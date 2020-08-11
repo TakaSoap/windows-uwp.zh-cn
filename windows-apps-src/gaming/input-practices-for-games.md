@@ -6,18 +6,18 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入
 ms.localizationpriority: medium
-ms.openlocfilehash: 8235b2c2029b2bb3b9351263a3c908879b4beba9
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: aa2036cb8d91b17d084e4e4922d01d4256bdb7de
+ms.sourcegitcommit: 29eb375bc634bf733be58107c1d648dc818da7f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210563"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88051322"
 ---
 # <a name="input-practices-for-games"></a>游戏输入实践
 
-本页描述了有效使用通用 Windows 平台 (UWP) 游戏中的输入设备的模式和技术。
+本主题介绍通用 Windows 平台 (UWP) 游戏中有效使用输入设备的模式和方法。
 
-在本页中，你将了解如下内容：
+阅读本主题后，你将了解：
 
 * 如何跟踪玩家和玩家当前正在使用的输入和导航设备
 * 如何检测按钮转换（按下到释放，释放到按下）
@@ -168,12 +168,11 @@ void OnGamepadRemoved(Platform::Object^ sender, Gamepad^ args)
 
 所有输入设备都与一位[用户](https://docs.microsoft.com/uwp/api/windows.system.user)关联，以便可以将其身份与其游戏玩法、成就、设置更改和其他活动关联。 用户可以随意登录或注销，而且，其他用户在之前的用户注销后登录到与系统保持相连的设备也很常见。用户登录或注销时会引发 [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged) 事件。 你可以为此事件注册事件处理程序，以跟踪玩家和他们正在使用的设备。
 
-输入设备与其相应的 [UI 导航控制器](ui-navigation-controller.md)也是通过用户身份这一方式关联的。
+用户标识也是输入设备与其相应的[UI 导航控制器](ui-navigation-controller.md)关联的方式。
 
 因此，应该使用设备类（继承自 [IGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller) 接口）的 [User](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.User) 属性跟踪和关联玩家。
 
-[UserGamepadPairingUWP (GitHub)](
-https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/UserGamepadPairingUWP) 示例演示了如何跟踪用户和他们正在使用的设备。
+[UserGamepadPairingUWP](/samples/microsoft/xbox-atg-samples/usergamepadpairinguwp/)示例演示了如何跟踪用户及其正在使用的设备。
 
 ## <a name="detecting-button-transitions"></a>检测按钮转换
 
@@ -304,7 +303,7 @@ if (buttonArrangement == buttonSelection)
 
 * **ChargeRateInMilliwatts** 和 **DesignCapacityInMilliwattHours** 将始终为 **NULL**。
 
-* 你可以通过计算 [RemainingCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours** 来获取电池电量百分比。 你应该忽略这些属性的值，而仅处理计算得出的百分比。
+* 可以通过计算[RemainingCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours)  /  **FullChargeCapacityInMilliwattHours**获取电池百分比。 你应该忽略这些属性的值，而仅处理计算得出的百分比。
 
 * 上一条中所述的百分比始终是以下值之一：
 
@@ -317,6 +316,7 @@ if (buttonArrangement == buttonSelection)
 
 ## <a name="see-also"></a>请参阅
 
-* [Windows. User 类](https://docs.microsoft.com/uwp/api/windows.system.user)
-* [IGameController 接口。](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Windows GamepadButtons 枚举](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)
+* [Windows.System.User 类](https://docs.microsoft.com/uwp/api/windows.system.user)
+* [Windows.Gaming.Input.IGameController 接口](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
+* [Windows.Gaming.Input.GamepadButtons 枚举](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)
+* [UserGamepadPairingUWP 示例](/samples/microsoft/xbox-atg-samples/usergamepadpairinguwp/)
