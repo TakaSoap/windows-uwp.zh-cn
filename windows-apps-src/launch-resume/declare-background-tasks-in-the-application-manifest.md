@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 32472f698381f4b109f280f0b964f00cdbcec66a
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: e1580bdc62585cb777334c217419b4de6a691add
+ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606196"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162562"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在应用程序清单中声明后台任务
 
@@ -21,7 +21,7 @@ ms.locfileid: "82606196"
 **重要的 API**
 
 -   [**BackgroundTasks 架构**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**Windows.applicationmodel.resources.core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。
 
@@ -90,7 +90,7 @@ ms.locfileid: "82606196"
 
 2.  更改 Task Type 属性列表以指示该后台任务所使用的任务注册类型。 如果后台任务注册了多个触发器类型，需要为每个触发器类型添加附加的 Task 元素和 Type 属性。
 
-    **注意**  请确保列出你正在使用的每个触发器类型，否则，后台任务将不会注册到未声明的触发器类型（ [**register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)方法将失败并引发异常）。
+    **注意**   请确保列出你正在使用的每个触发器类型，或后台任务不会使用未声明的触发器类型注册 ([**register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)方法将失败并引发异常) 。
 
     此代码段示例指示使用系统事件触发器和推送通知：
 
@@ -107,7 +107,7 @@ ms.locfileid: "82606196"
 
 对你的应用注册的每个额外的后台任务类重复步骤 2。
 
-下面的示例是来自[后台任务示例]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9)的完整 Application 元素。 它显示使用了两个后台任务类，触发器类型总数为 3。 复制此示例的“扩展”部分，并根据需要进行修改，以在应用程序清单中声明后台任务。
+下面的示例是来自[后台任务示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)的完整 Application 元素。 它显示使用了两个后台任务类，触发器类型总数为 3。 复制此示例的“扩展”部分，并根据需要进行修改，以在应用程序清单中声明后台任务。
 
 ```xml
 <Applications>
@@ -209,7 +209,7 @@ ms.locfileid: "82606196"
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>每次用 SupportsMultipleInstances 属性触发新触发器时，在新进程中运行
 
-此示例声明在新进程中运行的后台任务，每次触发新触发器时，该进程会获取自己的资源限制（内存和 CPU）。 请注意使用可启用此行为的 `SupportsMultipleInstances`。 若要使用此属性，必须将 SDK 版本设定为 "10.0.15063" （Windows 10 创意者更新）或更高版本。
+此示例声明在新进程中运行的后台任务，每次触发新触发器时，该进程会获取自己的资源限制（内存和 CPU）。 请注意使用可启用此行为的 `SupportsMultipleInstances`。 若要使用此属性，必须以 SDK 版本 "10.0.15063" 为目标 (Windows 10 创意者更新) 或更高版本。
 
 ```xml
 <Package
