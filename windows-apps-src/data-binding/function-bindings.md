@@ -5,17 +5,17 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 879be9591bae36a1dbcd485387fbb4ac7f502fea
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5d74e99526ed5531db92ba88a1053e07a3fc993b
+ms.sourcegitcommit: c7f33dbe9516d28664df1b91e03edca3cb9fb0c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66360076"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87871683"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函数
 
 > [!NOTE]
-> 有关将应用中的数据绑定与 **{x:Bind}** 结合使用的常规信息（以及有关 **{x:Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](data-binding-in-depth.md)。
+> 有关将应用中的数据绑定与 {x:Bind} 结合使用的常规信息（以及有关 {x:Bind} 和 {Binding} 之间的全方位比较），请参阅[深入了解数据绑定](data-binding-in-depth.md)和 [{x:Bind} 标记扩展](../xaml-platform/x-bind-markup-extension.md)。
 
 从 Windows 10 版本 1607 开始， **{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样做可以实现以下操作：
 
@@ -61,7 +61,7 @@ class ColorEntry
 
 ## <a name="path-to-the-function"></a>函数的路径
 
-与其他属性路径一样指定该函数的路径，可以包含用于定位该函数的点 (.)、索引器或强制转换。
+与其他属性路径一样指定[该函数的路径](../xaml-platform/x-bind-markup-extension.md#property-path)，可以包含用于定位该函数的[点](../xaml-platform/x-bind-markup-extension.md#property-path-resolution) (.)、[索引器](../xaml-platform/x-bind-markup-extension.md#collections)或[强制转换](../xaml-platform/x-bind-markup-extension.md#casting)。
 
 可以使用 XMLNamespace:ClassName.MethodName 语法指定静态函数。 例如，使用以下语法在代码隐藏中绑定到静态函数。
 
@@ -120,7 +120,7 @@ namespace MyNamespace
 ```
 
 ```csharp
-public class Person:INotifyPropertyChanged
+public class Person : INotifyPropertyChanged
 {
     //Implementation for an Icon property and a CancellationToken property with PropertyChanged notifications
     ...
@@ -183,3 +183,6 @@ public class Person:INotifyPropertyChanged
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```
+
+## <a name="see-also"></a>请参阅
+* [{x:Bind} 标记扩展](../xaml-platform/x-bind-markup-extension.md)

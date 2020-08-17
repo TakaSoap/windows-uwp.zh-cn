@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 强, 弱, 引用
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dc991ff485d9e4ba90264e1b8082a40e0f4ab801
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c8ca914737698c22d52657d20ee655d20491b3e8
+ms.sourcegitcommit: a9f44bbb23f0bc3ceade3af7781d012b9d6e5c9a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82267481"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88180762"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>C++/WinRT 中的强引用和弱引用
 
@@ -105,7 +105,7 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-C++/WinRT 类直接或间接派生自 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 模板。 因此， C++/WinRT 对象可以调用其 [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 受保护成员函数来检索对其 *this* 指针的强引用。 请注意，在上述代码示例中无需实际使用 `strong_this` 变量；只需调用 **get_strong** 即可递增 C++/WinRT 对象的引用计数，并使其隐式 *this* 指针保持有效。
+C++/WinRT 类直接或间接派生自 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 模板。 因此，C++/WinRT 对象可以调用其 [implements::get_strong](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 受保护成员函数来检索对其 this 指针的强引用。 请注意，在上述代码示例中无需实际使用 `strong_this` 变量；只需调用 **get_strong** 即可递增 C++/WinRT 对象的引用计数，并使其隐式 *this* 指针保持有效。
 
 > [!IMPORTANT]
 > 由于 **get_strong** 是 **winrt::implements** 结构模板的成员函数，因此你只能从直接或间接派生自 **winrt::implements** 的类（例如某个 C++/WinRT 类）调用该函数。 有关派生自 **winrt::implements** 的详细信息和示例，请参阅[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
@@ -134,9 +134,9 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 
 在上述示例中，当未保留任何强引用时，弱引用无法防止销毁类实例。 但是，它可以让你检查在访问成员变量之前，是否可以获取强引用。
 
-## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>使用事件处理委托安全访问 *this* 指针
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>使用事件处理委托安全访问 this 指针
 
-### <a name="the-scenario"></a>方案
+### <a name="the-scenario"></a>场景
 
 有关事件处理的一般信息，请参阅[在 C++/WinRT 中使用委托处理事件](handle-events.md)。
 
@@ -203,7 +203,7 @@ int main()
 
 但仍有一些情况，*this* 的生存期不及它在处理程序（包括用于由异步操作和运算引发的完成和进度事件的处理程序）中的使用时间。必须了解如何处理这种情况。
 
-- 当事件源以同步方式引发其事件时，你就可以放心地撤销处理程序：不会收到更多事件了。  但对于异步事件，即使在撤销（尤其是在析构函数中撤销）后，你的对象在开始析构后仍可能收到正在进行的事件。 在析构之前找到取消订阅的地方也许可以缓解此问题，但若要查找稳妥的解决方案，请继续阅读。
+- 当事件源以同步方式引发其事件时，你就可以放心地撤销处理程序：不会收到更多事件了。 但对于异步事件，即使在撤销（尤其是在析构函数中撤销）后，你的对象在开始析构后仍可能收到正在进行的事件。 在析构之前找到取消订阅的地方也许可以缓解此问题，但若要查找稳妥的解决方案，请继续阅读。
 - 如果你要创作用于实现异步方法的协同例程，那么这是可能的。
 - 在存在特定 XAML UI 框架对象（例如，[**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel)）的极少数情况下，如果接收方在完成时没有从事件源取消注册，那么这是可能的。
 
@@ -253,7 +253,7 @@ event_source.Event([this](auto&& ...)
 
 ### <a name="the-solution"></a>解决方案
 
-解决方法是捕获强引用（或者根据情况捕获弱引用，这一点我们会在后面介绍）。 强引用确实会递增引用计数，且确实会使当前对象保持活动状态。   只需声明一个捕获变量（在此示例中名为 `strong_this`），并通过调用 [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 将其初始化，以检索对 *this* 指针的强引用。
+解决方法是捕获强引用（或者根据情况捕获弱引用，这一点我们会在后面介绍）。 强引用确实会递增引用计数，且确实会使当前对象保持活动状态。**** 只需声明一个捕获变量（在此示例中名为 `strong_this`），并通过调用 [implements::get_strong](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 将其初始化，以检索对 this 指针的强引用。
 
 > [!IMPORTANT]
 > 由于 **get_strong** 是 **winrt::implements** 结构模板的成员函数，因此你只能从直接或间接派生自 **winrt::implements** 的类（例如某个 C++/WinRT 类）调用该函数。 有关派生自 **winrt::implements** 的详细信息和示例，请参阅[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
@@ -274,7 +274,7 @@ event_source.Event([strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-如果强引用不合适，则你可以改为调用 [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) 来检索对 *this* 的弱引用。 弱引用不会使当前对象保持活动状态。  因此，只需确认在访问成员之前仍可从弱引用检索强引用即可。
+如果强引用不合适，则你可以改为调用 [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) 来检索对 *this* 的弱引用。 弱引用不会使当前对象保持活动状态。** 因此，只需确认在访问成员之前仍可从弱引用检索强引用即可。
 
 ```cppwinrt
 event_source.Event([weak_this{ get_weak() }](auto&& ...)
@@ -325,7 +325,7 @@ event_source.Event({ get_strong(), &EventRecipient::OnEvent });
 event_source.Event({ get_weak(), &EventRecipient::OnEvent });
 ```
 
-如果委托  调用了成员函数，则 C++/WinRT 会使对象保持活动状态，直至处理程序返回。 但是，如果处理程序是异步的，并且在挂起点返回，则需在第一个挂起点之前为协同程序提供一个对类实例的强引用。 同样，如需详细信息，请参阅本主题前面的[在类成员协同程序中安全访问 *this* 指针](#safely-accessing-the-this-pointer-in-a-class-member-coroutine)部分。
+如果委托** 调用了成员函数，则 C++/WinRT 会使对象保持活动状态，直至处理程序返回。 但是，如果处理程序是异步的，并且在挂起点返回，则需在第一个挂起点之前为协同程序提供一个对类实例的强引用。 同样，如需详细信息，请参阅本主题前面的[在类成员协同程序中安全访问 *this* 指针](#safely-accessing-the-this-pointer-in-a-class-member-coroutine)部分。
 
 ### <a name="a-weak-reference-example-using-swapchainpanelcompositionscalechanged"></a>使用 **SwapChainPanel::CompositionScaleChanged** 的弱引用示例
 
@@ -410,7 +410,7 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, no_weak_ref>
 }
 ```
 
-标记结构在 variadic 参数包中的位置无关紧要。 如果你请求对某个已退出类型的弱引用，则编译器将帮助你退出并显示“此项仅用于弱引用支持”  。
+标记结构在 variadic 参数包中的位置无关紧要。 如果你请求对某个已退出类型的弱引用，则编译器将帮助你退出并显示“此项仅用于弱引用支持”**。
 
 ## <a name="important-apis"></a>重要的 API
 * [implements::get_weak 函数](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
