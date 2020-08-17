@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Windows 10 中的易访问性, 易访问性, 构建易访问的 win32 应用, 构建易访问的 UWP 应用, 构建易访问的 WPF 应用, 构建易访问的 WinForms 应用
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 2739546061febcfc96403ed5520fdcbd8bc2c462
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 04dc3571f6b2d8ddf57a3695330070d7c5b5061e
+ms.sourcegitcommit: 9beb6cce7375b726ad90ee84b72754268ae2819a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76725930"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88047784"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 中的易访问性
 
@@ -33,7 +33,7 @@ ms.locfileid: "76725930"
    :::column:::
       ![通用 Windows 平台 (UWP)](images/platform-uwp.png)
 
-      通用 Windows 平台 (UWP) 
+      **通用 Windows 平台 (UWP)**
 
       在新式平台上针对任何 Windows 设备（包括电脑、手机、Xbox One、HoloLens 等）上的 Windows 10 应用程序和游戏开发易访问的应用和工具，并将它们发布到 Microsoft Store。
 
@@ -77,7 +77,7 @@ ms.locfileid: "76725930"
 
       使用 XAML UI 模型和 .NET Framework 在建立的平台上针对托管 Windows 应用程序开发易访问的应用和工具。
 
-      [易访问性最佳做法](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
+      [辅助功能最佳方案](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
 
       [UI 自动化基础知识](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
 
@@ -104,9 +104,9 @@ ms.locfileid: "76725930"
 
       [创建易访问的 Windows 应用程序](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
 
-      [支持易访问性准则的 Windows 窗体控件上的属性](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
+      [支持辅助功能准则的 Windows 窗体控件上的属性](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
-      [为 Windows 窗体上的控件提供易访问性信息](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+      [为 Windows 窗体上的控件提供辅助功能信息](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -140,7 +140,7 @@ ms.locfileid: "76725930"
       新示例浏览器替代了 MSDN 代码库。
    :::column-end:::
    :::column:::
-      [MSDN 代码库（已停用）](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+      [MSDN 代码库（GitHub 存档）](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample)
 
       下载适用于 Windows、Windows Phone、Microsoft Azure、Office、SharePoint、Silverlight 和其他产品的示例。
    :::column-end:::

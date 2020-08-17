@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: 设置 windows, 开发环境, 开发工具, 开发路径, Microsoft, Windows, 开发人员, 使用技巧, 性能, WSL, 终端, nodejs, python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: e62ca938a23910290a8c63682fc2fde77ec0ea92
-ms.sourcegitcommit: 1e06168ada5ce6013b1d07c428548f084464a286
+ms.openlocfilehash: 4c9311c8aacf708e92feaea0b26ac20a01403257
+ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87363719"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162572"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>在 Windows 10 上设置开发环境
 
@@ -87,8 +87,8 @@ ms.locfileid: "87363719"
     :::column:::
        [![Windows 程序包管理器](../images/winget.png)](https://docs.microsoft.com/windows/package-manager/)<br>
         **[Windows 程序包管理器](https://docs.microsoft.com/windows/package-manager/)**<br>
-        将综合程序包管理器 WinGet 与命令行配合使用，在 Windows 10 上安装应用程序。<br>
-        [安装 WinGet（公共预览版）](https://docs.microsoft.com/windows/package-manager/winget/#install-winget)
+        将 winget.exe 客户端（一种综合程序包管理器）与命令行配合使用，在 Windows 10 上安装应用程序。<br>
+        [安装 Windows 程序包管理器（公共预览版）](https://docs.microsoft.com/windows/package-manager/winget/#install-winget)
     :::column-end:::
     :::column:::
        [![PowerToys](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
