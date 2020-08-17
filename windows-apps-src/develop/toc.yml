@@ -60,7 +60,7 @@
           href: ../audio-video-camera/process-media-frames-with-mediaframereader.md
           items:
             - name: 使用 MediaFrameReader 处理音频帧
-              href: ../audio-video-camera/use-opencv-with-mediaframereader.md
+              href: ../audio-video-camera/process-audio-frames-with-mediaframereader.md
             - name: 通过 MediaFrameReader 使用 OpenCV
               href: ../audio-video-camera/use-opencv-with-mediaframereader.md
         - name: 使用 MediaFrameSourceGroup 从多个来源捕获
@@ -795,6 +795,8 @@
           href: ../cpp-and-winrt-apis/move-to-winrt-from-cx.md
         - name: 与 C++/CX 互操作
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
+        - name: 异步，通过 C++/CX 实现互操作
+          href: ../cpp-and-winrt-apis/interop-winrt-cx-async.md
         - name: 从 WRL 移动到 C++/WinRT
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
         - name: 从 C# 移植示例应用
