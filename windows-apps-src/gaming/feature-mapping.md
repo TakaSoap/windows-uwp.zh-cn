@@ -6,28 +6,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx 9, directx 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: e0643773ca529540284f0749de6e91349f4e9c47
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 3470c8153cc0f6ba6d272e5ed1163c7f2c911c4c
+ms.sourcegitcommit: 7c1711d68496b781ed7d5b54e8ef5442e58661fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730236"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88578221"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>将 DirectX 9 功能映射到 DirectX 11 API
 
-
-
-**摘要**
-
--   [规划 DirectX 移植](plan-your-directx-port.md)
--   [从 Direct3D 9 到 Direct3D 11 的重要更改](understand-direct3d-11-1-concepts.md)
--   功能映射
-
-
 了解 Direct3D 9 游戏使用的功能如何转换到 Direct3D 11 和通用 Windows 平台 (UWP)。
 
-## <a name="mapping-direct3d-9-to-directx-11-apis"></a>将 Direct3D 9 映射到 DirectX 11 API
+另请参阅 [规划 DirectX 端口](plan-your-directx-port.md)和 [从 Direct3D 9 到 Direct3D 11 的重要更改](understand-direct3d-11-1-concepts.md)。
 
+## <a name="mapping-direct3d-9-to-directx-11-apis"></a>将 Direct3D 9 映射到 DirectX 11 API
 
 [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d) 仍然是 DirectX 图形的基础，但是 API 自从 DirectX 9 起发生了更改。
 
@@ -39,7 +31,6 @@ ms.locfileid: "82730236"
 
 ## <a name="moving-from-direct2d-9-to-direct2d-11"></a>从 Direct2D 9 移动到 Direct2D 11
 
-
 [Direct2D (Windows)](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) 仍然是 DirectX 图形和 Windows 的重要组成部分。 你仍然可以使用 Direct2D 来绘制 2D 游戏，以及在 Direct3D 上面绘制覆盖 (HUD)。
 
 Direct2D 在 Direct3D 上运行，因此可以使用任一 API 实现 2D 游戏。 例如，使用 Direct3D 实现的 2D 游戏可以使用正交投影、设置 Z 值以控制基元的绘制顺序，以及使用像素着色器添加特殊效果。
@@ -50,7 +41,6 @@ Direct2D 在 Direct3D 上运行，因此可以使用任一 API 实现 2D 游戏�
 
 ## <a name="replace-deprecated-helper-libraries"></a>替换已弃用的帮助程序库
 
-
 D3DX 和 DXUT 已弃用，并且不能由 UWP 游戏使用。 这些帮助程序库为诸如纹理加载和网格加载之类的任务提供了资源。
 
 -   [从 Direct3D 9 到 UWP 的简单移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)操作实例演示了如何设置窗口、初始化 Direct3D 以及执行基本的 3D 呈现。
@@ -59,17 +49,15 @@ D3DX 和 DXUT 已弃用，并且不能由 UWP 游戏使用。 这些帮助程序
 
 ## <a name="move-shader-programs-from-fx-to-hlsl"></a>将 FX 中的着色器程序移动到 HLSL
 
-
 对于 UWP 来说，D3DX 实用工具库（D3DX 9、D3DX 10 和 D3DX 11）（包括“效果”库）已被弃用。 UWP 的所有 DirectX 游戏都使用 [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl)（不使用“效果”库）驱动图形管道。
 
 Visual Studio 仍然在后台使用 FXC 编译着色器对象。 将提前编译 UWP 游戏着色器。 在运行时加载字节码，然后 在相应的呈现传递过程中将每个着色器资源绑定到图形管道。 应将着色器移动到它们自己的 .HLSL 文件中，且应采用 C++ 代码实现呈现技术。
 
 若要快速浏览加载着色器资源，请参阅[从 Direct3D 9 到 UWP 的简单移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)。
 
-Direct3D 11 引入了着色器模型5，它需要 Direct3D 功能\_级别 11 0 （或更高版本）。 请参阅 [Direct3D 11 的 HLSL 着色器模型 5 功能](https://docs.microsoft.com/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl)。
+Direct3D 11 引入了着色器模型5，它需要 Direct3D 功能级别 11 \_ 0 (或更高) 。 请参阅 [Direct3D 11 的 HLSL 着色器模型 5 功能](https://docs.microsoft.com/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl)。
 
 ## <a name="replace-xnamath-and-d3dxmath"></a>替换 XNAMath 和 D3DXMath
-
 
 应该将使用 XNAMath（或 D3DXMath）的代码迁移到 [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal)。 DirectXMath 包括可以跨 x86、x64 和 ARM 进行移植的类型。 请参阅 [XNA Math 库中的代码迁移](https://docs.microsoft.com/windows/desktop/dxmath/pg-xnamath-migration)。
 
@@ -77,13 +65,11 @@ Direct3D 11 引入了着色器模型5，它需要 Direct3D 功能\_级别 11 0 �
 
 ## <a name="replace-directsound-with-xaudio2-and-background-audio"></a>将 DirectSound 替换为 XAudio2（以及背景音频）
 
-
 UWP 不支持 DirectSound：
 
 -   使用 [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) 向游戏中添加声音效果。
 
 ##  <a name="replace-directinput-with-xinput-and-windows-runtime-apis"></a>将 DirectInput 替换为 XInput 和 Windows 运行时 Api
-
 
 UWP 不支持 DirectInput：
 
@@ -93,11 +79,9 @@ UWP 不支持 DirectInput：
 
 ## <a name="use-microsoft-media-foundation-instead-of-directshow"></a>使用 Microsoft Media Foundation 代替 DirectShow
 
-
 DirectShow 不再是 DirectX API（或 Windows API）的一部分。 [Microsoft 媒体基础](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)使用共享图面向 Direct3D 提供视频内容。 请参阅 [Direct3D 11 视频 API](https://docs.microsoft.com/windows/desktop/medfound/direct3d-11-video-apis)。
 
 ## <a name="replace-directplay-with-networking-code"></a>将 DirectPlay 替换为网络代码
-
 
 Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要提供符合 UWP 要求的网络代码。 使用以下 API：
 
@@ -117,7 +101,6 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 请注意，所有 UWP 应用（包括游戏）都使用特定类型的后台任务，以便在应用暂停时保持连接。 如果你的游戏需要在暂停时保持连接状态，请参阅[网络基础知识](https://docs.microsoft.com/windows/uwp/networking/networking-basics)。
 
 ## <a name="function-mapping"></a>功能映射
-
 
 使用下表可帮助你将 Direct3D 9 中的代码转换到 Direct3D 11。 该表还有助于区分设备和设备上下文。
 
@@ -231,15 +214,12 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-checkdeviceformat">IDirect3DDevice9:CheckDeviceFormat</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-getdevicecaps">IDirect3DDevice9:GetDeviceCaps</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-validatedevice">IDirect3DDevice9:ValidateDevice</a></p></td>
-<td align="left"><p>功能位已被替换为功能级别。 对于任何给定的功能级别，只有几个格式和功能用例是可选的。 这些可以使用 <a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport">ID3D11Device::CheckFeatureSupport</a> 和 <a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-checkformatsupport">ID3D11Device::CheckFormatSupport</a> 进行检查。</p></td>
+<td align="left"><p>功能位替换为功能级别。 对于任何给定的功能级别，只有几个格式和功能用例是可选的。 这些可以使用 <a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport">ID3D11Device::CheckFeatureSupport</a> 和 <a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-checkformatsupport">ID3D11Device::CheckFormatSupport</a> 进行检查。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
-
 ## <a name="surface-format-mapping"></a>图面格式映射
-
 
 使用下表将 Direct3D 9 格式转换为 DXGI 格式。
 
@@ -342,7 +322,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>请注意</strong>   ，在着色器中使用 r swizzle 将红色复制到其他组件，以获取 Direct3D 9 行为。
+<strong>注意</strong>   使用 swizzle 在着色器中将红色复制到其他组件，以获取 Direct3D 9 行为。
 </div>
 <div>
  
@@ -352,7 +332,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>请注意</strong>   ，在着色器中使用 swizzle 可重复红色，并将绿色移动到 alpha 组件以获取 Direct3D 9 行为。
+<strong>注意</strong>   在着色器中使用 rrrg 重复红色，并将绿色移动到 alpha 组件以获取 Direct3D 9 行为。
 </div>
 <div>
  
@@ -398,7 +378,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>请注意</strong>   ，在 Direct3D 9 中，数据已由 255.0 f 放大，但这可以在着色器中进行处理。
+<strong>注意</strong>   在 Direct3D 9 中，数据由 255.0 f 扩展，但这可以在着色器中进行处理。
 </div>
 <div>
  
@@ -412,7 +392,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>请注意</strong>   ，在 Direct3D 9 中，数据已由 255.0 f 放大，但这可以在着色器中进行处理。
+<strong>注意</strong>   在 Direct3D 9 中，数据由 255.0 f 扩展，但这可以在着色器中进行处理。
 </div>
 <div>
  
@@ -426,7 +406,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM &amp; DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>请注意</strong>   ，DXT1 和 DXT2 与 API/硬件的透视是相同的。 唯一的差别是是否使用了预乘 alpha，这可以通过应用程序来跟踪，并且不需要单独的格式。
+<strong>注意</strong>   DXT1 和 DXT2 与 API/硬件的透视是相同的。 唯一的差别是是否使用了预乘 alpha，这可以通过应用程序来跟踪，并且不需要单独的格式。
 </div>
 <div>
  
@@ -440,7 +420,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM &amp; DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>请注意</strong>   ，DXT3 和 DXT4 与 API/硬件的透视是相同的。 唯一的差别是是否使用了预乘 alpha，这可以通过应用程序来跟踪，并且不需要单独的格式。
+<strong>注意</strong>   DXT3 和 DXT4 与 API/硬件的透视是相同的。 唯一的差别是是否使用了预乘 alpha，这可以通过应用程序来跟踪，并且不需要单独的格式。
 </div>
 <div>
  
@@ -506,7 +486,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>请注意</strong>   ，在着色器中使用 r swizzle 将红色复制到其他组件，以获取 D3D9 行为。
+<strong>注意</strong>   使用 swizzle 在着色器中将红色复制到其他组件，以获取 D3D9 行为。
 </div>
 <div>
  
@@ -580,7 +560,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>请注意</strong>   ，着色器获取 UINT 值，但如果需要 Direct3D 9 样式整数浮点值（0.0 f，1.0 f .。。255. f），UINT 只能在着色器中转换为 float32。
+<strong>注意</strong>   着色器获取 UINT 值，但如果需要 (0.0 f，1.0 f，则需要 Direct3D 9 样式整数浮点) ，UINT 只能在着色器中转换为 float32。
 </div>
 <div>
  
@@ -590,7 +570,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>请注意</strong>   ，着色器会获得圣马丁值，但是如果需要 Direct3D 9 样式整数浮点值，则可以将圣马丁转换为着色器中的 float32。
+<strong>注意</strong>   着色器获取圣数值，但如果需要 Direct3D 9 样式整数浮点值，则可以只在着色器中将圣马丁转换为 float32。
 </div>
 <div>
  
@@ -600,7 +580,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>请注意</strong>   ，着色器会获得圣马丁值，但是如果需要 Direct3D 9 样式整数浮点值，则可以将圣马丁转换为着色器中的 float32。
+<strong>注意</strong>   着色器获取圣数值，但如果需要 Direct3D 9 样式整数浮点值，则可以只在着色器中将圣马丁转换为 float32。
 </div>
 <div>
  
@@ -646,7 +626,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>注意</strong>  需要功能级别10.0 或更高版本
+<strong>注意</strong>   需要功能级别10.0 或更高版本
 </div>
 <div>
  
@@ -656,7 +636,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>注意</strong>  需要功能级别10.0 或更高版本
+<strong>注意</strong>   需要功能级别10.0 或更高版本
 </div>
 <div>
  
@@ -665,12 +645,28 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tbody>
 </table>
 
- 
+## <a name="additional-mapping-info"></a>其他映射信息
 
- 
+- **IDirect3DDevice9：： SetCursorPosition** 替换为 [**SetCursorPos**](/windows/desktop/api/winuser/nf-winuser-setcursorpos)。
+- **IDirect3DDevice9：： SetCursorProperties** 替换为 [**SetCursor**](/windows/desktop/api/winuser/nf-winuser-setcursor)。
+- **IDirect3DDevice9：： SetIndices** 替换为 [**ID3D11DeviceContext：： IASetIndexBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer)。
+- **IDirect3DDevice9：： SetRenderTarget** 替换为 [**ID3D11DeviceContext：： OMSetRenderTargets**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets)。
+- **IDirect3DDevice9：： SetScissorRect** 替换为 [**ID3D11DeviceContext：： RSSetScissorRects**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetscissorrects)。
+- **IDirect3DDevice9：： SetStreamSource** 替换为 [**ID3D11DeviceContext：： IASetVertexBuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers)。
+- **IDirect3DDevice9：： SetVertexDeclaration** 替换为 [**ID3D11DeviceContext：： IASetInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout)。
+- **IDirect3DDevice9：： SetViewport** 替换为 [**ID3D11DeviceContext：： RSSetViewports**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports)。
+- **IDirect3DDevice9：： ShowCursor** 替换为 [**ShowCursor**](/windows/desktop/api/winuser/nf-winuser-showcursor)。
 
- 
+控制视频卡的硬件伽玛坡道到 **IDirect3DDevice9：： SetGammaRamp** 被替换为 **IDXGIOutput：： SetGammaControl**。 请参阅 [使用伽玛更正](/windows/win32/direct3ddxgi/using-gamma-correction)。
 
+**IDirect3DDevice9：:P rocessvertices** 替换为几何图形着色器的流输出功能。 请参阅 [流输出阶段](/windows/win32/direct3d11/d3d10-graphics-programming-guide-output-stream-stage-getting-started)入门。
 
+用于设置用户剪辑的方法 **IDirect3DDevice9：： SetClipPlane** 已由 HLSL **SV_ClipDistance** 顶点着色器输出语义 (参阅 [语义](/windows/win32/direct3dhlsl/dx-graphics-hlsl-semantics)) 、VS_4_0 和向上提供，或 new HLSL clipplanes function 特性 (参阅 [功能级别9硬件) 上的用户剪辑平面](/windows/win32/direct3dhlsl/user-clip-planes-on-10level9) 。
 
+**IDirect3DDevice9：： SetPaletteEntries** 和 **IDirect3DDevice9：： SetCurrentTexturePalette** 已弃用。 将它们替换为在 256x1 **R8G8B8A8** 纹理中查找颜色的像素着色器。
 
+已不推荐使用固定函数镶嵌函数，例如 **DrawRectPatch**、 **DrawTriPatch**、 **SetNPatchMode**和 **DeletePatch** 。 将它们替换为可编程管道 SM 5.0 分割着色器 (如果硬件支持镶嵌着色器) 。
+
+不再支持**IDirect3DDevice9：： SetFVF**和 FVF 代码。 在移植到 D3D11 输入布局之前，应从 D3D8/D3D9 FVF 代码移植到 D3D9 顶点声明。
+
+不直接支持的所有 **D3DDECLTYPE** 类型都可以通过在 VS_4_0 和向上的顶点着色器开头的少量按位运算来非常高效地模拟。
