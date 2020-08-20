@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: f484df97c6d29281941c8eed7b91fd0b156fff60
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 65f65fc62f839e379535f4e1a3df8a188620fed9
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968775"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502353"
 ---
 # <a name="combo-box-and-list-box"></a>组合框和列表框
 
@@ -23,7 +23,7 @@ ms.locfileid: "82968775"
 
 组合框在关闭后，会显示当前的选择或为空（如果没有选中项）。 当用户展开组合框时，它会显示可选择项的列表。
 
-![处于紧凑状态的下拉列表示例](images/combo_box_collapsed.png)
+![处于紧凑状态的下拉列表示例](images/combo-box-expand.gif)
 
 > 处于紧凑状态的组合框，显示一个标题。 
 
