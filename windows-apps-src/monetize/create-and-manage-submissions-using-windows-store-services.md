@@ -6,21 +6,21 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a41c0784302310be6f65a71b68233161a1c627d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 38a59db4115332a374c96c8a4400dbaccff9cd82
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260316"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846817"
 ---
 # <a name="create-and-manage-submissions"></a>创建和管理提交
 
-使用*Microsoft Store 提交 API*以编程方式为或组织的合作伙伴中心帐户查询和创建应用、外接程序和包的提交。 如果你的帐户管理多个应用或加载项，并且想要自动执行并优化这些资源的提交过程，此 API 非常有用。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
+使用 *Microsoft Store 提交 API* 以编程方式为或组织的合作伙伴中心帐户查询和创建应用、外接程序和包的提交。 如果你的帐户管理多个应用或加载项，并且想要自动执行并优化这些资源的提交过程，此 API 非常有用。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
 
 以下步骤介绍了使用 Microsoft Store 提交 API 的端到端过程：
 
 1.  确保已完成所有[先决条件](#prerequisites)。
-3.  在 Microsoft Store 提交 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Microsoft Store 提交 API。 该令牌到期后，你可以生成新的令牌。
+3.  在 Microsoft Store 提交 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用“Microsoft Store 提交 API”。 该令牌到期后，可以重新生成一个。
 4.  [调用 Microsoft Store 提交 API](#call-the-windows-store-submission-api)。
 
 <span id="not_supported" />
@@ -40,15 +40,15 @@ ms.locfileid: "74260316"
 
 在开始编写调用 Microsoft Store 提交 API 的代码之前，确保已满足以下先决条件。
 
-* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
+* 你（或你的组织）必须有一个 Azure AD 目录，并且必须对该目录拥有[全局管理员](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，则你已具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
 
-* 必须[将 Azure AD 应用程序与合作伙伴中心帐户相关联](#associate-an-azure-ad-application-with-your-windows-partner-center-account)，并获取租户 id、客户端 id 和密钥。 获取 Azure AD 访问令牌（该令牌用于调用 Microsoft Store 提交 API）需要这些值。
+* 必须[将某个 Azure AD 应用程序与你的合作伙伴中心帐户相关联](#associate-an-azure-ad-application-with-your-windows-partner-center-account)，并获取租户 ID、客户端 ID 和密钥。 需要使用这些值来获取 Azure AD 访问令牌，调用“Microsoft Store 提交 API”时将会使用该令牌。
 
 * 使用 Microsoft Store 提交 API 对应用进行准备：
 
-  * 如果你的应用尚不存在于合作伙伴中心，则必须[通过在合作伙伴中心保留其名称来创建你的应用](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 不能使用 Microsoft Store 提交 API 在合作伙伴中心创建应用;你必须在合作伙伴中心进行创建，然后才能使用 API 访问应用，并以编程方式为其创建提交。 不过，可以使用该 API 以编程方式创建加载项和软件包外部测试版，然后再为它们创建提交。
+  * 如果你的应用尚不存在于合作伙伴中心，则必须 [通过在合作伙伴中心保留其名称来创建你的应用](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 不能使用 Microsoft Store 提交 API 在合作伙伴中心创建应用;你必须在合作伙伴中心进行创建，然后才能使用 API 访问应用，并以编程方式为其创建提交。 不过，可以使用该 API 以编程方式创建加载项和软件包外部测试版，然后再为它们创建提交。
 
-  * 必须先[在合作伙伴中心为该应用创建一个提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，然后才能使用此 API[为该](https://docs.microsoft.com/windows/uwp/publish/age-ratings)应用创建提交。 完成此操作后，才可以使用该 API 为此应用以编程方式创建新的提交。 无需创建加载项提交或软件包外部测试版提交，即可将该 API 用于这些类型的提交。
+  * 必须先 [在合作伙伴中心为该应用创建一个提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，然后才能使用此 API [为该](https://docs.microsoft.com/windows/uwp/publish/age-ratings) 应用创建提交。 完成此操作后，才可以使用该 API 为此应用以编程方式创建新的提交。 无需创建加载项提交或软件包外部测试版提交，即可将该 API 用于这些类型的提交。
 
   * 如果你要创建或更新应用提交并需要包括应用包，请事先[准备应用包](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)。
 
@@ -58,20 +58,20 @@ ms.locfileid: "74260316"
 
 <span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 
-### <a name="how-to-associate-an-azure-ad-application-with-your-partner-center-account"></a>如何将 Azure AD 应用程序与合作伙伴中心帐户关联
+### <a name="how-to-associate-an-azure-ad-application-with-your-partner-center-account"></a>如何将 Azure AD 应用程序与合作伙伴中心帐户相关联
 
-使用 Microsoft Store 提交 API 之前，必须将 Azure AD 应用程序与合作伙伴中心帐户相关联，检索应用程序的租户 ID 和客户端 ID，并生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 提交 API 的应用或服务。 你需要租户 ID、客户端 ID 和密钥以获取传递给 API 的 Azure AD 访问令牌。
+使用 Microsoft Store 提交 API 之前，必须将 Azure AD 应用程序与合作伙伴中心帐户相关联，检索应用程序的租户 ID 和客户端 ID，并生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 提交 API 的应用或服务。 需要使用该租户 ID、客户端 ID 和密钥来获取要传递给 API 的 Azure AD 访问令牌。
 
 > [!NOTE]
-> 你只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
+> 你只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，每当需要创建新的 Azure AD 访问令牌时，都可以重复使用它们。
 
 1.  在合作伙伴中心，[将组织的合作伙伴中心帐户与组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-partner-center.md)。
 
-2.  接下来，从合作伙伴中心的 "**帐户设置**" 部分的 "**用户**" 页中，添加表示将用于访问合作伙伴中心帐户提交的应用或服务的[Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)。 请确保为此应用程序分配**管理员**角色。 如果 Azure AD 目录中尚不存在该应用程序，则可以[在合作伙伴中心创建新的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。  
+2.  接下来，在合作伙伴中心的“用户”页的“帐户设置”部分[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)，该应用程序代表你要用来访问合作伙伴中心帐户提交内容的应用或服务。  确保为此应用程序分配“管理者”角色。 如果你的 Azure AD 目录中尚不包含该应用程序，可以[在合作伙伴中心创建新的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。  
 
-3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
+3.  返回到“用户”页，单击 Azure AD 应用程序的名称转到“应用程序设置”，然后复制“租户 ID”和“客户端 ID”值。  
 
-4. 单击**添加新密钥**。 在接下来的屏幕上，记下**密钥**值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
+4. 单击“添加新密钥”。 在下一个屏幕上，复制“密钥”值。 离开此页后，不再可以访问此信息。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
 
 <span id="obtain-an-azure-ad-access-token" />
 
@@ -92,7 +92,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-对于 POST URI 中的*租户\_id*值和客户端 *\_id*和*客户端\_机密*参数，为你在上一节中的合作伙伴中心检索的应用程序指定租户 id、客户端 id 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
+对于 POST URI 中的 " *租户 \_ id* " 和 "客户端 * \_ id* " 和 " *客户端 \_ 密钥* " 参数，为你在上一节中的合作伙伴中心检索的应用程序指定租户 id、客户端 id 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
 
 在你的访问令牌到期后，你可按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
 
@@ -100,7 +100,7 @@ grant_type=client_credentials
 
 <span id="call-the-windows-store-submission-api">
 
-## <a name="step-3-use-the-microsoft-store-submission-api"></a>步骤 3：使用 Microsoft Store 提交 API
+## <a name="step-3-use-the-microsoft-store-submission-api"></a>步骤 3：使用“Microsoft Store 提交 API”
 
 获取 Azure AD 访问令牌后，可以在 Microsoft Store 提交 API 中调用方法。 该 API 中包含的许多方法按照所适用的应用、加载项和软件包外部测试版方案进行分组。 若要创建或更新提交，一般需在 Microsoft Store 提交 API 中按特定顺序调用多个方法。 有关每个方案和每个方法的语法的信息，请参阅下表中的文章。
 
@@ -110,8 +110,8 @@ grant_type=client_credentials
 | 方案       | 说明                                                                 |
 |---------------|----------------------------------------------------------------------|
 | 应用 |  检索注册到合作伙伴中心帐户的所有应用的数据，并创建应用的提交。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[获取应用数据](get-app-data.md)</li><li>[管理应用提交](manage-app-submissions.md)</li></ul> |
-| 加载项 | 获取、创建或删除应用的加载项，然后获取、创建或删除这些加载项的提交。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[管理加载项](manage-add-ons.md)</li><li>[管理加载项提交](manage-add-on-submissions.md)</li></ul> |
-| 软件包外部测试版 | 获取、创建或删除应用的软件包外部测试版，然后获取、创建或删除这些软件包外部测试版的提交。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[管理包航班](manage-flights.md)</li><li>[管理包航班提交](manage-flight-submissions.md)</li></ul> |
+| 外接程序 | 获取、创建或删除应用的加载项，然后获取、创建或删除这些加载项的提交。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[管理加载项](manage-add-ons.md)</li><li>[管理加载项提交](manage-add-on-submissions.md)</li></ul> |
+| 软件包外部测试版 | 获取、创建或删除应用的软件包外部测试版，然后获取、创建或删除这些软件包外部测试版的提交。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[管理软件包外部测试版](manage-flights.md)</li><li>[管理软件包外部测试版提交](manage-flight-submissions.md)</li></ul> |
 
 <span id="code-samples"/>
 
@@ -119,12 +119,12 @@ grant_type=client_credentials
 
 下面的文章提供详细的代码示例，演示如何以不同的多种编程语言使用 Microsoft Store 提交 API。
 
-* [C#示例：提交应用、外接程序和航班](csharp-code-examples-for-the-windows-store-submission-api.md)
-* [C#示例：带游戏选项和尾端的应用提交](csharp-code-examples-for-submissions-game-options-and-trailers.md)
-* [Java 示例：应用程序、外接程序和航班的提交](java-code-examples-for-the-windows-store-submission-api.md)
-* [Java 示例：带游戏选项和尾端的应用提交](java-code-examples-for-submissions-game-options-and-trailers.md)
-* [Python 示例：提交应用、外接程序和航班](python-code-examples-for-the-windows-store-submission-api.md)
-* [Python 示例：带游戏选项和尾端的应用提交](python-code-examples-for-submissions-game-options-and-trailers.md)
+* [C# 示例：应用、加载项和外部测试版的提交](csharp-code-examples-for-the-windows-store-submission-api.md)
+* [C# 示例：使用游戏选项和预告片的应用提交](csharp-code-examples-for-submissions-game-options-and-trailers.md)
+* [Java 示例：应用、加载项和外部测试版的提交](java-code-examples-for-the-windows-store-submission-api.md)
+* [Java 示例：使用游戏选项和预告片的应用提交](java-code-examples-for-submissions-game-options-and-trailers.md)
+* [Python 示例：应用、加载项和外部测试版的提交](python-code-examples-for-the-windows-store-submission-api.md)
+* [Python 示例：使用游戏选项和预告片的应用提交](python-code-examples-for-submissions-game-options-and-trailers.md)
 
 ## <a name="storebroker-powershell-module"></a>StoreBroker PowerShell 模块
 
@@ -134,16 +134,16 @@ grant_type=client_credentials
 
 ## <a name="troubleshooting"></a>疑难解答
 
-| 问题      | 分辨率                                          |
+| 问题      | 解决方法                                          |
 |---------------|---------------------------------------------|
-| 在通过 PowerShell 调用 Microsoft Store 提交 API 后，如果使用 [ConvertFrom-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) cmdlet 将该 API 的响应数据从 JSON 格式转换为 PowerShell 对象，然后使用 [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 将响应数据转换回为 JSON 格式，该响应数据会损坏。 |  默认情况下，*ConvertTo-Json* cmdlet 的 [-Depth](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) 参数设置为 2 级对象，这对于大多数由 Microsoft Store 提交 API 返回的 JSON 对象而言深度不够。 调用 [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 时，请将 *-Depth* 参数设置为较大数值（如 20）。 |
+| 在通过 PowerShell 调用 Microsoft Store 提交 API 后，如果使用 [ConvertFrom-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) cmdlet 将该 API 的响应数据从 JSON 格式转换为 PowerShell 对象，然后使用 [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 将响应数据转换回为 JSON 格式，该响应数据会损坏。 |  默认情况下，[ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 的 *-Depth* 参数设置为 2 级对象，这对于大多数由 Microsoft Store 提交 API 返回的 JSON 对象而言深度不够。 调用 [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 时，请将 *-Depth* 参数设置为较大数值（如 20）。 |
 
 ## <a name="additional-help"></a>其他帮助
 
 如果你对 Microsoft Store 提交 API 有疑问或需要使用此 API 管理你的提交的帮助，请使用以下资源：
 
 * 在我们的[论坛](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit)上提问。
-* 请访问我们的[支持页面](https://developer.microsoft.com/windows/support)，并为合作伙伴中心请求一个辅助支持选项。 如果系统提示你选择问题类型和类别，请分别选择**应用提交和认证**和**提交应用**。  
+* 请访问我们的 [支持页面](https://developer.microsoft.com/windows/support) ，并为合作伙伴中心请求一个辅助支持选项。 如果系统提示你选择问题类型和类别，请分别选择 " **应用提交" 和 "认证** 和 **提交应用**"。  
 
 ## <a name="related-topics"></a>相关主题
 
@@ -151,5 +151,5 @@ grant_type=client_credentials
 * [管理应用提交](manage-app-submissions.md)
 * [管理加载项](manage-add-ons.md)
 * [管理加载项提交](manage-add-on-submissions.md)
-* [管理包航班](manage-flights.md)
-* [管理包航班提交](manage-flight-submissions.md)
+* [管理软件包外部测试版](manage-flights.md)
+* [管理软件包外部测试版提交](manage-flight-submissions.md)

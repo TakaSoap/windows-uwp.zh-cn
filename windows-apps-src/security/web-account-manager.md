@@ -6,21 +6,21 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: e5b835c837ca750f2ccc1ebad9ec119047b02ce7
-ms.sourcegitcommit: 97d2ef33253af210ad2d4f036b4820056ff03f62
+ms.openlocfilehash: 7cf4cfa4b87842cd7113b36220cdfdff69449a3a
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85441624"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846787"
 ---
 # <a name="web-account-manager"></a>Web 帐户管理器
 
-本文介绍如何使用**[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** 将通用 WINDOWS 平台（UWP）应用程序连接到外部标识提供程序（如 Microsoft 或 Facebook），使用 Windows 10 Web 帐户管理器 api。 你将了解如何请求用户的权限以使用其 Microsoft 帐户、获取访问令牌，并使用它来执行基本操作（如获取配置文件数据或将文件上传到他们的 OneDrive 帐户）。 相关步骤类似于通过支持 Web 帐户管理器的任何标识提供者来获取用户权限和访问权限。
+本文介绍如何使用 **[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** 将通用 WINDOWS 平台 (UWP) 应用连接到外部标识提供者（如 Microsoft 或 Facebook），使用 Windows 10 Web 帐户管理器 api。 你将了解如何请求用户的权限以使用其 Microsoft 帐户、获取访问令牌，并使用它来执行基本操作（如获取配置文件数据或将文件上传到他们的 OneDrive 帐户）。 相关步骤类似于通过支持 Web 帐户管理器的任何标识提供者来获取用户权限和访问权限。
 
 > [!NOTE]
 > 有关完整代码示例，请参阅 [GitHub 上的 WebAccountManagement 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)。
 
-## <a name="get-set-up"></a>准备工作
+## <a name="get-set-up"></a>设置
 
 首先，在 Visual Studio 中创建一个新的空白应用。 
 
@@ -76,11 +76,11 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 窗格为空的原因是系统只提供了一个 UI shell，这取决于开发人员是否使用标识提供者以编程方式填充窗格。 
 
 > [!TIP]
-> 或者，您可以使用**[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而不是**[Show](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**，这将返回**[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** 以查询操作的状态。 
+> 或者，您可以使用 **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而不是 **[Show](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**，这将返回 **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** 以查询操作的状态。 
 
 ## <a name="register-for-accountcommandsrequested"></a>注册 AccountCommandsRequested
 
-若要向窗格添加命令，请先注册 AccountCommandsRequested 事件处理程序。 这会告知系统在用户要求查看窗格时（例如，单击 XAML 按钮）运行生成逻辑。 
+若要向窗格添加命令，请先注册 AccountCommandsRequested 事件处理程序。 这会告知系统在用户要求查看窗格时运行生成逻辑 (例如，单击 XAML 按钮) 。 
 
 在隐藏代码中，替代 OnNavigatedTo 和 OnNavigatedFrom 事件，并向它们添加以下代码： 
 
@@ -172,13 +172,13 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-在此示例中，我们将字符串 "wl. basic" 传递到_scope_参数。 作用域表示你正在从提供给特定用户的服务请求的信息类型。 某些作用域仅提供对用户基本信息的访问权限，例如姓名和电子邮件地址，而其他作用域可能允许访问敏感信息，如用户的照片或电子邮件收件箱。 通常，应用应该至少使用实现其功能所必需的最小许可作用域。 有关需要哪些作用域才能获得用以与它们的服务结合使用的令牌，服务提供商将提供相关文档。 
+在此示例中，我们将字符串 "wl. basic" 传递到 _scope_ 参数。 作用域表示你正在从提供给特定用户的服务请求的信息类型。 某些作用域仅提供对用户基本信息的访问权限，例如姓名和电子邮件地址，而其他作用域可能允许访问敏感信息，如用户的照片或电子邮件收件箱。 通常，应用应该至少使用实现其功能所必需的最小许可作用域。 有关需要哪些作用域才能获得用以与它们的服务结合使用的令牌，服务提供商将提供相关文档。 
 
-* 有关 Office 365 和 Outlook.com 的作用域，请参阅 [使用 v2.0 身份验证终结点对 Office 365 和 Outlook.com API 进行身份验证](https://developer.microsoft.com/graph/docs/concepts/auth_overview)。 
+* 有关 Microsoft 365 和 Outlook.com 范围，请参阅 [使用 Outlook REST API (版本 2.0) ](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api)。 
 * 有关 OneDrive 的作用域，请参阅 [OneDrive 身份验证和登录](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> （可选）如果你的应用使用登录提示（使用默认电子邮件地址填充 "用户" 字段）或其他与登录体验相关的特殊属性，请在**[WebTokenRequest. AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性中列出它。 这将导致系统在缓存 web 帐户时忽略属性，这会阻止缓存中的帐户不匹配。
+> （可选）如果你的应用使用登录提示 (用默认电子邮件地址填充 "user" 字段) 或与登录体验相关的其他特殊属性，请在 " **[AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** " 属性中列出。 这将导致系统在缓存 web 帐户时忽略属性，这会阻止缓存中的帐户不匹配。
 
 如果在开发企业应用，可能需要连接到 Azure Active Directory (AAD) 实例，并使用 Microsoft Graph API，而非常规的 MSA 服务。 在此方案中，使用以下代码： 
 
@@ -351,7 +351,7 @@ private async Task SignOutAccountAsync(WebAccount account)
 
 ## <a name="add-providers-that-dont-support-webaccountmanager"></a>添加不支持 WebAccountManager 的提供程序
 
-例如，如果你想要将身份验证从服务集成到你的应用，但该服务不支持 WebAccountManager-Google + 或 Twitter，则你仍可以将该提供程序手动添加到**AccountsSettingsPane**中。 若要执行此操作，请新建 WebAccountProvider 对象，并提供自己的名称和 .png 图标，然后将其添加到 WebAccountProviderCommands 列表。 下面是一些存根代码： 
+例如，如果你想要将身份验证从服务集成到你的应用，但该服务不支持 WebAccountManager-Google + 或 Twitter，则你仍可以将该提供程序手动添加到 **AccountsSettingsPane**中。 若要执行此操作，请新建 WebAccountProvider 对象，并提供自己的名称和 .png 图标，然后将其添加到 WebAccountProviderCommands 列表。 下面是一些存根代码： 
 
  ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -373,7 +373,7 @@ private async void GetTwitterTokenAsync(WebAccountProviderCommand command)
 ```
 
 > [!NOTE] 
-> 这只会将图标添加到 **AccountsSettingsPane** 并在单击该图标时运行指定的方法（在本例中为 GetTwitterTokenAsync）。 必须提供用于处理实际身份验证的代码。 有关详细信息，请参阅[Web 身份验证代理](web-authentication-broker.md)，它提供使用 REST 服务进行身份验证的帮助器方法。 
+> 这只会将图标添加到 **AccountsSettingsPane** 并在单击该图标时运行指定的方法（在本例中为 GetTwitterTokenAsync）。 必须提供用于处理实际身份验证的代码。 有关详细信息，请参阅 [Web 身份验证代理](web-authentication-broker.md)，它提供使用 REST 服务进行身份验证的帮助器方法。 
 
 ## <a name="add-a-custom-header"></a>添加自定义标题
 
@@ -398,7 +398,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 你可以向 AccountsSettingsPane 添加自定义命令，它们会在受支持的 WebAccountProviders 下方显示为链接。 自定义命令非常适合与用户帐户相关的简单任务，如显示隐私策略或为遇到问题的用户启动支持页面。 
 
-以下是一个示例： 
+下面是一个示例： 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -420,7 +420,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 理论上，你可以对任何内容使用设置命令。 但是，我们建议将它们的使用范围限制在直观的与帐户相关的情况，如上文所述。 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [Windows.Security.Authentication.Web.Core 命名空间](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
 
