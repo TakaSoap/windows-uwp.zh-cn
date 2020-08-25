@@ -5,12 +5,12 @@ ms.date: 10/09/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: c786256efb5488fff65a8e2bdb4c5d2ca0fa181c
-ms.sourcegitcommit: a9f44bbb23f0bc3ceade3af7781d012b9d6e5c9a
+ms.openlocfilehash: d3fa04f0aabe001dc87ce4292dff7557432583a6
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88180792"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502282"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>实现 C++/WinRT 与 C++/CX 之间的互操作
 
@@ -27,7 +27,9 @@ ms.locfileid: "88180792"
 
 ## <a name="the-from_cx-and-to_cx-functions"></a>from_cx 和 to_cx 函数
 
-下面是名为 `interop_helpers.h` 的头文件的源代码列表，其中包含两个转换帮助程序函数。 以下部分介绍了这两个函数，以及如何在项目中创建和使用头文件。
+下面是名为 `interop_helpers.h` 的头文件的源代码列表，其中包含两个转换帮助程序函数。 在逐步移植项目时，项目的一部分内容仍位于 C++/CX 中，一部分内容已移植到 C++/WinRT。 可以使用这些帮助程序函数在这两个部分之间的边界点在 C++/CX 和 C++/WinRT 之间来回转换项目中的对象。
+
+代码列表后面的部分介绍了这两个函数，以及如何在项目中创建和使用头文件。
 
 ```cppwinrt
 // interop_helpers.h
@@ -39,8 +41,7 @@ T from_cx(Platform::Object^ from)
     T to{ nullptr };
 
     winrt::check_hresult(reinterpret_cast<::IUnknown*>(from)
-        ->QueryInterface(winrt::guid_of<T>(),
-            reinterpret_cast<void**>(winrt::put_abi(to))));
+        ->QueryInterface(winrt::guid_of<T>(), winrt::put_abi(to)));
 
     return to;
 }
@@ -99,11 +100,9 @@ to_cx 帮助程序函数可将 C++/WinRT 对象转换为等效的 C++/CX 对象�
 或者（例如 XAML 项目），可以在 Visual Studio 中使用 C++/WinRT 项目属性页来添加 C++/CX 支持。 在项目属性中，“公共属性”\>“C++/WinRT”\>“项目语言”\>“C++/CX”。 这样做会将以下属性添加到 `.vcxproj` 文件中。
 
 ```xml
-<syntaxhighlight lang="xml">
   <PropertyGroup Label="Globals">
     <CppWinRTProjectLanguage>C++/CX</CppWinRTProjectLanguage>
   </PropertyGroup>
-</syntaxhighlight>
 ```
 
 > [!IMPORTANT]

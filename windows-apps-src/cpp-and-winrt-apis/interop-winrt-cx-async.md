@@ -5,12 +5,12 @@ ms.date: 08/06/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 移植, 迁移, 互操作, C++/CX, PPL, 任务, 协同程序
 ms.localizationpriority: medium
-ms.openlocfilehash: daa263836e9024a0aaa55b239b1a0db9437f1cd5
-ms.sourcegitcommit: a9f44bbb23f0bc3ceade3af7781d012b9d6e5c9a
+ms.openlocfilehash: d80fedcadaee96dcd4fae4081dcc117b55a1e498
+ms.sourcegitcommit: 2a90b41e455ba0a2b7aff6f771638fb3a2228db4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88181067"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88513424"
 ---
 # <a name="asynchrony-and-interop-between-cwinrt-and-ccx"></a>实现 C++/WinRT 与 C++/CX 之间的异步和互操作
 
@@ -19,28 +19,33 @@ ms.locfileid: "88181067"
 
 本主题是与从 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 逐步移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 相关的高级主题。 本主题紧接[实现 C++/WinRT 与 C++/CX 之间的互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)讨论的内容。
 
-如果代码库的大小或复杂性使得有必要逐步移植项目，则需要一个移植过程，在此过程中的某段时间，C++/CX 和 C++/WinRT 代码将在同一项目中并存。 如果你拥有异步代码，则可能需要在逐步移植源代码的过程中，让并行模式库 (PPL) 任务链和协同程序在项目中并存。 本主题重点介绍在 C++/CX 异步代码和 C++/WinRT 异步代码之间互操作的方法。 你可以单独使用这些方法，也可以组合使用这些方法。
+如果代码库的大小或复杂性使得有必要逐步移植项目，则需要一个移植过程，在此过程中的某段时间，C++/CX 和 C++/WinRT 代码将在同一项目中并存。 如果你拥有异步代码，则可能需要在逐步移植源代码的过程中，让并行模式库 (PPL) 任务链和协同程序在项目中并存。 本主题重点介绍在 C++/CX 异步代码和 C++/WinRT 异步代码之间互操作的方法。 你可以单独使用这些方法，也可以组合使用这些方法。 利用这些方法，你可以在移植整个项目的过程中逐步进行受控的本地更改，而不会使每项更改在整个项目中不受控制地级联。
 
 在阅读本主题前，最好先阅读[实现 C++/WinRT 与 C++/CX 之间的互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)。 该主题演示如何为逐步移植准备项目。 它还引入了两个帮助程序函数，可用于将 C++/CX 对象转换为 C++/WinRT 对象（反之亦然）。 本主题的异步内容基于这些信息，并使用这些帮助程序函数。
 
 > [!NOTE]
-> 逐步移植存在一些限制。 如果拥有 Windows 运行时组件项目，则无法逐步移植，并且需要一次性移植项目。 对于 XAML 项目，无论何时，均要求 XAML 页面类型要么完全是 C++/WinRT，要么完全是 C++/CX。 有关详细信息，请参阅[从 C++/CX 移动到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx)。
+> 从 C++/CX 逐步移植到 C++/WinRT 存在一些限制。 如果拥有 [Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)项目，则无法逐步移植，需要一次性移植项目。 对于 XAML 项目，无论何时，均要求 XAML 页面类型要么完全是 C++/WinRT，要么完全是 C++/CX。 有关详细信息，请参阅[从 C++/CX 移动到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx)这一主题。
 
 ## <a name="the-reason-an-entire-topic-is-dedicated-to-asynchronous-code-interop"></a>整个主题专门介绍异步代码互操作的原因
 
 从 C++/CX 到 C++/WinRT 的移植通常很简单，但从[并行模式库 (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) 任务迁移到协同程序的情况例外。 其模型不同。 从 PPL 任务到协同程序没有自然的一对一映射，也没有适用于所有情况的机械移植代码的简单方法。
 
-好消息是，从任务到协同程序的转换大幅简化了这一过程。 此外，开发团队通常会报告说，一旦克服了移植异步代码的障碍，其余的移植工作大部分是机械式的。
+好消息是，从任务到协同程序的转换大幅简化了这一过程。 开发团队通常会报告说，一旦克服了移植异步代码的障碍，其余的移植工作大部分都是机械式的。
 
-通常情况下，最初是为了适应同步 API 而编写算法。 其随后转换为任务和显式延续 &mdash; 结果通常是对底层逻辑的无意识混淆。 例如，循环变为递归；if-else 分支变成嵌套任务树（任务链）；共享变量变为 shared_ptr。 若要析构通常非自然的 PPL 源代码结构，我们建议先退一步，了解原始代码的意图（即发现原始同步版本）。 然后将 `co_await` 插入适当位置。
+通常情况下，最初是为了适应同步 API 而编写算法。 其随后转换为任务和显式延续 &mdash; 结果通常是对底层逻辑的无意识混淆。 例如，循环变为递归；if-else 分支变成嵌套任务树（任务链）；共享变量变为 shared_ptr。 若要析构通常非自然的 PPL 源代码结构，我们建议先退一步，了解原始代码的意图（即发现原始同步版本）。 然后将 `co_await`（协同等待）插入适当位置。
 
 因此，如果具有要从其开始进行移植的异步代码的 C#（而不是 C++/CX）版本，则可以获得更轻松的体验和更干净的移植。 C# 代码使用 `await`。 因此，C# 代码本质上已遵循从同步版本开始，然后在适当位置插入 `await` 的理念。
 
+如果没有项目的 C# 版本，则可以使用本主题中所述的方法。 移植到 C++/WinRT 后，异步代码的结构将更易于移植到 C#（如果你想这样做）。
+
 ## <a name="some-background-in-asynchronous-programming"></a>异步编程的一些背景
 
-既然我们已经有了坚实的异步编程概念和术语的参考框架，接下来让我们简单设置有关 Windows 运行时异步编程的一般场景，以及两种 C++ 语言投影如何以各自不同的方式在此之上放置。
+既然我们已经有了异步编程概念和术语的常用参考框架，接下来让我们简单设置有关 Windows 运行时异步编程的一般场景，以及两种 C++ 语言投影如何以各自不同的方式在此之上放置。
 
-项目中包含异步工作的方法。 在许多情况下，你需要等待工作完成，然后才能执行其他操作。 因此，你能够等待异步方法，方法会返回一个异步操作对象。 但有时你不希望或不需要等待工作异步完成。 在这种情况下，方法无需返回异步操作对象。 你无需等待的异步方法称为发后不理 (fire-and-forget) 方法。
+项目中包含异步工作的方法，主要分为两种。
+
+- 通常，你需要等待异步工作完成，然后才能执行其他操作。 返回异步操作对象的方法即可以等待异步工作完成的方法。
+- 但有时你不希望或不需要等待工作异步完成。 在这种情况下，异步方法不返回异步操作对象，会使效率更高。 你无需等待的异步方法称为发后不理 (fire-and-forget) 方法。
 
 ### <a name="windows-runtime-async-objects-iasyncxxx"></a>Windows 运行时异步对象 (IAsyncXxx)
 
@@ -57,7 +62,7 @@ ms.locfileid: "88181067"
 
 C++/CX 异步代码使用[并行模式库 (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) 任务。 PPL 任务由 [concurrency::task](/cpp/parallel/concrt/reference/task-class) 类表示。
 
-通常情况下，C++/CX 异步方法通过配合使用 lambda 函数和 [concurrency::create_task](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_task) 及 [concurrency::task::then](/cpp/parallel/concrt/reference/task-class#then) 来将 PPL 任务链接在一起。 其中每个 lambda函数都会返回一个任务，该任务完成时，会生成一个值，该值随后传入任务延续的 lambda 中。
+通常情况下，C++/CX 异步方法通过配合使用 lambda 函数和 [concurrency::create_task](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_task) 及 [concurrency::task::then](/cpp/parallel/concrt/reference/task-class#then) 来将 PPL 任务链接在一起。 每个 lambda 函数都会返回一个任务，该任务完成时，会生成一个值，该值随后传入任务延续的 lambda 中。
 
 此外，C++/CX 异步方法可以调用 [concurrency::create_async](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_async) 来创建 IAsyncXxx\^，而不是调用 create_task 来创建任务。
 
@@ -66,32 +71,34 @@ C++/CX 异步代码使用[并行模式库 (PPL)](/cpp/parallel/concrt/parallel-p
 在任一情况下，方法本身都使用 `return` 关键字返回异步对象，该对象完成时，会生成调用方实际需要的值（可能是文件、字节数组或布尔值）。
 
 > [!NOTE]
-> 如果 C++/CX 异步方法返回 IAsyncXxx\^，则 TResult 限制为 Windows 运行时类型。 例如，布尔值是 Windows 运行时类型；但 C++/CX 投影类型（例如，Platform::Array<byte>^）不是。
+> 如果 C++/CX 异步方法返回 IAsyncXxx\^，则 TResult（如果有）限制为 Windows 运行时类型 。 例如，布尔值是 Windows 运行时类型；但 C++/CX 投影类型（例如，Platform::Array<byte>^）不是。
 
 ### <a name="cwinrt-async"></a>C++/WinRT 异步
 
 C++/WinRT 将 C++ 协同程序集成到编程模型中。 协同程序和 `co_await` 语句提供一种协同等待结果的自然方法。
 
-每个 IAsyncXxx 类型都投影为 winrt::Windows::Foundation C++/WinRT 命名空间中的相应类型。 让我们将其称之为 winrt::IAsyncXxx。 C++/WinRT 协同程序的返回类型为 winrt::IAsyncXxx 或 [winrt::fire_and_forget](/uwp/cpp-ref-for-winrt/fire-and-forget)。 协同程序不使用 `return` 关键字来返回异步对象，而是使用 `co_return` 关键字来返回调用方实际需要的值（可能是文件、字节数组或布尔值）。
+每个 IAsyncXxx 类型都投影为 winrt::Windows::Foundation C++/WinRT 命名空间中的相应类型。 我们将其称为 winrt::IAsyncXxx（相对于 C++/CX 的 IAsyncXxx\^） 。
+
+C++/WinRT 协同程序的返回类型为 winrt::IAsyncXxx 或 [winrt::fire_and_forget](/uwp/cpp-ref-for-winrt/fire-and-forget)。 协同程序不使用 `return` 关键字来返回异步对象，而是使用 `co_return` 关键字来协同返回调用方实际需要的值（可能是文件、字节数组或布尔值）。
 
 如果某个方法包含至少一个 `co_await` 语句（或至少一个 `co_return` 或 `co_yield`），则该方法因此属于协同程序。
 
-有关详细信息，请参阅[使用 C++/WinRT 执行并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency)。
+详细信息和代码示例，请参阅[利用 C++/WinRT 实现的并发和异步运算](/windows/uwp/cpp-and-winrt-apis/concurrency)。
 
 ## <a name="the-direct3d-game-sample-simple3dgamedx"></a>Direct3D 游戏示例 (Simple3DGameDX)
 
-本主题包含多个演练，用于说明如何逐步移植异步代码。 作为案例研究，我们将使用 [Direct3D 游戏示例](/samples/microsoft/windows-universal-samples/simple3dgamedx/)的 C++/CX 版本（称为 Simple3DGameDX）。 我们将演示一些示例，说明如何采用该项目中的原始 C++/CX 源代码并将其异步代码逐步移植到 C++/WinRT。
+本主题包含多个特定编程方法的演练，用于说明如何逐步移植异步代码。 作为案例研究，我们将使用 [Direct3D 游戏示例](/samples/microsoft/windows-universal-samples/simple3dgamedx/)的 C++/CX 版本（称为 Simple3DGameDX）。 我们将演示一些示例，说明如何采用该项目中的原始 C++/CX 源代码并将其异步代码逐步移植到 C++/WinRT。
 
 - 从上述链接下载 ZIP 文件，然后解压缩。
 - 在 Visual Studio 中打开 C++/CX 项目（位于名为 `cpp` 的文件夹中）。
-- 然后，你需要向项目添加 C++/WinRT 支持。 [采用 C++/CX 项目并添加 C++/WinRT 支持](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-ccx-project-and-adding-cwinrt-support)中介绍了执行此操作的步骤。 将 `interop_helpers.h` 头文件添加到项目中的步骤尤其重要，因为在本主题中我们将依赖于这些帮助程序函数。
-- 最后，将 `#include <pplawait.h>` 添加到 `pch.h` 中。 此操作提供对 PPL 的协同程序支持（在下一部分中详细介绍该支持）。
+- 然后，你需要向项目添加 C++/WinRT 支持。 [采用 C++/CX 项目并添加 C++/WinRT 支持](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-ccx-project-and-adding-cwinrt-support)中介绍了执行此操作的步骤。 在该部分中，将 `interop_helpers.h` 头文件添加到项目中的步骤尤其重要，因为在本主题中我们将依赖于这些帮助程序函数。
+- 最后，将 `#include <pplawait.h>` 添加到 `pch.h` 中。 此操作提供对 PPL 的协同程序支持（下一部分中将详细介绍该支持）。
 
-在生成过程中，你将收到关于 byte 不明确的错误。 解决方法如下。
+暂时不要生成，否则你将收到关于 byte 不明确的错误。 解决方法如下。
 
 - 打开 `BasicLoader.cpp` 并注释掉 `using namespace std;`。
-- 在同一源代码文件中，随后需要将 shared_ptr 限定为 std::shared_ptr。 可通过在该文件中执行搜索并替换操作来实现。
-- 将 vector 限定为 std::vector，将 string 限定为 std::string。
+- 在同一源代码文件中，随后需要将 shared_ptr 限定为 std::shared_ptr。 为此，你可以在该文件中执行“搜索并替换”操作。
+- 然后将 vector 限定为 std::vector，将 string 限定为 std::string。
 
 现在，将再次生成项目，其具有 C++/WinRT 支持，并包含 from_cx 和 to_cx 互操作帮助程序函数。
 
@@ -99,30 +106,32 @@ C++/WinRT 将 C++ 协同程序集成到编程模型中。 协同程序和 `co_aw
 
 ## <a name="overview-of-porting-ccx-async-to-cwinrt"></a>将 C++/CX 异步移植到 C++/WinRT 概述
 
-简而言之，在移植过程中，我们将把 PPL 任务链更改为对 `co_await` 的调用。 我们将把方法的返回值从 PPL 任务更改为 C++/WinRT IAsyncXxx 对象或 IAsyncXxx\^。 我们将把任何 IAsyncXxx\^ 更改为 C++/WinRT IAsyncXxx。
+简而言之，在移植过程中，我们将把 PPL 任务链更改为对 `co_await` 的调用。 我们将把方法的返回值从 PPL 任务更改为 C++/WinRT winrt::IAsyncXxx 对象。 我们还将把任何 IAsyncXxx\^ 更改为 C++/WinRT winrt::IAsyncXxx 。
 
-你会记得，协同程序是调用 `co_xxx` 的任何方法。 C++/WinRT 协同程序使用 `co_return` 返回其值。 借助对 PPL 的协同程序支持（由 `pplawait.h` 提供），还可以使用 `co_return` 从协同程序返回 PPL 任务。 你还可以 `co_await` 任务和 IAsyncXxx。 但不能使用 `co_return` 返回 IAsyncXxx\^。 下表描述对各种异步方法之间的互操作的支持。
+你会记得，协同程序是调用 `co_xxx` 的任何方法。 C++/WinRT 协同程序使用 `co_return` 协同返回其值。 借助对 PPL 的协同程序支持（由 `pplawait.h` 提供），还可以使用 `co_return` 从协同程序返回 PPL 任务。 你还可以 `co_await` 任务和 IAsyncXxx。 但不能使用 `co_return` 返回 IAsyncXxx\^。 下表描述对图片中使用 `pplawait.h` 的各种异步方法之间的互操作的支持。
 
-|方法|是否可以 `co_await` 它？|是否可以从它 `co_return`？|
+|方法|能否 `co_await` 它？|能否从中 `co_return`？|
 |-|-|-|
 |方法返回 task\<void\>|是|是|
 |方法返回 task\<T\>|否|是|
-|方法返回 IAsyncXxx\^|是|否。 但是，你可以让 create_async 环绕使用 `co_return` 的任务。|
+|方法返回 IAsyncXxx^|是|否。 但是，你可以让 create_async 环绕使用 `co_return` 的任务。|
 |方法返回 winrt::IAsyncXxx|是|是|
 
-使用此表可以直接跳至感兴趣的互操作方法。
+使用下一个表直接跳至本主题中介绍相关互操作方法的部分，或继续从此处阅读。
 
 |异步互操作方法|本主题中的部分|
 |-|-|
-|使用 `co_await` 在发后不理方法中等待 task\<void\> 方法。|[在发后不理方法中等待 task\<void\>](#await-taskvoid-within-a-fire-and-forget-method)|
+|使用 `co_await` 在发后不理方法或构造函数中等待 task\<void\> 方法。|[在发后不理方法中等待 task\<void\>](#await-taskvoid-within-a-fire-and-forget-method)|
 |使用 `co_await` 在 task\<void\> 方法中等待 task\<void\> 方法。|[在 task\<void\> 方法中等待 task\<void\>](#await-taskvoid-within-a-taskvoid-method)|
 |使用 `co_await` 在 task\<T\> 方法中等待 task\<void\> 方法。|[在 task\<T\> 方法中等待 task\<void\>](#await-taskvoid-within-a-taskt-method)|
 |使用 `co_await` 等待 IAsyncXxx^ 方法。|[在 task 方法中等待 IAsyncXxx^，项目其余部分保持不变](#await-an-iasyncxxx-in-a-task-method-leaving-the-rest-of-the-project-unchanged)|
 |在 task\<void\> 方法中使用 `co_return`。|[在 task\<void\> 方法中等待 task\<void\>](#await-taskvoid-within-a-taskvoid-method)|
-|在 task\<T\> 方法中使用 `co_return`|[在 task 方法中等待 IAsyncXxx^，项目其余部分保持不变](#await-an-iasyncxxx-in-a-task-method-leaving-the-rest-of-the-project-unchanged)|
-|让 create_async 环绕使用 `co_return` 的任务|[让 create_async 环绕使用 `co_return` 的任务](#wrap-create_async-around-a-task-that-uses-co_return)|
-|移植 concurrency::wait|[将 concurrency::wait 移植到 `co_await winrt::resume_after`](#port-concurrencywait-to-co_await-winrtresume_after)|
+|在 task\<T\> 方法中使用 `co_return`。|[在 task 方法中等待 IAsyncXxx^，项目其余部分保持不变](#await-an-iasyncxxx-in-a-task-method-leaving-the-rest-of-the-project-unchanged)|
+|让 create_async 环绕使用 `co_return` 的任务。|[让 create_async 环绕使用 `co_return` 的任务](#wrap-create_async-around-a-task-that-uses-co_return)|
+|移植 concurrency::wait。|[将 concurrency::wait 移植到 `co_await winrt::resume_after`](#port-concurrencywait-to-co_await-winrtresume_after)|
 |返回 winrt::IAsyncXxx，而不是 task\<void\>。|[将 task\<void\> 返回类型移植到 winrt::IAsyncXxx](#port-a-taskvoid-return-type-to-winrtiasyncxxx)|
+|将 winrt::IAsyncXxx\<T\>（T 为基元）转换为 task\<T\> 。|[将 winrt::IAsyncXxx\<T\>（T 为基元）转换为 task\<T\>](#convert-a-winrtiasyncxxxt-t-is-primitive-to-a-taskt) |
+|将 winrt::IAsyncXxx\<T\>（T 为 Windows 运行时类型）转换为 task\<T^\> 。|[将 winrt::IAsyncXxx\<T\>（T 为 Windows 运行时类型）转换为 task\<T^\>](#convert-a-winrtiasyncxxxt-t-is-a-windows-runtime-type-to-a-taskt) |
 
 以下是一个演示部分支持的简短代码示例。
 
@@ -138,10 +147,11 @@ concurrency::task<bool> TaskAsync()
 
 Windows::Foundation::IAsyncOperation<bool>^ IAsyncXxxCppCXAsync()
 {
-    // co_return true; // Error! Can't do that.
-    return concurrency::create_async([=]() -> task<bool> {
+    // co_return true; // Error! Can't do that. But you can do
+    // the following.
+    return concurrency::create_async([=]() -> concurrency::task<bool> {
         co_return true;
-    });
+        });
 }
 
 winrt::Windows::Foundation::IAsyncOperation<bool> IAsyncXxxCppWinRTAsync()
@@ -153,7 +163,7 @@ concurrency::task<bool> CppCXAsync()
 {
     bool b1 = co_await TaskAsync();
     bool b2 = co_await IAsyncXxxCppCXAsync();
-    bool b3 = co_await IAsyncXxxCppWinRTAsync();
+    co_return co_await IAsyncXxxCppWinRTAsync();
 }
 
 winrt::fire_and_forget CppWinRTAsync()
@@ -164,13 +174,17 @@ winrt::fire_and_forget CppWinRTAsync()
 }
 ```
 
-即使拥有这些出色的互操作选项，逐步移植仍然取决于选择可以准确进行而不影响系统其余部分的更改。 我们希望避免任意抓住一头不放，因此拆解了整个项目。 为此，我们必须按照特定顺序执行操作。 让我们来看一些进行此类异步相关移植更改的示例。
+> [!IMPORTANT]
+> 即使拥有这些出色的互操作选项，逐步移植仍然取决于选择可以准确进行而不影响项目其余部分的更改。 我们希望避免任意抓住一头不放，因此拆解了整个项目的结构。 为此，我们必须按照特定顺序执行操作。 接下来，我们将仔细查看一些进行此类异步相关移植/互操作更改的示例。
 
 ## <a name="await-a-taskvoid-method-leaving-the-rest-of-the-project-unchanged"></a>等待 task\<void\>方法，项目其余部分保持不变
 
-返回 task\<void\> 的方法异步执行工作，但它最终不会生成值。 我们可以 `co_await` 这样的方法。
+返回 task\<void\> 的方法异步执行工作，并返回异步操作对象，但它最终不会生成值。 我们可以 `co_await` 这样的方法。
 
-因此，最好从找到调用这些方法的位置开始逐步移植异步代码。 这些位置将涉及创建和/或返回任务；和/或没有任何值从各个任务传递到其延续的任务链。 如我们所见，在类似位置，可以直接将异步代码替换为 `co_await` 语句。
+因此，最好从找到调用此类方法的位置开始逐步移植异步代码。 这些位置将涉及到创建和/或返回任务。 它们还可能涉及到没有任何值从各个任务传递到其延续的任务链。 如我们所见，在类似位置，可以直接将异步代码替换为 `co_await` 语句。
+
+> [!NOTE]
+> 随着本主题的深入，你将看到此策略的好处。 通过 `co_await` 专门调用特定 task\<void\> 方法后，你便可以自由地将该方法移植到 C++/WinRT，并使其返回 winrt::IAsyncXxx 。
 
 让我们来看一些示例。 打开 Simple3DGameDX 项目（请参阅 [Direct3D 游戏示例](#the-direct3d-game-sample-simple3dgamedx)）。
 
@@ -183,11 +197,11 @@ winrt::fire_and_forget CppWinRTAsync()
 
 查看项目依赖项关系图的根目录，查找包含 create_task 的 `void` 方法和/或仅调用 task\<void\> 方法的任务链。
 
-在 Simple3DGameDX 中，将在 GameMain::Update 方法的实现中找到匹配项。 它位于源代码文件 `GameMain.cpp` 中。
+在 Simple3DGameDX 中，你将在 GameMain::Update 方法的实现中找到类似代码。 它位于源代码文件 `GameMain.cpp` 中。
 
 #### <a name="gamemainupdate"></a>**GameMain::Update**
 
-以下是方法的 C++/CX 版本的摘录，其中显示两个异步完成的部分。
+以下是方法的 C++/CX 版本的摘录，其中显示方法的两个异步完成的部分。
 
 ```cppcx
 void GameMain::Update()
@@ -215,7 +229,7 @@ void GameMain::Update()
 
 可以看到对 Simple3DGame::LoadLevelAsync 方法（返回 PPL task\<void\>）的调用。 之后是执行一些同步工作的延续。 LoadLevelAsync 是异步的，但它不返回值。 因此，没有任何值从任务传递到延续。
 
-我们可以通过相同的方式更改这两个位置的代码。 代码在以下列表之后进行说明。 我们本可在此讨论在类成员协同程序中访问 this 指针的安全方法。 但是，让我们将其推迟到后面的部分进行讨论；目前，此代码可正常工作。
+我们可采用相同的方式对这两个位置的代码进行更改。 代码在以下列表之后进行说明。 我们本可在此讨论在类成员协同程序中访问 this 指针的安全方法。 但是，让我们将其推迟到后面的部分进行讨论（[ `co_await` 和 this 稍后进行讨论](#the-deferred-discussion-about-co_await-and-the-this-pointer)）&mdash;目前，此代码可以正常工作。
 
 ```cppcx
 winrt::fire_and_forget GameMain::Update()
@@ -239,15 +253,15 @@ winrt::fire_and_forget GameMain::Update()
 
 如你所见，因为 LoadLevelAsync 返回任务，所有我们可以 `co_await` 它。 而且，我们不需要显式延续 &mdash; `co_await` 之后的代码仅在 LoadLevelAsync 完成时执行。
 
-引入 `co_await` 会将方法转换为协同程序，因此它无法返回 `void`。 这是发后不理方法，因此我们返回 [winrt::fire_and_forget](/uwp/cpp-ref-for-winrt/fire-and-forget)。
+引入 `co_await` 会将方法转换为协同程序，因此不能让它返回 `void`。 这是发后不理方法，因此我们将其更改为返回 [winrt::fire_and_forget](/uwp/cpp-ref-for-winrt/fire-and-forget)。
 
-在 `GameMain.h` 中，你还需要在其声明中将 GameMain :: Update 的返回类型从 `void` 更改为 winrt::fire_and_forget。
+你还需要编辑 `GameMain.h`。 在此处的声明中将 GameMain::Update 的返回类型从 `void` 更改为 winrt::fire_and_forget 。
 
 可以对项目的副本进行此更改，游戏仍会照样生成并运行。 从根本上说，源代码仍然是 C++/CX，但它现在使用的模式与 C++/WinRT 相同，因此，让我们距离能够机械移植其余代码更近了一步。
 
 #### <a name="gamemainresetgame"></a>**GameMain::ResetGame**
 
-GameMain::ResetGame 是另一种发后不理方法；它也会调用 LoadLevelAsync。 因此，我们可以在此处进行相同的更改。
+GameMain::ResetGame 是另一种发后不理方法；它也会调用 LoadLevelAsync。 因此，如果你想练习，可在此处更改相同的代码。
 
 #### <a name="gamemainondevicerestored"></a>**GameMain::OnDeviceRestored**
 
@@ -289,7 +303,7 @@ void GameMain::OnDeviceRestored()
 
 若要移植异步代码，请删除所有 create_task 和 then 调用及其大括号，然后将方法简化为一系列简单语句。
 
-将任何 `return`（返回任务）更改为 `co_await`。 你将得到一个 `return`，它不返回任何内容，因此只需删除它即可。 完成后，无操作任务将消失，方法异步部分的概览如下所示。 同样，不太相关的同步代码使用省略号表示。
+将任何 `return`（返回任务）更改为 `co_await`。 你将得到一个 `return`，它不返回任何内容，因此只需删除它即可。 完成后，无操作任务将消失，方法异步部分的概览如下所示。 同样，不太相关的同步代码已省略。
 
 ```cppcx
 winrt::fire_and_forget GameMain::OnDeviceRestored()
@@ -306,7 +320,7 @@ winrt::fire_and_forget GameMain::OnDeviceRestored()
 }
 ```
 
-如你所见，它明显更简单，也更易于读取。
+如你所见，这种形式的异步结构更简单，且更易于阅读。
 
 #### <a name="gamemaingamemain"></a>**GameMain::GameMain**
 
@@ -344,7 +358,7 @@ GameMain::GameMain(...) : ...
 }
 ```
 
-但是，构造函数无法返回 winrt::fire_and_forget，因此，我们将异步代码移至新的 GameMain::ConstructInBackground 发后不理方法中，并将代码平展为 `co_await` 语句，然后从构造函数中调用新方法。
+但是，构造函数无法返回 winrt::fire_and_forget，因此，我们将异步代码移至新的 GameMain::ConstructInBackground 发后不理方法中，并将代码平展为 `co_await` 语句，然后从构造函数中调用新方法。 下面是结果。
 
 ```cppcx
 GameMain::GameMain(...) : ...
@@ -368,7 +382,7 @@ winrt::fire_and_forget GameMain::ConstructInBackground()
 }
 ```
 
-现在，GameMain 中的所有发后不理方法（实际上是所有异步代码）都变成了协同程序&mdash;&mdash;。 如果你有这样的倾向，也许可​​以在其他类中寻找发后不理方法，并进行类似更改。
+现在，GameMain 中的所有发后不理方法（实际上是所有异步代码）都变成了协同程序。 如果你有这样的倾向，也许可​​以在其他类中寻找发后不理方法，并进行类似更改。
 
 ### <a name="the-deferred-discussion-about-co_await-and-the-this-pointer"></a>关于 `co_await` 和 this 指针的推迟讨论
 
@@ -378,7 +392,7 @@ winrt::fire_and_forget GameMain::ConstructInBackground()
 
 简而言之，解决方案是调用 [implements::get_strong](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)。 但是，有关该问题和解决方案的完整讨论，请参阅[在类成员协同程序中安全访问 this 指针](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)。
 
-只能在派生自 [winrt::implements](/uwp/cpp-ref-for-winrt/implements) 的类中调用 implements::get_strong。
+你只能在派生自 [winrt::implements](/uwp/cpp-ref-for-winrt/implements) 的类中调用 implements::get_strong。
 
 #### <a name="derive-gamemain-from-winrtimplements"></a>从 winrt::implements 派生 GameMain
 
@@ -410,6 +424,8 @@ void App::Load(Platform::String^)
 ```
 
 但是，既然 GameMain 派生自 winrt::implements，我们就需要以不同的方式构造它。 在这种情况下，我们将使用 [winrt::make_self](/uwp/cpp-ref-for-winrt/make-self) 函数模板。 有关详细信息，请参阅[实例化和返回实现类型和接口](/windows/uwp/cpp-and-winrt-apis/author-apis#instantiating-and-returning-implementation-types-and-interfaces)。
+
+将上述代码行替换为以下代码行。
 
 ```cppwinrt
     ...
@@ -454,7 +470,7 @@ winrt::fire_and_forget GameMain::Update()
 
 ### <a name="await-taskvoid-within-a-taskvoid-method"></a>在 task\<void\> 方法中等待 task\<void\>
 
-下一个最简单的情况是在本身返回 task\<void\> 的方法中等待 task\<void\>，因为我们可以 `co_await` task\<void\>，并且我们可以从其 `co_return` 。
+下一个最简单的情况是在本身返回 task\<void\> 的方法中等待 task\<void\>。 因为我们可以 `co_await` task\<void\>，并且可以从其 `co_return`。
 
 在 Simple3DGame::LoadLevelAsync 方法的实现中，你会找到一个非常简单的示例。 它位于源代码文件 `Simple3DGame.cpp` 中。
 
@@ -480,11 +496,13 @@ task<void> Simple3DGame::LoadLevelAsync()
 }
 ```
 
+这似乎不是个重大变化。 但现在，我们通过 `co_await` 调用 GameRenderer::LoadLevelResourcesAsync 后，就可以自由对其进行移植，以返回 winrt::IAsyncXxx 而不是任务 。 稍后我们将在[将 task\<void\> 返回类型移植到 winrt::IAsyncXxx](#port-a-taskvoid-return-type-to-winrtiasyncxxx) 部分中执行此操作 。
+
 ### <a name="await-taskvoid-within-a-taskt-method"></a>在 task\<T\> 方法中等待 task\<void\>
 
 尽管在 Simple3DGameDX 中找不到合适的示例，但我们可以设计一个仅用于演示模式的假设示例。
 
-以下代码示例仅演示 task\<void\> 的简单 `co_await`。 然后，为了满足 task\<T\> 返回类型的要求，我们通过 co_await Windows 运行时方法和 `co_return` 生成的文件来异步返回 StorageFile\^。
+以下代码示例中的第一行演示 task\<void\> 的简单 `co_await`。 然后，为了满足 task\<T\> 返回类型的要求，我们需要以异步方式返回 StorageFile\^ 。 为此，我们需要 `co_await` Windows 运行时 API，并 `co_return` 生成文件。
 
 ```cppcx
 task<StorageFile^> Simple3DGame::LoadLevelAndRetrieveFileAsync(
@@ -496,7 +514,7 @@ task<StorageFile^> Simple3DGame::LoadLevelAndRetrieveFileAsync(
 }
 ```
 
-下一步是以相同方式将更多方法移植到 C++/WinRT。
+我们甚至可采用相同的方式将更多方法移植到 C++/WinRT。
 
 ```cppcx
 winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::StorageFile>
@@ -513,9 +531,11 @@ Simple3DGame::LoadLevelAndRetrieveFileAsync(
 
 ## <a name="await-an-iasyncxxx-in-a-task-method-leaving-the-rest-of-the-project-unchanged"></a>在 task 方法中等待 IAsyncXxx^，项目其余部分保持不变
 
-我们已了解可以如何 `co_await` task\<void\>。 还可以 `co_await` 返回 IAsyncXxx 的方法，无论这是项目中的方法还是异步 Windows API（例如，[StorageFolder.GetFileAsync](/uwp/api/windows.storage.storagefolder.getfileasync)）。
+我们已了解可以如何 `co_await` task\<void\>。 还可以 `co_await` 返回 IAsyncXxx 的方法，无论这是项目中的方法还是异步 Windows API（例如我们在上一部分中协同等待的 [StorageFolder.GetFileAsync](/uwp/api/windows.storage.storagefolder.getfileasync)）。
 
-有关进行此代码更改的示例，请查看 BasicReaderWriter::ReadDataAsync（你将发现其在 `BasicReaderWriter.cpp` 中实现）。 以下是原始 C++/CX 版本。
+有关进行此类代码更改的示例，请查看 BasicReaderWriter::ReadDataAsync（你将发现它在 `BasicReaderWriter.cpp` 中实现）。
+
+以下是原始 C++/CX 版本。
 
 ```cppcx
 task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
@@ -534,7 +554,7 @@ task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
 }
 ```
 
-我们不仅可以 `co_await` Windows API，还可以 `co_return` 该方法异步返回的值（在本例中为字节数组）。 第一步演示如何进行这些更改；我们将在下一部分中实际将 C++/CX 代码移植到 C++/WinRT。
+以下代码列表显示我们可以 `co_await` 返回 IAsyncXxx^ 的 Windows API。 不仅如此，我们还可以 `co_return` BasicReaderWriter::ReadDataAsync 异步返回的值（在本例中为字节数组）。 第一步演示如何进行这些更改；我们将在下一部分中实际将 C++/CX 代码移植到 C++/WinRT。
 
 ```cppcx
 task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
@@ -580,30 +600,128 @@ task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
 ```
 
 > [!NOTE]
-> 在 ReadDataAsync 中，我们构造并返回新的 C++/CX 数组。 当然，我们这样做是为了满足该方法的返回类型的要求（这样一来，我们就不必更改项目的其余部分）。
+> 在上述 ReadDataAsync 中，我们构造并返回了新的 C++/CX 数组。 当然，我们这样做是为了满足该方法的返回类型的要求（这样就不必更改项目的其余部分）。
 >
-> 你可能会在自己的项目中遇到其他示例，在这些示例中，你在移植后到达方法的结尾，但仅拥有 C++/WinRT 对象。 若要 `co_return` 它，只需调用 to_cx 进行转换即可。 以下是一个假设示例。
+> 你可能会在自己的项目中遇到其他示例，在这些示例中，你在移植后到达方法的结尾，但仅拥有 C++/WinRT 对象。 若要 `co_return` 它，只需调用 to_cx 进行转换即可。 有关此内容的详细信息和示例，请参阅下一部分。
+
+## <a name="convert-a-winrtiasyncxxxt-to-a-taskt"></a>将 winrt::IAsyncXxx\<T\> 转换为 task\<T\> 
+
+本部分将介绍以下情境：将异步方法移植到 C++/WinRT（以便它返回 winrt::IAsyncXxx\<T\>），但 C++/CX 代码仍调用该方法，就像它仍返回任务一样。
+
+- 一种情况是 T 为基元，不需要进行任何转换。
+- 另一种情况是 T 为 Windows 运行时类型，在这种情况下，需要将其转换为 T^ 。
+
+### <a name="convert-a-winrtiasyncxxxt-t-is-primitive-to-a-taskt"></a>将 winrt::IAsyncXxx\<T\>（T 为基元）转换为 task\<T\> 
+
+在异步返回基元值时，适用此部分中的模式（我们将使用布尔值来进行说明）。 假设移植到 C++/WinRT 的方法具有此签名。
+
+```cppwinrt
+winrt::Windows::Foundation::IAsyncOperation<bool>
+MyClass::GetBoolMemberFunctionAsync()
+{
+    bool value = ...
+    co_return value;
+}
+```
+
+你可以将对此方法的调用转换为如下任务。
 
 ```cppcx
-task<Windows::Storage::StorageFile^> RetrieveFileAsync()
+task<bool> MyClass::RetrieveBoolTask()
 {
-    winrt::Windows::Storage::StorageFile storageFile = co_await ...
+    co_return co_await GetBoolMemberFunctionAsync();
+}
+```
+
+或如下任务。
+
+```cppcx
+task<bool> MyClass::RetrieveBoolTask()
+{
+    return concurrency::create_task(
+        [this]() -> concurrency::task<bool> {
+            auto result = co_await GetBoolMemberFunctionAsync();
+            co_return result;
+        });
+}
+```
+
+请注意，lambda 函数的任务返回类型是显式的，因为编译器无法推导它。
+
+我们还可以从任意任务链中调用方法，如下所示。 同样，使用显式 lambda 返回类型。
+
+```cppcx
+...
+.then([this]() -> concurrency::task<bool> {
+    co_return co_await GetBoolMemberFunctionAsync();
+}).then([this](bool result) {
+    ...
+});
+...
+```
+
+### <a name="convert-a-winrtiasyncxxxt-t-is-a-windows-runtime-type-to-a-taskt"></a>将 winrt::IAsyncXxx\<T\>（T 为 Windows 运行时类型）转换为 task\<T^\> 
+
+在异步返回 Windows 运行时值时，适用此部分中的模式（我们将使用 StorageFile 值来进行说明）。 假设移植到 C++/WinRT 的方法具有此签名。
+
+```cppwinrt
+winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::StorageFile>
+MyClass::GetStorageFileMemberFunctionAsync()
+{
+    co_return co_await winrt::Windows::Storage::StorageFile::GetFileFromPathAsync
+    (L"MyFile.txt");
+}
+```
+
+下一列表显示如何将对此方法的调用转换为任务。 注意，我们需要调用 to_cx 互操作帮助程序函数，才能将返回的 C++/WinRT 对象转换为 C++/CX 句柄（也称为 hat）对象。
+
+```cppcx
+task<Windows::Storage::StorageFile^> RetrieveStorageFileTask()
+{
+    winrt::Windows::Storage::StorageFile storageFile =
+        co_await GetStorageFileMemberFunctionAsync();
     co_return to_cx<Windows::Storage::StorageFile>(storageFile);
 }
 ```
 
+下面是一个更简洁的版本。
+
+```cppcx
+task<Windows::Storage::StorageFile^> RetrieveStorageFileTask()
+{
+    co_return to_cx<Windows::Storage::StorageFile>(GetStorageFileMemberFunctionAsync());
+}
+```
+
+你甚至可以选择将该模式包装为可重复使用的函数模板，并像通常返回任务那样 `return` 它。
+
+```cppcx
+template<typename ResultTypeCX, typename Awaitable>
+concurrency::task<ResultTypeCX^> to_task(Awaitable awaitable)
+{
+    co_return to_cx<ResultTypeCX>(co_await awaitable);
+}
+
+task<Windows::Storage::StorageFile^> RetrieveStorageFileTask()
+{
+    return to_task<Windows::Storage::StorageFile>(GetStorageFileMemberFunctionAsync());
+}
+```
+
+如果你喜欢此想法，我们建议你将 to_task 添加到 `interop_helpers.h`。
+
 ## <a name="wrap-create_async-around-a-task-that-uses-co_return"></a>让 create_async 环绕使用 `co_return` 的任务
 
-无法直接 `co_return` IAsyncXxx\^，但可以实现类似目的。 如果有使用 `co_return` 的任务，则可以让 [concurrency::create_async](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_async) 环绕它。
+无法直接 `co_return` IAsyncXxx\^，但可以实现类似目的。 如果你有一个协同返回值的任务，可以将该任务包装在对 [concurrency::create_async](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_async) 的调用中。
 
 以下是一个假设示例，因为没有可以从 Simple3DGameDX 中提取的示例。
 
 ```cppcx
-Windows::Foundation::IAsyncOperation<bool>^ Simple3DGame::ReturnBooleanAsync()
+Windows::Foundation::IAsyncOperation<bool>^ MyClass::RetrieveBoolAsync()
 {
     return concurrency::create_async(
         [this]() -> concurrency::task<bool> {
-            bool result = co_await BooleanMemberFunctionAsync();
+            bool result = co_await GetBoolMemberFunctionAsync();
             co_return result;
         });
 }
@@ -670,7 +788,7 @@ task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
 
 在使用 Simple3DGameDX 的这一阶段，项目中所有调用 Simple3DGame::LoadLevelAsync 的位置都使用 `co_await` 来调用它。
 
-这意味着我们可以将该方法的返回类型从 task\<void\> 更改为 winrt::Windows::Foundation::IAsyncAction。
+这意味着只需将该方法的返回类型从 task\<void\> 更改为 winrt::Windows::Foundation::IAsyncAction （保持其余部分不变）。
 
 ```cppcx
 winrt::Windows::Foundation::IAsyncAction Simple3DGame::LoadLevelAsync()
@@ -681,7 +799,7 @@ winrt::Windows::Foundation::IAsyncAction Simple3DGame::LoadLevelAsync()
 }
 ```
 
-现在应该能够通过相当机械的方式将该方法的其余部分及其依赖项移植到 C++/WinRT。
+现在应该能够通过相当机械的方式将该方法的其余部分及其依赖项（例如 m_level 等）移植到 C++/WinRT。
 
 ### <a name="gamerendererloadlevelresourcesasync"></a>**GameRenderer::LoadLevelResourcesAsync**
 
@@ -732,9 +850,11 @@ winrt::Windows::Foundation::IAsyncAction GameRenderer::LoadLevelResourcesAsync()
 }
 ```
 
-### <a name="basicreaderwriterreaddataasync"></a>**BasicReaderWriter::ReadDataAsync**
+### <a name="the-goalmdashfully-port-a-method-to-cwinrt"></a>目标&mdash;将方法完全移植到 C++/WinRT
 
-让我们通过将 BasicReaderWriter::ReadDataAsync 完全移植到 C++/WinRT 来完成本演练。 我们上次查看它时（在[将 ReadDataAsync [大部分]移植到 C++/WinRT，项目其余部分保持不变](#port-readdataasync-mostly-to-cwinrt-leaving-the-rest-of-the-project-unchanged)中），其已大部分移植到 C++/WinRT 中。 但它仍然返回 Platform::Array\<byte\>^ 的任务。
+让我们通过将方法 BasicReaderWriter::ReadDataAsync 完全移植到 C++/WinRT，以一个最终目标示例结束本演练。
+
+我们上次查看此方法时（在[将 ReadDataAsync（大部分）移植到 C++/WinRT，项目其余部分保持不变](#port-readdataasync-mostly-to-cwinrt-leaving-the-rest-of-the-project-unchanged)部分中），大部分都已移植到 C++/WinRT 中。 但它仍然返回 Platform::Array\<byte\>^ 的任务。
 
 ```cppwinrt
 task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
@@ -752,7 +872,7 @@ task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
 }
 ```
 
-让我们将其更改为异步返回 C++/WinRT [IBuffer](/uwp/api/windows.storage.streams.ibuffer) 对象，而不返回任务，即使这意味着在调用站点上更改代码。
+我们会将其更改为返回 IAsyncOperation，而不是返回任务。 我们将返回 C++/WinRT [IBuffer](/uwp/api/windows.storage.streams.ibuffer) 对象，而不是通过该 IAsyncOperation 返回字节数组 。 我们将看到，此操作还需要对调用站点上的代码进行少许更改。
 
 在移植其实现、其参数和 m_location 数据成员以使用 C++/WinRT 语法和对象之后，方法的外观如下所示。
 
@@ -803,10 +923,10 @@ winrt::Windows::Foundation::IAsyncAction BasicLoader::LoadTextureAsync(...)
 
 ## <a name="important-apis"></a>重要的 API
 
-* [IAsyncAction](/uwp/api/windows.foundation.iasyncaction)；
-* [IAsyncActionWithProgress&lt;TProgress&gt;](/uwp/api/windows.foundation.iasyncactionwithprogress-1)；
-* [IAsyncOperation&lt;TResult&gt;](/uwp/api/windows.foundation.iasyncoperation-1)；
-* [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)。
+* [IAsyncAction](/uwp/api/windows.foundation.iasyncaction)
+* [IAsyncActionWithProgress&lt;TProgress&gt;](/uwp/api/windows.foundation.iasyncactionwithprogress-1)
+* [IAsyncOperation&lt;TResult&gt;](/uwp/api/windows.foundation.iasyncoperation-1)
+* [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)
 * [implements::get_strong](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 * [concurrency::create_async](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_async)
 * [concurrency::create_task](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_task)

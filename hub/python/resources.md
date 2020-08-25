@@ -1,6 +1,6 @@
 ---
 title: 用于在 Windows 上使用 Python 进行开发的资源
-description: 用于在 Windows 上使用 Python 进行开发的资源列表。
+description: 了解用于在 Windows 上使用 Python 进行开发的有用资源，例如在线课程和 Web 开发。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, microsoft, windows 10, tutorials, online courses, blogs, events
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 24bda3a9eb76dac2e584540161e551ce6bb7ff4e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 136da1d69a61cb90c9c80cab5d7ecd822d64820d
+ms.sourcegitcommit: b6138f9565252460ace6fa0acdc2a902e591681a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75683660"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243239"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>用于在 Windows 上使用 Python 进行开发的资源
 

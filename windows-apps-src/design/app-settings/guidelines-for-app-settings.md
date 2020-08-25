@@ -4,16 +4,16 @@ title: 应用设置指南
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 08/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b27094a5861151b907dc7787828068122e4a54
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 418c33952c4be6be08683b5e396f423f771bb997
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233988"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502373"
 ---
 # <a name="guidelines-for-app-settings"></a>应用设置指南
 
@@ -46,13 +46,13 @@ ms.locfileid: "83233988"
 
 对于导航窗格布局，应用设置应为导航选项列表中最后一项，并且应固定到底部：
 
-![导航窗格的应用设置入口点](images/appsettings-entrypoint-navpane.png)
+![导航窗格的应用设置入口点](images/appsettings-nav-settings.png)
 
 **应用栏**
 
-如果使用[应用栏](../controls-and-patterns/app-bars.md)或工具栏，请将设置入口点作为最后一个项目放在“更多”溢出菜单中。 如果使用户更容易发现设置入口点对应用来说很重要，请将入口点直接放在应用栏上，而不是放在溢出菜单中。
+如果使用[应用栏](../controls-and-patterns/app-bars.md)或工具栏，请将设置入口点作为最后的项目之一放在“更多”溢出菜单中。 如果使用户更容易发现设置入口点对应用来说很重要，请将入口点直接放在应用栏上，而不是放在溢出菜单中。
 
-![应用栏的应用设置入口点](images/appsettings-entrypoint-tabs.png)
+![应用栏的应用设置入口点](../controls-and-patterns/images/appbar_rs2_overflow_icons.png)
 
 **中心**
 
@@ -69,15 +69,10 @@ ms.locfileid: "83233988"
 ## <a name="layout"></a>布局
 
 
-在桌面和移动设备上，应用设置窗口应全屏打开，并填满整个窗口。 如果应用设置菜单拥有最多 4 个顶级组，这些组应串联在一列中。
-
-桌面设备：
+应用设置窗口应全屏打开，并填满整个窗口。 如果应用设置菜单拥有最多 4 个顶级组，这些组应串联在一列中。
 
 ![桌面上应用设置页面的布局](images/appsettings-layout-navpane-desktop.png)
 
-移动设备：
-
-![手机上应用设置页面的布局](images/appsettings-layout-navpane-mobile.png)
 
 ## <a name="color-mode-settings"></a>“颜色模式”设置
 

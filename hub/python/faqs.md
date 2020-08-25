@@ -1,6 +1,6 @@
 ---
 title: 有关在 Windows 上使用 Python 的常见问题解答
-description: 有关在 Windows 上使用 Python 的常见问题解答
+description: 如需获取帮助，请查看有关在 Windows 上使用 Python 进行开发的常见问题解答 (FAQ)。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, file paths, PYTHONPATH, python deployment, python packaging
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 6dbf86e0f9435e44140159ebb2bcbc3d67928999
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2541186a1dd0f205d88e1e14c146934490afff55
+ms.sourcegitcommit: b6138f9565252460ace6fa0acdc2a902e591681a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74663554"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243259"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>有关在 Windows 上使用 Python 的常见问题解答
 
@@ -31,7 +31,7 @@ ms.locfileid: "74663554"
 
 由于要处理不同类型的 Python 项目，因此最终可能会在计算机上安装多个版本的 Python。 由于所有这些版本都使用 `python` 命令，因此你使用的是哪个版本的 Python 可能并不明显。 作为标准，建议使用 `python3` 命令（或 `python3.7` 以选择特定版本）。
 
-[py.exe 启动器](https://docs.python.org/3/using/windows.html#launcher)将自动选择已安装的最新版本的 Python。 此外，还可以使用 `py -3.7` 之类的命令来选择特定版本，或者使用 `py --list` 来查看可使用的版本。 但是，仅当使用从 [python.org](https://www.python.org/downloads/windows/) 安装的 Python 版本时，py.exe 启动器才会正常运行  。从 Microsoft Store 安装 Python 时，不包含 `py` 命令  。 对于 Linux、macOS、WSL 和 Microsoft Store 版本的 Python，应使用 `python3`（或 `python3.7`）命令。
+[py.exe 启动器](https://docs.python.org/3/using/windows.html#launcher)将自动选择已安装的最新版本的 Python。 此外，还可以使用 `py -3.7` 之类的命令来选择特定版本，或者使用 `py --list` 来查看可使用的版本。 但是，仅当使用从 [python.org](https://www.python.org/downloads/windows/) 安装的 Python 版本时，py.exe 启动器才会正常运行。从 Microsoft Store 安装 Python 时，不包含 `py` 命令。 对于 Linux、macOS、WSL 和 Microsoft Store 版本的 Python，应使用 `python3`（或 `python3.7`）命令。
 
 ## <a name="why-does-running-pythonexe-open-the-microsoft-store"></a>为什么运行 python.exe 会打开 Microsoft Store？
 
@@ -39,7 +39,7 @@ ms.locfileid: "74663554"
 
 使用任何命令行参数运行快捷方式可执行文件都将返回错误代码，指示未安装 Python。 这是为了防止批处理文件和脚本意外打开 Store 应用。
 
-如果使用 [python.org](https://www.python.org/downloads/windows/) 中的安装程序安装 Python 并选择“添加到 PATH”选项，则新的 `python` 命令将优先于快捷方式。 请注意，其他安装程序可能以低于内置快捷方式的优先级添加 `python` 。
+如果使用 [python.org](https://www.python.org/downloads/windows/) 中的安装程序安装 Python 并选择“添加到 PATH”选项，则新的 `python` 命令将优先于快捷方式。 请注意，其他安装程序可能以低于内置快捷方式的优先级添加 `python`__。
 
 通过从“开始”打开“管理应用执行别名”，找到“应用安装程序”Python 条目并将其切换为“关闭”，无需安装 Python 即可禁用快捷方式。
 
@@ -59,7 +59,7 @@ Python 使用 PYTHONPATH 环境变量来指定可以从中导入模块的目录�
 
 要在 PowerShell 中设置此变量，请在启动 Python 之前使用：`$env:PYTHONPATH=’list;of;paths’`。
 
-不建议通过“环境变量”设置全局设置此变量，因为使用它的可能是任何版本的 Python，而非要使用的版本   。
+不建议通过“环境变量”设置全局设置此变量，因为使用它的可能是任何版本的 Python，而非要使用的版本********。
 
 ## <a name="where-can-i-find-help-with-packaging-and-deployment"></a>何处可以找到有关打包和部署的帮助？
 

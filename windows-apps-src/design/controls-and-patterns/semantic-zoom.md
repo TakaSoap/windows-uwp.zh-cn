@@ -4,19 +4,19 @@ title: 语义式缩放
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 08/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 35613366078531a9e342df0b4314d049fde844e9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3398be1569143e253b2b9cb9ee25133ee7fe5fd9
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081565"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502333"
 ---
 # <a name="semantic-zoom"></a>语义式缩放
 
@@ -59,17 +59,17 @@ ms.locfileid: "80081565"
 </tr>
 </table>
 
+**XAML 控件库**
+
+控件库中的 SemanticZoom 部分演示了一种导航体验，使用户可以快速放大和缩小控件类型的分组部分。 
+
+![XAMl 控件库中使用的语义缩放示例](images/semanticzoom-gallery.gif)
+
 **“照片”应用**
 
 下面是在“照片”应用中使用的语义式缩放。 照片按月分组。 为了实现更快的导航，在默认网格视图中选择月标头可缩小到月列表视图。
 
 ![在“照片”应用中使用的语义式缩放](images/control-examples/semantic-zoom-photos.png)
-
-**通讯簿**
-
-通讯簿是使用语义式缩放可更方便地导航数据集的另一个示例。 你可以使用缩小视图快速跳转到所需的字母（左图），同时视图中的放大视图显示个别数据项（右图）。
-
-![在联系人列表中使用的语义式缩放示例](images/semanticzoom-win10.png)
 
 ## <a name="create-a-semantic-zoom"></a>创建语义式缩放
 

@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c6eb22fbe0488fa9a36160ce9e704d10727e4c9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8bb01c76879bd00e10286ef429415cf4817315b7
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66364475"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502398"
 ---
 # <a name="search-and-find-in-page"></a>搜索和在页面中查找
 
@@ -24,7 +24,7 @@ ms.locfileid: "66364475"
 
 搜索是用户可以在你的应用中查找内容的最常用方法之一。 本文中的指南介绍搜索体验、搜索范围、实现的要素，以及在上下文中搜索的示例。
 
-> **重要的 API**：[AutoSuggestBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
+> **重要 API**：[AutoSuggestBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
 
 ## <a name="elements-of-the-search-experience"></a>搜索体验的要素
 
@@ -56,7 +56,7 @@ ms.locfileid: "66364475"
 
 一些常见的搜索范围包括：
 
-**全局**和**上下文/精确。**   跨多个云源以及本地内容进行搜索。 各种结果，包括 URL、文档、媒体、操作、应用等。
+**全局**和**上下文/精确。**  跨多个云源以及本地内容进行搜索。 各种结果，包括 URL、文档、媒体、操作、应用等。
 
 **Web。**   搜索 Web 索引。 结果包括页面、条目和解答。
 
@@ -87,13 +87,12 @@ ms.locfileid: "66364475"
 
 单击搜索图标之前：
 
-![搜索图标和折叠的搜索框示例](images/search-icon-collapsed.png)
+![搜索图标和折叠的搜索框示例](images/search-icon-collapsed-maps.png)
 
- 
 
 单击搜索图标之后：
 
-![搜索图标和展开的搜索框示例](images/search-icon-expanded.png)
+![导航菜单中的搜索示例](images/search-icon-expanded-maps.png)
 
  
 
@@ -120,13 +119,13 @@ ms.locfileid: "66364475"
 
 搜索作为应用画布上的输入：
 
-![应用画布上的搜索示例](images/search-canvas-contacts.png)
+![应用画布上的搜索示例](images/search-app-canvas.png)
 
  
 
-导航窗格中的搜索：
+地图应用的导航窗格中的搜索：
 
-![导航菜单中的搜索示例](images/search-navmenu.png)
+![导航菜单中的搜索示例](images/search-icon-expanded-maps.png)
 
  
 
@@ -146,10 +145,10 @@ ms.locfileid: "66364475"
 -   在具有“在页面中查找”功能的应用中放置命令栏，使用户能搜索页面上的文本。 有关放置详细信息，请参阅“示例”部分。
 
     -   提供“在页面中查找”的应用应该在命令栏中具有所有必要的控件。
-    -   如果你的应用包含除“在页面中查找”之外的大量功能，你可以在顶层命令栏中提供一个“查找”  按钮，将此按钮作为到另一个命令栏（该命令栏包含所有“在页面中查找”控件）的入口。
+    -   如果你的应用包含除“在页面中查找”之外的大量功能，你可以在顶层命令栏中提供一个**查找**按钮，将此按钮作为到另一个命令栏（该命令栏包含所有“在页面中查找”控件）的入口。
     -   当用户与触摸键盘交互时，在页面中查找命令栏应该保持可见。 当用户点击输入框时，将显示触摸键盘。 在页面中查找命令栏应该向上移动，以使其不被触摸键盘遮盖住。
 
-    -   当用户与视图交互时，在页面中查找应该保持可用。 用户需要在使用在页面中查找时与视图中的文本交互。 例如，用户可能会需要放大或缩小文档或平移视图以阅读文本。 用户开始使用在页面中查找之后，命令栏应该保持可用，并且提供一个用于退出在页面中查找的“关闭”  按钮。
+    -   当用户与视图交互时，在页面中查找应该保持可用。 用户需要在使用在页面中查找时与视图中的文本交互。 例如，用户可能会需要放大或缩小文档或平移视图以阅读文本。 用户开始使用在页面中查找之后，命令栏应该保持可用，并且提供一个用于退出在页面中查找的**关闭**按钮。
 
     -   启用键盘快捷方式 (CTRL+F)。 实施键盘快捷方式 CTRL+F，以使用户能够快速调用在页面中查找命令栏。
 
@@ -159,7 +158,7 @@ ms.locfileid: "66364475"
         -   “上一个”和“下一个”按钮
         -   匹配计数
         -   关闭（仅限桌面）
-    -   该视图应该突出显示匹配项并滚动以显示屏幕上的下一个匹配项。 通过使用“上一个”  和“下一个”  按钮并通过使用滚动栏或通过直接使用触摸操纵，用户可以快速在文档中移动。
+    -   该视图应该突出显示匹配项并滚动以显示屏幕上的下一个匹配项。 通过使用**上一个**和**下一个**按钮并通过使用滚动栏或通过直接使用触摸操纵，用户可以快速在文档中移动。
 
     -   查找与替换功能应该与基本在页面中查找功能一起使用。 对于具有“查找与替换”功能的应用，请确保“在页面中查找”不会干扰“查找与替换”功能。
 
