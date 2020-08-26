@@ -1379,6 +1379,8 @@
               href: ../launch-resume/create-and-register-an-inproc-background-task.md
             - name: 创建和注册进程外后台任务
               href: ../launch-resume/create-and-register-a-background-task.md
+            - name: 创建和注册 winmain COM 后台任务
+              href: ../launch-resume/create-and-register-a-winmain-background-task.md
             - name: 将进程外后台任务移植到进程内后台任务
               href: ../launch-resume/convert-out-of-process-background-task.md
             - name: 调试后台任务
