@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 31d7805e7ae936e5c7427b54f2eb9b0ad4b4c3e9
-ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
+ms.openlocfilehash: c871149f764024de41309f21dbd036848633a2af
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84257378"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846727"
 ---
 # <a name="modernize-your-desktop-apps"></a>实现桌面应用的现代化
 
@@ -97,7 +97,7 @@ MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（
 
 Microsoft Graph 是一系列 API，这些 API 可以用来为组织和消费者构建与数百万用户的数据交互的应用。 Microsoft Graph 公开的 REST API 和客户端库可以用来访问以下服务的数据：
 * Azure Active Directory
-* Office 365 服务：SharePoint、OneDrive、Outlook/Exchange、Microsoft Teams、OneNote、Planner、Excel
+* Microsoft 365 Office 应用：SharePoint、OneDrive、Outlook/Exchange、Microsoft Teams、OneNote、Planner、Excel
 * 企业移动性和安全性服务：Identity Manager、Intune、高级威胁分析、高级威胁防护。
 * Windows 10 服务：活动和设备
 
