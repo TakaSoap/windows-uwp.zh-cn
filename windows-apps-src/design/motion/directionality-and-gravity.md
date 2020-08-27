@@ -1,6 +1,6 @@
 ---
-Description: 了解流畅运动如何使用方向性和重心。
 title: 方向性和重力-Windows 应用中的动画
+description: 查看示例，了解如何在动画场景中使用移动方向、导航方向和重心。
 label: Directionality and gravity
 template: detail.hbs
 ms.date: 10/02/2018
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ddcfac5e36500a8fc6dc41c7c86037f5a1483203
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a9b6fbc639ac225e68a6ae1b008537cba6f72ead
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970642"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943107"
 ---
 # <a name="directionality-and-gravity"></a>方向性和引力
 
@@ -59,7 +59,7 @@ ms.locfileid: "82970642"
 
 对于后退导航，移动是反向的（从 B 到 A）。 当用户导航回来时，他们希望尽快返回到之前的状态。 计时更快、更直接，并使用减速缓动。
 
-下面的示例应用了上述原则 - 在前进和后退导航过程中，所选项目停留在屏幕上。
+在此，将应用这些原则，因为在前进和后退导航过程中，所选项目将停留在屏幕上。
 
 ![连续动作的 UI 示例](images/continuous3.gif)
 
@@ -75,7 +75,7 @@ ms.locfileid: "82970642"
 
 :::row:::
     :::column:::
-**前进**以不与传出内容发生冲突的方式，庆祝内容进入场景。 内容减速到场景中。
+**前进** 以不与传出内容发生冲突的方式，庆祝内容进入场景。 内容减速到场景中。
     :::column-end:::
     :::column:::
         ![前进方向](images/forwardIN.gif)
@@ -83,7 +83,7 @@ ms.locfileid: "82970642"
 :::row-end:::
 :::row:::
     :::column:::
-**向外扩展**内容很快就会退出。 对象在屏幕上进行加速。
+**向外扩展** 内容很快就会退出。 对象在屏幕上进行加速。
     :::column-end:::
     :::column:::
         ![前进方向](images/forwardOUT.gif)
@@ -91,7 +91,7 @@ ms.locfileid: "82970642"
 :::row-end:::
 :::row:::
     :::column:::
-**向后**与 Forward 相同，但反向。
+**向后** 与 Forward 相同，但反向。
     :::column-end:::
     :::column:::
         ![方向后退进入](images/backwardIN.gif)
@@ -99,7 +99,7 @@ ms.locfileid: "82970642"
 :::row-end:::
 :::row:::
     :::column:::
-**向后输出**与前向外，但反过来。
+**向后输出** 与前向外，但反过来。
     :::column-end:::
     :::column:::
         ![向后翻方向](images/backwardOUT.gif)

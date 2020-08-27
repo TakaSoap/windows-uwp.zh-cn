@@ -1,17 +1,17 @@
 ---
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: 情节提要动画
-description: 情节提要动画不仅仅是视觉动画。
+description: 了解如何使用 storyboarded 动画更改依赖属性的值作为时间函数。
 ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1107670e837dff294739e9ba38c7dea9004d1d62
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 2ec64c1d036c9c306fdcb51f0e3fe83079efada0
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340344"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942867"
 ---
 # <a name="storyboarded-animations"></a>情节提要动画
 
@@ -40,7 +40,7 @@ ms.locfileid: "71340344"
 
 大多数情况下，通过编写 XAML 来定义情节提要动画。 如果你使用了工具，例如 Microsoft Visual Studio，则该工具将会为你生成 XAML。 也可以使用代码定义情节提要动画，但这种方法并不常见。
 
-让我们来看个简单示例。 在此 XAML 示例中，在特定的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 对象上为 [**Opacity**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 属性创建动画。
+让我们来举一个简单的示例。 在此 XAML 示例中，在特定的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 对象上为 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 属性创建动画。
 
 ```xaml
 <Page ...>
@@ -64,7 +64,7 @@ ms.locfileid: "71340344"
 
 ### <a name="identifying-the-object-to-animate"></a>确定要实现动画的对象
 
-在前面的示例中，情节提要为 [**Rectangle**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 属性创建了动画。 你没有在对象本身上声明动画。 而是在情节提要的动画定义内声明了动画。 情节提要通常在 XAML 中定义，不在要创建动画的对象的 XAML UI 定义的紧邻位置。 而它们通常会设置为 XAML 资源。
+在前面的示例中，情节提要为 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 属性创建了动画。 你没有在对象本身上声明动画。 而是在情节提要的动画定义内声明了动画。 情节提要通常在 XAML 中定义，不在要创建动画的对象的 XAML UI 定义的紧邻位置。 而它们通常会设置为 XAML 资源。
 
 若要将动画连接到目标，则按其标识的编程名称来引用目标。 你应始终在 XAML UI 定义中应用 [x:Name 属性](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute)以命名要创建动画的对象。 然后，通过在动画定义中设置 [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname) 确定要创建动画的对象目标。 对于 **Storyboard.TargetName** 的值，使用目标对象的名称字符串，它是你之前设置的名称并在其他位置具有 x:Name 属性。
 
@@ -74,7 +74,7 @@ ms.locfileid: "71340344"
 
 有时，你需要确定不是目标对象的直接属性的属性目标，而它可能嵌套在对象属性关系的更深位置。 你通常需要执行此操作以便深入到构成对象和属性值的集中，直至你可以引用可创建动画的属性类型为止（[**Double**](https://docs.microsoft.com/dotnet/api/system.double)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)）。 此概念称为*间接目标*，采用此方式确定属性目标的语法称为*属性路径*。
 
-下面提供了一个示例。 情节提要动画的一个常见方案是更改部分应用 UI 或控件的颜色，以便表明控件处于特定状态。 说明你希望为 [**TextBlock**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.foreground) 的 [**Foreground**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 创建动画，以便它从红色变为绿色。 你预期包括 [**ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation)，这非常正确。 但是，UI 元素上的任何影响对象颜色属性的类型实际上都不是 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)， 而是类型 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)。 因此，你实际上要创建动画的目标是 [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 类的 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 属性，它通常是用于与颜色相关的这些 UI 属性的 **Brush** 派生的类型。 下面是形成动画的属性目标的属性路径的示例：
+下面是一个示例。 情节提要动画的一个常见方案是更改部分应用 UI 或控件的颜色，以便表明控件处于特定状态。 说明你希望为 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 的 [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.foreground) 创建动画，以便它从红色变为绿色。 你预期包括 [**ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation)，这非常正确。 但是，UI 元素上的任何影响对象颜色属性的类型实际上都不是 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)， 而是类型 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)。 因此，你实际上要创建动画的目标是 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 类的 [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 属性，它通常是用于与颜色相关的这些 UI 属性的 **Brush** 派生的类型。 下面是形成动画的属性目标的属性路径的示例：
 
 ```xaml
 <Storyboard x:Name="myStoryboard">
@@ -93,9 +93,9 @@ ms.locfileid: "71340344"
 
 下面是动画目标方案的列表，你可能从中使用间接属性目标，以及与你将使用的语法类似的某些属性路径字符串：
 
-- 对[**system.windows.media.translatetransform.x**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)的[**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x)值进行动画处理，并将其应用于[**system.windows.uielement.rendertransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)： `(UIElement.RenderTransform).(TranslateTransform.X)`
-- 在[**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)的[**System.windows.media.gradientstop>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop)中对[**颜色**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)进行动画处理，并将其应用于[**填充**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill)： `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
-- 对[**system.windows.media.translatetransform.x**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)的[**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x)值进行动画处理，这是[**system.windows.media.transformgroup>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TransformGroup)中4个转换的1个，应用于[**system.windows.uielement.rendertransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)：`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
+- 对[**system.windows.media.translatetransform.x**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)的[**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x)值进行动画处理，并将其应用于[**system.windows.uielement.rendertransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)：`(UIElement.RenderTransform).(TranslateTransform.X)`
+- 在[**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)的[**System.windows.media.gradientstop>**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop)中对[**颜色**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)进行动画处理，并将其应用于[**填充**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill)：`(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
+- 对[**system.windows.media.translatetransform.x**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)的[**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x)值进行动画处理，这是[**system.windows.media.transformgroup>**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TransformGroup)中应用于[**system.windows.uielement.rendertransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)的4个转换中的1个：`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
 
 你将发现某些示例使用方括号来包含数字。 这是一种索引器。 它指示它前面的属性名称具有用作值的一个集合，并且你需要该集合中的一项（按照从零开始的索引标识）。
 
@@ -107,9 +107,9 @@ ms.locfileid: "71340344"
 
 Windows 运行时动画系统具有情节提要动画可以应用于的三种特定类型：
 
--   [Double](https://docs.microsoft.com/dotnet/api/system.double)，可通过任何 [**DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation) 进行动画处理
--   [点](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)，可通过任何 [pointanimation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointAnimation) 针对对其进行动画处理
--   [Color](https://docs.microsoft.com/uwp/api/Windows.UI.Color)可以通过任何 [**ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation) 进行动画处理
+-   [**Double**](https://docs.microsoft.com/dotnet/api/system.double)，可使用任意 [**DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation) 为其创建动画
+-   [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)，可使用任意 [**PointAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointAnimation) 为其创建动画
+-   [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)，可使用任意 [**ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation) 为其创建动画
 
 对于对象引用值，还存在通用化 [**Object**](https://docs.microsoft.com/dotnet/api/system.object) 动画类型，我们将在后面部分对此进行讨论。
 
@@ -117,7 +117,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 到目前为止，我们已经向你介绍了如何确定要创建动画的对象和属性目标，但尚未介绍动画运行时会对属性值执行的操作。
 
-我们介绍的动画类型有时也称为 **From**/**To**/**By** 动画。 这表示，动画使用一个或多个来自动画定义的以下输入来随时间更改属性的值：
+我们介绍的动画类型有时也称为 "**从** / **到** / **By**动画"。 这表示，动画使用一个或多个来自动画定义的以下输入来随时间更改属性的值：
 
 -   值从 **From** 值开始。 如果你没有指定 **From** 值，则起始值是动画运行前那个时刻动画化属性具有的任意值。 它可能是一个默认值，样式或模板中的值，或是 XAML UI 定义或应用代码特别应用的值。
 -   在动画结尾处，值为 **To** 值。
@@ -127,7 +127,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 让我们重新复习下以前的 XAML 示例，再次看看 **From** 和 **To** 值，以及 **Duration**。 本例创建 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 属性的动画，并且 **Opacity** 的属性类型为 [**Double**](https://docs.microsoft.com/dotnet/api/system.double)。 因此，此处要使用的动画为 [**DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation)。
 
-`From="1.0" To="0.0"` 指定在动画运行时， [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)属性以值1开始，并动画处理为0。 换句话说，根据这些 [**Double**](https://docs.microsoft.com/dotnet/api/system.double) 值对 **Opacity** 属性产生作用，此动画将对象从不透明开始，然后逐渐变成透明形式。
+`From="1.0" To="0.0"` 指定在动画运行时， [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 属性以值1开始，并动画处理为0。 换句话说，根据这些 [**Double**](https://docs.microsoft.com/dotnet/api/system.double) 值对 **Opacity** 属性产生作用，此动画将对象从不透明开始，然后逐渐变成透明形式。
 
 ```xaml
 ...
@@ -140,7 +140,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 ...
 ```
 
-`Duration="0:0:1"` 指定动画持续时间（即，矩形的淡化速度）。 [  **Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 属性采用以下形式指定：*hours*:*minutes*:*seconds*。 此示例中持续时间为一秒。
+`Duration="0:0:1"` 指定动画的持续时间（即，矩形的淡化速度）。 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 属性采用以下形式指定：*hours*:*minutes*:*seconds*。 此示例中持续时间为一秒。
 
 有关 [**Duration**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration) 值和 XAML 语法的详细信息，请参阅 [**Duration**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration)。
 
@@ -149,31 +149,31 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By 可以为空
 
-我们之前提到过，你可以忽略 **From**、**To** 或 **By**，并因此使用当前非动画化的值作为缺失值的替代值。 动画的 **From**、**To** 或 **By** 属性的类型不能猜测。 例如，[**DoubleAnimation.To**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.doubleanimation.easingfunction) 属性的类型不是 [**Double**](https://docs.microsoft.com/dotnet/api/system.double)。 而是 [Double**的**](https://docs.microsoft.com/dotnet/api/system.nullable-1)Nullable。 并且其默认值为 **null**，而不是 0。 该 **null** 值是动画系统区别你没有特别为 **From**、**To** 或 **By** 属性设置值的方式。 可视化C++组件扩展（C++/Cx）不具有**可以为 null**的类型，因此它使用[**IReference**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_) 。
+我们之前提到过，你可以忽略 **From**、**To** 或 **By**，并因此使用当前非动画化的值作为缺失值的替代值。 动画的**From**、 **To**或**By**属性不是您可能猜到的类型。 例如，[**DoubleAnimation.To**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.doubleanimation.easingfunction) 属性的类型不是 [**Double**](https://docs.microsoft.com/dotnet/api/system.double)。 而是 **Double** 的 [**Nullable**](https://docs.microsoft.com/dotnet/api/system.nullable-1)。 并且其默认值为 **null**，而不是 0。 该 **null** 值是动画系统区别你没有特别为 **From**、**To** 或 **By** 属性设置值的方式。 Visual C++ 组件扩展 (C++/CX) 不具有 **Nullable** 类型，因此它转而使用 [**IReference**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_)。
 
 ### <a name="other-properties-of-an-animation"></a>动画的其他属性
 
 本节中接下来介绍的属性全部是可选的，因为它们具有适合于大部分动画的默认值。
 
-### <a name="autoreverse"></a>**System.windows.media.animation.timeline.autoreverse**
+### <a name="autoreverse"></a>**AutoReverse**
 
 如果你没有在动画中指定 [**AutoReverse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.autoreverse) 或 [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.repeatbehavior)，则该动画将运行一次，并且运行持续时间为 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 中指定的值。
 
-[  **AutoReverse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.autoreverse) 属性指定在时间线达到其 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 的结尾处后是否反向播放。 如果将其设置为 **true**，则动画在达到其声明的 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 的结尾处后反向播放，从其结束值 (**To**) 起更改值直至返回其起始值 (**From**)。 这意味着，动画有效运行时间是其 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 的两倍。
+[**AutoReverse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.autoreverse) 属性指定在时间线达到其 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 的结尾处后是否反向播放。 如果将其设置为 **true**，则动画在达到其声明的 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 的结尾处后反向播放，从其结束值 (**To**) 起更改值直至返回其起始值 (**From**)。 这意味着，动画有效运行时间是其 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 的两倍。
 
-### <a name="repeatbehavior"></a>**System.windows.media.animation.timeline.repeatbehavior**
+### <a name="repeatbehavior"></a>**RepeatBehavior**
 
-[  **RepeatBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.repeatbehavior) 属性指定时间线播放的次数，或是时间线应在其范围内重复的较长持续时间。 默认情况下，时间线具有“1x”的迭代计数，这表示它播放其 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 的一次倍数，并且不再重复。
+[**RepeatBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.repeatbehavior) 属性指定时间线播放的次数，或是时间线应在其范围内重复的较长持续时间。 默认情况下，时间线具有“1x”的迭代计数，这表示它播放其 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 的一次倍数，并且不再重复。
 
-你可能会使动画运行多个迭代。 例如，值“3x”将使动画运行三次。 或者，可以为 [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration) 指定不同的 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.repeatbehavior)。 该 **Duration** 应长于动画本身的 **Duration** 方才有效。 例如，对于具有“0:0:2”的Duration[**的动画，如果你指定“0:0:10”的**RepeatBehavior](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration)，则该动画重复五次。 如果这些数不能被整除，动画将在到达 **RepeatBehavior** 时间时被截断，此时动画可能正在播放中。 最后，你可以指定特殊值“永远”，这将使动画无限期运行直至被故意停止。
+你可能会使动画运行多个迭代。 例如，值“3x”将使动画运行三次。 或者，可以为 [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.repeatbehavior) 指定不同的 [**Duration**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration)。 该 **Duration** 应长于动画本身的 **Duration** 方才有效。 例如，对于具有“0:0:2”的 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 的动画，如果你指定“0:0:10”的 **RepeatBehavior**，则该动画重复五次。 如果这些数不能被整除，动画将在到达 **RepeatBehavior** 时间时被截断，此时动画可能正在播放中。 最后，你可以指定特殊值“永远”，这将使动画无限期运行直至被故意停止。
 
 有关 [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior) 值和 XAML 语法的详细信息，请参阅 [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior)。
 
-### <a name="fillbehaviorstop"></a>**System.windows.media.animation.timeline.fillbehavior = "Stop"**
+### <a name="fillbehaviorstop"></a>**FillBehavior="Stop"**
 
 默认情况下，当动画结束时，即使在超过其持续时间后，动画将属性值保留为最终 **To** 或 **By** 修改的值。 但是，如果你将 [**FillBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.fillbehavior) 属性的值设置为 [**FillBehavior.Stop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior)，则动画化值的值将还原为应用动画前的任意值，或者更精确些还原为按照依赖属性系统（有关此区别的详细信息，请参阅[依赖属性概述](https://docs.microsoft.com/windows/uwp/xaml-platform/dependency-properties-overview)）确定的当前有效值。
 
-### <a name="begintime"></a>**System.windows.media.animation.timeline.begintime**
+### <a name="begintime"></a>**BeginTime**
 
 默认情况下，动画的 [**BeginTime**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.begintime) 为“0:0:0”，因此动画在其包含的 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 运行后立刻开始运行。 如果 **Storyboard** 包含多个动画并且你希望错开其他动画与初始动画的起始时间，或者希望有意创建短时延迟，则可以更改此值。
 
@@ -183,13 +183,13 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 ## <a name="defining-more-than-one-animation-in-a-storyboard"></a>在 **Storyboard** 中定义多个动画
 
-[  **Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 的内容可以是多个动画定义。 如果将相关的动画应用到同一目标对象的两个属性，则可以具有多个动画。 例如，你可以同时更改用作 UI 元素的 [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.compositetransform.translatex) 的 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.compositetransform.translatey) 的 [**TranslateX**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) 和 [**TranslateY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) 属性；这将使元素沿对角线转换。 你需要两个不同的动画才能完成该操作，但你可能希望两个动画属于同一 **Storyboard**，因为你始终希望这两个动画同时运行。
+[**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 的内容可以是多个动画定义。 如果将相关的动画应用到同一目标对象的两个属性，则可以具有多个动画。 例如，你可以同时更改用作 UI 元素的 [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) 的 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) 的 [**TranslateX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.compositetransform.translatex) 和 [**TranslateY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.compositetransform.translatey) 属性；这将使元素沿对角线转换。 你需要两个不同的动画才能完成该操作，但你可能希望两个动画属于同一 **Storyboard**，因为你始终希望这两个动画同时运行。
 
 动画无需是同一类型，或确定同一对象目标。 他们可以有不同的持续时间，并且无需共享任何属性值。
 
 当父 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 运行时，其中的每个动画都将运行。
 
-实际上，[**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 类具有许多与动画类型具有的相同的动画属性，因为二者共享 [**Timeline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Timeline) 基类。 因此，**Storyboard** 可以具有 [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.repeatbehavior) 或 [**BeginTime**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.begintime)。 你通常不会在 **Storyboard** 上设置它们，但除非你希望所有包含的动画都具有该行为。 一般来说，与在 **Storyboard** 上设置一样，任何 **Timeline** 属性都会应用到其所有子动画。 如果未设置，则 **Storyboard** 具有通过包含的动画的最长 [**Duration**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration) 值计算而来的隐式持续时间。 如果 [Storyboard**上显式设置的**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration)Duration 少于其子动画之一的持续时间，则将导致动画被截断，而这通常不是期望的效果。
+实际上，[**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 类具有许多与动画类型具有的相同的动画属性，因为二者共享 [**Timeline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Timeline) 基类。 因此，**Storyboard** 可以具有 [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.repeatbehavior) 或 [**BeginTime**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.begintime)。 你通常不会在 **Storyboard** 上设置它们，但除非你希望所有包含的动画都具有该行为。 一般来说，与在 **Storyboard** 上设置一样，任何 **Timeline** 属性都会应用到其所有子动画。 如果未设置，则 **Storyboard** 具有通过包含的动画的最长 [**Duration**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration) 值计算而来的隐式持续时间。 如果 **Storyboard** 上显式设置的 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 少于其子动画之一的持续时间，则将导致动画被截断，而这通常不是期望的效果。
 
 情节提要无法包含尝试确定同一对象上的同一属性目标和创建其动画的两个动画。 如果你尝试这样做，则将在情节提要尝试运行时遇到运行时错误。 即使在动画在时间上没有重叠的情况下，此限制也适用，因为 [**BeginTime**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.begintime) 值和持续时间明显不同。 如果你确实希望对一个情节提要中的同一属性应用更复杂的动画时间线，则实现方法为使用关键帧动画。 请参阅[关键帧和缓动函数动画](key-frame-and-easing-function-animations.md)。
 
@@ -197,7 +197,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 ## <a name="defining-a-storyboard-as-a-resource"></a>将情节提要定义为资源
 
-[  **Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 是放入动画对象的容器。 通常会在页面级别的Resources[**或**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources)Application.Resources[**中将**Storyboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resources) 定义为要创建动画的对象可用的资源。
+[**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 是放入动画对象的容器。 通常会在页面级别的 [**Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources) 或 [**Application.Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resources) 中将 **Storyboard** 定义为要创建动画的对象可用的资源。
 
 下一示例介绍如何将上一示例 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 包含在页面级别的 [**Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources) 定义中，其中 **Storyboard** 为根 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) 的键控资源。 请注意 [x:Name 属性](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute)。 此属性是你定义 **Storyboard** 的变量名称的方式，以便以后 XAML 中的其他元素以及代码可以参考 **Storyboard**。
 
@@ -220,14 +220,14 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 </Page>
 ```
 
-在 XAML 文件（例如 page.xaml 或 app.xaml）的 XAML 根上定义资源是在 XAML 中组织键控资源的常用做法。 还可以将资源分为单独的文件，然后将其合并到应用或页面中。 有关详细信息，请参阅 [ResourceDictionary 和 XAML 资源参考](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。
+在 XAML 文件（例如 page.xaml 或 app.xaml）的 XAML 根上定义资源是在 XAML 中组织键控资源的常用做法。 还可以将资源分为单独的文件，然后将其合并到应用或页面中。 有关详细信息，请参阅 [ResourceDictionary 和 XAML 资源引用](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。
 
 > [!NOTE]
 > Windows 运行时 XAML 支持使用 [x:Key 属性](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)或 [x:Name 属性](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute)标识资源。 使用 x:Name 属性对于 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 更常见，因为你最终会需要按变量名称引用它，以便你可以调用其 [**Begin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin) 方法和运行动画。 如果你确实要使用 [x:Key 属性](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)，则需要使用 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 方法（例如 [**Item**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.item) 索引器）来作为键控资源检索它，然后将检索的对象转换为 **Storyboard** 以使用 **Storyboard** 方法。
 
 ### <a name="storyboards-for-visual-states"></a>视觉状态的情节提要
 
-此外，在为控件的视觉外观声明视觉状态动画时，还可以将动画放在 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 单元中。 在此情况下，你定义的 **Storyboard** 元素位于 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 容器中，此容器嵌套在 [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style)（作为键控资源的 **Style**）中更深层的位置。 在此情况下，不需要对 **Storyboard** 使用键或名称，因为它是一种 **VisualState**，其中包含 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstatemanager) 可以调用的目标名称。 控件的样式通常分为单独的 XAML [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 文件，而不是放在特定页面或应用的 **Resources** 集合中。 有关详细信息，请参阅[视觉状态的情节提要动画](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))。
+在为控件的可视外观声明视觉状态动画时，你还可将动画放在 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 单元中。 在此情况下，你定义的 **Storyboard** 元素位于 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 容器中，此容器嵌套在 [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style)（作为键控资源的 **Style**）中更深层的位置。 在此情况下，不需要对 **Storyboard** 使用键或名称，因为它是一种 **VisualState**，其中包含 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstatemanager) 可以调用的目标名称。 控件的样式通常分为单独的 XAML [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 文件，而不是放在特定页面或应用的 **Resources** 集合中。 有关详细信息，请参阅[视觉状态的情节提要动画](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))。
 
 ## <a name="dependent-and-independent-animations"></a>从属动画和独立动画
 
@@ -242,7 +242,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 -   动画以下列 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 属性的子属性值为目标：[**Transform3D**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transform3d)、[**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)、[**Projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection)、[**Clip**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
 -   动画以 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 或 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) 为目标
 -   动画确定 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 值为目标并使用 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)，为其 [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 创建动画
--   动画为 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)
+-   动画以 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) 为目标
 
 > [!WARNING]
 > 要让动画被视为独立动画，必须显式设置 `Duration="0"`。 例如，如果从此 XAML 中删除 `Duration="0"`，动画将被视为从属动画，即使框架的 [**KeyTime**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.doublekeyframe.keytime) 是“0:0:0”。
@@ -270,11 +270,11 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 ## <a name="starting-and-controlling-an-animation"></a>启动动画和控制动画
 
-到目前为止，我们向你展示的所有内容实际上都不会导致动画运行或应用！ 在动画启动和运行前，动画在 XAML 中声明的值更改都是潜在的并且尚未发生。 你必须采用某些与应用生存期或用户体验相关的方法来显式启动动画。 最简单的方法是，你可以通过在作为该动画的父动画的 [**Storyboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin) 上调用 [**Begin**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 方法来启动一个动画。 你不能直接通过 XAML 调用方法，因此无论你采用哪种方法启动动画，你都将通过代码来完成。 它将是页面的代码隐藏或是应用的组件，或许是控件的逻辑（如果你定义自定义控件类）。
+到目前为止，我们向你展示的所有内容实际上都不会导致动画运行或应用！ 在动画启动和运行前，动画在 XAML 中声明的值更改都是潜在的并且尚未发生。 你必须采用某些与应用生存期或用户体验相关的方法来显式启动动画。 最简单的方法是，你可以通过在作为该动画的父动画的 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 上调用 [**Begin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin) 方法来启动一个动画。 你不能直接通过 XAML 调用方法，因此无论你采用哪种方法启动动画，你都将通过代码来完成。 它将是页面的代码隐藏或是应用的组件，或许是控件的逻辑（如果你定义自定义控件类）。
 
 通常来说，你将调用 [**Begin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin) 并仅仅让动画运行直至其持续时间结束。 但是，你也可以使用 [**Pause**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.pause)、[**Resume**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.resume) 和 [**Stop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.stop) 方法在运行时控制 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)，以及用于更先进的动画控制方案的其他 API。
 
-当你在包含无限重复 ([) 的动画的情节提要上调用Begin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin)`RepeatBehavior="Forever"` 时，该动画将一直运行，除非停止加载包含该动画的页面或者专门调用 [**Pause**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.pause) 或 [**Stop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.stop)。
+当你在包含无限重复 (`RepeatBehavior="Forever"`) 的动画的情节提要上调用 [**Begin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin) 时，该动画将一直运行，除非停止加载包含该动画的页面或者专门调用 [**Pause**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.pause) 或 [**Stop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.stop)。
 
 ### <a name="starting-an-animation-from-app-code"></a>通过应用代码启动动画
 
@@ -288,7 +288,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
   Width="300" Height="200" Fill="Blue"/>
 ```
 
-事件处理程序通过使用 [Storyboard**的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)Begin[**方法来启动**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin)Storyboard（动画）。
+事件处理程序通过使用 **Storyboard** 的 [**Begin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin) 方法来启动 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)（动画）。
 
 ```csharp
 myStoryboard.Begin();
@@ -315,7 +315,7 @@ myStoryBoard.Begin()
 
 ### <a name="animations-for-visual-states"></a>视觉状态的动画
 
-用于定义控件的视觉状态的 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 的运行行为不同于应用直接运行情节提要的方式。 当应用到 XAML 中的视觉状态时，**Storyboard** 是包含的 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的元素，并且可以通过使用 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstatemanager) API 将该状态作为整体进行控制。 当控件使用包含的 [VisualState**时，其中的任何动画都将根据其动画值和**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Timeline)Timeline 属性运行。 有关详细信息，请参阅[视觉状态的情节提要](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))。 对于视觉状态，显示的 [**FillBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.fillbehavior) 是不同的。 如果视觉状态更改为另一个状态，则之前视觉状态及其动画应用的所有属性更改都将被取消，即使在新的视觉状态没有专门将新的动画应用到属性的情况下也是如此。
+用于定义控件的视觉状态的 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 的运行行为不同于应用直接运行情节提要的方式。 当应用到 XAML 中的视觉状态时，**Storyboard** 是包含的 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的元素，并且可以通过使用 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstatemanager) API 将该状态作为整体进行控制。 当控件使用包含的 **VisualState** 时，其中的任何动画都将根据其动画值和 [**Timeline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Timeline) 属性运行。 有关详细信息，请参阅[视觉状态的情节提要](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))。 对于视觉状态，显示的 [**FillBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.fillbehavior) 是不同的。 如果视觉状态更改为另一个状态，则之前视觉状态及其动画应用的所有属性更改都将被取消，即使在新的视觉状态没有专门将新的动画应用到属性的情况下也是如此。
 
 ### <a name="storyboard-and-eventtrigger"></a>**Storyboard** 和 **EventTrigger**
 
@@ -323,21 +323,21 @@ myStoryBoard.Begin()
 
 ## <a name="animating-xaml-attached-properties"></a>创建 XAML 附加属性的动画
 
-这不是一个常见情形，但你可以将动画值应用到 XAML 附加属性。 有关哪些附加属性及其工作原理的详细信息，请参阅[附加属性概述](https://docs.microsoft.com/windows/uwp/xaml-platform/attached-properties-overview)。 确定附加属性目标需要括号中包含属性名的 [Property-path语法](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)。 你可以通过使用应用不连续整数值的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) 创建内置附加属性的动画，如 [**Canvas.ZIndex**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)。 不过，Windows 运行时 XAML 实现的现有局限性是无法创建自定义附加属性的动画。
+这不是一个常见情形，但你可以将动画值应用到 XAML 附加属性。 有关哪些附加属性及其工作原理的详细信息，请参阅[附加属性概述](https://docs.microsoft.com/windows/uwp/xaml-platform/attached-properties-overview)。 确定附加属性目标需要括号中包含属性名的 [Property-path语法](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)。 你可以通过使用应用不连续整数值的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) 创建内置附加属性的动画，如 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95))。 不过，Windows 运行时 XAML 实现的现有局限性是无法创建自定义附加属性的动画。
 
 ## <a name="more-animation-types-and-next-steps-for-learning-about-animating-your-ui"></a>更多动画类型，以及了解有关创建 UI 动画的后续步骤
 
-到目前为止，我们已经介绍了在两个值之间创建动画的自定义动画，然后在动画运行期间根据需要采用线性方式插入值。 它们被称为 **From**/**To**/**By** 动画。 但还有另一种动画类型可以帮助你声明介于起始和结束之间的中间值。 它们被称为*关键帧动画*。 还有一种方法可以在 **From**/**To**/**By** 动画或关键帧动画上改变插入逻辑。 这将涉及缓动函数的应用。 有关这些概念的详细信息，请参阅[关键帧和缓动函数动画](key-frame-and-easing-function-animations.md)。
+到目前为止，我们已经介绍了在两个值之间创建动画的自定义动画，然后在动画运行期间根据需要采用线性方式插入值。 这些是由动画**从** / **到** / **的**调用。 但还有另一种动画类型可以帮助你声明介于起始和结束之间的中间值。 它们被称为*关键帧动画*。 还有一种方法可以**From** / **To** / **通过**动画或关键帧动画来更改的内插逻辑。 这将涉及缓动函数的应用。 有关这些概念的详细信息，请参阅[关键帧和缓动函数动画](key-frame-and-easing-function-animations.md)。
 
 ## <a name="related-topics"></a>相关主题
 
-* [属性路径语法](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)
+* [Property-path 语法](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)
 * [依赖属性概述](https://docs.microsoft.com/windows/uwp/xaml-platform/dependency-properties-overview)
-* [关键帧和缓动函数动画](key-frame-and-easing-function-animations.md)
-* [视觉对象状态的 Storyboarded 动画](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
+* [关键帧以及缓动函数动画](key-frame-and-easing-function-animations.md)
+* [视觉状态的情节提要动画](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
 * [控件模板](https://docs.microsoft.com/windows/uwp/controls-and-patterns/control-templates)
 * [**情节提要**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
-* [**System.windows.media.animation.storyboard.targetproperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
+* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
  
 
  

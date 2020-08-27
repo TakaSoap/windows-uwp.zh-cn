@@ -1,15 +1,15 @@
 ---
 title: Device Portal 部署信息 API 参考
-description: 了解如何以编程方式访问部署信息 API。
+description: 了解如何使用 Xbox 设备门户 REST API deployinfo 来请求一个或多个已安装的包的部署信息。
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 7543b41c6ee1d9c07f4540012f84dccc10bb4d76
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5260125625ced6c258a683bcfb9b552e57d07f06
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638002"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942997"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>请求一个或多个已安装程序包的部署信息。
 
@@ -53,13 +53,13 @@ POST | /ext/app/deployinfo
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 描述
+HTTP 状态代码      | 说明
 :------     | :-----
-200 | 成功
+200 | Success
 4XX | 错误代码
 5XX | 错误代码
 <br />
 
-**可用的设备系列**
+**可用设备系列**
 
 * Windows Xbox

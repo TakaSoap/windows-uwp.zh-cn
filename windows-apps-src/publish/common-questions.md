@@ -1,17 +1,17 @@
 ---
-Description: 有关广告市场活动的常见问题
-title: 有关广告市场活动的常见问题
+title: 查看有关应用的广告活动的常见问题的解答，包括成本、计费、自定义和支持。
+description: 有关广告市场活动的常见问题
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eec32cab8da41b6069862484372ae8bc55ad1a0c
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 9294ea5928b5da9feb1c94e6b134dc45ccb1c053
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506821"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943007"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>有关广告市场活动的常见问题
 
@@ -24,15 +24,15 @@ ms.locfileid: "77506821"
 
 ### <a name="how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign"></a>如何提高我的广告活动的每月最高预算额？
 
-如果你打算每月在广告活动上花费超过 10000 美元，请联系 [aiacare@microsoft.com](mailto:aiacare@microsoft.com)。 我们会将你升级到高级帐户，它允许你每个市场活动最多花费 50000 美元。 高级帐户还提供了额外的功能，例如，设置市场活动的开始和结束日期，以及为市场活动指定目标 URL。
+如果你计划在一个月内花费超过 $10000 的广告活动，请联系 [aiacare@microsoft.com](mailto:aiacare@microsoft.com) 。 我们会将你升级到高级帐户，它允许你每个市场活动最多花费 50000 美元。 高级帐户还提供了额外的功能，例如，设置市场活动的开始和结束日期，以及为市场活动指定目标 URL。
 
 ### <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>我是否可以在我的其他应用中为我的某个应用投放广告？
 
-可以。 我们将其称为*自家广告*，你可以免费投放它们。 有关社区广告的详细信息，请查看[此文章](about-house-ads.md)。
+是。 我们将其称为*自家广告*，你可以免费投放它们。 有关社区广告的详细信息，请查看[此文章](about-house-ads.md)。
 
 ### <a name="can-i-cross-promote-my-app-with-apps-from-other-developers-in-the-store"></a>我可以使用应用商店中其他开发人员的应用交叉推广我的应用吗？
 
-可以。 我们将其称为*社区广告*，你可以免费投放它们。 在你[选择加入社区广告](about-community-ads.md#opt-in-to-community-ads)后，你可以[创建免费的社区广告市场活动](create-an-ad-campaign-for-your-app.md)，并且你的应用将与其他同样选择加入社区广告的开发人员的应用共享推广广告空间。 有关详细信息，请查看[此文章](about-community-ads.md)。
+是。 我们将其称为*社区广告*，你可以免费投放它们。 在你[选择加入社区广告](about-community-ads.md#opt-in-to-community-ads)后，你可以[创建免费的社区广告市场活动](create-an-ad-campaign-for-your-app.md)，并且你的应用将与其他同样选择加入社区广告的开发人员的应用共享推广广告空间。 有关详细信息，请查看[此文章](about-community-ads.md)。
 
 ### <a name="how-can-i-customize-my-ad"></a>如何自定义我的广告？
 
@@ -58,9 +58,9 @@ ms.locfileid: "77506821"
 
 如果你的帐户在你的最后计费日期之后的 30 天时间内获得小于 50 美元的费用，将在下个月月初针对这些费用对你计费。 这有助于确保你的帐户不会维持广告市场活动费用的收支状态超过一个月。
 
-如果不想等待帐单，可以通过选择**帐单摘要**页面（**促销**帐单历史记录 > ）上的**立即支付帐单**来支付帐单。 将按 **未出票金额**下列出的金额对付款方式收费。
+如果你不想要等待计费，则可以通过选择 " (**促销** **Charge now** **Billing summary**  >  **计费历史记录**") 上的 "立即支付" 来立即支付你的帐单。 将按 **未出票金额**下列出的金额对付款方式收费。
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>如何删除信用卡或编辑信用卡详细信息？
 
-请参阅[https://commerce.microsoft.com](https://commerce.microsoft.com)，用你的 Microsoft 帐户凭据登录，并进行必要的更改。
+请参阅 [https://commerce.microsoft.com](https://commerce.microsoft.com) ，用 Microsoft 帐户凭据登录，并进行必要的更改。
 

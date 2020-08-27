@@ -1,17 +1,17 @@
 ---
 title: 附录
-description: 以下部分提供了深层次的技术细节。
+description: 查看有关浮点规则、数据类型转换、光栅化规则和纹理块压缩的技术详细信息的主题的链接表。
 ms.assetid: 461CCE6F-BAF0-4965-90A5-FD36B511F72C
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f4cd2e17754dc5b5958e8bca208e30b87718cdd8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 41762bf24202d155ed7af288ff43ea898b43e46d
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632492"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942767"
 ---
 # <a name="appendices"></a>附录
 
@@ -28,7 +28,7 @@ ms.locfileid: "57632492"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

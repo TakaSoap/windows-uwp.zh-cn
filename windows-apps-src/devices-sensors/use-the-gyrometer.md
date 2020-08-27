@@ -1,17 +1,17 @@
 ---
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: 使用陀螺测试仪
-description: 了解如何使用陀螺测试仪检测用户移动变化。
+description: 了解如何使用陀螺测试仪 API 在应用中集成陀螺测试仪输入，以检测用户移动（如角度速度和旋转动作）中的更改。
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6ad3b98c559dff8781c96a98a6428a4d1f95a4
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 10d65a6b752c904d7145c3c5e09194dab7c8e0a5
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493122"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943087"
 ---
 # <a name="use-the-gyrometer"></a>使用陀螺测试仪
 

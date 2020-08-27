@@ -1,16 +1,16 @@
 ---
 title: 相机条形码扫描仪标志
-description: 相机条形码扫描仪支持的标志
+description: 查看 Windows 10 随附的软件条码解码器支持的每个符号的示例条码。
 ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 481d10f2fea076f45124a3c75819dfe6494300bf
-ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
+ms.openlocfilehash: a9618402a6ee76a20ff5f95418ee7280b39db4a2
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448397"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943127"
 ---
 # <a name="symbologies"></a>标志
 
@@ -18,10 +18,10 @@ ms.locfileid: "85448397"
 
 Windows 10 使用与软件解码器结合使用的标准镜头照相机来生成条形码扫描器。 本文是指软件解码器支持的符号。 具有内置硬件解码器的专用条形码扫描器设备可能支持其他符号，请联系条形码扫描器制造商获取详细信息。 除非另行指定，否则在 Windows 10 build 17134 或更高版本的所有版本中都支持所列的符号。
 
-使用[GetSupportedSymbologiesAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.getsupportedsymbologiesasync)确定条形码扫描器支持的特定符号。
+使用 [GetSupportedSymbologiesAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.getsupportedsymbologiesasync) 确定条形码扫描器支持的特定符号。
 
 > [!NOTE]
-> Windows 10 中内置的软件解码器由[*Digimarc Corporation*](https://www.digimarc.com/)提供。
+> Windows 10 中内置的软件解码器由 [*Digimarc Corporation*](https://www.digimarc.com/)提供。
 
 ## <a name="1d-symbologies"></a>1D 标志
 

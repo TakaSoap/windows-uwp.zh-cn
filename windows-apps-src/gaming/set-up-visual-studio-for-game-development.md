@@ -1,17 +1,17 @@
 ---
 title: 用于游戏编程的 Visual Studio 工具
-description: 概要介绍了 Visual Studio 中提供的 DirectX 特定工具。
+description: 了解 Visual Studio 中提供的用于 DirectX 游戏编程的工具，包括图像编辑器、模型编辑器和着色器设计器。
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, visual studio, 工具, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: f4ff471ae4c45761a1c1dad5819e97c8245746a1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c97c24eca55cf43559b9f518eaf2fbc4656aa374
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368135"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942800"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>用于游戏编程的 Visual Studio 工具
 
@@ -33,7 +33,7 @@ ms.locfileid: "66368135"
 使用图像编辑器可处理 DirectX 使用的各种丰富纹理和图像格式。 图像编辑器支持以下格式。
 
 -   .png
--   .jpg、jpeg、.jpe、.jfif
+-   .jpg、.jpeg、.jpe、.jfif
 -   .dds
 -   .gif
 -   .bmp
@@ -45,14 +45,14 @@ ms.locfileid: "66368135"
 
 有关详细信息，请参阅[使用纹理和图像](https://docs.microsoft.com/visualstudio/designers/working-with-textures-and-images?view=vs-2015)。
 
-> **请注意**  使用图像编辑器不是为了替代完整功能图像编辑应用，但适用于许多简单查看和编辑方案。
+> **注意**   图像编辑器并不旨在代替完整的功能图像编辑应用程序，但它适用于许多简单的查看和编辑方案。
 
  
 
 ## <a name="model-editor"></a>模型编辑器
 
 
-可以使用模型编辑器从头开始创建基本的 3D 模型，或者使用功能全面的 3D 建模工具查看和修改更复杂的 3D 模型。 模型编辑器支持 DirectX 应用开发中使用的多种 3D 模型格式。 可以创建[生成自定义文件](#build-customizations-for-3d-assets)以在生成时将这些格式转换为 .cmo 文件。
+可以使用模型编辑器从头开始创建基本的 3D 模型，或者使用功能全面的 3D 建模工具查看和修改更复杂的 3D 模型。 模型编辑器支持用于 DirectX 应用程序开发的若干三维模型格式。 可以创建[生成自定义文件](#build-customizations-for-3d-assets)以在生成时将这些格式转换为 .cmo 文件。
 
 -   .fbx
 -   .dae
@@ -64,7 +64,7 @@ ms.locfileid: "66368135"
 
 有关详细信息，请参阅[使用 3D 模型](https://docs.microsoft.com/visualstudio/designers/working-with-3-d-models?view=vs-2015)。
 
-> **请注意**  使用模型编辑器不是为了替代完整的功能模型编辑应用，但适用于许多简单查看和编辑方案。
+> **注意**   模型编辑器不打算替换为完整功能模型编辑应用程序，但适用于很多简单的查看和编辑方案。
 
  
 
@@ -114,9 +114,9 @@ float3 LambertLighting(
 ## <a name="build-customizations-for-3d-assets"></a>为 3D 资源生成自定义
 
 
-你可以向项目中添加生成自定义以便 Visual Studio 将资源转换为可以使用的格式。 在此之后，你可以将资源加载到应用中 并通过创建和填充 DirectX 资源来使用它们，就像在任何其他 DirectX 应用中一样。
+你可以向项目中添加生成自定义以便 Visual Studio 将资源转换为可以使用的格式。 此后，你可以将资产加载到应用中，然后通过创建并填充 DirectX 资源来使用它们，正如你在任何其他 DirectX 应用中一样。
 
-若要添加生成自定义，请在“解决方案资源管理器”  中右键单击该项目，然后选择“生成自定义...”  。可以向项目中添加以下类型的生成自定义。
+若要添加生成自定义项，请在 **解决方案资源管理器** 中右键单击该项目，然后选择 " **生成自定义 ...**"。你可以将以下类型的生成自定义添加到你的项目中。
 
 -   图像内容管道获取图像文件作为输入，并输出 DirectDraw 表面 (.dds) 文件。
 -   网格内容管道获取网格文件（如 .fbx）并输出 .cmo 网格文件。

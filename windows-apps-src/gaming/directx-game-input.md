@@ -1,17 +1,17 @@
 ---
 title: DirectX 游戏的游戏输入
-description: DirectX 游戏的游戏输入。
+description: 查看相关主题的链接，这些主题介绍如何从移动外观控件、相对鼠标移动和基本触控控件向 DirectX 游戏添加输入。
 ms.assetid: 4c7dff42-978b-475e-a1a6-88c99bf2350a
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 输入, 鼠标, 触摸, 控件
 ms.localizationpriority: medium
-ms.openlocfilehash: 549a4da0614dd1c7cc6884c5556c061edfccaf18
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cff165108e2773725fa3b7460f007ee82ef7c856
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599452"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943077"
 ---
 # <a name="game-input-for-directx-games"></a>DirectX 游戏的游戏输入
 
@@ -31,20 +31,20 @@ ms.locfileid: "57599452"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="tutorial--adding-move-look-controls-to-your-directx-game.md">游戏的移动外观控件</a></p></td>
+<td align="left"><p><a href="tutorial--adding-move-look-controls-to-your-directx-game.md">游戏的移动外观控制</a></p></td>
 <td align="left"><p>添加移动观看控件。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="relative-mouse-movement.md">相对的鼠标移动</a></p></td>
+<td align="left"><p><a href="relative-mouse-movement.md">相对鼠标移动</a></p></td>
 <td align="left"><p>处理相对鼠标移动。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="tutorial--adding-touch-controls-to-your-directx-game.md">游戏的触控控件</a></p></td>
+<td align="left"><p><a href="tutorial--adding-touch-controls-to-your-directx-game.md">游戏的触摸控件</a></p></td>
 <td align="left"><p>为游戏添加基本的触摸控件。</p></td>
 </tr>
 </tbody>
