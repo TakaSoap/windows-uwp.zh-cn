@@ -1,24 +1,24 @@
 ---
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
-description: 查看 Microsoft Advertising 库的发行说明。
+description: 查看支持适用于 Windows 10 的 XAML 和 JavaScript/HTML 应用程序、Windows 8.1 Windows Phone 8.1 和 Windows Phone 8 的 Microsoft 广告库的发行说明。
 title: Advertising 库的发行说明
 ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, 广告, 发行说明
 ms.localizationpriority: medium
-ms.openlocfilehash: 377069522c6b31a55028bf35bf9c71ac50c90608
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 10762d28191dfe59ae6f63f06cbeb0dd3e8a9f51
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506841"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969915"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising 库的发行说明
 
 >[!WARNING]
 > 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-本部分提供当前版本的 Microsoft Advertising 库的发行说明。 这些库支持适用于 Windows 10、Windows 8.1 Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 应用。
+本部分提供当前版本的 Microsoft Advertising 库的发行说明。 这些库支持适用于 Windows 10、Windows 8.1、Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 应用。
 
 ## <a name="installation"></a>安装
 
@@ -31,7 +31,7 @@ Microsoft 广告库作为 [Microsoft 广告 SDK](https://marketplace.visualstudi
 
 ## <a name="target-architecture-specific-build-outputs"></a>面向特定于体系结构的生成输出
 
-在使用 Microsoft Advertising 库时，你无法在项目中面向**任何 CPU**。 如果你的项目面向**任何 CPU** 平台，在你添加对 Microsoft Advertising 库的引用后，可能会在项目中看到一条警告。 若要删除此警告，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 有关详细信息，请参阅[已知问题](known-issues-for-the-advertising-libraries.md)。
+在使用 Microsoft Advertising 库时，你无法在项目中面向**任何 CPU**。 如果你的项目面向**任何 CPU** 平台，在你添加对 Microsoft Advertising 库的引用后，可能会在项目中看到一条警告。 若要删除此警告，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 有关详细信息，请参阅 [已知问题](known-issues-for-the-advertising-libraries.md)。
 
 ## <a name="c-support"></a>C++ 支持
 
@@ -43,7 +43,7 @@ Microsoft Advertising 库（其中包括 **AdControl** 和 **InterstitialAd** �
 
 ## <a name="latitude-and-longitude-properties-no-longer-available"></a>不再可用的纬度和经度属性
 
-**AdControl** 类不会再有适用于 UWP 应用的“纬度”和“经度”属性。 内置于广告控件的代码将以应用的名义检测这些值，并将它们发送到广告服务器。
+**AdControl** 类不会再有适用于 UWP 应用的“纬度”**** 和“经度”**** 属性。 内置于广告控件的代码将以应用的名义检测这些值，并将它们发送到广告服务器。
 
 
  

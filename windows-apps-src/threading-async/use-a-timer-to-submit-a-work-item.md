@@ -1,17 +1,17 @@
 ---
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: 使用计时器提交工作项
-description: 了解如何创建在经过计时器时间后运行的工作项。
+description: 了解如何使用 Windows.system.threading.threadpooltimer API 创建一个计时器，以便在计时器在通用 Windows 平台 (UWP) 应用程序中过期时提交工作项。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 计时器, 线程
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b5c0982c10cde25fc5f61314c540c194d6519a2
-ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
+ms.openlocfilehash: 2c34f50d7b5abec28b11fc67a7e0515f07206060
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619331"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970125"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>使用计时器提交工作项
 
@@ -27,7 +27,7 @@ ms.locfileid: "82619331"
 
 使用 [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) 方法为工作项创建计时器。 提供用于完成工作的 lambda，并使用 *delay* 参数指定线程池在可将工作项分配给可用线程之前等待的时间。 使用 [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan) 结构指定延迟。
 
-> **请注意**  ，可以使用[**CoreDispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)访问 UI，并显示工作项的进度。
+> **注意**   可以使用[**CoreDispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)访问 UI，并显示工作项的进度。
 
 以下示例创建三分钟后运行的工作项：
 
@@ -217,7 +217,7 @@ ms.locfileid: "82619331"
 > DelayTimer->Cancel();
 > ```
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 通用 Windows 平台 (UWP) 应用无法使用 **Thread.Sleep**，因为它会阻止 UI 线程。 你可以改为使用 [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) 创建工作项，这将延迟工作项完成的任务，但不会阻止 UI 线程。
 

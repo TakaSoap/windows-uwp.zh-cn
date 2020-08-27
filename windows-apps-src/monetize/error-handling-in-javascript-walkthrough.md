@@ -1,17 +1,17 @@
 ---
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
-description: 了解如何在应用中捕获 AdControl 错误。
+description: 按照此演练操作，了解如何捕获和处理 JavaScript 和 HTML5 应用程序中的 Adunitid 的错误。
 title: JavaScript 演练中的错误处理
 ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 广告, AdControl, 错误处理, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 918c2d289317b63216f11aecc3ec3c758921c19f
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 6bbd892f47f0191455df3b235bdb5125a45ea4fc
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507131"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970245"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>JavaScript 演练中的错误处理
 

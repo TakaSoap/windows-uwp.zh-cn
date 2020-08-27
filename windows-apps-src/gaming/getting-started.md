@@ -1,71 +1,71 @@
 ---
-title: 即刻体验
-description: 游戏开发学习指南
+title: 入门
+description: 按照本快速入门指南中的说明，了解如何立即开始开发适用于 Windows 或 Xbox 的游戏。
 ms.assetid: 40490837-6c7f-4f82-96b5-14f6858982b3
 ms.date: 01/25/2018
 ms.topic: article
-keywords: windows 10、 uwp、 游戏，入门
+keywords: windows 10，uwp，游戏，入门
 localizationpriority: medium
-ms.openlocfilehash: c0d819322e7e9479772f8ca3d72bbdcdb4d192b8
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: eb2feeaa7d4ad67ecb9d6b54c5bc275faf9cc0bd
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321270"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970235"
 ---
-# <a name="getting-started"></a>即刻体验
+# <a name="getting-started"></a>入门
 
-本文是入门指南创作者想要 Windows 或 Xbox 上开发游戏。 
+本文是一篇入门指南，适用于想要在 Windows 或 Xbox 上开发游戏的创建者。 
 
-下面是一些问题，可帮助您找到所需的信息：
-* 是有经验的游戏开发人员和需要的所有详细信息？ 请参阅[Windows 10 游戏开发指南](e2e.md)。
-* 完全不熟悉编码？ 如一些有趣[Minecraft 小时的代码教程](https://code.org/minecraft)可能感兴趣。
-* 只寻找很棒的游戏播放？ 请查看[Microsoft Store](https://www.microsoft.com/store)。
-* 准备好开始为 Windows 或 Xbox 开发出色的游戏？  你已在这里 ！
+下面是一些可帮助你查找所需信息的问题：
+* 你是经验丰富的游戏开发人员，想要了解所有详细信息吗？ 请参阅 [Windows 10 游戏开发指南](e2e.md)。
+* 编码的全新 很有趣，如 [代码教程的 Minecraft 小时](https://code.org/minecraft) 。
+* 只需寻找好游戏？ 查看 [Microsoft Store](https://www.microsoft.com/store)。
+* 准备好开始为 Windows 或 Xbox 开发强大的游戏？  你已准备就绪！
 
 ## <a name="quick-start-guide"></a>快速入门指南
 
-若要将导入立即开发游戏的步骤。
+立即开发游戏的步骤。
 
-### <a name="step-1-get-the-software-and-tools"></a>第 1 步：获取软件和工具
+### <a name="step-1-get-the-software-and-tools"></a>步骤1：获取软件和工具
 
-请确保安装有 Windows 10 设备上安装并安装最新安装的更新。
+请确保已在设备上安装了 Windows 10 并安装了最新更新。
 
-安装 Visual Studio 之类的合适 IDE。 Visual Studio Community 2017 现在可供免费下载。 有关详细信息，请参阅[Visual Studio 下载](https://visualstudio.microsoft.com/downloads/)。
+安装适用于 Visual Studio 的 IDE。 可以免费下载 Visual Studio 社区2017。 有关详细信息，请参阅 [Visual Studio 下载](https://visualstudio.microsoft.com/downloads/)。
 
-如果你打算使用游戏引擎和其他中间件，请参阅[桥、 游戏引擎和中间件](e2e.md#bridges-game-engines-and-middleware)主题中[Windows 10 游戏开发指南](e2e.md)。 有关开发 Windows 和 Xbox 游戏使用一个特定的游戏引擎，您将需要转到游戏引擎的文档。
+如果计划使用游戏引擎和其他中间件，请参阅[Windows 10 游戏开发指南](e2e.md)中的[桥接器、游戏引擎和中间件](e2e.md#bridges-game-engines-and-middleware)部分。 若要了解如何使用特定的游戏引擎开发 Windows 和 Xbox 游戏，需要参阅游戏引擎的文档。
 
-### <a name="step-2-prepare-your-hardware-for-development"></a>步骤 2：准备对硬件进行开发
+### <a name="step-2-prepare-your-hardware-for-development"></a>步骤2：准备要开发的硬件
 
-如果您正执行的第一次开发，您将需要在设备上启用开发人员模式。 有关详细信息，请参阅[启用设备进行开发](../get-started/enable-your-device-for-development.md)。
+如果是首次进行开发，则需要在设备上启用开发人员模式。 有关详细信息，请参阅 [启用设备进行开发](../get-started/enable-your-device-for-development.md)。
 
-对于那些正在计划开发使用零售 Xbox 控制台的 Xbox 游戏，您还需要激活并在其上启用开发人员模式。 有关详细信息，请参阅[Xbox 一个开发人员模式下激活](../xbox-apps/devkit-activation.md)并[Xbox 上的 UWP 应用开发入门](../xbox-apps/getting-started.md)。 
-
-> [!Note]
-> 将需要注册[合作伙伴中心](https://partner.microsoft.com/dashboard)帐户，然后可以在 Xbox 控制台上启用开发人员模式。 注册合作伙伴中心帐户的详细信息，请参阅[步骤 5](#step-5-sign-up-for-a-partner-center-account)下面。
-
-### <a name="step-3-run-a-sample-and-see-how-it-works"></a>步骤 3:运行示例并查看其工作原理
-
-若要开始使用 UWP DirectX 开发，请参阅[使用 DirectX 创建简单的 UWP 游戏](tutorial--create-your-first-uwp-directx-game.md)。 如果只是想要阅读和熟悉 DirectX 概念，如哪些一个缓冲区就是，请参阅[Direct3D 图形概念](../graphics-concepts/index.md)。
-
-有关更多示例，请参阅[游戏示例](e2e.md#game-samples)。
-
-### <a name="step-4-consider-joining-a-program"></a>步骤 4：请考虑加入程序
-
-如果你想要开发 Xbox 游戏或在您的游戏中使用 Xbox Live 功能，加入任一[Xbox Live Creators 计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)或[ ID@Xbox ](https://www.xbox.com/Developers/id)程序。 
-
-若要了解有关可供每个程序的 Xbox Live 功能的详细信息，请参阅[功能表](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table)。 有关详细信息，请参阅[开发人员计划](e2e.md#developer-programs)。
+对于计划使用零售 Xbox 控制台开发 Xbox 游戏的用户，还需要在其上激活并启用开发人员模式。 有关详细信息，请参阅 xbox one [开发人员模式激活](../xbox-apps/devkit-activation.md) 和 [XBOX 上的 UWP 应用开发入门](../xbox-apps/getting-started.md)。 
 
 > [!Note]
-> Xbox Live Creators 计划可供所有开发人员。 **任何人都**可以发布一个 Xbox 游戏。 若要使 Xbox Live Creators 计划在标题部分，只需启用此选项从合作伙伴中心。 注册合作伙伴中心帐户的详细信息，请参阅[步骤 5](#step-5-sign-up-for-a-partner-center-account)下面。
+> 在 Xbox 控制台上启用开发人员模式之前，你将需要注册 [合作伙伴中心](https://partner.microsoft.com/dashboard)  帐户。 有关注册合作伙伴中心帐户的详细信息，请参阅下面的 [步骤 5](#step-5-sign-up-for-a-partner-center-account) 。
 
-### <a name="step-5-sign-up-for-a-partner-center-account"></a>步骤 5：注册合作伙伴中心帐户
+### <a name="step-3-run-a-sample-and-see-how-it-works"></a>步骤3：运行示例并查看其工作原理
 
-合作伙伴中心帐户使您可以访问[合作伙伴中心](https://partner.microsoft.com/dashboard)，它可让你管理和提交的所有应用和游戏的一个位置中的 Windows 设备。
+若要开始使用 UWP DirectX 开发，请参阅 [使用 DirectX 创建简单的 UWP 游戏](tutorial--create-your-first-uwp-directx-game.md)。 如果只是想要阅读并熟悉类似于缓冲区的 DirectX 概念，请参阅 [Direct3D 图形概念](../graphics-concepts/index.md)。
 
-用于 Windows 游戏开发，您可以选择想要访问合作伙伴中心或者你想要在您的游戏中使用 Xbox Live 功能时等待。
+有关更多示例，请参阅 [游戏示例](e2e.md#game-samples)。
 
-Xbox 开发游戏，您应注册合作伙伴中心帐户具有需要设置您的零售 Xbox 开发。 请参阅[步骤 2](#step-2-prepare-your-hardware-for-development)有关详细信息。
+### <a name="step-4-consider-joining-a-program"></a>步骤4：考虑加入节目
+
+如果要开发 Xbox 游戏或在游戏中使用 Xbox Live 功能，请加入 [Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator) 或 [ID@Xbox](https://www.xbox.com/Developers/id) 节目。 
+
+若要了解有关可用于每个程序的 Xbox Live 功能的详细信息，请参阅 [功能表](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table)。 有关详细信息，请参阅 [开发人员计划](e2e.md#developer-programs)。
+
+> [!Note]
+> Xbox Live 创意者计划适用于所有开发人员。 **任何人都** 可以发布 Xbox 游戏。 若要使您的标题成为 Xbox Live 创意者计划的一部分，只需从 "合作伙伴中心" 启用此选项。 有关注册合作伙伴中心帐户的详细信息，请参阅下面的 [步骤 5](#step-5-sign-up-for-a-partner-center-account) 。
+
+### <a name="step-5-sign-up-for-a-partner-center-account"></a>步骤5：注册合作伙伴中心帐户
+
+合作伙伴中心帐户允许访问 [合作伙伴中心](https://partner.microsoft.com/dashboard)，这使你可以在一个位置管理和提交适用于 Windows 设备的所有应用和游戏。
+
+对于 Windows 游戏开发，你可以选择等待，直到你需要访问合作伙伴中心，或者在你想要在游戏中使用 Xbox Live 功能。
+
+对于 Xbox 游戏开发，你应该注册合作伙伴中心帐户，因为需要设置零售版 Xbox 进行开发。 有关详细信息，请参阅 [步骤 2](#step-2-prepare-your-hardware-for-development) 。
 
 有关详细信息，请参阅[发布 Windows 应用和游戏](../publish/index.md)。
 
@@ -73,5 +73,5 @@ Xbox 开发游戏，您应注册合作伙伴中心帐户具有需要设置您的
 
 * [Windows 10 游戏开发指南](e2e.md)
 * [UWP 应用是什么？](../get-started/universal-application-platform-guide.md)
-* [使用 UWP 游戏的云服务](cloud-for-games.md)
-* [使游戏易于访问](accessibility-for-games.md)
+* [使用适用于 UWP 游戏的云服务](cloud-for-games.md)
+* [使游戏成为辅助游戏](accessibility-for-games.md)

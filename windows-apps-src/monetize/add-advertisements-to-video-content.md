@@ -1,17 +1,17 @@
 ---
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
-description: 了解如何使用 AdScheduler 类在视频内容中显示广告。
+description: 了解如何使用 AdScheduler 类在通用 Windows 平台 (UWP) 应用程序的视频内容中显示广告，该应用程序是使用 JavaScript 和 HTML 编写的。
 title: 在视频内容中显示广告
 ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 视频, scheduler, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b07b24de9d89d8021090312f62df4f0fb1e78dc
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: b42c917a0532a015a789c8b4ac57d59c65804ce1
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507171"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970195"
 ---
 # <a name="show-ads-in-video-content"></a>在视频内容中显示广告
 
@@ -33,7 +33,7 @@ ms.locfileid: "77507171"
 
 * 你的项目必须使用 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) 控件，提供将计划广告的视频内容。 可在 GitHub 上的 Microsoft 中提供的 [TVHelpers](https://github.com/Microsoft/TVHelpers) 库集合中获取此控件。
 
-  以下示例演示了如何使用 HTML 标记声明 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview)。 通常，此标记属于 index.html 文件（或另一个适用于你项目的 html 文件）中的 `<body>` 部分。
+  以下示例演示如何使用 HTML 标记声明 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview)。 通常，此标记属于 index.html 文件（或另一个适用于你项目的 html 文件）中的 `<body>` 部分。
 
   ``` html
   <div id="MediaPlayerDiv" data-win-control="TVJS.MediaPlayer">
@@ -42,7 +42,7 @@ ms.locfileid: "77507171"
   </div>
   ```
 
-  以下示例演示了如何使用 JavaScript 代码建立 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview)。
+  以下示例演示如何使用 JavaScript 代码建立 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview)。
 
   [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet1)]
 
@@ -52,15 +52,15 @@ ms.locfileid: "77507171"
 
 2. 如果你的项目面向**任何 CPU**，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 如果你的项目面向**任何 CPU**，你将无法在以下步骤中成功添加对 Microsoft Advertising 库的引用。 有关详细信息，请参阅[项目中由面向任何 CPU 引起的引用错误](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
-3. 将对**适用于 JavaScript 的 Microsoft Advertising SDK** 库的引用添加到你的项目。
+3. 将对**适用于 JavaScript 的 Microsoft 广告 SDK** 库的引用添加到你的项目。
 
-    1. 在“解决方案资源管理器”窗口中，右键单击“引用”，然后选择“添加引用...”
-    2. 在“引用管理器”中，展开“通用 Windows”、单击“扩展”，然后选中“适用于 JavaScript 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
-    3. 在“引用管理器”中，单击“确定”。
+    1. 在**解决方案资源管理器**窗口中，右键单击**引用**，然后选择**添加引用...**
+    2. 在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中**适用于 JavaScript 的 Microsoft 广告 SDK**（版本 10.0）旁边的复选框。
+    3. 在**引用管理器**中，单击“确定”。
 
 4.  将 AdScheduler.js 文件添加到你的项目：
 
-    1. 在 Visual Studio 中，依次单击“项目”和“管理 NuGet 包”。
+    1. 在 Visual Studio 中，依次单击**项目**和**管理 NuGet 包**。
     2. 在搜索框中，键入 **Microsoft.StoreServices.VideoAdScheduler** 并安装 Microsoft.StoreServices.VideoAdScheduler 程序包。 AdScheduler.js 文件将添加到你的项目中的 ../js 子目录。
 
 5.  打开 index.html 文件（或其他适用于你项目的 html 文件）。 在 `<head>` 部分中，在项目的 JavaScript 引用 default.css 和 main.js 之后，添加对 ad.js 和 adscheduler.js 的引用。

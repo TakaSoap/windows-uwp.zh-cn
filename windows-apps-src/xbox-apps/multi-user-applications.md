@@ -1,17 +1,17 @@
 ---
 title: 多用户应用程序简介
-description: 对 Xbox 多用户模型进行一次高级别的简单介绍。
+description: 获取 Xbox One 多用户模型的高级简介，它支持多个用户在单个设备上以协作方式玩游戏。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b6c3303950c29ffb88d13fb9bcecff4d43e304a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0364964f069537ee934771184eb9c6ffda6f346f
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372092"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970285"
 ---
 # <a name="introduction-to-multi-user-applications"></a>多用户应用程序简介
 
@@ -25,15 +25,15 @@ ms.locfileid: "66372092"
 使用 Xbox One 用户模型的每位用户都受本地用户帐户支持。 此本地用户帐户与 Xbox Live 帐户（以及 Microsoft 帐户）相关联。 这意味着从 Xbox 用户帐户到 Xbox Live 帐户和 Microsoft 帐户存在严格的一对一映射。
 
 ## <a name="single-user-applications"></a>单用户应用程序
-默认情况下，通用 Windows 平台 (UWP) 应用在启动该应用程序的用户的上下文中运行。 这些“单用户应用程序”  (SUA) 仅了解此单个用户，并在与其他 Windows 设备上的用户模型兼容的模式下运行。 Xbox 用户模型对与应用相关联的用户进行管理，并且保证在应用启动时用户可进行登录。 在此模型中，UWP 应用和游戏创作人员无需执行任何特殊操作便可在 Xbox 上运行。 
+默认情况下，通用 Windows 平台 (UWP) 应用在启动该应用程序的用户的上下文中运行。 这些“单用户应用程序”**(SUA) 仅了解此单个用户，并在与其他 Windows 设备上的用户模型兼容的模式下运行。 Xbox 用户模型对与应用相关联的用户进行管理，并且保证在应用启动时用户可进行登录。 在此模型中，UWP 应用和游戏创作人员无需执行任何特殊操作便可在 Xbox 上运行。 
 
 ## <a name="multi-user-applications"></a>多用户应用程序
-UWP 游戏可以选择采用 Xbox One 多用户模型。 这些“多用户应用程序”  (MUA) 在系统帐户（称为“默认帐户”）的上下文中运行，并且可以充分利用 Xbox One 用户模型的灵活性和强大功能。 对于这些游戏，Xbox 用户模型不会对与游戏相关联的用户进行管理，甚至不需要用户登录即可使游戏运行。 这意味着必须写明用户要求，以使用户明确了解其内容并对内容进行管理，例如，是否需要用户登录、是否实现当前用户的概念以及是否允许多个用户同时输入等等。
+UWP 游戏可以选择采用 Xbox One 多用户模型。 这些“多用户应用程序”**(MUA) 在系统帐户（称为“默认帐户”）的上下文中运行，并且可以充分利用 Xbox One 用户模型的灵活性和强大功能。 对于这些游戏，Xbox 用户模型不会对与游戏相关联的用户进行管理，甚至不需要用户登录即可使游戏运行。 这意味着必须写明用户要求，以使用户明确了解其内容并对内容进行管理，例如，是否需要用户登录、是否实现当前用户的概念以及是否允许多个用户同时输入等等。
    
 若要选择进入多用户模型：   
-1. 在 Visual Studio 中打开你的项目。   
+1. 在 Visual Studio 中打开项目。   
 2. 选择 package.appxmanifest.xml 文件。   
-3. 右键单击并选择“查看代码”  。   
+3. 右键单击并选择“查看代码”****。   
 4. 在 `<Properties></Properties>` 部分中添加以下行：
 
 ```
@@ -51,4 +51,4 @@ UWP 游戏可以选择采用 Xbox One 多用户模型。 这些“多用户应�
 所有 UWP 应用和大多数单用户游戏可以编写成 SUA。 我们建议仅合作的多玩家游戏考虑选择采用 Xbox One 多用户模型。
 
 ## <a name="see-also"></a>请参阅
-- [在 Xbox One 上 UWP](index.md)
+- [Xbox One 上的 UWP](index.md)

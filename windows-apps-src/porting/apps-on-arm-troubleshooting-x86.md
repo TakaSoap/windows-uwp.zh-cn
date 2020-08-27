@@ -1,16 +1,16 @@
 ---
 title: x86 桌面应用疑难解答
-description: 在 ARM 上运行 x86 应用的常见问题以及如何解决这些问题。
+description: 了解如何排查和解决在 ARM64 上运行的 x86 桌面应用程序的常见问题，包括有关驱动程序、shell 扩展和调试的信息。
 ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, 始终连接, ARM 上的 x86 模拟, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: a71f33438a336aba67afbb30b19987b0e0aef83b
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 4dbb3c485d3f6ba3ba410e2a960162880b6f3660
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683930"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970265"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>x86 桌面应用疑难解答
 >[!IMPORTANT]
@@ -36,11 +36,11 @@ ms.locfileid: "75683930"
 
 应用可以将注册表项放在本机注册表视图下，或者根据 WOW 的存在执行功能。 原来的 **IsWow64Process** 只指示应用是否运行在 x64 计算机上。 现在，应用应该使用 [IsWow64Process2](https://docs.microsoft.com/windows/desktop/api/wow64apiset/nf-wow64apiset-iswow64process2) 确定自己是否运行在带有 WOW 支持的系统上。 
 
-## <a name="drivers"></a>Drivers 
+## <a name="drivers"></a>驱动程序 
 所有内核模式驱动程序、[用户模式驱动程序框架 (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf) 驱动程序和打印驱动程序都必须进行编译，以匹配操作系统的体系结构。 如果 x86 应用具有驱动程序，则必须为 ARM64 重新编译该驱动程序。 x86 应用也许能够在模拟环境中良好运行，但必须为 ARM64 重新编译其驱动程序，并且依赖该驱动程序的任何应用体验都将无法使用。 有关为 ARM64 编译驱动程序的详细信息，请参阅[使用 WDK 构建 ARM64 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)。
 
-## <a name="shell-extensions"></a>Shell 扩展 
-尝试连接 Windows 组件或将 DLL 加载到 Windows 进程中的应用需要重新编译这些 DLL，以匹配系统的体系结构，即 ARM64。 通常，这些由输入法编辑器（Ime）、辅助技术和 shell 扩展应用程序使用（例如，在资源管理器中显示云存储图标或右键单击上下文菜单）。 若要了解如何将应用或 DLL 重新编译到 ARM64，请参阅博客文章[针对 ARM 开发的 Visual Studio 早期预览版 Windows 10 支持](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/)。 
+## <a name="shell-extensions"></a>外壳扩展 
+尝试连接 Windows 组件或将 DLL 加载到 Windows 进程中的应用需要重新编译这些 DLL，以匹配系统的体系结构，即 ARM64。 通常，这些由输入法编辑器使用 (Ime) 、辅助技术和 shell 扩展应用程序 (例如，在资源管理器中显示云存储图标或右键单击上下文菜单) 。 若要了解如何将应用或 DLL 重新编译到 ARM64，请参阅博客文章[针对 ARM 开发的 Visual Studio 早期预览版 Windows 10 支持](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/)。 
 
 ## <a name="debugging"></a>调试
 要更深入地调查应用的行为，请参阅[在 ARM 上进行调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64)，以详细了解在 ARM 上进行调试的工具和策略。
@@ -51,4 +51,4 @@ Qualcomm Snapdragon 835 移动电脑平台不支持 Windows 虚拟机监控程�
 ## <a name="dynamic-code-generation"></a>动态代码生成
 X86 桌面应用程序在 ARM64 上通过系统生成 ARM64 指令在运行时进行模拟。 这意味着，如果 x86 桌面应用在其进程中阻止动态代码生成或修改，则无法支持在 ARM64 上以 x86 身份运行该应用。 
 
-这是在使用带有 `ProcessDynamicCodePolicy` 标志的[SetProcessMitigationPolicy](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API 对其进程启用的安全缓解措施。 若要在 ARM64 上成功运行作为 x86 进程，则必须禁用此缓解策略。 
+这是在使用带有标志的 [SetProcessMitigationPolicy](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API 对其进程启用的安全缓解措施 `ProcessDynamicCodePolicy` 。 若要在 ARM64 上成功运行作为 x86 进程，则必须禁用此缓解策略。 

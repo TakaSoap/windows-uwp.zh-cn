@@ -1,6 +1,6 @@
 ---
-Description: 优化你的应用程序，以便从 Xbox 游戏板和远程控制输入。
 title: 游戏板和遥控器交互
+description: 查看有关如何针对 Xbox 游戏板和远程控制的输入优化应用的指南、建议和建议。
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd39acbf6549cddc075f8b63779f06a802bfdbb
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 34bdda207350d980e323b27a7b98e3c0112d06f4
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234675"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970175"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>游戏板和遥控器交互
 
@@ -22,35 +22,35 @@ ms.locfileid: "83234675"
 
 ***各种交互体验在游戏板、远程控制和键盘之间共享***
 
-在 Windows 应用程序中构建交互体验，确保你的应用程序可供使用，并可通过传统的 Pc、笔记本电脑和平板电脑（鼠标、键盘、触摸等）输入类型进行访问，以及电视和 Xbox *10 英尺*体验的典型输入类型，如游戏板和遥控器。
+在 Windows 应用程序中构建交互体验，以确保你的应用程序可供使用，并可通过传统的 Pc、便携式计算机和平板电脑 (鼠标、键盘、触摸等) 的输入类型以及电视和 Xbox *10 英尺* 体验的典型输入类型（例如游戏板和远程控制）进行访问。
 
 有关 Windows 应用程序的常规设计指南，请参阅在*10 英尺*体验中[设计 Xbox 和 TV](../devices/designing-for-tv.md) 。
 
 ## <a name="overview"></a>概述
 
-在本主题中，我们将讨论你应该在交互设计中考虑的内容（或者，如果平台看起来不是这样，则可以提供指导、建议和建议）来构建使用愉快的 Windows 应用程序，而不考虑设备、输入类型或用户能力和首选项。
+在本主题中，我们将讨论你应该在交互设计中考虑的内容 (或不需要的内容，如果该平台在你) 后就会看到这些内容，并提供指导、建议和建议，用于构建使用愉快的 Windows 应用程序（无论设备、输入类型或用户能力和首选项）。
 
-要点是，当应用程序在*10 英尺*环境中时，您的应用程序应该像在*2*英尺环境中一样直观且易于使用（反之亦然）。 支持用户的首选设备，使 UI 专注于清晰和不容置疑、排列内容以便导航一致且可预测，并为用户提供尽可能短的路径。
+最后一行，你的应用程序应在 *2* 英尺环境中是直观且易于使用，因为它在 *10 英尺* 环境中 (，反之亦然) 。 支持用户的首选设备，使 UI 专注于清晰和不容置疑、排列内容以便导航一致且可预测，并为用户提供尽可能短的路径。
 
 > [!NOTE]
-> 本主题中的大多数代码片段都在 XAML/c # 中;但是，原则和概念适用于所有 Windows 应用。 如果要开发适用于 Xbox 的 HTML/JavaScript Windows 应用，请查看 GitHub 上的优秀[TVHelpers](https://github.com/Microsoft/TVHelpers/wiki)库。
+> 本主题中的大多数代码片段都在 XAML/c # 中;但是，原则和概念适用于所有 Windows 应用。 如果要开发适用于 Xbox 的 HTML/JavaScript Windows 应用，请查看 GitHub 上的优秀 [TVHelpers](https://github.com/Microsoft/TVHelpers/wiki) 库。
 
 
 ## <a name="optimize-for-both-2-foot-and-10-foot-experiences"></a>优化2英尺和10英尺体验
 
-我们至少建议你对应用程序进行测试，以确保它们能在2英尺和10英尺方案中正常运行，并且 Xbox[游戏板和远程控制](#gamepad-and-remote-control)功能可被发现并可访问。
+我们至少建议你对应用程序进行测试，以确保它们能在2英尺和10英尺方案中正常运行，并且 Xbox [游戏板和远程控制](#gamepad-and-remote-control)功能可被发现并可访问。
 
-下面是一些其他方法，你可以通过这种方式优化你的应用程序，以便在2英尺和10英尺体验以及所有输入设备（每个链接都链接到本主题中的相应部分）中使用。
+下面是一些其他方法，你可以通过此方法优化你的应用程序以在2英尺和10英尺体验中使用，并将所有输入设备 (每个链接到本主题中的相应部分) 。
 
 > [!NOTE]
-> 由于 Xbox gamepads 和远程控制支持许多 Windows 键盘行为和体验，因此，这些建议适用于这两种输入类型。 有关更详细的键盘信息，请参阅[键盘交互](keyboard-interactions.md)。
+> 由于 Xbox gamepads 和远程控制支持许多 Windows 键盘行为和体验，因此，这些建议适用于这两种输入类型。 有关更详细的键盘信息，请参阅 [键盘交互](keyboard-interactions.md) 。
 
 | 功能        | 说明           |
 | -------------------------------------------------------------- |--------------------------------|
 | [XY 焦点导航和交互](#xy-focus-navigation-and-interaction) | 通过**XY 焦点导航**，用户可以在应用的 UI 周围导航。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
-| [鼠标模式](#mouse-mode)|对于某些类型的应用程序（例如地图、绘图和绘图应用程序），XY 焦点导航并不可行，甚至可能不可行。 在这些情况下，**鼠标模式**使用户能够在游戏板或遥控器上自由导航，就像 PC 上的鼠标一样。|
+| [鼠标模式](#mouse-mode)|对于某些类型的应用程序（例如地图、绘图和绘图应用程序），XY 焦点导航并不可行，甚至可能不可行。 在这些情况下， **鼠标模式** 使用户能够在游戏板或遥控器上自由导航，就像 PC 上的鼠标一样。|
 | [焦点视觉对象](#focus-visual)  | 焦点视觉对象是突出显示当前聚焦的 UI 元素的边框。 这可帮助用户快速识别他们要浏览或与之交互的 UI。  |
-| [专注参与](#focus-engagement) | 当 UI 元素具有焦点以便与之进行交互时，用户需要在游戏板或遥控器上按下 **/选择**按钮。 |
+| [专注参与](#focus-engagement) | 当 UI 元素具有焦点以便与之进行交互时，用户需要在游戏板或遥控器上按下 **/选择** 按钮。 |
 | [硬件按钮](#hardware-buttons) | 游戏板和远程控制提供了非常不同的按钮和配置。 |
 
 ## <a name="gamepad-and-remote-control"></a>游戏板和遥控器
@@ -71,7 +71,7 @@ ms.locfileid: "83234675"
 
 下表列出了 Windows 应用支持的所有硬件按钮，以及哪些输入设备支持这些按钮。
 
-| Button                    | 游戏板   | 远程控制    |
+| 按钮                    | 游戏板   | 远程控制    |
 |---------------------------|-----------|-------------------|
 | A/“选择”按钮           | 是       | 是               |
 | B/“后退”按钮             | 是       | 是               |
@@ -93,14 +93,14 @@ ms.locfileid: "83234675"
 
 UWP 会自动将现有键盘输入行为映射到游戏板和远程控制输入。 下表列出了这些内置映射。
 
-| Keyboard              | 游戏板/遥控器                        |
+| 键盘              | 游戏板/遥控器                        |
 |-----------------------|---------------------------------------|
 | 箭头键            | 方向键（以及游戏板上的左摇杆）    |
 | 空格键              | A/“选择”按钮                       |
 | Enter                 | A/“选择”按钮                       |
 | Escape                | B/“后退”按钮*                        |
 
-\*当应用程序不处理 B 按钮的[KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)事件和[KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)事件时，将激发[SystemNavigationManager BackRequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested)事件，这将导致在应用内后退导航。 但是，你必须自行实现此操作，如以下代码片段中所示：
+\*当应用程序不处理 B 按钮的 [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 事件和 [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件时，将激发 [SystemNavigationManager BackRequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) 事件，这将导致在应用内后退导航。 但是，你必须自行实现此操作，如以下代码片段中所示：
 
 ```csharp
 // This code goes in the MainPage class
@@ -145,9 +145,9 @@ private bool BackRequested()
 ```
 
 > [!NOTE]
-> 如果 B 按钮用于返回，则 UI 中不会显示“后退”按钮。 如果你使用的是[导航视图](../controls-and-patterns/navigationview.md)，则“后退”按钮将自动隐藏。 有关向后导航的详细信息，请参阅[Windows 应用的导航历史记录和向后导航](../basics/navigation-history-and-backwards-navigation.md)。
+> 如果 B 按钮用于返回，则 UI 中不会显示“后退”按钮。 如果你使用的是[导航视图](../controls-and-patterns/navigationview.md)，则“后退”按钮将自动隐藏。 有关向后导航的详细信息，请参阅 [Windows 应用的导航历史记录和向后导航](../basics/navigation-history-and-backwards-navigation.md)。
 
-Xbox one 上的 Windows 应用程序还支持按**菜单**按钮打开上下文菜单。 有关详细信息，请参阅 [CommandBar 和 ContextFlyout](#commandbar-and-contextflyout)。
+Xbox one 上的 Windows 应用程序还支持按 **菜单** 按钮打开上下文菜单。 有关详细信息，请参阅 [CommandBar 和 ContextFlyout](#commandbar-and-contextflyout)。
 
 ### <a name="accelerator-support"></a>加速器支持
 
@@ -160,7 +160,7 @@ Xbox one 上的 Windows 应用程序还支持按**菜单**按钮打开上下文�
 | 向上/向下翻页  | 向上/向下翻页 | 左/右扳机键 | [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)、[ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支持垂直滚动的视图
 | 向左/向右翻页 | 无 | 左/右缓冲键 | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支持水平滚动的视图
 | 放大/缩小        | Ctrl +/- | 左/右扳机键 | 无 | `ScrollViewer`支持放大和缩小的视图 |
-| 打开/关闭导航窗格 | 无 | 视图 | 无 | 导航窗格​​ |
+| 打开/关闭导航窗格 | 无 | 查看 | 无 | 导航窗格​​ |
 | 搜索 | 无 | Y 按钮 | 无 | 应用中主要搜索功能的快捷方式 |
 | [打开上下文菜单](#commandbar-and-contextflyout) | 右键单击 | “菜单”按钮 | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | 上下文菜单 |
 
@@ -273,11 +273,11 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ### <a name="path-of-least-clicks"></a>最少单击路径
 
-尝试允许用户以最少的单击数执行最常见的任务。 在下面的示例中， [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)放置在 "**播放**" 按钮（最初获得焦点）和一个常用元素之间，因此在优先级任务之间放置了不必要的元素。
+尝试允许用户以最少的单击数执行最常见的任务。 在下面的示例中， [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 放置在 " **播放** " 按钮 (，这一操作最初获得焦点) 和一个常用元素，因此在优先级任务之间放置了不必要的元素。
 
 ![导航最佳做法可提供最少单击路径。](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks.png)
 
-在下面的示例中， [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)放置在 "**播放**" 按钮的上方。
+在下面的示例中， [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 放置在 " **播放** " 按钮的上方。
 只需重新排列 UI 以使优先任务之间不放置不必要的元素即可大幅提高应用的可用性。
 
 ![TextBlock 已移到“播放”按钮上方，以使其不再位于优先任务之间。](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks-2.png)
@@ -292,7 +292,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 尽管你无法垂直堆叠 `CommandBar` 的项，但相对于滚动方向放置它们（例如，垂直滚动列表的左侧或右侧，或者水平滚动列表的顶部或底部）是另一个需要考虑的选项（如果适用于你的 UI 布局）。
 
-如果应用的 `CommandBar` 具有需要便于用户访问的项，你可能要考虑将这些项放置在 [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) 内部，并将它们从 `CommandBar` 中删除。 `ContextFlyout`是[UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)的属性，是与该元素关联的[上下文菜单](../controls-and-patterns/dialogs-and-flyouts/index.md)。 在电脑上，右键单击带有 `ContextFlyout` 的元素时，会弹出上下文菜单。 在 Xbox one 上，当焦点位于此类元素上**时，将**发生这种情况。
+如果应用的 `CommandBar` 具有需要便于用户访问的项，你可能要考虑将这些项放置在 [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) 内部，并将它们从 `CommandBar` 中删除。 `ContextFlyout` 是 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的属性，是与该元素关联的 [上下文菜单](../controls-and-patterns/dialogs-and-flyouts/index.md) 。 在电脑上，右键单击带有 `ContextFlyout` 的元素时，会弹出上下文菜单。 在 Xbox one 上，当焦点位于此类元素上 **时，将** 发生这种情况。
 
 ### <a name="ui-layout-challenges"></a>UI 布局挑战
 
@@ -319,7 +319,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 #### <a name="solutions"></a>解决方案
 
-**UI 重新排列<a name="ui-rearrange"></a>**
+**UI 重新排列 <a name="ui-rearrange"></a>**
 
 除非你的初始焦点放置在页面底部，否则放置在长滚动列表上方的 UI 元素通常比放置在下方更易于访问。
 如果此新布局适用于其他设备，则针对所有设备系列更改布局而不仅仅针对 Xbox One 进行特殊 UI 更改，此方法的成本可能更低。
@@ -327,7 +327,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ![房地产应用：将按钮放置在长滚动列表上方](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
 
-**专注参与<a name="engagement"></a>**
+**专注参与 <a name="engagement"></a>**
 
 当要求*占用*时，整个 `ListView` 将变为一个焦点目标。 用户将能够绕过列表的内容到达下一个可聚焦元素。 在[焦点占用](#focus-engagement)中阅读有关哪些控件支持占用以及如何使用它们的详细信息。
 
@@ -482,10 +482,10 @@ public App()
 > [!NOTE]
 > 设置焦点占用不会影响键盘或其他输入设备。
 
-当 [FrameworkElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 对象上的属性 `IsFocusEngagementEnabled` 设置为 `True` 时，它会将控件标记为需要焦点占用。 这意味着用户必须按**A/Select**按钮才能 "参与" 控件并与其进行交互。 完成后，他们可以按**B/后退**按钮来脱开控件并从中导航。
+当 [FrameworkElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 对象上的属性 `IsFocusEngagementEnabled` 设置为 `True` 时，它会将控件标记为需要焦点占用。 这意味着用户必须按 **A/Select** 按钮才能 "参与" 控件并与其进行交互。 完成后，他们可以按 **B/后退** 按钮来脱开控件并从中导航。
 
 > [!NOTE]
-> `IsFocusEngagementEnabled`是新的 API，但尚未记录。
+> `IsFocusEngagementEnabled` 是新的 API，但尚未记录。
 
 ### <a name="focus-trapping"></a>焦点捕获
 
@@ -514,7 +514,7 @@ public App()
 
 除了 [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 控件，还有其他可能要求占用的控件，例如：
 
-- [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
+- [改](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
 - [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)
@@ -530,7 +530,7 @@ public App()
 如果 `ListView` 包含大量数据，这可能造成不便且非最佳的用户体验。
 
 若要解决此问题，请在 `ListView` 上设置属性 `IsFocusEngagementEnabled="True"` 以在该控件上要求占用。
-这将允许用户只需按向下键即可跳过 `ListView`。 但是，他们将无法在列表中滚动或从列表中选择项目，除非他们通过在具有焦点的情况下按**A/Select**按钮，然后按**B/后退**按钮脱开。
+这将允许用户只需按向下键即可跳过 `ListView`。 但是，他们将无法在列表中滚动或从列表中选择项目，除非他们通过在具有焦点的情况下按 **A/Select** 按钮，然后按 **B/后退** 按钮脱开。
 
 ![要求占用的 ListView](images/designing-for-tv/focus-engagement-list-and-grid-controls-2.png)
 
@@ -538,7 +538,7 @@ public App()
 
 与这些控件稍有不同的是 [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)，该控件具有其自己的特点要考虑。 如果你有包含可聚焦内容的 `ScrollViewer`，默认情况下导航到 `ScrollViewer` 将允许你移动其可聚焦元素。 和在 `ListView` 中相同，你必须滚动浏览每一项才能导航到 `ScrollViewer` 外部。
 
-如果 `ScrollViewer` *不*具有可设定焦点 &mdash; 的内容（例如，如果它仅包含可以设置的文本），则 &mdash; `IsFocusEngagementEnabled="True"` 用户可以 `ScrollViewer` 通过使用 " **/选择**" 按钮来参与。 使用后，他们可以使用**D-pad/左摇杆**滚动文本，然后按**B/后退**按钮，在完成后松开。
+如果 `ScrollViewer` *不* 具有可设定焦点 &mdash; 的内容（例如，如果它仅包含可以设置的文本），则 &mdash; `IsFocusEngagementEnabled="True"` 用户可以 `ScrollViewer` 通过使用 " **/选择** " 按钮来参与。 使用后，他们可以使用 **D-pad/左摇杆**滚动文本，然后按 **B/后退** 按钮，在完成后松开。
 
 另一个方法是在 `ScrollViewer` 上设置 `IsTabStop="True"`，以便当 `ScrollViewer` 内不存在可聚焦元素时用户无需占用控件&mdash;他们只需将焦点放置在该控件上，然后使用**方向键/左摇杆**进行滚动。
 
@@ -548,14 +548,14 @@ public App()
 
 | 控件               | 焦点占用默认值  |
 |-----------------------|---------------------------|
-| CalendarDatePicker    | 启用                        |
-| FlipView              | 关闭                       |
-| GridView              | 关闭                       |
-| ListBox               | 关闭                       |
-| ListView              | 关闭                       |
-| ScrollViewer          | 关闭                       |
-| SemanticZoom          | 关闭                       |
-| 滑块                | 启用                        |
+| CalendarDatePicker    | 开                        |
+| FlipView              | 关                       |
+| GridView              | 关                       |
+| ListBox               | 关                       |
+| ListView              | 关                       |
+| ScrollViewer          | 关                       |
+| SemanticZoom          | 关                       |
+| 滑块                | 开                        |
 
 所有其他 Windows 控件在时不会导致行为或视觉对象更改 `IsFocusEngagementEnabled="True"` 。
 
