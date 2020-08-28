@@ -1,18 +1,18 @@
 ---
-description: 从 iOS 移动到 UWP
 Search.SourceType: Video
 title: 从 iOS 移动到 UWP
+description: 了解可用于帮助 iOS 开发人员扩展其用户群以包括 Windows 10 和通用 Windows 平台 (UWP) 的工具。
 ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 266a5f147b57e522088dab2ec298b54596ef77b7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 608f254114a200850341837528cb7506597c3bed
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260161"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043519"
 ---
 # <a name="move-from-ios-to-uwp"></a>从 iOS 移动到 UWP
 
@@ -26,12 +26,12 @@ ms.locfileid: "74260161"
 
 | 主题 | 说明 |
 |-------|-------------|
-| [选择 iOS 和 UWP 应用开发的方法](selecting-an-approach-to-ios-and-uwp-app-development.md) | 在开发跨平台应用时，应如何选择？ |
+| [选择一种方法进行 iOS 和 UWP 应用开发](selecting-an-approach-to-ios-and-uwp-app-development.md) | 在开发跨平台应用时，应如何选择？ |
 | [适用于 iOS 开发人员的 UWP 入门](getting-started-with-uwp-for-ios-developers.md) | 如果你是考虑为 Windows 10 进行开发的 iOS 开发人员，这些文档会是很好的入门文档。 |
-| [通过 Windows 10 设置 Mac](setting-up-your-mac-with-windows-10.md) | 使用当前的 Mac 计算机开发 Windows 应用。 |
+| [在 Mac 上设置 Windows 10](setting-up-your-mac-with-windows-10.md) | 使用当前的 Mac 计算机开发 Windows 应用。 |
 
 ## <a name="related-topics"></a>相关主题
 
-**面向设计人员和开发人员**
+**对于设计人员和开发人员**
 * [构建适用于所有 Windows 设备的通用 Windows 应用程序](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-* [下载 UWP 应用的设计资产](https://docs.microsoft.com/windows/uwp/design/downloads/index)
+* [适用于 UWP 应用的下载设计资源](https://docs.microsoft.com/windows/uwp/design/downloads/index)

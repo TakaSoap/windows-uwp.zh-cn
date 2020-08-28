@@ -1,17 +1,17 @@
 ---
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
-description: 了解如何在应用中捕获 AdControl 错误。
 title: XAML/C# 演练中的错误处理
+description: '按照此演练操作，了解如何从 XAML/c # 应用中的 Adunitid 捕获和处理错误。'
 ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 投放广告, 错误处理, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c856322c4940e5bbb28cb17c6da7fa49d4c3465
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 4526f44c1a38af79886a7404eb932416a4414f77
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507121"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043499"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>XAML/C# 演练中的错误处理
 
@@ -62,7 +62,7 @@ ms.locfileid: "77507121"
         ErrorOccurred="OnAdError" />
     ```
 
-4.  在 MainPage.xaml.cs 中，将以下 **OnAdError** 事件处理程序添加到 **MainPage** 类。 此事件处理程序会将信息写入 Visual Studio“输出”窗口。
+4.  在 MainPage.xaml.cs 中，将以下 **OnAdError** 事件处理程序添加到 **MainPage** 类。 此事件处理程序会将信息写入 Visual Studio **输出**窗口。
     ``` csharp
     private void OnAdError(object sender, AdErrorEventArgs e)
     {
@@ -71,7 +71,7 @@ ms.locfileid: "77507121"
     }
     ```
 
-4.  生成并运行该项目。 在应用运行后，你将在 Visual Studio 的“输出”窗口中看到与以下内容类似的消息。
+4.  生成并运行该项目。 在应用运行后，你将在 Visual Studio 的**输出**窗口中看到与以下内容类似的消息。
     ```json
     AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
     ```

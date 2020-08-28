@@ -1,31 +1,31 @@
 ---
-Description: 您可以将应用提交到超过 100 种语言在 Microsoft Store。
 title: 支持的语言
+description: 查看向 Microsoft Store 提交应用程序所支持的语言和相应语言代码的表。
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 716a6e86e03feb6edcbc5cde5aa37d0282df6aca
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: a3b3ada3415e6f1abc98dc3c351f6db791adc984
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244283"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043429"
 ---
 # <a name="supported-languages"></a>支持的语言
 
 
-您可以将应用提交到超过 100 种语言在 Microsoft Store。
+你可以将应用提交到100多种语言的 Microsoft Store。
 
-若要了解有关在您的应用程序中配置语言的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)并[了解用户配置文件的语言和应用程序清单语言](../design/globalizing/manage-language-and-region.md)。 我们还提供[多语言应用工具包](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)，用于帮助你编写支持多种语言的应用。
+若要详细了解如何在应用程序中配置语言，请参阅 [全球化和本地化](../design/globalizing/globalizing-portal.md) ，并 [了解用户配置文件语言和应用程序清单语言](../design/globalizing/manage-language-and-region.md)。 我们还提供[多语言应用工具包](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)，用于帮助你编写支持多种语言的应用。
 
 ## <a name="supported-languages"></a>支持的语言
 
 
-这些是 Microsoft Store 支持的语言。 您的应用程序必须支持至少一种语言。 
+这些是 Microsoft Store 支持的语言。 应用必须至少支持其中一种语言。 
 
-此处不包括的语言代码不支持由存储区中。 我们建议您不要包含面向语言代码; 下面未列出的其他包此类包将不会分发到客户，并可能导致延迟或故障认证中。
+存储区不支持此处未包含的语言代码。 建议你不要包含除下面列出的语言代码之外的包：此类包不会分发给客户，并可能导致证书延迟或故障。
 
 | 语言名称         | 支持的语言代码                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -35,16 +35,16 @@ ms.locfileid: "59244283"
 | 阿姆哈拉语               | am、am-et                                                                                                                                                                                             |
 | 亚美尼亚语              | hy、hy-am                                                                                                                                                                                             |
 | 阿萨姆语              | as、as-in                                                                                                                                                                                             |
-| 阿塞拜疆语           | az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
-| 巴斯克语(巴斯克语)       | eu、eu-es                                                                                                                                                                                             |
+| 阿塞拜疆语           | az、az-az、az-cyrl、az-cyrl-az、az-latn、az-latn-az                                                                                                                                     |
+| 巴斯克语（巴斯克）       | eu、eu-es                                                                                                                                                                                             |
 | 白俄罗斯语            | be、be-by                                                                                                                                                                                             |
-| 孟加拉语                | bn、bn-bd、bn-in                                                                                                                                                                                      |
+| Bangla                | bn、bn-bd、bn-in                                                                                                                                                                                      |
 | 波斯尼亚语               | bs、bs-cyrl、bs-cyrl-ba、bs-latn、bs-latn-ba                                                                                                                                                          |
 | 保加利亚语             | bg、bg-bg                                                                                                                                                                                             |
 | 加泰罗尼亚语               | ca、ca-es、ca-es-valencia                                                                                                                                                                             |
 | 切罗基语              | chr-cher、chr-cher-us、chr-latn                                                                                                                                                                       |
-| 中文(简体)  | zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
-| 中文（繁体） | zh-Hant、zh-hk、zh-mo、zh-tw、zh-hant-hk、zh-hant-mo、zh-hant-tw                                                                                                                                      |
+| 中文(简体)  | zh-chs-Hans，zh-chs，zh-chs-Hans-cn，zh-chs，zh-chs-Hans                                                                                                                                                     |
+| 中文(繁体) | zh-Hant、zh-hk、zh-mo、zh-tw、zh-hant-hk、zh-hant-mo、zh-hant-tw                                                                                                                                      |
 | 克罗地亚语              | hr、hr-hr、hr-ba                                                                                                                                                                                      |
 | 捷克语                 | cs、cs-cz                                                                                                                                                                                             |
 | 丹麦语                | da、da-dk                                                                                                                                                                                             |
@@ -60,20 +60,20 @@ ms.locfileid: "59244283"
 | 德语                | de、de-at、de-ch、de-de、de-lu、de-li                                                                                                                                                                 |
 | 希腊语                 | el、el-gr                                                                                                                                                                                             |
 | 古吉拉特语              | gu、gu-in                                                                                                                                                                                             |
-| 豪撒语                 | ha、ha-latn、ha-latn-ng                                                                                                                                                                               |
+| 豪萨语                 | ha、ha-latn、ha-latn-ng                                                                                                                                                                               |
 | 希伯来语                | he、he-il                                                                                                                                                                                             |
-| 印地语                 | hi、hi-in                                                                                                                                                                                             |
+| Hindi                 | hi、hi-in                                                                                                                                                                                             |
 | 匈牙利语             | hu、hu-hu                                                                                                                                                                                             |
 | 冰岛语             | is、is-is                                                                                                                                                                                             |
 | 伊博语                  | ig-latn、ig-ng                                                                                                                                                                                        |
 | 印度尼西亚语            | id、id-id                                                                                                                                                                                             |
 | 因纽特语(拉丁语)     | iu-cans、iu-latn、iu-latn-ca                                                                                                                                                                          |
 | 爱尔兰语                 | ga、ga-ie                                                                                                                                                                                             |
-| 索萨语              | xh、xh-za                                                                                                                                                                                             |
+| 科萨语              | xh、xh-za                                                                                                                                                                                             |
 | 祖鲁语               | zu、zu-za                                                                                                                                                                                             |
 | 意大利语               | it、it-it、it-ch                                                                                                                                                                                      |
 | 日语              | ja、ja-jp                                                                                                                                                                                            |
-| 埃纳德语               | kn、kn-in                                                                                                                                                                                             |
+| 卡纳达语               | kn、kn-in                                                                                                                                                                                             |
 | 哈萨克语                | kk、kk-kz                                                                                                                                                                                             |
 | 高棉语                 | km、km-kh                                                                                                                                                                                             |
 | 基切语               | quc-latn、qut-gt、qut-latn                                                                                                                                                                            |
@@ -82,7 +82,7 @@ ms.locfileid: "59244283"
 | 孔卡尼语               | kok、kok-in                                                                                                                                                                                           |
 | 朝鲜语                | ko、ko-kr                                                                                                                                                                                             |
 | 库尔德语               | ku-arab、ku-arab-iq                                                                                                                                                                                   |
-| 吉尔吉斯语                | ky-kg、ky-cyrl                                                                                                                                                                                        |
+| 柯尔克孜语                | ky-kg、ky-cyrl                                                                                                                                                                                        |
 | 老挝语                   | lo、lo-la                                                                                                                                                                                             |
 | 拉脱维亚语               | lv、lv-lv                                                                                                                                                                                             |
 | 立陶宛语            | lt、lt-lt                                                                                                                                                                                             |
@@ -100,15 +100,15 @@ ms.locfileid: "59244283"
 | 波斯语               | fa、fa-ir                                                                                                                                                                                             |
 | 波兰语                | pl、pl-pl                                                                                                                                                                                             |
 | 葡萄牙语（巴西）   | pt-br                                                                                                                                                                                                 |
-| 葡萄牙语（葡萄牙） | pt、pt-pt                                                                                                                                                                                             |
+| 葡萄牙语(葡萄牙) | pt、pt-pt                                                                                                                                                                                             |
 | 旁遮普语               | pa、pa-arab、pa-arab-pk、pa-deva、pa-in                                                                                                                                                               |
 | 盖丘亚语               | quz、quz-bo、quz-ec、quz-pe                                                                                                                                                                           |
 | 罗马尼亚语              | ro、ro-ro                                                                                                                                                                                             |
 | 俄语               | ru、ru-ru                                                                                                                                                                                            |
 | 苏格兰盖尔语       | gd-gb、gd-latn                                                                                                                                                                                        |
-| 塞尔维亚语(拉丁语)       | sr-Latn、sr-latn-cs、sr、sr-latn-ba、sr-latn-me、sr-latn-rs                                                                                                                                           |
-| 塞尔维亚语(西里尔文)    | sr-cyrl、sr-cyrl-ba、sr-cyrl-cs、sr-cyrl-me、sr-cyrl-rs                                                                                                                                               |
-| 巴索托语      | nso、nso-za                                                                                                                                                                                           |
+| 塞尔维亚语（拉丁）       | sr-Latn、sr-latn-cs、sr、sr-latn-ba、sr-latn-me、sr-latn-rs                                                                                                                                           |
+| 塞尔维亚语（西里尔）    | sr-cyrl、sr-cyrl-ba、sr-cyrl-cs、sr-cyrl-me、sr-cyrl-rs                                                                                                                                               |
+| 北索托语      | nso、nso-za                                                                                                                                                                                           |
 | 茨瓦纳语              | tn、tn-bw、tn-za                                                                                                                                                                                      |
 | 信德语                | sd-arab、sd-arab-pk、sd-deva                                                                                                                                                                          |
 | 僧伽罗语               | si、si-lk                                                                                                                                                                                             |

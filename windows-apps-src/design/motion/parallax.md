@@ -1,6 +1,6 @@
 ---
-Description: 使用 ParallaxView 控件向你的应用添加深度和移动效果。
-title: 使用视差可向应用程序添加深度和移动。
+title: 使用视差向应用添加深度和移动效果。
+description: 了解如何在 UWP 应用中使用 ParallaxView 控件来创建视觉效果，其中与查看器更接近的项目的移动速度要快于背景中的项目。
 ms.assetid: ''
 label: Parallax View
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d659683d6871d9d48fd17b73c74477e7bd03e258
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5ded09e2de6e3aafa0108d3f7ef66808cb02bfd8
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970492"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043569"
 ---
 # <a name="parallax"></a>视差
 
@@ -45,7 +45,7 @@ ms.locfileid: "82970492"
 
 ## <a name="parallax-and-the-fluent-design-system"></a>视差和 Fluent 设计系统
 
- Fluent Design System 可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 视差是 Fluent 设计系统的一个组成部分，它将动画、深度和比例添加到你的应用。 若要了解详细信息，请参阅 "[熟知设计概述](/windows/apps/fluent-design-system)"。
+ Fluent Design System 可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 视差是 Fluent 设计系统的一个组成部分，它将动画、深度和比例添加到你的应用。 若要了解详细信息，请参阅 [Fluent Design 概述](/windows/apps/fluent-design-system)。
 
 ## <a name="how-it-works-in-a-user-interface"></a>它在用户界面中的工作原理
 
@@ -125,4 +125,4 @@ VerticalShift 和 HorizontalShift 属性让你可以控制视差效果的程度�
 
 - [ParallaxView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [UWP 的 Fluent Design](/windows/apps/fluent-design-system)
-- [系统内的科学：Fluent Design 和深色](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [系统中的科学：Fluent Design 和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

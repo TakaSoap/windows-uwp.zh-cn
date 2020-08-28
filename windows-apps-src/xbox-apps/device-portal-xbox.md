@@ -1,27 +1,27 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: 适用于 Xbox 的 Device Portal
-description: 了解如何启用适用于 Xbox One 的 Device Portal。
+description: 了解如何为 Xbox 提供设备门户，以便远程访问开发 Xbox。
 ms.date: 04/09/2019
 ms.topic: article
-keywords: windows 10，uwp，设备门户
+keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: db0d2955f01fcae04a85c57a6dc28a32c561553a
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 485cd9dc5a7ecb437cacf4a2c9c6eee57c3717f1
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713845"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043479"
 ---
 # <a name="device-portal-for-xbox"></a>适用于 Xbox 的 Device Portal
 
-## <a name="set-up-device-portal-on-xbox"></a>在 Xbox 上设置 Device Portal
+## <a name="set-up-device-portal-on-xbox"></a>在 Xbox 上设置设备门户
 
 以下步骤显示如何启用 Xbox 设备门户，从而为你提供对你的开发 Xbox 的远程访问。
 
 1. 打开“开发人员主页”。 默认情况下，该主页应在你启动开发 Xbox 时打开，但你也可以从主屏幕打开它。
 
-    ![Device Portal DevHome](images/device-portal-xbox-1.png)
+    ![设备门户 DevHome](images/device-portal-xbox-1.png)
 
 2. 在开发人员主页中，在**主页**选项卡上的**远程访问**下，选择**远程访问设置**。
 
@@ -31,15 +31,15 @@ ms.locfileid: "67713845"
 
 4. 在**身份验证**下，选择**设置用户名和密码**。 输入用于从浏览器对开发套件的访问进行身份验证的**用户名**和**密码**，然后**保存**它们。
 
-5. **关闭** **远程访问**页面，并在**主页**选项卡上，记下**远程访问**下列出的 URL。
+5. **关闭****远程访问**页面，并在**主页**选项卡上，记下**远程访问**下列出的 URL。
 
 6. 在浏览器中输入 URL，然后使用已配置的凭据登录。
 
-7. 你将收到有关已提供的证书的警告，与下图中的内容类似。 在 Microsoft Edge 中，单击**详细信息**，然后**转到网页**以访问 Xbox 设备门户。 在弹出的对话框中，输入您之前在 Xbox 中输入的用户名和密码。
+7. 你将收到有关已提供的证书的警告，与下图中的内容类似。 在 Edge 中，单击**详细信息**，然后**转到网页**以访问 Xbox 设备门户。 在弹出的对话框中，输入您之前在 Xbox 中输入的用户名和密码。
 
-    ![Device Portal 证书错误](images/device-portal-xbox-3.png)
+    ![设备门户证书错误](images/device-portal-xbox-3.png)
 
-## <a name="device-portal-pages"></a>Device Portal 页面
+## <a name="device-portal-pages"></a>设备门户页面
 
 Xbox 设备门户提供了一组与 Windows 设备门户上可用的页面类似的标准页面以及唯一的多个页面。 有关前者的详细说明，请参阅 [Windows 设备门户概述](../debug-test-perf/device-portal.md)。 以下部分介绍对 Xbox 设备门户是唯一的页面。
 
@@ -53,9 +53,9 @@ Xbox 设备门户提供了一组与 Windows 设备门户上可用的页面类似
 
 ### <a name="xbox-live-game-saves"></a>Xbox Live（游戏保存）
 
-Windows 设备门户和 Xbox 设备门户均有一个 **Xbox Live** 页面。 但是，Xbox 设备门户有一个独特的部分 **Xbox Live 游戏保存**，在此部分中，你可以保存已在 Xbox 上安装的游戏的数据。 输入与标题和游戏保存关联的**服务配置 ID (SCID)** （有关更多信息，请参阅 [Xbox Live 服务配置](https://docs.microsoft.com/gaming/xbox-live/xbox-live-service-configuration.md#get-your-ids)）、**成员名(MSA)** 和**包系列名称(PFN)** ，浏览**输入文件(.json 或 .xml)** ，然后选择其中一个按钮（**重置**、**导入**、**导出**和**删除** ）来操作保存数据。
+Windows 设备门户和 Xbox 设备门户均有一个 **Xbox Live** 页面。 但是，Xbox 设备门户有一个独特的部分 **Xbox Live 游戏保存**，在此部分中，你可以保存已在 Xbox 上安装的游戏的数据。 输入与标题和游戏保存关联的**服务配置 ID (SCID)**（有关更多信息，请参阅 [Xbox Live 服务配置](https://docs.microsoft.com/gaming/xbox-live/xbox-live-service-configuration.md#get-your-ids)）、**成员名(MSA)** 和**包系列名称(PFN)**，浏览**输入文件(.json 或 .xml)**，然后选择其中一个按钮（**重置**、**导入**、**导出**和**删除 **）来操作保存数据。
 
-在**生成**部分中，你可以生成虚拟数据并保存到指定的输入文件中。 只需输入**容器(默认为 2 个)** 、**Blob (默认为 3 个)** 和 **Blob 大小(默认为 1024)** ，然后选择**生成**。
+在**生成**部分中，你可以生成虚拟数据并保存到指定的输入文件中。 只需输入**容器(默认为 2 个)**、**Blob (默认为 3 个)** 和 **Blob 大小(默认为 1024)**，然后选择**生成**。
 
 ![Xbox Live](images/device-portal-xbox-17.png)
 
@@ -67,7 +67,7 @@ HTTP 监视器允许你当其在你的 Xbox One 上运行时查看你的应用�
 
 若要启用它，在 Xbox One 上打开开发人员主页，转到**设置**选项卡，然后在 **HTTP 监视器设置**框中，选中**启用 HTTP 监视器**。
 
-![适用于开发人员主页：网络](images/device-portal-xbox-14.png)
+![开发人员主页: 网络](images/device-portal-xbox-14.png)
 
 启用此项后，在 Xbox 设备门户中，你可以通过选择相应按钮来对 HTTP 和 HTTPS 流量执行**停止**、**清除**和**保存到文件**操作。
 
@@ -95,93 +95,93 @@ Xbox 设备门户中的**网络**页面与 Windows 设备门户中的**网络**�
 
 #### <a name="device-information"></a>设备信息
 
-* **设备名称**:设备的名称。 若要编辑，在框中更改该名称，然后选择**保存**。
+* **设备名称**：设备的名称。 若要编辑，在框中更改该名称，然后选择**保存**。
 
-* **OS 版本**:只读的。 操作系统的版本号。
+* **操作系统版本**：只读。 操作系统的版本号。
 
-* **OS 版本**:只读的。 主要版本操作系统的名称。
+* **操作系统版本**：只读。 主要版本操作系统的名称。
 
-* **Xbox Live 设备 ID**:只读的。
+* **Xbox Live 设备 ID**：只读。
 
-* **控制台 ID**:只读的。
+* **控制台 ID**：只读。
 
-* **序列号**:只读的。
+* **序列号**：只读。
 
-* **控制台类型**:只读的。 Xbox One 设备的类型（Xbox One、Xbox One S 或 Xbox One X）。
+* **控制台类型**：只读。 Xbox One 设备的类型（Xbox One、Xbox One S 或 Xbox One X）。
 
-* **开发人员模式**:只读的。 设备所处的开发人员模式。
+* **开发人员模式**：只读。 设备所处的开发人员模式。
 
 #### <a name="audio-settings"></a>音频设置
 
-* **音频位流格式**:音频数据的格式。
+* **音频比特流格式**：音频数据的格式。
 
-* **HDMI 音频**:通过 HDMI 端口的音频的类型。
+* **HDMI 音频**：通过 HDMI 端口连接的音频的类型。
 
-* **耳机格式**:通过耳机的音频格式。
+* **耳机格式**：通过耳机连接的音频的格式。
 
-* **光学音频**:通过光学端口的音频的类型。
+* **光纤音频**：通过光纤端口连接的音频的类型。
 
-* **使用 HDMI 或光学音频耳机**:如果将耳机连接通过 HDMI 或光盘，请选中此框。
+* **使用 HDMI 或光纤音频耳机**：如果你使用的是通过 HDMI 或光纤连接的耳机，请选中此框。
 
 #### <a name="display-settings"></a>显示设置
 
-* **颜色深度**:为一个像素的每个颜色组件使用的位的数目。
+* **颜色深度**：用于单个像素的每个颜色分量的位数。
 
-* **颜色空间**:色域供显示。
+* **颜色空间**：适用于屏幕的色域。
 
-* **显示分辨率**:显示的分辨率。
+* **屏幕分辨率**：屏幕的分辨率。
 
-* **显示连接**:连接到显示的类型。
+* **屏幕连接**：屏幕的连接类型。
 
-* **允许高动态范围 (HDR)** :启用 HDR 上显示。 仅适用于兼容的屏幕。
+* **允许高动态范围(HDR)**：在屏幕上启用 HDR。 仅适用于兼容的屏幕。
 
-* **允许 4k**:使 4k 分辨率的显示器上。 仅适用于兼容的屏幕。
+* **允许 4K**：在屏幕上启用 4K 分辨率。 仅适用于兼容的屏幕。
 
-* **允许变量刷新速率 (VRR)** :启用 VRR 上显示。 仅适用于兼容的屏幕。
+* **允许变量刷新频率(VRR)**：在屏幕上启用 VRR。 仅适用于兼容的屏幕。
 
 #### <a name="kinect-settings"></a>Kinect 设置
 
 Kinect 传感器必须连接到控制台才能更改以下这些设置。
 
-* **启用 Kinect**:启用附加的 Kinect 传感器。
+* **启用 Kinect**：启用连接的 Kinect 传感器。
 
-* **在应用更改时重新加载强制 Kinect**:无论何时运行不同的应用或游戏，重新加载附加的 Kinect 传感器。
+* **在应用更改时强制 Kinect 重新加载**：每当不同的应用或游戏运行时重新加载连接的 Kinect 传感器。
 
 #### <a name="localization-settings"></a>本地化设置
 
-* **地理区域**:设备设置为在地理区域。 必须为特定的 2 个字符国家/地区代码（例如，**US** 表示美国）。
+* **地理区域**：设备设置为的地理区域。 必须为特定的 2 个字符国家/地区代码（例如，**US** 表示美国）。
 
-* **首选语言**:设备设置为语言。
+* **首选语言**：设置设为的语言。
 
-* **时区**:设备设置为的时区。
+* **时区**：设备设置为的时区。
 
 #### <a name="network-settings"></a>网络设置
 
-* **无线广播设置**:无线设备 （如无线 LAN 的某些方面是否打开或关闭） 的设置。
+* **无线电设置**：设备的无线设置（无线 LAN 等方面打开或关闭）。
 
 #### <a name="power-settings"></a>电源设置
 
-* **当处于空闲状态时，dim 屏幕 （分钟） 后的**:设备的此时间内处于空闲状态后，屏幕会变暗。 设置为 **0** 表示屏幕永远不会变暗。
+* **处于空闲状态时，(分钟)后使屏幕变暗**：在设备在此时间内处于空闲状态后，屏幕将变暗。 设置为 **0** 表示屏幕永远不会变暗。
 
-* **如果处于空闲状态，请关闭后**:在空闲此段时间后，设备将关闭。
+* **处于空闲状态时，之后关闭**：设备将在其在此时间内处于空闲状态后关闭。
 
-* **电源模式**:设备的电源模式。 有关更多信息，请参阅[有关节能和随开即用电源模式](https://support.xbox.com/xbox-one/console/learn-about-power-modes)。
+* **电源模式**：设备的电源模式。 有关更多信息，请参阅[有关节能和随开即用电源模式](https://support.xbox.com/xbox-one/console/learn-about-power-modes)。
 
-* **自动启动控制台时连接到电源**:当连接到电源时，将自动开启设备。
+* **连接到电源时自动启动控制台**：该设备将在其连接到电源时自动打开。
 
 #### <a name="preference-settings"></a>首选项设置
 
-* **默认主页体验**:主屏幕将显示在设备开启时的设置。
+* **默认主页体验**：设置当设备打开时显示的主屏幕。
 
-* **允许来自 Xbox 应用程序的连接**:另一台设备 （如 Windows 10 电脑） 上的 Xbox 应用可以连接到此控制台。
+* **允许从 Xbox 应用连接**：其他设备上的 Xbox 应用（如 Windows 10 电脑）可连接到此控制台。
 
-* **默认情况下将视为游戏的 UWP 应用**:游戏和应用程序获取 Xbox 上分配给它们的不同资源。 如果选中此框，所有 UWP 程序包将标识为游戏，并因此获取更多资源。
+* **默认情况下将 UWP 应用视为游戏**：游戏和应用在 Xbox 上获取向其分配的不同资源。 如果选中此框，所有 UWP 程序包将标识为游戏，并因此获取更多资源。
 
 #### <a name="user-settings"></a>用户设置
 
-* **自动登录用户**:中选定的用户在设备开启时自动登录。
+* **自动登录用户**：设备打开时自动登录选定的用户。
 
-* **自动登录用户控制器**:自动将特定的控制器类型与特定用户相关联。
+* **自动登录用户控制器**：将某特定控制器类型自动与某特定用户关联。
 
 #### <a name="xbox-live-sandbox"></a>Xbox Live 沙盒
 
@@ -195,11 +195,11 @@ Kinect 传感器必须连接到控制台才能更改以下这些设置。
 
 ### <a name="game-event-data"></a>游戏事件数据
 
-上**游戏事件数据**页上，您可以查看流的实时关系图中的当前记录在 Xbox One 上的事件跟踪 Windows (ETW) 游戏事件数。 如果有记录在系统上的游戏事件，您还可以查看详细信息 （事件名称、 事件匹配项和游戏标题） 描述数据在图表下方的数据表中的每个事件。 表才可用，如果有记录的事件。
+在 " **游戏事件数据** " 页上，您可以查看实时图形，该图形按 Windows () ETW 事件跟踪的数量进行流式处理。 如果系统上记录了游戏事件，则还可以查看详细信息 (事件名称、事件发生情况和游戏标题) 描述数据图下的数据表中的每个事件。 只有记录了事件时，表才可用。
 
 ![游戏事件数据](images/device-portal-xbox-22.PNG)
 
 ## <a name="see-also"></a>请参阅
 
-* [Windows Device Portal 概述](../debug-test-perf/device-portal.md)
-* [设备门户 core API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Windows 设备门户概述](../debug-test-perf/device-portal.md)
+* [Device Portal 核心 API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
