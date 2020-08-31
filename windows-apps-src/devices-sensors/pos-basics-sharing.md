@@ -1,28 +1,28 @@
 ---
 title: PointOfService 设备共享
-description: 与其他人共享 PointOfService 外围设备
+description: 了解如何在多台电脑依赖于共享外设的环境中，与其他计算机共享网络或 Bluetooth 连接的外围设备。
 ms.date: 06/14/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 53dc22b2aa35b5e69854f6fb489ff6a454c73bf6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5416628b88a070c7bd4f361f9f438fe690951d34
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618942"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054157"
 ---
 # <a name="pointofservice-device-sharing"></a>PointOfService 设备共享
 
-了解如何与多台 Pc，依赖于共享外围设备而不是附加到每台计算机的专用外围设备的环境中的其他计算机共享网络或连接的蓝牙外围设备。
+了解如何在多台电脑依赖于共享外围设备（而不是连接到每台计算机的专用外围设备）的环境中，与其他计算机共享网络或蓝牙连接的外围网络。
 
-## <a name="device-sharing"></a>共享设备
+## <a name="device-sharing"></a>设备共享
 
-网络和蓝牙连接的 PointOfService 外围设备通常使用在环境 wheere 中多个客户端设备正在共享一天中的相同外围设备。  在繁忙的零售或食物服务环境中客户端设备能够将附加到外围设备的功能中的任何延迟会影响可以关闭与客户的事务和移至下一个相关联的效率。 在快速服务餐馆方案中，为厨房打印机使用回执打印机传输到厨房中使用适用于准备客户的订单的详细信息将从客户获取订单的多个客户端设备。  订单处理完成后的每个客户端设备应该能够声明共享的打印机并立即打印厨房中使用的顺序。
+网络和蓝牙连接的 PointOfService 外设通常用于 wheere 多个客户端设备在一整天共享同一外围设备的环境中使用。  在繁忙的零售或食品服务环境中，客户端设备连接到外围设备的任何延迟都会影响到相关工作效率，即关联可以与客户关闭交易，然后继续下一步。 在 "快速服务餐厅" 方案中，使用收据打印机作为厨房打印机，以将客户订单的详细信息传送到厨房进行准备，其中有多个客户端设备从客户那里获得订单。  当订单完成后，每个客户端设备应该能够声明共享打印机，并立即打印厨房的顺序。
 
-在这些环境中，非常重要的应用程序完全**dispose**设备对象，以便另一个可以声明同一个设备。
+在这些环境中，应用程序必须完全 **释放** 设备对象，以便另一台设备可以声明同一设备，这一点非常重要。
 
-在 using 块末尾 PosPrinter 释放
+在 "using" 块的末尾释放 PosPrinter
 
 ```Csharp 
 using Windows.Devices.PointOfService;
@@ -39,7 +39,7 @@ using(PosPrinter printer = await PosPrinter.FromIdAsync("Device ID"))
 ```
 
 
-释放 PosPrinter 通过显式调用 dispose （）
+通过显式调用 Dispose ( 释放 PosPrinter
 
 ```Csharp 
 using Windows.Devices.PointOfService;
@@ -52,13 +52,13 @@ if (printer != null)
 }
 ```
 
-## <a name="api-methods-used"></a>使用 API 方法 
+## <a name="api-methods-used"></a>使用的 API 方法 
 
-+ [BarcodeScanner.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.dispose) 
-+ [CashDrawer.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.dispose) 
-+ [LineDisplay.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.linedisplay.dispose) 
-+ [MagneticStripeReader.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose)  
-+ [PosPrinter.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.dispose) 
++ [BarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.dispose) 
++ [CashDrawer](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.dispose) 
++ [LineDisplay](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.linedisplay.dispose) 
++ [MagneticStripeReader](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose)  
++ [PosPrinter](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.dispose) 
 
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]

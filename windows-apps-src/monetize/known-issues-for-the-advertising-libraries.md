@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 已知问题, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: f39d8512398c43ea65037de82434e3740bac7ff2
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: c69c61cc1db0796edbaedb2f8e2970e1100c5774
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209703"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158531"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>有关应用内广告的已知问题和疑难解答
 
@@ -21,11 +21,11 @@ ms.locfileid: "79209703"
 本主题列出了当前版本的 Microsoft 广告 SDK 的已知问题。 有关其他疑难解答指南，请参阅以下主题。
 
 * [HTML 和 JavaScript 疑难解答指南](html-and-javascript-troubleshooting-guide.md)
-* [XAML 和C#故障排除指南](xaml-and-c-troubleshooting-guide.md)
+* [XAML 和 C# 疑难解答指南](xaml-and-c-troubleshooting-guide.md)
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>XAML 中的 AdControl 接口未知
 
-适用于 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 的 XAML 标记可能会错误显示暗示接口未知的蓝色曲线。 这仅在面向 x86 时发生，并且可能会被省略。
+适用于 [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 的 XAML 标记可能会错误显示暗示接口未知的蓝色曲线。 这仅在面向 x86 时发生，并且可能会被省略。
 
 ## <a name="lasterror-from-previous-ad-request"></a>之前广告请求的 lastError
 
@@ -43,13 +43,13 @@ ms.locfileid: "79209703"
 
 你没有看到广告的原因有很多，其中包括网络错误。 其他原因可能包括：
 
-* 在合作伙伴中心选择一个大小大于或小于应用程序代码中**adunitid**大小的 ad 单位。
+* 在合作伙伴中心选择一个大小大于或小于应用程序代码中 **adunitid** 大小的 ad 单位。
 
 * 在运行动态应用时，如果将[测试模式值](set-up-ad-units-in-your-app.md#test-ad-units)用于广告单元 ID，则广告不会显示。
 
 * 如果你在过去半小时创建了新的广告单元 ID，可能无法看到广告，直到服务器通过系统传播新数据为止。 之前显示了广告的现有 ID 应会立即显示广告。
 
-如果你可以在应用中看到测试广告，则代码有效，并且能够显示广告。 如果你遇到问题，请联系[产品支持人员](https://developer.microsoft.com/windows/support)。 在该页上 **，选择 "联系我们"** 。
+如果你可以在应用中看到测试广告，则代码有效，并且能够显示广告。 如果遇到问题，请联系[产品支持人员](https://developer.microsoft.com/windows/support)。 在该页上 **，选择 "联系我们"**。
 
 你还可在[论坛](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps)发布问题。
 
@@ -61,18 +61,18 @@ ms.locfileid: "79209703"
 
 * 旁加载应用或在仿真器中运行的应用不会显示实时广告。
 
-当实时 ad 单位提供测试广告时，ad 单位的状态显示为 "活动"，并为 "合作伙伴中心"**提供测试广告**。 这当前不适用于手机应用。
+当实时 ad 单位提供测试广告时，ad 单位的状态显示为 "活动"，并为 "合作伙伴中心" **提供测试广告** 。 这当前不适用于手机应用。
 
 
 <span id="reference_errors"/>
 
 ## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>项目中通过面向任何 CPU 引起的引用错误
 
-在使用 Microsoft 广告 SDK 时，你无法在项目中面向**任何 CPU**。 如果你的项目面向**任何 CPU** 平台，可能在添加类似于此引用的引用后会看到警告。
+在使用 Microsoft 广告 SDK 时，你无法在项目中面向**任何 CPU**。 如果你的项目面向**任何 CPU** 平台，可能会在添加类似于此引用的引用后看到警告。
 
-![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
+![referenceerror \- solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
-若要删除此警告，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 使用“配置管理器”以设置适用于调试和版本配置的平台目标。
+若要删除此警告，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 使用**配置管理器**以设置适用于调试和版本配置的平台目标。
 
 ![configurationmanagerwin10](images/13-87074274-c10d-4dbd-9a06-453b7184f8de.png)
 
@@ -92,7 +92,7 @@ JavaScript/HTML 应用不得将元素放入 Z 顺序的保留 MAX-10 范围。 �
 
 设置由 **AdControl** 从父类继承的边框相关的属性将引起广告位置出错。
 
-## <a name="more-information"></a>详细信息
+## <a name="more-information"></a>更多信息
 
 有关最新的已知问题和发布与 Microsoft 广告 SDK 相关的问题的详细信息，请访问[论坛](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps)。
 

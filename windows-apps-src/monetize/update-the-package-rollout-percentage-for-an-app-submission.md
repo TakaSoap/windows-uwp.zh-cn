@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 软件包推出, 应用提交, 更新, 百分比
 ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
 ms.localizationpriority: medium
-ms.openlocfilehash: d9f9f1f352db4da27370eae6a4a68e4a8c5310c7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 20bfbec102f60a9f6335a819a01772ea831f4c44
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371400"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158291"
 ---
 # <a name="update-the-rollout-percentage-for-an-app-submission"></a>更新应用提交的推出百分比
 
@@ -19,14 +19,14 @@ ms.locfileid: "66371400"
 使用 Microsoft Store 提交 API 中的此方法[更新应用提交的推出百分比](../publish/gradual-package-rollout.md#setting-the-rollout-percentage)。 有关通过使用 Microsoft Store 提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
 
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 创建一个您的应用程序提交。 可以执行此操作在合作伙伴中心，也可以执行此操作通过使用[创建应用程序提交](create-an-app-submission.md)方法。
-* 启用提交的逐步软件包推出。 您可以执行此操作[在合作伙伴中心](../publish/gradual-package-rollout.md)，也可以执行此操作[使用的 Microsoft Store 提交 API](manage-app-submissions.md#manage-gradual-package-rollout)。
+* 为某个应用创建提交。 可以在合作伙伴中心执行此操作，也可以使用 [创建应用提交](create-an-app-submission.md) 方法来执行此操作。
+* 启用提交的逐步软件包推出。 可以在 [合作伙伴中心](../publish/gradual-package-rollout.md)中执行此操作，也可以通过 [使用 Microsoft Store 提交 API](manage-app-submissions.md#manage-gradual-package-rollout)来实现此目的。
 
 ## <a name="request"></a>请求
 
@@ -34,23 +34,23 @@ ms.locfileid: "66371400"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| 发布   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/updatepackagerolloutpercentage` |
+| POST   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/updatepackagerolloutpercentage` |
 
 
 ### <a name="request-header"></a>请求头
 
-| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt; 。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必需。 应用（包含要更新软件包推出百分比的提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| submissionId | string | 必需。 要更新软件包推出百分比的提交的 ID。 此 ID 包含在[创建应用提交](create-an-app-submission.md)请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。   |
-| 百分比  |  浮点数  |  必需。 将收到逐步推出软件包的用户百分比。  |
+| applicationId | 字符串 | 必需。 应用（包含要更新软件包推出百分比的提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](../publish/view-app-identity-details.md)。  |
+| submissionId | 字符串 | 必需。 要更新软件包推出百分比的提交的 ID。 此 ID 包含在[创建应用提交](create-an-app-submission.md)请求的响应数据中。 对于在合作伙伴中心创建的提交，此 ID 还可用于合作伙伴中心中的提交页的 URL。   |
+| percentage  |  float  |  必需。 将收到逐步推出软件包的用户百分比。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -83,14 +83,14 @@ Authorization: Bearer <your access token>
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
-| 错误代码 |  描述   |
+| 错误代码 |  说明   |
 |--------|------------------|
 | 404  | 找不到提交。 |
-| 409  | 此代码指示以下错误之一：<br/><br/><ul><li>对于逐步推出操作，该提交未处于有效状态（在调用此方法之前，必须发布该提交，并且必须将 [packageRolloutStatus](manage-app-submissions.md#package-rollout-object) 值设置为 **PackageRolloutInProgress**）。</li><li>提交不属于指定应用。</li><li>该应用使用的合作伙伴中心功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。</li></ul> |   
+| 409  | 此代码指示以下错误之一：<br/><br/><ul><li>对于逐步推出操作，该提交未处于有效状态（在调用此方法之前，必须发布该提交，并且必须将 [packageRolloutStatus](manage-app-submissions.md#package-rollout-object) 值设置为 **PackageRolloutInProgress**）。</li><li>提交不属于指定应用。</li><li>此应用使用的合作伙伴中心功能 [当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。</li></ul> |   
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [逐步包推出](../publish/gradual-package-rollout.md)
-* [管理使用 Microsoft Store 提交 API 提交应用程序](manage-app-submissions.md)
-* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
+* [逐步部署程序包](../publish/gradual-package-rollout.md)
+* [使用 Microsoft Store 提交 API 管理应用提交](manage-app-submissions.md)
+* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)

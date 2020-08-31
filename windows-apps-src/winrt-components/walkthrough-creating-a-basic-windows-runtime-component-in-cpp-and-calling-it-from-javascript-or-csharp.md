@@ -6,19 +6,19 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 605b8cf927067da78785ec470cfdbe27852205fd
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: c7f0e1ba5c78ce41a5326d3643b5afe80f380b3c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493182"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155171"
 ---
 # <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>创建 C++/CX Windows 运行时组件并通过 JavaScript 或 C# 调用此组件的演练
 
 > [!NOTE]
-> 本主题旨在帮助你维护 C++/CX 应用程序。 不过，我们建议你使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 编写新应用程序。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 若要了解如何使用 c + +/WinRT 创建 Windows 运行时组件，请参阅[使用 c + +/WinRT 组件 Windows 运行时](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)。
+> 本主题旨在帮助你维护 C++/CX 应用程序。 不过，我们建议你使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 编写新应用程序。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 若要了解如何使用 C++/WinRT 创建 Windows 运行时组件，请参阅[使用 C++/WinRT 创建 Windows 运行时组件](./create-a-windows-runtime-component-in-cppwinrt.md)。
 
-本演练演示了如何创建一个可通过 JavaScript、C# 或 Visual Basic 调用的基本 Windows 运行时组件 DLL。 在开始本演练之前，请确保你已了解抽象二进制接口 (ABI)、ref 类以及简化使用 ref 类的 Visual C++ 组件扩展等概念。 有关详细信息，请参阅[Windows 运行时带有 c + +/cx 的组件](creating-windows-runtime-components-in-cpp.md)和[Visual C++ 语言参考（c + +/cx）](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx)。
+本演练演示了如何创建一个可通过 JavaScript、C# 或 Visual Basic 调用的基本 Windows 运行时组件 DLL。 在开始本演练之前，请确保你已了解抽象二进制接口 (ABI)、ref 类以及简化使用 ref 类的 Visual C++ 组件扩展等概念。 有关详细信息，请参阅 [Windows 运行时带有 c + +/cx 的组件](creating-windows-runtime-components-in-cpp.md) 和 [Visual C++ 语言参考 (c + +/cx) ](/cpp/cppcx/visual-c-language-reference-c-cx)。
 
 ## <a name="creating-the-c-component-dll"></a>创建 C++ 组件 DLL
 在本例中，我们首先创建组件项目，但你可以首先创建 JavaScript 项目。 顺序无关紧要。
@@ -26,16 +26,16 @@ ms.locfileid: "86493182"
 请注意，组件的主类包含属性和方法定义以及事件声明的示例。 只是为了向你演示如何实现该目的才提供它们。 它们不是必需的，并且在本例中，我们将使用自己的代码替换所有生成的代码。
 
 ### <a name="to-create-the-c-component-project"></a>**创建 C++ 组件项目**
-1. 在 Visual Studio 菜单栏上，依次选择 "**文件"、"新建"、"项目"**。
+1. 在 Visual Studio 菜单栏上，依次选择 " **文件"、"新建"、"项目"**。
 
 2. 在 **“新建项目”** 对话框的左侧窗格中，展开 **“Visual C++”**，然后选择通用 Windows 应用的节点。
 
-3. 在中心窗格中，选择 " **Windows 运行时组件**"，然后将项目命名为 WinRT \_ CPP。
+3. 在中心窗格中，选择 " **Windows 运行时组件** "，然后将项目命名为 WinRT \_ CPP。
 
 4. 选择“确定”  按钮。
 
 ## <a name="to-add-an-activatable-class-to-the-component"></a>**将可激活类添加到组件**
-可激活类是客户端代码可以使用 **new** 表达式（Visual Basic 中为 **New**，C++ 中为 **ref new**）创建的类。 在你的组件中，将其声明为 **public ref class sealed**。 其实，Class1.h 和 .cpp 文件中已具有一个 ref 类。 你可以更改名称，但在本例中我们将使用默认名称 Class1。 你可以根据需要在组件中定义额外的 ref 类或常规类。 有关 ref 类的详细信息，请参阅[类型系统 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
+可激活类是客户端代码可以使用 **new** 表达式（Visual Basic 中为 **New**，C++ 中为 **ref new**）创建的类。 在你的组件中，将其声明为 **public ref class sealed**。 其实，Class1.h 和 .cpp 文件中已具有一个 ref 类。 你可以更改名称，但在本例中我们将使用默认名称 Class1。 你可以根据需要在组件中定义额外的 ref 类或常规类。 有关 ref 类的详细信息，请参阅[类型系统 (C++/CX)](/cpp/cppcx/type-system-c-cx)。
 
 将这些 \# include 指令添加到 Class1：
 
@@ -267,15 +267,15 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 }
 ```
 
-## <a name="creating-a-javascript-client-app-visual-studio-2017"></a>创建 JavaScript 客户端应用（Visual Studio 2017）
+## <a name="creating-a-javascript-client-app-visual-studio-2017"></a> (Visual Studio 2017) 创建 JavaScript 客户端应用
 
 如果要创建 c # 客户端，则可以跳过此部分。
 
 > [!NOTE]
-> 通用 Windows 平台（UWP）项目在 Visual Studio 2019 中不受支持。 请参阅[Visual Studio 2019 中的 JavaScript 和 TypeScript](/visualstudio/javascript/javascript-in-vs-2019?view=vs-2019#projects)。 若要遵循本部分，我们建议使用 Visual Studio 2017。 请参阅[Visual Studio 2017 中的 JavaScript](/visualstudio/javascript/javascript-in-vs-2017)。
+> Visual Studio 2019 不支持通用 Windows 平台 (UWP) 项目。 请参阅 [Visual Studio 2019 中的 JavaScript 和 TypeScript](/visualstudio/javascript/javascript-in-vs-2019?view=vs-2019#projects)。 若要遵循本部分，我们建议使用 Visual Studio 2017。 请参阅 [Visual Studio 2017 中的 JavaScript](/visualstudio/javascript/javascript-in-vs-2017)。
 
 ### <a name="to-create-a-javascript-project"></a>创建 JavaScript 项目
-1. 在解决方案资源管理器（Visual Studio 2017 中，请参阅上面的**注释**），打开解决方案节点的快捷菜单，然后选择 "**添加"、"新建项目**"。
+1. 在 Visual Studio 2017 的解决方案资源管理器 (中;请参阅) 上的 " **注意** "，打开 "解决方案" 节点的快捷菜单，然后选择 " **添加"、"新建项目**"。
 
 2. 展开 JavaScript（它可能嵌套在**其他语言**下方）然后选择**空白应用(通用 Windows)**。
 
@@ -426,7 +426,7 @@ function ButtonClear_Click() {
 }
 ```
 
-通过添加代码来添加事件侦听器，方法是使用以下在 then 代码块中实现事件注册的代码，在 default.js 的 app.onactivated 中替换对 WinJS.UI.processAll 的现有调用。 有关此情况的详细说明，请参阅[创建 "Hello，World" 应用（JS）](/windows/uwp/get-started/create-a-hello-world-app-js-uwp)。
+通过添加代码来添加事件侦听器，方法是使用以下在 then 代码块中实现事件注册的代码，在 default.js 的 app.onactivated 中替换对 WinJS.UI.processAll 的现有调用。 有关此情况的详细说明，请参阅 [创建 (JS) 的 "Hello，World" 应用 ](../get-started/create-a-hello-world-app-js-uwp.md)。
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {
@@ -456,11 +456,11 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 
 5. 添加对 WinRT_CPP 的项目引用：
 
-   - 打开 "**引用**" 节点的快捷菜单，然后选择 "**添加引用**"。
+   - 打开 " **引用** " 节点的快捷菜单，然后选择 " **添加引用**"。
 
    - 在**引用管理器**对话框的左侧窗格中，依次选择**项目**和**解决方案**。
 
-   - 在中心窗格中，选择 "WinRT_CPP"，然后选择 "**确定"** 按钮。
+   - 在中心窗格中，选择 "WinRT_CPP"，然后选择 " **确定"** 按钮。
 
 ## <a name="to-add-the-xaml-that-defines-the-user-interface"></a>添加定义用户界面的 XAML
 将以下代码复制到 MainPage.xaml 中的 Grid 元素。
@@ -598,7 +598,7 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 为实现更好的调试体验，请从公共 Microsoft 符号服务器下载调试符号：
 
 ### <a name="to-download-debugging-symbols"></a>**下载调试符号**
-1. 在菜单栏上，依次选择 "**工具"、"选项"**。
+1. 在菜单栏上，依次选择 " **工具"、"选项"**。
 
 2. 在**选项**对话框中，展开**调试**并选择**符号**。
 

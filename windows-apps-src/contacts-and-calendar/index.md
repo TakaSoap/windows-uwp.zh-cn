@@ -1,17 +1,17 @@
 ---
-description: 如何在 UWP 应用中使用联系人和日历信息。
+description: 寻找方法让用户能够访问他们的联系人和约会来共享内容、电子邮件、日历信息或消息。
 title: 联系人和日历
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp, 联系人, 日历, 约会, 电子邮件
 ms.localizationpriority: medium
-ms.openlocfilehash: b2e3f0b1d93d2b2c32e117f61fd7514077ca3923
-ms.sourcegitcommit: 90fe7a9a5bfa7299ad1b78bbef289850dfbf857d
+ms.openlocfilehash: e94810ef3fac9c21221181338b7efd8d78fefb97
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2020
-ms.locfileid: "84756543"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054147"
 ---
 # <a name="contacts-my-people-and-calendar"></a>联系人、我的人脉和日历
 

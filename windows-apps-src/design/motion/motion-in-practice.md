@@ -1,5 +1,5 @@
 ---
-Description: 了解你的应用中的流畅运动基础知识。
+description: 了解如何在你的应用程序中组合计时、缓动、方向性和重心等流畅运动基础知识。
 title: 练习中的动作-Windows 应用中的动画
 label: Motion in practice
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 45ab6c593b9e20f778e4b352a8b284cefe57c9a8
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 8604d925ffefc96cd74726909afab6e2016cce76
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970322"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054527"
 ---
 # <a name="bringing-it-together"></a>综合运用
 
@@ -26,13 +26,13 @@ ms.locfileid: "82970322"
 
 :::row:::
     :::column:::
-**隐式动画**参数更改中的值之间的自动补间和计时将更改为使用标准化值实现非常简单的流畅运动。
+**隐式动画** 参数更改中的值之间的自动补间和计时将更改为使用标准化值实现非常简单的流畅运动。
     :::column-end:::
     :::column:::
-**内置动画**系统组件（如公用控件和共享动作）为 "默认情况下处于活动状态"。 基础知识的应用方式与其隐含用法一致。
+**内置动画** 系统组件（如公用控件和共享动作）为 "默认情况下处于活动状态"。 基础知识的应用方式与其隐含用法一致。
     :::column-end:::
     :::column:::
-**遵循指南建议的自定义动画**有时，系统还没有为方案提供精确的运动解决方案。 在这些情况下，请使用基线基本建议作为你的体验的起点。
+**遵循指南建议的自定义动画** 有时，系统还没有为方案提供精确的运动解决方案。 在这些情况下，请使用基线基本建议作为你的体验的起点。
     :::column-end:::
 :::row-end:::
 
@@ -43,12 +43,12 @@ ms.locfileid: "82970322"
 :::row:::
     :::column:::
 <b>前进方向：</b><br>
-淡出： 150m;缓动：默认加速<b>方向：</b><br>
+淡出： 150m;缓动：默认加速 <b>方向：</b><br>
 Slide 150： 300ms;缓动：默认减速
     :::column-end:::
     :::column:::
 <b>反向方向：</b><br>
-向下滑动150： 150ms;缓动：默认<b>的加速方向：</b><br>
+向下滑动150： 150ms;缓动：默认 <b>的加速方向：</b><br>
 淡入： 300ms;缓动：默认减速
     :::column-end:::
 :::row-end:::
@@ -74,7 +74,7 @@ Slide 150： 300ms;缓动：默认减速
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>如果安装了<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/ImplicitTransition">打开应用，并查看操作中的隐式转换</a>。</p>
+    <p>如果安装了 <strong style="font-weight: semi-bold">XAML 控件库</strong> 应用，请单击此处 <a href="xamlcontrolsgallery:/item/ImplicitTransition">打开应用，并查看操作中的隐式转换</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
@@ -85,7 +85,7 @@ Slide 150： 300ms;缓动：默认减速
 
 ## <a name="implicit-animations"></a>隐式动画
 
-> 隐式动画需要 Windows 10 版本1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本。
+> 隐式动画需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。
 
 隐式动画是一种简单的方法，通过在参数更改期间自动在新值和新值之间进行插值来实现流畅的运动。
 
@@ -97,10 +97,10 @@ Slide 150： 300ms;缓动：默认减速
   - **缩放**
   - **翻译**
 
-- [Border](/uwp/api/windows.ui.xaml.controls.border)、 [system.windows.controls.contentpresenter>](/uwp/api/windows.ui.xaml.controls.contentpresenter)或[Panel](/uwp/api/windows.ui.xaml.controls.panel)
+- [Border](/uwp/api/windows.ui.xaml.controls.border)、 [system.windows.controls.contentpresenter>](/uwp/api/windows.ui.xaml.controls.contentpresenter)或 [Panel](/uwp/api/windows.ui.xaml.controls.panel)
   - **背景**
 
-可以具有隐式动画的更改的每个属性都有相应的_转换_属性。 若要对属性进行动画处理，请将转换类型分配给相应的_转换_属性。 此表显示了要用于每个的_转换_属性和过渡类型。
+可以具有隐式动画的更改的每个属性都有相应的 _转换_ 属性。 若要对属性进行动画处理，请将转换类型分配给相应的 _转换_ 属性。 此表显示了要用于每个的 _转换_ 属性和过渡类型。
 
 | 动画属性 | 转换属性 | 隐式转换类型 |
 | -- | -- | -- |

@@ -1,5 +1,5 @@
 ---
-Description: 了解如何在 toast 通知上使用通知镜像。
+description: 了解如何使用由云中的操作中心提供支持的通知镜像，在电脑上查看手机的 toast 通知。
 title: 通知镜像
 label: Notification mirroring
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, 云中的操作中心, 通知镜像, 通知, 跨设备
 ms.localizationpriority: medium
-ms.openlocfilehash: b897c6574f6cbfe78406d1c624f2e3b7286ef582
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 13e3e9f0b675ef0e5f9e0787f0544f87689cf74a
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971052"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054007"
 ---
 # <a name="notification-mirroring"></a>通知镜像
 

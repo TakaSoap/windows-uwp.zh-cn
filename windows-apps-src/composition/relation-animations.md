@@ -1,16 +1,16 @@
 ---
 title: 基于关系的动画
-description: 基于其他对象的属性创建运动
+description: 了解当动作依赖于另一个对象的属性时，如何使用 ExpressionAnimations 创建基于关系的动画。
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: bfed00cf4866d79d4ac3097026cc09c70f9327cd
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 91e3ae5b23b7429633053f4d4d876f02127d26e3
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318169"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054417"
 ---
 # <a name="relation-based-animations"></a>基于关系的动画
 
@@ -59,7 +59,7 @@ Expression 还支持一系列关键字 - 一种特殊的短语，仅在 Expressi
 
 为使该文档表述清晰，我们将使用 ExpressionBuilder 定义我们的 Expression。
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>parameters
 
 参数构成了 Expression 的核心。 有两种类型的参数：
 
@@ -112,7 +112,7 @@ var orbitRotation = EF.Vector3(
 ```
 
 > [!NOTE]
-> `EF` 是一个简短"的使用"的注释来定义 ExpressionBuilder.ExpressionFunctions。
+> `EF` 是简写的 "using" 表示法，用于定义 ExpressionBuilder。 ExpressionFunctions。
 
 最后，将这些部分组合起来，引用红球的位置，定义数学关系。
 

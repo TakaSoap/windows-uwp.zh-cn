@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d15173471b7f1ef3f1c6b042671eb85b7a53dc4
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 1a875a0cb56e6a2a29627f05e6c01398233c8a48
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282339"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155391"
 ---
 # <a name="create-a-windows-hello-login-service"></a>创建 Windows Hello 登录服务
 
@@ -51,7 +51,7 @@ ms.locfileid: "72282339"
     }
     ```
 
-    你可能已经注意到，已注释 PassportDevices 列表。 这是一项你需要对当前实现中的现有用户模型进行的修改。 PassportDevices 列表将包含 deviceID（从 Windows Hello 中获取的公钥）以及 [**KeyCredentialAttestationResult**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredentialAttestationResult)。 对于本动手实验，你将需要实现 keyAttestationResult，因为它们仅由 Windows Hello 在具有 TPM（受信任的平台模块）芯片的设备上提供。 **KeyCredentialAttestationResult** 是多个属性的组合，并且将需要进行拆分，以便可以使用数据库保存和加载它们。
+    你可能已经注意到，已注释 PassportDevices 列表。 这是一项你需要对当前实现中的现有用户模型进行的修改。 PassportDevices 列表将包含 deviceID（从 Windows Hello 中获取的公钥）以及 [**KeyCredentialAttestationResult**](/uwp/api/Windows.Security.Credentials.KeyCredentialAttestationResult)。 对于本动手实验，你将需要实现 keyAttestationResult，因为它们仅由 Windows Hello 在具有 TPM（受信任的平台模块）芯片的设备上提供。 **KeyCredentialAttestationResult** 是多个属性的组合，并且将需要进行拆分，以便可以使用数据库保存和加载它们。
 
 -   在名为“PassportDevice.cs”的 AuthService 文件夹中创建新类。 这是适用于上述 Windows Hello 设备的模型。 更改类定义以使其成为公共类，并添加以下属性。
 
@@ -804,7 +804,7 @@ ms.locfileid: "72282339"
     }
     ```
 
--   由于在删除\_帐户时，将使用 AuthService，因此\_用户\_单击方法时，可能会被删除。 现在，该方法应如下所示。
+-   由于在删除帐户时将使用 AuthService，因此可以删除按钮中对 AccountHelper 的引用 \_ \_ \_ 。 现在，该方法应如下所示。
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)

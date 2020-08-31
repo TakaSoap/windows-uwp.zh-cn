@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e06f8e915466f116692c63df5c53c2a0f97447f
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 7f02e222cf495f56352a645ac3a366da39dc5e3a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209653"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158411"
 ---
 # <a name="manage-add-ons"></a>管理加载项
 
@@ -41,22 +41,22 @@ ms.locfileid: "79209653"
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
-<td align="left"><a href="get-an-add-on.md">获取特定外接程序</a></td>
+<td align="left"><a href="get-an-add-on.md">获取特定加载项</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts</td>
-<td align="left"><a href="create-an-add-on.md">创建外接程序</a></td>
+<td align="left"><a href="create-an-add-on.md">创建加载项</a></td>
 </tr>
 <tr>
-<td align="left">删除</td>
+<td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
-<td align="left"><a href="delete-an-add-on.md">删除外接程序</a></td>
+<td align="left"><a href="delete-an-add-on.md">删除加载项</a></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)，然后再尝试使用其中任何方法。
 
@@ -97,14 +97,14 @@ ms.locfileid: "79209653"
 
 此资源具有以下值。
 
-| 值      | 类型   | 说明        |
+| 值      | 类型   | 描述        |
 |------------|--------|--------------|
-| 应用程序      | 数组  | 包含表示应用（与此加载项相关联）的[应用程序资源](#application-object)的数组。 只有一个项在此数组中受支持。  |
-| id | string  | 加载项的应用商店 ID。 此值由应用商店提供。 应用商店 ID 的一个示例是 9NBLGGH4TNMP。  |
-| productId | string  | 加载项的产品 ID。 这是在创建加载项时由开发人员提供的 ID。 有关详细信息，请参阅[设置你的产品类型和产品 ID](https://docs.microsoft.com/windows/uwp/publish/set-your-iap-product-id)。 |
-| productType | string  | 加载项的产品类型。 支持以下值：**Durable** 和 **Consumable**。  |
-| lastPublishedInAppProductSubmission       | 对象 | 提供有关加载项的上次发布提交的信息的[提交资源](#submission-object)。         |
-| pendingInAppProductSubmission        | 对象  |  提供有关加载项的当前挂起提交的信息的[提交资源](#submission-object)。  |   |
+| applications      | array  | 包含表示应用（与此加载项相关联）的[应用程序资源](#application-object)的数组。 只有一个项在此数组中受支持。  |
+| id | 字符串  | 加载项的应用商店 ID。 此值由应用商店提供。 应用商店 ID 的一个示例是 9NBLGGH4TNMP。  |
+| productId | 字符串  | 加载项的产品 ID。 这是在创建加载项时由开发人员提供的 ID。 有关详细信息，请参阅[设置你的产品类型和产品 ID](../publish/set-your-add-on-product-id.md)。 |
+| productType | 字符串  | 加载项的产品类型。 支持以下值：**Durable** 和 **Consumable**。  |
+| lastPublishedInAppProductSubmission       | 对象 (object) | 提供有关加载项的上次发布提交的信息的[提交资源](#submission-object)。         |
+| pendingInAppProductSubmission        | 对象 (object)  |  提供有关加载项的当前挂起提交的信息的[提交资源](#submission-object)。  |   |
 
 <span id="application-object" />
 
@@ -130,7 +130,7 @@ ms.locfileid: "79209653"
 
 | 值           | 类型    | 说明        |
 |-----------------|---------|-----------|
-| 值            | 对象  |  包含以下值的对象： <br/><br/> <ul><li>*id*。应用的 Store ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。</li><li>*resourceLocation*。 可追加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于检索应用的完整数据。</li></ul>   |
+| 值            | 对象 (object)  |  包含以下值的对象： <br/><br/> <ul><li>*id*。应用的 Store ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](../publish/view-app-identity-details.md)。</li><li>*resourceLocation*。 可追加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于检索应用的完整数据。</li></ul>   |
 | totalCount   | int  | 响应正文的 *applications* 数组中的应用对象数。                                                                                                                                                 |
 
 <span id="submission-object" />
@@ -152,16 +152,16 @@ ms.locfileid: "79209653"
 
 | 值           | 类型    | 说明     |
 |-----------------|---------|------------------|
-| id            | string  | 提交的 ID。    |
-| resourceLocation   | string  | 可追加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于检索提交的完整数据。     |
+| id            | 字符串  | 提交的 ID。    |
+| resourceLocation   | 字符串  | 可追加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于检索提交的完整数据。     |
  
 <span/>
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Microsoft Store services 创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [使用 Microsoft Store 提交 API 管理外接程序提交](manage-add-on-submissions.md)
+* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [使用 Microsoft Store 提交 API 管理加载项提交](manage-add-on-submissions.md)
 * [获取所有加载项](get-all-add-ons.md)
-* [获取外接程序](get-an-add-on.md)
-* [创建外接程序](create-an-add-on.md)
-* [删除外接程序](delete-an-add-on.md)
+* [获取加载项](get-an-add-on.md)
+* [创建加载项](create-an-add-on.md)
+* [删除加载项](delete-an-add-on.md)

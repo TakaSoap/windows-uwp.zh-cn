@@ -5,12 +5,12 @@ ms.date: 09/02/2019
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: f48d0d8c06a9718479c73ff4523f62ddd2fa0a06
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: f7206250b2495ae2c905d2aece2b8cd1b85d6859
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053737"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168471"
 ---
 # <a name="getting-started-with-a-camera-barcode-scanner"></a>相机条形码扫描仪入门
 
@@ -49,7 +49,7 @@ DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAs
 
 ## <a name="step-4-enumerate-all-barcode-scanners"></a>步骤4：枚举所有条形码扫描器
 
-如果你不希望在应用程序的生命周期内更改设备的列表，则可以使用 [DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)枚举快照一次，但如果你认为条码扫描器列表可能会在应用程序的生存期内发生更改，则应改用 [DeviceWatcher](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher) 。  
+如果你不希望在应用程序的生命周期内更改设备的列表，则可以使用 [DeviceInformation](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)枚举快照一次，但如果你认为条码扫描器列表可能会在应用程序的生存期内发生更改，则应改用 [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher) 。  
 
 > [!Important]
 > 使用 GetDefaultAsync 枚举 PointOfService 设备可能导致不一致的行为，因为它只返回在类中找到的第一个设备，这可能随会话的变化而改变。
@@ -61,7 +61,7 @@ DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAs
 ```
 
 > [!TIP]
-> 请参阅[*枚举设备快照*](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices#enumerate-a-snapshot-of-devices)了解有关使用 *FindAllAsync* 的详细信息。
+> 请参阅[*枚举设备快照*](./enumerate-devices.md#enumerate-a-snapshot-of-devices)了解有关使用 *FindAllAsync* 的详细信息。
 
 ### <a name="option-b-enumerate-available-barcode-scanners-and-watch-for-changes-to-the-available-scanners"></a>**选项 B：枚举可用的条形码扫描器并监视对可用扫描仪的更改**
 
@@ -74,13 +74,13 @@ watcher.Start();
 ```
 
 > [!TIP]
-> 请参阅[*枚举和观察设备更改*](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices#enumerate-and-watch-devices)和 [*DeviceWatcher*](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) 了解详细信息。
+> 请参阅[*枚举和观察设备更改*](./enumerate-devices.md#enumerate-and-watch-devices)和 [*DeviceWatcher*](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) 了解详细信息。
 
 ## <a name="step-5-identify-camera-barcode-scanners"></a>步骤 5：识别相机条形码扫描仪
 
 相机条形码扫描仪在 Windows 将连接到计算机的相机与软件解码器配对时动态创建。  每个相机 - 解码器对都是一个功能完全的条形码扫描仪。
 
-对于生成的设备集合中的每个条形码扫描器，可以通过检查 [*BarcodeScanner. VideoDeviceID*](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.videodeviceid#Windows_Devices_PointOfService_BarcodeScanner_VideoDeviceId) 属性来区分照相机条形码扫描器和物理条形码扫描仪。  非 NULL VideoDeviceID 表示设备集合中的条形码扫描器对象是相机条形码扫描器。  如果有多个相机条形码扫描器，你可能想要生成一个不包括物理条形码扫描器的单独集合。
+对于生成的设备集合中的每个条形码扫描器，可以通过检查 [*BarcodeScanner. VideoDeviceID*](/uwp/api/windows.devices.pointofservice.barcodescanner.videodeviceid#Windows_Devices_PointOfService_BarcodeScanner_VideoDeviceId) 属性来区分照相机条形码扫描器和物理条形码扫描仪。  非 NULL VideoDeviceID 表示设备集合中的条形码扫描器对象是相机条形码扫描器。  如果有多个相机条形码扫描器，你可能想要生成一个不包括物理条形码扫描器的单独集合。
 
 使用随 Windows 附带的解码器的相机条形码扫描器标识为：
 
@@ -125,7 +125,7 @@ private async void ScannerSelection_Changed(object sender, SelectionChangedEvent
 
 ## <a name="step-6-claim-the-camera-barcode-scanner"></a>步骤 6：认领相机条形码扫描仪
 
-使用 [BarcodeScanner.ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync) 来获取对相机条形码扫描仪的独占使用。
+使用 [BarcodeScanner.ClaimScannerAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync) 来获取对相机条形码扫描仪的独占使用。
 
 ```csharp
 private async Task SelectScannerAsync(string scannerDeviceId)
@@ -153,20 +153,20 @@ private async Task SelectScannerAsync(string scannerDeviceId)
 
 ## <a name="step-7-system-provided-preview"></a>步骤 7：系统提供的预览
 
-用户要成功扫描相机的条形码需要使用相机预览。  Windows 提供了一个简单的相机预览，用于启动用于基本控制相机条形码扫描器的对话框。  调用 [ClaimedBarcodeScanner.ShowVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) 即可打开对话框，完成后调用 [ClaimedBarcodeScanner.HideVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) 将其关闭。
+用户要成功扫描相机的条形码需要使用相机预览。  Windows 提供了一个简单的相机预览，用于启动用于基本控制相机条形码扫描器的对话框。  调用 [ClaimedBarcodeScanner.ShowVideoPreview](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) 即可打开对话框，完成后调用 [ClaimedBarcodeScanner.HideVideoPreview](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) 将其关闭。
 
 > [!TIP]
 > 请参阅[托管预览](pos-camerabarcode-hosting-preview.md)了解如何托管应用程序中相机条形码扫描仪的预览。
 
 ## <a name="step-8-initiate-scan"></a>步骤8：启动扫描
 
-你可以通过调用 [**StartSoftwareTriggerAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync) 来启动扫描过程。
+你可以通过调用 [**StartSoftwareTriggerAsync**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync) 来启动扫描过程。
 
-根据 [**IsDisabledOnDataReceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) 的值，扫描程序可能只扫描一个条形码，然后在调用 [**StopSoftwareTriggerAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.stopsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StopSoftwareTriggerAsync)之前停止或扫描。
+根据 [**IsDisabledOnDataReceived**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) 的值，扫描程序可能只扫描一个条形码，然后在调用 [**StopSoftwareTriggerAsync**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.stopsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StopSoftwareTriggerAsync)之前停止或扫描。
 
-设置所需的 [**IsDisabledOnDataReceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) 值来在解码条形码时控制扫描仪行为。
+设置所需的 [**IsDisabledOnDataReceived**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) 值来在解码条形码时控制扫描仪行为。
 
-| “值” | 说明 |
+| 值 | 描述 |
 | ----- | ----------- |
 | True   | 在扫描一个条形码后停止 |
 | False  | 持续扫描条形码而不停止 |

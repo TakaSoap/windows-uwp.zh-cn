@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b8960d9723460fcbb8cec71da0998958cac8a6e8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 90dfb8d28be786cb542e72fde5a24bed4de68f78
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370945"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167971"
 ---
 # <a name="tessellator-ts-stage"></a>Tessellator (TS) 阶段
 
 
 细化器 (TS) 阶段创建代表几何图形修补程序的域的采样模式，并生成连接这些样本的一组较小对象（三角形、点或线）。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途，并使用
+## <a name="span-idpurpose_and_usesspanspan-idpurpose_and_usesspanspan-idpurpose_and_usesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>目的和使用
 
 
 下图重点显示了 Direct3D 图形管道的阶段。
@@ -52,9 +52,9 @@ Direct3D 运行时支持实现分割的三个阶段，通过分割可将低画�
 
 Direct3D 图形管道在软件中实施分割，能够将 CPU 的工作负担转移至 GPU。 如果应用程序实施大量的变形目标和/或更加复杂的蒙皮/变形模型，这将能够显著改善性能。
 
-细化器是由一种固定功能阶段，通过将[外壳着色器](hull-shader-stage--hs-.md)绑定至管道进行初始化。 (请参阅[How To:初始化细化器阶段](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-advanced-stages-tessellator-initialize))。 细化器阶段旨在将域（四边形、三角形或线）分割为很多较小对象（三角形、点或线）。 细化器能够在标准化（零到一）协调系统中平铺规范域。 例如，四边形域细化为单位正方形。
+细化器是由一种固定功能阶段，通过将[外壳着色器](hull-shader-stage--hs-.md)绑定至管道进行初始化。 （请参阅[如何：初始化细化器阶段](/windows/desktop/direct3d11/direct3d-11-advanced-stages-tessellator-initialize)）。 细化器阶段旨在将域（四边形、三角形或线）分割为很多较小对象（三角形、点或线）。 细化器能够在标准化（零到一）协调系统中平铺规范域。 例如，四边形域细化为单位正方形。
 
-### <a name="span-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanphases-in-the-tessellator-ts-stage"></a><span id="Phases_in_the_Tessellator__TS__stage"></span><span id="phases_in_the_tessellator__ts__stage"></span><span id="PHASES_IN_THE_TESSELLATOR__TS__STAGE"></span>细化器 (TS) 阶段中的阶段
+### <a name="span-idphases_in_the_tessellator__ts__stagespanspan-idphases_in_the_tessellator__ts__stagespanspan-idphases_in_the_tessellator__ts__stagespanphases-in-the-tessellator-ts-stage"></a><span id="Phases_in_the_Tessellator__TS__stage"></span><span id="phases_in_the_tessellator__ts__stage"></span><span id="PHASES_IN_THE_TESSELLATOR__TS__STAGE"></span>细化器 (TS) 阶段中的各个阶段
 
 细化器 (TS) 阶段的运行有两个阶段：
 
@@ -63,27 +63,27 @@ Direct3D 图形管道在软件中实施分割，能够将 CPU 的工作负担转
 
     | 分区类型 | 范围                       |
     |----------------------|-----------------------------|
-    | Fractional\_odd      | \[1...63\]                  |
-    | 小数\_甚至     | TessFactor 范围：\[2..64\] |
-    | 整型              | TessFactor 范围：\[1..64\] |
-    | 幂 2                 | TessFactor 范围：\[1..64\] |
+    | 奇数的小数部分 \_      | \[1 ... 63\]                  |
+    | \_偶数     | TessFactor 范围： \[ 2 .. 64\] |
+    | Integer              | TessFactor 范围： \[ 1 .. 64\] |
+    | 幂 2                 | TessFactor 范围： \[ 1 .. 64\] |
 
      
 
-分割通过两个可编程的着色器阶段实施：[外壳着色器](hull-shader-stage--hs-.md)和[域着色器](domain-shader-stage--ds-.md)。 这些着色器阶段通过在着色器模型 5 中定义的 HLSL 代码进行编程。 着色器的目标是： hs\_5\_0 和 ds\_5\_0。 标题创建着色器，然后从在着色器绑定至管道时传递至运行时的编译着色器提取硬件代码。
+分割通过两个可编程的着色器阶段实施：[外壳着色器](hull-shader-stage--hs-.md)和[域着色器](domain-shader-stage--ds-.md)。 这些着色器阶段通过在着色器模型 5 中定义的 HLSL 代码进行编程。 着色器目标是： hs \_ 5 \_ 0 和 ds \_ 5 \_ 0。 标题创建着色器，然后从在着色器绑定至管道时传递至运行时的编译着色器提取硬件代码。
 
-### <a name="span-idenablingdisablingtessellationspanspan-idenablingdisablingtessellationspanspan-idenablingdisablingtessellationspanenablingdisabling-tessellation"></a><span id="Enabling_disabling_tessellation"></span><span id="enabling_disabling_tessellation"></span><span id="ENABLING_DISABLING_TESSELLATION"></span>启用/禁用分割
+### <a name="span-idenabling_disabling_tessellationspanspan-idenabling_disabling_tessellationspanspan-idenabling_disabling_tessellationspanenablingdisabling-tessellation"></a><span id="Enabling_disabling_tessellation"></span><span id="enabling_disabling_tessellation"></span><span id="ENABLING_DISABLING_TESSELLATION"></span>启用/禁用分割
 
 通过创建外壳着色器并将其绑定至外壳着色器阶段（这会自动设置细化器阶段），进而实现分割。 要从细化修补程序生成最终顶点位置，你还需要创建[域着色器](domain-shader-stage--ds-.md)并将其绑定至域着色器阶段。 启用分割后，输入汇编程序 (IA) 阶段的数据输入必须为修补程序数据。 输入汇编程序拓扑必须为修补程序常数拓扑。
 
 要禁用分割，则将外壳着色器和域着色器设为**空**。 [几何着色器 (GS) 阶段](geometry-shader-stage--gs-.md)和[流输出 (SO) 阶段](stream-output-stage--so-.md)均不会读取外壳着色器输出控制点或修补程序数据。
 
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>输入
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>送
 
 
 在每个使用从外壳着色器阶段传入的细化因素（指定域被细分的细微程度）和分区的类型（指定用于分割修补程序的算法）的修补程序上执行一次细化器。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
 细化器将 uv（和可选 w）坐标和表面拓扑输出到域着色器阶段。
@@ -96,7 +96,3 @@ Direct3D 图形管道在软件中实施分割，能够将 CPU 的工作负担转
  
 
  
-
-
-
-

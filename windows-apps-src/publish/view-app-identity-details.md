@@ -6,30 +6,30 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 07c2d3308d204d37e246a9a56c0a7203a1340dc0
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 9232acbf83659c661e1b1f3c35a7fb7ad546e819
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210423"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157921"
 ---
 # <a name="view-app-identity-details"></a>查看应用标识的详细信息
 
 
-可以通过**应用标识**页面上的 Microsoft Store 查看与分配给应用的唯一标识相关的详细信息。 你还可以在此页上获取应用商店列表的链接。
+可以通过 **应用标识** 页面上的 Microsoft Store 查看与分配给应用的唯一标识相关的详细信息。 你还可以在此页上获取应用商店列表的链接。
 
-若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的“应用管理”。 选中**应用标识**查看这些详细信息。
+若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的**应用管理**。 选中**应用标识**查看这些详细信息。
 
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>要包含在应用程序包清单中的值
 
 以下值必须包含在包清单中。 如果[使用 Microsoft Visual Studio 生成程序包](/windows/msix/package/packaging-uwp-apps)，并使用与你的开发者帐户关联的相同 Microsoft 帐户登录，则会自动包含这些详细信息。 如果手动生成程序包，则需要将以下各项添加到程序包中：
 
--   **包/标识/名称**
--   **包/标识/发布服务器**
--   **Package/Properties/PublisherDisplayName**
+-   **程序包/标识/名称**
+-   **程序包/标识/发布者**
+-   **程序包/属性/发行商显示名称**
 
-有关详细信息，请参阅[程序包清单架构参考](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
+有关详细信息，请参阅[程序包清单架构参考](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的[**标识**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 
 同时，这些元素声明应用的标识、建立了所有程序包所属于的“程序包系列”。 单个程序包将具有其他详细信息，如体系结构和版本。
 
@@ -38,8 +38,8 @@ ms.locfileid: "79210423"
 
 以下值是指应用的程序包系列的其他值，但不包含在清单内。
 
--   **包系列名称（PFN）** ：此值用于某些 Windows Api。
--   **包 SID**：需要此值才能向应用程序发送 WNS 通知。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
+-   **程序包系列名称 (PFN)**：此值与某些 Windows API 结合使用。
+-   **程序包 SID**：需要该值才能向应用发送 WNS 通知。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
 
 
 ## <a name="link-to-your-apps-listing"></a>链接到应用一览
@@ -55,7 +55,3 @@ ms.locfileid: "79210423"
  
 
  
-
-
-
-

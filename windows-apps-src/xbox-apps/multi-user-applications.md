@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
 ms.localizationpriority: medium
-ms.openlocfilehash: 0364964f069537ee934771184eb9c6ffda6f346f
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 52a740f3dec2f0106beb76a6a96903ac71bf5035
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970285"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157791"
 ---
 # <a name="introduction-to-multi-user-applications"></a>多用户应用程序简介
 
@@ -44,11 +44,11 @@ UWP 游戏可以选择采用 Xbox One 多用户模型。 这些“多用户应�
 开发人员可以使用 KeyUp 和 KeyDown 路由事件所用的 KeyRoutedEventArgs.DeviceId，来区分不同输入生成的事件。
 使用 Windows.System.UserDeviceAssociation.FindUserFromDeviceId 方法将有助于识别与特定输入关联的用户。
 
-有关详细信息，请参阅 [KeyRoutedEventArgs.DeviceId](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.deviceid) 主题。
+有关详细信息，请参阅 [KeyRoutedEventArgs.DeviceId](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.deviceid) 主题。
 
 
 ## <a name="guidance-on-which-model-to-choose"></a>有关要选择的模型的指南
 所有 UWP 应用和大多数单用户游戏可以编写成 SUA。 我们建议仅合作的多玩家游戏考虑选择采用 Xbox One 多用户模型。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 - [Xbox One 上的 UWP](index.md)

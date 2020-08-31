@@ -6,32 +6,32 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
-ms.openlocfilehash: a9da63e05380987d69d97a74123e593acd0b8cb1
-ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
+ms.openlocfilehash: 3576f907e4ab601013d22fe9ae7697e0ec523ce4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619341"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155201"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>向线程池提交工作项
 
-\[已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 2.x 的文章，请参阅[存档](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
+\[ 已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 2.x 的文章，请参阅[存档](/previous-versions/windows/apps/mt244353(v=win.10))\]
 
 <b>重要的 API</b>
 
--   [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)
--   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)
+-   [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync)
+-   [**IAsyncAction**](/uwp/api/Windows.Foundation.IAsyncAction)
 
 了解如何通过向线程池提交工作项，在单独的线程中完成工作。 使用此快速入门可维护 UI 快速响应，同时仍然可以完成需要花费大量时间来完成的工作，并且可以使用它来并行完成多个任务。
 
 ## <a name="create-and-submit-the-work-item"></a>创建和提交工作项
 
-通过调用 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 创建工作项。 提供委派来完成工作（你可使用一个 lambda 或 delegate 函数）。 请注意，**RunAsync** 返回 [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction) 对象；存储此对象以用于下一个步骤。
+通过调用 [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync) 创建工作项。 提供委派来完成工作（你可使用一个 lambda 或 delegate 函数）。 请注意，**RunAsync** 返回 [**IAsyncAction**](/uwp/api/Windows.Foundation.IAsyncAction) 对象；存储此对象以用于下一个步骤。
 
-[**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 有 3 个版本，你可指定工作项的优先级，控制它是否与其他工作项同时运行。
+[**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync) 有 3 个版本，你可指定工作项的优先级，控制它是否与其他工作项同时运行。
 
 >[!NOTE]
->使用[**CoreDispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)可访问 UI 线程并显示工作项的进度。
+>使用 [**CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher.runasync) 可访问 UI 线程并显示工作项的进度。
 
 以下示例创建工作项并提供 lambda 以执行此工作：
 
@@ -269,13 +269,13 @@ auto asyncAction = ThreadPool::RunAsync(workItem);
 m_workItem = asyncAction;
 ```
 
-在调用 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 后，线程池将对工作项进行排队，并在线程可用时运行工作项。 线程池工作项异步运行，并且它们可以任何顺序运行，以便确保你的工作项独立运行。
+在调用 [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync) 后，线程池将对工作项进行排队，并在线程可用时运行工作项。 线程池工作项异步运行，并且它们可以任何顺序运行，以便确保你的工作项独立运行。
 
-请注意，该工作项会检查 [**IAsyncInfo.Status**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncinfo.status) 属性，如果该工作项被取消，则退出。
+请注意，该工作项会检查 [**IAsyncInfo.Status**](/uwp/api/windows.foundation.iasyncinfo.status) 属性，如果该工作项被取消，则退出。
 
 ## <a name="handle-work-item-completion"></a>处理工作项完成
 
-通过设置工作项的 [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) 属性来提供完成处理程序。 提供委派（可使用 lambda 或 delegate 函数）来处理工作项的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 访问 UI 线程并显示结果。
+通过设置工作项的 [**IAsyncAction.Completed**](/uwp/api/windows.foundation.iasyncaction.completed) 属性来提供完成处理程序。 提供委派（可使用 lambda 或 delegate 函数）来处理工作项的完成。 例如，使用 [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) 访问 UI 线程并显示结果。
 
 以下示例使用在步骤 1 中所提交工作项的结果更新 UI：
 
@@ -350,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>总结和后续步骤
 
-若要了解详细信息，可在创建为 Windows 8.1 编写的[ThreadPool 工作项示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample)中下载此快速入门中的代码，并在 Win\_unap Windows 10 应用中重复使用源代码。
+若要了解详细信息，可在创建为 Windows 8.1 编写的 [ThreadPool 工作项示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) 中下载此快速入门中的代码，并在 Win \_ unap Windows 10 应用中重复使用源代码。
 
 ## <a name="related-topics"></a>相关主题
 

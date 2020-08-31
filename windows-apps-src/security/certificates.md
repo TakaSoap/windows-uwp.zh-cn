@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 28419df1a37ff640db7246b54e50da5bfce9fedb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7c8d3fd007e688bd11423c32bd175203a6f1917d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372621"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157881"
 ---
 # <a name="intro-to-certificates"></a>证书简介
 
@@ -22,7 +22,7 @@ ms.locfileid: "66372621"
 
 ### <a name="shared-certificate-stores"></a>共享的证书存储
 
-UWP 应用使用的 Windows 8 中引入新的来自应用程序模型。 在此模型中，应用将在低级操作系统结构（称为应用容器）中运行，除非明确允许，否则禁止应用访问除本身以外的资源或文件。 以下各节将介绍这对公钥基础结构 (PKI) 的含义。
+UWP 应用将使用在 Windows 8 中引入的新 isolationist 应用程序模型。 在此模型中，应用将在低级操作系统结构（称为应用容器）中运行，除非明确允许，否则禁止应用访问除本身以外的资源或文件。 以下各节将介绍这对公钥基础结构 (PKI) 的含义。
 
 ### <a name="certificate-storage-per-app-container"></a>证书按应用容器存储
 
@@ -53,18 +53,18 @@ X.509 公钥证书标准已经随着时间的过去经过了修订。 每一个�
 
 ![x.509 证书版本 1、2 和 3](images/x509certificateversions.png)
 
-在使用 [**CertificateRequestProperties**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties) 类创建证书请求时，可以直接指定某些字段和扩展。 大多数不能。 这些字段可由证书颁发机构填充，也可以保留为空。 有关这些字段的详细信息，请参阅以下部分：
+在使用 [**CertificateRequestProperties**](/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties) 类创建证书请求时，可以直接指定某些字段和扩展。 大多数不能。 这些字段可由证书颁发机构填充，也可以保留为空。 有关这些字段的详细信息，请参阅以下部分：
 
 ### <a name="version-1-fields"></a>版本 1 字段
 
-| 字段 | 描述 |
+| 字段 | 说明 |
 |-------|-------------|
-| Version | 指定所编码证书的版本号。 当前，此字段的可能值为 0、1 或 2。 |
+| 版本 | 指定所编码证书的版本号。 当前，此字段的可能值为 0、1 或 2。 |
 | 序列号 | 包含证书颁发机构 (CA) 分配给证书的一个唯一正整数。 |
 | 签名算法 | 包含一个对象标识符 (OID)，指定 CA 用于对证书进行签名的算法。 例如，1.2.840.113549.1.1.5 指定 SHA-1 哈希算法与来自 RSA 实验室的 RSA 加密算法结合使用。 |
 | 颁发者 | 包含创建和签名证书的 CA 的 X.500 可分辨名称 (DN)。 |
 | 有效期 | 指定证书有效的时间间隔。 到 2049 年末之前的日期使用协调世界时（格林威治标准时间）格式 (yymmddhhmmssz)。 2050 年 1 月 1 日开始的日期使用普通时间格式 (yyyymmddhhmmssz)。 |
-| Subject | 包含实体的 X.500 可分辨名称，该实体与证书中包含的公钥相关联。 |
+| 主题 | 包含实体的 X.500 可分辨名称，该实体与证书中包含的公钥相关联。 |
 | 公钥 | 包含公钥和关联的算法信息。 |
 
 ### <a name="version-2-fields"></a>版本 2 字段
@@ -93,7 +93,6 @@ X.509 版本 3 证书包含版本 1 和版本 2 中定义的字段并添加了�
 | 策略约束 | 通过禁止策略映射或通过要求层次结构中的每个证书包含一个可接受的策略标识符来约束路径验证。 扩展仅在 CA 证书中使用。 |
 | 策略映射 | 指定与发证 CA 中的策略对应的从属 CA 中的策略。 |
 | 私钥使用周期 | 为私钥指定与私钥关联的证书不同的验证周期。 |
-| 使用者备用名称 | 为证书请求使用者指定一个或多个备用名称形式。 示例备用形式包括电子邮件地址、DNS 名称、IP 地址和 URI。 |
+| 使用者可选名称 | 为证书请求使用者指定一个或多个备用名称形式。 示例备用形式包括电子邮件地址、DNS 名称、IP 地址和 URI。 |
 | 使用目录属性 | 传达标识属性，如证书使用者的国籍。 扩展值是 OID 值对序列。 |
 | 使用者密钥标识符 | 区分证书使用者持有的多个公钥。 扩展值一般是密钥的 SHA-1 哈希。 |
-

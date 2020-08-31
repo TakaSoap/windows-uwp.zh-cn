@@ -5,12 +5,12 @@ ms.date: 01/22/2019
 ms.topic: article
 keywords: windows 10, uwp, 评分, 评价
 ms.localizationpriority: medium
-ms.openlocfilehash: b167f4cc40ee72e6405436bacee28f2f20b4623c
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: c0a668ac66f48e386a6299a64e5bcc18cec4fccc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210713"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158371"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>请求应用的评分和评价
 
@@ -21,11 +21,11 @@ ms.locfileid: "79210713"
 准备好分析分级和查看数据时，可以在 "合作伙伴中心" 查看数据，也可以使用 Microsoft Store analytics API 以编程方式检索此数据。
 
 > [!IMPORTANT]
-> 在应用程序中添加分级函数时，无论选择哪种评价，所有检查都必须将用户发送到商店的分级机制。 如果你从用户那里收集反馈或评论，则必须清楚地表明它与应用分级或在商店中的评论无关，但会直接发送到应用开发人员。 有关[虚假活动或不诚实活动](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)的详细信息，请参阅开发人员行为准则。
+> 在应用程序中添加分级函数时，无论选择哪种评价，所有检查都必须将用户发送到商店的分级机制。 如果你从用户那里收集反馈或评论，则必须清楚地表明它与应用分级或在商店中的评论无关，但会直接发送到应用开发人员。 有关 [虚假活动或不诚实活动](/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)的详细信息，请参阅开发人员行为准则。
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>在应用中显示评分和评价对话框
 
-若要以编程方式在应用程序中显示一个对话框，该对话框要求客户对应用进行评级并提交评审，请调用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中的 [RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) 方法。 
+若要以编程方式在应用程序中显示一个对话框，该对话框要求客户对应用进行评级并提交评审，请调用 RequestRateAndReviewAppAsync 命名空间中的 " [RequestRateAndReviewAppAsync](/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) "[方法。](/uwp/api/windows.services.store) 
 
 > [!IMPORTANT]
 > 显示评分和评价对话框的请求必须在应用中的 UI 线程上调用。
@@ -101,11 +101,11 @@ private async Task PromptUserToRateApp()
 }
 ```
 
-**RequestRateAndReviewAppAsync**方法是在 windows 10 1809 版中引入的，并且只能在面向**Windows 10 10 月2018更新的项目中使用（10.0;版本17763）** 或更高版本的 Visual Studio。
+Windows 10 1809 版中引入了 **RequestRateAndReviewAppAsync** 方法，并且它只能用于面向 **Windows 10 十月2018更新 (10.0; ** 在 Visual Studio 中生成 17763) 或更高版本。
 
 ### <a name="response-data-for-the-rating-and-review-request"></a>评分和评价请求的响应数据
 
-提交请求以显示 "分级和审阅" 对话框后， [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult)类的[ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata)属性包含一个 JSON 格式的字符串，该字符串指示请求是否成功。
+提交请求以显示 "分级和审阅" 对话框后， [StoreRateAndReviewResult](/uwp/api/windows.services.store.storerateandreviewresult)类的[ExtendedJsonData](/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata)属性包含一个 JSON 格式的字符串，该字符串指示请求是否成功。
 
 下面的示例演示在客户成功提交评分或评价之后此请求的返回值。
 
@@ -138,7 +138,7 @@ private async Task PromptUserToRateApp()
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>在 Microsoft Store 中对你的应用启动评分和评价页面。
 
-如果你想要以程序方式在 Microsoft Store 中对你的应用打开评分和评价页面，可像此代码示例中演示的那样，使用 ```ms-windows-store://review``` URI 架构的 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。
+如果你想要以程序方式在 Microsoft Store 中对你的应用打开评分和评价页面，可像此代码示例中演示的那样，使用 ```ms-windows-store://review``` URI 架构的 [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) 方法。
 
 ```csharp
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://review/?ProductId=9WZDNCRFHVJL"));
@@ -149,11 +149,11 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 ## <a name="analyze-your-ratings-and-reviews-data"></a>分析你的评分和评价数据
 
 要分析你的客户对应用的评分和评价数据，你有多个选择：
-* 你可以使用合作伙伴中心的 "[评论](../publish/reviews-report.md)" 报告来查看你的客户的评级和评论。 还可以下载该报告以便脱机查看。
+* 你可以使用合作伙伴中心的 " [评论](../publish/reviews-report.md) " 报告来查看你的客户的评级和评论。 还可以下载该报告以便脱机查看。
 * 你可以使用 Microsoft Store 分析 API 中的 [Get app ratings](get-app-ratings.md) 和 [Get app reviews](get-app-reviews.md) 方法以编程方式获取 JSON 格式的客户评分和评价。
 
 ## <a name="related-topics"></a>相关主题
 
-* [向存储发送请求](send-requests-to-the-store.md)
+* [向 Microsoft Store 发送请求](send-requests-to-the-store.md)
 * [启动 Microsoft Store 应用](../launch-resume/launch-store-app.md)
-* [评论报告](../publish/reviews-report.md)
+* [评价报告](../publish/reviews-report.md)

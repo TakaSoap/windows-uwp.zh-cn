@@ -6,16 +6,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 加载项, 属性, 订阅期, 产品生命周期, 内容类型, iap, 应用内购买, 应用内产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 59c7e5b2c9ceea534f530bc6880b32a808c91e70
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 9d092f443ab643b74cdd0221c96540fed0c7d474
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210393"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157991"
 ---
 # <a name="enter-add-on-properties"></a>输入加载项属性
 
-在提交加载项时，“属性”页面上的选项有助于确定在提供给客户时加载项的行为。
+提交外接程序时，" **属性** " 页上的选项有助于确定外接程序在向客户提供时的行为。
 
 ## <a name="product-type"></a>产品类型
 
@@ -29,17 +29,17 @@ ms.locfileid: "79210393"
 
 ## <a name="product-lifetime"></a>产品生命周期
 
-如果选择的产品类型为**耐用品**，此处将显示**产品生命周期**。 持久型加载项的默认“产品生命周期”为“永久”，这意味着加载项永不过期。 如果需要，你可以更改**产品生存期**，使外接程序在设置的持续时间（使用1-365 天的选项）之后过期。
+如果选择的产品类型为**耐用品**，此处将显示**产品生命周期**。 耐用型加载项的默认**产品生命周期**为**永久**，这意味着加载项永不过期。 如果需要，你可以更改 **产品生存期** ，使外接程序在设置的持续时间后过期 (具有1-365 天) 的选项。
 
 
 ## <a name="quantity"></a>数量
 
-如果选择的产品类型为**应用商店管理的易耗品**，此处将显示**数量**。 你将需要输入 1 到 1000000 之间的数字。 此数量将在客户获取你的加载项时授予他们，并且应用商店将在应用报告客户使用该加载项时跟踪平衡。
+如果选择的产品类型为**应用商店管理的易耗品**，此处将显示**数量**。 将需要输入一个 1 到 1000000 之间的数字。 此数量将在客户获取你的加载项时授予他们，并且应用商店将在应用报告客户使用该加载项时跟踪平衡。
 
 
 ## <a name="subscription-period"></a>订阅期限
 
-如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 选择一个选项以指定向客户收取订阅费用的频率。 默认选项为 "**每月**"，但你也可以选择**3 个月**、 **6 个月**、**每年**或**24 个月**。
+如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 选择一个选项以指定向客户收取订阅费用的频率。 默认选项为 " **每月**"，但你也可以选择 **3 个月**、 **6 个月**、 **每年**或 **24 个月**。
 
 > [!IMPORTANT]
 > 加载项发布之后，将无法更改**订阅期限**选择。
@@ -55,7 +55,7 @@ ms.locfileid: "79210393"
 
 ## <a name="content-type"></a>内容类型
 
-无论加载项的产品类型是什么，将需要指示所提供内容的类型。 对于大部分加载项，内容类型应为“电子软件下载”。 如果列表中的另一个选项可以更好地描述加载项（例如，如果要提供音乐下载或电子书），请改为选择该选项。
+无论加载项的产品类型是什么，将需要指示所提供内容的类型。 对于大部分加载项，内容类型应为**电子软件下载**。 如果列表中的另一个选项可以更好地描述加载项（例如，如果要提供音乐下载或电子书），请改为选择该选项。
 
 以下是加载项内容类型的可能选项：
 
@@ -81,10 +81,10 @@ ms.locfileid: "79210393"
 
 可以选择为每个提交的加载项提供最多十个关键字，每个关键字最多 30 个字符。 然后，你的应用便可查询匹配这些字词的加载项。 你可以使用此功能在应用中生成可加载加载项的屏幕，而无需直接在应用的代码中指定产品 ID。 然后，可以随时更改加载项关键字，而无需在应用中更改代码或重新提交应用。
 
-若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/Windows.Services.Store) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) 属性。）
+若要查询此字段，请使用 [Windows.Services.Store 命名空间](/uwp/api/Windows.Services.Store)中的 [StoreProduct.Keywords](/uwp/api/windows.services.store.storeproduct.Keywords) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Keywords](/uwp/api/windows.applicationmodel.store.productlisting.Keywords) 属性。）
 
 > [!NOTE]
-> 关键字不能用于面向 Windows 8 和 Windows 8.1 的包。
+> 关键字不适用于面向 Windows 8 和 Windows 8.1 的程序包。
 
 <span id="custom-developer-data" />
 
@@ -94,10 +94,10 @@ ms.locfileid: "79210393"
 
 例如，假设你有一款游戏，并且你正在出售一个可帮助客户访问其他级别的加载项。 通过使用**自定义开发人员数据**字段，当客户拥有该加载项时，应用可以进行查询以查看有哪些级别可用。 可更新加载项**自定义开发人员数据**字段中的信息并发布该加载项的已更新提交来随时调整值（在本例中，即为包含的级别），而无需在应用中更改代码或重新提交应用。
 
-若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData)中的 [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/Windows.Services.Store) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) 属性。）
+若要查询此字段，请使用 [Windows.Services.Store 命名空间](/uwp/api/Windows.Services.Store)中的 [StoreSku.CustomDeveloperData](/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Tag](/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) 属性。）
 
 > [!NOTE]
-> **自定义开发人员数据**字段不可用于面向 Windows 8 和 Windows 8.1 的包。
+> **自定义开发人员数据**字段不适用于面向 Windows 8 和 Windows 8.1 的程序包。
 
  
 

@@ -1,17 +1,17 @@
 ---
 title: 游戏输入实践
-description: 了解有效使用输入设备的模式和技术。
+description: 了解通用 Windows 平台 (UWP) 游戏中有效使用输入设备的模式和方法。
 ms.assetid: CBAD3345-3333-4924-B6D8-705279F52676
 ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入
 ms.localizationpriority: medium
-ms.openlocfilehash: aa2036cb8d91b17d084e4e4922d01d4256bdb7de
-ms.sourcegitcommit: 29eb375bc634bf733be58107c1d648dc818da7f8
+ms.openlocfilehash: eb543e86221f8f1a37565c2e6e6bf1fe4a8d3635
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88051322"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054487"
 ---
 # <a name="input-practices-for-games"></a>游戏输入实践
 
@@ -168,7 +168,7 @@ void OnGamepadRemoved(Platform::Object^ sender, Gamepad^ args)
 
 所有输入设备都与一位[用户](https://docs.microsoft.com/uwp/api/windows.system.user)关联，以便可以将其身份与其游戏玩法、成就、设置更改和其他活动关联。 用户可以随意登录或注销，而且，其他用户在之前的用户注销后登录到与系统保持相连的设备也很常见。用户登录或注销时会引发 [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged) 事件。 你可以为此事件注册事件处理程序，以跟踪玩家和他们正在使用的设备。
 
-用户标识也是输入设备与其相应的[UI 导航控制器](ui-navigation-controller.md)关联的方式。
+用户标识也是输入设备与其相应的 [UI 导航控制器](ui-navigation-controller.md)关联的方式。
 
 因此，应该使用设备类（继承自 [IGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller) 接口）的 [User](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.User) 属性跟踪和关联玩家。
 
@@ -314,7 +314,7 @@ if (buttonArrangement == buttonSelection)
 
 如果你的代码根据剩余的电池使用时间百分比执行某些操作（如绘制 UI），请确保它与上面的值相符。 例如，如果你想要警告玩家控制器的电池电量不足，则在到达 10% 时执行此操作。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 * [Windows.System.User 类](https://docs.microsoft.com/uwp/api/windows.system.user)
 * [Windows.Gaming.Input.IGameController 接口](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)

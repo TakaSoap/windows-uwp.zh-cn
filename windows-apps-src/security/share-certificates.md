@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe9a6fe94fa388c35f181341972211b9ed6c03f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cbe4f1e2a9b3e5290cd26edae10af6ac9bb0dbfc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371925"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155291"
 ---
 # <a name="share-certificates-between-apps"></a>在应用之间共享证书
 
 
 
 
-要求用户名和密码组合以上的安全身份认证的通用 Windows 平台 (UWP) 应用可以使用证书进行身份验证。 当对用户进行身份验证时，认证身份验证提供高级别的信任。 在某些情况下，一组服务将要针对多个应用对用户进行身份验证。 本文介绍了如何使用同一个证书对多个应用进行身份验证，以及如何提供方便代码，用户可使用此代码导入提供的证书以访问安全的 Web 服务。
+要求用户名和密码组合以上的安全身份认证的通用 Windows 平台 (UWP) 应用可以使用证书进行身份验证。 对用户进行身份验证时，证书身份验证将提供高级别的信任。 在某些情况下，一组服务将要针对多个应用对用户进行身份验证。 本文介绍了如何使用同一个证书对多个应用进行身份验证，以及如何提供方便代码，用户可使用此代码导入提供的证书以访问安全的 Web 服务。
 
 应用可使用证书对 Web 服务进行身份验证，并且多个应用可使用来自证书存储的单个证书对相同的用户进行身份验证。 如果存储中不存在证书，可将代码添加到应用以从 PFX 文件导入证书。
 
@@ -27,15 +27,15 @@ ms.locfileid: "66371925"
 
 本文以 Microsoft Internet 信息服务 (IIS) 为例。 默认情况下不启用 IIS。 可通过使用控制面板来启用 IIS。
 
-1.  打开“控制面板”，选择“程序”  。
-2.  选择“打开或关闭 Windows 功能”  。
-3.  展开“Internet 信息服务”  ，然后展开“万维网服务”  。 展开“应用程序开发功能”  并选择“ASP.NET 3.5”  和“ASP.NET 4.5”  。 做出这些选择将自动启用 **Internet 信息服务**。
-4.  单击“确定”  以应用更改。
+1.  打开“控制面板”，选择“程序”****。
+2.  选择 **"打开或关闭 Windows 功能"**。
+3.  展开“Internet 信息服务”****，然后展开“万维网服务”****。 展开“应用程序开发功能”**** 并选择“ASP.NET 3.5”**** 和“ASP.NET 4.5”****。 做出这些选择将自动启用 **Internet 信息服务**。
+4.  单击“确定”应用更改。
 
 ## <a name="create-and-publish-a-secured-web-service"></a>创建并发布安全的 Web 服务
 
 
-1.  作为管理员运行 Microsoft Visual Studio 并从起始页选择“新建项目”  。 将 Web 服务发布到 IIS 服务器需要管理员访问权限。 在“新建项目”对话框中，将框架更改为“.NET Framework 3.5”  。 选择**可视化C#**   - &gt; **Web**  - &gt; **Visual Studio**  - &gt; **ASP.NET Web 服务应用程序**。 将应用程序命名为“FirstContosoBank”。 单击**确定**以创建项目。
+1.  作为管理员运行 Microsoft Visual Studio 并从起始页选择“新建项目”****。 将 Web 服务发布到 IIS 服务器需要管理员访问权限。 在“新建项目”对话框中，将框架更改为“.NET Framework 3.5”****。 选择 " **visual c #**  - &gt; **Web**  - &gt; **visual Studio**  - &gt; **ASP.NET Web 服务应用程序**"。 将应用程序命名为“FirstContosoBank”。 单击“确定”以创建该项目  。
 2.  在 **Service1.asmx.cs** 文件中，用以下“登录”方法替换 **HelloWorld** Web 方法。
     ```cs
             [WebMethod]
@@ -50,35 +50,35 @@ ms.locfileid: "66371925"
     ```
 
 3.  保存 **Service1.asmx.cs** 文件。
-4.  在“解决方案资源管理器”  中，右键单击“FirstContosoBank”应用并选择“发布”  。
-5.  在“发布 Web”  对话框中，创建新的配置文件并将其命名为“ContosoProfile”。 单击“下一步”  。
-6.  在下一个页面上，为你的 IIS 服务器输入服务器名并指定“默认 Web 站点/FirstContosoBank”的站点名。 单击“发布”  以发布你的 Web 服务。
+4.  在“解决方案资源管理器”**** 中，右键单击“FirstContosoBank”应用并选择“发布”****。
+5.  在“发布 Web”**** 对话框中，创建新的配置文件并将其命名为“ContosoProfile”。 单击“下一步”。
+6.  在下一个页面上，为你的 IIS 服务器输入服务器名并指定“默认 Web 站点/FirstContosoBank”的站点名。 单击“发布”**** 以发布你的 Web 服务。
 
 ## <a name="configure-your-web-service-to-use-client-certificate-authentication"></a>配置你的 Web 服务以使用客户端认证身份验证。
 
 
-1.  运行“Internet 信息服务 (IIS) 管理器”  。
-2.  展开你的 IIS 服务器的站点。 在“默认 Web 站点”  下，选择新的“FirstContosoBank”Web 服务。 在“操作”  部分中，选择“高级设置...”  。
-3.  将“应用程序池”  设置为“.NET v2.0”  并单击“确定”  。
-4.  在“Internet 信息服务 (IIS) 管理器”  中，选择你的 IIS 服务器，然后双击“服务器证书”  。 在“操作”  部分中，选择“创建自签名证书...”  。输入“ContosoBank”作为证书的友好名称并单击“确定”  。 这将创建一个新的证书供 IIS 服务器以“&lt;server-name&gt;.&lt;domain-name&gt;”格式使用。
-5.  在“Internet 信息服务 (IIS) 管理器”  中，选择默认网站。 在“操作”  部分中，选择“绑定”  ，然后单击“添加...”  。选择“https”作为类型、将端口设置为“443”，然后输入 IIS 服务器的完整主机名（“&lt;server-name&gt;.&lt;domain-name&gt;”）。 将 SSL 证书设置为“ContosoBank”。 单击 **“确定”** 。 单击“站点绑定”  窗口中的“关闭”  。
-6.  在“Internet 信息服务 (IIS) 管理器”  中，选择“FirstContosoBank”Web 服务。 双击“SSL 设置”  。 选中“要求 SSL”  。 在“客户端证书”  下，选择“要求”  。 在“操作”  部分中，单击“应用”  。
-7.  你可以通过打开 Web 浏览器并输入以下 Web 地址来验证 Web 服务是否正确配置：“https://&lt;server-name&gt;.&lt;domain-name&gt;/FirstContosoBank/Service1.asmx”。 例如，“https://myserver.example.com/FirstContosoBank/Service1.asmx”。 如果你的 Web 服务已正确配置，将提示你选择一个客户端证书以访问该 Web 服务。
+1.  运行“Internet 信息服务 (IIS) 管理器”****。
+2.  展开你的 IIS 服务器的站点。 在“默认 Web 站点”**** 下，选择新的“FirstContosoBank”Web 服务。 在“操作”**** 部分中，选择“高级设置...”****。
+3.  将“应用程序池”**** 设置为“.NET v2.0”**** 并单击“确定”****。
+4.  在“Internet 信息服务 (IIS) 管理器”**** 中，选择你的 IIS 服务器，然后双击“服务器证书”****。 在**操作**部分中，选择**创建自签名证书…**。输入“ContosoBank”作为证书的易记名称，然后单击**确定**。 这将创建一个新的证书供 IIS 服务器以“&lt;server-name&gt;.&lt;domain-name&gt;”格式使用。
+5.  在“Internet 信息服务 (IIS) 管理器”**** 中，选择默认网站。 在**操作**部分中，选择**绑定**，然后单击**添加...**。选择“https”作为类型，将端口设置为“443”，然后输入 IIS 服务器的完整主机名（“&lt;server-name&gt;.&lt;domain-name&gt;”）。 将 SSL 证书设置为“ContosoBank”。 单击" **确定**"。 单击“站点绑定”**** 窗口中的“关闭”****。
+6.  在“Internet 信息服务 (IIS) 管理器”**** 中，选择“FirstContosoBank”Web 服务。 双击“SSL 设置”****。 选中“要求 SSL”****。 在“客户端证书”**** 下，选择“要求”****。 在“操作”**** 部分中，单击“应用”****。
+7.  你可以通过打开 Web 浏览器并输入以下 Web 地址来验证 Web 服务是否正确配置：“https://&lt;server-name&gt;.&lt;domain-name&gt;/FirstContosoBank/Service1.asmx”。 例如“https://myserver.example.com/FirstContosoBank/Service1.asmx”。 如果 Web 服务已正确配置，系统将提示你选择一个客户端证书以访问该 Web 服务。
 
 你可以重复之前的步骤以创建多个可使用相同客户端证书访问的 Web 服务。
 
 ## <a name="create-a-uwp-app-that-uses-certificate-authentication"></a>创建使用证书身份验证的 UWP 应用
 
 
-现在你已拥有一个或多个安全 Web 服务，应用可使用证书来验证这些 Web 服务。 在使用 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 对象发出对经过身份验证的 Web 服务的请求时，初始请求将不包含客户端证书。 经过身份验证的 Web 服务将以对客户端身份验证的请求进行响应。 当此情况发生时，Windows 客户端将自动查询证书存储以获取可用的客户端证书。 用户可以从这些证书中选择以对 Web 服务进行身份验证。 一些证书受密码保护，所以你将需要向用户提供输入证书密码的方法。
+现在你已拥有一个或多个安全 Web 服务，应用可使用证书来验证这些 Web 服务。 在使用 [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) 对象发出对经过身份验证的 Web 服务的请求时，初始请求将不包含客户端证书。 经过身份验证的 Web 服务将以对客户端身份验证的请求进行响应。 当此情况发生时，Windows 客户端将自动查询证书存储以获取可用的客户端证书。 用户可以从这些证书中选择以对 Web 服务进行身份验证。 一些证书受密码保护，所以你将需要向用户提供输入证书密码的方法。
 
 如果没有可用的客户端证书，则用户将需要将证书添加到证书存储。 可将代码包括在 Windows 应用商店应用中，此应用使用户能够选择包含客户端证书的 PFX 文件，然后将该证书导入到客户端证书存储中。
 
-**提示**  可以使用 makecert.exe 创建 PFX 文件将用于本快速入门。 有关使用 makecert.exe 的信息，请参阅 [MakeCert](https://docs.microsoft.com/windows/desktop/SecCrypto/makecert)。
+**提示**   你可以使用 makecert.exe 来创建用于本快速入门的 PFX 文件。 有关使用 makecert.exe 的信息，请参阅 [MakeCert](/windows/desktop/SecCrypto/makecert)。
 
  
 
-1.  打开 Visual Studio，然后在起始页创建新的项目。 将此新项目命名为“FirstContosoBankApp”。 单击“确定”  创建新项目。
+1.  打开 Visual Studio，然后在起始页创建新的项目。 将此新项目命名为“FirstContosoBankApp”。 单击“确定”以创建新项目****。
 2.  在 MainPage.xaml 文件中，将以下 XAML 添加到默认 **Grid** 元素中。 此 XAML 包括一个用于浏览要导入的 PFX 文件的按钮、一个用于输入受密码保护的 PFX 文件的密码的文本框、一个用于导入选中的 PFX 文件的按钮、一个用于登录安全 Web 服务的按钮以及一个用于显示当前操作状况的文本块。
     ```xml
     <Button x:Name="Import" Content="Import Certificate (PFX file)" HorizontalAlignment="Left" Margin="352,305,0,0" VerticalAlignment="Top" Height="77" Width="260" Click="Import_Click" FontSize="16"/>

@@ -6,24 +6,24 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 阴影图, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 1087a063fa19bea716b86143c10097711cef9205
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2c21b1c77b15435458d75a1772a914aa95048559
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367900"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168291"
 ---
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a>在许多硬件上支持阴影图
 
 
 
 
-在速度更快的设备上更高保真度地呈现阴影，在功能不够强大的设备上更快地呈现阴影。 第 4 个部分[演练：实现在 Direct3D 11 中使用深度缓冲区的卷影卷](implementing-depth-buffers-for-shadow-mapping.md)。
+在速度更快的设备上更高保真度地呈现阴影，在功能不够强大的设备上更快地呈现阴影。 [演练：使用 Direct3D 11 中的深度缓冲区实现阴影体](implementing-depth-buffers-for-shadow-mapping.md)的第 4 部分。
 
 ## <a name="comparison-filter-types"></a>比较筛选器类型
 
 
-只有设备可以承担性能损失时，才使用线性筛选。 通常情况下，Direct3D 功能级别 9\_1 的设备没有足够的能力，省去为线性筛选阴影。 在这些设备上改为使用点筛选。 在使用线性筛选时，请调整像素着色器，以便它能混合阴影边缘。
+只有设备可以承担性能损失时，才使用线性筛选。 通常，Direct3D 功能级别 9 \_ 1 设备没有足够的电源可用于隐藏线性筛选。 在这些设备上改为使用点筛选。 在使用线性筛选时，请调整像素着色器，以便它能混合阴影边缘。
 
 为点筛选创建比较取样器：
 
@@ -108,17 +108,17 @@ return float4(input.color * (light + shadow), 1.f);
 ## <a name="shadow-buffer-size"></a>阴影缓冲区大小
 
 
-较大的阴影图看起来不会呈块状，但它们将在图形内存中占用更多空间。 在你的游戏中使用不同的阴影图试验，并观察在不同类型的设备和不同显示尺寸中的效果。 考虑一个类似级联阴影图的优化情况，以用较少的显存内存获得更好的效果。 请参见[改进阴影深度图的常见技术](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps)。
+较大的阴影图看起来不会呈块状，但它们将在图形内存中占用更多空间。 在你的游戏中使用不同的阴影图试验，并观察在不同类型的设备和不同显示尺寸中的效果。 考虑一个类似级联阴影图的优化情况，以用较少的显存内存获得更好的效果。 请参见[改进阴影深度图的常见技术](/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps)。
 
 ## <a name="shadow-buffer-depth"></a>阴影缓冲区深度
 
 
-更精确的阴影缓冲区会带来更准确的深度测试结果，从而有助于避免 Z 缓冲争夺之类的问题。 但和更大的阴影图一样，更精确将占用更多内存。 试用不同的深度精度类型，在您的游戏-DXGI\_格式\_R24G8\_TYPELESS 与 DXGI\_格式\_R16\_TYPELESS-和上观察到的速度和质量不同的功能级别。
+更精确的阴影缓冲区会带来更准确的深度测试结果，从而有助于避免 Z 缓冲争夺之类的问题。 但和更大的阴影图一样，更精确将占用更多内存。 在游戏-DXGI 格式 R24G8 无类型与 DXGI 格式 R16 中试验不同的深度精度类型 \_ \_ \_ \_ \_ \_ ，并观察不同功能级别的速度和质量。
 
 ## <a name="optimizing-precompiled-shaders"></a>优化预编译的着色器
 
 
-通用 Windows 平台 (UWP) 应用可以使用动态着色器编译，但使用动态着色器链接会更快。 也可使用编译器指令和 `#ifdef` 块来创建不同的着色器版本。 这可通过在文本编辑器中打开 Visual Studio 项目文件并为 HLSL 添加多个 `<FxcCompiler>` 条目（每个都具有相应的预处理器定义）来实现。 请注意，这需要不同的文件名;在这种情况下，Visual Studio 将追加\_点和\_线性到不同版本的着色器。
+通用 Windows 平台 (UWP) 应用可以使用动态着色器编译，但使用动态着色器链接会更快。 也可使用编译器指令和 `#ifdef` 块来创建不同的着色器版本。 这可通过在文本编辑器中打开 Visual Studio 项目文件并为 HLSL 添加多个 `<FxcCompiler>` 条目（每个都具有相应的预处理器定义）来实现。 请注意，这需要不同的文件名;在这种情况下，Visual Studio 会 \_ \_ 向着色器的不同版本追加点和线性。
 
 着色器的线性筛选版本的项目文件条目定义 LINEAR：
 
@@ -175,7 +175,3 @@ return float4(input.color * (light + shadow), 1.f);
  
 
  
-
-
-
-

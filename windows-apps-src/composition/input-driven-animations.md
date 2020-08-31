@@ -1,26 +1,26 @@
 ---
 title: 输入驱动的动画
-description: 了解如何在应用 UI 中使用输入动画。
+description: 了解 InputAnimation API，以及如何使用输入驱动的动画在应用 UI 中创建动态响应动作。
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: 94d15fc7f2443475020aa7e134c076b833db46a8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0f9abd902e39b645f27b7a0f5d521097ca4aff8a
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597752"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054357"
 ---
 # <a name="input-driven-animations"></a>输入驱动的动画
 
 本文介绍了 InputAnimation API，并针对如何在 UI 中使用这些类型的动画提供建议。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 我们在此假设你熟悉这些文章中所述的概念：
 
-- [关系基于动画](relation-animations.md)
+- [基于关系的动画](relation-animations.md)
 
 ## <a name="smooth-motion-driven-from-user-interactions"></a>用户交互驱动的平滑运动
 

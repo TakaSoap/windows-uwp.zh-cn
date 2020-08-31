@@ -1,17 +1,17 @@
 ---
 title: 使用适用于 UWP 游戏的云服务
-description: 了解有关实现云作为 UWP 游戏后端的详细信息。
+description: 跨平台和设备开发 UWP 游戏时，使用云后端有助于根据需求缩放游戏。
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 ms.date: 03/27/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 云服务
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d959c490474a6280d878be9679abafc31b565d8
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 7c0cfd98a37c4822d80eded7fe69e23c54bcdc89
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846857"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054407"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>使用适用于 UWP 游戏的云服务
 
@@ -150,7 +150,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 
     平台即服务 (PaaS) 与 IaaS 类似，但它还包括对诸如服务器、存储和网络连接等基础设施的管理。 因此，首先是不必购买物理服务器和数据中心基础设施，其次是也不需要购买和管理软件许可证、底层应用程序基础架构、中间件、开发工具或其他资源。
 
-* [软件即服务 (SaaS) ](https://azure.microsoft.com/overview/what-is-saas/)
+* [软件即服务 (SaaS)](https://azure.microsoft.com/overview/what-is-saas/)
 
     软件即服务 (SaaS) 让用户可以通过 Internet 连接并使用基于云的应用。 它提供了一个完整的软件解决方案，你可以从云服务商那里以即付即用方式购买该解决方案。  常见示例包括电子邮件、日历和 office 工具 (例如 Microsoft 365 Office 应用程序) 。 你可以租用组织的应用，并且你的用户通常使用 Web 浏览器通过 Internet 连接到该应用。 所有底层基础结构、中间件、应用软件和应用数据都位于服务提供商的数据中心。 服务提供商将管理硬件和软件，并通过适当的服务协议来确保游戏和数据的可用性和安全性。 SaaS 使组织能够以最低的前期费用快速启动并运行应用。
 

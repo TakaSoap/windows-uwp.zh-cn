@@ -1,5 +1,5 @@
 ---
-Description: 了解流畅运动如何使用计时和缓动函数。
+description: 了解计时和缓动的重要性，使动作对于进入、退出或在 UI 内移动的对象非常自然。
 title: 计时和缓动
 label: Timing and easing
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 098a75da573a977aa393197a61a62b0337f0dc06
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 46ec373ffb7ad141bcff36c33fa35900c888daf8
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970502"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054427"
 ---
 # <a name="timing-and-easing"></a>计时和缓动
 
@@ -28,7 +28,7 @@ ms.locfileid: "82970502"
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>如果安装了<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/EasingFunction">打开应用，并查看缓动函数的操作</a>。</p>
+    <p>如果安装了 <strong style="font-weight: semi-bold">XAML 控件库</strong> 应用，请单击此处 <a href="xamlcontrolsgallery:/item/EasingFunction">打开应用，并查看缓动函数的操作</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>

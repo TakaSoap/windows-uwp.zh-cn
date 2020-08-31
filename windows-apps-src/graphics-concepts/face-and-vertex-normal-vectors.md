@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7146fe6489d61c641b7104e8c7c25728550c1c54
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ef0d3ea5a3bc0f5c4ac6b6b660dc543919d297ec
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370665"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168161"
 ---
 # <a name="face-and-vertex-normal-vectors"></a>人脸和顶点的法线向量
 
 
 网格的每个面都有垂直单位法向矢量。 矢量方向取决于顶点的定义顺序和坐标系统是左手坐标还是右手坐标。
 
-## <a name="span-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanperpendicular-unit-normal-vector-for-a-front-face"></a><span id="Perpendicular_unit_normal_vector_for_a_front_face"></span><span id="perpendicular_unit_normal_vector_for_a_front_face"></span><span id="PERPENDICULAR_UNIT_NORMAL_VECTOR_FOR_A_FRONT_FACE"></span>垂直单元的正面的法向量
+## <a name="span-idperpendicular_unit_normal_vector_for_a_front_facespanspan-idperpendicular_unit_normal_vector_for_a_front_facespanspan-idperpendicular_unit_normal_vector_for_a_front_facespanperpendicular-unit-normal-vector-for-a-front-face"></a><span id="Perpendicular_unit_normal_vector_for_a_front_face"></span><span id="perpendicular_unit_normal_vector_for_a_front_face"></span><span id="PERPENDICULAR_UNIT_NORMAL_VECTOR_FOR_A_FRONT_FACE"></span>正面垂直的单位法线向量
 
 
 网格的每个面都有垂直单位法向矢量。 矢量方向取决于顶点的定义顺序和坐标系统是左手坐标还是右手坐标。 面法线指离面的前端。 在 Direct3D 中，仅正面可见。 正面是指在其中按顺时针顺序定义顶点的面。
@@ -28,12 +28,12 @@ ms.locfileid: "66370665"
 
 ![正面的法向矢量](images/nrmlvect.png)
 
-## <a name="span-idcullingbackfacesspanspan-idcullingbackfacesspanspan-idcullingbackfacesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>消除返回的人脸
+## <a name="span-idculling_back_facesspanspan-idculling_back_facesspanspan-idculling_back_facesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>剔除背面
 
 
-任何非正面的面都属于背面。 Direct3D 不总是渲染背面；一般要将背面剔除。 背面剔除指消除背面渲染。 如果需要，你可以更改剔除模式以渲染背面。 有关详细信息，请参阅[剔除状态](https://docs.microsoft.com/windows/desktop/direct3d9/culling-state)。
+任何非正面的面都属于背面。 Direct3D 不总是渲染背面；一般要将背面剔除。 背面剔除指消除背面渲染。 如果需要，你可以更改剔除模式以渲染背面。 有关详细信息，请参阅[剔除状态](/windows/desktop/direct3d9/culling-state)。
 
-## <a name="span-idvertexunitnormalsspanspan-idvertexunitnormalsspanspan-idvertexunitnormalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>单元顶点的法向
+## <a name="span-idvertex_unit_normalsspanspan-idvertex_unit_normalsspanspan-idvertex_unit_normalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>顶点单位法线
 
 
 Direct3D 使用顶点单位法线产生高氏着色、照明和纹理效果。
@@ -44,7 +44,7 @@ Direct3D 使用顶点单位法线产生高氏着色、照明和纹理效果。
 
 对多边形应用高氏阴影着色时，Direct3D 使用顶点法线计算光源和表面之间的角度。 它计算顶点的颜色和强度值，并为所有基元表面的每个点插入顶点。 Direct3D 采用此角度计算光线强度值。 角度越大，表面上发亮的光越少。
 
-## <a name="span-idflatsurfacesspanspan-idflatsurfacesspanspan-idflatsurfacesspanflat-surfaces"></a><span id="Flat_surfaces"></span><span id="flat_surfaces"></span><span id="FLAT_SURFACES"></span>平面的图面
+## <a name="span-idflat_surfacesspanspan-idflat_surfacesspanspan-idflat_surfacesspanflat-surfaces"></a><span id="Flat_surfaces"></span><span id="flat_surfaces"></span><span id="FLAT_SURFACES"></span>平面
 
 
 如果你要创建平面对象，请将顶点法线设置为垂直于此表面。
@@ -53,7 +53,7 @@ Direct3D 使用顶点单位法线产生高氏着色、照明和纹理效果。
 
 ![平面由两个带有顶点法线的三角形组成](images/flatvert.png)
 
-## <a name="span-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspansmooth-shading-on-a-non-flat-object"></a><span id="Smooth_shading_on_a_non-flat_object"></span><span id="smooth_shading_on_a_non-flat_object"></span><span id="SMOOTH_SHADING_ON_A_NON-FLAT_OBJECT"></span>非平面对象上的平滑明暗度
+## <a name="span-idsmooth_shading_on_a_non-flat_objectspanspan-idsmooth_shading_on_a_non-flat_objectspanspan-idsmooth_shading_on_a_non-flat_objectspansmooth-shading-on-a-non-flat-object"></a><span id="Smooth_shading_on_a_non-flat_object"></span><span id="smooth_shading_on_a_non-flat_object"></span><span id="SMOOTH_SHADING_ON_A_NON-FLAT_OBJECT"></span>在非平面对象上平滑着色
 
 
 你的对象很可能不是由平面，而是由三角形带组成，并且三角形不是共面的。 在三角形带中为所有三角形实现平滑着色的一个简单方法是，首先计算关联了矢量的每个多边形面的表面法向矢量。 可将顶点法线设置为与每个表面法线等角。 但是，对于复杂的基元来说，此方法可能不是很高效。
@@ -70,7 +70,7 @@ Direct3D 使用顶点单位法线产生高氏着色、照明和纹理效果。
 
 ![带有一个顶点法向矢量的两个表面（S1 和 S2）与某个面斜交](images/gvert2.png)
 
-## <a name="span-idsharpedgesspanspan-idsharpedgesspanspan-idsharpedgesspansharp-edges"></a><span id="Sharp_edges"></span><span id="sharp_edges"></span><span id="SHARP_EDGES"></span>锐边
+## <a name="span-idsharp_edgesspanspan-idsharp_edgesspanspan-idsharp_edgesspansharp-edges"></a><span id="Sharp_edges"></span><span id="sharp_edges"></span><span id="SHARP_EDGES"></span>利边缘
 
 
 你可以使用高氏着色在 3D 场景中显示带锐边的对象。 为此，在需要锐边的情况下，面相交时重复顶线法向矢量。
@@ -93,7 +93,3 @@ Direct3D 使用顶点单位法线产生高氏着色、照明和纹理效果。
  
 
  
-
-
-
-

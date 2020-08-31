@@ -6,22 +6,22 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 触摸, 控件, directx, 输入
 ms.localizationpriority: medium
-ms.openlocfilehash: b1f683f2d357057e33f3daa613e1b027a83776af
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 546d36e26489563720f5aad8a0c9f81f85649e5a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367758"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168281"
 ---
 # <a name="touch-controls-for-games"></a>游戏的触摸控件
 
 
 
-了解如何将基本触摸控件添加到使用 DirectX 的通用 Windows 平台 (UWP) C++ 游戏。 我们将介绍如何添加基于触摸的控件以便在 Direct3D 环境中移动固定平台相机，其中包括使用手指拖动或触笔改变相机视景。
+了解如何将基本触摸控件添加到使用 DirectX 的通用 Windows 平台 (UWP) C++ 游戏。 我们将介绍如何添加基于触摸的控件以便在 Direct3D 环境中（使用手指或触笔在其中拖动来改变相机视角） 移动固定平面相机。
 
 你可以将这些控件合并到游戏中，让玩家能够在 3D 环境中通过拖动滚动或平移地图或游戏区。 例如，在策略游戏或拼图游戏中，你可以使用这些控件让玩家通过左右平移来观看大于屏幕的游戏环境。
 
-> **请注意**  我们的代码也适用于基于鼠标的移动控件。 与指针相关的事件通过 Windows 运行时 API 进行抽象，因此它们可以处理基于触摸或基于鼠标的指针事件。
+> **注意**   我们的代码还适用于基于鼠标的平移控件。 与指针相关的事件通过 Windows 运行时 API 进行抽象，因此它们可以处理基于触摸或基于鼠标的指针事件。
 
  
 
@@ -104,12 +104,12 @@ public:
 
 私有字段包含相机控制器的当前状态。 下面我们了解这些内容。
 
--   **m\_位置**场景空间中相机的位置。 在本示例中，z 坐标值固定为 0。 我们可以使用 DirectX::XMFLOAT2 表示此值，但是对于本示例和为了未来可扩展性，我们使用 DirectX::XMFLOAT3。 我们将通过此值传递**获取\_位置**应用本身以便它能够相应地更新视区属性。
--   **m\_panInUse**是一个布尔值，该值指示平移操作是否处于活动状态; 或者，更具体地说，是否播放机是触摸屏幕并移动摄像头。
--   **m\_panPointerID**是指针的唯一 ID。 我们在示例中不使用此项，但使用它可以很好地将控制器状态类与特定指针关联。
--   **m\_panFirstDown**是其中播放机首次接触屏幕的或照相机平移操作过程中，单击鼠标在屏幕上的点。 稍后我们将使用此值设置死区，以防止触摸屏幕时或鼠标轻度颤动时发生抖动。
--   **m\_panPointerPosition**是播放机具有当前移动鼠标指针在屏幕上的点。 我们使用它来确定哪些播放机想要通过检查其相对于移动的方向**m\_panFirstDown**。
--   **m\_panCommand**是相机控制器的最终计算的命令： 向上、 下、 左或向右。 由于我们使用固定到 x-y 平面上的相机，因此它可以是一个 DirectX::XMFLOAT2 值。
+-   **m \_ position** 是指相机在场景空间中的位置。 在本示例中，z 坐标值固定为 0。 我们可以使用 DirectX::XMFLOAT2 表示此值，但是对于本示例和为了未来可扩展性，我们使用 DirectX::XMFLOAT3。 我们通过 " **获取 \_ 位置** " 属性将此值传递给应用本身，以便它能够相应地更新视区。
+-   **m \_ panInUse** 是一个布尔值，指示平移操作是否处于活动状态; 或者更具体地说，它是播放机是否触摸屏幕并移动照相机。
+-   **m \_ panPointerID** 是指针的唯一 ID。 我们在示例中不使用此项，但使用它可以很好地将控制器状态类与特定指针关联。
+-   **m \_ panFirstDown** 是屏幕上的点，播放机在相机平移操作期间首先触及屏幕或单击鼠标。 稍后我们将使用此值设置死区，以防止触摸屏幕时或鼠标轻度颤动时发生抖动。
+-   **m \_ panPointerPosition** 是屏幕上的点，播放机当前已将指针移动到该点。 我们使用它来确定播放机要通过检查它相对于 **m \_ panFirstDown**来移动的方向。
+-   **m \_ panCommand** 是相机控制器的最终计算命令：向上、向下、向左或向右。 由于我们使用固定到 x-y 平面上的相机，因此它可以是一个 DirectX::XMFLOAT2 值。
 
 我们使用这 3 个事件处理程序更新相机控制器状态信息。
 
@@ -119,10 +119,10 @@ public:
 
 最后，我们使用这些方法和属性来初始化、访问和更新相机控制器状态信息。
 
--   **Initialize** 是一个事件处理程序，应用调用此处理程序来初始化控件，并将它们附加到描述显示窗口的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 对象。
+-   **Initialize** 是一个事件处理程序，应用调用此处理程序来初始化控件，并将它们附加到描述显示窗口的 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 对象。
 -   **SetPosition** 是一个方法，应用调用此方法在场景空间中设置控件的（x、y 和 z）坐标。 注意，z 坐标在整个教程中始终为 0。
--   **获取\_位置**是一个属性，我们的应用程序访问以获取场景空间中相机的当前位置。 使用此属性作为当前相机位置与应用进行通信的方法。
--   **获取\_FixedLookPoint**是我们的应用程序访问以获取向面向控制器照相机的当前点的属性。 在本示例中，它通常锁定到 x-y 平面。
+-   **获取 \_位置** 是应用程序访问的属性，用于获取场景空间中照相机的当前位置。 使用此属性作为当前相机位置与应用进行通信的方法。
+-   **获取 \_FixedLookPoint** 是应用程序访问的属性，用于获取控制器摄像机所面向的当前点。 在本示例中，它通常锁定到 x-y 平面。
 -   **Update** 是一个方法，用于读取控制器状态和更新相机位置。 从应用的主循环中不断调用此 &lt;方法&gt; 可刷新相机控制器数据和相机在场景空间中的位置。
 
 现在，你拥有了实现触摸控件所需的全部组件。 你可以检测触摸或鼠标指针事件发生的时间和位置，以及操作是什么。 你可以相对于场景空间设置相机的位置和方向，并跟踪更改。 最后，你可以将新相机位置传达给执行调用的应用。
@@ -134,15 +134,15 @@ public:
 
 Windows 运行时事件调度程序提供我们希望自己的应用处理的 3 个事件：
 
--   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
--   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
--   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
+-   [**PointerPressed**](/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased)
 
-这些事件在 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 类型上实现。 我们假设你有一个 **CoreWindow** 对象要处理。 有关详细信息，请参阅[如何设置 UWP C++ 应用以显示 DirectX 视图](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10))。
+这些事件在 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 类型上实现。 我们假设你有一个 **CoreWindow** 对象要处理。 有关详细信息，请参阅[如何设置 UWP C++ 应用以显示 DirectX 视图](/previous-versions/windows/apps/hh465077(v=win.10))。
 
 由于在应用运行时将触发这些事件，因此处理程序将更新相机控制器在我们的私有字段中定义的状态信息。
 
-首先，让我们填充触摸指针事件处理程序。 在第一个事件处理程序 **OnPointerPressed** 中，我们在用户触摸屏幕或单击鼠标时从用于管理显示的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 中获取指针的 x-y 坐标。
+首先，让我们填充触摸指针事件处理程序。 在第一个事件处理程序 **OnPointerPressed** 中，我们在用户触摸屏幕或单击鼠标时从用于管理显示的 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 中获取指针的 x-y 坐标。
 
 **OnPointerPressed**
 
@@ -170,7 +170,7 @@ void CameraPanController::OnPointerPressed(
 }
 ```
 
-我们使用此处理程序来让当前**CameraPanController**实例知道该摄像机控制器应将其视为为活动状态设置**m\_panInUse**为 TRUE。 这样，当应用调用 **Update** 时，它将使用当前位置数据更新视口。
+使用此处理程序，可让当前的 **CameraPanController** 实例知道，通过将 **m \_ panInUse** 设置为 TRUE 应将相机控制器视为活动状态。 这样，当应用调用 **Update** 时，它将使用当前位置数据更新视口。
 
 现在，我们已经建立了当用户在显示窗口中触摸屏幕或点按时相机移动的基本值，我们必须确定当用户拖动鼠标点按或按住按钮移动鼠标时的操作。
 
@@ -190,7 +190,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-最后，当玩家停止触摸屏幕时，我们需要停用相机平移行为。 我们使用**OnPointerReleased**，时调用[ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)触发时，若要设置**m\_panInUse**为 FALSE 和关闭移动相机平移，并将指针 ID 设置为 0。
+最后，当玩家停止触摸屏幕时，我们需要停用相机平移行为。 我们使用 **OnPointerReleased**，这是在触发 [**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased) 时调用的，用于将 **m \_ panInUse** 设置为 FALSE 并关闭相机平移运动，并将指针 ID 设置为0。
 
 **OnPointerReleased**
 
@@ -239,7 +239,7 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** 将指向该应用的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 实例的引用作为参数提供，并在该 **CoreWindow** 上注册我们已开发的相应事件处理程序。
+**Initialize** 将指向该应用的 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 实例的引用作为参数提供，并在该 **CoreWindow** 上注册我们已开发的相应事件处理程序。
 
 ## <a name="getting-and-setting-the-position-of-the-camera-controller"></a>获取并设置相机控制器的位置
 
@@ -271,14 +271,14 @@ DirectX::XMFLOAT3 CameraPanController::get_FixedLookPoint()
 
 **SetPosition** 是一个公共方法，如果需要将相机控制器位置设置到特定的点，我们可以从应用中调用此方法。
 
-**获取\_位置**是我们最重要的公共属性： 它是我们的应用程序获取场景空间中的当前位置的照相机控制器，以便它能够相应地更新视区的方法。
+**获取 \_Position** 是我们最重要的公共属性：它是我们的应用程序在场景空间中获取照相机控制器当前位置的方式，因此它可以相应地更新视区。
 
-**获取\_FixedLookPoint**是公共属性，在此示例中，获取介绍点，是对 x，y 平面正常。 在计算 x、y 和 z 轴坐标值时，如果要为固定相机创建更多斜角，可以更改此方法以使用三角函数正弦和余弦。
+**获取 \_FixedLookPoint** 是一个公共属性，在此示例中，将获取垂直于 x-y 平面的外观点。 在计算 x、y 和 z 轴坐标值时，如果要为固定相机创建更多斜角，可以更改此方法以使用三角函数正弦和余弦。
 
 ## <a name="updating-the-camera-controller-state-information"></a>更新相机控制器的状态信息
 
 
-现在，我们执行转换中跟踪的指针坐标信息我们计算**m\_panPointerPosition**到各自的三维场景空间的新坐标信息。 每当刷新主应用循环时，应用都会调用此方法。 我们需要在其中计算要传递给应用的新位置 信息，以便在投影到视口之前更新视图矩阵。
+现在，我们执行计算，将 **m \_ panPointerPosition** 中跟踪的指针坐标信息转换为与我们的三维场景空间相关的新坐标信息。 每当刷新主应用循环时，应用都会调用此方法。 我们需要在其中计算要传递给应用的新位置 信息，以便在投影到视口之前更新视图矩阵。
 
 ```cpp
 
@@ -339,7 +339,7 @@ void CameraPanController::Update( CoreWindow ^window )
         );  
 ```
 
-祝贺你！ 你已在游戏中实现了一组简单的相机平移触摸控件。
+恭喜！ 你已在游戏中实现了一组简单的相机平移触摸控件。
 
 
  
@@ -347,7 +347,3 @@ void CameraPanController::Update( CoreWindow ^window )
  
 
  
-
-
-
-

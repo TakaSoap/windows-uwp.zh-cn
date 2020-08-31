@@ -7,16 +7,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 608f254114a200850341837528cb7506597c3bed
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: ef0f712a87f0b2aea7fdb2204691e9b439315b44
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043519"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155381"
 ---
 # <a name="move-from-ios-to-uwp"></a>从 iOS 移动到 UWP
 
-如果你是 iOS 开发人员，并且想知道如何扩展用户群以将 Windows 10 和通用 Windows 平台 (UWP) 包括在内，则你可以寻求帮助的工具已经越来越多。 你可以采取的方法取决于正在处理的应用类型（游戏、生活方式、企业等）以及你在开发进程中的进度。 例如，严重依赖 OpenGL 或 Cocos2D 的完成或接近完成的游戏是[适用于 iOS 的 Windows 桥](https://developer.microsoft.com/windows/bridges/ios)的理想候选项，而如果你要规划一款适用于小型企业的跨平台应用，则应该考虑使用 [Xamarin.Forms](https://docs.microsoft.com/xamarin/xamarin-forms/)。 如果你已经使用跨平台工具（例如 Unity）编写应用，[发布到 Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) 会相当简单。
+如果你是 iOS 开发人员，并且想知道如何扩展用户群以将 Windows 10 和通用 Windows 平台 (UWP) 包括在内，则你可以寻求帮助的工具已经越来越多。 你可以采取的方法取决于正在处理的应用类型（游戏、生活方式、企业等）以及你在开发进程中的进度。 例如，严重依赖 OpenGL 或 Cocos2D 的完成或接近完成的游戏是[适用于 iOS 的 Windows 桥](https://developer.microsoft.com/windows/bridges/ios)的理想候选项，而如果你要规划一款适用于小型企业的跨平台应用，则应该考虑使用 [Xamarin.Forms](/xamarin/xamarin-forms/)。 如果你已经使用跨平台工具（例如 Unity）编写应用，[发布到 Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) 会相当简单。
 
 ## <a name="why-windows"></a>为什么使用 Windows？
 
@@ -24,7 +24,7 @@ ms.locfileid: "89043519"
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-Convert-your-iOS-app-to-Windows/player]
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [选择一种方法进行 iOS 和 UWP 应用开发](selecting-an-approach-to-ios-and-uwp-app-development.md) | 在开发跨平台应用时，应如何选择？ |
 | [适用于 iOS 开发人员的 UWP 入门](getting-started-with-uwp-for-ios-developers.md) | 如果你是考虑为 Windows 10 进行开发的 iOS 开发人员，这些文档会是很好的入门文档。 |
@@ -33,5 +33,5 @@ ms.locfileid: "89043519"
 ## <a name="related-topics"></a>相关主题
 
 **对于设计人员和开发人员**
-* [构建适用于所有 Windows 设备的通用 Windows 应用程序](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-* [适用于 UWP 应用的下载设计资源](https://docs.microsoft.com/windows/uwp/design/downloads/index)
+* [构建适用于所有 Windows 设备的通用 Windows 应用程序](../get-started/universal-application-platform-guide.md)
+* [适用于 UWP 应用的下载设计资源](../design/downloads/index.md)

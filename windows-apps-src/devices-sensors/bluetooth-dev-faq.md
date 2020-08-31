@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ff826be0f5b0b8e9a6723fbb1593663f1748c3d
-ms.sourcegitcommit: d708ac4ec4fac0135dafc0d8c5161ef9fd945ce7
+ms.openlocfilehash: 7d41e49f599e1fe5e835443f7c8cb732e625491e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85069474"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168591"
 ---
 # <a name="bluetooth-developer-faq"></a>蓝牙开发人员常见问题
 
@@ -22,7 +22,7 @@ ms.locfileid: "85069474"
 
 ### <a name="bluetooth-le-windowsdevicesbluetoothgenericattributeprofile"></a>蓝牙 LE (Windows.Devices.Bluetooth.GenericAttributeProfile)
 
-使用支持低耗电蓝牙的设备进行通信时，请使用 GATT API。 如果用例不常发生、带宽较低或需要电量低，则会出现蓝牙低能量问题。 包含此功能的主命名空间是 [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)。 
+使用支持低耗电蓝牙的设备进行通信时，请使用 GATT API。 如果用例不常发生、带宽较低或需要电量低，则会出现蓝牙低能量问题。 包含此功能的主命名空间是 [Windows.Devices.Bluetooth.GenericAttributeProfile](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)。 
 
 **何时不使用蓝牙 LE**
 - 高带宽、高频率条件下。 如果需要持续与大量数据保持同步，请考虑使用经典蓝牙，甚至可以使用 WiFi。 
@@ -33,7 +33,7 @@ RFCOMM Api 为开发人员提供了用于执行双向串行端口样式通信的
 
 **何时不使用蓝牙 Rfcomm** 
 - 通知。 蓝牙 GATT 协议具有用于此方面的特定命令，功耗显著降低并且响应时间更快。 
-- 邻近感应检查或存在检测。 更好的做法是使用[播发 API](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement) 并通过蓝牙 LE 进行连接。 
+- 邻近感应检查或存在检测。 更好的做法是使用[播发 API](/uwp/api/windows.devices.bluetooth.advertisement) 并通过蓝牙 LE 进行连接。 
 
 
 ## <a name="why-does-my-bluetooth-le-device-stop-responding-after-a-disconnect"></a>为什么我的蓝牙 LE 设备在断开连接后会停止响应？
@@ -61,18 +61,18 @@ RFCOMM Api 为开发人员提供了用于执行双向串行端口样式通信的
 
 ## <a name="do-i-have-to-pair-bluetooth-devices-before-using-them"></a>在使用蓝牙设备前是否要先配对？
 
-如果使用 Bluetooth RFCOMM （经典），则无需对设备进行配对。 从 Windows 10 版本 1607 开始，只需查询附近设备即可连接。 更新后的 [RFCOMM 聊天示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat)展示了此项功能。 
+如果使用 Bluetooth RFCOMM (经典) ，则无需对设备进行配对。 从 Windows 10 版本 1607 开始，只需查询附近设备即可连接。 更新后的 [RFCOMM 聊天示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat)展示了此项功能。 
 
-**（14393及更低）** 此功能不适用于蓝牙低功耗（GATT 客户端），因此你仍需要通过 "设置" 页或使用[Windows.. 枚举](https://docs.microsoft.com/uwp/api/windows.devices.enumeration)api 来访问这些设备。
+** (14393 及更低) ** 此功能不适用于 GATT 客户端) 的蓝牙低能耗 (，因此你仍需要通过 "设置" 页或使用 [Windows](/uwp/api/windows.devices.enumeration) api 来访问这些设备。
 
 **（15030 及更高版本）** 不再需要对蓝牙设备进行配对。 使用新的异步 API（如 GetGattServicesAsync 和 GetCharacteristicsAsync）查询远程设备的当前状态。 有关更多详细信息，请参阅[客户端文档](gatt-client.md)。 
 
 ## <a name="when-should-i-pair-with-a-device-before-communicating-with-it"></a>在与设备进行通信之前，应何时与它配对？
-通常，如果需要与设备进行受信任的长期绑定，请将用户定向到 "设置" 页或使用设备枚举和配对 Api，使其与设备配对。 如果只需从公开公开的设备读取信息（温度传感器或信标），请连接或侦听广告，无需对设备进行配对。 这会阻止长时间运行中的互操作性问题，因为大量设备不支持配对。 
+通常，如果需要与设备进行受信任的长期绑定，请将用户定向到 "设置" 页或使用设备枚举和配对 Api，使其与设备配对。 如果只需从公开公开的设备读取信息 (温度传感器或信标) ，则连接或侦听广告，无需对设备进行配对。 这会阻止长时间运行中的互操作性问题，因为大量设备不支持配对。 
 
 ## <a name="do-all-windows-devices-support-peripheral-role"></a>所有 Windows 设备是否都支持外设角色？
 
-不需要。 这是一个与硬件相关的功能，但提供了一个方法 BluetoothAdapter. IsPeripheralRoleSupported，用于查询是否支持此功能。  当前支持的设备包括 8992+ 上的 Windows Phone 和 RPi3 (Windows IoT)。 
+不能。 这是一个与硬件相关的功能，但提供了一个方法 BluetoothAdapter. IsPeripheralRoleSupported，用于查询是否支持此功能。  当前支持的设备包括 8992+ 上的 Windows Phone 和 RPi3 (Windows IoT)。 
 
 ## <a name="can-i-access-these-apis-from-win32"></a>是否可以从 Win32 访问这些 API？
 
@@ -82,4 +82,4 @@ RFCOMM Api 为开发人员提供了用于执行双向串行端口样式通信的
 **蓝牙 LE**：是的，所有功能都处于 OneCore 中，应在带有正常运行的蓝牙 LE 堆栈的最新设备上可用。 
 > 警告：外围角色依赖于硬件，某些 Windows Server 版本不支持蓝牙。 
 
-**蓝牙 BR/EDR （经典）**：存在一些变体，但它们主要具有非常相似的配置文件级别支持。 请参阅[RFCOMM](send-or-receive-files-with-rfcomm.md)上的文档和适用于[电脑](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles)和[手机](https://support.microsoft.com/help/10569/windows-10-mobile-supported-bluetooth-profiles)的这些受支持的配置文件文档
+**蓝牙) 的蓝牙 BR/EDR (**：存在一些差异，但通常情况下，它们具有非常相似的配置文件级别支持。 请参阅[RFCOMM](send-or-receive-files-with-rfcomm.md)上的文档和适用于[电脑](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles)和[手机](https://support.microsoft.com/help/10569/windows-10-mobile-supported-bluetooth-profiles)的这些受支持的配置文件文档
