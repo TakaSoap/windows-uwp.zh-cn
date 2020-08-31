@@ -1,6 +1,6 @@
 ---
-Description: 让用户在给定的范围内设置值。
 title: 滑块
+description: 了解如何实现 Windows UI 库滑块控件，它可让用户通过沿轨迹移动 thumb 控件从一个值范围中进行选择。
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a1de8437c5b463b13e3adb8c4d7eb7161663f4d6
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: a51bfb262e81668d167a380a9f3572011dbf7e2c
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997964"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943097"
 ---
 # <a name="sliders"></a>滑块
 

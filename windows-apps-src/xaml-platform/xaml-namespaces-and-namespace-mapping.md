@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1da466cf12a8a5f959af7e863f7a300f3c713961
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 557301873cbea09d3601b09254c5a296ceb9fc82
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258714"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168991"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空间和命名空间映射
 
@@ -41,13 +41,13 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 
 这是多个也使用 XAML 作为 UI 定义标记格式的预处理器 Microsoft 技术中使用的相同 XAML 命名空间标识符。 使用相同的标识符是经过深思熟虑的，在将以前定义的 UI 迁移到使用 C++、C# 或 Visual Basic 的 Windows 运行时应用时很有用。
 
-第二个声明为 XAML 定义的语言元素映射单独的 XAML 命名空间，并将其映射到 "x：" 前缀（通常为）： `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`
+第二个声明为 XAML 定义的语言元素映射单独的 XAML 命名空间，并将其映射 (通常) 为 "x：" 前缀： `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`
 
 此 **xmlns** 值和它所映射到的“x:”前缀对于在多个使用 XAML 的前置任务 Microsoft 技术中使用的定义也是相同的。
 
 这些声明之间的关系是，XAML 是一种语言定义，Windows 运行时是一种实现，它使用 XAML 作为语言并定义一个特定的词汇表，它的类型在这里供 XAML 引用。
 
-XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XAML 命名空间的 XAML 处理器实现进行访问。 项目模板、示例代码和语言特性文档遵循 XAML 语言 XAML 命名空间的“x:”映射约定。 XAML 语言命名空间定义多个常用的功能，甚至对于使用 C++、C# 或 Visual Basic 的基本 Windows 运行时应用，这些功能也是必要的。 例如，为了将任何代码隐藏通过分部类联接到 XAML 文件，必须将该类命名为相关 XAML 文件的根元素中的 [x:Class 属性](x-class-attribute.md)。 或者，任何在 XAML 页面中定义为 [ResourceDictionary 和 XAML 资源引用](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)中一个键资源的元素必须在相关的对象元素上设置 [x:Key 特性](x-key-attribute.md)。
+XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XAML 命名空间的 XAML 处理器实现进行访问。 项目模板、示例代码和语言特性文档遵循 XAML 语言 XAML 命名空间的“x:”映射约定。 XAML 语言命名空间定义多个常用的功能，甚至对于使用 C++、C# 或 Visual Basic 的基本 Windows 运行时应用，这些功能也是必要的。 例如，为了将任何代码隐藏通过分部类联接到 XAML 文件，必须将该类命名为相关 XAML 文件的根元素中的 [x:Class 属性](x-class-attribute.md)。 或者，任何在 XAML 页面中定义为 [ResourceDictionary 和 XAML 资源引用](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)中一个键资源的元素必须在相关的对象元素上设置 [x:Key 特性](x-key-attribute.md)。
 
 ## <a name="code-namespaces-that-map-to-the-default-xaml-namespace"></a>映射到默认 XAML 命名空间的代码命名空间
 
@@ -56,25 +56,25 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 * Windows.UI
 * Windows.UI.Xaml
 * Windows.UI.Xaml.Automation
-* Windows UI .Xaml。
-* Windows UI .Xaml。 Provider
-* Windows （UI）。
-* Windows UI。控件
+* Windows.UI.Xaml.Automation.Peers
+* Windows.UI.Xaml.Automation.Provider
+* Windows.UI.Xaml.Automation.Text
+* Windows.UI.Xaml.Controls
 * Windows.UI.Xaml.Controls.Primitives
-* Windows。
-* Windows。
+* Windows.UI.Xaml.Data
+* Windows.UI.Xaml.Documents
 * Windows.UI.Xaml.Input
-* Windows。
-* Windows。
+* Windows.UI.Xaml.Interop
+* Windows.UI.Xaml.Markup
 * Windows.UI.Xaml.Media
 * Windows.UI.Xaml.Media.Animation
-* Windows. .Xaml。
+* Windows.UI.Xaml.Media.Imaging
 * Windows.UI.Xaml.Media.Media3D
 * Windows.UI.Xaml.Navigation
-* Windows。
+* Windows.UI.Xaml.Resources
 * Windows.UI.Xaml.Shapes
 * Windows UI。
-* Windows 用户界面。文本
+* Windows.UI.Text
 
 <span id="other-XAML-namespaces"/>
 
@@ -82,29 +82,29 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 除了默认命名空间和 XAML 语言 XAML 命名空间“x:”，你也可能在 Microsoft Visual Studio 生成的应用的初始默认 XAML 中看到其他的已映射 XAML 命名空间。
 
-### <a name="d-httpschemasmicrosoftcomexpressionblend2008"></a>**d：（`http://schemas.microsoft.com/expression/blend/2008`）**
+### <a name="d-httpschemasmicrosoftcomexpressionblend2008"></a>**d： (`http://schemas.microsoft.com/expression/blend/2008`) **
 
 “d:”XAML 命名空间旨在提供设计器支持，尤其是 Microsoft Visual Studio 的 XAML 设计界面中的设计器支持。 “d:”XAML 命名空间支持 XAML 元素上的设计器或设计时特性。 这些设计器特性只影响 XAML 行为的设计方面。 如果 Windows 运行时 XAML 分析器在一个应用运行时加载相同的 XAML，设计器特性会被忽略。 一般而言，设计器特性在任何 XAML 元素上是有效的，但在实际情况中，只有某些场景适合应用设计器特性。 具体来讲，许多设计器特性是为了在你开发使用数据绑定的 XAML 和代码时，提供一种与数据上下文和数据源交互的更好体验。
 
--   **d:DesignHeight 和 d:DesignWidth 属性：** 这些属性有时应用于 Visual Studio 或其他 XAML 设计器图面为你创建的 XAML 文件的根。 例如，如果你向应用项目中添加了新的 [UserControl **，则这些属性是针对所创建的 XAML 的** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl)UserControl 根设置的。 这些属性更便于设计 XAML 内容组合，以便在将该 XAML 内容用于控件示例或更大 UI 页面的其他部分之后，你能够预测可能存在的布局约束。
+-   **d:DesignHeight 和 d:DesignWidth 属性：** 这些属性有时应用于 Visual Studio 或其他 XAML 设计器图面为你创建的 XAML 文件的根。 例如，如果你向应用项目中添加了新的 **UserControl**，则这些属性是针对所创建的 XAML 的 [**UserControl**](/uwp/api/Windows.UI.Xaml.Controls.UserControl) 根设置的。 这些属性更便于设计 XAML 内容组合，以便在将该 XAML 内容用于控件示例或更大 UI 页面的其他部分之后，你能够预测可能存在的布局约束。
 
-   **请注意**  如果你要从 Microsoft SILVERLIGHT 迁移 XAML，你可能会在代表整个 UI 页面的根元素上具有这些属性。 在这种情况下，你可能希望删除这些特性。 与使用 **d:DesignHeight** 和 **d:DesignWidth** 的固定大小页面布局相比，XAML 设计器的其他功能（如模拟器）对于设计能够很好地处理缩放和视图状态的页面布局或许更有用。
+   **注意**   如果要从 Microsoft Silverlight 迁移 XAML，则可能会在表示整个 UI 页的根元素上具有这些属性。 在这种情况下，你可能希望删除这些特性。 与使用 **d:DesignHeight** 和 **d:DesignWidth** 的固定大小页面布局相比，XAML 设计器的其他功能（如模拟器）对于设计能够很好地处理缩放和视图状态的页面布局或许更有用。
 
--   **d:DataContext 特性：** 可以针对页面根或控件设置此特性，以便替代该对象所拥有的任何显式或继承的 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)。
--   **d:DesignSource 特性：** 为 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 指定设计时数据源，并替代 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.collectionviewsource.source)。
--   **d:DesignInstance 和 d:DesignData 标记扩展：** 这些标记扩展用于为 **d:DataContext** 或 **d:DesignSource** 提供设计时数据资源。 在这里，我们不会完全记录如何使用设计时数据源资源。 有关详细信息，请参阅[设计时特性](https://msdn.microsoft.com/library/ff602277(v=VS.95).aspx)。 有关一些使用示例，请参阅[设计面图以及用于原型制作的示例数据](https://docs.microsoft.com/windows/uwp/data-binding/displaying-data-in-the-designer)。
+-   **d:DataContext 特性：** 可以针对页面根或控件设置此特性，以便替代该对象所拥有的任何显式或继承的 [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext)。
+-   **d:DesignSource 特性：** 为 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 指定设计时数据源，并替代 [**Source**](/uwp/api/windows.ui.xaml.data.collectionviewsource.source)。
+-   **d:DesignInstance 和 d:DesignData 标记扩展：** 这些标记扩展用于为 **d:DataContext** 或 **d:DesignSource** 提供设计时数据资源。 在这里，我们不会完全记录如何使用设计时数据源资源。 有关详细信息，请参阅[设计时特性](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff602277(v=vs.95))。 有关一些使用示例，请参阅[设计面图以及用于原型制作的示例数据](../data-binding/displaying-data-in-the-designer.md)。
 
-### <a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>**mc：（`http://schemas.openxmlformats.org/markup-compatibility/2006`）**
+### <a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>**mc： (`http://schemas.openxmlformats.org/markup-compatibility/2006`) **
 
 “mc:”表示并支持读取 XAML 的标记兼容性模式。 通常，“d:”前缀与特性 **mc:Ignorable** 相关联。 此技术使运行时 XAML 分析器忽略“d:”中的设计特性。
 
 ### <a name="local-and-common"></a>**local:** 和 **common:**
 
-“local:”是一个前缀，通常会在模板化 UWP 应用项目的 XAML 页面中为你映射它。 它映射为引用相同的命名空间，该命名空间旨在包含 [x:Class 特性](x-class-attribute.md)和所有 XAML 文件（包括 app.xaml）的代码。 只要你在此相同命名空间中定义你要在 XAML 中使用的任何自定义类，你就可以使用 **local:** 前缀在 XAML 中引用你的自定义类型。 来自模板化的 UWP 应用项目的相关前缀是 **common:** 。 此前缀引用包含实用程序类（例如转换器和命令）的嵌套“Common”命名空间，你可以在**解决方案资源管理器**视图的“Common”文件夹中找到定义。
+“local:”是一个前缀，通常会在模板化 UWP 应用项目的 XAML 页面中为你映射它。 它映射为引用相同的命名空间，该命名空间旨在包含 [x:Class 特性](x-class-attribute.md)和所有 XAML 文件（包括 app.xaml）的代码。 只要你在此相同命名空间中定义你要在 XAML 中使用的任何自定义类，你就可以使用 **local:** 前缀在 XAML 中引用你的自定义类型。 来自模板化的 UWP 应用项目的相关前缀是 **common:**。 此前缀引用包含实用工具类（如转换器和命令）的嵌套 "Common" 命名空间，您可以在 " **解决方案资源管理器** " 视图中的 "common" 文件夹中找到这些定义。
 
-### <a name="vsm"></a>**vsm**
+### <a name="vsm"></a>**vsm:**
 
-请勿使用。 “vsm:”是有时在从其他 Microsoft 技术导入的较老 XAML 模板中会看到的一个前缀。 该命名空间最初解决了旧版命名空间工具问题。 你应该在用于 Windows 运行时的任何 XAML 中删除“vsm:”的 XAML 命名空间定义，更改 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)、[**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) 和相关对象的任何前缀的用法，从而使用默认的 XAML 命名空间。 有关 XAML 迁移的详细信息，请参阅[将 Silverlight 或 WPF XAML/代码迁移到 Windows 运行时应用](https://docs.microsoft.com/previous-versions/windows/apps/br229571(v=win.10))。
+请勿使用。 “vsm:”是有时在从其他 Microsoft 技术导入的较老 XAML 模板中会看到的一个前缀。 该命名空间最初解决了旧版命名空间工具问题。 你应该在用于 Windows 运行时的任何 XAML 中删除“vsm:”的 XAML 命名空间定义，更改 [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState)、[**VisualStateGroup**](/uwp/api/Windows.UI.Xaml.VisualStateGroup) 和相关对象的任何前缀的用法，从而使用默认的 XAML 命名空间。 有关 XAML 迁移的详细信息，请参阅[将 Silverlight 或 WPF XAML/代码迁移到 Windows 运行时应用](/previous-versions/windows/apps/br229571(v=win.10))。
 
 ## <a name="mapping-custom-types-to-xaml-namespaces-and-prefixes"></a>将自定义类型映射到 XAML 命名空间和前缀
 
@@ -126,7 +126,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 ## <a name="custom-types-and-assemblies"></a>自定义类型和程序集
 
-定义 XAML 命名空间的支持类型的程序集名称不是在映射中指定的。 关于哪些程序集可用的逻辑在应用定义级别控制，包含在基本应用部署和安全原则中。 在项目设置中，将你希望作为 XAML 的一个代码定义源包含的任何程序集声明为一个独立程序集。 有关详细信息，请参阅[在 C# 和 Visual Basic 中创建 Windows 运行时组件](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))。
+定义 XAML 命名空间的支持类型的程序集名称不是在映射中指定的。 关于哪些程序集可用的逻辑在应用定义级别控制，包含在基本应用部署和安全原则中。 在项目设置中，将你希望作为 XAML 的一个代码定义源包含的任何程序集声明为一个独立程序集。 有关详细信息，请参阅[在 C# 和 Visual Basic 中创建 Windows 运行时组件](/previous-versions/windows/apps/hh441572(v=vs.140))。
 
 如果从主要应用的应用程序定义或页面定义中引用自定义类型，这些类型无需进一步的依赖程序集配置即可使用，但你仍然必须映射包含这些类型的代码命名空间。 一种常见的约定是映射任何给定 XAML 页面的默认代码命名空间的前缀“local”。 此约定常常包含在 XAML 项目的初始项目模板中。
 
@@ -138,8 +138,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 * [XAML概述](xaml-overview.md)
 * [XAML 语法指南](xaml-syntax-guide.md)
-* [在和中C#创建 Windows 运行时组件 Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
-* [C#、VB 和C++项目模板 Windows 运行时应用](https://docs.microsoft.com/previous-versions/windows/apps/hh768232(v=win.10))
-* [将 Silverlight 或 WPF XAML/代码迁移到 Windows 运行时应用](https://docs.microsoft.com/previous-versions/windows/apps/br229571(v=win.10))
+* [用 c # 和 Visual Basic 创建 Windows 运行时组件](/previous-versions/windows/apps/hh441572(v=vs.140))
+* [适用于 Windows 运行时应用的 C#、VB 和 C++ 项目模板](/previous-versions/windows/apps/hh768232(v=win.10))
+* [将 Silverlight 或 WPF XAML/代码迁移到 Windows 运行时应用](/previous-versions/windows/apps/br229571(v=win.10))
  
-

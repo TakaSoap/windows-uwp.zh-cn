@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 07d8e6c180f332e75852c6a6627004f0306e26d4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 32d09d4366d5ee05fe9581c4c8076811cfa0436f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259847"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155001"
 ---
 # <a name="staticresource-markup-extension"></a>{StaticResource} 标记扩展
 
 
-通过计算对一个已定义资源的引用，为任何 XAML 属性提供一个值。 资源在 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中定义，而 **StaticResource** 用法则在 **ResourceDictionary** 中引用该资源的键。
+通过计算对一个已定义资源的引用，为任何 XAML 属性提供一个值。 资源在 [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中定义，而 **StaticResource** 用法则在 **ResourceDictionary** 中引用该资源的键。
 
-## <a name="xaml-attribute-usage"></a>XAML 属性用法
+## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
 ``` syntax
 <object property="{StaticResource key}" .../>
@@ -26,9 +26,9 @@ ms.locfileid: "74259847"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 术语 | 说明 |
+| 术语 | 描述 |
 |------|-------------|
-| 密钥 | 所请求资源的键。 此键最初通过 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 分配。 资源键可以是以 XamlName 语法定义的任何字符串。 |
+| key | 所请求资源的密钥。 此键最初通过 [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 分配。 资源键可以是以 XamlName 语法定义的任何字符串。 |
 
 ## <a name="remarks"></a>备注
 
@@ -36,17 +36,17 @@ ms.locfileid: "74259847"
 
 **StaticResource** 使用一个参数，该参数用来为所请求的资源指定键。 在 Windows 运行时 XAML 中，资源键始终是一个字符串。 有关最初如何指定资源键的详细信息，请参阅 [x:Key 属性](x-key-attribute.md)。
 
-本主题未介绍 **StaticResource** 解析为资源字典中的项时所遵循的规则。 这些规则取决于引用和资源是否都存在于模板中，以及是否使用了合并的资源字典，等等。 有关如何定义资源和正确使用 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的详细信息（包括示例代码），请参阅 [ResourceDictionary 和 XAML 资源引用](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。
+本主题未介绍 **StaticResource** 解析为资源字典中的项时所遵循的规则。 这些规则取决于引用和资源是否都存在于模板中，以及是否使用了合并的资源字典，等等。 有关如何定义资源和正确使用 [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的详细信息（包括示例代码），请参阅 [ResourceDictionary 和 XAML 资源引用](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)。
 
-**重要**   **StaticResource**不能尝试对 XAML 文件中在词法上进一步定义的资源进行前向引用。 这样的尝试不受支持。 即使前向引用没有失败，尝试进行这样的引用也会对性能造成不利影响。 为实现最佳效果，请调整你的资源字典的组成，以避免使用前向引用。
+**重要提示**   **StaticResource**不能尝试对 XAML 文件中对其进行词法上进一步定义的资源进行前向引用。 这样的尝试不受支持。 即使前向引用没有失败，尝试进行这样的引用也会对性能造成不利影响。 为实现最佳效果，请调整你的资源字典的组成，以避免使用前向引用。
 
 尝试为无法解析的键指定 **StaticResource** 会在运行时引发 XAML 分析异常。 设计工具还可能会提供警告或错误。
 
-在 Windows 运行时 XAML 处理器实现中，没有针对 **StaticResource** 功能的后备类表示。 **StaticResource** 专用于 XAML 中。 在代码中最接近的等效体是使用 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的集合 API，例如调用 [**Contains**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.contains) 或 [**TryGetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.trygetvalue)。
+在 Windows 运行时 XAML 处理器实现中，没有针对 **StaticResource** 功能的后备类表示。 **StaticResource** 专用于 XAML 中。 在代码中最接近的等效体是使用 [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的集合 API，例如调用 [**Contains**](/uwp/api/windows.ui.xaml.resourcedictionary.contains) 或 [**TryGetValue**](/uwp/api/windows.ui.xaml.resourcedictionary.trygetvalue)。
 
 [{ThemeResource} 标记扩展](themeresource-markup-extension.md)是在其他位置中引用命名资源的类似标记扩展。 不同之处在于 {ThemeResource} 标记扩展能够返回不同的资源，具体取决于处于活动状态的系统主题。 有关详细信息，请参阅 [{ThemeResource} 标记扩展](themeresource-markup-extension.md)。
 
-**StaticResource** 是标记扩展。 当需要将属性值转义为除文字值或处理程序名称之外的值时，以及当需求更具全局性而不是仅仅将类型转换器放在某些类型或属性上时，通常需要实现标记扩展。 XAML 中的所有标记扩展在其特性语法中使用 "\{" 和 "\}" 字符，这是 XAML 处理器识别标记扩展必须处理特性的约定。
+**StaticResource** 是标记扩展。 当要求转义特性值应为非文本值或非处理程序名称时，通常会实现标记扩展，相对于只在某些类型或属性上放置类型转换器而言，此需求更具有全局性。 XAML 中的所有标记扩展在 \{ 其特性语法中使用 "" 和 " \} " 字符，这是 xaml 处理器识别标记扩展必须处理特性的约定。
 
 ### <a name="an-example-staticresource-usage"></a>示例 {StaticResource} 用法
 
@@ -67,7 +67,7 @@ ms.locfileid: "74259847"
 </StackPanel> 
 ```
 
-这个特定示例创建一个由自定义类支持的对象，并将它作为 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中的一个资源。 为了使此 `local:S2Formatter` 元素成为有效的资源，它还必须具有一个 **x:Key** 属性值。 该属性的值设置为“GradeConverter”。
+这个特定示例创建一个由自定义类支持的对象，并将它作为 [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中的一个资源。 为了使此 `local:S2Formatter` 元素成为有效的资源，它还必须具有一个 **x:Key** 属性值。 该属性的值设置为“GradeConverter”。
 
 随后会将该资源进一步请求到 XAML 中，在 XAML 中可以看到 `{StaticResource GradeConverter}`。
 
@@ -75,14 +75,13 @@ ms.locfileid: "74259847"
 
 ## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>设计时工具支持 **{StaticResource}** 标记扩展
 
-当你在 XAML 页中使用 **{StaticResource}** 标记扩展时，Microsoft Visual Studio 2013 可以在 Microsoft IntelliSense 下拉列表中包含可能的键值。 例如，只要键入“{StaticResource”，来自当前查找作用域的任何资源键就会显示在 IntelliSense 下拉菜单中。 除了你在页面级别 ([**FrameworkElement.Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources)) 和应用级别 ([**Application.Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resources)) 上具有的典型资源外，你还可以查看 [XAML 主题资源](https://docs.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)以及你的项目正在使用的任何扩展中的资源。
+当你在 XAML 页面中使用 **{StaticResource}** 标记扩展时，Microsoft Visual Studio 2013 可在 Microsoft IntelliSense 下拉菜单中包含可能的键值。 例如，只要键入“{StaticResource”，来自当前查找作用域的任何资源键就会显示在 IntelliSense 下拉菜单中。 除了你在页面级别 ([**FrameworkElement.Resources**](/uwp/api/windows.ui.xaml.frameworkelement.resources)) 和应用级别 ([**Application.Resources**](/uwp/api/windows.ui.xaml.application.resources)) 上具有的典型资源外，你还可以查看 [XAML 主题资源](../design/controls-and-patterns/xaml-theme-resources.md)以及你的项目正在使用的任何扩展中的资源。
 
-在资源键作为任何 **{StaticResource}** 用法的一部分存在后，“转至定义”(F12) 功能可以解析该资源并向你显示其定义所在的字典。 若要获取主题资源，请转到设计时 generic.xaml。
+在资源键作为任何 **{StaticResource}** 用法的一部分存在后，“转至定义”****(F12) 功能可以解析该资源并向你显示其定义所在的字典。 若要获取主题资源，请转到设计时 generic.xaml。
 
 ## <a name="related-topics"></a>相关主题
 
-* [ResourceDictionary 和 XAML 资源引用](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
-* [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary)
+* [ResourceDictionary 和 XAML 资源引用](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
+* [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary)
 * [x:Key 特性](x-key-attribute.md)
 * [{ThemeResource} 标记扩展](themeresource-markup-extension.md)
-

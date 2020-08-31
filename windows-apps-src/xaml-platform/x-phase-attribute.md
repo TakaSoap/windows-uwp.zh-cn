@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bf1372289afcc8649fff6c2ed56ad85aad46b76c
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 70c867441aff2532627f6e2bb1bfbdc50a1510dc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997984"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169017"
 ---
 # <a name="xphase-attribute"></a>x:Phase 属性
 
 
-使用带有[{x:Bind} 标记扩展](x-bind-markup-extension.md)的**x:Phase**来增量呈现[**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)和[**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)项，并改善平移体验。 为了能实现与使用 [**ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件手动控制列表项的呈现相同的效果，**x:Phase** 提供了一种声明性方法。 另请参阅[以增量方式更新 ListView 和 GridView 项](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
+使用带有[{x:Bind} 标记扩展](x-bind-markup-extension.md)的**x:Phase**来增量呈现[**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)和[**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView)项，并改善平移体验。 为了能实现与使用 [**ContainerContentChanging**](/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件手动控制列表项的呈现相同的效果，**x:Phase** 提供了一种声明性方法。 另请参阅[以增量方式更新 ListView 和 GridView 项](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
 
-## <a name="xaml-attribute-usage"></a>XAML 属性用法
+## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
 
 ``` syntax
@@ -69,15 +69,14 @@ ms.locfileid: "86997984"
 3.  显示 prettyFileSize 和 prettyImageSize 文本块。
 4.  显示图像。
 
-阶段是 [{x:Bind}](x-bind-markup-extension.md) 的一项功能，它适用于派生自 [**ListViewBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase) 的控件，且以增量方式处理数据绑定的项目模板。 在呈现列表项时，**ListViewBase** 将先以视图形式为所有项呈现单个阶段，然后再移至下一阶段。 呈现工作将以时间分片批处理的形式进行执行，以便在滚动列表时可对所需的工作进行重新评估，从而可不执行不再可见的项。
+阶段是 [{x:Bind}](x-bind-markup-extension.md) 的一项功能，它适用于派生自 [**ListViewBase**](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase) 的控件，且以增量方式处理数据绑定的项目模板。 在呈现列表项时，**ListViewBase** 将先以视图形式为所有项呈现单个阶段，然后再移至下一阶段。 呈现工作将以时间分片批处理的形式进行执行，以便在滚动列表时可对所需的工作进行重新评估，从而可不执行不再可见的项。
 
-**x:Phase** 可以在使用 [{x:Bind}](x-bind-markup-extension.md) 的数据模板中的任一元素上进行指定。 当元素具有一个非 0 的阶段时，将（通过 **Opacity**，而非 **Visibility**）从视图中隐藏该元素，直到处理完该阶段并更新绑定为止。 当滚动 [**ListViewBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase) 派生的控件时，它将从不再显示在屏幕上的项中回收项目模板，以呈现新的可见项。 模板内的 UI 元素将保留其旧值，直到它们再次进行数据绑定。 阶段将导致数据绑定步骤延迟，因此它需要隐藏 UI 元素，以防这些元素过时。
+**x:Phase** 可以在使用 [{x:Bind}](x-bind-markup-extension.md) 的数据模板中的任一元素上进行指定。 当元素具有一个非 0 的阶段时，将（通过 **Opacity**，而非 **Visibility**）从视图中隐藏该元素，直到处理完该阶段并更新绑定为止。 当滚动 [**ListViewBase**](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase) 派生的控件时，它将从不再显示在屏幕上的项中回收项目模板，以呈现新的可见项。 模板内的 UI 元素将保留其旧值，直到它们再次进行数据绑定。 阶段将导致数据绑定步骤延迟，因此它需要隐藏 UI 元素，以防这些元素过时。
 
 每个 UI 元素可能只具有一个指定阶段。 如果是，这将应用于元素上的所有绑定。 如果未指定阶段，将假定阶段 0。
 
-阶段数字不需要是连续的，不过需与 [**ContainerContentChangingEventArgs.Phase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.containercontentchangingeventargs.phase) 值相同。 在处理 **x:Phase** 绑定前，将针对每个阶段引发 [**ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件。
+阶段数字不需要是连续的，不过需与 [**ContainerContentChangingEventArgs.Phase**](/uwp/api/windows.ui.xaml.controls.containercontentchangingeventargs.phase) 值相同。 在处理 **x:Phase** 绑定前，将针对每个阶段引发 [**ContainerContentChanging**](/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件。
 
 阶段仅影响 [{x:Bind}](x-bind-markup-extension.md) 绑定，而不会影响 [{Binding}](binding-markup-extension.md) 绑定。
 
-仅当项目模板使用阶段感知的控件进行呈现时，才应用阶段。 对于 Windows 10，即表示 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)。 阶段既不会应用于其他项目控件中所使用的数据模板，也不会应用于诸如 [**ContentTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) 或 [**Hub**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub) 等部分中的方案，因为在这些用例中，将一次数据绑定所有 UI 元素。
-
+仅当项目模板使用阶段感知的控件进行呈现时，才应用阶段。 对于 Windows 10，即表示 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView)。 阶段既不会应用于其他项目控件中所使用的数据模板，也不会应用于诸如 [**ContentTemplate**](/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) 或 [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub) 等部分中的方案，因为在这些用例中，将一次数据绑定所有 UI 元素。

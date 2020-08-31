@@ -1,17 +1,17 @@
 ---
 title: 为 DirectX 游戏添加功能
-description: 为 DirectX 游戏添加功能。
+description: 了解如何使用 DirectX 和 XAML 生成 UI 接口、添加控件并处理 DirectX 游戏中的屏幕旋转。
 ms.assetid: 78e17048-a4a5-47d3-b250-19375b6f186c
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, xaml, 屏幕旋转, 输入
 ms.localizationpriority: medium
-ms.openlocfilehash: 432e7716363f6a51254e1476dac38f713c94fb69
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d6d32097675ee5a85b689203d7e1034f31246221
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599502"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053827"
 ---
 # <a name="add-features-to-directx-games"></a>为 DirectX 游戏添加功能
 
@@ -31,7 +31,7 @@ DirectX 和 XAML 互操作主题介绍了如何结合使用 Extensible Applicati
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

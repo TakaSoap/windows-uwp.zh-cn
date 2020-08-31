@@ -7,32 +7,32 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 739abc139eabc9f773938f55c15d3e18aaf562ce
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4368c3d504b01a48b05fcaffdb01a71b916d9d43
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365961"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169301"
 ---
 # <a name="special-tile-templates"></a>特殊磁贴模板
  
 
-特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。 每个特殊的磁贴模板是专门构建，适用于 Windows 10 除外图标磁贴模板中，已更新适用于 Windows 10 的经典特殊模板。 本文介绍了三个特殊的磁贴模板：图标，照片和人员。
+特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。 每个特殊磁贴模板均专为 Windows 10 而生成，除了图标磁贴模板，它是针对 Windows 10 进行更新的经典特殊模板。 本文介绍了三种特殊磁贴模板：图标、照片和人脉。
 
 ## <a name="iconic-tile-template"></a>图标磁贴模板
 
 
-图标模板（也称为“IconWithBadge”模板）允许你在磁贴中心显示较小的图像。 Windows 10 手机和平板电脑/桌面支持模板。
+图标模板（也称为“IconWithBadge”模板）允许你在磁贴中心显示较小的图像。 Windows 10 在手机和平板电脑/台式机上都支持该模板。
 
 ![小邮件磁贴和中邮件磁贴](images/iconic-template-mail-2sizes.png)
 
 ### <a name="how-to-create-an-iconic-tile"></a>如何创建图标磁贴
 
-以下步骤涵盖所有需要了解适用于 Windows 10 创建图标磁贴。 具体而言，你首先需要图标图像资源，然后使用图标模板向磁贴发送通知，最后发送锁屏提醒通知以提供要在磁贴上显示的数目。
+以下步骤介绍了要创建适用于 Windows 10 的图标磁贴所需的所有内容。 具体而言，你首先需要图标图像资源，然后使用图标模板向磁贴发送通知，最后发送锁屏提醒通知以提供要在磁贴上显示的数目。
 
 ![图标磁贴的开发人员流程](images/iconic-template-dev-flow.png)
 
-**步骤 1：创建图像资产、 PNG 格式**
+**步骤 1：创建采用 PNG 格式的图像资源**
 
 为磁贴创建图标资源，然后将其放置在包含其他资源的项目资源中。 至少创建一个 200x200 像素的图标，这可用于手机和台式机上的小磁贴和中等磁贴。 若要提供最佳用户体验，请为每种大小创建一个图标。 这些资源上不需要填充。 请参阅下图中的调整大小详细信息。
 
@@ -54,13 +54,13 @@ ms.locfileid: "66365961"
 
 ![非方形资源大小调整（带有和不带有锁屏提醒）](images/assetguidance26b.png)
 
-**步骤 2：创建基本图块**
+**步骤 2：创建基本磁贴**
 
 你可以在主要磁贴和辅助磁贴上使用图标模板。 如果要在辅助磁贴上使用它，首先需要创建辅助磁贴或使用已固定的辅助磁贴。 主要磁贴已隐式固定，并且始终可以向其发送通知。
 
-**步骤 3：将通知发送到你的磁贴**
+**步骤 3：向磁贴发送通知**
 
-尽管此步骤将根据通知的发送方式（通过本地或通过服务器推送）而有所不同，但所发送的 XML 负载依然保持不变。 若要发送本地磁贴通知，请为磁贴（主要磁贴或辅助磁贴）创建 [**TileUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater)，然后向使用图标磁贴模板的磁贴发送通知，如下所示。 理想情况下，还应为使用[自适应磁贴模板](create-adaptive-tiles.md)的宽形磁贴和大磁贴包含绑定。
+尽管此步骤将根据通知的发送方式（通过本地或通过服务器推送）而有所不同，但所发送的 XML 负载依然保持不变。 若要发送本地磁贴通知，请为磁贴（主要磁贴或辅助磁贴）创建 [**TileUpdater**](/uwp/api/Windows.UI.Notifications.TileUpdater)，然后向使用图标磁贴模板的磁贴发送通知，如下所示。 理想情况下，还应为使用[自适应磁贴模板](create-adaptive-tiles.md)的宽形磁贴和大磁贴包含绑定。
 
 下面是 XML 负载的示例代码：
 
@@ -82,9 +82,9 @@ ms.locfileid: "66365961"
 
 此图标磁贴模板 XML 负载使用的图像元素指向在步骤 1 中创建的图像。 现在，磁贴已经可以在图标旁边显示锁屏提醒；只需发送锁屏提醒通知即可。
 
-**步骤 4：将徽章通知发送到你的磁贴**
+**步骤 4：向磁贴发送锁屏提醒通知**
 
-与步骤 3 一样，此步骤将根据通知的发送方式（通过本地或通过服务器推送）而有所不同，但所发送的 XML 负载依然保持不变。 若要发送本地锁屏提醒通知，请为磁贴（主要磁贴或辅助磁贴）创建 [**BadgeUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater)，然后发送具有所需值的锁屏提醒（或清除锁屏提醒）通知。
+与步骤 3 一样，此步骤将根据通知的发送方式（通过本地或通过服务器推送）而有所不同，但所发送的 XML 负载依然保持不变。 若要发送本地锁屏提醒通知，请为磁贴（主要磁贴或辅助磁贴）创建 [**BadgeUpdater**](/uwp/api/Windows.UI.Notifications.BadgeUpdater)，然后发送具有所需值的锁屏提醒（或清除锁屏提醒）通知。
 
 下面是 XML 负载的示例代码：
 
@@ -94,9 +94,9 @@ ms.locfileid: "66365961"
 
 磁贴的锁屏提醒将进行相应的更新。
 
-**步骤 5：将它放在一起**
+**步骤 5：组织到一起**
 
-下图说明了如何将各个 API 和负载与图标磁贴模板的每个方面关联在一起。 [磁贴通知](https://docs.microsoft.com/previous-versions/windows/apps/hh779724(v=win.10))（包含那些 &lt;binding&gt; 元素）用于指定图标模板和图像资源；[锁屏提醒通知](https://docs.microsoft.com/previous-versions/windows/apps/hh779719(v=win.10))指定数值；磁贴属性控制你的磁贴的显示名称、颜色等。
+下图说明了如何将各个 API 和负载与图标磁贴模板的每个方面关联在一起。 [磁贴通知](/previous-versions/windows/apps/hh779724(v=win.10))（包含那些 &lt;binding&gt; 元素）用于指定图标模板和图像资源；[锁屏提醒通知](/previous-versions/windows/apps/hh779719(v=win.10))指定数值；磁贴属性控制你的磁贴的显示名称、颜色等。
 
 ![与图标磁贴模板关联的 API 和负载](images/iconic-template-properties-info.png)
 
@@ -184,7 +184,7 @@ TileContent content = new TileContent()
 ## <a name="people-tile-template"></a>“人脉”磁贴模板
 
 
-Windows 10 中的“人脉”应用使用的特殊磁贴模板显示一系列在磁贴上垂直或水平滚动的圆形图像。 此磁贴模板以来提供 Windows 10 生成 10572，和任何人都是欢迎使用以在自己的应用程序中使用它。
+Windows 10 中的“人脉”应用使用的特殊磁贴模板显示一系列在磁贴上垂直或水平滚动的圆形图像。 这种磁贴模板自 Windows 10 版本 10572 起推出，任何人都可随意在其应用中使用该模板。
 
 “人脉”磁贴模板可用于以下大小的磁贴：
 
@@ -261,9 +261,9 @@ TileContent content = new TileContent()
 
 若要提供最佳用户体验，我们建议为每种磁贴大小提供以下数量的照片：
 
--   中等磁贴：9 照片
--   宽磁贴：15 照片
--   大磁贴：20 照片
+-   中等磁贴：9 张照片
+-   宽形磁贴：15 张照片
+-   大磁贴：20 张照片
 
 提供如此数量的照片将允许出现几个空圆圈，这意味着磁贴的视觉效果不会过于拥挤。 可随意调整照片数量以获得最合适的外观。
 
@@ -280,7 +280,3 @@ TileContent content = new TileContent()
  
 
  
-
-
-
-

@@ -1,6 +1,6 @@
 ---
-Description: 使用嵌套的 UI 来支持列表项上的多个操作
 title: 列表项中嵌套的 UI
+description: 了解如何在 ListView 和 GridView 项中创建嵌套 UI，为用户提供执行重要操作的附加选项。
 label: Nested UI in list items
 template: detail.hbs
 ms.date: 05/19/2017
@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d2372044076e1885602dec806df95ad60e789cdd
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 9a8b53eef3538ca637fa5b351b74125eebdfe2b3
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968082"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942837"
 ---
 # <a name="nested-ui-in-list-items"></a>列表项中嵌套的 UI
 

@@ -6,26 +6,26 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 软件包推出, 应用提交, 完成
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
 ms.localizationpriority: medium
-ms.openlocfilehash: bfab2a56c3b8c7508042091f16a33d45b3272106
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 65c3d976607d260cca38e8ee09520d6a60e758a4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371774"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171511"
 ---
 # <a name="finalize-the-rollout-for-an-app-submission"></a>完成应用提交的推出
 
 
-使用 Microsoft Store 提交 API 中的此方法为应用提交[完成软件包推出](../publish/gradual-package-rollout.md#completing-the-rollout)。 有关通过使用 Microsoft Store 提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
+在 Microsoft Store 提交 API 中使用此方法来完成应用程序提交的 [包推出](../publish/gradual-package-rollout.md#completing-the-rollout) 。 有关通过使用 Microsoft Store 提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 在合作伙伴中心帐户中创建的应用提交。 可以执行此操作在合作伙伴中心，也可以执行此操作通过使用[创建应用程序提交](create-an-app-submission.md)方法。
-* 启用提交的逐步软件包推出。 可以执行此操作[在合作伙伴中心](../publish/gradual-package-rollout.md)，也可以执行此操作[使用的 Microsoft Store 提交 API](manage-app-submissions.md#manage-gradual-package-rollout)。
+* 为合作伙伴中心帐户中的应用创建提交。 可以在合作伙伴中心执行此操作，也可以使用 [创建应用提交](create-an-app-submission.md) 方法来执行此操作。
+* 启用提交的逐步软件包推出。 可以 [在合作伙伴中心](../publish/gradual-package-rollout.md)执行此操作，也可以通过 [使用 Microsoft Store 提交 API](manage-app-submissions.md#manage-gradual-package-rollout)来实现此目的。
 
 ## <a name="request"></a>请求
 
@@ -33,22 +33,22 @@ ms.locfileid: "66371774"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| 发布   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout` |
+| POST   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout` |
 
 
 ### <a name="request-header"></a>请求头
 
-| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt; 。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必需。 应用（包含要完成软件包推出的提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| submissionId | string | 必需。 要完成软件包推出的提交的 ID。 此 ID 包含在[创建应用提交](create-an-app-submission.md)请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。  |
+| applicationId | 字符串 | 必需。 应用（包含要完成软件包推出的提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](../publish/view-app-identity-details.md)。  |
+| submissionId | 字符串 | 必需。 要完成软件包推出的提交的 ID。 此 ID 包含在[创建应用提交](create-an-app-submission.md)请求的响应数据中。 对于在合作伙伴中心创建的提交，此 ID 还可用于合作伙伴中心中的提交页的 URL。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -57,7 +57,7 @@ ms.locfileid: "66371774"
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示了如何完成软件包外部测试版提交的软件包推出。
+以下示例演示如何完成软件包外部测试版提交的软件包推出。
 
 ```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243680/finalizepackagerollout HTTP/1.1
@@ -82,14 +82,14 @@ Authorization: Bearer <your access token>
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
-| 错误代码 |  描述   |
+| 错误代码 |  说明   |
 |--------|------------------|
 | 404  | 找不到提交。 |
-| 409  | 此代码指示以下错误之一：<br/><br/><ul><li>对于逐步推出操作，该提交未处于有效状态（在调用此方法之前，必须发布该提交，并且必须将 [packageRolloutStatus](manage-app-submissions.md#package-rollout-object) 值设置为 **PackageRolloutInProgress**）。</li><li>提交不属于指定应用。</li><li>该应用使用的 DevPartner Center 功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。</li></ul> |   
+| 409  | 此代码指示以下错误之一：<br/><br/><ul><li>对于逐步推出操作，该提交未处于有效状态（在调用此方法之前，必须发布该提交，并且必须将 [packageRolloutStatus](manage-app-submissions.md#package-rollout-object) 值设置为 **PackageRolloutInProgress**）。</li><li>提交不属于指定应用。</li><li>此应用使用的是 [Microsoft Store 提交 API 目前不支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)的 DevPartner Center 功能。</li></ul> |   
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [逐步包推出](../publish/gradual-package-rollout.md)
-* [管理使用 Microsoft Store 提交 API 提交应用程序](manage-app-submissions.md)
-* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
+* [逐步部署程序包](../publish/gradual-package-rollout.md)
+* [使用 Microsoft Store 提交 API 管理应用提交](manage-app-submissions.md)
+* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)

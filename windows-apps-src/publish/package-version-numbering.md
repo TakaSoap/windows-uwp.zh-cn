@@ -6,16 +6,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ac50cdba542de56ffb1daee01da12d4979ac45
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: 01e3a1d012e6c309f1c486417708457dd31c2c22
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945973"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171001"
 ---
 # <a name="package-version-numbering"></a>程序包版本编号
 
-你提供的每个程序包都必须具有一个版本号（采用应用清单中 [Package/Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 元素的 **Version** 属性值进行提供）。 Microsoft Store 强制执行某些与版本号相关的规则，它们在不同的 OS 版本中的工作方式略有不同。
+你提供的每个程序包都必须具有一个版本号（采用应用清单中 [Package/Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 元素的 **Version** 属性值进行提供）。 Microsoft Store 强制执行某些与版本号相关的规则，它们在不同的 OS 版本中的工作方式略有不同。
 
 > [!NOTE]
 > 本主题引用 "程序包"，但除非注明，否则相同的规则适用于 .msix/.appx 和 .msixbundle/.appxbundle 文件的版本号。
@@ -24,13 +24,13 @@ ms.locfileid: "84945973"
 ## <a name="version-numbering-for-windows10-packages"></a>Windows 10 程序包的版本编号
 
 > [!IMPORTANT]
-> 对于 Windows 10 （UWP）包，版本号的最后一个（第四个）部分保留用于商店用途，生成包时，必须将其保留为0（尽管存储可以更改此部分中的值）。 其他部分必须设置为介于0到65535之间的整数（不能为0的第一部分除外）。
+> 对于 Windows 10 (UWP) 包，版本号的最后一个 (第四) 部分保留为商店使用，并且在生成包时必须保留为 0 (但存储可能会更改此部分中的值) 。 其他部分必须设置为0到65535之间的整数 (除了第一部分，不能是 0) 。
 
 从已发布的提交中选择 UWP 包时，Microsoft Store 将始终使用适用于客户的 Windows 10 设备的最高版本的包。 这将为你提供更大的灵活性，并让你可以控制在特定设备类型上提供给客户的程序包。 重要的是，你可以按任意顺序提交这些程序包；你将并不局限于提供每个后续提交中的更高版本的程序包。
 
-可以提供具有相同版本号的多个 UWP 包。 但是，共享一个版本号的程序包也不能拥有相同的体系结构，因为应用商店用于每个程序包的完整标识必须是唯一的。 有关详细信息，请参阅 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
+可以提供具有相同版本号的多个 UWP 包。 但是，共享一个版本号的程序包也不能拥有相同的体系结构，因为应用商店用于每个程序包的完整标识必须是唯一的。 有关详细信息，请参阅 [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 
-如果提供多个使用相同版本号的 UWP 包，则将使用体系结构（顺序为 x64、x86、ARM、中性）来决定哪个级别为较高级别（在商店确定要提供给客户设备的包时）。 当对使用相同版本号的应用程序包进行分级时，应考虑采用程序包内等级最高的体系结构：包含 x64 程序包的应用程序包的等级高于仅包含 x86 程序包的应用程序包的等级。
+如果提供多个使用相同版本号的 UWP 包，则在应用商店确定要提供给客户设备) 的包时，将使用 "x64、x86、ARM、中性) 形式 (的体系结构来决定哪一项具有较高的 (级别。 当对使用相同版本号的应用程序包进行分级时，应考虑采用程序包内等级最高的体系结构：包含 x64 程序包的应用程序包的等级高于仅包含 x86 程序包的应用程序包的等级。
 
 这将为你随时间推移不断优化你的应用提供了极大的灵活性。 你可以上传和提交使用较低版本号的新包，以添加对以前不支持的 Windows 10 设备的支持，你可以添加具有更严格的依赖项的更高版本的包以利用硬件或 OS 功能，或者你可以添加更高版本的包，以便作为更新的部分或全部现有客户群。
 
@@ -56,7 +56,7 @@ Windows 10 使你能够编写一个可在任意位置上运行的单个基本代
 
 如果保留了包的副本，则可以选择将应用程序的包回滚到以前的 Windows 10 包，前提是你应该发现发布的问题。 这是一种暂时的方法，可让你在花费时间解决问题时限制客户的中断。
 
-为此，请创建新的[提交](app-submissions.md)。 删除有问题的程序包并上载你想要在应用商店中提供的旧程序包。 已收到你正在回滚的程序包的客户仍然会具有出现问题的程序包（因为较旧程序包的版本号是早期的）。 但是，这将阻止任何其他用户获取有问题的程序包，同时将仍然允许在应用商店中提供该应用。
+为此，请创建新的 [提交](app-submissions.md)。 删除有问题的程序包并上载你想要在应用商店中提供的旧程序包。 已收到你正在回滚的程序包的客户仍然会具有出现问题的程序包（因为较旧程序包的版本号是早期的）。 但是，这将阻止任何其他用户获取有问题的程序包，同时将仍然允许在应用商店中提供该应用。
 
 若要解决已接收到问题包的客户的问题，你可以提交新的 Windows 10 包，该程序包的版本号比错误包的版本更高。 在该提交完成认证过程后，所有客户的程序包都将更新为新程序包，因为它具有更高的版本号。
 
@@ -64,7 +64,7 @@ Windows 10 使你能够编写一个可在任意位置上运行的单个基本代
 ## <a name="version-numbering-for-windows81-and-earlier-and-windows-phone-81-packages"></a>适用于 Windows 8.1（和更早版本）以及 Windows Phone 8.1 程序包的版本编号
 
 > [!IMPORTANT]
-> 你不能再上传使用 Windows Phone 3.x SDK 生成的新 XAP 包。 已存储在 XAP 包中的应用将在 Windows 10 移动版设备上继续运行。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
+> 你无法再上传使用 Windows Phone 3.x SDK (s) 生成的新 XAP 包。 已存储在 XAP 包中的应用将在 Windows 10 移动版设备上继续运行。 有关详细信息，请参阅此 [博客文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
 对于面向 Windows Phone 8.1 的 .appx 程序包，新提交中的程序包版本号必须始终大于上一提交（或之前任意提交）中所含的程序包版本号。
 
@@ -73,17 +73,17 @@ Windows 10 使你能够编写一个可在任意位置上运行的单个基本代
 此外，Windows 8.1 程序包的版本号必须始终大于相同应用的任何 Windows 8 程序包的版本号。 换言之，你提交的任何 Windows 8 程序包的版本号都必须低于你已为相同应用提交的任何 Windows 8.1 程序包的版本号。
 
 > [!NOTE]
-> 如果你的应用程序还具有 Windows 10 包，则 Windows 10 包的版本号必须高于你的任何 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 包的版本号。 有关详细信息，请参阅[将适用于 Windows 10 的包添加到以前发布的应用](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)。
+> 如果你的应用程序还具有 Windows 10 包，则 Windows 10 包的版本号必须高于你的任何 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 包的版本号。 有关详细信息，请参阅 [将适用于 Windows 10 的包添加到以前发布的应用](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)。
 
 下面是针对面向 Windows 8 和 Windows 8.1 的包的不同版本号更新方案中会发生的情况的一些示例。
 
 | 应用商店中存在该版本的应用  | 并且上传该版本 | 在新版本位于 Microsoft Store 中之后，将在新的购置中安装此版本 | 在新版本位于 Microsoft Store 中之后，如果客户已经拥有该应用，只需更新便可。 |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
-| Nothing                                     | x86，v1.0.0.0               | x86，v1.0.0.0，在 x86 和 x64 计算机上                                                | 无。 |
-| x86，v1.0.0.0                               | x64，v1.0.0.0               | v1.0.0.0，针对客户的体系结构                                                   | 无。 版本号相同。 |
+| 无                                     | x86，v1.0.0.0               | x86，v1.0.0.0，在 x86 和 x64 计算机上                                                | 那没有意义。 |
+| x86，v1.0.0.0                               | x64，v1.0.0.0               | v1.0.0.0，针对客户的体系结构                                                   | 那没有意义。 版本号相同。 |
 | x86，v1.0.0.0 <br> x64，v1.0.0.0            | x64，v1.0.0.1               | v1.0.0.0，适用于使用 x86 的客户 <br> v1.0.0.1，适用于使用 x64 的客户                 | 无，针对在 x86 计算机上运行应用的客户。 <br> 对于在 x64 计算机上运行应用的客户，v1.0.0.0 将更新为 v1.0.0.1。 <br> **注意**   如果 x86 版本的应用程序在 x64 计算机上运行，则应用程序不会更新到 x64 版本，除非客户卸载并重新安装。 |
-| Nothing                                     | 中性，v1.0.0.1           | 中性，v1.0.0.1，在所有计算机上                                                         | 无。 |
-| 中性，v1.0.0.1                           | x86，v1.0.0.0 <br> x64，v1.0.0.0 <br> ARM，v1.0.0.0 | v1.0.0.0，针对客户计算机的体系结构。          | 无。 拥有体系结构为 Neutral 的 v1.0.0.1 版本应用的客户将继续使用它。 |
+| 无                                     | 中性，v1.0.0.1           | 中性，v1.0.0.1，在所有计算机上                                                         | 那没有意义。 |
+| 中性，v1.0.0.1                           | x86，v1.0.0.0 <br> x64，v1.0.0.0 <br> ARM，v1.0.0.0 | v1.0.0.0，针对客户计算机的体系结构。          | 那没有意义。 拥有体系结构为 Neutral 的 v1.0.0.1 版本应用的客户将继续使用它。 |
 | 中性，v1.0.0.1 <br> x86，v1.0.0.0 <br> x64，v1.0.0.0 <br> ARM，v1.0.0.0 | x86，v1.0.0.1 <br> x64，v1.0.0.1 <br> ARM，v1.0.0.1 | v1.0.0.1，针对客户计算机的体系结构。 | 无，针对运行中性，v1.0.0.1 版本应用的客户。 <br> 对于运行为其计算机的特定体系结构所构建应用的 v1.0.0.0 的客户，v1.0.0.0 将更新为 v1.0.0.1。 |
 | x86，v1.0.0.1 <br> x64，v1.0.0.1 <br> ARM，v1.0.0.1 | x86，v1.0.0.2 <br> x64，v1.0.0.2 <br> ARM，v1.0.0.2 | v1.0.0.2，针对客户计算机的体系结构。  | 对于运行针对其计算机的特定体系结构所生成应用的 v1.0.0.1 的客户，v1.0.0.1 将更新为 v1.0.0.2。 |
 

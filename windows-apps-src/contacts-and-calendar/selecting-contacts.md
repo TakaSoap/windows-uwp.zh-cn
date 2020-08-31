@@ -6,22 +6,22 @@ keywords: 联系人，选择 选择单个联系人 选择多个联系人 联系�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 634b72032b37fe4a6bc4ea44a2e4fe27abede47d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: dcf8fefb82de3cccf3d914ae6003c991107888e1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255075"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154681"
 ---
 # <a name="select-contacts"></a>选择联系人
 
 
 
-[  **Windows.ApplicationModel.Contacts**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts) 命名空间提供了多个用于选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。
+[  **Windows.ApplicationModel.Contacts**](/uwp/api/Windows.ApplicationModel.Contacts) 命名空间提供了多个用来选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。
 
 ## <a name="set-up-the-contact-picker"></a>设置联系人选取器
 
-创建一个 [**Windows.ApplicationModel.Contacts.ContactPicker**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactPicker) 实例并将它分配给某个变量。
+创建一个 [**Windows.ApplicationModel.Contacts.ContactPicker**](/uwp/api/Windows.ApplicationModel.Contacts.ContactPicker) 实例并将它分配给某个变量。
 
 ```cs
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
@@ -29,15 +29,15 @@ var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 
 ## <a name="set-the-selection-mode-optional"></a>设置选择模式（可选）
 
-默认情况下，联系人选取器检索用户选择的联系人的所有可用数据。 [  **SelectionMode**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.selectionmode) 属性允许你将联系人选取器配置为仅检索你的应用所需的数据字段。 如果你只需要可用联系人数据的一个子集，那么更有效的方法是使用联系人选取器。
+默认情况下，联系人选取器检索用户选择的联系人的所有可用数据。 [**SelectionMode**](/uwp/api/windows.applicationmodel.contacts.contactpicker.selectionmode) 属性允许你将联系人选取器配置为仅检索你的应用所需的数据字段。 如果你只需要可用联系人数据的一个子集，那么更有效的方法是使用联系人选取器。
 
-首先，将 [**SelectionMode**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.selectionmode) 属性设置为 **Fields**：
+首先，将 [**SelectionMode**](/uwp/api/windows.applicationmodel.contacts.contactpicker.selectionmode) 属性设置为 **Fields**：
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-然后，使用 [**desiredFieldsWithContactFieldType**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) 属性指定你希望联系人选取器检索的字段。 该示例将联系人选取器配置为检索电子邮件地址：
+然后，使用 [**desiredFieldsWithContactFieldType**](/uwp/api/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) 属性指定你希望联系人选取器检索的字段。 该示例将联系人选取器配置为检索电子邮件地址：
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
@@ -49,7 +49,7 @@ contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Con
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-如果你希望用户选择一个或多个联系人，请使用 [**pickContactsAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.pickcontactsasync)。
+如果你希望用户选择一个或多个联系人，请使用 [**pickContactsAsync**](/uwp/api/windows.applicationmodel.contacts.contactpicker.pickcontactsasync)。
 
 ```cs
 public IList<Contact> contacts;
@@ -60,7 +60,7 @@ contacts = await contactPicker.PickContactsAsync();
 
 当选取器返回时，检查用户是否选择了任何联系人。 如果选择了联系人，则处理联系人信息。
 
-此示例显示如何处理一个联系人。 下面我们检索联系人的姓名并将该姓名复制到称为 [OutputName**的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)TextBlock 控件中。
+此示例显示如何处理一个联系人。 下面我们检索联系人的姓名并将该姓名复制到称为 *OutputName* 的 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 控件中。
 
 ```cs
 if (contact != null)
@@ -167,7 +167,7 @@ private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 
 ## <a name="complete-example-multiple-contacts"></a>完整示例（多个联系人）
 
-该示例使用联系人选取器检索多个联系人，然后将联系人添加到名为 [ 的ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)`OutputContacts` 控件中。
+该示例使用联系人选取器检索多个联系人，然后将联系人添加到名为 `OutputContacts` 的 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 控件中。
 
 ```cs
 MainPage rootPage = MainPage.Current;
@@ -228,6 +228,6 @@ public class ContactItemAdapter
 }
 ```
 
-## <a name="summary-and-next-steps"></a>摘要和后续步骤
+## <a name="summary-and-next-steps"></a>总结和后续步骤
 
 现在，你基本了解了如何使用联系人选取器检索联系人信息。 从 GitHub 下载[通用 Windows 应用示例](https://github.com/Microsoft/Windows-universal-samples)来查看更多有关如何使用联系人和联系人选取器的示例。

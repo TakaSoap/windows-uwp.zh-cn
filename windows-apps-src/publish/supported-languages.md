@@ -6,19 +6,19 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a3b3ada3415e6f1abc98dc3c351f6db791adc984
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 79d729f97bef68a429c57894e6c0eeeab389c642
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043429"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170891"
 ---
 # <a name="supported-languages"></a>支持的语言
 
 
 你可以将应用提交到100多种语言的 Microsoft Store。
 
-若要详细了解如何在应用程序中配置语言，请参阅 [全球化和本地化](../design/globalizing/globalizing-portal.md) ，并 [了解用户配置文件语言和应用程序清单语言](../design/globalizing/manage-language-and-region.md)。 我们还提供[多语言应用工具包](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)，用于帮助你编写支持多种语言的应用。
+若要详细了解如何在应用程序中配置语言，请参阅 [全球化和本地化](../design/globalizing/globalizing-portal.md) ，并 [了解用户配置文件语言和应用程序清单语言](../design/globalizing/manage-language-and-region.md)。 我们还提供[多语言应用工具包](../design/globalizing/use-mat.md)，用于帮助你编写支持多种语言的应用。
 
 ## <a name="supported-languages"></a>支持的语言
 
@@ -138,7 +138,3 @@ ms.locfileid: "89043429"
  
 
  
-
-
-
-

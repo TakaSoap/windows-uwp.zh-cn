@@ -1,16 +1,16 @@
 ---
 title: Xbox 最佳做法
-description: 如何针对 Xbox 优化你的应用程序。
+description: 按照以下 Xbox 开发最佳做法，了解如何优化通用 Windows 平台 (UWP) 应用程序。
 ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ce69549996a5adfb8c5d2d585753cf95ef3fdc3
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 8aaf8759b59c8ccbb5b09ba969675096700ce9e8
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684906"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094454"
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 
@@ -22,7 +22,7 @@ ms.locfileid: "75684906"
 
 ### <a name="do-turn-off-mouse-mode"></a>*应做事项：* 关闭鼠标模式
 
-Xbox 用户喜欢其控制器。 若要优化控制器输入，请[禁用鼠标模式](how-to-disable-mouse-mode.md)并启用方向导航（也称为[XY focus 导航和交互](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)）。 观看重点陷阱和无法访问的 UI。
+Xbox 用户喜欢其控制器。 若要优化控制器输入，请 [禁用鼠标模式](how-to-disable-mouse-mode.md) 并启用方向导航 (也称为 [XY 焦点导航和交互](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)) 。 观看重点陷阱和无法访问的 UI。
 
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*应做事项：* 绘制适用于 10 英尺体验的焦点矩形
 
@@ -43,7 +43,7 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 ### <a name="consider-use-tv-safe-colors"></a>*注意事项：* 使用电视安全颜色
 
-电视不会处理严重的颜色浓度，但计算机监视器会处理。 避免在应用中使用高浓度颜色，以免用户看到奇怪的带状效果或褪色的图像。 另外，请注意，电视间的差异是指在*你的*电视上显示良好的颜色可能不适用于用户。 阅读[颜色](../design/devices/designing-for-tv.md#colors)以了解如何使你的应用对每个人都非常出色！
+电视不会处理严重的颜色浓度，但计算机监视器会处理。 避免在应用中使用高浓度颜色，以免用户看到奇怪的带状效果或褪色的图像。 另外，请注意，电视间的差异是指在*你的*电视上显示良好的颜色可能不适用于用户。 阅读 [颜色](../design/devices/designing-for-tv.md#colors) 以了解如何使你的应用对每个人都非常出色！
 
 ### <a name="remember-you-can-disable-scaling"></a>*记住：* 可以禁用缩放
 
@@ -54,24 +54,24 @@ UWP 应用将自动缩放，以确保 UI 元素（如控件和字体）在所有
 </br>
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Tailoring-your-UWP-app-for-Xbox/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
-## <a name="channel-9"></a>第 9 频道
+## <a name="channel-9"></a>Channel 9
 
-有关在 Xbox 上生成出色应用的信息，请参阅[第 9 频道](https://channel9.msdn.com/)上的以下讨论：
+第 [9 频道](https://channel9.msdn.com/) 上的以下讨论是用于在 Xbox 上构建惊人应用的信息源：
 
 - [生成适用于 Xbox 的出色通用 Windows 平台 (UWP) 应用](https://channel9.msdn.com/Events/Build/2016/B883)
 - [针对 Xbox One 和 TV 调整你的应用](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-- [UWP 开发1：生成自适应 UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-- [浏览器之外的 Web 应用：跨平台满足跨设备](https://channel9.msdn.com/Events/Build/2016/B888)
+- [UWP 开发 1：生成自适应 UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
+- [浏览器外的 Web 应用：跨平台与跨设备](https://channel9.msdn.com/Events/Build/2016/B888)
 
 ## <a name="app-dev-on-xbox"></a>Xbox 上的应用开发
 
-对于在 Xbox 上构建应用程序的开发人员来说，**应用程序在 xbox 事件上的开发**是一种很好的起点。
+对于在 Xbox 上构建应用程序的开发人员来说， **应用程序在 xbox 事件上的开发** 是一种很好的起点。
 
 * [观看记录的会话](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
 * [阅读博客文章](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
 ## <a name="see-also"></a>另请参阅
 
-- [Xbox one 上的 UWP](index.md)
+- [Xbox One 上的 UWP](index.md)
 - [针对 Xbox 和电视进行设计](../design/devices/designing-for-tv.md)
 - [适用于 Xbox One 的渐进式 Web 应用](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations)

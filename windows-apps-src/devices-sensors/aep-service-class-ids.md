@@ -6,22 +6,22 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0af0e8b17578c2ef3cd3fb0a466446b06f8e4a00
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 025db9ae6ed3b7ab2c532ddc140fd5279db58777
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854733"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168611"
 ---
 # <a name="aep-service-class-ids"></a>AEP 服务类 ID
 
 关联终结点 (AEP) 服务为设备通过给定协议支持的服务提供编程合约。 其中多个服务具有现成的标识符，应在引用它们时使用。 这些合约通过 **System.Devices.AepService.ServiceClassId** 属性标识。 本主题列出了几个众所周知的 AEP 服务类 ID。 AEP 服务类 ID 也可应用于具有客户类 ID 的协议。
 
-应用开发人员应使用基于这些类 ID 的高级查询语法 (AQS) 筛选器来将其查询限制于其打算使用的 AEP 服务。 这既会将查询限制于相关服务，又会显著提高设备的性能、电池寿命和服务质量。 例如，应用程序可以通过这些服务类 ID 将设备用作 Miracast 同步或 DLNA 苏自媒体呈现器 (DMR)。 有关其他设备和服务彼此如何交互的详细信息，请参阅[**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)。
+应用开发人员应使用基于这些类 ID 的高级查询语法 (AQS) 筛选器来将其查询限制于其打算使用的 AEP 服务。 这既会将查询限制于相关服务，又会显著提高设备的性能、电池寿命和服务质量。 例如，应用程序可以通过这些服务类 ID 将设备用作 Miracast 同步或 DLNA 苏自媒体呈现器 (DMR)。 有关其他设备和服务彼此如何交互的详细信息，请参阅[**DeviceInformationKind**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)。
 
 > **重要的 API**
 >
-> - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
+> - [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration)
 
 ## <a name="bluetooth-and-bluetooth-le-services"></a>蓝牙和蓝牙 LE 服务
 
@@ -68,7 +68,7 @@ ms.locfileid: "83854733"
 | GATT - 用户数据                     | **181C0000-0000-1000-8000-00805F9B34FB** |
 | GATT - 体重秤                  | **181D0000-0000-1000-8000-00805F9B34FB** |
 
-有关可用蓝牙服务的更完整列表，请参阅[GATT services 规范](https://www.bluetooth.com/specifications/gatt/services/)。 你还可以使用 [**GattServiceUuids**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids) API 获取一些常见的 GATT 服务。
+有关可用蓝牙服务的更完整列表，请参阅 [GATT services 规范](https://www.bluetooth.com/specifications/gatt/services/)。 你还可以使用 [**GattServiceUuids**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids) API 获取一些常见的 GATT 服务。
 
 ## <a name="custom-bluetooth-le-services"></a>自定义蓝牙 LE 服务
 
@@ -110,7 +110,7 @@ WSD 服务使用以下协议标识符：{782232aa-a2f9-4993-971b-aedc551346b0}
 
 ## <a name="aqs-sample"></a>AQS 示例
 
-此 AQS 将对支持 DIAL 的所有 UPnP **AssociationEndpointService** 对象进行筛选。 在此情况下，[**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) 设置为 **AsssociationEndpointService**。
+此 AQS 将对支持 DIAL 的所有 UPnP **AssociationEndpointService** 对象进行筛选。 在此情况下，[**DeviceInformationKind**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) 设置为 **AsssociationEndpointService**。
 
 ``` syntax
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND

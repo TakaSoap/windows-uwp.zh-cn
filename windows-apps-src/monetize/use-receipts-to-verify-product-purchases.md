@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 收据, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: ba87de0755469f373f9000f3d96d3021c9197985
-ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
+ms.openlocfilehash: 0bbdaa8164e5d3a7e660fc4667b7cfe3c090bc10
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82148889"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171321"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收据验证产品购买
 
@@ -20,15 +20,15 @@ ms.locfileid: "82148889"
 有权访问此信息可支持以下方案：你的应用需要验证用户是否购买了你的应用，或者是否已从 Microsoft Store 进行了加载项（也称为应用内产品或 IAP）购买。 例如，请设想一个提供下载内容的游戏。 如果购买了该游戏内容的用户要在其他设备上玩这个游戏，则需要验证该用户是否已经拥有此项内容。 操作方法如下。
 
 > [!IMPORTANT]
-> 此文章将介绍如何使用 [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) 命名空间的成员来获取和验证应用内购买的收据。 如果你使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store) 命名空间进行应用内购买（在 Windows 10 版本 1607 中引入，可在 Visual Studio 中用于面向 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本的项目），此命名空间不会提供 API 用于获取应用内购买的购买收据。 但是，你可以使用 Microsoft Store 集合 API 中的 REST 方法获取购买交易的数据。 有关详细信息，请参阅[应用内购买的收据](in-app-purchases-and-trials.md#receipts)。
+> 此文章将介绍如何使用 [Windows.ApplicationModel.Store](/uwp/api/Windows.ApplicationModel.Store) 命名空间的成员来获取和验证应用内购买的收据。 如果你使用 [Windows.Services.Store](/uwp/api/Windows.Services.Store) 命名空间进行应用内购买（在 Windows 10 版本 1607 中引入，可在 Visual Studio 中用于面向 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本的项目），此命名空间不会提供 API 用于获取应用内购买的购买收据。 但是，你可以使用 Microsoft Store 集合 API 中的 REST 方法获取购买交易的数据。 有关详细信息，请参阅[应用内购买的收据](in-app-purchases-and-trials.md#receipts)。
 
 ## <a name="requesting-a-receipt"></a>索要收据
 
 
 **Windows.ApplicationModel.Store** 命名空间支持多个方法来获取收据：
 
-* 当通过使用 [CurrentApp.RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) 或 [CurrentApp.RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync)（或此方法的其他重载之一）进行购买时，返回值将包含收据。
-* 可以调用 [CurrentApp.GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) 方法来检索应用的当前收据信息以及应用中的任何加载项。
+* 当通过使用 [CurrentApp.RequestAppPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) 或 [CurrentApp.RequestProductPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync)（或此方法的其他重载之一）进行购买时，返回值将包含收据。
+* 可以调用 [CurrentApp.GetAppReceiptAsync](/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) 方法来检索应用的当前收据信息以及应用中的任何加载项。
 
 应用收据如下所示。
 
@@ -87,7 +87,7 @@ ms.locfileid: "82148889"
 
 ## <a name="validating-a-receipt"></a>验证收据
 
-若要验证收据的真实性，需要后端系统（Web 服务或类似系统）使用公钥证书检查收据的签名。 若要获取此证书，请使用```https://lic.apps.microsoft.com/licensing/certificateserver/?cid=CertificateId%60%60%60, where ```URL CertificateId "" 是回执中的**CertificateId**值。
+若要验证收据的真实性，需要后端系统（Web 服务或类似系统）使用公钥证书检查收据的签名。 若要获取此证书，请使用 URL ```https://lic.apps.microsoft.com/licensing/certificateserver/?cid=CertificateId%60%60%60, where ``` CertificateId "" 是回执中的 **CertificateId** 值。
 
 以下是该验证过程的一个示例。 此代码在 .NET Framework 控制台应用程序中运行，该应用程序包含对 **System.Security** 程序集的引用。
 
@@ -104,7 +104,7 @@ ms.locfileid: "82148889"
 
 此文件的根元素是 **Receipt** 元素，其中包含应用和应用内购买的信息。 此元素包含以下子元素。
 
-|  元素  |  必选  |  数量  |  说明   |
+|  元素  |  必选  |  数量  |  描述   |
 |-------------|------------|--------|--------|
 |  [AppReceipt](#appreceipt)  |    否        |  0 或 1  |  包含当前应用的购买信息。            |
 |  [ProductReceipt](#productreceipt)  |     否       |  0 个或更多    |   包含有关当前应用的应用内购买的信息。     |
@@ -112,7 +112,7 @@ ms.locfileid: "82148889"
 
 **Receipt** 具有以下必属性。
 
-|  特性  |  说明   |
+|  Attribute  |  说明   |
 |-------------|-------------------|
 |  **版本**  |    收据的版本号。            |
 |  **CertificateId**  |     用于对收据进行签名的证书指纹。          |
@@ -127,7 +127,7 @@ ms.locfileid: "82148889"
 
 **AppReceipt** 具有以下属性。
 
-|  特性  |  说明   |
+|  Attribute  |  说明   |
 |-------------|-------------------|
 |  **Id**  |    标识购买。           |
 |  **AppId**  |     操作系统用于该应用的程序包系列名称值。           |
@@ -142,7 +142,7 @@ ms.locfileid: "82148889"
 
 **ProductReceipt** 具有以下属性。
 
-|  特性  |  说明   |
+|  Attribute  |  说明   |
 |-------------|-------------------|
 |  **Id**  |    标识购买。           |
 |  **AppId**  |     标识应用，用户通过该应用进行购买。           |

@@ -2,20 +2,27 @@
 title: 什么是通用 Windows 平台 (UWP) 应用？
 description: 了解通用 Windows 平台 (UWP) 应用，此类应用可跨多种使用 Windows 10 的设备运行。
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.date: 05/07/2018
+ms.date: 08/21/2020
 ms.topic: article
 keywords: windows 10, uwp, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b2c270538ec49a139b88fb1c7eddb92acad10a
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 412dfe7d9e2387a90bc51f834755e8565f170812
+ms.sourcegitcommit: ab68ff43139f2423091bf8830c00f8a0fc7326ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730093"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88785029"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>什么是通用 Windows 平台 (UWP) 应用？
 
-![通用 Windows 平台应用可在各种设备上运行，支持自适应式用户界面、自然用户输入、一站式应用商店、合作伙伴中心和云服务](images/universalapps-overview.png)
+
+## <a name="where-does-uwp-fit-in-the-microsoft-development-story"></a>UWP 在 Microsoft 的开发故事中处于什么位置？
+
+UWP 是创建适用于 Windows 的客户端应用程序的众多方法之一。 UWP 应用使用 WinRT API 来提供强大的 UI 和高级异步功能，这些功能非常适用于 Internet 连接的设备。 UWP 应用仍然可以使用 Win32 API 和 .NET 类（请参阅[适用于 UWP 应用的 API 集](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85))、[适用于 UWP 应用的 DLL](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85))以及 [适用于 UWP 应用的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)）。
+
+Microsoft 的开发故事还在继续发展，随着 [WinUI](https://docs.microsoft.com/windows/apps/winui/)、[MSIX](https://docs.microsoft.com/windows/msix/) 以及 [Project Reunion](https://github.com/microsoft/ProjectReunion) 等计划的推出，UWP 成为创建客户端应用的强大工具。
+
+## <a name="features-of-a-uwp-app"></a>UWP 应用的功能
 
 UWP 应用的特点：
 
@@ -77,7 +84,7 @@ UWP 应用与 [Application Insights](https://azure.microsoft.com/services/applic
 - 付费下载是最简单的选项。 只需指定价格即可。
 - 试用允许用户在购买前先试用你的应用，与更传统的“免费模式”选项相比，用户更易于发现你的应用并转而使用该应用。
 - 激励用户的促销价格。
-- 此外还提供应用内购买和广告。
+- 应用内购买。
 
 ### <a name="apps-from-the-microsoft-store-provide-a-seamless-install-uninstall-and-upgrade-experience"></a>来自 Microsoft Store 的应用提供无缝的安装、卸载和升级体验
 

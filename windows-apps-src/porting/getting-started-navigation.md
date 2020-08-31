@@ -1,17 +1,17 @@
 ---
 title: 导航入门
-description: 导航入门
+description: 了解如何通过使用通用 Windows 平台 (UWP) Frame 类将页面导航添加到具有多个视图的 Windows 10 应用。
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d2f73ba6a14ace1319285ca436db4738f84548
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 3d26bf6e63c61207142b8945c48f9925a7459844
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493292"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094684"
 ---
 # <a name="getting-started-navigation"></a>入门：导航
 
@@ -34,7 +34,7 @@ iOS 提供 **UINavigationController** 类以帮助应用内导航：可按下和
 
 接下来，向 BlankPage.xaml 文件中添加一个按钮。 我们可以使用 AppBarButton 控件并为它添加一个返回箭头图像：在 **“XAML”** 视图中，在 `<Grid> </Grid>` 元素之间添加 ` <AppBarButton Icon="Back"/>`。
 
-现在，让我们向该按钮添加一个事件处理程序：在 "**设计**" 视图中双击该控件，然后 Microsoft Visual Studio 将文本 "AppBarButton \_ 单击" 添加到**单击**框（如下图所示），然后在 BlankPage.xaml.cs 文件中添加并显示相应的事件处理程序。
+现在，让我们向该按钮添加一个事件处理程序：在 " **设计** " 视图中双击该控件，然后 Microsoft Visual Studio 将文本 "AppBarButton \_ 单击" 添加到 **单击** 框（如下图所示），然后在 BlankPage.xaml.cs 文件中添加并显示相应的事件处理程序。
 
 ![在 Visual Studio 中添加一个后退按钮及其 Click 事件](images/ios-to-uwp/vs-add-back-button.png)
 
@@ -64,7 +64,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 现在运行该程序。 点击“Go To Page”按钮以转到另一页，然后点击后退箭头按钮返回到上一页。
 
-页面导航由 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 类管理。 由于 iOS 中的**UINavigationController**类使用**pushViewController**和**popViewController**方法，因此 UWP 应用的**Frame**类提供了[**导航**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate)和[**GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback)方法。 **Frame** 类还有一个名为 [**GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) 的方法，该方法可以执行可能需要的操作。
+页面导航由 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 类管理。 由于 iOS 中的 **UINavigationController** 类使用 **pushViewController** 和 **popViewController** 方法，因此 UWP 应用的 **Frame** 类提供了 [**导航**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) 和 [**GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) 方法。 **Frame** 类还有一个名为 [**GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) 的方法，该方法可以执行可能需要的操作。
 
 此演练在每次导航到 BlankPage 时都会创建它的一个新实例。 （上一实例将被释放或自动*释放*）。 如果不希望每次都创建一个新实例，可将以下代码添加到 BlankPage.xaml.cs 文件中 BlankPage 类的构造函数。 这将启用 [**NavigationCacheMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) 行为。
 

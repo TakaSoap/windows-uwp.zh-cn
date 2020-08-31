@@ -1,20 +1,20 @@
 ---
 title: 时间动画
-description: 使用 KeyFrameAnimation 类可随着时间推移更改 UI。
+description: 了解如何使用 KeyFrameAnimations 类创建基于时间的动画，这些动画可指导用户完成 UI 更改。
 ms.date: 12/12/2018
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: 838a8c3a6dfe89de49fddefd28c53cea563408cf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c63f59e7bcf282dc829d0fb8fa5971113f7638ad
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593162"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053587"
 ---
 # <a name="time-based-animations"></a>基于时间的动画
 
-当有组件加入，或整体用户体验改变时，最终用户通常会以两种方式观察到：随时间推移的变化或瞬时变化。 在 Windows 平台上，前者比后者-立即经常更改的用户体验混淆和感到惊讶的最终用户，因为它们不能按照发生了什么情况。 然后最终用户会觉得该体验不协调、不自然。
+当有组件加入，或整体用户体验改变时，最终用户通常会以两种方式观察到：随时间推移的变化或瞬时变化。 在 Windows 平台上，前者是首选 - 瞬间发生改变的用户体验通常会让用户感到困惑和惊讶，因为他们无法马上明白发生了什么。 然后最终用户会觉得该体验不协调、不自然。
 
 你可以用一段时间来慢慢改变 UI，慢慢引导最终用户，或通知他们其试用体验会有哪些改变。 在 Windows 平台上，这可通过基于时间的动画（也称为 KeyFrameAnimations）来实现。 KeyFrameAnimations 允许随时间推移更改 UI，并控制动画的每一个方面，包括动画启动的方式和时间，以及它如何达到结束状态。 例如，用 300 毫秒将一个对象以动画形式移动到一个新位置，比起“瞬间挪移”要更讨喜。 当使用动画而不是即时更改时，最终结果是更让人愉快和有吸引力。
 
@@ -62,10 +62,10 @@ ms.locfileid: "57593162"
 1. 使用动画模板，开始添加关键帧和定义动画属性。
     - 至少需要有一个关键帧（100% 或 1f 关键帧）。
     - 建议同时定义持续时间。
-1. 一次已准备好运行此动画，然后调用 StartAnimation(...) CompositionObject，面向想要进行动画处理的属性。 特别是：
+1. 准备好运行此动画后，请在 CompositionObject 上调用 StartAnimation ( ... ) ，目标是要进行动画处理的属性。 具体来说：
     - `visual.StartAnimation("targetProperty", CompositionAnimation animation);`
     - `visual.StartAnimationGroup(AnimationGroup animationGroup);`
-1. 如果必须正在运行的动画，并且你想要停止的动画或动画组，则可以使用这些 Api:
+1. 如果有正在运行的动画并且要停止动画或动画组，则可以使用这些 Api：
     - `visual.StopAnimation("targetProperty");`
     - `visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
 
@@ -73,7 +73,7 @@ ms.locfileid: "57593162"
 
 ## <a name="example"></a>示例
 
-在此示例中，你想要进行动画处理到 < 200,0,0 > 从 < 0,0,0 > visual 的偏移量超过 1 秒。 此外，需要看 10 次在这些位置之间的视觉动画。
+在此示例中，你想要将视觉对象的偏移量从 <0，0，0> 到 <200，0，0> 1 秒之间。 此外，需要看 10 次在这些位置之间的视觉动画。
 
 ![关键帧动画](images/animation/animated-rectangle.gif)
 
@@ -86,7 +86,7 @@ ms.locfileid: "57593162"
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
 ```
 
-然后，您定义 KeyFrameAnimation 来描述它的持续时间以及要对两个位置 （当前和 < 200,0,0 >） 10 倍之间进行动画处理的行为的属性。
+然后，定义 KeyFrameAnimation 的属性，以描述它的持续时间，以及在两个位置 (当前和 <200，0，0>) 10 次的情况下进行动画处理。
 
 ```csharp
     animation.Duration = TimeSpan.FromSeconds(2);

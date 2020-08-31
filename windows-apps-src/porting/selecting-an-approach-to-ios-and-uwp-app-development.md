@@ -1,17 +1,17 @@
 ---
-description: 在开发跨平台应用时，应该作何选择？
+description: 了解可以帮助你编写支持 Windows、iOS 和 Android 的应用程序的工具和技术。
 title: 选择一种方法进行 iOS 和 UWP 应用开发
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 538fbc33d161f5f91033427af76438f49d3d3b68
-ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
+ms.openlocfilehash: 83a316a729fc1c2042dde5541e2b187bf8903188
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82148586"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171181"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>选择一种方法进行 iOS 和 UWP 应用开发
 

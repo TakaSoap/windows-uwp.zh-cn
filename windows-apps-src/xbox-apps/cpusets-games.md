@@ -4,12 +4,12 @@ description: 本文概述了通用 Windows 平台 (UWP) 新增的 CPUSets API，
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: 693abe68fcc7e4a341d773c6fa1af0d777c60c15
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: a20838a6d58eede75efb2441680aba6629db1700
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322158"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154201"
 ---
 # <a name="cpusets-for-game-development"></a>适用于游戏开发的 CPUSets
 
@@ -43,20 +43,20 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 
 每个返回的 **SYSTEM_CPU_SET_INFORMATION** 实例包含有关一个唯一的处理单元（也称为“CPU 集”）的信息。 这并不一定意味着它表示硬件的独特物理部分。 利用超线程的 CPU 将具有在单个物理处理内核上运行的多个逻辑核心。 在不同逻辑核心（位于同一物理核心上）上调度多个线程允许执行硬件级别的资源优化，否则会以内核级别执行额外工作。 在同一物理核心的单独逻辑核心上调度的两个线程必须共享 CPU 时间，但相比于它们在同一逻辑核心上调度而言，可以更高效地运行。
 
-### <a name="systemcpusetinformation"></a>SYSTEM_CPU_SET_INFORMATION
+### <a name="system_cpu_set_information"></a>SYSTEM_CPU_SET_INFORMATION
 
 从 **GetSystemCpuSetInformation** 中返回的此数据结构的每个实例中的信息包含有关可以在其上调度的线程唯一处理单元的信息。 根据给定的可能目标设备范围，**SYSTEM_CPU_SET_INFORMATION** 数据结构中的许多信息可能不适用于游戏开发。 表 1 提供适用于游戏开发的数据成员的说明。
 
- **表 1。对游戏开发非常有用的数据成员。**
+ **表1。数据成员对于游戏开发非常有用。**
 
-| 成员名称  | 数据类型 | 描述 |
+| 成员名称  | 数据类型 | 说明 |
 | ------------- | ------------- | ------------- |
-| 在任务栏的搜索框中键入  | CPU_SET_INFORMATION_TYPE  | 结构中信息的类型。 如果此成员的值不是 **CpuSetInformation**，应忽略它。  |
-| Id  | 无符号长整型  | 指定 CPU 设置的 ID。 这是应与 CPU 设置函数（如 **SetThreadSelectedCpuSets**）结合使用的 ID。  |
-| Group  | 无符号短整型  | 指定 CPU 设置的“处理器组”。 处理器组允许电脑具有超过 64 个逻辑核心，并允许在系统运行期间热交换 CPU。 不是服务器但具有多个组的电脑并不常见。 除非你要编写的应用程序打算在大型服务器或服务器场上运行，否则最好使用单个组中的 CPU 设置，因为大多数消费者电脑只具有一个处理器组。 此结构中的其他所有值都与 Group 有关。  |
-| LogicalProcessorIndex  | 无符号字符型  | CPU 设置的 Group 相关索引  |
-| CoreIndex  | 无符号字符型  | CPU 设置所在的物理 CPU 核心的 Group 相关索引  |
-| LastLevelCacheIndex  | 无符号字符型  | 与此 CPU 设置关联的最后一级缓存的 Group 相关索引。 此缓存的速度最慢，除非系统利用 NUMA 节点，通常为 L2 或 L3 缓存。  |
+| 类型  | CPU_SET_INFORMATION_TYPE  | 结构中信息的类型。 如果此成员的值不是 **CpuSetInformation**，应忽略它。  |
+| ID  | unsigned long  | 指定 CPU 设置的 ID。 这是应与 CPU 设置函数（如 **SetThreadSelectedCpuSets**）结合使用的 ID。  |
+| 组  | unsigned short  | 指定 CPU 设置的“处理器组”。 处理器组允许电脑具有超过 64 个逻辑核心，并允许在系统运行期间热交换 CPU。 不是服务器但具有多个组的电脑并不常见。 除非你要编写的应用程序打算在大型服务器或服务器场上运行，否则最好使用单个组中的 CPU 设置，因为大多数消费者电脑只具有一个处理器组。 此结构中的其他所有值都与 Group 有关。  |
+| LogicalProcessorIndex  | unsigned char  | CPU 设置的 Group 相关索引  |
+| CoreIndex  | unsigned char  | CPU 设置所在的物理 CPU 核心的 Group 相关索引  |
+| LastLevelCacheIndex  | unsigned char  | 与此 CPU 设置关联的最后一级缓存的 Group 相关索引。 此缓存的速度最慢，除非系统利用 NUMA 节点，通常为 L2 或 L3 缓存。  |
 
 <br />
 
@@ -64,15 +64,15 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 
 以下是一些从各种类型硬件上运行的 UWP 应用程序中收集的信息类型的示例。
 
-**表 2。从 Microsoft Lumia 950 上运行的 UWP 应用中返回的信息。这是一个具有多个最后一级缓存的系统示例。Lumia 950 功能包含双核 ARM Cortex A57 和四核 ARM Cortex A53 Cpu Qualcomm 808 Snapdragon 过程。**
+**表2：从 Microsoft Lumia 950 上运行的 UWP 应用返回的信息。这是具有多个最后一级缓存的系统的示例。Lumia 950 具有一个 Qualcomm 808 Snapdragon 进程，其中包含一个双核 ARM Cortex-a9 A57 和四核 ARM Cortex-a9 A53 Cpu。**
 
   ![表 2](images/cpusets-table2.png)
 
-**表 3。从典型的电脑上运行的 UWP 应用中返回的信息。这是一个使用超线程的系统示例；每个物理核心具有两个可在其上调度线程的逻辑核心。在这种情况下，系统配备 Intel Xenon CPU E5 2620。**
+**表3：从在典型电脑上运行的 UWP 应用返回的信息。这是使用超线程的系统的示例;每个物理核心都具有两个逻辑内核，可以在这些内核上计划线程。在这种情况下，系统包含 Intel Xenon CPU E5-2620。**
 
   ![表 3](images/cpusets-table3.png)
 
-**表 4。从四核 Microsoft Surface Pro 4 上运行的 UWP 应用中返回的信息。此系统具有 Intel Core i5 6300 CPU。**
+**表4。从在四核 Microsoft Surface Pro 4 上运行的 UWP 应用返回的信息。此系统具有 Intel Core i5 CPU。**
 
   ![表 4](images/cpusets-table4.png)
 
@@ -182,16 +182,15 @@ for (size_t i = 0; i < count; ++i)
 
 图 1 中所示的缓存布局是你可以从系统中看到的布局的类型示例。 此图是在 Microsoft Lumia 950 中找到的缓存示意图。 CPU 256 和 CPU 260 之间发生的线程间通信将导致大量开销，因为需要系统保持它们的 L2 缓存一致性。
 
-**图 1。Microsoft Lumia 950 设备上发现的缓存体系结构。**
+**图1。在 Microsoft Lumia 950 设备上找到缓存体系结构。**
 
 ![Lumia 950 缓存](images/cpusets-lumia950cache.png)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>“摘要”
 
 适用于 UWP 开发的 CPUSets API 提供了与你的多线程选项有关的大量信息和控制。 相比于以前的适用于 Windows 开发的多线程 API，增加的复杂性具有一些学习曲线，但提升的灵活性最终允许在一些消费者电脑和其他硬件目标之间实现较好的性能。
 
 ## <a name="additional-resources"></a>其他资源
-- [CPU 集 (MSDN)](https://docs.microsoft.com/windows/desktop/ProcThread/cpu-sets)
-- [提供的 ATG CPUSets 示例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
-- [在 Xbox One 上 UWP](index.md)
-
+- [CPU 设置 (MSDN)](/windows/desktop/ProcThread/cpu-sets)
+- [ATG 提供的 CPUSets 示例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+- [Xbox One 上的 UWP](index.md)

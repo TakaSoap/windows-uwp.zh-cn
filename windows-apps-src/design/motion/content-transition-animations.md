@@ -1,5 +1,5 @@
 ---
-Description: 内容过渡动画可让你更改屏幕区域的内容，同时保持容器或背景不变。 新的内容将淡入。 如果存在要替换的现有内容，则该内容将淡出。
+Description: 内容转换动画可让你更改屏幕区域的内容，同时保持容器或背景不变。 新的内容将淡入。 如果存在要替换的现有内容，则该内容将淡出。
 title: 内容过渡动画指南
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
@@ -10,20 +10,20 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7703f2dfac2eed6df1f59b8e1cdfa6371e240eb4
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 8d498c3214effd64895c6a894802a9ccc82ff357
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317104"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169261"
 ---
-# <a name="content-transition-animations"></a>内容过渡动画
+# <a name="content-transition-animations"></a>内容转换动画
 
 
 
-内容过渡动画可让你更改屏幕区域的内容，同时保持容器或背景不变。 新的内容将淡入。 如果存在要替换的现有内容，则该内容将淡出。
+内容转换动画可让你更改屏幕区域的内容，同时保持容器或背景不变。 新的内容将淡入。 如果存在要替换的现有内容，则该内容将淡出。
 
-> **重要的 API**：[**ContentThemeTransition 类 (XAML)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
+> **重要 API**：[**ContentThemeTransition 类 (XAML)**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 
@@ -41,15 +41,11 @@ ms.locfileid: "67317104"
 ## <a name="related-articles"></a>相关文章
 
 **面向开发人员 (XAML)**
-* [动画概述](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [对内容的转换进行动画处理](https://docs.microsoft.com/previous-versions/windows/apps/jj649426(v=win.10))
-* [快速入门：对 UI 使用库动画进行动画处理](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**ContentThemeTransition 类**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
+* [动画概述](./xaml-animation.md)
+* [创建内容过渡动画](/previous-versions/windows/apps/jj649426(v=win.10))
+* [快速入门：使用库动画创建 UI 动画](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**ContentThemeTransition 类**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
  
 
  
-
-
-
-

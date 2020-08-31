@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: windows 10，uwp，WNS，windows 通知服务，通知，windows，防火墙，疑难解答，IP，流量，企业，网络，IPv4，VIP，FQDN，公共 IP 地址
 ms.localizationpriority: medium
-ms.openlocfilehash: 9594b90bd3bf9a4db082586a2823f4013340b85a
-ms.sourcegitcommit: b5232934702b28102c4014a96b34f2e459c9660d
+ms.openlocfilehash: a2eb09a0b1cc6f135a23b038207bb442eb741bf8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87928004"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169201"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支持 WNS 流量的企业防火墙和代理配置
 
@@ -22,7 +22,7 @@ ms.locfileid: "87928004"
 ## <a name="proxy-support"></a>代理支持
 
 > [!Note]
-> Windows 客户端**不**支持所有代理，与 WNS 的连接必须是直接连接。
+> Windows 客户端 **不** 支持所有代理，与 WNS 的连接必须是直接连接。
 
 **即将推出！** 我们正在积极调查不同的网络配置、代理和防火墙。 我们将更新此页，其中包含有关常见企业方案和 WNS 支持的更多详细信息。
 
@@ -38,7 +38,7 @@ ms.locfileid: "87928004"
 
 
 ### <a name="fqdns-vips-ips-and-ports"></a>Fqdn、Vip、Ip 和端口
-无论从下面选择哪种方法，都需要允许通过**端口 443**向所列目标发送网络流量。 以下 XML 文档中的每个元素都在下表中进行了说明， ([术语和表示法](#terms-and-notations)) 。 此文档中特意遗留了 IP 范围，以鼓励你只使用 Fqdn，因为 Fqdn 将保持不变。 但是，你可以从下载中心下载包含完整列表的 XML 文件： [Windows 通知服务 (WNS) VIP 和 IP 范围](https://www.microsoft.com/download/details.aspx?id=44238)。 新的 Vip 或 IP 范围将在**其上传一周后生效**。
+无论从下面选择哪种方法，都需要允许通过 **端口 443**向所列目标发送网络流量。 以下 XML 文档中的每个元素都在下表中进行了说明， ([术语和表示法](#terms-and-notations)) 。 此文档中特意遗留了 IP 范围，以鼓励你只使用 Fqdn，因为 Fqdn 将保持不变。 但是，你可以从下载中心下载包含完整列表的 XML 文件： [Windows 通知服务 (WNS) VIP 和 IP 范围](https://www.microsoft.com/download/details.aspx?id=44238)。 新的 Vip 或 IP 范围将在 **其上传一周后生效**。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -85,10 +85,10 @@ ms.locfileid: "87928004"
 
 ## <a name="related-topics"></a>相关主题
 
-* [快速入门：发送推送通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
-* [如何请求、创建和保存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
-* [如何为正在运行的应用程序截获通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
-* [如何使用 Windows 推送通知服务 (WNS) 进行验证](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
-* [推送通知服务请求和响应头](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
-* [推送通知指南和清单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [快速入门：发送推送通知](/previous-versions/windows/apps/hh868252(v=win.10))
+* [如何请求、创建和保存通知通道](/previous-versions/windows/apps/hh465412(v=win.10))
+* [如何为正在运行的应用程序截获通知](/previous-versions/windows/apps/jj709907(v=win.10))
+* [如何使用 Windows 推送通知服务 (WNS) 进行验证](/previous-versions/windows/apps/hh465407(v=win.10))
+* [推送通知服务请求和响应头](/previous-versions/windows/apps/hh465435(v=win.10))
+* [推送通知指南和清单](./windows-push-notification-services--wns--overview.md)
  

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ad128aca1a633c5ce33830b5ee9231f7a794a60c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 320d5cc4232d613a4fb437fbd11f3c83287b3030
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969672"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154101"
 ---
 # <a name="accessibility-in-the-store"></a>应用商店中的辅助功能  
 
@@ -40,7 +40,7 @@ ms.locfileid: "82969672"
     * 使用键盘快捷方式实现主要应用功能。
     * 针对选项卡使用讲述人触控笔势，针对不带键盘的设备使用等效箭头键。
 * 确保你的应用 UI 具有视觉辅助功能：文本对比率最低为 4.5:1、不单单依赖颜色传递信息等等。
-* 使用 [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) 和 [**UIAVerify**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-automation-verify) 等辅助功能测试工具验证过你的辅助功能实现，已解决由类似工具报告的、优先级为 1 的所有错误。
+* 使用 [**Inspect**](/windows/desktop/WinAuto/inspect-objects) 和 [**UIAVerify**](/windows/desktop/WinAuto/ui-automation-verify) 等辅助功能测试工具验证过你的辅助功能实现，已解决由类似工具报告的、优先级为 1 的所有错误。
 * 已使用讲述人、放大镜、屏幕键盘、高对比度主题和已调节的 dpi 设置从头到尾验证了你的应用的主要方案。
 
 请参阅[辅助功能清单](accessibility-checklist.md)，以查看这些过程以及有助于实现辅助功能的资源的链接。
@@ -48,4 +48,4 @@ ms.locfileid: "82969672"
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>相关主题    
-* [辅助功能](accessibility.md) 
+* [辅助功能](accessibility.md)

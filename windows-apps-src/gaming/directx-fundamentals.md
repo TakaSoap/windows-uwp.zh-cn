@@ -1,17 +1,17 @@
 ---
 title: DirectX 编程基础知识
-description: DirectX 编程基础。
+description: 请参阅有关 DirectX 编程基础的文章，其中包括 Direct2D 和 Direct3D 库和使用情况。
 ms.assetid: 05a1bc59-f32e-44a0-8902-94cf1e099b1b
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 加载, 栅格化, 网格, 位图, 2D, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 942a775fca262903b1ee72831b4eae6612d25786
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1718677dce325cccc535e603aca1910eb83d1de0
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368858"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053577"
 ---
 # <a name="fundamentals-of-directx-programming"></a>DirectX 编程基础知识
 
@@ -33,7 +33,7 @@ DirectX 游戏的基本 3D 图形主题通过介绍 Direct3D 概念和 API 的�
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -50,7 +50,7 @@ DirectX 游戏的基本 3D 图形主题通过介绍 Direct3D 概念和 API 的�
 <td align="left"><p>创建基本的 3D DirectX 图形。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="load-a-game-asset.md">加载您的 DirectX 游戏中的资源</a></p></td>
+<td align="left"><p><a href="load-a-game-asset.md">在 DirectX 游戏中加载资源</a></p></td>
 <td align="left"><p>在 DirectX 游戏中加载网格。</p></td>
 </tr>
 </tbody>

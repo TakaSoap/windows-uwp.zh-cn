@@ -1,54 +1,54 @@
 ---
 title: 组合照明
-description: 组合照明 Api 可用于将动态 3D 光照添加到你的应用程序。
+description: 组合照明 Api 可用于向应用程序中添加动态3D 光照。
 ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c23de238a0004066b44cfe962e2de72216eb7a6d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5531382ef46346a40844a8eb5a5a77c0ad565fbb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318468"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154701"
 ---
-# <a name="using-lights-in-windows-ui"></a>Windows UI 中使用灯
+# <a name="using-lights-in-windows-ui"></a>在 Windows UI 中使用灯光
 
-Windows.UI.Composition Api 使你能够创建实时动画和效果。 组合照明使 3D 光照 2D 应用程序中。 在此概述中，我们将通过如何设置组合灯、 确定视觉对象以接收每个光源和效果用于定义你的内容的材料的功能运行。
+使用 Windows UI 组合 Api 可以创建实时动画和效果。 组合照明实现了2D 应用程序中的3D 光照。 在本概述中，我们将学习如何设置组合灯的功能，如何识别要接收每个灯光的视觉对象，并使用各种效果来定义内容内容。
 
 > [!NOTE]
-> 如何读取[XamlLight](/uwp/api/windows.ui.xaml.media.xamllight)对象将应用[CompositionLights](/uwp/api/Windows.UI.Composition.CompositionLight)照射 XAML UIElements，请参阅[XAML 照明](xaml-lighting.md)。
+> 若要了解 [XamlLight](/uwp/api/windows.ui.xaml.media.xamllight) 对象如何将 [CompositionLights](/uwp/api/Windows.UI.Composition.CompositionLight) 应用于照亮 xaml UIElements，请参阅 [xaml 照明](xaml-lighting.md)。
 
-组合照明允许您创建有趣的 UI，从而：
+使用组合照明，你可以通过允许以下操作创建有趣的 UI：
 
-- 轻型独立于场景中，从而启用沉浸式方案，如音乐播放场景中的其他对象的转换。
-- 对具有光线的对象，以便它们一起移动的能力独立于场景中，从而启用方案，如 Fluent 其余[揭示](/windows/uwp/design/style/reveal)突出显示。
-- 作为一个组来创建材料和深度光和整个场景的转换。
+- 不依赖场景中的其他对象来实现沉浸式方案，如音乐播放场景。
+- 能够将一个对象与一个光源配对，以便它们与场景的其余部分一起移动，以[实现流畅的突出显示。](../design/style/reveal.md)
+- 以组的形式转换光线和整个场景以创建材料和深度。
 
-组合照明支持三个关键概念：**Light**，**目标**，和**SceneLightingEffect**。
+组合照明支持三个关键概念： **光源**、 **目标**和 **SceneLightingEffect**。
 
-## <a name="light"></a>浅色
+## <a name="light"></a>亮
 
-[CompositionLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlight) ，可创建各种光和将其放在坐标空间。 这些灯面向想要标识为光照亮的视觉对象。
+[CompositionLight](/uwp/api/windows.ui.composition.compositionlight) 允许您创建各种光源，并将其置于坐标空间中。 这些光源的目标是您希望将视觉对象识别为发亮的视觉对象。
 
-### <a name="light-types"></a>光类型
+### <a name="light-types"></a>灯光类型
 
-| 在任务栏的搜索框中键入 | 描述 |
+| 类型 | 描述 |
 | --- | --- |
-| [AmbientLight](/uwp/api/windows.ui.composition.ambientlight) | 发出出现的非定向光源的光源反射场景中的所有内容。 |
-| [DistantLight](/uwp/api/windows.ui.composition.distantlight) | 无限大远处的光源的发光的一个方向。 如 sun。 |
-| [PointLight](/uwp/api/windows.ui.composition.pointlight) | 发出的所有方向光的光点源。 如灯泡。 |
-| [SpotLight](/uwp/api/windows.ui.composition.spotlight) | 发出的光线的内部和外部圆锥光源。 如手电筒。 |
+| [AmbientLight](/uwp/api/windows.ui.composition.ambientlight) | 发出显示在场景中的所有内容反射的非定向光线的光源。 |
+| [DistantLight](/uwp/api/windows.ui.composition.distantlight) | 无限远的远距离光源，它以单个方向发出光。 类似于 sun。 |
+| [System.windows.media.media3d.pointlight>](/uwp/api/windows.ui.composition.pointlight) | 光的点，可在所有方向发出光。 类似于灯泡。 |
+| [式](/uwp/api/windows.ui.composition.spotlight) | 发出灯光的内部和外部圆锥的光源。 类似于闪光灯。 |
 
-## <a name="targets"></a>目标
+## <a name="targets"></a>Targets
 
-当灯针对视觉对象 (将添加到[目标](/uwp/api/windows.ui.composition.compositionlight.targets)列表)，视觉对象及其所有子代都识别并响应此光源。 这可以是如下简单的形式对点光源方向的动画树和下面的所有视觉对象的根处的 PointLight 源做出反应的设置。
+当光源面向视觉对象 (添加到 [目标](/uwp/api/windows.ui.composition.compositionlight.targets) 列表) 时，视觉对象及其所有子对象均可感知和响应此光源。 这可能是一个简单的操作，就像在树的根设置 System.windows.media.media3d.pointlight> 源一样，下面的所有视觉对象都反应点光源方向的动画。
 
-**ExclusionsFromTargets**使您能够以类似方式与添加目标删除照明的视觉对象或视觉对象的子树。 在树中排除视觉对象取得 root 权限的子级不因此亮。
+**ExclusionsFromTargets** 使你能够以类似于添加目标的方式删除视觉对象或视觉对象子树的照明。 由所排除的视觉对象以根为根的子树中的子元素不会亮起。
 
-### <a name="sample-targets"></a>示例 （目标）
+### <a name="sample-targets"></a>示例 (目标) 
 
-在下面的示例中，我们使用 CompositionPointLight 面向 XAML TextBlock。
+在下面的示例中，我们使用 CompositionPointLight 来面向 XAML TextBlock。
 
 ```cs
     _pointLight = _compositor.CreatePointLight();
@@ -57,77 +57,77 @@ Windows.UI.Composition Api 使你能够创建实时动画和效果。 组合照�
     _pointLight.Targets.Add(text); //target XAML TextBlock
 ```
 
-通过将动画添加到点光的偏移量，可以轻松实现闪烁效果。
+通过将动画添加到点光的偏移量，可轻松实现 shimmering 效果。
 
 ```cs
 _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock.ActualHeight / 2, (float)TextBlock.FontSize);
 ```
 
-请参阅完整[文本闪现](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 14393/TextShimmer)WindowUIDevLabs 示例条样，若要了解更多示例。
+有关详细信息，请参阅 WindowUIDevLabs 示例条样中的完整 [文本 Shimmer](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 14393/TextShimmer) 示例。
 
 ## <a name="restrictions"></a>限制
 
-有几个 CompositionLight 将为文字确定哪些内容时要考虑的因素。
+确定 CompositionLight 将发亮的内容时，有几个因素需要考虑。
 
 概念 | 详细信息
 --- | ---
-**环境光线** | 将非环境光线添加到您的场景将关闭所有现有的光线。  未针对非环境光线的项将显示为黑色。  若要照亮周围的视觉对象未针对光线很自然地，使用与其他灯结合环境光线。
-**灯** | 您可以使用任何两个非环境组合灯的任意组合以面向您的 UI。 环境光不会限制;找出，点光和存有一定距离的光。
-**生存期** | CompositionLight 可能会遇到生存期条件 (示例： 垃圾回收器可以回收的光对象，然后使用它)。  我们建议通过将光添加为成员，才能帮助应用程序管理生命周期中保持对您的灯的引用。
-**转换** | 光必须放置在上方使用效果，例如 UI 节点[透视转换](/windows/uwp/design/layout/3-d-perspective-effects)中要正确绘制在可视结构。
-**目标和坐标空间** | CoordinateSpace 是灯属性必须设置所有的可视空间。 CompositionLight.Targets 必须 CoordinateSpace 树中。
+**环境光线** | 将非环境光源添加到场景会关闭所有现有光源。  非环境光线所面向的项将显示为黑色。  若要使视觉对象的视觉对象不是面向视觉对象的视觉对象，请将环境光源与其他光源结合使用。
+**灯光数量** | 你可以使用任何组合中的任意两个非环境组合光源来面向你的 UI。 不限制环境光线;点光、点光和远处光线是。
+**生存期** | CompositionLight 可能会遇到生存期条件 (示例：垃圾回收器可能会在) 使用光对象之前回收该对象。  建议通过将灯光添加为成员来帮助应用程序管理生存期，以保留对灯光的引用。
+**转换** | 光源必须位于 UI 之上的节点中，该节点使用视觉对象结构中的 [透视转换](../design/layout/3-d-perspective-effects.md) 等效果来正确绘制。
+**目标和协调空间** | CoordinateSpace 是必须在其中设置所有光源属性的视觉空间。 CompositionLight 必须位于 CoordinateSpace 树中。
 
 ## <a name="lighting-properties"></a>照明属性
 
-根据所使用光的类型，光可以具有衰减和空间的属性。 并非所有光类型都使用所有属性。
+根据所用的光线类型，光可以具有衰减和空间的属性。 并非所有光类型都使用所有属性。
 
 属性 | 描述
 --- | ---
-**Color** | [颜色](/uwp/api/windows.ui.color)光。 通过定义照明颜色值[D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties)漫射、 Ambient，并定义所发出的颜色的反射。 照明的光; 使用 RGBA 值不使用 alpha 颜色组件。
-**方向** | 光的方向。 光所指方向指定相对于其[CoordinateSpace](/uwp/api/windows.ui.composition.distantlight.coordinatespace) Visual。
-**坐标空间** | 每个视觉对象具有隐式的三维坐标空间。 X 方向是从左到右。 Y 方向是从上到下。 Z 方向是从平面的点。 此坐标的原始点是左上角的视觉对象，且单位是设备独立像素 (DIP)。 在此坐标中定义的光源的偏移量。
-**内部和外部圆锥** | 聚光发出的光锥包括两个部分：一个明亮的内锥和一个外锥。 组合允许你控制对内部和外部锥角和颜色。
-**Offset** | 相对于其坐标空间 Visual 光源的偏移量。
+**颜色** | 光的 [颜色](/uwp/api/windows.ui.color) 。 照明颜色值由 [D3D](../graphics-concepts/light-properties.md) 漫射、环境和镜面定义，用于定义要发出的颜色。 光源使用 RGBA 值用于光源;不使用 alpha 颜色部分。
+**方向** | 光的方向。 光源的方向相对于其 [CoordinateSpace](/uwp/api/windows.ui.composition.distantlight.coordinatespace) 视觉对象指定。
+**坐标空间** | 每个视觉对象都有一个隐式三维坐标空间。 X 方向从左到右。 Y 方向从上到下。 Z 方向是平面的点。 此坐标的原始点为视觉对象的左上角，单位为与设备无关的像素 (DIP) 。 此坐标中定义的光线偏移量。
+**内部和外部圆锥** | 聚光发出的光锥包括两个部分：一个明亮的内锥和一个外锥。 组合允许您控制内部和外部圆锥度和颜色。
+**Offset** | 光源相对于其坐标空间视觉对象的偏移量。
 
 > [!NOTE]
-> 当多个光源达到相同的视觉对象，或每当光源的颜色值获取足够大，以超过 1.0 时，可能会由于夹紧的灯颜色通道更改光的颜色。
+> 当多个光源碰到同一视觉对象时，或者当光源的颜色值大到足以超过1.0 时，光源的颜色可能会改变，因为光源颜色通道的钳位。
 
 ### <a name="advanced-lighting-properties"></a>高级照明属性
 
 属性 | 描述
 --- | ---
-**强度** | 控制光的亮度。
-**衰减** | 衰减控制光的强度如何随距离属性指定的最大距离而减弱。  常量，Quadradic 和线性衰减属性可用。
+**光** | 控制光的亮度。
+**衰减** | 衰减控制光的强度如何随距离属性指定的最大距离而减弱。  可以使用常量、Quadradic 和线性衰减属性。
 
-## <a name="getting-started-with-lighting"></a>开始使用照明
+## <a name="getting-started-with-lighting"></a>带有照明的入门
 
-请按照以下常规步骤添加灯操作：
+请按照以下常规步骤添加光源：
 
-- 创建并将系统正常运行：创建光，并将它们放在指定的坐标空间。
-- 标识对象发光对象：目标灯在相关的视觉对象。
-- [可选]定义个别对象向灯做出反应：使用与 EffectBrush SceneLightingEffect 自定义用于显示 SpriteVisual 光线反射。 反射的默认值支持子级的光源的 CoordinateSpace 的照明。  使用 SceneLightingEffect 绘制视觉对象将覆盖该视觉对象默认照明。
+- 创建和放置光源：创建光源并将其放在指定的坐标空间中。
+- 确定要光源的对象：目标光线位于相关视觉对象上。
+- 可有可无定义各个对象对光源的反应方式：将 SceneLightingEffect 与 EffectBrush 配合使用，以自定义用于显示 SpriteVisual 的光源反射。 反射默认值支持光源的 CoordinateSpace 的子级照明。  使用 SceneLightingEffect 绘制的视觉对象将覆盖该视觉对象的默认光照。
 
 ## <a name="scenelightingeffect"></a>SceneLightingEffect
 
-[SceneLightingEffect](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect)用于修改应用到的内容的默认光照[SpriteVisual](/uwp/api/Windows.UI.Composition.SpriteVisual)面向[CompositionLight](/uwp/api/windows.ui.composition.compositionlight)。
+[SceneLightingEffect](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect)用于修改应用于[CompositionLight](/uwp/api/windows.ui.composition.compositionlight)的目标[SpriteVisual](/uwp/api/Windows.UI.Composition.SpriteVisual)内容的默认照明。
 
-[SceneLightingEffect](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect)经常用于材料的创建。 SceneLightingEffect 是你想要实现更复杂，例如启用映像上的反射属性和/或使用法线贴图提供深度的错觉时使用的效果。 SceneLightingEffect 提供要使用的照明属性，反射高光和漫射量等自定义 UI 的功能。 您可以进一步自定义光照效果，从而可以单独进行混合和 compose 与你的内容的不同光源反应效果管道的其余部分使用。
+[SceneLightingEffect](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) 经常用于创建材料。 当您想要实现更复杂的操作时（例如，启用图像上的反射属性）和/或使用普通地图提供深度反射时，使用 SceneLightingEffect。 SceneLightingEffect 提供了使用反射和漫射量等照明属性自定义 UI 的功能。 您可以通过 "效果" 管道的其余部分进一步自定义光照效果，使您可以单独与内容混合和组合不同的照明反应。
 
 > [!NOTE]
-> 场景的照明不会产生阴影;它是侧重于 2D 呈现的效果。  它不考虑包含真实照明模型，包括阴影的考虑因素 3D 光照方案。
+> 场景照明不产生阴影;这是一种侧重于2D 呈现的效果。  它不考虑包含实照明模型（包括阴影）的3D 光照方案。
 
 
 属性 | 描述
 --- | ---
-**法线贴图** | NormalMaps 创建其中指示灯正常指向将更亮和正常指向立即将不断变暗的纹理的效果。 若要向目标 visual 使用 NormalMap [CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)使用 LoadedImageSurface 加载 NormalMap 资产。
+**普通地图** | "NormalMaps" 创建纹理效果，在该纹理中，指向光源的法线将更亮，而正常的指针会变暗。 若要将 NormalMap 添加到目标视觉对象，请使用 LoadedImageSurface 的 [CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 来加载 NormalMap 资产。
 **环境** | 环境属性主要用于控制总体颜色反射。
-**Specular** | 反射高光反射对象，使它们看起来有光泽上创建突出显示。 您可以控制的反射高光反射级别以及闪光的级别。  这些属性操作创建材料效果，例如 shinny 金属或光泽纸。
-**漫射** | 扩散型的反射散布在所有方向上的指示灯。
-**反射度模型** | [反射度模型](/uwp/api/windows.ui.composition.effects.scenelightingeffectreflectancemodel)允许你选择之间[Blinn 冯氏](https://docs.microsoft.com/visualstudio/designers/how-to-create-a-basic-phong-shader)和以物理方式基于 Blinn Phong。  如果想要具有精简反射高光，您可以选择以物理方式基于 Blinn 冯氏。
+**反射** | 反射反射在对象上创建突出显示，使它们显得发亮。 您可以控制反射反射的级别以及闪光度。  这些属性用于创建材料效果，如 shinny 金属或光泽纸。
+**漫射** | 散射反射在所有方向上 scatters 光。
+**Reflectance 模型** | [Reflectance 模型](/uwp/api/windows.ui.composition.effects.scenelightingeffectreflectancemodel) 允许在 [Blinn 冯氏](/visualstudio/designers/how-to-create-a-basic-phong-shader) 和基于物理的 Blinn 冯氏之间进行选择。  当您想要进行简洁反射高光时，应选择 "基于物理的 Blinn 冯氏"。
 
-### <a name="sample-scenelightingeffect"></a>示例 (SceneLightingEffect)
+### <a name="sample-scenelightingeffect"></a>示例 (SceneLightingEffect) 
 
-下面的示例演示如何向 SceneLightingEffect 添加法线贴图。
+下面的示例演示如何向 SceneLightingEffect 添加普通地图。
 
 ```cs
 CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
@@ -162,9 +162,9 @@ CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 
 ## <a name="related-articles"></a>相关文章
 
-- [在可视化层中创建材料和光线](https://blogs.windows.com/buildingapps/2017/08/04/creating-materials-lights-visual-layer/)
-- [照明概述](https://docs.microsoft.com/windows/uwp/graphics-concepts/lighting-overview)
-- [CompositionCapabilities API](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities)
-- [照明的数学](https://docs.microsoft.com/windows/uwp/graphics-concepts/mathematics-of-lighting)
-- [SceneLightingEffect](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects.scenelightingeffect)
+- [在可视层中创建材料和光源](https://blogs.windows.com/buildingapps/2017/08/04/creating-materials-lights-visual-layer/)
+- [照明概述](../graphics-concepts/lighting-overview.md)
+- [CompositionCapabilities API](/uwp/api/windows.ui.composition.compositioncapabilities)
+- [数学数学](../graphics-concepts/mathematics-of-lighting.md)
+- [SceneLightingEffect](/uwp/api/windows.ui.composition.effects.scenelightingeffect)
 - [WindowsUIDevLabs GitHub 存储库](https://github.com/microsoft/WindowsCompositionSamples)

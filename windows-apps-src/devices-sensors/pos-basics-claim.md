@@ -1,16 +1,16 @@
 ---
 title: PointOfService 设备声明和启用模型
-description: 了解 PointOfService 声明和启用模型
+description: 使用服务设备声明，并使 Api 能够声明设备，并使其能够进行 i/o 操作。
 ms.date: 06/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: bc3a8afbc0d3ca4655e0b1745090db633bcd92b7
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 1977fd5db2f2e026ae4bbab21de9683f275e96d3
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684669"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053747"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>服务点设备声明和启用模型
 
@@ -19,11 +19,11 @@ ms.locfileid: "75684669"
 在成功创建 PointOfService 设备对象后，你必须使用适合的设备类型声明方法进行声明，然后才能使用该设备输入或输出。  声明授予应用程序对很多设备功能的独占访问权限，以确保一个应用程序不会干扰其他应用程序使用设备。  一次只有一个应用程序可以声明独占使用 PointOfService 设备。 
 
 > [!Note]
-> 声明操作将为设备建立一个排他锁，但不会将其置于操作状态。  有关详细信息，请参阅[启用设备的 i/o 操作](#enable-device-for-io-operations)。
+> 声明操作将为设备建立一个排他锁，但不会将其置于操作状态。  有关详细信息，请参阅 [启用设备的 i/o 操作](#enable-device-for-io-operations) 。
 
 ### <a name="apis-used-to-claim--release"></a>用于声明/释放的 Api
 
-|设备|声明 | 发布版本 | 
+|设备|声明 | 发布 | 
 |-|:-|:-|
 |BarcodeScanner | [BarcodeScanner.ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync) | [ClaimedBarcodeScanner 关闭](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.close) |
 |CashDrawer | [CashDrawer.ClaimDrawerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.claimdrawerasync) | [ClaimedCashDrawer 关闭](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.close) | 
@@ -34,11 +34,11 @@ ms.locfileid: "75684669"
 
 ## <a name="enable-device-for-io-operations"></a>启用设备进行 i/o 操作
 
-声明操作只是为设备建立独占权限，但不会使其进入操作状态。  若要接收事件或执行任何输出操作，必须使用**EnableAsync**启用设备。  相反，你可以调用**DisableAsync**来停止从设备侦听事件或执行输出。  还可以使用**IsEnabled**来确定设备的状态。
+声明操作只是为设备建立独占权限，但不会使其进入操作状态。  若要接收事件或执行任何输出操作，必须使用 **EnableAsync**启用设备。  相反，你可以调用 **DisableAsync** 来停止从设备侦听事件或执行输出。  还可以使用 **IsEnabled** 来确定设备的状态。
 
 ### <a name="apis-used-enable--disable"></a>使用的 Api 启用/禁用
 
-| 设备 | Enable | 禁用 | IsEnabled? |
+| 设备 | 启用 | 禁用 | IsEnabled? |
 |-|:-|:-|:-|
 |ClaimedBarcodeScanner | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isenabled) | 
 |ClaimedCashDrawer | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.isenabled) |

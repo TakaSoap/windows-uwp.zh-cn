@@ -6,12 +6,12 @@ ms.date: 03/05/2019
 ms.topic: article
 keywords: windows 10, uwp, 税收, 应用税收, 税收要求, 商业扩张, 税率
 ms.localizationpriority: medium
-ms.openlocfilehash: f1147ab6ee76b1d7615d6acaadaf6190db96c668
-ms.sourcegitcommit: 829af8cf4679a6aa9e7ecad961e1e33a09235028
+ms.openlocfilehash: 2d78a5a6af362a52b55830f279b3fffc1fb74346
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88681258"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170871"
 ---
 # <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>Windows 应用/游戏开发人员和 Azure Marketplace 发布者的税务详细信息
 
@@ -24,10 +24,10 @@ ms.locfileid: "88681258"
 若要了解有关价格选择的税务注意事项，以及应用开发人员协议或新式出版商协议下的税务责任，请参阅下表中的国家/地区。
 
 > [!NOTE]
-> 商业扩张调整可能会在有限的几个国家/地区规定实际付款。 有关商业扩张调整的进一步详细信息及其适用的市场，请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和[受影响国家/地区](define-market-selection.md#price-considerations-for-specific-markets)的列表。
+> 商业扩张调整可能会在有限的几个国家/地区规定实际付款。 有关商业扩张调整的进一步详细信息及其适用的市场，请参阅[应用开发人员协议](/legal/windows/agreements/app-developer-agreement)和[受影响国家/地区](define-market-selection.md#price-considerations-for-specific-markets)的列表。
 
 > [!IMPORTANT]
-> 有关分销商国家/地区和环境的税收责任 ([如下所述) ](#reseller-countriesregions) 由 [应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的 "展示 C" 涵盖，而不是下表中的信息。
+> 有关分销商国家/地区和环境的税收责任 ([如下所述) ](#reseller-countriesregions) 由 [应用开发人员协议](/legal/windows/agreements/app-developer-agreement)的 "展示 C" 涵盖，而不是下表中的信息。
 > 请注意， **支出隐含** 列仅适用于 Windows 应用/游戏开发人员。 此列中所述的税率随时可能更改，Microsoft 无法保证下表中的费率始终准确。
 
 
@@ -289,7 +289,7 @@ ms.locfileid: "88681258"
 
 ## <a name="reseller-countriesregions"></a>经销商国家/地区
 
-在某些国家/地区，Microsoft 充当经销商而不是代理，在应用商店中提供你的应用和应用内产品。 有关经销商国家/地区的条款和条件的进一步详细信息，请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。
+在某些国家/地区，Microsoft 充当经销商而不是代理，在应用商店中提供你的应用和应用内产品。 有关经销商国家/地区的条款和条件的进一步详细信息，请参阅[应用开发人员协议](/legal/windows/agreements/app-developer-agreement)。
 
 以下内容仅适用于 Windows 应用/游戏开发人员：   
 

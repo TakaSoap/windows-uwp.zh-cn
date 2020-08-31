@@ -1,17 +1,17 @@
 ---
 title: Device Portal Xbox 开发人员设置 API 参考
-description: 了解如何访问 Xbox 开发人员设置。
+description: 了解如何使用 Xbox 设备门户 REST API 访问用于开发的 Xbox 一项设置。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
-ms.openlocfilehash: 54a15be26adf0da97105f15f3a44f26ee7bfc96d
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 0aceb7afdce9cc76eab3ee330f0018fdc7ccd1bb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59240035"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168981"
 ---
 # <a name="developer-settings-api-reference"></a>开发人员设置 API 参考
 
@@ -39,7 +39,7 @@ GET | /ext/settings
 
 - 无
 
-**响应**   
+**回复**   
 该响应是一个设置 JSON 数组，包含所有设置。 每个设置对象都包含以下字段：
 
 * Name -（字符串）设置的名称。
@@ -49,21 +49,21 @@ GET | /ext/settings
 * Category -（字符串）设置的类别。
 * Type - ("Text" | "Number" | "Bool" | "Select") 此字段指示设备的类型：文本输入、布尔值（“true”或“false”），具有最小值和最大值的数字或者在特定的值列表中进行选择。
 
-如果设置为一个数字：
+如果设置为数字：
 
-* 最小值-（数字） 此字段指示的设置的最小的数字值。
-* 最大的 （数字） 此字段指示的设置的最大的数字值。
+* 最小值 (数字) 此字段指示设置的最小数值。
+* 最大值 (数字) 此字段指示设置的最大数值。
 
-如果设置为选择：
+如果设置为 "选择"：
 
-* OptionsVariable-("是"|"否"） 此字段指示设置选项是否是可变的如果有效的选项可以更改而重新启动。
+* OptionsVariable- ( "是" |"否" ) 此字段指示设置选项是否是可变的（如果有效选项在不重新启动的情况下可以更改）。
 * 选项 - JSON 数组，将有效的选择选项包含为字符串。
 
 **状态代码**
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 描述
+HTTP 状态代码      | 说明
 :------     | :-----
 200 | 请求已成功
 4XX | 错误代码
@@ -79,7 +79,7 @@ HTTP 状态代码      | 描述
 
 方法      | 请求 URI
 :------     | :-----
-GET | /ext/settings/\<设置名称\>
+GET | /ext/settings/\<setting name\>
 
 **URI 参数**
 
@@ -93,7 +93,7 @@ GET | /ext/settings/\<设置名称\>
 
 - 无
 
-**响应**   
+**回复**   
 该响应是一个具有以下字段的 JSON 对象：
 
 * Name -（字符串）设置的名称。
@@ -103,21 +103,21 @@ GET | /ext/settings/\<设置名称\>
 * Category -（字符串）设置的类别。
 * Type - ("Text" | "Number" | "Bool" | "Select") 此字段指示设备的类型：文本输入、布尔值（“true”或“false”），具有最小值和最大值的数字或者在特定的值列表中进行选择。
 
-如果设置为一个数字：
+如果设置为数字：
 
-* 最小值-（数字） 此字段指示的设置的最小的数字值。
-* 最大的 （数字） 此字段指示的设置的最大的数字值。
+* 最小值 (数字) 此字段指示设置的最小数值。
+* 最大值 (数字) 此字段指示设置的最大数值。
 
-如果设置为选择：
+如果设置为 "选择"：
 
-* OptionsVariable-("是"|"否"） 此字段指示设置选项是否是可变的如果有效的选项可以更改而重新启动。
+* OptionsVariable- ( "是" |"否" ) 此字段指示设置选项是否是可变的（如果有效选项在不重新启动的情况下可以更改）。
 * 选项 - JSON 数组，将有效的选择选项包含为字符串。
 
 **状态代码**
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 描述
+HTTP 状态代码      | 说明
 :------     | :-----
 200 | 请求已成功
 4XX | 错误代码
@@ -133,7 +133,7 @@ HTTP 状态代码      | 描述
 
 方法      | 请求 URI
 :------     | :-----
-PUT | /ext/settings/\<设置名称\>
+PUT | /ext/settings/\<setting name\>
 
 **URI 参数**
 
@@ -155,7 +155,7 @@ Value -（字符串）设置的新值。
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 描述
+HTTP 状态代码      | 说明
 :------     | :-----
 200 | 请求已成功
 4XX | 错误代码

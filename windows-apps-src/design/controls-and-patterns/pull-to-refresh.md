@@ -1,6 +1,6 @@
 ---
-Description: 使用下拉刷新控件将新内容加入列表。
 title: 下拉刷新
+description: 了解如何实现下拉刷新控件，使用户可以使用触控来下拉数据列表，以便检索更多数据。
 label: Pull-to-refresh
 template: detail.hbs
 ms.date: 03/07/2018
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: faff0857679d50f6995640bbf9bf0222bb0d2e37
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 1164113b4e4c6b64c6ee1e3d98e0bdc4c8b635ea
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081614"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942847"
 ---
 # <a name="pull-to-refresh"></a>下拉刷新
 

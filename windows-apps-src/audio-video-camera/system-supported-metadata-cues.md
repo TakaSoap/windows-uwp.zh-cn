@@ -1,17 +1,17 @@
 ---
 ms.assetid: F28162D4-AACC-4EE0-B243-5878F870F87F
-description: 在媒体播放过程中处理系统支持的元数据提示
+description: 了解如何利用一些可能嵌入到媒体文件或流中的定时元数据格式。
 title: 系统支持的计时元数据提示
 ms.date: 04/18/2017
 ms.topic: article
 keywords: windows 10, uwp, 元数据, 提示, 语言, 章节
 ms.localizationpriority: medium
-ms.openlocfilehash: 92f8826729bb2374b87267d27b961d74eb72e928
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8991a2044caa20a4441d4b30d5359b6d4c6a8fa1
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360544"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053597"
 ---
 # <a name="system-supported-timed-metadata-cues"></a>系统支持的计时元数据提示
 本文介绍如何利用可以在媒体文件或流中嵌入的多种格式的计时元数据。 UWP 应用可以注册在播放过程中每当遇到这些元数据提示时由媒体管道引发的事件。 通过使用 [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) 类，应用可以实现自己的自定义元数据提示，但是本文重点介绍由媒体管道自动检测的几种元数据标准，包括：
@@ -100,7 +100,7 @@ ms.locfileid: "66360544"
 
 [!code-cs[RegisterMetadataHandlerForChapterCues](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetRegisterMetadataHandlerForChapterCues)]
 
-在 **CueEntered** 事件的处理程序中，可以检查传入处理程序中的 [**TimedMetadataTrack**](https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatatrack) 对象的 [**TimedMetadataKind**](https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatatrack.TimedMetadataKind) 属性，以查看元数据是否用于章节提示。如果对多种类型的元数据使用相同的数据提示事件程序，则这是必需的。 如果关联元数据轨属于类型 **TimedMetadataKind.Chapter**，则将 [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) 的 **Cue** 属性中包含的数据提示强制转换为 [**ChapterCue**](https://docs.microsoft.com/uwp/api/windows.media.core.chaptercue)。 **ChapterCue** 的 [**Title**](https://docs.microsoft.com/uwp/api/windows.media.core.chaptercue.Title) 属性包含播放中刚刚到达的章节的标题。
+在 **CueEntered** 事件的处理程序中，可以检查传入处理程序中的 [**TimedMetadataTrack**](https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatatrack) 对象的 [**TimedMetadataKind**](https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatatrack.TimedMetadataKind) 属性，以查看元数据是否用于章节提示。如果对多种类型的元数据使用相同的数据提示事件处理程序，则这是必要的操作。 如果关联元数据轨属于类型 **TimedMetadataKind.Chapter**，则将 [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) 的 **Cue** 属性中包含的数据提示强制转换为 [**ChapterCue**](https://docs.microsoft.com/uwp/api/windows.media.core.chaptercue)。 **ChapterCue** 的 [**Title**](https://docs.microsoft.com/uwp/api/windows.media.core.chaptercue.Title) 属性包含播放中刚刚到达的章节的标题。
 
 [!code-cs[ChapterCueEntered](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetChapterCueEntered)]
 
@@ -148,7 +148,7 @@ ms.locfileid: "66360544"
 
 [!code-cs[RegisterMetadataHandlerForID3Cues](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetRegisterMetadataHandlerForID3Cues)]
 
-在 **CueEntered** 事件的处理程序中，将 [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) 的  **Cue** 属性中包含的数据提示强制转换为 [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue)。  检查以确保提示的 **DataCue** 和 [**Data**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Data) 属性不为 null。 扩展的 EMU 注释在传输流中采用原始字节的形式提供（请参阅[http://id3.org/id3v2.4.0-structure](https://id3.org/id3v2.4.0-structure)）。 通过调用 [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer) 来创建新 **DataReader** 以读取提示数据。  在此示例中，ID3 标记中的标头值从提示数据进行读取并写入调试输出。
+在 **CueEntered** 事件的处理程序中，将 [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) 的  **Cue** 属性中包含的数据提示强制转换为 [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue)。  检查以确保提示的 **DataCue** 和 [**Data**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Data) 属性不为 null。 传输流中的原始字节形式提供了扩展的 EMU 注释 (参阅 [http://id3.org/id3v2.4.0-structure](https://id3.org/id3v2.4.0-structure)) 。 通过调用 [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer) 来创建新 **DataReader** 以读取提示数据。  在此示例中，ID3 标记中的标头值从提示数据进行读取并写入调试输出。
 
 [!code-cs[ID3CueEntered](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetID3CueEntered)]
 
@@ -182,7 +182,7 @@ ms.locfileid: "66360544"
 ## <a name="related-topics"></a>相关主题
 
 * [媒体播放](media-playback.md)
-* [媒体项，播放列表，其中跟踪](media-playback-with-mediasource.md)
+* [媒体项、播放列表和曲目](media-playback-with-mediasource.md)
 
 
  

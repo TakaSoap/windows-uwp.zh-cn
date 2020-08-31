@@ -1,5 +1,5 @@
 ---
-Description: 介绍可访问性的界标和标题功能。
+description: 介绍辅助功能的特征点和标题功能。
 ms.assetid: 019CC63D-D915-4EBD-9442-DE899AB973C9
 title: 标志和标题
 label: Landmarks and Headings
@@ -8,12 +8,12 @@ ms.date: 01/24/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 28a1bd46646deae8f6e6519d72295d42ce2766db
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 942c24e8f5c7c521502ee5a9f9eb7175bf04b94f
+ms.sourcegitcommit: 2a1ceeacf5cdadc803bad83dc3ceb57a16ce79a3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359561"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067509"
 ---
 # <a name="landmarks-and-headings"></a>标志和标题
 
@@ -21,21 +21,26 @@ ms.locfileid: "66359561"
 
 [ARIA 标志](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)、[ARIA 标题](https://www.w3.org/TR/WCAG20-TECHS/ARIA12.html) 和 [HTML 标题](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H42.html)的概念数年来一直用在 Web 内容中，以允许屏幕阅读器用户更快地浏览。 网页利用标志和标题通过允许 AT 用户快速到达大区块（标志）和较小区块（标题）来使其内容更易于使用。 具体来说，屏幕阅读器具有允许用户在标志之间跳转和在标题之间跳转（下一个/上一个或特定标题级别）的命令。 由于同样原因，请务必考虑你的应用中的标志和标题。
 
-标志启用要分组到各个类别（如搜索、导航、主内容等）中的内容。 分组后，AT 用户可以在各个组之间快速导航。 这种快速导航允许用户跳过潜在的大量内容，这些内容在以前可能必须按项目进行导航，从而产生糟糕的体验。 
+标志启用要分组到各个类别（如搜索、导航、主内容等）中的内容。 分组后，AT 用户可以在各个组之间快速导航。 这种快速导航允许用户跳过潜在的大量内容，这些内容在以前可能必须按项目进行导航，从而产生糟糕的体验。
 
-例如，当使用标签面板时，将此视为导航标志。 当使用搜索编辑框时，将此视为搜索标志并考虑将你的主内容设置为主内容标志。 无论是在标志内还是在标志外，请考虑将子元素设置为具有逻辑标题级别的标题。 
+例如，当使用标签面板时，将此视为导航标志。 当使用搜索编辑框时，将此视为搜索标志并考虑将你的主内容设置为主内容标志。 无论是在标志内还是在标志外，请考虑将子元素设置为具有逻辑标题级别的标题。
 
-请考虑使用 Windows 设置应用中的**轻松访问**页面。 
+请考虑使用 Windows 设置应用中的**轻松访问**页面。
 
 ![Windows 设置应用中的“轻松访问”页面](images/EaseOfAccessSettings.png)  
 
-搜索标志内有一个环绕的搜索编辑框。 左侧的导航元素环绕在导航标志内，右侧的主内容环绕在主内容标志内。 更进一步说明，在导航标志内，有一个名为**轻松访问**的主组，其为标题级别 1。 在此之下是子选项**视觉**、**听觉**，依此类推。 这些具有标题级别 2。 设置标题针对设置主要主题继续在主内容内进行，**显示** 作为标题级别 1 而且子组（如**使一切变大**作为标题级别 2。 
+搜索标志内有一个环绕的搜索编辑框。 左侧的导航元素环绕在导航标志内，右侧的主内容环绕在主内容标志内。 更进一步说明，在导航标志内，有一个名为**轻松访问**的主组，其为标题级别 1。 在此之下是子选项**视觉**、**听觉**，依此类推。 这些具有标题级别 2。 设置标题针对设置主要主题继续在主内容内进行，**显示** 作为标题级别 1 而且子组（如**使一切变大**作为标题级别 2。
 
-设置应用将可供访问，无需标志和标题，但会变得更易于使用它们。 屏幕阅读器用户可以快速轻松地到达其所需的组（标志），然后也快速到达子组（标题）。 
+设置应用将可供访问，无需标志和标题，但会变得更易于使用它们。 屏幕阅读器用户可以快速轻松地到达其所需的组（标志），然后也快速到达子组（标题）。
 
-使用 [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) 将 UI 元素设置为所需的[标志类型](https://docs.microsoft.com/windows/desktop/WinAuto/landmark-type-identifiers)。 此标志 UI 元素将封装对于该标志来说有意义的所有其他 UI 元素。 
+使用 [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) 将 UI 元素设置为所需的[标志类型](https://docs.microsoft.com/windows/desktop/WinAuto/landmark-type-identifiers)。 此标志 UI 元素将封装对于该标志来说有意义的所有其他 UI 元素。
 
-使用 [AutomationProperties.LocalizedLandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) 专门命名该标志。 如果你选择预定义的标志类型，如主或导航，这些名称将用于标志名称。 但是，如果将标志类型设置为自定义，你必须通过此属性专门命名标志。 你还可以使用此属性覆盖非自定义标志类型中的默认名称。 
+使用 [AutomationProperties.LocalizedLandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) 专门命名该标志。 如果你选择预定义的标志类型，如主或导航，这些名称将用于标志名称。 但是，如果将标志类型设置为自定义，你必须通过此属性专门命名标志。 你还可以使用此属性覆盖非自定义标志类型中的默认名称。
 
 使用 [AutomationProperties.HeadingLevel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.headinglevelproperty) 将 UI 元素设置为从 *Level1* 到 *Level9* 内某特定级别的标题。
 
+## <a name="examples"></a>示例
+
+有关演示如何解决 Windows 桌面应用程序中的许多常见编程式辅助功能问题的许多代码示例，请参阅 [解决 windows 桌面应用程序中的常见编程式辅助功能问题的代码示例](https://docs.microsoft.com/accessibility-tools-docs/)。
+
+这些代码示例是由 Microsoft 的[ 可访问性 Insights （适用于 Windows](https://github.com/microsoft/accessibility-insights-windows)）直接引用的，它们有助于在 UI 中突出出现许多辅助功能问题。

@@ -4,12 +4,12 @@ description: 开发人员可以使用协议激活和启动激活来自动启动�
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: abc0b40178dc9b7c386342af6a6d85c6fb61945a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 661576ede9a940f7f8aa71715900306d2c2b28a9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320270"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154871"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>自动启动 Windows 10 UWP 应用
 
@@ -28,15 +28,15 @@ ms.locfileid: "67320270"
 按照以下步骤来设置适用于应用的协议激活： 
 
 1. 在 Visual Studio 中打开 **Package.appxmanifest** 文件。
-2. 选择“声明”  选项卡。
-3. 在“可用声明”  下拉列表中，选择“协议”  ，然后选择“添加”  。
-4. 在“属性”  下的“名称”  字段中，输入唯一名称以启动应用。 
+2. 选择“声明”**** 选项卡。
+3. 在“可用声明”**** 下拉列表中，选择“协议”****，然后选择“添加”****。
+4. 在“属性”**** 下的“名称”**** 字段中，输入唯一名称以启动应用。 
 
     ![协议激活](images/automate-uwp-apps-1.png)
 
 5. 保存文件并部署项目。 
 6. 在部署项目后，应设置协议激活。 
-7. 转到“控制面板”\“所有控制面板项”\“默认程序”  ，然后选择“将文件类型或协议与特定程序关联”  。 滚动到“协议”  部分，查看协议是否列出。 
+7. 转到“控制面板”\“所有控制面板项”\“默认程序”****，然后选择“将文件类型或协议与特定程序关联”****。 滚动到“协议”**** 部分，查看协议是否列出。 
 
 现在设置了协议激活，你可以通过两个选项（命令行或启动器应用程序）使用协议激活应用。 
 
@@ -48,7 +48,7 @@ ms.locfileid: "67320270"
   scheme://username:password@host:port/path.extension?query#fragment
   ```
 
-Uri 对象有分析此格式的 URI 字符串的方法。 有关详细信息，请参阅 [Uri 类 (MSDN)](https://docs.microsoft.com/uwp/api/windows.foundation.uri)。 
+Uri 对象有分析此格式的 URI 字符串的方法。 有关详细信息，请参阅 [Uri 类 (MSDN)](/uwp/api/windows.foundation.uri)。 
 
 示例：
 
@@ -110,11 +110,11 @@ Uri(URI));
 获取程序包系列名称的最佳方法是完成以下步骤：
 
 1. 打开 **Package.appxmanifest** 文件。
-2. 在“打包”  选项卡上，输入“程序包名称”  。
+2. 在“打包”**** 选项卡上，输入“程序包名称”****。
 
     ![启动激活](images/automate-uwp-apps-2.png)
 
-3. 如果“程序包系列名称”  未列出，请打开 PowerShell 并运行 `>get-appxpackage MyPackageName` 来查找 **PackageFamilyName**。
+3. 如果“程序包系列名称”**** 未列出，请打开 PowerShell 并运行 `>get-appxpackage MyPackageName` 来查找 **PackageFamilyName**。
 
 在 `<Applications>` 元素下的 **Package.appxmanifest** 文件（在 XML 视图中打开）中可找到应用程序 ID。
 
@@ -136,7 +136,7 @@ C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.s
 
 ### <a name="launcher-application"></a>启动器应用程序
 
-你可以单独创建一个支持使用 COM 的应用程序以用于启动。 以下示例显示启动程序中用于通过启动激活启动的 C++ 代码。 使用此代码，你可以创建 **ApplicationActivationManager** 对象并调用传入之前查找的 AUMID 的 **ActivateApplication** 和任何参数。 有关其他参数的详细信息，请参阅 [IApplicationActivationManager::ActivateApplication 方法 (MSDN)](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication)。
+你可以单独创建一个支持使用 COM 的应用程序以用于启动。 以下示例显示启动程序中用于通过启动激活启动的 C++ 代码。 使用此代码，你可以创建 **ApplicationActivationManager** 对象并调用传入之前查找的 AUMID 的 **ActivateApplication** 和任何参数。 有关其他参数的详细信息，请参阅 [IApplicationActivationManager::ActivateApplication 方法 (MSDN)](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication)。
 
 ```
 #include <ShObjIdl.h>
@@ -207,9 +207,8 @@ void OnActivated(IActivatedEventArgs^ args)
 }
 ```
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>“摘要”
 总之，你可以使用各种方法来启动 UWP 应用。 根据要求和使用情况，可能还有更适合的其他方法。 
 
-## <a name="see-also"></a>请参阅
-- [在 Xbox One 上 UWP](index.md)
-
+## <a name="see-also"></a>另请参阅
+- [Xbox One 上的 UWP](index.md)

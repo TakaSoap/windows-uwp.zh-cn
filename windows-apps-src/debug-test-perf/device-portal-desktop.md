@@ -2,20 +2,23 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: 适用于 Windows 桌面的设备门户
 description: 了解 Windows Device Portal 如何在 Windows 桌面上打开诊断和自动化。
-ms.date: 02/06/2019
+ms.date: 08/20/2020
 ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 73f7e827c0ec8ca289d3523da06601de978a91d2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: dc3ca2379ae7dd704d96e383cc02314ee9423fb7
+ms.sourcegitcommit: 508fb9e763aa5967beebf7bf5e77d7ad12baa566
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79210183"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88714483"
 ---
 # <a name="device-portal-for-windows-desktop"></a>适用于 Windows 桌面的设备门户
 
-Windows 设备门户允许你查看诊断信息，并通过 HTTP 从浏览器窗口与你的桌面进行交互。 你可以使用 Device Portal 执行以下操作：
+Windows 设备门户是一个调试工具，利用它可以查看诊断信息，并通过 HTTP 从 Web 浏览器与你的台式电脑进行交互。 若要调试其他设备，请参阅 [Windows 设备门户概述](device-portal.md)。
+
+
+你可以使用设备门户执行以下操作：
 - 查看并操作正在运行的进程的列表
 - 安装、删除、启动和终止应用
 - 更改 WLAN 配置文件、查看信号强度 并查看 ipconfig
@@ -35,13 +38,20 @@ Windows 设备门户允许你查看诊断信息，并通过 HTTP 从浏览器窗
 
 ### <a name="turn-on-device-portal"></a>打开设备门户
 
-可以在“设置”  的“面向开发人员”  部分中启用设备门户。 在启用设备门户时，还必须创建相应的用户名和密码。 不要使用你的 Microsoft 帐户或其他 Windows 凭据。 
+您可以在**设置**的**面向开发人员**部分中启用设备门户。 当你启用它时，你还必须创建相应的用户名和密码。 不要使用你的 Microsoft 帐户或其他 Windows 凭据。
 
-![“设置”应用的“设备门户”部分](images/device-portal/device-portal-desk-settings.png) 
+![“设置”应用的“设备门户”部分](images/device-portal/device-portal-desk-settings.png)
 
-在启用设备门户后，你将在该部分的底部看到 Web 链接。 记下追加到所列 URL 末尾的端口号：此端口号在启用设备门户时随机生成，但应在桌面重启后保持一致。 
+在启用设备门户后，你将在该部分的底部看到 Web 链接。 记下追加到所列 URL 末尾的端口号：此端口号在启用设备门户时随机生成，但应在桌面重启后保持一致。
 
-这些链接提供了连接到设备门户的两种方法：通过本地网络（包括 VPN）或通过本地主机。
+这些链接提供了连接到设备门户的两种方法：通过本地网络（包括 VPN）或通过本地主机。 连接后，你应该会看到类似下面的屏幕：
+
+![设备门户](images/device-portal/device-portal-example.png)
+
+
+### <a name="turn-off-device-portal"></a>关闭设备门户
+
+可以在“设置”的“面向开发人员”部分中禁用设备门户 。
 
 ### <a name="connect-to-device-portal"></a>连接到设备门户
 
@@ -56,41 +66,49 @@ Windows 设备门户允许你查看诊断信息，并通过 HTTP 从浏览器窗
 
 ## <a name="device-portal-content-on-windows-desktop"></a>Windows 桌面上的设备门户内容
 
-Windows 桌面上的设备门户提供了一组标准页面。 有关这些页面的详细说明，请参阅 [Windows 设备门户概述](device-portal.md)。
+Windows 桌面上的设备门户将显示 [Windows 设备门户概述](device-portal.md)中描述的页面集。
 
 - 应用管理器
+- Xbox Live
 - 文件资源管理器
 - 正在运行的进程
 - 性能
 - 调试
-- Windows 事件跟踪 (ETW)
+- ETW（Windows 事件跟踪）日志记录
 - 性能跟踪
 - 设备管理器
+- Bluetooth
 - 网络
-- 故障数据
+- 崩溃数据
 - 功能
 - 混合现实
 - 流式安装调试程序
 - 位置
 - Scratch
 
+## <a name="using-device-portal-for-windows-desktop-to-test-and-debug-msix-apps"></a>使用适用于 Windows 桌面的设备门户测试和调试 MSIX 应用
+
+
+> [!VIDEO https://www.youtube.com/embed/PdgXeOMt4hk]
+
+
 ## <a name="more-device-portal-options"></a>更多设备门户选项
 
 ### <a name="registry-based-configuration-for-device-portal"></a>设备门户的基于注册表的配置
 
-如果你希望为 Device Portal 选择端口号（如 80 和 443），你可以设置以下 RegKey：
+如果你希望为设备门户选择端口号（如 80 和 443），你可以设置以下 RegKey：
 
 - （位于 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service` 下面）
     - `UseDynamicPorts`：一个必需的 DWORD。 将其设置为 0，以便保留你已选择的端口号。
-    - `HttpPort`：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTP 连接的端口号。    
-    - `HttpsPort`：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTPS 连接的端口号。
+    - `HttpPort`：一个必需的 DWORD。 包含设备门户将在其上侦听 HTTP 连接的端口号。    
+    - `HttpsPort`：一个必需的 DWORD。 包含设备门户将在其上侦听 HTTPS 连接的端口号。
     
-在相同的 regkey 路径下，还可以关闭身份验证要求：
+在相同的 RegKey 路径下，你也可以关闭身份验证要求：
 - `UseDefaultAuthorizer` - `0` 为禁用，`1` 为启用。  
     - 这可控制每个连接的基本身份验证要求以及从 HTTP 到 HTTPS 的重定向。  
     
 ### <a name="command-line-options-for-device-portal"></a>设备门户的命令行选项
-通过管理命令提示符，可以启用和配置设备门户的部件。 要查看版本上支持的最新命令集，可以运行 `webmanagement /?`
+通过管理命令提示符，你可以启用和配置设备门户的部件。 要查看版本上支持的最新命令集，可以运行 `webmanagement /?`
 
 - `sc start webmanagement` 或 `sc stop webmanagement` 
     - 打开或关闭该服务。 这仍需要启用开发人员模式。 
@@ -105,7 +123,7 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
     - 运行独立版本的具有特定配置和可见调试消息的设备门户。 这对于生成[打包的插件](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin)最为有用。 
     - 有关如何作为系统运行此项以完全测试你的打包插件的详细信息，请参阅 [MSDN 杂志文章](https://msdn.microsoft.com/magazine/mt826332.aspx)。
 
-## <a name="common-errors-and-issues"></a>常见错误和问题
+## <a name="troubleshooting"></a>疑难解答
 
 下面介绍在设置设备门户时可能会遇到的一些常见错误。
 
@@ -113,13 +131,13 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 
 尝试在 Windows 10 的预发行版上安装开发人员包时，可能会收到此错误。 这些按需功能 (FoD) 包托管在 Windows 更新上，要在预发行版本上下载它们，则需要选择加入外部测试。 如果安装没有选择加入外部测试以查找正确的版本和环组合，则将无法下载有效负载。 仔细检查以下内容：
 
-1. 导航到“设置”>“更新和安全性”>“Windows 预览体验计划”  ，并确认“Windows 预览体验成员帐户”  部分中包含正确的帐户信息。 如果没有看到该部分，请选择“链接 Windows 预览体验成员帐户”  ，添加电子邮件帐户，并确认它显示在“Windows 预览体验成员帐户”  标题下（可能需要再次选择“链接 Windows 预览体验成员帐户”  以实际链接新添加的帐户）。
+1. 导航到“设置”>“更新和安全性”>“Windows 预览体验计划”，并确认“Windows 预览体验成员帐户”部分中包含正确的帐户信息。 如果没有看到该部分，请选择“链接 Windows 预览体验成员帐户”，添加电子邮件帐户，并确认它显示在“Windows 预览体验成员帐户”标题下（可能需要再次选择“链接 Windows 预览体验成员帐户”以实际链接新添加的帐户）。
  
-2. 在“要接收哪种类型的内容?”  下，确保选中“Windows 积极开发”  。
+2. 在“要接收哪种类型的内容?”下，确保选中“Windows 积极开发”。
  
-3. 在“要以什么进度来获取新版本?”  下，确保选中“Windows 预览体验 - 快”  。
+3. 在“要以什么进度来获取新版本?”下，确保选中“Windows 预览体验 - 快”。
  
-4. 现即可安装 FoDs。 如果确认使用的是 Windows 预览体验 - 快，但仍然无法安装 FoDs，请提供反馈并将日志文件附加在 C:\Windows\Logs\CBS  下。
+4. 现即可安装 FoDs。 如果确认使用的是 Windows 预览体验 - 快，但仍然无法安装 FoDs，请提供反馈并将日志文件附加在 C:\Windows\Logs\CBS 下。
 
 ### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC] StartService：OpenService FAILED 1060：指定的服务不作为已安装的服务存在
 
@@ -129,7 +147,7 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 
 如果使用的是按流量计费的 Internet 连接，则可能会收到此错误。 你将无法通过按流量计费的连接下载开发人员包。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [Windows 设备门户概述](device-portal.md)
-* [设备门户核心 API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Device Portal 核心 API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

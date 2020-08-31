@@ -1,17 +1,17 @@
 ---
 title: Microsoft Store 策略更改历史记录
-description: Microsoft Store 策略更改历史记录
+description: 查看一个表，表中显示了 Microsoft Store 策略更改历史记录并说明了每次更改的新增内容、更新内容和删除内容。
 ms.date: 10/01/2019
 ms.topic: article
 keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
-ms.openlocfilehash: 3fbdc8e4831a39386396dc2c1dad25581f12fbf9
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: bfdcaca05d704b0f6b62aa5c1023ea09ed2392c0
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77607277"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942857"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Microsoft Store 策略更改历史记录
 

@@ -1,19 +1,19 @@
 ---
-Description: 可以使用扩展以预定义方式将打包的桌面应用与 Windows 10 集成。
+description: 可以使用扩展以预定义方式将打包的桌面应用与 Windows 10 集成。
 title: 使用桌面桥新式化现有桌面应用
-ms.date: 04/18/2018
+ms.date: 08/25/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d9f5ca95678a8b31ed53cfdf2c4e6433bca504c8
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: fb1daddeb743909417d6483223d5386e64ca5241
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334450"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942777"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>将桌面应用与 Windows 10 和 UWP 集成
 
@@ -406,11 +406,15 @@ ms.locfileid: "85334450"
 
 ### <a name="place-your-dll-files-into-any-folder-of-the-package"></a>将你的 DLL 文件放到程序包的任意文件夹中
 
-使用扩展标识这些文件夹。 这样，系统就能找到并加载你放在这些文件夹中的文件。 可以将该扩展看作是 %PATH%  环境变量的替代品。
+使用 [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) 扩展在应用包中声明最多五个相对于应用包根路径的文件夹路径，它们将在应用进程的加载程序搜索路径中使用。
 
-如果你不使用该扩展，系统将按以下顺序进行搜索：进程的程序包依赖关系图、程序包根文件夹、系统目录 (%SystemRoot%\system32  )。 若要了解详细信息，请参阅 [Windows 应用的搜索顺序](https://docs.microsoft.com/windows/desktop/Dlls/dynamic-link-library-search-order)。
+Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dlls/dynamic-link-library-search-order)包含程序包依赖关系图中的包，前提是这些包具有执行权限。 默认情况下，这包括主包、可选包和框架包，但这可以被程序包清单中的 [uap6:AllowExecution](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution) 元素所覆盖。
 
-每个程序包只能包含一个这种类型的扩展。 也就是说，你可以将其中一个扩展添加到主程序包，然后向你的每个[可选包和相关的集](/windows/msix/package/optional-packages)添加一个扩展。
+默认情况下，包含在 DLL 搜索顺序中的包将包括其有效路径。 关于有效路径的详细信息，请参阅 [EffectivePath](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.effectivepath) 属性 (WinRT) 和 [PackagePathType](https://docs.microsoft.com/windows/win32/api/appmodel/ne-appmodel-packagepathtype) 枚举 (Win32)。
+
+如果包指定了 [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride)，则使用此信息而不是包的有效路径。
+
+每个包只能包含一个 [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) 扩展。 也就是说，你可以将其中一个扩展添加到主程序包，然后向你的每个[可选包和相关的集](/windows/msix/package/optional-packages)添加一个扩展。
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
@@ -431,8 +435,8 @@ ms.locfileid: "85334450"
 
 |名称 | 说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.loaderSearchPathOverride``。
-|FolderPath | 包含你的 dll 文件的文件夹路径。 指定相对于程序包根文件夹的路径。 可以在一个扩展中最多指定五个路径。 如果希望系统搜索程序包根文件夹中的文件，请为这些路径之一使用空字符串。 不要包含重复路径，并确保路径的开头和结尾不包含斜杠或反斜杠。 <br><br> 系统不搜索子文件夹，因此请务必明确列出包含你希望系统加载的 DLL 文件的每个文件夹。|
+|类别 |总是为 ``windows.loaderSearchPathOverride``。
+|FolderPath | 包含 DLL 文件的文件夹路径。 指定相对于程序包根文件夹的路径。 你可以在一个扩展中最多指定五个路径。 如果你希望系统搜索程序包根文件夹中的文件，请为这些路径之一使用空字符串。 不要包含重复路径，确保路径的开头和结尾不包含斜杠或反斜杠。 <br><br> 系统不搜索子文件夹，因此请务必明确列出包含你希望系统加载的 DLL 文件的每个文件夹。|
 
 #### <a name="example"></a>示例
 
@@ -496,20 +500,20 @@ ms.locfileid: "85334450"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.fileTypeAssociation``。
+|类别 |总是为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 此名称可用于组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
-|MultiSelectModel |见下方 |
+|MultiSelectModel |请参阅下文 |
 |FileType |相关的文件扩展名。 |
 
 **MultiSelectModel**
 
-打包的桌面应用具有与常规桌面应用相同的三个选项。
+已打包的桌面应用具有与常规桌面应用相同的三个选项。
 
 * ``Player``：应用程序已激活一次。 将所有所选文件作为实参参数传递给应用程序。
 * ``Single``：为第一个选定的文件激活一次应用程序。 忽略其他文件。
 * ``Document``：针对每个选定的文件激活应用程序的一个新的单独实例。
 
- 可以为不同的文件类型和操作设置不同的首选项。 例如，你可能希望以“文档”  模式打开文档  ，以“播放机”  模式打开图像  。
+ 可以为不同的文件类型和操作设置不同的首选项。 例如，你可能希望以“文档”模式打开文档，以“播放机”模式打开图像。
 
 #### <a name="example"></a>示例
 
@@ -538,7 +542,7 @@ ms.locfileid: "85334450"
 </Package>
 ```
 
-如果用户打开 15 个或更少的文件，MultiSelectModel  特性的默认选项为“播放机”  。 否则，默认选项为“文档”  。 始终将 UWP 应用启动为“播放机”  。
+如果用户打开 15 个或更少的文件，**MultiSelectModel** 特性的默认选项为*播放机*。 否则，默认选项“文档”**。 始终将 UWP 应用启动为*播放机*。
 
 <a id="show"></a>
 
@@ -571,7 +575,7 @@ ms.locfileid: "85334450"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.fileTypeAssociation``。
+|类别 |总是为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 此名称可用于组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |FileType |相关的文件扩展名。 |
 |Clsid   |应用的类 ID。 |
@@ -633,7 +637,7 @@ ms.locfileid: "85334450"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.fileTypeAssociation``。
+|类别 |总是为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 此名称可用于组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |FileType |相关的文件扩展名。 |
 |Clsid   |应用的类 ID。 |
@@ -668,11 +672,11 @@ ms.locfileid: "85334450"
 
 ### <a name="enable-users-to-group-files-by-using-the-kind-column-in-file-explorer"></a>使用户能够使用文件资源管理器中的“类型”列对文件进行分组
 
-可以将文件类型的一个或多个预定义值与“类型”  字段相关联。
+可以将文件类型的一个或多个预定义值与**类型**字段相关联。
 
 在文件资源管理器中，用户可以使用该字段对这些文件进行分组。 系统组件也会将此字段用于不同的用途，例如建立索引。
 
-若要详细了解“类型”  字段以及可对此字段使用的值，请参阅[使用类型名称](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。
+若要详细了解**类型**字段以及可对此字段使用的值，请参阅[使用类型名称](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -698,7 +702,7 @@ ms.locfileid: "85334450"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.fileTypeAssociation``。
+|类别 |总是为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 此名称可用于组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |FileType |相关的文件扩展名。 |
 |value |有效的[类型值](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
@@ -759,7 +763,7 @@ ms.locfileid: "85334450"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.fileTypeAssociation``。
+|类别 |总是为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 此名称可用于组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |FileType |相关的文件扩展名。 |
 |Clsid  |应用的类 ID。 |
@@ -823,7 +827,7 @@ ms.locfileid: "85334450"
 
 在此处找到完整的架构参考：[com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) 和 [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus)。
 
-#### <a name="instructions"></a>说明
+#### <a name="instructions"></a>Instructions
 
 若要注册上下文菜单处理程序，请遵循以下说明。
 
@@ -891,7 +895,7 @@ ms.locfileid: "85334450"
 
 ### <a name="make-files-from-your-cloud-service-appear-in-file-explorer"></a>使你的云服务中的文件显示在文件资源管理器中
 
-注册你在应用程序中实现的处理程序。 还可以添加上下文菜单选项 - 当用户在文件资源管理器中右键单击你的基于云的文件时，将显示这些菜单选项。
+注册你在应用程序中实现的处理程序。 你还可以添加上下文菜单选项 - 当用户在文件资源管理器中右键单击你的基于云的文件时，将显示这些菜单选项。
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
@@ -915,13 +919,13 @@ ms.locfileid: "85334450"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.cloudfiles``。
-|iconResource |代表你的云文件提供程序服务的图标。 该图标显示在文件资源管理器的“导航”窗格中。  用户选择该图标可显示云服务中的文件。 |
+|类别 |总是为 ``windows.cloudfiles``。
+|iconResource |代表你的云文件提供商服务的图标。 该图标显示在文件资源管理器的导航窗格中。  用户选择该图标可显示云服务中的文件。 |
 |CustomStateHandler Clsid |实现 CustomStateHandler 的应用程序的类 ID。 系统使用该类 ID 请求云文件的自定义状态和列。 |
 |ThumbnailProviderHandler Clsid |实现 ThumbnailProviderHandler 的应用程序的类 ID。 系统使用该类 ID 请求云文件的缩略图图像。 |
 |ExtendedPropertyHandler Clsid |实现 ExtendedPropertyHandler 的应用程序的类 ID。  系统使用该类 ID 请求云文件的扩展属性。 |
-|Verb |你的云服务提供的文件在文件资源管理器上下文菜单中显示的名称。 |
-|ID |谓词的唯一 ID。 |
+|谓词 |你的云服务提供的文件在文件资源管理器上下文菜单中显示的名称。 |
+|ID |动词命令的唯一 ID。 |
 
 #### <a name="example"></a>示例
 
@@ -985,7 +989,7 @@ ms.locfileid: "85334450"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.protocol``。
+|类别 |总是为 ``windows.protocol``。
 |名称 |协议的名称。 |
 |参数 |应用程序激活时要向其传递用作事件参数的参数和值的列表。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 |
 
@@ -1037,9 +1041,9 @@ ms.locfileid: "85334450"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.appExecutionAlias``。
+|类别 |总是为 ``windows.appExecutionAlias``。
 |可执行文件 |调用别名时要启动的可执行文件的相对路径。 |
-|别名 |应用的简称。 它必须始终以“.exe”扩展名结尾。 只可以为程序包中每个应用程序指定一个应用执行别名。 如果多个应用都注册了同一个别名，系统会调用最后注册的一个应用，因此请确保选择其他应用不太可能覆盖的独特别名。
+|Alias |应用的简称。 它必须始终以“.exe”扩展名结尾。 只可以为程序包中每个应用程序指定一个应用执行别名。 如果多个应用都注册了同一个别名，系统会调用最后注册的一个应用，因此请确保选择其他应用不太可能覆盖的独特别名。
 |
 
 #### <a name="example"></a>示例
@@ -1076,7 +1080,7 @@ ms.locfileid: "85334450"
 > [!NOTE]
 > 用户必须至少启动一次应用程序才可注册此启动任务。
 
-应用程序可声明多个启动任务。 每个任务独立启动。 所有启动任务都将显示在任务管理器的“启动”  选项卡下，其名称在应用的清单和应用的图标中指定。 任务管理器将自动分析任务的启动影响。
+应用程序可声明多个启动任务。 每个任务独立启动。 所有启动任务都将显示在任务管理器的**启动**选项卡下，其名称在应用的清单和应用的图标中指定。 任务管理器将自动分析任务的启动影响。
 
 用户可以使用任务管理器手动禁用应用的启动任务。 如果用户禁用任务，则无法以编程方式重新启用它。
 
@@ -1100,10 +1104,10 @@ ms.locfileid: "85334450"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.startupTask``。|
+|类别 |总是为 ``windows.startupTask``。|
 |可执行文件 |要启动的可执行文件的相对路径。 |
 |TaskId |任务的唯一标识符。 应用程序可以使用此标识符调用 [Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) 类中的 API，以便以编程方式启用或禁用启动任务。 |
-|启用 |指示是启用还是禁用任务的首次启动。 启用的任务将在用户下次登录时运行（除非用户禁用它）。 |
+|已启用 |指示是启用还是禁用任务的首次启动。 启用的任务将在用户下次登录时运行（除非用户禁用它）。 |
 |DisplayName |任务管理器中显示的任务名称。 可以使用 ```ms-resource``` 本地化此字符串。 |
 
 #### <a name="example"></a>示例
@@ -1155,11 +1159,11 @@ ms.locfileid: "85334450"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.autoPlayHandler``。
+|类别 |总是为 ``windows.autoPlayHandler``。
 |ActionDisplayName |表示用户可以对其连接到电脑的设备执行的操作的字符串（例如：“导入文件”或“播放视频”）。 |
 |ProviderDisplayName | 表示你的应用程序或服务的字符串（例如：“Contoso 视频播放器”）。 |
-|ContentEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的内容事件的名称。 当卷设备（如相机内存卡、U 盘或 DVD）插入到电脑时，会引发内容事件。 可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到此类事件的完整列表。  |
-|Verb |“谓词”设置标识针对所选选项传递给你的应用程序的值。 可以为自动播放事件指定多个启动操作，并且可以使用“谓词”设置确定用户为你的应用选择的选项。 可以通过检查传递给应用的启动事件参数的 verb 属性来标识用户选择的选项。 可以为“谓词”设置使用任何值（但保留的 open 除外）。 |
+|ContentEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的内容事件的名称。 当卷设备（如相机内存卡、U 盘或 DVD）插入到电脑时，会引发内容事件。 你可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到此类事件的完整列表。  |
+|谓词 |“谓词”设置标识针对所选选项传递给你的应用程序的值。 你可以为自动播放事件指定多个启动操作并且可以使用谓词设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 verb 属性来标识用户选择的选项。 你可以为谓词设置使用任何值（但保留的 open 除外）。 |
 |DropTargetHandler |实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口的应用程序的类 ID。 系统会将可移动媒体中的文件传递给你的 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 实现的 [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) 方法。  |
 |参数 |你不必为所有内容事件实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于任意内容事件，你可以提供命令行参数，而不是实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于此类事件，自动播放将使用这些命令行参数启动你的应用程序。 你可以在应用的初始化代码中解析这些参数，确定应用是否由自动播放启动，然后提供自定义实现。 |
 |DeviceEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的设备事件的名称。 当有设备连接到电脑时，将引发设备事件。 设备事件以字符串 ``WPD`` 开头，你可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到设备事件列表。 |
@@ -1242,7 +1246,7 @@ ms.locfileid: "85334450"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.appPrinter``。
+|类别 |总是为 ``windows.appPrinter``。
 |DisplayName |希望在应用的打印目标列表中显示的名称。 |
 |参数 |应用程序正确处理请求所需的任何参数。 |
 
@@ -1292,8 +1296,8 @@ ms.locfileid: "85334450"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.sharedFonts``。
-|文件 |包含要共享的字体的文件。 |
+|类别 |总是为 ``windows.sharedFonts``。
+|文件 |包含想要共享的字体的文件。 |
 
 #### <a name="example"></a>示例
 
@@ -1338,9 +1342,9 @@ ms.locfileid: "85334450"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.fullTrustProcess``。
-|GroupID |标识要传递给可执行文件的参数集的字符串。 |
-|参数 |要传递给可执行文件的参数。 |
+|类别 |总是为 ``windows.fullTrustProcess``。
+|GroupID |标识想要传递给可执行文件的参数集的字符串。 |
+|参数 |想要传递给可执行文件的参数。 |
 
 #### <a name="example"></a>示例
 
@@ -1371,7 +1375,7 @@ ms.locfileid: "85334450"
 
 如果要创建在所有设备上运行的通用 Windows 平台用户界面，但希望 Win32 应用程序的组件继续以完全信任方式运行，此扩展可能会很有用。
 
-只需为 Win32 应用创建 Windows 应用包。 然后，将此扩展添加到 UWP 应用的程序包文件。 此扩展指示你要在 Windows 应用包中启动可执行文件。  如果要在 UWP 应用和 Win32 应用之间进行通信，可以设置一个或多个[应用服务](/windows/uwp/launch-resume/app-services)来执行此操作。 可以在[此处](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)阅读关于此方案的详细信息。
+只需为 Win32 应用创建 Windows 应用包。 然后，将此扩展添加到 UWP 应用的程序包文件。 此扩展指示你要在 Windows 应用包中启动可执行文件。  如果想要在 UWP 应用和 Win32 应用之间进行通信，可以设置一个或多个[应用服务](/windows/uwp/launch-resume/app-services)来执行此操作。 可以在[此处](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)阅读关于此方案的详细信息。
 
 ## <a name="next-steps"></a>后续步骤
 
