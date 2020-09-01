@@ -1,17 +1,17 @@
 ---
 title: 启动、恢复和后台任务
-description: 本部分介绍在启动、暂停、恢复和终止通用 Windows 平台 (UWP) 应用时会发生什么情况。
+description: 本节介绍在启动、暂停、恢复和终止通用 Windows 平台 (UWP) 应用时会发生什么情况。
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 ms.date: 10/04/2017
 ms.topic: article
 keywords: windows 10, uwp, 后台任务, 应用服务, 连接设备, 远程系统
 ms.localizationpriority: medium
-ms.openlocfilehash: 9280a240f35c2fdf5290c94d837e2fafc008dbfd
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 3e3a8266c3f1f9ce80496770fb79c96be5db9d6b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80483007"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158723"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>启动、恢复和后台任务
 
@@ -36,10 +36,10 @@ ms.locfileid: "80483007"
 | [应用生命周期](app-lifecycle.md)               | 了解有关 UWP 应用的生命周期，以及在 Windows 启动、暂停和恢复你的应用时会发生什么情况。 |
 | [处理应用预启动](handle-app-prelaunch.md) | 了解如何处理应用预启动。                                                                              |
 | [处理应用激活](activate-an-app.md)     | 了解如何处理应用激活。                                                                             |
-| [处理应用挂起](suspend-an-app.md)         | 了解当系统暂停你的应用时如何保存重要的应用程序数据。                                 |
-| [处理应用恢复](resume-an-app.md)           | 了解当系统恢复你的应用时如何刷新显示的内容。                                        |
+| [处理应用暂停](suspend-an-app.md)         | 了解当系统挂起你的应用时如何保存重要的应用程序数据。                                 |
+| [处理应用恢复](resume-an-app.md)           | 了解如何在系统恢复你的应用时刷新显示的内容。                                        |
 | [在将应用移动到后台时释放内存](reduce-memory-usage.md) | 了解如何降低应用处于后台状态时所使用的内存量，以防止该应用终止。|
-| [使用扩展执行来推迟应用挂起](run-minimized-with-extended-execution.md) | 了解最小化时如何使用扩展执行让你的应用保持运行 |
+| [使用扩展执行来推迟应用挂起](run-minimized-with-extended-execution.md) | 了解最小化时如何使用扩展执行让应用保持运行 |
 
 ## <a name="launch-apps"></a>启动应用
 
@@ -75,7 +75,7 @@ ms.locfileid: "80483007"
 |-------|-------------|
 | [即便跨设备，也继续用户活动](useractivities.md) | 通过在用户离开的位置启动应用，即使跨设备也可以让用户重新使用应用。 |
 | [借助自动播放功能自动启动](auto-launching-with-autoplay.md) | 可以使用自动播放功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。 |
-| [保留的文件和 URI 方案名称](reserved-uri-scheme-names.md) | 本主题列出了不可用于应用的保留文件和 URI 方案名称。 |
+| [保留的文件和 URI 方案名称](reserved-uri-scheme-names.md) | 本主题将列出不可用于应用的保留文件和 URI 方案名称。 |
 
 ## <a name="app-services-and-extensions"></a>应用服务和扩展
 
@@ -95,26 +95,26 @@ ms.locfileid: "80483007"
 | 主题 | 说明 |
 |-------|-------------|
 | [后台任务指南](guidelines-for-background-tasks.md)                                       | 确保你的应用满足运行后台任务的要求。 |
-| [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 |
+| [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 |
 | [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)       | 创建和注册在前台应用所在的同一进程中运行的后台任务。 |
 | [创建和注册进程外后台任务](create-and-register-a-background-task.md)           | 创建和注册一个与你的应用不在同一个进程中运行的后台任务，然后将它注册为在应用不在前台运行时运行。 |
 | [为 winmain 应用创建和注册 COM 后台任务](create-and-register-a-winmain-background-task.md) | 创建一个 COM 后台任务，当打包的 winmain 应用可能未在运行时，该任务可以在在你的主进程中运行，也可以在进程外运行。 |
 | [将进程外后台任务移植到进程内后台任务](convert-out-of-process-background-task.md) | 了解如何将进程外后台任务移植到与前台应用在同一进程中运行的进程内后台任务。|
-| [调试后台任务](debug-a-background-task.md)                                                       | 了解如何调试后台任务，包括后台任务激活和调试 Windows 事件日志中的跟踪。 |
+| [调试后台任务](debug-a-background-task.md)                                                       | 了解如何调试后台任务，其中包括后台任务激活和调试 Windows 事件日志中的跟踪。 |
 | [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md) | 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。 |
 | [分组后台任务注册](group-background-tasks.md)                                             | 通过分组隔离后台任务注册。 |
 | [处理取消的后台任务](handle-a-cancelled-background-task.md)                                 | 了解如何创建一个后台任务，该任务识别取消请求并停止工作，向使用永久性存储的应用报告取消。 |
 | [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)       | 了解应用可以识别后台任务进度和完成的方式。 |
-| [优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) |了解如何减少后台中使用的能量并与后台活动的用户设置进行交互。 |
-| [注册后台任务](register-a-background-task.md)                                                 | 了解如何创建可以重新使用以安全注册大部分后台任务的函数。 |
-| [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)         | 了解如何创建响应 [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 事件的后台任务。 |
+| [优化后台活动](../debug-test-perf/optimize-background-activity.md) |了解如何减少后台中使用的能量并与后台活动的用户设置进行交互。 |
+| [注册后台任务](register-a-background-task.md)                                                 | 了解如何创建可以重复使用以安全注册大部分后台任务的函数。 |
+| [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)         | 了解如何创建响应 [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 事件的后台任务。 |
 | [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)                                    | 了解如何计划一次性后台任务，或运行周期性后台任务。 |
 | [在后台无限期运行](run-in-the-background-indefinetly.md)                                    | 使用可在后台无限期运行后台任务或扩展执行会话的功能。 |
-| [从应用中触发后台任务](trigger-background-task-from-app.md) | 了解如何使用 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) 从应用中激活后台任务。|
+| [从应用中触发后台任务](trigger-background-task-from-app.md) | 了解如何使用 [ApplicationTrigger](/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) 从应用中激活后台任务。|
 | [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)             | 了解如何设置控制何时运行后台任务的条件。 |
-| [在后台传输数据](https://docs.microsoft.com/windows/uwp/networking/background-transfers)                 | 使用后台传输 API 以便在后台复制文件。 |
-| [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)                   | 使用后台任务，以最新内容更新应用的动态磁贴。 |
-| [使用维护触发器](use-a-maintenance-trigger.md)                                                   | 了解如何在插入设备的情况下使用 [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) 类在后台运行轻型代码。 |
+| [在后台传输数据](../networking/background-transfers.md)                 | 使用后台传输 API 以便在后台复制文件。 |
+| [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)                   | 使用后台任务将应用的动态磁贴更新为最新内容。 |
+| [使用维护触发器](use-a-maintenance-trigger.md)                                                   | 了解如何在插入设备的情况下使用 [**MaintenanceTrigger**](/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) 类在后台运行轻型代码。 |
 
 ## <a name="remote-systems"></a>远程系统
 
@@ -124,7 +124,7 @@ ms.locfileid: "80483007"
 |-------|-------------|
 | [发现远程设备](discover-remote-devices.md)  | 了解如何发现可以连接的设备。 |
 | [启动远程设备上的应用](launch-a-remote-app.md) | 了解如何启动远程设备上的应用。  |
-| [与远程应用服务进行通信](communicate-with-a-remote-app-service.md) | 了解如何与远程设备上的应用交互。 |
+| [与远程应用服务通信](communicate-with-a-remote-app-service.md) | 了解如何与远程设备上的应用交互。 |
 | [通过远程会话连接设备](remote-sessions.md) | 通过在远程会话中加入多个设备来创建跨多个设备的共享体验。 |
 
 ## <a name="splash-screens"></a>初始屏幕

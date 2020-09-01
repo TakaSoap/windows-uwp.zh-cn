@@ -7,12 +7,12 @@ ms.date: 10/20/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b45f33e9849a46e22250640b88a85ea16143231
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: cb64294710ca1d28c11308161665e72e37342193
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089315"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174091"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a>应用资源和资源管理系统
 
@@ -25,7 +25,7 @@ ms.locfileid: "77089315"
 
 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。
 
-| 文章 | 说明 |
+| 项目 | 说明 |
 |---------|-------------|
 | [资源管理系统](resource-management-system.md) | 在生成时，资源管理系统会创建与你的应用打包在一起的资源的所有不同变体的索引。 在运行时，系统会检测有效的用户和计算机设置，并加载最匹配这些设置的资源。 |
 | [资源管理系统如何匹配和选择资源](how-rms-matches-and-chooses-resources.md) | 请求资源时，可能有多个候选项在一定程度上匹配当前的资源上下文。 资源管理系统将分析所有这些候选项，并确定要返回的最佳候选项。 本主题详细介绍了该过程，并提供了示例。 |
@@ -35,8 +35,8 @@ ms.locfileid: "77089315"
 | [加载在比例、主题、高对比度和其他方面进行了定制的图像和资产](images-tailored-for-scale-theme-contrast.md) | 应用可以加载在显示比例系数、主题、高对比度和其他运行时上下文方面进行了定制的图像所在的图像资源文件。 |
 | [URI 方案](uri-schemes.md) | 你可以使用几种 URI（统一资源标识符）方案引用来自应用包、应用的数据文件夹或云的文件。 还可以使用 URI 方案引用从应用的资源文件 (.resw) 加载的字符串。 |
 | [指定应用使用的默认资源](specify-default-resources-installed.md) | 如果应用没有与客户设备的特定设置相匹配的资源，则会使用应用的默认资源。 本主题介绍了如何指定这些默认资源。 |
-| [将资源构建到你的应用包而非资源包中](build-resources-into-app-package.md) | 某些类型的应用（多语言字典、翻译工具等）需要覆盖应用程序包的默认行为，并将资源构建到应用包中，而不是构建到单独的资源包中。 本主题介绍了如何执行该操作。 |
-| [包资源索引 (PRI) API 和自定义生成系统](pri-apis-custom-build-systems.md) | 通过[包资源索引 (PRI) API](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference)，你可以为 UWP 应用的资源开发自定义生成系统。 生成系统可以创建、改编和转储（作为 XML）包资源索引 (PRI) 文件，以适应 UWP 应用所需的任何级别的复杂性。 |
+| [将资源构建到应用包而非资源包中](build-resources-into-app-package.md) | 某些类型的应用（多语言字典、翻译工具等）需要覆盖应用程序包的默认行为，并将资源构建到应用包中，而不是构建到单独的资源包中。 本主题介绍了如何执行该操作。 |
+| [包资源索引 (PRI) API 和自定义生成系统](pri-apis-custom-build-systems.md) | 通过[包资源索引 (PRI) API](/windows/desktop/menurc/pri-indexing-reference)，你可以为 UWP 应用的资源开发自定义生成系统。 生成系统可以创建、改编和转储（作为 XML）包资源索引 (PRI) 文件，以适应 UWP 应用所需的任何级别的复杂性。 |
 | [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md) | MakePri.exe 是可用于创建和转储 PRI 文件的命令行工具。 它作为 MSBuild 的一部分集成到 Microsoft Visual Studio 中，但它可用于手动或使用自定义生成系统来创建包。 |
 | [在旧应用或游戏中使用 Windows 10 资源管理系统](using-mrt-for-converted-desktop-apps-and-games.md) | 通过将 .NET 或 Win32 应用或游戏打包为 .msix 或 .appx 包，可以利用资源管理系统加载已为运行时上下文定制的应用资源。 本主题对方法进行了深入描述。 |
 

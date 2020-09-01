@@ -1,24 +1,24 @@
 ---
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
 title: 打包应用
-description: 本部分包含或链接到有关打包通用 Windows 平台 (UWP) 应用的文章。
+description: 本节包含或链接到有关打包通用 Windows 平台 (UWP) 应用的文章。
 ms.date: 07/22/2019
 ms.topic: article
 keywords: windows 10, uwp, 打包
 ms.localizationpriority: medium
-ms.openlocfilehash: bb772007cd5c4391634f9df6ba0b6d2037a7b5de
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 35adf8db66bbfaa1be11c0b389efea88b5c2437b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089473"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164360"
 ---
 # <a name="packaging-apps"></a>打包应用
 
-本部分包含或链接到一些文章，这些文章介绍了如何将通用 Windows 平台 (UWP) 应用打包到 MSIX 和 .appx 应用包中，以便进行部署和安装。 其中一些链接指向 [MSIX 文档](https://docs.microsoft.com/windows/msix/)中的相关文章。
+本部分包含或链接到一些文章，这些文章介绍了如何将通用 Windows 平台 (UWP) 应用打包到 MSIX 和 .appx 应用包中，以便进行部署和安装。 其中一些链接指向 [MSIX 文档](/windows/msix/)中的相关文章。
 
 > [!NOTE]
-> Windows 10 中 UWP 应用的原始应用打包格式为 .appx。 从 Windows 10 版本 1809 开始，此打包格式已重命名为 .msix 并经过扩展，以支持所有类型的 Windows 应用，包括 .NET 和 C++/Win32 桌面应用。 对 MSIX 的支持也在扩展到早期的 Windows 版本。 有关详细信息，请参阅 [MSIX 文档](https://docs.microsoft.com/windows/msix/)。
+> Windows 10 中 UWP 应用的原始应用打包格式为 .appx。 从 Windows 10 版本 1809 开始，此打包格式已重命名为 .msix 并经过扩展，以支持所有类型的 Windows 应用，包括 .NET 和 C++/Win32 桌面应用。 对 MSIX 的支持也在扩展到早期的 Windows 版本。 有关详细信息，请参阅 [MSIX 文档](/windows/msix/)。
 
 | 主题 | 说明 |
 |-------|-------------|
@@ -31,5 +31,5 @@ ms.locfileid: "77089473"
 | [使用应用安装程序安装 Windows 10 应用](/windows/msix/app-installer/app-installer-root) | 利用应用安装程序，可以通过双击应用包来安装 Windows 10 应用。 |
 | [使用 WinAppDeployCmd.exe 工具安装应用](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于将 UWP 应用从 Windows 10 计算机部署到任意 Windows 10 移动版设备。 当 Windows 10 移动版设备通过 USB 进行连接或无需 Microsoft Visual Studio 或该应用的解决方案即可连接到同一子网时，可使用此工具部署应用包。 本文介绍如何使用此工具安装 UWP 应用。 |
 | [设置 UWP 应用的自动生成](auto-build-package-uwp-apps.md) | 如果你希望在自动生成过程中打包应用，本主题介绍如何使用 Visual Studio Team Services (VSTS) 执行此操作。 |
-| [应用功能声明](app-capability-declarations.md) | 功能必须在应用的[程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)中声明，以便可用于访问某些 API 或资源（如图片、音乐）或者设备（如相机或麦克风）。 |
+| [应用功能声明](app-capability-declarations.md) | 功能必须在应用的[程序包清单](/uwp/schemas/appxpackage/appx-package-manifest)中声明，以便可用于访问某些 API 或资源（如图片、音乐）或者设备（如相机或麦克风）。 |
 | [从 Microsoft Store 下载并安装程序包更新](self-install-package-updates.md) | 你的 UWP 应用可以以编程方式检查程序包更新，并安装这些更新。 你的应用还可以查询已在合作伙伴中心内标记为必需的程序包，以及完成安装该必需更新前禁用功能。  |

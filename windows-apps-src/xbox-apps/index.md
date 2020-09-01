@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: aecb0a6e6a7d9dfbe05a43b760b044d032fff4e1
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 1fe3e4e23bc2be46d3ddb09d9ebf83b5fda5ce9d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685036"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173711"
 ---
 # <a name="uwp-on-xbox-one"></a>Xbox One 上的 UWP
 
 在 Xbox One 上生成适用于通用 Windows 平台 (UWP) 的应用入门。
 
-Xbox One 上的 UWP 支持应用和游戏的开发。 你不必参与开发人员计划，便可在 Xbox 上试用、创建和测试游戏。 你只需要在[合作伙伴中心](https://partner.microsoft.com/dashboard)内拥有[开发人员帐户](https://developer.microsoft.com/store/register)。 当你准备在 Xbox One 上发布和出售游戏或利用 Windows 10 上的 Xbox Live 时，你需要加入 [Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)或者需要是 [ID@Xbox](https://www.xbox.com/Developers/id) 开发人员。 如果计划成为 ID@Xbox 开发人员，建议在注册开发人员帐户前先申请加入该计划。 有关详细信息，请参阅[开发人员计划概述](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview)。
+Xbox One 上的 UWP 支持应用和游戏的开发。 你不必参与开发人员计划，便可在 Xbox 上试用、创建和测试游戏。 你只需要在[合作伙伴中心](https://partner.microsoft.com/dashboard)内拥有[开发人员帐户](https://developer.microsoft.com/store/register)。 当你准备在 Xbox One 上发布和出售游戏或利用 Windows 10 上的 Xbox Live 时，你需要加入 [Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)或者需要是 [ID@Xbox](https://www.xbox.com/Developers/id) 开发人员。 如果计划成为 ID@Xbox 开发人员，建议在注册开发人员帐户前先申请加入该计划。 有关详细信息，请参阅[开发人员计划概述](/gaming/xbox-live/developer-program-overview)。
 
 本部分包括设置步骤、身份验证过程指南、有关安装 Visual Studio 和 Windows 10 工具的所需版本的信息，以及生成、运行和调试你的第一个简单应用程序的步骤。 
 
@@ -40,7 +40,7 @@ Xbox One 上的 UWP 支持应用和游戏的开发。 你不必参与开发人�
 |[多用户应用程序简介](multi-user-applications.md)| 介绍 Xbox One 上的多用户应用程序 (MUA)。 |
 | [自动化 Xbox One 开发任务](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | GitHub 上的 WindowsDevicePortalWrapper 项目提供了一个库，允许自动执行常见的开发任务，例如部署或启动应用。 该项目包括一个示例 XboxWdpDriver.exe，演示如何使用这些 API 执行常见任务。 |
 |[将现有游戏移植到 Xbox](development-lanes-landing.md)|基于生成你的游戏所采用的技术，我们可以直接向你提供分步说明，这可以加快使用 UWP 将游戏移植到 Xbox 的进度。|
-|[Xbox One 上尚不支持的 UWP 功能](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)|  介绍在 Xbox One 上尚不能完全正常运行的 UWP 功能区域。|
+|[Xbox One 上尚不支持的 UWP 功能](/uwp/extension-sdks/uwp-limitations-on-xbox)|  介绍在 Xbox One 上尚不能完全正常运行的 UWP 功能区域。|
 
 ## <a name="videos"></a>视频
 
@@ -48,11 +48,11 @@ Xbox One 上的 UWP 支持应用和游戏的开发。 你不必参与开发人�
 
 * [生成适用于 Xbox 的出色通用 Windows 平台 (UWP) 应用](https://channel9.msdn.com/Events/Build/2016/B883)
 * [针对 Xbox One 和 TV 调整你的应用](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-* [UWP 开发 1：构建自适应 UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-* [超越浏览器的 Web 应用：跨平台遇上跨设备](https://channel9.msdn.com/Events/Build/2016/B888)
+* [UWP 开发 1：生成自适应 UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
+* [浏览器外的 Web 应用：跨平台与跨设备](https://channel9.msdn.com/Events/Build/2016/B888)
 
 ## <a name="see-also"></a>另请参阅
 
 - [自动启动 Windows 10 UWP 应用](automate-launching-uwp-apps.md)
 - [适用于游戏开发的 CPUSets](cpusets-games.md)
-- [适用于 Xbox One 的渐进式 Web 应用](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations)
+- [适用于 Xbox One 的渐进式 Web 应用](/microsoft-edge/progressive-web-apps/xbox-considerations)
