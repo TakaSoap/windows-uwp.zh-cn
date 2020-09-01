@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aaa5b5a51ab2aea863fece8fb466f274a00ace3
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: c0b1ae069959e74239234ae5c9ba409fe7a65f23
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684252"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165971"
 ---
 # <a name="designing-for-mixed-reality"></a>针对混合现实而开发
 
@@ -26,7 +26,7 @@ ms.locfileid: "75684252"
 
 ## <a name="overview"></a>概述
 
-[混合现实](https://developer.microsoft.com/windows/mixed-reality/mixed_reality)是将物理世界与数字世界相混合的结果。 混合现实体验的范围包括在一种极限设备，如 HoloLens（一种混合计算机生成的内容与真实世界的设备）以及其他设备，虚拟现实的完全沉浸式视图（正如使用 Windows Mixed Reality 头戴显示设备看到的场景）。 有关体验各不相同的方式的示例，请参阅[混合现实应用的类型](https://developer.microsoft.com/windows/mixed-reality/types_of_mixed_reality_apps)。
+[混合现实](https://developer.microsoft.com/windows/mixed-reality/mixed_reality) 是将物理世界与数字世界混合的结果。 混合现实体验的范围包括在一种极限设备，如 HoloLens（一种混合计算机生成的内容与真实世界的设备）以及其他设备，虚拟现实的完全沉浸式视图（正如使用 Windows Mixed Reality 头戴显示设备看到的场景）。 有关体验各不相同的方式的示例，请参阅[混合现实应用的类型](https://developer.microsoft.com/windows/mixed-reality/types_of_mixed_reality_apps)。
 
 几乎所有现有 UWP 应用都将在混合现实环境中作为 2D 应用运行，没有任何更改，但用户的体验可通过遵循本主题中指南的相关内容得到改善。
 
@@ -40,7 +40,7 @@ HoloLens 和 Windows Mixed Reality 头戴显示设备支持在 UWP 平台上运�
 
 如果要创建沉浸式应用，你应访问 [Windows Mixed Reality 开发人员中心](https://developer.microsoft.com/mixed-reality)以了解更多信息。
 
-2D 应用作为传统的平面窗口在用户的视图内运行。 在 HoloLens 上，这表示固定到墙的某个视图或用户自己的真实客厅或办公室空间中的某点。 在 Windows Mixed Reality 头戴显示设备中，该应用已固定到[混合现实家庭版](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)（有时称为*悬崖小屋*）中的墙上。
+2D 应用作为传统的平面窗口在用户的视图内运行。 在 HoloLens 上，这表示固定到墙的某个视图或用户自己的真实客厅或办公室空间中的某点。 在 Windows Mixed Reality 头戴显示设备中，该应用已固定到[混合现实家庭版](/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)（有时称为*悬崖小屋*）中的墙上。
 
 ![在混合现实中运行的多个应用](images/MR-multiple.png)
 
@@ -70,7 +70,7 @@ HoloLens 和混合现实平台上均支持键盘和鼠标。 你可以通过蓝�
 
 请务必注意，所有这些交互都将自动发生，不会在部件上进行额外的编码，从而在 UWP 平台上运行。 来自 HoloLens 和混合现实头戴显示设备的输入将显示为到 2D 应用的触控输入。 这意味着默认情况下许多 UWP 应用将运行且在混合现实中可用。 
 
-也就是说，借助一些额外的工作，这种体验可得到大大改善。 例如，[语音控制](https://developer.microsoft.com/windows/mixed-reality/voice_design)可能尤其有效。 HoloLens 和混合现实环境支持用于启动应用和与应用进行交互的语音命令，并且包括的语音支持将显示为此方法的自然扩展。 若要详细了解如何向 UWP 应用添加语音支持，请参阅[语音交互]( https://docs.microsoft.com/windows/uwp/design/input/speech-interactions)。 
+也就是说，借助一些额外的工作，这种体验可得到大大改善。 例如，[语音控制](https://developer.microsoft.com/windows/mixed-reality/voice_design)可能尤其有效。 HoloLens 和混合现实环境支持用于启动应用和与应用进行交互的语音命令，并且包括的语音支持将显示为此方法的自然扩展。 若要详细了解如何向 UWP 应用添加语音支持，请参阅[语音交互]( ../input/speech-interactions.md)。 
 
 
 ### <a name="selecting-the-right-controller"></a>选择合适的控制器
@@ -82,7 +82,7 @@ HoloLens 和混合现实平台上均支持键盘和鼠标。 你可以通过蓝�
 * [手势](https://developer.microsoft.com/windows/mixed-reality/gestures)（仅限 HoloLens，但仅用于启动 2D 应用）
 * [游戏板支持](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories)（两个环境均适用）
 * [遥控器设备](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories)（仅限 HoloLens）
-* [运动控制器](https://docs.microsoft.com/windows/mixed-reality/motion-controllers)（仅限混合现实设备，如上所示。）
+* [运动控制器](/windows/mixed-reality/motion-controllers)（仅限混合现实设备，如上所示。）
 
 这些控制器使得与虚拟对象的交互似乎变得自然和精确。 其中一些交互可免费获取。 例如，HoloLens 选择手势或单击运动控制器的 Windows 键或触发器将再次生成所需的输入响应，而无需进行编码。
 
@@ -98,7 +98,7 @@ HoloLens 和混合现实平台上均支持键盘和鼠标。 你可以通过蓝�
 
 * 当用于运动控制器、游戏板或手势时拖放可能不适用。 如果应用程序很大程度上依赖于拖放操作，你将面要提供支持此操作的替代方法，例如呈现一个用于确认对象是否迁移到新位置的对话。
 
-* 注意声音更改的方式。 如果应用生成声音效果，则声音源将显示在应用在虚拟世界中的固定位置。 随着用户远离应用，声音将减小。 有关更多信息，请参阅[空间音效](https://docs.microsoft.com/windows/mixed-reality/spatial-sound)。
+* 注意声音更改的方式。 如果应用生成声音效果，则声音源将显示在应用在虚拟世界中的固定位置。 随着用户远离应用，声音将减小。 有关更多信息，请参阅[空间音效](/windows/mixed-reality/spatial-sound)。
 
 * 考虑视野并提供提示。 并非每个设备都提供与计算机监视器一样大的视野。 有关完整的详细信息，请参阅[全息照相帧](https://developer.microsoft.com/windows/mixed-reality/holographic_frame)。 此外，用户可能距正在运行的应用有一些距离。 也就是说，应用可能显示固定到（真实或虚拟）世界中不同位置处的墙上。 应用可能需要获取用户关注，或始终考虑整个视图不可见。 Toast 通知可用，但获取用户关注的另一种方式可能是发出声音或[语音](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cs/Scenario_SynthesizeText.xaml.cs)警报。
 
@@ -107,7 +107,7 @@ HoloLens 和混合现实平台上均支持键盘和鼠标。 你可以通过蓝�
 
 ## <a name="2d-app-design-considerations-uiux"></a>2D 应用设计注意事项：UI/UX
 
-* 实现 [Fluent Design 系统](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/)的 XAML 控件（如[导航视图](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)）和效果（如[亚克力](https://docs.microsoft.com/windows/uwp/design/style/acrylic)）都尤其适用于 2D 混合现实应用。
+* 实现 [Fluent Design 系统](/windows/uwp/design/fluent-design-system/)的 XAML 控件（如[导航视图](../controls-and-patterns/navigationview.md)）和效果（如[亚克力](../style/acrylic.md)）都尤其适用于 2D 混合现实应用。
 
 * 在混合现实设备中或至少在混合现实模拟器中测试文本和窗口大小。 应用将有一个为 853x480 有效像素的默认窗口大小。 使用较大的字号（建议使用约为 32 的磅值）并阅读[针对 Hololens 更新现有通用应用](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens)。 [版式](https://developer.microsoft.com/windows/mixed-reality/typography)一文中详细涵盖了本主题。 在 Visual Studio 中工作时，有一个适用于 57" HoloLens 2D 应用的 XAML 设计编辑器设置，可提供具有正确的比例和维度的视图。 
 
@@ -115,7 +115,7 @@ HoloLens 和混合现实平台上均支持键盘和鼠标。 你可以通过蓝�
 
 * [注视是鼠标](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting)。 当用户看着某内容时，它将充当**触控悬停**事件，所以，仅看着某个对象可能会触发无意的弹出窗口或其他不需要的交互。 你可能需要检查应用目前是否正在混合现实中运行并更改此行为。 请参阅下面的**运行时支持**。 
 
-* 当用户使用运动控制器注视某些内容或点时，**触控悬停**事件将发生。 这包括 **PointerPoint**，其中 **PointerType** 为**触控**，但 **IsInContact** 为 **false**。 当某些形式的提交发生（例如，按钮下游戏板 A 按钮、按下遥控器设备、按下运动控制器扳机键或“选择”语音识别人头）时，**触控按下**事件将发生，同时具有 **IsInContact** 的 **PointerPoint** 变为 **true**。 有关这些输入事件的更多信息，请参阅[触控交互](https://docs.microsoft.com/windows/uwp/design/input/touch-interactions)。
+* 当用户使用运动控制器注视某些内容或点时，**触控悬停**事件将发生。 这包括 **PointerPoint**，其中 **PointerType** 为**触控**，但 **IsInContact** 为 **false**。 当某些形式的提交发生（例如，按钮下游戏板 A 按钮、按下遥控器设备、按下运动控制器扳机键或“选择”语音识别人头）时，**触控按下**事件将发生，同时具有 **IsInContact** 的 **PointerPoint** 变为 **true**。 有关这些输入事件的更多信息，请参阅[触控交互](../input/touch-interactions.md)。
 
 * 请记住，注视并不与鼠标指向一样地准确。 较小的鼠标目标或按钮可能会为用户带来沮丧，因此请相应地调整控件大小。 如果它们针对触控进行设计，则将适用于混合现实，但你可能决定在运行时放大一些按钮。 请参阅[针对 Hololens 更新现有通用应用](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens)。
 
@@ -126,7 +126,7 @@ HoloLens 和混合现实平台上均支持键盘和鼠标。 你可以通过蓝�
 
 ## <a name="other-points-to-consider"></a>要考虑的其他要点
 
-* 尽管[桌面桥](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)可帮助将现有 (Win32) 桌面应用带入 Windows 10 和 Microsoft Store，但它无法创建同时在 HoloLens 上和混合现实中运行的应用。
+* 尽管[桌面桥](/windows/msix/desktop/source-code-overview)可帮助将现有 (Win32) 桌面应用带入 Windows 10 和 Microsoft Store，但它无法创建同时在 HoloLens 上和混合现实中运行的应用。
 
 
 
@@ -163,9 +163,7 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 ## <a name="related-articles"></a>相关文章
 
 
-* [使用 shell 中的 Api 的应用的当前限制](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
-* [构建2D 应用](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
-* [HoloLens：生成适用于 Microsoft HoloLens 的 UWP 2D 应用](https://channel9.msdn.com/Events/Build/2016/B854)
-* [条件 XAML](https://docs.microsoft.com/windows/uwp/debug-test-perf/conditional-xaml)
-
-
+* [从 shell 中使用 API 的应用的当前限制](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
+* [构建 2D 应用](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
+* [HoloLens：针对 Microsoft HoloLens 构建 UWP 2D 应用](https://channel9.msdn.com/Events/Build/2016/B854)
+* [条件 XAML](../../debug-test-perf/conditional-xaml.md)

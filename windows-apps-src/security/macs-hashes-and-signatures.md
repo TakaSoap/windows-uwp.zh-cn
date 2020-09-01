@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 78b14023f61dd3f8c27bc31f5876407ff0ed0366
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7932636679a09834b982e2c320309b90c759c365
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371198"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167141"
 ---
 # <a name="macs-hashes-and-signatures"></a>MAC、哈希以及签名
 
@@ -23,22 +23,22 @@ ms.locfileid: "66371198"
 ## <a name="message-authentication-codes-macs"></a>消息验证代码 (MAC)
 
 
-加密有助于防止未经授权的个人读取消息，但不能防止个人篡改消息。 更改的消息（即使该更改不会导致任何情况发生，只是一种无聊的行为）会产生实际成本。 消息验证代码 (MAC) 有助于防止消息篡改。 例如，考虑以下情景：
+加密有助于防止未经授权的个人读取消息，但不能防止个人篡改消息。 更改的消息（即使该更改不会导致任何情况发生，只是一种无聊的行为）会产生实际成本。 消息验证代码 (MAC) 有助于防止消息篡改。 例如，考虑以下方案：
 
 -   鲍勃和艾丽斯共享密钥并就要使用的 MAC 功能达成一致意见。
 -   Bob 创建了消息并将该消息和密钥输入至 MAC 功能以检索 MAC 值。
--   Bob 将发送\[未加密\]消息和 MAC 值向 Alice 通过网络。
+-   Bob \[ 通过网络将未加密的 \] 消息和 MAC 值发送到 Alice。
 -   Alice 使用密钥和消息作为 MAC 功能的输入。 她将生成的 MAC 值与鲍勃发送的 MAC 值进行比较。 如果二者相同，则消息在传输中未进行更改。
 
 注意，偷听鲍勃和艾丽斯之间对话的第三方伊夫无法有效操纵消息。 伊夫没有私钥访问权限，因此，无法创建 MAC 值，该值看上去可让艾丽斯感觉出现的篡改消息合法。
 
 创建消息验证代码仅确保原始消息未更改，并且通过使用共享密钥，消息哈希由具有该私钥访问权限的某人进行签名。
 
-可以使用 [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) 枚举可用的 MAC 算法并生成对称密钥。 可以使用 [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) 类上的静态方法来执行创建 MAC 值的必要加密。
+可以使用 [**MacAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) 枚举可用的 MAC 算法并生成对称密钥。 可以使用 [**CryptographicEngine**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) 类上的静态方法来执行创建 MAC 值的必要加密。
 
 数字签名为等同于私钥消息验证代码 (MAC) 的公钥。 尽管 MAC 使用私钥来使消息接收人验证传输过程中尚未更改消息，但是签名使用私钥/公钥对。
 
-此示例代码说明如何使用 [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) 类创建经过哈希的邮件身份验证代码 (HMAC)。
+此示例代码说明如何使用 [**MacAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) 类创建经过哈希的邮件身份验证代码 (HMAC)。
 
 ```cs
 using Windows.Security.Cryptography;
@@ -125,23 +125,23 @@ namespace SampleMacAlgorithmProvider
 }
 ```
 
-## <a name="hashes"></a>Hashes
+## <a name="hashes"></a>哈希
 
 
 加密哈希函数获取任意长度的数据块并返回固定大小的位字符串。 哈希函数通常在对数据进行签名时使用。 由于大多数公钥签名操作是计算密集型的操作，因此对消息哈希进行签名（加密）比对原始消息进行签名通常更高效。 以下过程显示了一个常用的简化方案：
 
 -   鲍勃和艾丽斯共享密钥并就要使用的 MAC 功能达成一致意见。
 -   Bob 创建了消息并将该消息和密钥输入至 MAC 功能以检索 MAC 值。
--   Bob 将发送\[未加密\]消息和 MAC 值向 Alice 通过网络。
+-   Bob \[ 通过网络将未加密的 \] 消息和 MAC 值发送到 Alice。
 -   Alice 使用密钥和消息作为 MAC 功能的输入。 她将生成的 MAC 值与鲍勃发送的 MAC 值进行比较。 如果二者相同，则消息在传输中未进行更改。
 
 请注意，Alice 发送了一个未加密的消息。 只对哈希进行加密。 该过程只能确保原始消息未经修改，以及消息哈希是由对 Alice 的私钥（推测是 Alice）具有访问权限的人进行的签名，后者是通过使用通过使用 Alice 的公钥来实现的。
 
-你可以使用 [**HashAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) 类枚举可用的哈希算法并创建一个 [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) 值。
+你可以使用 [**HashAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) 类枚举可用的哈希算法并创建一个 [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) 值。
 
 数字签名为等同于私钥消息验证代码 (MAC) 的公钥。 但是 MAC 使用私钥使消息接受者能够验证消息在传输期间是否尚未改变，签名使用私钥/公钥对。
 
-[  **CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) 对象可用于重复哈希不同的数据，不必在每次使用时重新创建该对象。 [  **Append**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.append) 方法将新数据添加到要进行哈希操作的缓冲区。 [  **GetValueAndReset**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) 方法对数据进行哈希操作并重置对象以用于另一个用途。 下面的示例对此进行了展示。
+[**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) 对象可用于重复哈希不同的数据，不必在每次使用时重新创建该对象。 [**Append**](/uwp/api/windows.security.cryptography.core.cryptographichash.append) 方法将新数据添加到要进行哈希操作的缓冲区。 [**GetValueAndReset**](/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) 方法对数据进行哈希操作并重置对象以用于另一个用途。 下面的示例对此进行了展示。
 
 ```cs
 public void SampleReusableHash()
@@ -191,4 +191,4 @@ public void SampleReusableHash()
 
 签名通过发送者的公钥只能确保原始消息未被改变以及消息哈希是由对私钥有访问权限的某个人进行的签名。
 
-你可以使用 [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) 对象枚举可用的签名算法以及生成或导入密钥对。 你可以在 [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) 类上使用静态方法对消息进行签名或验证签名。
+你可以使用 [**AsymmetricKeyAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) 对象枚举可用的签名算法以及生成或导入密钥对。 你可以在 [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) 类上使用静态方法对消息进行签名或验证签名。

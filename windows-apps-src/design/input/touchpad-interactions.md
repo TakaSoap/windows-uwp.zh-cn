@@ -8,12 +8,12 @@ keywords: 触摸板, PTP, 触摸, 指针, 输入, 用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ffc3ce96c7e8c2ad4a34aecd1ca85ff644bdef97
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 9e83cb1ceca96e5c7b51e71cb419b86b0395ea99
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234487"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165861"
 ---
 # <a name="touchpad-design-guidelines"></a>触摸板设计指南
 
@@ -42,7 +42,7 @@ ms.locfileid: "83234487"
 
 触摸板将间接多点触控输入与指针设备（如鼠标）的精确输入结合。 这种组合使触摸板既适用于触摸优化的 UI，也适用于效率应用和桌面环境通常较小的目标。 为触摸输入优化 Windows 应用设计，并在默认情况下获取触摸板支持。
 
-由于触摸板支持聚合的交互体验，所以除了触摸输入的内置支持，我们还建议使用 [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) 事件来提供鼠标样式的 UI 命令。 例如，使用“上一页”和“下一页”按钮，使用户既可以翻阅网页内容，也可以通过平移浏览内容。
+由于触摸板支持聚合的交互体验，所以除了触摸输入的内置支持，我们还建议使用 [**PointerEntered**](/uwp/api/windows.ui.xaml.uielement.pointerentered) 事件来提供鼠标样式的 UI 命令。 例如，使用“上一页”和“下一页”按钮，使用户既可以翻阅网页内容，也可以通过平移浏览内容。
 
 本主题中讨论的手势和指南可以帮助确保你的应用使用最少的代码无缝支持触摸板输入。
 
@@ -71,7 +71,7 @@ ms.locfileid: "83234487"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -119,7 +119,7 @@ ms.locfileid: "83234487"
 ## <a name="hardware"></a>硬件
 
 
-查询鼠标设备功能 ([**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities)) 以确定触摸板硬件可以直接访问你的应用 UI 的哪些方面。 我们建议提供适用于触摸和鼠标输入的 UI。
+查询鼠标设备功能 ([**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities)) 以确定触摸板硬件可以直接访问你的应用 UI 的哪些方面。 我们建议提供适用于触摸和鼠标输入的 UI。
 
 有关查询设备功能的详细信息，请参阅[标识输入设备](identify-input-devices.md)。
 
@@ -132,14 +132,14 @@ ms.locfileid: "83234487"
 -   不要将焦点矩形与触摸板交互结合使用。 保留焦点矩形是为了进行键盘交互。
 -   对于所有代表相同输入目标的元素，同时显示视觉反馈。
 
-有关视觉反馈的更常规的指南，请参阅[视觉反馈指南](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-visualfeedback)。
+有关视觉反馈的更常规的指南，请参阅[视觉反馈指南](./guidelines-for-visualfeedback.md)。
 
 ## <a name="cursors"></a>游标
 
 
 为触摸板指针提供了一组标准光标。 它们用来表示元素的主要操作。
 
-每个标准光标都有一个与它相关联的默认图像。 用户或应用可以随时替换与任何标准光标相关联的默认图像。 UWP 应用通过 [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) 功能指定光标图像。
+每个标准光标都有一个与它相关联的默认图像。 用户或应用可以随时替换与任何标准光标相关联的默认图像。 UWP 应用通过 [**PointerCursor**](/uwp/api/windows.ui.core.corewindow.pointercursor) 功能指定光标图像。
 
 如果你需要自定义鼠标光标：
 

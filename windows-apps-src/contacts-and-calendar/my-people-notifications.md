@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c106df0efc7952895f882ec5c05cc1af52bcfac
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 3e00e3de9445a8b7c63ebaead70173c29b637b54
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683495"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166321"
 ---
 # <a name="my-people-notifications"></a>“我的人脉”通知
 
@@ -20,8 +20,8 @@ ms.locfileid: "75683495"
 
 ## <a name="requirements"></a>要求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)。
-+ C# 或类似面向对象的编程语言的基础知识。 若要开始使用 C#，请参阅[创建“Hello, world”应用](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
++ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](../get-started/get-set-up.md)。
++ C# 或类似面向对象的编程语言的基础知识。 若要开始使用 C#，请参阅[创建“Hello, world”应用](../get-started/create-a-hello-world-app-xaml-universal.md)。
 
 ## <a name="how-it-works"></a>工作原理
 
@@ -53,7 +53,7 @@ experienceType="shoulderTap"
     + 资源的 URI。 这可以是 HTTP/HTTPS Web URI、msappx URI 或本地文件的路径。
 + **spritesheet-src**
     + 资源的 URI。 这可以是 HTTP/HTTPS Web URI、msappx URI 或本地文件的路径。 只有 Spritesheet 动画才需要此参数。
-+ **spritesheet-高度**
++ **spritesheet-height**
     + 帧高度（以像素为单位）。 只有 Spritesheet 动画才需要此参数。
 + **spritesheet-fps**
     + 每秒帧数 (FPS)。 只有 Spritesheet 动画才需要此参数。 仅支持值 1-120。
@@ -75,10 +75,10 @@ experienceType="shoulderTap"
     + 例如 remoteid:1234
 
 > [!NOTE]
-> 如果应用使用 [ContactStore API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore)，并且使用 [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) 属性将存储在电脑上的联系人链接至远程存储的联系人，则 RemoteId 属性的值必须稳定并且是唯一的。 这意味着远程 ID 必须一致地标识单个用户帐户，并且应包含唯一标记，以保证它不与电脑上其他联系人（包括其他应用所拥有的联系人）的远程 ID 冲突。
-> 如果无法保证应用所使用的远程 ID 的稳定性和唯一性，则可以使用 [RemoteIdHelper 类](https://docs.microsoft.com/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass)，以便在将所有远程 ID 添加到系统之前，先将唯一标记添加到这些 ID 中。 或者，你也可以选择彻底不使用 RemoteId 属性，而是创建一个自定义扩展属性来存储联系人的远程 ID。
+> 如果应用使用 [ContactStore API](/uwp/api/windows.applicationmodel.contacts.contactstore)，并且使用 [StoredContact.RemoteId](/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) 属性将存储在电脑上的联系人链接至远程存储的联系人，则 RemoteId 属性的值必须稳定并且是唯一的。 这意味着远程 ID 必须一致地标识单个用户帐户，并且应包含唯一标记，以保证它不与电脑上其他联系人（包括其他应用所拥有的联系人）的远程 ID 冲突。
+> 如果无法保证应用所使用的远程 ID 的稳定性和唯一性，则可以使用 [RemoteIdHelper 类](/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass)，以便在将所有远程 ID 添加到系统之前，先将唯一标记添加到这些 ID 中。 或者，你也可以选择彻底不使用 RemoteId 属性，而是创建一个自定义扩展属性来存储联系人的远程 ID。
 
-除了第二个绑定和负载，你必须在回退 Toast 的第一个绑定中包含另一个负载。 如果回退 Toast 被强制恢复为普通 Toast，通知将使用该负载（[本文末尾](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)进行了进一步说明）。
+除了第二个绑定和负载，你必须在回退 Toast 的第一个绑定中包含另一个负载。 如果回退 Toast 被强制恢复为普通 Toast，通知将使用该负载（[本文末尾](#falling-back-to-toast)进行了进一步说明）。
 
 ## <a name="creating-the-notification"></a>创建通知
 你可以创建“我的人脉”通知模板，就像创建 [Toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)一样。
@@ -126,7 +126,7 @@ experienceType="shoulderTap"
 ![Spritesheet 通知](images/pizza-notification-small.gif)
 
 ## <a name="starting-the-notification"></a>启动通知
-为了启动“我的人脉”通知，我们需要将 Toast 模板转换为 [XmlDocument](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument) 对象。 当你已在 XML 文件（此处名为“content.xml”）中定义 Toast 时，可以使用此 C# 代码启动它：
+为了启动“我的人脉”通知，我们需要将 Toast 模板转换为 [XmlDocument](/uwp/api/windows.data.xml.dom.xmldocument) 对象。 当你已在 XML 文件（此处名为“content.xml”）中定义 Toast 时，可以使用此 C# 代码启动它：
 
 ```CSharp
 string xmlText = File.ReadAllText("content.xml");
@@ -151,7 +151,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 如果“我的人脉”通知回退到 Toast，则将忽略第二个特定于“我的人脉”的绑定，并且仅使用第一个绑定来显示 Toast。 这正是为何在第一个 Toast 绑定中提供回退负载很重要。
 
 ## <a name="see-also"></a>另请参阅
-+ [我的人员通知示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
-+ [添加我的人员支持](my-people-support.md)
-+ [自适应 toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
-+ [ToastNotification 类](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotification)
++ [“我的人脉”通知示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
++ [添加“我的人脉”支持](my-people-support.md)
++ [自适应 Toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
++ [ToastNotification 类](/uwp/api/windows.ui.notifications.toastnotification)

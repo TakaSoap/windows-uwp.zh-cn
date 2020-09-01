@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 多重采样, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: f4d3e590f99fdf6ca907fcc8fd5b412c5796f474
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: 0fccc549deb579a51cfedaad1fd0a1e1dd861fa8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735102"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165171"
 ---
-# <a name="span-iddev_gamingmultisampling__multi-sample_anti_aliasing__in_windows_store_appsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span>通用 Windows 平台（UWP）应用中的多级取样
+# <a name="span-iddev_gamingmultisampling__multi-sample_anti_aliasing__in_windows_store_appsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span>通用 Windows 平台 (UWP) 应用中的多重采样
 
 
 
-了解如何在使用 Direct3D 生成的通用 Windows 平台 (UWP) 应用中使用多重采样。 多重采样（也称为多重采样抗锯齿）是一种图形技术，用于减少锯齿边缘的显示。 它的工作方式是绘制比最终渲染目标中包含的实际像素更多的像素，然后取平均值以保留某些像素的“局部”边缘的显示。 有关多重采样在 Direct3D 中的实际工作方式的详细说明，请参阅[多重采样抗锯齿光栅化规则](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules)。
+了解如何在使用 Direct3D 生成的通用 Windows 平台 (UWP) 应用中使用多重采样。 多重采样（也称为多重采样抗锯齿）是一种图形技术，用于减少锯齿边缘的显示。 它的工作方式是绘制比最终渲染目标中包含的实际像素更多的像素，然后取平均值以保留某些像素的“局部”边缘的显示。 有关多重采样在 Direct3D 中的实际工作方式的详细说明，请参阅[多重采样抗锯齿光栅化规则](/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules)。
 
 ## <a name="multisampling-and-the-flip-model-swap-chain"></a>多重采样和翻转模型交换链
 
@@ -28,11 +28,11 @@ ms.locfileid: "74735102"
 
 Direct3D 功能级别保证支持特定的最小样本计数功能，并保证某些支持多重采样的缓冲区格式可用。 图形设备支持的格式和样本计数通常多于最低要求。 通过检查具有特定 DXGI 格式的多重采样支持功能，然后检查可以与每个支持的格式一起使用的样本计数，你可以在运行时确定多重采样支持。
 
-1.  调用 [**ID3D11Device::CheckFeatureSupport**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) 以了解哪些 DXGI 格式可以用于多重采用。 提供游戏可以使用的呈现目标格式。 呈现目标和解析目标都必须使用相同的格式，因此，请检查[**D3D11\_格式\_支持\_多级采样\_RENDERTARGET**](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support)和**D3D11\_格式\_支持\_的多级**\_解析。
+1.  调用 [**ID3D11Device::CheckFeatureSupport**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) 以了解哪些 DXGI 格式可以用于多重采用。 提供游戏可以使用的呈现目标格式。 呈现器目标和解析目标都必须使用相同的格式，因此，请检查 [**D3D11 \_ 格式 \_ 支持的 \_ 多级 \_ RENDERTARGET**](/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support) 和 **D3D11 \_ 格式 \_ 支持多级显示 \_ \_ 解析**。
 
-    **功能级别9：  **尽管功能级别9设备[保证支持多级采样呈现目标格式](https://docs.microsoft.com/previous-versions/ff471324(v=vs.85))，但不保证对多级显示解析目标的支持。 因此，在尝试使用本主题所述的多重采样技术之前，此检查是必要的。
+    **功能级别9：  ** 尽管功能级别9设备 [保证支持多级采样呈现目标格式](/previous-versions/ff471324(v=vs.85))，但不保证对多级显示解析目标的支持。 因此，在尝试使用本主题所述的多重采样技术之前，此检查是必要的。
 
-    下面的代码检查所有 DXGI\_格式值的多级多级支持：
+    下面的代码检查所有 DXGI 格式值的多级取样支持 \_ ：
 
     ```cpp
     // Determine the format support for multisampling.
@@ -55,7 +55,7 @@ Direct3D 功能级别保证支持特定的最小样本计数功能，并保证�
     }
     ```
 
-2.  对于每个支持的格式，通过调用 [**ID3D11Device::CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels) 查询样本计数支持。
+2.  对于每个支持的格式，通过调用 [**ID3D11Device::CheckMultisampleQualityLevels**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels) 查询样本计数支持。
 
     以下代码将检查受支持的 DXGI 格式的样本大小支持：
 
@@ -82,11 +82,11 @@ Direct3D 功能级别保证支持特定的最小样本计数功能，并保证�
     }
     ```
 
-    > **请注意**，   使用[**ID3D11Device2：： CheckMultisampleQualityLevels1**](https://docs.microsoft.com/windows/desktop/api/d3d11_2/nf-d3d11_2-id3d11device2-checkmultisamplequalitylevels1) ，而不需要检查对平铺资源缓冲区的多级的支持。
+    > **注意**   如果需要检查对平铺资源缓冲区的多级支持，请改用[**ID3D11Device2：： CheckMultisampleQualityLevels1**](/windows/desktop/api/d3d11_2/nf-d3d11_2-id3d11device2-checkmultisamplequalitylevels1) 。
 
      
 
-3.  创建具有所需样本计数的缓冲区和呈现目标视图。 使用与交换链相同的 DXGI\_格式、宽度和高度，但指定一个大于1的样本数，并使用多级采样纹理维度（**D3D11\_RTV\_dimension\_TEXTURE2DMS** ）。 如果必要，你可以使用为多重采样优化的新设置重新创建交换链。
+3.  创建具有所需样本计数的缓冲区和呈现目标视图。 使用与交换链相同的 DXGI \_ 格式、宽度和高度，但指定一个大于1的样本数，并使用多级采样纹理维度 (**D3D11 \_ RTV \_ dimension \_ TEXTURE2DMS** 例如) 。 如果必要，你可以使用为多重采样优化的新设置重新创建交换链。
 
     以下代码将创建多重采样渲染目标：
 
@@ -179,7 +179,7 @@ Direct3D 功能级别保证支持特定的最小样本计数功能，并保证�
     m_d3dContext->RSSetViewports(1, &m_screenViewport);
     ```
 
-6.  将每个帧渲染到多重采样渲染目标。 完成渲染后，先调用 [**ID3D11DeviceContext::ResolveSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-resolvesubresource)，然后再呈现帧。 此操作可指导 Direct3D 执行多重采样操作、计算每个像素值以供显示，并将结果放置在后台缓冲区中。 然后，后台缓冲区可包含最终抗锯齿图像并可供呈现。
+6.  将每个帧渲染到多重采样渲染目标。 完成渲染后，先调用 [**ID3D11DeviceContext::ResolveSubresource**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-resolvesubresource)，然后再呈现帧。 此操作可指导 Direct3D 执行多重采样操作、计算每个像素值以供显示，并将结果放置在后台缓冲区中。 然后，后台缓冲区可包含最终抗锯齿图像并可供呈现。
 
     以下代码在呈现帧之前将解析子资源：
 
@@ -206,7 +206,3 @@ Direct3D 功能级别保证支持特定的最小样本计数功能，并保证�
  
 
  
-
-
-
-

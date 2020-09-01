@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 560f9b545cc7c7b547e707bffb2b19904c36863b
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 9b9cb30d2a87d93df1790fb42ad3b4b243f0f713
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846767"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164551"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>使用 Microsoft Store 服务开展广告活动
 
@@ -36,7 +36,7 @@ ms.locfileid: "88846767"
 
 * 必须先 [使用合作伙伴中心的 **ad 市场** 活动页创建一个付费广告活动](../publish/create-an-ad-campaign-for-your-app.md)，并在此页上至少添加一种付款方式，然后才能成功使用此 API 创建和启动广告活动。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用此 API 创建的 ad 市场活动的传递行会自动对在合作伙伴中心的 " **ad 市场活动** " 页上选择的默认付款方式进行计费。
 
-* 你（或你的组织）必须有一个 Azure AD 目录，并且必须对该目录拥有[全局管理员](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，则你已具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
+* 你（或你的组织）必须有一个 Azure AD 目录，并且必须对该目录拥有[全局管理员](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，则你已具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
 
 * 必须将 Azure AD 应用程序与合作伙伴中心帐户相关联，并检索应用程序的租户 ID 和客户端 ID，并生成一个密钥。 Azure AD 应用程序是指要从中调用 Microsoft Store 促销 API 的应用或服务。 需要使用该租户 ID、客户端 ID 和密钥来获取要传递给 API 的 Azure AD 访问令牌。
     > [!NOTE]
@@ -58,7 +58,7 @@ ms.locfileid: "88846767"
 
 在 Microsoft Store 促销 API 中调用任何方法之前，首先必须获取将传递给该 API 中每个方法的 **Authorization** 标头的 Azure AD 访问令牌。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以对它进行刷新，以便可以在之后调用该 API 时继续使用。
 
-若要获取访问令牌，请按照 [使用客户端凭据的服务到服务调用](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) 中的说明将 HTTP POST 发送到 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
+若要获取访问令牌，请按照 [使用客户端凭据的服务到服务调用](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) 中的说明将 HTTP POST 发送到 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
 
 ```syntax
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -73,7 +73,7 @@ grant_type=client_credentials
 
 对于 POST URI 中的 " *租户 \_ id* " 和 "客户端 * \_ id* " 和 " *客户端 \_ 密钥* " 参数，为你在上一节中的合作伙伴中心检索的应用程序指定租户 id、客户端 id 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
 
-在你的访问令牌到期后，你可按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
+在你的访问令牌到期后，你可按照[此处](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens)的说明刷新令牌。
 
 <span id="call-the-windows-store-promotions-api" />
 
@@ -86,7 +86,7 @@ grant_type=client_credentials
 有关这些对象及其相关方法的详细信息，请参阅下表。
 
 
-| 对象       | 说明   |
+| 对象       | 描述   |
 |---------------|-----------------|
 | 营销活动 |  此对象代表广告活动，位于广告活动对象模型层次结构的顶部。 此对象标识了你目前开展的活动类型（付费广告、自家广告或社区广告）、活动目标、活动的投放渠道及其他详细信息。 每项活动可能仅与一个应用相关联。<br/><br/>有关此对象相关方法的详细信息，请参阅[管理广告活动](manage-ad-campaigns.md)。<br/><br/>**Note** &nbsp; 注意 &nbsp;创建广告营销活动后，可以通过使用[Microsoft Store ANALYTICS API](access-analytics-data-using-windows-store-services.md)中的[获取 ad 市场活动性能数据](get-ad-campaign-performance-data.md)方法来检索该市场活动的性能数据。  |
 | 投放渠道 | 每项广告活动具有一个或多个投放渠道，用于购买存货和投放广告。 你可以针对每个投放渠道设定目标市场、标价，并通过设定预算及与你希望启用的创意连接来判断你的预期费用。<br/><br/>有关此对象相关方法的详细信息，请参阅[管理广告活动的投放渠道](manage-delivery-lines-for-ad-campaigns.md)。 |

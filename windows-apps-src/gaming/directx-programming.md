@@ -6,12 +6,12 @@ ms.date: 06/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 概述, 编程, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 24c15516bc18eacd6c5dfcad8edec9a2c088fc7f
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 846c333a7cce9d8f373b01aabf525f103dba57f2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970255"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165301"
 ---
 # <a name="directx-programming"></a>DirectX 编程
 
@@ -25,7 +25,7 @@ ms.locfileid: "88970255"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -61,11 +61,5 @@ ms.locfileid: "88970255"
 </table>
 
 
-有关 DirectX 参考和编程指南，请参阅 [Direct3D 11 图形](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11)和 [Direct3D 12 图形](https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics)。
+有关 DirectX 参考和编程指南，请参阅 [Direct3D 11 图形](/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11)和 [Direct3D 12 图形](/windows/desktop/direct3d12/direct3d-12-graphics)。
  
-
-
-
-
-
-

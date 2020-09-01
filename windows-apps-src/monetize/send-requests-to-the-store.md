@@ -6,24 +6,24 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: 810c546eb0ee0263dcb50b3ce58e593ad294435c
-ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
+ms.openlocfilehash: a02be93a56d6066ebd4d9547c8cc9ea1a96c9e09
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83867327"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164491"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>向 Microsoft Store 发送请求
 
-从 Windows 10 版本 1607 起，Windows SDK 在 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中为与 Microsoft Store 相关的操作（如应用内购买）提供 API。 但是，尽管支持应用商店的服务在操作系统发布过程中不断地更新、扩展和提高，但新的 API 通常只会在主要操作系统版本中添加到 Windows SDK。
+从 Windows 10 版本 1607 起，Windows SDK 在 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空间中为与 Microsoft Store 相关的操作（如应用内购买）提供 API。 但是，尽管支持应用商店的服务在操作系统发布过程中不断地更新、扩展和提高，但新的 API 通常只会在主要操作系统版本中添加到 Windows SDK。
 
-我们提供的 [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) 方法可以在发布新版本的 Windows SDK 之前灵活地为通用 Windows 平台 (UWP) 应用提供新的应用商店操作。 你可以使用此方法为最新版本的 Windows SDK 中尚未提供对应 API 的新操作向应用商店发送请求。
+我们提供的 [SendRequestAsync](/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) 方法可以在发布新版本的 Windows SDK 之前灵活地为通用 Windows 平台 (UWP) 应用提供新的应用商店操作。 你可以使用此方法为最新版本的 Windows SDK 中尚未提供对应 API 的新操作向应用商店发送请求。
 
 > [!NOTE]
 > **SendRequestAsync** 方法仅可用于针对 Windows 10 版本 1607 或更高版本的应用。 此方法支持的有些请求仅在 Windows 10 版本 1607 之后的版本中受支持。
 
-**SendRequestAsync** 是一种 [StoreRequestHelper](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper) 类的静态方法。 若要调用此方法，你必须将以下信息传递给此方法：
-* [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 对象，用于提供与你想要为其执行操作的用户相关的信息。 有关此对象的更多信息，请参阅 [StoreContext 类入门](in-app-purchases-and-trials.md#get-started-with-the-storecontext-class)。
+**SendRequestAsync** 是一种 [StoreRequestHelper](/uwp/api/windows.services.store.storerequesthelper) 类的静态方法。 若要调用此方法，你必须将以下信息传递给此方法：
+* [StoreContext](/uwp/api/windows.services.store.storecontext) 对象，用于提供与你想要为其执行操作的用户相关的信息。 有关此对象的更多信息，请参阅 [StoreContext 类入门](in-app-purchases-and-trials.md#get-started-with-the-storecontext-class)。
 * 用于标识你想要向应用商店发送的请求的整数。
 * 如果请求支持任何参数，你还可以传递 JSON 格式的字符串，它包含要与请求一起传递的参数。
 
@@ -58,7 +58,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 **SendRequestAsync** 方法支持一组外部测试版组方案的请求，例如为外部测试版组添加用户或设备。 若要提交这些请求，请将 *requestKind* 参数值 7 或 8 以及 JSON 格式的字符串一起传递给用于指示你想要与任何相关参数一起提交的请求的 *parametersAsJson* 参数。 这些 *requestKind* 值在以下方面不同。
 
-|  请求类型值  |  说明  |
+|  请求类型值  |  描述  |
 |----------------------|---------------|
 |  7                   |  此请求将在当前设备的上下文中执行。 此值仅可用于 Windows 10 版本 1703 或更高版本。  |
 |  8                   |  此请求将在当前已登录到应用商店的用户的上下文中执行。 此值可用于 Windows 10 版本 1607 或更高版本。  |
@@ -72,12 +72,12 @@ public async Task<bool> AddUserToFlightGroup()
 
 此请求将为当前用户或设备检索排名最高的外部测试版组的远程变量。 若要发送此请求，请将以下信息传递至 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 参数。
 
-|  参数  |  说明  |
+|  参数  |  描述  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7 以返回设备的最高排名外部测试版组，或者指定 8 以返回当前用户和设备的最高排名外部测试版组。 我们建议为 *requestKind* 参数使用值 8，因为此值将在成员中返回当前用户和设备的最高排名外部测试版组。  |
 |  *parametersAsJson*                   |  传递 JSON 格式的字符串，它包含以下示例显示的数据。  |
 
-以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为*类型*字段分配字符串 *GetRemoteVariables*。 将*projectId*字段分配到在其中定义了合作伙伴中心中的远程变量的项目的 ID。
+以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为*类型*字段分配字符串 *GetRemoteVariables*。 将 *projectId* 字段分配到在其中定义了合作伙伴中心中的远程变量的项目的 ID。
 
 ```json
 { 
@@ -86,12 +86,12 @@ public async Task<bool> AddUserToFlightGroup()
 }
 ```
 
-提交此请求之后，[StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) 返回值的 [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.Response) 属性将包含 JSON 格式的字符串及以下字段。
+提交此请求之后，[StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) 返回值的 [Response](/uwp/api/windows.services.store.storesendrequestresult.Response) 属性将包含 JSON 格式的字符串及以下字段。
 
 |  字段  |  描述  |
 |----------------------|---------------|
 |  *匿名*                   |  布尔值，其中 **true** 指示用户或设备身份不存在于请求中，**false** 指示用户或设备身份已存在于请求中。  |
-|  name                   |  包含设备或用户所在的最高排名外部测试版组名称的字符串。  |
+|  name                    |  包含设备或用户所在的最高排名外部测试版组名称的字符串。  |
 |  *设置*                   |  键/值对的字典，包含开发人员为外部测试版组配置的远程变量的名称和值。  |
 
 以下示例展示了此请求的返回值。
@@ -115,7 +115,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 若要发送此请求，请将以下信息传递至 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 参数。
 
-|  参数  |  说明  |
+|  参数  |  描述  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7 以将设备添加到外部测试版组，或者指定 8 以将当前已登录到应用商店的用户添加到外部测试版组。  |
 |  *parametersAsJson*                   |  传递 JSON 格式的字符串，它包含以下示例显示的数据。  |
@@ -129,7 +129,7 @@ public async Task<bool> AddUserToFlightGroup()
 }
 ```
 
-如果请求中没有错误，则 [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) 返回值的 [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) 属性将包含响应代码。
+如果请求中没有错误，则 [StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) 返回值的 [HttpStatusCode](/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) 属性将包含响应代码。
 
 ### <a name="remove-the-current-device-or-user-from-a-flight-group"></a>从外部测试版组中删除当前设备或用户
 
@@ -138,7 +138,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 若要发送此请求，请将以下信息传递至 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 参数。
 
-|  参数  |  说明  |
+|  参数  |  描述  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7 以从外部测试版组中删除设备，或者指定 8 以从外部测试版组中删除当前已登录到应用商店的用户。  |
 |  *parametersAsJson*                   |  传递 JSON 格式的字符串，它包含以下示例显示的数据。  |
@@ -152,9 +152,9 @@ public async Task<bool> AddUserToFlightGroup()
 }
 ```
 
-如果请求中没有错误，则 [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) 返回值的 [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) 属性将包含响应代码。
+如果请求中没有错误，则 [StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) 返回值的 [HttpStatusCode](/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) 属性将包含响应代码。
 
 ## <a name="related-topics"></a>相关主题
 
 * [在应用中显示评分和评价对话框](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
-* [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)
+* [SendRequestAsync](/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d3f1f4cfa609ce7e5df83c98f2e815045a3209f
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b79fd57ddd089542de83e04450c768654df2f78f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970222"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165841"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial 交互
 
@@ -57,7 +57,7 @@ Surface Dial 与 Windows 紧密集成，并且支持菜单上的一组内置工�
 - 用户位于 Windows 桌面时的系统亮度工具
 - 播放媒体时的上一首/下一首工具
 
-除了这一常规平台支持之外，Surface Dial 还与 Windows Ink 平台控件（[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 和 [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)）紧密集成。
+除了这一常规平台支持之外，Surface Dial 还与 Windows Ink 平台控件（[**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 和 [**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)）紧密集成。
 
 ![适配 Surface 触控笔的 Surface Dial](images/windows-wheel/dial-and-pen-400px.png)  
 *适配 Surface 触控笔的 Surface Dial*
@@ -127,13 +127,13 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
 
 ### <a name="developer-guidance"></a>开发人员指南
 
-可以通过一组全面的 [Windows 运行时 API](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) 自定义 Surface Dial 体验，来补充应用中的功能。 
+可以通过一组全面的 [Windows 运行时 API](/uwp/api/Windows.UI.Input.RadialController) 自定义 Surface Dial 体验，来补充应用中的功能。 
 
 如前所述，Surface Dial 的默认菜单中预置了一组内置工具，这些工具涵盖广泛的基本系统功能（系统音量、系统亮度、滚动、缩放、撤消和媒体控制（系统检测到正在播放音频或视频时））。 不过，这些默认工具可能不会提供你的应用所需的功能。 
 
 在以下部分中，我们介绍了如何向 Surface Dial 菜单添加自定义工具，以及如何指定哪些内置工具要公开。
 
-从[RadialController 自定义](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)下载此示例的更可靠版本。
+从 [RadialController 自定义](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)下载此示例的更可靠版本。
 
 **添加自定义工具**
 
@@ -174,15 +174,15 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
     </Grid>
     ```
 
-2. 然后，我们在代码隐藏中将自定义工具添加到 Surface Dial 菜单，并声明 [**RadialController**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) 输入处理程序。 
+2. 然后，我们在代码隐藏中将自定义工具添加到 Surface Dial 菜单，并声明 [**RadialController**](/uwp/api/Windows.UI.Input.RadialController) 输入处理程序。 
 
-   我们通过调用 [**CreateForCurrentView**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)，获取对 Surface Dial (myController) 的 [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.createforcurrentview) 对象的引用。
+   我们通过调用 [**CreateForCurrentView**](/uwp/api/Windows.UI.Input.RadialController)，获取对 Surface Dial (myController) 的 [**RadialController**](/uwp/api/windows.ui.input.radialcontroller.createforcurrentview) 对象的引用。
 
-   然后，我们通过调用 [**RadialControllerMenuItem.CreateFromIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 创建 [**RadialControllerMenuItem**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem.createfromicon) (myItem) 的实例。 
+   然后，我们通过调用 [**RadialControllerMenuItem.CreateFromIcon**](/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 创建 [**RadialControllerMenuItem**](/uwp/api/windows.ui.input.radialcontrollermenuitem.createfromicon) (myItem) 的实例。 
 
    接下来，我们将该项附加到菜单项的集合。
 
-   我们为 [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 对象声明输入事件处理程序（[**ButtonClicked**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.rotationchanged) 和 [**RotationChanged**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)）。
+   我们为 [**RadialController**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 对象声明输入事件处理程序（[**ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.rotationchanged) 和 [**RotationChanged**](/uwp/api/Windows.UI.Input.RadialController)）。
 
    最后，我们定义事件处理程序。
 
@@ -247,7 +247,7 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
 
 **指定内置工具**
 
-可以使用 [**RadialControllerConfiguration**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 类为应用自定义内置菜单项的集合。
+可以使用 [**RadialControllerConfiguration**](/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 类为应用自定义内置菜单项的集合。
 
 例如，当你的应用中不存在任何滚动或缩放区域，也不需要撤消/重做功能时，可以将这些工具从菜单中删除。 这将在菜单上打开用于为你的应用添加自定义工具的空间。 
 
@@ -318,25 +318,25 @@ Surface Dial 无法检测到正在使用哪只手，但用户可以在 **Windows
 
 |   |   |   |
 | --- | --- | --- |
-| Left<br/>向上<br/>出 | ![Surface Dial 的图像](images/windows-wheel/surface-dial-rotate.png) | Right<br/>向下<br/>In |
+| Left<br/>向上<br/>出 | ![Surface Dial 的图像](images/windows-wheel/surface-dial-rotate.png) | Right<br/>向下<br/>在 |
 |   |   |   |
 
 | 概念性方向 | 映射到 Surface Dial | 顺时针旋转 | 逆时针旋转 |
 | --- | --- | --- | --- |
 | 横向 | 基于 Surface Dial 顶部的左右映射 | Right | Left |
 | 垂直 | 基于 Surface Dial 左侧的上下映射 | 向下 | 向上 |
-| Z 轴 | 映射到向上/向右的放大（或靠近）<br/>映射到向下/向左的缩小（或远离） | In | 出 |
+| Z 轴 | 映射到向上/向右的放大（或靠近）<br/>映射到向下/向左的缩小（或远离） | 在 | 出 |
 
 #### <a name="developer-guidance"></a>开发人员指南
 
-用户旋转设备时，将基于相对于旋转方向的增量 ([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.rotationchanged)) 触发 [**RadialController.RotationChanged**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerrotationchangedeventargs.rotationdeltaindegrees) 事件。 可以使用 [**RadialController.RotationResolutionInDegrees**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.rotationresolutionindegrees) 属性设置数据的灵敏度（或分辨率）。
+用户旋转设备时，将基于相对于旋转方向的增量 ([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](/uwp/api/windows.ui.input.radialcontroller.rotationchanged)) 触发 [**RadialController.RotationChanged**](/uwp/api/windows.ui.input.radialcontrollerrotationchangedeventargs.rotationdeltaindegrees) 事件。 可以使用 [**RadialController.RotationResolutionInDegrees**](/uwp/api/windows.ui.input.radialcontroller.rotationresolutionindegrees) 属性设置数据的灵敏度（或分辨率）。
 
 > [!NOTE]
-> 默认情况下，仅当设备旋转至少 10 度时，才会向 [**RadialController**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) 对象传递旋转输入事件。 每个输入事件都会导致设备振动。
+> 默认情况下，仅当设备旋转至少 10 度时，才会向 [**RadialController**](/uwp/api/Windows.UI.Input.RadialController) 对象传递旋转输入事件。 每个输入事件都会导致设备振动。
 
 通常，当旋转分辨率设置为低于 5 度时，我们建议禁用触觉反馈。 这将为连续交互提供更流畅的体验。 
 
-可以通过设置 [**RadialController.UseAutomaticHapticFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.useautomatichapticfeedback) 属性启用和禁用自定义工具的触觉反馈。
+可以通过设置 [**RadialController.UseAutomaticHapticFeedback**](/uwp/api/windows.ui.input.radialcontroller.useautomatichapticfeedback) 属性启用和禁用自定义工具的触觉反馈。
 
 > [!NOTE]
 > 无法覆盖系统工具（例如音量控件）的触觉行为。 对于这些工具，只可以由用户从“Wheel”设置页禁用触觉反馈。
@@ -380,13 +380,13 @@ private void MyController_ButtonClicked(RadialController sender,
 
 **不应该通过单击 Surface Dial 启用或禁用模式工具**
 
-某些应用/工具模式可能会禁用依赖旋转的交互或与其冲突。 Windows Ink 工具栏中的功能（如标尺）应通过其他 UI 提供功能（Ink 工具栏提供了内置的 [**ToggleButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton) 控件）切换开关。
+某些应用/工具模式可能会禁用依赖旋转的交互或与其冲突。 Windows Ink 工具栏中的功能（如标尺）应通过其他 UI 提供功能（Ink 工具栏提供了内置的 [**ToggleButton**](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton) 控件）切换开关。
 
 对于模式工具，请将 Surface Dial 活动菜单项映射到目标工具或先前选定的菜单项。
 
 #### <a name="developer-guidance"></a>开发人员指南
 
-单击 Surface Dial 时，会触发 [**RadialController.ButtonClicked**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 事件。 [**RadialControllerButtonClickedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs) 包括 [**Contact**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact) 属性，该属性包含 Surface Dial 与 Surface Studio 屏幕接触的位置和边界区域。 Surface Dial 未与屏幕保持接触，则该属性为 null。 
+单击 Surface Dial 时，会触发 [**RadialController.ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 事件。 [**RadialControllerButtonClickedEventArgs**](/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs) 包括 [**Contact**](/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact) 属性，该属性包含 Surface Dial 与 Surface Studio 屏幕接触的位置和边界区域。 Surface Dial 未与屏幕保持接触，则该属性为 null。 
 
 ### <a name="on-screen"></a>屏幕
 
@@ -425,11 +425,11 @@ private void MyController_ButtonClicked(RadialController sender,
 
 #### <a name="developer-guidance"></a>开发人员指南
 
-当 Surface Dial 置于 Surface Studio 的数字化器图面上时，将触发 [**RadialController.ScreenContactStarted**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.screencontactstarted) 事件，并向你的应用提供接触信息 ([**RadialControllerScreenContactStartedEventArgs.Contact**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontactstartedeventargs.contact))。
+当 Surface Dial 置于 Surface Studio 的数字化器图面上时，将触发 [**RadialController.ScreenContactStarted**](/uwp/api/windows.ui.input.radialcontroller.screencontactstarted) 事件，并向你的应用提供接触信息 ([**RadialControllerScreenContactStartedEventArgs.Contact**](/uwp/api/windows.ui.input.radialcontrollerscreencontactstartedeventargs.contact))。
 
-同样，如果在 Surface Dial 与 Surface Studio 的数字化器图面接触的情况下单击它，将触发 [**RadialController.ButtonClicked**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 事件，并向你的应用提供接触信息 ([**RadialControllerButtonClickedEventArgs.Contact**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact))。 
+同样，如果在 Surface Dial 与 Surface Studio 的数字化器图面接触的情况下单击它，将触发 [**RadialController.ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 事件，并向你的应用提供接触信息 ([**RadialControllerButtonClickedEventArgs.Contact**](/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact))。 
 
-接触信息 ([**RadialControllerScreenContact**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContact)) 包括 Surface Dial 中心在应用的坐标空间中的 X/Y 坐标 ([**RadialControllerScreenContact.Position**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontact.position))，以及边界矩形 ([**RadialControllerScreenContact.Bounds**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontact.bounds))（以与设备无关的像素 (DIP) 为单位）。 此信息对于向活动工具提供上下文和向用户提供与设备有关的视觉反馈非常有用。
+接触信息 ([**RadialControllerScreenContact**](/uwp/api/Windows.UI.Input.RadialControllerScreenContact)) 包括 Surface Dial 中心在应用的坐标空间中的 X/Y 坐标 ([**RadialControllerScreenContact.Position**](/uwp/api/windows.ui.input.radialcontrollerscreencontact.position))，以及边界矩形 ([**RadialControllerScreenContact.Bounds**](/uwp/api/windows.ui.input.radialcontrollerscreencontact.bounds))（以与设备无关的像素 (DIP) 为单位）。 此信息对于向活动工具提供上下文和向用户提供与设备有关的视觉反馈非常有用。
 
 在以下示例中，我们创建了一个四个部分不同的基本应用，其中的每一个都包含一个滑块和一个切换按钮。 然后，我们使用 Surface Dial 的屏幕位置来确定哪组滑块和切换按钮受 Surface Dial 控制。
 
@@ -638,32 +638,32 @@ private void ActivateGridAtLocation(Point Location)
 ![使用 Surface Dial 自定义工具激活的示例应用 UI 的图像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *使用 Surface Dial 自定义工具激活的示例应用 UI*
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>“摘要”
 
 本主题概述了有关以下方面的 Surface Dial 输入设备与 UX 和开发人员指南：与 Surface Studio 配合使用时，如何针对离屏情形以及屏幕情形自定义用户体验。
 
 ## <a name="feedback"></a>反馈
 
-请将你的问题、建议和反馈发送[radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com)到。
+请将你的问题、建议和反馈发送到 [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com) 。
 
 ## <a name="related-articles"></a>相关文章
 
-[教程：在 Windows 应用程序中支持 Surface 拨号（和其他轮设备）](radialcontroller-walkthrough.md)
+[教程：支持在 Windows 应用中)  (和其他轮设备](radialcontroller-walkthrough.md)
 
 ### <a name="api-reference"></a>API 参考
 
-- [**RadialController**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)
-- [**RadialControllerButtonClickedEventArgs**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
-- [**RadialControllerConfiguration**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 
-- [**RadialControllerControlAcquiredEventArgs**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
-- [**RadialControllerMenu**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenu) 
-- [**RadialControllerMenuItem**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 
-- [**RadialControllerRotationChangedEventArgs**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
-- [**RadialControllerScreenContact**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContact) 
-- [**RadialControllerScreenContactContinuedEventArgs**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
-- [**RadialControllerScreenContactStartedEventArgs**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
-- [**RadialControllerMenuKnownIcon**枚举](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon) 
-- [**RadialControllerSystemMenuItemKind**枚举](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
+- [**RadialController** 类](/uwp/api/Windows.UI.Input.RadialController)
+- [**RadialControllerButtonClickedEventArgs** 类](/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
+- [**RadialControllerConfiguration** 类](/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 
+- [**RadialControllerControlAcquiredEventArgs** 类](/uwp/api/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
+- [**RadialControllerMenu** 类](/uwp/api/Windows.UI.Input.RadialControllerMenu) 
+- [**RadialControllerMenuItem** 类](/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 
+- [**RadialControllerRotationChangedEventArgs** 类](/uwp/api/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
+- [**RadialControllerScreenContact** 类](/uwp/api/Windows.UI.Input.RadialControllerScreenContact) 
+- [**RadialControllerScreenContactContinuedEventArgs** 类](/uwp/api/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
+- [**RadialControllerScreenContactStartedEventArgs** 类](/uwp/api/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
+- [**RadialControllerMenuKnownIcon** 枚举](/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon) 
+- [**RadialControllerSystemMenuItemKind** 枚举](/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
 ### <a name="samples"></a>示例
 
@@ -675,7 +675,7 @@ private void ActivateGridAtLocation(Point Location)
 
 [着色书籍示例](https://github.com/Microsoft/Windows-appsample-coloringbook)
 
-[入门教程：在 Windows 应用程序中支持外围网络（和其他轮设备）](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController)
+[入门教程：支持在 Windows 应用中)  (和其他轮设备](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController)
 
 [通用 Windows 平台示例（C# 和 C++）](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
 

@@ -8,19 +8,19 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ecdd882357a7e20506ab6116748d57ab0dde33f
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 249af1260b261733454fa353adc695818d113afc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997714"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165891"
 ---
 # <a name="speech-recognition"></a>语音识别
 
 
 使用语音识别提供输入内容、指定操作或命令并完成任务。
 
-> **重要 API**：[**Windows.Media.SpeechRecognition**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition)
+> **重要 API**：[**Windows.Media.SpeechRecognition**](/uwp/api/Windows.Media.SpeechRecognition)
 
 语音识别由以下部分构成：语音运行时、用于为运行时编程的识别 API、用于听写和 Web 搜索的现成语法，以及帮助用户发现和使用语音识别功能的默认系统 UI。
 
@@ -28,13 +28,13 @@ ms.locfileid: "86997714"
 
 若要支持应用的语音识别，用户必须在其设备上连接并启用麦克风，并接受 Microsoft 隐私策略授予你的应用程序使用的权限。
 
-若要自动提示用户使用系统对话框，该对话框请求访问和使用麦克风的音频源（如下面所示的[语音识别和语音合成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)），只需在[应用程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)中设置**麦克风**[设备功能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)即可。 有关更多详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
+若要自动提示用户使用系统对话框，该对话框请求访问和使用麦克风的音频源 (示例，请阅读下面) 的[语音识别和语音合成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)，只需在[应用程序包清单](/uwp/schemas/appxpackage/appx-package-manifest)中设置**麦克风**[设备功能](/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)即可。 有关更多详细信息，请参阅 [应用功能声明](../../packaging/app-capability-declarations.md)。
 
 ![麦克风访问隐私策略](images/speech/privacy.png)
 
 如果用户单击 "是" 将访问权限授予麦克风，你的应用将添加到 "设置-> 隐私-> 麦克风" 页上的 "已批准的应用程序" 列表中。 但是，用户可以随时选择关闭此设置，因此，在尝试使用它之前，应确认你的应用程序有权访问麦克风。
 
-如果还想要支持听写、Cortana 或其他语音识别服务（如主题约束中定义的[预定义语法](#predefined-grammars)），还必须确认启用了**联机语音识别**（设置-> 的隐私 > 语音）。
+如果还想要支持听写、Cortana 或其他语音识别服务 (例如在主题约束) 中定义的 [预定义语法](#predefined-grammars) ，还必须确认启用了 **联机语音识别** (设置-> 隐私 > 语音) 。
 
 此代码段显示了你的应用程序可以如何检查是否存在麦克风以及是否有权使用它。
 
@@ -216,7 +216,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 预定义的听写和 Web 搜索语法在无需你创作语法的情况下为你的应用提供语音识别。 使用这些语法时，语音识别由远程 Web 服务执行，并且结果将返回到设备。
 
-默认自由文本听写语法可以识别用户以特定语言说出的大部分字词或短语，并且为识别短语进行了优化。 如果没有为 [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) 对象指定任何约束，将使用预定义的听写语法。 当你不希望限制用户可说内容的种类时，自由文本听写非常有用。 典型用法包括为一条消息创建笔记或听写其内容。
+默认自由文本听写语法可以识别用户以特定语言说出的大部分字词或短语，并且为识别短语进行了优化。 如果没有为 [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) 对象指定任何约束，将使用预定义的听写语法。 当你不希望限制用户可说内容的种类时，自由文本听写非常有用。 典型用法包括为一条消息创建笔记或听写其内容。
 
 诸如听写语法等 Web 搜索语法包含了用户可能说出的大量字词和短语。 但是，优化它的目的是识别用户搜索 Web 时通常使用的术语。
 
@@ -229,13 +229,13 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 下面我们将介绍如何测试是否已启用语音输入，如果未启用，则打开“设置”->“隐私”->“语音、墨迹书写和键入”页面。
 
-首先，我们将全局变量 (HResultPrivacyStatementDeclined) 初始化为 0x80045509 的 HResult 值。 请参阅[C \# 或 Visual Basic 中的异常处理](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10))。
+首先，我们将全局变量 (HResultPrivacyStatementDeclined) 初始化为 0x80045509 的 HResult 值。 请参阅 [C \# 或 Visual Basic 中的异常处理](/previous-versions/windows/apps/dn532194(v=win.10))。
 
 ```csharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;
 ```
 
-如果 [**HResult**](https://docs.microsoft.com/uwp/api/Windows.Foundation.HResult) 值等于 HResultPrivacyStatementDeclined 变量的值，则我们会在识别和测试过程中发现任何标准异常。 如果情况如此，我们将会显示一则警告并调用 `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` 以打开“设置”页。
+如果 [**HResult**](/uwp/api/Windows.Foundation.HResult) 值等于 HResultPrivacyStatementDeclined 变量的值，则我们会在识别和测试过程中发现任何标准异常。 如果情况如此，我们将会显示一则警告并调用 `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` 以打开“设置”页。
 
 ```csharp
 catch (Exception exception)
@@ -258,7 +258,7 @@ catch (Exception exception)
 }
 ```
 
-请参阅[**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)。
+请参阅 [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)。
 
 ### <a name="programmatic-list-constraints"></a>编程列表约束 
 
@@ -266,19 +266,19 @@ catch (Exception exception)
 
 列表约束由字符串数组组成，此数组表示你的应用将为识别操作接受的语音输入。 你可以通过创建语音识别列表约束对象并传递字符串数组在应用中创建列表约束。 然后，将该对象添加到识别器的约束集合。 当语音识别器识别数组中的任何一个字符串时，识别成功。
 
-请参阅[**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)。
+请参阅 [**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)。
 
 ### <a name="srgs-grammars"></a>SRGS 语法
 
 语音识别语法规范 (SRGS) 语法是一个静态文档，与编程列表约束不同，它使用由 [SRGS 版本 1.0](https://www.w3.org/TR/speech-grammar/) 定义的 XML 格式。 SRGS 语法提供了对语音识别体验的最大控制，方法是让你在单个识别中捕获多个语义含义。
 
- 请参阅[**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)。
+ 请参阅 [**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)。
 
 ### <a name="voice-command-constraints"></a>语音命令约束
 
-使用语音命令定义 (VCD) XML 文件定义用户可以在激活应用时说出以启动操作的命令。 有关更多详细信息，请参阅[通过 Cortana 使用语音命令激活前台应用](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。
+使用语音命令定义 (VCD) XML 文件定义用户可以在激活应用时说出以启动操作的命令。 有关更多详细信息，请参阅 [通过 Cortana 使用语音命令激活前台应用](/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。
 
-请参阅[ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
+请参阅[ **SpeechRecognitionVoiceCommandDefinitionConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
 
 **注意**   使用的约束类型类型取决于要创建的识别体验的复杂性。 对于特定识别任务，任一类型都可能是最佳选择，你也可能在应用中发现所有类型的约束的用途。
 要开始使用约束，请参阅[定义自定义识别约束](define-custom-recognition-constraints.md)。
@@ -289,7 +289,7 @@ catch (Exception exception)
 
 - 创建语音识别器。
 - 编译默认 Universal Windows App 约束（未向语音识别器的语法集添加任何语法）。
-- 开始使用 [**RecognizeWithUIAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) 方法提供的基本识别 UI 和 TTS 反馈侦听语音。 如果不需要默认 UI，则使用 [**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync) 方法。
+- 开始使用 [**RecognizeWithUIAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) 方法提供的基本识别 UI 和 TTS 反馈侦听语音。 如果不需要默认 UI，则使用 [**RecognizeAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync) 方法。
 
 ```CSharp
 private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
@@ -312,7 +312,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 ## <a name="customize-the-recognition-ui"></a>自定义识别 UI
 
 
-当你的应用通过调用 [**SpeechRecognizer.RecognizeWithUIAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) 来尝试进行语音识别时，多个屏幕将按以下顺序显示。
+当你的应用通过调用 [**SpeechRecognizer.RecognizeWithUIAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) 来尝试进行语音识别时，多个屏幕将按以下顺序显示。
 
 如果你使用基于预定义语法的约束（听写或 Web 搜索）：
 
@@ -334,7 +334,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 ![基于 sgrs 语法文件的约束的最终识别屏幕](images/speech-listening-complete.png)
 
-**侦听**屏幕可提供应用可识别的字词或短语的示例。 下面我们介绍如何使用 [**SpeechRecognizerUIOptions**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions) 类的属性（通过调用 [**SpeechRecognizer.UIOptions**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions) 属性获取）自定义**侦听**屏幕上的内容。
+**侦听**屏幕可提供应用可识别的字词或短语的示例。 下面我们介绍如何使用 [**SpeechRecognizerUIOptions**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions) 类的属性（通过调用 [**SpeechRecognizer.UIOptions**](/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions) 属性获取）自定义**侦听**屏幕上的内容。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)

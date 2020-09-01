@@ -1,32 +1,32 @@
 ---
-Description: 了解如何为应用、外接程序（应用内产品）和广告收益接收付款。
+Description: 了解如何接收应用的付款、 (应用内产品) 和广告收入。
 title: 收取付款
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.date: 05/29/2020
 ms.topic: article
 keywords: Windows 10, uwp, 付款, 应用销售, 应用收款, 付款, 应用商店费用, 付款暂停, 百分比
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d42677aeda694e2fc8924cee1832b62d98b15e5
-ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
+ms.openlocfilehash: 5e2b67984c43d799f0f4e3a1c6662b57bdc6ae9d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84746767"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167391"
 ---
 # <a name="getting-paid"></a>收取付款
 下面是有关接收应用、外接程序和广告收益的付款的重要信息。
 
 > [!IMPORTANT]
-> 在从 Microsoft Store 中的应用销售额获得资金之前，你需要[设置你的帐户，并填写所需的税务形式](setting-up-your-payout-account-and-tax-forms.md)。
+> 在从 Microsoft Store 中的应用销售额获得资金之前，你需要 [设置你的帐户，并填写所需的税务形式](setting-up-your-payout-account-and-tax-forms.md)。
 
 > [!NOTE]
-> 如果你正在寻找有关付款的支持，包括配置帐户、缺失付款、将付款置于保持状态或其他任何内容，请在[此处](https://developer.microsoft.com/windows/support)联系支持人员。
+> 若要寻求付款方面的支持（包括配置付款帐户、付款丢失、暂停付款或其他任何方面），请单击[此处](https://developer.microsoft.com/windows/support)联系支持人员。
 
 ## <a name="store-fee"></a>应用商店费用
 
-当你[注册开发者帐户](https://developer.microsoft.com/store/register)时，你将接受[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 此协议针对你在 Microsoft Store 中出售应用的相关事宜，包括 Microsoft 对每笔销售收取的应用商店费用，阐述了你与 Microsoft 之间的关系。
+当你[注册开发者帐户](https://developer.microsoft.com/store/register)时，你将接受[应用开发人员协议](/legal/windows/agreements/app-developer-agreement)。 此协议针对你在 Microsoft Store 中出售应用的相关事宜，包括 Microsoft 对每笔销售收取的应用商店费用，阐述了你与 Microsoft 之间的关系。
 
-费用已在[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中正式规定。 如果有任何问题，可始终查看该文档。
+费用已在[应用开发人员协议](/legal/windows/agreements/app-developer-agreement)中正式规定。 如果有任何问题，可始终查看该文档。
 
 Microsoft Store 费用适用于通过 Microsoft Store 收到的所有应用销售，包括加载项。
 
@@ -59,11 +59,11 @@ Microsoft Store 费用适用于通过 Microsoft Store 收到的所有应用销�
 
 ##  <a name="payout-hold-status"></a>付款暂停状态
 
-默认情况下，我们将每月发送付款，如上所述。 但是，可以选择暂停每个计划的付款，这将阻止我们向你的帐户发送付款。 如果选择将付款置于保持状态，我们将继续记录你所获得的任何收入，并提供你的付出的详细信息**摘要**。 但是，在你删除暂停前，我们不会向你的帐户发送任何付款。
+默认情况下，我们将每月发送付款，如上所述。 但是，可以选择暂停每个计划的付款，这将阻止我们向你的帐户发送付款。 如果选择将付款置于保持状态，我们将继续记录你所获得的任何收入，并提供你的付出的详细信息 **摘要**。 但是，在你删除暂停前，我们不会向你的帐户发送任何付款。
 
-若要暂停付款，请转到“开发人员设置”。 在“付款和税务”下的“付款和税务配置文件分配”部分中，找到要对其暂停付款的计划。 单击“暂停我的付款”复选框以暂停此计划的付款。 可以随时更改付款暂停状态，但请注意，你的决策将影响下一次每月付款。 例如，如果您想要保留四月的付出，请确保在三月份结束之前将您的支出保持状态设置为 **"开**"。
+若要暂停付款，请转到“开发人员设置”。 在“付款和税务”下的“付款和税务配置文件分配”部分中，找到要对其暂停付款的计划。 单击“暂停我的付款”复选框以暂停此计划的付款。 可以随时更改付款暂停状态，但请注意，你的决策将影响下一次每月付款。 例如，如果您想要保留四月的付出，请确保在三月份结束之前将您的支出保持状态设置为 **"开** "。
 
-将付款暂停状态设置为“打开”后，此计划的所有付款都将处于暂停状态，直到将滑块切换回“关闭” 。 当执行此操作时，将在下一个每月付款周期期间包含你（前提是已达到任何适用的付款阈值）。 例如，如果你已有付款，但想要在六月生成一项支出，则请确保在 "可能" 结束之前，将 "付出保留" 状态切换为 "**关**"。
+将付款暂停状态设置为“打开”后，此计划的所有付款都将处于暂停状态，直到将滑块切换回“关闭” 。 当执行此操作时，将在下一个每月付款周期期间包含你（前提是已达到任何适用的付款阈值）。 例如，如果你已有付款，但想要在六月生成一项支出，则请确保在 "可能" 结束之前，将 "付出保留" 状态切换为 " **关** "。
 
 > [!NOTE]
 > “付款暂停状态”会分别应用于每个计划（Microsoft Store、广告、Azure 市场等）。 如果希望对所有计划暂停付款，则必须分别对每个计划暂停付款。
@@ -72,7 +72,3 @@ Microsoft Store 费用适用于通过 Microsoft Store 收到的所有应用销�
  
 
  
-
-
-
-

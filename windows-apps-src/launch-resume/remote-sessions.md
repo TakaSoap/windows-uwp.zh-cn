@@ -4,18 +4,18 @@ description: 通过在远程会话中加入多个设备来创建跨多个设备�
 ms.assetid: 1c8dba9f-c933-4e85-829e-13ad784dd3e2
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10，uwp，已连接设备、 远程系统、 罗马、 项目罗马
+keywords: windows 10，uwp，连接的设备，远程系统，罗马，project 罗马
 ms.localizationpriority: medium
-ms.openlocfilehash: 4787b6c14408dc8ee35e26764caafc5b6e7fbdc9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f88f44d26c3a6f4971422074e855ffca53935c7f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371879"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164821"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>通过远程会话连接设备
 
-“远程会话”功能允许应用通过会话连接到其他设备，以进行显式应用消息传送或系统管理数据的中转交换，如用于在 Windows Holographic 设备之间进行全息共享的 **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)** 。
+“远程会话”功能允许应用通过会话连接到其他设备，以进行显式应用消息传送或系统管理数据的中转交换，如用于在 Windows Holographic 设备之间进行全息共享的 **[SpatialEntityStore](/uwp/api/windows.perception.spatial.spatialentitystore)**。
 
 远程会话可以由任何 Windows 设备进行创建，并且任何 Windows 设备（包括其他用户登录的设备）都可以请求加入远程会话（尽管会话可能具有“仅邀请”可见性）。 本指南为使用远程会话的所有主要方案提供了基本示例代码。 此代码可以合并到现有应用项目中，并且可以根据需要进行修改。 有关端到端实现，请参阅[问答游戏示例应用](https://github.com/microsoft/Windows-appsample-remote-system-sessions)。
 
@@ -23,7 +23,7 @@ ms.locfileid: "66371879"
 
 ### <a name="add-the-remotesystem-capability"></a>添加 RemoteSystem 功能
 
-为了让你的应用启动远程设备上的应用，必须将 `remoteSystem` 功能添加到应用包清单。 可以通过选择**功能**选项卡上的**远程系统**来使用程序包清单设计器添加它，也可以手动将以下行添加到项目的 _Package.appxmanifest_ 文件。
+为了让你的应用启动远程设备上的应用，必须将 `remoteSystem` 功能添加到应用包清单。 你可以使用包清单设计器通过选择 "**功能**" 选项卡上的 "**远程系统**" 来添加它，也可以手动将以下行添加到项目的_appxmanifest.xml_文件。
 
 ``` xml
 <Capabilities>
@@ -42,7 +42,7 @@ if (!RemoteSystem.IsAuthorizationKindEnabled(RemoteSystemAuthorizationKind.Anony
 }
 ```
 
-若要更改此设置，用户必须打开**设置**应用。 在**系统** > **共享体验** > **跨设备共享**菜单中有一个下拉框，用户可在此指定系统可与哪些设备共享体验。
+若要更改此设置，用户必须打开**设置**应用。 在 "**系统**  >  **共享体验**  >  **跨设备**" 菜单中，有一个下拉框，用户可以在其中指定与系统共享的设备。
 
 ![共享体验设置页面](images/shared-experiences-settings.png)
 
@@ -57,7 +57,7 @@ using Windows.System.RemoteSystems;
 
 ## <a name="create-a-remote-session"></a>创建远程会话
 
-若要创建远程会话实例，你必须从 **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** 对象开始进行操作。 使用以下框架创建新的会话并处理其他设备的加入请求。
+若要创建远程会话实例，你必须从 **[RemoteSystemSessionController](/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** 对象开始进行操作。 使用以下框架创建新的会话并处理其他设备的加入请求。
 
 ```csharp
 public async void CreateSession() {
@@ -107,7 +107,7 @@ public async void CreateSession() {
 
 如果希望远程会话无法被公众发现，可以将其设为“仅邀请”会话。 只有收到邀请的设备才能发送加入请求。 
 
-此过程基本上与上面相同，但在构建 **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** 实例时，你将传入配置的 **[RemoteSystemSessionOptions](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.RemoteSystemSessionOptions)** 对象。
+此过程基本上与上面相同，但在构建 **[RemoteSystemSessionController](/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** 实例时，你将传入配置的 **[RemoteSystemSessionOptions](/uwp/api/windows.system.remotesystems.RemoteSystemSessionOptions)** 对象。
 
 ```csharp
 // define the session options with the invite-only designation
@@ -120,7 +120,7 @@ RemoteSystemSessionController manager = new RemoteSystemSessionController("Bob's
 //...
 ```
 
-若要发送邀请，你必须拥有对接收远程系统的引用（通过正常的远程系统发现来获取）。 只需将此引用传入会话对象的 **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** 方法即可。 会话中的所有参与者都拥有对远程会话的引用（请参阅下一部分），所以任何参与者都可以发送邀请。
+若要发送邀请，你必须拥有对接收远程系统的引用（通过正常的远程系统发现来获取）。 只需将此引用传入会话对象的 **[SendInvitationAsync](/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** 方法即可。 会话中的所有参与者都拥有对远程会话的引用（请参阅下一部分），所以任何参与者都可以发送邀请。
 
 ```csharp
 // "currentSession" is a reference to a RemoteSystemSession.
@@ -130,7 +130,7 @@ currentSession.SendInvitationAsync(guestSystem);
 
 ## <a name="discover-and-join-a-remote-session"></a>发现并加入远程会话
 
-发现远程会话的过程由 **[RemoteSystemSessionWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionwatcher)** 类进行处理，类似于发现单个远程系统。
+发现远程会话的过程由 **[RemoteSystemSessionWatcher](/uwp/api/windows.system.remotesystems.remotesystemsessionwatcher)** 类进行处理，类似于发现单个远程系统。
 
 ```csharp
 public void DiscoverSessions() {
@@ -156,7 +156,7 @@ public void DiscoverSessions() {
 }
 ```
 
-获取 **[RemoteSystemSessionInfo](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioninfo)** 实例后，它可以用于向控制相应会话的设备发出加入请求。 接受的加入请求将异步返回 **[RemoteSystemSessionJoinResult](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionjoinresult)** 对象，该对象包含对已加入会话的引用。
+获取 **[RemoteSystemSessionInfo](/uwp/api/windows.system.remotesystems.remotesystemsessioninfo)** 实例后，它可以用于向控制相应会话的设备发出加入请求。 接受的加入请求将异步返回 **[RemoteSystemSessionJoinResult](/uwp/api/windows.system.remotesystems.remotesystemsessionjoinresult)** 对象，该对象包含对已加入会话的引用。
 
 ```csharp
 public async void JoinSession(RemoteSystemSessionInfo sessionInfo) {
@@ -189,13 +189,13 @@ public async void JoinSession(RemoteSystemSessionInfo sessionInfo) {
 }
 ```
 
-设备可以同时加入到多个会话中。 因此，可能需要将加入功能与每个会话的实际交互分开。 只要在应用中保留了对 **[RemoteSystemSession](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession)** 实例的引用，就可以通过该会话尝试通信。
+设备可以同时加入到多个会话中。 因此，可能需要将加入功能与每个会话的实际交互分开。 只要在应用中保留了对 **[RemoteSystemSession](/uwp/api/windows.system.remotesystems.remotesystemsession)** 实例的引用，就可以通过该会话尝试通信。
 
 ## <a name="share-messages-and-data-through-a-remote-session"></a>通过远程会话共享消息和数据
 
 ### <a name="receive-messages"></a>接收消息
 
-你可以使用一个表示单一会话范围的信道的 **[RemoteSystemSessionMessageChannel](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionmessagechannel)** 实例与参与会话的其他设备交换消息和数据。 对其进行初始化后，它会立即开始侦听传入的消息。
+你可以使用一个表示单一会话范围的信道的 **[RemoteSystemSessionMessageChannel](/uwp/api/windows.system.remotesystems.remotesystemsessionmessagechannel)** 实例与参与会话的其他设备交换消息和数据。 对其进行初始化后，它会立即开始侦听传入的消息。
 
 >[!NOTE]
 >在发送和接收时，必须从字节数组对消息进行序列化和反序列化。 此功能包含在以下示例中，但可以单独实现以获得更好的代码模块性。 有关此功能的示例，请参阅[示例应用](https://github.com/microsoft/Windows-appsample-remote-system-sessions)。
@@ -252,7 +252,7 @@ public async void SendMessageToAllParticipantsAsync(RemoteSystemSessionMessageCh
 }
 ```
 
-为了仅向特定参与者发送消息，你必须首先启动发现过程以获取对参与会话的远程系统的引用。 这类似于在会话之外发现远程系统的过程。 使用 **[RemoteSystemSessionParticipantWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionparticipantwatcher)** 实例查找会话的参与设备。
+为了仅向特定参与者发送消息，你必须首先启动发现过程以获取对参与会话的远程系统的引用。 这类似于在会话之外发现远程系统的过程。 使用 **[RemoteSystemSessionParticipantWatcher](/uwp/api/windows.system.remotesystems.remotesystemsessionparticipantwatcher)** 实例查找会话的参与设备。
 
 ```csharp
 public void WatchForParticipants() {
@@ -321,5 +321,5 @@ public async void SendMessageToListAsync(RemoteSystemSessionMessageChannel messa
 ```
 
 ## <a name="related-topics"></a>相关主题
-* [连接的应用和设备 （项目罗马）](connected-apps-and-devices.md)
-* [远程系统 API 参考](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)
+* [连接的应用和设备（项目 Rome）](connected-apps-and-devices.md)
+* [远程系统 API 参考](/uwp/api/Windows.System.RemoteSystems)

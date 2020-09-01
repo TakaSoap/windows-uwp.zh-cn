@@ -6,22 +6,22 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 47011a22353f26361a392690d857bde1fc180c03
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 9c4e8677a27128e6a33a844f5a887e921ca9ced3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79211003"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167361"
 ---
 # <a name="product-declarations"></a>产品声明
 
 [提交过程](app-submissions.md)的 "[属性](enter-app-properties.md)" 页的 "**产品声明**" 部分可帮助确保你的应用程序正确显示并向正确的客户提供，帮助他们了解他们如何使用你的应用程序。
 
-以下各节介绍了一些声明以及在确定每个声明是否适用于你的应用程序时需要考虑的事项。 请注意，默认情况下会选中其中的两个声明（如下所述）。根据你的产品类别，你可能还会看到其他声明。 确保查看所有声明，并确保它们准确反映您的提交。
+以下各节介绍了一些声明以及在确定每个声明是否适用于你的应用程序时需要考虑的事项。 请注意，默认情况下会选中其中的两个声明 (如下所述。 ) 根据你的产品类别，你还可以看到其他声明。 确保查看所有声明，并确保它们准确反映您的提交。
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>此应用允许用户购买，但不使用 Microsoft Store commerce 系统。
 
-对于几乎每个提交，你都应将此框保持为未选中状态，因为提供购买项目的机会的应用程序必须使用 Microsoft Store 应用内购买 API 来创建和提交外接程序。 根据[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，在2015年6月29日之前创建并提交的应用程序可以继续提供应用内购买功能，而无需使用 Microsoft 的商业引擎，只要购买功能符合[Microsoft Store 策略](store-policies.md#108-financial-transactions)即可。 如果这适用于你的应用，你必须选中此框。 否则，请不要选中。
+对于几乎每个提交，你都应将此框保持为未选中状态，因为提供购买项目的机会的应用程序必须使用 Microsoft Store 应用内购买 API 来创建和提交外接程序。 根据 [应用开发人员协议](/legal/windows/agreements/app-developer-agreement)，在2015年6月29日之前创建并提交的应用程序可以继续提供应用内购买功能，而无需使用 Microsoft 的商业引擎，只要购买功能符合 [Microsoft Store 策略](store-policies.md#108-financial-transactions)即可。 如果这适用于你的应用，你必须选中此框。 否则，请不要选中。
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>已对此应用进行辅助功能指南符合度测试。
 
@@ -40,13 +40,13 @@ ms.locfileid: "79211003"
 有关详细信息，请参阅[辅助功能](../design/accessibility/accessibility.md)、[辅助功能测试](../design/accessibility/accessibility-testing.md)和[应用商店中的辅助功能](../design/accessibility/accessibility-in-the-store.md)。
 
 > [!IMPORTANT]
->除非您出于此目的专门设计和测试应用程序，否则  不会列出您的应用程序。 如果将你的应用声明为辅助应用，但它实际上并不支持辅助功能，你可能会收到来自社区的负面反馈。
+> 不要将您的应用程序列出为可访问，除非您出于此目的专门设计和测试。 如果将你的应用声明为辅助应用，但它实际上并不支持辅助功能，你可能会收到来自社区的负面反馈。
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客户可以将此应用安装到备用驱动器或可移动存储。
 
 默认情况下，此框处于选中状态，以允许客户将应用安装到外部或可移动存储媒体（如 SD 卡）或非系统卷驱动器（如外部驱动器）。
 
-如果要阻止将应用安装到备用驱动器或可移动存储，并仅允许安装到设备上的内部硬盘驱动器，请取消选中此框。 （请注意，不能选择限制安装，以便*只能*将应用程序安装到可移动存储媒体。）
+如果要阻止将应用安装到备用驱动器或可移动存储，并仅允许安装到设备上的内部硬盘驱动器，请取消选中此框。  (请注意，不能选择限制安装，以便 *只能* 将应用程序安装到可移动存储媒体。 ) 
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows 可以将此应用的数据包含在 OneDrive 的自动备份中。
@@ -67,7 +67,3 @@ ms.locfileid: "79211003"
  
 
  
-
-
-
-

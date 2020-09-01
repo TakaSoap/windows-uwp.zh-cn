@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: 91e3ae5b23b7429633053f4d4d876f02127d26e3
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 57d2f3729430faefc7db31cad6a0ac91ddaa2e02
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054417"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166361"
 ---
 # <a name="relation-based-animations"></a>基于关系的动画
 
@@ -46,9 +46,9 @@ ms.locfileid: "89054417"
 
 - 参数 – 表示常量值或对其他 Composition 对象的引用的值。
 - 算术运算符 – 将各个参数连接起来形成等式的典型算术运算符：加号 (+)、减号 (-)、乘号 (*)、除号(/)。 还包含条件运算符，如大于号 (>)、等于号 (==)、三元运算符 (condition ? ifTrue ：ifFalse) 等。
-- 数学函数 – 基于 System.Numeric 的数学函数/快捷键。 有关受支持函数的完整列表，请参阅 [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation)。
+- 数学函数 – 基于 System.Numeric 的数学函数/快捷键。 有关受支持函数的完整列表，请参阅 [ExpressionAnimation](/uwp/api/Windows.UI.Composition.ExpressionAnimation)。
 
-Expression 还支持一系列关键字 - 一种特殊的短语，仅在 ExpressionAnimation 系统中有不同含义。 这些关键字（以及数学函数的完整列表）都在 [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation) 文档中列出。
+Expression 还支持一系列关键字 - 一种特殊的短语，仅在 ExpressionAnimation 系统中有不同含义。 这些关键字（以及数学函数的完整列表）都在 [ExpressionAnimation](/uwp/api/Windows.UI.Composition.ExpressionAnimation) 文档中列出。
 
 ### <a name="creating-expressions-with-expressionbuilder"></a>使用 ExpressionBuilder 创建 Expression
 
@@ -59,7 +59,7 @@ Expression 还支持一系列关键字 - 一种特殊的短语，仅在 Expressi
 
 为使该文档表述清晰，我们将使用 ExpressionBuilder 定义我们的 Expression。
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 参数构成了 Expression 的核心。 有两种类型的参数：
 

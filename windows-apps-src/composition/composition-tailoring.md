@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 95a7355241f9ba4cc7b4bb743b78ac09169d65d9
-ms.sourcegitcommit: 2747d9266e1678fca96d3822ce47499ca91a2c70
+ms.openlocfilehash: 3d4aa82f70e9bad7a60a97b6b28f28f3dfd008c9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77213674"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166401"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>使用 Windows UI & 体验定制效果
 
@@ -22,7 +22,7 @@ UI 定制是一种广泛的类别，其中包含与以下领域相关的高性�
 - 容纳动画的用户设置
 - 为给定的硬件功能优化 UI
 
-在此，我们将介绍如何使用上述区域中的可视层定制您的效果和动画，但有许多其他方法可定制您的应用程序以确保最终用户体验出色。 有关如何为各种设备[定制 ui](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)并[创建响应式 ui](/windows/uwp/design/layout/responsive-design)的指南文档可用。
+在此，我们将介绍如何使用上述区域中的可视层定制您的效果和动画，但有许多其他方法可定制您的应用程序以确保最终用户体验出色。 有关如何为各种设备 [定制 ui](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) 并 [创建响应式 ui](../design/layout/responsive-design.md)的指南文档可用。
 
 ## <a name="user-effects-settings"></a>用户效果设置
 
@@ -38,10 +38,10 @@ UI 定制是一种广泛的类别，其中包含与以下领域相关的高性�
 
 关闭后，acrylic 材料将自动回退为纯色，因为 XAML 的 acrylic 画笔在默认情况下已侦听此事件。 在这里，我们看到计算器应用程序在未启用透明效果时适当地恢复为纯色：
 
-![计算器与 Acrylic](images/tailoring-acrylic.png)
-![计算器，Acrylic 响应透明度设置](images/tailoring-acrylic-fallback.png)
+![带有 Acrylic ](images/tailoring-acrylic.png)
+ ![ 计算器且 Acrylic 响应透明度设置的计算器](images/tailoring-acrylic-fallback.png)
 
-但是，对于任何自定义效果，应用程序需要响应[UISettings. AdvancedEffectsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabled)属性或[AdvancedEffectsEnabledChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged)事件，并切换效果/效果图以使用没有透明度的效果。 下面是一个示例：
+但是，对于任何自定义效果，应用程序需要响应 [UISettings. AdvancedEffectsEnabled](/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabled) 属性或 [AdvancedEffectsEnabledChanged](/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) 事件，并切换效果/效果图以使用没有透明度的效果。 下面是一个示例：
 
 ```cs
 public MainPage()
@@ -59,7 +59,7 @@ private void Uisettings_AdvancedEffectsEnabledChanged(UISettings sender, object 
 
 ## <a name="animations-settings"></a>动画设置
 
-同样，应用程序应侦听[UISettings](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.animationsenabled)属性，并对其做出响应，以确保根据 "设置" 中的用户设置 > 轻松访问 > 显示打开或关闭动画。
+同样，应用程序应侦听 [UISettings](/uwp/api/windows.ui.viewmanagement.uisettings.animationsenabled) 属性，并对其做出响应，以确保根据 "设置" 中的用户设置 > 轻松访问 > 显示打开或关闭动画。
 
 ![设置中的动画选项](images/tailoring-animations-setting.png)
 
@@ -75,7 +75,7 @@ public MainPage()
 
 ## <a name="leveraging-the-capabilities-api"></a>利用功能 API
 
-利用[CompositionCapabilities](/uwp/api/windows.ui.composition.compositioncapabilities) api，你可以在给定的硬件上检测哪些组合功能可用且性能良好，并定制设计以确保最终用户能够在任何设备上获得高性能和漂亮的体验。 Api 提供了一种方法来检查硬件系统功能，以实现各种外形规格的平稳效果缩放。 这样就可以轻松地对应用程序进行适当调整，以创建精美且无缝的最终用户体验。
+利用 [CompositionCapabilities](/uwp/api/windows.ui.composition.compositioncapabilities) api，你可以在给定的硬件上检测哪些组合功能可用且性能良好，并定制设计以确保最终用户能够在任何设备上获得高性能和漂亮的体验。 Api 提供了一种方法来检查硬件系统功能，以实现各种外形规格的平稳效果缩放。 这样就可以轻松地对应用程序进行适当调整，以创建精美且无缝的最终用户体验。
 
 此 API 提供了方法和事件侦听器，可用于对应用程序 UI 做出有效缩放决策。 此功能检测到系统可处理复杂的组合和渲染操作的程度，然后在易于使用的模型中返回信息供开发人员使用。
 
@@ -112,17 +112,17 @@ CompositionCapabilities 功能已用于 Acrylic 材料等功能，在这种情�
     }
     ```
 
-可在[WINDOWS UI Github](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 15063/CompCapabilities)存储库中找到完整示例代码。
+可在 [WINDOWS UI Github](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 15063/CompCapabilities)存储库中找到完整示例代码。
 
 ## <a name="fast-vs-slow-effects"></a>快速和缓慢效果
 
-根据 CompositionCapabilities API 中所提供的[AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported)和[AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast)方法的反馈，应用程序可以决定为设备优化所选的其他效果，从而实现昂贵或不受影响的影响。 众所周知，某些效果的资源比其他效果要多得多，并且应谨慎使用，其他效果可以更自由地使用。 但是，对于所有效果，当在某些情况下进行链接和动画处理时应谨慎使用，否则组合可能会更改效果图的性能特征。 下面是一些针对单个效果的性能特征的规则：
+根据 CompositionCapabilities API 中所提供的 [AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) 和 [AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) 方法的反馈，应用程序可以决定为设备优化所选的其他效果，从而实现昂贵或不受影响的影响。 众所周知，某些效果的资源比其他效果要多得多，并且应谨慎使用，其他效果可以更自由地使用。 但是，对于所有效果，当在某些情况下进行链接和动画处理时应谨慎使用，否则组合可能会更改效果图的性能特征。 下面是一些针对单个效果的性能特征的规则：
 
-- 已知的影响对性能的影响包括：高斯模糊、阴影掩码、BackDropBrush、HostBackDropBrush 和分层视觉对象。 不建议对低端设备使用这些[功能（功能级别 9.1-9.3）](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)，并且应谨慎地在高端设备上使用。
-- 具有中等性能影响的影响包括颜色矩阵、特定混合效果 BlendModes （亮度、颜色、饱和度和色调）、聚焦、SceneLightingEffect 和（具体取决于方案） BorderEffect。 这些效果可能适用于低端设备上的某些方案，但在链接和动画处理时应谨慎使用。 建议限制使用为两个或更少，并仅对转换进行动画处理。
+- 已知的影响对性能的影响包括：高斯模糊、阴影掩码、BackDropBrush、HostBackDropBrush 和分层视觉对象。 对于低端设备 [ (功能级别 9.1-9.3) ](/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)，不建议使用这些功能，应在高端设备上谨慎使用。
+- 具有中等性能影响的影响包括颜色矩阵、特定混合效果 BlendModes (发光度、颜色、饱和度和色调) 、聚焦、SceneLightingEffect 和 (，具体取决于) BorderEffect 的方案。 这些效果可能适用于低端设备上的某些方案，但在链接和动画处理时应谨慎使用。 建议限制使用为两个或更少，并仅对转换进行动画处理。
 - 所有其他效果的性能不会受到影响，并且在动画和链接时适用于所有合理方案。
 
 ## <a name="related-articles"></a>相关文章
 
-- [UWP 响应式设计技术](https://docs.microsoft.com/windows/uwp/design/layout/responsive-design)
-- [UWP 设备定制](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+- [UWP 响应式设计技术](../design/layout/responsive-design.md)
+- [UWP 设备定制](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)

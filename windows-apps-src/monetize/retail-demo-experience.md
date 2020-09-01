@@ -1,31 +1,31 @@
 ---
-title: 向应用程序添加零售演示（RDX）功能
+title: 向应用中添加零售演示 (RDX) 功能
 description: 为零售演示模式准备你的应用，帮助在零售楼层上展示你的应用。
 ms.assetid: f83f950f-7fdd-4f18-8127-b92a8f400061
 ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, uwp, 零售演示应用
 ms.localizationpriority: medium
-ms.openlocfilehash: 5be39760ee2b8837cfb9b0809a354262e790970b
-ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
+ms.openlocfilehash: 39f1cb7439c02f215824c6c632fb2e2fc6afdb39
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73051993"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164531"
 ---
-# <a name="add-retail-demo-rdx-features-to-your-app"></a>向应用程序添加零售演示（RDX）功能
+# <a name="add-retail-demo-rdx-features-to-your-app"></a>向应用中添加零售演示 (RDX) 功能
 
 在你的 Windows 应用中包括零售演示模式，以便在销售场所试用电脑和设备的客户可以直接进入。
 
-当客户在零售商店中时，他们希望能够试用 Pc 和设备的演示。 他们通常会花费相当多的时间块，通过[零售演示体验（RDX）](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)与应用程序进行玩。
+当客户在零售商店中时，他们希望能够试用 Pc 和设备的演示。 他们通常会通过 [零售演示体验 (RDX) ](/windows-hardware/customize/desktop/retail-demo-experience)，花费大量时间来围绕应用程序进行播放。
 
-你可以将应用设置为在_正常_或_零售_模式下提供不同的体验。 例如，如果你的应用程序是在安装过程中启动的，则你可能会在 "零售" 模式下跳过它，并使用示例数据和默认设置预填充应用，以便他们可以直接进入。
+你可以将应用设置为在 _正常_ 或 _零售_ 模式下提供不同的体验。 例如，如果你的应用程序是在安装过程中启动的，则你可能会在 "零售" 模式下跳过它，并使用示例数据和默认设置预填充应用，以便他们可以直接进入。
 
 从客户的角度来看，只有一个应用。 为了帮助客户区分这两种模式，我们建议，在你的应用处于零售模式时，它会在标题栏或适当位置显示 "零售" 一词。
 
 除了适用于应用的 Microsoft Store 要求外，RDX 感知的应用还必须与 RDX 安装、清理和更新过程兼容，以确保客户在零售商店具有积极的体验。
 
-## <a name="design-principles"></a>设计原则
+## <a name="design-principles"></a>设计原理
 
 * **显示您的最佳**方案。 使用零售演示体验展示你的应用 rocks 的原因。 这很可能是您首次看到您的应用程序，因此显示最好的棋子！
 
@@ -45,11 +45,11 @@ ms.locfileid: "73051993"
 
 不符合这些关键要求的 RDX 感知应用将尽快从所有零售演示设备中删除。
 
-* **请勿要求提供个人身份信息（PII）** 。 这包括登录信息、Microsoft 帐户信息或联系人详细信息。
+* **请勿要求 (PII) 的个人身份信息 **。 这包括登录信息、Microsoft 帐户信息或联系人详细信息。
 
 * **无错误体验**。 你的应用必须毫无错误地运行。 此外，不应向使用零售演示设备的客户显示任何错误弹出窗口或通知。 错误会对应用本身、品牌、设备品牌、设备的 manufacturer's 品牌和 Microsoft 品牌产生不良反应。
 
-* **付费应用必须具有试用模式**。 您的应用程序需要是免费的或包含[试用模式](https://docs.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app)。 客户不希望为零售商店中的体验付费。
+* **付费应用必须具有试用模式**。 您的应用程序需要是免费的或包含 [试用模式](./exclude-or-limit-features-in-a-trial-version-of-your-app.md)。 客户不希望为零售商店中的体验付费。
 
 ### <a name="high-priority-requirements"></a>高优先级要求
 
@@ -61,7 +61,7 @@ ms.locfileid: "73051993"
 
 * **无匿名通信**。 由于使用零售演示设备的客户是匿名用户，因此他们不应该能够通过该设备发送或共享内容。
 
-* **使用清除过程提供一致的体验**。 当客户走到零售演示设备前时，每个客户都应具有相同的体验。 应用应在每次使用后使用 "[清除进程](#cleanup-process)" 返回到相同的默认状态。 我们不希望下一个客户查看最后一个客户留下的内容。 这包括计分牌、成就和解锁。
+* **使用清除过程提供一致的体验**。 当客户走到零售演示设备前时，每个客户都应具有相同的体验。 应用应在每次使用后使用 " [清除进程](#cleanup-process) " 返回到相同的默认状态。 我们不希望下一个客户查看最后一个客户留下的内容。 这包括计分牌、成就和解锁。
 
 * **Age 相应内容**。 需要为所有应用程序内容分配 "一个或更低的评分" 类别。 若要了解详细信息，请参阅使用 IARC 和[ESRB 评级](https://www.esrb.org/ratings/ratings_guide.aspx)[获取应用](https://www.globalratings.com/for-developers.aspx)。
 
@@ -76,7 +76,7 @@ Windows 零售商店团队可能直接联系开发人员，以设置有关如何
 ## <a name="retailinfo-api-preparing-your-code-for-demo-mode"></a>RetailInfo API：在演示模式下准备你的代码
 
 ### <a name="isdemomodeenabled"></a>IsDemoModeEnabled
-[**RetailInfo**](https://docs.microsoft.com/uwp/api/Windows.System.Profile.RetailInfo)实用工具类中的[**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled)属性，该类是 windows 10 SDK 中的[windows 配置文件](https://docs.microsoft.com/uwp/api/windows.system.profile)命名空间的一部分，用作布尔指示符，用于指定应用运行的代码路径（_正常_模式或_零售_模式。
+[**RetailInfo**](/uwp/api/Windows.System.Profile.RetailInfo)实用工具类中的[**IsDemoModeEnabled**](/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled)属性，它是Windows.System 的一部分[。](/uwp/api/windows.system.profile)Windows 10 SDK 中的配置文件命名空间用作布尔指示符，用于指定应用在_正常_模式或_零售_模式下运行的代码路径。
 
 ``` csharp
 using Windows.Storage;
@@ -129,7 +129,7 @@ if (Windows.System.Profile.retailInfo.isDemoModeEnabled) {
 
 ### <a name="retailinfoproperties"></a>RetailInfo
 
-当 [**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) 返回 true 时，可使用 [**RetailInfo.Properties**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.properties) 查询一组关于设备的属性，以生成更加自定义的零售演示体验。 这些属性包括 [**ManufacturerName**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.manufacturername)、[**Screensize**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.screensize)、[**Memory**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.memory) 等。
+当 [**IsDemoModeEnabled**](/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) 返回 true 时，可使用 [**RetailInfo.Properties**](/uwp/api/windows.system.profile.retailinfo.properties) 查询一组关于设备的属性，以生成更加自定义的零售演示体验。 这些属性包括 [**ManufacturerName**](/uwp/api/windows.system.profile.knownretailinfoproperties.manufacturername)、[**Screensize**](/uwp/api/windows.system.profile.knownretailinfoproperties.screensize)、[**Memory**](/uwp/api/windows.system.profile.knownretailinfoproperties.memory) 等。
 
 ```csharp
 using Windows.UI.Xaml.Controls;
@@ -243,15 +243,15 @@ namespace Windows.System.Profile
 
 ### <a name="store-data-across-user-sessions"></a>跨用户会话存储数据
 
-若要跨用户会话存储数据，可以将信息存储在__ApplicationData__中，因为默认的清理过程不会自动删除此文件夹中的数据。 请注意，在清理过程中，将删除使用*LocalState*存储的信息。
+若要跨用户会话存储数据，可以将信息存储在 __ApplicationData__ 中，因为默认的清理过程不会自动删除此文件夹中的数据。 请注意，在清理过程中，将删除使用 *LocalState* 存储的信息。
 
 ### <a name="customize-the-cleanup-process"></a>自定义清除过程
 
-若要自定义清理过程，请在应用中实现 `Microsoft-RetailDemo-Cleanup` 应用服务。
+若要自定义清除过程，请将 `Microsoft-RetailDemo-Cleanup` 应用服务实现到应用中。
 
-需要自定义清理逻辑的情况包括运行广泛的设置、下载和缓存数据，或者不希望删除*LocalState*数据。
+需要自定义清理逻辑的情况包括运行广泛的设置、下载和缓存数据，或者不希望删除 *LocalState* 数据。
 
-步骤1：在应用程序清单中声明_RetailDemo-清理_服务。
+步骤1：在应用程序清单中声明 _RetailDemo-清理_ 服务。
 ``` CSharp
   <Applications>
       <Extensions>
@@ -264,7 +264,7 @@ namespace Windows.System.Profile
 
 ```
 
-步骤2：使用下面的示例模板在_AppdataCleanup_ case 函数下实现自定义清理逻辑。
+步骤2：使用下面的示例模板在 _AppdataCleanup_ case 函数下实现自定义清理逻辑。
 ``` CSharp
 using System;
 using System.IO;
@@ -359,7 +359,7 @@ namespace MyCompany.MyApp
 
 ## <a name="related-links"></a>相关链接
 
-* [存储和检索应用数据](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [如何创建和使用应用服务](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-* [本地化应用程序内容](https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal)
-* [零售演示体验（RDX）](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)
+* [存储和检索应用数据](../design/app-settings/store-and-retrieve-app-data.md)
+* [如何创建和使用应用服务](../launch-resume/how-to-create-and-consume-an-app-service.md)
+* [本地化应用内容](../design/globalizing/globalizing-portal.md)
+* [ (RDX 的零售演示体验) ](/windows-hardware/customize/desktop/retail-demo-experience)

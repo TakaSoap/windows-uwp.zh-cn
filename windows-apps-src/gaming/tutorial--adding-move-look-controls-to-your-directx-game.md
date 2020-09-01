@@ -6,14 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 移动观看, 控件
 ms.localizationpriority: medium
-ms.openlocfilehash: f1516ada043ac5e9d5c059f7cd2b91cb69a5eab1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ed17d38bfaa90956b22265d1dfc320bfcc13ede7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367856"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165121"
 ---
-# <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>游戏的移动外观控件
+# <a name="span-iddev_gamingtutorial__adding_move-look_controls_to_your_directx_gamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>游戏的移动观看控件
 
 
 
@@ -145,28 +145,28 @@ internal:
 
 首先，我们定义一些有用的字段，用于保存有关相机视图的更新信息。
 
--   **m\_位置**照相机 （并因此 viewplane） 在三维场景中，使用场景坐标的位置。
--   **m\_间距**是相机或按上下轮换使用其周围 viewplane 的 x 轴，以弧度为单位的间距。
--   **m\_偏航角**是相机或其左右旋转围绕 viewplane 的 y 轴，以弧度为单位的偏航。
+-   **m \_ position** 是相机 (的位置，因此在三维场景中使用场景坐标) viewplane。
+-   **m \_ 螺距** 是相机的间距，或其围绕 viewplane 的 x 轴的上下旋转（以弧度表示）。
+-   **m \_ 偏航** 是相机的偏航，或其围绕 viewplane 的 y 轴的左右旋转（以弧度表示）。
 
 现在，我们定义用于存储有关控制器状态和位置信息的字段。 首先，我们将定义基于触摸的移动控制器所需的字段。 （对于移动控制器的键盘实现没有特殊要求。 我们只需使用特定处理程序读取键盘事件。）
 
--   **m\_moveInUse**指示移动控制器是否正在使用。
--   **m\_movePointerID**是当前的移动指针的唯一 ID。 在检查指针 ID 值时，我们用它来区分观看指针和移动指针。
--   **m\_moveFirstDown**是播放机第一次触摸移动控制器指针区域在屏幕上的点。 我们稍后将使用此值设置死区，以防止视图的抖动。
--   **m\_movePointerPosition**是播放机当前已移动到指针在屏幕上的点。 我们使用它来确定哪些播放机想要通过检查其相对于移动的方向**m\_moveFirstDown**。
--   **m\_moveCommand**是移动控制器的最终计算的命令： 最多 （向前），向下 （后退），鼠标左键，或右键。
+-   **m \_ moveInUse** 指示移动控制器是否正在使用中。
+-   **m \_ movePointerID** 是当前移动指针的唯一 ID。 在检查指针 ID 值时，我们用它来区分观看指针和移动指针。
+-   **m \_ moveFirstDown** 是屏幕上的点，播放机首先接触移动控制器指针区域。 我们稍后将使用此值设置死区，以防止视图的抖动。
+-   **m \_ movePointerPosition** 是播放机当前将指针移动到的屏幕上的点。 我们使用它来确定播放机要通过检查它相对于 **m \_ moveFirstDown**来移动的方向。
+-   **m \_ moveCommand** 是移动控制器的最终计算命令：向上) 、向下 (向下) 、向左或向右 (。
 
 现在，我们定义用于观看控制器的字段，同时适用于鼠标和触摸实现。
 
--   **m\_lookInUse**指示查看控件是否在使用中。
--   **m\_lookPointerID**是当前查找指针的唯一 ID。 在检查指针 ID 值时，我们用它来区分观看指针和移动指针。
--   **m\_lookLastPoint**是中的最后一点，场景坐标，在上一帧捕获。
--   **m\_lookLastDelta**计算当前区别**m\_位置**并**m\_lookLastPoint**。
+-   **m \_ lookInUse** 指示 "外观" 控件是否正在使用中。
+-   **m \_ lookPointerID** 是当前外观指针的唯一 ID。 在检查指针 ID 值时，我们用它来区分观看指针和移动指针。
+-   **m \_ lookLastPoint** 是在上一帧中捕获的场景坐标中的最后一个点。
+-   **m \_ lookLastDelta** 是当前 **m \_ 位置** 和 **m \_ lookLastPoint**之间的计算差。
 
 最后，我们为运动的 6 个维度定义 6 个布尔值，用于指示每个方向移动操作的当前状态（开或关）：
 
--   **m\_向前**， **m\_回**， **m\_左**， **m\_右**， **m\_向上**并**m\_下**。
+-   **m \_ 向前**、 **m 向 \_ 后**、 **m \_ 向左**、 **m \_ 向右**、 **m \_ 向上** 和 ** \_ 向下移动**。
 
 我们使用 6 个事件处理程序捕获输入数据来更新控制器的状态：
 
@@ -178,12 +178,12 @@ internal:
 
 最后，我们使用这些方法和属性来初始化、访问和更新控制器的状态信息。
 
--   **Initialize**。 应用调用此事件处理程序来初始化控件，并将其附加到描述显示窗口的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 对象。
+-   **初始化**。 应用调用此事件处理程序来初始化控件，并将其附加到描述显示窗口的 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 对象。
 -   **SetPosition**。 应用调用此方法以在场景空间中设置控件的（x、y 和 z）坐标。
 -   **SetOrientation**。 应用调用此方法以设置相机的俯仰和偏航。
--   **获取\_位置**。 应用访问此属性来获取相机在场景空间中的当前位置。 使用此属性作为当前相机位置与应用进行通信的方法。
--   **获取\_LookPoint**。 应用访问此属性来获取控制器相机面向的当前点。
--   **Update**。 读取移动和观看控制器的状态并更新相机位置。 从应用的主循环中不断调用此方法可刷新相机控制器数据和相机在场景空间中的位置。
+-   **获取 \_位置**。 应用访问此属性来获取相机在场景空间中的当前位置。 使用此属性作为当前相机位置与应用进行通信的方法。
+-   **获取 \_LookPoint**。 应用访问此属性来获取控制器相机面向的当前点。
+-   **更新**。 读取移动和观看控制器的状态并更新相机位置。 从应用的主循环中不断调用此方法可刷新相机控制器数据和相机在场景空间中的位置。
 
 现在，你在此处拥有了实现移动观看控件所需的全部组件。 因此，我们将这些片段连接在一起。
 
@@ -192,17 +192,17 @@ internal:
 
 Windows 运行时事件调度程序提供我们需要 **MoveLookController** 类的实例处理的 5 个事件：
 
--   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
--   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
--   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
--   [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup)
--   [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown)
+-   [**PointerPressed**](/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased)
+-   [**KeyUp**](/uwp/api/windows.ui.core.corewindow.keyup)
+-   [**KeyDown**](/uwp/api/windows.ui.core.corewindow.keydown)
 
-这些事件在 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 类型上实现。 我们假设你有一个 **CoreWindow** 对象要处理。 如果不知道如何获取该对象，请参阅[如何设置通用 Windows 平台 (UWP) C++ 应用以显示 DirectX 视图](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10))。
+这些事件在 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 类型上实现。 我们假设你有一个 **CoreWindow** 对象要处理。 如果不知道如何获取该对象，请参阅[如何设置通用 Windows 平台 (UWP) C++ 应用以显示 DirectX 视图](/previous-versions/windows/apps/hh465077(v=win.10))。
 
 由于在应用运行时将触发这些事件，处理程序将更新控制器在私有字段中定义的状态信息。
 
-首先，让我们填充鼠标和触摸指针事件处理程序。 在第一个事件处理程序 **OnPointerPressed()** 中，我们从 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 获取指针的 x-y 坐标，该类型管理用户单击鼠标或触摸屏幕的观看控制器区域时的显示。
+首先，让我们填充鼠标和触摸指针事件处理程序。 在第一个事件处理程序 **OnPointerPressed()** 中，我们从 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 获取指针的 x-y 坐标，该类型管理用户单击鼠标或触摸屏幕的观看控制器区域时的显示。
 
 **OnPointerPressed**
 
@@ -251,9 +251,9 @@ _In_ PointerEventArgs^ args)
 }
 ```
 
-此事件处理程序检查指针是否为鼠标（对于本示例，同时支持鼠标和触摸）以及是否位于移动控制器区域中。 如果这两个条件均为 true，它将检查是否指针只需按下，具体而言，是否此单击操作的不相关到上一次移动或查找输入，通过测试如果**m\_moveInUse**为 false。 因此，该处理程序捕获按下了完成的操作和设置移动控制器区域中的点如果**m\_moveInUse**为 true，以便当再次调用此处理程序时，它不会覆盖的起始位置的移动输入的控制器的交互。 它还将移动控制器指针 ID 更新为当前指针的 ID。
+此事件处理程序检查指针是否为鼠标（对于本示例，同时支持鼠标和触摸）以及是否位于移动控制器区域中。 如果这两个条件都为 true，则它会检查是否只按下了指针（具体来说，这种单击是否与上一个 move 或 look input 无关），方法是测试 **m \_ moveInUse** 是否为 false。 如果是这样，则该处理程序将捕获移动控制器区域中按下的点，并将 **m \_ moveInUse** 设置为 true，以便再次调用此处理程序时，它不会覆盖移动控制器输入交互的开始位置。 它还将移动控制器指针 ID 更新为当前指针的 ID。
 
-如果指针是鼠标或者触摸指针不在移动控制器区域中，它一定位于观看控制器区域中。 它会设置**m\_lookLastPoint**用户按下鼠标按钮或接触和按下的当前位置，重置差异，并介绍控制器的指针 ID 更新为当前指针 id。 它还会将观看控制器的状态设置为活动。
+如果指针是鼠标或者触摸指针不在移动控制器区域中，它一定位于观看控制器区域中。 它将 **m \_ lookLastPoint** 设置为用户按下鼠标按钮或触摸和按下鼠标按钮的当前位置，并重置增量，并将外观控制器的指针 id 更新为当前指针 id。 它还会将观看控制器的状态设置为活动。
 
 **OnPointerMoved**
 
@@ -299,11 +299,11 @@ void MoveLookController::OnPointerMoved(
 
 每当指针移动（在此情况下为拖动触摸屏指针或者在按下鼠标左键的同时移动鼠标指针）时都会触发 **OnPointerMoved** 事件处理程序。 如果指针 ID 与移动控制器指针的 ID 相同，则它是移动指针；否则，我们需要检查它是否是作为活动指针的观看控制器。
 
-如果它是移动控制器，我们只需更新指针位置。 只要不断触发 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) 事件，我们就不断更新指针位置，因为我们希望将最终位置与 **OnPointerPressed** 事件处理程序捕获的第一个位置进行比较。
+如果它是移动控制器，我们只需更新指针位置。 只要不断触发 [**PointerMoved**](/uwp/api/windows.ui.core.corewindow.pointermoved) 事件，我们就不断更新指针位置，因为我们希望将最终位置与 **OnPointerPressed** 事件处理程序捕获的第一个位置进行比较。
 
 如果是观看控制器，则情况稍复杂一些。 我们需要计算新观看点并将相机定位到它的中心，因而需要计算上一个观看点与当前屏幕位置之间的增量，然后乘以我们的缩放比例，我们可以进行调整，使观看点的移动相对于屏幕移动的距离变小或变大。 我们使用该值来计算俯仰和偏航。
 
-最后，当玩家停止移动鼠标或触摸屏幕时，我们需要停用移动或观看控制器行为。 我们使用**OnPointerReleased**，我们称之为何时[ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)触发时，若要设置**m\_moveInUse**或**m\_lookInUse**为 FALSE，并且驱动器上的照相机平移移动、 关闭和零出指针 id。
+最后，当玩家停止移动鼠标或触摸屏幕时，我们需要停用移动或观看控制器行为。 我们使用 **OnPointerReleased**，在触发 [**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased) 时调用，将 **m \_ MOVEINUSE** 或 ** \_ lookInUse** 设置为 FALSE 并关闭相机平移运动，并将指针 ID 设置为零。
 
 **OnPointerReleased**
 
@@ -424,7 +424,7 @@ void MoveLookController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** 将指向该应用的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 实例的引用作为参数提供，并在该 **CoreWindow** 上注册我们已开发的相应事件处理程序。 它初始化移动和观看指针的 ID、将触摸屏移动控制器实现的命令矢量设置为零，并将相机设置为在应用启动时观看正前方。
+**Initialize** 将指向该应用的 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 实例的引用作为参数提供，并在该 **CoreWindow** 上注册我们已开发的相应事件处理程序。 它初始化移动和观看指针的 ID、将触摸屏移动控制器实现的命令矢量设置为零，并将相机设置为在应用启动时观看正前方。
 
 ## <a name="getting-and-setting-the-position-and-orientation-of-the-camera"></a>获取和设置相机的位置和方向
 
@@ -470,7 +470,7 @@ DirectX::XMFLOAT3 MoveLookController::get_LookPoint()
 ## <a name="updating-the-controller-state-info"></a>更新控制器状态信息
 
 
-现在，我们执行转换中跟踪的指针坐标信息我们计算**m\_movePointerPosition**到新坐标信息各自的我们的世界坐标系统。 每当刷新主应用循环时，应用都会调用此方法。 因此，我们需要在这里计算要传递给应用的新视点位置信息，以便在投影到视口之前更新 视图矩阵。
+现在，我们执行计算，将 **m \_ movePointerPosition** 中跟踪的指针坐标信息转换为世界坐标系统的新坐标信息。 每当刷新主应用循环时，应用都会调用此方法。 因此，我们需要在这里计算要传递给应用的新视点位置信息，以便在投影到视口之前更新 视图矩阵。
 
 ```cpp
 void MoveLookController::Update(CoreWindow ^window)
@@ -557,7 +557,7 @@ void MoveLookController::Update(CoreWindow ^window)
 
 在计算速度时，我们还会将从移动和观看控制器接收的坐标转换为发送到我们用于 计算场景视图矩阵的方法的实际视点的移动。 首先，我们反转 x 坐标，因为如果我们单击移动或左右拖动观看控制器，视点将在场景中向 相反方向旋转，相机可能会沿着其中心轴旋转。 然后，我们交换 y 和 z 轴，因为在移动控制器上按向上/向下键或触摸拖动运动（读取为 y 轴行为）应转换为将视点移入或移出屏幕（z 轴）的相机操作。
 
-有关播放机查找点的最后一个位置是最后一个位置加上计算的速度，这是所读取的内容呈现器时，它调用**获取\_位置**方法 （最有可能在每个安装过程帧）。 然后，我们将移动命令重置为零。
+播放机的 "外观点" 的最终位置是最后一个位置加上计算的速度，而这是在调用 " **获取 \_ 位置** " 方法时，呈现器读取的内容，在每个帧) 的安装程序中最可能 (。 然后，我们将移动命令重置为零。
 
 ## <a name="updating-the-view-matrix-with-the-new-camera-position"></a>使用相机的新位置更新视图矩阵
 
@@ -575,14 +575,10 @@ myFirstPersonCamera->SetViewParameters(
                  ); 
 ```
 
-祝贺你！ 你已经在游戏中为触摸屏和键盘/鼠标输入触摸控件实现了基本的移动观看控件！
+恭喜！ 你已经在游戏中为触摸屏和键盘/鼠标输入触摸控件实现了基本的移动观看控件！
 
 
 
  
 
  
-
-
-
-

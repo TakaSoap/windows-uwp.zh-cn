@@ -1,16 +1,16 @@
 ---
-description: 在 XAML 标记中，指定 x:Bind 的默认模式。
+description: 了解如何在 XAML 标记中使用 x:DefaultBindMode 特性为除一次性以外的 x:Bind 指定默认模式。
 title: xDefaultBindMode 属性
 ms.date: 02/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c8917b09f04206a5466797f48414defeb35baf5e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 817b89dc8f3ab7952cdbfc53489eb1afb12024f2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647602"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166871"
 ---
 # <a name="xdefaultbindmode-attribute"></a>x:DefaultBindMode 属性
 
@@ -30,4 +30,4 @@ ms.locfileid: "57647602"
 
 ## <a name="related-topics"></a>相关主题
 
-* [x： 绑定标记扩展](x-bind-markup-extension.md)
+* [x:Bind 标记扩展](x-bind-markup-extension.md)

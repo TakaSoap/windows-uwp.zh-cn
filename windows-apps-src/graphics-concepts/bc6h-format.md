@@ -7,30 +7,30 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c8fa623130412688f14307fa46540c81f38554
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5f53ebf6a7326bd9e6a99272c01d9eeb5c03f580
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370486"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165071"
 ---
 # <a name="bc6h-format"></a>BC6H 格式
 
 
 BC6H 格式是一种纹理压缩格式，设计用于支持源数据中的高动态范围 (HDR) 颜色空间。
 
-## <a name="span-idabout-bc6h-dxgi-format-bc6hspanspan-idabout-bc6h-dxgi-format-bc6hspanspan-idabout-bc6h-dxgi-format-bc6hspanabout-bc6hdxgiformatbc6h"></a><span id="About-BC6H-DXGI-FORMAT-BC6H"></span><span id="about-bc6h-dxgi-format-bc6h"></span><span id="ABOUT-BC6H-DXGI-FORMAT-BC6H"></span>有关 BC6H/DXGI\_格式\_BC6H
+## <a name="span-idabout-bc6h-dxgi-format-bc6hspanspan-idabout-bc6h-dxgi-format-bc6hspanspan-idabout-bc6h-dxgi-format-bc6hspanabout-bc6hdxgi_format_bc6h"></a><span id="About-BC6H-DXGI-FORMAT-BC6H"></span><span id="about-bc6h-dxgi-format-bc6h"></span><span id="ABOUT-BC6H-DXGI-FORMAT-BC6H"></span>关于 BC6H/DXGI \_ FORMAT \_ BC6H
 
 
 BC6H 格式为使用三个 HDR 颜色通道的图像提供高质量的压缩，对于该值 (16:16:16) 的每个颜色通道，使用一个 16 位值。 不存在任何对 alpha 通道的支持。
 
-由以下 DXGI 指定 BC6H\_格式枚举值：
+BC6H 由以下 DXGI \_ 格式枚举值指定：
 
--   **DXGI\_格式\_BC6H\_TYPELESS**。
--   **DXGI\_格式\_BC6H\_UF16**。 此 BC6H 格式不使用 16 位浮点颜色通道值中的符号位。
--   **DXGI\_FORMAT\_BC6H\_SF16**. 此 BC6H 格式使用 16 位浮点颜色通道值中的符号位。
+-   **DXGI \_格式 \_ BC6H \_ 无格式**。
+-   **DXGI \_设置 \_ BC6H \_ UF16 的格式**。 此 BC6H 格式不使用 16 位浮点颜色通道值中的符号位。
+-   **DXGI \_设置 \_ BC6H \_ SF16 的格式**。 此 BC6H 格式使用 16 位浮点颜色通道值中的符号位。
 
-**请注意**   16 位浮点颜色通道的点格式通常称为"一半"浮点格式。 此格式具有以下位布局：
+**注意**   颜色通道的16位浮点格式通常称为 "半角" 浮点格式。 此格式具有以下位布局：
 |                       |                                                 |
 |-----------------------|-------------------------------------------------|
 | UF16（无符号浮点） | 5 个指数位 + 11 个尾数位              |
@@ -40,13 +40,13 @@ BC6H 格式为使用三个 HDR 颜色通道的图像提供高质量的压缩，�
 
  
 
-BC6H 格式可用于 [Texture2D](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures)（包括数组）、Texture3D 或 TextureCube（包括阵列）纹理资源。 同样，此格式适用于与这些资源相关联的任何 MIP 贴图表面。
+BC6H 格式可用于 [Texture2D](/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures)（包括数组）、Texture3D 或 TextureCube（包括阵列）纹理资源。 同样，此格式适用于与这些资源相关联的任何 MIP 贴图表面。
 
 BC6H 使用 16 字节（128 位）的固定块大小和 4×4 纹素的固定磁贴大小。 与先前的 BC 格式一样，大于支持的磁贴大小 (4x4) 的纹理图像会通过使用多个块进行压缩。 此寻址标识也适用于三维图像、MIP 贴图、立方体贴图和纹理阵列。 所有图像磁贴必须使用相同的格式。
 
 BC6H 格式的几点注意事项：
 
--   BC6H 支持浮点非规范化，但不支持 INF（无穷大）和 NaN（非数字）。 例外情况是 BC6H 的签名的模式 (DXGI\_格式\_BC6H\_SF16)，它支持-INF （负无穷）。 这种对 -INF 的支持只是格式本身的一个项目，并且并不受这种格式的编码器专门支持。 通常，当编码器遇到 INF（正或负）或 NaN 输入数据时，编码器应该将该数据转换为最大允许的非 INF 表示值，并且在压缩之前将 NaN 映射为 0。
+-   BC6H 支持浮点非规范化，但不支持 INF（无穷大）和 NaN（非数字）。 例外情况是 BC6H 的已签名模式 (DXGI \_ FORMAT \_ BC6H \_ SF16) ，它支持-INF (负无穷) 。 这种对 -INF 的支持只是格式本身的一个项目，并且并不受这种格式的编码器专门支持。 通常，当编码器遇到 INF（正或负）或 NaN 输入数据时，编码器应该将该数据转换为最大允许的非 INF 表示值，并且在压缩之前将 NaN 映射为 0。
 -   BC6H 不支持 alpha 通道。
 -   BC6H 解码器在执行纹理筛选之前执行解压缩。
 -   BC6H 解压缩必须是位精度的；也就是说，硬件必须返回与本文档中所述的解码器相同的结果。
@@ -93,7 +93,7 @@ decompress_bc6h(x, y, block)
 
 下表包含 BC6H 块 14 种可能格式中每一种的位计数和值。
 
-| 模式 | 分区索引 | Partition | 颜色终结点                  | 模式位      |
+| “模式” | 分区索引 | 分区 | 颜色终结点                  | 模式位      |
 |------|-------------------|-----------|----------------------------------|----------------|
 | 1    | 46 位           | 5 位    | 75 位 (10.555, 10.555, 10.555) | 2 位 (00)    |
 | 2    | 46 位           | 5 位    | 75 位 (7666, 7666, 7666)       | 2 位 (01)    |
@@ -135,7 +135,7 @@ decompress_bc6h(x, y, block)
 
 ![bc6h 压缩终结点格式的位字段](images/bc6h-headers-med.png)
 
-此表将压缩终结点的位字段显示为终结点格式的一个函数，其中每一列指定一个编码，而每一行指定一个位字段。 对于两区域磁贴，此方法占用 82 位，而对于单区域磁贴，此方法占用 65 位。 例如，一个区域的前 5 位\[16 4\]上方 （特别是最右侧的列） 编码是位 m\[4:0\]的下一步的 10 位均为 bits rw\[9:0\]，等等最后一个 6 位进行运算包含 bw\[10:15\]。
+此表将压缩终结点的位字段显示为终结点格式的一个函数，其中每一列指定一个编码，而每一行指定一个位字段。 对于两区域磁贴，此方法占用 82 位，而对于单区域磁贴，此方法占用 65 位。 例如，上面的单区域 16 4 编码 (第一个5位 \[ \]) 为位 m \[ 4:0 \] ，接下来的10位是 bits rw \[ 9:0 \] ，依此类推，最后6位包含 bw \[ 10:15 \] 。
 
 上表中的字段名称定义如下：
 
@@ -143,26 +143,26 @@ decompress_bc6h(x, y, block)
 |-------|-------------------|
 | m     | mode              |
 | d     | 形状索引       |
-| rw    | endpt\[0\].A\[0\] |
-| rx    | endpt\[0\].B\[0\] |
-| ry    | endpt\[1\].A\[0\] |
-| rz    | endpt\[1\].B\[0\] |
-| gw    | endpt\[0\].A\[1\] |
-| gx    | endpt\[0\].B\[1\] |
-| gy    | endpt\[1\]。一个\[1\] |
-| gz    | endpt\[1\].B\[1\] |
-| bw    | endpt\[0\].A\[2\] |
-| bx    | endpt\[0\].B\[2\] |
-| 作者：    | endpt\[1\].A\[2\] |
-| bz    | endpt\[1\].B\[2\] |
+| rw    | endpt \[ 0 \] 。\[0\] |
+| rx    | endpt \[ 0 \] 。B \[ 0\] |
+| ry    | endpt \[ 1 \] 。\[0\] |
+| rz    | endpt \[ 1 \] 。B \[ 0\] |
+| gw    | endpt \[ 0 \] 。\[1\] |
+| gx    | endpt \[ 0 \] 。B \[ 1\] |
+| gy    | endpt \[ 1 \] 。\[1\] |
+| gz    | endpt \[ 1 \] 。B \[ 1\] |
+| bw    | endpt \[ 0 \] 。A \[ 2\] |
+| bx    | endpt \[ 0 \] 。B \[ 2\] |
+| by    | endpt \[ 1 \] 。A \[ 2\] |
+| bz    | endpt \[ 1 \] 。B \[ 2\] |
 
  
 
-Endpt\[我\]，其中 i 是 0 或 1，分别是指第 0 个或第一组终结点。
-## <a name="span-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspansign-extension-for-endpoint-values"></a><span id="Sign-extension-for-endpoint-values"></span><span id="sign-extension-for-endpoint-values"></span><span id="SIGN-EXTENSION-FOR-ENDPOINT-VALUES"></span>终结点值的符号扩展
+Endpt \[ i \] ，其中 i 是0或1，分别指第0个或第一组终结点。
+## <a name="span-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspansign-extension-for-endpoint-values"></a><span id="Sign-extension-for-endpoint-values"></span><span id="sign-extension-for-endpoint-values"></span><span id="SIGN-EXTENSION-FOR-ENDPOINT-VALUES"></span>终结点值的签名扩展
 
 
-对于两区域磁贴，存在四个可以进行符号扩展的终结点值。 Endpt\[0\]。格式是一种带符号的格式; 如果只签名仅当该终结点进行转换，或如果格式是一种带符号的格式，其他终结点进行签名。 下面的代码演示了用于扩展两区域终结点值的符号的算法。
+对于两区域磁贴，存在四个可以进行符号扩展的终结点值。 Endpt \[ 0 \] 。仅当格式为签名格式时，才对进行签名;其他终结点只有在转换终结点时才会进行签名，或者，如果格式是已签名的格式，则为。 下面的代码演示了用于扩展两区域终结点值的符号的算法。
 
 ``` syntax
 static void sign_extend_two_region(Pattern &p, IntEndpts endpts[NREGIONS_TWO])
@@ -181,7 +181,7 @@ static void sign_extend_two_region(Pattern &p, IntEndpts endpts[NREGIONS_TWO])
 }
 ```
 
-对于一个区域图块的行为是相同的仅与 endpt\[1\]中删除。
+对于单区域磁贴，行为是相同的，只是删除了 endpt \[ 1 \] 。
 
 ``` syntax
 static void sign_extend_one_region(Pattern &p, IntEndpts endpts[NREGIONS_ONE])
@@ -196,25 +196,25 @@ static void sign_extend_one_region(Pattern &p, IntEndpts endpts[NREGIONS_ONE])
 }
 ```
 
-## <a name="span-idtransform-inversion-for-endpoint-valuesspanspan-idtransform-inversion-for-endpoint-valuesspanspan-idtransform-inversion-for-endpoint-valuesspantransform-inversion-for-endpoint-values"></a><span id="Transform-inversion-for-endpoint-values"></span><span id="transform-inversion-for-endpoint-values"></span><span id="TRANSFORM-INVERSION-FOR-ENDPOINT-VALUES"></span>转换终结点值的反转
+## <a name="span-idtransform-inversion-for-endpoint-valuesspanspan-idtransform-inversion-for-endpoint-valuesspanspan-idtransform-inversion-for-endpoint-valuesspantransform-inversion-for-endpoint-values"></a><span id="Transform-inversion-for-endpoint-values"></span><span id="transform-inversion-for-endpoint-values"></span><span id="TRANSFORM-INVERSION-FOR-ENDPOINT-VALUES"></span>终结点值的转换反转
 
 
-为两个区域的磁贴，该转换将应用编码，并在 endpt 添加基础值的差异的逆\[0\]。A 的三个其他条目总共 9 到添加操作。 在下图中，基值表示为“A0”，并且具有最高的浮点精度。 “A1”、“B0”和“B1”都是从定位点值计算出的增量，并且这些增量值是用较低的精度表示的。 (A0 对应于 endpt\[0\]。A，B0 将对应于 endpt\[0\]。B，A1 对应于 endpt\[1\]。A 和 B1 对应于 endpt\[1\]。B.)
+对于两个区域的磁贴，转换应用差编码的逆元，并将基值添加到 endpt \[ 0 \] 。的第三个条目，共9个添加操作。 在下图中，基值表示为“A0”，并且具有最高的浮点精度。 “A1”、“B0”和“B1”都是从定位点值计算出的增量，并且这些增量值是用较低的精度表示的。  (A0 对应于 endpt \[ 0 \] 。A，B0 对应于 endpt \[ 0 \] 。B，A1 对应于 endpt \[ 1 \] 。A 和 B1 对应于 endpt \[ \] ) 
 
 ![转换反转终结点值的计算](images/bc6h-transform-inverse.png)
 
 对于单区域磁贴，仅存在一个增量偏移，因此只有 3 个添加操作。
 
-解压缩程序必须确保反的结果转换将不溢出的精度 endpt\[0\]。 在溢出的情况下，从逆转换得到的值必须包含在相同的位数内。 如果 A0 的精度是“p”位，则转换算法为：
+解压缩程序必须确保反向转换的结果不会将 endpt 0 的精度溢出。 \[ \] 在溢出的情况下，从逆转换得到的值必须包含在相同的位数内。 如果 A0 的精度是“p”位，则转换算法为：
 
 `B0 = (B0 + A0) & ((1 << p) - 1)`
 
 对于带符号格式，增量计算的结果也必须进行符号扩展。 如果符号扩展操作考虑扩展全部两个符号，其中 0 是正的，1 是负的，那么 0 的符号扩展会处理上面的固定。 同样，在上述固定之后，只有 1（负）的一个值需要进行符号扩展。
 
-## <a name="span-idunquantization-of-color-endpointsspanspan-idunquantization-of-color-endpointsspanspan-idunquantization-of-color-endpointsspanunquantization-of-color-endpoints"></a><span id="Unquantization-of-color-endpoints"></span><span id="unquantization-of-color-endpoints"></span><span id="UNQUANTIZATION-OF-COLOR-ENDPOINTS"></span>Unquantization 颜色终结点
+## <a name="span-idunquantization-of-color-endpointsspanspan-idunquantization-of-color-endpointsspanspan-idunquantization-of-color-endpointsspanunquantization-of-color-endpoints"></a><span id="Unquantization-of-color-endpoints"></span><span id="unquantization-of-color-endpoints"></span><span id="UNQUANTIZATION-OF-COLOR-ENDPOINTS"></span>颜色终结点的非量化
 
 
-对于未压缩的终结点，下一步是执行颜色终结点的初始非量化。 这包括以下三个步骤：
+对于未压缩的终结点，下一步是执行颜色终结点的初始非量化。 这涉及到三个步骤：
 
 -   调色板的非量化
 -   调色板的内插
@@ -249,7 +249,7 @@ void generate_palette_unquantized(UINT8 uNumIndices, int c1, int c2, int prec, U
 下一个代码示例演示了插值过程，其中包含以下观察结果：
 
 -   由于 **unquantize** 函数（下方）的颜色值的完整范围为 -32768 至 65535，内插器是使用 17 位带符号算术实现的。
--   内插之后, 将值传递到**完成\_unquantize**函数 （在本部分中的第三个示例中介绍），这可应用于最后一个缩放。
+-   在内插后，将值传递给 ** \_ unquantize** 函数 (此部分第三个示例中所述的) ，这将应用最终缩放。
 -   所有硬件解压缩器都需要返回带有这些函数的位精度结果。
 
 ``` syntax
@@ -296,7 +296,7 @@ int unquantize(int comp, int uBitsPerComp)
 }
 ```
 
-**完成\_unquantize**调色板内插之后，将调用。 对于带符号的终结点，**unquantize** 函数会按 31/32 延迟缩放，而对于无符号的终结点，会按 31/64 延迟缩放。 在完成调色板内插之后，为了减少需要的乘法次数，需要此行为来使最终值进入有效半范围 (-0x7BFF ~ 0x7BFF)。 **完成\_unquantize**将应用最后一个缩放并返回**unsigned short**获取重新解释为值**一半**。
+在调色板内插后调用**finish \_ unquantize** 。 对于带符号的终结点，**unquantize** 函数会按 31/32 延迟缩放，而对于无符号的终结点，会按 31/64 延迟缩放。 在完成调色板内插之后，为了减少需要的乘法次数，需要此行为来使最终值进入有效半范围 (-0x7BFF ~ 0x7BFF)。 **finish \_ unquantize**应用最终缩放，并返回一个重新解释为**半部分**的**无符号短**值。
 
 ``` syntax
 unsigned short finish_unquantize(int comp)
@@ -328,7 +328,3 @@ unsigned short finish_unquantize(int comp)
  
 
  
-
-
-
-

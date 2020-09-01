@@ -6,19 +6,19 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 广告, AdControl, 错误处理, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bbd892f47f0191455df3b235bdb5125a45ea4fc
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: f6567432714fb68618510923e49f2467daefdc54
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970245"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167681"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>JavaScript 演练中的错误处理
 
 >[!WARNING]
 > 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-本演练介绍如何在 JavaScript 应用中捕获与广告相关的错误。 本演练使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 显示横幅广告，但其中的普通概念也适用于间隙广告和本机广告。
+本演练介绍如何在 JavaScript 应用中捕获与广告相关的错误。 本演练使用 [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 显示横幅广告，但其中的普通概念也适用于间隙广告和本机广告。
 
 这些示例假定你拥有一个 JavaScript 应用，它包含一个 **AdControl**。 有关演示如何向你的应用添加 **AdControl** 的分步说明，请参阅 [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)。 有关演示如何将横幅广告添加到 JavaScript/HTML 应用的完整示例项目，请参阅 [GitHub 上的广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
 

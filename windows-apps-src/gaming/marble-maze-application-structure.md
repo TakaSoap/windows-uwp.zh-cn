@@ -6,19 +6,19 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 示例, directx, 结构
 ms.localizationpriority: medium
-ms.openlocfilehash: d248d8737f32d35cf0a25f4ad0c9138a1d334365
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e4dd33bb40b84db79e3ac2ea43a4252b6e20d441
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258501"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165241"
 ---
 # <a name="marble-maze-application-structure"></a>Marble Maze 应用程序结构
 
 
 
 
-DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构不同。 Windows 运行时提供了接口（如 [](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types)Windows::UI::Core::ICoreWindow[](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa)），以便你可以采用更现代、面向对象的方式开发 UWP 应用，而不是使用句柄类型（如 [HWND](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow)）和函数（如 CreateWindow）。 文档的这一部分介绍了如何构造 Marble Maze 应用代码。
+DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构不同。 Windows 运行时提供了接口（如 [[Windows::UI::Core::ICoreWindow](/windows/desktop/WinProg/windows-data-types)](/uwp/api/Windows.UI.Core.ICoreWindow)），以便你可以采用更现代、面向对象的方式开发 UWP 应用，而不是使用句柄类型（如 [HWND](/windows/desktop/api/winuser/nf-winuser-createwindowa)）和函数（如 CreateWindow）。 文档的这一部分介绍了如何构造 Marble Maze 应用代码。
 
 > [!NOTE]
 > 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](https://github.com/microsoft/Windows-appsample-marble-maze)中。
@@ -38,7 +38,7 @@ DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构�
 
 Marble Maze 中的一些组件只需很少或无需修改即可在任何游戏中重用。 对于你自己的游戏，可以调整这些文件所提供的结构和观点。 下表简短描述了重要的源代码文件。
 
-| 文件                                      | 说明                                                                                                                                                                          |
+| 文件                                      | 描述                                                                                                                                                                          |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | App.h、App.cpp               | 定义 **App** 和 **DirectXApplicationSource** 类，可封装应用的视图（窗口、线程和事件）。                                                     |
 | Audio.h、Audio.cpp                         | 定义 **Audio** 类，可管理音频资源。                                                                                                                          |
@@ -79,7 +79,7 @@ HLSL 着色器是使用不同设计时和运行时格式的一个资源示例。
 ##  <a name="application-life-cycle"></a>应用程序生命周期
 
 
-Marble Maze 遵循典型的 UWP 应用的生命周期。 有关 UWP 应用的生命周期的详细信息， 请参阅[应用生命周期](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)。
+Marble Maze 遵循典型的 UWP 应用的生命周期。 有关 UWP 应用的生命周期的详细信息， 请参阅[应用生命周期](../launch-resume/app-lifecycle.md)。
 
 UWP 游戏初始化时，它通常会初始化运行时组件（例如 Direct3D、Direct2D）和它使用的任何输入、音频或物理库。 它还在游戏开始之前加载特定于游戏的必要资源。 此初始化过程在一个游戏会话中发生一次。
 
@@ -100,7 +100,7 @@ UWP 游戏初始化时，它通常会初始化运行时组件（例如 Direct3D�
 
 **App** 类还开始为游戏加载延迟资源。 有关详细信息，请参阅下一部分。
 
-此外，**App** 类会为 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) 事件设置事件处理程序。 当调用这些事件的处理程序时，它们会将输入传递到 **MarbleMazeMain** 类。
+此外，**App** 类会为 [CoreWindow](/uwp/api/windows.ui.core.corewindow) 事件设置事件处理程序。 当调用这些事件的处理程序时，它们会将输入传递到 **MarbleMazeMain** 类。
 
 ## <a name="loading-game-assets-in-the-background"></a>在后台加载游戏资源
 
@@ -114,7 +114,7 @@ UWP 游戏初始化时，它通常会初始化运行时组件（例如 Direct3D�
 
 即使游戏包含相对较少的游戏资源，以异步方式加载它们也是一种不错的做法，原因有二。 一个原因是很难保证所有资源将快速加载到所有设备和所有配置上。 另外，通过尽早整合异步加载功能，代码随时可随着功能的添加而扩展。
 
-异步资源加载从 **App::Load** 方法开始。 此方法使用 [task](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-class) 类在后台加载游戏资源。
+异步资源加载从 **App::Load** 方法开始。 此方法使用 [task](/cpp/parallel/concrt/reference/task-class) 类在后台加载游戏资源。
 
 ```cpp
     task<void>([=]()
@@ -123,12 +123,12 @@ UWP 游戏初始化时，它通常会初始化运行时组件（例如 Direct3D�
     });
 ```
 
-**MarbleMazeMain**类定义*m\_deferredResourcesReady*标志以指示异步加载已完成。 **MarbleMazeMain::LoadDeferredResources** 方法加载游戏资源，然后设置此标志。 应用的更新 (**MarbleMazeMain::Update**) 和呈现 (**MarbleMazeMain::Render**) 阶段会检查此标志。 设置此标志后，游戏会像平常一样继续运行。 如果未设置此标志，则游戏会显示加载屏幕。
+**MarbleMazeMain**类定义*m \_ deferredResourcesReady*标志以指示异步加载已完成。 **MarbleMazeMain::LoadDeferredResources** 方法加载游戏资源，然后设置此标志。 应用的更新 (**MarbleMazeMain::Update**) 和呈现 (**MarbleMazeMain::Render**) 阶段会检查此标志。 设置此标志后，游戏会像平常一样继续运行。 如果未设置此标志，则游戏会显示加载屏幕。
 
-有关 UWP 应用的异步编程的详细信息，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+有关 UWP 应用的异步编程的详细信息，请参阅[使用 C++ 进行异步编程](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
 > [!TIP]
-> 如果要编写 Windows 运行时 C++ 库（也就是 DLL）中包含的游戏代码，请考虑是否阅读[使用 C++ 为 UWP 应用创建异步操作](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)，以了解如何创建可供应用和其他库使用的异步操作。
+> 如果要编写 Windows 运行时 C++ 库（也就是 DLL）中包含的游戏代码，请考虑是否阅读[使用 C++ 为 UWP 应用创建异步操作](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)，以了解如何创建可供应用和其他库使用的异步操作。
 
  
 
@@ -195,7 +195,7 @@ enum class GameState
 };
 ```
 
-例如，**MainMenu** 状态定义主菜单显示和游戏未活动。 相反，**InGameActive** 状态定义游戏是活动的和菜单未显示。 **MarbleMazeMain**类定义用于保存活动游戏状态的**m\_gameState**成员变量。
+例如，**MainMenu** 状态定义主菜单显示和游戏未活动。 相反，**InGameActive** 状态定义游戏是活动的和菜单未显示。 **MarbleMazeMain**类定义用于保存活动游戏状态的**m \_ gameState**成员变量。
 
 **MarbleMazeMain::Update** 和 **MarbleMazeMain::Render** 方法使用 switch 语句执行当前状态的逻辑。 下面的示例展示了 **MarbleMazeMain::Update** 方法的 switch 语句的可能形式（为了演示结构，已删除了详细内容）。
 
@@ -240,7 +240,7 @@ Marble Maze 执行以下任务来支持暂停和恢复：
 -   它通过将状态保存到持久存储来响应暂停通知。
 -   它通过从持久存储加载状态来响应恢复通知。 它也会在启动期间加载以前的状态。
 
-为了支持暂停和恢复，Marble Maze 定义了 **PersistentState** 类。 （参见 **PersistentState.h** 和 **PersistentState.cpp**）。 此类使用 [Windows::Foundation::Collections::IPropertySet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IPropertySet) 接口读取和写入属性。 **PersistentState** 类提供了从备份存储读取和向其写入基元数据类型（例如 **bool**、**int**、**float**、[XMFLOAT3](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3) 和 [Platform::String](https://docs.microsoft.com/cpp/cppcx/platform-string-class)）的方法。
+为了支持暂停和恢复，Marble Maze 定义了 **PersistentState** 类。 （参见 **PersistentState.h** 和 **PersistentState.cpp**）。 此类使用 [Windows::Foundation::Collections::IPropertySet](/uwp/api/Windows.Foundation.Collections.IPropertySet) 接口读取和写入属性。 **PersistentState**类提供了一些方法，这些方法可读取和写入基元数据类型 (如**bool**、 **int**、 **Float**、 [XMFLOAT3](/windows/desktop/api/directxmath/ns-directxmath-xmfloat3)和[Platform：： String](/cpp/cppcx/platform-string-class)) ，从和到后备存储。
 
 ```cpp
 ref class PersistentState
@@ -414,7 +414,7 @@ void MarbleMazeMain::LoadState()
 > [!IMPORTANT]
 > Marble Maze 不会区分冷启动（即首次启动，之前没有暂停事件）和从暂停状态恢复。 这是所有 UWP 应用的建议设计。
 
-有关应用程序数据的详细信息，请参阅[存储和检索设置以及其他应用数据](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)。
+有关应用程序数据的详细信息，请参阅[存储和检索设置以及其他应用数据](../design/app-settings/store-and-retrieve-app-data.md)。
 
 ##  <a name="next-steps"></a>后续步骤
 
@@ -423,14 +423,10 @@ void MarbleMazeMain::LoadState()
 
 ## <a name="related-topics"></a>相关主题
 
-* [向大理石迷宫示例中添加视觉内容](adding-visual-content-to-the-marble-maze-sample.md)
-* [大理石迷宫示例基础知识](marble-maze-sample-fundamentals.md)
-* [开发大理石迷宫，其中的 UWP 游戏C++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [向 Marble Maze 示例添加可视内容](adding-visual-content-to-the-marble-maze-sample.md)
+* [Marble Maze 示例基础](marble-maze-sample-fundamentals.md)
+* [开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 
  
-
-
-
-

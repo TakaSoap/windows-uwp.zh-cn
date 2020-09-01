@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 使用情况, 自定义事件, 报告, 遥测, 用户会话
 ms.localizationpriority: medium
-ms.openlocfilehash: bced71620b5e52e90b104a9a50d8fb774ba14228
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: d2839112d36822be5eb8297b838cdc38bab5c71b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846807"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167271"
 ---
 # <a name="usage-report"></a>使用情况报告
 
@@ -73,7 +73,7 @@ ms.locfileid: "88846807"
 
 **自定义事件**图显示为应用定义的自定义事件的总发生次数。 这可以包括与同一个客户有关的多次发生次数。 此类筛选器可用于选择你希望查看此类数据的特定自定义事件。
 
-自定义事件使用 [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md) 中的 [StoreServicesCustomEventLogger.Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 方法实现。
+自定义事件使用 [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md) 中的 [StoreServicesCustomEventLogger.Log](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 方法实现。
 
 有关详细信息，请参阅[记录开发人员中心的自定义事件](../monetize/log-custom-events-for-dev-center.md)。
 

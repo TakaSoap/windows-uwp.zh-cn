@@ -6,21 +6,21 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 78faef0d6a6e02c43221d1d525adedd364dd6e34
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: ff40b506ef305ac4bc651864da34fe746f6229a3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493152"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164851"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>启动 URI 的默认应用
 
 
 **重要的 API**
 
-- [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
-- [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
-- [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)
+- [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync)
+- [**PreferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
+- [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
 了解如何启动统一资源标识符 (URI) 的默认应用。 URI 允许你启动其他应用以执行特定任务。 本主题还提供许多内置于 Windows 的 URI 方案的概述。 你也可以启动自定义 URI。 有关注册自定义 URI 方案和处理 URI 激活的详细信息，请参阅[处理 URI 激活](handle-uri-activation.md)。
 
@@ -30,7 +30,7 @@ URI 方案允许你通过单击超链接来打开应用。 正如可以使用 **
 
 | URI 方案 | 启动 |
 | ----------:|----------|
-|[bingmaps：，ms-驱动器到：，和 ms-行走：](#maps-app-uri-schemes) | “地图”应用 |
+|[bingmaps：，ms-驱动器到：，和 ms-行走： ](#maps-app-uri-schemes) | “地图”应用 |
 |[http](#http-uri-scheme) | 默认 Web 浏览器 |
 |[地址](#email-uri-scheme) | 默认电子邮件应用 |
 |[ms-call:](#call-app-uri-scheme) |  调用应用 |
@@ -54,9 +54,9 @@ URI 方案允许你通过单击超链接来打开应用。 正如可以使用 **
 
 ### <a name="call-launchuriasync-to-launch-a-uri"></a>调用 LaunchUriAsync 以启动 URI
 
-使用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法启动 URI。 调用此方法时，你的应用必须是前台应用，即对于用户必须是可见的。 此要求有助于确保用户保持控制。 为满足此要求，请确保将 URI 的所有启动都直接绑定到到应用的 UI 中。 用户必须总是采取某种操作来发起 URI 启动。 如果尝试启动 URI 并且你的应用不在前台运行，则启动将失败，且会调用错误回调。
+使用 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 方法启动 URI。 调用此方法时，你的应用必须是前台应用，即对于用户必须是可见的。 此要求有助于确保用户保持控制。 为满足此要求，请确保将 URI 的所有启动都直接绑定到到应用的 UI 中。 用户必须总是采取某种操作来发起 URI 启动。 如果尝试启动 URI 并且你的应用不在前台运行，则启动将失败，且会调用错误回调。
 
-首先创建 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) 对象来表示 URI，然后将其传递给 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。 使用返回结果以查看调用是否成功，如以下示例所示。
+首先创建 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) 对象来表示 URI，然后将其传递给 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 方法。 使用返回结果以查看调用是否成功，如以下示例所示。
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -117,9 +117,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="set-remaining-view-preference"></a>设置其余视图首选项
 
-调用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 的源应用可请求在 URI 启动后停留于屏幕上。 默认情况下，Windows 会尝试在处理该 URI 的源应用和目标应用之间平等地共享所有可用空间。 源应用可使用 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 属性向操作系统指示希望其应用占用较多或较少的可用空间。 此外，还可使用 **DesiredRemainingView** 指示源应用在 URI 启动后无需停留于屏幕上，并可由目标应用完全替代。 此属性仅指定调用应用的首选窗口大小。 不指定可能会同时显示在屏幕上的其他应用的行为。
+调用 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 的源应用可请求在 URI 启动后停留于屏幕上。 默认情况下，Windows 会尝试在处理该 URI 的源应用和目标应用之间平等地共享所有可用空间。 源应用可使用 [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) 属性向操作系统指示希望其应用占用较多或较少的可用空间。 此外，还可使用 **DesiredRemainingView** 指示源应用在 URI 启动后无需停留于屏幕上，并可由目标应用完全替代。 此属性仅指定调用应用的首选窗口大小。 不指定可能会同时显示在屏幕上的其他应用的行为。
 
-**注意**   当 Windows 确定源应用的最终窗口大小时，Windows 会考虑多个不同的因素，例如，源应用的首选项、屏幕上的应用数和屏幕方向等。 设置 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 并不能保证为源应用设定具体的窗口化行为。
+**注意**   当 Windows 确定源应用的最终窗口大小时，Windows 会考虑多个不同的因素，例如，源应用的首选项、屏幕上的应用数和屏幕方向等。 设置 [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) 并不能保证为源应用设定具体的窗口化行为。
 
 ```cs
 // Set the desired remaining view.
@@ -167,7 +167,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ![Windows 地图应用的示例。](images/mapnyc.png)
 
-有关详细信息，请参阅[启动 Windows 地图应用](launch-maps-app.md)。 若要在你自己的应用中使用地图控件，请参阅[以 2D、3D 和街景视图方式显示地图](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps)。
+有关详细信息，请参阅[启动 Windows 地图应用](launch-maps-app.md)。 若要在你自己的应用中使用地图控件，请参阅[以 2D、3D 和街景视图方式显示地图](../maps-and-location/display-maps.md)。
 
 ### <a name="messaging-app-uri-scheme"></a>“消息”应用 URI 方案
 
@@ -189,7 +189,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 |------------|---------|
 | ms-tonepicker: | 选取铃声、闹钟和系统音。 |
 
-参数通过 LaunchURI API 的 [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) 传递。 有关详细信息，请参阅[使用 ms-tonepicker URI 方案选择并保存音调](launch-ringtone-picker.md)。
+参数通过 LaunchURI API 的 [ValueSet](/uwp/api/windows.foundation.collections.valueset) 传递。 有关详细信息，请参阅[使用 ms-tonepicker URI 方案选择并保存音调](launch-ringtone-picker.md)。
 
 ### <a name="nearby-numbers-app-uri-scheme"></a>“114 查号”应用 URI 方案
 
@@ -197,7 +197,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI 方案 | 结果 |
 |------------|---------|
-| yellowpage：？ input = \[ 关键字 \]&method = \[ String 或 T9\] | 启动“114 查号”应用。<br>`input`引用要搜索的关键字。<br>`method`指搜索类型（string 或 T9 search）。<br>如果 `method` 是 `T9`（一种键盘），则 `keyword` 应该是映射到 T9 键盘字母搜索的数字字符串。<br>如果 `method` 是 `String`，则 `keyword` 是要搜索的关键字。 |
+| yellowpage：？ input = \[ 关键字 \]&method = \[ String 或 T9\] | 启动“114 查号”应用。<br>`input` 引用要搜索的关键字。<br>`method` 引用 (string 或 T9 search) 的搜索类型。<br>如果 `method` 是 `T9`（一种键盘），则 `keyword` 应该是映射到 T9 键盘字母搜索的数字字符串。<br>如果 `method` 是 `String`，则 `keyword` 是要搜索的关键字。 |
 
 ### <a name="people-app-uri-scheme"></a>“人脉”应用 URI 方案
 
@@ -207,18 +207,18 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ### <a name="photos-app-uri-scheme"></a>“照片”应用 URI 方案
 
 使用 **ms-photos:** URI 方案来启动“照片”应用，以查看图像或编辑视频。 例如：  
-查看图像：`ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
-或编辑视频：`ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
+查看图像： `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
+或编辑视频： `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
 
 > [!NOTE]
 > 用于编辑视频或显示图像的 URI 仅适用于桌面。
 
 | URI 方案 |结果 |
 |------------|--------|
-| ms-photos:viewer?fileName={filename} | 启动“照片”应用查看指定的图像，其 {filename} 为完全限定的路径名称。 例如： `c:\users\userName\Pictures\ImageToView.jpg` |
-| ms-photos:videoedit?InputToken={input token} | 以视频编辑模式为由文件标记表示的文件启动“照片”应用。 **InputToken** 是必需的。 使用 [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) 来获取文件的标记。 |
-| ms-photos:videoedit?Action={action} | 一个参数，该参数指示要在其中打开照片应用的视频编辑模式，其中 {action} 是以下其中之一： **SlowMotion**、 **FrameExtraction**、 **Trim**、 **View**、 **Ink**。 **操作**是必需的。 |
-| ms-photos:videoedit?StartTime={timespan} | 一个可选参数，用于指定视频开始播放的位置。 `{timespan}`必须采用格式 `"hh:mm:ss.ffff"` 。 如果未指定，则默认为`00:00:00.0000` |
+| ms-photos:viewer?fileName={filename} | 启动“照片”应用查看指定的图像，其 {filename} 为完全限定的路径名称。 例如：`c:\users\userName\Pictures\ImageToView.jpg` |
+| ms-photos:videoedit?InputToken={input token} | 以视频编辑模式为由文件标记表示的文件启动“照片”应用。 **InputToken** 是必需的。 使用 [SharedStorageAccessManager](/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) 来获取文件的标记。 |
+| ms-photos:videoedit?Action={action} | 一个参数，该参数指示要在其中打开照片应用的视频编辑模式，其中 {action} 是以下其中之一： **SlowMotion**、 **FrameExtraction**、 **Trim**、 **View**、 **Ink**。 **操作** 是必需的。 |
+| ms-photos:videoedit?StartTime={timespan} | 一个可选参数，用于指定视频开始播放的位置。 `{timespan}` 必须采用格式 `"hh:mm:ss.ffff"` 。 如果未指定，则默认为 `00:00:00.0000` |
 
 ### <a name="settings-app-uri-scheme"></a>“设置”应用 URI 方案
 
@@ -240,8 +240,8 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="weather-app-uri-scheme"></a>天气应用 URI 方案
 
-使用**msnweather：** URI 方案启动天气应用。
+使用 **msnweather：** URI 方案启动天气应用。
 
 | URI 方案 | 结果 |
 |------------|---------|
-| msnweather：//forecast？ la = \[ 纬度 \]&lo = \[ 经度\] | 基于位置地理坐标在预测页中启动天气应用。<br>`latitude`指位置的纬度。<br> `longitude`引用位置的经度。<br> |
+| msnweather：//forecast？ la = \[ 纬度 \]&lo = \[ 经度\] | 基于位置地理坐标在预测页中启动天气应用。<br>`latitude` 指位置的纬度。<br> `longitude` 引用位置的经度。<br> |

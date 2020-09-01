@@ -1,31 +1,31 @@
 ---
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: 合成视觉对象
-description: 合成视觉效果组成了可使用和生成合成 API 的所有其他功能的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。
+description: 合成视觉对象组成了合成 API 的所有其他功能均可使用和基于的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6d150f2f882348bffb36dd2918f0f61ea1586c7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 70f71265ff763ff8a160705694476e03bf8b6667
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360490"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166351"
 ---
 # <a name="composition-visual"></a>合成视觉对象
 
-合成视觉效果组成了可使用和生成合成 API 的所有其他功能的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。
+合成视觉对象组成了合成 API 的所有其他功能均可使用和基于的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。
 
 ## <a name="visuals"></a>视觉对象
 
 可视树结构的组成部分包括以下三种视觉类型，以及影响视觉对象内容的多个子类的基本画笔类：
 
-- [**Visual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) – 基对象的属性的大多数都是此处，并由其他视觉对象继承。
-- [**ContainerVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual) – 派生[ **Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual)，并添加创建子级的能力。
-- [**SpriteVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) – 派生[ **ContainerVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual)并将功能添加到关联画笔，以便视觉对象可以呈现像素包括图像、 效果或实体颜色。
+- [**Visual**](/uwp/api/Windows.UI.Composition.Visual) – 基对象，大部分属性均位于此处且继承自其他视觉对象。
+- [**System.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual) –派生自 [**视觉对象**](/uwp/api/Windows.UI.Composition.Visual)，并添加了创建子项的功能。
+- [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual) ，并添加了关联画笔的功能，以使视觉对象能够呈现包括图像、效果或纯色的像素。
 
-可以使用 [**CompositionBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) 及其子类（包括 [**CompositionColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)、[**CompositionSurfaceBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 和 [**CompositionEffectBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)）将内容和效果应用于 SpriteVisual。 若要了解有关画笔的详细信息，请参阅 [**CompositionBrush 概述**](https://docs.microsoft.com/windows/uwp/composition/composition-brushes)。
+可以使用 [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) 及其子类（包括 [**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush)、[**CompositionSurfaceBrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 和 [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush)）将内容和效果应用于 SpriteVisual。 若要了解有关画笔的详细信息，请参阅 [**CompositionBrush 概述**](./composition-brushes.md)。
 
 ## <a name="the-compositionvisual-sample"></a>CompositionVisual 示例
 
@@ -44,7 +44,7 @@ ms.locfileid: "66360490"
 
 ## <a name="creating-a-compositor"></a>创建合成器
 
-创建 [**Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) 并存储它以用作某一变量中的工厂对象是一项简单的任务。 以下代码段演示了如何创建新的 **Compositor**：
+创建 [**Compositor**](/uwp/api/Windows.UI.Composition.Compositor) 并存储它以用作某一变量中的工厂对象是一项简单的任务。 以下代码段演示了如何创建新的 **Compositor**：
 
 ```cs
 _compositor = new Compositor();
@@ -52,18 +52,18 @@ _compositor = new Compositor();
 
 ## <a name="creating-a-spritevisual-and-colorbrush"></a>创建 SpriteVisual 和 ColorBrush
 
-使用 [**Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) 可随时根据需要轻松创建对象， 如 [**SpriteVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) 和 [**CompositionColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)：
+使用 [**Compositor**](/uwp/api/Windows.UI.Composition.Compositor) 可随时根据需要轻松创建对象，如 [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) 和 [**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush)：
 
 ```cs
 var visual = _compositor.CreateSpriteVisual();
 visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
 ```
 
-虽然这是只有几行代码，它演示了一个强大的概念：[**SpriteVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual)对象是影响系统的核心。 在创建颜色、图形和效果方面，**SpriteVisual** 具有出色的灵活性和互动性。 **SpriteVisual** 是单一视觉对象类型，该对象可以使用画笔填充 2D 矩形；在本示例中为纯色。
+虽然该代码段只有几行代码，但它演示了一个强大的概念：即 [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) 对象，此类对象是效果系统的核心。 在创建颜色、图形和效果方面，**SpriteVisual** 具有出色的灵活性和互动性。 **SpriteVisual**是一种视觉对象类型，它可以使用画笔（在本例中为纯色）填充2d 矩形。
 
 ## <a name="clipping-a-visual"></a>剪裁可视对象
 
-[  **Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) 还可以用于创建 [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) 的剪裁。 下面的例子来自于使用 [**InsetClip**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.InsetClip) 剪裁可视对象每一侧的示例：
+[**Compositor**](/uwp/api/Windows.UI.Composition.Compositor) 还可以用于创建 [**Visual**](/uwp/api/Windows.UI.Composition.Visual) 的剪裁。 下面的例子来自于使用 [**InsetClip**](/uwp/api/Windows.UI.Composition.InsetClip) 剪裁可视对象每一侧的示例：
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -74,11 +74,11 @@ clip.BottomInset = 1.0f;
 _currentVisual.Clip = clip;
 ```
 
-与 API 中的其他对象一样，[**InsetClip**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.InsetClip) 也可以将动画应用到其属性。
+与 API 中的其他对象一样，[**InsetClip**](/uwp/api/Windows.UI.Composition.InsetClip) 也可以将动画应用到其属性。
 
-## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>旋转剪贴画
+## <a name="span-idrotating_a_clipspanspan-idrotating_a_clipspanspan-idrotating_a_clipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>旋转剪裁
 
-[  **Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) 可以通过旋转进行转换。 请注意，[**RotationAngle**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visual.rotationangle) 同时支持弧度和度数。 其默认采用弧度为单位，不过也可以轻松指定以度数为单位，如以下代码段中所示：
+[**Visual**](/uwp/api/Windows.UI.Composition.Visual) 可以通过旋转进行转换。 请注意，[**RotationAngle**](/uwp/api/windows.ui.composition.visual.rotationangle) 同时支持弧度和度数。 其默认采用弧度为单位，不过也可以轻松指定以度数为单位，如以下代码段中所示：
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;
@@ -94,13 +94,13 @@ Rotation 仅仅是 API 提供一组转换组件以供简化这些任务的示例
 visual.Opacity = 0.8f;
 ```
 
-与 Rotation 一样，[**Opacity**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visual.opacity) 属性也进行动画处理。
+与 Rotation 一样，[**Opacity**](/uwp/api/windows.ui.composition.visual.opacity) 属性也进行动画处理。
 
 ## <a name="changing-the-visuals-position-in-the-collection"></a>更改集合中视觉对象的位置
 
-借助合成 API，可以采用多种方式更改 [**VisualCollection**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection) 中视觉对象的位置。 使用 [**InsertAbove**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertabove) 可将该对象放置在其他视觉对象的上方、使用 [**InsertBelow**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertbelow) 可放置在下方、使用 [**InsertAtTop**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertattop) 可移动到顶部，而使用[**InsertAtBottom**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertatbottom) 可移动到底部。
+借助合成 API，可以采用多种方式更改 [**VisualCollection**](/uwp/api/windows.ui.composition.visualcollection) 中视觉对象的位置。 使用 [**InsertAbove**](/uwp/api/windows.ui.composition.visualcollection.insertabove) 可将该对象放置在其他视觉对象的上方、使用 [**InsertBelow**](/uwp/api/windows.ui.composition.visualcollection.insertbelow) 可放置在下方、使用 [**InsertAtTop**](/uwp/api/windows.ui.composition.visualcollection.insertattop) 可移动到顶部，而使用[**InsertAtBottom**](/uwp/api/windows.ui.composition.visualcollection.insertatbottom) 可移动到底部。
 
-在示例中，如果在 [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) 对象上单击，该对象将排列到顶部：
+在示例中，如果在 [**Visual**](/uwp/api/Windows.UI.Composition.Visual) 对象上单击，该对象将排列到顶部：
 
 ```cs
 parent.Children.InsertAtTop(_currentVisual);
@@ -108,7 +108,7 @@ parent.Children.InsertAtTop(_currentVisual);
 
 ## <a name="full-example"></a>完整示例
 
-在完整示例中，上述所有概念可一起用于构造和浏览 [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) 对象的一个简单树，以便可以在不使用 XAML、WWA 或 DirectX 的情况下更改不透明度。 此示例显示了如何创建和添加子 **Visual** 对象，以及如何更改属性。
+在完整示例中，上述所有概念可一起用于构造和浏览 [**Visual**](/uwp/api/Windows.UI.Composition.Visual) 对象的一个简单树，以便可以在不使用 XAML、WWA 或 DirectX 的情况下更改不透明度。 此示例显示了如何创建和添加子 **Visual** 对象，以及如何更改属性。
 
 ```cs
 using System;
