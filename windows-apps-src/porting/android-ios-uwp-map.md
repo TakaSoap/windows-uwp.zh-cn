@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f8afe892b7b8e91e72c1be7c655c8bc00998dd4
-ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
+ms.openlocfilehash: 0591b32671c7e1e74b47a41448f3b77b915a7dc7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094614"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174901"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
 
@@ -354,7 +354,7 @@ ms.locfileid: "89094614"
 <td align="left"><strong>列表视图优化。</strong> <br><br>帮助优化数据列表的内置模式，当需要显示的数据量很大时，性能通常很差</td>
 <td align="left"><strong>ViewHolder</strong> 设计模式用于避免多个视图查找，从而使你可以使用可重用的 UI 元素。</td>
 <td align="left">可以进行一系列的优化来改善 <strong>UITableView</strong> 的性能，不内置任何内容。</td>
-<td align="left">你可以使用自带 <strong>UI 虚拟化</strong>的 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview">ListView</a> 和 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">GridView</a> 控件，从而提供流畅的平移和滚动体验以及更快速的启动时间。 你还可以在数据源中实现 <a href="https://docs.microsoft.com/dotnet/api/system.collections.ilist">IList</a> 和 <a href="https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a>，从而提供<strong>数据虚拟化</strong>并进一步改善性能。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview">ListView 和 GridView UI 优化</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization">ListView 和 GridView 数据虚拟化</a></td>
+<td align="left">你可以使用自带 <strong>UI 虚拟化</strong>的 <a href="/uwp/api/windows.ui.xaml.controls.listview">ListView</a> 和 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">GridView</a> 控件，从而提供流畅的平移和滚动体验以及更快速的启动时间。 你还可以在数据源中实现 <a href="/dotnet/api/system.collections.ilist">IList</a> 和 <a href="https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a>，从而提供<strong>数据虚拟化</strong>并进一步改善性能。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview">ListView 和 GridView UI 优化</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization">ListView 和 GridView 数据虚拟化</a></td>
 </tr>
 </tbody>
 </table>
@@ -482,7 +482,7 @@ ms.locfileid: "89094614"
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>计划本地通知。</strong> <br><br>在计划时间由应用发送的本地通知。</td>
 <td align="left">通知和操作可使用 <strong>NotificationCompat.Builder</strong> 进行定义，并且可以使用 <strong>AlarmManager</strong> 和 <strong>BroadcastReceiver</strong> 在应用内进行计划和处理。</td>
-<td align="left">本地通知是使用 <strong>UILocalNotification</strong> 创建的，可以使用 <b> UILocalNotification.scheduleLocalNotification:<strong> 来计划。| 可以使用 </strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification">ScheduledToastNotification</a><strong> 来计划 toast 通知。可以使用 </strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification">TileNotification 类</a><strong>从应用中发送磁贴通知，或使用 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledTileNotification">ScheduledTileNotification</a> 计划磁贴通知。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts">自适应和交互式 Toast 通知</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-sending-a-local-tile-notification">发送本地磁贴通知</a> | |正在 </strong> 发送推送通知。</b> 从推送通知服务器发送并可以选择在应用内处理的通知。</td>
+<td align="left">本地通知是使用 <strong>UILocalNotification</strong> 创建的，可以使用 <b> UILocalNotification.scheduleLocalNotification:<strong> 来计划。| 可以使用 </strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification">ScheduledToastNotification</a><strong> 来计划 toast 通知。可以使用 </strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification">TileNotification 类</a><strong>从应用中发送磁贴通知，或使用 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledTileNotification">ScheduledTileNotification</a> 计划磁贴通知。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts">自适应和交互式 Toast 通知</a><br/><br/><a href="/windows/uwp/controls-and-patterns/tiles-and-notifications-sending-a-local-tile-notification">发送本地磁贴通知</a> | |正在 </strong> 发送推送通知。</b> 从推送通知服务器发送并可以选择在应用内处理的通知。</td>
 <td align="left"><strong>Google Cloud Messaging</strong> 为 Android 提供推送通知支持。</td>
 </tr>
 </tbody>

@@ -5,22 +5,22 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c07a3bbff4b29d2b59ef7d6d8a5912ce3675a4e
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 2e13c656f02531d500a72aa74b2d3c5d6cc29aa4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730356"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174931"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>从桌面应用程序移至 UWP
 
-如果现有的桌面应用程序是使用 .NET Framework （包括 WPF 和 Windows 窗体）或 c + + Win32 Api 生成的，则可以使用几个选项移动到通用 Windows 平台（UWP）和 Windows 10。
+如果现有的桌面应用程序是使用 .NET Framework (（包括 WPF 和 Windows 窗体) 或 c + + Win32 Api）生成的，则可以使用几个选项移动到通用 Windows 平台 (UWP) 和 Windows 10。
 
 ## <a name="package-your-desktop-application-in-an-msix-package"></a>在 .MSIX 包中打包桌面应用程序
 
-可以将桌面应用程序打包在 .MSIX 包中，以访问更多 Windows 10 功能。 MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（包括 UWP、WPF、Windows 窗体和 Win32 应用）的通用打包体验。 将桌面 Windows 应用打包到 MSIX 包中即可访问可靠的安装和更新体验、功能系统灵活的托管安全模型、对 Microsoft Store 的支持、企业管理以及许多自定义分发模型。 无论你是否有源代码，你都可以打包应用程序，或者是否只有现有的安装程序文件（例如 MSI 或 App-v 安装程序）。 打包应用程序后，可以集成 UWP 功能，如包扩展和其他 UWP 组件。
+可以将桌面应用程序打包在 .MSIX 包中，以访问更多 Windows 10 功能。 MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（包括 UWP、WPF、Windows 窗体和 Win32 应用）的通用打包体验。 将桌面 Windows 应用打包到 MSIX 包中即可访问可靠的安装和更新体验、功能系统灵活的托管安全模型、对 Microsoft Store 的支持、企业管理以及许多自定义分发模型。 无论是使用源代码还是只有现有的安装程序文件 (如 MSI 或 App-v 安装程序) ，你都可以对应用程序进行打包。 打包应用程序后，可以集成 UWP 功能，如包扩展和其他 UWP 组件。
 
-有关详细信息，请参阅[打包桌面应用程序（Desktop Bridge）](/windows/msix/desktop/desktop-to-uwp-root)和[需要包标识的功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
+有关详细信息，请参阅将 [桌面应用程序打包 (桌面桥) ](/windows/msix/desktop/desktop-to-uwp-root) 和 [需要包标识的功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
 
 ## <a name="use-windows-runtime-apis"></a>使用 Windows 运行时 Api
 
@@ -70,7 +70,7 @@ ms.locfileid: "82730356"
 &nbsp;
 > [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
-如果你的代码不符合此标准，请考虑其他可以实现该代码的方法。 首先打开 [.NET API 浏览器](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)。 你可以使用该浏览器查看 .NET Standard 2.0 中可用的 API。 请确保将列表作用域限定为 .NET Standard 2.0。
+如果你的代码不符合此标准，请考虑其他可以实现该代码的方法。 首先打开 [.NET API 浏览器](/dotnet/api/?view=netstandard-2.0)。 你可以使用该浏览器查看 .NET Standard 2.0 中可用的 API。 请确保将列表作用域限定为 .NET Standard 2.0。
 
 ![.NET 选项](images/desktop-to-uwp/dot-net-option.png)
 
@@ -82,7 +82,7 @@ ms.locfileid: "82730356"
 
 ![Windows 窗体应用](images/desktop-to-uwp/win-forms-app.png)
 
-项目包含一个 .NET Standard 2.0 类库，其中包含名为 **Northwind** 的静态类。 如果将此代码移到**Northwind**类中，则不会进行编译，因为``SQLConnection``它``SqlCommand``使用了``SqlDataReader`` 、和类，而这些类在 .NET Standard 2.0 中不可用。
+项目包含一个 .NET Standard 2.0 类库，其中包含名为 **Northwind** 的静态类。 如果将此代码移到 **Northwind** 类中，则不会进行编译，因为它使用了 ``SQLConnection`` 、 ``SqlCommand`` 和 ``SqlDataReader`` 类，而这些类在 .NET Standard 2.0 中不可用。
 
 ```csharp
 public static ArrayList GetCustomerNames()
@@ -112,7 +112,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-不过，我们可以使用 [.NET API 浏览器](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) 找到另一种方法。 我们可以使用 ``DbConnection``、``DbCommand`` 和 ``DbDataReader`` 类，这些类都在 .NET Standard 2.0 中可用。  
+不过，我们可以使用 [.NET API 浏览器](/dotnet/api/?view=netstandard-2.0) 找到另一种方法。 我们可以使用 ``DbConnection``、``DbCommand`` 和 ``DbDataReader`` 类，这些类都在 .NET Standard 2.0 中可用。  
 
 此修订版本使用这些类来获取客户列表，但是，若要创建 ``DbConnection`` 类，我们将需要传递在客户端应用程序中创建的工厂对象。
 
@@ -216,7 +216,7 @@ public sealed partial class MainPage : Page
 }
 ```
 
-要开始使用 UWP，请参阅[什么是 UWP 应用](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
+要开始使用 UWP，请参阅[什么是 UWP 应用](../get-started/universal-application-platform-guide.md)。
 
 ### <a name="reach-ios-and-android-devices"></a>覆盖 iOS 和 Android 设备
 
@@ -239,7 +239,7 @@ public sealed partial class MainPage : Page
 ![Xamarin 应用](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->跨平台项目非常适合具有极少特定于平台的功能的应用。 你可以使用它们构建一个在 iOS、Android 和 Windows 上运行的基于 XAML 的本机 UI。 在[此处](https://docs.microsoft.com/xamarin/xamarin-forms/)了解更多信息。
+>跨平台项目非常适合具有极少特定于平台的功能的应用。 你可以使用它们构建一个在 iOS、Android 和 Windows 上运行的基于 XAML 的本机 UI。 在[此处](/xamarin/xamarin-forms/)了解更多信息。
 
 然后，从你的 Android、iOS 或跨平台项目中，添加对类库项目的引用。
 
@@ -278,13 +278,13 @@ public class MainActivity : ListActivity
 }
 ```
 
-若要开始使用 Android、iOS 和跨平台项目，请参阅 [Xamarin 开发人员门户](https://docs.microsoft.com/xamarin)。
+若要开始使用 Android、iOS 和跨平台项目，请参阅 [Xamarin 开发人员门户](/xamarin)。
 
 ## <a name="next-steps"></a>后续步骤
 
 **查找问题的答案**
 
-有任何疑问吗？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
+有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
 
 **提供反馈或提出功能建议**
 

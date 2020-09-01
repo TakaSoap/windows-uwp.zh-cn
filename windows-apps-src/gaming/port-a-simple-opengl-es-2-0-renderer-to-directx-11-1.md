@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, opengl, direct3d 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c17e0b8ceb5938b7ca224f4a67198929a37a7f4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cdd5bc20d9cceff992cc23ae4863f952ea719877
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368362"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175211"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11
 
@@ -27,7 +27,7 @@ ms.locfileid: "66368362"
 
 本主题会在创建新的 DirectX 11 项目之后开始。 若要了解如何创建新的 DirectX 11 项目， 请阅读[创建新的用于通用 Windows 平台 (UWP) 的 DirectX 11 项目](user-interface.md)。
 
-通过上面任一链接创建的项目准备了 [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews) 基础结构的所有代码， 你可以直接执行将呈现器从 Open GL ES 2.0 移植到 Direct3D 11 的过程。
+通过上面任一链接创建的项目准备了 [Direct3D](/windows/desktop/direct3d11/dx-graphics-overviews) 基础结构的所有代码， 你可以直接执行将呈现器从 Open GL ES 2.0 移植到 Direct3D 11 的过程。
 
 本主题介绍了执行以下同一基本图形任务的两种代码路径：在窗口中显示一个旋转的顶点着色立方体。 在这两种情况下，该代码涉及以下流程：
 
@@ -80,23 +80,23 @@ typedef struct
 
 该结构具有一个实例，并且包含用于呈现非常简单的顶点作色网格所需的所有组件。
 
-> **请注意**  本主题中的任何 OpenGL ES 2.0 代码取决于 Khronos 组提供的 Windows API 实现，并使用 Windows C 编程语法。
+> **注意**   本主题中的任何 OpenGL ES 2.0 代码都基于 Khronos 组提供的 Windows API 实现，并使用 Windows C 编程语法。
 
  
 
-## <a name="what-you-need-to-know"></a>你需要了解的内容
+## <a name="what-you-need-to-know"></a>须知内容
 
 
 ### <a name="technologies"></a>技术
 
--   [Microsoft Visual C++](https://docs.microsoft.com/previous-versions/60k1461a(v=vs.140))
+-   [Microsoft Visual C++](/previous-versions/60k1461a(v=vs.140))
 -   OpenGL ES 2.0
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>必备条件
 
 -   可选。 查看[将 EGL 代码移植到 DXGI 和 Direct3D](moving-from-egl-to-dxgi.md)。 阅读本主题以便更好地了解 DirectX 提供的图形接口。
 
-## <a name="span-idkeylinksstepsheadingspansteps"></a><span id="keylinks_steps_heading"></span>步骤
+## <a name="span-idkeylinks_steps_headingspansteps"></a><span id="keylinks_steps_heading"></span>步骤
 
 
 <table>
@@ -112,19 +112,19 @@ typedef struct
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="port-the-shader-config.md">端口的着色器对象</a></p></td>
+<td align="left"><p><a href="port-the-shader-config.md">移植着色器对象</a></p></td>
 <td align="left"><p>移植 OpenGL ES 2.0 中的简单呈现器时，第一步是在 Direct3D 11 中设置等效的顶点着色器和片段着色器对象，并且确保在编译之后主程序能够与着色器对象进行通信。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="port-the-vertex-buffers-and-data-config.md">顶点缓冲区和数据端口</a></p></td>
+<td align="left"><p><a href="port-the-vertex-buffers-and-data-config.md">移植顶点缓冲区和数据</a></p></td>
 <td align="left"><p>在此步骤中，你将定义将包含网格的顶点缓冲区以及允许着色器按照指定的顺序遍历顶点的索引缓冲区。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="port-the-glsl.md">GLSL 端口</a></p></td>
+<td align="left"><p><a href="port-the-glsl.md">移植 GLSL</a></p></td>
 <td align="left"><p>转到创建和配置缓冲区及着色器对象的代码之后，应该将这些着色器中的代码从 OpenGL ES 2.0 的 GL 着色器语言 (GLSL) 移植到 Direct3D 11 的高级着色器语言 (HLSL)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="draw-to-the-screen.md">在屏幕上绘制</a></p></td>
+<td align="left"><p><a href="draw-to-the-screen.md">绘制到屏幕</a></p></td>
 <td align="left"><p>最终，我们会移植可将旋转立方体绘制到屏幕的代码。</p></td>
 </tr>
 </tbody>
@@ -132,17 +132,13 @@ typedef struct
 
  
 
-## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>其他资源
+## <a name="span-idadditional_resourcesspanadditional-resources"></a><span id="additional_resources"></span>其他资源
 
 
--   [准备好 UWP DirectX 游戏开发的开发环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
--   [为 UWP 创建新的 DirectX 11 项目](user-interface.md)
--   [将 OpenGL ES 2.0 的概念和基础结构映射到 Direct3D 11](map-concepts-and-infrastructure.md)
-
- 
+-   [为 UWP DirectX 游戏开发准备开发环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
+-   [创建针对 UWP 的新的 DirectX 11 项目](user-interface.md)
+-   [将 OpenGL ES 2.0 概念和基础结构映射到 Direct3D 11](map-concepts-and-infrastructure.md)
 
  
 
-
-
-
+ 

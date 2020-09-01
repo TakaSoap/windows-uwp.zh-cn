@@ -1,16 +1,16 @@
 ---
 title: 获取并了解磁条数据
-description: 了解如何从磁条获取和解释数据。
+description: 了解如何使用通用 Windows 平台 (UWP) 点 (点) Api 中获取和解释来自磁条读取器的数据。
 ms.date: 10/04/2018
 ms.topic: article
 keywords: windows 10，uwp，服务点，pos，磁条纹读取器
 ms.localizationpriority: medium
-ms.openlocfilehash: eb4238d35497bdd90671dd0b6fa63d589c0ec740
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2a405a66fbc243925c4c9bbd5b1ee499a9a7b9f8
+ms.sourcegitcommit: e273e5901bfa6596dfef4cc741bb1c42614c25ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173261"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238272"
 ---
 # <a name="obtain-and-understand-magnetic-stripe-data"></a>获取并了解磁条数据
 

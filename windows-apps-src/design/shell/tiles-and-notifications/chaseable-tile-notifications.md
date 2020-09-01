@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 可追踪的磁贴, 动态磁贴, 可追踪的磁贴通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e27dec0e7256cfc035ecc3150bd976f69743fe3
-ms.sourcegitcommit: f15cf141c299bde9cb19965d8be5198d7f85adf8
+ms.openlocfilehash: a10e68f2926761338a95d5d2c649c84468efada8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58358612"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173811"
 ---
 # <a name="chaseable-tile-notifications"></a>可追踪的磁贴通知
 
@@ -21,10 +21,10 @@ ms.locfileid: "58358612"
 例如，新应用可以使用此功能来决定用户启动应用时其动态磁贴显示哪一篇新闻报道，这样可以确保文章突出显示，以便用户找到它。 
 
 > [!IMPORTANT]
-> **需要周年更新**:若要使用与 chaseable 磁贴通知C#， C++，或基于 VB 的 UWP 应用中，必须为目标 SDK 14393 和 14393 或更高版本运行生成。 对于基于 JavaScript 的 UWP 应用，必须面向 SDK 17134 且必须运行版本 17134 或更高版本。 
+> **需要周年更新**：若要通过 C#、C++ 或基于 VB 的 UWP 应用使用可追踪的磁贴通知，必须面向 SDK 14393 且必须运行版本 14393 或更高版本。 对于基于 JavaScript 的 UWP 应用，必须面向 SDK 17134 且必须运行版本 17134 或更高版本。 
 
 
-> **重要的 API**：[LaunchActivatedEventArgs.TileActivatedInfo 属性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)， [TileActivatedInfo 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **重要 API**：[LaunchActivatedEventArgs.TileActivatedInfo 属性](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)、[TileActivatedInfo 类](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
 ## <a name="how-it-works"></a>工作原理
@@ -40,7 +40,7 @@ ms.locfileid: "58358612"
 
 ## <a name="what-to-do-with-a-chaseable-tile-notifications"></a>对可追踪磁贴通知的操作
 
-请注意，最重要的是，在大多数情况下，当用户单击磁贴时，**不应直接导航到磁贴上的特定通知**。 动态磁贴用作的是应用程序的入口点。 当用户单击实时磁贴时，可以是两种方案：（1） 他们想要启动您的应用程序通常情况下，或者 （2） 他们想要了解有关动态磁贴上的特定通知详细信息。 由于无法让用户明确表示他们所需的是哪种行为，所以理想的体验是**正常启动应用，并确保用户可以轻松找到其看到的通知**。
+请注意，最重要的是，在大多数情况下，当用户单击磁贴时，**不应直接导航到磁贴上的特定通知**。 动态磁贴用作的是应用程序的入口点。 当用户单击动态磁贴时可能有两种情况：(1) 他们希望正常启动应用或 (2) 他们希望看到有关动态磁贴上特定通知的详细信息。 由于无法让用户明确表示他们所需的是哪种行为，所以理想的体验是**正常启动应用，并确保用户可以轻松找到其看到的通知**。
 
 例如，单击“MSN 资讯”应用的动态磁贴可正常启动应用：它会显示主页或用户之前阅读的文章。 但是，在主页上，该应用可确保动态磁贴上显示的新闻可以轻松找到。 这样即可支持以下两种情况：仅想要启动/继续使用该应用的情况，以及想要查看具体新闻的情况。
 
@@ -105,13 +105,13 @@ TileContent content = new TileContent()
 
 ## <a name="how-to-check-for-the-arguments-property-when-your-app-launches"></a>在应用启动时如何检查参数属性
 
-大部分应用都有一个包含 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法的重写方法的 App.xaml.cs 文件。 顾名思义，应用在启动时调用此方法。 它使用一个参数，即 [LaunchActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 对象。
+大部分应用都有一个包含 [OnLaunched](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法的重写方法的 App.xaml.cs 文件。 顾名思义，应用在启动时调用此方法。 它使用一个参数，即 [LaunchActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 对象。
 
-LaunchActivatedEventArgs 对象有一个属性支持可追踪通知，那就是 [TileActivatedInfo 属性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)，它提供对 [TileActivatedInfo 对象](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)的访问。 当用户从应用磁贴（而不是应用列表、搜索或任何其他入口点）启动应用时，它初始化此属性。
+LaunchActivatedEventArgs 对象有一个属性支持可追踪通知，那就是 [TileActivatedInfo 属性](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)，它提供对 [TileActivatedInfo 对象](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)的访问。 当用户从应用磁贴（而不是应用列表、搜索或任何其他入口点）启动应用时，它初始化此属性。
 
-[TileActivatedInfo 对象](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)包含一个名为 [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications) 的属性，其中包含在前 15 分钟内在磁贴上显示的通知的列表。 该列表中的第一项表示磁贴的当前通知，后面的项表示用户在当前通知之前看过的通知。 如果已清除磁贴，则该列表为空。
+[TileActivatedInfo 对象](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)包含一个名为 [RecentlyShownNotifications](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications) 的属性，其中包含在前 15 分钟内在磁贴上显示的通知的列表。 该列表中的第一项表示磁贴的当前通知，后面的项表示用户在当前通知之前看过的通知。 如果已清除磁贴，则该列表为空。
 
-每个 ShownTileNotification 有一个参数属性。 如果负载不包括参数字符串，将使用从磁贴通知有效负载，则为 null 的参数字符串初始化参数属性。
+每个 ShownTileNotification 都有一个 Arguments 属性。 如果负载不包括参数字符串，则使用磁贴通知负载中的参数字符串或 null 初始化 Arguments 属性。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -142,12 +142,12 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ### <a name="accessing-onlaunched-from-desktop-applications"></a>从桌面应用程序访问 OnLaunched
 
-桌面应用程序 （如 Win32，WPF 中，等） 使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)，也可以使用 chaseable 磁贴 ！ 唯一的区别访问 OnLaunched 自变量。 请注意，首先必须[你的应用使用桌面桥打包](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)。
+桌面应用程序 (如 Win32、WPF 等) 使用 [桌面桥](https://developer.microsoft.com/windows/bridges/desktop)，还可以使用 chaseable 磁贴！ 唯一的区别是访问 OnLaunched 参数。 请注意，必须首先 [将你的应用与桌面桥打包](/windows/msix/desktop/source-code-overview)。
 
 > [!IMPORTANT]
-> **需要 2018 年 10 月更新**:若要使用`AppInstance.GetActivatedEventArgs()`API，必须为目标 SDK 17763 和 17763 或更高版本运行生成。
+> **需要10月2018更新**：若要使用 `AppInstance.GetActivatedEventArgs()` API，你必须面向 SDK 17763，并运行版本17763或更高版本。
 
-对于桌面应用程序，要访问启动参数，请执行以下...
+对于桌面应用程序，若要访问启动参数，请执行以下操作 .。。
 
 ```csharp
 
@@ -221,5 +221,5 @@ static void Main()
 
 ## <a name="related-articles"></a>相关文章
 
-- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
-- [TileActivatedInfo 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+- [LaunchActivatedEventArgs.TileActivatedInfo 属性](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [TileActivatedInfo 类](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

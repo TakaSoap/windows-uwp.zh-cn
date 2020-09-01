@@ -1,16 +1,16 @@
 ---
 title: Xbox Live 测试用户管理 API 参考
-description: 了解如何以编程方式访问用户管理 API。
+description: 了解如何使用 Xbox 设备门户 REST API 获取或更新控制台上的用户列表。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
-ms.openlocfilehash: 52f333af73084ed14982b9d09b6770c8294980f7
-ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
+ms.openlocfilehash: 0f05bc84469585fc10bfff6a7f0d0f0976a0080d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74902530"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174671"
 ---
 # <a name="xbox-live-user-management"></a>Xbox Live 用户管理
 
@@ -20,7 +20,7 @@ ms.locfileid: "74902530"
 
 | 方法        | 请求 URI     | 
 | ------------- |-----------------|
-| 获取           | /ext/user |
+| GET           | /ext/user |
 | PUT           | /ext/user |
 
 
@@ -43,7 +43,7 @@ ms.locfileid: "74902530"
   * SignedIn（可选）：用于指定是否应登录或注销所提供帐户的布尔值。
   * UserId（可选，但如果未提供 EmailAddress，则必须提供，除非登录的是赞助用户）：用于指定要修改/添加/删除的用户的 UserId。
   * SponsoredUser（可选）：用于指定是否添加赞助用户的布尔值。
-  * Delete （可选）：指定从控制台中删除此用户的布尔值
+  * 删除 (可选) ： bool 指定从控制台中删除此用户
 
 ## <a name="response"></a>响应
 
@@ -64,7 +64,7 @@ ms.locfileid: "74902530"
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码   | 描述     | 
+| HTTP 状态代码   | 说明     | 
 | ------------------ |-----------------|
 | 200                | 调用 GET 成功，并且在响应正文中已返回用户的 JSON 数组 |
 | 204                | 调用 PUT 成功，并且主机中的用户已更新 |

@@ -6,19 +6,19 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 控件, 输入
 ms.localizationpriority: medium
-ms.openlocfilehash: dfe864f0b8c16cce9cc8d413c41a4e3324cf2e9b
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: 87a56c9213aabce23801f305d8a100f536f0889b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409656"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175231"
 ---
 # <a name="add-controls"></a>添加控件
 
 > [!NOTE]
-> 本主题是[使用 DirectX 教程系列创建简单通用 Windows 平台（UWP）游戏](tutorial--create-your-first-uwp-directx-game.md)的一部分。 该链接上的主题设置了序列的上下文。
+> 本主题是 [使用 DirectX 教程系列 (UWP) 游戏创建简单通用 Windows 平台](tutorial--create-your-first-uwp-directx-game.md) 的一部分。 该链接上的主题设置了序列的上下文。
 
-\[已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 2.x 的文章，请参阅[存档](/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
+\[ 已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 2.x 的文章，请参阅[存档](/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
 
 优秀的通用 Windows 平台 (UWP) 游戏支持多种界面。 潜在玩家可能将 Windows 10 安装在没有物理按钮的平板电脑、连接了 Xbox 控制器的电脑，或者具有高性能鼠标和游戏键盘的最新桌面游戏设备上。 在我们的游戏中，控制在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 类中实现。 此类将全部三个输入类型（鼠标和键盘、触控和游戏板）聚合到一个控制器内。 最终结果是一个第一人称射击游戏，其使用通过多台设备使用的流派标准移动观看控件。
 
@@ -30,20 +30,20 @@ ms.locfileid: "85409656"
 
 此时，我们有呈现的游戏，但我们不能四处移动玩家或射击目标。 我们来看看我们的游戏如何在 UWP DirectX 游戏中为以下类型的输入实现第一人称射击游戏移动观看控件。
 - 鼠标和键盘
-- 触控
+- 触摸
 - 游戏板
 
 >[!Note]
->如果尚未下载此示例的最新游戏代码，请参阅[Direct3D 示例游戏](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此示例是大型 UWP 功能示例集合的一部分。 有关如何下载示例的说明，请参阅[从 GitHub 获取 UWP 示例](/windows/uwp/get-started/get-uwp-app-samples)。
+>如果尚未下载此示例的最新游戏代码，请参阅 [Direct3D 示例游戏](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此示例是大型 UWP 功能示例集合的一部分。 有关如何下载示例的说明，请参阅[从 GitHub 获取 UWP 示例](../get-started/get-app-samples.md)。
 
 ## <a name="common-control-behaviors"></a>常用控件行为
 
 
 触摸控件和鼠标/键盘控件具有非常类似的核心实现。 在 UWP 应用中，指针只是屏幕上的点。 你可以滑动鼠标或在触摸屏上滑动手指来移动指针。 因此，你可以注册单个事件集，而不用担心玩家使用鼠标或触摸屏移动或点按指针。
 
-当示例游戏中的**MoveLookController**类初始化时，它将注册四个特定于指针的事件和一个鼠标特定事件：
+当示例游戏中的 **MoveLookController** 类初始化时，它将注册四个特定于指针的事件和一个鼠标特定事件：
 
-事件 | 说明
+事件 | 描述
 :------ | :-------
 [**CoreWindow::PointerPressed**](/uwp/api/windows.ui.core.corewindow.pointerpressed) | 点按（并按住）左右鼠标按钮，或触摸触摸屏表面。
 [**CoreWindow::PointerMoved**](/uwp/api/windows.ui.core.corewindow.pointermoved) |移动鼠标，或在触摸表面执行拖动操作。
@@ -82,7 +82,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow const& window)
 
 状态 | 说明
 :----- | :-------
-无 | 这是控制器的初始化状态。 忽略所有输入，因为游戏不期待任何控制器输入。
+**无** | 这是控制器的初始化状态。 忽略所有输入，因为游戏不期待任何控制器输入。
 **WaitForInput** | 控制器等待玩家通过使用鼠标左键、触摸事件或游戏板上的菜单按钮确认来自游戏的消息。
 **活动** | 控制器处于活动的游戏模式。
 
@@ -93,7 +93,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow const& window)
 游戏在暂停后进入 **WaitForInput** 状态。 当玩家将指针移出游戏主窗口或者按下暂停按钮（P 键或游戏板**开始**按钮）时将发生此情况。 **MoveLookController** 注册点按操作，并在它调用 [**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127) 方法时通知游戏循环。 此时，如果 **IsPauseRequested** 返回 **true**，游戏循环将对 **MoveLookController** 调用 **WaitForPress** 以将控制器转入 **WaitForInput** 状态。 
 
 
-进入 **WaitForInput** 状态后，游戏将停止处理几乎所有游戏输入事件，直到它返回到 **Active** 状态。 例外情况是暂停按钮，按此按钮会使游戏回退到活动状态。 除 "暂停" 按钮外，要使游戏返回到播放机的**活动**状态，播放机需要选择菜单项。 
+进入 **WaitForInput** 状态后，游戏将停止处理几乎所有游戏输入事件，直到它返回到 **Active** 状态。 例外情况是暂停按钮，按此按钮会使游戏回退到活动状态。 除 "暂停" 按钮外，要使游戏返回到播放机的 **活动** 状态，播放机需要选择菜单项。 
 
 
 
@@ -111,7 +111,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow const& window)
 
 在将指针事件映射到特定的游戏操作之后，可以更新 **MoveLookController** 对象与主游戏循环共享的数据。
 
-调用时，示例游戏中的[**Update**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1005-L1096)方法会处理输入并更新速度和外观方向变量（**m \_ 速度**和** \_ Lookdirection**），然后通过调用公共[**速度**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L906-L909)和[**lookdirection**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L913-L923)方法来检索游戏循环。
+在调用时，示例游戏中的 [**Update**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1005-L1096) 方法将处理输入并更新速度和外观方向变量 (**m \_ 速度** 和 **m \_ lookdirection**) ，然后游戏循环通过调用公共 [**速度**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L906-L909) 和 [**lookdirection**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L913-L923) 方法来检索这些变量。
 
 > [!NOTE]
 > 有关 [**Update**](#the-update-method) 方法的更多详细信息，可以在此页的后面部分看到。
@@ -231,7 +231,7 @@ void MoveLookController::OnMouseMoved(
 [**SetMoveRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L843-L853) 和 [**SetFireRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L857-L867) 方法创建输入矩形，使用两个 2D 矢量在屏幕上指定每个矩形的左上角和右下角位置。 
 
 
-然后，将参数分配给**m \_ fireUpperLeft**和**m \_ fireLowerRight** ，这将帮助我们确定用户是否在矩形内触摸。 
+然后，将参数分配给 **m \_ fireUpperLeft** 和 **m \_ fireLowerRight** ，这将帮助我们确定用户是否在矩形内触摸。 
 ```cppwinrt
 m_fireUpperLeft = upperLeft;
 m_fireLowerRight = lowerRight;
@@ -252,9 +252,9 @@ window.PointerReleased({ this, &MoveLookController::OnPointerReleased });
 
 我们将首先确定，用户在使用 [**OnPointerPressed**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L179-L313) 方法第一次按移动或射击矩形内部时将发生什么。
 在这里，我们检查他们触摸控件的位置以及指针是否已在该控制器中。 如果这是触摸特定控件的第一个手指，我们执行以下操作。
-- 将 system.windows.uielement.touchdown> 的位置以**m \_ moveFirstDown**或**m \_ fireFirstDown**存储为2d 向量。
-- 将指针 ID 分配给**m \_ movePointerID**或**m \_ firePointerID**。
-- 将正确的**正在使用**标志（**m \_ moveInUse**或**m \_ fireInUse**）设置为， `true` 因为现在我们有该控件的活动指针。
+- 将 system.windows.uielement.touchdown> 的位置以 **m \_ moveFirstDown** 或 **m \_ fireFirstDown** 存储为2d 向量。
+- 将指针 ID 分配给 **m \_ movePointerID** 或 **m \_ firePointerID**。
+- 将正确的 **正在使用** 标志设置 (**m \_ moveInUse** 或 **m \_ fireInUse**) ， `true` 因为现在我们有该控件的活动指针。
 
 ```cppwinrt
 PointerPoint point = args.CurrentPoint();
@@ -351,7 +351,7 @@ case MoveLookControllerState::Active:
 
 如果移动控件已释放，我们执行以下操作。
 - 在所有方向将玩家的速度设置为 `0` 以阻止他们在游戏中移动。
-- 将**m \_ moveInUse**切换为， `false` 因为用户不再触及移动控制器。
+- 将 **m \_ moveInUse** 切换为， `false` 因为用户不再触及移动控制器。
 - 将移动指针 ID 设置为 `0`，因为移动控制器中不再有指针。
 
 ```cppwinrt
@@ -392,12 +392,12 @@ if (!m_lookInUse)
 }
 ```
 
-在这里，**MoveLookController** 将触发该事件的指针的指针 ID 分配到对应于观看区域的特定变量。 如果在外观区域发生触摸，则**m \_ lookPointerID**变量设置为触发事件的指针 ID。 布尔变量**m \_ lookInUse**也设置为指示该控件尚未释放。
+在这里，**MoveLookController** 将触发该事件的指针的指针 ID 分配到对应于观看区域的特定变量。 如果在外观区域发生触摸，则 **m \_ lookPointerID** 变量设置为触发事件的指针 ID。 布尔变量 **m \_ lookInUse**也设置为指示该控件尚未释放。
 
-现在，让我们看看示例游戏如何处理[**PointerMoved**](/uwp/api/windows.ui.core.corewindow.pointermoved)触摸屏事件。
+现在，让我们看看示例游戏如何处理 [**PointerMoved**](/uwp/api/windows.ui.core.corewindow.pointermoved) 触摸屏事件。
 
 在 **MoveLookController::OnPointerMoved** 方法内，我们查看哪类指针 ID 被分配到该事件。 如果是 **m_lookPointerID**，我们将计算指针位置的变化。
-然后，我们使用此增量计算应更改多少旋转。 最后，我们可以更新要在游戏中使用的**m \_ 跨度**和**m \_ 偏航**来更改播放机旋转。 
+然后，我们使用此增量计算应更改多少旋转。 最后，我们可以更新要在游戏中使用的 **m \_ 跨度** 和 **m \_ 偏航** 来更改播放机旋转。 
 
 ```cppwinrt
 // This is the look pointer.
@@ -428,7 +428,7 @@ else if (pointerID == m_lookPointerID)
 }
 ```
 
-接下来我们要介绍的是示例游戏如何处理[**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased)触摸屏事件。
+接下来我们要介绍的是示例游戏如何处理 [**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased) 触摸屏事件。
 当用户完成了触摸手势并在屏幕上删除了手指后，[**MoveLookController::OnPointerReleased**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L441-L500) 将启动。
 如果触发 [**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased) 事件的指针的指针 ID 是以前记录的移动指针的 ID，则 **MoveLookController** 将速度设置为 `0`，这是因为玩家已停止触摸观看区域。
 
@@ -557,7 +557,7 @@ case MoveLookControllerState::Active:
 右扳机键 | 射击视区
 “开始”/“菜单”按钮 | 暂停或继续游戏
 
-在 [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) 方法中，我们添加了两个新事件来确定游戏板是否已[添加](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105)或[删除](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114)。 这些事件更新 **m_gamepadsChanged** 属性。 在**UpdatePollingDevices**方法中使用此方法来检查已知 gamepads 的列表是否已更改。 
+在 [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) 方法中，我们添加了两个新事件来确定游戏板是否已[添加](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105)或[删除](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114)。 这些事件更新 **m_gamepadsChanged** 属性。 在 **UpdatePollingDevices** 方法中使用此方法来检查已知 gamepads 的列表是否已更改。 
 
 ```cppwinrt
 // Detect gamepad connection and disconnection events.

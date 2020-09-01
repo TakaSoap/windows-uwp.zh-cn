@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 恢复, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: b1506351dd06563386154ac35938cbd17f5ced32
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 37bceafae39c314966a95f06a282fe5c91814738
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368617"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175281"
 ---
 # <a name="how-to-resume-an-app-directx-and-c"></a>如何恢复应用（DirectX 和 C++）
 
@@ -22,9 +22,9 @@ ms.locfileid: "66368617"
 ## <a name="register-the-resuming-event-handler"></a>注册恢复事件处理程序
 
 
-注册以处理 [**CoreApplication::Resuming**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming) 事件， 该事件指示用户从你的应用切换离开，而后又切换回你的应用。
+注册以处理 [**CoreApplication::Resuming**](/uwp/api/windows.applicationmodel.core.coreapplication.resuming) 事件， 该事件指示用户从你的应用切换离开，而后又切换回你的应用。
 
-将此代码添加到你的视图提供程序 的 [**IFrameworkView::Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize) 方法的实现中：
+将此代码添加到你的视图提供程序 的 [**IFrameworkView::Initialize**](/uwp/api/windows.applicationmodel.core.iframeworkview.initialize) 方法的实现中：
 
 ```cpp
 // The first method is called when the IFrameworkView is being created.
@@ -43,7 +43,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 ## <a name="refresh-displayed-content-after-suspension"></a>暂停之后刷新显示的内容
 
 
-当你的应用处理 Resuming 事件时，它将有机会刷新其显示的内容。 还原你已使用你的 [**CoreApplication::Suspending**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.suspending) 处理程序保存的所有应用，然后重新启动处理。 游戏开发人员：如果你已暂停你的音频引擎，那么现在该重新启动它了。
+当你的应用处理 Resuming 事件时，它将有机会刷新其显示的内容。 还原你已使用你的 [**CoreApplication::Suspending**](/uwp/api/windows.applicationmodel.core.coreapplication.suspending) 处理程序保存的所有应用，然后重新启动处理。 游戏开发人员：如果你已暂停你的音频引擎，那么现在该重新启动它了。
 
 ```cpp
 void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)
@@ -56,7 +56,7 @@ void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)
 }
 ```
 
-对于应用的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)，此回调是由 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 处理的一条事件消息。 如果你没有从你的应用的主回路调用 [**CoreDispatcher::ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)（在你的查看提供程序的 [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run) 方法中实现），那么将不会调用此回调。
+对于应用的 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)，此回调是由 [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) 处理的一条事件消息。 如果你没有从你的应用的主回路调用 [**CoreDispatcher::ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents)（在你的查看提供程序的 [**IFrameworkView::Run**](/uwp/api/windows.applicationmodel.core.iframeworkview.run) 方法中实现），那么将不会调用此回调。
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -90,13 +90,9 @@ void App::Run()
 
 ## <a name="related-topics"></a>相关主题
 
-* [如何暂停应用 (DirectX 和C++)](how-to-suspend-an-app-directx-and-cpp.md)
-* [如何激活应用 (DirectX 和C++)](how-to-activate-an-app-directx-and-cpp.md)
+* [如何暂停应用（DirectX 和 C++）](how-to-suspend-an-app-directx-and-cpp.md)
+* [如何激活应用（DirectX 和 C++）](how-to-activate-an-app-directx-and-cpp.md)
 
  
 
  
-
-
-
-

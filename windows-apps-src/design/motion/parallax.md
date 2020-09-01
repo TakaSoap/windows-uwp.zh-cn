@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ded09e2de6e3aafa0108d3f7ef66808cb02bfd8
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 5eac1b5d95dff4887258278f9ff700adaf663194
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043569"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175541"
 ---
 # <a name="parallax"></a>视差
 
@@ -56,14 +56,14 @@ ms.locfileid: "89043569"
  
 ## <a name="using-the-parallaxview-control-to-create-a-parallax-effect"></a>使用 ParallaxView 控件创建视差效果
 
-要创建视差效果，你可以使用 [ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 控件。 该控件将前景元素（如列表）的滚动位置与背景元素（如图像）关联到一起。 当你滚动前景元素时，它会为背景元素创建动画以创建视差效果。 
+要创建视差效果，你可以使用 [ParallaxView](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 控件。 该控件将前景元素（如列表）的滚动位置与背景元素（如图像）关联到一起。 当你滚动前景元素时，它会为背景元素创建动画以创建视差效果。 
 
-要使用 ParallaxView 控件，你需要提供源元素、背景元素，并将 [VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)（针对垂直滚动）和/或  [HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)（针对水平滚动）属性设置为大于零的值。 
-* 源属性参考前景元素。 为了让视差效果出现，前景应为 [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 或一个包含 ScrollViewer 的元素，例如 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 或 [RichTextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)。 
+要使用 ParallaxView 控件，你需要提供源元素、背景元素，并将 [VerticalShift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)（针对垂直滚动）和/或  [HorizontalShift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)（针对水平滚动）属性设置为大于零的值。 
+* 源属性参考前景元素。 为了让视差效果出现，前景应为 [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 或一个包含 ScrollViewer 的元素，例如 [ListView](/uwp/api/windows.ui.xaml.controls.listview) 或 [RichTextBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)。 
 
-* 要设置背景元素，你需要将该元素添加为 ParallaxView 控件的子元素。 背景元素可以是任何 [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，如[图像](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)或包含其他 UI 元素的面板。 
+* 要设置背景元素，你需要将该元素添加为 ParallaxView 控件的子元素。 背景元素可以是任何 [UIElement](/uwp/api/windows.ui.xaml.uielement)，如[图像](/uwp/api/Windows.UI.Xaml.Controls.Image)或包含其他 UI 元素的面板。 
 
-要创建视差效果，ParallaxView 必须位于前景元素之后。 [网格](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)和[画布](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)面板让你能够以相互叠加的形式放置项目，以便它们与 ParallaxView 控件很好地配合使用。  
+要创建视差效果，ParallaxView 必须位于前景元素之后。 [网格](/uwp/api/windows.ui.xaml.controls.grid)和[画布](/uwp/api/windows.ui.xaml.controls.canvas)面板让你能够以相互叠加的形式放置项目，以便它们与 ParallaxView 控件很好地配合使用。  
 
 该示例创建了列表的视差效果：
  
@@ -123,6 +123,6 @@ VerticalShift 和 HorizontalShift 属性让你可以控制视差效果的程度�
 
 ## <a name="related-articles"></a>相关文章
 
-- [ParallaxView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
+- [ParallaxView 类](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [UWP 的 Fluent Design](/windows/apps/fluent-design-system)
 - [系统中的科学：Fluent Design 和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

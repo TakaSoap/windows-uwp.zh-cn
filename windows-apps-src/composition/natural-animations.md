@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fde0cbf5335b4f5c3da2f21f692fc2c23455776
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 02c76991a60205042642f57fed475755db8c8071
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630372"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174081"
 ---
 # <a name="natural-motion-animations"></a>自然运动动画
 
@@ -22,28 +22,28 @@ ms.locfileid: "57630372"
 
 运动可帮助建立这种联系的一种方式是提供让用户从外观上感到熟悉的体验。 用户对于其在运动中感觉到的体验有一种无意识的预期，他们希望这种体验基于其实际的生活经验。 我们看到物体在地板上如何滑动、如何从桌面上跌落、如何相互碰撞，以及如何在弹簧的作用下振荡。 基于真实世界物理特性来利用这种预期的运动，在我们的眼中会显得更加自然。 运动变得更加自然，与用户的交互也更多，但更重要的是，整个体验都变得更加让人难忘和愉快。
 
-![扩展不包含动画的动作](images/animation/scale-no-animation.gif)
-![缩放与三次方贝塞尔运动](images/animation/scale-cubic-bezier.gif)
-![缩放使用 spring 动画的动作](images/animation/scale-spring.gif)
+![无动画缩放动作缩放动作，带 ](images/animation/scale-no-animation.gif)
+ ![ 弹簧动画的三次方贝塞尔曲线 ](images/animation/scale-cubic-bezier.gif)
+ ![ 缩放动作](images/animation/scale-spring.gif)
 
 最终结果是应用获得了更高的用户参与度和用户保留率。
 
 ## <a name="balancing-control-and-dynamism"></a>平衡控件和动态性
 
-在传统 UI 中，[KeyFrameAnimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.keyframeanimation) 是描述运动的主要方式。 关键帧为设计人员和开发人员提供用于定义开始、结束和内插的最多控件。 虽然这在许多情况下非常有用，但关键帧动画动态性不够；其运动没有适应性，在任何情况下都具有相同的外观。
+在传统 UI 中，[KeyFrameAnimation](/uwp/api/windows.ui.composition.keyframeanimation) 是描述运动的主要方式。 关键帧为设计人员和开发人员提供用于定义开始、结束和内插的最多控件。 虽然这在许多情况下非常有用，但关键帧动画动态性不够；其运动没有适应性，在任何情况下都具有相同的外观。
 
 在这个“频谱”的另一端，游戏和物理引擎中经常会看到模拟。 这些体验常常栩栩如生，并用户能够与之动态交互 - 这就能提供一种用户每天都能体会到的氛围和随意之感。 虽然这使得运动感觉更为鲜活和动态，设计人员和开发人员的控制力却较少，因此集成到传统 UI 更为困难。
 
 ![控制力频谱图](images/animation/natural-motion-diagram.png)
 
-[NaturalMotionAnimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.naturalmotionanimation) 旨在帮助衔接起这种分离的状况 – 实现控制力与运动之间的平衡，对于重要的动画元素（如开始/完成）具有控制力，又能保持运动的自然和动态。
+[NaturalMotionAnimation](/uwp/api/windows.ui.composition.naturalmotionanimation) 旨在帮助衔接起这种分离的状况 – 实现控制力与运动之间的平衡，对于重要的动画元素（如开始/完成）具有控制力，又能保持运动的自然和动态。
 
 > [!NOTE]
 > NaturalMotionAnimation 并不意在替代关键帧动画 - 在 Fluent 设计语言中仍然存在建议使用关键帧之处。 NaturalMotionAnimation 意在用于需要运动，但是关键帧动画的动态性不够的地方。
 
 ## <a name="using-naturalmotionanimations"></a>使用 NaturalMotionAnimations
 
-从 Fall Creators Update 开始，可以获得一种运动新体验：**弹簧动画**。 请参阅[弹簧动画](spring-animations.md)深入了解弹簧的操作实例。
+从秋季创意者更新开始，你可以访问新的动作体验： **弹簧动画**。 请参阅[弹簧动画](spring-animations.md)深入了解弹簧的操作实例。
 
 此运动类型通过使用新 NaturalMotionAnimation 来实现 – 这是一个新的动画类型，其中心是支持开发人员在其 UI 中构造更令人熟悉和自然的运动，同时在控制力与动态性之间取得平衡。 它们公开以下功能：
 

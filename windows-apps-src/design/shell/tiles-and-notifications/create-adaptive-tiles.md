@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bbc0f23ad712850e565814febe5b7e681e58a85d
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 7cee236b385b6129e7ab1a9cacd549f217f6e734
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234577"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175601"
 ---
 # <a name="create-adaptive-tiles"></a>创建自适应磁贴
 
-自适应磁贴模板是 Windows 10 中的一项新功能，允许你使用可适应不同屏幕密度的简单而灵活的标记语言来设计你自己的磁贴通知内容。 本文说明如何为 Windows 应用创建自适应动态磁贴。 有关自适应元素和属性的完整列表，请参阅[自适应磁贴架构](../tiles-and-notifications/tile-schema.md)。
+自适应磁贴模板是 Windows 10 中的一项新功能，允许你使用可适应不同屏幕密度的简单而灵活的标记语言来设计你自己的磁贴通知内容。 本文介绍了如何为 Windows 应用创建自适应动态磁贴。 有关自适应元素和属性的完整列表，请参阅[自适应磁贴架构](../tiles-and-notifications/tile-schema.md)。
 
-（如果你愿意，你仍然可以在为 Windows 10 设计通知时使用 [Windows 8 磁贴模板目录](https://docs.microsoft.com/previous-versions/windows/apps/hh761491(v=win.10))中的预设模板。）
+（如果你愿意，你仍然可以在为 Windows 10 设计通知时使用 [Windows 8 磁贴模板目录](/previous-versions/windows/apps/hh761491(v=win.10))中的预设模板。）
 
 
 ## <a name="getting-started"></a>入门
@@ -203,7 +203,7 @@ TileContent content = new TileContent()
 
 ![自适应磁贴大小：小、中、宽和大](images/adaptive-tiles-sizes.png)
 
-## <a name="branding"></a>署名
+## <a name="branding"></a>品牌打造
 
 
 你可以控制动态磁贴底部的品牌（显示名称和角徽标），方法是使用通知负载上的品牌属性。 你可以选择显示“无”、仅“名称”、仅“徽标”，或使用“nameAndLogo”显示两者。
@@ -284,7 +284,7 @@ TileContent content = new TileContent()
 
  
 
-## <a name="display-name"></a>Display name
+## <a name="display-name"></a>显示名称
 
 
 可通过输入使用 **displayName** 属性选择的文本字符串来替代通知的显示名称。 与品牌一样，可在 [TileVisual](../tiles-and-notifications/tile-schema.md#tilevisual) 元素上指定它（这将影响整个通知有效负载），或者可在 [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding) 元素上指定它（这仅影响个别磁贴）。
@@ -415,13 +415,13 @@ new AdaptiveText()
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
 | &lt;文本提示-style = " \* "/&gt; | 字体高度               | 字体粗细 |
-| caption                        | 12 个有效像素 (epx) | 常规     |
-| body                           | 15 epx                    | 常规     |
+| caption                        | 12 个有效像素 (epx) | 定期     |
+| body                           | 15 epx                    | 定期     |
 | base                           | 15 epx                    | 半粗体    |
-| 副标题                       | 20 epx                    | 常规     |
+| 副标题                       | 20 epx                    | 定期     |
 | title                          | 24 epx                    | 半细   |
-| 副标题                      | 34 epx                    | 轻型       |
-| 标头的值开始缓存响应                         | 46 epx                    | 轻型       |
+| 副标题                      | 34 epx                    | 亮       |
+| 标头的值开始缓存响应                         | 46 epx                    | 亮       |
 
  
 
@@ -787,7 +787,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 
 ![天气磁贴的示例](images/adaptive-tiles-weathertile.png)
 
-## <a name="images"></a>图像
+## <a name="images"></a>映像
 
 
 &lt;image&gt; 元素用于在磁贴通知上显示图像。 图像可以嵌入到磁贴内容中（默认）、作为内容背后的背景图像，或作为从通知顶部以动画形式进入的速览图像。
@@ -1399,7 +1399,3 @@ TileWide = new TileBinding()
  
 
  
-
-
-
-

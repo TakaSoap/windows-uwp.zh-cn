@@ -8,12 +8,12 @@ ms.date: 01/24/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 942c24e8f5c7c521502ee5a9f9eb7175bf04b94f
-ms.sourcegitcommit: 2a1ceeacf5cdadc803bad83dc3ceb57a16ce79a3
+ms.openlocfilehash: 4c05f39c0497a2e2ef369abd04ed437f8387e60f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067509"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173991"
 ---
 # <a name="landmarks-and-headings"></a>标志和标题
 
@@ -33,14 +33,14 @@ ms.locfileid: "89067509"
 
 设置应用将可供访问，无需标志和标题，但会变得更易于使用它们。 屏幕阅读器用户可以快速轻松地到达其所需的组（标志），然后也快速到达子组（标题）。
 
-使用 [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) 将 UI 元素设置为所需的[标志类型](https://docs.microsoft.com/windows/desktop/WinAuto/landmark-type-identifiers)。 此标志 UI 元素将封装对于该标志来说有意义的所有其他 UI 元素。
+使用 [AutomationProperties.LandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) 将 UI 元素设置为所需的[标志类型](/windows/desktop/WinAuto/landmark-type-identifiers)。 此标志 UI 元素将封装对于该标志来说有意义的所有其他 UI 元素。
 
-使用 [AutomationProperties.LocalizedLandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) 专门命名该标志。 如果你选择预定义的标志类型，如主或导航，这些名称将用于标志名称。 但是，如果将标志类型设置为自定义，你必须通过此属性专门命名标志。 你还可以使用此属性覆盖非自定义标志类型中的默认名称。
+使用 [AutomationProperties.LocalizedLandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) 专门命名该标志。 如果你选择预定义的标志类型，如主或导航，这些名称将用于标志名称。 但是，如果将标志类型设置为自定义，你必须通过此属性专门命名标志。 你还可以使用此属性覆盖非自定义标志类型中的默认名称。
 
-使用 [AutomationProperties.HeadingLevel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.headinglevelproperty) 将 UI 元素设置为从 *Level1* 到 *Level9* 内某特定级别的标题。
+使用 [AutomationProperties.HeadingLevel](/uwp/api/windows.ui.xaml.automation.automationproperties.headinglevelproperty) 将 UI 元素设置为从 *Level1* 到 *Level9* 内某特定级别的标题。
 
 ## <a name="examples"></a>示例
 
-有关演示如何解决 Windows 桌面应用程序中的许多常见编程式辅助功能问题的许多代码示例，请参阅 [解决 windows 桌面应用程序中的常见编程式辅助功能问题的代码示例](https://docs.microsoft.com/accessibility-tools-docs/)。
+有关演示如何解决 Windows 桌面应用程序中的许多常见编程式辅助功能问题的许多代码示例，请参阅 [解决 windows 桌面应用程序中的常见编程式辅助功能问题的代码示例](/accessibility-tools-docs/)。
 
 这些代码示例是由 Microsoft 的[ 可访问性 Insights （适用于 Windows](https://github.com/microsoft/accessibility-insights-windows)）直接引用的，它们有助于在 UI 中突出出现许多辅助功能问题。

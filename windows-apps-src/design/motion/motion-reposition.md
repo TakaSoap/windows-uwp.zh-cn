@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f469ab07794014b77ea08087ada793cb83133cc8
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: dac1af8a14ede535d2087469cb559d7038f22032
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970522"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175531"
 ---
 # <a name="reposition-animations"></a>重新定位动画
 
@@ -21,7 +21,7 @@ ms.locfileid: "82970522"
 
 使用重新定位动画将一个或多个元素移动到新位置。
 
-> **重要 API**：[**RepositionThemeAnimation 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation)、[**RepositionThemeTransition 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
+> **重要 API**：[**RepositionThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation)、[**RepositionThemeTransition 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 
@@ -31,15 +31,11 @@ ms.locfileid: "82970522"
 
 ## <a name="related-articles"></a>相关文章
 
-* [动画概述](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [创建重新定位动画](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
-* [快速入门：使用库动画创建 UI 动画](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**RepositionThemeAnimation 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation)
-* [**RepositionThemeTransition 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
+* [动画概述](./xaml-animation.md)
+* [创建重新定位动画](/previous-versions/windows/apps/jj649434(v=win.10))
+* [快速入门：使用库动画创建 UI 动画](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**RepositionThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation)
+* [**RepositionThemeTransition 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
 
 
  
-
-
-
-

@@ -1,17 +1,17 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: 适用于 Xbox 的 Device Portal
-description: 了解如何为 Xbox 提供设备门户，以便远程访问开发 Xbox。
+description: 了解如何为 Xbox 设备启用 Xbox 设备门户，以便远程访问开发 Xbox。
 ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 485cd9dc5a7ecb437cacf4a2c9c6eee57c3717f1
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: ed490b0474b919d4439e5b74b676d5974a3c6a30
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043479"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174781"
 ---
 # <a name="device-portal-for-xbox"></a>适用于 Xbox 的 Device Portal
 
@@ -53,7 +53,7 @@ Xbox 设备门户提供了一组与 Windows 设备门户上可用的页面类似
 
 ### <a name="xbox-live-game-saves"></a>Xbox Live（游戏保存）
 
-Windows 设备门户和 Xbox 设备门户均有一个 **Xbox Live** 页面。 但是，Xbox 设备门户有一个独特的部分 **Xbox Live 游戏保存**，在此部分中，你可以保存已在 Xbox 上安装的游戏的数据。 输入与标题和游戏保存关联的**服务配置 ID (SCID)**（有关更多信息，请参阅 [Xbox Live 服务配置](https://docs.microsoft.com/gaming/xbox-live/xbox-live-service-configuration.md#get-your-ids)）、**成员名(MSA)** 和**包系列名称(PFN)**，浏览**输入文件(.json 或 .xml)**，然后选择其中一个按钮（**重置**、**导入**、**导出**和**删除 **）来操作保存数据。
+Windows 设备门户和 Xbox 设备门户均有一个 **Xbox Live** 页面。 但是，Xbox 设备门户有一个独特的部分 **Xbox Live 游戏保存**，在此部分中，你可以保存已在 Xbox 上安装的游戏的数据。 输入与标题和游戏保存关联的**服务配置 ID (SCID)**（有关更多信息，请参阅 [Xbox Live 服务配置](/gaming/xbox-live/xbox-live-service-configuration.md#get-your-ids)）、**成员名(MSA)** 和**包系列名称(PFN)**，浏览**输入文件(.json 或 .xml)**，然后选择其中一个按钮（**重置**、**导入**、**导出**和**删除 **）来操作保存数据。
 
 在**生成**部分中，你可以生成虚拟数据并保存到指定的输入文件中。 只需输入**容器(默认为 2 个)**、**Blob (默认为 3 个)** 和 **Blob 大小(默认为 1024)**，然后选择**生成**。
 
@@ -202,4 +202,4 @@ Kinect 传感器必须连接到控制台才能更改以下这些设置。
 ## <a name="see-also"></a>请参阅
 
 * [Windows 设备门户概述](../debug-test-perf/device-portal.md)
-* [Device Portal 核心 API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Device Portal 核心 API 参考](../debug-test-perf/device-portal-api-core.md)

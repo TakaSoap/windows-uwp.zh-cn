@@ -6,12 +6,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: d7a63c44ac8cb6f6b17951cf6515fad33fb83ee9
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: b975dcf88ecd26dc5a24d602c117b779fa2aada6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74734942"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174521"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>将资源构建到应用包而非资源包中
 
@@ -25,7 +25,7 @@ ms.locfileid: "74734942"
 
 可以配置 Visual Studio 以通过以下两种方式之一将资源构建到应用包。 可以将配置文件添加到项目，也可以直接编辑项目文件。 使用这些选项中最熟悉或最适用于生成系统的选项。
 
-## <a name="option-1-use-priconfigpackagingxml-to-build-resources-into-your-app-package"></a>选项 1 使用 priconfig.packaging.xml 将资源构建到应用包
+## <a name="option-1-use-priconfigpackagingxml-to-build-resources-into-your-app-package"></a>选项 1. 使用 priconfig.packaging.xml 将资源构建到应用包
 
 1. 在 Visual Studio 中，将新项添加到项目。 选择 XML 文件，并将该文件命名为 `priconfig.packaging.xml`。
 2. 在“解决方案资源管理器”中，选择 `priconfig.packaging.xml` 并检查“属性”窗口。 文件的“生成操作”应设置为 None，“复制到输出目录”应设置为“不要复制”。
@@ -71,7 +71,7 @@ ms.locfileid: "74734942"
 
 将 `FILE-PATH-AND-NAME` 替换为文件的路径和名称。
 
-## <a name="option-2-use-your-project-file-to-build-resources-into-your-app-package"></a>选项 2 使用项目文件将资源构建到应用包
+## <a name="option-2-use-your-project-file-to-build-resources-into-your-app-package"></a>选项 2. 使用项目文件将资源构建到应用包
 
 这是选项 1 的替代方法。 了解选项 1 的工作原理后，如果选项 2 更适合开发和/或构建工作流，则可以选择执行选项 2。
 
@@ -97,6 +97,6 @@ ms.locfileid: "74734942"
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Visual Studio 打包 UWP 应用](../packaging/packaging-uwp-apps.md)
+* [使用 Visual Studio 打包 UWP 应用](/windows/msix/package/packaging-uwp-apps)
 * [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)
 * [指定应用使用的默认资源](specify-default-resources-installed.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 着色器, 基元, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: fecce6237d08f9ffa89bc7503412a357b17c641d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e900767b594b195ac5e1dd1d5777cfab16c2ece4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368948"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175361"
 ---
 # <a name="create-shaders-and-drawing-primitives"></a>创建着色器和绘制基元
 
@@ -21,22 +21,22 @@ ms.locfileid: "66368948"
 
 我们将使用顶点着色器和像素着色器来创建并绘制一个黄色的三角形。 在创建了 Direct3D 设备、交换链和呈现器目标视图之后，我们将从磁盘上的二进制着色器对象文件中读取数据。
 
-**目标：** 若要创建着色器，并要绘制的基元。
+**目标：** 创建着色器并绘制基元。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>必备条件
 
 
 我们假定你熟悉 C++。 你还需要具有图形编程概念方面的基本经验。
 
 我们还假定你已阅读[快速入门：设置 DirectX 资源并显示图像](setting-up-directx-resources.md)。
 
-**若要完成的时间：** 20 分钟。
+**完成所需时间：** 20 分钟。
 
-## <a name="instructions"></a>说明
+## <a name="instructions"></a>Instructions
 
-### <a name="1-compiling-hlsl-source-files"></a>1.编译 HLSL 源代码文件
+### <a name="1-compiling-hlsl-source-files"></a>1. 编译 HLSL 源文件
 
-Microsoft Visual Studio 使用 [fxc.exe](https://docs.microsoft.com/windows/desktop/direct3dtools/fxc) HLSL 代码编译器将 .hlsl 源文件（SimpleVertexShader.hlsl 和 SimplePixelShader.hlsl）编译为 .cso 二进制着色器对象文件（SimpleVertexShader.cso 和 SimplePixelShader.cso）。 有关 HLSL 代码编译器的详细信息，请参阅效果编译器工具。 有关编译着色器代码的详细信息，请参阅[编译着色器](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-part1)。
+Microsoft Visual Studio 使用 [fxc.exe](/windows/desktop/direct3dtools/fxc) HLSL 代码编译器将 .hlsl 源文件（SimpleVertexShader.hlsl 和 SimplePixelShader.hlsl）编译为 .cso 二进制着色器对象文件（SimpleVertexShader.cso 和 SimplePixelShader.cso）。 有关 HLSL 代码编译器的详细信息，请参阅效果编译器工具。 有关编译着色器代码的详细信息，请参阅[编译着色器](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-part1)。
 
 下面是 SimpleVertexShader.hlsl 中的代码：
 
@@ -77,15 +77,15 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-### <a name="2-reading-data-from-disk"></a>2.从磁盘读取数据
+### <a name="2-reading-data-from-disk"></a>2. 从磁盘读取数据
 
 我们使用 DirectX 11 应用（通用 Windows）模板中的 DirectXHelper.h DX::ReadDataAsync 函数以异步方式从磁盘上的文件中读取数据。
 
-### <a name="3-creating-vertex-and-pixel-shaders"></a>3.创建顶点和像素着色器
+### <a name="3-creating-vertex-and-pixel-shaders"></a>3. 创建顶点着色器和像素着色器
 
-从 SimpleVertexShader.cso 文件读取数据，并将该数据分配给 *vertexShaderBytecode* 字节数组。 使用字节数组调用 [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) 来创建顶点着色器 ([**ID3D11VertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11vertexshader))。 在 SimpleVertexShader.hlsl 源中将顶点深度值设置为 0.5，以保证绘制出三角形。 我们填充的数组[ **D3D11\_输入\_元素\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc)结构，以描述顶点着色器代码的布局，然后调用[**ID3D11Device::CreateInputLayout** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout)创建布局。 该数组仅有一个定义顶点位置的布局元素。 从 SimplePixelShader.cso 文件读取数据，并将该数据分配给 *pixelShaderBytecode* 字节数组。 使用字节数组调用 [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) 来创建像素着色器 ([**ID3D11PixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11pixelshader))。 在 SimplePixelShader.hlsl 源中将像素值设置为 (1,1,1,1)，使三角形变为黄色。 你可以通过更改此值来更改颜色。
+从 SimpleVertexShader.cso 文件读取数据，并将该数据分配给 *vertexShaderBytecode* 字节数组。 使用字节数组调用 [**ID3D11Device::CreateVertexShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) 来创建顶点着色器 ([**ID3D11VertexShader**](/windows/desktop/api/d3d11/nn-d3d11-id3d11vertexshader))。 在 SimpleVertexShader.hlsl 源中将顶点深度值设置为 0.5，以保证绘制出三角形。 我们将填充 [**D3D11 \_ 输入 \_ 元素 \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) 结构的数组，以描述顶点着色器代码的布局，然后调用 [**ID3D11Device：： CreateInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout) 来创建布局。 该数组仅有一个定义顶点位置的布局元素。 从 SimplePixelShader.cso 文件读取数据，并将该数据分配给 *pixelShaderBytecode* 字节数组。 使用字节数组调用 [**ID3D11Device::CreatePixelShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) 来创建像素着色器 ([**ID3D11PixelShader**](/windows/desktop/api/d3d11/nn-d3d11-id3d11pixelshader))。 在 SimplePixelShader.hlsl 源中将像素值设置为 (1,1,1,1)，使三角形变为黄色。 你可以通过更改此值来更改颜色。
 
-创建用来定义简单三角形的顶点缓冲区和索引缓冲区。 若要执行此操作，我们首先定义三角形，接下来将介绍顶点和索引缓冲区 ([**D3D11\_缓冲区\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)并[ **D3D11\_SUBRESOURCE\_数据**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)) 使用三角形定义，并最后调用[ **ID3D11Device::CreateBuffer** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer)一次针对每个缓冲区。
+创建用来定义简单三角形的顶点缓冲区和索引缓冲区。 为此，我们首先定义三角形，接下来使用三角形定义来描述顶点和索引缓冲区 ([**D3D11 \_ BUFFER \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) 和 [**D3D11 \_ SUBRESOURCE \_ 数据**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)) ，最后对每个缓冲区调用 [**ID3D11Device：： CreateBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) 。
 
 ```cpp
         auto loadVSTask = DX::ReadDataAsync(L"SimpleVertexShader.cso");
@@ -200,21 +200,21 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 使用顶点着色器和像素着色器、顶点着色器布局以及顶点缓冲区和索引缓冲区来缓制一个黄色三角形。
 
-### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a>4.绘制三角形并提供了呈现的图像
+### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a>4. 绘制三角形并显示呈现的图像
 
-我们将进入一个不断呈现和显示场景的无限循环。 调用 [**ID3D11DeviceContext::OMSetRenderTargets**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) 以将呈现器目标指定为输出目标。 调用 [**ID3D11DeviceContext::ClearRenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview)，通过 { 0.071f, 0.04f, 0.561f, 1.0f } 将呈现器目标清空为纯蓝色。
+我们将进入一个不断呈现和显示场景的无限循环。 调用 [**ID3D11DeviceContext::OMSetRenderTargets**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) 以将呈现器目标指定为输出目标。 调用 [**ID3D11DeviceContext::ClearRenderTargetView**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview)，通过 { 0.071f, 0.04f, 0.561f, 1.0f } 将呈现器目标清空为纯蓝色。
 
 在该无限循环中，我们需要在蓝色图面上绘制一个黄色三角形。
 
-**若要绘制一个黄色的三角形**
+**绘制黄色三角形的步骤**
 
-1.  首先，调用 [**ID3D11DeviceContext::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) 来描述如何将顶点缓冲区数据流传输到输入程序集阶段。
-2.  接着，调用 [**ID3D11DeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) 将顶点缓冲区和索引缓冲区绑定到输入程序集阶段。
-3.  接下来，我们调用[ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology)与[ **D3D11\_基元\_拓扑\_TRIANGLESTRIP** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85))要解释的顶点数据作为三角形带输入装配器阶段指定的值。
-4.  接着，调用 [**ID3D11DeviceContext::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) 以使用顶点着色器代码初始化顶点着色器阶段，并调用 [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) 以使用像素着色器代码初始化像素着色器阶段。
-5.  最后，调用 [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) 绘制三角形并将其提交给呈现管道。
+1.  首先，调用 [**ID3D11DeviceContext::IASetInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) 来描述如何将顶点缓冲区数据流传输到输入程序集阶段。
+2.  接着，调用 [**ID3D11DeviceContext::IASetVertexBuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) 将顶点缓冲区和索引缓冲区绑定到输入程序集阶段。
+3.  接下来，我们将 [**ID3D11DeviceContext：： IASetPrimitiveTopology**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) 与 [**D3D11 \_ 基元 \_ 拓扑 \_ TRIANGLESTRIP**](/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) 值一起调用，以指定输入汇编程序阶段将顶点数据解释为三角形条带。
+4.  接着，调用 [**ID3D11DeviceContext::VSSetShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) 以使用顶点着色器代码初始化顶点着色器阶段，并调用 [**ID3D11DeviceContext::PSSetShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) 以使用像素着色器代码初始化像素着色器阶段。
+5.  最后，调用 [**ID3D11DeviceContext::DrawIndexed**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) 绘制三角形并将其提交给呈现管道。
 
-调用 [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) 向窗口显示呈现的图像。
+调用 [**IDXGISwapChain::Present**](/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) 以向窗口显示呈现的图像。
 
 ```cpp
             // Specify the render target we created as the output target.
@@ -280,19 +280,15 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
                 );
 ```
 
-## <a name="summary-and-next-steps"></a>摘要和后续步骤
+## <a name="summary-and-next-steps"></a>总结和后续步骤
 
 
 我们已使用顶点着色器和像素着色器创建并绘制出一个黄色的三角形。
 
 接下来，我们需要创建一个环行 3D 立方体并向其应用照明效果。
 
-[使用深度和基元上的效果](using-depth-and-effects-on-primitives.md)
+[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)
 
  
 
  
-
-
-
-

@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Ink 书写, DirectInk, InkPresenter, InkCanvas, �
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c9986ee6d4dacc929a8c2d243becf7d5c9d973e
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 3733c98c81a23fbc5b369297b45f1c1e5183c198
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234907"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173381"
 ---
 # <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Windows 应用中的笔交互和 Windows Ink
 
@@ -22,7 +22,7 @@ ms.locfileid: "83234907"
 
 ## <a name="overview"></a>概述
 
-优化 Windows 应用程序的笔输入，为用户提供标准[**指针设备**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice)功能和最佳 Windows 墨迹体验。
+优化 Windows 应用程序的笔输入，为用户提供标准 [**指针设备**](/uwp/api/Windows.Devices.Input.PointerDevice) 功能和最佳 Windows 墨迹体验。
 
 > [!NOTE]
 > 本主题重点介绍 Windows Ink 平台。 对于常规指针输入处理（类似于鼠标、触摸和触摸板），请参阅[处理指针输入](handle-pointer-input.md)。
@@ -45,26 +45,26 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 
 ## <a name="components-of-the-windows-ink-platform"></a>Windows Ink 平台组件
 
-| 组件 | 说明 |
+| 组件 | 描述 |
 | --- | --- |
-| [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) | 默认情况下，XAML UI 平台控件将所有笔输入接收和显示为笔划墨迹或擦除笔划。<br/>有关如何使用 InkCanvas 的详细信息，请参阅[将 Windows Ink 笔划识别为文本](convert-ink-to-text.md)和[存储和检索 Windows Ink 笔划数据](save-and-load-ink.md)。 |
-| [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 代码隐藏对象，与 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件（通过 [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 属性公开）一起进行实例化。 此对象提供 **InkCanvas** 公开的所有默认墨迹书写功能以及适用于其他自定义和个性化的完整 API 集。<br/>有关如何使用 InkPresenter 的详细信息，请参阅[将 Windows Ink 笔划识别为文本](convert-ink-to-text.md)和[存储和检索 Windows Ink 笔划数据](save-and-load-ink.md)。 |
-| [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) | XAML UI 平台控件，包含在关联 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 中激活墨迹相关功能的按钮的可自定义、可扩展的集合。<br/>有关如何使用 InkToolbar 的详细信息，请参阅[向 Windows 应用程序墨迹应用添加 InkToolbar](ink-toolbar.md)。 |
-| [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer) | 支持将笔划墨迹呈现到通用 Windows 应用的指定 Direct2D 设备上下文，而非默认的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件。 这支持完全自定义墨迹书写体验。<br/>有关详细信息，请参阅[复杂墨迹示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)。 |
+| [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) | 默认情况下，XAML UI 平台控件将所有笔输入接收和显示为笔划墨迹或擦除笔划。<br/>有关如何使用 InkCanvas 的详细信息，请参阅[将 Windows Ink 笔划识别为文本](convert-ink-to-text.md)和[存储和检索 Windows Ink 笔划数据](save-and-load-ink.md)。 |
+| [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 代码隐藏对象，与 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件（通过 [**InkCanvas.InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 属性公开）一起进行实例化。 此对象提供 **InkCanvas** 公开的所有默认墨迹书写功能以及适用于其他自定义和个性化的完整 API 集。<br/>有关如何使用 InkPresenter 的详细信息，请参阅[将 Windows Ink 笔划识别为文本](convert-ink-to-text.md)和[存储和检索 Windows Ink 笔划数据](save-and-load-ink.md)。 |
+| [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) | XAML UI 平台控件，包含在关联 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) 中激活墨迹相关功能的按钮的可自定义、可扩展的集合。<br/>有关如何使用 InkToolbar 的详细信息，请参阅 [向 Windows 应用程序墨迹应用添加 InkToolbar](ink-toolbar.md)。 |
+| [**IInkD2DRenderer**](/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer) | 支持将笔划墨迹呈现到通用 Windows 应用的指定 Direct2D 设备上下文，而非默认的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件。 这支持完全自定义墨迹书写体验。<br/>有关详细信息，请参阅[复杂墨迹示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)。 |
 
 ## <a name="basic-inking-with-inkcanvas"></a>通过 InkCanvas 实现基本墨迹书写
 
-若要添加基本的墨迹书写功能，只需将 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) UWP 平台控件放在应用的相应页面上。
+若要添加基本的墨迹书写功能，只需将 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) UWP 平台控件放在应用的相应页面上。
 
-默认情况下，[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 仅支持来自笔的墨迹输入。 该输入通过颜色和粗细的默认设置呈现为笔划墨迹（粗细为 2 个像素的黑色圆珠笔），或视为笔划橡皮擦（当输入来源于橡皮擦尖或使用擦除按钮修改的笔尖时）。
+默认情况下，[**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 仅支持来自笔的墨迹输入。 该输入通过颜色和粗细的默认设置呈现为笔划墨迹（粗细为 2 个像素的黑色圆珠笔），或视为笔划橡皮擦（当输入来源于橡皮擦尖或使用擦除按钮修改的笔尖时）。
 
 > [!NOTE]
 > 如果橡皮擦尖或按钮不存在，则 InkCanvas 可配置为将来自笔尖的输入作为擦除笔划处理。
 
-在本例中，[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 覆盖了背景图。
+在本例中，[**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 覆盖了背景图。
 
 > [!NOTE]
-> InkCanvas 的默认[**高度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height)和[**宽度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width)属性均为零，除非它是自动调整其子元素的元素（如[system.windows.controls.stackpanel>](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)或[Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)控件）的子元素。
+> InkCanvas 的默认 [**高度**](/uwp/api/windows.ui.xaml.frameworkelement.Height) 和 [**宽度**](/uwp/api/windows.ui.xaml.frameworkelement.Width) 属性均为零，除非它是自动调整其子元素的元素（如 [system.windows.controls.stackpanel>](/uwp/api/windows.ui.xaml.controls.stackpanel) 或 [Grid](/uwp/api/windows.ui.xaml.controls.grid) 控件）的子元素。
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -85,31 +85,31 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 </Grid>
 ```
 
-该系列图显示此 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件如何呈现笔输入。
+该系列图显示此 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件如何呈现笔输入。
 
 | ![带有背景图的空白 InkCanvas](images/ink_basic_1_small.png) | ![带有墨迹笔划的 InkCanvas](images/ink_basic_2_small.png) | ![擦除了一条笔划的 InkCanvas](images/ink_basic_3_small.png) |
 | --- | --- | ---|
-| 带有背景图像的空白[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 。 | 带有笔划墨迹的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。 | 擦除了一条笔划的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)（注意如何在整条笔划而非某个部分上执行擦除）。 |
+| 带有背景图像的空白 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 。 | 带有笔划墨迹的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。 | 擦除了一条笔划的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)（注意如何在整条笔划而非某个部分上执行擦除）。 |
 
-[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件支持的墨迹书写功能由名为 [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) 的代码隐藏对象提供。
+[**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件支持的墨迹书写功能由名为 [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 的代码隐藏对象提供。
 
-对于基本墨迹书写，你不必考虑 [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter)。 但是，若要在 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 上自定义和配置墨迹书写行为，则必须访问其相应的 **InkPresenter** 对象。
+对于基本墨迹书写，你不必考虑 [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter)。 但是，若要在 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 上自定义和配置墨迹书写行为，则必须访问其相应的 **InkPresenter** 对象。
 
 ## <a name="basic-customization-with-inkpresenter"></a>通过 InkPresenter 实现基本自定义
 
-[**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) 对象通过每个 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件进行实例化。
+[**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 对象通过每个 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件进行实例化。
 
 > [!NOTE]
-> [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) 不能直接进行实例化。 而是通过 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 的 [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 属性进行访问。 
+> [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 不能直接进行实例化。 而是通过 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 的 [**InkPresenter**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 属性进行访问。 
 
-[**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 不仅提供了其相应 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) 控件的所有默认墨迹书写行为，它还提供了完整 API 集用于对笔输入（标准和修改后）进行其他笔划自定义和精细管理。 这包括笔划属性、支持的输入设备类型以及输入是由对象进行处理还是传递到应用进行处理。
+[**InkPresenter**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 不仅提供了其相应 [**InkCanvas**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 控件的所有默认墨迹书写行为，它还提供了完整 API 集用于对笔输入（标准和修改后）进行其他笔划自定义和精细管理。 这包括笔划属性、支持的输入设备类型以及输入是由对象进行处理还是传递到应用进行处理。
 
 > [!NOTE]
 > 标准墨迹输入（从笔尖或橡皮擦尖/按钮）不使用辅助硬件提供功能修改，如笔桶按钮、鼠标右键按钮或类似机制。 
 
-默认情况下，墨迹仅支持使用触控笔输入。 我们在此处将 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为墨迹笔划。 我们还将设置一些用于将笔划呈现到 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 的初始墨迹笔划属性。
+默认情况下，墨迹仅支持使用触控笔输入。 我们在此处将 [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为墨迹笔划。 我们还将设置一些用于将笔划呈现到 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 的初始墨迹笔划属性。
 
-若要启用鼠标和触摸墨迹书写，将 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter) 的 [**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes) 属性设置为你需要的 [**CoreInputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.core.coreinputdevicetypes) 值的组合。
+若要启用鼠标和触摸墨迹书写，将 [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkpresenter) 的 [**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes) 属性设置为你需要的 [**CoreInputDeviceTypes**](/uwp/api/windows.ui.core.coreinputdevicetypes) 值的组合。
 
 ```csharp
 public MainPage()
@@ -196,21 +196,21 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 }
 ```
 
-这些图像显示了 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 如何处理和自定义笔输入。
+这些图像显示了 [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 如何处理和自定义笔输入。
 
 | ![具有默认的黑色笔划墨迹的 inkcanvas](images/ink-basic-custom-1-small.png) | ![具有用户选择的红色笔划墨迹的 inkcanvas](images/ink-basic-custom-2-small.png) |
 | --- | --- |
-| 带有默认黑色墨笔划的[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 。 | [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) ，用户选择了红色墨迹笔划。 | 
+| 带有默认黑色墨笔划的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 。 | [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) ，用户选择了红色墨迹笔划。 | 
 
-若要提供墨迹书写和擦除之外的功能（例如笔划选择），你的应用必须为 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 标识特定输入，从而在未处理的情况下进行传递以供应用处理。
+若要提供墨迹书写和擦除之外的功能（例如笔划选择），你的应用必须为 [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 标识特定输入，从而在未处理的情况下进行传递以供应用处理。
 
 ## <a name="pass-through-input-for-advanced-processing"></a>传递输入以进行高级处理
 
-默认情况下，[**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 将所有输入作为笔划墨迹或擦除笔划进行处理，包括由辅助硬件（例如笔桶按钮、鼠标右键按钮或类似硬件）修改的输入。 但是，用户通常期望通过这些辅助提供获得一些其他功能或修改的行为。
+默认情况下，[**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 将所有输入作为笔划墨迹或擦除笔划进行处理，包括由辅助硬件（例如笔桶按钮、鼠标右键按钮或类似硬件）修改的输入。 但是，用户通常期望通过这些辅助提供获得一些其他功能或修改的行为。
 
 在某些情况下，你可能还需要公开未使用辅助提供（通常不会与笔尖关联的功能）时笔的其他功能、其他输入设备类型或某种类型的修改行为，具体取决于用户在应用 UI 中的选择。
 
-若要支持此要求，可将 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为保留特定输入的未处理状态。 这个未处理的输入随后将传递到你的应用以进行处理。
+若要支持此要求，可将 [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为保留特定输入的未处理状态。 这个未处理的输入随后将传递到你的应用以进行处理。
 
 ### <a name="example---use-unprocessed-input-to-implement-stroke-selection"></a>示例 - 使用未处理的输入实现笔划选择 
 
@@ -220,7 +220,7 @@ Windows Ink 平台未为需要修改输入的操作（例如笔划选择）提�
 
 1.  首先，我们在 MainPage.xaml 中设置 UI。
 
-    我们在此处添加一个用于绘制选择笔划的画布（在 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 下面）。 使用单独的图层绘制选择笔划可使 **InkCanvas** 及其内容不会受到影响。
+    我们在此处添加一个用于绘制选择笔划的画布（在 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 下面）。 使用单独的图层绘制选择笔划可使 **InkCanvas** 及其内容不会受到影响。
 
     ![带有基础选择画布的空白 inkcanvas](images/ink-unprocessed-1-small.png)
 
@@ -255,13 +255,13 @@ Windows Ink 平台未为需要修改输入的操作（例如笔划选择）提�
         private Rect boundingRect;
       ```
 
-3.  接下来，我们配置 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 以将来自笔和鼠标的输入数据解释为墨迹笔划，然后设置一些用于将笔划呈现到 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 的初始墨迹笔划属性。
+3.  接下来，我们配置 [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 以将来自笔和鼠标的输入数据解释为墨迹笔划，然后设置一些用于将笔划呈现到 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 的初始墨迹笔划属性。
 
-    最重要的是，我们使用 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputprocessingconfiguration) 的 [InputProcessingConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 属性指示任何修改的输入均应由应用进行处理。 通过向 **InputProcessingConfiguration.RightDragAction** 分配值 [**InkInputRightDragAction.LeaveUnprocessed**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkInputRightDragAction) 指定修改的输入。 设置此值后，[InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 会向 [InkUnprocessedInput](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkunprocessedinput) 类传递一组指针事件让你进行处理。
+    最重要的是，我们使用 [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkpresenter.inputprocessingconfiguration) 的 [InputProcessingConfiguration](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 属性指示任何修改的输入均应由应用进行处理。 通过向 **InputProcessingConfiguration.RightDragAction** 分配值 [**InkInputRightDragAction.LeaveUnprocessed**](/uwp/api/Windows.UI.Input.Inking.InkInputRightDragAction) 指定修改的输入。 设置此值后，[InkPresenter](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 会向 [InkUnprocessedInput](/uwp/api/windows.ui.input.inking.inkunprocessedinput) 类传递一组指针事件让你进行处理。
 
-    我们为由 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointerpressed) 传递的未经处理的 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointermoved)、[**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointerreleased) 和 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 事件分配侦听器。 所有选择功能均在这些事件的处理程序中实现。
+    我们为由 [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointerpressed) 传递的未经处理的 [**PointerPressed**](/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointermoved)、[**PointerMoved**](/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointerreleased) 和 [**PointerReleased**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 事件分配侦听器。 所有选择功能均在这些事件的处理程序中实现。
 
-    最后，我们为 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted) 的 [**StrokeStarted**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokeserased) 和 [**StrokesErased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 事件分配侦听器。 如果启动了新笔划或擦除了现有笔划，我们将使用这些事件的处理程序清理选择 UI。
+    最后，我们为 [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted) 的 [**StrokeStarted**](/uwp/api/windows.ui.input.inking.inkpresenter.strokeserased) 和 [**StrokesErased**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 事件分配侦听器。 如果启动了新笔划或擦除了现有笔划，我们将使用这些事件的处理程序清理选择 UI。
 
     ![具有默认的黑色笔划墨迹的 inkcanvas](images/ink-unprocessed-2-small.png)
 
@@ -308,7 +308,7 @@ Windows Ink 平台未为需要修改输入的操作（例如笔划选择）提�
         }
       ```
 
-4.  然后，我们为由 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointerpressed) 传递的未经处理的 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointermoved)、[**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointerreleased) 和 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 事件定义处理程序。
+4.  然后，我们为由 [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointerpressed) 传递的未经处理的 [**PointerPressed**](/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointermoved)、[**PointerMoved**](/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointerreleased) 和 [**PointerReleased**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 事件定义处理程序。
 
     所有选择功能（包括套索笔划和边界矩形）均在这些处理程序中实现。
 
@@ -393,7 +393,7 @@ Windows Ink 平台未为需要修改输入的操作（例如笔划选择）提�
           }
       ```
 
-6.  最后，我们将定义 [**StrokeStarted**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted) 和 [**StrokesErased**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokeserased) InkPresenter 事件的处理程序。
+6.  最后，我们将定义 [**StrokeStarted**](/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted) 和 [**StrokesErased**](/uwp/api/windows.ui.input.inking.inkpresenter.strokeserased) InkPresenter 事件的处理程序。
 
     这二者都可以在检测到新笔划时调用相同的清理功能以清除当前选择。
 
@@ -438,7 +438,7 @@ Windows Ink 平台未为需要修改输入的操作（例如笔划选择）提�
 
 ## <a name="custom-ink-rendering"></a>自定义墨迹呈现
 
-默认情况下，墨迹输入在低延迟后台线程上进行处理，并在绘制时呈现正在进行或“墨迹未干”。 笔划完成时（抬起笔或手指，或者释放鼠标按钮），笔划将在 UI 线程上进行处理并向 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 图层呈现“墨迹已干”（在应用程序内容之上，并且替换未干墨迹）。
+默认情况下，墨迹输入在低延迟后台线程上进行处理，并在绘制时呈现正在进行或“墨迹未干”。 笔划完成时（抬起笔或手指，或者释放鼠标按钮），笔划将在 UI 线程上进行处理并向 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 图层呈现“墨迹已干”（在应用程序内容之上，并且替换未干墨迹）。
 
 你可以通过“自定义烘干”未干的笔划墨迹，覆盖这种默认行为并完全控制墨迹书写体验。 虽然默认行为通常足以适用于大多数应用程序，但在少数情况下，可能需要自定义烘干，其中包括：
 - 更高效地管理大型或复杂的笔划墨迹集合
@@ -446,23 +446,23 @@ Windows Ink 平台未为需要修改输入的操作（例如笔划选择）提�
 - 交错墨迹和其他对象（如形状或文本），同时保持 Z 顺序 
 - 烘干墨迹并将其同步转换为 DirectX 形状（例如，将直线或形状光栅化并集成到应用程序内容中，而不是作为单独的 **InkCanvas** 层）。
 
-自定义烘干需要 [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer) 对象管理墨迹输入，并将其呈现到通用 Windows 应用的 Direct2D 设备上下文，而非默认 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件。
+自定义烘干需要 [**IInkD2DRenderer**](/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer) 对象管理墨迹输入，并将其呈现到通用 Windows 应用的 Direct2D 设备上下文，而非默认 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件。
 
-通过调用 [**ActivateCustomDrying**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.activatecustomdrying)（在加载 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 之前），应用创建 [**InkSynchronizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkSynchronizer) 对象以自定义如何向 [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 或 [**VirtualSurfaceImageSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.virtualsurfaceimagesource) 呈现墨迹已干的笔划墨迹。 
+通过调用 [**ActivateCustomDrying**](/uwp/api/windows.ui.input.inking.inkpresenter.activatecustomdrying)（在加载 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 之前），应用创建 [**InkSynchronizer**](/uwp/api/Windows.UI.Input.Inking.InkSynchronizer) 对象以自定义如何向 [**SurfaceImageSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 或 [**VirtualSurfaceImageSource**](/uwp/api/windows.ui.xaml.media.imaging.virtualsurfaceimagesource) 呈现墨迹已干的笔划墨迹。 
 
-尽管 VSIS 提供比屏幕更大的虚拟图面以实现高性能平移和缩放，但 [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 和 [**VirtualSurfaceImageSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.virtualsurfaceimagesource) 都为你的应用提供 DirectX 共享图面以便绘制并组合到应用程序的内容中。 由于这些图面的视觉更新与 XAML UI 线程同步，在向其中的任意一个呈现墨迹时，可以同时从 InkCanvas 中删除未干墨迹。 
+尽管 VSIS 提供比屏幕更大的虚拟图面以实现高性能平移和缩放，但 [**SurfaceImageSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 和 [**VirtualSurfaceImageSource**](/uwp/api/windows.ui.xaml.media.imaging.virtualsurfaceimagesource) 都为你的应用提供 DirectX 共享图面以便绘制并组合到应用程序的内容中。 由于这些图面的视觉更新与 XAML UI 线程同步，在向其中的任意一个呈现墨迹时，可以同时从 InkCanvas 中删除未干墨迹。 
 
-你也可以将干墨迹自定义到 [SwapChainPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.swapchainpanel)，但无法保证与 UI 线程同步，并且向 SwapChainPanel 呈现墨迹的时间与从 InkCanvas 中删除墨迹的时间之间可能出现延迟。
+你也可以将干墨迹自定义到 [SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel)，但无法保证与 UI 线程同步，并且向 SwapChainPanel 呈现墨迹的时间与从 InkCanvas 中删除墨迹的时间之间可能出现延迟。
 
 有关该功能的完整示例，请参阅[复杂墨迹示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)。
 
 > [!NOTE]
-> 自定义烘干和 [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)  
-> 如果你的应用将 [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) 的默认墨迹呈现行为替代为自定义烘干实现，呈现的笔划墨迹不再可用于 InkToolbar，并且 InkToolbar 的内置擦除命令不会按预期工作。 若要提供擦除功能，必须处理所有指针事件、在每个笔划上执行命中测试，并替代内置的“清除所有墨迹”命令。
+> 自定义烘干和 [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar)  
+> 如果你的应用将 [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 的默认墨迹呈现行为替代为自定义烘干实现，呈现的笔划墨迹不再可用于 InkToolbar，并且 InkToolbar 的内置擦除命令不会按预期工作。 若要提供擦除功能，必须处理所有指针事件、在每个笔划上执行命中测试，并替代内置的“清除所有墨迹”命令。
 
 ## <a name="other-articles-in-this-section"></a>本部分中的其他文章
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 | --- | --- |
 | [识别笔划墨迹](convert-ink-to-text.md) | 使用手写识别将笔划墨迹转换为文本，或使用自定义识别转换为形状。 |
 | [存储和检索笔划墨迹](save-and-load-ink.md) | 使用嵌入的墨迹序列化格式 (ISF) 元数据在图形交换格式 (GIF) 文件中存储笔划墨迹数据。 |
@@ -470,15 +470,15 @@ Windows Ink 平台未为需要修改输入的操作（例如笔划选择）提�
 
 ## <a name="related-articles"></a>相关文章
 
-- [入门：在 Windows 应用程序中支持墨迹](../../get-started/ink-walkthrough.md)
+- [入门：在 Windows 应用程序中支持墨迹](./ink-walkthrough.md)
 - [处理指针输入](handle-pointer-input.md)
 - [标识输入设备](identify-input-devices.md)
 
 ### <a name="apis"></a>API
 
-- [**Windows. 输入**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
-- [**Windows UI. Input. 墨迹**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
-- [**Windows. Input。**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.Core)
+- [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input)
+- [**Windows.UI.Input.Inking**](/uwp/api/Windows.UI.Input.Inking)
+- [**Windows. Input。**](/uwp/api/Windows.UI.Input.Inking.Core)
 
 ### <a name="samples"></a>示例
 

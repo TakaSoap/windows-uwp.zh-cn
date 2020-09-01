@@ -1,5 +1,5 @@
 ---
-Description: 了解如何通过提供直观的方式来提高 Windows 应用的可用性和可访问性，使用户能够通过键盘而不是指针设备（如触控或鼠标）快速导航并与应用程序的可见 UI 交互。
+Description: 了解如何通过键盘而不是指针设备 (如触摸或鼠标) ，为用户提供一种直观的方式来快速导航并与应用程序的可见 UI 交互，从而提高 Windows 应用程序的可用性和可访问性。
 title: 访问键设计指南
 label: Access keys design guidelines
 keywords: 键盘, 访问键, 键提示, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d5808c462beb72341fd83c6fc4c1cfc0178b2f
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ca8c21729f27e30e7703291c04a940301a3feb26
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970972"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173891"
 ---
 # <a name="access-keys"></a>访问键
 
@@ -25,7 +25,7 @@ ms.locfileid: "82970972"
 有关使用键盘快捷方式在 Windows 应用程序中调用常见操作的详细信息，请参阅[加速键](keyboard-accelerators.md)主题。 
 
 > [!NOTE]
-> 对于残疾人士用户而言，键盘是必不可少的工具（请参阅[键盘辅助功能](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)），并且对于将键盘认为是与应用交互的较有效方法的用户而言，键盘也非常重要。
+> 对于残疾人士用户而言，键盘是必不可少的工具（请参阅[键盘辅助功能](../accessibility/keyboard-accessibility.md)），并且对于将键盘认为是与应用交互的较有效方法的用户而言，键盘也非常重要。
 
 Windows 应用跨平台控件在平台控件上提供内置支持，用于基于键盘的访问密钥和通过视觉提示（称为键提示）关联的 UI 反馈。
 
@@ -72,11 +72,11 @@ _Microsoft Word 访问键的 KeyTip 锁屏提醒_
 
 下图所示为 Word 中的两个作用域。 第一个显示可让用户选择选项卡和其他顶级命令的主访问键，第二个显示“主页”选项卡的辅助访问键。
 
-![Microsoft word 中 microsoft word](images/accesskeys/primary-access-keys-word.png)
-_主访问密钥_中的主访问密钥
+![Microsoft word 中 Microsoft Word ](images/accesskeys/primary-access-keys-word.png)
+ _主访问密钥_中的主访问密钥
 
-![Microsoft word 中的辅助访问](images/accesskeys/secondary-access-keys-word.png)
-密钥 microsoft word_辅助访问密钥_
+![Microsoft word 中的辅助访问密钥 microsoft word ](images/accesskeys/secondary-access-keys-word.png)
+ _辅助访问密钥_
 
 可以为不同域中的元素复制访问键。 在前面的示例中，“2”既是主域中“撤销”的访问键，也是辅助域中“斜体”的访问键。
 
@@ -241,7 +241,7 @@ _英语和西班牙语资源字符串文件夹_
 
 _指定已在 resources.resw 文件中指定的 AccessKey 属性_
 
-有关详细信息，请参阅[翻译 UI 资源](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))
+有关详细信息，请参阅[翻译 UI 资源](/previous-versions/windows/apps/hh965329(v=win.10))
 
 ## <a name="key-tip-positioning"></a>键提示定位
 
@@ -272,7 +272,7 @@ _自动键提示放置示例_
 
 ### <a name="relative-position"></a>相对位置
 
-使用**KeyTipPlacementMode**属性可以自定义每个元素或每个组的键提示的位置。
+使用 **KeyTipPlacementMode** 属性可以自定义每个元素或每个组的键提示的位置。
 
 放置模式包括：顶部、底部、右侧、左侧、隐藏、居中和自动。
 
@@ -353,7 +353,7 @@ _键提示自定义选项_
 
 XAML 框架公开了自动化属性，支持 UI 自动化客户端发现与用户界面中的元素相关的信息。
 
-如果你在 UIElement 或 TextElement 控件上指定了 AccessKey 属性，则可以通过 [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) 属性来获得此值。 每当元素获得焦点时，辅助功能客户端（如讲述人）将会读取分此属性值。
+如果你在 UIElement 或 TextElement 控件上指定了 AccessKey 属性，则可以通过 [AutomationProperties.AccessKey](/dotnet/api/system.windows.automation.automationproperties.accesskey) 属性来获得此值。 每当元素获得焦点时，辅助功能客户端（如讲述人）将会读取分此属性值。
 
 ## <a name="related-articles"></a>相关文章
 
@@ -361,6 +361,4 @@ XAML 框架公开了自动化属性，支持 UI 自动化客户端发现与用�
 * [键盘快捷键](keyboard-accelerators.md)
 
 **示例**
-* [XAML 控件库（也称为 XamlUiBasics）](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
-
-
+* [XAML 控件库 (也称为 XamlUiBasics) ](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)

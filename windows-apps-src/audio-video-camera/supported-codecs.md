@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b122aa6436e55c80276cdd684b7c10cc3c47d28
-ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
+ms.openlocfilehash: bf61935459d8b842a3d26fcfe546995427d98d3f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74153721"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175691"
 ---
 # <a name="supported-codecs"></a>支持的编解码器
 
@@ -28,7 +28,7 @@ ms.locfileid: "74153721"
 
  
 
-### <a name="desktop"></a>桌面
+### <a name="desktop"></a>“桌面”
 
 <table>
 <colgroup>
@@ -339,7 +339,7 @@ ms.locfileid: "74153721"
 
  
 
-### <a name="mobile"></a>移动版
+### <a name="mobile"></a>移动型
 
 <table>
 <colgroup>
@@ -1593,7 +1593,7 @@ ms.locfileid: "74153721"
 
  
 
-### <a name="desktop"></a>桌面
+### <a name="desktop"></a>“桌面”
 
 <table>
 <colgroup>
@@ -1812,7 +1812,7 @@ ms.locfileid: "74153721"
 
  
 
-### <a name="mobile"></a>移动版
+### <a name="mobile"></a>移动型
 
 <table>
 <colgroup>
@@ -2697,7 +2697,7 @@ ms.locfileid: "74153721"
 <thead>
 <tr class="header">
 <th align="left">编解码器</th>
-<th align="left">桌面</th>
+<th align="left">“桌面”</th>
 <th align="left">其他设备系列</th>
 </tr>
 </thead>
@@ -2749,12 +2749,12 @@ ms.locfileid: "74153721"
 <tr class="even">
 <td align="left">相机 RAW</td>
 <td align="left">D<sup>3</sup></td>
-<td align="left">无</td>
+<td align="left">否</td>
 </tr>
 </table>
 
-<sup>1</sup> 支持使用 BC1 至 BC5 压缩的 DDS 图像。  
+<sup>1</sup> 支持使用 BC1 到 BC5 压缩的 DDS 映像。  
 <sup>2</sup> 支持具有非 RAW 嵌入预览的 DNG 图像。  
 <sup>3</sup> 仅支持某些相机 RAW 格式。  
 
-有关图像编解码器的详细信息，请参阅[本机 WIC 编解码器](https://docs.microsoft.com/windows/desktop/wic/native-wic-codecs)。
+有关图像编解码器的详细信息，请参阅[本机 WIC 编解码器](/windows/desktop/wic/native-wic-codecs)。

@@ -6,33 +6,33 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a314d0acdc3df1e0b53b1d78445b6ab1b71bf92
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c306c225d200fe0636b3195699afe0441bc252bf
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369738"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175431"
 ---
 # <a name="scan-from-your-app"></a>从应用扫描
 
 
-**重要的 Api**
+**重要的 API**
 
--   [**Windows.Devices.Scanners**](https://docs.microsoft.com/uwp/api/Windows.Devices.Scanners)
--   [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)
--   [**DeviceClass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceClass)
+-   [**Windows.Devices.Scanners**](/uwp/api/Windows.Devices.Scanners)
+-   [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation)
+-   [**DeviceClass**](/uwp/api/Windows.Devices.Enumeration.DeviceClass)
 
 在此处了解如何通过使用平板扫描仪、送纸器或自动配置的扫描源从你的应用扫描内容。
 
-**重要**   [ **Windows.Devices.Scanners** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Scanners) Api 属于桌面[设备系列](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。 应用可以使用这些 Api 仅在桌面版本的 Windows 10 上。
+**重要提示**   [**Windows 设备扫描器**](/uwp/api/Windows.Devices.Scanners)api 是桌面[设备系列](../get-started/universal-application-platform-guide.md)的一部分。 应用仅可以在桌面版的 Windows 10 上使用这些 API。
 
-若要从你的应用进行扫描，你必须首先声明一个新的 [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 对象并获取 [**DeviceClass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceClass) 类型，以此来列出可用的扫描仪。 仅列出并向应用提供带有 WIA 驱动程序的本地安装的扫描仪。
+若要从你的应用进行扫描，你必须首先声明一个新的 [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 对象并获取 [**DeviceClass**](/uwp/api/Windows.Devices.Enumeration.DeviceClass) 类型，以此来列出可用的扫描仪。 仅列出并向应用提供带有 WIA 驱动程序的本地安装的扫描仪。
 
-在应用列出可用的扫描仪后，它可以使用基于扫描仪类型的自动配置的扫描设置，或使用可用的平板或送纸器扫描源进行扫描。 要使用自动配置的设置，扫描仪必须启用自动配置，并且不可同时配备平板和送纸器扫描仪。 有关详细信息，请参阅[自动配置的扫描](https://docs.microsoft.com/windows-hardware/drivers/image/auto-configured-scanning)。
+在应用列出可用的扫描仪后，它可以使用基于扫描仪类型的自动配置的扫描设置，或使用可用的平板或送纸器扫描源进行扫描。 要使用自动配置的设置，扫描仪必须启用自动配置，并且不可同时配备平板和送纸器扫描仪。 有关详细信息，请参阅[自动配置的扫描](/windows-hardware/drivers/image/auto-configured-scanning)。
 
 ## <a name="enumerate-available-scanners"></a>枚举可用扫描仪
 
-Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与该扫描仪进行通信。 在本示例中，使用 [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 命名空间进行扫描仪设备枚举。
+Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与该扫描仪进行通信。 在本示例中，使用 [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) 命名空间进行扫描仪设备枚举。
 
 1.  首先，将这些 using 语句添加到你的类定义文件。
 
@@ -84,32 +84,32 @@ Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与�
     }
 ```
 
-## <a name="scan"></a>Scan
+## <a name="scan"></a>扫描
 
 1.  **获取 ImageScanner 对象**
 
-对于每个 [**ImageScannerScanSource**](https://docs.microsoft.com/uwp/api/Windows.Devices.Scanners.ImageScannerScanSource) 枚举类型，无论它是 **Default**、**AutoConfigured**、**Flatbed** 还是 **Feeder**，必须首先通过调用 [**ImageScanner.FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.scanners.imagescanner.fromidasync) 方法来创建 [**ImageScanner**](https://docs.microsoft.com/uwp/api/Windows.Devices.Scanners.ImageScanner) 对象，如下所示。
+对于每个 [**ImageScannerScanSource**](/uwp/api/Windows.Devices.Scanners.ImageScannerScanSource) 枚举类型，无论它是 **Default**、**AutoConfigured**、**Flatbed** 还是 **Feeder**，必须首先通过调用 [**ImageScanner.FromIdAsync**](/uwp/api/windows.devices.scanners.imagescanner.fromidasync) 方法来创建 [**ImageScanner**](/uwp/api/Windows.Devices.Scanners.ImageScanner) 对象，如下所示。
 
  ```csharp
     ImageScanner myScanner = await ImageScanner.FromIdAsync(deviceId);
  ```
 
-2.  **只需扫描**
+2.  **仅扫描**
 
-要以默认设置进行扫描，你的应用将依靠 [**Windows.Devices.Scanners**](https://docs.microsoft.com/uwp/api/Windows.Devices.Scanners) 命名空间选择一个扫描仪并从该来源进行扫描。 未更改扫描设置。 可能的扫描仪为自动配置、平板或送纸器。 此类型的扫描最有可能产生成功的扫描操作，即使它从错误的来源进行扫描，如从平板扫描仪而不是从送纸器。
+要以默认设置进行扫描，你的应用将依靠 [**Windows.Devices.Scanners**](/uwp/api/Windows.Devices.Scanners) 命名空间选择一个扫描仪并从该来源进行扫描。 未更改扫描设置。 可能的扫描仪为自动配置、平板或送纸器。 此类型的扫描最有可能产生成功的扫描操作，即使它从错误的来源进行扫描，如从平板扫描仪而不是从送纸器。
 
-**请注意**  如果用户将放在送纸器中进行扫描的文档，从平板改为将扫描，扫描程序。 如果用户尝试从空的送纸器进行扫描，扫描作业将不会产生任何扫描后的文件。
+**注意**   如果用户将文档放入送纸器，扫描程序将改为从平板扫描。 如果用户尝试从空的送纸器进行扫描，扫描作业将不会产生任何扫描后的文件。
  
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default,
         folder).AsTask(cancellationToken.Token, progress);
 ```
 
-3.  **从自动配置的扫描、 平板、 或送纸器源**
+3.  **从自动配置、平板或送纸器来源进行扫描**
 
-应用可以使用设备的[自动配置的扫描](https://docs.microsoft.com/windows-hardware/drivers/image/auto-configured-scanning)来以最佳的扫描设置进行扫描。 使用此选项，设备本身可以根据要扫描的内容确定最佳扫描设置，例如颜色模式和扫描分辨率。 设备在运行时为每个新的扫描作业选择扫描设置。
+应用可以使用设备的[自动配置的扫描](/windows-hardware/drivers/image/auto-configured-scanning)来以最佳的扫描设置进行扫描。 使用此选项，设备本身可以根据要扫描的内容确定最佳扫描设置，例如颜色模式和扫描分辨率。 设备在运行时为每个新的扫描作业选择扫描设置。
 
-**请注意**  并非所有扫描仪都支持此功能，因此应用程序必须检查扫描程序是否支持使用此设置之前此功能。
+**注意**   并非所有扫描仪都支持此功能，因此，在使用此设置之前，应用必须检查扫描程序是否支持此功能。
 
 在本示例中，应用首先检查扫描仪是否可以进行自动配置，然后进行扫描。 要指定平板扫描仪或送纸器扫描仪，只需使用 **Flatbed** 或 **Feeder** 替换 **AutoConfigured**。
 
@@ -174,4 +174,4 @@ cancellationToken = new CancellationTokenSource();
 
 ## <a name="scanning-to-the-pictures-library"></a>扫描到图片库
 
-用户可以使用 [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker) 类动态扫描到任何文件夹，但是你必须在清单中声明*图片库*功能以允许用户扫描到该文件夹。 有关应用功能的详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
+用户可以使用 [**FolderPicker**](/uwp/api/Windows.Storage.Pickers.FolderPicker) 类动态扫描到任何文件夹，但是你必须在清单中声明*图片库*功能以允许用户扫描到该文件夹。 有关应用功能的详细信息，请参阅[应用功能声明](../packaging/app-capability-declarations.md)。

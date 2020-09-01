@@ -1,33 +1,33 @@
 ---
 ms.assetid: ''
-title: 支持 Windows 应用中的外围网络（和其他轮设备）
-description: 添加对你的 Windows 应用的 Surface 拨号（和其他轮设备）的支持的分步教程。
+title: 在 Windows 应用中支持 Surface Dial（和其他滚轮设备）
+description: 逐步教程，介绍如何将 (和其他滑轮设备的支持添加) 到 Windows 应用。
 keywords: 转盘, 径向, 教程
 ms.date: 03/11/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3972e04c59748efabd51b423f6f24fc22291a6d1
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 8edd7a9345f93d3cf0abe76f68c321a977ee2e50
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234896"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173371"
 ---
-# <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-windows-app"></a>教程：在 Windows 应用程序中支持 Surface 拨号（和其他轮设备）
+# <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-windows-app"></a>教程：支持在 Windows 应用中)  (和其他轮设备
 
 ![适配 Surface Studio 的 Surface Dial 的图像](images/radialcontroller/dial-pen-studio-600px.png)  
 *适配 Surface Studio 和 Surface 触控笔的 Surface Dial*（可通过 [Microsoft 官方商城](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116)购买）。
 
-此教程逐步介绍如何自定义 Surface Dial 等滚轮设备支持的用户交互体验。 我们使用可以从 GitHub 下载的示例应用中的代码段（参阅[示例代码](#sample-code)），来展示各个步骤所讨论的各种功能和关联的 [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) API。
+此教程逐步介绍如何自定义 Surface Dial 等滚轮设备支持的用户交互体验。 我们使用可以从 GitHub 下载的示例应用中的代码段（参阅[示例代码](#sample-code)），来展示各个步骤所讨论的各种功能和关联的 [**RadialController**](/uwp/api/windows.ui.input.radialcontroller) API。
 
 我们主要介绍以下内容：
-* 指定哪些内置工具在 [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) 菜单中显示
+* 指定哪些内置工具在 [**RadialController**](/uwp/api/windows.ui.input.radialcontroller) 菜单中显示
 * 将自定义工具添加到菜单
 * 控制触觉反馈
 * 自定义单击交互
 * 自定义旋转交互
 
-有关实现这些功能和其他功能的详细信息，请参阅[Windows 应用中的外围网络交互](windows-wheel-interactions.md)。
+有关实现这些功能和其他功能的详细信息，请参阅 [Windows 应用中的外围网络交互](windows-wheel-interactions.md)。
 
 ## <a name="introduction"></a>简介
 
@@ -45,8 +45,8 @@ Dial 支持三种基本手势：
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 滚轮设备（现在仅限 [Surface Dial](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116)）
 * 如果不熟悉 Visual Studio 的 Windows 应用开发，请在开始学习本教程之前先了解以下主题：  
-    * [准备工作](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
-    * [创建“Hello, world”应用 \(XAML\)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [准备工作](../../get-started/get-set-up.md)
+    * [创建“Hello, world”应用 \(XAML\)](../../get-started/create-a-hello-world-app-xaml-universal.md)
 
 ## <a name="set-up-your-devices"></a>设置设备
 
@@ -58,7 +58,7 @@ Dial 支持三种基本手势：
 6. 返回到 Windows 设备，选择**添加蓝牙或其他设备**。
 7. 在**设备添加**对话框中，选择**蓝牙** > **Surface Dial**。 Surface Dial 现在应已连接，并被添加到**蓝牙和其他设备**设置页中**鼠标、键盘和笔**下的设备列表中。
 8. 长按 Dial 几秒钟以显示内置菜单，通过此方法对 Dial 进行测试。
-9. 如果屏幕上未显示菜单（"拨号" 也应振动），请返回蓝牙设置，删除设备，并尝试重新连接设备。
+9. 如果屏幕上未显示菜单 (拨号还应振动) ，返回蓝牙设置，删除设备，并尝试重新连接设备。
 
 > [!NOTE]
 > 可以通过**滚轮**设置配置滚轮设备：
@@ -68,15 +68,15 @@ Dial 支持三种基本手势：
 
 现在，你已准备好开始此教程了。 
 
-## <a name="sample-code"></a>示例代码
+## <a name="sample-code"></a>代码示例
 在本指南中，我们全部使用示例应用来演示所讨论的概念和功能。
 
 在 [windows-appsample-get-started-radialcontroller 示例](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController)从 [GitHub](https://github.com/) 下载此 Visual Studio 示例和源代码：
 
-1. 选择绿色**克隆或下载**按钮。  
+1. 选择绿色 **克隆或下载** 按钮。  
 ![克隆存储库](images/radialcontroller/wheel-clone.png)
-2. 如果有 GitHub 帐户，则可以通过选择 "**在 Visual Studio 中打开**" 将存储库克隆到本地计算机。 
-3. 如果没有 GitHub 帐户，或者只是想要项目的本地副本，请选择 "**下载 ZIP** " （需要定期检查以下载最新更新）。
+2. 如果有 GitHub 帐户，则可以通过选择 " **在 Visual Studio 中打开**" 将存储库克隆到本地计算机。 
+3. 如果你没有 GitHub 帐户，或者只是想要项目的本地副本，请选择 " **下载 ZIP** (你将需要定期检查以下载最新的更新) 。
 
 > [!IMPORTANT]
 > 示例中的大部分代码已被注释掉。在我们介绍本主题中的各个步骤时，系统将要求你取消代码各个部分的注释。 在 Visual Studio 中，只需突出显示代码行，并按 CTRL-K，然后按 CTRL-U。
@@ -85,10 +85,10 @@ Dial 支持三种基本手势：
 
 这些对象为 Windows 应用程序提供了滚轮设备体验。
 
-| 组件 | 说明 |
+| 组件 | 描述 |
 | --- | --- |
-| [**RadialController** 类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)和相关项 | 表示滚轮输入设备或附件，例如 Surface Dial。 |
-| [**IRadialControllerConfigurationInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop)  / [ **IRadialControllerInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>我们不在这里介绍此功能，有关详细信息，请参阅 [Windows 经典桌面示例](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)。 | 启用与 Windows 应用的互操作性。 |
+| [**RadialController** 类](/uwp/api/Windows.UI.Input.RadialController)和相关项 | 表示滚轮输入设备或附件，例如 Surface Dial。 |
+| [**IRadialControllerConfigurationInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop)  / [ **IRadialControllerInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>我们不在这里介绍此功能，有关详细信息，请参阅 [Windows 经典桌面示例](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)。 | 启用与 Windows 应用的互操作性。 |
 
 ## <a name="step-1-run-the-sample"></a>步骤 1：运行示例
 
@@ -108,7 +108,7 @@ Dial 支持三种基本手势：
 
 ## <a name="step-2-basic-radialcontroller-functionality"></a>步骤 2：基本 RadialController 功能
 
-在前台运行和的应用程序时，按下图面拨号以显示**RadialController**菜单。
+在前台运行和的应用程序时，按下图面拨号以显示 **RadialController** 菜单。
 
 我们尚未对应用进行任何自定义设置，所以菜单包含一组默认的上下文工具。 
 
@@ -125,7 +125,7 @@ Dial 支持三种基本手势：
 首先，我们来为应用添加 UI：
 
 1. 打开 MainPage_Basic.xaml 文件。
-2. 查找标记有此步骤标题的代码（" \< !--步骤3：添加色轮输入的控件-->"）。
+2. 查找此步骤标题标记的代码 ( " \<!-- Step 3: Add controls for wheel input --> " ) 。
 3. 取消以下各行的注释。
 
     ```xaml
@@ -166,14 +166,14 @@ Dial 支持三种基本手势：
 1. 打开 MainPage_Basic.xaml.cs 文件。
 2. 找到标有此步骤标题的代码 ("// Step 4: Basic RadialController menu customization")。
 3. 取消以下各行的注释：
-    - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input) 和 [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams) 类型引用用于后续步骤中的功能：  
+    - [Windows.UI.Input](/uwp/api/windows.ui.input) 和 [Windows.Storage.Streams](/uwp/api/windows.storage.streams) 类型引用用于后续步骤中的功能：  
     
         ```csharp
         // Using directives for RadialController functionality.
         using Windows.UI.Input;
         ```
 
-    - 这些全局对象（[RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller)、[RadialControllerConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration)、[RadialControllerMenuItem](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem)）用于整个应用。
+    - 这些全局对象（[RadialController](/uwp/api/windows.ui.input.radialcontroller)、[RadialControllerConfiguration](/uwp/api/windows.ui.input.radialcontrollerconfiguration)、[RadialControllerMenuItem](/uwp/api/windows.ui.input.radialcontrollermenuitem)）用于整个应用。
     
         ```csharp
         private RadialController radialController;
@@ -188,7 +188,7 @@ Dial 支持三种基本手势：
         { InitializeSample(sender, args); };
         ``` 
 
-    - 接下来，我们初始化 [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) 对象，并设置 [RotationChanged](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationChanged) 和 [ButtonClicked](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) 事件的处理程序。
+    - 接下来，我们初始化 [RadialController](/uwp/api/windows.ui.input.radialcontroller) 对象，并设置 [RotationChanged](/uwp/api/windows.ui.input.radialcontroller.RotationChanged) 和 [ButtonClicked](/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) 事件的处理程序。
 
         ```csharp
         // Set up the app UI and RadialController.
@@ -206,7 +206,7 @@ Dial 支持三种基本手势：
         }
         ```
 
-    - 在这里，我们初始化自定义 RadialController 菜单项。 我们使用 [CreateForCurrentView](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) 获取对 [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) 对象的引用，使用 [RotationResolutionInDegrees](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees) 属性将旋转灵敏度设置为“1”，然后使用 [CreateFromFontGlyph](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph) 创建 [RadialControllerMenuItem](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem)，我们将菜单项添加到 **RadialController** 菜单项集合，最后，我们使用 [SetDefaultMenuItems](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems) 清除默认菜单项，只保留我们的自定义工具。 
+    - 在这里，我们初始化自定义 RadialController 菜单项。 我们使用 [CreateForCurrentView](/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) 获取对 [RadialController](/uwp/api/windows.ui.input.radialcontroller) 对象的引用，使用 [RotationResolutionInDegrees](/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees) 属性将旋转灵敏度设置为“1”，然后使用 [CreateFromFontGlyph](/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph) 创建 [RadialControllerMenuItem](/uwp/api/windows.ui.input.radialcontrollermenuitem)，我们将菜单项添加到 **RadialController** 菜单项集合，最后，我们使用 [SetDefaultMenuItems](/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems) 清除默认菜单项，只保留我们的自定义工具。 
 
         ```csharp
         // Configure RadialController menu and custom tool.
@@ -358,7 +358,7 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
     rootFrame.Navigate(typeof(MainPage), e.Arguments);
     ```
 4. 打开 MainPage_Haptics.xaml 文件。
-5. 查找此步骤标题标记的代码（" \< !--步骤6：自定义设备 haptics-->"）。
+5. 查找此步骤标题标记的代码 ( " \<!-- Step 6: Customize the device haptics --> " ) 。
 6. 取消以下各行的注释。 （此 UI 代码仅指示当前设备支持哪些触觉功能。）    
 
     ```xaml
@@ -434,20 +434,20 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
 8. 找到标有此步骤标题的代码 ("Step 6: Haptics customization")
 9. 取消以下各行的注释：  
 
-    - [Windows.Devices.Haptics](https://docs.microsoft.com/uwp/api/windows.devices.haptics) 类型引用用于后续步骤中的功能。  
+    - [Windows.Devices.Haptics](/uwp/api/windows.devices.haptics) 类型引用用于后续步骤中的功能。  
     
         ```csharp
         using Windows.Devices.Haptics;
         ```
 
-    - 在这里，我们指定选择自定义 **RadialController** 菜单项时触发的 [ControlAcquired](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) 事件的处理程序。
+    - 在这里，我们指定选择自定义 **RadialController** 菜单项时触发的 [ControlAcquired](/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) 事件的处理程序。
 
         ```csharp
         radialController.ControlAcquired += (rc_sender, args) =>
         { RadialController_ControlAcquired(rc_sender, args); };
         ``` 
 
-    - 接下来，我们定义 [ControlAcquired](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) 处理程序，在这个过程中我们禁用默认的触觉反馈并初始化我们的触觉 UI。
+    - 接下来，我们定义 [ControlAcquired](/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) 处理程序，在这个过程中我们禁用默认的触觉反馈并初始化我们的触觉 UI。
 
         ```csharp
         private void RadialController_ControlAcquired(
@@ -516,7 +516,7 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
         }
         ```
 
-    - 在 [RotationChanged](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationChanged) 和 [ButtonClicked](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) 事件处理程序中，我们将相应的滑块和切换按钮控件连接到我们的自定义触觉。 
+    - 在 [RotationChanged](/uwp/api/windows.ui.input.radialcontroller.RotationChanged) 和 [ButtonClicked](/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) 事件处理程序中，我们将相应的滑块和切换按钮控件连接到我们的自定义触觉。 
 
         ```csharp
         // Connect wheel device rotation to slider control.
@@ -559,7 +559,7 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
             }
         }
         ```
-    - 最后，我们为触觉反馈获得请求的 **[Waveform](https://docs.microsoft.com/uwp/api/windows.devices.haptics.simplehapticscontrollerfeedback.Waveform)**（如果受支持）。 
+    - 最后，我们为触觉反馈获得请求的 **[Waveform](/uwp/api/windows.devices.haptics.simplehapticscontrollerfeedback.Waveform)**（如果受支持）。 
 
         ```csharp
         // Get the requested waveform.
@@ -609,9 +609,9 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
 
     <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe>  
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>“摘要”
 
-恭喜，你已完成*入门教程：在 Windows 应用程序中支持 Surface 拨号（和其他轮设备）*！ 我们向您展示了在 Windows 应用程序中支持滑轮设备所需的基本代码，以及如何提供**RadialController** api 支持的一些更丰富的用户体验。
+恭喜，你已完成 *入门教程：支持你的 Windows 应用中) 的 Surface 拨号盘 (和其他轮设备*！ 我们向您展示了在 Windows 应用程序中支持滑轮设备所需的基本代码，以及如何提供 **RadialController** api 支持的一些更丰富的用户体验。
 
 ## <a name="related-articles"></a>相关文章
 
@@ -619,18 +619,18 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
 
 ### <a name="api-reference"></a>API 参考
 
-- [**RadialController**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)
-- [**RadialControllerButtonClickedEventArgs**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
-- [**RadialControllerConfiguration**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 
-- [**RadialControllerControlAcquiredEventArgs**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
-- [**RadialControllerMenu**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenu) 
-- [**RadialControllerMenuItem**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 
-- [**RadialControllerRotationChangedEventArgs**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
-- [**RadialControllerScreenContact**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContact) 
-- [**RadialControllerScreenContactContinuedEventArgs**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
-- [**RadialControllerScreenContactStartedEventArgs**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
-- [**RadialControllerMenuKnownIcon**枚举](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon) 
-- [**RadialControllerSystemMenuItemKind**枚举](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
+- [**RadialController** 类](/uwp/api/Windows.UI.Input.RadialController)
+- [**RadialControllerButtonClickedEventArgs** 类](/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
+- [**RadialControllerConfiguration** 类](/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 
+- [**RadialControllerControlAcquiredEventArgs** 类](/uwp/api/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
+- [**RadialControllerMenu** 类](/uwp/api/Windows.UI.Input.RadialControllerMenu) 
+- [**RadialControllerMenuItem** 类](/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 
+- [**RadialControllerRotationChangedEventArgs** 类](/uwp/api/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
+- [**RadialControllerScreenContact** 类](/uwp/api/Windows.UI.Input.RadialControllerScreenContact) 
+- [**RadialControllerScreenContactContinuedEventArgs** 类](/uwp/api/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
+- [**RadialControllerScreenContactStartedEventArgs** 类](/uwp/api/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
+- [**RadialControllerMenuKnownIcon** 枚举](/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon) 
+- [**RadialControllerSystemMenuItemKind** 枚举](/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
 ### <a name="samples"></a>示例
 

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d6ddf03541e94f89d0950a4f4c03eebaa0e396e
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 242f7c30260956bc84478153f39b0da4d8461e12
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234470"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173401"
 ---
 # <a name="mouse-interactions"></a>鼠标交互
 
@@ -39,7 +39,7 @@ ms.locfileid: "83234470"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -86,48 +86,48 @@ ms.locfileid: "83234470"
 
 ## <a name="mouse-input-events"></a>鼠标输入事件
 
-大多数鼠标输入都可以通过所有[**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)对象支持的常见路由输入事件进行处理。 其中包括：
+大多数鼠标输入都可以通过所有 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 对象支持的常见路由输入事件进行处理。 这些方法包括：
 
-- [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
-- [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
-- [**ContextCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextcanceled)
-- [**ContextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
-- [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
-- [**DragEnter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
-- [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
-- [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
-- [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
-- [**击落**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
-- [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
-- [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
-- [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
-- [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
-- [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
-- [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
-- [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus)
-- [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
-- [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)
-- [**ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
-- [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
-- [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
-- [**NoFocusCandidateFound**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefound)
-- [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
-- [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
-- [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)
-- [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)
-- [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)
-- [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
-- [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
-- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
-- [**System.windows.forms.control.previewkeydown>**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown)
-- [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup)
-- [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**BringIntoViewRequested**](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
+- [**CharacterReceived**](/uwp/api/windows.ui.xaml.uielement.characterreceived)
+- [**ContextCanceled**](/uwp/api/windows.ui.xaml.uielement.contextcanceled)
+- [**ContextRequested**](/uwp/api/windows.ui.xaml.uielement.contextrequested)
+- [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped)
+- [**DragEnter**](/uwp/api/windows.ui.xaml.uielement.dragenter)
+- [**DragLeave**](/uwp/api/windows.ui.xaml.uielement.dragleave)
+- [**DragOver**](/uwp/api/windows.ui.xaml.uielement.dragover)
+- [**DragStarting**](/uwp/api/windows.ui.xaml.uielement.dragstarting)
+- [**击落**](/uwp/api/windows.ui.xaml.uielement.drop)
+- [**DropCompleted**](/uwp/api/windows.ui.xaml.uielement.dropcompleted)
+- [**GettingFocus**](/uwp/api/windows.ui.xaml.uielement.gettingfocus)
+- [**GotFocus**](/uwp/api/windows.ui.xaml.uielement.gotfocus)
+- [**Holding**](/uwp/api/windows.ui.xaml.uielement.holding)
+- [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown)
+- [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup)
+- [**LosingFocus**](/uwp/api/windows.ui.xaml.uielement.losingfocus)
+- [**LostFocus**](/uwp/api/windows.ui.xaml.uielement.lostfocus)
+- [**ManipulationCompleted**](/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
+- [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta)
+- [**ManipulationInertiaStarting**](/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
+- [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
+- [**ManipulationStarting**](/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
+- [**NoFocusCandidateFound**](/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefound)
+- [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled)
+- [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
+- [**PointerEntered**](/uwp/api/windows.ui.xaml.uielement.pointerentered)
+- [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited)
+- [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved)
+- [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)
+- [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased)
+- [**PointerWheelChanged**](/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**System.windows.forms.control.previewkeydown>**](/uwp/api/windows.ui.xaml.uielement.previewkeydown)
+- [**PreviewKeyUp**](/uwp/api/windows.ui.xaml.uielement.previewkeyup)
+- [**RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped)
+- [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped)
 
-不过，你可以使用[Windows](https://docs.microsoft.com/uwp/api/windows.ui.input)中的指针、笔势和操作事件来利用每个设备（如鼠标滚轮事件）的特定功能。
+但是，你可以利用每个设备的特定功能 (例如鼠标滚轮事件) 使用 [Windows](/uwp/api/windows.ui.input)中的指针、笔势和操作事件。
 
-**示例：** 请参阅[BasicInput 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)。
+**示例：** 请参阅 [BasicInput 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)。
 
 ## <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
@@ -144,7 +144,7 @@ ms.locfileid: "83234470"
 
 为鼠标指针提供了一组标准光标。 它们用来表示元素的主要操作。
 
-每个标准光标都有一个与它相关联的默认图像。 用户或应用可以随时替换与任何标准光标相关联的默认图像。 通过 [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) 函数指定光标图像。
+每个标准光标都有一个与它相关联的默认图像。 用户或应用可以随时替换与任何标准光标相关联的默认图像。 通过 [**PointerCursor**](/uwp/api/windows.ui.core.corewindow.pointercursor) 函数指定光标图像。
 
 如果你需要自定义鼠标光标：
 
@@ -158,7 +158,7 @@ ms.locfileid: "83234470"
 
 - [处理指针输入](handle-pointer-input.md)
 - [标识输入设备](identify-input-devices.md)
-- [事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
+- [事件和路由事件概述](../../xaml-platform/events-and-routed-events-overview.md)
 
 ### <a name="samples"></a>示例
 

@@ -7,57 +7,57 @@ ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f7bcb745245c896d1fc72c2e324af341b2e5aac
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: e3c0454b5596490631f32c3481675f3c70d4eb76
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683860"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175641"
 ---
 # <a name="composition-brushes"></a>合成画笔
 屏幕上的 UWP 应用中可见的所有内容均可见，因为它是通过画笔绘制。 你可以通过画笔绘制用户界面 (UI) 对象，内容可以为简单纯色图像或绘图到复杂的效果链。 本主题介绍使用 CompositionBrush 绘制的概念。
 
-请注意，使用 XAML UWP 应用时，你可以选择使用 [XAML 画笔](/windows/uwp/design/style/brushes)或 [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) 绘制 UIElement。 一般来说，如果你的方案支持 XAML 画笔，则建议你选择 XAML 画笔，这样更加容易。 例如，设置按钮颜色动画、使用图像更改文本或图形填充。 另一方面，如果你尝试使用动画蒙板或动画九网格拉伸或效果链等 XAML 画笔来执行不支持的操作，则可以使用 CompositionBrush 来通过使用[XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)来绘制 UIElement。
+请注意，使用 XAML UWP 应用时，你可以选择使用 [XAML 画笔](../design/style/brushes.md)或 [CompositionBrush](/uwp/api/Windows.UI.Composition.CompositionBrush) 绘制 UIElement。 一般来说，如果你的方案支持 XAML 画笔，则建议你选择 XAML 画笔，这样更加容易。 例如，设置按钮颜色动画、使用图像更改文本或图形填充。 另一方面，如果你尝试使用动画蒙板或动画九网格拉伸或效果链等 XAML 画笔来执行不支持的操作，则可以使用 CompositionBrush 来通过使用 [XamlCompositionBrushBase](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)来绘制 UIElement。
 
-操作可视化层时，必须使用 CompositionBrush 绘制 [SpriteVisual](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) 区域。
+操作可视化层时，必须使用 CompositionBrush 绘制 [SpriteVisual](/uwp/api/Windows.UI.Composition.SpriteVisual) 区域。
 
 -   [必备条件](./composition-brushes.md#prerequisites)
--   [用 CompositionBrush 画图](./composition-brushes.md#paint-with-a-compositionbrush)
+-   [使用 CompositionBrush 绘制](./composition-brushes.md#paint-with-a-compositionbrush)
     -   [使用纯色绘制](./composition-brushes.md#paint-with-a-solid-color)
     -   [使用线性渐变绘制](./composition-brushes.md#paint-with-a-linear-gradient) 
     -   [使用径向渐变绘制](./composition-brushes.md#paint-with-a-radial-gradient)
-    -   [使用图像进行绘制](./composition-brushes.md#paint-with-an-image)
+    -   [使用图像绘制](./composition-brushes.md#paint-with-an-image)
     -   [使用自定义绘图绘制](./composition-brushes.md#paint-with-a-custom-drawing)
-    -   [使用视频进行绘制](./composition-brushes.md#paint-with-a-video)
-    -   [使用筛选器效果画图](./composition-brushes.md#paint-with-a-filter-effect)
-    -   [使用不透明蒙板绘制 CompositionBrush](./composition-brushes.md#paint-with-a-compositionbrush-with-opacity-mask-applied)
-    -   [使用 NineGrid 伸展使用 CompositionBrush 进行绘制](./composition-brushes.md#paint-with-a-compositionbrush-using-ninegrid-stretch)
+    -   [使用视频绘制](./composition-brushes.md#paint-with-a-video)
+    -   [使用过滤效果绘制](./composition-brushes.md#paint-with-a-filter-effect)
+    -   [使用带不透明蒙板的 CompositionBrush 绘制](./composition-brushes.md#paint-with-a-compositionbrush-with-opacity-mask-applied)
+    -   [使用九网格拉伸的 CompositionBrush 绘制](./composition-brushes.md#paint-with-a-compositionbrush-using-ninegrid-stretch)
     -   [使用背景像素绘制](./composition-brushes.md#paint-using-background-pixels)
--   [组合 CompositionBrushes](./composition-brushes.md#combining-compositionbrushes)
+-   [组合 CompositionBrush](./composition-brushes.md#combining-compositionbrushes)
 -   [使用 XAML 画笔与 CompositionBrush](./composition-brushes.md#using-a-xaml-brush-vs-compositionbrush)
 -   [相关主题](./composition-brushes.md#related-topics)
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 本概述假定你已熟悉基本合成应用程序的结构，如[可视化层概述](visual-layer.md)中所述。
 
 ## <a name="paint-with-a-compositionbrush"></a>使用 CompositionBrush 绘制
 
-[CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush)通过输出“绘制”区域。 不同的画笔具有不同的输出类型。 某些画笔使用纯色绘制区域，其他的画笔可以使用渐变、图像、自定义绘图或效果绘制区域。 另外还有用于修改其他画笔行为的专用画笔。 例如，绘制区域时，可以使用不透明蒙板控制使用 CompositionBrush 绘制的区域，或者使用九网格控制应用到 CompositionBrush 的延伸。 CompositionBrush 可以是以下类型之一：
+[CompositionBrush](/uwp/api/Windows.UI.Composition.CompositionBrush)通过输出“绘制”区域。 不同的画笔具有不同的输出类型。 某些画笔使用纯色绘制区域，其他的画笔可以使用渐变、图像、自定义绘图或效果绘制区域。 另外还有用于修改其他画笔行为的专用画笔。 例如，绘制区域时，可以使用不透明蒙板控制使用 CompositionBrush 绘制的区域，或者使用九网格控制应用到 CompositionBrush 的延伸。 CompositionBrush 可以是以下类型之一：
 
 |类                                   |详细信息                                         |在  中引入|
 |-------------------------------------|---------------------------------------------------------|--------------------------------------|
-|[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)         |使用纯色绘制区域                        |Windows 10 版本1511（SDK 10586）|
-|[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)       |使用 [ICompositionSurface](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ICompositionSurface) 内容绘制区域|Windows 10 版本1511（SDK 10586）|
-|[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)        |使用合成效果内容绘制区域 |Windows 10 版本1511（SDK 10586）|
-|[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)          |使用带不透明蒙板的 CompositionBrush 绘制视觉对象 |Windows 10 版本1607（SDK 14393）
-|[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)      |使用九网格拉伸的 CompositionBrush 绘制区域 |Windows 10 版本1607（SDK 14393）
-|[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)|使用线性渐变绘制区域                    |Windows 10 版本1709（SDK 16299）
-|[CompositionRadialGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionradialgradientbrush)|使用径向渐变绘制区域                    |Windows 10 版本1903（有问必答预览版 SDK）
-|[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)     |通过对应用程序的背景像素或桌面上应用程序窗口正后方的像素采用来绘制区域。 用作其他 CompositionBrush（如 CompositionEffectBrush）的输入 | Windows 10 版本1607（SDK 14393）
+|[CompositionColorBrush](/uwp/api/Windows.UI.Composition.CompositionColorBrush)         |使用纯色绘制区域                        |Windows 10 版本 1511 (SDK 10586) |
+|[CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)       |使用 [ICompositionSurface](/uwp/api/Windows.UI.Composition.ICompositionSurface) 内容绘制区域|Windows 10 版本 1511 (SDK 10586) |
+|[CompositionEffectBrush](/uwp/api/Windows.UI.Composition.CompositionEffectBrush)        |使用合成效果内容绘制区域 |Windows 10 版本 1511 (SDK 10586) |
+|[CompositionMaskBrush](/uwp/api/Windows.UI.Composition.CompositionMaskBrush)          |使用带不透明蒙板的 CompositionBrush 绘制视觉对象 |Windows 10 版本 1607 (SDK 14393) 
+|[CompositionNineGridBrush](/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)      |使用九网格拉伸的 CompositionBrush 绘制区域 |Windows 10 版本 1607 (SDK 14393) 
+|[CompositionLinearGradientBrush](/uwp/api/windows.ui.composition.compositionlineargradientbrush)|使用线性渐变绘制区域                    |Windows 10 版本 1709 (SDK 16299) 
+|[CompositionRadialGradientBrush](/uwp/api/windows.ui.composition.compositionradialgradientbrush)|使用径向渐变绘制区域                    |Windows 10 版本 1903 (有问必答 Preview SDK) 
+|[CompositionBackdropBrush](/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)     |通过对应用程序的背景像素或桌面上应用程序窗口正后方的像素采用来绘制区域。 用作其他 CompositionBrush（如 CompositionEffectBrush）的输入 | Windows 10 版本 1607 (SDK 14393) 
 
 ### <a name="paint-with-a-solid-color"></a>使用纯色绘制
 
-[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush) 使用纯色绘制区域。 可以通过多种方式指定 SolidColorBrush 颜色。 例如，可以指定其 alpha、红色、蓝色和绿色 (ARGB) 通道，或者使用[颜色](https://docs.microsoft.com/uwp/api/windows.ui.colors)类中提供的其中一个预定义颜色。
+[CompositionColorBrush](/uwp/api/Windows.UI.Composition.CompositionColorBrush) 使用纯色绘制区域。 可以通过多种方式指定 SolidColorBrush 颜色。 例如，可以指定其 alpha、红色、蓝色和绿色 (ARGB) 通道，或者使用[颜色](/uwp/api/windows.ui.colors)类中提供的其中一个预定义颜色。
 
 下图和代码显示了一个较小的可视化树来创建一个矩形，该矩形用黑色画笔描边，并使用颜色值为 0x9ACD32 的纯色画笔进行绘制。
 
@@ -89,7 +89,7 @@ _container.Children.InsertAtBottom(_colorVisual2);
 
 ### <a name="paint-with-a-linear-gradient"></a>使用线性渐变绘制
 
-[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush) 使用线性渐变绘制区域。 线性渐变在线条（渐变轴）中混合了两种或多种颜色。 你可以使用 GradientStop 对象指定渐变的颜色及其位置。
+[CompositionLinearGradientBrush](/uwp/api/windows.ui.composition.compositionlineargradientbrush) 使用线性渐变绘制区域。 线性渐变在线条（渐变轴）中混合了两种或多种颜色。 你可以使用 GradientStop 对象指定渐变的颜色及其位置。
 
 下图和代码所示为使用红黄 2 种起止颜色的 LinearGradientBrush 绘制的 SpriteVisual。
 
@@ -135,7 +135,7 @@ _gradientVisual.Size = new Vector2(200, 200);
 
 ### <a name="paint-with-an-image"></a>使用图像绘制
 
-[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 使用 ICompositionSurface 上渲染的像素绘制区域。 例如，CompositionSurfaceBrush 可用于使用 [LoadedImageSurface](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.loadedimagesurface) API 通过 ICompositionSurface 上渲染的图像绘制区域。
+[CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 使用 ICompositionSurface 上渲染的像素绘制区域。 例如，CompositionSurfaceBrush 可用于使用 [LoadedImageSurface](/uwp/api/windows.ui.xaml.media.loadedimagesurface) API 通过 ICompositionSurface 上渲染的图像绘制区域。
 
 下图和代码所示为使用 LoadedImageSurface 通过 ICompositionSurface 上渲染的 licorice 位图绘制的 SpriteVisual。 CompositionSurfaceBrush 的属性可用于拉伸和对齐可视边界内的位图。
 
@@ -160,7 +160,7 @@ _imageVisual.Size = new Vector2(156, 156);
 ```
 
 ### <a name="paint-with-a-custom-drawing"></a>使用自定义绘图绘制
-[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 也可用于使用 [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)（或 D2D）渲染的 ICompositionSurface 中的像素绘制区域。
+[CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 也可用于使用 [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)（或 D2D）渲染的 ICompositionSurface 中的像素绘制区域。
 
 下图和代码所示为通过 Win2D 使用 ICompositionSurface 上渲染的文本运行绘制的 SpriteVisual。 请注意，若要使用 Win2D，你需要在项目中包括 [Win2D NuGet](https://www.nuget.org/packages/Win2D.uwp) 程序包。
 
@@ -203,7 +203,7 @@ _drawingVisual.Size = new Vector2(156, 156);
 同样，CompositionSurfaceBrush 也可用于使用 Win2D 互操作通过 SwapChain 绘制 SpriteVisual。 [本示例](https://github.com/Microsoft/Win2D-Samples/tree/master/CompositionExample)提供如何使用 Win2D 绘制具有交换链的 SpriteVisual。
 
 ### <a name="paint-with-a-video"></a>使用视频绘制
-[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)也可用于使用通过 [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 类加载的视频渲染的 ICompositionSurface 中的像素绘制区域。
+[CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)也可用于使用通过 [MediaPlayer](/uwp/api/Windows.Media.Playback.MediaPlayer) 类加载的视频渲染的 ICompositionSurface 中的像素绘制区域。
 
 下图和代码所示为使用加载到 ICompositionSurface 的视频绘制的 SpriteVisual。
 
@@ -233,7 +233,7 @@ _videoVisual.Size = new Vector2(156, 156);
 
 ### <a name="paint-with-a-filter-effect"></a>使用过滤效果绘制
 
-[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush) 使用 CompositionEffect 输出绘制区域。 可视化层中的效果可以制作应用到源内容集合的可进行动画设置的过滤效果，如颜色、渐变、图像、视频、交换链、UI 区域或视觉对象树。 源内容通常使用其他 CompositionBrush 指定。
+[CompositionEffectBrush](/uwp/api/Windows.UI.Composition.CompositionEffectBrush) 使用 CompositionEffect 输出绘制区域。 可视化层中的效果可以制作应用到源内容集合的可进行动画设置的过滤效果，如颜色、渐变、图像、视频、交换链、UI 区域或视觉对象树。 源内容通常使用其他 CompositionBrush 指定。
 
 下图和代码所示为使用已应用去饱和度过滤效果的猫图像绘制的 SpriteVisual。
 
@@ -265,11 +265,11 @@ _effectVisual.Brush = _effectBrush;
 _effectVisual.Size = new Vector2(156, 156);
 ```
 
-有关使用 CompositionBrush 创建效果的详细信息，请参阅[可视化层中的效果](https://docs.microsoft.com/windows/uwp/composition/composition-effects)
+有关使用 CompositionBrush 创建效果的详细信息，请参阅[可视化层中的效果](./composition-effects.md)
 
 ### <a name="paint-with-a-compositionbrush-with-opacity-mask-applied"></a>使用已应用不透明蒙板的 CompositionBrush 绘制
 
-[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush) 使用已应用不透明度蒙板的 CompositionBrush 绘制区域。 不透明度蒙板源可以为 CompositionColorBrush、CompositionLinearGradientBrush、CompositionSurfaceBrush、CompositionEffectBrush 或 CompositionNineGridBrush 类型的任何 CompositionBrush。 不透明度蒙板必须指定为 CompositionSurfaceBrush。
+[CompositionMaskBrush](/uwp/api/Windows.UI.Composition.CompositionMaskBrush) 使用已应用不透明度蒙板的 CompositionBrush 绘制区域。 不透明度蒙板源可以为 CompositionColorBrush、CompositionLinearGradientBrush、CompositionSurfaceBrush、CompositionEffectBrush 或 CompositionNineGridBrush 类型的任何 CompositionBrush。 不透明度蒙板必须指定为 CompositionSurfaceBrush。
 
 下图和代码所示为使用 CompositionMaskBrush 绘制的 SpriteVisual。 蒙板源为 CompositionLinearGradientBrush，蒙上后的效果如同使用圆圈图像的圆圈作为蒙板。
 
@@ -299,7 +299,7 @@ _maskVisual.Size = new Vector2(156, 156);
 
 ### <a name="paint-with-a-compositionbrush-using-ninegrid-stretch"></a>使用九网格拉伸的 CompositionBrush 绘制
 
-[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush) 使用通过九网格形式拉伸的 CompositionBrush 绘制区域。 九网格形式支持将 CompositionBrush 的边缘和角拉伸成与其中心不同的形状。 九网格拉伸源可以是 CompositionColorBrush、CompositionSurfaceBrush 或 CompositionEffectBrush 类型的任何 CompositionBrush。
+[CompositionNineGridBrush](/uwp/api/Windows.UI.Composition.CompositionNineGridBrush) 使用通过九网格形式拉伸的 CompositionBrush 绘制区域。 九网格形式支持将 CompositionBrush 的边缘和角拉伸成与其中心不同的形状。 九网格拉伸源可以是 CompositionColorBrush、CompositionSurfaceBrush 或 CompositionEffectBrush 类型的任何 CompositionBrush。
 
 以下代码所示为使用 CompositionNineGridBrush 绘制的 SpriteVisual。 蒙板源为使用九网格拉伸的 CompositionSurfaceBrush。
 
@@ -332,7 +332,7 @@ _nineGridVisual.Size = new Vector2(100, 75);
 
 ### <a name="paint-using-background-pixels"></a>使用背景像素绘制
 
-[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush) 使用区域后的内容绘制区域。 CompositionBackdropBrush 不可单独使用，但可用作其他 CompositionBrush（如 EffectBrush）的输入。 例如，通过将 CompositionBackdropBrush 用作模糊效果的输入，你可以实现霜冻玻璃效果。
+[CompositionBackdropBrush](/uwp/api/Windows.UI.Composition.CompositionBackdropBrush) 使用区域后的内容绘制区域。 CompositionBackdropBrush 不可单独使用，但可用作其他 CompositionBrush（如 EffectBrush）的输入。 例如，通过将 CompositionBackdropBrush 用作模糊效果的输入，你可以实现霜冻玻璃效果。
 
 以下代码所示为一个较小的可视化树，用于创建一个使用 CompositionSurfaceBrush 的图像并在该图像上覆盖霜冻的玻璃。 覆盖的霜冻玻璃通过在图像上放入具有 EffectBrush 填充效果的 SpriteVisual 创建。 EffectBrush 使用 CompositionBackdropBrush 作为模糊效果的输入。
 
@@ -400,52 +400,52 @@ _containerVisual.Children.InsertAtTop(_backdropVisual);
 </tr>
 <tr>
 <td>CompositionColorBrush</td>
-<td>是</td>
-<td>是</td>
-<td>是</td>
-<td>是</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
 </tr>
 <tr>
 <td>CompositionLinear<br />GradientBrush</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
 <td>是</td>
-<td>是</td>
-<td>是</td>
-<td>否</td>
 </tr>
 <tr>
 <td>CompositionSurfaceBrush</td>
-<td>是</td>
-<td>是</td>
-<td>是</td>
-<td>是</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
 </tr>
 <tr>
 <td>CompositionEffectBrush</td>
-<td>否</td>
-<td>否</td>
 <td>是</td>
-<td>否</td>
+<td>是</td>
+<td>YES</td>
+<td>是</td>
 </tr>
 <tr>
 <td>CompositionMaskBrush</td>
-<td>否</td>
-<td>否</td>
-<td>否</td>
-<td>否</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
 </tr>
 <tr>
 <td>CompositionNineGridBrush</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
 <td>是</td>
-<td>是</td>
-<td>是</td>
-<td>否</td>
 </tr>
 <tr>
 <td>CompositionBackdropBrush</td>
+<td>YES</td>
 <td>是</td>
-<td>否</td>
-<td>否</td>
-<td>否</td>
+<td>是</td>
+<td>是</td>
 </tr>
 </tbody>
 </table>
@@ -460,24 +460,24 @@ _containerVisual.Children.InsertAtTop(_backdropVisual);
 
 |方案                                                                   | XAML UIElement                                                                                                |合成 SpriteVisual
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------------------------------
-|使用纯色绘制区域                                             |[System.windows.media.solidcolorbrush>](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)                                |[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)
-|使用动画颜色绘制区域                                          |[System.windows.media.solidcolorbrush>](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)                                |[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)
-|使用静态渐变绘制区域                                       |[LinearGradientBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)                            |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)
-|使用动画渐变起止颜色绘制区域                                 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)                                                                                 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)
-|使用图像绘制区域                                                |[System.windows.media.imagebrush>](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush)                                     |[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)
-|使用网页绘制区域                                               |[WebViewBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush)                                   |N/A
-|使用九网格拉伸的图像绘制区域                         |[图像控件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)                   |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
-|使用动画九网格拉伸绘制区域                               |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)                                                                                       |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
-|使用交换链绘制区域                                             |[SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)                                                                                                 |带交换链互操作的 [CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)
-|使用视频绘制区域                                                 |[MediaElement](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/media-playback)                                                                                                  |带媒体互操作的 [CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)
-|使用自定义 2D 绘图绘制区域                                       |Win2D 中的 [CanvasControl](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm)                                                                                                 |带 Win2D 互操作的 [CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)
-|使用非动画蒙板绘制区域                                       |使用 XAML [形状](https://docs.microsoft.com/windows/uwp/graphics/drawing-shapes)定义蒙板   |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)
-|使用动画蒙板绘制区域                                        |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)                                                                                           |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)
-|使用动画过滤效果绘制区域                               |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)                                                                                         |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)
-|使用应用于背景像素的效果绘制区域        |[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)                                                                                        |[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)
+|使用纯色绘制区域                                             |[SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)                                |[CompositionColorBrush](/uwp/api/Windows.UI.Composition.CompositionColorBrush)
+|使用动画颜色绘制区域                                          |[SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)                                |[CompositionColorBrush](/uwp/api/Windows.UI.Composition.CompositionColorBrush)
+|使用静态渐变绘制区域                                       |[LinearGradientBrush](/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)                            |[CompositionLinearGradientBrush](/uwp/api/windows.ui.composition.compositionlineargradientbrush)
+|使用动画渐变起止颜色绘制区域                                 |[CompositionLinearGradientBrush](/uwp/api/windows.ui.composition.compositionlineargradientbrush)                                                                                 |[CompositionLinearGradientBrush](/uwp/api/windows.ui.composition.compositionlineargradientbrush)
+|使用图像绘制区域                                                |[ImageBrush](/uwp/api/Windows.UI.Xaml.Media.ImageBrush)                                     |[CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)
+|使用网页绘制区域                                               |[WebViewBrush](/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush)                                   |不适用
+|使用九网格拉伸的图像绘制区域                         |[图像控制](/uwp/api/Windows.UI.Xaml.Controls.Image)                   |[CompositionNineGridBrush](/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
+|使用动画九网格拉伸绘制区域                               |[CompositionNineGridBrush](/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)                                                                                       |[CompositionNineGridBrush](/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
+|使用交换链绘制区域                                             |[SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)                                                                                                 |带交换链互操作的 [CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)
+|使用视频绘制区域                                                 |[MediaElement](../design/controls-and-patterns/media-playback.md)                                                                                                  |带媒体互操作的 [CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)
+|使用自定义 2D 绘图绘制区域                                       |Win2D 中的 [CanvasControl](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm)                                                                                                 |带 Win2D 互操作的 [CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)
+|使用非动画蒙板绘制区域                                       |使用 XAML [形状](../design/controls-and-patterns/shapes.md)定义蒙板   |[CompositionMaskBrush](/uwp/api/Windows.UI.Composition.CompositionMaskBrush)
+|使用动画蒙板绘制区域                                        |[CompositionMaskBrush](/uwp/api/Windows.UI.Composition.CompositionMaskBrush)                                                                                           |[CompositionMaskBrush](/uwp/api/Windows.UI.Composition.CompositionMaskBrush)
+|使用动画过滤效果绘制区域                               |[CompositionEffectBrush](/uwp/api/Windows.UI.Composition.CompositionEffectBrush)                                                                                         |[CompositionEffectBrush](/uwp/api/Windows.UI.Composition.CompositionEffectBrush)
+|使用应用于背景像素的效果绘制区域        |[CompositionBackdropBrush](/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)                                                                                        |[CompositionBackdropBrush](/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)
 
 ## <a name="related-topics"></a>“相关主题”
 
-[结合 BeginDraw 和 EndDraw 组合本机 DirectX 和 Direct2D 互操作](composition-native-interop.md)
+[带有 BeginDraw 和 EndDraw 的合成本机 DirectX 和 Direct2D 互操作性](composition-native-interop.md)
 
-[具有 XamlCompositionBrushBase 的 XAML 画笔互操作](/windows/uwp/design/style/brushes#xamlcompositionbrushbase)
+[与 XamlCompositionBrushBase 进行的 XAML 画笔互操作](../design/style/brushes.md#xamlcompositionbrushbase)

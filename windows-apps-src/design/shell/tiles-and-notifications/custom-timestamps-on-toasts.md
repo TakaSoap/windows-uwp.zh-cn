@@ -1,18 +1,18 @@
 ---
-Description: 了解如何使用自定义的时间戳的 toast 通知。
 title: Toast 上的自定义时间戳
+description: 了解如何使用自定义时间戳替代 toast 通知上的默认时间戳，该时间戳指示生成消息/信息/内容的时间。
 label: Custom timestamps on toasts
 template: detail.hbs
 ms.date: 12/15/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, 自定义时间戳, 时间戳, 通知, 操作中心
 ms.localizationpriority: medium
-ms.openlocfilehash: c18c32e1dcee5486ff6545a1db0ec8f0cd67bfae
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 11d9064d39d4e8ecd74229afc4eee325297f246b
+ms.sourcegitcommit: e273e5901bfa6596dfef4cc741bb1c42614c25ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625812"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238302"
 ---
 # <a name="custom-timestamps-on-toasts"></a>Toast 上的自定义时间戳
 
@@ -23,7 +23,7 @@ ms.locfileid: "57625812"
 可以选择用自己的自定义日期和时间替代时间戳，使时间戳表示消息/信息/内容实际创建的时间，而不是发送通知的时间。 这还可以确保通知以正确的顺序在操作中心显示（按时间排序）。 我们建议大多数应用指定自定义时间戳。
 
 > [!IMPORTANT]
-> **需要创意者更新和通知库 1.4.0**:您必须运行生成 15063 或更高版本，请参阅自定义的时间戳。 必须使用版本 1.4.0 或更高版本的 [UWP 社区工具包通知 NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)来分配 Toast 的内容上的时间戳。
+> **需要创意者更新和通知库 1.4.0**：必须运行内部版本 15063 或更高版本，以查看自定义时间戳。 必须使用版本 1.4.0 或更高版本的 [UWP 社区工具包通知 NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)来分配 Toast 的内容上的时间戳。
 
 若要使用自定义时间戳，只需分配 **ToastContent** 上的 **DisplayTimestamp** 属性。
 
@@ -67,5 +67,5 @@ ToastContent toastContent = new ToastContent()
 
 ## <a name="related-topics"></a>相关主题
 
-- [发送本地 toast 通知](send-local-toast.md)
-- [Toast 通知内容文档](adaptive-interactive-toasts.md)
+- [发送本地 toast](send-local-toast.md)
+- [toast 内容文档](adaptive-interactive-toasts.md)

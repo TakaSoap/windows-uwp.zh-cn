@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, toast 通知, 交互式 toast, 自适应 toast, toast 内容, toast 有效负载
 ms.localizationpriority: medium
-ms.openlocfilehash: bda62b76973adb7b6cfe068cdd9ca33b1a54454c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 97dd16d712dca3de69a98c608b7c8947ebbddfea
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970922"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173361"
 ---
 # <a name="toast-content"></a>Toast 内容
 
@@ -22,7 +22,7 @@ ms.locfileid: "82970922"
 > **重要的 API**：[UWP 社区工具包通知 NuGet 程序包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> 要查看 Windows 8.1 和 Windows Phone 8.1 中的传统模板，请参阅[传统 Toast 模板目录](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10))。
+> 要查看 Windows 8.1 和 Windows Phone 8.1 中的传统模板，请参阅[传统 Toast 模板目录](/previous-versions/windows/apps/hh761494(v=win.10))。
 
 
 ## <a name="getting-started"></a>入门
@@ -144,7 +144,7 @@ new ToastBindingGeneric()
 
 ## <a name="app-logo-override"></a>应用徽标替代
 
-默认情况下，toast 将显示应用徽标。 不过，你可以用自己的[**ToastGenericAppLogo**](toast-schema.md#toastgenericapplogo)映像覆盖此徽标。 例如，如果这是来自某人的通知，则建议将应用徽标替换为此人的照片。
+默认情况下，toast 将显示应用徽标。 不过，你可以用自己的 [**ToastGenericAppLogo**](toast-schema.md#toastgenericapplogo) 映像覆盖此徽标。 例如，如果这是来自某人的通知，则建议将应用徽标替换为此人的照片。
 
 <img alt="Toast with app logo override" src="images/toast-applogooverride.jpg" width="364"/>
 
@@ -303,7 +303,7 @@ ToastContent toastContent = new ToastContent()
 若要详细了解如何使用进度栏，请参阅 [Toast 进度栏](toast-progress-bar.md)。
 
 
-## <a name="headers"></a>标头
+## <a name="headers"></a>头文件
 
 **创意者更新的新增功能**：可在操作中心将通知分到不同的标题下。 例如，你可以将群聊中的组消息分到一个标题下，或将常见主题的通知分到一个标题下等等。
 
@@ -318,7 +318,7 @@ ToastContent toastContent = new ToastContent()
 
 这些附加内容是用 Adaptive 指定的，阅读[自适应磁贴文档](create-adaptive-tiles.md)可了解更多内容。
 
-请注意，任何自适应内容都必须包含在[**AdaptiveGroup**](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema#adaptivegroup)中。 否则将不会使用自适应呈现。
+请注意，任何自适应内容都必须包含在 [**AdaptiveGroup**](./toast-schema.md#adaptivegroup)中。 否则将不会使用自适应呈现。
 
 
 ### <a name="columns-and-text-elements"></a>列和文本元素
@@ -502,7 +502,7 @@ new ToastButton("Dismiss", "dismiss")
 > [!NOTE]
 > 在较旧的设备上，上述其他关联菜单操作仅显示为 Toast 上的正常按钮。
 
-添加的其他上下文菜单操作（如 "更改位置"）将显示在这两个默认的系统条目上方。
+添加的其他上下文菜单操作 (如 "更改位置" ) 出现在两个默认系统项的上方。
 
 <img alt="Toast with context menu" src="images/toast-contextmenu.png" width="444"/>
 
@@ -551,7 +551,7 @@ ToastContent content = new ToastContent()
 
 ### <a name="quick-reply-text-box"></a>快速回复文本框
 
-若要启用 "快速答复" 文本框（例如，在消息应用中），请添加文本输入和按钮，并引用文本输入字段的 ID，以使该按钮显示在输入字段的旁边。 此按钮的图标应为32x32 像素图像，其中空白像素设置为透明，100% 缩放。
+若要启用 "快速答复" 文本框 (例如，在消息应用中) 添加文本输入和按钮，并引用文本输入字段的 ID，以使该按钮显示在输入字段的旁边。 此按钮的图标应为32x32 像素图像，其中空白像素设置为透明，100% 缩放。
 
 <img alt="notification with text input and actions" src="images/adaptivetoasts-xmlsample05.jpg" width="364"/>
 

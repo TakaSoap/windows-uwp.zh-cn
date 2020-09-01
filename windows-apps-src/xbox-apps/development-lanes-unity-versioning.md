@@ -1,15 +1,15 @@
 ---
 title: Unity - 对你的 UWP 项目进行版本控制
-description: 对你的 Unity UWP 项目进行版本控制。
+description: 了解如何使用通用 Windows 平台 (UWP) 为 Xbox 游戏使用版本控制。
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: b98fba394fb326d60451f07938504e99a92d764d
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: 3e4d98892b9bd738eca788d166ef79f81ea1b047
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089483"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173741"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity：对你的 UWP 项目进行版本控制
 
@@ -25,11 +25,11 @@ ms.locfileid: "77089483"
 
 这是我们的 UWP 目录的外观：
 
-![UWP VS 解决方案](images/uwp-vs-solution.png)
+![UWP 与解决方案](images/uwp-vs-solution.png)
 
 在此目录中，我们只关心一个文件夹，即 ***ScrapyardPhoenix***（在此处插入你的游戏的名称）文件夹。  在版本控制中，可以忽略其他所有内容。
 
-***不熟悉 .gitignore 文件是什么？ 请参阅[.gitignore](https://git-scm.com/docs/gitignore)。***
+***不熟悉 .gitignore 文件是什么？ 请参阅 [.gitignore](https://git-scm.com/docs/gitignore)。***
 
     ##################################################################
     # The original .gitignore file can be found at
@@ -49,21 +49,21 @@ ms.locfileid: "77089483"
 
 ![UWP 生成目录](images/uwp-build-directory.png)  
 
-## <a name="folders"></a>文件夹  
+## <a name="folders"></a>Folders  
 
-`Assets` | ***包括***|包含 Microsoft Store 映像  
-`Data`   | ***忽略***|Unity 将项目编译到（场景、着色器、脚本、Prototyping 等）  
-`Dependencies` | ***包括***|此文件夹是创建的，用于保留所有 UWP 依赖项（例如 XboxLiveSDK）  
-`Properties` | ***包括***|包含开发人员可以修改的更高级的设置  
-`Unprocessed` | ***忽略***|包含 Unity `.dll` 和 `.pdb` 文件  
+`Assets` | ***Include*** |包含 Microsoft Store 映像  
+`Data`   | ***忽略*** |Unity 将项目编译到 (场景、着色器、脚本、Prototyping 等 )   
+`Dependencies` | ***Include*** |此文件夹是创建的，用于将所有 UWP 依赖项保存在 (例如，XboxLiveSDK.dll)   
+`Properties` | ***Include*** |包含开发人员可以修改的更高级的设置  
+`Unprocessed` | ***忽略*** |包含 Unity `.dll` 和 `.pdb` 文件  
 
-## <a name="files"></a>Files  
+## <a name="files"></a>文件  
 
-`App.cs` | ***包括***|UWP 应用程序的入口点;可以通过其他源文件修改和扩展此文件  
-`Package.appxmanifest` | ***包括***|.Msix 或 .appx 包的应用包清单源文件  
-`project.json` | ***包括***|介绍 `*.csproj` 所依赖的 NuGet 包  
-`ScrapyardPhoenix.csproj` | ***包括***|描述 UWP 生成目标;如果将其他依赖项添加到 UWP 项目中，此 `*.csproj` 文件将包含此信息  
-`ScrapyardPhoenix.csproj.user` | ***忽略***|此文件包含本地用户信息
+`App.cs` | ***Include*** |UWP 应用程序的入口点;可以通过其他源文件修改和扩展此文件  
+`Package.appxmanifest` | ***Include*** |.Msix 或 .appx 包的应用包清单源文件  
+`project.json` | ***Include*** |描述你依赖的 NuGet 包 `*.csproj`  
+`ScrapyardPhoenix.csproj` | ***Include*** |描述 UWP 生成目标;如果将其他依赖项添加到 UWP 项目中，此 `*.csproj` 文件将包含此信息  
+`ScrapyardPhoenix.csproj.user` | ***忽略*** |此文件包含本地用户信息
 
 ## <a name="resulting-gitignore"></a>生成的 .gitignore
 
@@ -101,4 +101,4 @@ ms.locfileid: "77089483"
 
 ## <a name="see-also"></a>另请参阅
 - [将现有游戏移植到 Xbox](development-lanes-landing.md)
-- [Xbox one 上的 UWP](index.md)
+- [Xbox One 上的 UWP](index.md)

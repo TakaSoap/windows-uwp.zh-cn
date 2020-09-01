@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 编解码器, 编码器, 解码器, 查询
 ms.localizationpriority: medium
-ms.openlocfilehash: e447f39258a4a0439bcbd3cca7aeb4407a9b1d26
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: ff1199651ceb9cf6ab3ef88cfdfa7dfbf25b67ee
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318616"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175731"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>查询设备上安装的编解码器
-可通过 **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** 类查询当前设备上安装的编解码器。 文章[支持的编解码器](supported-codecs.md)中给出了 Windows 10 附带的用于不同设备系列的编解码器列表，但是由于用户和应用可以在设备上安装其他编解码器，因此你可能要在运行时查询编解码器支持，以确定当前设备上可用的编解码器。
+**[CodecQuery](/uwp/api/windows.media.core.codecquery)** 类允许查询在当前设备上安装的编解码器。 文章[支持的编解码器](supported-codecs.md)中给出了 Windows 10 附带的用于不同设备系列的编解码器列表，但是由于用户和应用可以在设备上安装其他编解码器，因此你可能要在运行时查询编解码器支持，以确定当前设备上可用的编解码器。
 
-CodecQuery API 是 **[Windows.Media.Core](https://docs.microsoft.com/uwp/api/windows.media.core)** 命名空间的成员，因此需要在应用中包含此命名空间。
+CodecQuery API 是 **[Windows. Core](/uwp/api/windows.media.core)** 命名空间的成员，因此需要在应用中包含此命名空间。
 
-CodecQuery API 是 **[Windows.Media.Core](https://docs.microsoft.com/uwp/api/windows.media.core)** 命名空间的成员，因此需要在应用中包含此命名空间。
+CodecQuery API 是 **[Windows. Core](/uwp/api/windows.media.core)** 命名空间的成员，因此需要在应用中包含此命名空间。
 
 [!code-cs[CodecQueryUsing](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetCodecQueryUsing)]
 
@@ -26,32 +26,28 @@ CodecQuery API 是 **[Windows.Media.Core](https://docs.microsoft.com/uwp/api/win
 
 [!code-cs[NewCodecQuery](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetNewCodecQuery)]
 
-**[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery.findallasync)** 方法返回与提供的参数匹配的所有已安装编解码器。 这些参数包括用于指定查询音频和/或视频编解码器的 **[CodecKind](https://docs.microsoft.com/uwp/api/windows.media.core.codeckind)** 值、用于指定查询编码器或解码器的 **[CodecCategory](https://docs.microsoft.com/uwp/api/windows.media.core.codeccategory)** 值以及表示所查询的媒体编码子类型（如 H.264 视频或 MP3 音频）的字符串。
+**[FindAllAsync](/uwp/api/windows.media.core.codecquery.findallasync)** 方法返回与提供的参数相匹配的所有已安装的编解码器。 这些参数包括指定是要查询音频或视频编解码器还是同时查询两者的 **[CodecKind](/uwp/api/windows.media.core.codeckind)** 值， **[CodecCategory](/uwp/api/windows.media.core.codeccategory)** 值指定是要查询编码器还是解码器，并指定表示要查询的媒体编码子类型的字符串，例如：
 
 为子类型值指定空字符串或 null 以返回适用于所有子类型的编解码器。 以下示例列出了设备上安装的所有视频编码器。
 
 [!code-cs[FindAllEncoders](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetFindAllEncoders)]
 
-传入到 **FindAllAsync** 的子类型字符串可以是系统定义的子类型 GUID 的字符串表示形式或子类型的 FOURCC 代码。 [音频子类型 GUID](https://docs.microsoft.com/windows/desktop/medfound/audio-subtype-guids) 和[视频子类型 GUID](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids) 文章中列出了支持的媒体子类型 GUID 集，而 **[CodecSubtypes](https://docs.microsoft.com/uwp/api/windows.media.core.codecsubtypes)** 类提供的是返回每个受支持子类型的 GUID 值的属性。 有关 FOURCC 代码的详细信息，请参阅 [FOURCC 代码](https://docs.microsoft.com/windows/desktop/DirectShow/fourcc-codes) 
+传入到 **FindAllAsync** 的子类型字符串可以是系统定义的子类型 GUID 的字符串表示形式或子类型的 FOURCC 代码。 " [音频子类型 guid](/windows/desktop/medfound/audio-subtype-guids) " 和 " [视频子](/windows/desktop/medfound/video-subtype-guids)类型" guid 一文中列出了一组受支持的媒体子类型 guid，但 **[CodecSubtypes](/uwp/api/windows.media.core.codecsubtypes)** 类提供了为每个受支持的子类型返回 GUID 值的属性。 有关 FOURCC 代码的详细信息，请参阅 [FOURCC 代码](/windows/desktop/DirectShow/fourcc-codes) 
 
-以下示例指定 FOURCC 代码“H264”，以确定是否在设备上安装了 H.264 视频解码器。 可以在尝试播放 H.264 视频内容之前执行此查询。 还可以在播放时处理不支持的编解码器。 有关详细信息，请参阅[在打开媒体项时，处理不受支持的编解码器和未知错误](https://docs.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource#handle-unsupported-codecs-and-unknown-errors-when-opening-media-items)。
+以下示例指定 FOURCC 代码“H264”，以确定是否在设备上安装了 H.264 视频解码器。 可以在尝试播放 H.264 视频内容之前执行此查询。 还可以在播放时处理不支持的编解码器。 有关详细信息，请参阅[在打开媒体项时，处理不受支持的编解码器和未知错误](./media-playback-with-mediasource.md#handle-unsupported-codecs-and-unknown-errors-when-opening-media-items)。
 
 [!code-cs[IsH264Supported](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetIsH264Supported)]
 
-以下示例中，进行查询的目的是确定当前设备上是否已安装 FLAC 音频编码器。如果已安装，则为子类型创建 **[MediaEncodingProfile](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile)** ，它可用于将音频捕获到文件中或是将音频从另一种格式转码为 FLAC 音频文件。
+以下示例中，进行查询的目的是确定当前设备上是否已安装 FLAC 音频编码器。如果已安装，则为子类型创建 **[MediaEncodingProfile](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile)**，它可用于将音频捕获到文件中或是将音频从另一种格式转码为 FLAC 音频文件。
 
 [!code-cs[IsFLACSupported](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetIsFLACSupported)]
 
 ## <a name="related-topics"></a>相关主题
 
 * [媒体播放](media-playback.md)
-* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [对媒体文件进行转码](transcode-media-files.md)
+* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [转换媒体文件代码](transcode-media-files.md)
 * [支持的编解码器](supported-codecs.md)
  
 
  
-
-
-
-

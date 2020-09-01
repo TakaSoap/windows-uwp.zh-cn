@@ -1,29 +1,29 @@
 ---
-Description: 将用户添加到你的合作伙伴中心帐户并将其分配具有特定权限的角色。
+Description: 将用户添加到合作伙伴中心帐户，并为其分配具有特定权限的角色。
 title: 管理帐户用户
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10，uwp，帐户用户，管理用户、 azure ad、 多用户、 多个用户
+keywords: windows 10，uwp，帐户用户，管理用户，azure ad，多用户，多用户
 ms.localizationpriority: medium
-ms.openlocfilehash: 282b1eb087fa081b621437206f338ed4b6d3569b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b95b19aace3ba788135dbdb02e3fda5f21635eb6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57659742"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174801"
 ---
 # <a name="manage-account-users"></a>管理帐户用户
 
-可以使用 Azure Active Directory 添加和管理中的其他用户你[合作伙伴中心](https://partner.microsoft.com/dashboard)帐户。 可以定义每位用户应拥有的角色或自定义权限。 你还可以将一个角色分配给一组用户或 Azure AD 应用程序。
+你可以使用 Azure Active Directory 在 [合作伙伴中心](https://partner.microsoft.com/dashboard)  帐户中添加和管理其他用户。 您可以为每个用户定义应有的角色或自定义权限。 你还可以将一个角色分配给一组用户或 Azure AD 应用程序。
 
-要添加和管理帐户的用户，必须先将你的合作伙伴中心帐户关联与组织的 Azure Active Directory 中。 
+若要添加和管理帐户用户，必须首先将合作伙伴中心帐户与组织的 Azure Active Directory 相关联。 
 
-本部分介绍了如何执行以下操作：
+本节将介绍如何执行以下操作：
 
--   [将 Azure Active Directory 与你的合作伙伴中心帐户相关联](associate-azure-ad-with-dev-center.md)
--   [添加用户、 组和 Azure AD 应用程序到合作伙伴中心帐户](add-users-groups-and-azure-ad-applications.md)
--   [设置角色和帐户用户的自定义权限](set-custom-permissions-for-account-users.md)
+-   [将 Azure Active Directory 与合作伙伴中心帐户关联](./associate-azure-ad-with-partner-center.md)
+-   [向合作伙伴中心帐户添加用户、组和 Azure AD 应用程序](add-users-groups-and-azure-ad-applications.md)
+-   [为帐户用户设置角色和自定义权限](set-custom-permissions-for-account-users.md)
 
 > [!TIP]
-> 这些主题特定于 Windows 应用开发人员计划在合作伙伴中心，但将租户相关联以及管理用户的工作方式类似 Windows 硬件开发人员计划中的帐户 (请参阅[仪表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)有关详细信息） 或 Windows 桌面应用程序中 (请参阅[Windows 桌面应用程序程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)的详细信息)。
+> 这些主题特定于合作伙伴中心的 Windows apps 开发人员计划，但关联租户和管理用户的工作方式类似于 Windows 硬件开发人员计划中的帐户 (参阅 [仪表板管理](/windows-hardware/drivers/dashboard/dashboard-administration) 获取详细信息) 或 windows 桌面 (应用 [程序中的](/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users) 详细信息) 。

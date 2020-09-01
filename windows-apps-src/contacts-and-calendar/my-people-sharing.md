@@ -1,16 +1,16 @@
 ---
 title: “我的人脉”共享
-description: 介绍如何为“我的人脉”共享添加支持
+description: 使用 "我的人员共享"，让用户将联系人固定到其任务栏，并与 Windows 中的任意位置轻松保持接触。
 ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff37a243f88bdd378998070f58ec35196c62a6cf
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 76d52fe3ed7e7fb74ae5338e589ab34751bedebe
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683485"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173661"
 ---
 # <a name="my-people-sharing"></a>“我的人脉”共享
 
@@ -20,16 +20,16 @@ ms.locfileid: "75683485"
 
 ## <a name="requirements"></a>要求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)。
-+ C# 或类似面向对象的编程语言的基础知识。 若要开始使用 C#，请参阅[创建“Hello, world”应用](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
++ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](../get-started/get-set-up.md)。
++ C# 或类似面向对象的编程语言的基础知识。 若要开始使用 C#，请参阅[创建“Hello, world”应用](../get-started/create-a-hello-world-app-xaml-universal.md)。
 
 ## <a name="overview"></a>概述
 
 你必须执行以下三个步骤，才能将应用程序启用为“我的人脉”共享目标：
 
-1. [在应用程序清单中声明对 shareTarget 激活约定的支持。](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [使用你的应用来批注用户可以共享的联系人。](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3. 支持同时运行应用程序的多个实例。  用户必须能够与完整版本的应用程序进行交互，并且同时也可以使用应用程序与其他人共享。 他们可以同时在多个共享窗口中使用该应用程序。 为了对此提供支持，应用程序需要能够同时运行多个视图。 若要了解如何执行此操作，请参阅文章[“显示应用的多个视图”](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views)。
+1. [声明对应用程序清单中的 shareTarget 激活合约提供支持。](#declaring-support-for-the-share-contract)
+2. [为用户可与之共用应用的联系人添加注释。](#annotating-contacts)
+3. 支持同时运行应用程序的多个实例。  用户必须能够与完整版本的应用程序进行交互，并且同时也可以使用应用程序与其他人共享。 他们可以同时在多个共享窗口中使用该应用程序。 为了对此提供支持，应用程序需要能够同时运行多个视图。 若要了解如何执行此操作，请参阅文章[“显示应用的多个视图”](../design/layout/show-multiple-views.md)。
 
 当你完成此操作后，应用程序将在“我的人脉”共享窗口中显示为共享目标，可以通过以下两种方式启动共享目标：
 1. 通过共享超级按钮选择联系人。
@@ -75,7 +75,7 @@ ms.locfileid: "75683485"
 </Applications>
 ```
 
-此代码将添加对所有文件和数据格式的支持，但是你可以选择指定所支持的文件类型和数据格式（请参阅 [ShareTarget 类文档](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)了解更多详细信息）。
+此代码将添加对所有文件和数据格式的支持，但是你可以选择指定所支持的文件类型和数据格式（请参阅 [ShareTarget 类文档](/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)了解更多详细信息）。
 
 ## <a name="annotating-contacts"></a>为联系人添加注释
 
@@ -107,7 +107,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 
 ## <a name="running-as-a-my-people-share-target"></a>作为“我的人脉”共享目标运行
 
-最后，若要运行该应用，请替代应用主类中的 [OnShareTargetActivated](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) 方法，以处理共享目标激活。 [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties) 属性将包含与之共享的联系人，如果这是标准共享操作（不是“我的人脉”共享），则将为空。
+最后，若要运行该应用，请替代应用主类中的 [OnShareTargetActivated](/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) 方法，以处理共享目标激活。 [ShareTargetActivatedEventArgs.ShareOperation.Contacts](/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties) 属性将包含与之共享的联系人，如果这是标准共享操作（不是“我的人脉”共享），则将为空。
 
 ```Csharp
 protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -132,6 +132,6 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 ```
 
 ## <a name="see-also"></a>另请参阅
-+ [添加我的人员支持](my-people-support.md)
-+ [ShareTarget 类](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
++ [添加“我的人脉”支持](my-people-support.md)
++ [ShareTarget 类](/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
 + [联系人卡集成示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

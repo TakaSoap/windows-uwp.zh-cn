@@ -6,22 +6,22 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b5b5678ad1a0666e6f008a2ec69ba63c35441edf
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: b44e4ba86ab96474d4770c32024b8edc5641c396
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493512"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174281"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 运行时组件中引发事件
 
 > [!NOTE]
-> 有关在[c + +/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Windows 运行时组件中引发事件的详细信息，请参阅[在 c + + 中创作事件/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)。
+> 有关在 [c + +/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows 运行时组件中引发事件的详细信息，请参阅 [在 c + + 中创作事件/WinRT](../cpp-and-winrt-apis/author-events.md)。
 
-如果 Windows 运行时组件在后台线程（工作线程）上引发用户定义的委托类型的事件，并且你希望 JavaScript 能够接收事件，则可以通过以下任一方式实现和/或引发该事件。
+如果 Windows 运行时组件在后台线程上引发用户定义的委托类型的事件 (工作线程) ，并且你希望 JavaScript 能够接收事件，则可以通过以下任一方式实现和/或引发该事件。
 
--   （选项1）通过[**CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher)引发事件，将事件封送到 JavaScript 线程上下文。 尽管通常情况下，这是最佳选项，但在某些情况中，它可能不会提供最快性能。
--   （选项2）使用** [EventHandler](/uwp/api/windows.foundation.eventhandler-1) \<Object\> ** （但会丢失事件类型信息）。 如果选项1不可行或其性能不够，则这是一个很好的第二个选择，因为丢失类型信息是可接受的。 如果正在创作 c # Windows 运行时组件，则**EventHandler \<Object\> **类型将不可用; 而是将该类型投影到[**EventHandler**](/dotnet/api/system.eventhandler)，因此应改用。
+-    (选项 1) 通过 [**CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher) 引发事件以便将事件封送到 JavaScript 线程上下文。 尽管通常情况下，这是最佳选项，但在某些情况中，它可能不会提供最快性能。
+-    (选项 2) 使用** [EventHandler](/uwp/api/windows.foundation.eventhandler-1) \<Object\> ** (但丢失事件类型信息) 。 如果选项1不可行或其性能不够，则这是一个很好的第二个选择，因为丢失类型信息是可接受的。 如果正在创作 c # Windows 运行时组件，则**EventHandler \<Object\> **类型将不可用; 而是将该类型投影到[**EventHandler**](/dotnet/api/system.eventhandler)，因此应改用。
 -   （选项 3）为组件创建你自己的代理和存根。 此选项是最难以实现的选项，但它会保留类型信息，并且在需要的情况下，可能提供比选项 1 更为出色的性能。
 
 如果你只是在后台线程中引发了一个事件而不使用其中任一选项，JavaScript 客户端将不会接收该事件。
@@ -136,9 +136,9 @@ toastCompletedEventHandler: function (event) {
 
 ## <a name="to-create-the-windows-runtime-component"></a>创建 Windows 运行时组件
 
-在 Visual Studio 的菜单栏上，选择 "**文件" " &gt; 新建项目**"。 在“新建项目”**** 对话框中，依次展开JavaScript&gt;“通用 Windows”****，然后选择“空白应用”****。 将该项目命名为 ToasterApplication，然后选择“确定”**** 按钮。
+在 Visual Studio 的菜单栏上，选择 " **文件" " &gt; 新建项目**"。 在“新建项目”**** 对话框中，依次展开JavaScript&gt;“通用 Windows”****，然后选择“空白应用”****。 将该项目命名为 ToasterApplication，然后选择“确定”**** 按钮。
 
-向解决方案中添加一个 C# Windows 运行时组件：在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后依次选择“添加”&gt;“新建项目”****。 展开 " **Visual c #" &gt; Microsoft Store**然后选择 " **Windows 运行时组件**"。 将该项目命名为 ToasterComponent，然后选择“确定”**** 按钮。 ToasterComponent 将是你在后面步骤中创建的组件的根命名空间。
+向解决方案中添加一个 C# Windows 运行时组件：在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后依次选择“添加”&gt;“新建项目”****。 展开 " **Visual c #" &gt; Microsoft Store** 然后选择 " **Windows 运行时组件**"。 将该项目命名为 ToasterComponent，然后选择“确定”**** 按钮。 ToasterComponent 将是你在后面步骤中创建的组件的根命名空间。
 
 在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后选择“属性”****。 在“属性页”**** 对话框中，选择左侧窗格中的“配置属性”****，然后在该对话框顶部，将“配置”**** 设置为“调试”**** 以及将“平台”**** 设置为 x86、x64 或 ARM。 选择“确定”  按钮。
 
@@ -283,7 +283,7 @@ IToast 接口具有一个字符串，可以检索该字符串来描述 Toast 的
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>为组件的接口生成 GUID（C# 和其他 .NET 语言）
 
-在菜单栏上，选择“工具”&gt;“创建 GUID”。 在对话框中，选择“5. \[Guid （"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx .。。xxxx "） \] 。 选择“新建 GUID”按钮，然后选择“复制”按钮。
+在菜单栏上，选择“工具”&gt;“创建 GUID”。 在对话框中，选择“5. \[Guid ( "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx .。。xxxx ") \] 。 选择“新建 GUID”按钮，然后选择“复制”按钮。
 
 ![GUID 生成器工具](./images/guidgeneratortool.png)
 
@@ -341,7 +341,7 @@ midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid 
 
 ## <a name="to-compile-the-proxy-and-stub-code-into-a-dll"></a>将代理和存根代码编译到 DLL 中
 
-在有了所需的文件后，便可以将它们编译为生成 DLL，即一个 C++ 文件。 为了使此操作尽量简单，请添加新的项目以支持生成代理。 打开 ToasterApplication 解决方案的快捷菜单，然后选择**添加 > 新项目**。 在 "**新建项目**" 对话框的左窗格中，展开 " **Visual C++ &gt; windows &gt; 通用 windows**"，然后在中间窗格中选择 " **DLL （UWP 应用）**"。 （请注意，这不是 C++ Windows 运行时组件项目。）将项目命名为 Proxies，然后选择**确定**按钮。 当 C# 类中发生更改时，这些文件将被生成后事件更新。
+在有了所需的文件后，便可以将它们编译为生成 DLL，即一个 C++ 文件。 为了使此操作尽量简单，请添加新的项目以支持生成代理。 打开 ToasterApplication 解决方案的快捷菜单，然后选择**添加 > 新项目**。 在 " **新建项目** " 对话框的左窗格中，展开 " **Visual C++ &gt; windows &gt; 通用 windows**"，然后在中间窗格中选择 " **DLL (UWP apps) **"。 （请注意，这不是 C++ Windows 运行时组件项目。）将项目命名为 Proxies，然后选择**确定**按钮。 当 C# 类中发生更改时，这些文件将被生成后事件更新。
 
 默认情况下，Proxies 项目会生成标头 .h 文件和 C++ .cpp 文件。 由于 DLL 是从由 MIDL 生成的文件构建的，因此不需要 .h 和 .cpp 文件。 在“解决方案资源管理器”中，打开它们的快捷菜单，选择**删除**，然后确认删除。
 

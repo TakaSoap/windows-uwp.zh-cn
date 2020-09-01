@@ -1,17 +1,17 @@
 ---
 ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
-description: 了解如何使用 JavaScript/HTML 启动间隙广告。
+description: 了解如何使用以 JavaScript 和 HTML 编写的通用 Windows 平台 (UWP) 应用启动插播式 ad。
 title: JavaScript 中的间隙广告示例代码
 ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 间隙, javascript, 示例代码
 ms.localizationpriority: medium
-ms.openlocfilehash: b9aaf24ac4471c9873035afa91294dabd0487a4c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 764d5dd3f48afa7c446c51ff88090cba88654eba
+ms.sourcegitcommit: e273e5901bfa6596dfef4cc741bb1c42614c25ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164581"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238262"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>JavaScript 中的间隙广告示例代码
 

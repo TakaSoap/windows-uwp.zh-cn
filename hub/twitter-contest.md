@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: uwp
 ms.technology: apps
 ms.date: 03/19/2020
-ms.openlocfilehash: b6cdab774389d4cbd41c53d6ca6a368eb182c339
-ms.sourcegitcommit: 4c7f1e5952ead9b9a71a8d13795d1771a5f3219e
+ms.openlocfilehash: 0f67795f57ba5a7af1fea54eac59e00b5664d6e8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80871010"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174541"
 ---
 # <a name="contribute-to-windows-docs-and-be-entered-to-win-some-swag"></a>参与 Windows 文档并进入以赢得一些顺手牵羊
 
@@ -21,15 +21,15 @@ ms.locfileid: "80871010"
 
 下面是需要执行的操作：
 
-1. [使用 GitHub 设置帐户](https://github.com/join)（如果还没有帐户），并阅读[文档参与者指南](https://docs.microsoft.com/contribute/)。
+1. [使用 GitHub 设置帐户](https://github.com/join)（如果还没有帐户），并阅读[文档参与者指南](/contribute/)。
 2. 阅读以下文档内容，查找更好的内容：
-    -  - [UWP](https://docs.microsoft.com/windows/uwp/)、 [Win32](https://docs.microsoft.com/windows/win32/)、 [WPF](https://docs.microsoft.com/dotnet/framework/wpf/) [Windows 窗体](https://docs.microsoft.com/dotnet/framework/winforms/)**生成桌面应用**
-    - [适用于 UWP 应用的](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/) **Windows UI 库** - 控件，[控制 API 参考](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls?view=winui-2.3)
-    - Windows - [Windows 子系统（适用于 Linux](https://docs.microsoft.com/windows/wsl/about)）、 [Python](https://docs.microsoft.com/windows/python/)、 [NodeJS](https://docs.microsoft.com/windows/nodejs/)、 [Mac 到 Windows 指南](https://docs.microsoft.com/windows/dev-environment/mac-to-windows)的**构建**
-    - **Windows 硬件开发人员** - [工具和驱动程序](https://docs.microsoft.com/windows-hardware/drivers/)
-3. 通过选择页面顶部的 "**编辑**" 按钮来更正文档页。 这会将你转到 GitHub 中的 markdown 源文件。
-4. 更改完成后。 将拉取请求（PR）文件。
-5. 回复[@WindowsDocs 比赛](https://twitter.com/WindowsDocs/status/1242088720209268736)，其中包含你的 PR 的链接。
+    - **生成桌面应用**  - [UWP](/windows/uwp/)、 [Win32](/windows/win32/)、 [WPF](/dotnet/framework/wpf/)、 [Windows 窗体](/dotnet/framework/winforms/)
+    - **WINDOWS UI 库**  - [UWP 应用的控件](/windows/uwp/design/controls-and-patterns/)，[控件 API 参考](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.3)
+    - **用 Windows 生成**  - [适用于 Linux 的 Windows 子系统](/windows/wsl/about)、 [Python](./python/index.yml)、 [NodeJS](./nodejs/index.yml)、 [Mac 到 Windows 指南](./dev-environment/mac-to-windows.md)
+    - **Windows 硬件开发人员**  - [工具和驱动程序](/windows-hardware/drivers/)
+3. 通过选择页面顶部的 " **编辑** " 按钮来更正文档页。 这会将你转到 GitHub 中的 markdown 源文件。
+4. 更改完成后。 将拉取请求文件 (PR) 。
+5. 使用你的 PR 的链接回复[ @WindowsDocs 比赛帖子](https://twitter.com/WindowsDocs/status/1242088720209268736)。
 
 感谢我们的开发人员社区！
 

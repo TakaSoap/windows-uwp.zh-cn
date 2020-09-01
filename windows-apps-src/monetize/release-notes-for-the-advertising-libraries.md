@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, 广告, 发行说明
 ms.localizationpriority: medium
-ms.openlocfilehash: 10762d28191dfe59ae6f63f06cbeb0dd3e8a9f51
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 8faf352040b9d7bdc9fc8bc79804d5903573d41d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969915"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174961"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising 库的发行说明
 
@@ -35,7 +35,7 @@ Microsoft 广告库作为 [Microsoft 广告 SDK](https://marketplace.visualstudi
 
 ## <a name="c-support"></a>C++ 支持
 
-Microsoft Advertising 库（其中包括 **AdControl** 和 **InterstitialAd** 类）支持在 C++ 和 DirectX 中使用 Windows 运行时互操作性（*互操作*）编写的应用。 有关使用 XAML 和 C++ 编程的详细信息和示例，请参阅[类型系统](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
+Microsoft Advertising 库（其中包括 **AdControl** 和 **InterstitialAd** 类）支持在 C++ 和 DirectX 中使用 Windows 运行时互操作性（*互操作*）编写的应用。 有关使用 XAML 和 C++ 编程的详细信息和示例，请参阅[类型系统](/cpp/cppcx/type-system-c-cx)。
 
 ## <a name="no-toolbox-control"></a>没有工具箱控件
 

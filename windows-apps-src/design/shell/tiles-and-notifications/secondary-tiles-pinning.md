@@ -1,5 +1,5 @@
 ---
-Description: 了解如何从 Windows 应用程序中固定辅助磁贴。
+description: 了解如何创建辅助磁贴，并通过通用 Windows 平台 (UWP) 应用以编程方式将其固定到 "开始" 菜单。
 title: 将辅助磁贴固定到“开始”菜单
 label: Pin secondary tiles to Start
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile
 ms.localizationpriority: medium
-ms.openlocfilehash: 7499a9a4040850595f616a5de0badb9efeab635f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8e3949bd4534d32f202aaec78b91eb8c780e6db8
+ms.sourcegitcommit: e273e5901bfa6596dfef4cc741bb1c42614c25ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172311"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238282"
 ---
 # <a name="pin-secondary-tiles-to-start"></a>将辅助磁贴固定到“开始”菜单
 

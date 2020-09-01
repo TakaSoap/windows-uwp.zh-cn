@@ -6,27 +6,27 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c18b2ab7af1b83ab54f98dc85d73ae621524f52f
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 2965eb3196f2a19f7d5351ee422013c6c22ba88a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493192"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174301"
 ---
 # <a name="windows-runtime-components-with-ccx"></a>使用 C++/CX 创建 Windows 运行时组件
 
 > [!NOTE]
-> 本主题旨在帮助你维护 C++/CX 应用程序。 不过，我们建议你使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 编写新应用程序。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 若要了解如何使用 c + +/WinRT 创建 Windows 运行时组件，请参阅[使用 c + +/WinRT 组件 Windows 运行时](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)。
+> 本主题旨在帮助你维护 C++/CX 应用程序。 不过，我们建议你使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 编写新应用程序。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 若要了解如何使用 C++/WinRT 创建 Windows 运行时组件，请参阅[使用 C++/WinRT 创建 Windows 运行时组件](./create-a-windows-runtime-component-in-cppwinrt.md)。
 
-本主题演示如何使用 c + +/CX 创建 Windows 运行时组件 &mdash; ，该组件可从使用任意 Windows 运行时语言（c #、Visual Basic、c + + 或 Javascript）生成的通用 Windows 应用程序调用。
+本主题演示如何使用 c + +/CX 创建 Windows 运行时组件 &mdash; ，该组件可从使用任意 Windows 运行时 (语言（c #、Visual Basic、c + + 或 Javascript) ）生成的通用 Windows 应用程序中调用。
 
 用 c + + 构建 Windows 运行时组件有多种原因。
 - 在复杂或计算密集型操作中获取 C++ 的性能优势。
 - 重复使用已编写和测试的代码。
 
-在生成包含 JavaScript 或 .NET 项目的解决方案时，Windows 运行时组件项目、JavaScript 项目文件和编译的 DLL 会合并到一个程序包中，可以在模拟器中本地调试或在受限设备上远程调试该程序包。 你还可以仅将组件项目作为扩展 SDK 进行分配。 有关详细信息，请参阅[创建软件开发工具包](https://docs.microsoft.com/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015)。
+在生成包含 JavaScript 或 .NET 项目的解决方案时，Windows 运行时组件项目、JavaScript 项目文件和编译的 DLL 会合并到一个程序包中，可以在模拟器中本地调试或在受限设备上远程调试该程序包。 你还可以仅将组件项目作为扩展 SDK 进行分配。 有关详细信息，请参阅[创建软件开发工具包](/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015)。
 
-通常，当你编写 c + +/CX 组件的代码时，请使用常规 c + + 库和内置类型，但在将数据传递到另一个 winmd 包的代码的抽象二进制接口（ABI）边界中除外。 在那里，使用 Windows 运行时类型和 c + +/CX 支持的用于创建和操作这些类型的特殊语法。 此外，在 c + +/CX 代码中，可以使用委托和事件等类型来实现可从你的组件引发并在 JavaScript、Visual Basic、c + + 或 c # 中进行处理的事件。 有关 c + +/CX 语法的详细信息，请参阅[Visual C++ 语言参考（c + +/cx）](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx)。
+通常，当你编写 c + +/CX 组件的代码时，请使用常规 c + + 库和内置类型，但在抽象二进制接口 (ABI) 边界，在该边界内，你要将数据传递到另一个 winmd 包中的代码。 在那里，使用 Windows 运行时类型和 c + +/CX 支持的用于创建和操作这些类型的特殊语法。 此外，在 c + +/CX 代码中，可以使用委托和事件等类型来实现可从你的组件引发并在 JavaScript、Visual Basic、c + + 或 c # 中进行处理的事件。 有关 c + +/CX 语法的详细信息，请参阅 [c + +/cx (Visual C++ 语言参考) ](/cpp/cppcx/visual-c-language-reference-c-cx)。
 
 ## <a name="casing-and-naming-rules"></a>大小写和命名规则
 
@@ -41,7 +41,7 @@ JavaScript 区分大小写。 因此，必须遵循以下大小写约定：
 .NET 语言遵循其正常大小写规则。
 
 ## <a name="instantiating-the-object"></a>实例化对象
-仅 Windows 运行时类型可以跨 ABI 边界传递。 如果组件在公共方法中具有作为返回类型或参数的类型（例如 std::wstring），编译器将引发错误。 Visual C++ 组件扩展 (C++/CX) 内置类型包括诸如整型和双精度型的常用标量及其 typedef 等效项 int32、float64 等。 有关详细信息，请参阅[类型系统 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
+仅 Windows 运行时类型可以跨 ABI 边界传递。 如果组件在公共方法中具有作为返回类型或参数的类型（例如 std::wstring），编译器将引发错误。 Visual C++ 组件扩展 (C++/CX) 内置类型包括诸如整型和双精度型的常用标量及其 typedef 等效项 int32、float64 等。 有关详细信息，请参阅[类型系统 (C++/CX)](/cpp/cppcx/type-system-c-cx)。
 
 ```cpp
 // ref class definition in C++
@@ -74,15 +74,15 @@ ResultText.Text = num.ToString();
 ## <a name="ccx-built-in-types-library-types-and-windows-runtime-types"></a>C + +/CX 内置类型、库类型和 Windows 运行时类型
 可激活类（也称为 ref 类）是可通过其他诸如 JavaScript、C# 或 Visual Basic 语言实例化的类。 若要能够通过其他语言使用，组件必须包含至少一项可激活类。
 
-Windows 运行时组件可以包含多个公共的可激活类以及其他仅为组件内部所知的类。 将[WebHostHidden](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.webhosthiddenattribute)特性应用于不应向 JavaScript 显示的 c + +/cx 类型。
+Windows 运行时组件可以包含多个公共的可激活类以及其他仅为组件内部所知的类。 将 [WebHostHidden](/uwp/api/windows.foundation.metadata.webhosthiddenattribute) 特性应用于不应向 JavaScript 显示的 c + +/cx 类型。
 
 所有公共类必须驻留在与组件元数据文件具有相同名称的相同根命名空间中。 例如，名为 A.B.C.MyClass 的类只有在名为 A.winmd 或 A.B.winmd 或 A.B.C.winmd 的元数据文件中定义后才能实例化。 DLL 的名称不必与 .winmd 文件名匹配。
 
 就像对任意类一样，客户端代码使用 **new**（在 Visual Basic 中是 **New**）关键字创建组件实例。
 
-可激活类必须声明为 **public ref class sealed**。 **ref class** 关键字告知编译器将类创建为 Windows 运行时兼容类型，而 sealed 关键字指定该类无法继承。 Windows 运行时当前无法支持一般化的继承模型；有限的继承模型支持创建自定义 XAML 控件。 有关详细信息，请参阅 [Ref 类和结构 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/ref-classes-and-structs-c-cx)。
+可激活类必须声明为 **public ref class sealed**。 **ref class** 关键字告知编译器将类创建为 Windows 运行时兼容类型，而 sealed 关键字指定该类无法继承。 Windows 运行时当前无法支持一般化的继承模型；有限的继承模型支持创建自定义 XAML 控件。 有关详细信息，请参阅 [Ref 类和结构 (C++/CX)](/cpp/cppcx/ref-classes-and-structs-c-cx)。
 
-对于 c + +/CX，所有数值基元都在默认命名空间中定义。 [平台](https://docs.microsoft.com/cpp/cppcx/platform-namespace-c-cx)命名空间包含特定于 Windows 运行时类型系统的 c + +/cx 类。 这些类包括 [Platform::String](https://docs.microsoft.com/cpp/cppcx/platform-string-class) 类和 [Platform::Object](https://docs.microsoft.com/cpp/cppcx/platform-object-class) 类。 诸如 [Platform::Collections::Map](https://docs.microsoft.com/cpp/cppcx/platform-collections-map-class) 类和 [Platform::Collections::Vector](https://docs.microsoft.com/cpp/cppcx/platform-collections-vector-class) 类的具体集合类型在 [Platform::Collections](https://docs.microsoft.com/cpp/cppcx/platform-collections-namespace) 命名空间中定义。 这些类型实现的公共接口在 [Windows::Foundation::Collections 命名空间 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/windows-foundation-collections-namespace-c-cx) 中定义。 JavaScript、C# 和 Visual Basic 使用的正是这些接口类型。 有关详细信息，请参阅[类型系统 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
+对于 c + +/CX，所有数值基元都在默认命名空间中定义。 [平台](/cpp/cppcx/platform-namespace-c-cx)命名空间包含特定于 Windows 运行时类型系统的 c + +/cx 类。 这些类包括 [Platform::String](/cpp/cppcx/platform-string-class) 类和 [Platform::Object](/cpp/cppcx/platform-object-class) 类。 诸如 [Platform::Collections::Map](/cpp/cppcx/platform-collections-map-class) 类和 [Platform::Collections::Vector](/cpp/cppcx/platform-collections-vector-class) 类的具体集合类型在 [Platform::Collections](/cpp/cppcx/platform-collections-namespace) 命名空间中定义。 这些类型实现的公共接口在 [Windows::Foundation::Collections 命名空间 (C++/CX)](/cpp/cppcx/windows-foundation-collections-namespace-c-cx) 中定义。 JavaScript、C# 和 Visual Basic 使用的正是这些接口类型。 有关详细信息，请参阅[类型系统 (C++/CX)](/cpp/cppcx/type-system-c-cx)。
 
 ## <a name="method-that-returns-a-value-of-built-in-type"></a>返回内置类型值的方法
 ```cpp
@@ -192,7 +192,7 @@ int GetNumber(int i);
 double GetNumber(double d);
 ```
 
-在不明确的情况下，通过在标头文件中将 [Windows::Foundation::Metadata::DefaultOverload](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.defaultoverloadattribute) 属性应用到方法签名，你可以确保 JavaScript 始终调用特定重载。
+在不明确的情况下，通过在标头文件中将 [Windows::Foundation::Metadata::DefaultOverload](/uwp/api/windows.foundation.metadata.defaultoverloadattribute) 属性应用到方法签名，你可以确保 JavaScript 始终调用特定重载。
 
 此 JavaScript 始终调用属性化重载：
 
@@ -206,7 +206,7 @@ document.getElementById('P4').innerHTML = num;
 .NET 语言识别 c + +/CX ref 类中的重载，就像在任何 .NET 类中一样。
 
 ## <a name="datetime"></a>DateTime
-在 Windows 运行时中，[Windows::Foundation::DateTime](https://docs.microsoft.com/uwp/api/windows.foundation.datetime) 对象仅是一个 64 位有符号的整数，代表 1601 年 1 月 1 日前或后 100 纳秒间隔的数字。 Windows:Foundation::DateTime 对象上没有方法。 相反，每个语言以该语言的本机方式投影日期时间： JavaScript 中的 Date 对象和 .NET 中的 system.string 和 System.object 类型。
+在 Windows 运行时中，[Windows::Foundation::DateTime](/uwp/api/windows.foundation.datetime) 对象仅是一个 64 位有符号的整数，代表 1601 年 1 月 1 日前或后 100 纳秒间隔的数字。 Windows:Foundation::DateTime 对象上没有方法。 相反，每个语言以该语言的本机方式投影日期时间： JavaScript 中的 Date 对象和 .NET 中的 system.string 和 System.object 类型。
 
 ```cpp
 public  ref class MyDateClass sealed
@@ -260,7 +260,7 @@ private void DateTimeExample()
 ```
 
 ## <a name="collections-and-arrays"></a>集合和数组
-集合始终作为 Windows 运行时类型（例如 Windows::Foundation::Collections::IVector^ 和 Windows::Foundation::Collections::IMap^）的句柄在 ABI 边界上传递。 例如，如果将句柄返回到 Platform::Collections::Map，它会隐式转换为 Windows::Foundation::Collections::IMap^。 集合接口在与提供具体实现的 c + +/CX 类不同的命名空间中定义。 JavaScript 和 .NET 语言使用接口。 有关详细信息，请参阅[集合 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/collections-c-cx) 和[数组和 WriteOnlyArray (C++/CX)](https://docs.microsoft.com/cpp/cppcx/array-and-writeonlyarray-c-cx)。
+集合始终作为 Windows 运行时类型（例如 Windows::Foundation::Collections::IVector^ 和 Windows::Foundation::Collections::IMap^）的句柄在 ABI 边界上传递。 例如，如果将句柄返回到 Platform::Collections::Map，它会隐式转换为 Windows::Foundation::Collections::IMap^。 集合接口在与提供具体实现的 c + +/CX 类不同的命名空间中定义。 JavaScript 和 .NET 语言使用接口。 有关详细信息，请参阅[集合 (C++/CX)](/cpp/cppcx/collections-c-cx) 和[数组和 WriteOnlyArray (C++/CX)](/cpp/cppcx/array-and-writeonlyarray-c-cx)。
 
 ## <a name="passing-ivector"></a>传递 IVector
 ```cpp
@@ -541,11 +541,11 @@ Direction[curDirection];
 C# 和 Visual Basic 均支持枚举语言。 这些语言会看到 c + + 公共枚举类，就像它们会看到 .NET 枚举一样。
 
 ## <a name="asynchronous-methods"></a>异步方法
-若要使用其他 Windows 运行时对象公开的异步方法，请使用[任务类（并发运行时）](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-class)。 有关详细信息，请参阅[任务并行度（并发运行时）](https://docs.microsoft.com/cpp/parallel/concrt/task-parallelism-concurrency-runtime)。
+若要使用其他 Windows 运行时对象公开的异步方法，请使用[任务类（并发运行时）](/cpp/parallel/concrt/reference/task-class)。 有关详细信息，请参阅[任务并行度（并发运行时）](/cpp/parallel/concrt/task-parallelism-concurrency-runtime)。
 
-若要在 c + +/CX 中实现异步方法，请使用 ppltasks.h 中定义的[create \_ async](https://docs.microsoft.com/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017)函数。 有关详细信息，请参阅[在适用于 UWP 应用的 c + +/cx 中创建异步操作](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)。 有关示例，请参阅[创建 c + +/cx Windows 运行时组件并从 JavaScript 或 c # 中调用该组件的演练](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 语言使用 c + +/CX 异步方法，就像它们是在 .NET 中定义的任何异步方法一样。
+若要在 c + +/CX 中实现异步方法，请使用 ppltasks.h 中定义的 [create \_ async](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) 函数。 有关详细信息，请参阅 [在适用于 UWP 应用的 c + +/cx 中创建异步操作](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)。 有关示例，请参阅 [创建 c + +/cx Windows 运行时组件并从 JavaScript 或 c # 中调用该组件的演练](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 语言使用 c + +/CX 异步方法，就像它们是在 .NET 中定义的任何异步方法一样。
 
-## <a name="exceptions"></a>异常
+## <a name="exceptions"></a>例外
 你可以引发任何由 Windows 运行时定义的异常类型。 你无法从任何 Windows 运行时异常类型中派生自定义类型。 但是，你可以引发 COMException 并提供可由捕获异常的代码访问的自定义 HRESULT。 无法在 COMException 中指定自定义消息。
 
 ## <a name="debugging-tips"></a>调试提示

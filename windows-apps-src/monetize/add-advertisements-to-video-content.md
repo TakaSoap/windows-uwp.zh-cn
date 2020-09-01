@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 视频, scheduler, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: b42c917a0532a015a789c8b4ac57d59c65804ce1
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 6baf26b083cce08557a9b09f2ba95d5ad889f4a4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970195"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175101"
 ---
 # <a name="show-ads-in-video-content"></a>在视频内容中显示广告
 
@@ -27,7 +27,7 @@ ms.locfileid: "88970195"
 
 视频内容的广告根据程序短于十分钟（简短形式）还是长于十分钟（较长形式）而有所不同。 虽然后者在服务上设置时更为复杂，但实际上在用户编写客户端代码方式方面没有任何不同。 如果 **AdScheduler** 接收具有单个广告（而不是清单）的 VAST 负载，它将被视为针对单个前导广告调用的清单（在 00:00 时中断一次）。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 * 使用 Visual Studio 2015 安装 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 或更高版本。
 
@@ -73,7 +73,7 @@ ms.locfileid: "88970195"
     > [!NOTE]
     > 在包含了 main.js 之后，此行必须放置在 `<head>` 部分；否则，当你生成项目时将遇到错误。
 
-6.  在你的项目的 main.js 文件中，添加可创建新 **AdScheduler** 对象的代码。 传入可托管视频内容的 **MediaPlayer**。 必须放置代码，以便它在 [WinJS.UI.processAll](https://docs.microsoft.com/previous-versions/windows/apps/hh440975) 后运行。
+6.  在你的项目的 main.js 文件中，添加可创建新 **AdScheduler** 对象的代码。 传入可托管视频内容的 **MediaPlayer**。 必须放置代码，以便它在 [WinJS.UI.processAll](/previous-versions/windows/apps/hh440975) 后运行。
 
     [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
 
@@ -81,7 +81,7 @@ ms.locfileid: "88970195"
 
     * 如果你是已接收从 Microsoft 广告服务器请求广告计划权限的 Microsoft 合作伙伴，请使用 **requestSchedule** 并指定 Microsoft 代表已向你提供的应用程序 ID 和广告单元 ID。
 
-        此方法采用 [Promise](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps#asynchronous-patterns-in-uwp-using-javascript)形式，这是一个异步构造，在其中传递两个函数指针：一个是 **onComplete** 函数的指针，在承诺成功完成时调用，另一个是 **onError** 函数的指针，在遇到错误时调用。 在 **onComplete** 函数中，开始播放视频内容。 广告将在计划的时间开始播放。 在 **onError** 函数中，处理错误，然后开始播放视频。 视频内容将无广告播放。 **onError** 函数的参数是一个包含以下成员的对象。
+        此方法采用 [Promise](../threading-async/asynchronous-programming-universal-windows-platform-apps.md#asynchronous-patterns-in-uwp-using-javascript)形式，这是一个异步构造，在其中传递两个函数指针：一个是 **onComplete** 函数的指针，在承诺成功完成时调用，另一个是 **onError** 函数的指针，在遇到错误时调用。 在 **onComplete** 函数中，开始播放视频内容。 广告将在计划的时间开始播放。 在 **onError** 函数中，处理错误，然后开始播放视频。 视频内容将无广告播放。 **onError** 函数的参数是一个包含以下成员的对象。
 
         [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet3)]
 
@@ -165,7 +165,7 @@ ms.locfileid: "88970195"
 
 ### <a name="onerroroccurred"></a>onErrorOccurred  
 
-当 **AdScheduler** 遇到错误时引发此事件。 有关错误代码值的详细信息，请参阅[错误代码](https://docs.microsoft.com/uwp/api/microsoft.advertising.errorcode)。
+当 **AdScheduler** 遇到错误时引发此事件。 有关错误代码值的详细信息，请参阅[错误代码](/uwp/api/microsoft.advertising.errorcode)。
 
 ### <a name="onpodcountdown"></a>onPodCountdown
 

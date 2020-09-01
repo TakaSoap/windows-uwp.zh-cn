@@ -13,18 +13,18 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5025a63f5c96365ba1f14311b9c68ed41f4fc5aa
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 491b67322c8b328c21446d50951daad61f15ad3d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234597"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175571"
 ---
 # <a name="designing-for-xbox-and-tv"></a>针对 Xbox 和电视进行设计
 
 设计您的 Windows 应用程序，使其在 Xbox One 和电视屏幕上看起来良好且功能良好。
 
-请参阅[游戏板和远程控制交互](../input/gamepad-and-remote-interactions.md)，获取有关在*10 英尺*体验中的 UWP 应用程序的交互体验指导。
+请参阅 [游戏板和远程控制交互](../input/gamepad-and-remote-interactions.md) ，获取有关在 *10 英尺* 体验中的 UWP 应用程序的交互体验指导。
 
 ## <a name="overview"></a>概述
 
@@ -66,7 +66,7 @@ _**屏幕截图中显示的所有电影都可从 Microsoft 电影 & TV 获得。
 
 现在你已了解了适用于 10 英尺体验的良好 UWP 应用设计的原则，请阅读以下关于优化应用和实现出色用户体验的特定方法的概述。
 
-| 功能        | 说明           |
+| 功能        | 描述           |
 | -------------------------------------------------------------- |--------------------------------|
 | [UI 元素大小调整](#ui-element-sizing)  | 通用 Windows 平台使用[缩放和有效像素](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)来根据观看距离缩放 UI。 了解大小调整并在 UI 上应用它有助于针对 10 英尺环境优化你的应用。  |
 |  [电视安全区域](#tv-safe-area) | 默认情况下，UWP 将自动避免在电视不安全区域（接近屏幕边缘的区域）显示任何 UI。 但是，这将导致“箱中”效果，即 UI 看起来以宽屏显示。 为了使你的应用在电视上提供真正的沉浸式体验，你将要对其进行修改，以使其延伸到电视上的屏幕边缘（如果电视支持此功能）。 |
@@ -75,14 +75,14 @@ _**屏幕截图中显示的所有电影都可从 Microsoft 电影 & TV 获得。
 | [UI 控件指南](#guidelines-for-ui-controls)  |  有多个 UI 控件可跨多台设备运行良好，但在电视上使用时有些特定的注意事项。 请阅读在针对 10 英尺体验进行设计时使用这些控件的一些最佳做法。 |
 | [Xbox 的自定义视觉状态触发器](#custom-visual-state-trigger-for-xbox) | 若要针对 3 米体验定制 UWP 应用，我们建议你使用自定义*视觉状态触发器*，以在应用检测到它已在 Xbox 主机上启动时更改布局。 |
 
-除了前面的设计和布局注意事项外，在构建应用程序时，还应考虑许多[游戏板和远程控制交互](../input/gamepad-and-remote-interactions.md)优化。
+除了前面的设计和布局注意事项外，在构建应用程序时，还应考虑许多 [游戏板和远程控制交互](../input/gamepad-and-remote-interactions.md) 优化。
 
-| 功能        | 说明           |
+| 功能        | 描述           |
 | -------------------------------------------------------------- |--------------------------------|
 | [XY 焦点导航和交互](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | 通过**XY 焦点导航**，用户可以在应用的 UI 周围导航。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
-| [鼠标模式](../input/gamepad-and-remote-interactions.md#mouse-mode)|对于某些类型的应用程序（例如地图、绘图和绘图应用程序），XY 焦点导航并不可行，甚至可能不可行。 在这些情况下，**鼠标模式**使用户能够在游戏板或遥控器上自由导航，就像 PC 上的鼠标一样。|
+| [鼠标模式](../input/gamepad-and-remote-interactions.md#mouse-mode)|对于某些类型的应用程序（例如地图、绘图和绘图应用程序），XY 焦点导航并不可行，甚至可能不可行。 在这些情况下， **鼠标模式** 使用户能够在游戏板或遥控器上自由导航，就像 PC 上的鼠标一样。|
 | [焦点视觉对象](../input/gamepad-and-remote-interactions.md#focus-visual)  | 焦点视觉对象是突出显示当前聚焦的 UI 元素的边框。 这可帮助用户快速识别他们要浏览或与之交互的 UI。  |
-| [专注参与](../input/gamepad-and-remote-interactions.md#focus-engagement) | 当 UI 元素具有焦点以便与之进行交互时，用户需要在游戏板或遥控器上按下 **/选择**按钮。 |
+| [专注参与](../input/gamepad-and-remote-interactions.md#focus-engagement) | 当 UI 元素具有焦点以便与之进行交互时，用户需要在游戏板或遥控器上按下 **/选择** 按钮。 |
 | [硬件按钮](../input/gamepad-and-remote-interactions.md#hardware-buttons) | 游戏板和远程控制提供了非常不同的按钮和配置。 |
 
 > [!NOTE]
@@ -147,7 +147,7 @@ bool result =
     Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
 ```
 
-`result`将通知你是否成功选择了。
+`result` 将通知你是否成功选择了。
 
 有关详细信息，包括 HTML/JavaScript 示例代码，请参阅[如何关闭缩放](../../xbox-apps/disable-scaling.md)。
 
@@ -185,7 +185,7 @@ bool result =
 
 ### <a name="drawing-ui-to-the-edge"></a>将 UI 绘制到边缘
 
-我们建议你使用特定 UI 元素来延伸到屏幕边缘，以向用户提供更多的沉浸式体验。 这些元素包括 [ScrollViewers](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)、[nav panes](../controls-and-patterns/navigationview.md) 和 [CommandBars](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)。
+我们建议你使用特定 UI 元素来延伸到屏幕边缘，以向用户提供更多的沉浸式体验。 这些元素包括 [ScrollViewers](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)、[nav panes](../controls-and-patterns/navigationview.md) 和 [CommandBars](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)。
 
 另一方面，交互式元素和文本始终避开屏幕边缘以确保它们在某些电视上不会被切断，这一点也很重要。 我们建议你在屏幕边缘的 5% 内仅绘制非必要的视觉对象。 如 [UI 元素大小调整](#ui-element-sizing)中所述，遵循 Xbox One 主机的默认比例系数 200% 的 UWP 应用将利用 960 x 540 epx 的区域，因此在应用的 UI 中，你应避免在以下区域中放置必需 UI：
 
@@ -205,7 +205,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
     (Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
 ```
 
-通过此代码行，应用窗口将延伸到屏幕边缘，因此你需要将所有交互式和必需 UI 移动到之前所述的电视安全区域中。 临时 UI（如上下文菜单和打开的 [ComboBoxes](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)）将自动保留在电视安全区域内。
+通过此代码行，应用窗口将延伸到屏幕边缘，因此你需要将所有交互式和必需 UI 移动到之前所述的电视安全区域中。 临时 UI（如上下文菜单和打开的 [ComboBoxes](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)）将自动保留在电视安全区域内。
 
 ![核心窗口边界](images/designing-for-tv/core-window-bounds.png)
 
@@ -213,7 +213,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 导航窗格通常绘制在屏幕边缘附近，因此背景应延伸到电视不安全区域中，以免引入不可取的间距。 只需将导航窗格的背景颜色更改为应用的背景颜色即可达成目标。
 
-按上述方法使用核心窗口边界会允许你将 UI 绘制到屏幕边缘，但之后对于 [SplitView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView) 内容应使用正边距以确保内容位于电视安全区域内。
+按上述方法使用核心窗口边界会允许你将 UI 绘制到屏幕边缘，但之后对于 [SplitView](/uwp/api/Windows.UI.Xaml.Controls.SplitView) 内容应使用正边距以确保内容位于电视安全区域内。
 
 ![延伸到屏幕边缘的导航窗格](images/designing-for-tv/tv-safe-areas-2.png)
 
@@ -239,7 +239,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 </SplitView>
 ```
 
-[CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 是另一个通常定位在应用的一个或多个边缘附近的窗格示例，因此在电视上，它的背景应延伸到屏幕边缘。 它通常还**包含一个 "** ..."在右侧，它应保留在电视安全区域中。 以下是实现所需交互和视觉效果的一些不同策略。
+[CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 是另一个通常定位在应用的一个或多个边缘附近的窗格示例，因此在电视上，它的背景应延伸到屏幕边缘。 它通常还 **包含一个 "** ..."在右侧，它应保留在电视安全区域中。 以下是实现所需交互和视觉效果的一些不同策略。
 
 **选项 1**：将 `CommandBar` 背景色更改为透明或与页面背景相同的颜色：
 
@@ -280,7 +280,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 ![滚动网格焦点应保留在电视安全区域中。](images/designing-for-tv/scrolling-grid-focus.png)
 
-UWP 具有将焦点视觉对象保留在 [VisibleBounds](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.visiblebounds) 内部的功能，但你需要添加填充以确保列表/网格项可以滚动到安全区域的视图中。 具体来说，将正边距添加到 [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 或 [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 的 [ItemsPresenter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsPresenter)，如以下代码片段所示：
+UWP 具有将焦点视觉对象保留在 [VisibleBounds](/uwp/api/windows.ui.viewmanagement.applicationview.visiblebounds) 内部的功能，但你需要添加填充以确保列表/网格项可以滚动到安全区域的视图中。 具体来说，将正边距添加到 [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) 或 [GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView) 的 [ItemsPresenter](/uwp/api/Windows.UI.Xaml.Controls.ItemsPresenter)，如以下代码片段所示：
 
 ```xml
 <Style x:Key="TitleSafeListViewStyle"
@@ -331,9 +331,9 @@ UWP 具有将焦点视觉对象保留在 [VisibleBounds](https://docs.microsoft.
 ```
 
 > [!NOTE]
-> 此代码片段专门用于 `ListView`；对于 `GridView` 样式，请将 [ControlTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) 和 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 的 [TargetType](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 属性设置为 `GridView`。
+> 此代码片段专门用于 `ListView`；对于 `GridView` 样式，请将 [ControlTemplate](/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) 和 [Style](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 的 [TargetType](/uwp/api/Windows.UI.Xaml.Style) 属性设置为 `GridView`。
 
-为了更精细地控制项的显示方式，如果应用程序面向版本1803或更高版本，则可以使用[BringIntoViewRequested 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 你可以将其放在[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) **ListView** / **GridView**的 ItemsPanel 上，在内部**ScrollViewer**之前捕获它，如以下代码片段所示：
+为了更精细地控制项的显示方式，如果应用程序面向版本1803或更高版本，则可以使用 [BringIntoViewRequested 事件](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 你可以将其放在[ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) **ListView** / **GridView**的 ItemsPanel 上，在内部**ScrollViewer**之前捕获它，如以下代码片段所示：
 
 ```xaml
 <GridView x:Name="gridView">
@@ -394,7 +394,7 @@ UWP 还允许应用基于运行这些应用的设备所提供的系统设置动�
 由于 Xbox One 的性质，即预期其*媒体*体验多于*办公*体验，因此它默认为深色系统主题。
 如果你的应用主题基于系统设置，则预期它在 Xbox One 上默认为深色。
 
-### <a name="accent-color"></a>主题色
+### <a name="accent-color"></a>着色
 
 UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主题色**。
 
@@ -403,7 +403,7 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 
 另请注意，Xbox One 上的用户颜色集与电脑、手机和其他设备上的不同。
 
-只要应用使用画笔资源（如 **SystemControlForegroundAccentBrush**）或颜色资源 (**SystemAccentColor**)，或者直接通过 [UIColorType.Accent*](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType) API 调用主题色，这些颜色就将替换为适用于 Xbox One 的主题色。 还通过与电脑和手机上相同的方式从系统中提取高对比度画笔颜色。
+只要应用使用画笔资源（如 **SystemControlForegroundAccentBrush**）或颜色资源 (**SystemAccentColor**)，或者直接通过 [UIColorType.Accent*](/uwp/api/Windows.UI.ViewManagement.UIColorType) API 调用主题色，这些颜色就将替换为适用于 Xbox One 的主题色。 还通过与电脑和手机上相同的方式从系统中提取高对比度画笔颜色。
 
 要了解有关主题色的一般详细信息，请参阅[主题色](../style/color.md#accent-color)。
 
@@ -420,9 +420,9 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 过去，Xbox 上的应用必须定制其颜色才能位于这种“电视安全”颜色范围内；但是，从 Fall Creators Update 开始，Xbox One 可自动将全范围内容缩放为电视安全范围。 这意味着大多数应用开发人员将无需担心电视安全颜色问题。
 
 > [!IMPORTANT]
-> 已位于电视安全颜色范围中的视频内容在使用[媒体基础](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)播放时不会应用这种颜色缩放效果。
+> 已位于电视安全颜色范围中的视频内容在使用[媒体基础](/windows/desktop/medfound/microsoft-media-foundation-sdk)播放时不会应用这种颜色缩放效果。
 
-如果你要使用 DirectX 11 或 DirectX 12 开发应用并创建自己的交换链来呈现 UI 或视频，你可以通过调用 [IDXGISwapChain3::SetColorSpace1](https://docs.microsoft.com/windows/desktop/api/dxgi1_4/nf-dxgi1_4-idxgiswapchain3-setcolorspace1) 来指定要使用的颜色空间，这将让系统了解其是否需要缩放颜色。
+如果你要使用 DirectX 11 或 DirectX 12 开发应用并创建自己的交换链来呈现 UI 或视频，你可以通过调用 [IDXGISwapChain3::SetColorSpace1](/windows/desktop/api/dxgi1_4/nf-dxgi1_4-idxgiswapchain3-setcolorspace1) 来指定要使用的颜色空间，这将让系统了解其是否需要缩放颜色。
 
 ## <a name="guidelines-for-ui-controls"></a>UI 控件指南
 
@@ -430,21 +430,21 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 
 ### <a name="pivot-control"></a>Pivot 控件
 
-[Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) 通过选择不同标题或选项卡来提供应用内视图的快速导航。 该控件会对具有焦点的标题加下划线，从而在使用游戏板/遥控器时使当前选中标题的显示较为明显。
+[Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) 通过选择不同标题或选项卡来提供应用内视图的快速导航。 该控件会对具有焦点的标题加下划线，从而在使用游戏板/遥控器时使当前选中标题的显示较为明显。
 
 ![Pivot 下划线](images/designing-for-tv/pivot-underline.png)
 
-你可以将 [Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) 属性设置为 `true`，以便透视表始终保持在相同的位置，而不是使选定的透视表标题始终移动到第一个位置。 这对大屏幕显示（如电视）来说是更佳的体验，因为标题换行可能会干扰用户。 如果所有透视表标题不能全部适合屏幕，有一个滚动条可以让客户看到其他标题；但是，你应确保它们全部适合屏幕以提供最佳体验。 有关详细信息，请参阅[表和透视表](/windows/uwp/design/controls-and-patterns/pivot)。
+你可以将 [Pivot.IsHeaderItemsCarouselEnabled](/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) 属性设置为 `true`，以便透视表始终保持在相同的位置，而不是使选定的透视表标题始终移动到第一个位置。 这对大屏幕显示（如电视）来说是更佳的体验，因为标题换行可能会干扰用户。 如果所有透视表标题不能全部适合屏幕，有一个滚动条可以让客户看到其他标题；但是，你应确保它们全部适合屏幕以提供最佳体验。 有关详细信息，请参阅[表和透视表](../controls-and-patterns/pivot.md)。
 
 ### <a name="navigation-pane"></a>导航窗格 <a name="navigation-pane" />
 
 导航窗格（也称为*汉堡菜单*）是 UWP 应用中常用的导航控件。 通常，该窗格内含多个从列表样式菜单中选择的选项，用于将用户转到其他页面。 此窗格通常一开始以折叠方式显示以节省空间，用户可以通过单击某个按钮来打开它。
 
-用户很容易通过鼠标和触摸操作访问导航窗格，但游戏板/遥控器将使这些窗格不易访问，因为用户必须导航到某个按钮才能打开窗格。 因此，一种很好的做法是让 "**视图**" 按钮打开导航窗格，并允许用户通过导航到页面左侧的所有方法来打开它。 可以在[编程焦点导航](../input/focus-navigation-programmatic.md#split-view-code-sample)文档中找到有关如何实现此设计模式的代码示例。 这样可以使用户轻松访问窗格内容。 有关导航窗格在不同的屏幕大小中的行为以及游戏板/遥控器导航的最佳做法的详细信息，请参阅[导航窗格](../controls-and-patterns/navigationview.md)。
+用户很容易通过鼠标和触摸操作访问导航窗格，但游戏板/遥控器将使这些窗格不易访问，因为用户必须导航到某个按钮才能打开窗格。 因此，一种很好的做法是让 " **视图** " 按钮打开导航窗格，并允许用户通过导航到页面左侧的所有方法来打开它。 可以在[编程焦点导航](../input/focus-navigation-programmatic.md#split-view-code-sample)文档中找到有关如何实现此设计模式的代码示例。 这样可以使用户轻松访问窗格内容。 有关导航窗格在不同的屏幕大小中的行为以及游戏板/遥控器导航的最佳做法的详细信息，请参阅[导航窗格](../controls-and-patterns/navigationview.md)。
 
 ### <a name="commandbar-labels"></a>CommandBar 标签
 
-最好是将标签放置于 [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 上的图标右侧，以便最大程度降低标签高度并保持一致性。 为此，你可以将 [CommandBar.DefaultLabelPosition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelpositionproperty) 属性设置为 `CommandBarDefaultLabelPosition.Right`。
+最好是将标签放置于 [CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 上的图标右侧，以便最大程度降低标签高度并保持一致性。 为此，你可以将 [CommandBar.DefaultLabelPosition](/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelpositionproperty) 属性设置为 `CommandBarDefaultLabelPosition.Right`。
 
 ![图标右侧带有标签的 CommandBar](images/designing-for-tv/commandbar.png)
 
@@ -452,7 +452,7 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 
 ### <a name="tooltip"></a>工具提示
 
-引入了 [Tooltip](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip) 控件，可作为一种在用户将鼠标悬停在元素上或点击并按住元素上的图片时在 UI 中提供更多信息的方法。 对于游戏板和遥控器，`Tooltip` 将在元素得到焦点的短暂时间后显示、在屏幕上保留一小段时间，然后消失。 如果使用了太多 `Tooltip`，此行为可能令人分心。 在针对电视进行设计时，请尝试避免使用 `Tooltip`。
+引入了 [Tooltip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip) 控件，可作为一种在用户将鼠标悬停在元素上或点击并按住元素上的图片时在 UI 中提供更多信息的方法。 对于游戏板和遥控器，`Tooltip` 将在元素得到焦点的短暂时间后显示、在屏幕上保留一小段时间，然后消失。 如果使用了太多 `Tooltip`，此行为可能令人分心。 在针对电视进行设计时，请尝试避免使用 `Tooltip`。
 
 ### <a name="button-styles"></a>按钮样式
 
@@ -468,7 +468,7 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 
-[MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 元素通过提供默认的播放体验（即允许用户播放、暂停、打开隐藏式字幕等），允许用户与其媒体交互。 此控件是 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 的一个属性，支持以下两个布局选项：*单行*和*双行*。 在单行布局中，滑块和播放按钮位于同一行，而播放/暂停按钮位于滑块左侧。 在双行布局中，滑块单独占用一行，而播放按钮位于单独的下一行。 当针对 10 英尺体验进行设计时，应使用双行布局，因为它能为游戏板提供更好的导航。 若要启用双行布局，请在 `MediaPlayerElement` 的 [TransportControls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) 属性中的 `MediaTransportControls` 元素上设置 `IsCompact="False"`。
+[MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 元素通过提供默认的播放体验（即允许用户播放、暂停、打开隐藏式字幕等），允许用户与其媒体交互。 此控件是 [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 的一个属性，支持以下两个布局选项：*单行*和*双行*。 在单行布局中，滑块和播放按钮位于同一行，而播放/暂停按钮位于滑块左侧。 在双行布局中，滑块单独占用一行，而播放按钮位于单独的下一行。 当针对 10 英尺体验进行设计时，应使用双行布局，因为它能为游戏板提供更好的导航。 若要启用双行布局，请在 `MediaPlayerElement` 的 [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) 属性中的 `MediaTransportControls` 元素上设置 `IsCompact="False"`。
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -482,7 +482,7 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 
 请访问[媒体播放](../controls-and-patterns/media-playback.md)，了解有关将媒体添加到应用的详细信息。
 
-> ![注意] `MediaPlayerElement` 仅在 Windows 10 版本 1607 及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 上述建议也适用于 `MediaElement`，并且可通过相同方式访问 `TransportControls` 属性。
+> ![注意] `MediaPlayerElement` 仅在 Windows 10 版本 1607 及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 上述建议也适用于 `MediaElement`，并且可通过相同方式访问 `TransportControls` 属性。
 
 ### <a name="search-experience"></a>搜索体验
 
@@ -560,7 +560,7 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
 
 然后，你可以遵循此检查对代码块中的 UI 进行相应调整。 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>“摘要”
 
 针对 10 英尺体验进行设计需要考虑特殊的注意事项，这些注意事项有别于针对任何其他平台进行设计。 当然直接将 UWP 应用移植到 Xbox One 也能使其工作，但它不一定已针对 10 英尺体验进行优化，并且可能导致用户沮丧。 按照本文中的指南进行操作可确保你的应用在电视上达到最佳状态。
 

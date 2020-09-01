@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 耳机
 ms.localizationpriority: medium
-ms.openlocfilehash: 73815fb3f1b732537e9f08932639a1eccd7ed1b0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5e5b0894dbab03490cb74bdae8c231b57d397cb4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368618"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175291"
 ---
 # <a name="headset"></a>耳机
 
@@ -65,12 +65,12 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 
 [Headset][] 类由两个表示 XAudio 终结点 ID 的字符串组成--一个用于音频捕获（从耳机麦克风录制），一个用于音频呈现（通过耳机播放）。
 
-此处不讨论使用 XAudio 的详细信息，有关详细信息，请参阅 [XAudio2 编程指南](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide)和 [XAudio2 API 参考](https://docs.microsoft.com/windows/desktop/xaudio2/programming-reference).
+此处不讨论使用 XAudio 的详细信息，有关详细信息，请参阅 [XAudio2 编程指南](/windows/desktop/xaudio2/programming-guide)和 [XAudio2 API 参考](/windows/desktop/xaudio2/programming-reference).
 
 
-[Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
-[igamecontroller]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx
-[igamecontroller.headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headset.aspx
-[igamecontroller.headsetconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetconnected.aspx
-[igamecontroller.headsetdisconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetdisconnected.aspx
-[headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
+[Windows。]: /uwp/api/Windows.Gaming.Input
+[igamecontroller]: /uwp/api/Windows.Gaming.Input.IGameController
+[igamecontroller.headset]: /uwp/api/Windows.Gaming.Input.IGameController
+[igamecontroller.headsetconnected]: /uwp/api/Windows.Gaming.Input.IGameController
+[igamecontroller.headsetdisconnected]: /uwp/api/Windows.Gaming.Input.IGameController
+[设备]: /uwp/api/Windows.Gaming.Input.Headset

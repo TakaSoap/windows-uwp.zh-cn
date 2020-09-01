@@ -6,18 +6,18 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交, 状态
 ms.localizationpriority: medium
-ms.openlocfilehash: 30e3314f52ec39f9f262f274fcf2db70f0aad7d9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4f6adafe9d3ebbc1fcffad830c5214e18e9c515f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66358779"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175001"
 ---
 # <a name="get-the-status-of-an-app-submission"></a>获取应用提交的状态
 
 在 Microsoft Store 提交 API 中使用此方法，可获取应用提交的状态。 有关通过使用 Microsoft Store 提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -35,17 +35,17 @@ ms.locfileid: "66358779"
 
 ### <a name="request-header"></a>请求头
 
-| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt; 。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必需。 应用（包含要获取状态的提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| submissionId | string | 必需。 要获取状态的提交的 ID。 此 ID 包含在[创建应用提交](create-an-app-submission.md)请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。  |
+| applicationId | 字符串 | 必需。 应用（包含要获取状态的提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](../publish/view-app-identity-details.md)。  |
+| submissionId | 字符串 | 必需。 要获取状态的提交的 ID。 此 ID 包含在[创建应用提交](create-an-app-submission.md)请求的响应数据中。 对于在合作伙伴中心创建的提交，此 ID 还可用于合作伙伴中心中的提交页的 URL。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -78,27 +78,27 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 在任务栏的搜索框中键入   | 描述                                                                                                                                                                                                                                                                         |
+| 值      | 类型   | 说明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | string  | 提交的状态。 这可以是以下值之一： <ul><li>无</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>认证</li><li>CertificationFailed</li><li>发行版本</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | 对象  |  包含有关提交状态的附加详细信息，其中包括任何错误的相关信息。 有关详细信息，请参阅[状态详细信息资源](manage-app-submissions.md#status-details-object)。 |
+| status           | 字符串  | 提交的状态。 这可以是以下值之一： <ul><li>无</li><li>已取消</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>发布</li><li>已发布</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>认证</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
+| statusDetails           | 对象 (object)  |  包含有关提交状态的附加详细信息，其中包括任何错误的相关信息。 有关详细信息，请参阅[状态详细信息资源](manage-app-submissions.md#status-details-object)。 |
 
 
 ## <a name="error-codes"></a>错误代码
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
-| 错误代码 |  描述   |
+| 错误代码 |  说明   |
 |--------|------------------|
 | 404  | 找不到提交。 |
-| 409  | 该应用使用的合作伙伴中心功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
+| 409  | 此应用使用的合作伙伴中心功能 [当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
-* [获取应用程序提交](get-an-app-submission.md)
-* [创建应用程序提交](create-an-app-submission.md)
-* [提交应用程序提交](commit-an-app-submission.md)
-* [更新应用程序提交](update-an-app-submission.md)
-* [删除应用程序提交](delete-an-app-submission.md)
+* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [获取应用提交](get-an-app-submission.md)
+* [创建应用提交](create-an-app-submission.md)
+* [确认应用提交](commit-an-app-submission.md)
+* [更新应用提交](update-an-app-submission.md)
+* [删除应用提交](delete-an-app-submission.md)

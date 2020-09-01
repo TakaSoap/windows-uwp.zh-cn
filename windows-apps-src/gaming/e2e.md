@@ -1,19 +1,19 @@
 ---
-title: Windows 10 游戏开发指南
+title: Windows 10 游戏开发指南
 description: 开发通用 Windows 平台 (UWP) 游戏的资源和信息的端到端指南。
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
-ms.openlocfilehash: 24414ba36e2ee1af8f391eec38b04d9e17bb7237
-ms.sourcegitcommit: 2e597438dafedde3bde24424ef005bb4c24ba3bf
+ms.openlocfilehash: cf1566b804caaf39def783d95752a389536daa3b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84800323"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175331"
 ---
-# <a name="windows-10-game-development-guide"></a>Windows 10 游戏开发指南
+# <a name="windows-10-game-development-guide"></a>Windows 10 游戏开发指南
 
 欢迎使用 Windows 10 游戏开发指南！
 
@@ -101,19 +101,19 @@ ms.locfileid: "84800323"
 
 ### <a name="partner-center"></a>合作伙伴中心
 
-[在合作伙伴中心注册开发人员帐户](https://developer.microsoft.com/store/register)是发布 Windows 游戏的第一步。 开发人员帐户让你可以保留游戏名称和将免费或付费游戏提交到适用于所有 Windows 设备的 Microsoft Store。 使用开发人员帐户管理游戏和游戏内产品、获取详细分析，以及支持全世界玩家创建绝佳体验的服务。 
+[在合作伙伴中心注册开发人员帐户](https://developer.microsoft.com/store/register) 是发布 Windows 游戏的第一步。 开发人员帐户让你可以保留游戏名称和将免费或付费游戏提交到适用于所有 Windows 设备的 Microsoft Store。 使用开发人员帐户管理游戏和游戏内产品、获取详细分析，以及支持全世界玩家创建绝佳体验的服务。 
 
 Microsoft 还提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 在注册合作伙伴中心帐户之前，我们建议你查看是否有合适的权限。 有关详细信息，请转到[开发人员计划](#developer-programs)
 
 ### <a name="developer-programs"></a>开发人员计划
 
-Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 如果你想要开发适用于 Xbox One 的游戏并在游戏中集成 Xbox Live 功能，请考虑加入开发人员计划。 若要在 Microsoft Store 中发布游戏，还需要在[合作伙伴中心](https://partner.microsoft.com/dashboard)创建一个开发人员帐户。
+Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 如果你想要开发适用于 Xbox One 的游戏并在游戏中集成 Xbox Live 功能，请考虑加入开发人员计划。 若要在 Microsoft Store 中发布游戏，还需要在 [合作伙伴中心](https://partner.microsoft.com/dashboard) 创建一个开发人员帐户。
 
 #### <a name="xbox-live-creators-program"></a>Xbox Live 创建者程序
 
-利用 Xbox Live 创意者计划，任何人都可以将 Xbox Live 集成到其游戏中并发布到 Xbox One 和 Windows 10。 标准 [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)之外存在简化的认证过程，但不需要概念审批。
+利用 Xbox Live 创意者计划，任何人都可以将 Xbox Live 集成到其游戏中并发布到 Xbox One 和 Windows 10。 标准 [Microsoft Store 策略](/legal/windows/agreements/store-policies)之外存在简化的认证过程，但不需要概念审批。
 
-你可以在没有专用开发工具包、仅使用零售硬件的情况下，在创意者计划中部署、设计和发布游戏。 若要开始，请在 Xbox One 上下载[开发人员模式激活应用](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation)。
+你可以在没有专用开发工具包、仅使用零售硬件的情况下，在创意者计划中部署、设计和发布游戏。 若要开始，请在 Xbox One 上下载[开发人员模式激活应用](../xbox-apps/devkit-activation.md)。
 
 如果希望获得更多 Xbox Live 功能的访问权限、专职营销和开发支持，以及在主要 Xbox One 商店中提供的机会，请将应用到该 [ID@Xbox](https://www.xbox.com/Developers/id) 计划。
 
@@ -463,7 +463,7 @@ XAML 是一种易于使用的声明性 UI 语言，它具有一些便捷的功�
     </tr>
 </table>
  
-####组合演示技术
+#### 组合演示技术
 
 Microsoft DirectX 图形基础结构 (DXGI) 通过多种图形技术提供互操作性和兼容性。 对于高性能图形，你可以将 XAML 与 DirectX 结合使用，具体操作方式是：将 XAML 用于菜单和其他简单 UI，而将 DirectX 用于呈现复杂的 2D 和 3D 场景。 DXGI 还可在 Direct2D、Direct3D、DirectWrite、DirectCompute 和 Microsoft 媒体基础之间提供兼容性。
 
@@ -493,7 +493,7 @@ C++/CX 是一种高性能、低开销的语言，可提供速度、兼容性和�
     </colgroup>
     <tr>
         <td>C++/CX 参考和概述</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Visual C++ 语言参考（c + +/CX）</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">C + +/CX (Visual C++ 语言参考) </a></td>
     </tr>
     <tr>
         <td>Visual C++ 编程指南和参考</td>
@@ -516,7 +516,7 @@ C#（读作“C sharp”）是一种现代创新型语言，它简单、功能�
     </tr>
 </table>
  
-####JavaScript
+#### JavaScript
 
 JavaScript 是一种动态脚本语言，广泛用于现代 Web 应用程序和胖客户端应用程序。
 
@@ -624,7 +624,7 @@ Direct3D 11.3 是一个低级别图形 API，使用熟悉的 Direct3D 编程模�
         <td><a href="https://www.youtube.com/watch?v=fGNpiqVi5xU&list=PLHCfyL7JpoPbLpA_oh_T5PKrfzPgCpPT5">有关 PlayFab 核心系统的系列演示视频</a></td>
     </tr>
     <tr>
-        <td>食谱</td>
+        <td>配方</td>
         <td><a href="https://api.playfab.com/docs/tutorials/recipes-index">受欢迎的游戏机制和设计模式示例</a></td>
     </tr>
     <tr>
@@ -706,7 +706,7 @@ Unity 提供用于创建美丽动人的 2D、3D、VR 和 AR 游戏和应用的�
     </tr>
 </table>
  
-####Havok
+#### Havok
 
 Havok 模块化的工具和技术套件可帮助游戏创建者达到交互式和沉浸式体验的新级别。 Havok 支持高度真实的物理特性、交互模拟和令人惊叹的电影制作技术。 版本 2015.1 及更高版本正式支持 x86、64 位和 ARM 上 Visual Studio 2015 中的 UWP。
 
@@ -729,7 +729,7 @@ Havok 模块化的工具和技术套件可帮助游戏创建者达到交互式�
     </tr>
 </table>
  
-####MonoGame
+#### MonoGame
 
 MonoGame 是最初基于 Microsoft 的 XNA Framework 4.0 的跨平台开源游戏开发框架。 Monogame 当前支持 Windows、Windows Phone 和 Xbox，以及 Linux、macOS、iOS、Android 和多个其他平台。
 
@@ -909,7 +909,7 @@ Windows 10 引入通用 Windows 平台 (UWP)，该平台在 Windows 10 设备�
     </tr>
 </table>
  
-###UWP 开发入门
+### UWP 开发入门
 
 可轻松快速地完成通用 Windows 平台应用开发的准备工作。 以下指南将指导你分步完成该过程。
 
@@ -997,7 +997,7 @@ Windows 10 引入通用 Windows 平台 (UWP)，该平台在 Windows 10 设备�
     </tr>
 </table>
  
-###进程生存期管理
+### 进程生存期管理
 
 进程周期管理（或称应用生命周期）介绍通用 Windows 平台应用可以转换的各种激活状态。 你的游戏不仅可以激活、暂停、恢复或终止，还可以通过多种方式在这些状态中转换。
 
@@ -1016,7 +1016,7 @@ Windows 10 引入通用 Windows 平台 (UWP)，该平台在 Windows 10 设备�
     </tr>
 </table>
  
-###设计游戏 UX
+### 设计游戏 UX
 
 出色的游戏源自于获得灵感的设计。
 
@@ -1047,7 +1047,7 @@ Windows 10 引入通用 Windows 平台 (UWP)，该平台在 Windows 10 设备�
     </tr>   
 </table>
  
-####颜色准则和调色板
+#### 颜色准则和调色板
 
 在游戏中遵循一致的颜色指南，有助于美化外观、辅助导航，并让玩家清楚地了解菜单和 HUD 功能。 一致的游戏元素（如警告、危害、XP 和成就）颜色可使 UI 更简洁明了，同时减少对显式标签的需求。
 
@@ -1201,7 +1201,7 @@ UI 地图是一个游戏导航布局，在其中菜单以流程图的形式呈�
     </tr>
 </table>
  
-####DirectX 工具包和库
+#### DirectX 工具包和库
 
 DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库、UVAtlas 库和 DirectXMath 库提供用于 DirectX 开发的纹理、网格、子画面以及其他实用工具功能和帮助程序类。 这些库可以帮助你节省开发时间和精力。
 
@@ -1310,9 +1310,9 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
     </tr>
 </table>
 
-### <a name="enable-in-app-product-add-on-purchases"></a>启用应用内产品（外接程序）购买
+### <a name="enable-in-app-product-add-on-purchases"></a>启用应用内产品 () 购买的外接程序
 
-外接程序（应用内产品）是播放机可以在游戏中购买的补充项目。 外接程序可以是游戏级别、物品或玩家可能会喜欢的任何其他内容。 适当地使用外接程序可以提供收入，同时改善游戏体验。 通过合作伙伴中心定义和发布游戏的外接程序，并在游戏代码中启用应用内购买。
+ (应用内产品) 的加载项是播放机可以在游戏中购买的补充项目。 外接程序可以是游戏级别、物品或玩家可能会喜欢的任何其他内容。 适当地使用外接程序可以提供收入，同时改善游戏体验。 通过合作伙伴中心定义和发布游戏的外接程序，并在游戏代码中启用应用内购买。
 
 <table>
     <colgroup>
@@ -1337,11 +1337,11 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
     </tr>
 </table>
  
-###调试、性能优化和监视
+### 调试、性能优化和监视
 
 若要优化性能，请利用 Windows 10 中的游戏模式，通过充分利用当前硬件的能力，为玩家提供可能最佳的游戏体验。
 
-Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具可生成有关 Windows 操作系统和应用程序的详细性能概况。 该工具包在监视内存使用量和改善游戏性能方面尤其有用。 Windows Performance Toolkit 包含在 Windows 10 SDK 和 Windows ADK 中。 该工具包包含两个独立的工具：Windows Performance Recorder (WPR) 和 Windows Performance Analyzer (WPA)。 ProcDump 是 [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default) 的一部分，也是监视 CPU 峰值的命令行实用程序，并且会在游戏崩溃期间生成转储文件。 
+Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具可生成有关 Windows 操作系统和应用程序的详细性能概况。 该工具包在监视内存使用量和改善游戏性能方面尤其有用。 Windows Performance Toolkit 包含在 Windows 10 SDK 和 Windows ADK 中。 该工具包包含两个独立的工具：Windows Performance Recorder (WPR) 和 Windows Performance Analyzer (WPA)。 ProcDump 是 [Windows Sysinternals](/sysinternals/) 的一部分，也是监视 CPU 峰值的命令行实用程序，并且会在游戏崩溃期间生成转储文件。 
 
 <table>
     <colgroup>
@@ -1473,7 +1473,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
 
 ### <a name="publishing"></a>发布
 
-你将使用[合作伙伴中心](https://partner.microsoft.com/dashboard)来发布和管理你的游戏包。
+你将使用 [合作伙伴中心](https://partner.microsoft.com/dashboard) 来发布和管理你的游戏包。
 
 <table>
     <colgroup>
@@ -1485,11 +1485,11 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
         <td><a href="https://developer.microsoft.com/store/publish-apps">发布 Windows 应用</a></td>
     </tr>
     <tr>
-        <td>合作伙伴中心高级发布（GDN）</td>
+        <td>合作伙伴中心高级发布 (GDN) </td>
         <td><a href="https://developer.xboxlive.com/windows/documentation/Pages/home.aspx">合作伙伴中心高级发布指南</a></td>
     </tr>
     <tr>
-        <td>使用 Azure Active Directory （AAD）将用户添加到合作伙伴中心帐户</td>
+        <td>使用 Azure Active Directory (AAD) 向合作伙伴中心帐户添加用户</td>
         <td><a href="https://docs.microsoft.com/windows/uwp/publish/manage-account-users">管理帐户用户</a></td>
     </tr>   
     <tr>
@@ -1610,7 +1610,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     </tr>
 </table>
  
-###Visual Studio Application Insights
+### Visual Studio Application Insights
 
 Visual Studio Application Insights 提供关于发布的游戏的性能、遥测和使用情况分析。 Application Insights 可帮助你检测和解决游戏发布后出现的问题、持续监视和改善使用情况，并了解玩家如何继续与游戏交互。 Application Insights 的工作原理是向你的应用添加一个 SDK，它会将遥测数据发送到 [Azure 门户](https://portal.azure.com/)。
 
@@ -1686,7 +1686,7 @@ Visual Studio Application Insights 提供关于发布的游戏的性能、遥测
 Xbox Live 是一个卓越的游戏网络，连接着世界各地的数百万玩家。 开发人员获取可以有机增加其游戏受众的 Xbox Live 功能的访问权限，包括 Xbox Live 状态、排行榜、云保存、游戏中心、俱乐部、群聊天、游戏 DVR，等等。
 
 > [!Note]
-> 如果你要开发支持 Xbox Live 的作品，则可以在若干选项中选择。 有关各种计划的信息，请参阅[开发人员计划概述](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview)。
+> 如果你要开发支持 Xbox Live 的作品，则可以在若干选项中选择。 有关各种计划的信息，请参阅[开发人员计划概述](/gaming/xbox-live/developer-program-overview)。
 
 <table>
     <colgroup>

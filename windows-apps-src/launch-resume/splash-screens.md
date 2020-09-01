@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 09eadb8467725cbf40f3fb54d32741960fc89321
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 490f5f70efcd21fe2be5c909bcc409daf1feeeea
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371861"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175121"
 ---
 # <a name="splash-screens"></a>初始屏幕
 
@@ -27,7 +27,7 @@ ms.locfileid: "66371861"
 
 具有背景色的简单图像看起来不错，不管应用运行在哪个设备。 只有背景的大小会更改以补偿各种屏幕大小。 你的图像会始终保持完整。
 
-此外，你可以使用 [**SplashScreen**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) 类来自定义你的应用的启动体验。 你可以对你创建的延长初始屏幕进行适当定位，以使你的应用具有更多时间来完成诸如准备应用 UI 或完成网络操作等附加任务。 你还可以使用 **SplashScreen** 类以在初始屏幕消失时通知你，以便你可以开始进入动画。
+此外，你可以使用 [**SplashScreen**](/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) 类来自定义你的应用的启动体验。 你可以对你创建的延长初始屏幕进行适当定位，以使你的应用具有更多时间来完成诸如准备应用 UI 或完成网络操作等附加任务。 你还可以使用 **SplashScreen** 类以在初始屏幕消失时通知你，以便你可以开始进入动画。
 
 | 主题 | 描述 |
 |-------|-------------|

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标题栏
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 47db0abfa96ae572c20d6bfd7496d7b5d168ab50
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 6722004efea76ce1a7a2b6eba92d45e8dbf126ba
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968412"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174571"
 ---
 # <a name="title-bar-customization"></a>标题栏自定义
 
@@ -20,13 +20,13 @@ ms.locfileid: "82968412"
 
 当你的应用在桌面窗口中运行时，你可以自定义标题栏以匹配应用的个性。 利用标题栏自定义 API，你可以为标题栏元素指定颜色，或者将应用内容扩展到标题栏区域并完全控制该内容。
 
-> **重要 API**：[ApplicationView.TitleBar 属性](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、[ApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、[CoreApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **重要 API**：[ApplicationView.TitleBar 属性](/uwp/api/windows.ui.viewmanagement.applicationview)、[ApplicationViewTitleBar 类](/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、[CoreApplicationViewTitleBar 类](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>标题栏的自定义程度
 
 你可以对标题栏应用两个自定义级别。
 
-对于简单的颜色自定义，你可以设置 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) 属性，以指定要用于标题栏元素的颜色。 在此情况下，系统仍对标题栏的所有其他方面负责，比如绘制应用标题和定义可拖动区域。
+对于简单的颜色自定义，你可以设置 [ApplicationViewTitleBar](/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) 属性，以指定要用于标题栏元素的颜色。 在此情况下，系统仍对标题栏的所有其他方面负责，比如绘制应用标题和定义可拖动区域。
 
 你的其他选项是隐藏默认标题栏并将其替换为自己的 XAML 内容。 例如，你可以在标题栏区域中放置文本、按钮或自定义的菜单。 你将还需要使用此选项将[亚克力](../style/acrylic.md)背景扩展到标题栏区域中。
 
@@ -37,7 +37,7 @@ ms.locfileid: "82968412"
 
 ## <a name="simple-color-customization"></a>简单的颜色自定义
 
-如果只想自定义标题栏的颜色而不做任何太奇特的操作（比如将选项卡放在标题栏中），则可以为应用窗口设置 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) 的颜色属性。
+如果只想自定义标题栏的颜色而不做任何太奇特的操作（比如将选项卡放在标题栏中），则可以为应用窗口设置 [ApplicationViewTitleBar](/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) 的颜色属性。
 
 此示例显示了如何获取 ApplicationViewTitleBar 的实例以及如何设置其颜色属性。
 
@@ -64,10 +64,10 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 ```
 
 > [!NOTE]
-> 此代码可放在应用的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 方法 (_App.xaml.cs_) 中、对 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) 的调用的后面，或应用的第一页中。
+> 此代码可放在应用的 [OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched) 方法 (_App.xaml.cs_) 中、对 [Window.Activate](/uwp/api/windows.ui.xaml.window.Activate) 的调用的后面，或应用的第一页中。
 
 > [!TIP]
-> Windows 社区工具包提供的扩展可用于在 XAML 中设置这些颜色属性。 有关详细信息，请参阅 [Windows 社区工具包文档](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions)。
+> Windows 社区工具包提供的扩展可用于在 XAML 中设置这些颜色属性。 有关详细信息，请参阅 [Windows 社区工具包文档](/windows/uwpcommunitytoolkit/extensions/viewextensions)。
 
 设置标题栏颜色时需要注意以下几点：
 
@@ -76,15 +76,15 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 - 将颜色属性设置为 **null** 会将其重置为默认的系统颜色。
 - 你无法设置透明色。 颜色的 alpha 通道会被忽略。
 
-Windows 为用户提供了将选定的[主题色](https://docs.microsoft.com/windows/uwp/style/color#accent-color)应用于标题栏的选项。 如果你要设置任何标题栏颜色，那么我们建议你显式设置所有颜色。 这可以确保不存在因用户定义的颜色设置而出现的意外颜色组合。
+Windows 为用户提供了将选定的[主题色](../style/color.md#accent-color)应用于标题栏的选项。 如果你要设置任何标题栏颜色，那么我们建议你显式设置所有颜色。 这可以确保不存在因用户定义的颜色设置而出现的意外颜色组合。
 
 ## <a name="full-customization"></a>完全自定义
 
 当你选择进行标题栏完全自定义时，应用的客户端区域会进行扩展以覆盖整个窗口，包括标题栏区域。 你负责对整个窗口（在应用画布顶部重叠的标题按钮除外）进行绘制和输入处理。
 
-若要隐藏默认标题栏并将你的内容扩展到标题栏区域中，请将 [CoreApplicationViewTitleBar.ExtendViewIntoTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar) 属性设置为 **true**。
+若要隐藏默认标题栏并将你的内容扩展到标题栏区域中，请将 [CoreApplicationViewTitleBar.ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar) 属性设置为 **true**。
 
-此示例介绍如何获取 CoreApplicationViewTitleBar 以及如何将 ExtendViewIntoTitleBar 属性设置为 **true**。 此操作可以在应用的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 方法 (_App.xaml.cs_) 中或在应用的第一页中完成。
+此示例介绍如何获取 CoreApplicationViewTitleBar 以及如何将 ExtendViewIntoTitleBar 属性设置为 **true**。 此操作可以在应用的 [OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched) 方法 (_App.xaml.cs_) 中或在应用的第一页中完成。
 
 ```csharp
 // using Windows.ApplicationModel.Core;
@@ -99,14 +99,14 @@ coreTitleBar.ExtendViewIntoTitleBar = true;
 
 ### <a name="draggable-regions"></a>可拖动区域
 
-标题栏的可拖动区域定义了用户可以在哪里通过单击和拖动来移动窗口（而不是只在应用画布中拖动内容）。 通过调用 [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.settitlebar) 方法并传入一个定义可拖动区域的 UIElement，你可以指定可拖动区域。 （UIElement 通常是一个包含其他元素的面板。）
+标题栏的可拖动区域定义了用户可以在哪里通过单击和拖动来移动窗口（而不是只在应用画布中拖动内容）。 通过调用 [Window.SetTitleBar](/uwp/api/windows.ui.xaml.window.settitlebar) 方法并传入一个定义可拖动区域的 UIElement，你可以指定可拖动区域。 （UIElement 通常是一个包含其他元素的面板。）
 
 下面介绍如何将内容网格设置为可拖动的标题栏区域。 此代码会写入应用第一页的 XAML 和代码隐藏部分中。 请参阅[完全自定义示例](./title-bar.md#full-customization-example)部分以获取完整代码。
 
 
 > [!IMPORTANT]
 > 默认情况下，某些 UI 元素（例如网格）在没有后台集时不参与命中测试。
-> 为了使下面`AppTitleBar`的示例中的网格允许拖动，我们需要将背景设置为`Transparent`。
+> 为了 `AppTitleBar` 使下面的示例中的网格允许拖动，我们需要将背景设置为 `Transparent` 。
 
 ```xaml
 <Grid x:Name="AppTitleBar" Background="Transparent">
@@ -151,7 +151,7 @@ UIElement (`AppTitleBar`) 是应用的 XAML 的一部分。 你可以在不变�
 你可以调用 SetTitleBar 以在应用运行时切换到新的标题栏元素。 你还可以将 **null** 作为参数传递给 SetTitleBar 以还原为默认的拖动行为。 （有关详细信息，请参阅“默认的可拖动区域”。）
 
 > [!IMPORTANT]
-> 你指定的可拖动区域必须可执行点击测试，这意味着对于某些元素，你可能需要设置透明背景画笔。 有关详细信息，请参阅关于 [VisualTreeHelper.FindElementsInHostCoordinates](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper.findelementsinhostcoordinates) 的备注。
+> 你指定的可拖动区域必须可执行点击测试，这意味着对于某些元素，你可能需要设置透明背景画笔。 有关详细信息，请参阅关于 [VisualTreeHelper.FindElementsInHostCoordinates](/uwp/api/windows.ui.xaml.media.visualtreehelper.findelementsinhostcoordinates) 的备注。
 >
 >例如，如果将网格定义为可拖动区域，请设置 `Background="Transparent"` 以使其可拖动。
 >
@@ -169,13 +169,13 @@ UIElement (`AppTitleBar`) 是应用的 XAML 的一部分。 你可以在不变�
 
 系统会为系统标题按钮（“后退”、“最小化”、“最大化”、“关闭”）保留应用窗口的左上角或右上角。 系统会保留对标题控制区域的控制，以保证提供最少功能来拖动、最小化、最大化和关闭窗口。 系统在右上方为从左到右的语言绘制“关闭”按钮，在左上方为从右到左的语言绘制“关闭”按钮。
 
-标题控制区域的尺寸和位置由 CoreApplicationViewTitleBar 类进行传递，以便你可以在标题栏 UI 布局中将其考虑在内。 每一侧上的保留区域的宽度由 [SystemOverlayLeftInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayLeftInset) 或 [SystemOverlayRightInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayRightInset) 属性提供，其高度由 [Height](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.Height) 属性提供。
+标题控制区域的尺寸和位置由 CoreApplicationViewTitleBar 类进行传递，以便你可以在标题栏 UI 布局中将其考虑在内。 每一侧上的保留区域的宽度由 [SystemOverlayLeftInset](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayLeftInset) 或 [SystemOverlayRightInset](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayRightInset) 属性提供，其高度由 [Height](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.Height) 属性提供。
 
 你可以在这些属性所定义的标题控制区域下方绘制内容，如应用背景，但不应放置你希望用户能够与之交互的任何 UI。 它不会接收任何输入，因为标题控件的输入由系统进行处理。
 
-你可以处理 [LayoutMetricsChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged) 事件，以响应标题按钮的大小变化。 例如，显示或隐藏系统后退按钮时，可能会发生这种情况。 处理此事件可验证并更新取决于标题栏大小的 UI 元素的定位。
+你可以处理 [LayoutMetricsChanged](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged) 事件，以响应标题按钮的大小变化。 例如，显示或隐藏系统后退按钮时，可能会发生这种情况。 处理此事件可验证并更新取决于标题栏大小的 UI 元素的定位。
 
-此示例介绍如何调整标题栏的布局，以考虑系统后退按钮的显示或隐藏等变化。 `AppTitleBar`在`LeftPaddingColumn`前面所`RightPaddingColumn`示的 XAML 中声明了、和。
+此示例介绍如何调整标题栏的布局，以考虑系统后退按钮的显示或隐藏等变化。 `AppTitleBar``LeftPaddingColumn` `RightPaddingColumn` 在前面所示的 XAML 中声明了、和。
 
 ```csharp
 private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -238,7 +238,7 @@ private void UpdateTitleBarLayout(CoreApplicationViewTitleBar coreTitleBar)
 
 ### <a name="transparency-in-caption-buttons"></a>标题按钮中的透明度
 
-如果将 ExtendViewIntoTitleBar 设置为 **true**，则可以使标题按钮的背景变为透明，以使应用背景可隐约显示。 为了实现完全透明，通常可以将背景设置为 [Colors.Transparent](https://docs.microsoft.com/uwp/api/windows.ui.colors.Transparent)。 为了实现部分透明，请将属性设置为 [Color](https://docs.microsoft.com/uwp/api/windows.ui.color) 并为其设置 alpha 通道。
+如果将 ExtendViewIntoTitleBar 设置为 **true**，则可以使标题按钮的背景变为透明，以使应用背景可隐约显示。 为了实现完全透明，通常可以将背景设置为 [Colors.Transparent](/uwp/api/windows.ui.colors.Transparent)。 为了实现部分透明，请将属性设置为 [Color](/uwp/api/windows.ui.color) 并为其设置 alpha 通道。
 
 以下 ApplicationViewTitleBar 属性可以是透明的：
 
@@ -254,7 +254,7 @@ private void UpdateTitleBarLayout(CoreApplicationViewTitleBar coreTitleBar)
 ### <a name="full-screen-and-tablet-mode"></a>全屏和平板模式
 
 当应用在_全屏_或_平板模式_下运行时，系统将隐藏标题栏和标题控制按钮。 但是，用户可以调用标题栏，以使其以覆盖形式显示在应用的 UI 顶部。
-你可以处理隐藏或调用标题栏时将通知的 [CoreApplicationViewTitleBar.IsVisibleChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.IsVisibleChanged) 事件，并根据需要显示或隐藏你的自定义标题栏内容。
+你可以处理隐藏或调用标题栏时将通知的 [CoreApplicationViewTitleBar.IsVisibleChanged](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.IsVisibleChanged) 事件，并根据需要显示或隐藏你的自定义标题栏内容。
 
 此示例介绍如何处理 IsVisibleChanged 以显示和隐藏之前显示的 `AppTitleBar` 元素。
 
@@ -284,7 +284,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->仅在应用支持时才能进入_全屏_模式。 有关详细信息，请参阅 [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_平板模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是受支持的硬件上的用户选项，以便用户可以选择在平板模式下运行任何应用。
+>仅在应用支持时才能进入_全屏_模式。 有关详细信息，请参阅 [ApplicationView.IsFullScreenMode](/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_平板模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是受支持的硬件上的用户选项，以便用户可以选择在平板模式下运行任何应用。
 
 ## <a name="full-customization-example"></a>完全自定义示例
 
@@ -390,5 +390,5 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 
 ## <a name="related-articles"></a>相关文章
 
-- [亚克力](../style/acrylic.md)
+- [Acrylic](../style/acrylic.md)
 - [颜色](../style/color.md)

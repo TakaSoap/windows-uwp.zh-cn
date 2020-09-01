@@ -1,6 +1,6 @@
 ---
 title: 图形管道
-description: Direct3D 图形管道旨在为实时游戏应用程序生成图形。 数据通过各个可配置或可编程的阶段从输入流到输出。
+description: Direct3D 图形管道设计用于为实时游戏应用程序生成图形。 数据通过各个可配置或可编程的阶段从输入流到输出。
 ms.assetid: C9519AD0-5425-48BD-9FF4-AED8959CA4AD
 keywords:
 - 图形管道
@@ -8,19 +8,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b931268dc20f40c1bc1d7c700f346d29d6aa9d6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a562e1eb99447db263cd2bb4f87ec1a642ed8394
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370614"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175171"
 ---
 # <a name="graphics-pipeline"></a>图形管道
 
 
-Direct3D 图形管道旨在为实时游戏应用程序生成图形。 数据通过各个可配置或可编程的阶段从输入流到输出。
+Direct3D 图形管道设计用于为实时游戏应用程序生成图形。 数据通过各个可配置或可编程的阶段从输入流到输出。
 
-所有阶段都可以使用 Direct3D API 进行配置。 具有常见着色器核心（圆角矩形块）的阶段可通过使用 [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl) 编程语言进行编程。 这使得管道具有非常高的灵活性和适应性。
+所有阶段都可以使用 Direct3D API 进行配置。 具有常见着色器核心（圆角矩形块）的阶段可通过使用 [HLSL](/windows/desktop/direct3dhlsl/dx-graphics-hlsl) 编程语言进行编程。 这使得管道具有非常高的灵活性和适应性。
 
 最常用的是顶点着色器 (VS) 阶段和像素着色器 (PS) 阶段。 如果你甚至不提供这些着色器阶段，则使用默认的无操作、传递式顶点和像素着色器。
 
@@ -44,11 +44,11 @@ Direct3D 图形管道旨在为实时游戏应用程序生成图形。 数据通�
 
 ## <a name="domain-shader-stage"></a>域着色器阶段
 
-|-|-| |作用|[域着色器 (DS) 阶段](domain-shader-stage--ds-.md)计算输出修补程序中细分点的顶点位置；它计算与每个域样本对应的顶点位置。 对每个细化器阶段输出点运行一次域着色器，并且该着色器具有对外壳着色器输出修补程序、输出修补程序常量以及细化器阶段输出 UV 坐标的只读权限。| |输入|域着色器使用[外壳着色器 (HS) 阶段](hull-shader-stage--hs-.md)的输出控制点。 外壳着色器输出包括：控制点、 修补程序常量数据，以及分割因子 （分割因素可能包括使用固定函数细化器，以及原始值的整数分割-该工具可帮助 geomorphing，例如通过舍入之前的值). 对[细化器 (TS) 阶段](tessellator-stage--ts-.md)的每个输出坐标调用一次域着色器。| |输出|域着色器 (DS) 阶段输出输出修补程序中细分点的顶点位置。|
+|-|-| |作用|[域着色器 (DS) 阶段](domain-shader-stage--ds-.md)计算输出修补程序中细分点的顶点位置；它计算与每个域样本对应的顶点位置。 对每个细化器阶段输出点运行一次域着色器，并且该着色器具有对外壳着色器输出修补程序、输出修补程序常量以及细化器阶段输出 UV 坐标的只读权限。| |输入|域着色器使用[外壳着色器 (HS) 阶段](hull-shader-stage--hs-.md)的输出控制点。 外壳着色器输出包括：控制点、修补程序常数数据和细化因素（例如，细化因素可以包括固定函数细化器使用的值以及原始值（例如在被整数细化舍入前），这有助于加快几何过渡）。 对[细化器 (TS) 阶段](tessellator-stage--ts-.md)的每个输出坐标调用一次域着色器。| |输出|域着色器 (DS) 阶段输出输出修补程序中细分点的顶点位置。|
 
 ## <a name="geometry-shader-stage"></a>几何着色器阶段
 
-|-|-| |作用|[几何着色器 (GS) 阶段](geometry-shader-stage--gs-.md)处理整个基元：三角形、线和点，以及它们的相邻顶点。 它支持几何放大和解扩。 它对于点精灵扩展、动态粒子系统、皮毛/鳍生成、阴影卷生成、单通道渲染到 Cubemap、每基元材料交换和每基元材料设置等算法很有用 - 包括将重心坐标生成为基元数据，使得像素着色器可以执行定制属性内插。 | |输入|与在单个顶点上操作的顶点着色器不同，几何着色器的输入是完整基元的顶点（三角形为三个顶点，线为两个顶点或点为单个顶点）。| |输出|几何着色器 (GS) 阶段能够输出形成单个选定拓扑的多个顶点。 可用的几何着色器输出拓扑有 <strong>tristrip</strong>、<strong>linestrip</strong> 和 <strong>pointlist</strong>。 在几何着色器的任何调用中，发出的基元的数目可以自由地变化，但是必须静态地声明可发出的顶点的最大数目。 从几何着色器调用发出的带长度可以是任意的，并且可以通过 [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL 函数创建新带。|
+|-|-| |作用|[几何着色器 (GS) 阶段](geometry-shader-stage--gs-.md)处理整个基元：三角形、线和点，以及它们的相邻顶点。 它支持几何放大和解扩。 它对于点精灵扩展、动态粒子系统、皮毛/鳍生成、阴影卷生成、单通道渲染到 Cubemap、每基元材料交换和每基元材料设置等算法很有用 - 包括将重心坐标生成为基元数据，使得像素着色器可以执行定制属性内插。 | |输入|与在单个顶点上操作的顶点着色器不同，几何着色器的输入是完整基元的顶点（三角形为三个顶点，线为两个顶点或点为单个顶点）。| |输出|几何着色器 (GS) 阶段能够输出形成单个选定拓扑的多个顶点。 可用的几何着色器输出拓扑有 <strong>tristrip</strong>、<strong>linestrip</strong> 和 <strong>pointlist</strong>。 在几何着色器的任何调用中，发出的基元的数目可以自由地变化，但是必须静态地声明可发出的顶点的最大数目。 从几何着色器调用发出的带长度可以是任意的，并且可以通过 [RestartStrip](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL 函数创建新带。|
 
 ## <a name="stream-output-stage"></a>流输出阶段
 

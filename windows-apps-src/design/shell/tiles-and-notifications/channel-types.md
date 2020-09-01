@@ -5,28 +5,28 @@ ms.date: 07/07/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 502395d1daa698e1b05e40f355e65f074219e9a5
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 166abeb792e86fc44568a5ee29263262214657cf
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970852"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173821"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>选择正确的推送通知通道类型
 
-本文介绍三种类型的 Windows 推送通知通道（主要、次要和备用），可帮助你将内容传递到应用。 
+本文介绍三种类型的 Windows 推送通知通道 (主要、辅助和备用) ，可帮助你将内容传递到应用。 
 
-（有关如何创建推送通知的详细信息，请参阅[Windows 推送 Notification Services （WNS）概述](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)。） 
+ (有关如何创建推送通知的详细信息，请参阅 [Windows 推送 Notification Services (WNS) 概述](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)。 )  
 
 ## <a name="types-of-push-channels"></a>推送通道的类型 
 
-有三种类型的推送通道可用于将通知发送到 Windows 应用。 它们是： 
+有三种类型的推送通道可用于将通知发送到 Windows 应用。 它们分别是： 
 
-[主要通道](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) -“传统”推送通道。 应用商店中的任何应用均可使用来发送 toast、磁贴、原始或徽章通知。 [在此处了解详细信息](windows-push-notification-services--wns--overview.md)。
+[主要通道](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) -“传统”推送通道。 应用商店中的任何应用均可使用来发送 toast、磁贴、原始或徽章通知。 [在此处了解详细信息](windows-push-notification-services--wns--overview.md)。
 
-[辅助磁贴通道](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_)-用于将磁贴更新推送到辅助磁贴。 仅用于将磁贴或锁屏提醒通知发送到固定在用户“开始”屏幕上的辅助磁贴
+[辅助磁贴通道](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) -用于将磁贴更新推送到辅助磁贴。 仅用于将磁贴或锁屏提醒通知发送到固定在用户“开始”屏幕上的辅助磁贴
 
-[备用通道](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - 在创意者更新中添加的一种新型通道。 它允许将原始通知发送到任何 Windows 应用，包括未在存储中注册的应用。 
+[备用通道](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - 在创意者更新中添加的一种新型通道。 它允许将原始通知发送到任何 Windows 应用，包括未在存储中注册的应用。 
 
 > [!NOTE]
 > 无论你使用哪种推送通道，在设备上运行你的应用后，应用将始终能够发送本地 Toast、磁贴或锁屏提醒通知。 它可以利用前台应用进程或后台任务发送本地通知。 
@@ -84,7 +84,7 @@ PushNotificationChannel channel =
 利用备用通道，应用能够发送推送通知，而无需向 Microsoft Store 注册或在用于应用的主要通道之外创建推送通道。 
  
 ### <a name="what-do-alternate-channels-enable"></a>备用通道允许执行哪些操作？
--   将原始推送通知发送到在任何 Windows 设备上运行的 Windows。 备用通道仅允许原始通知（但你仍可将后台任务唤醒以在本地显示 toast 或磁贴通知）。
+-   将原始推送通知发送到在任何 Windows 设备上运行的 Windows。 备用通道仅允许原始通知 (但是，你仍可以将后台任务唤醒以在本地显示 toast 或磁贴通知) 。
 -   允许应用为应用内的不同功能创建多个原始推送通道。 应用最多可以创建 1000 个备用通道，每个通道的有效期为 30 天。 应用可以单独管理或吊销每个通道。
 -   无需在 Microsoft Store 中注册应用即可创建备用推送通道。 如果计划在设备上安装应用但不在 Microsoft Store 中注册，该应用仍可接收推送通知。
 -   服务器可以使用 W3C 标准 REST API 和 VAPID 协议推送通知。 备用通道使用 W3C 标准协议，这样，你可以简化需要维护的服务器逻辑。
@@ -107,20 +107,20 @@ PushNotificationChannel webChannel =
 <table>
 
 <tr class="header">
-<th align="left">类型 </th>
+<th align="left"><b>类型</b></th>
 <th align="left"><b>推送 Toast？</b></th>
 <th align="left"><b>推送磁贴/锁屏提醒？</b></th>
 <th align="left"><b>推送原始通知？</b></th>
 <th align="left"><b>身份验证</b></th>
 <th align="left"><b>API</b></th>
 <th align="left"><b>需要在应用商店中注册？</b></th>
-<th align="left"><b>通道</b></th>
+<th align="left">通道</th>
 <th align="left"><b>加密</b></th>
 </tr>
 
 
 <tr class="odd">
-<td align="left">基本</td>
+<td align="left">主要</td>
 <td align="left">是</td>
 <td align="left">是 - 仅限主要磁贴</td>
 <td align="left">是</td>
@@ -167,11 +167,11 @@ PushNotificationChannel webChannel =
 
 * [发送本地磁贴通知](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [自适应和交互式 Toast 通知](../tiles-and-notifications/adaptive-interactive-toasts.md)
-* [快速入门：发送推送通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
-* [如何通过推送通知更新锁屏提醒](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
-* [如何请求、创建和保存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
-* [如何为正在运行的应用程序截获通知](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
-* [如何使用 Windows 推送通知服务 (WNS) 进行验证](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
-* [推送通知服务请求和响应头](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
-* [推送通知指南和清单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [快速入门：发送推送通知](/previous-versions/windows/apps/hh868252(v=win.10))
+* [如何通过推送通知更新锁屏提醒](/previous-versions/windows/apps/hh465450(v=win.10))
+* [如何请求、创建和保存通知通道](/previous-versions/windows/apps/hh465412(v=win.10))
+* [如何为正在运行的应用程序截获通知](/previous-versions/windows/apps/hh465450(v=win.10))
+* [如何使用 Windows 推送通知服务 (WNS) 进行验证](/previous-versions/windows/apps/hh465407(v=win.10))
+* [推送通知服务请求和响应头](/previous-versions/windows/apps/hh465435(v=win.10))
+* [推送通知指南和清单](./windows-push-notification-services--wns--overview.md)
 * [原始通知](raw-notification-overview.md)

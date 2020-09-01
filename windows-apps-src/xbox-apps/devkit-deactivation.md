@@ -1,17 +1,17 @@
 ---
 title: Xbox One 开发人员模式停用
-description: 如何停用开发人员模式。
+description: 如果你决定不再想要使用控制台进行开发，请使用以下步骤停用开发人员模式。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e7b96e3b8b0cd6f47fdd97008aa8d90dc032fc4
-ms.sourcegitcommit: bee98f7a468c97c707de76afc14e1707c25f74f4
+ms.openlocfilehash: 6e1629435151ca7f66ea5d2e4ef5c90e7336d4f8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80531465"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174711"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>Xbox One 开发人员模式停用
 
@@ -21,7 +21,7 @@ ms.locfileid: "80531465"
 
 首先，将你的 Xbox One 主机返回到零售模式。
 
-1. 打开**开发人员主页**。
+1. 打开 **开发宿主**。
 
 2. 选择**退出开发人员模式**。  主机将在零售模式下重新启动。  
 
@@ -33,7 +33,7 @@ ms.locfileid: "80531465"
 
 在主机上停用开发人员模式的首选方法是使用**开发人员模式激活**应用。 
 
-1. 导航到**游戏和应用** > **应用**。
+1. 导航到 "游戏" " **& 应用**"  >  **Apps**。
   
    ![激活步骤 3](images/devkit-deactivation-5.png)    
    
@@ -56,7 +56,7 @@ ms.locfileid: "80531465"
 
 1.  转到**我的游戏和应用**。
 
-2.  选择**应用**，然后选择**设置**。
+2.  选择 " **应用**"，然后选择 " **设置**"。
 
 3.  转到左侧窗格中的**系统**，然后选择右侧窗格中的**主机信息**。   
    
@@ -74,11 +74,11 @@ ms.locfileid: "80531465"
 
 如果出于任何原因无法访问控制台，还可以使用合作伙伴中心在控制台上停用开发人员模式。
 
-1. 在合作伙伴中心导航到 "[管理 Xbox one 控制台](https://partner.microsoft.com/xboxconfig/devices)" 页。 系统可能会提示你登录。
+1. 在合作伙伴中心导航到 " [管理 Xbox one 控制台](https://partner.microsoft.com/xboxconfig/devices) " 页。 系统可能会提示你登录。
 
 2. 通过匹配序列号、主机 ID 或设备 ID，在主机列表中找到要停用的主机。  
 
-3. 单击**停用**。  
+3. 单击 " **停用**"。  
   
 ![使用 DevCenter 执行停用](images/devkit-deactivation-6.png)
 
@@ -86,4 +86,4 @@ ms.locfileid: "80531465"
 
 ## <a name="see-also"></a>另请参阅
 - [Xbox One 开发人员模式激活](devkit-activation.md)
-- [Xbox one 上的 UWP](index.md)
+- [Xbox One 上的 UWP](index.md)

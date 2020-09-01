@@ -6,12 +6,12 @@ ms.date: 01/25/2018
 ms.topic: article
 keywords: windows 10，uwp，游戏，入门
 localizationpriority: medium
-ms.openlocfilehash: eb2feeaa7d4ad67ecb9d6b54c5bc275faf9cc0bd
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 7d3e50f5d32cd8c6a497ff3de67005972d3a0f7f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970235"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175311"
 ---
 # <a name="getting-started"></a>入门
 
@@ -54,7 +54,7 @@ ms.locfileid: "88970235"
 
 如果要开发 Xbox 游戏或在游戏中使用 Xbox Live 功能，请加入 [Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator) 或 [ID@Xbox](https://www.xbox.com/Developers/id) 节目。 
 
-若要了解有关可用于每个程序的 Xbox Live 功能的详细信息，请参阅 [功能表](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table)。 有关详细信息，请参阅 [开发人员计划](e2e.md#developer-programs)。
+若要了解有关可用于每个程序的 Xbox Live 功能的详细信息，请参阅 [功能表](/gaming/xbox-live/developer-program-overview.md#feature-table)。 有关详细信息，请参阅 [开发人员计划](e2e.md#developer-programs)。
 
 > [!Note]
 > Xbox Live 创意者计划适用于所有开发人员。 **任何人都** 可以发布 Xbox 游戏。 若要使您的标题成为 Xbox Live 创意者计划的一部分，只需从 "合作伙伴中心" 启用此选项。 有关注册合作伙伴中心帐户的详细信息，请参阅下面的 [步骤 5](#step-5-sign-up-for-a-partner-center-account) 。
@@ -69,7 +69,7 @@ ms.locfileid: "88970235"
 
 有关详细信息，请参阅[发布 Windows 应用和游戏](../publish/index.md)。
 
-## <a name="useful-links"></a>有用链接
+## <a name="useful-links"></a>有用的链接
 
 * [Windows 10 游戏开发指南](e2e.md)
 * [UWP 应用是什么？](../get-started/universal-application-platform-guide.md)

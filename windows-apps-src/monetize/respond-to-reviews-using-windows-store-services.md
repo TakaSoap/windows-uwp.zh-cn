@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 评价 API, 回复评价
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a88f55555245ac64982b01920e538295c2ffbd2
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 5b39ec67c4821b870a0f404e7199b69152b3a89c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846847"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174951"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>使用 Microsoft Store 服务回复评价
 
@@ -32,7 +32,7 @@ ms.locfileid: "88846847"
 
 在开始编写调用 Microsoft Store 评价 API 的代码之前，确保已完成以下先决条件。
 
-* 你（或你的组织）必须有一个 Azure AD 目录，并且必须对该目录拥有[全局管理员](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，则你已具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
+* 你（或你的组织）必须有一个 Azure AD 目录，并且必须对该目录拥有[全局管理员](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，则你已具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
 
 * 必须将 Azure AD 应用程序与合作伙伴中心帐户相关联，并检索应用程序的租户 ID 和客户端 ID，并生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 评价 API 的应用或服务。 需要使用该租户 ID、客户端 ID 和密钥来获取要传递给 API 的 Azure AD 访问令牌。
     > [!NOTE]
@@ -54,7 +54,7 @@ ms.locfileid: "88846847"
 
 在 Microsoft Store 评价 API 中调用任何方法之前，首先必须获取将传递给该 API 中每个方法的 **Authorization** 标头的 Azure AD 访问令牌。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以对它进行刷新，以便可以在之后调用该 API 时继续使用。
 
-若要获取访问令牌，请按照 [使用客户端凭据的服务到服务调用](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) 中的说明将 HTTP POST 发送到 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
+若要获取访问令牌，请按照 [使用客户端凭据的服务到服务调用](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) 中的说明将 HTTP POST 发送到 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
 
 ```syntax
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -69,7 +69,7 @@ grant_type=client_credentials
 
 对于 POST URI 中的 " *租户 \_ id* " 和 "客户端 * \_ id* " 和 " *客户端 \_ 密钥* " 参数，为你在上一节中的合作伙伴中心检索的应用程序指定租户 id、客户端 id 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
 
-在你的访问令牌到期后，你可按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
+在你的访问令牌到期后，你可按照[此处](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens)的说明刷新令牌。
 
 <span id="call-the-windows-store-reviews-api" />
 
