@@ -1,18 +1,18 @@
 ---
 title: 顶点缓冲区视图 (VBV) 和索引缓冲区视图 (IBV)
-description: 顶点缓冲区保存顶点列表的数据。
+description: 了解 (VBV) 和索引缓冲区视图 (IBV) 的顶点缓冲区视图，它在 Direct3D 呈现中保存顶点的数据和整数索引。
 ms.assetid: 695115D2-9DA0-41F2-9416-33BFAB698129
 keywords:
 - 顶点缓冲区视图 (VBV)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cfb92c4f876d85388ce325f151408fe7b9e8d8b4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a616f2bad8f478b2d20e96b183ba944950fef8a8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636242"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156091"
 ---
 # <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a>顶点缓冲区视图 (VBV) 和索引缓冲区视图 (IBV)
 
@@ -35,7 +35,7 @@ CUSTOMVERTEX 的定义随后会在创建顶点缓冲区时传递到图形驱动�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[视图](views.md)
+[Views](views.md)
 
  
 

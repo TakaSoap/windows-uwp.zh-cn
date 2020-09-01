@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 编程
 ms.localizationpriority: medium
-ms.openlocfilehash: a87b979dc48f8977047599cac6a32ba0d901bd63
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: 6c1da82eaff074dfd3e925c298f9839dbb70ee3d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606356"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156501"
 ---
 # <a name="game-programming-resources"></a>游戏编程资源
 
@@ -23,7 +23,7 @@ ms.locfileid: "82606356"
 ## <a name="game-programming-reference"></a>游戏编程参考
 
 
--   [图形和游戏](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
+-   [图形和游戏](/windows/desktop/graphics-and-multimedia)
 -   [OpenGL 参考](https://www.opengl.org/sdk/docs/man4/)
 
 ## <a name="game-design-guidance"></a>游戏设计指南
@@ -43,9 +43,9 @@ ms.locfileid: "82606356"
 
 -   [DirectX 工具包](  https://github.com/Microsoft/DirectXTK)
 -   [DirectXTex 纹理处理库](  https://github.com/Microsoft/DirectXTex)
--   Microsoft Visual Studio[图形诊断](https://docs.microsoft.com/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)
+-   Microsoft Visual Studio[图形诊断](/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)
 -   [Win2D](https://github.com/Microsoft/Win2D) - 一个易于使用的 Windows 运行时 API，具有带 GPU 加速的立即模式 2D 图形呈现。
--   [Microsoft Store 的角度](https://github.com/microsoft/angle/wiki)-通过将 OPENGL es api 调用转换为 DIRECTX 11 API 调用，在 Windows 上运行 OpenGL es 内容。
+-   [Microsoft Store 的角度](https://github.com/microsoft/angle/wiki) -通过将 OPENGL es api 调用转换为 DIRECTX 11 API 调用，在 Windows 上运行 OpenGL es 内容。
 
 ## <a name="gdc-2015-game-dev-session-videos"></a>GDC 2015 游戏开发会议视频
 
@@ -81,7 +81,3 @@ ms.locfileid: "82606356"
  
 
  
-
-
-
-

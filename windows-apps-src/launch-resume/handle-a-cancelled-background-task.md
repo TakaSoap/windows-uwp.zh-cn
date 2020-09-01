@@ -10,20 +10,20 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: f660c17cd981ca830f0751819d01bf2141408ecc
-ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
+ms.openlocfilehash: fe862bf1b23ae7969e043d2172aa1633bd633ade
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162552"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155821"
 ---
 # <a name="handle-a-cancelled-background-task"></a>处理取消的后台任务
 
 **重要的 API**
 
--   [**BackgroundTaskCanceledEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcanceledeventhandler)
--   [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)
--   [**ApplicationData.Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
+-   [**BackgroundTaskCanceledEventHandler**](/uwp/api/windows.applicationmodel.background.backgroundtaskcanceledeventhandler)
+-   [**IBackgroundTaskInstance**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)
+-   [**ApplicationData.Current**](/uwp/api/windows.storage.applicationdata.current)
 
 了解如何创建一个后台任务，该任务识别取消请求、停止工作，并向使用永久性存储的应用报告取消。
 
@@ -177,7 +177,7 @@ else
 ```
 
 > [!NOTE]
-> 上面所示的代码示例使用 [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)。用于记录后台任务进度的[**进度**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) 属性。 使用 [**BackgroundTaskProgressEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs) 类将进度报告回应用。
+> 上面所示的代码示例使用 [**IBackgroundTaskInstance**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)。用于记录后台任务进度的[**进度**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) 属性。 使用 [**BackgroundTaskProgressEventArgs**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs) 类将进度报告回应用。
 
 修改 **Run** 方法，以便在工作停止后记录该任务是已完成还是已取消。 此步骤适用于进程外后台任务，因为你需要一种取消后台任务后在进程之间通信的方法。 对于进程内后台任务，可以仅与应用程序共享状态，以指示该任务已取消。
 
@@ -414,4 +414,4 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 - [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
 - [使用维护触发器](use-a-maintenance-trigger.md)
 - [调试后台任务](debug-a-background-task.md)
-- [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+- [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](/previous-versions/hh974425(v=vs.110))

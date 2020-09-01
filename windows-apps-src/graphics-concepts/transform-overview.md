@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fe97d689711202511dcfec023b718cd1ba9b0b1d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0f8efd1984ae8a726870bd8e7aaa3960baf91218
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370930"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156211"
 ---
 # <a name="transform-overview"></a>转换概述
 
@@ -37,7 +37,7 @@ ms.locfileid: "66370930"
 -   [视图转换](view-transform.md) - 从世界空间转换为视图空间。
 -   [投影转换](projection-transform.md) - 将视图空间转换为投影空间。
 
-## <a name="span-idmatrixtransformsspanspan-idmatrixtransformsspanspan-idmatrixtransformsspanmatrix-transforms"></a><span id="Matrix_Transforms"></span><span id="matrix_transforms"></span><span id="MATRIX_TRANSFORMS"></span>矩阵转换
+## <a name="span-idmatrix_transformsspanspan-idmatrix_transformsspanspan-idmatrix_transformsspanmatrix-transforms"></a><span id="Matrix_Transforms"></span><span id="matrix_transforms"></span><span id="MATRIX_TRANSFORMS"></span>矩阵转换
 
 
 在处理 3D 图形的应用程序中，你可使用几何转换来执行以下操作：
@@ -60,7 +60,7 @@ ms.locfileid: "66370930"
 
 ![用于统一缩放的矩阵的等式](images/matrix.png)
 
-在 C++ 中，Direct3D 使用矩阵结构将矩阵声明为二维数组。 以下示例说明如何初始化 [**D3DMATRIX**](https://docs.microsoft.com/windows/desktop/direct3d9/d3dmatrix) 结构以充当统一缩放矩阵（比例系数“s”）。
+在 C++ 中，Direct3D 使用矩阵结构将矩阵声明为二维数组。 以下示例说明如何初始化 [**D3DMATRIX**](/windows/desktop/direct3d9/d3dmatrix) 结构以充当统一缩放矩阵（比例系数“s”）。
 
 ```cpp
 D3DMATRIX scale = {
@@ -92,14 +92,14 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 }    // End of Translate
 ```
 
-## <a name="span-idscalespanspan-idscalespanspan-idscalespanscale"></a><span id="Scale"></span><span id="scale"></span><span id="SCALE"></span>缩放
+## <a name="span-idscalespanspan-idscalespanspan-idscalespanscale"></a><span id="Scale"></span><span id="scale"></span><span id="SCALE"></span>纵向
 
 
 以下等式按 x 轴、y 轴和 z 轴方向的任意值将点 (x, y, z) 缩放到新点 (x', y', z')。
 
 ![新点的缩放矩阵的等式](images/matscale.png)
 
-## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>Rotate
+## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>90
 
 
 此处描述的转换是针对左手坐标系的，因此可能不同于你在其他地方看到的转换矩阵。
@@ -134,7 +134,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 }
 ```
 
-## <a name="span-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanconcatenating-matrices"></a><span id="Concatenating_Matrices"></span><span id="concatenating_matrices"></span><span id="CONCATENATING_MATRICES"></span>串联矩阵
+## <a name="span-idconcatenating_matricesspanspan-idconcatenating_matricesspanspan-idconcatenating_matricesspanconcatenating-matrices"></a><span id="Concatenating_Matrices"></span><span id="concatenating_matrices"></span><span id="CONCATENATING_MATRICES"></span>串联矩阵
 
 
 使用矩阵的一个优势在于，你可通过将两个或两个以上的矩阵相乘来组合其效果。 这意味着，要旋转模型并将其转换到某个位置，你无需应用两个矩阵。 相反，你将旋转矩阵和转换矩阵相乘以产生包含其所有效果的复合矩阵。 此过程称为矩阵连接，可使用以下等式进行编写。
@@ -161,7 +161,3 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
  
 
  
-
-
-
-

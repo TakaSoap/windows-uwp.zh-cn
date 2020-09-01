@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, xaml 互操作
 ms.localizationpriority: medium
-ms.openlocfilehash: 174cb7f2608c1da89ebacc21e5032d03f7701f15
-ms.sourcegitcommit: 0179e2ccb59a14abc1676da0662e2def54af24ea
+ms.openlocfilehash: fc5e5323f509759754822849bd7dc93e7a45eaee
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72796221"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156471"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX 和 XAML 互操作
 
@@ -20,7 +20,7 @@ ms.locfileid: "72796221"
 如果你的应用主要侧重于 2D 呈现，你可能需要使用 [Win2D](https://github.com/microsoft/win2d) Windows 运行时库。 此库由 Microsoft 维护，并且基于核心 Direct2D 技术生成。 它大大简化了实现 2D 图形的使用模式，并包括对本文档中所述的某些技术的有用抽象。 有关更多详细信息，请参阅项目页面。 本文档介绍有关选择*不*使用 Win2D 的应用开发人员的指南。
 
 > [!NOTE]
-> DirectX api 未定义为 Windows 运行时类型，但你通常可以使用[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index)开发与 DirectX 互操作的 XAML UWP 组件。 此外，如果将 DirectX 调用包装在一个独立的 Windows 运行时元数据文件中，可以创建一个使用 DirectX 的 C# 和 XAML UWP 应用。
+> DirectX Api 未定义为 Windows 运行时类型，但你通常可以使用 [c + +/WinRT](../cpp-and-winrt-apis/index.md) 开发与 DirectX 互操作的 XAML UWP 组件。 此外，如果将 DirectX 调用包装在一个独立的 Windows 运行时元数据文件中，可以创建一个使用 DirectX 的 C# 和 XAML UWP 应用。
 
 ## <a name="xaml-and-directx"></a>XAML 和 DirectX
 
@@ -28,32 +28,32 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 
 如果要实现自定义 XAML 和 DirectX 互操作，需要知道以下两个概念：
 
--   共享图面是由 XAML（可以使用 DirectX 间接绘入）使用 [Windows::UI::Xaml::Media::ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagesource) 类型定义的调整大小的显示区域。 对于共享图面，不对新内容显示在屏幕上的情形控制精确计时。 而将对共享图面的更新同步到 XAML 框架的更新。
--   [交换链](https://docs.microsoft.com/windows/desktop/direct3d9/what-is-a-swap-chain-)表示用于以最小延迟显示图形的缓冲区集合。 通常，交换链独立于 UI 线程以每秒 60 帧的速度进行更新。 但是，交换链会使用更多的内存和 CPU 资源来支持快速更新，并且更难以使用，因为你必须管理多个线程。
+-   共享图面是由 XAML（可以使用 DirectX 间接绘入）使用 [Windows::UI::Xaml::Media::ImageSource](/uwp/api/windows.ui.xaml.media.imagesource) 类型定义的调整大小的显示区域。 对于共享图面，不对新内容显示在屏幕上的情形控制精确计时。 而将对共享图面的更新同步到 XAML 框架的更新。
+-   [交换链](/windows/desktop/direct3d9/what-is-a-swap-chain-)表示用于以最小延迟显示图形的缓冲区集合。 通常，交换链独立于 UI 线程以每秒 60 帧的速度进行更新。 但是，交换链会使用更多的内存和 CPU 资源来支持快速更新，并且更难以使用，因为你必须管理多个线程。
 
 考虑 DirectX 的用途。 它是否用于合成适合显示窗口维度的单一控件或对其进行动画处理？ 它是否包含像游戏中那样需要呈现和实时控制的输出？ 如果是，你可能需要实现一个交换链。 否则，可以使用共享图面。
 
 在确定希望使用 DirectX 的方式之后，即可使用这些 Windows 运行时类型之一将 DirectX 呈现合并到 UWP 应用中：
 
--   如果希望创作静态图像，或以事件驱动的间隔绘制复杂图像，可使用 [Windows::UI::Xaml::Media::Imaging::SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 绘制到共享图面。 此类型处理特定大小的 DirectX 绘图图面。 通常，在以位图形式创作图像或纹理来在一个文档或 UI 元素中显示时，可以使用此类型。 它不太适合实时交互，例如高性能游戏。 这是因为 **SurfaceImageSource** 对象的更新会同步到 XAML 用户界面更新，而且这可能导致你提供给用户的视觉反馈出现延迟，例如起伏不定的帧速率或实时输入时能感觉到的迟缓响应。 不过，更新对动态控制或数据模拟而言已经足够快了！
+-   如果希望创作静态图像，或以事件驱动的间隔绘制复杂图像，可使用 [Windows::UI::Xaml::Media::Imaging::SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 绘制到共享图面。 此类型处理特定大小的 DirectX 绘图图面。 通常，在以位图形式创作图像或纹理来在一个文档或 UI 元素中显示时，可以使用此类型。 它不太适合实时交互，例如高性能游戏。 这是因为 **SurfaceImageSource** 对象的更新会同步到 XAML 用户界面更新，而且这可能导致你提供给用户的视觉反馈出现延迟，例如起伏不定的帧速率或实时输入时能感觉到的迟缓响应。 不过，更新对动态控制或数据模拟而言已经足够快了！
 
--   如果图像比所提供的屏幕空间要大，并且可由用户平移或缩放，则使用 [Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource)。 此类型处理一个比屏幕更大的特定大小 DirectX 绘图图面。 像 [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 一样，你可以在动态创作复杂图像或控件时使用它。 而且，也像 **SurfaceImageSource** 一样，它不太适合高性能游戏。 可使用 **VirtualSurfaceImageSource** 的一些 XAML 元素示例包括地图控件，或者大型的、包含大量图像的文档查看器。
+-   如果图像比所提供的屏幕空间要大，并且可由用户平移或缩放，则使用 [Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource)。 此类型处理一个比屏幕更大的特定大小 DirectX 绘图图面。 像 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 一样，你可以在动态创作复杂图像或控件时使用它。 而且，也像 **SurfaceImageSource** 一样，它不太适合高性能游戏。 可使用 **VirtualSurfaceImageSource** 的一些 XAML 元素示例包括地图控件，或者大型的、包含大量图像的文档查看器。
 
--   如果你使用 DirectX 提供实时更新的图形，或者在必须以低延迟的定期间隔更新的情况下，可以使用 [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 类，这样你无需同步到 XAML 框架刷新计时器即可刷新图形。 此类型使你能够直接访问图形设备的交换链 ([IDXGISwapChain1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1))，并将 XAML 放在呈现目标之上。 此类型很适合需要基于 XAML 的用户界面的游戏和全屏 DirectX 应用。 若要使用此方法，你必须熟悉 DirectX，包括 Microsoft DirectX 图形基础结构 (DXGI)、Direct2D 和 Direct3D 技术。 有关详细信息，请参阅 [Direct3D 11 编程指南](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews)。
+-   如果你使用 DirectX 提供实时更新的图形，或者在必须以低延迟的定期间隔更新的情况下，可以使用 [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 类，这样你无需同步到 XAML 框架刷新计时器即可刷新图形。 此类型使你能够直接访问图形设备的交换链 ([IDXGISwapChain1](/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1))，并将 XAML 放在呈现目标之上。 此类型很适合需要基于 XAML 的用户界面的游戏和全屏 DirectX 应用。 若要使用此方法，你必须熟悉 DirectX，包括 Microsoft DirectX 图形基础结构 (DXGI)、Direct2D 和 Direct3D 技术。 有关详细信息，请参阅 [Direct3D 11 编程指南](/windows/desktop/direct3d11/dx-graphics-overviews)。
 
 ## <a name="surfaceimagesource"></a>SurfaceImageSource
 
-[SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 提供要绘入的 DirectX 共享图面，然后将位编写到应用内容中。
+[SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 提供要绘入的 DirectX 共享图面，然后将位编写到应用内容中。
 
-下面是在代码隐藏文件中创建和更新 [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 对象的基本过程：
+下面是在代码隐藏文件中创建和更新 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 对象的基本过程：
 
-1.  通过将高度和宽度传递到 [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 构造函数定义共享图面的大小。 还可以指示图面是否需要 alpha（透明度）支持。
+1.  通过将高度和宽度传递到 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 构造函数定义共享图面的大小。 还可以指示图面是否需要 alpha（透明度）支持。
 
     例如：
 
     `SurfaceImageSource^ surfaceImageSource = ref new SurfaceImageSource(400, 300);`
 
-2.  获取 [ISurfaceImageSourceNativeWithD2D](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d) 的指针。 将 [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 对象强制转换为 [IInspectable](https://docs.microsoft.com/windows/desktop/api/inspectable/nn-inspectable-iinspectable)（或 **IUnknown**），并对它调用 **QueryInterface** 以获取基础 **ISurfaceImageSourceNativeWithD2D** 实现。 你使用在此实现上定义的方法设置设备并运行绘图操作。
+2.  获取 [ISurfaceImageSourceNativeWithD2D](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d) 的指针。 将 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 对象强制转换为 [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)（或 **IUnknown**），并对它调用 **QueryInterface** 以获取基础 **ISurfaceImageSourceNativeWithD2D** 实现。 你使用在此实现上定义的方法设置设备并运行绘图操作。
 
     ```cpp
     Microsoft::WRL::ComPtr<ISurfaceImageSourceNativeWithD2D> m_sisNativeWithD2D;
@@ -163,27 +163,27 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
     ```
 
     > [!NOTE]
-    > 当前调用 [SurfaceImageSource::SetSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource)（从 **IBitmapSource::SetSource** 继承）将引发异常。 不要从你的 [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 对象调用它。
+    > 当前调用 [SurfaceImageSource::SetSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource)（从 **IBitmapSource::SetSource** 继承）将引发异常。 不要从你的 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 对象调用它。
 
     > [!NOTE]
     > 当关联的 [Window](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 隐藏时，应用必须避免绘制到 **SurfaceImageSource**，否则，**ISurfaceImageSourceNativeWithD2D** API 将会失败。 为实现此目的，请为 [Window.VisibilityChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) 事件注册为事件侦听器，以跟踪可见性变化。
 
 ## <a name="virtualsurfaceimagesource"></a>VirtualSurfaceImageSource
 
-[VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 在内容可能比可用屏幕大时扩展 [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)，使内容可以获得最佳的呈现效果。
+[VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 在内容可能比可用屏幕大时扩展 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)，使内容可以获得最佳的呈现效果。
 
-[VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 不同于 [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)，因为它使用了一个回调 [IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative-updatesneeded)，你可以实现该回调，当图面区域在屏幕上可见时更新该区域。 你不需要清除隐藏的区域，因为 XAML 框架会负责此事。
+[VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 不同于 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)，因为它使用了一个回调 [IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative-updatesneeded)，你可以实现该回调，当图面区域在屏幕上可见时更新该区域。 你不需要清除隐藏的区域，因为 XAML 框架会负责此事。
 
-这是在代码隐藏文件中创建和更新 [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 对象的基本过程：
+这是在代码隐藏文件中创建和更新 [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 对象的基本过程：
 
-1.  创建一个具有所需大小的 [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 实例。 例如：
+1.  创建一个具有所需大小的 [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 实例。 例如：
 
     ```cpp
     VirtualSurfaceImageSource^ virtualSIS = 
         ref new VirtualSurfaceImageSource(2000, 2000);
     ```
 
-2.  获取 [IVirtualSurfaceImageSourceNative](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative) 和 [ISurfaceImageSourceNativeWithD2D](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d) 的指针。 将 [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 对象强制转换为 [IInspectable](https://docs.microsoft.com/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 或 [IUnknown](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)，并对它调用 [QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 以获取基础的 **IVirtualSurfaceImageSourceNative** 和 **ISurfaceImageSourceNativeWithD2D** 实现。 你使用在这些实现上定义的方法设置设备并运行绘图操作。
+2.  获取 [IVirtualSurfaceImageSourceNative](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative) 和 [ISurfaceImageSourceNativeWithD2D](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d) 的指针。 将 [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 对象强制转换为 [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 或 [IUnknown](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)，并对它调用 [QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 以获取基础的 **IVirtualSurfaceImageSourceNative** 和 **ISurfaceImageSourceNativeWithD2D** 实现。 你使用在这些实现上定义的方法设置设备并运行绘图操作。
 
     ```cpp
     Microsoft::WRL::ComPtr<IVirtualSurfaceImageSourceNative>  m_vsisNative;
@@ -274,7 +274,7 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
     }
     ```
 
-    框架在一个 [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 区域需要更新时调用你的 [IVirtualSurfaceUpdatesCallbackNative::UpdatesNeeded](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-registerforupdatesneeded) 实现。
+    框架在一个 [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 区域需要更新时调用你的 [IVirtualSurfaceUpdatesCallbackNative::UpdatesNeeded](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-registerforupdatesneeded) 实现。
 
     在两个时刻可发生此情况：当框架确定该区域需要绘制时（例如当用户平移或缩放图面的视图时），或者在应用在该区域上调用 [IVirtualSurfaceImageSourceNative::Invalidate](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-invalidate) 时。
 
@@ -360,26 +360,26 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 ## <a name="swapchainpanel-and-gaming"></a>SwapChainPanel 和游戏
 
 
-[SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 是用于支持高性能图形和游戏的 Windows 运行时类型，你可以在其中直接管理交换链。 在此情况下，你可以创建自己的 DirectX 交换链并管理所呈现内容的显示。
+[SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 是用于支持高性能图形和游戏的 Windows 运行时类型，你可以在其中直接管理交换链。 在此情况下，你可以创建自己的 DirectX 交换链并管理所呈现内容的显示。
 
-若要确保良好的性能，[SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 类型有一些限制：
+若要确保良好的性能，[SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 类型有一些限制：
 
--   每个应用的 [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 实例不超过 4 个。
--   应将 DirectX 交换链的高度和宽度（在[DXGI \_SWAP \_CHAIN \_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)）设置为交换链元素的当前尺寸。 如果不这样做，则会缩放显示内容（使用**DXGI \_SCALING \_STRETCH**）来容纳。
--   必须将 DirectX 交换链的缩放模式（在[dxgi \_SWAP \_CHAIN \_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)）设置为**dxgi \_SCALING \_STRETCH**。
+-   每个应用的 [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 实例不超过 4 个。
+-   应将 "DirectX 交换链" 的 "高度" 和 "宽度" (设置为 " [DXGI \_ 交换 \_ 链 \_ DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) 到交换链元素的当前尺寸。 否则，将使用 **DXGI \_ 缩放 \_ STRETCH**) 来缩放显示内容 (。
+-   必须将 DirectX 交换链的缩放模式 (到 [dxgi \_ 交换 \_ 链 \_ DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1) 中) 才能 ** \_ 扩展扩展 \_ **。
 -   必须调用 [IDXGIFactory2::CreateSwapChainForComposition](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcomposition) 来创建 DirectX 交换链。
 
-你基于应用的需求来更新 [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)，而不是 XAML 框架的更新。 如果需要将 **SwapChainPanel** 的更新与 XAML 框架的更新同步，可以注册 [Windows::UI::Xaml::Media::CompositionTarget::Rendering](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.compositiontarget.rendering) 事件。 否则，如果尝试通过与更新 **SwapChainPanel** 的线程不同的线程更新 XAML 元素，则必须考虑任何跨线程问题。
+你基于应用的需求来更新 [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)，而不是 XAML 框架的更新。 如果需要将 **SwapChainPanel** 的更新与 XAML 框架的更新同步，可以注册 [Windows::UI::Xaml::Media::CompositionTarget::Rendering](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.compositiontarget.rendering) 事件。 否则，如果尝试通过与更新 **SwapChainPanel** 的线程不同的线程更新 XAML 元素，则必须考虑任何跨线程问题。
 
 如果你需要接收 **SwapChainPanel** 的低延迟指针输入，请使用 [SwapChainPanel::CreateCoreIndependentInputSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.swapchainpanel.createcoreindependentinputsource)。 此方法将返回 [CoreIndependentInputSource](https://docs.microsoft.com/uwp/api/windows.ui.core.coreindependentinputsource) 对象，该对象可用于在后台线程上以最小延迟接收输入事件。 请注意，在调用此方法后，将不会对 **SwapChainPanel** 引发正常 XAML 指针输入事件，因为所有输入都将重定向到后台线程。
 
 
-> **注意**   通常，你的 DirectX 应用应当在横向创建交换链，并等于显示窗口大小（这在大多数 Microsoft Store 游戏中通常为本机屏幕分辨率）。 这可确保你的应用在没有任何可见 XAML 覆盖时使用最佳交换链实现。 如果应用旋转到纵向模式，你的应用应在现有交换链上调用 [IDXGISwapChain1::SetRotation](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation)，根据需要应用内容转换，然后在同一交换链上再次调用 [SetSwapChain](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain)。 类似地，每当通过调用 [IDXGISwapChain::ResizeBuffers](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers) 调整了交换链的大小时，你的应用都应当再次在同一交换链上调用**SetSwapChain**。
+> **注意**   通常，你的 DirectX 应用应当在横向创建交换链，并等于显示窗口大小（这在大多数 Microsoft Store 游戏中通常为本机屏幕分辨率）。 这可确保你的应用在没有任何可见 XAML 覆盖时使用最佳交换链实现。 如果应用旋转到纵向模式，你的应用应在现有交换链上调用 [IDXGISwapChain1::SetRotation](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation)，根据需要应用内容转换，然后在同一交换链上再次调用 [SetSwapChain](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain)。 类似地，每当通过调用 [IDXGISwapChain::ResizeBuffers](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers) 调整了交换链的大小时，你的应用都应当再次在同一交换链上调用**SetSwapChain**。
 
 
  
 
-这是在代码隐藏文件中创建和更新 [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 对象的基本过程。
+这是在代码隐藏文件中创建和更新 [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 对象的基本过程。
 
 1.  获取应用的交换链面板的实例。 这些实例在 XAML 中使用 `<SwapChainPanel>` 标记表示。
 
@@ -396,7 +396,7 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
     …
     ```
 
-2.  获取 [ISwapChainPanelNative](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative) 的指针。 将 [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 对象强制转换为 [IInspectable](https://docs.microsoft.com/windows/desktop/api/inspectable/nn-inspectable-iinspectable)（或 **IUnknown**），并对它调用 **QueryInterface** 以获取基础 **ISwapChainPanelNative** 实现。
+2.  获取 [ISwapChainPanelNative](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative) 的指针。 将 [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 对象强制转换为 [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)（或 **IUnknown**），并对它调用 **QueryInterface** 以获取基础 **ISwapChainPanelNative** 实现。
 
     ```cpp
     Microsoft::WRL::ComPtr<ISwapChainPanelNative> m_swapChainNative;
@@ -405,7 +405,7 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
     panelInspectable->QueryInterface(__uuidof(ISwapChainPanelNative), (void **)&m_swapChainNative);
     ```
 
-3.  创建 DXGI 设备和交换链，并将交换链设置为 [ISwapChainPanelNative](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative)，方法是将它传递给 [SetSwapChain](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain)。
+3.  创建 DXGI 设备和交换链，并将交换链设置为 [ISwapChainPanelNative](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative)，方法是将它传递给 [SetSwapChain](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain)。
 
     ```cpp
     Microsoft::WRL::ComPtr<IDXGISwapChain1>               m_swapChain;    
@@ -456,8 +456,8 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 ## <a name="related-topics"></a>相关主题
 
 * [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)
-* [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)
-* [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource)
-* [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)
-* [ISwapChainPanelNative](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative)
-* [Direct3D 11 编程指南](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews)
+* [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)
+* [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource)
+* [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)
+* [ISwapChainPanelNative](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative)
+* [Direct3D 11 编程指南](/windows/desktop/direct3d11/dx-graphics-overviews)

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 02108ad2926fc1514ca94f08d11f565bc342a62d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2fd92209e821d0d07f5cffda0850423e0496b03a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970312"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156821"
 ---
 # <a name="edge-based-ui-animations"></a>基于边缘的 UI 动画
 
@@ -23,7 +23,7 @@ ms.locfileid: "82970312"
 
 基于边缘的动画显示或隐藏源自屏幕边缘的 UI。 显示和隐藏动画可以由用户或应用启动。 此 UI 可以覆盖应用，也可以作为主屏表面的一部分。 如果此 UI 是应用图面的一部分，那么应用的其余部分可能需要相应调整大小。
 
-> **重要 API**：[**EdgeUIThemeTransition 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+> **重要 API**：[**EdgeUIThemeTransition 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -45,18 +45,14 @@ ms.locfileid: "82970312"
 
 
 **面向开发人员**
-* [动画概述](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [创建基于边缘的 UI 动画](https://docs.microsoft.com/previous-versions/windows/apps/jj649428(v=win.10))
-* [快速入门：使用库动画创建 UI 动画](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**EdgeUIThemeTransition 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
-* [**PaneThemeTransition 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)
-* [创建淡化动画](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
-* [创建重新定位动画](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
+* [动画概述](./xaml-animation.md)
+* [创建基于边缘的 UI 动画](/previous-versions/windows/apps/jj649428(v=win.10))
+* [快速入门：使用库动画创建 UI 动画](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**EdgeUIThemeTransition 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+* [**PaneThemeTransition 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)
+* [创建淡化动画](/previous-versions/windows/apps/jj649429(v=win.10))
+* [创建重新定位动画](/previous-versions/windows/apps/jj649434(v=win.10))
 
  
 
  
-
-
-
-

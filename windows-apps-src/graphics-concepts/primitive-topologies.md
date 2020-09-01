@@ -7,34 +7,34 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7a60b3eba8545eeeea4cf477a40e044578c166
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 45abb0c356b4ee6923bf6edd0b462f568749de5e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371245"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156331"
 ---
 # <a name="primitive-topologies"></a>基元拓扑
 
 
 Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列表和三角形带）将如何解释和呈现顶点。
 
-## <a name="span-idprimitivetypesspanspan-idprimitivetypesspanspan-idprimitivetypesspanbasic-primitive-topologies"></a><span id="Primitive_Types"></span><span id="primitive_types"></span><span id="PRIMITIVE_TYPES"></span>基本基元拓扑
+## <a name="span-idprimitive_typesspanspan-idprimitive_typesspanspan-idprimitive_typesspanbasic-primitive-topologies"></a><span id="Primitive_Types"></span><span id="primitive_types"></span><span id="PRIMITIVE_TYPES"></span>基本基元拓扑
 
 
 支持以下基本基元拓扑（或基元类型）：
 
 -   [点列表](point-lists.md)
 -   [行列表](line-lists.md)
--   [条带线](line-strips.md)
+-   [线条带](line-strips.md)
 -   [三角形列表](triangle-lists.md)
--   [三角形条带](triangle-strips.md)
+-   [三角形带](triangle-strips.md)
 
 有关每个基元类型的可视化，请参阅[缠绕方向和前导顶点位置](#winding-direction-and-leading-vertex-positions)中本主题后面的图示。
 
 [输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)从顶点和索引缓冲区读取数据，将数据装配到这些基元中，然后将数据发送到剩余的管道阶段。
 
-## <a name="span-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanprimitive-adjacency"></a><span id="Primitive_Adjacency"></span><span id="primitive_adjacency"></span><span id="PRIMITIVE_ADJACENCY"></span>基元相邻
+## <a name="span-idprimitive_adjacencyspanspan-idprimitive_adjacencyspanspan-idprimitive_adjacencyspanprimitive-adjacency"></a><span id="Primitive_Adjacency"></span><span id="primitive_adjacency"></span><span id="PRIMITIVE_ADJACENCY"></span>基元邻接
 
 
 所有 Direct3D 基元类型（点列表除外）以两个版本提供：带邻近度的基元类型和不带邻近度的基元类型。 带邻近度的基元包含一些周围的顶点，而不带邻近度的基元仅包含目标基元的顶点。 例如，线列表基元具有包含邻近度的对应线列表基元。
@@ -43,7 +43,7 @@ Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列�
 
 例如，假设你想要绘制带邻近度的三角形列表。 包含 36 个顶点的三角形列表（带邻近度）将产生 6 个已完成的基元。 带邻近度的基元（线条带除外）包含的顶点数正好是不带邻近度的等效基元的顶点数的两倍，其中每个多出的顶点都是相邻顶点。
 
-## <a name="span-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwinding-direction-and-leading-vertex-positionsspanwinding-direction-and-leading-vertex-positions"></a><span id="Winding_Direction_and_Leading_Vertex_Positions"></span><span id="winding_direction_and_leading_vertex_positions"></span><span id="WINDING_DIRECTION_AND_LEADING_VERTEX_POSITIONS"></span><span id="winding-direction-and-leading-vertex-positions"></span>出现在缠绕方向和领先的顶点位置
+## <a name="span-idwinding_direction_and_leading_vertex_positionsspanspan-idwinding_direction_and_leading_vertex_positionsspanspan-idwinding_direction_and_leading_vertex_positionsspanspan-idwinding-direction-and-leading-vertex-positionsspanwinding-direction-and-leading-vertex-positions"></a><span id="Winding_Direction_and_Leading_Vertex_Positions"></span><span id="winding_direction_and_leading_vertex_positions"></span><span id="WINDING_DIRECTION_AND_LEADING_VERTEX_POSITIONS"></span><span id="winding-direction-and-leading-vertex-positions"></span>缠绕方向和前导顶点位置
 
 
 如下图中所示，前导顶点是基元中的第一个非相邻顶点。 基元类型可以定义多个前导顶点，只要每个顶点都用于不同的基元。
@@ -58,7 +58,7 @@ Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列�
 
 下表描述了上图中的符号。
 
-| 符号                                                                                   | 名称              | 描述                                                                         |
+| 符号                                                                                   | “属性”              | 描述                                                                         |
 |------------------------------------------------------------------------------------------|-------------------|-------------------------------------------------------------------------------------|
 | ![顶点的符号](images/d3d10-primitive-topologies-vertex.png)                     | 顶点            | 3D 空间中的点。                                                                |
 | ![缠绕方向的符号](images/d3d10-primitive-topologies-winding-direction.png) | 缠绕方向 | 装配基元时的顶点顺序。 可以是顺时针或逆时针。 |
@@ -66,10 +66,10 @@ Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列�
 
  
 
-## <a name="span-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>生成多个条带
+## <a name="span-idgenerating_multiple_stripsspanspan-idgenerating_multiple_stripsspanspan-idgenerating_multiple_stripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>生成多个条带
 
 
-你可以通过条带切割生成多个条带。 你可以通过显式调用 [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL 函数或通过将特殊索引值插入索引缓冲区来执行条带切割。 此值为 –1，对于 32 位指数为 0xffffffff，对于 16 位指数为 0xffff。
+你可以通过条带切割生成多个条带。 你可以通过显式调用 [RestartStrip](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL 函数或通过将特殊索引值插入索引缓冲区来执行条带切割。 此值为 –1，对于 32 位指数为 0xffffffff，对于 16 位指数为 0xffff。
 
 索引 –1 表示显式“切割”或“重启”当前条带。 上一个索引完成上一个基元或条带，下一个索引启动新基元或条带。
 
@@ -85,7 +85,3 @@ Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列�
  
 
  
-
-
-
-

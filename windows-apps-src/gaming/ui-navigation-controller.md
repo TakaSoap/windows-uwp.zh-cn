@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, ui, 导航
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5ba9d893a622e256030601cca204abab35045f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7cf5369bd01fbcf95c5af7bddc7055958cc50299
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599922"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159081"
 ---
 # <a name="ui-navigation-controller"></a>UI 导航控制器
 
@@ -42,12 +42,12 @@ UI 导航控制器是_逻辑_输入设备，用于提供一套可由各种_物�
 | -------:| ---------------
 |      向上 | XY-聚焦导航上
 |    向下 | XY-聚焦导航下
-|    向左 | XY-聚焦导航左
-|   向右 | XY-聚焦导航右
-|    视图 | 显示游戏玩法信息 _（记分牌、游戏统计信息、目标、世界地图或区域地图）_
+|    Left | XY-聚焦导航左
+|   Right | XY-聚焦导航右
+|    查看 | 显示游戏玩法信息 _（记分牌、游戏统计信息、目标、世界地图或区域地图）_
 |    菜单 | 主菜单/暂停 _（设置、状态、装备、背包、暂停）_
 |  接受 | 肯定响应 _（接受、前进、确认、开始、是）_
-|  Cancel | 否定响应 _（拒绝、倒退、谢绝、停止、否）_
+|  取消 | 否定响应 _（拒绝、倒退、谢绝、停止、否）_
 
 
 ### <a name="optional-set"></a>可选组
@@ -84,29 +84,29 @@ Windows.Gaming.Input 命名空间支持的所有输入设备都是 UI 导航设�
 | ------------------:| ----------------------------------- | ------------------ | ------------------ |
 |                 向上 | 左操纵杆向上/方向键向上       | 上摇杆           | 方向键向上           |
 |               向下 | 左操纵杆向下/方向键向下   | 下摇杆         | 方向键向下         |
-|               向左 | 左操纵杆向左/方向键向左   | 左摇杆         | 方向键向左         |
-|              向右 | 左操纵杆向右/方向键向右 | 右摇杆        | 方向键向右        |
-|               视图 | “视图”按钮                         | “视图”按钮        | “视图”按钮        |
+|               Left | 左操纵杆向左/方向键向左   | 左摇杆         | 方向键向左         |
+|              Right | 左操纵杆向右/方向键向右 | 右摇杆        | 方向键向右        |
+|               查看 | “视图”按钮                         | “视图”按钮        | “视图”按钮        |
 |               菜单 | “菜单”按钮                         | “菜单”按钮        | “菜单”按钮        |
-|             接受 | A 按钮                            | 操作 1 按钮    | A 按钮           |
-|             Cancel | B 按钮                            | 操作 2 按钮    | B 按钮           |
+|             接受 | A 按钮                            | “操作 1”按钮    | A 按钮           |
+|             取消 | B 按钮                            | “操作 2”按钮    | B 按钮           |
 
 下表总结了导航命令的_可选组_是如何映射到各种输入设备的。
 
 | 导航命令 | 游戏板输入          | 街机摇杆输入 | 赛车方向盘输入    |
 | ------------------:| ---------------------- | ------------------ | --------------------- |
-|             PageUp | 左扳机键           | _不支持_    | _各不相同_              |
-|           PageDown | 右扳机键          | _不支持_    | _各不相同_              |
-|           PageLeft | 左缓冲键            | _不支持_    | _各不相同_              |
-|          PageRight | 右缓冲键           | _不支持_    | _各不相同_              |
-|           ScrollUp | 右操纵杆向上    | _不支持_    | _各不相同_              |
-|         ScrollDown | 右操纵杆向下  | _不支持_    | _各不相同_              |
-|         ScrollLeft | 右操纵杆向左  | _不支持_    | _各不相同_              |
-|        ScrollRight | 右操纵杆向右 | _不支持_    | _各不相同_              |
-|           Context1 | X 按钮               | _不支持_    | X 按钮（_常用_） |
-|           Context2 | Y 按钮               | _不支持_    | Y 按钮（_常用_） |
-|           Context3 | 左操纵杆按键  | _不支持_    | _各不相同_              |
-|           Context4 | 右操纵杆按键 | _不支持_    | _各不相同_              |
+|             PageUp | 左扳机键           | _不支持_    | _多种多样_              |
+|           PageDown | 右扳机键          | _不支持_    | _多种多样_              |
+|           PageLeft | 左缓冲键            | _不支持_    | _多种多样_              |
+|          PageRight | 右缓冲键           | _不支持_    | _多种多样_              |
+|           ScrollUp | 右操纵杆向上    | _不支持_    | _多种多样_              |
+|         ScrollDown | 右操纵杆向下  | _不支持_    | _多种多样_              |
+|         ScrollLeft | 右操纵杆向左  | _不支持_    | _多种多样_              |
+|        ScrollRight | 右操纵杆向右 | _不支持_    | _多种多样_              |
+|           Context1 | X 按钮               | _不支持_    | X 按钮 (_通常_)  |
+|           Context2 | Y 按钮               | _不支持_    | Y 按钮 (_通常_)  |
+|           Context3 | 左操纵杆按键  | _不支持_    | _多种多样_              |
+|           Context4 | 右操纵杆按键 | _不支持_    | _多种多样_              |
 
 
 ## <a name="detect-and-track-ui-navigation-controllers"></a>检测并追踪 UI 导航控制器
@@ -156,11 +156,11 @@ UINavigationController::UINavigationControllerRemoved += ref new EventHandler<UI
 
 ### <a name="users-and-headsets"></a>用户和耳机
 
-每个导航设备都可以关联一个用户帐户，用以将其身份链接到他们的输入，而且还可以连一个耳机，方便使用语音聊天或游戏内功能。 若要了解有关如何关联用户帐户和使用耳机的详细信息，请参阅 [跟踪用户及其设备](input-practices-for-games.md#tracking-users-and-their-devices)和[耳机](headset.md)。
+每个导航设备都可以关联一个用户帐户，用以将其身份链接到他们的输入，而且还可以连一个耳机，方便使用语音聊天或游戏内功能。 若要了解有关如何关联用户帐户和使用耳机的详细信息，请参阅[跟踪用户及其设备](input-practices-for-games.md#tracking-users-and-their-devices)和[耳机](headset.md)。
 
 ## <a name="reading-the-ui-navigation-controller"></a>读取 UI 导航控制器
 
-确定感兴趣的 UI 导航设备之后，便可以从中收集输入了。 不过，与你可能已习惯的某些其他输入类型不同，导航设备不会通过触发事件来传达状态的更改。 相反，你需要通过对它们进行“轮询”来定期读取其当前状态。
+确定感兴趣的 UI 导航设备之后，便可以从中收集输入了。 不过，与你可能已习惯的某些其他输入类型不同，导航设备不会通过触发事件来传达状态的更改。 相反，你需要通过对它们进行“轮询”__ 来定期读取其当前状态。
 
 ### <a name="polling-the-ui-navigation-controller"></a>轮询 UI 导航控制器
 
@@ -206,30 +206,30 @@ if (OptionalUINavigationButtons::Context1 == (reading.OptionalButtons & Optional
 }
 ```
 
-有时你可能需要确定：何时将按钮从按下转换为释放或从释放转换为按下，是按下还是释放多个按钮，或者是否按特定方式安排一组按钮（按下一些按钮，释放一些按钮）。 有关如何检测这些状态的详细信息，请参阅 [检测按钮转换](input-practices-for-games.md#detecting-button-transitions) 和 [检测复杂按钮安排](input-practices-for-games.md#detecting-complex-button-arrangements)。
+有时你可能需要确定：何时将按钮从按下转换为释放或从释放转换为按下，是按下还是释放多个按钮，或者是否按特定方式安排一组按钮（按下一些按钮，释放一些按钮）。 有关如何检测这些状态的详细信息，请参阅[检测按钮转换](input-practices-for-games.md#detecting-button-transitions) 和[检测复杂按钮安排](input-practices-for-games.md#detecting-complex-button-arrangements)。
 
 
 ## <a name="run-the-ui-navigation-controller-sample"></a>运行 UI 导航控制器示例
 
-[InputInterfacingUWP 示例 _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/InputInterfacingUWP) 演示了不同的输入设备如何作为 UI 导航控制器。
+[InputInterfacingUWP 示例_ (github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/InputInterfacingUWP) 演示了不同的输入设备如何作为 UI 导航控制器。
 
 ## <a name="see-also"></a>另请参阅
-[Windows.Gaming.Input.Gamepad][]
-[Windows.Gaming.Input.ArcadeStick][]
-[Windows.Gaming.Input.RacingWheel][]
-[Windows.Gaming.Input.IGameController][]
+[Windows.][] 
+[ArcadeStick。][] 
+[RacingWheel。][] 
+[IGameController。][]
 
 
-[Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
-[Windows.Gaming.Input.Gamepad]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.aspx
-[Windows.Gaming.Input.Arcadestick]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.arcadestick.aspx
-[Windows.Gaming.Input.Racingwheel]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.aspx
-[Windows.Gaming.Input.IGameController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx
-[uinavigationcontroller]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.aspx
-[uinavigationcontrollers]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.uinavigationcontrollers.aspx
-[uinavigationcontrolleradded]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.uinavigationcontrolleradded.aspx
-[uinavigationcontrollerremoved]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.uinavigationcontrollerremoved.aspx
-[getcurrentreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.getcurrentreading.aspx
-[uinavigationreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationreading.aspx
-[requireduinavigationbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.requireduinavigationbuttons.aspx
-[optionaluinavigationbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.optionaluinavigationbuttons.aspx
+[Windows.Gaming.Input]: /uwp/api/Windows.Gaming.Input
+[Windows.Gaming.Input.Gamepad]: /uwp/api/Windows.Gaming.Input.Gamepad
+[Arcadestick。]: /uwp/api/Windows.Gaming.Input.ArcadeStick
+[Racingwheel。]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[Windows.Gaming.Input.IGameController]: /uwp/api/Windows.Gaming.Input.IGameController
+[uinavigationcontroller]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[uinavigationcontrollers]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[uinavigationcontrolleradded]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[uinavigationcontrollerremoved]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[getcurrentreading]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[uinavigationreading]: /uwp/api/Windows.Gaming.Input.UINavigationReading
+[requireduinavigationbuttons]: /uwp/api/Windows.Gaming.Input.RequiredUINavigationButtons
+[optionaluinavigationbuttons]: /uwp/api/Windows.Gaming.Input.OptionalUINavigationButtons

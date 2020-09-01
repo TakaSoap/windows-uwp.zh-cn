@@ -1,17 +1,17 @@
 ---
 title: 启动远程设备上的应用
-description: 了解如何使用“Rome”项目在远程设备上启动应用。
+description: 了解如何在另一台设备上远程启动 UWP 应用或 Windows 桌面应用程序，让用户在一个设备上启动一项任务，并在另一台设备上完成任务。
 ms.date: 02/12/2018
 ms.topic: article
-keywords: windows 10，uwp，已连接设备、 远程系统、 罗马、 项目罗马
+keywords: windows 10，uwp，连接的设备，远程系统，罗马，project 罗马
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
-ms.openlocfilehash: ac4a5783250f3bd21cb8a3b96a579715830e687d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 784403ede6b21b79dcb14d1da6dde22df68c410e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371717"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158781"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>启动远程设备上的应用
 
@@ -25,7 +25,7 @@ ms.locfileid: "66371717"
 
 ### <a name="add-the-remotesystem-capability"></a>添加 RemoteSystem 功能
 
-为了让你的应用启动远程设备上的应用，必须将 `remoteSystem` 功能添加到应用包清单。 可以通过选择**功能**选项卡上的**远程系统**来使用程序包清单设计器添加它，也可以手动将以下行添加到项目的 _Package.appxmanifest_ 文件。
+为了让你的应用启动远程设备上的应用，必须将 `remoteSystem` 功能添加到应用包清单。 你可以使用包清单设计器通过选择 "**功能**" 选项卡上的 "**远程系统**" 来添加它，也可以手动将以下行添加到项目的_appxmanifest.xml_文件。
 
 ``` xml
 <Capabilities>
@@ -35,7 +35,7 @@ ms.locfileid: "66371717"
 
 ### <a name="enable-cross-device-sharing"></a>启用跨设备共享
 
-此外，客户端设备必须设置为允许跨设备共享。 此设置，在中访问**设置**:**系统** > **共享体验** > **跨设备共享**，默认情况下启用。 
+此外，客户端设备必须设置为允许跨设备共享。 此设置可以在**设置**：**系统** > **共享体验** > **跨设备共享**中进行访问，默认情况下处于启用状态。 
 
 ![共享体验设置页面](images/shared-experiences-settings.png)
 
@@ -58,11 +58,11 @@ ms.locfileid: "66371717"
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetMembers)]
 
-在尝试启动远程应用前，在你的应用启动代码中添加对 `BuildDeviceList()` 的调用。
+尝试启动远程应用前，在应用启动代码中添加对 `BuildDeviceList()` 的调用。
 
 ## <a name="launch-an-app-on-a-remote-device"></a>启动远程设备上的应用
 
-通过将希望连接的设备传递给 [**RemoteLauncher.LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotelauncher.launchuriasync) API，远程启动应用。 此方法有三个重载。 最简单的重载（即该示例中所演示的重载）用于指定将激活远程设备上的应用的 URI。 在该示例中，URI 将打开远程计算机上具有三维太空针塔视图的“地图”应用。
+通过将希望连接的设备传递给 [**RemoteLauncher.LaunchUriAsync**](/uwp/api/windows.system.remotelauncher.launchuriasync) API，远程启动应用。 此方法有三个重载。 最简单的重载（即该示例中所演示的重载）用于指定将激活远程设备上的应用的 URI。 在该示例中，URI 将打开远程计算机上具有三维太空针塔视图的“地图”应用。
 
 其他 **RemoteLauncher.LaunchUriAsync** 重载允许你指定网站 URI 之类的选项，以便查看是否没有合适的应用在远程设备上启动，以及可用于启动远程设备上 URI 的程序包系列名称的可选列表。 也可以采用键/值对的形式提供数据。 可以将数据传递给正在激活的应用，以便为远程应用提供上下文，例如将播放的歌曲名称，以及将播放从一台设备转移到另一台设备时的当前播放位置。
 
@@ -70,11 +70,11 @@ ms.locfileid: "66371717"
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
 
-从 **RemoteLauncher.LaunchUriAsync()** 返回的 [**RemoteLaunchUriStatus**](https://docs.microsoft.com/uwp/api/windows.system.remotelaunchuristatus) 对象提供有关远程启动是否成功以及失败原因（如果失败）的信息。
+从 **RemoteLauncher.LaunchUriAsync()** 返回的 [**RemoteLaunchUriStatus**](/uwp/api/windows.system.remotelaunchuristatus) 对象提供有关远程启动是否成功以及失败原因（如果失败）的信息。
 
 ## <a name="related-topics"></a>相关主题
 
-[远程系统 API 参考](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)  
-[已连接的应用和设备 （项目罗马） 概述](connected-apps-and-devices.md)  
+[远程系统 API 参考](/uwp/api/Windows.System.RemoteSystems)  
+[已连接的应用和设备 (项目罗马) 概述](connected-apps-and-devices.md)  
 [发现远程设备](discover-remote-devices.md)  
-[远程系统示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)演示了如何发现远程系统、在远程系统上启动应用，以及使用应用服务在两个系统上运行的应用之间发送消息。
+[远程系统示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)演示了如何发现远程系统、在远程系统上启动应用，以及使用应用服务在运行在两个系统上的应用之间发送消息。

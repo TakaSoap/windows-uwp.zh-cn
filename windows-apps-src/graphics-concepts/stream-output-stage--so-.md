@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e3614b7bde3a87c8f5fa6fdc0eada560fd7bbcdc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f56036ecc083d72f552954860d04750c1c83b8b6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370967"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156201"
 ---
 # <a name="stream-output-so-stage"></a>流输出 (SO) 阶段
 
 
 流输出 (SO) 阶段可将顶点数据从之前的有效阶段输出（或流式传输）至内存中的一个或多个缓冲区。 流出到内存的数据可以作为输入数据再次循环回到管道，或者从 CPU 读回。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途，并使用
+## <a name="span-idpurpose_and_usesspanspan-idpurpose_and_usesspanspan-idpurpose_and_usesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>目的和使用
 
 
 ![流输出阶段在管道中的位置图](images/d3d10-pipeline-stages-so.png)
@@ -31,19 +31,19 @@ ms.locfileid: "66370967"
 将流输出数据馈送至管道的方式有两种：
 
 -   可将流输出数据回送至输入汇编程序 (IA) 阶段。
--   流输出数据可由可编程的着色器使用[加载](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load)功能读取。
+-   流输出数据可由可编程的着色器使用[加载](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load)功能读取。
 
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>输入
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>送
 
 
 来自之前着色器阶段的顶点数据。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
-流输出 (SO) 阶段连续地将来自前一活动阶段的顶点数据（例如几何着色器 (GS) 阶段）输出（或流入）到内存中的一个或多个缓冲区。 如果几何着色器 (GS) 阶段处于非活动状态，则 Stream 输出 (SO) 阶段持续输出缓冲区在内存中 （或如果 DS 还处于非活动状态，来自顶点着色器 (VS) 阶段） 到来自域着色器 (DS) 阶段的顶点数据。
+流输出 (SO) 阶段连续地将来自前一活动阶段的顶点数据（例如几何着色器 (GS) 阶段）输出（或流入）到内存中的一个或多个缓冲区。 如果 (GS) 阶段的几何图形着色器处于非活动状态，则流输出 (因此) 阶段会持续从域着色器将顶点数据输出 (DS) 阶段到内存中的缓冲区 (或者 DS 也处于非活动状态，从顶点着色器 (VS) 阶段) 。
 
-三角形或直线带与输入汇编程序 (IA) 阶段绑定时，那么所有带会在流出之前转化为列表。顶点始终展开写成完整基元（例如，三角形一次为 3 个顶点）；不完整的基元不会流出。相邻的基元类型会在数据流出之前放弃相邻数据。
+三角形或直线带与输入汇编程序 (IA) 阶段绑定时，每个带都会在流出之前转换为列表。顶点始终展开写成完整基元（例如，三角形一次为 3 个顶点）；不完整的基元绝不会流出。相邻的基元类型会在数据流出之前放弃相邻数据。
 
 流输出阶段支持最多同时 4 个缓冲区。
 
@@ -58,7 +58,3 @@ ms.locfileid: "66370967"
  
 
  
-
-
-
-

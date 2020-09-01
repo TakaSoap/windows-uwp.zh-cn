@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 51b0180d6b550cda082b5ee10530194824a48e33
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 8becf9149d0afa888d0024619df06f2103c7bf8b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846797"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158641"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
@@ -30,7 +30,7 @@ ms.locfileid: "88846797"
 
 在开始编写调用 Microsoft Store 分析 API 的代码之前，确保已完成以下先决条件。
 
-* 你（或你的组织）必须有一个 Azure AD 目录，并且必须对该目录拥有[全局管理员](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，则你已具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
+* 你（或你的组织）必须有一个 Azure AD 目录，并且必须对该目录拥有[全局管理员](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，则你已具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
 
 * 必须将 Azure AD 应用程序与合作伙伴中心帐户相关联，并检索应用程序的租户 ID 和客户端 ID，并生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 分析 API 的应用或服务。 需要使用该租户 ID、客户端 ID 和密钥来获取要传递给 API 的 Azure AD 访问令牌。
     > [!NOTE]
@@ -52,7 +52,7 @@ ms.locfileid: "88846797"
 
 在 Microsoft Store 分析 API 中调用任何方法之前，首先必须获取将传递给该 API 中每个方法的 **Authorization** 标头的 Azure AD 访问令牌。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以对它进行刷新，以便可以在之后调用该 API 时继续使用。
 
-若要获取访问令牌，请按照 [使用客户端凭据的服务到服务调用](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) 中的说明将 HTTP POST 发送到 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
+若要获取访问令牌，请按照 [使用客户端凭据的服务到服务调用](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) 中的说明将 HTTP POST 发送到 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
 
 ```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -67,7 +67,7 @@ grant_type=client_credentials
 
 对于 POST URI 中的 " *租户 \_ id* " 和 "客户端 * \_ id* " 和 " *客户端 \_ 密钥* " 参数，为你在上一节中的合作伙伴中心检索的应用程序指定租户 id、客户端 id 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
 
-在你的访问令牌到期后，你可按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
+在你的访问令牌到期后，你可按照[此处](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens)的说明刷新令牌。
 
 <span id="call-the-windows-store-analytics-api" />
 
@@ -95,18 +95,18 @@ grant_type=client_credentials
 
 ### <a name="methods-for-desktop-applications"></a>适用于桌面应用程序的方法
 
-属于 [Windows 桌面应用程序计划](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的开发人员帐户可以使用以下分析方法。
+属于 [Windows 桌面应用程序计划](/windows/desktop/appxpkg/windows-desktop-application-program)的开发人员帐户可以使用以下分析方法。
 
 | 方案       | 方法      |
 |---------------|--------------------|
 | 安装次数 |  <ul><li>[获取桌面应用程序安装](get-desktop-app-installs.md)</li></ul> |
-| 块 |  <ul><li>[获取桌面应用程序的升级块](get-desktop-block-data.md)</li><li>[获取桌面应用程序的升级块详情](get-desktop-block-data-details.md)</li></ul> |
+| 块 |  <ul><li>[获取桌面应用程序的升级块](get-desktop-block-data.md)</li><li>[获取桌面应用程序的升级块详细信息](get-desktop-block-data-details.md)</li></ul> |
 | 应用程序错误 |  <ul><li>[获取桌面应用程序的错误报告数据](get-desktop-application-error-reporting-data.md)</li><li>[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)</li><li>[获取桌面应用程序中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[下载桌面应用程序中错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
 | 洞察力 | <ul><li>[获取桌面应用程序的见解数据](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>适用于 Xbox Live 服务的方法
 
-使用 [Xbox Live 服务](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md)的游戏开发人员帐户可以使用以下其他方法。
+使用 [Xbox Live 服务](/gaming/xbox-live/developer-program-overview.md)的游戏开发人员帐户可以使用以下其他方法。
 
 | 方案       | 方法      |
 |---------------|--------------------|
@@ -116,7 +116,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-hardware-and-drivers"></a>适用于硬件和驱动程序的方法
 
-属于 [Windows 硬件仪表板程序](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) 的开发人员帐户可以访问一组额外的方法来检索硬件和驱动程序的分析数据。 有关详细信息，请参阅 [硬件仪表板 API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)。
+属于 [Windows 硬件仪表板程序](/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) 的开发人员帐户可以访问一组额外的方法来检索硬件和驱动程序的分析数据。 有关详细信息，请参阅 [硬件仪表板 API](/windows-hardware/drivers/dashboard/dashboard-api)。
 
 ## <a name="code-example"></a>代码示例
 

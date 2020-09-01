@@ -7,17 +7,17 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 87d4be69d9a7869f5331d30225e93a22ad9e959c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7217b52c6e9f9882997649c5f843eb119d741e0b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371251"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156151"
 ---
-# <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>使用系统生成的值
+# <a name="span-iddirect3dconceptsusing_system-generated_valuesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>使用系统生成的值
 
 
-系统生成的值由[输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)（基于用户提供的输入[语义](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)）生成，用于在一定程度上提高着色器运算的效率。 通过附加数据，如实例 ID（对[顶点着色器 (VS) 阶段](vertex-shader-stage--vs-.md)可见）、顶点 ID（对 VS 可见）或基元 ID（对[几何着色器 (GS) 阶段](geometry-shader-stage--gs-.md)/[像素着色器 (PS) 阶段](pixel-shader-stage--ps-.md)可见），后续的着色器阶段可以查找这些系统值，从而对当前阶段的处理进行优化。
+系统生成的值由 [输入汇编 (IA) 阶段](input-assembler-stage--ia-.md) (基于用户提供的输入 [语义](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)) ，以允许在着色器操作中实现某些效率。 通过附加数据，如实例 ID（对[顶点着色器 (VS) 阶段](vertex-shader-stage--vs-.md)可见）、顶点 ID（对 VS 可见）或基元 ID（对[几何着色器 (GS) 阶段](geometry-shader-stage--gs-.md)/[像素着色器 (PS) 阶段](pixel-shader-stage--ps-.md)可见），后续的着色器阶段可以查找这些系统值，从而对当前阶段的处理进行优化。
 
 例如，VS 阶段可能查找实例 ID 以便为着色器获取更多每顶点数据，或者执行其他操作；GS 和 PS 阶段可能使用基元 ID 以相同的方式获取每基元数据。
 
@@ -48,7 +48,7 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 
 如果顶点着色器输入声明包含实例 ID 语义，[输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)会将实例 ID 添加到每个顶点。 每调用一次已建立索引的绘制，实例 ID 就增加 1。 所有其他绘制调用都不会更改实例 ID 的值。 如果实例 ID 溢出（超过 2³²– 1），它将回到 0。
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>实例
 
 
 下图显示了如何将系统值附加到[输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)中的实例化三角形带。
@@ -103,7 +103,3 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
  
 
  
-
-
-
-

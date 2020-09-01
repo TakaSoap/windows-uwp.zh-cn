@@ -6,12 +6,12 @@ ms.date: 11/28/2017
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 位置功能
 ms.localizationpriority: medium
-ms.openlocfilehash: 50f605164a496d00113b73ffeae669e3ff145535
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 79c34af48cf1b2d860d2a170fd642ef05945c15d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260397"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158711"
 ---
 # <a name="get-the-users-location"></a>获取用户位置
 
@@ -40,11 +40,11 @@ ms.locfileid: "74260397"
 ## <a name="get-the-current-location"></a>获取当前位置
 
 
-此部分介绍如何使用 [**Windows.Devices.Geolocation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation) 命名空间中的 API 检测用户的地理位置。
+此部分介绍如何使用 [**Windows.Devices.Geolocation**](/uwp/api/Windows.Devices.Geolocation) 命名空间中的 API 检测用户的地理位置。
 
 ### <a name="step-1-request-access-to-the-users-location"></a>步骤 1：请求访问用户的位置
 
-除非你的应用程序具有粗位置功能（请参阅注意），否则在尝试访问该位置之前，必须使用[**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync)方法请求访问用户的位置。 必须从 UI 线程调用 **RequestAccessAsync** 方法，并且你的应用必须在前台。 在用户向应用授予权限之前，你的应用将无法访问用户的位置信息。\*
+除非你的应用具有粗位置功能 (请参阅注意) ，在尝试访问该位置之前，必须使用 [**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) 方法请求访问用户的位置。 必须从 UI 线程调用 **RequestAccessAsync** 方法，并且你的应用必须在前台。 只有在用户授予相应的应用权限后，你的应用才可以访问用户的位置信息。\*
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -54,13 +54,13 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 
 
-[  **RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) 方法提示用户提供访问其位置的权限。 仅提示用户一次（每个应用）。 在他们第一次授予或拒绝授予权限之后，此方法不会再提示用户提供权限。 若要在提示之后帮助用户更改位置权限，我们建议提供位置设置的链接，如本主题中后面部分所示。
+[**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) 方法提示用户提供访问其位置的权限。 仅提示用户一次（每个应用）。 在他们第一次授予或拒绝授予权限之后，此方法不会再提示用户提供权限。 若要在提示之后帮助用户更改位置权限，我们建议提供位置设置的链接，如本主题中后面部分所示。
 
->注意：粗糙位置功能允许你的应用程序在不获取用户的显式权限的情况下获取经过明确转换（不精确）的位置（但系统范围内的位置交换机仍必须**启用**）。 若要了解如何在应用中使用粗糙位置，请参阅[**定位**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator)类中的[**AllowFallbackToConsentlessPositions**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.allowfallbacktoconsentlesspositions)方法。
+>注意：粗糙位置功能允许你的应用程序获取有意模糊处理 (不精确的) 位置，而无需获取用户的显式权限 (系统范围内的位置交换机仍必须处于 **打开**，但) 。 若要了解如何在应用中使用粗糙位置，请参阅[**定位**](/uwp/api/windows.devices.geolocation.geolocator)类中的[**AllowFallbackToConsentlessPositions**](/uwp/api/windows.devices.geolocation.geolocator.allowfallbacktoconsentlesspositions)方法。
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>步骤 2：获取用户的位置并注册位置权限的更改
 
-[  **GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 方法执行当前位置的一次读取。 在此处，**switch** 语句将与 **accessStatus**（来自上一示例）结合使用以便仅在允许访问用户位置时进行操作。 如果允许访问用户位置，该代码将创建 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象、注册位置权限的更改，并请求用户位置。
+[**GetGeopositionAsync**](/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 方法执行当前位置的一次读取。 在此处，**switch** 语句将与 **accessStatus**（来自上一示例）结合使用以便仅在允许访问用户位置时进行操作。 如果允许访问用户位置，该代码将创建 [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象、注册位置权限的更改，并请求用户位置。
 
 ```csharp
 switch (accessStatus)
@@ -96,7 +96,7 @@ switch (accessStatus)
 
 ### <a name="step-3-handle-changes-in-location-permissions"></a>步骤 3：处理位置权限的更改
 
-[  **Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象触发 [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件以指示用户位置设置已更改。 该事件通过参数的 **Status** 属性（类型为 [**PositionStatus**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.PositionStatus)）传递相应的状态。 请注意，此方法不是从 UI 线程中调用的，并且 [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 对象调用了 UI 更改。
+[**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象触发 [**StatusChanged**](/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件以指示用户位置设置已更改。 该事件通过参数的 **Status** 属性（类型为 [**PositionStatus**](/uwp/api/Windows.Devices.Geolocation.PositionStatus)）传递相应的状态。 请注意，此方法不是从 UI 线程中调用的，并且 [**Dispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) 对象调用了 UI 更改。
 
 ```csharp
 using Windows.UI.Core;
@@ -165,18 +165,18 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
 ## <a name="respond-to-location-updates"></a>响应位置更新
 
 
-本部分介绍如何使用 [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件来接收一段时间内的用户的位置更新。 由于用户随时可能会取消对位置的访问，请务必调用 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) 和使用 [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件，如上一部分中所示。
+本部分介绍如何使用 [**PositionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件来接收一段时间内的用户的位置更新。 由于用户随时可能会取消对位置的访问，请务必调用 [**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) 和使用 [**StatusChanged**](/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件，如上一部分中所示。
 
-本部分假定你已启用位置功能并且已从前台应用的 UI 线程调用 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync)。
+本部分假定你已启用位置功能并且已从前台应用的 UI 线程调用 [**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync)。
 
 ### <a name="step-1-define-the-report-interval-and-register-for-location-updates"></a>步骤 1：定义报告间隔和注册位置更新
 
-在本示例中，将一个 **switch** 语句与 **accessStatus**（来自上一示例）一起使用，以便仅在允许访问用户位置时进行操作。 如果允许访问用户位置，该代码将创建 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象、指定跟踪类型并注册位置更新。
+在本示例中，将一个 **switch** 语句与 **accessStatus**（来自上一示例）一起使用，以便仅在允许访问用户位置时进行操作。 如果允许访问用户位置，该代码将创建 [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象、指定跟踪类型并注册位置更新。
 
-[  **Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象可以基于位置更改（基于距离的跟踪）或时间更改（基于定期的跟踪）触发 [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件。
+[**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象可以基于位置更改（基于距离的跟踪）或时间更改（基于定期的跟踪）触发 [**PositionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件。
 
--   对于基于距离的跟踪，设置 [**MovementThreshold**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.movementthreshold) 属性。
--   对于基于周期的跟踪，设置 [**ReportInterval**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.reportinterval) 属性。
+-   对于基于距离的跟踪，设置 [**MovementThreshold**](/uwp/api/windows.devices.geolocation.geolocator.movementthreshold) 属性。
+-   对于基于周期的跟踪，设置 [**ReportInterval**](/uwp/api/windows.devices.geolocation.geolocator.reportinterval) 属性。
 
 如果两个属性都未设置，则每隔 1 秒（相当于 `ReportInterval = 1000`）返回一个位置。 此处，使用 2 秒 (`ReportInterval = 2000`) 报告间隔。
 ```csharp
@@ -216,7 +216,7 @@ switch (accessStatus)
 
 ### <a name="step-2-handle-location-updates"></a>步骤 2：处理位置更新
 
-[  **Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象通过触发 [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件以指示用户的位置更改或时间已过，具体取决于配置它的方式。 该事件通过参数的 **Position** 属性（属于类型 [**Geoposition**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geoposition)）来传递相应的位置信息。 在此示例中，该方法不是从 UI 线程中调用的，并且 [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 对象调用了 UI 更改。
+[**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象通过触发 [**PositionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件以指示用户的位置更改或时间已过，具体取决于配置它的方式。 该事件通过参数的 **Position** 属性（属于类型 [**Geoposition**](/uwp/api/Windows.Devices.Geolocation.Geoposition)）来传递相应的位置信息。 在此示例中，该方法不是从 UI 线程中调用的，并且 [**Dispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) 对象调用了 UI 更改。
 
 ```csharp
 using Windows.UI.Core;
@@ -248,7 +248,7 @@ async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs
 </TextBlock>
 ```
 
-此外，你的应用可以调用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法，以从代码启动 **“设置”** 应用。 有关详细信息，请参阅[启动 Windows 设置应用](https://docs.microsoft.com/windows/uwp/launch-resume/launch-settings-app)。
+此外，你的应用可以调用 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 方法，以从代码启动 **“设置”** 应用。 有关详细信息，请参阅[启动 Windows 设置应用](../launch-resume/launch-settings-app.md)。
 
 ```csharp
 using Windows.System;
@@ -259,14 +259,14 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 ## <a name="troubleshoot-your-app"></a>对应用进行故障排除
 
 
-在你的应用可以访问用户位置之前，必须在设备上启用 **“位置”** 。 在**设置**应用中，检查以下**位置隐私设置**是否已打开：
+在你的应用可以访问用户位置之前，必须在设备上启用 **“位置”**。 在**设置**应用中，检查以下**位置隐私设置**是否已打开：
 
--   **此设备的位置 ...** 已启用 **（不适**用于 Windows 10 移动版）
+-   **“此设备的位置...”** 已 **“打开”**（在 Windows 10 移动版中不适用）
 -   位置服务设置（**位置**）已**打开**
 -   在 **“选择可以使用你的位置的应用”** 下，你的应用已设置为 **“打开”**
 
 ## <a name="related-topics"></a>相关主题
 
 * [UWP 地理位置示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
-* [地理围栏的设计准则](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)
-* [位置感知应用设计指南](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location)
+* [地理围栏设计指南](./guidelines-for-geofencing.md)
+* [位置感知应用设计指南](./guidelines-and-checklist-for-detecting-location.md)

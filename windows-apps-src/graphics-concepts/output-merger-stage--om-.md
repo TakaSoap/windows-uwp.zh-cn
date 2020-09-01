@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 177d5a8fed47396fa694bd8fb88baea8d8b7bbb3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6478eaa2dadac74c22e5959623f03547f18babfc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371185"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156311"
 ---
 # <a name="output-merger-om-stage"></a>输出合并 (OM) 阶段
 
 
 输出合并 (OM) 阶段将各种类型的输出数据（像素着色器值、深度和模板信息）与着色器目标的内容以及深度/模板缓冲区组合在一起，以生成最终的管道结果。
 
-## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>用途，并使用
+## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>目的和使用
 
 
 输出合并 (OM) 阶段是确定可见的像素（利用深度模板测试）和混合最终像素颜色的最后一步。
@@ -31,25 +31,25 @@ OM 阶段将使用以下项的组合生成最终呈现的像素颜色：
 -   呈现目标的内容
 -   深度/模板缓冲区的内容。
 
-### <a name="span-idblending-overviewspanspan-idblending-overviewspanspan-idblending-overviewspanblending-overview"></a><span id="Blending-overview"></span><span id="blending-overview"></span><span id="BLENDING-OVERVIEW"></span>值混合处理概述
+### <a name="span-idblending-overviewspanspan-idblending-overviewspanspan-idblending-overviewspanblending-overview"></a><span id="Blending-overview"></span><span id="blending-overview"></span><span id="BLENDING-OVERVIEW"></span>混合概述
 
 混合是指将一个或多个像素值组合起来以创建最终的像素颜色。 下图显示了混合像素数据涉及的过程。
 
 ![混合数据的工作原理的图示](images/d3d10-blend-state.png)
 
-从概念上来说，你可以将在输出合并阶段实施了两次的此流程图可视化：第一次混合 RGB 数据，第二次混合 alpha 数据，两者并行执行。 若要了解如何使用 API 创建和设置混合状态，请参阅[配置混合功能](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-blend-state)。
+从概念上来说，你可以将在输出合并阶段实施了两次的此流程图可视化：第一次混合 RGB 数据，第二次混合 alpha 数据，两者并行执行。 若要了解如何使用 API 创建和设置混合状态，请参阅[配置混合功能](/windows/desktop/direct3d11/d3d10-graphics-programming-guide-blend-state)。
 
 可为每个呈现目标单独启用固定函数混合。 但是，只存在一组混合控件，这是为了在启用混合后让同一混合应用于所有 RenderTarget。 在混合之前，混合值（包括 BlendFactor）始终固定到呈现目标格式的范围。 根据呈现目标类型，固定对每个呈现目标执行一次。 唯一的例外情况是 float16、float11 或 float10 格式，为了让针对这些格式的混合运算可在至少具有与输出格式相等的精度/范围的情况下完成，没有对这些格式进行固定。 在所有情况下都会传播 NaN 和有符号零（包括 0.0 混合权重）。
 
 当你使用 sRGB 呈现目标时，运行时在执行混合之前会将呈现目标颜色转换到线性空间中。 运行时在将最终混合的值保存回呈现目标之前会将该值转换回 sRGB 空间中。
 
-### <a name="span-iddual-source-color-blendingspanspan-iddual-source-color-blendingspanspan-iddual-source-color-blendingspandual-source-color-blending"></a><span id="Dual-source-color-blending"></span><span id="dual-source-color-blending"></span><span id="DUAL-SOURCE-COLOR-BLENDING"></span>双源颜色值混合处理
+### <a name="span-iddual-source-color-blendingspanspan-iddual-source-color-blendingspanspan-iddual-source-color-blendingspandual-source-color-blending"></a><span id="Dual-source-color-blending"></span><span id="dual-source-color-blending"></span><span id="DUAL-SOURCE-COLOR-BLENDING"></span>双源颜色混合
 
 此功能使输出合并阶段能够同时使用两个像素着色器输出（o0 和 o1）作为单个呈现目标位于槽 0 中的混合运算的输入。 有效的混合运算包括：add、subtract 和 revsubtract。 混合方程和输出写入掩码指定了像素着色器将输出的组件。 额外组件将被忽略。
 
 向其他像素着色器输出（o2、o3 等）的写入未定义；如果呈现目标未绑定到槽 0，你就无法写入到呈现目标。 在双源颜色混合期间写入 oDepth 很有效。
 
-### <a name="span-iddepth-stencil-testspanspan-iddepth-stencil-testspanspan-iddepth-stencil-testspandepth-stencil-testing-overview"></a><span id="Depth-Stencil-Test"></span><span id="depth-stencil-test"></span><span id="DEPTH-STENCIL-TEST"></span>深度模具测试概述
+### <a name="span-iddepth-stencil-testspanspan-iddepth-stencil-testspanspan-iddepth-stencil-testspandepth-stencil-testing-overview"></a><span id="Depth-Stencil-Test"></span><span id="depth-stencil-test"></span><span id="DEPTH-STENCIL-TEST"></span>深度模板测试概述
 
 作为纹理资源创建的深度模板缓冲区可同时包含深度数据和模板数据。 深度数据用于确定最靠近相机的像素，模板数据用于掩盖可以更新的像素。 最终，深度值和模板值数据将被输出合并阶段用来确定是否应绘制某个像素。 下图显示了在概念上如何完成深度模板测试。
 
@@ -69,7 +69,7 @@ OM 阶段将使用以下项的组合生成最终呈现的像素颜色：
 
 采样掩码是 32 位多重采样覆盖掩码，用于确定哪些样本在活动呈现目标中获得更新。 一次只允许有一个采样掩码。 采样掩码中的位到资源中的样本的映射由用户定义。 对于 n 采样呈现，将使用采样掩码的前 n 位（从 LSB 起，32 位是最大位数）。
 
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>输入
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>送
 
 
 输出合并 (OM) 阶段将使用以下项的组合生成最终呈现的像素颜色：
@@ -79,14 +79,14 @@ OM 阶段将使用以下项的组合生成最终呈现的像素颜色：
 -   呈现目标的内容
 -   深度/模板缓冲区的内容。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
-### <a name="span-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanoutput-write-mask-overview"></a><span id="Output-write-mask-overview"></span><span id="output-write-mask-overview"></span><span id="OUTPUT-WRITE-MASK-OVERVIEW"></span>输出写掩码概述
+### <a name="span-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanoutput-write-mask-overview"></a><span id="Output-write-mask-overview"></span><span id="output-write-mask-overview"></span><span id="OUTPUT-WRITE-MASK-OVERVIEW"></span>输出-写入掩码概述
 
 使用输出写入掩码可控制（对每个组件）可写入到呈现目标的数据。
 
-### <a name="span-idmultiple-render-targets-overviewspanspan-idmultiple-render-targets-overviewspanspan-idmultiple-render-targets-overviewspanmultiple-render-targets-overview"></a><span id="Multiple-render-targets-overview"></span><span id="multiple-render-targets-overview"></span><span id="MULTIPLE-RENDER-TARGETS-OVERVIEW"></span>多个呈现器目标概述
+### <a name="span-idmultiple-render-targets-overviewspanspan-idmultiple-render-targets-overviewspanspan-idmultiple-render-targets-overviewspanmultiple-render-targets-overview"></a><span id="Multiple-render-targets-overview"></span><span id="multiple-render-targets-overview"></span><span id="MULTIPLE-RENDER-TARGETS-OVERVIEW"></span>多呈现目标概述
 
 像素着色器可用于呈现至少 8 个单独的呈现目标，所有这些目标都必须属于同一类型（缓冲区、Texture1D、Texture1DArray 等）。 此外，所有呈现目标在所有尺寸上都必须都具有相同的大小（宽度、高度、深度、数组大小、样本计数）。 每个呈现器目标都可能有不同的数据格式。
 
@@ -108,7 +108,7 @@ OM 阶段将使用以下项的组合生成最终呈现的像素颜色：
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="configuring-depth-stencil-functionality.md">配置深度模具功能</a></p></td>
+<td align="left"><p><a href="configuring-depth-stencil-functionality.md">配置深度模板功能</a></p></td>
 <td align="left"><p>本节介绍了设置深度模板缓冲区的步骤以及输出合并阶段的深度模板状态。</p></td>
 </tr>
 </tbody>
@@ -124,7 +124,3 @@ OM 阶段将使用以下项的组合生成最终呈现的像素颜色：
  
 
  
-
-
-
-

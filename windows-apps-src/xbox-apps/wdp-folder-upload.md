@@ -1,17 +1,17 @@
 ---
 title: Device Portal 文件夹上载 API 参考
-description: 了解如何以编程方式访问文件夹上载 API。
+description: 了解如何使用 Xbox 设备门户 REST API 将文件夹上传到开发目录。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
-ms.openlocfilehash: 870d203271cb75ecf5531106bb2c10b3736db9b9
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: b71f60350bf5c8318adb2a4741bb1a275a4b0276
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244043"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157751"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>将文件夹上载到开发目录
 
@@ -21,7 +21,7 @@ ms.locfileid: "59244043"
 
 方法      | 请求 URI
 :------     | :------
-发布 | /api/app/packagemanager/upload 
+POST | /api/app/packagemanager/upload 
 
 **URI 参数**
 
@@ -46,9 +46,9 @@ destinationFolder（必需） | 要上载的文件夹的目标文件夹名称。
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 描述
+HTTP 状态代码      | 说明
 :------     | :-----
-200 | 成功
+200 | Success
 4XX | 错误代码
 5XX | 错误代码
 

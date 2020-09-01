@@ -6,19 +6,19 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 投放广告, 错误处理, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 4526f44c1a38af79886a7404eb932416a4414f77
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 7ad3d7dfcbf191960fba03808270a55d3128d4f0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043499"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158581"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>XAML/C# 演练中的错误处理
 
 >[!WARNING]
 > 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-本演练介绍如何在应用中捕获与广告相关的错误。 本演练使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 显示横幅广告，但其中的普通概念也适用于间隙广告和本机广告。
+本演练介绍如何在应用中捕获与广告相关的错误。 本演练使用 [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 显示横幅广告，但其中的普通概念也适用于间隙广告和本机广告。
 
 这些示例假定你拥有一个 XAML/C# 应用，它包含一个 **AdControl**。 有关演示如何向你的应用添加 **AdControl** 的分步说明，请参阅 [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)。 
 
@@ -34,7 +34,7 @@ ms.locfileid: "89043499"
       Width="300" />
     ```
 
-2.   在 **Width** 属性之后，但在结束标记之前，将错误事件处理程序的名称分配给 [ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.erroroccurred) 事件。 在本演练中，错误事件处理程序的名称为 **OnAdError**。
+2.   在 **Width** 属性之后，但在结束标记之前，将错误事件处理程序的名称分配给 [ErrorOccurred](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.erroroccurred) 事件。 在本演练中，错误事件处理程序的名称为 **OnAdError**。
     ``` xml
     <UI:AdControl
       ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
@@ -49,7 +49,7 @@ ms.locfileid: "89043499"
 
 3.  若要生成运行时错误，请创建具有不同应用程序 ID 的第二个 **AdControl**。 因为应用中的所有 **AdControl** 对象必须使用相同的应用程序 ID，所以创建具有不同应用程序 ID 的其他 **AdControl** 会引发错误。
 
-    仅在 MainPage.xaml 中的第一个 **AdControl** 后面，定义第二个 **AdControl**，然后将 [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 属性设置为零 (“0”)。
+    仅在 MainPage.xaml 中的第一个 **AdControl** 后面，定义第二个 **AdControl**，然后将 [ApplicationId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 属性设置为零 (“0”)。
     ``` xml
     <UI:AdControl
         ApplicationId="0"

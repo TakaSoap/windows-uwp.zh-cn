@@ -1,31 +1,31 @@
 ---
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
-description: 在 Microsoft Store 提交 API 中使用此方法以创建新提交到合作伙伴中心帐户注册的应用。
+description: 在 Microsoft Store 提交 API 中使用此方法为注册到合作伙伴中心帐户的应用创建新的提交。
 title: 创建应用提交
 ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建应用提交
 ms.localizationpriority: medium
-ms.openlocfilehash: e899b203a21f8c29c9c95973871881cc618b5d55
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cbaf7e13c937762716bfd0cf35fbfdfb4776b1f1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371222"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158621"
 ---
 # <a name="create-an-app-submission"></a>创建应用提交
 
-在 Microsoft Store 提交 API 中使用此方法以创建新提交到合作伙伴中心帐户注册的应用。 使用此方法成功创建新提交后，[更新提交](update-an-app-submission.md)以对提交数据进行任何必要更改，然后[确认提交](commit-an-app-submission.md)以供引入和发布。
+在 Microsoft Store 提交 API 中使用此方法为注册到合作伙伴中心帐户的应用创建新的提交。 使用此方法成功创建新提交后，[更新提交](update-an-app-submission.md)以对提交数据进行任何必要更改，然后[确认提交](commit-an-app-submission.md)以供引入和发布。
 
 有关此方法如何适用通过使用 Microsoft Store 提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 确保应用至少有一个已完成[年龄分级](https://docs.microsoft.com/windows/uwp/publish/age-ratings)信息的提交。
+* 确保应用至少有一个已完成[年龄分级](../publish/age-ratings.md)信息的提交。
 
 ## <a name="request"></a>请求
 
@@ -33,19 +33,19 @@ ms.locfileid: "66371222"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| 发布    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions` |
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions` |
 
 ### <a name="request-header"></a>请求头
 
-| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt; 。 |
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必需。 要创建提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| applicationId | 字符串 | 必需。 要创建提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](../publish/view-app-identity-details.md)。  |
 
 ### <a name="request-body"></a>请求正文
 
@@ -53,7 +53,7 @@ ms.locfileid: "66371222"
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示了如何为应用创建新提交。
+以下示例演示如何为应用创建新提交。
 
 ```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions HTTP/1.1
@@ -179,16 +179,16 @@ Authorization: Bearer <your access token>
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
-| 错误代码 |  描述   |
+| 错误代码 |  说明   |
 |--------|------------------|
 | 400  | 由于请求无效，无法创建提交。 |
-| 409  | 由于应用程序中的当前状态，无法创建提交或应用程序使用的合作伙伴中心功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
+| 409  | 由于应用的当前状态，或应用使用的合作伙伴中心功能 [当前不受 Microsoft Store 提交 API 的支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)，无法创建提交。 |   
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
-* [获取应用程序提交](get-an-app-submission.md)
-* [提交应用程序提交](commit-an-app-submission.md)
-* [更新应用程序提交](update-an-app-submission.md)
-* [删除应用程序提交](delete-an-app-submission.md)
-* [获取应用程序提交的状态](get-status-for-an-app-submission.md)
+* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [获取应用提交](get-an-app-submission.md)
+* [确认应用提交](commit-an-app-submission.md)
+* [更新应用提交](update-an-app-submission.md)
+* [删除应用提交](delete-an-app-submission.md)
+* [获取应用提交的状态](get-status-for-an-app-submission.md)

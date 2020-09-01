@@ -7,19 +7,19 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 9998436b106acce6a9223140e66d2633c2210a54
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: c4f1857ba4afe5eba271f7022c64aca26eb6b6b8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493352"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156931"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>了解用户配置文件语言和应用清单语言
 Windows 用户可以使用**设置**  >  **时间 & 语言**  >  **区域 & 语言**来配置首选显示语言的排序列表，或只使用单个首选显示语言。 某种语言可能会具有区域变体。 例如，可以选择西班牙使用的西班牙语、墨西哥使用的西班牙语、美国使用的西班牙语等。
 
-此外，在**设置**  >  **时间 & 语言**  >  **区域 & 语言**，但不同于语言，用户可以在世界上指定其位置（称为区域）。 请注意，显示语言（以及区域变体）设置不是地区设置的决定因素，反之亦然。 例如，尽管某位用户可能目前居住在法国，但选择的却是西班牙语（墨西哥）作为首选 Windows 显示语言。
+此外，在**设置**  >  **时间 & 语言**  >  **区域 & 语言**，但不同于语言，用户可以指定其在世界 (称为区域) 的位置。 请注意，显示语言（以及区域变体）设置不是地区设置的决定因素，反之亦然。 例如，尽管某位用户可能目前居住在法国，但选择的却是西班牙语（墨西哥）作为首选 Windows 显示语言。
 
-对于 Windows 应用，语言表示为[BCP-47 语言标记](https://tools.ietf.org/html/bcp47)。 例如，BCP-47 语言标记“en-US”对应**设置**中的英语（美国）。 适当的 Windows 运行时 Api 接受并返回 BCP-47 语言标记的字符串表示形式。
+对于 Windows 应用，语言表示为 [BCP-47 语言标记](https://tools.ietf.org/html/bcp47)。 例如，BCP-47 语言标记“en-US”对应**设置**中的英语（美国）。 适当的 Windows 运行时 Api 接受并返回 BCP-47 语言标记的字符串表示形式。
 
 另请参阅 [IANA 语言子标记注册表](https://www.iana.org/assignments/language-subtag-registry)。
 
@@ -93,12 +93,12 @@ Windows 用户可以使用**设置**  >  **时间 & 语言**  >  **区域 & 语�
 **注意**：如果用户配置文件语言和应用部件清单语言是彼此的区域变体，用户的区域变体则用作应用运行时语言。 例如，如果用户首选 en-GB，而应用支持 en-US，应用运行时语言则为 en-GB。 这将确保日期、时间和数字的格式更接近用户的期望 (en-GB)，但仍然会使用应用支持的语言 (en-US) 加载本地化资源（由于语言匹配）。
 
 ## <a name="qualify-resource-files-with-their-language"></a>使用资源文件的语言限定资源文件
-使用语言资源限定符命名资源文件或其文件夹。 若要了解有关资源限定符的详细信息，请参阅[定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)。 资源文件可以是图像（或其他资产），也可以是包含文本字符串的 *.resw*等资源容器文件。
+使用语言资源限定符命名资源文件或其文件夹。 若要了解有关资源限定符的详细信息，请参阅[定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)。 资源文件可以是 (或其他资产) 的图像，也可以是包含文本字符串的 *.resw* 资源容器文件。
 
-**注意**甚至应用的默认语言中的资源都必须指定语言限定符。 例如，如果应用的默认语言为英语（美国），则将资产限定为 `\Assets\Images\en-US\logo.png` 。
+**注意** 甚至应用的默认语言中的资源都必须指定语言限定符。 例如，如果应用的默认语言为英语 (美国) ，则将资产限定为 `\Assets\Images\en-US\logo.png` 。
 
 - Windows 执行复杂匹配，其中包括 en-us 和 en 等区域变体。 因此，请根据需要包含区域子标记。 请参阅[资源管理系统匹配语言标记的方式](../../app-resources/how-rms-matches-lang-tags.md)。
-- 如果没有为该语言定义的禁止显示脚本值，请在限定符中指定语言脚本子标记。 例如，使用 zh-chs-Zh-hant、zh-chs-Zh-hant 或 zh-chs-Hans （有关更多详细信息，请参阅[IANA 语言](https://www.iana.org/assignments/language-subtag-registry)子标记注册表），而不是 zh-chs 或 zh-chs。
+- 如果没有为该语言定义的禁止显示脚本值，请在限定符中指定语言脚本子标记。 例如，使用 zh-chs、Zh-hant、zh-chs-Zh-hant 或 zh-chs-Hans (来了解更多详细信息，而不是使用 zh-chs 或 zh-chs，请参阅 [IANA 语言](https://www.iana.org/assignments/language-subtag-registry) 子标记注册表) 。
 - 对于具有单个标准方言的语言，无需包含区域限定符。 例如，使用 ja 而不是 ja-jp。
 - 某些工具和其他组件（如机器翻译程序）可能会发现特定的语言标记（如区域方言信息）在理解数据方面很有帮助。
 
@@ -107,12 +107,12 @@ Windows 用户可以使用**设置**  >  **时间 & 语言**  >  **区域 & 语�
 并非所有资源都需要进行本地化。
 
 - 至少，确保所有资源都以默认语言存在。
-- 某些资源的子集可能足以满足紧密相关的语言（部分本地化）。 例如，如果应用的整个资源集都使用西班牙语，那么你可能不会将应用的全部 UI 本地化为加泰罗尼亚语。 对于说加泰罗尼亚语和西班牙语的用户，加泰罗尼亚语中未提供的资源将以西班牙语显示。
-- 某些资源可能需要特定语言的例外，而其他大多数资源则映射到公共资源。 在这种情况下，请将旨在用于所有语言的资源标记为 "und"。 Windows 将 "und" 语言标记解释为通配符（类似于 " \* "），因为它与任何其他特定匹配项后的顶级应用程序语言匹配。 例如，如果某些资源对于芬兰语有所不同，但是这些资源的剩余部分对于所有语言都相同，应该使用芬兰语语言标记对芬兰语资源进行标记，而剩余部分则应该通过“und”进行标记。
+- 某些资源的子集可能足以满足紧密相关的语言 (部分本地化) 。 例如，如果应用的整个资源集都使用西班牙语，那么你可能不会将应用的全部 UI 本地化为加泰罗尼亚语。 对于说加泰罗尼亚语和西班牙语的用户，加泰罗尼亚语中未提供的资源将以西班牙语显示。
+- 某些资源可能需要特定语言的例外，而其他大多数资源则映射到公共资源。 在这种情况下，请将旨在用于所有语言的资源标记为 "und"。 Windows 会将 "und" 语言标记解释为类似于 "" ) 的 (通配符 \* ，因为在任何其他特定匹配后，它会与顶级应用程序语言匹配。 例如，如果某些资源对于芬兰语有所不同，但是这些资源的剩余部分对于所有语言都相同，应该使用芬兰语语言标记对芬兰语资源进行标记，而剩余部分则应该通过“und”进行标记。
 - 对于基于语言脚本的资源（如字体或文本的高度），请将不确定的语言标记用于指定的脚本： ' und &lt; &gt; '。 例如，对于拉丁语字体，请使用 `und-Latn\\fonts.css`；对于西里尔文字体，请使用 `und-Cryl\\fonts.css`。
 
 ## <a name="set-the-http-accept-language-request-header"></a>设置 HTTP 接受的语言请求标头
-请考虑所调用的 Web 服务是否具有与应用相同的本地化程度范围。 从典型 web 请求中的 Windows 应用程序和 XMLHttpRequest （XHR）发出的 HTTP 请求，使用标准的 HTTP Accept-Language 请求标头。 默认情况下，HTTP 标头设置为用户配置文件语言列表。 列表中的每种语言进一步扩展为包含中性语言和权重 (q)。 例如，fr-FR 和 en-US 的用户语言列表会产生 fr-FR、fr、en-US、en 的 HTTP 接受的语言请求标头（“fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3”）。 但是，如果天气应用（以此为例）以法语（法国）显示 UI，但用户在其首选项列表中排在最顶端的语言是德语，你则需要从服务中显式请求使用法语（法国），以便在应用内保持一致性。
+请考虑所调用的 Web 服务是否具有与应用相同的本地化程度范围。 在典型 web 请求中从 Windows 应用发出 HTTP 请求，并使用 XMLHttpRequest (XHR) ，请使用标准 HTTP Accept-Language 请求标头。 默认情况下，HTTP 标头设置为用户配置文件语言列表。 列表中的每种语言进一步扩展为包含中性语言和权重 (q)。 例如，fr-FR 和 en-US 的用户语言列表会产生 fr-FR、fr、en-US、en 的 HTTP 接受的语言请求标头（“fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3”）。 但是，如果天气应用（以此为例）以法语（法国）显示 UI，但用户在其首选项列表中排在最顶端的语言是德语，你则需要从服务中显式请求使用法语（法国），以便在应用内保持一致性。
 
 ## <a name="apis-in-the-windowsglobalization-namespace"></a>Windows.Globalization 命名空间中的 API
 通常，[**Windows.Globalization**](/uwp/api/windows.globalization?branch=live) 命名空间中的 API 使用应用运行时语言列表确定语言。 如果没有任何一种语言有匹配的格式，则使用用户区域设置。 该区域设置即用于系统时钟的区域设置。 用户区域设置可从**设置**  >  **时间 & 语言**  >  **区域 & 语言**  >  **其他日期、时间、& 区域设置**区域中获取  >  **：更改日期、时间或数字格式**。 **Windows.Globalization** API 还具有指定要使用的语言列表的替代，而不是应用运行时语言列表。
@@ -170,9 +170,9 @@ Windows 用户可以使用**设置**  >  **时间 & 语言**  >  **区域 & 语�
 </tr>
 <tr>
 <td align="left">西班牙语(西班牙)（默认）；西班牙语(墨西哥)；西班牙语(拉丁美洲)；葡萄牙语(巴西)</td>
-<td align="left">英语(美国)</td>
+<td align="left">英语（美国）</td>
 <td align="left">无</td>
-<td align="left">西班牙语(西班牙)</td>
+<td align="left">西班牙语（西班牙）</td>
 <td align="left">UI：西班牙语(西班牙)（由于没有可用于英语的回退，因此使用默认值）<br>日期/时间/数字西班牙语(西班牙)</td>
 </tr>
 <tr>
@@ -193,7 +193,7 @@ Windows 用户可以使用**设置**  >  **时间 & 语言**  >  **区域 & 语�
 </table>
 
 >[!NOTE]
-> 有关 Microsoft 使用的标准国家/地区代码的列表，请参阅[官方国家/地区列表](/windows/uwp/publish/supported-languages)。
+> 有关 Microsoft 使用的标准国家/地区代码的列表，请参阅 [官方国家/地区列表](../../publish/supported-languages.md)。
 
 ## <a name="important-apis"></a>重要的 API
 * [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)

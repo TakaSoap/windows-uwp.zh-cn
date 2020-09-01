@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: e1580bdc62585cb777334c217419b4de6a691add
-ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
+ms.openlocfilehash: 5b66cffa25dce28be22a1347b10e121e75936c25
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162562"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155951"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在应用程序清单中声明后台任务
 
@@ -20,8 +20,8 @@ ms.locfileid: "88162562"
 
 **重要的 API**
 
--   [**BackgroundTasks 架构**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [**BackgroundTasks 架构**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**Windows.ApplicationModel.Background**](/uwp/api/Windows.ApplicationModel.Background)
 
 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。
 
@@ -90,7 +90,7 @@ ms.locfileid: "88162562"
 
 2.  更改 Task Type 属性列表以指示该后台任务所使用的任务注册类型。 如果后台任务注册了多个触发器类型，需要为每个触发器类型添加附加的 Task 元素和 Type 属性。
 
-    **注意**   请确保列出你正在使用的每个触发器类型，或后台任务不会使用未声明的触发器类型注册 ([**register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)方法将失败并引发异常) 。
+    **注意**   请确保列出你正在使用的每个触发器类型，或后台任务不会使用未声明的触发器类型注册 ([**register**](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)方法将失败并引发异常) 。
 
     此代码段示例指示使用系统事件触发器和推送通知：
 
@@ -171,7 +171,7 @@ ms.locfileid: "88162562"
 </Extensions>
 ```
 
-当你指定 **EntryPoint** 时，你的应用程序将在触发器触发时接收对指定方法的回调。 如果你没有指定 **EntryPoint**，应用程序将通过 [OnBackgroundActivated()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated) 接收回调。  有关详细信息，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
+当你指定 **EntryPoint** 时，你的应用程序将在触发器触发时接收对指定方法的回调。 如果你没有指定 **EntryPoint**，应用程序将通过 [OnBackgroundActivated()](/uwp/api/windows.ui.xaml.application.onbackgroundactivated) 接收回调。  有关详细信息，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 
 ### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>使用 ResourceGroup 属性指定运行后台任务的位置。
 

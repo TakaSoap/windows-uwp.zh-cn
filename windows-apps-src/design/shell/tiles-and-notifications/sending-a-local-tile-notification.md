@@ -7,17 +7,17 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a6b61463204b4ae60fbb853cd00a10c7185a084
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a8e3bee4a32c4a66ece5f486386340e9f9122f87
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362694"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156801"
 ---
 # <a name="send-a-local-tile-notification"></a>发送本地磁贴通知
  
 
-Windows 10 中的主应用磁贴被定义在应用程序清单中，而辅助磁贴以编程方式创建和定义的应用程序代码。 本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。 （本地通知是从应用代码发送的通知，而不是从 Web 服务器推送或拉取的通知。）
+在 Windows 10 中，主要应用磁贴在应用清单中定义，而辅助磁贴由应用代码以编程方式创建和定义。 本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。 （本地通知是从应用代码发送的通知，而不是从 Web 服务器推送或拉取的通知。）
 
 ![默认磁贴和带有通知的磁贴](images/sending-local-tile-01.png)
 
@@ -26,7 +26,7 @@ Windows 10 中的主应用磁贴被定义在应用程序清单中，而辅助磁
 
  
 
-## <a name="install-the-nuget-package"></a>安装 NuGet 程序包
+## <a name="install-the-nuget-package"></a>安装 NuGet 包
 
 
 我们建议安装[通知库 NuGet 程序包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，它可以通过生成带有对象而不是原始 XML 的磁贴负载来简化一些操作流程。
@@ -36,7 +36,7 @@ Windows 10 中的主应用磁贴被定义在应用程序清单中，而辅助磁
 ## <a name="add-namespace-declarations"></a>添加命名空间声明
 
 
-若要访问磁贴 API，请包含 [**Windows.UI.Notifications**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications) 命名空间。 我们还建议包含 **Microsoft.Toolkit.Uwp.Notifications** 命名空间，以便可以利用磁贴帮助程序 API（必须安装[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet 程序包才能访问这些 API）。
+若要访问磁贴 API，请包含 [**Windows.UI.Notifications**](/uwp/api/Windows.UI.Notifications) 命名空间。 我们还建议包含 **Microsoft.Toolkit.Uwp.Notifications** 命名空间，以便可以利用磁贴帮助程序 API（必须安装[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet 程序包才能访问这些 API）。
 
 ```csharp
 using Windows.UI.Notifications;
@@ -46,9 +46,9 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>创建通知内容
 
 
-在 Windows 10 中，使用自适应磁贴模板，可用于创建通知的自定义可视布局定义磁贴有效负载。 （若要了解自适应磁贴的功能，请参阅[创建自适应磁贴](create-adaptive-tiles.md)。）
+在 Windows 10 中，使用自适应磁贴模板定义磁贴负载，通过这种方式可以为通知创建自定义视觉布局。 （若要了解自适应磁贴的功能，请参阅[创建自适应磁贴](create-adaptive-tiles.md)。）
 
-此代码示例会为中等和加宽磁贴创建自适应磁贴内容。
+此代码示例会为中型磁贴和宽磁贴创建自适应磁贴内容。
 
 ```csharp
 // In a real app, these would be initialized with actual data
@@ -125,7 +125,7 @@ TileContent content = new TileContent()
 ## <a name="create-the-notification"></a>创建通知
 
 
-在拥有通知内容之后，你将需要创建一个新的 [**TileNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)。 **TileNotification** 构造函数会采用一个 Windows 运行时 [**XmlDocument**](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument) 对象，如果你使用的是[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，则可以通过 **TileContent.GetXml** 方法获取该对象。
+在拥有通知内容之后，你将需要创建一个新的 [**TileNotification**](/uwp/api/Windows.UI.Notifications.TileNotification)。 **TileNotification** 构造函数会采用一个 Windows 运行时 [**XmlDocument**](/uwp/api/windows.data.xml.dom.xmldocument) 对象，如果你使用的是[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，则可以通过 **TileContent.GetXml** 方法获取该对象。
 
 此代码示例会为新磁贴创建一个通知。
 
@@ -150,9 +150,9 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);
 
 尽管本地发送磁贴通知比较简单，但将通知发送到主要磁贴或辅助磁贴略有不同。
 
-**主磁贴**
+**主要磁贴**
 
-若要将通知发送到主要磁贴，请使用 [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager) 为主要磁贴创建磁贴更新程序，并通过调用“更新”发送通知。 无论是否可见，你的应用的主要磁贴始终存在，因此你可以向其发送通知，即使它没有固定。 如果用户稍后固定你的主要磁贴，你发送的通知也将随后显示。
+若要将通知发送到主要磁贴，请使用 [**TileUpdateManager**](/uwp/api/Windows.UI.Notifications.TileUpdateManager) 为主要磁贴创建磁贴更新程序，并通过调用“更新”发送通知。 无论是否可见，你的应用的主要磁贴始终存在，因此你可以向其发送通知，即使它没有固定。 如果用户稍后固定你的主要磁贴，你发送的通知也将随后显示。
 
 此代码示例将通知发送到主要磁贴。
 
@@ -164,7 +164,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 
 **辅助磁贴**
 
-若要将通知发送到辅助磁贴，请首先确保该辅助磁贴存在。 如果你尝试为不存在的辅助磁贴创建磁贴更新程序（例如，如果用户取消固定辅助磁贴），将引发异常。 你可以使用 [**SecondaryTile.Exists**](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.SecondaryTile#Windows_UI_StartScreen_SecondaryTile_Exists_System_String_)(tileId) 来查看你的辅助磁贴是否已固定，然后为辅助磁贴创建磁贴更新程序并发送通知。
+若要将通知发送到辅助磁贴，请首先确保该辅助磁贴存在。 如果你尝试为不存在的辅助磁贴创建磁贴更新程序（例如，如果用户取消固定辅助磁贴），将引发异常。 你可以使用 [**SecondaryTile.Exists**](/uwp/api/Windows.UI.StartScreen.SecondaryTile#Windows_UI_StartScreen_SecondaryTile_Exists_System_String_)(tileId) 来查看你的辅助磁贴是否已固定，然后为辅助磁贴创建磁贴更新程序并发送通知。
 
 此代码示例将通知发送到辅助磁贴。
 
@@ -204,13 +204,13 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();
 
 **使用通知队列**
 
-在执行了第一次磁贴更新之后，你可以通过启用[通知队列](https://docs.microsoft.com/previous-versions/windows/apps/hh868234(v=win.10))来扩展磁贴的功能。
+在执行了第一次磁贴更新之后，你可以通过启用[通知队列](/previous-versions/windows/apps/hh868234(v=win.10))来扩展磁贴的功能。
 
-**其他通知传递方法**
+**其他通知传送方法**
 
 本文将向你介绍如何将磁贴更新作为一个通知发送。 若要了解其他通知传送方法（包括计划通知、定期通知和推送通知），请参阅[传送通知](choosing-a-notification-delivery-method.md)。
 
-**XmlEncode 传递方法**
+**XmlEncode 传送方法**
 
 如果你使用的不是[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，则此通知传送方法为备用方法。
 
@@ -290,13 +290,9 @@ var notification = new TileNotification(doc);
 * [磁贴内容架构](../tiles-and-notifications/tile-schema.md)
 * [通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
-* [**Windows.UI.Notifications 命名空间**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
-* [如何使用通知队列 (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh868234(v=win.10))
-* [将通知传递](choosing-a-notification-delivery-method.md)
+* [**Windows.UI.Notifications 命名空间**](/uwp/api/Windows.UI.Notifications)
+* [如何使用通知队列 (XAML)](/previous-versions/windows/apps/hh868234(v=win.10))
+* [传送通知](choosing-a-notification-delivery-method.md)
  
 
  
-
-
-
-

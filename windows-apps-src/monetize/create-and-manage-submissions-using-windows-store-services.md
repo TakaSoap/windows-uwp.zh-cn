@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a59db4115332a374c96c8a4400dbaccff9cd82
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: af0d36f2fa76fe9bb5bd253436f3d434a860e7ec
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846817"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155621"
 ---
 # <a name="create-and-manage-submissions"></a>创建和管理提交
 
@@ -40,21 +40,21 @@ ms.locfileid: "88846817"
 
 在开始编写调用 Microsoft Store 提交 API 的代码之前，确保已满足以下先决条件。
 
-* 你（或你的组织）必须有一个 Azure AD 目录，并且必须对该目录拥有[全局管理员](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，则你已具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
+* 你（或你的组织）必须有一个 Azure AD 目录，并且必须对该目录拥有[全局管理员](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，则你已具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
 
 * 必须[将某个 Azure AD 应用程序与你的合作伙伴中心帐户相关联](#associate-an-azure-ad-application-with-your-windows-partner-center-account)，并获取租户 ID、客户端 ID 和密钥。 需要使用这些值来获取 Azure AD 访问令牌，调用“Microsoft Store 提交 API”时将会使用该令牌。
 
 * 使用 Microsoft Store 提交 API 对应用进行准备：
 
-  * 如果你的应用尚不存在于合作伙伴中心，则必须 [通过在合作伙伴中心保留其名称来创建你的应用](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 不能使用 Microsoft Store 提交 API 在合作伙伴中心创建应用;你必须在合作伙伴中心进行创建，然后才能使用 API 访问应用，并以编程方式为其创建提交。 不过，可以使用该 API 以编程方式创建加载项和软件包外部测试版，然后再为它们创建提交。
+  * 如果你的应用尚不存在于合作伙伴中心，则必须 [通过在合作伙伴中心保留其名称来创建你的应用](../publish/create-your-app-by-reserving-a-name.md)。 不能使用 Microsoft Store 提交 API 在合作伙伴中心创建应用;你必须在合作伙伴中心进行创建，然后才能使用 API 访问应用，并以编程方式为其创建提交。 不过，可以使用该 API 以编程方式创建加载项和软件包外部测试版，然后再为它们创建提交。
 
-  * 必须先 [在合作伙伴中心为该应用创建一个提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，然后才能使用此 API [为该](https://docs.microsoft.com/windows/uwp/publish/age-ratings) 应用创建提交。 完成此操作后，才可以使用该 API 为此应用以编程方式创建新的提交。 无需创建加载项提交或软件包外部测试版提交，即可将该 API 用于这些类型的提交。
+  * 必须先 [在合作伙伴中心为该应用创建一个提交](../publish/app-submissions.md)，然后才能使用此 API [为该](../publish/age-ratings.md) 应用创建提交。 完成此操作后，才可以使用该 API 为此应用以编程方式创建新的提交。 无需创建加载项提交或软件包外部测试版提交，即可将该 API 用于这些类型的提交。
 
-  * 如果你要创建或更新应用提交并需要包括应用包，请事先[准备应用包](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)。
+  * 如果你要创建或更新应用提交并需要包括应用包，请事先[准备应用包](../publish/app-package-requirements.md)。
 
-  * 如果你要创建或更新应用提交并需要包括 Store 一览的屏幕截图或图像，请事先[准备应用屏幕截图和图像](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。
+  * 如果你要创建或更新应用提交并需要包括 Store 一览的屏幕截图或图像，请事先[准备应用屏幕截图和图像](../publish/app-screenshots-and-images.md)。
 
-  * 如果你要创建或更新加载项提交并需要包括图标，请事先[准备图标](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions)。
+  * 如果你要创建或更新加载项提交并需要包括图标，请事先[准备图标](../publish/create-add-on-store-listings.md)。
 
 <span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 
@@ -79,7 +79,7 @@ ms.locfileid: "88846817"
 
 在 Microsoft Store 提交 API 中调用任何方法之前，首先必须获取将传递给该 API 中每个方法的 **Authorization** 标头的 Azure AD 访问令牌。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以对它进行刷新，以便可以在之后调用该 API 时继续使用。
 
-若要获取访问令牌，请按照 [使用客户端凭据的服务到服务调用](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) 中的说明将 HTTP POST 发送到 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
+若要获取访问令牌，请按照 [使用客户端凭据的服务到服务调用](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) 中的说明将 HTTP POST 发送到 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
 
 ```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -94,7 +94,7 @@ grant_type=client_credentials
 
 对于 POST URI 中的 " *租户 \_ id* " 和 "客户端 * \_ id* " 和 " *客户端 \_ 密钥* " 参数，为你在上一节中的合作伙伴中心检索的应用程序指定租户 id、客户端 id 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
 
-在你的访问令牌到期后，你可按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
+在你的访问令牌到期后，你可按照[此处](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens)的说明刷新令牌。
 
 对于演示如何使用 C#、Java 或 Python 代码获取访问令牌的示例，请参阅 Microsoft Store 提交 API [代码示例](#code-examples)。
 
@@ -107,7 +107,7 @@ grant_type=client_credentials
 > [!NOTE]
 > 获取访问令牌后，在令牌到期前，你有 60 分钟时间可以调用 Microsoft Store 提交 API 中的方法。
 
-| 方案       | 说明                                                                 |
+| 方案       | 描述                                                                 |
 |---------------|----------------------------------------------------------------------|
 | 应用 |  检索注册到合作伙伴中心帐户的所有应用的数据，并创建应用的提交。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[获取应用数据](get-app-data.md)</li><li>[管理应用提交](manage-app-submissions.md)</li></ul> |
 | 外接程序 | 获取、创建或删除应用的加载项，然后获取、创建或删除这些加载项的提交。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[管理加载项](manage-add-ons.md)</li><li>[管理加载项提交](manage-add-on-submissions.md)</li></ul> |
@@ -132,11 +132,11 @@ grant_type=client_credentials
 
 有关详细信息，请参阅我们 [GitHub 上的 StoreBroker 页面](https://github.com/Microsoft/StoreBroker)。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 | 问题      | 解决方法                                          |
 |---------------|---------------------------------------------|
-| 在通过 PowerShell 调用 Microsoft Store 提交 API 后，如果使用 [ConvertFrom-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) cmdlet 将该 API 的响应数据从 JSON 格式转换为 PowerShell 对象，然后使用 [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 将响应数据转换回为 JSON 格式，该响应数据会损坏。 |  默认情况下，[ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 的 *-Depth* 参数设置为 2 级对象，这对于大多数由 Microsoft Store 提交 API 返回的 JSON 对象而言深度不够。 调用 [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 时，请将 *-Depth* 参数设置为较大数值（如 20）。 |
+| 在通过 PowerShell 调用 Microsoft Store 提交 API 后，如果使用 [ConvertFrom-Json](/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) cmdlet 将该 API 的响应数据从 JSON 格式转换为 PowerShell 对象，然后使用 [ConvertTo-Json](/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 将响应数据转换回为 JSON 格式，该响应数据会损坏。 |  默认情况下，[ConvertTo-Json](/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 的 *-Depth* 参数设置为 2 级对象，这对于大多数由 Microsoft Store 提交 API 返回的 JSON 对象而言深度不够。 调用 [ConvertTo-Json](/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 时，请将 *-Depth* 参数设置为较大数值（如 20）。 |
 
 ## <a name="additional-help"></a>其他帮助
 

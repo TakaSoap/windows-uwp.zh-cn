@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 5807cdc19e4b38c8cc8fa4ca45c4ef47e79b7742
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: fcffbf9fd3f333aa4aea4f155c5508d2867c2776
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282247"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158722"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>使用应用 URI 处理程序启用“网站的应用”功能
 
@@ -23,7 +23,7 @@ ms.locfileid: "72282247"
 - 处理应用中的激活。
 
 > [!Note]
-> 从 Windows 10 创意者更新开始，Microsoft Edge 中单击的支持链接会启动相应的应用。 如果在其他浏览器（例如 Internet Explorer 等）中单击了支持的链接，则会使你保持浏览体验。
+> 从 Windows 10 创意者更新开始，Microsoft Edge 中单击的支持链接会启动相应的应用。 在其他浏览器中单击 "支持的链接" (例如，Internet Explorer 等 ) ，会使你保持浏览体验。
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>注册以处理应用部件清单中的 http 和 https 链接
 
@@ -46,7 +46,7 @@ ms.locfileid: "72282247"
 </Applications>
 ```
 
-上述声明将你的应用注册为处理来自指定主机的链接。 如果你的网站具有多个地址（例如： m.example.com、www\.example.com 和 example.com），则在每个地址的 `<uap3:AppUriHandler>` 内添加单独的 `<uap3:Host Name=... />` 条目。
+上述声明将你的应用注册为处理来自指定主机的链接。 如果你的网站具有多个地址 (例如： m.example.com、www \. example.com 和 example.com) 则在 `<uap3:Host Name=... />` 中 `<uap3:AppUriHandler>` 为每个地址添加单独的条目。
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>将你的应用和网站与 JSON 文件关联
 
@@ -71,12 +71,12 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 
 上述 JSON 文件示例演示了通配符的用法。 通配符允许你使用较少的代码行支持多种链接。 Web 到应用链接在 JSON 文件中支持两种类型的通配符：
 
-| **通配符** | **描述**               |
+| **通配符** | **说明**               |
 |--------------|-------------------------------|
 | **\***       | 表示任何子字符串      |
 | **?**        | 表示单个字符 |
 
-例如，在上面的示例中，`"excludePaths" : [ "/news/*", "/blog/*" ]` 假设你的应用程序将支持以你的网站的地址（例如 msn.com）开头的所有路径，但 `/news/` 和 `/blog/`下的路径**除外**。 将支持**msn.com/weather.html** ，但不支持**msn.com/news/topnews.html**。
+例如， `"excludePaths" : [ "/news/*", "/blog/*" ]` 在上面的示例中，你的应用程序将支持以你的网站地址开头的所有路径 (例如 msn.com) ， **但** 和下的 `/news/` 除外 `/blog/` 。 将支持**msn.com/weather.html** ，但**msn.com/news/topnews.html**。
 
 ### <a name="multiple-apps"></a>多个应用
 
@@ -96,7 +96,7 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 
 若要为用户提供最佳体验，请使用排除路径以确保仅联机内容已从 JSON 文件中的受支持路径中排除。
 
-先检查排除路径，如果存在匹配项，则将使用浏览器（而不是指定应用）打开相应的页面。 在上面的示例中，"/news/\*" 包含该路径下的任何页面，而 "/news\*" （无正斜杠轨迹 "新闻"）包含 "news\*" 下的任何路径，例如 "newslocal/"、"newsinternational/" 等等。
+先检查排除路径，如果存在匹配项，则将使用浏览器（而不是指定应用）打开相应的页面。 在上面的示例中，"/news/ \* " 包含该路径下的任何页面，而 "/news \* " (没有正斜杠轨迹 "新闻" ) 包括 "news" 下的任何路径 \* ，例如 "newslocal/"、"newsinternational/" 等等。
 
 ## <a name="handle-links-on-activation-to-link-to-content"></a>处理用于链接到内容的“激活”上的链接
 
@@ -154,15 +154,15 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 你可以测试应用和网站的配置，方法是运行在以下位置提供的应用主机注册验证程序工具：
 
-% windir%\\system32\\**AppHostRegistrationVerifier**
+% windir% \\ system32 \\ **AppHostRegistrationVerifier.exe**
 
 通过使用以下参数运行此工具来测试应用和网站的配置：
 
-**AppHostRegistrationVerifier** *hostname packagefamilyname filepath*
+**AppHostRegistrationVerifier.exe** *主机名 packagefamilyname 文件路径*
 
--   Hostname：你的网站（例如，microsoft.com）
+-   Hostname：你的网站 (例如，microsoft.com) 
 -   程序包系列名称 (PFN)：你的应用的 PFN
--   文件路径：用于本地验证的 JSON 文件（例如，C：\\SomeFolder\\windows-应用程序）
+-   文件路径：用于本地验证的 JSON 文件 (例如，C： \\ SomeFolder \\) 
 
 如果工具未范围任何内容，则上传时对该文件进行验证即可。 如果返回错误代码，则不起作用。
 
@@ -177,25 +177,25 @@ Keyname： `ForceValidation` 值： `1`
 
 关闭应用程序以验证当你单击某个链接时应用是否激活。 然后，在网站中复制受支持路径之一的地址。 例如，如果网站的地址是 "msn.com"，并且其中一个支持路径是 "path1"，则可以使用 `http://msn.com/path1`
 
-验证你的应用是否已关闭。 按 **Windows 键 + R** 打开 **“运行”** 对话框，并在窗口中粘贴该链接。 应启动你的应用，而不是 Web 浏览器。
+验证你的应用是否已关闭。 按 **Windows 键 + R** 打开 " **运行** " 对话框，并将该链接粘贴到窗口中。 应启动你的应用，而不是 Web 浏览器。
 
-此外，你可以通过使用 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) API 从其他应用启动你的应用来测试它。 你也可以使用此 API 在手机上进行测试。
+此外，你可以通过使用 [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) API 从其他应用启动你的应用来测试它。 你也可以使用此 API 在手机上进行测试。
 
 如果你希望遵循协议激活逻辑，请在 **OnActivated** 事件处理程序中设置断点。
 
 ## <a name="appurihandlers-tips"></a>AppUriHandlers 提示：
 
 - 请确保仅指定你的应用可以处理的链接。
-- 列出你将支持的所有主机。  请注意，www\.example.com 和 example.com 是不同的主机。
+- 列出你将支持的所有主机。  请注意，www \. example.com 和 example.com 是不同的主机。
 - 用户可以在“设置”中选择他们更希望哪个应用处理网站。
 - 你的 JSON 文件必须上载到 https 服务器。
 - 如果你需要更改你希望支持的路径，可以重新发布你的 JSON 文件，而无需重新发布你的应用。 用户将在 1-8 天内看到更改。
 - 带有 AppUriHandlers 的所有旁加载应用都将在安装时验证主机的链接。 不需要上载 JSON 文件即可测试该功能。
-- 只要你的应用是使用 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 启动的 UWP 应用或使用 [ShellExecuteEx](https://docs.microsoft.com/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa) 启动的 Windows 桌面应用，此功能就可行。 如果 URL 对应于注册的应用 URI 处理程序，则将启动应用，而不是浏览器。
+- 只要你的应用是使用 [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) 启动的 UWP 应用或使用 [ShellExecuteEx](/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa) 启动的 Windows 桌面应用，此功能就可行。 如果 URL 对应于注册的应用 URI 处理程序，则将启动应用，而不是浏览器。
 
 ## <a name="see-also"></a>另请参阅
 
-[Web 到应用示例项目](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
-[windows.protocol 注册](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-protocol)
-[处理 URI 激活](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-[关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)诠释了如何使用 LaunchUriAsync() API。
+[Web 到应用示例项目](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts) 
+[windows 协议注册](/uwp/schemas/appxpackage/appxmanifestschema/element-protocol) 
+[处理 URI 激活](./handle-uri-activation.md) 
+[关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)说明了如何使用 LaunchUriAsync ( # A1 API。

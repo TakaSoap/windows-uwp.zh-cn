@@ -1,5 +1,5 @@
 ---
-description: 针对笔、Surface Dial 和其他类型的输入优化应用。
+description: 了解如何自定义通用 Windows 平台 (UWP) 应用来与特定类型的输入（包括触控笔、Surface 拨号和语音）进行交互。
 title: 输入和交互
 keywords: 应用输入, 自定义 UWP 应用程序
 label: Input and interactions
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c54101306d2382a4e0301e89410d58abfb87743
-ms.sourcegitcommit: dccba7256765116f06cf96143eb3cbaa12d7fe0b
+ms.openlocfilehash: 4fc0fa50bbf015c32934785e96b59924889d2f45
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87523533"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094764"
 ---
 # <a name="input-and-interactions"></a>输入和交互
 

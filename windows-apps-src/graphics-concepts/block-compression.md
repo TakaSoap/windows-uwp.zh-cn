@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ac7f0785894849cffe09cd902f459015f1f7b6b
-ms.sourcegitcommit: ea15237291ae3ade0bf22e38bd292c3a23947a03
+ms.openlocfilehash: 02b65357b52740e9b56e0e2dc11ff22723825f20
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377324"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156451"
 ---
 # <a name="block-compression"></a>块压缩
 
@@ -24,16 +24,16 @@ ms.locfileid: "66377324"
 
 在所有尺寸上创建的块压缩纹理必须是大小 4 的倍数，且不能用作管道的输出。
 
-## <a name="span-idbasicsspanspan-idbasicsspanspan-idbasicsspanhow-block-compression-works"></a><span id="Basics"></span><span id="basics"></span><span id="BASICS"></span>如何阻止压缩的工作原理
+## <a name="span-idbasicsspanspan-idbasicsspanspan-idbasicsspanhow-block-compression-works"></a><span id="Basics"></span><span id="basics"></span><span id="BASICS"></span>块压缩的工作原理
 
 块压缩是一种用来减少存储颜色数据所需的内存的技术。 通过将某些颜色按其原始大小存储，而其他颜色使用编码模式，你可以大幅减少存储图像所需的内存。 由于硬件会自动解码压缩的数据，因此使用压缩的纹理不会导致性能下降。
 
 若要了解压缩的工作原理，请看下面两个示例。 第一个示例介绍存储未压缩的数据所用的内存量；第二个示例介绍存储压缩的数据所用的内存量。
 
 - [存储未压缩的数据](#storing-uncompressed-data)
-- [存储压缩的数据](#storing-compressed-data)
+- [存储压缩数据](#storing-compressed-data)
 
-### <a name="span-idstoringuncompresseddataspanspan-idstoringuncompresseddataspanspan-idstoringuncompresseddataspanspan-idstoring-uncompressed-dataspanstoring-uncompressed-data"></a><span id="Storing_Uncompressed_Data"></span><span id="storing_uncompressed_data"></span><span id="STORING_UNCOMPRESSED_DATA"></span><span id="storing-uncompressed-data"></span>存储未压缩的数据
+### <a name="span-idstoring_uncompressed_dataspanspan-idstoring_uncompressed_dataspanspan-idstoring_uncompressed_dataspanspan-idstoring-uncompressed-dataspanstoring-uncompressed-data"></a><span id="Storing_Uncompressed_Data"></span><span id="storing_uncompressed_data"></span><span id="STORING_UNCOMPRESSED_DATA"></span><span id="storing-uncompressed-data"></span>存储未压缩的数据
 
 下图显示了未压缩的 4×4 纹理。 假设每种颜色包含一个单色分量（例如红色），并且存储在一字节的内存中。
 
@@ -43,7 +43,7 @@ ms.locfileid: "66377324"
 
 ![顺序内存中的未压缩数据](images/d3d10-block-compress-2.png)
 
-### <a name="span-idstoringcompresseddataspanspan-idstoringcompresseddataspanspan-idstoringcompresseddataspanspan-idstoring-compressed-dataspanstoring-compressed-data"></a><span id="Storing_Compressed_Data"></span><span id="storing_compressed_data"></span><span id="STORING_COMPRESSED_DATA"></span><span id="storing-compressed-data"></span>存储压缩的数据
+### <a name="span-idstoring_compressed_dataspanspan-idstoring_compressed_dataspanspan-idstoring_compressed_dataspanspan-idstoring-compressed-dataspanstoring-compressed-data"></a><span id="Storing_Compressed_Data"></span><span id="storing_compressed_data"></span><span id="STORING_COMPRESSED_DATA"></span><span id="storing-compressed-data"></span>存储压缩数据
 
 你已经了解了未压缩的图像使用的内存量，现在来看看压缩的图像节省的内存量。 [BC1](#bc1) 压缩格式存储 2 种颜色（每种颜色 1 字节）和用于在纹理中内插原始颜色的 16 个 3 位指数（48 位，或者 6 字节），如下图中所示。
 
@@ -55,7 +55,7 @@ ms.locfileid: "66377324"
 
 下一节介绍 Direct3D 如何实现在应用程序中使用块压缩。
 
-## <a name="span-idusingblockcompressionspanspan-idusingblockcompressionspanspan-idusingblockcompressionspanusing-block-compression"></a><span id="Using_Block_Compression"></span><span id="using_block_compression"></span><span id="USING_BLOCK_COMPRESSION"></span>使用块压缩
+## <a name="span-idusing_block_compressionspanspan-idusing_block_compressionspanspan-idusing_block_compressionspanusing-block-compression"></a><span id="Using_Block_Compression"></span><span id="using_block_compression"></span><span id="USING_BLOCK_COMPRESSION"></span>使用块压缩
 
 创建块压缩纹理和未压缩纹理一样，唯一区别是要指定块压缩格式。
 
@@ -63,9 +63,9 @@ ms.locfileid: "66377324"
 
 请以使用未压缩纹理的方式来使用块压缩纹理。 如果你的应用程序将获取指向块压缩数据的内存指针，你需要考虑 mipmap 中的内存填充，它会导致声明的大小与实际大小不同。
 
-- [与物理大小的虚拟大小](#virtual-size-versus-physical-size)
+- [虚拟大小与物理大小](#virtual-size-versus-physical-size)
 
-### <a name="span-idvirtualsizespanspan-idvirtualsizespanspan-idvirtualsizespanspan-idvirtual-size-versus-physical-sizespanvirtual-size-versus-physical-size"></a><span id="Virtual_Size"></span><span id="virtual_size"></span><span id="VIRTUAL_SIZE"></span><span id="virtual-size-versus-physical-size"></span>与物理大小的虚拟大小
+### <a name="span-idvirtual_sizespanspan-idvirtual_sizespanspan-idvirtual_sizespanspan-idvirtual-size-versus-physical-sizespanvirtual-size-versus-physical-size"></a><span id="Virtual_Size"></span><span id="virtual_size"></span><span id="VIRTUAL_SIZE"></span><span id="virtual-size-versus-physical-size"></span>虚拟大小与物理大小
 
 如果你的应用程序代码使用内存指针遍历块压缩纹理的内存，则你的应用程序代码中会有一个可能需要修改的重要事项。 因为块压缩算法在 4x4 纹素块上操作，所以所有尺寸中的块压缩纹理必须是 4 的倍数。 对于原始尺寸可以被 4 整除、但细分尺寸无法被 4 整除的 mipmap，这将是个问题。 下图显示了每个 mipmap 级别的虚拟（声明）大小和物理（实际）大小之间的区域差。
 
@@ -73,13 +73,13 @@ ms.locfileid: "66377324"
 
 图示左侧显示为未压缩的 60×40 纹理生成的 mipmap 级别大小。 最高级别的大小取自生成纹理的 API 调用；每个后续级别是上一个级别大小的一半。 对于未压缩的纹理，虚拟（声明）大小和物理（实际）大小之间没有区别。
 
-图示右侧显示了为使用压缩的同一 60×40 纹理生成的 mipmap 级别大小。 注意，第二个和第三个级别均有内存填充，以使每个级别上的大小为 4 的因数。 这很有必要，以便算法可以在 4×4 纹素块上操作。 这就显得如果考虑 mipmap 级别小于 4 × 4;这些非常小的 mipmap 级别的大小将向上舍入到最接近原来的四分之一纹理内存分配时。
+图示右侧显示了为使用压缩的同一 60×40 纹理生成的 mipmap 级别大小。 注意，第二个和第三个级别均有内存填充，以使每个级别上的大小为 4 的因数。 这很有必要，以便算法可以在 4×4 纹素块上操作。 如果考虑的 mipmap 级别小于4×4，则这一点尤其明显;分配纹理内存时，这些非常小的 mipmap 级别的大小将向上舍入为最接近的4倍。
 
 采样硬件使用虚拟大小；如果对纹理采样，将忽略内存填充。 对于小于 4×4 的 mipmap 级别，只有前四个纹素将用于 2×2 的映射，并且只有第一个纹素将由 1×1 的块使用。 但是，没有公开物理大小（包括内存填充）的 API 结构。
 
 总之，复制包含块压缩数据的区域时，请小心使用对齐的内存块。 若要在获取内存指针的应用程序中执行此操作，请确保指针使用图面间距以考虑物理内存大小。
 
-## <a name="span-idcompressionalgorithmsspanspan-idcompressionalgorithmsspanspan-idcompressionalgorithmsspancompression-algorithms"></a><span id="Compression_Algorithms"></span><span id="compression_algorithms"></span><span id="COMPRESSION_ALGORITHMS"></span>压缩算法
+## <a name="span-idcompression_algorithmsspanspan-idcompression_algorithmsspanspan-idcompression_algorithmsspancompression-algorithms"></a><span id="Compression_Algorithms"></span><span id="compression_algorithms"></span><span id="COMPRESSION_ALGORITHMS"></span>压缩算法
 
 Direct3D 中的块压缩技术将未压缩的纹理数据分成 4×4 的块，压缩每个块，然后存储数据。 因此，预计要压缩的纹理的纹理尺寸必须是 4 的倍数。
 
@@ -105,13 +105,13 @@ Direct3D 实施了多个压缩方案，每个方案在存储的分量数、每�
 
 ### <a name="span-idbc1spanspan-idbc1spanbc1"></a><span id="BC1"></span><span id="bc1"></span>BC1
 
-使用第一个块压缩格式 (BC1) (任一 DXGI\_格式\_BC1\_TYPELESS、 DXGI\_格式\_BC1\_UNORM 或 DXGI\_BC1\_UNORM\_SRGB) 来存储三个组件颜色数据使用 5:6:5 颜色 （红色的 5 位，绿色的 6 位，蓝色的 5 位）。 即使该数据还包含 1 位 alpha 也是如此。 假设 4×4 纹理使用最大的数据格式，BC1 格式会将所需的内存从 48 内存字节（16 种颜色 × 3 个分量/颜色 × 1 字节/分量）减少到 8 内存字节。
+使用第一种块压缩格式 (BC1)  (DXGI \_ format \_ BC1 无型 \_ 、dxgi \_ FORMAT \_ BC1 \_ UNORM 或 dxgi \_ BC1 \_ UNORM \_ SRGB) ，使用5:6:5 颜色存储三组件颜色数据， (5 位红色，6位绿色，5位蓝色) 。 即使该数据还包含 1 位 alpha 也是如此。 假设 4×4 纹理使用最大的数据格式，BC1 格式会将所需的内存从 48 内存字节（16 种颜色 × 3 个分量/颜色 × 1 字节/分量）减少到 8 内存字节。
 
-该算法在 4×4 纹素块上操作。 而不是存储 16 种颜色，该算法将保存 2 种引用颜色 (颜色\_0 和颜色\_1） 和 16 2 位颜色索引 (块 a – p)，如以下关系图中所示。
+该算法在 4×4 纹素块上操作。 算法不是存储16种颜色，而是保存2个引用颜色 (颜色 \_ 0 和颜色 \_ 1) 和 16 2 位颜色索引 (块 a – p) ，如下图所示。
 
 ![bc1 压缩的布局](images/d3d10-compression-bc1.png)
 
-颜色指数 (a–p) 用于从颜色表中查找原始颜色。 颜色表包含 4 种颜色。 前两个颜色，颜色\_0 和颜色\_1-最小值和最大颜色。 其他两种颜色，颜色\_2 和颜色\_3，将使用线性内插计算的中间颜色。
+颜色指数 (a–p) 用于从颜色表中查找原始颜色。 颜色表包含 4 种颜色。 前两种颜色（颜色 \_ 0 和颜色 \_ 1）是最小和最大颜色。 其他两种颜色，颜色 \_ 2 和颜色 \_ 3 是用线性内插计算的中间颜色。
 
 ```cpp
 color_2 = 2/3*color_0 + 1/3*color_1
@@ -129,7 +129,7 @@ color_3 = 11
 
 最后，会将块 a–p 中的颜色与颜色表中的这四种颜色进行比较，最接近的颜色的指数将存储在 2 位的块中。
 
-该算法还会将自己借给包含 1 位 alpha 的数据。 唯一的区别是该颜色\_3 设置为 0 （它表示透明的颜色） 和颜色\_2 是线性的颜色混合\_0 和颜色\_1。
+该算法还会将自己借给包含 1 位 alpha 的数据。 唯一的区别在于，颜色 \_ 3 设置为 0 (表示透明色) 并且颜色 \_ 2 是颜色 \_ 0 和颜色1的线性 blend \_ 。
 
 ```cpp
 color_2 = 1/2*color_0 + 1/2*color_1;
@@ -138,7 +138,7 @@ color_3 = 0;
 
 ### <a name="span-idbc2spanspan-idbc2spanbc2"></a><span id="BC2"></span><span id="bc2"></span>BC2
 
-使用 BC2 格式 (任一 DXGI\_格式\_BC2\_TYPELESS、 DXGI\_格式\_BC2\_UNORM 或 DXGI\_BC2\_UNORM\_SRGB) 到包含了颜色和 alpha 数据的低一致性的数据存储 (使用[BC3](#bc3)高度一致的 alpha 数据)。 BC2 格式将 RGB 数据存储为 5:6:5 颜色（5 位红色、6 位绿色、5 位蓝色），将 alpha 存储为单独的 4 位值。 假设 4×4 纹理使用最大的数据格式，该压缩技术会将所需的内存从 64 内存字节（16 种颜色 × 4 分量/颜色 × 1 字节/分量）减少为 16 内存字节。
+使用 BC2 格式 (DXGI \_ format BC2 无 \_ 类型 \_ 、dxgi \_ FORMAT \_ BC2 \_ UNORM 或 DXGI \_ BC2 \_ UNORM \_ SRGB) 来存储包含颜色和 alpha 数据（具有较低一致性）的数据 (使用 [BC3](#bc3) 实现高度连贯的 alpha 数据) 。 BC2 格式将 RGB 数据存储为 5:6:5 颜色（5 位红色、6 位绿色、5 位蓝色），将 alpha 存储为单独的 4 位值。 假设 4×4 纹理使用最大的数据格式，该压缩技术会将所需的内存从 64 内存字节（16 种颜色 × 4 分量/颜色 × 1 字节/分量）减少为 16 内存字节。
 
 BC2 格式将具有相同位数和数据布局的颜色存储为 [BC1](#bc1) 格式；但是，BC2 需要额外 64 位内存来存储 alpha 数据，如下图所示。
 
@@ -146,17 +146,17 @@ BC2 格式将具有相同位数和数据布局的颜色存储为 [BC1](#bc1) 格
 
 ### <a name="span-idbc3spanspan-idbc3spanbc3"></a><span id="BC3"></span><span id="bc3"></span>BC3
 
-使用 BC3 格式 (任一 DXGI\_格式\_BC3\_TYPELESS、 DXGI\_格式\_BC3\_UNORM 或 DXGI\_BC3\_UNORM\_SRGB) 到存储高度一致的颜色数据 (使用[BC2](#bc2)与不连贯的 alpha 数据)。 BC3 格式使用 5:6:5 颜色（5 位红色、6 位绿色、5 位蓝色）存储颜色数据，使用 1 字节存储 alpha 数据。 假设 4×4 纹理使用最大的数据格式，该压缩技术会将所需的内存从 64 内存字节（16 种颜色 × 4 分量/颜色 × 1 字节/分量）减少为 16 内存字节。
+使用 BC3 格式 (DXGI \_ format BC3 无 \_ \_ 格式、dxgi \_ FORMAT \_ BC3 \_ UNORM 或 dxgi \_ BC3 \_ UNORM \_ SRGB) 来存储高度连贯的颜色数据 (使用具有不太一致的 alpha 数据) 的 [BC2](#bc2) 。 BC3 格式使用 5:6:5 颜色（5 位红色、6 位绿色、5 位蓝色）存储颜色数据，使用 1 字节存储 alpha 数据。 假设 4×4 纹理使用最大的数据格式，该压缩技术会将所需的内存从 64 内存字节（16 种颜色 × 4 分量/颜色 × 1 字节/分量）减少为 16 内存字节。
 
 BC3 格式将具有相同位数和数据布局的颜色存储为 [BC1](#bc1) 格式；但是，BC3 需要额外的 64 位内存来存储 alpha 数据。 BC3 格式通过存储两个参考值并在它们之间进行内插（类似于 BC1 存储 RGB 颜色的方式）来处理 alpha。
 
-该算法在 4×4 纹素块上操作。 而不是存储 16 alpha 值，该算法将存储 2 个引用 alpha (alpha\_0 和 alpha\_1) 和 16 3 位颜色索引 (alpha 通过 p)，如以下关系图中所示。
+该算法在 4×4 纹素块上操作。 该算法存储2个引用 alphas，而不是存储16个 alpha 值，而是存储2个引用 (alpha \_ 0 和 alpha \_ 1) 并且 16 3 位颜色索引 (alpha a 到 p) ，如下图所示。
 
 ![bc3 压缩的布局](images/d3d10-compression-bc3.png)
 
-BC3 格式使用 alpha 指数 (a–p) 从包含 8 个值的查找表中查找原始颜色。 前两个值 — alpha\_0 和 alpha\_1 — 是最小和最大值; 其他六个中间值使用线性插值进行计算。
+BC3 格式使用 alpha 指数 (a–p) 从包含 8 个值的查找表中查找原始颜色。 前两个值（"alpha \_ 0" 和 "alpha 1" \_ ）是最小值和最大值; 其他六个中间值使用线性内插进行计算。
 
-该算法通过检查两个参考 alpha 值确定内插的 alpha 值的数量。 如果 alpha\_0 大于 alpha\_1，则 BC3 内插 6 alpha 值; 否则，它内插 4。 当 BC3 仅内插 4 个 alpha 值时，它会设置两个额外的 alpha 值（0 表示完全透明，255 表示完全不透明）。 BC3 通过存储与最匹配指定纹理的原始 alpha 的内插 alpha 值对应的位代码，将 alpha 值压缩在 4×4 纹理区域中。
+该算法通过检查两个参考 alpha 值确定内插的 alpha 值的数量。 如果 alpha \_ 0 大于 alpha \_ 1，则 BC3 内插 6 alpha 值; 否则，它将内插4。 当 BC3 仅内插 4 个 alpha 值时，它会设置两个额外的 alpha 值（0 表示完全透明，255 表示完全不透明）。 BC3 通过存储与最匹配指定纹理的原始 alpha 的内插 alpha 值对应的位代码，将 alpha 值压缩在 4×4 纹理区域中。
 
 ```cpp
 if( alpha_0 > alpha_1 )
@@ -183,20 +183,20 @@ else
 
 ### <a name="span-idbc4spanspan-idbc4spanbc4"></a><span id="BC4"></span><span id="bc4"></span>BC4
 
-使用 BC4 格式存储单分量颜色数据（每种颜色使用 8 位）。 由于更高的准确性 (相比[BC1](#bc1))，BC4 非常适合用于存储浮点数据的范围内\[0 到 1\]使用 DXGI\_格式\_BC4\_UNORM 格式和\[-1 到 + 1\]使用 DXGI\_格式\_BC4\_SNORM 格式。 假设 4×4 纹理使用最大的数据格式，该压缩技术会将所需的内存从 16 字节（16 种颜色 × 1 分量/颜色 × 1 字节/分量）减少为 8 字节。
+使用 BC4 格式存储单分量颜色数据（每种颜色使用 8 位）。 与 [BC1](#bc1)) 相比， (增加了准确性，BC4 是使用 dxgi 格式 \[ \] \_ \_ BC4 \_ UNORM 格式，并 \[ \] 使用 dxgi \_ 格式 \_ BC4 \_ SNORM 格式将浮点数据存储在0到1范围内的理想选择。 假设 4×4 纹理使用最大的数据格式，该压缩技术会将所需的内存从 16 字节（16 种颜色 × 1 分量/颜色 × 1 字节/分量）减少为 8 字节。
 
-该算法在 4×4 纹素块上操作。 而不是存储 16 种颜色，该算法将存储 2 种引用颜色 (红\_为 0，红色\_1) 和 16 3 位颜色索引 (红色通过红色 p)，如以下关系图中所示。
+该算法在 4×4 纹素块上操作。 该算法不会存储16种颜色，而是存储2个引用颜色 (红 \_ 0 和 red \_ 1) ，将 16 3 位颜色索引存储 (红色 a 到红色 p) ，如下图所示。
 
 ![bc4 压缩的布局](images/d3d10-compression-bc4.png)
 
-该算法使用 3 位指数从包含 8 种颜色的颜色表中查找颜色。 前两个颜色-红色\_为 0，红色\_1-最小值和最大颜色。 该算法使用线性内插计算剩余颜色。
+该算法使用 3 位指数从包含 8 种颜色的颜色表中查找颜色。 前两种颜色（红色 \_ 0 和红色 \_ 1）是最小和最大颜色。 该算法使用线性内插计算剩余颜色。
 
-该算法通过检查两个参考值确定内插的颜色值的数量。 如果红色\_0 大于 red\_1，则 BC4 内插 6 颜色值; 否则，它内插 4。 如果 BC4 仅内插 4 个颜色值，它将设置两个额外的颜色值（0.0f 表示完全透明，1.0f 表示完全不透明）。 BC4 通过存储与最匹配指定纹理的原始 alpha 的内插 alpha 值对应的位代码，将 alpha 值压缩在 4×4 纹理区域中。
+该算法通过检查两个参考值确定内插的颜色值的数量。 如果红色 \_ 0 大于红色 \_ 1，则 BC4 内插6颜色值; 否则，它将内插4。 如果 BC4 仅内插 4 个颜色值，它将设置两个额外的颜色值（0.0f 表示完全透明，1.0f 表示完全不透明）。 BC4 通过存储与最匹配指定纹理的原始 alpha 的内插 alpha 值对应的位代码，将 alpha 值压缩在 4×4 纹理区域中。
 
-- [BC4\_UNORM](#bc4-unorm)
-- [BC4\_SNORM](#bc4-snorm)
+- [BC4 \_ UNORM](#bc4-unorm)
+- [BC4 \_ SNORM](#bc4-snorm)
 
-### <a name="span-idbc4unormspanspan-idbc4unormspanspan-idbc4-unormspanbc4unorm"></a><span id="BC4_UNORM"></span><span id="bc4_unorm"></span><span id="bc4-unorm"></span>BC4\_UNORM
+### <a name="span-idbc4_unormspanspan-idbc4_unormspanspan-idbc4-unormspanbc4_unorm"></a><span id="BC4_UNORM"></span><span id="bc4_unorm"></span><span id="bc4-unorm"></span>BC4 \_ UNORM
 
 以下代码示例显示了单分量数据的内插完成情况。
 
@@ -227,9 +227,9 @@ else
 
 参考颜色将会获分 3 位指数（000–111，因为有 8 个值），在压缩过程中将会保存在红色 a 块至红色 p 块中。
 
-### <a name="span-idbc4snormspanspan-idbc4snormspanspan-idbc4-snormspanbc4snorm"></a><span id="BC4_SNORM"></span><span id="bc4_snorm"></span><span id="bc4-snorm"></span>BC4\_SNORM
+### <a name="span-idbc4_snormspanspan-idbc4_snormspanspan-idbc4-snormspanbc4_snorm"></a><span id="BC4_SNORM"></span><span id="bc4_snorm"></span><span id="bc4-snorm"></span>BC4 \_ SNORM
 
-DXGI\_格式\_BC4\_SNORM 是完全相同，不同之处在于数据编码 SNORM 范围内以及时 4 个颜色值的内插。 以下代码示例显示了单分量数据的内插完成情况。
+DXGI \_ 格式 \_ BC4 \_ SNORM 完全相同，不同之处在于，数据在 SNORM 范围内进行编码，并在插入4个颜色值时进行编码。 以下代码示例显示了单分量数据的内插完成情况。
 
 ```cpp
 signed word red_0, red_1;
@@ -260,20 +260,20 @@ else
 
 ### <a name="span-idbc5spanspan-idbc5spanbc5"></a><span id="BC5"></span><span id="bc5"></span>BC5
 
-使用 BC5 格式存储双分量颜色数据（每种颜色使用 8 位）。 由于更高的准确性 (相比[BC1](#bc1))，BC5 非常适合用于存储浮点数据的范围内\[0 到 1\]使用 DXGI\_格式\_BC5\_UNORM 格式和\[-1 到 + 1\]使用 DXGI\_格式\_BC5\_SNORM 格式。 假设 4×4 纹理使用最大的数据格式，该压缩技术会将所需的内存从 32 字节（16 种颜色 × 2 分量/颜色 × 1 字节/分量）减少为 16 字节。
+使用 BC5 格式存储双分量颜色数据（每种颜色使用 8 位）。 与 [BC1](#bc1)) 相比， (增加了准确性，BC5 是使用 dxgi 格式 \[ \] \_ \_ BC5 \_ UNORM 格式，并 \[ \] 使用 dxgi \_ 格式 \_ BC5 \_ SNORM 格式将浮点数据存储在0到1范围内的理想选择。 假设 4×4 纹理使用最大的数据格式，该压缩技术会将所需的内存从 32 字节（16 种颜色 × 2 分量/颜色 × 1 字节/分量）减少为 16 字节。
 
-- [BC5\_UNORM](#bc5-unorm)
-- [BC5\_SNORM](#bc5-snorm)
+- [BC5 \_ UNORM](#bc5-unorm)
+- [BC5 \_ SNORM](#bc5-snorm)
 
-该算法在 4×4 纹素块上操作。 而不是存储 16 种颜色为这两个组件，该算法将存储为每个组件的 2 个引用颜色 (红\_0，红色\_月 1 日，绿色\_为 0，，绿色\_1) 和每个组件的 16 3 位颜色索引 (红色通过 p 红色和绿色到绿色 p)，如以下关系图中所示。
+该算法在 4×4 纹素块上操作。 算法不是为这两个组件存储16种颜色，而是为每个组件存储2个引用颜色， (红 \_ 0、red \_ 1、绿色 \_ 0 和绿色 \_ 1) ，每个组件 (红色 a 到红色 p，绿色 a 到绿色 p) 为 16 3 位颜色索引，如下图所示。
 
 ![bc5 压缩的布局](images/d3d10-compression-bc5.png)
 
-该算法使用 3 位指数从包含 8 种颜色的颜色表中查找颜色。 前两个颜色-红色\_为 0，红色\_1 (或绿色\_为 0，绿色\_1)-最小值和最大颜色。 该算法使用线性内插计算剩余颜色。
+该算法使用 3 位指数从包含 8 种颜色的颜色表中查找颜色。 前两种颜色（红色 \_ 0 和红色 \_ 1 (或绿色 \_ 0 和绿色 \_ 1) ）是最小和最大颜色。 该算法使用线性内插计算剩余颜色。
 
-该算法通过检查两个参考值确定内插的颜色值的数量。 如果红色\_0 大于 red\_1，则 BC5 内插 6 颜色值; 否则，它内插 4。 如果 BC5 仅内插 4 个颜色值，它将设置 0.0f 和 1.0f 上的其余两个颜色值。
+该算法通过检查两个参考值确定内插的颜色值的数量。 如果红色 \_ 0 大于红色 \_ 1，则 BC5 内插6颜色值; 否则，它将内插4。 如果 BC5 仅内插 4 个颜色值，它将设置 0.0f 和 1.0f 上的其余两个颜色值。
 
-### <a name="span-idbc5unormspanspan-idbc5unormspanspan-idbc5-unormspanbc5unorm"></a><span id="BC5_UNORM"></span><span id="bc5_unorm"></span><span id="bc5-unorm"></span>BC5\_UNORM
+### <a name="span-idbc5_unormspanspan-idbc5_unormspanspan-idbc5-unormspanbc5_unorm"></a><span id="BC5_UNORM"></span><span id="bc5_unorm"></span><span id="bc5-unorm"></span>BC5 \_ UNORM
 
 以下代码示例显示了单分量数据的内插完成情况。 绿色分量的计算类似。
 
@@ -304,9 +304,9 @@ else
 
 参考颜色将会获分 3 位指数（000–111，因为有 8 个值），在压缩过程中将会保存在红色 a 块至红色 p 块中。
 
-### <a name="span-idbc5snormspanspan-idbc5snormspanspan-idbc5-snormspanbc5snorm"></a><span id="BC5_SNORM"></span><span id="bc5_snorm"></span><span id="bc5-snorm"></span>BC5\_SNORM
+### <a name="span-idbc5_snormspanspan-idbc5_snormspanspan-idbc5-snormspanbc5_snorm"></a><span id="BC5_SNORM"></span><span id="bc5_snorm"></span><span id="bc5-snorm"></span>BC5 \_ SNORM
 
-DXGI\_格式\_BC5\_SNORM 是完全相同，只不过对数据编码 SNORM 范围内，并且时 4 个数据值的内插，两个其他的值为-1.0 f 和 1.0f。 以下代码示例显示了单分量数据的内插完成情况。 绿色分量的计算类似。
+\_BC5 SNORM 的 DXGI 格式 \_ \_ 完全相同，不同之处在于，数据在 SNORM 范围内进行编码，而当插入4个数据值时，另外两个值为-1.0 f 和 1.0 f。 以下代码示例显示了单分量数据的内插完成情况。 绿色分量的计算类似。
 
 ```cpp
 signed word red_0, red_1;
@@ -346,13 +346,13 @@ FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
-若要将“f”重新解释为类型“u”，请使用 [memcpy](https://docs.microsoft.com/cpp/c-runtime-library/reference/memcpy-wmemcpy)：
+若要将“f”重新解释为类型“u”，请使用 [memcpy](/cpp/c-runtime-library/reference/memcpy-wmemcpy)：
 
 ```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
-在上一重新解释中，数据的基础值不变；[memcpy](https://docs.microsoft.com/cpp/c-runtime-library/reference/memcpy-wmemcpy) 将浮点数重新解释为无符号整数。
+在上一重新解释中，数据的基础值不变；[memcpy](/cpp/c-runtime-library/reference/memcpy-wmemcpy) 将浮点数重新解释为无符号整数。
 
 若要执行更典型的转换类型，请使用分配：
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9712b4498b03460568d20d4c8e27172ad5c14360
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: b300747027f0c9466e7ca04b4c4b571882f57a6e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210093"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156431"
 ---
 # <a name="resource-types"></a>资源类型
 
@@ -29,7 +29,7 @@ ms.locfileid: "79210093"
 <thead>
 <tr class="header">
 <th align="left">项</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -73,7 +73,7 @@ ms.locfileid: "79210093"
 
 要访问顶点缓冲区中的数据，你需要知道要访问的顶点以及其他缓冲区参数：
 
--   *Offset* - 缓冲区起点到第一个顶点数据之间的字节数。
+-   *Offset* -从缓冲区的开头到第一个顶点的数据的字节数。
 -   *BaseVertexLocation* - 从偏移到相应的绘图调用所使用的第一个顶点之间的字节数。
 
 在创建顶点缓冲区之前，你需要通过创建输入布局对象来定义其布局。 创建输入布局对象后，将它绑定到输入装配器 (IA) 阶段。
@@ -88,7 +88,7 @@ ms.locfileid: "79210093"
 
 -   *Offset* - 从缓冲区起点到第一个索引之间的字节数。
 -   *StartIndexLocation* - 从偏移到相应的绘图调用所使用的第一个顶点之间的字节数。
--   *IndexCount* - 要呈现的索引的数量。
+-   *IndexCount* -要呈现的索引数。
 
 索引缓冲区可通过使用带-剪切索引分隔多个直线带或三角形带（[基元拓扑](primitive-topologies.md)）来将它们连接在一起。 带-剪切索引允许使用单一绘图调用来绘制多个直线带或三角形带。 带-剪切索引是索引的最大可能值（对于 16 位索引，为 0xffff；对于 32 位索引，为 0xffffffff）。 带-剪切索引将重置已索引基元中的缠绕顺序，并且可用于消除使在三角形带中保持正确的缠绕顺序所需的三角形退化的需求。 下图显示带-剪切索引的示例。
 
@@ -110,12 +110,12 @@ Direct3D 具有一个提供着色器常量的缓冲区，此缓冲区称为“�
 
 使用常量缓冲区存储流-输出阶段的结果。
 
-有关在着色器中声明常量缓冲区的示例，请参阅[着色器常量 (DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)。
+有关在着色器中声明常量缓冲区的示例，请参阅[着色器常量 (DirectX HLSL)](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)。
 
 ## <a name="span-idtexture_resourcesspanspan-idtexture_resourcesspanspan-idtexture_resourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>纹理资源
 
 
-纹理资源是用于存储纹素的数据的结构化集合。 与缓冲区不同，在着色器单元读取纹理时，纹理采样器可筛选纹理。 纹理的类型将影响筛选纹理的方式。 纹素表示可由管道读取的或可写入管道的纹理的最小单位。 每个纹素都包含1到4个组件，按其中一种 DXGI 格式排列（请参阅[**dxgi\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)）。
+纹理资源是用于存储纹素的数据的结构化集合。 与缓冲区不同，在着色器单元读取纹理时，纹理采样器可筛选纹理。 纹理的类型将影响筛选纹理的方式。 纹素表示可由管道读取的或可写入管道的纹理的最小单位。 每个纹素都包含1到4个组件，按一种 DXGI 格式排列 (参阅 [**dxgi \_ 格式**](/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)) 。
 
 纹理作为结构化资源创建，以使其大小众所周知。 但是，只要在将纹理绑定到管道时使用视图完全指定类型，在创建资源时，每个纹理可以是类型化的，也可以是无类型的。
 
@@ -154,7 +154,7 @@ Direct3D 10 也具有一个适用于纹理数组的新数据结构。 从概念�
 
 Direct3D 中的所有纹理数组都是同类纹理数组；这意味着，纹理数组中的每个纹理必须具有相同的数据格式和大小（包括纹理宽度和 mipmap 级别数）。 你可以创建具有不同大小的纹理数组，前提是每个数组中的所有纹理大小相同。
 
-### <a name="span-idtexture2d_resourcespanspan-idtexture2d_resourcespanspan-idtexture2d_resourcespanspan-idtexture2d-resourcespan2d-texture-and-2d-texture-array"></a><span id="Texture2D_Resource"></span><span id="texture2d_resource"></span><span id="TEXTURE2D_RESOURCE"></span><span id="texture2d-resource"></span>二维纹理和二维纹理数组
+### <a name="span-idtexture2d_resourcespanspan-idtexture2d_resourcespanspan-idtexture2d_resourcespanspan-idtexture2d-resourcespan2d-texture-and-2d-texture-array"></a><span id="Texture2D_Resource"></span><span id="texture2d_resource"></span><span id="TEXTURE2D_RESOURCE"></span><span id="texture2d-resource"></span>2D 纹理和 2D 纹理数组
 
 Texture2D 资源包含 2D 纹素网格。 每个纹素均可通过 u, v 矢量进行寻址。 由于它是纹理资源，因此可包含 mipmap 级别和子资源。 完全填充的 2D 纹理资源如下图所示。
 
@@ -222,7 +222,7 @@ mip 切片（用白色矩形表示）为数组中的每个纹理包含一个 mip
 
 ![mip 切片的图示](images/d3d10-resource-mip-slice.png)
 
-### <a name="span-idselecting_a_single_subresourcespanspan-idselecting_a_single_subresourcespanspan-idselecting_a_single_subresourcespanselecting-a-single-subresource"></a><span id="Selecting_a_Single_Subresource"></span><span id="selecting_a_single_subresource"></span><span id="SELECTING_A_SINGLE_SUBRESOURCE"></span>选择单个 Subresource
+### <a name="span-idselecting_a_single_subresourcespanspan-idselecting_a_single_subresourcespanspan-idselecting_a_single_subresourcespanselecting-a-single-subresource"></a><span id="Selecting_a_Single_Subresource"></span><span id="selecting_a_single_subresource"></span><span id="SELECTING_A_SINGLE_SUBRESOURCE"></span>选择单个子资源
 
 你可使用这两种切片选择单个子资源，如下图所示。
 
@@ -236,7 +236,7 @@ mip 切片（用白色矩形表示）为数组中的每个纹理包含一个 mip
 
 无论你使用哪种纹理类型，是否有 mipmap 或纹理数组，通常都会提供 Helper 函数来计算特殊子资源的索引。
 
-### <a name="span-idtypedspanspan-idtypedspanspan-idtypedspanstrong-vs-weak-typing"></a><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>强类型化与弱类型化
+### <a name="span-idtypedspanspan-idtypedspanspan-idtypedspanstrong-vs-weak-typing"></a><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>强与弱类型化
 
 创建完全类型化的资源会将资源限制为创建时采用的格式。 这使运行时能够优化访问，尤其是在创建的资源带有指示其无法由应用程序映射的标志时。 无法使用视图机制解释使用特定类型创建的资源。
 

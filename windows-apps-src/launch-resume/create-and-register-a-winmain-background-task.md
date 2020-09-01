@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 1e06a87ce771f603721c928b984d0f57d8e45013
-ms.sourcegitcommit: 1d53d89bd3d044f4a2dc290b93c1ad15a088b361
+ms.openlocfilehash: 72b6196f0b4607f2414eb94220dd31190ef93245
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87547309"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156011"
 ---
-# <a name="create-and-register-a-winmain-com-background-task"></a>创建并注册 winmain COM 后台任务
+# <a name="create-and-register-a-winmain-com-background-task"></a>创建和注册 winmain COM 后台任务
 
 > [!TIP]
 > 从 Windows 10 版本2004开始提供 BackgroundTaskBuilder. SetTaskEntryPointClsid 方法。
@@ -26,26 +26,26 @@ ms.locfileid: "87547309"
 
 **重要的 API**
 
--   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 创建一个 COM 后台任务类，并将其注册为在完全信任的打包 winmain 应用中运行，以响应触发器。 你可以使用后台任务在应用暂停或未运行时提供功能。 本主题演示如何创建和注册可在前台应用进程或其他进程中运行的后台任务。
 
 ## <a name="create-the-background-task-class"></a>创建后台任务类
 
-你可以通过编写用于实现 [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 接口的类来在后台运行代码。 此代码在使用触发特定事件时运行，例如， [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)或[**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger)。
+你可以通过编写用于实现 [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 接口的类来在后台运行代码。 此代码在使用触发特定事件时运行，例如， [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 或 [**TimeTrigger**](/uwp/api/Windows.ApplicationModel.Background.TimeTrigger)。
 
-以下步骤说明如何编写实现[**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)接口的新类并将其添加到主进程。
+以下步骤说明如何编写实现 [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 接口的新类并将其添加到主进程。
 
-1.  [**请参阅这些说明**](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance)，以在打包的 WinMain 应用程序解决方案中引用 WinRT api。 这是使用 IBackgroundTask 和相关 Api 所必需的。
-2.  在该新类中，实现[**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)接口。 [**IBackgroundTask**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是在触发指定事件时将调用的必需入口点;每个后台任务都需要此方法。
+1.  [**请参阅这些说明**](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) ，以在打包的 WinMain 应用程序解决方案中引用 WinRT api。 这是使用 IBackgroundTask 和相关 Api 所必需的。
+2.  在该新类中，实现 [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 接口。 [**IBackgroundTask**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是在触发指定事件时将调用的必需入口点;每个后台任务都需要此方法。
 
 > [!NOTE]
-> 后台任务类本身 &mdash; 以及后台任务项目中的所有其他类都 &mdash; 需要是**公共**的。
+> 后台任务类本身 &mdash; 以及后台任务项目中的所有其他类都 &mdash; 需要是 **公共**的。
 
 下面的示例代码演示了一个基本的基本任务类，该类对 primes 进行计数，并将其写入文件，直到请求取消为止。
 
-C + +/WinRT 示例将后台任务类作为[**COM coclass**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory)实现。
+C + +/WinRT 示例将后台任务类作为 [**COM coclass**](../cpp-and-winrt-apis/author-coclasses.md#implement-the-coclass-and-class-factory)实现。
 
 
 <details>
@@ -391,9 +391,9 @@ sampleTaskServer.Start();
 
 ## <a name="register-the-background-task-to-run"></a>注册要运行的后台任务
 
-1.  通过循环访问[**BackgroundTaskRegistration. AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks)属性，确定是否已注册了后台任务。 *此步骤非常重要*;如果你的应用程序不检查现有的后台任务注册，它可以轻松地多次注册任务，从而导致性能问题，并支持任务在工作完成前的可用 CPU 时间。 应用程序可以自由使用同一入口点来处理所有后台任务，并使用其他属性（例如，分配给[**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration)的[**名称**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.name#Windows_ApplicationModel_Background_BackgroundTaskRegistration_Name)或[**TaskId**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.taskid#Windows_ApplicationModel_Background_BackgroundTaskRegistration_TaskId) ）来决定应执行的操作。
+1.  通过循环访问 [**BackgroundTaskRegistration. AllTasks**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) 属性，确定是否已注册了后台任务。 *此步骤非常重要*;如果你的应用程序不检查现有的后台任务注册，它可以轻松地多次注册任务，从而导致性能问题，并支持任务在工作完成前的可用 CPU 时间。 应用程序可以自由使用同一入口点来处理所有后台任务，并使用其他属性（例如，分配给[**BackgroundTaskRegistration**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration)的[**名称**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.name#Windows_ApplicationModel_Background_BackgroundTaskRegistration_Name)或[**TaskId**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.taskid#Windows_ApplicationModel_Background_BackgroundTaskRegistration_TaskId) ）来决定应执行的操作。
 
-下面的示例将循环访问**AllTasks**属性，并将一个标志变量设置为 true （如果该任务已注册）。
+下面的示例将循环访问 **AllTasks** 属性，并将一个标志变量设置为 true （如果该任务已注册）。
 
 ```csharp
 
@@ -432,14 +432,14 @@ for (auto const& task : allTasks)
 
 ```
 
-1.  如果后台任务尚未注册，则使用 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 创建你的后台任务的一个实例。 任务入口点应为命名空间为前缀的后台任务的名称。
+1.  如果后台任务尚未注册，则使用 [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 创建你的后台任务的一个实例。 任务入口点应为命名空间为前缀的后台任务的名称。
 
-后台任务触发器控制后台任务何时运行。 有关可能的触发器的列表，请参阅[**Windows.applicationmodel.resources.core**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background)命名空间。
+后台任务触发器控制后台任务何时运行。 有关可能的触发器的列表，请参阅 [**Windows.applicationmodel.resources.core**](/uwp/api/windows.applicationmodel.background) 命名空间。
 
 > [!NOTE]
 > 对于打包的 winmain 后台任务，仅支持一部分触发器。
 
-例如，以下代码将创建一个新的后台任务，并将其设置为在15分钟的周期性[**TimeTrigger**]()上运行：
+例如，以下代码将创建一个新的后台任务，并将其设置为在15分钟的周期性 [**TimeTrigger**]()上运行：
 
 ```csharp
 
@@ -471,7 +471,7 @@ if (!taskRegistered)
 
 ```
 
-1.  （可选）在触发器事件发生后，你可以添加条件控制任务何时运行。 例如，如果你不希望在 internet 可用之前运行任务，请使用条件**InternetAvailable**。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
+1.  （可选）在触发器事件发生后，你可以添加条件控制任务何时运行。 例如，如果你不希望在 internet 可用之前运行任务，请使用条件 **InternetAvailable**。 有关可能条件的列表，请参阅 [**SystemConditionType**](/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
 以下示例代码分配需要用户存在的条件：
 
@@ -485,7 +485,7 @@ builder.AddCondition(SystemCondition{ SystemConditionType::InternetAvailable });
 // The code in the next step goes here.
 ```
 
-4.  通过在 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 对象上调用 Register 方法来注册后台任务。 存储 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 结果，以便可以在下一步中使用该结果。 请注意，register 函数可能会以异常形式返回错误。 请确保在 try-catch 中调用 Register。
+4.  通过在 [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 对象上调用 Register 方法来注册后台任务。 存储 [**BackgroundTaskRegistration**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 结果，以便可以在下一步中使用该结果。 请注意，register 函数可能会以异常形式返回错误。 请确保在 try-catch 中调用 Register。
 
 以下代码注册后台任务并存储结果：
 
@@ -1045,7 +1045,7 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 
 ## <a name="remarks"></a>备注
 
-与可在新式备用模式下运行后台任务的 UWP 应用不同，WinMain apps 无法从新式备用的低能耗阶段运行代码。 有关详细信息，请参阅[新式备用](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby)。
+与可在新式备用模式下运行后台任务的 UWP 应用不同，WinMain apps 无法从新式备用的低能耗阶段运行代码。 有关详细信息，请参阅 [新式备用](/windows-hardware/design/device-experiences/modern-standby) 。
 
 有关 API 引用、后台任务概念指南以及编写使用后台任务的应用的更多详细说明，请参阅以下相关主题。
 
@@ -1065,8 +1065,8 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](/previous-versions/hh974425(v=vs.110))
 
 **后台任务 API 引用**
 
-* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+* [**Windows.ApplicationModel.Background**](/uwp/api/Windows.ApplicationModel.Background)

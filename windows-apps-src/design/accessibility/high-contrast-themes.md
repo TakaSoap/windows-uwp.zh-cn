@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ce3fe9ea96f4b4ce2f541fb5f7a9682a0dee5e0e
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 79ade0e3a823282fb970f470e1a902b1bc30c592
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234031"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157051"
 ---
 # <a name="high-contrast-themes"></a>高对比度主题  
 
@@ -39,14 +39,14 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 在第一个示例中，当 `#E6E6E6` 颜色设置为内联时，网格将在所有主题中保留该背景色。 如果用户切换到高对比度黑色主题，他们希望你的应用有一个黑色背景。 由于 `#E6E6E6` 几乎为白色，所以有些用户可能无法与你的应用进行交互。
 
-在第二个示例中，[**{ThemeResource} 标记扩展**](../../xaml-platform/themeresource-markup-extension.md)用来引用 [**ThemeDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)（[**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 元素中的一个专用属性）集合中的颜色。 **ThemeDictionaries**允许 XAML 根据用户的当前主题自动为你交换颜色。
+在第二个示例中，[**{ThemeResource} 标记扩展**](../../xaml-platform/themeresource-markup-extension.md)用来引用 [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)（[**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 元素中的一个专用属性）集合中的颜色。 **ThemeDictionaries** 允许 XAML 根据用户的当前主题自动为你交换颜色。
 
 ## <a name="theme-dictionaries"></a>主题字典
 
 当你需要从其系统默认值更改颜色时，可为你的应用创建 ThemeDictionaries 集合。
 
-1. 首先创建正确的管道（如果尚不存在）。 在 app.xaml 中，创建一个**ThemeDictionaries**集合，其中至少包括**默认值**和**system.windows.forms.systeminformation.highcontrast** 。
-2. 在 **Default** 中，创建所需的 [Brush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) 类型，通常为 **SolidColorBrush**。 为其提供特定于其用途的 " *x：Key*名称"。
+1. 首先创建正确的管道（如果尚不存在）。 在 app.xaml 中，创建一个 **ThemeDictionaries** 集合，其中至少包括 **默认值** 和 **system.windows.forms.systeminformation.highcontrast** 。
+2. 在 **Default** 中，创建所需的 [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) 类型，通常为 **SolidColorBrush**。 为其提供特定于其用途的 " *x：Key* 名称"。
 3. 为它分配所需的**颜色**。
 4. 将 **Brush** 复制到 **HighContrast** 中。
 
@@ -78,7 +78,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 最后一步是确定要在高对比度中使用哪种颜色，这将在下一节中进行介绍。
 
 > [!NOTE]
-> **System.windows.forms.systeminformation.highcontrast**不是唯一可用的密钥名称。 还存在**HighContrastBlack**、 **HighContrastWhite**和**HighContrastCustom**。 在大多数情况下，只需使用 **HighContrast**。
+> **System.windows.forms.systeminformation.highcontrast** 不是唯一可用的密钥名称。 还存在 **HighContrastBlack**、 **HighContrastWhite**和 **HighContrastCustom**。 在大多数情况下，只需使用 **HighContrast**。
 
 ## <a name="high-contrast-colors"></a>高对比度颜色
 
@@ -108,13 +108,13 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 通常有助于查看现有应用、“开始”菜单或常用控件，了解其他人如何解决类似于自己面临的高对比度设计问题。
 
-**应做事项**
+**建议做法**
 
 * 如有可能，请考虑背景/前景配对。
 * 当应用正在运行时，在 4 个高对比度主题中都进行测试。 用户切换主题时，应无需重新启动你的应用。
 * 保持一致。
 
-**禁止事项**
+**不要**
 
 * 硬编码 **HighContrast** 主题中的颜色；使用 **SystemColor*Color** 资源。
 * 选择具有美学效果的颜色资源。 请记住，它们会随主题变化而变化！
@@ -167,20 +167,20 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 ## <a name="list-items"></a>列表项
 
-在高对比度模式下，当将光标悬停在 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 中的项目上、按下或选择它们时，它们会将自己的背景设置为 **SystemColorHighlightColor**。 复杂的列表项通常有一个 bug，即当将光标悬停在某项上、按下或选择该项时，该列表项的内容无法反转颜色。 这导致无法读取该项。
+在高对比度模式下，当将光标悬停在 [ListView](/uwp/api/windows.ui.xaml.controls.listview) 中的项目上、按下或选择它们时，它们会将自己的背景设置为 **SystemColorHighlightColor**。 复杂的列表项通常有一个 bug，即当将光标悬停在某项上、按下或选择该项时，该列表项的内容无法反转颜色。 这导致无法读取该项。
 
 ![浅色主题和高对比度黑色主题中的简单列表](images/high-contrast-list1.png)
 
-*浅色主题中的简单列表（左侧）和高对比度黑色主题（右侧）。选中第二项;请注意其文本颜色在高对比度下的反转方式。*
+*浅色主题中的简单列表 (左) 并高对比度黑色主题 (权限) 。选中第二项;请注意其文本颜色在高对比度下的反转方式。*
 
 
 ### <a name="list-items-with-colored-text"></a>带有彩色文本的列表项
 
-在 ListView 的 [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 中设置 TextBlock.Foreground 是原因之一。 这样做的目的通常是为了构建视觉层次结构。 Foreground 属性在 [ListViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewitem) 上设置，当将光标悬停在该项上、按下或选择该项时，DataTemplate 中的 TextBlocks 继承正确的前景色。 但是，设置 Foreground 将打断这种继承关系。
+在 ListView 的 [DataTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 中设置 TextBlock.Foreground 是原因之一。 这样做的目的通常是为了构建视觉层次结构。 Foreground 属性在 [ListViewItem](/uwp/api/windows.ui.xaml.controls.listviewitem) 上设置，当将光标悬停在该项上、按下或选择该项时，DataTemplate 中的 TextBlocks 继承正确的前景色。 但是，设置 Foreground 将打断这种继承关系。
 
 ![浅色主题和高对比度黑色主题中的复杂列表](images/high-contrast-list2.png)
 
-*浅色主题中的复杂列表（左侧）和高对比度黑色主题（右侧）。在 "高对比度" 中，所选项目的第二行无法反转。*  
+*浅色主题中的复杂列表 (左) 并高对比度黑色主题 (右) 。在 "高对比度" 中，所选项目的第二行无法反转。*  
 
 你可以通过 **ThemeDictionaries** 集合中的某个 Style，有条件的设置 Foreground，以便解决此问题。 因为 **Foreground** 并非由 **HighContrast** 中的 **SecondaryBodyTextBlockStyle** 设置，所以它的颜色将正确反转。
 
@@ -228,7 +228,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 ## <a name="detecting-high-contrast"></a>检测高对比度
 
-你可以使用 [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings) 类的成员，以编程方式检查当前主题是否为高对比度主题。
+你可以使用 [**AccessibilitySettings**](/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings) 类的成员，以编程方式检查当前主题是否为高对比度主题。
 
 > [!NOTE]
 > 确保从初始化应用且已经显示内容的范围内调用 **AccessibilitySettings** 构造函数。
@@ -238,4 +238,4 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 * [UI 对比度和设置示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))
 * [XAML 辅助功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
 * [XAML 高对比度示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))
-* [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)
+* [**AccessibilitySettings**](/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)

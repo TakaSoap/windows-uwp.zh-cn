@@ -7,21 +7,21 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22aa6da9a26e3bd50fc5ff4fe4272f6da91cdd08
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: a30aa1a2901f109a4f13316024785981023975b8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320988"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156251"
 ---
 # <a name="rectangles"></a>矩形
 
 在整个 Direct3D 和 Windows 编程中，将根据边界矩形引用屏幕上的对象。 边界矩形的边始终与屏幕的边平行，始终可通过两个点（左上角和右下角）来描述矩形。
 
-## <a name="span-idboundingrectanglesspanspan-idboundingrectanglesspanspan-idboundingrectanglesspanbounding-rectangles"></a><span id="Bounding_rectangles"></span><span id="bounding_rectangles"></span><span id="BOUNDING_RECTANGLES"></span>边框
+## <a name="span-idbounding_rectanglesspanspan-idbounding_rectanglesspanspan-idbounding_rectanglesspanbounding-rectangles"></a><span id="Bounding_rectangles"></span><span id="bounding_rectangles"></span><span id="BOUNDING_RECTANGLES"></span>边界矩形
 
 
-大多数应用程序使用 [**RECT**](https://docs.microsoft.com/previous-versions/dd162897(v=vs.85)) 结构（或其 typedef'd 别名）来传输有关在位块传输到屏幕或执行点击测试时要使用的边界矩形的信息。 在 C++ 中，**RECT** 结构具有以下定义。
+大多数应用程序使用 [**RECT**](/previous-versions/dd162897(v=vs.85)) 结构（或其 typedef'd 别名）来传输有关在位块传输到屏幕或执行点击测试时要使用的边界矩形的信息。 在 C++ 中，**RECT** 结构具有以下定义。
 
 ```cpp
 typedef struct tagRECT { 
@@ -48,7 +48,3 @@ typedef struct tagRECT {
  
 
  
-
-
-
-

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 33244391ca9f2ffcba21adacccebf2e9b1d73419
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cf3bf3733e17312ee0750006d2b8f94c70dbbd43
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363359"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156651"
 ---
 # <a name="toast-content-xml-schema"></a>Toast 内容 XML 架构
 
@@ -43,7 +43,7 @@ ms.locfileid: "66363359"
 </toast>
 ```
 
-**中的属性&lt;toast&gt;**
+**Toast 中的属性 &lt;&gt;**
 
 launch?
 
@@ -75,51 +75,51 @@ scenario?
 -   你不需要此属性，除非你的方案是弹出警报、提醒或来电。
 -   不要将此属性仅用于使通知持续显示在屏幕上。
 
-**中的属性&lt;visual&gt;**
+**视觉对象中的属性 &lt;&gt;**
 
 lang?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](/uwp/schemas/tiles/toastschema/element-visual)。
 
 baseUri?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](/uwp/schemas/tiles/toastschema/element-visual)。
 
 addImageQuery?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](/uwp/schemas/tiles/toastschema/element-visual)。
 
-**中的属性&lt;绑定&gt;**
+**绑定中的属性 &lt;&gt;**
 
 template?
 
--   \[重要\]模板？ = "ToastGeneric"
+-   \[重要的 \] 模板？ = "ToastGeneric"
 -   如果你要使用任意新的自适应和交互式通知功能，请确保开始使用“ToastGeneric”模板而不是传统模板。
 -   使用带有新操作的传统模板现在可能有效，但这不是预定用例，我们无法保证它会继续工作。
 
 lang?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](/uwp/schemas/tiles/toastschema/element-visual)。
 
 baseUri?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](/uwp/schemas/tiles/toastschema/element-visual)。
 
 addImageQuery?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](/uwp/schemas/tiles/toastschema/element-visual)。
 
-**中的属性&lt;文本&gt;**
+**文本中的属性 &lt;&gt;**
 
 lang?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](/uwp/schemas/tiles/toastschema/element-visual)。
 
-**中的属性&lt;图像&gt;**
+**映像中的属性 &lt;&gt;**
 
 src
 
--   有关此必需属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image)。
+-   有关此必需属性的详细信息，请参阅[此元素架构文章](/uwp/schemas/tiles/toastschema/element-image)。
 
 placement?
 
@@ -131,11 +131,11 @@ placement?
 
 alt?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](/uwp/schemas/tiles/toastschema/element-image)。
 
 addImageQuery?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](/uwp/schemas/tiles/toastschema/element-image)。
 
 hint-crop?
 
@@ -144,19 +144,19 @@ hint-crop?
 -   “none”是默认值，表示没有裁剪。
 -   “circle”将图像裁剪为圆形。 将此属性用于联系人的头像、用户图像等。
 
-**中的属性&lt;音频&gt;**
+**音频中的属性 &lt;&gt;**
 
 src?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](/uwp/schemas/tiles/toastschema/element-audio)。
 
 loop?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](/uwp/schemas/tiles/toastschema/element-audio)。
 
 silent?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](/uwp/schemas/tiles/toastschema/element-audio)。
 
 ## <a name="schemas-ltactiongt"></a>架构：&lt;action&gt;
 
@@ -177,18 +177,18 @@ silent?
 </toast>
 ```
 
-**中的属性&lt;输入&gt;**
+**输入中的属性 &lt;&gt;**
 
 id
 
 -   id = string
--   此属性是必需的。
+-   该属性是必选项。
 -   id 属性是必需的，并由开发人员用于在激活应用（在前台或后台）后检索用户输入。
 
 type
 
 -   type = "text | selection"
--   此属性是必需的。
+-   该属性是必选项。
 -   它用于指定文本输入或预定义的选择列表中的输入。
 -   在移动或桌面上，这用于指定你需要文本框输入还是列表框输入。
 
@@ -210,24 +210,24 @@ defaultInput?
 -   如果输入类型是“text”，将其视为字符串输入。
 -   如果输入类型是“selection”，这应是此输入的元素内的可用选择之一的 id。
 
-**中的属性&lt;选定内容&gt;**
+**选定内容中的属性 &lt;&gt;**
 
 id
 
--   此属性是必需的。 它用于标识用户选择。 id 将返回到你的应用。
+-   该属性是必选项。 它用于标识用户选择。 id 将返回到你的应用。
 
-content
+内容
 
--   此属性是必需的。 它为此选择元素提供要显示的字符串。
+-   该属性是必选项。 它为此选择元素提供要显示的字符串。
 
-**中的属性&lt;操作&gt;**
+**操作中的属性 &lt;&gt;**
 
-content
+内容
 
 -   content = string
 -   content 属性是必需的。 它提供在按钮上显示的文本字符串。
 
-arguments
+参数
 
 -   arguments = string
 -   arguments 属性是必需的。 它描述应用定义的数据，在执行此操作的用户激活它以后应用可检索该数据。

@@ -7,22 +7,22 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e193ab7bce31c1f13cb40f04902922c6ff21056
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 28152f39983f4831a9efa981efcb85fb65fa0204
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370915"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156171"
 ---
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a>Texture2D 和 Texture2DArray 子资源平铺
 
 
-这些表说明了 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) 和 [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) 子资源的平铺方式。 这些表中的值未计入尾部 mip 打包。
+这些表显示了 [**Texture2D**](/windows/desktop/direct3dhlsl/sm5-object-texture2d) 和 [**Texture2DArray**](/windows/desktop/direct3dhlsl/sm5-object-texture2darray) 子资源的平铺方式。 这些表中的值未计入尾部 mip 打包。
 
-## <a name="span-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spansubresources-with-multisample-counts-of-1"></a><span id="Subresources-with-multisample-counts-of-1"></span><span id="subresources-with-multisample-counts-of-1"></span><span id="SUBRESOURCES-WITH-MULTISAMPLE-COUNTS-OF-1"></span>多重采样计数 1 与子
+## <a name="span-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spansubresources-with-multisample-counts-of-1"></a><span id="Subresources-with-multisample-counts-of-1"></span><span id="subresources-with-multisample-counts-of-1"></span><span id="SUBRESOURCES-WITH-MULTISAMPLE-COUNTS-OF-1"></span>多重采样数为 1 的子资源
 
 
-此表说明了多重采样计数为 1 的 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) 和 [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) 子资源的平铺方式。
+此表说明了多重采样计数为 1 的 [**Texture2D**](/windows/desktop/direct3dhlsl/sm5-object-texture2d) 和 [**Texture2DArray**](/windows/desktop/direct3dhlsl/sm5-object-texture2darray) 子资源的平铺方式。
 
 | 位数/像素（每像素选择 1 个示例） | 磁贴尺寸（像素，宽 x 高） |
 |-----------------------------|-------------------------------|
@@ -36,12 +36,12 @@ ms.locfileid: "66370915"
 
  
 
-不支持流式处理资源的格式位计数是 96 bpp 格式，视频格式，DXGI\_格式\_R1\_UNORM、 DXGI\_格式\_R8G8\_B8G8\_UNORM，和 DXGI\_格式\_R8R8\_G8B8\_UNORM。
+流资源不支持格式位计数为 96 bpp 格式、视频格式、DXGI \_ 格式 \_ R1 \_ UNORM、dxgi \_ format \_ R8G8 \_ B8G8 \_ UNORM 和 dxgi \_ 格式 \_ R8R8 \_ \_ G8B8 UNORM。
 
-## <a name="span-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspansubresources-with-various-multisample-counts"></a><span id="Subresources-with-various-multisample-counts"></span><span id="subresources-with-various-multisample-counts"></span><span id="SUBRESOURCES-WITH-VARIOUS-MULTISAMPLE-COUNTS"></span>子与各种多重采样计数
+## <a name="span-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspansubresources-with-various-multisample-counts"></a><span id="Subresources-with-various-multisample-counts"></span><span id="subresources-with-various-multisample-counts"></span><span id="SUBRESOURCES-WITH-VARIOUS-MULTISAMPLE-COUNTS"></span>具有各种多级采样计数的子资源
 
 
-此表说明了多重采样数各不相同的 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) 和 [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) 子资源的平铺方式。
+此表说明了多重采样数各不相同的 [**Texture2D**](/windows/desktop/direct3dhlsl/sm5-object-texture2d) 和 [**Texture2DArray**](/windows/desktop/direct3dhlsl/sm5-object-texture2darray) 子资源的平铺方式。
 
 | 位数/像素（每像素选择 1 个示例） | 磁贴尺寸（像素，宽 x 高） |
 |-----------------------------|-------------------------------|
@@ -64,12 +64,8 @@ ms.locfileid: "66370915"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[如何平铺流式处理资源的区域](how-a-streaming-resource-s-area-is-tiled.md)
+[流式资源区域的平铺方式](how-a-streaming-resource-s-area-is-tiled.md)
 
  
 
  
-
-
-
-

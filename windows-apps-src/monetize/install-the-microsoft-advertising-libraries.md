@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 安装, SDK, 广告库
 ms.localizationpriority: medium
-ms.openlocfilehash: d5c5c18c41996c5d46c261f351a900fea2532a93
-ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
+ms.openlocfilehash: a7ec56281c5f1d441d3808fa91491d0d290018f3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094664"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155491"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安装 Microsoft 广告 SDK
 
@@ -69,7 +69,7 @@ ms.locfileid: "89094664"
 
 5. 在搜索框中，键入 **Microsoft.Advertising.XAML**（对于 XAML 项目）或 **Microsoft.Advertising.JS**（对于 JavaScript/HTML 项目）并安装相应程序包。 程序包安装完成后，保存你的解决方案。
     > [!NOTE]
-    > 如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 `repositoryPath` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。
+    > 如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 `repositoryPath` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](/nuget/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。
 
 6. 关闭解决方案，然后重新打开它。
 
@@ -104,7 +104,7 @@ ms.locfileid: "89094664"
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>了解 Microsoft 广告 SDK 中的框架包
 
-UWP) 应用的 [MICROSOFT ADVERTISING SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (中的 Microsoft.Advertising.dll 库配置为 *框架包*。 此库包含 [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) 和 [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) 命名空间中的广告 API。
+UWP) 应用的 [MICROSOFT ADVERTISING SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (中的 Microsoft.Advertising.dll 库配置为 *框架包*。 此库包含 [Microsoft.Advertising](/uwp/api/microsoft.advertising) 和 [Microsoft.Advertising.WinRT.UI](/uwp/api/microsoft.advertising.winrt.ui) 命名空间中的广告 API。
 
 此库是一个框架包，因此，这意味着在用户安装使用此库的应用版本之后，无论我们何时发布新版本的库及修复和性能增强，Windows 更新均会在其设备上自动更新此库。 这有助于确保客户始终在其设备上安装最新可用版本的库。
 

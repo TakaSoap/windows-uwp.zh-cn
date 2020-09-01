@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8823116b8fed3503ccf0dadc488956c93ae6c32b
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: f2c2dd6df44e477e34dfddfd6d2c1315b8f32ec2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234449"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156771"
 ---
 # <a name="tiles-for-windows-apps"></a>适用于 Windows 应用的磁贴
 
@@ -51,7 +51,7 @@ ms.locfileid: "83234449"
 -   ShortName：由于磁贴上容纳显示名称的空间有限，我们也建议指定 ShortName，以确保应用名称不会被截断。
 -   徽标图像：
 
-    应用自己的图像替换这些图像。 可选择为不同的缩放提供图像，但无需为所有缩放提供。 若要确保应用在一系列设备上具有良好的外观，我们建议提供每个图像的 100%、200% 和 400% 缩放版本。 若要详细了解如何生成这些资产，请参阅[应用程序图标和徽标](/windows/uwp/design/style/app-icons-and-logos)。
+    应用自己的图像替换这些图像。 可选择为不同的缩放提供图像，但无需为所有缩放提供。 若要确保应用在一系列设备上具有良好的外观，我们建议提供每个图像的 100%、200% 和 400% 缩放版本。 若要详细了解如何生成这些资产，请参阅 [应用程序图标和徽标](../../style/app-icons-and-logos.md) 。
 
     缩放的图像应遵循此命名约定：
     
@@ -59,7 +59,7 @@ ms.locfileid: "83234449"
 
     例如：SplashScreen.scale-100.png
 
-    引用该映像时，请将其引用为* &lt; 映像名称 &gt; *。* &lt;图像文件扩展名 &gt; * （在本示例中为 "SplashScreen"）。 系统将自动从你提供的图像中为设备选择相应的缩放图像。
+    引用该映像时，请将其引用为* &lt; 映像名称 &gt; *。* &lt;&gt;* 在此示例中，图像文件扩展名 ( "SplashScreen.png") 。 系统将自动从你提供的图像中为设备选择相应的缩放图像。
 
 -   虽然不是必须的，但我们强烈建议你提供适用于宽磁贴和大磁贴的徽标，以便用户可以将应用磁贴大小调整到这些大小。 若要提供这些附加图像，可创建 **DefaultTile** 元素并使用 **Wide310x150Logo** 和 **Square310x310Logo** 属性指定附加图像：
 ```    XML

@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77b47866bc064baec7c0ecf556eb615f67af0554
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 8599d1f493dc37095c0cb9464aa1d14c22072413
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234379"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846837"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>面向开发人员的 Windows 10 内部版本 17763 中的新增功能
 
@@ -47,7 +47,7 @@ C++/WinRT 代码示例 | 我们的文档中增加了 250 C++/WinRT 代码列表�
 DirectX 图形基础结构 (DXGI) | 已添加针对缺失的 DXGI API 的新文档，并提供了在 Windows 10 上进行演示的最佳做法的相关文章。 </br> * [为了获得最佳性能，请使用 DXGI 翻转模式](https://docs.microsoft.com/windows/desktop/direct3ddxgi/for-best-performance--use-dxgi-flip-model)：提供有关如何最大限度提高新版 Windows 上演示堆栈的性能和效率的指南。 </br> * [IDXGIOutput6::CheckHardwareCompositionSupport 方法](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-idxgioutput6-checkhardwarecompositionsupport)：通知应用程序支持硬件拉伸。 </br> * [DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS 枚举](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_hardware_composition_support_flags)：描述受支持的硬件组合级别。
 入门 | [入门](../get-started/index.md)内容包含全新主题，提供有关 Windows 10 新手开发人员如何完成以下常见任务的信息和指导： </br> * [构建表单](../get-started/construct-form-learning-track.md) </br> * [在列表中显示客户](../get-started/display-customers-in-list-learning-track.md) </br> * [保存并加载设置](../get-started/settings-learning-track.md) </br> * [处理文件](../get-started/fileio-learning-track.md)
 地图样式表参考 | 使用新的 [地图样式表编辑器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft?rtc=1#activetab=pivot:overviewtab)应用程序，以交互方式自定义添加到应用程序的地图的外观。
-Microsoft Learn | 新的 [Microsoft Learn 站点](https://www.microsoft.com/learning/default.aspx)为 Microsoft 开发人员提供新的实践学习和培训机会。 目前，Microsoft Learn 为 Microsoft 365、Microsoft Azure、Office 365 和 Windows Server 提供培训和认证。
+Microsoft Learn | 新的 [Microsoft Learn 站点](https://www.microsoft.com/learning/default.aspx)为 Microsoft 开发人员提供新的实践学习和培训机会。 目前，Microsoft Learn 为 Microsoft 365、Microsoft Azure 和 Windows Server 提供培训和认证。
 记事本 | [已更新记事本](https://blogs.windows.com/windowsexperience/2018/07/11/announcing-windows-10-insider-preview-build-17713/)，添加了缩放、环绕内容查找/替换，以及对 Unix/Linux (LF) 和 Mac (CR) 行尾的支持。
 Project Rome | [Project Rome](https://docs.microsoft.com/windows/project-rome/) 现在提供跨支持的平台和 SDK 的一致编程体验。 </br>  新的 [Microsoft Graph 通知](https://developer.microsoft.com/graph/docs/concepts/notifications-concept-overview)使用 Project Rome 为应用提供以人为中心的跨平台通知平台。
 屏幕截取 | 新的 [URI 方案](../launch-resume/launch-screen-snipping.md)可让应用以编程方式打开一个新的截图，或者使用特定的注释图像来启动“截图和草图”应用。

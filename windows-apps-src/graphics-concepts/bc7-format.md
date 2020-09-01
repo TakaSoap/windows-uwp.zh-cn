@@ -7,30 +7,30 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ee9960e55100eaf743d73d7007e9bcf51342ee
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4ca22bc897acf0d4cbd924002de96d13f2ba8549
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370725"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159021"
 ---
 # <a name="bc7-format"></a>BC7 格式
 
 
 BC7 格式是一种用于对 RGB 和 RGBA 数据进行高质量压缩的纹理压缩格式。
 
-有关 BC7 格式的块模式的信息，请参阅 [BC7 格式模式参考](https://docs.microsoft.com/windows/desktop/direct3d11/bc7-format-mode-reference)。
+有关 BC7 格式的块模式的信息，请参阅 [BC7 格式模式参考](/windows/desktop/direct3d11/bc7-format-mode-reference)。
 
-## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgiformatbc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>有关 BC7/DXGI\_格式\_BC7
+## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgi_format_bc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>关于 BC7/DXGI \_ FORMAT \_ BC7
 
 
-由以下 DXGI 指定 BC7\_格式枚举值：
+BC7 由以下 DXGI \_ 格式枚举值指定：
 
--   **DXGI\_格式\_BC7\_TYPELESS**。
--   **DXGI\_格式\_BC7\_UNORM**。
--   **DXGI\_格式\_BC7\_UNORM\_SRGB**。
+-   **DXGI \_格式 \_ BC7 \_ 无格式**。
+-   **DXGI \_设置 \_ BC7 \_ UNORM 的格式**。
+-   **DXGI \_\_BC7 \_ UNORM \_ SRGB 格式**。
 
-BC7 格式可用于 [Texture2D](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures)（包括阵列）、Texture3D 或 TextureCube（包括阵列）纹理资源。 同样，此格式适用于与这些资源相关联的任何 MIP 贴图表面。
+BC7 格式可用于 [Texture2D](/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures)（包括阵列）、Texture3D 或 TextureCube（包括阵列）纹理资源。 同样，此格式适用于与这些资源相关联的任何 MIP 贴图表面。
 
 BC7 使用 16 字节（128 位）的固定块大小和 4×4 纹素的固定磁贴大小。 与先前的 BC 格式一样，大于支持的磁贴大小 (4x4) 的纹理图像会通过使用多个块进行压缩。 此寻址标识也适用于三维图像和 MIP 贴图、立方体贴图和纹理阵列。 所有图像磁贴必须使用相同的格式。
 
@@ -51,15 +51,15 @@ BC7 块可以包含多个终结点对。 与某个终结点对对应的索引集
 
 对于已组合了颜色分量和 alpha 分量的 BC7 块，一个块由多个模式位、多个压缩的终结点、多个压缩的索引以及多个可选分区位和一个 P 位组成。 在这些块中，终结点颜色是用 RGBA 格式表示的，而 alpha 分量值会与颜色分量值一起以内插值替换。
 
-对于具有单独的颜色和 alpha 分量的 BC7 块，一个块由多个模式位、多个旋转位、多个压缩的终结点、多个压缩的索引和一个可选索引选择器位组成。 这些块是否包含有效的 RGB 向量\[R、 G、 B\]和标量的 alpha 通道\[A\]单独编码。
+对于具有单独的颜色和 alpha 分量的 BC7 块，一个块由多个模式位、多个旋转位、多个压缩的终结点、多个压缩的索引和一个可选索引选择器位组成。 这些块具有有效的 RGB 向量 \[ R、G、B \] 和标量 alpha 通道， \[ \] 分别进行编码。
 
 下表列出了每个块类型的分量。
 
 | BC7 块包含的项目     | 多个模式位 | 多个旋转位 | 索引选择器位 | 多个分区位 | 多个压缩终结点 | P 位    | 多个压缩的索引 |
 |---------------------------|-----------|---------------|--------------------|----------------|----------------------|----------|--------------------|
-| 仅颜色分量     | 必需的  | 不可用           | 不可用                | 必需的       | 必需的             | 可选 | 必需的           |
-| 组合的颜色 + alpha    | 必需的  | 不可用           | 不可用                | 可选       | 必需的             | 可选 | 必需的           |
-| 单独的颜色和 alpha | 必需的  | 必需的      | 可选           | 不可用            | 必需的             | 不可用      | 必需的           |
+| 仅颜色分量     | 必需  | 不适用           | 不适用                | 必需       | 必需             | 可选 | 必需           |
+| 组合的颜色 + alpha    | 必需  | 不适用           | 不适用                | 可选       | 必需             | 可选 | 必需           |
+| 单独的颜色和 alpha | 必需  | 必需      | 可选           | 不适用            | 必需             | 不适用      | 必需           |
 
  
 
@@ -231,7 +231,7 @@ bitcount get_color_bitcount(block, mode)
 
 块内的每个子集的颜色由两个显式终结点颜色和它们之间的一组内插颜色表示。 根据块的索引精度，每个子集可以具有 4 种、8 种或 16 种可能的颜色。
 
-### <a name="span-idmode-0spanspan-idmode-0spanspan-idmode-0spanmode-0"></a><span id="Mode-0"></span><span id="mode-0"></span><span id="MODE-0"></span>模式 0
+### <a name="span-idmode-0spanspan-idmode-0spanspan-idmode-0spanmode-0"></a><span id="Mode-0"></span><span id="mode-0"></span><span id="MODE-0"></span>模式0
 
 BC7 模式 0 具有以下特征：
 
@@ -243,7 +243,7 @@ BC7 模式 0 具有以下特征：
 
 ![模式 0 位布局](images/bc7-mode0.png)
 
-### <a name="span-idmode-1spanspan-idmode-1spanspan-idmode-1spanmode-1"></a><span id="Mode-1"></span><span id="mode-1"></span><span id="MODE-1"></span>模式 1
+### <a name="span-idmode-1spanspan-idmode-1spanspan-idmode-1spanmode-1"></a><span id="Mode-1"></span><span id="mode-1"></span><span id="MODE-1"></span>模式1
 
 BC7 模式 1 具有以下特征：
 
@@ -255,7 +255,7 @@ BC7 模式 1 具有以下特征：
 
 ![模式 1 位布局](images/bc7-mode1.png)
 
-### <a name="span-idmode-2spanspan-idmode-2spanspan-idmode-2spanmode-2"></a><span id="Mode-2"></span><span id="mode-2"></span><span id="MODE-2"></span>模式 2
+### <a name="span-idmode-2spanspan-idmode-2spanspan-idmode-2spanmode-2"></a><span id="Mode-2"></span><span id="mode-2"></span><span id="MODE-2"></span>模式2
 
 BC7 模式 2 具有以下特征：
 
@@ -267,7 +267,7 @@ BC7 模式 2 具有以下特征：
 
 ![模式 2 位布局](images/bc7-mode2.png)
 
-### <a name="span-idmode-3spanspan-idmode-3spanspan-idmode-3spanmode-3"></a><span id="Mode-3"></span><span id="mode-3"></span><span id="MODE-3"></span>模式 3
+### <a name="span-idmode-3spanspan-idmode-3spanspan-idmode-3spanmode-3"></a><span id="Mode-3"></span><span id="mode-3"></span><span id="MODE-3"></span>模式3
 
 BC7 模式 3 具有以下特征：
 
@@ -279,7 +279,7 @@ BC7 模式 3 具有以下特征：
 
 ![模式 3 位布局](images/bc7-mode3.png)
 
-### <a name="span-idmode-4spanspan-idmode-4spanspan-idmode-4spanmode-4"></a><span id="Mode-4"></span><span id="mode-4"></span><span id="MODE-4"></span>模式 4
+### <a name="span-idmode-4spanspan-idmode-4spanspan-idmode-4spanmode-4"></a><span id="Mode-4"></span><span id="mode-4"></span><span id="MODE-4"></span>模式4
 
 BC7 模式 4 具有以下特征：
 
@@ -308,7 +308,7 @@ BC7 模式 5 具有以下特征：
 
 ![模式 5 位布局](images/bc7-mode5.png)
 
-### <a name="span-idmode-6spanspan-idmode-6spanspan-idmode-6spanmode-6"></a><span id="Mode-6"></span><span id="mode-6"></span><span id="MODE-6"></span>模式 6
+### <a name="span-idmode-6spanspan-idmode-6spanspan-idmode-6spanmode-6"></a><span id="Mode-6"></span><span id="mode-6"></span><span id="MODE-6"></span>模式6
 
 BC7 模式 6 具有以下特征：
 
@@ -339,13 +339,13 @@ BC7 模式 7 具有以下特征：
 
 -   未进行显式 alpha 分量编码的块类型。 在这些块中，颜色终结点有一个仅 RGB 编码，并且对于所有纹素，alpha 分量被解码为 1.0。
 -   具有组合的颜色和 alpha 分量的块类型。 在这些块中，终结点颜色值是用 RGBA 格式指定的，而 alpha 分量值会与颜色值一起以内插值替换。
--   具有单独的颜色和 alpha 分量的块类型。 在这些块中，颜色和 alpha 值是单独指定的，每个都有它们自己的索引集。 因此，它们具有有效的矢量和标量通道分别编码，向量通常指定颜色通道\[R、 G、 B\] ，并与标量指定 alpha 通道\[A\]。 为支持此方法，在编码中会提供一个单独的 2 位字段，该字段允许将单独通道编码指定为一个标量值。 因此，块可以具有此 alpha 编码的以下四种不同表示之一（由 2 位字段指示）：
+-   具有单独的颜色和 alpha 分量的块类型。 在这些块中，颜色和 alpha 值是单独指定的，每个都有它们自己的索引集。 因此，它们具有一个有效的矢量和一个单独编码的标量通道，其中，矢量通常指定颜色通道 \[ R、G、B， \] 而标量指定 alpha 通道 \[ a \] 。 为支持此方法，在编码中会提供一个单独的 2 位字段，该字段允许将单独通道编码指定为一个标量值。 因此，块可以具有此 alpha 编码的以下四种不同表示之一（由 2 位字段指示）：
     -   RGB|A：单独的 alpha 通道
     -   AGB|R：单独的“红”色通道
     -   RAB|G：单独的“绿”色通道
     -   RGA|B：单独的“蓝”色通道
 
-    解码器在解码之后将通道顺序重新排序回到 RGBA，这样，内部块格式会对于开发者不可见。 具有单独的颜色和 alpha 分量的块也有两组索引数据：一组用于矢量通道集，一组用于标量通道。 (在模式 4 的情况下这些索引是宽度不同\[2 或 3 位\]。 模式 4 还包含一个 1 位选择器，该选择器指定矢量或标量通道是否使用 3 位索引。）
+    解码器在解码之后将通道顺序重新排序回到 RGBA，这样，内部块格式会对于开发者不可见。 具有单独的颜色和 alpha 分量的块也有两组索引数据：一组用于矢量通道集，一组用于标量通道。  (在模式4中，这些索引的宽度为 \[ 2 或3位 \] 。 模式 4 还包含一个 1 位选择器，该选择器指定矢量或标量通道是否使用 3 位索引。）
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
@@ -355,7 +355,3 @@ BC7 模式 7 具有以下特征：
  
 
  
-
-
-
-

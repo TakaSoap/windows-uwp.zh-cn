@@ -7,18 +7,18 @@ ms.date: 05/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 通知, 集合, 通知分组, 分组, 组织, 操作中心, toast
 ms.localizationpriority: medium
-ms.openlocfilehash: aff6b933e04611013761c10ad7a76824f7347855
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 7cd99519f7213f85c50a14db0597daa4e10f8360
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970065"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156751"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>通过集合对 Toast 通知分组
 在操作中心使用集合来组织应用的 Toast。 集合能帮助用户更轻松地在操作中心找到信息，并帮助开发人员更好地管理他们的通知。  以下 API 可用于删除、创建和更新通知集合。
 
 > [!IMPORTANT]
-> **需要创意者更新**：目标必须为 SDK 15063，并且必须运行版本 15063 或更高版本才能使用 Toast 集合。 相关 API 包括 [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollection) 和 [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollectionmanager)
+> **需要创意者更新**：目标必须为 SDK 15063，并且必须运行版本 15063 或更高版本才能使用 Toast 集合。 相关 API 包括 [Windows.UI.Notifications.ToastCollection](/uwp/api/windows.ui.notifications.toastcollection) 和 [Windows.UI.Notifications.ToastCollectionManager](/uwp/api/windows.ui.notifications.toastcollectionmanager)
 
 下面的示例包含一个消息传送应用，该应用根据聊天群组将通知分开，每个标题（Comp Sci 160A Project Chat、Direct Messages、Lacrosse Team Chat）都代表一个单独的集合。  可以看到，虽然所有通知都来自同一个应用，但它们分成了各不相关的组，好像来自不同的应用一样。  如果希望使用更巧妙的方式来组织通知，请参阅 [Toast 标题](toast-headers.md)。  
 ![包含两个不同通知组的集合示例](images/toast-collection-example.png)

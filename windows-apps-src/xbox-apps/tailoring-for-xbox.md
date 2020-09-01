@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aaf8759b59c8ccbb5b09ba969675096700ce9e8
-ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
+ms.openlocfilehash: 01ae58b7422215a0e4f90c5b3f59819d9a24fa36
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094454"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157771"
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 
@@ -30,7 +30,7 @@ Xbox 用户喜欢其控制器。 若要优化控制器输入，请 [禁用鼠标
 
 ### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*应做事项：* 与 SystemMediaTransportControls 类集成
 
-Xbox 用户想要使用 Xbox 媒体遥控器、Cortana（尤其是“播放”和“暂停”语音命令）和 Xbox SmartGlass 控制媒体应用。 若要免费获取这些功能，你的应用应使用 [SystemMediaTransportControls](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols) 类，该类将自动包含在 Xbox 媒体控件中。 如果你的应用具有自定义媒体控件，请确保与 **SystemMediaTransportControls** 类集成，以向用户提供这些功能。 如果你要创建背景音乐应用，与 **SystemMediaTransportControls** 类集成，确保背景音乐控件在 Xbox 多任务选项卡中正常工作。
+Xbox 用户想要使用 Xbox 媒体遥控器、Cortana（尤其是“播放”和“暂停”语音命令）和 Xbox SmartGlass 控制媒体应用。 若要免费获取这些功能，你的应用应使用 [SystemMediaTransportControls](/uwp/api/windows.media.systemmediatransportcontrols) 类，该类将自动包含在 Xbox 媒体控件中。 如果你的应用具有自定义媒体控件，请确保与 **SystemMediaTransportControls** 类集成，以向用户提供这些功能。 如果你要创建背景音乐应用，与 **SystemMediaTransportControls** 类集成，确保背景音乐控件在 Xbox 多任务选项卡中正常工作。
 
 <!-- ### *Do:* Use adaptive UI to account for snapped apps
 One of the unique features of Xbox One is that users can snap apps such as Cortana next to any other app, so your app should respond gracefully when it runs in *fill mode*. Implement [adaptive UI](../get-started/universal-application-platform-guide.md#design-adaptive-ui-with-adaptive-panels) and make sure to test your app during development by snapping an app next to it. -->
@@ -74,4 +74,4 @@ UWP 应用将自动缩放，以确保 UI 元素（如控件和字体）在所有
 
 - [Xbox One 上的 UWP](index.md)
 - [针对 Xbox 和电视进行设计](../design/devices/designing-for-tv.md)
-- [适用于 Xbox One 的渐进式 Web 应用](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations)
+- [适用于 Xbox One 的渐进式 Web 应用](/microsoft-edge/progressive-web-apps/xbox-considerations)
