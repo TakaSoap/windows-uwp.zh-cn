@@ -60,21 +60,21 @@
             - name: 在设备或仿真器上测试
               href: ../android/emulator.md
         - name: C 和 C++ 入门
-          href: 'https://docs.microsoft.com/cpp/'
+          href: /cpp/
         - name: C# 入门
-          href: 'https://docs.microsoft.com/dotnet/csharp/'
+          href: /dotnet/csharp/
         - name: Azure 上的 Java 入门
-          href: 'https://docs.microsoft.com/azure/developer/java/'
+          href: /azure/developer/java/
         - name: PowerShell 入门
-          href: 'https://docs.microsoft.com/powershell/'
+          href: /powershell/
         - name: WSL 上的数据库入门
-          href: 'https://docs.microsoft.com/windows/wsl/tutorials/wsl-database'
+          href: /windows/wsl/tutorials/wsl-database
     - name: 工具和平台
       items:
         - name: 适用于 Linux 的 Windows 子系统
-          href: 'https://docs.microsoft.com/windows/wsl/'
+          href: /windows/wsl/
         - name: Windows 终端
-          href: 'https://docs.microsoft.com/windows/terminal/'
+          href: /windows/terminal/
         - name: Windows 程序包管理器
           items:
             - name: 概述
@@ -110,8 +110,8 @@
         - name: VS Code
           href: 'https://code.visualstudio.com/docs'
         - name: Visual Studio
-          href: 'https://docs.microsoft.com/visualstudio/windows/?view=vs-2019'
+          href: /visualstudio/windows/?view=vs-2019
         - name: Azure
-          href: 'https://docs.microsoft.com/azure/?product=featured'
+          href: /azure/?product=featured
         - name: .NET
-          href: 'https://docs.microsoft.com/dotnet/'
+          href: /dotnet/

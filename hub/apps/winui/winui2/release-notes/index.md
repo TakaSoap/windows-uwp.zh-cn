@@ -3,12 +3,12 @@ title: WinUI 发行说明
 description: WinUI 发行说明的索引。
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 4161b8d8a74ffc493c44bba5104c54cb911861c6
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 33d4b9dfb497017f446549d4f3daf737a8fa5ebb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492872"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166691"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Windows UI 库 2.x 发行说明
 
@@ -22,7 +22,7 @@ WinUI 包括两个 NuGet 包：
 
 * [Microsoft.UI.Xaml.Core.Direct](https://www.nuget.org/packages/Microsoft.UI.Xaml.Core.Direct)：用在中间件组件中的低级别 API。
 
-可以使用 NuGet 包管理器在应用中下载并使用 WinUI 包：有关详细信息，请参阅 [Getting Started with the Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/getting-started)（Windows UI 库入门）。
+可以使用 NuGet 包管理器在应用中下载并使用 WinUI 包：有关详细信息，请参阅 [Getting Started with the Windows UI Library](/uwp/toolkits/winui/getting-started)（Windows UI 库入门）。
 
 ## <a name="examples"></a>示例
 

@@ -4,12 +4,12 @@ description: 开发人员可以在 Windows 10 计算机上使用 winget 命令�
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b3f108de117fb937a7a670497a4a1a1d5810aca
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 4c918dccb2873f47a16669c195c47180e2129476
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334535"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168741"
 ---
 # <a name="use-the-winget-tool-to-install-and-manage-applications"></a>使用 winget 工具安装和管理应用程序
 
@@ -38,7 +38,7 @@ ms.locfileid: "85334535"
 
 * 在没有管理员权限的情况下运行 **winget** 时，某些应用程序可能会[要求提升权限](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/)才能进行安装。 当安装程序运行时，Windows 会提示你[提升权限](https://docs.microsoft.com/windows/security/identity-protection/user-account-control)。 如果你选择不提升权限，则应用程序无法进行安装。  
 
-* 在管理员命令提示符下运行 **winget** 时，如果应用程序要求你提升权限，你不会看到[提升权限提示](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/how-user-account-control-works)。 以管理员身份运行命令提示符时请务必小心，仅安装你信任的应用程序。
+* 在管理员命令提示符下运行 **winget** 时，如果应用程序要求你提升权限，你不会看到[提升权限提示](/windows/security/identity-protection/user-account-control/how-user-account-control-works)。 以管理员身份运行命令提示符时请务必小心，仅安装你信任的应用程序。
 
 ## <a name="use-winget"></a>使用 winget
 

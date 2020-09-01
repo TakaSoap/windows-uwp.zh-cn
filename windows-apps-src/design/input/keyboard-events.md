@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: cb82c137bf2aa0d1cd4e03025d3babace07549b5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 151abd02b34263cdd92b917127f306c25ebc5e0d
+ms.sourcegitcommit: deb2867924ce16efcabfa011892157b7aa4fa2d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173411"
+ms.locfileid: "89187834"
 ---
 # <a name="keyboard-events"></a>键盘事件
 
@@ -107,15 +107,16 @@ void MyProject::MainPage::Grid_KeyUp(
 
 修改键是用户通常与其他键组合而按下的键，如 Ctrl 或 Shift。 你的应用可以使用这些组合作为键盘快捷方式来调用应用命令。
 
-使用 [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) 和 [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) 事件处理程序中的代码检测快捷组合键。 然后，你可以跟踪感兴趣的修改键的按下状态。 当非修改键发生键盘事件时，可以同时检查修改键是否处于按下状态。
+可以在 [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) 和 [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) 事件处理程序中检测快捷组合键。 当某个非修改键发生键盘事件时，可以检查修饰符键是否处于按下状态。
+
+或者，通过) [** ( CoreWindow**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) (获取的[**CoreWindow**](/uwp/api/windows.ui.core.corewindow)的[**GetKeyState ( # B1**](/uwp/api/windows.ui.core.corewindow.getkeystate)函数也可用于在按下非修改键时检查修饰符状态。
+
+下面的示例实现第二种方法，同时包含第一个实现的存根代码。
 
 > [!NOTE]
 > Alt 键由 **VirtualKey.Menu** 值表示。
 
- 
-
 ### <a name="shortcut-keys-example"></a>快捷键示例
-
 
 以下示例演示如何实现快捷键。 在此示例中，用户可以使用 Play、Pause 和 Stop 按钮或 Ctrl+P、Ctrl+A 和 Ctrl+S 键盘快捷键来控制媒体播放。 按钮 XAML 通过使用工具提示和按钮标签中的 [**AutomationProperties**](/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) 属性来显示快捷键。 此自述文档对于增加应用的实用功能和辅助功能非常重要。 有关详细信息，请参阅[键盘辅助功能](../accessibility/keyboard-accessibility.md)。
 

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb65acf606ffa44f075016720ebcd055ba5febc8
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 06cff7247dff4f370d9e20a736c4383a9c09c25a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234468"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174611"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>适用于 Windows 应用的磁贴、锁屏提醒和通知
  
@@ -37,7 +37,7 @@ ms.locfileid: "83234468"
 | 文章 | 说明 |
 | --- | --- |
 | [创建磁贴](creating-tiles.md) | 为你的应用自定义默认磁贴，并提供适用于不同屏幕大小的资源。 |
-| [应用图标资源](app-assets.md) | 应用图标资产（以各种形式出现在整个 Windows 10 操作系统中）是 Windows 应用的调用卡。 这些指南详细介绍应用图标资源在系统中的显示位置，并提供有关如何创建最完美图标的深入设计提示。 |
+| [应用图标资源](../../style/app-icons-and-logos.md) | 应用图标资产（以各种形式出现在整个 Windows 10 操作系统中）是 Windows 应用的调用卡。 这些指南详细介绍应用图标资源在系统中的显示位置，并提供有关如何创建最完美图标的深入设计提示。 |
 | [主要磁贴 API](primary-tile-apis.md) | 请求固定你的应用的主磁贴，并检查主磁贴当前是否已固定。 |
 | [磁贴内容](create-adaptive-tiles.md) | 磁贴通知内容使用 Windows 10 中的自适应新功能来指定，让你可以使用可适应不同屏幕密度的简单而灵活的标记语言来设计你自己的磁贴通知内容。 本文介绍了如何为 Windows 应用创建自适应动态磁贴。 |
 | [磁贴内容架构](../tiles-and-notifications/tile-schema.md) | 以下是用于创建自适应磁贴的元素和属性。 |

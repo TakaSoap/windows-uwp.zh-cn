@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 785047b3ee5f18fa4f6ea8fd78f6d8ab7a92e8e6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8a3231f608984c9d1f67df71de9cab4cfecd9a13
+ms.sourcegitcommit: deb2867924ce16efcabfa011892157b7aa4fa2d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173421"
+ms.locfileid: "89187892"
 ---
 # <a name="keyboard-accelerators"></a>键盘快捷键
 
@@ -386,7 +386,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 *工具提示中的加速键组合*
 
-对于 [Button](/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton)和 [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) 对象，键盘快捷键将追加到控件的默认工具提示。 对于 [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.appbarbutton) 和 [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) 对象，将显示带有飞出文本的键盘快捷键。
+对于 [Button](/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton)和 [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) 对象，键盘快捷键将追加到控件的默认工具提示。 对于 [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.appbarbutton) 和 [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) 对象，将显示带有飞出文本的键盘快捷键。
 
 > [!NOTE]
 > 指定工具提示 (参阅以下示例中的 Button1) 重写此行为。

@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c#, winrt, cswinrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: e52763d78937405b308c4c4fe06f6d231fa3abcf
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 8fb098cb247890dc1b3919f6123b76b54366d60f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580274"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154321"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -23,9 +23,9 @@ C#/WinRT 当前支持使用 WinRT 类型，当前的预览版允许[创建](#cre
 
 ## <a name="motivation-for-cwinrt"></a>采用 C#/WinRT 的动机
 
-[.NET Core](https://docs.microsoft.com/dotnet/core/) 是 .NET 平台的重点，.NET 5 是下一个主要版本。 它是一个开源的跨平台运行时，可用于构建设备、云和 IoT 应用程序。
+[.NET Core](/dotnet/core/) 是 .NET 平台的重点，.NET 5 是下一个主要版本。 它是一个开源的跨平台运行时，可用于构建设备、云和 IoT 应用程序。
 
-以前版本的 .NET Framework 和 .NET Core 都内置了 WinRT（一种特定于 Windows 的技术）知识。 为了支持 .NET 5 的可移植性和高效性目标，我们从 .NET 编译器和运行时中撤销了 WinRT 投影支持，将其移到了 C#/WinRT 工具包中。 C#/WinRT 的目标是通过旧版 C# 编译器和 .NET 运行时提供的内置 WinRT 支持来提供奇偶校验。 有关详细信息，请参阅 [Windows 运行时类型的 .NET 映射](https://docs.microsoft.com/windows/uwp/winrt-components/net-framework-mappings-of-windows-runtime-types)。
+以前版本的 .NET Framework 和 .NET Core 都内置了 WinRT（一种特定于 Windows 的技术）知识。 为了支持 .NET 5 的可移植性和高效性目标，我们从 .NET 编译器和运行时中撤销了 WinRT 投影支持，将其移到了 C#/WinRT 工具包中。 C#/WinRT 的目标是通过旧版 C# 编译器和 .NET 运行时提供的内置 WinRT 支持来提供奇偶校验。 有关详细信息，请参阅 [Windows 运行时类型的 .NET 映射](../winrt-components/net-framework-mappings-of-windows-runtime-types.md)。
 
 C#/WinRT 还支持 WinUI 3.0。 此版本的 WinUI 从操作系统中移除了原生的 Microsoft UI 控件和功能。 这使得应用开发人员能够在 Windows 10 版本 1803 和更高版本上使用最新控件和视觉对象。
 
@@ -124,7 +124,7 @@ C#/WinRT 支持激活由操作系统承载的 WinRT 类型以及第三方组件�
 2. Contoso.Controls.dll
 3. Contoso.dll
 
-C#/WinRT 使用 [LoadLibrary 备用搜索顺序](https://docs.microsoft.com/windows/win32/dlls/dynamic-link-library-search-order?#alternate-search-order-for-desktop-applications)查找一个实现 DLL。 依赖于此回退行为的应用应将该实现 DLL 与应用模块一起打包。
+C#/WinRT 使用 [LoadLibrary 备用搜索顺序](/windows/win32/dlls/dynamic-link-library-search-order#alternate-search-order-for-desktop-applications)查找一个实现 DLL。 依赖于此回退行为的应用应将该实现 DLL 与应用模块一起打包。
 
 ## <a name="known-issues"></a>已知问题
 

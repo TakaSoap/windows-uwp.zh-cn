@@ -7,12 +7,12 @@ keywords: windows win32, 桌面开发
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 20399b9a6398b1f17f74d2de74cc4b5e4ba270ac
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 6f4b790978449bd6d5c279a5405c22db51cd0724
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492992"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170721"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>构建 Windows 电脑的桌面应用
 
@@ -49,12 +49,12 @@ ms.locfileid: "86492992"
 <td><a href="/windows/win32/desktop-programming/">入门</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API 参考</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">示例</a></td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/dotnet/framework/wpf/">WPF</a></td>
+<td><a href="/dotnet/framework/wpf/">WPF</a></td>
 <td><p>已建立的基于 .NET 的平台，它适合带有 XAML UI 模型的图形丰富的托管 Windows 应用。 这些应用可面向 <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> 或完整的 .NET Framework。</p></td>
 <td><a href="/dotnet/framework/wpf/getting-started/">入门</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 参考 (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">示例</a></td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/dotnet/framework/winforms/">Windows 窗体</a></td>
+<td><a href="/dotnet/framework/winforms/">Windows 窗体</a></td>
 <td><p>基于 .NET 的平台，它专用于具有轻量级 UI 模型的托管业务线应用。 这些应用可面向 <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> 或完整的 .NET Framework。</p></td>
 <td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">入门</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 参考 (.NET)</a></td>
 </tr>
@@ -71,8 +71,8 @@ ms.locfileid: "86492992"
 有很多功能可用于增强你的现有桌面应用，下面仅举几例：
 
 * 使用 [MSIX](/windows/msix/) 打包和部署桌面应用。 MSIX 是一种新式 Windows 应用包格式，提供适合所有 Windows 应用的通用打包体验。 MSIX 汇集了 MSI、.appx、App-V 和 ClickOnce 安装技术的最佳方面，按照安全可靠的目标构建。
-* 使用[包扩展](/windows/apps/desktop/modernize/desktop-to-uwp-extensions)将桌面应用与 Windows 10 体验相集成。 例如，将“启动”磁贴指向你的应用，将你的应用设为共享目标，或者通过你的应用发送 toast 通知。
-* 使用 [XAML 孤岛](/windows/apps/desktop/modernize/xaml-islands)在桌面应用中托管 UWP XAML 控件。 很多最新 Windows 10 UI 功能仅适用于 UWP XAML 控件。
+* 使用[包扩展](./modernize/desktop-to-uwp-extensions.md)将桌面应用与 Windows 10 体验相集成。 例如，将“启动”磁贴指向你的应用，将你的应用设为共享目标，或者通过你的应用发送 toast 通知。
+* 使用 [XAML 孤岛](./modernize/xaml-islands.md)在桌面应用中托管 UWP XAML 控件。 很多最新 Windows 10 UI 功能仅适用于 UWP XAML 控件。
 
 有关详细信息，请参阅以下文章。
 
@@ -80,8 +80,8 @@ ms.locfileid: "86492992"
 
 | 文章 | 说明 |
 |---------|-------------|
-| [实现桌面应用的现代化](/windows/apps/desktop/modernize) | 介绍可在 WPF、Windows 窗体和 C++ Win32 应用等任何桌面应用中使用的最新 Windows 10 和 UWP 开发功能。 |
-| [教程：实现 WPF 应用现代化](/windows/apps/desktop/modernize/modernize-wpf-tutorial) | 按照分步说明将 UWP 墨迹和日历控件添加到应用中并将其打包到 MSIX 包中，从而将现有 WPF 业务线示例应用现代化。  |
+| [实现桌面应用的现代化](./modernize/index.md) | 介绍可在 WPF、Windows 窗体和 C++ Win32 应用等任何桌面应用中使用的最新 Windows 10 和 UWP 开发功能。 |
+| [教程：实现 WPF 应用现代化](./modernize/modernize-wpf-tutorial.md) | 按照分步说明将 UWP 墨迹和日历控件添加到应用中并将其打包到 MSIX 包中，从而将现有 WPF 业务线示例应用现代化。  |
 
 ## <a name="create-new-desktop-apps"></a>创建新的桌面应用
 
@@ -93,20 +93,20 @@ ms.locfileid: "86492992"
 |---------|-------------|
 | [选择应用平台](choose-your-platform.md) | 提供对主要桌面应用的深入比较，并可帮助你选择适合你的需求的平台。 本文还提供了介绍每个平台的文档的有用链接。 |
 | [适用于 Windows 应用的 Visual Studio 项目模板](visual-studio-templates.md) | 介绍 Visual Studio 提供的项目和项模板，这些项目和项模板有助于你使用 C\# 或 C++ 创建适用于 Windows 10 设备的应用。 |
-| [实现桌面应用的现代化](/windows/apps/desktop/modernize) | 介绍可在 WPF、Windows 窗体和 C++ Win32 应用等任何桌面应用中使用的最新 Windows 10 和 UWP 开发功能。 |
-| [功能和技术](/windows/apps/features-and-technologies) | 概要介绍可通过每个主要桌面应用平台和相关文档的链接访问的 Windows 功能。 |
+| [实现桌面应用的现代化](./modernize/index.md) | 介绍可在 WPF、Windows 窗体和 C++ Win32 应用等任何桌面应用中使用的最新 Windows 10 和 UWP 开发功能。 |
+| [功能和技术](../features-and-technologies.md) | 概要介绍可通过每个主要桌面应用平台和相关文档的链接访问的 Windows 功能。 |
 
 ## <a name="related-documentation-and-technologies"></a>相关文档和技术
 
 | 资源 | 说明 |
 |---------|-------------|
-| [.NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0) | 了解 .NET Core 3.0 的最新功能，包括对 WPF 和 Windows 窗体应用的增强功能。 |
-| [关于 WPF 和 .NET Core 3.0 的桌面指南](https://docs.microsoft.com/dotnet/desktop-wpf/overview/index) | 开发面向 .NET Core 3.0 而不是整个 .NET Framework 的 WPF 应用。  |
-| [Azure](https://docs.microsoft.com/azure/) | 使用 Azure 云服务扩大应用的覆盖范围。 |
-| [Visual Studio](https://docs.microsoft.com/visualstudio/) | 了解如何使用 Visual Studio 开发应用和服务。 |
-| [MSIX](https://docs.microsoft.com/windows/msix/) | 采用新式通用打包格式打包和部署任何 Windows 应用。 |
-| [Windows AI](https://docs.microsoft.com/windows/ai/) | 使用 Windows AI 构建智能解决方案来处理应用中的复杂问题。 |
-| [Windows 容器](https://docs.microsoft.com/virtualization/windowscontainers/) | 在运行快速、完全隔离的 Windows 环境中将应用程序与其依赖项打包在一起。 |
-| [渐进式 Web 应用](https://docs.microsoft.com/microsoft-edge/progressive-web-apps) | 将 Web 应用转换为可分发并可在 Windows 10 上作为 UWP 应用运行的渐进式 Web 应用。 |
-| [Xamarin](https://docs.microsoft.com/xamarin/) | 使用 .NET 代码和平台专属用户界面构建适合 Windows,、Android、iOS 和 macOS 的跨平台应用。 |
-| [Windows 8.x 及更低版本的文档存档](https://docs.microsoft.com/previous-versions/windows/) | 访问存档的文档，了解如何构建适合 Windows 8.x 及更低版本的应用。 |
+| [.NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0) | 了解 .NET Core 3.0 的最新功能，包括对 WPF 和 Windows 窗体应用的增强功能。 |
+| [关于 WPF 和 .NET Core 3.0 的桌面指南](/dotnet/desktop-wpf/overview/index) | 开发面向 .NET Core 3.0 而不是整个 .NET Framework 的 WPF 应用。  |
+| [Azure](/azure/) | 使用 Azure 云服务扩大应用的覆盖范围。 |
+| [Visual Studio](/visualstudio/) | 了解如何使用 Visual Studio 开发应用和服务。 |
+| [MSIX](/windows/msix/) | 采用新式通用打包格式打包和部署任何 Windows 应用。 |
+| [Windows AI](/windows/ai/) | 使用 Windows AI 构建智能解决方案来处理应用中的复杂问题。 |
+| [Windows 容器](/virtualization/windowscontainers/) | 在运行快速、完全隔离的 Windows 环境中将应用程序与其依赖项打包在一起。 |
+| [渐进式 Web 应用](/microsoft-edge/progressive-web-apps) | 将 Web 应用转换为可分发并可在 Windows 10 上作为 UWP 应用运行的渐进式 Web 应用。 |
+| [Xamarin](/xamarin/) | 使用 .NET 代码和平台专属用户界面构建适合 Windows,、Android、iOS 和 macOS 的跨平台应用。 |
+| [Windows 8.x 及更低版本的文档存档](/previous-versions/windows/) | 访问存档的文档，了解如何构建适合 Windows 8.x 及更低版本的应用。 |
