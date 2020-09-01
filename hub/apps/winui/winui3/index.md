@@ -3,12 +3,12 @@ title: WinUI 3 预览版 2（2020 年 7 月）
 description: WinUI 3 预览版 2 发布概述。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 4d971ffd3ec44ab766122dbb80847b9c2ccfc891
-ms.sourcegitcommit: e6b1ed3c9ddcf650e2f71c29d81bffac6ab292f4
+ms.openlocfilehash: c57132ec5219ef32f2b2b69168592e07f49d904b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89116802"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168771"
 ---
 # <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows UI 库 3 预览版 2（2020 年 7 月）
 
@@ -54,7 +54,7 @@ WinUI 3 预览版 2 提供有 Visual Studio 项目模板和 NuGet 包，前者�
 
 4. 下载并安装 [WinUI 3 预览版 2 VSIX 包](https://aka.ms/winui3/previewdownload)。 此 VSIX 包将 WinUI 3 项目模板和包含 WinUI 3 库的 NuGet 包添加到 Visual Studio 2019。
 
-    有关如何将 VSIX 包添加到 Visual Studio 的说明，请参阅[查找和使用 Visual Studio 扩展](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box)。
+    有关如何将 VSIX 包添加到 Visual Studio 的说明，请参阅[查找和使用 Visual Studio 扩展](/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box)。
 
 
 ## <a name="create-winui-projects"></a>创建 WinUI 项目
@@ -99,10 +99,10 @@ WinUI 3 预览版 2 提供有 Visual Studio 项目模板和 NuGet 包，前者�
 |----------|----------|-------------|
 | 空白页 (WinUI) | C# 和 C++ | 添加 XAML 文件和定义了新页面的代码文件，该页面派生自 WinUI 库中的 Microsoft.UI.Xaml.Controls.Page 类。 |
 | 空白窗口（桌面版 WinUI） | C# 和 C++ | 添加 XAML 文件和定义了新窗口的代码文件，该窗口派生自 WinUI 库中的 Microsoft.UI.Xaml.Window 类。 |
-| 自定义控件 (WinUI) | C# 和 C++ | 添加用于创建具有默认样式的模板化控件的代码文件。 该模板化控件派生自 WinUI 库中的 Microsoft.UI.Xaml.Controls.Control 类。<p></p>有关如何使用该项模板的演练，请参阅[使用 C++/WinRT 模板化 UWP 和 WinUI 3 应用的 XAML 控件](xaml-templated-controls-cppwinrt-winui3.md)。 有关模板化控件的详细信息，请参阅[自定义 XAML 控件](https://docs.microsoft.com/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls)。 |
+| 自定义控件 (WinUI) | C# 和 C++ | 添加用于创建具有默认样式的模板化控件的代码文件。 该模板化控件派生自 WinUI 库中的 Microsoft.UI.Xaml.Controls.Control 类。<p></p>有关如何使用该项模板的演练，请参阅[使用 C++/WinRT 模板化 UWP 和 WinUI 3 应用的 XAML 控件](xaml-templated-controls-cppwinrt-winui3.md)。 有关模板化控件的详细信息，请参阅[自定义 XAML 控件](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls)。 |
 | 资源字典 (WinUI) | C# 和 C++ | 添加 XAML 资源的空键控集合。 有关详细信息，请参阅 [ResourceDictionary 和 XAML 资源参考](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。 |
 | 资源文件 (WinUI) | C# 和 C++ | 添加用于存储应用的字符串和条件资源的文件。 可以借助此项对应用程序进行本地化。 有关详细信息，请参阅[对 UI 和应用包清单中的字符串进行本地化](/windows/uwp/app-resources/localize-strings-ui-manifest)。 |
-| 用户控件 (WinUI) | C# 和 C++ | 添加 XAML 文件和用于创建用户控件的代码文件，该用户控件派生自 WinUI 库中的 Microsoft.UI.Xaml.Controls.UserControl 类。 通常，用户控件封装相关的现有控件并提供其自己的逻辑。<p></p>有关用户控件的详细信息，请参阅[自定义 XAML 控件](https://docs.microsoft.com/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls)。 |
+| 用户控件 (WinUI) | C# 和 C++ | 添加 XAML 文件和用于创建用户控件的代码文件，该用户控件派生自 WinUI 库中的 Microsoft.UI.Xaml.Controls.UserControl 类。 通常，用户控件封装相关的现有控件并提供其自己的逻辑。<p></p>有关用户控件的详细信息，请参阅[自定义 XAML 控件](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls)。 |
 
 ## <a name="bug-fixes-and-other-improvements-in-winui-3-preview-2"></a>WinUI 3 预览版 2 中的 Bug 修复和其他改进
 
@@ -111,10 +111,10 @@ WinUI 3 预览版 2 提供有 Visual Studio 项目模板和 NuGet 包，前者�
 > [!NOTE]
 > WinUI 3 预览版 2 使用 WinUI 2 库的版本 2.4.2。 
 
-- [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) 和 [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) 目前在 C# 桌面应用中按预期方式工作
+- [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) 和 [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) 目前在 C# 桌面应用中按预期方式工作
   - 这解决了其他一些问题，即有关集合控件在后端中更新时不会在 UI 中更新的问题。
   - 感谢 @hshristov 在 GitHub 上提交了[类似的问题](https://github.com/microsoft/microsoft-ui-xaml/issues/2490)！
-- 预览版 2 现与桌面应用的 [.NET 5 预览版 5](https://docs.microsoft.com/dotnet/api/?view=net-5.0) 兼容
+- 预览版 2 现与桌面应用的 [.NET 5 预览版 5](/dotnet/api/?view=net-5.0) 兼容
 - WinUI 3 现在与 [WinUI 2.4](../winui2/release-notes/winui-2.4.md) 具有同等性能，其中包括新的控件和功能，例如[分层 NavigationView](../winui2/release-notes/winui-2.4.md#hierarchical-navigation) 和 [ProgressRing](../winui2/release-notes/winui-2.4.md#progressring)。
 - 已修复故障：触控使用 [TabView](/windows/uwp/design/controls-and-patterns/tab-view)
 - [XAML 控件库示例](#xaml-controls-gallery-winui-3-preview-2-branch)中的 [NavigationView](/windows/uwp/design/controls-and-patterns/navigationview) 现使用左侧模式而不是左紧凑模式
@@ -122,7 +122,7 @@ WinUI 3 预览版 2 提供有 Visual Studio 项目模板和 NuGet 包，前者�
   - 感谢 @paulovilla 在 GitHub 上提交了[此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/2563)！
 - 已修复故障：[TextBox](/windows/uwp/design/controls-and-patterns/text-box) 菜单打开时与 XAML UI 进行交互
 - 导航至多个页面后，[XAML 控件库示例](#xaml-controls-gallery-winui-3-preview-2-branch)标题文本不再打乱
-- 触控使用 [WebView2](https://docs.microsoft.com/microsoft-edge/webview2/) 不再出现轻微偏移
+- 触控使用 [WebView2](/microsoft-edge/webview2/) 不再出现轻微偏移
 - WinUIEdit.dll 中的类已从 Windows.UI.Text 命名空间移至 Microsoft.UI.Text 命名空间
 - 已修复故障：可在多选模式下选择 [TreeView](/windows/uwp/design/controls-and-patterns/tree-view) 中的项目（Windows 10 版本 1803）
 - 在桌面应用程序的 API 的 C# 投影中，Point、Rect 和 Size 成员现为双类型。
@@ -152,7 +152,7 @@ WinUI 3 预览版 2 提供有 Visual Studio 项目模板和 NuGet 包，前者�
 - [RadialGradientBrush](/windows/uwp/design/style/brushes#radial-gradient-brushes)
 - [TabView 更新](/windows/uwp/design/controls-and-patterns/tab-view)
 - 深色主题更新
-- 对 [WebView2](https://docs.microsoft.com/microsoft-edge/hosting/webview2) 的改进和更新
+- 对 [WebView2](/microsoft-edge/hosting/webview2) 的改进和更新
   - 支持高 DPI
   - 支持调整窗口大小和移动窗口
   - 已更新为面向较新版本的 Edge
