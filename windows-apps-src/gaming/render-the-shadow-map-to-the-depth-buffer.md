@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现, 阴影映射, 深度缓冲区, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ae67df457d4abafc8fb689a747139f62ca0e0e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5f492b1007a96b893abf6cdd1e7c6686cd5a41ee
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368076"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159231"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>将阴影映射呈现到深度缓冲区
 
 
 
 
-从光线的角度呈现，以创建一个表示阴影卷的二维深度映射。 深度映射会掩盖将在阴影中呈现的空间。 第 2 的部分[演练：实现在 Direct3D 11 中使用深度缓冲区的卷影卷](implementing-depth-buffers-for-shadow-mapping.md)。
+从光线的角度呈现，以创建一个表示阴影卷的二维深度映射。 深度映射会掩盖将在阴影中呈现的空间。 [操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷](implementing-depth-buffers-for-shadow-mapping.md)的第 2 部分。
 
 ## <a name="clear-the-depth-buffer"></a>清除深度缓冲区
 
@@ -37,7 +37,7 @@ context->ClearDepthStencilView(m_shadowDepthView.Get(), D3D11_CLEAR_DEPTH | D3D1
 
 指定光线视区、顶点着色器，并设置光线空间常量缓冲区。 为该通道使用正面剔除以优化放置在阴影缓冲区中的深度值。
 
-请注意，在大多数设备上，你可以为像素着色器指定 nullptr（或者完全跳过指定像素着色器）。 但一些驱动程序可能会在像素着色器集为 null 的 Direct3D 设备上调用 draw 时引发异常。 为了避免发生此异常，你可以为阴影呈现通道设置最低像素着色器。 扔掉该着色器的输出；它可以在每个像素上调用 [**discard**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-discard)。
+请注意，在大多数设备上，你可以为像素着色器指定 nullptr（或者完全跳过指定像素着色器）。 但一些驱动程序可能会在像素着色器集为 null 的 Direct3D 设备上调用 draw 时引发异常。 为了避免发生此异常，你可以为阴影呈现通道设置最低像素着色器。 扔掉该着色器的输出；它可以在每个像素上调用 [**discard**](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-discard)。
 
 呈现可以投影的对象，但不要打扰没有投影的呈现几何图形（就像房间中的地板，或者为了优化而从阴影通道中删除的对象）。
 
@@ -125,7 +125,7 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**优化视图截锥：** 请确保您的实现计算紧密视图截锥，以便最大精度摆脱深度缓冲区。 有关阴影技术的更多提示，请参阅[改进阴影深度映射的常用技术](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps)。
+**优化视锥：** 确保你的实现计算一个严密的视锥，以便在深度缓冲区之外获得最大精度。 有关阴影技术的更多提示，请参阅[改进阴影深度映射的常用技术](/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps)。
 
 ## <a name="vertex-shader-for-shadow-pass"></a>阴影通道的顶点着色器
 
@@ -153,7 +153,3 @@ PixelShaderInput main(VertexShaderInput input)
  
 
  
-
-
-
-

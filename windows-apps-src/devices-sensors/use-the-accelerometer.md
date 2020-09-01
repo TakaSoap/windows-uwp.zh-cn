@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e38d64750b410369a9ff9ebf871267b03e0ad07e
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 4bed5ad24c1478d47456d1e35a83ba4c54f99406
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054337"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159541"
 ---
 # <a name="use-the-accelerometer"></a>使用加速计
 
 
 **重要的 API**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**加速计**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**加速计**](/uwp/api/Windows.Devices.Sensors.Accelerometer)
 
 **示例**
 
@@ -29,7 +29,7 @@ ms.locfileid: "89054337"
 
 一个简单的游戏应用依赖于单个传感器，即加速计，作为输入设备。 这些应用通常只使用单轴或双轴进行输入，但它们也会将抖动事件作为另一个输入源使用。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 你应熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 和事件。
 

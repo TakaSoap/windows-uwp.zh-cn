@@ -8,12 +8,12 @@ keywords: Cortana, Cortana 画布, Cortana 设计, 用户界面, 语音命令, V
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 09a2ed3b3f12b47b7b6d8665225ee9d830827839
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 8aa02956aec46280c4ed3e54547f68bc544497bc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970892"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160091"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Windows 应用中的 Cortana 交互
 
@@ -23,24 +23,20 @@ ms.locfileid: "82970892"
 
 现在可通过 [Cortana 开发人员中心](https://developer.microsoft.com/cortana)获取 Cortana 功能和服务的所有开发人员文档。
 
-若要开始使用，请参阅 [Cortana 技能工具包概述](https://docs.microsoft.com/cortana/skills/overview)。
+若要开始使用，请参阅 [Cortana 技能工具包概述](/cortana/skills/overview)。
 
-若要了解如何使用语音命令使用 Windows 应用中的功能扩展 Cortana，请参阅[Cortana 语音命令](https://docs.microsoft.com/cortana/voice-commands/vcd)。 
+若要了解如何使用语音命令使用 Windows 应用中的功能扩展 Cortana，请参阅 [Cortana 语音命令](/cortana/voice-commands/vcd)。 
 
 ## <a name="related-articles"></a>相关文章
 
-* [**VCD 元素和属性 v1.2**](https://docs.microsoft.com/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+* [**VCD 元素和属性 v1.2**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 
 **设计器**
 * [语音设计指南](speech-interactions.md)
-* [适用于语音命令的 Cortana 设计指南](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
+* [适用于语音命令的 Cortana 设计指南](/cortana/voice-commands/voicecommand-design-guidelines)
 
 **示例**
 * [Cortana 语音命令示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CortanaVoiceCommand)
  
 
  
-
-
-
-

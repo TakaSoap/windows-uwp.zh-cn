@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ebfbdda8f5f7bf308ee427ab79d8dd45969e3108
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 40095ce6c6011d97959e2515f4e6699fefd61b81
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054327"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159501"
 ---
 # <a name="use-the-inclinometer"></a>使用测斜仪
 
 
 **重要的 API**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**Inclinometer**](/uwp/api/Windows.Devices.Sensors.Inclinometer)
 
 **示例**
 
@@ -29,7 +29,7 @@ ms.locfileid: "89054327"
 
 一些三维游戏应用需要将测斜仪作为输入设备。 一个常见的示例是飞行模拟器，它将测斜仪的三条轴（X、Y 和 Z）映射到飞行器的升降舵、副翼和方向舵输入。
 
- ## <a name="prerequisites"></a>先决条件
+ ## <a name="prerequisites"></a>必备条件
 
 你应熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 和事件。
 
@@ -177,4 +177,3 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
  <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,56,0,0" TextWrapping="Wrap" Text="Yaw:" VerticalAlignment="Top" Width="55" Foreground="#FFF7F3F3"/>
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
-

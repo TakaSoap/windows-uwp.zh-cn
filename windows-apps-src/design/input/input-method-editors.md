@@ -7,12 +7,12 @@ keywords: ime、输入法编辑器、输入、交互
 ms.date: 07/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 438c53a0f3fbec1fdac0206bde3584c738759de4
-ms.sourcegitcommit: 86ce67a03e87fa1282849b2fcb4f89d1cf23a091
+ms.openlocfilehash: 8e7782dea8cd634fd9fe3bac4a3e4c870cd680e9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87839996"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159941"
 ---
 # <a name="input-method-editors-ime"></a>输入法编辑器 (IME) 
 
@@ -40,19 +40,19 @@ ms.locfileid: "87839996"
 第三方 IME 必须满足以下要求：
 
 - 必须进行数字签名
-- 必须是[文本服务框架 (TSF) ](/windows/win32/tsf/text-services-framework)知道，并正确设置适当的 IME 标记
-- 必须遵循输入法编辑器中所述的准则[ (IME) 要求](input-method-editor-requirements.md)和[设计和代码 Windows 应用](/windows/uwp/design/)
+- 必须是 [文本服务框架 (TSF) ](/windows/win32/tsf/text-services-framework) 知道，并正确设置适当的 IME 标记
+- 必须遵循输入法编辑器中所述的准则 [ (IME) 要求](input-method-editor-requirements.md) 和 [设计和代码 Windows 应用](../index.md)
 
 不满足这些要求的第三方 IME 被阻止运行。
 
 > [!NOTE]
 > 旧的自定义 Ime 可以在桌面应用中运行，但会在 Windows 应用中被阻止。
 
-此外，Windows Defender 还会从系统中删除恶意的 Ime。 因此，请务必熟悉 IME 编码要求。 有关详细信息，请参阅[输入法编辑器 (IME) 要求](input-method-editor-requirements.md)。
+此外，Windows Defender 还会从系统中删除恶意的 Ime。 因此，请务必熟悉 IME 编码要求。 有关详细信息，请参阅 [输入法编辑器 (IME) 要求](input-method-editor-requirements.md)。
 
 ## <a name="design-guidelines-for-imes"></a>Ime 设计准则
 
-阅读[输入法编辑器 (ime) 要求](input-method-editor-requirements.md)，详细了解有关输入法的最佳实践和设计准则的详细信息。 通常，所有 IME Ui 都需要：
+阅读 [输入法编辑器 (ime) 要求](input-method-editor-requirements.md) ，详细了解有关输入法的最佳实践和设计准则的详细信息。 通常，所有 IME Ui 都需要：
 
 - 遵循 Windows 运行时应用的 UX 指导原则
 - 避免出现模式体验，并在需要时仅显示 IME 窗口

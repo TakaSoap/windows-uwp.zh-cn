@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, uwp, 辅助功能, 游戏
 ms.localizationpriority: medium
-ms.openlocfilehash: 347f5c6900806ef4658b81b8db15957029d39116
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: f90f976f696d5c49e7f772627bbb7d0e3e3d0908
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77478643"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159431"
 ---
 #  <a name="making-games-accessible"></a>使游戏成为辅助游戏
 
@@ -35,7 +35,7 @@ ms.locfileid: "77478643"
 
 如果你制作了一款精彩的游戏，但这款游戏很复杂，只有少量的用户可以玩，你的销量便会受到限制。 同样，如果你制作的游戏无法供具有肢体、感官或认知障碍的人士玩，那么你就错过了潜在的销量。 例如，考虑到[美国就有 19% 的人口具有某种形式的残障](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html)，[有估计 14% 的成年人面临阅读困难](https://nces.ed.gov/naal/estimates/overview.aspx)，而且[估计有 10% 的男性具有某种形式的色觉障碍](https://www.aao.org/eye-health/diseases/color-blindness-risk)，这可能会对你的应用收益产生很大的影响。 
 
-有关更多商业理由，请参阅[使视频游戏成为辅助游戏](https://docs.microsoft.com/windows/desktop/DxTechArts/accessibility-best-practices)。
+有关更多商业理由，请参阅[使视频游戏成为辅助游戏](/windows/desktop/DxTechArts/accessibility-best-practices)。
 
 ### <a name="better-games"></a>更好的游戏
 
@@ -71,12 +71,12 @@ ms.locfileid: "77478643"
 
 残障定义为“个体的需求与所提供的服务、产品或环境之间的不匹配”。 （[非独占视频](https://www.microsoft.com/design/inclusive/)，Microsoft.com。）这意味着任何人都可能体验残障，它可以是短期或情境式的状况。 想象一下具有这些状况的玩家在玩游戏时可能遇到的挑战，并思考如何针对它们更好地设计你的游戏。 下面是需要考虑的某些残障：
 
-### <a name="vision"></a>视觉
+### <a name="vision"></a>影像
 
 *   医学的、长期的状况，如青光眼、白内障、色盲、近视和糖尿病视网膜病
 *   短期的、情境式的状况，如监视器或屏幕尺寸较小、屏幕分辨率低，或者由监视器或移动设备屏幕上的明亮光源（如太阳）产生的屏幕炫光
         
-### <a name="hearing"></a>听觉
+### <a name="hearing"></a>听力
 
 * 医学的、长期的状况，如由疾病或遗传引发的完全失聪或部分听力损失
 * 短期的、情境式的状况，如背景噪音过大、较低的音频质量，或为避免打扰他人而限制了音量
@@ -86,9 +86,9 @@ ms.locfileid: "77478643"
 * 医学的、长期的状况，如帕金森病、肌萎缩侧索硬化 (ALS)、关节炎和肌肉萎缩症
 * 短期的、情境式的状况，如手受伤、拿着饮料或手臂中怀抱孩子
   
-### <a name="cognitive"></a>认知
+### <a name="cognitive"></a>认知性
 
-* 医学的、长期的状况，如诵读困难、癫痫、注意缺陷多动障碍、痴呆和健忘症
+* 医学的、长期的状况，如诵读困难、癫痫、注意缺陷多动障碍 (ADHD)、痴呆和健忘症
 * 短期的、情境式状况（如饮酒），如缺乏睡眠或者由房屋旁边驶过的紧急车辆发出的鸣笛等所引发的暂时分心
 
 ### <a name="speech"></a>语音
@@ -137,7 +137,7 @@ ms.locfileid: "77478643"
 
 在开发期间，你可以引入一个审核过程来确保你在途中的每个步骤都思考辅助功能。 制作类似如下的清单来帮助你的团队经常评估你正在创建的内容是否具有辅助性。
 
-| 检查表                                         | 辅助功能                                                                                                         |
+| 清单                                         | 辅助功能                                                                                                         |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | 游戏内电影                                | 具有字幕和描述文字，经过光敏性测试                                                                           |
 | 整体插图（2D 和3D 图形）              | 使颜色和选项完全相关，而不是完全依赖于标识，同时也使用形状和模式|
@@ -158,7 +158,7 @@ ms.locfileid: "77478643"
 
 ## <a name="game-accessibility-features"></a>游戏辅助功能
 
-本部分概述可使你的游戏更具辅助性的一些功能。 这些功能派生自[游戏辅助功能指南](http://gameaccessibilityguidelines.com/)网站中的指导原则。 该资源代表了一组工作室、专家和学者的调查结果。
+本部分概述可使你的游戏更具辅助性的一些功能。 这些功能派生自 [游戏辅助功能指南](http://gameaccessibilityguidelines.com/) 网站中的指导原则。 该资源代表了一组工作室、专家和学者的调查结果。
 
 ### <a name="color-blind-friendly-graphics-and-user-interface"></a>色盲友好图形和用户界面
 
@@ -175,7 +175,7 @@ ms.locfileid: "77478643"
     
   + 不要只单独依赖颜色来传达或区分游戏对象。 还应使用形状和图案。
   + 如果只能使用颜色，请在预设中加入可自由选择的颜色，以便有需要的玩家可以进行完全自定义，同时不为不需要的玩家带来额外的麻烦。
-  + 使用色盲模拟器测试设计，以便可以通过色盲眼睛查看设计。 这可以帮助你避免出现常见的对比度问题。 [彩色 Oracle](https://www.colororacle.org)是一种免费的色盲模拟器，可以模拟三种最常见的颜色视觉缺陷类型-deuteranopia、protanopia 和 tritanopia。
+  + 使用色盲模拟器测试设计，以便可以通过色盲眼睛查看设计。 这可以帮助你避免出现常见的对比度问题。 [彩色 Oracle](https://www.colororacle.org) 是一种免费的色盲模拟器，可以模拟三种最常见的颜色视觉缺陷类型-deuteranopia、protanopia 和 tritanopia。
   
 ### <a name="closed-captioning-and-subtitles"></a>隐藏式字幕和字幕
 
@@ -185,8 +185,8 @@ ms.locfileid: "77478643"
 
 *   选择简单易读的字体。
 *   选择足够大的字体大小，或者考虑使用可调整的字体大小选项来增加灵活性。 （理想的字体大小取决于屏幕大小、离屏幕的观看的距离等。）
-*   在背景和字体颜色之间创造高对比度。 为文本使用鲜明轮廓和阴影。 为字幕使用深色的背景覆盖层，并记住提供开关选项。 （有关详细信息，请参阅[关于对比度比率的信息](https://docs.microsoft.com/windows/uwp/accessibility/accessible-text-requirements)。）
-* 在屏幕上显示短句，每行最多 38 个字符，每次最多 2-3 行。 （记得不要在活动发生前就显示文字，从而泄露游戏情节。）
+*   在背景和字体颜色之间创造高对比度。 为文本使用鲜明轮廓和阴影。 为字幕使用深色的背景覆盖层，并记住提供开关选项。 （有关详细信息，请参阅[关于对比度比率的信息](../design/accessibility/accessible-text-requirements.md)。）
+* 在屏幕上显示短句，每行最多 38 个字符，每次最多 2-3 行。 （记得不要在事件发生前就显示文字，从而泄露游戏情节。）
 *   区分制造声音的物体或说话的人。 （示例：“Daniel：嗨！”）
 *   提供打开和关闭隐藏式和字幕的选项。 （其他功能：基于重要性选择显示多少声音信息的功能。）
 
@@ -196,7 +196,7 @@ ms.locfileid: "77478643"
 
 游戏设备未连接麦克风的用户仍可以与发言的其他人进行语音对话。 他们可以在聊天窗口中键入文本并将这些消息转换为语音。 它还让听力不是很好的用户能够阅读来自语音聊天用户的转录的文本消息。
 
-对于参与 ID@Xbox 和托管合作伙伴计划的开发人员，文本到语音转换和语音到文本转换功能作为 Xbox Live 服务的[游戏聊天 2 辅助功能](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility)的一部分提供。 有关详细信息，请参阅[游戏聊天 2 概述](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md)。
+对于参与 ID@Xbox 和托管合作伙伴计划的开发人员，文本到语音转换和语音到文本转换功能作为 Xbox Live 服务的[游戏聊天 2 辅助功能](/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility)的一部分提供。 有关详细信息，请参阅[游戏聊天 2 概述](/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md)。
 
 ### <a name="sound-feedback"></a>声音反馈
 
@@ -252,22 +252,22 @@ ms.locfileid: "77478643"
 下面是一些提供关于游戏辅助功能的其他信息的外部站点。
 
 ### <a name="game-accessibility-guidelines"></a>游戏辅助功能指南
-* [游戏辅助功能指导原则](http://gameaccessibilityguidelines.com/)（在本主题中用作参考）
-* [AbleGamers 基础指导原则](https://accessible.games/accessible-player-experiences/)（在本主题中用作参考）
-* [设计通用可访问（UA）游戏](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
+* [游戏辅助功能准则](http://gameaccessibilityguidelines.com/) (用作本主题中的参考) 
+* [AbleGamers Foundation 准则](https://accessible.games/accessible-player-experiences/) (用作本主题中的参考) 
+* [设计通用辅助 (UA) 游戏](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>自定义输入控制器
 * [特殊效果](https://www.specialeffect.org.uk/)
-* [War 战斗机](https://www.warfighterengaged.org/)
+* [参战的战争斗士](https://www.warfighterengaged.org/)
 
 ### <a name="other-references-used"></a>使用的其他引用
-* [盲人认知，社区权益公司](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
-* [如何进行副标题良好&mdash;Ian Hamilton 上的 Gamasutra 博客文章](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [所有计划的创新](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
-* [Epilepsy 基础](https://www.epilepsy.com/)
+* [Color Blind Awareness，一家社区利益公司](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
+* [如何 &mdash; 在 Gamasutra 上通过 Ian Hamilton 撰写博客文章](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
+* [面向所有人的创新计划](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
+* [癫痫基金会](https://www.epilepsy.com/)
 
 ### <a name="related-links"></a>相关链接
 * [非独占设计](https://www.microsoft.com/design/inclusive/)
 * [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
-* [开发可访问的 UWP 应用](https://docs.microsoft.com/windows/uwp/accessibility/accessibility)
-* [用于辅助功能的工程软件电子书](https://www.microsoft.com/download/details.aspx?id=19262)
+* [开发辅助 UWP 应用](../design/accessibility/accessibility.md)
+* [针对辅助功能设计软件电子书](https://www.microsoft.com/download/details.aspx?id=19262)

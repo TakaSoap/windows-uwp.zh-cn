@@ -5,12 +5,12 @@ ms.date: 12/12/2018
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: c63f59e7bcf282dc829d0fb8fa5971113f7638ad
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 8846fc11dc39a3931d8f3278caf13b7aff464bc2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053587"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160831"
 ---
 # <a name="time-based-animations"></a>基于时间的动画
 
@@ -53,7 +53,7 @@ ms.locfileid: "89053587"
 - Animation Group – 同时开始几个动画。
   - 通常在需要同时对多个属性进行动画处理时使用。
 
-有关详细信息，请参阅 [CompositionAnimationGroup](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionanimationgroup)。
+有关详细信息，请参阅 [CompositionAnimationGroup](/uwp/api/windows.ui.composition.compositionanimationgroup)。
 
 请记住这些概念，我们现在开始介绍构造 KeyFrameAnimation 的常规准则：
 

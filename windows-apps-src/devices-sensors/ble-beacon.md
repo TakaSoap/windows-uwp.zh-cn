@@ -6,24 +6,24 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: 2300871292e08588b0c2124c67a379d403ae53b3
-ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
+ms.openlocfilehash: 319038f8922aac2686dab6836f94ead5018effdf
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469522"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159741"
 ---
 # <a name="bluetooth-le-advertisements"></a>蓝牙低能耗广告
 
 
 **重要的 API**
 
--   [**Windows.Devices.Bluetooth.Advertisement**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
+-   [**Windows.Devices.Bluetooth.Advertisement**](/uwp/api/windows.devices.bluetooth.advertisement)
 
 本文概述了适用于通用 Windows 平台 (UWP) 应用的低功耗 (LE) 蓝牙广告信标。  
 
 > [!Important]
-> 必须在*appxmanifest.xml*中声明 "蓝牙" 功能。
+> 必须在 *appxmanifest.xml*中声明 "蓝牙" 功能。
 >
 > `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
@@ -31,8 +31,8 @@ ms.locfileid: "85469522"
 
 开发人员可以使用 LE 广告 API 执行以下两项主要功能：
 
--   [广告观察程序](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher)：侦听附近信标并根据负载或邻近感应将它们过滤掉。  
--   [广告发布程序](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher)：定义负载使 Windows 能够以开发人员的名义发布广告。  
+-   [广告观察程序](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher)：侦听附近信标并根据负载或邻近感应将它们过滤掉。  
+-   [广告发布程序](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher)：定义负载使 Windows 能够以开发人员的名义发布广告。  
 
 Github 上的[蓝牙广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothAdvertisement)中有完整的示例代码。
 
@@ -48,7 +48,7 @@ Github 上的[蓝牙广告示例](https://github.com/Microsoft/Windows-universal
 
 蓝牙 LE 广告允许你的设备不断以信标方式发出特定负载，称为广告。 如果任何附近支持蓝牙 LE 的设备都设置为侦听此特定广告，则这些设备可以看到此广告。
 
-> **注意**：对于用户隐私，播发的生存期与你的应用程序的生存期相关联。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/index)。
+> **注意**：对于用户隐私，播发的生存期与你的应用程序的生存期相关联。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](../launch-resume/index.md)。
 
 ### <a name="basic-publishing"></a>基本发布
 
@@ -78,7 +78,7 @@ manufacturerData.Data = writer.DetachBuffer();
 publisher.Advertisement.ManufacturerData.Add(manufacturerData);
 ```
 
-现在，已创建并设置了发布者，接下来可以**开始播发**。
+现在，已创建并设置了发布者，接下来可以 **开始播发** 。
 
 ```csharp
 publisher.Start();

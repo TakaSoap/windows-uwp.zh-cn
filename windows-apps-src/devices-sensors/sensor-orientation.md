@@ -6,21 +6,21 @@ ms.date: 07/03/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b61b7bcd18419ec9be719b5f565e5503953be7c3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 8836753778b1dd5dcbc8856b0df5ec1f11d8e753
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493463"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159801"
 ---
 # <a name="sensor-orientation"></a>传感器方向
 
-来自 [**Accelerometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)、[**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)、[**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass)、[**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer) 和 [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) 类的传感器数据由其参考轴定义。 这些轴由设备的参考帧定义，并在用户转动设备时与其一起旋转。 如果你的应用支持自动旋转，会在用户旋转设备时自行重定向以适应设备，则必须先调整关于旋转的传感器数据才能使用它。
+来自 [**Accelerometer**](/uwp/api/Windows.Devices.Sensors.Accelerometer)、[**Gyrometer**](/uwp/api/Windows.Devices.Sensors.Gyrometer)、[**Compass**](/uwp/api/Windows.Devices.Sensors.Compass)、[**Inclinometer**](/uwp/api/Windows.Devices.Sensors.Inclinometer) 和 [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) 类的传感器数据由其参考轴定义。 这些轴由设备的参考帧定义，并在用户转动设备时与其一起旋转。 如果你的应用支持自动旋转，会在用户旋转设备时自行重定向以适应设备，则必须先调整关于旋转的传感器数据才能使用它。
 
 ### <a name="important-apis"></a>重要的 API
 
-- [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
-- [**Windows. 传感器自定义**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
+- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+- [**Windows. 传感器自定义**](/uwp/api/Windows.Devices.Sensors.Custom)
 
 ## <a name="display-orientation-vs-device-orientation"></a>显示方向和设备方向对比
 
@@ -30,22 +30,22 @@ ms.locfileid: "86493463"
 > Z 轴正向外扩展，如下图所示。
 > :::image type="content" source="images/sensor-orientation-zaxis-1-small.png" alt-text="便携式计算机的 Z 轴":::
 
-在下图中，设备和显示方向都处于[横向](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)（显示的传感器轴特定于横向方向）。
+在下图中，设备和显示方向都处于 [横向](/uwp/api/Windows.Graphics.Display.DisplayOrientations) (显示的传感器轴特定于横向方向) 。
 
 
-此图显示了[横向](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)显示和设备方向。
+此图显示了 [横向](/uwp/api/Windows.Graphics.Display.DisplayOrientations)显示和设备方向。
 
 :::image type="content" source="images/sensor-orientation-a-small.jpg" alt-text="采用横向的显示和设备方向":::
 
-下图显示了[LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)中的显示和设备方向。
+下图显示了 [LandscapeFlipped](/uwp/api/Windows.Graphics.Display.DisplayOrientations)中的显示和设备方向。
 
 :::image type="content" source="images/sensor-orientation-b-small.jpg" alt-text="显示和设备方向采用 LandscapeFlipped 的显示和设备方向":::
 
-此最终关系图显示了在设备方向为 " [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)" 时横向显示方向。
+此最终关系图显示了在设备方向为 " [LandscapeFlipped](/uwp/api/Windows.Graphics.Display.DisplayOrientations)" 时横向显示方向。
 
 :::image type="content" source="images/sensor-orientation-c-small.jpg" alt-text="采用横向的显示方向和采用横向翻转的设备方向":::
 
-你可以使用具有 [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation) 属性的 [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) 方法以通过 [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation) 类查询方向值。 然后，你可以通过与 [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) 枚举进行比较来创建逻辑。 请记住，对于你支持的每一个方向，必须支持该方向的参考轴的转换。
+你可以使用具有 [**CurrentOrientation**](/uwp/api/windows.graphics.display.displayinformation.currentorientation) 属性的 [**GetForCurrentView**](/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) 方法以通过 [**DisplayInformation**](/uwp/api/Windows.Graphics.Display.DisplayInformation) 类查询方向值。 然后，你可以通过与 [**DisplayOrientations**](/uwp/api/Windows.Graphics.Display.DisplayOrientations) 枚举进行比较来创建逻辑。 请记住，对于你支持的每一个方向，必须支持该方向的参考轴的转换。
 
 ## <a name="landscape-first-vs-portrait-first-devices"></a>横向优先设备和纵向优先设备对比
 
@@ -164,7 +164,7 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## <a name="display-orientation-and-device-orientation"></a>显示方向和设备方向
 
-必须采用不同的方式更改 [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) 数据。 将这些不同的方向视为逆时针旋转到 z 轴的方向，因此我们需要反向旋转才能返回用户的方向。 对于四元数数据，我们可以使用欧拉公式定义参考四元数的旋转，也可以使用参考旋转矩阵。
+必须采用不同的方式更改 [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) 数据。 将这些不同的方向视为逆时针旋转到 z 轴的方向，因此我们需要反向旋转才能返回用户的方向。 对于四元数数据，我们可以使用欧拉公式定义参考四元数的旋转，也可以使用参考旋转矩阵。
 
 :::image type="content" source="images/eulers-formula.png" alt-text="欧拉公式":::
 
@@ -183,4 +183,4 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## <a name="see-also"></a>另请参阅
 
-[集成动作和方向传感器](https://docs.microsoft.com/windows-hardware/design/whitepapers/integrating-motion-and-orientation-sensors)
+[集成动作和方向传感器](/windows-hardware/design/whitepapers/integrating-motion-and-orientation-sensors)

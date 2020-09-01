@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d6c1b4c477bfe5c4f584227491ef5a94e375fa2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5b0c8f9909f59cb3a0dd5e16a6bb1c46fc069bfb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255663"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160801"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>将可视化层与 XAML 结合使用
 
@@ -31,9 +31,9 @@ XAML 和可视化层互操作功能可用于创建单独使用 XAML API 时无�
 
 **XamlCompositionBrush** 为使用 **CompositionBrush** 绘制某个区域 XAML 画笔提供基类。 这可以用于方便地向 XAML UI 元素应用合成效果（如模糊或毛玻璃）。
 
-有关将画笔与 XAML UI 结合使用的详细信息，请参阅[**画笔**](/windows/uwp/design/style/brushes#xamlcompositionbrushbase)部分。
+有关将画笔与 XAML UI 结合使用的详细信息，请参阅[**画笔**](../design/style/brushes.md#xamlcompositionbrushbase)部分。
 
-有关代码示例，请参阅 [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) 的参考页面。
+有关代码示例，请参阅 [XamlCompositionBrushBase](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) 的参考页面****。
 
 ## <a name="the-xamllight-class"></a>XamlLight 类
 
@@ -41,16 +41,16 @@ XAML 和可视化层互操作功能可用于创建单独使用 XAML API 时无�
 
 有关使用光（包括对 XAML UI 元素进行照明）的详细信息，请参阅[**照明**](xaml-lighting.md)部分。
 
-有关代码示例，请参阅 [**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) 的参考页面。
+有关代码示例，请参阅 [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) 的参考页面。
 
 ## <a name="the-elementcompositionpreview-class"></a>ElementCompositionPreview 类
 
-[**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview)是一个提供 XAML 和可视层互操作功能的静态类。 有关可视化层及其功能的概述，请参阅[可视化层](https://docs.microsoft.com/windows/uwp/graphics/visual-layer)。 **ElementCompositionPreview** 类提供以下方法：
+[**ElementCompositionPreview**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) 是一个静态类，可提供 XAML 和可视化层互操作功能。 有关可视化层及其功能的概述，请参阅[可视化层](./visual-layer.md)。 **ElementCompositionPreview** 类提供以下方法：
 
--   [**GetElementVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)：获取用于呈现此元素的 "讲义" 视觉对象
--   [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual)：将 "Handin" 视觉对象设置为此元素的可视化树的最后一个子级。 此视觉对象将在元素其余部分上进行绘制。 
--   [**GetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)：使用**SetElementChildVisual**检索视觉对象集
--   [**GetScrollViewerManipulationPropertySet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)：获取一个对象，该对象可用于基于**ScrollViewer**中的滚动偏移量创建60fps 动画
+-   [**GetElementVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)：获取用于呈现此元素的“handout”视觉对象
+-   [**SetElementChildVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual)：将“handin”视觉对象设置为此元素的可视化树的最后一个子项。 此视觉对象将在元素其余部分上进行绘制。 
+-   [**GetElementChildVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)：检索使用 **SetElementChildVisual** 设置的视觉对象
+-   [**GetScrollViewerManipulationPropertySet**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)：获取可用于基于 **ScrollViewer** 中的滚动偏移创建 60fps 动画的对象。
 
 ## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>关于 ElementCompositionPreview.GetElementVisual 的备注
 
@@ -96,9 +96,9 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 
 ## <a name="getalphamask-methods"></a>**GetAlphaMask** 方法
 
-[**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)、 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)和[**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)分别实现一个名为**GetAlphaMask**的方法，该方法返回一个**CompositionBrush** ，该方法表示具有元素形状的灰度图像。 此 **CompositionBrush** 可充当复合 **DropShadow** 的输入，因此阴影可以反映元素的形状，而不是矩形。 这将为文本、带有 alpha 的图像和形状启用像素完美、基于轮廓的阴影。 有关此 API 的示例，请参阅下面的*投影*。
+[**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image)、[**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 各自实现一个称为 **GetAlphaMask** 的方法，该方法返回一个 **CompositionBrush**，用于表示带有元素形状的灰度图像。 此 **CompositionBrush** 可充当复合 **DropShadow** 的输入，因此阴影可以反映元素的形状，而不是矩形。 这将为文本、带有 alpha 的图像和形状启用像素完美、基于轮廓的阴影。 有关此 API 的示例，请参阅下面的*投影*。
 
-## <a name="recipes"></a>秘诀
+## <a name="recipes"></a>配方
 
 ### <a name="reposition-animation"></a>重新定位动画
 
@@ -199,7 +199,7 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-下面两个列表显示了采用相同 XAML 结构的旧版 C&#35; 代码的 [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index) 和 [C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) 等效内容。
+下面两个列表显示了采用相同 XAML 结构的旧版 C&#35; 代码的 [C++/WinRT](../cpp-and-winrt-apis/index.md) 和 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 等效内容。
 
 ```cppwinrt
 #include <winrt/Windows.UI.Composition.h>
@@ -291,7 +291,7 @@ void MainPage::InitializeDropShadow(Windows::UI::Xaml::UIElement^ shadowHost, Wi
 2.  使用 Win2D 和 **CompositionEffectSourceParameter** 创建模糊效果树
 3.  基于效果树创建 **CompositionEffectBrush**
 4.  将 **CompositionEffectBrush** 的输入设置为 **CompositionBackdropBrush**，从而允许将效果应用到 **SpriteVisual** 背后的内容
-5.  将 **CompositionEffectBrush** 设置为新 **SpriteVisual** 的内容，并将该 **SpriteVisual** 设置为主机元素的子元素。 可以选择使用 XamlCompositionBrushBase。
+5.  将 **CompositionEffectBrush** 设置为新 **SpriteVisual**的内容，并将 **SpriteVisual** 设置为 host 元素的子元素。 可以选择使用 XamlCompositionBrushBase。
 6.  使用 **ExpressionAnimation** 将 **SpriteVisual** 的大小绑定到主机的大小
 
 ```xaml
@@ -362,8 +362,8 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 ## <a name="additional-resources"></a>其他资源
 
-- [可视化层概述](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
-- [**ElementCompositionPreview**类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
+- [可视化层概述](./visual-layer.md)
+- [**ElementCompositionPreview** 类](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
 - [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples) 中的高级 UI 和复合示例
 - [BasicXamlInterop 示例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
 - [ParallaxingListItems 示例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)

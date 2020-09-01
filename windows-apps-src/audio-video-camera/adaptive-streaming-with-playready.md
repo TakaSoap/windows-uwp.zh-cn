@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e0f6ef206dc836e48bfc904767ff8c8c7bdca9db
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 3bef1e1061948c4327426485621b9f611fc51f21
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340042"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161241"
 ---
 # <a name="adaptive-streaming-with-playready"></a>使用 PlayReady 的自适应流式处理
 
@@ -26,7 +26,7 @@ HLS（Apple 的 HTTP 实时流）不受 PlayReady 支持。
 
 本文仅介绍特定于 PlayReady 的自适应流式处理方面的内容。 有关一般实现自适应流式处理的信息，请参阅[自适应流式处理](adaptive-streaming.md)。
 
-本文使用的代码来自 GitHub 上 Microsoft 的 **Windows-universal-samples** 存储库中的[自适应流式处理示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 方案 4 介绍自适应流式处理与 PlayReady 的结合使用。 你可以下载 ZIP 文件形式的存储库，方法是导航到存储库的根级别并选择“下载 ZIP”按钮。
+本文使用的代码来自 GitHub 上 Microsoft 的 **Windows-universal-samples** 存储库中的[自适应流式处理示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 方案 4 介绍自适应流式处理与 PlayReady 的结合使用。 你可以下载 ZIP 文件形式的存储库，方法是导航到存储库的根级别并选择“下载 ZIP”**** 按钮。
 
 你将需要以下 **using** 语句：
 
@@ -63,9 +63,9 @@ private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
 
 ## <a name="setting-up-the-mediaprotectionmanager"></a>设置 MediaProtectionManager
 
-若要向你的 UWP 应用添加 PlayReady 内容保护，需要设置 [MediaProtectionManager](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.MediaProtectionManager) 对象。 在初始化 [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource) 对象时执行此操作。
+若要向你的 UWP 应用添加 PlayReady 内容保护，需要设置 [MediaProtectionManager](/uwp/api/Windows.Media.Protection.MediaProtectionManager) 对象。 在初始化 [**AdaptiveMediaSource**](/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource) 对象时执行此操作。
 
-以下代码可设置 [MediaProtectionManager](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.MediaProtectionManager)：
+以下代码可设置 [MediaProtectionManager](/uwp/api/Windows.Media.Protection.MediaProtectionManager)：
 
 ```csharp
 private void SetUpProtectionManager(ref MediaElement mediaElement)
@@ -100,7 +100,7 @@ private void SetUpProtectionManager(ref MediaElement mediaElement)
 
 只能将此代码复制到你的应用，因为它对设置内容保护是强制性的。
 
-在加载二进制数据失败时，引发 [ComponentLoadFailed](https://docs.microsoft.com/uwp/api/windows.media.protection.mediaprotectionmanager.componentloadfailed) 事件。 我们需要添加事件处理程序来处理这一暗示加载未完成的情况：
+在加载二进制数据失败时，引发 [ComponentLoadFailed](/uwp/api/windows.media.protection.mediaprotectionmanager.componentloadfailed) 事件。 我们需要添加事件处理程序来处理这一暗示加载未完成的情况：
 
 ```csharp
 private void ProtectionManager_ComponentLoadFailed(
@@ -111,7 +111,7 @@ private void ProtectionManager_ComponentLoadFailed(
 }
 ```
 
-同样，我们需要为 [ServiceRequested](https://docs.microsoft.com/uwp/api/windows.media.protection.mediaprotectionmanager.servicerequested) 事件添加事件处理程序，该事件将在请求服务时引发。 此代码会检查请求的类型，然后相应地做出响应：
+同样，我们需要为 [ServiceRequested](/uwp/api/windows.media.protection.mediaprotectionmanager.servicerequested) 事件添加事件处理程序，该事件将在请求服务时引发。 此代码会检查请求的类型，然后相应地做出响应：
 
 ```csharp
 private async void ProtectionManager_ServiceRequested(
@@ -192,7 +192,7 @@ async void ProActiveIndivRequest()
 
 ## <a name="license-acquisition-service-requests"></a>许可证获取服务请求
 
-如果请求改为 [PlayReadyLicenseAcquisitionServiceRequest](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyLicenseAcquisitionServiceRequest)，我们将调用以下函数以进行请求并获取 PlayReady 许可证。 我们告知我们传入的 **MediaProtectionServiceCompletion** 对象请求是否已成功，并完成以下请求：
+如果请求改为 [PlayReadyLicenseAcquisitionServiceRequest](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyLicenseAcquisitionServiceRequest)，我们将调用以下函数以进行请求并获取 PlayReady 许可证。 我们告知我们传入的 **MediaProtectionServiceCompletion** 对象请求是否已成功，并完成以下请求：
 
 ```csharp
 async void LicenseAcquisitionRequest(
@@ -274,7 +274,7 @@ async void LicenseAcquisitionRequest(
 
 ## <a name="initializing-the-adaptivemediasource"></a>初始化 AdaptiveMediaSource
 
-最后，你将需要一个函数来初始化从给定 [Uri](https://docs.microsoft.com/dotnet/api/system.uri) 和 [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 创建的 [AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)。 **Uri** 应为指向媒体文件（HLS 或 DASH）的链接；**MediaElement** 应在 XAML 中进行定义。
+最后，你将需要一个函数来初始化从给定 [Uri](/dotnet/api/system.uri) 和 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 创建的 [AdaptiveMediaSource](/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)。 **Uri** 应为指向媒体文件（HLS 或 DASH）的链接；**MediaElement** 应在 XAML 中进行定义。
 
 ```csharp
 async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
@@ -295,9 +295,5 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 你可以在处理自适应流式处理开始的任何事件中调用此函数；例如在按钮单击事件中。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 - [PlayReady DRM](playready-client-sdk.md)
-
-
-
-

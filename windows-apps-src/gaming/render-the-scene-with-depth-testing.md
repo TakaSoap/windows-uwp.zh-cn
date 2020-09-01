@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现, 场景, 深度测试, direct3d, 阴影
 ms.localizationpriority: medium
-ms.openlocfilehash: d1c2c4e5d45b28c318085f4ce257b587f23f1426
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fd38378e0a1f4cbdf4f9ded246b4b94ed3a705eb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368098"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159241"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>通过深度测试呈现场景
 
 
 
 
-通过向顶点（或几何图形）着色器和像素着色器中添加深度测试来创建阴影效果。 第 3 部分[演练：实现在 Direct3D 11 中使用深度缓冲区的卷影卷](implementing-depth-buffers-for-shadow-mapping.md)。
+通过向顶点（或几何图形）着色器和像素着色器中添加深度测试来创建阴影效果。 [操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷](implementing-depth-buffers-for-shadow-mapping.md)的第 3 部分。
 
 ## <a name="include-transformation-for-light-frustum"></a>包括用于光锥的转换
 
@@ -67,7 +67,7 @@ PixelShaderInput main(VertexShaderInput input)
 ## <a name="test-whether-the-position-is-in-the-light-frustum"></a>测试位置是否位于光锥之内
 
 
-首先，通过将 X 和 Y 坐标规范化来检查像素是否位于视锥之内。 如果两个类型都在范围内\[0，1\] ，那么很可能要在卷影的像素。 否则，你可以跳过深度测试。 通过调用 [Saturate](https://docs.microsoft.com/windows/desktop/direct3dhlsl/saturate) 并将结果与原始值进行比较来快速对着色器进行此项测试。
+首先，通过将 X 和 Y 坐标规范化来检查像素是否位于视锥之内。 如果两者都在范围 \[ 0、1范围内，则 \] 像素可能位于阴影中。 否则，你可以跳过深度测试。 通过调用 [Saturate](/windows/desktop/direct3dhlsl/saturate) 并将结果与原始值进行比较来快速对着色器进行此项测试。
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.
@@ -89,7 +89,7 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 ## <a name="depth-test-against-the-shadow-map"></a>针对阴影映射进行深度测试
 
 
-使用示例比较函数（[SampleCmp](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmp) 或 [SampleCmpLevelZero](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero)）来针对深度映射测试像素在光线空间中的深度。 计算标准化光线空间深度值（即 `z / w`），并将该值传递给比较函数。 由于我们使用 LessOrEqual 示例比较测试，则比较测试通过时固有函数会返回零；这表示像素位于阴影中。
+使用示例比较函数（[SampleCmp](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmp) 或 [SampleCmpLevelZero](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero)）来针对深度映射测试像素在光线空间中的深度。 计算标准化光线空间深度值（即 `z / w`），并将该值传递给比较函数。 由于我们使用 LessOrEqual 示例比较测试，则比较测试通过时固有函数会返回零；这表示像素位于阴影中。
 
 ```cpp
 // Use an offset value to mitigate shadow artifacts due to imprecise 
@@ -161,7 +161,3 @@ return float4(input.color * ambient, 1.f);
  
 
  
-
-
-
-

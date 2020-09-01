@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d20f2d372354cf7bbfa596318f165c424f08c8ee
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d484571f69025ceb1ce8c6eeb827c46cacfa15ed
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66358861"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160971"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>用于视频捕获的手动相机控件
 
@@ -21,7 +21,7 @@ ms.locfileid: "66358861"
 
 本文中讨论的视频设备控件全部使用相同模式添加到你的应用中。 首先，检查运行你的应用的当前设备是否支持该控件。 如果控件受支持，则为控件设置所需模式。 通常，如果特定控件在当前设备上不受支持，你应禁用或隐藏允许用户启用该功能的 UI 元素。
 
-本文中讨论的所有设备控件 API 都是 [**Windows.Media.Devices**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices) 命名空间的成员。
+本文中讨论的所有设备控件 API 都是 [**Windows.Media.Devices**](/uwp/api/Windows.Media.Devices) 命名空间的成员。
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
@@ -30,38 +30,38 @@ ms.locfileid: "66358861"
 
 ## <a name="hdr-video"></a>HDR 视频
 
-高动态范围 (HDR) 视频功能将 HDR 处理应用到捕获设备的视频流。 通过选择 [**HdrVideoControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.hdrvideocontrol.supported) 属性来确定 HDR 视频是否受支持。
+高动态范围 (HDR) 视频功能将 HDR 处理应用到捕获设备的视频流。 通过选择 [**HdrVideoControl.Supported**](/uwp/api/windows.media.devices.hdrvideocontrol.supported) 属性来确定 HDR 视频是否受支持。
 
-HDR 视频控件支持以下三种模式：开、关和自动。这意味着设备以动态方式确定 HDR 视频处理是否会改进媒体捕获；如果会改进，则启用 HDR 视频。 若要确定特定模式在当前设备上是否受支持，请检查以查看 [**HdrVideoControl.SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.hdrvideocontrol.supportedmodes) 集合是否包含所需模式。
+HDR 视频控件支持以下三种模式：开、关和自动。这意味着设备以动态方式确定 HDR 视频处理是否会改进媒体捕获；如果会改进，则启用 HDR 视频。 若要确定特定模式在当前设备上是否受支持，请检查以查看 [**HdrVideoControl.SupportedModes**](/uwp/api/windows.media.devices.hdrvideocontrol.supportedmodes) 集合是否包含所需模式。
 
-通过将 [**HdrVideoControl.Mode**](https://docs.microsoft.com/uwp/api/windows.media.devices.hdrvideocontrol.mode) 设置为所需模式，启用或禁用 HDR 视频处理。
+通过将 [**HdrVideoControl.Mode**](/uwp/api/windows.media.devices.hdrvideocontrol.mode) 设置为所需模式，启用或禁用 HDR 视频处理。
 
 [!code-cs[SetHdrVideoMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetHdrVideoMode)]
 
 ## <a name="exposure-priority"></a>曝光优先级
 
-启用 [**ExposurePriorityVideoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ExposurePriorityVideoControl) 时，将评估来自捕获设备的视频帧以确定视频是否正在捕获光线较暗的场景。 如果是，该控件将降低已捕获视频的帧速率，以便增加每个帧的曝光时间并改进已捕获视频的视觉质量。
+启用 [**ExposurePriorityVideoControl**](/uwp/api/Windows.Media.Devices.ExposurePriorityVideoControl) 时，将评估来自捕获设备的视频帧以确定视频是否正在捕获光线较暗的场景。 如果是，该控件将降低已捕获视频的帧速率，以便增加每个帧的曝光时间并改进已捕获视频的视觉质量。
 
-通过检查 [**ExposurePriorityVideoControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurepriorityvideocontrol.supported) 属性，确定曝光优先级控件在当前设备上是否受支持。
+通过检查 [**ExposurePriorityVideoControl.Supported**](/uwp/api/windows.media.devices.exposurepriorityvideocontrol.supported) 属性，确定曝光优先级控件在当前设备上是否受支持。
 
-通过将 [**ExposurePriorityVideoControl.Enabled**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurepriorityvideocontrol.enabled) 设置为所需模式，启用或禁用曝光优先级控件。
+通过将 [**ExposurePriorityVideoControl.Enabled**](/uwp/api/windows.media.devices.exposurepriorityvideocontrol.enabled) 设置为所需模式，启用或禁用曝光优先级控件。
 
 [!code-cs[EnableExposurePriority](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEnableExposurePriority)]
 
 ## <a name="temporal-denoising"></a>临时降噪
 自 Windows 10 版本 1803 起，可在支持临时降噪的设备上为视频启用此功能。 此功能实时融合来自多个相邻帧的图像数据，生成视觉噪音较少的视频帧。
 
-应用可通过 [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) 确定当前设备是否支持临时降噪，如果支持，则还确定设备支持哪种降噪模式。 可用 denoising 模式[**关闭**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)， [**上**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)，并[**自动**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode).设备可能不支持所有模式，但每个设备必须都支持这两**自动**或**上**并**关闭**。
+应用可通过 [**VideoTemporalDenoisingControl**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) 确定当前设备是否支持临时降噪，如果支持，则还确定设备支持哪种降噪模式。 三种可用的降噪模式为：[**关**](/uwp/api/windows.media.devices.videotemporaldenoisingmode)、[**开**](/uwp/api/windows.media.devices.videotemporaldenoisingmode)和[**自动**](/uwp/api/windows.media.devices.videotemporaldenoisingmode)。设备可能不支持所有模式，但每台设备必须支持**自动**或支持**开**和**关**。
 
 以下示例使用简单的 UI 来提供单选按钮，让用户切换降噪模式。
 
 [!code-xml[SnippetDenoiseXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetDenoiseXAML)]
 
-以下方法检查了 [**VideoTemporalDenoisingControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported) 属性以确定当前设备是否支持临时降噪。 如果支持，则检查确保设备支持**关**和**自动**或**开**模式，我们将在此情况下将单选按钮设置为可见。 接下来，如果设备支持这些模式，则**自动**和**开**按钮为可见状态。
+以下方法检查了 [**VideoTemporalDenoisingControl.Supported**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported) 属性以确定当前设备是否支持临时降噪。 如果支持，则检查确保设备支持**关**和**自动**或**开**模式，我们将在此情况下将单选按钮设置为可见。 接下来，如果设备支持这些模式，则**自动**和**开**按钮为可见状态。
 
 [!code-cs[SnippetUpdateDenoiseCapabilities](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetUpdateDenoiseCapabilities)]
 
-在单选按钮的 **Checked** 事件处理程序中，已选中按钮名称，并通过设置 [**VideoTemporalDenoisingControl.Mode**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.mode) 属性设置了相应模式。
+在单选按钮的 **Checked** 事件处理程序中，已选中按钮名称，并通过设置 [**VideoTemporalDenoisingControl.Mode**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.mode) 属性设置了相应模式。
 
 [!code-cs[SnippetDenoiseButtonChecked](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseButtonChecked)]
 
@@ -87,11 +87,7 @@ HDR 视频控件支持以下三种模式：开、关和自动。这意味着设�
 ## <a name="related-topics"></a>相关主题
 
 * [摄像头](camera.md)
-* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [处理媒体帧与 MediaFrameReader](process-media-frames-with-mediaframereader.md)
-*  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
+* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [使用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)
+*  [**VideoTemporalDenoisingControl**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
-
-
-
-

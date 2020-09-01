@@ -5,12 +5,12 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: Windows 10, uwp, 蓝牙, 蓝牙 LE, 低耗电, gatt, gap, 中央, 外围, 客户端, 服务器, 观察程序, 发布者
 ms.localizationpriority: medium
-ms.openlocfilehash: 56fcb84f5dddc0c49e48c49787a4278a1f10446f
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 566e8e26e1a219a07dd5e7b539d96878a79f9163
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043389"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159761"
 ---
 # <a name="bluetooth-low-energy"></a>低耗电蓝牙
 低耗电蓝牙 (LE) 是一种规范，定义高能效设备之间的发现和通信协议。 设备的发现通过通用访问配置文件 (GAP) 协议进行。 发现之后，设备到设备之间的通信通过通用属性 (GATT) 协议进行。 本主题提供 UWP 应用中的蓝牙 LE 的快速概述。 若要查看有关蓝牙 LE 的更多详细信息，请参阅[蓝牙核心规范](https://www.bluetooth.com/specifications/bluetooth-core-specification/)版本 4.0，其中介绍了蓝牙 LE。 
@@ -20,8 +20,8 @@ ms.locfileid: "89043389"
 *GATT 和 GAP 角色是在 Windows 10 版本 1703 中引入的*
 
 可以使用以下命名空间在 UWP 应用中实现 GATT 和 GAP 协议。
-- [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
+- [Windows.Devices.Bluetooth.GenericAttributeProfile](/uwp/api/windows.devices.bluetooth.genericattributeprofile)
+- [Windows.Devices.Bluetooth.Advertisement](/uwp/api/windows.devices.bluetooth.advertisement)
 
 ## <a name="central-and-peripheral"></a>中央和外围
 发现的两个主要角色称为中央和外围。 一般情况下，Windows 在中央模式下运行，并连接到不同的外围设备。 
@@ -37,9 +37,9 @@ ms.locfileid: "89043389"
 建立连接之后，包含数据的设备（通常是小型 IoT 传感器或可穿戴设备）称为服务器。 使用该数据执行功能的设备称为客户端。 例如，Windows 电脑（客户端）从心率监视器（服务器）读取数据以跟踪用户是否以最佳方式进行锻炼。 有关详细信息，请参阅 [GATT 客户端](gatt-client.md)和 [GATT 服务器](gatt-server.md)主题。
 
 ## <a name="watchers-and-publishers-beacons"></a>观察程序和发布者（信标）
-除了中央和外围角色之外，还有观察者和广播者角色。 广播者通常称为信标，它们不通过 GATT 进行通信，因为它们使用播发数据包中提供的有限空间进行通信。 同样，观察者不必建立连接来接收数据，它会扫描附近的播发。 若要配置 Windows 以观察附近的播发，请使用 [BluetoothLEAdvertisementWatcher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher) 类。 若要广播信标有效负载，请使用 [BluetoothLEAdvertisementPublisher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher) 类。 有关详细信息，请参阅[播发](ble-beacon.md)主题。
+除了中央和外围角色之外，还有观察者和广播者角色。 广播者通常称为信标，它们不通过 GATT 进行通信，因为它们使用播发数据包中提供的有限空间进行通信。 同样，观察者不必建立连接来接收数据，它会扫描附近的播发。 若要配置 Windows 以观察附近的播发，请使用 [BluetoothLEAdvertisementWatcher](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher) 类。 若要广播信标有效负载，请使用 [BluetoothLEAdvertisementPublisher](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher) 类。 有关详细信息，请参阅[播发](ble-beacon.md)主题。
 
 ## <a name="see-also"></a>另请参阅
-- [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
+- [Windows.Devices.Bluetooth.GenericAttributeProfile](/uwp/api/windows.devices.bluetooth.genericattributeprofile)
+- [Windows.Devices.Bluetooth.Advertisement](/uwp/api/windows.devices.bluetooth.advertisement)
 - [蓝牙核心规范](https://www.bluetooth.com/specifications/bluetooth-core-specification)
