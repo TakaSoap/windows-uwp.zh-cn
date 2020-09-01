@@ -1,28 +1,28 @@
 ---
 Description: 应用提交过程的 Microsoft Store 一览部分是你提供文本和图像的地方，当客户在 Microsoft Store 中查看你的应用一览时将看到这些内容。
-title: 创建 Store 一览
+title: 创建应用应用商店一览
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.date: 03/13/2019
 ms.topic: article
 keywords: Windows 10, uwp, 一览, 描述, Microsoft Store 页面, 发行说明, 标题
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e8ba40129197f77b2bbbd3950a6bcf214bae787
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 6124ea17d8c1c348e9093882df901c829f2cd90e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493012"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164191"
 ---
-# <a name="create-app-store-listings"></a>创建 Store 一览
+# <a name="create-app-store-listings"></a>创建应用应用商店一览
 
 [应用提交过程](app-submissions.md)的 **Microsoft Store 一览**部分是你提供文本和[图像](app-screenshots-and-images.md)的地方，当客户在 Microsoft Store 中查看你的应用一览时将看到这些内容。
 
 虽然 **Microsoft Store 一览**中的许多字段可选，但我们建议提供多张图像以及尽可能详细的信息，以便你的应用一览能脱颖而出。填写文本描述并提供至少一张[屏幕截图](app-screenshots-and-images.md#screenshots)是完成 **Microsoft Store 一览**步骤的最低要求。
 
 > [!TIP]
-> 如果希望在 .csv 文件中脱机输入列表信息，则可以选择性地[导入和导出商店列表](import-and-export-store-listings.md)，而不是在合作伙伴中心提供信息并直接上传文件。 如果你有多种语言的一览，使用导入和导出选项可能尤其方便，因为这样你可以一次执行多项更新。
+> 如果希望在 .csv 文件中脱机输入列表信息，则可以选择性地 [导入和导出商店列表](import-and-export-store-listings.md) ，而不是在合作伙伴中心提供信息并直接上传文件。 如果你有多种语言的一览，使用导入和导出选项可能尤其方便，因为这样你可以一次执行多项更新。
 
-如果你以前发布的应用支持 Windows 2.x 和/或 Windows Phone 8mb 或更早版本，则可以[创建特定于平台的商店列表](create-platform-specific-store-listings.md)以向这些客户显示。
+如果你以前发布的应用支持 Windows 2.x 和/或 Windows Phone 8mb 或更早版本，则可以 [创建特定于平台的商店列表](create-platform-specific-store-listings.md) 以向这些客户显示。
 
 ## <a name="store-listing-languages"></a>Store 一览语言
 
@@ -39,22 +39,22 @@ ms.locfileid: "86493012"
 
 ## <a name="add-and-edit-store-listing-info"></a>添加和编辑商店列表信息
 
-若要编辑商店列表，请从 "提交概述" 页中选择语言名称。 必须单独编辑每种语言，除非选择导出商店列表并脱机工作，然后一次导入所有列表数据。 有关其工作原理的详细信息，请参阅[导入和导出存储列表](import-and-export-store-listings.md)。
+若要编辑商店列表，请从 "提交概述" 页中选择语言名称。 必须单独编辑每种语言，除非选择导出商店列表并脱机工作，然后一次导入所有列表数据。 有关其工作原理的详细信息，请参阅 [导入和导出存储列表](import-and-export-store-listings.md)。
 
 可用字段如下所述。
 
 ## <a name="product-name"></a>产品名称
 
-您可以使用此下拉框指定要在商店列表中使用的名称（如果为应用保留了多个名称）。
+通过此下拉框，您可以指定在商店列表中应使用的名称， (如果您为应用) 保留了多个名称。
 
-如果上传的包的语言与正在处理的存储区列表相同，则将选择这些包中使用的名称。 如果需要在应用程序已发布后对其进行[重命名](manage-app-names.md#rename-an-app-that-has-already-been-published)，则在上载使用新名称的包之后，可以在此处选择一个不同的保留名称。
+如果上传的包的语言与正在处理的存储区列表相同，则将选择这些包中使用的名称。 如果需要在应用程序已发布后对其进行 [重命名](manage-app-names.md#rename-an-app-that-has-already-been-published) ，则在上载使用新名称的包之后，可以在此处选择一个不同的保留名称。
 
 如果尚未为正在处理的语言上传包，并且已保留多个名称，则需要选择一个保留的应用名称，因为该语言中没有要从中提取名称的关联包。
 
 > [!NOTE]
-> 你选择的**产品名称**仅适用于你正在使用的语言的商店列表。 它不会影响客户安装应用时显示的名称;该名称来自安装的包的清单。 为避免混淆，建议每个语言的包和应用商店列表使用相同的名称。
+> 你选择的 **产品名称** 仅适用于你正在使用的语言的商店列表。 它不会影响客户安装应用时显示的名称;该名称来自安装的包的清单。 为避免混淆，建议) 和存储列表中的每个语言包都使用相同的名称 (。
 
-## <a name="description"></a>说明
+## <a name="description"></a>描述
 
 你可以在提要字段中告知客户你的应用的功能。 此字段是必需的，并且将接受最多 10,000 个纯文本字符。
 
@@ -92,7 +92,7 @@ ms.locfileid: "86493012"
 
 你可以为产品提交其他资产，包括视频尾端和促销图像。 这是可选的，但建议你尽可能多地上传此类资产。 这些图像有助于客户更好地了解产品，并且可让列表更具吸引力。
 
-有关详细信息，请参阅[尾端和其他资产](app-screenshots-and-images.md#trailers-and-additional-assets)。
+有关详细信息，请参阅 [尾端和其他资产](app-screenshots-and-images.md#trailers-and-additional-assets)。
 
 <a name="supplemental-information"></a>
 
@@ -124,7 +124,7 @@ ms.locfileid: "86493012"
 
 对于游戏，简短说明还可能出现在 Xbox One 上游戏中心的“信息”部分。
 
-为获得最佳结果，请将简短说明保留为270个字符。 该字段的限制为1000个字符，但在某些视图中，将仅显示前270个字符（使用可查看简短说明的其余部分的链接）。
+为获得最佳结果，请将简短说明保留为270个字符。 该字段的限制为1000个字符，但在某些视图中，将仅显示前270个字符 (带有可用于查看简略说明) 的其余部分的链接。
 
 ### <a name="additional-system-requirements"></a>其他系统要求
 
@@ -153,7 +153,7 @@ ms.locfileid: "86493012"
 
 ### <a name="additional-license-terms"></a>附加许可条款
 
-如果你希望按照**标准应用程序许可条款**（可以从[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)进行链接）中的条款向客户授权你的应用，请将此字段留空。
+如果你希望按照**标准应用程序许可条款**（可以从[应用开发人员协议](/legal/windows/agreements/app-developer-agreement)进行链接）中的条款向客户授权你的应用，请将此字段留空。
 
 如果你的许可条款不同于**标准应用程序许可条款**，请在此处输入你的条款。
 

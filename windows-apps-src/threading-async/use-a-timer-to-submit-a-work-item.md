@@ -6,28 +6,28 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 计时器, 线程
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c34f50d7b5abec28b11fc67a7e0515f07206060
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: a93b023120957f6335c14a4d40013f51e4e7be2a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970125"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164111"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>使用计时器提交工作项
 
 
 <b>重要的 API</b>
 
--   [**Windows.UI.Core 命名空间**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
--   [**Windows.System.Threading 命名空间**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
+-   [**Windows.UI.Core 命名空间**](/uwp/api/Windows.UI.Core)
+-   [**Windows.System.Threading 命名空间**](/uwp/api/Windows.System.Threading)
 
 了解如何创建在经过计时器时间后运行的工作项。
 
 ## <a name="create-a-single-shot-timer"></a>创建单次计时器
 
-使用 [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) 方法为工作项创建计时器。 提供用于完成工作的 lambda，并使用 *delay* 参数指定线程池在可将工作项分配给可用线程之前等待的时间。 使用 [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan) 结构指定延迟。
+使用 [**CreateTimer**](/uwp/api/windows.system.threading.threadpooltimer.createtimer) 方法为工作项创建计时器。 提供用于完成工作的 lambda，并使用 *delay* 参数指定线程池在可将工作项分配给可用线程之前等待的时间。 使用 [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan) 结构指定延迟。
 
-> **注意**   可以使用[**CoreDispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)访问 UI，并显示工作项的进度。
+> **注意**   可以使用[**CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher.runasync)访问 UI，并显示工作项的进度。
 
 以下示例创建三分钟后运行的工作项：
 
@@ -87,7 +87,7 @@ ms.locfileid: "88970125"
 
 ## <a name="provide-a-completion-handler"></a>提供完成处理程序
 
-如果需要，使用 [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler) 处理工作项的取消和完成。 使用 [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) 重载以提供其他 lambda。 它在计时器被取消或工作项完成时运行。
+如果需要，使用 [**TimerDestroyedHandler**](/uwp/api/windows.system.threading.timerdestroyedhandler) 处理工作项的取消和完成。 使用 [**CreateTimer**](/uwp/api/windows.system.threading.threadpooltimer.createtimer) 重载以提供其他 lambda。 它在计时器被取消或工作项完成时运行。
 
 以下示例创建提交工作项的计时器，并在工作项完成或计时器被取消时调用方法：
 
@@ -207,7 +207,7 @@ ms.locfileid: "88970125"
 
 ## <a name="cancel-the-timer"></a>取消计时器
 
-如果计时器仍在倒计时，但是已不再需要工作项，调用 [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel)。 计时器会取消，而工作项不会提交到线程池。
+如果计时器仍在倒计时，但是已不再需要工作项，调用 [**Cancel**](/uwp/api/windows.system.threading.threadpooltimer.cancel)。 计时器会取消，而工作项不会提交到线程池。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -217,9 +217,9 @@ ms.locfileid: "88970125"
 > DelayTimer->Cancel();
 > ```
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
-通用 Windows 平台 (UWP) 应用无法使用 **Thread.Sleep**，因为它会阻止 UI 线程。 你可以改为使用 [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) 创建工作项，这将延迟工作项完成的任务，但不会阻止 UI 线程。
+通用 Windows 平台 (UWP) 应用无法使用 **Thread.Sleep**，因为它会阻止 UI 线程。 你可以改为使用 [**ThreadPoolTimer**](/uwp/api/Windows.System.Threading.ThreadPoolTimer) 创建工作项，这将延迟工作项完成的任务，但不会阻止 UI 线程。
 
 如需演示工作项、计时器工作项和定期工作项的完整代码示例，请参阅[线程池示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample)。 代码示例最初是为 Windows 8.1 编写，但该代码可在 Windows 10 中重复使用。
 

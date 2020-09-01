@@ -1,17 +1,17 @@
 ---
 title: Device Portal Fiddler API 参考
-description: 了解如何以编程方式启用/禁用 Fiddler 跟踪。
+description: 了解如何使用 Xbox 设备门户 REST API 在 devkit 上启用和禁用 Fiddler 网络跟踪。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cbdae1084f96901e90f8237d71bd59bf2d4c592
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: f431adae41021432dfcfca6b4e79df5237fcb283
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59240015"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163991"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 设置 API 参考   
 可以使用此 REST API 在开发工具包上启用和禁用 Fiddler 网络跟踪。
@@ -47,9 +47,9 @@ GET | /ext/fiddler
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 描述
+HTTP 状态代码      | 说明
 :------     | :-----
-200 | 成功
+200 | Success
 4XX | 错误代码
 5XX | 错误代码
 
@@ -61,7 +61,7 @@ HTTP 状态代码      | 描述
 
 方法      | 请求 URI
 :------     | :-----
-发布 | /ext/fiddler
+POST | /ext/fiddler
 
 **URI 参数**
 
@@ -90,7 +90,7 @@ HTTP 状态代码      | 描述
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 描述
+HTTP 状态代码      | 说明
 :------     | :-----
 204 | 已接受启用 Fiddler 的请求。 将在设备下次重启时启用 Fiddler。
 4XX | 错误代码
@@ -126,7 +126,7 @@ DELETE | /ext/fiddler
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 描述
+HTTP 状态代码      | 说明
 :------     | :-----
 204 | 禁用 Fiddler 跟踪的请求已成功。 将在设备下次重启时禁用跟踪。
 4XX | 错误代码
@@ -137,6 +137,6 @@ HTTP 状态代码      | 描述
 
 * Windows Xbox
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 - [为 Xbox 上的 UWP 配置 Fiddler](uwp-fiddler.md)
 

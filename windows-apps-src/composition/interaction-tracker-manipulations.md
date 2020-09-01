@@ -5,23 +5,23 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: 89b393120657b7c02ccfe10ce6aca16be80118aa
-ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
+ms.openlocfilehash: 8a4b682f009a4ac1350ceee3b8c23fe5e772150d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65852263"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163591"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a>InteractionTracker 的自定义操作体验
 
 在本文中，我们将介绍如何使用 InteractionTracker 来创建自定义操作体验。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 我们在此假设你熟悉这些文章中所述的概念：
 
-- [输入驱动动画](input-driven-animations.md)
-- [关系基于动画](relation-animations.md)
+- [输入驱动的动画](input-driven-animations.md)
+- [基于关系的动画](relation-animations.md)
 
 ## <a name="why-create-custom-manipulation-experiences"></a>为什么要创建自定义操作体验？
 
@@ -48,8 +48,8 @@ ms.locfileid: "65852263"
 
 创建自定义操作体验时，要与两个主要组件进行交互。 我们先讨论第一个：
 
-- [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker) – 维护其属性由活动的用户输入或直接更新和动画驱动的状态机的核心对象。 然后，它应绑定到一个 CompositionAnimation 以创建自定义操作运动。
-- [VisualInteractionSource](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.visualinteractionsource) – 一个补充对象，定义何时以及在什么情况下将输入发送给 InteractionTracker。 它定义用于命中测试的 CompositionVisual 以及其他输入配置属性。
+- [InteractionTracker](/uwp/api/windows.ui.composition.interactions.interactiontracker) – 维护其属性由活动的用户输入或直接更新和动画驱动的状态机的核心对象。 然后，它应绑定到一个 CompositionAnimation 以创建自定义操作运动。
+- [VisualInteractionSource](/uwp/api/windows.ui.composition.interactions.visualinteractionsource) – 一个补充对象，定义何时以及在什么情况下将输入发送给 InteractionTracker。 它定义用于命中测试的 CompositionVisual 以及其他输入配置属性。
 
 作为状态机中，InteractionTracker 的属性可由以下任何一项驱动：
 
@@ -59,16 +59,16 @@ ms.locfileid: "65852263"
 
 ### <a name="interactiontracker-state-machine"></a>InteractionTracker 状态机
 
-正如前面提到，InteractionTracker 是包含 4 种状态 – 其中每个可以转换为任何其他四个状态的状态机。 (有关 InteractionTracker 如何在这些状态之间过渡的详细信息，请参阅 [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker) 类文档。)
+如上文所述，InteractionTracker 是具有 4 种状态的状态机，其中的每个状态都可过渡到其他三种状态中的任意一种。 (有关 InteractionTracker 如何在这些状态之间过渡的详细信息，请参阅 [InteractionTracker](/uwp/api/windows.ui.composition.interactions.interactiontracker) 类文档。)
 
 | 状态 | 描述 |
 |-------|-------------|
 | 空闲 | 不活动状态，驱动输入或动画 |
-| Interacting | 检测到活动用户输入 |
-| Inertia | 因活动输入或编程速度导致的活动运动 |
+| 正在交互 | 检测到活动用户输入 |
+| 惯性 | 因活动输入或编程速度导致的活动运动 |
 | CustomAnimation | 因自定义动画导致的活动运动 |
 
-只要 InteractionTracker 状态发生更改，就会生成可以侦听的事件（或回调）。 要让这些事件可以侦听，它们必须实现 [IInteractionTrackerOwner](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.iinteractiontrackerowner) 接口，并使用 CreateWithOwner 方法创建其 InteractionTracker 对象。 下图也简要介绍了不同事件在何时触发。
+只要 InteractionTracker 状态发生更改，就会生成可以侦听的事件（或回调）。 要让这些事件可以侦听，它们必须实现 [IInteractionTrackerOwner](/uwp/api/windows.ui.composition.interactions.iinteractiontrackerowner) 接口，并使用 CreateWithOwner 方法创建其 InteractionTracker 对象。 下图也简要介绍了不同事件在何时触发。
 
 ![InteractionTracker 状态机](images/animation/interaction-tracker-diagram.png)
 
@@ -78,8 +78,8 @@ ms.locfileid: "65852263"
 
 1. 将在其中跟踪输入并检测坐标空间手势的命中测试区域
 1. 将检测和路由的输入的配置，其中包括以下几种：
-    - 可检测手势：位置 X 和 Y （水平和垂直平移），小数位数 （捏合）
-    - Inertia
+    - 可检测到的手势：位置 X 和 Y（水平和垂直平移）、伸缩（缩放）
+    - 惯性
     - 轨道和链
     - 重定向模式：哪些输入数据将自动重定向到 InteractionTracker
 
@@ -167,5 +167,5 @@ private void InteractionTrackerSetup(Compositor compositor, Visual hitTestRoot)
 
 有关 InteractionTracker 的更多高级用法，请参阅下面的文章：
 
-- [创建具有 InertiaModifiers 吸附点](inertia-modifiers.md)
-- [使用 SourceModifiers-刷新请求](source-modifiers.md)
+- [使用 InertiaModifier 创建吸附点](inertia-modifiers.md)
+- [使用 SourceModifier 的下拉刷新](source-modifiers.md)

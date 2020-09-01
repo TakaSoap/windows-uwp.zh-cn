@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, directx, 2d, 图形
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e3a843c00d28d83157cf35a0bd9527be8c6b62f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4dfcb56eb225dafd204a2975b998d0d59253c4ef
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367357"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162921"
 ---
 # <a name="2d-graphics-for-directx-games"></a>DirectX 游戏的 2D 图形
 
@@ -21,9 +21,9 @@ ms.locfileid: "66367357"
 
 2D 图形是 3D 图形的子集，用于处理 2D 基元或位图。 更一般地说，它们不像 3D 那样使用 z 坐标，因此游戏的执行通常限制在 x-y 平面。 它们有时使用 3D 图形技术创建其视觉组件，而且它们的开发一般比较简单。 如果你是游戏开发新手，则最好从 2D 游戏开始，而且 2D 图形开发也是在 DirectX 上操作的良好开端。
 
-你可以使用 Direct2D 或 Direct3D 或者一些组件在 DirectX 中开发 2D 游戏图形。 用于 2D 游戏开发的许多较有用的类（如 [**Sprite**](https://docs.microsoft.com/windows/desktop/direct3d10/id3dx10sprite) 类）都在 Direct3D 中。 Direct2D 是一组 API，主要定位到需要绘制基元（如圆、线和平面多边形）支持的用户界面和应用。 除此之外，它还为创建游戏图形提供了一组功能强大和性能优异的类和方法，尤其是创建游戏覆盖层、界面和抬头显示 (HUD) 时 - 或用于创建从简单到相当详细的各种 2D 游戏。 但创建 2D 游戏最有效的方法是使用两个库中的元素，这是本主题中处理 2D 图形开发的方法。
+你可以使用 Direct2D 或 Direct3D 或者一些组件在 DirectX 中开发 2D 游戏图形。 用于 2D 游戏开发的许多较有用的类（如 [**Sprite**](/windows/desktop/direct3d10/id3dx10sprite) 类）都在 Direct3D 中。 Direct2D 是一组 API，主要定位到需要绘制基元（如圆、线和平面多边形）支持的用户界面和应用。 除此之外，它还为创建游戏图形提供了一组功能强大和性能优异的类和方法，尤其是创建游戏覆盖层、界面和抬头显示 (HUD) 时 - 或用于创建从简单到相当详细的各种 2D 游戏。 但创建 2D 游戏最有效的方法是使用两个库中的元素，这是本主题中处理 2D 图形开发的方法。
 
-## <a name="concepts-at-a-glance"></a>简要介绍相关的概念
+## <a name="concepts-at-a-glance"></a>概念概览
 
 
 在现代 3D 图形和支持它的硬件出现之前，游戏主要是 2D 形式，并且其许多图形技术涉及移动内存块 - 通常是颜色数据数组，将以 1:1 的方式平移或转换为屏幕上的像素。
@@ -32,7 +32,7 @@ ms.locfileid: "66367357"
 
 下面是在开始 2D 图形开发时应熟悉的一些基本概念。
 
--   像素和光栅坐标。 像素是光栅显示屏上的单一点，有自己的 (x, y) 坐标对，指示其在显示屏上的位置。 （术语"像素"是通常包含显示物理像素和用来保存像素的颜色和 alpha 值发送到显示之前的可寻址内存元素之间互换使用）。光栅被视为由 Api 矩形网格像素元素，它通常与物理像素网格的显示具有 1 对 1 的对应关系。 光栅坐标系从左上角开始，网格最左上角的像素在 (0, 0)。
+-   像素和光栅坐标。 像素是光栅显示屏上的单一点，有自己的 (x, y) 坐标对，指示其在显示屏上的位置。 （术语“像素”通常与物理像素互换使用，后者包括显示屏和在发送到显示屏之前用于保存像素颜色和 Alpha 值的可寻址内存元素。）API 将光栅视为像素元素的矩形网格，通常与显示屏的物理像素网格具有一一对应关系。 光栅坐标系从左上角开始，网格最左上角的像素在 (0, 0)。
 -   位图图形（有时称为光栅图形）是表示为像素值矩形网格的图形元素。 子画面 - 独立于光栅管理的计算出的像素数组 - 是位图图形的一种类型，常用于游戏中的活动人物或独立于背景的动画对象。 子画面动画的各种帧都表示为称为“表”或“批”的位图集合。 背景是较大的位图对象，其分辨率等于或大于屏幕光栅的分辨率，通常作为游戏画面的背景。
 -   矢量图形是使用几何图形基元（如点、线、圆和多边形）定义 2D 对象的图形。 它们不表示为像素的数组，而表示为在 2D 空间中定义它们的数学公式。 它们不一定与显示的像素网格具有一一对应的关系，并且必须从呈现它们的坐标系转换为显示的光栅坐标系。
 -   平移是采用点或顶点并计算其同一坐标系中的新位置。
@@ -56,6 +56,6 @@ ms.locfileid: "66367357"
 ## <a name="reference"></a>参考
 
 
--   [Direct2D 概述](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-overview)
--   [Direct2D 快速入门](https://docs.microsoft.com/windows/desktop/Direct2D/getting-started-with-direct2d)
--   [Direct2D 和 Direct3D 互操作性概述](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-and-direct3d-interoperation-overview)
+-   [Direct2D 概述](/windows/desktop/Direct2D/direct2d-overview)
+-   [Direct2D 快速入门](/windows/desktop/Direct2D/getting-started-with-direct2d)
+-   [Direct2D 和 Direct3D 互操作性概述](/windows/desktop/Direct2D/direct2d-and-direct3d-interoperation-overview)

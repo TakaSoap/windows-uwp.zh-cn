@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 网络, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b0dd6168d932d1c131ca6bcd4530795c6ed1ba3
-ms.sourcegitcommit: b408494ebe8489b9ba84fb8bfd893d90c8524020
+ms.openlocfilehash: 6d6d9d927c60cb74f1b19de607480e0811f47cbb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88576850"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162931"
 ---
 # <a name="networking-for-games"></a>游戏网络
 
@@ -27,7 +27,7 @@ ms.locfileid: "88576850"
 
 对于单个玩家的游戏，中心 Web 服务器或服务通常用于存储用户名、游戏得分和其他信息。 在这些游戏中，不需要过多考虑网络传输的速度和延迟，因为它不会直接影响游戏操作。
 
-由于网络条件可能随时发生更改，因此任何使用网络 API 的游戏都需要处理可能发生的网络异常。 若要了解有关处理网络异常的详细信息，请参阅[网络基础知识](/windows/uwp/networking/networking-basics)。
+由于网络条件可能随时发生更改，因此任何使用网络 API 的游戏都需要处理可能发生的网络异常。 若要了解有关处理网络异常的详细信息，请参阅[网络基础知识](../networking/networking-basics.md)。
 
 防火墙和 Web 代理十分常见，它们可以影响使用网络功能的能力。 需要为使用网络的游戏做好准备，使其正确处理防火墙和代理。
 
@@ -362,7 +362,7 @@ using namespace Windows::Web::Http;
 * [借助流套接字连接到网络资源](/previous-versions/windows/apps/jj150599(v=win.10))
 * [连接到网络服务](/previous-versions/windows/apps/hh452976(v=win.10))
 * [连接到 Web 服务](/previous-versions/windows/apps/hh761504(v=win.10))
-* [网络基础知识](/windows/uwp/networking/networking-basics)
+* [网络基础知识](../networking/networking-basics.md)
 * [如何配置网络隔离功能](/previous-versions/windows/apps/hh770532(v=win.10))
 * [如何启用环回和调试网络隔离](/previous-versions/windows/apps/hh780593(v=win.10))
 

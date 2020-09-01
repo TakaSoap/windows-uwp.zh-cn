@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, directx, 应用对象
 ms.localizationpriority: medium
-ms.openlocfilehash: a7c4475ba22e1fd9fe6c1bb95db2183211ee734e
-ms.sourcegitcommit: e0f6150c8f45b69a3e114d0556c2c3d5aed7238f
+ms.openlocfilehash: 29eaba70a7114624474275b8f98ec77f8038b2b0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72560822"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163161"
 ---
 # <a name="the-app-object-and-directx"></a>应用对象和 DirectX
 
 使用 DirectX 的通用 Windows 平台 (UWP) 游戏不会使用许多 Windows UI 用户界面元素和对象。 相反，因为它们在 Windows 运行时堆栈中的较低级别上运行，所以它们必须以更加基本的方式与用户界面框架互操作： 直接访问应用对象并与之互操作。 了解何时以及如何执行此互操作，以及作为 DirectX 开发人员， 你可以如何在 UWP 应用的开发中高效使用此模型。
 
-请参阅[Direct3D graphics 术语表](../graphics-concepts/index.md)，了解有关在阅读时遇到的不熟悉的图形术语或概念的信息。
+请参阅 [Direct3D graphics 术语表](../graphics-concepts/index.md) ，了解有关在阅读时遇到的不熟悉的图形术语或概念的信息。
 
 ## <a name="the-important-core-user-interface-namespaces"></a>重要的核心用户界面命名空间
 
@@ -26,15 +26,15 @@ ms.locfileid: "72560822"
 -   [**Windows.applicationmodel.resources.core**](/uwp/api/Windows.ApplicationModel.Core)
 -   [**Windows.applicationmodel.resources.core**](/uwp/api/Windows.ApplicationModel.Activation)
 -   [**Windows**](/uwp/api/Windows.UI.Core)
--   [**Windows。系统**](/uwp/api/Windows.System)
--   [**Windows Foundation**](/uwp/api/Windows.Foundation)
+-   [**Windows.System**](/uwp/api/Windows.System)
+-   [**Windows.Foundation**](/uwp/api/Windows.Foundation)
 
 > [!NOTE]
 > 如果不开发 UWP 应用，请使用 JavaScript 或特定于 XAML 的库和命名空间中提供的用户界面组件，而不是这些命名空间中提供的类型。
 
 ## <a name="the-windows-runtime-app-object"></a>Windows 运行时应用对象
 
-在你的 UWP 应用中，你希望获得一个窗口和一个视图提供程序，你可从该提供程序获得一个视图，也可将你的交换链（显示缓冲区）连接到该提供程序。 你也可以将此视图连接到正在运行的应用的特定于窗口的事件中。 若要获取应用程序对象的父窗口（由[**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)类型定义），请创建实现[**IFrameworkViewSource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource)的类型。 有关演示如何实现**IFrameworkViewSource**的[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index)代码示例，请参阅[使用 DirectX 和 Direct2D 组合本机互操作](/windows/uwp/composition/composition-native-interop)。
+在你的 UWP 应用中，你希望获得一个窗口和一个视图提供程序，你可从该提供程序获得一个视图，也可将你的交换链（显示缓冲区）连接到该提供程序。 你也可以将此视图连接到正在运行的应用的特定于窗口的事件中。 若要获取应用程序对象的父窗口（由 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 类型定义），请创建实现 [**IFrameworkViewSource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource)的类型。 有关演示如何实现**IFrameworkViewSource**的[c + +/WinRT](../cpp-and-winrt-apis/index.md)代码示例，请参阅[使用 DirectX 和 Direct2D 组合本机互操作](../composition/composition-native-interop.md)。
 
 下面是使用核心用户界面框架获取窗口的基本步骤集。
 
@@ -62,9 +62,9 @@ ms.locfileid: "72560822"
 
 以下是 Windows 运行时中可能对你有帮助的其他核心用户界面类型：
 
--   [**Windows.applicationmodel.resources.core. CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
--   [**CoreWindow。** ](/uwp/api/Windows.UI.Core.CoreWindow)
--   [**CoreDispatcher。** ](/uwp/api/Windows.UI.Core.CoreDispatcher)
+-   [**Windows.ApplicationModel.Core.CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
+-   [**Windows.UI.Core.CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)
+-   [**CoreDispatcher。**](/uwp/api/Windows.UI.Core.CoreDispatcher)
 
 你可以使用这些类型访问应用的视图（具体来讲，访问绘制应用父窗口内容的位），并处理为该窗口引发的事件。 应用窗口的进程是一个*应用程序单线程单元* (ASTA)，它是隔离的并处理所有回调。
 
@@ -80,13 +80,13 @@ ms.locfileid: "72560822"
 
 ## <a name="coreapplicationview-behaviors-and-properties"></a>CoreApplicationView 行为和属性
 
-[**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)表示当前应用程序视图。 应用单一实例在初始化期间创建应用视图，但在激活之前，视图将保持休眠。 你可获得 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)，可访问它之上的 [**CoreApplicationView.CoreWindow**](/uwp/api/windows.applicationmodel.core.coreapplicationview.corewindow) 属性来显示视图，你也可以向 [**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) 事件注册委托来处理视图的激活和停用事件。
+[**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) 表示当前的应用视图。 应用单一实例在初始化期间创建应用视图，但在激活之前，视图将保持休眠。 你可获得 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)，可访问它之上的 [**CoreApplicationView.CoreWindow**](/uwp/api/windows.applicationmodel.core.coreapplicationview.corewindow) 属性来显示视图，你也可以向 [**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) 事件注册委托来处理视图的激活和停用事件。
 
 ## <a name="corewindow-behaviors-and-properties"></a>CoreWindow 行为和属性
 
 在应用对象初始化时，会创建父窗口（一个 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 实例）并传递给视图提供程序。 如果应用有一个窗口要显示，它会显示它，否则它会初始化视图。
 
-[**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)提供了特定于输入和基本窗口行为的大量事件。 你可以向这些事件注册自己的委托来处理它们。
+[**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 提供了许多特定于输入和基本窗口行为的事件。 你可以向这些事件注册自己的委托来处理它们。
 
 你也可以访问 [**CoreWindow.Dispatcher**](/uwp/api/windows.ui.core.corewindow.dispatcher) 属性来获得窗口的窗口事件调度程序，该属性提供了一个 [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) 实例。
 
@@ -134,6 +134,6 @@ int main(Platform::Array<Platform::String^>^)
     -   使用在并行模式库 (PPLTasks.h) 中定义的 **async** 模式
     -   尽快从应用的 ASTA（应用的主线程）调用 [**CoreDispatcher::ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) 以允许任意调用。
 
-    也就是说，你不能依赖于将无关调用立即提交到你的应用的 ASTA。 有关异步调用的详细信息， 请阅读[使用 C++ 进行异步编程](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    也就是说，你不能依赖于将无关调用立即提交到你的应用的 ASTA。 有关异步调用的详细信息， 请阅读[使用 C++ 进行异步编程](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
 总的来说，在设计 UWP 应用时，使用应用的 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 和 [**CoreDispatcher::ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) 的 [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) 来处理所有 UI 线程，而不要尝试自行创建和管理 MTA 线程。 当你需要一个不能用 **CoreDispatcher** 处理的单独线程时，请使用异步模式，并按照前面提到的指南操作以避免出现重新进入问题。

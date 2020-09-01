@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 延迟, dxgi, 交换链, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ecce9d95d3c2e852b049e3cac9579850022df9
-ms.sourcegitcommit: d2aabe027a2fff8a624111a00864d8986711cae6
+ms.openlocfilehash: 41d11865daadacf8ff90971836cab7cd941c4182
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82880857"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163041"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>利用 DXGI 1.3 交换链减少延迟
 
@@ -21,18 +21,18 @@ ms.locfileid: "82880857"
 
 使用翻转模型交换链，当你的游戏调用 [**IDXGISwapChain::Present**](/windows/win32/api/dxgi/nf-dxgi-idxgiswapchain-present) 时，会将后台缓冲区“翻转”进行排队。 当呈现循环调用 Present() 时，系统会阻止线程，直到显示完前一帧为止，从而为在新帧显示之前将其排入队列腾出了空间。 这会导致游戏绘制帧的时间，以及系统允许游戏显示该帧的时间之间的延迟增加。 在很多情况下，系统将会达到一个稳定的平衡状态，在这种状态下，游戏始终会在呈现帧和呈现下一帧之间等待一个完整的额外帧。 最好等到系统准备好接受新帧，然后再根据当前数据呈现该帧并立即将其排队。
 
-使用[**\_DXGI\_交换链\_标记\_帧\_延迟\_可等待\_对象**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)标志创建可等待交换链。 以这种方式创建的交换链可以在系统准备好接收新帧时通知你的呈现循环。 这样就允许你的游戏根据当前数据进行呈现，然后立即将结果放入显示队列中。
+使用 [**DXGI \_ 交换 \_ 链 \_ 标记 \_ 帧 \_ 延迟 \_ 可等待 \_ 对象**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) 标志创建可等待交换链。 以这种方式创建的交换链可以在系统准备好接收新帧时通知你的呈现循环。 这样就允许你的游戏根据当前数据进行呈现，然后立即将结果放入显示队列中。
 
 ## <a name="step-1-create-a-waitable-swap-chain"></a>步骤 1。 创建可等待交换链
 
-调用[**CreateSwapChainForCoreWindow**](/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow)时，指定[**\_DXGI\_交换\_\_链\_标记\_帧延迟\_可等待对象**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)标志。
+调用[**CreateSwapChainForCoreWindow**](/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow)时，指定[**DXGI \_ 交换 \_ 链 \_ 标记 \_ 帧 \_ 延迟 \_ 可等待 \_ 对象**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)标志。
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
 > [!NOTE]
-> 与某些标志相比，不能使用[**ResizeBuffers**](/windows/win32/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers)添加或删除此标志。 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
+> 与某些标志相比，不能使用 [**ResizeBuffers**](/windows/win32/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers)添加或删除此标志。 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
 
 ```cpp
 // If the swap chain already exists, resize it.
@@ -141,7 +141,7 @@ void DX::DeviceResources::WaitOnSwapChain()
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](/windows/win32/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
 * [**WaitForSingleObjectEx**](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobjectex)
 * [**Windows.System.Threading**](/uwp/api/Windows.System.Threading)
-* [C + + 中的异步编程](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
+* [C + + 中的异步编程](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)
 * [进程和线程](/windows/win32/procthread/processes-and-threads)
-* [处理](/windows/win32/sync/synchronization)
+* [同步](/windows/win32/sync/synchronization)
 * [使用事件对象 (Windows)](/windows/win32/sync/using-event-objects)

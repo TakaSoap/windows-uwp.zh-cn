@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c635d0efad627734e0305c687e015ad183764717
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 38522be28280c0a08f6cb065e5dfb5c2f26642a8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371052"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162791"
 ---
 # <a name="introduction-to-rasterization-rules"></a>光栅化规则简介
 
@@ -21,7 +21,7 @@ ms.locfileid: "66371052"
 
 这是对光栅化规则的简略介绍。 有关详细信息，请参阅[光栅化规则](rasterization-rules.md)。 另请参阅[光栅器 (RS) 阶段](rasterizer-stage--rs-.md)。
 
-## <a name="span-idtrianglerasterizationrulesspanspan-idtrianglerasterizationrulesspanspan-idtrianglerasterizationrulesspantriangle-rasterization-rules"></a><span id="Triangle_Rasterization_Rules"></span><span id="triangle_rasterization_rules"></span><span id="TRIANGLE_RASTERIZATION_RULES"></span>三角形光栅化规则
+## <a name="span-idtriangle_rasterization_rulesspanspan-idtriangle_rasterization_rulesspanspan-idtriangle_rasterization_rulesspantriangle-rasterization-rules"></a><span id="Triangle_Rasterization_Rules"></span><span id="triangle_rasterization_rules"></span><span id="TRIANGLE_RASTERIZATION_RULES"></span>三角形光栅化规则
 
 
 Direct3D 使用左上填充约定来填充几何图形。 这与 GDI 和 OpenGL 中用于矩形的约定相同。 在 Direct3D 中，像素的中心是决策点。 如果中心位于三角形内，则像素是三角形的一部分。 像素中心位于整数坐标处。
@@ -52,14 +52,14 @@ Direct3D 使用的三角形光栅化规则的描述不一定适用于所有可�
 
 ![受上图中两个带有编号的正方形影响的像素](images/samepix.png)
 
-## <a name="span-idpointandlinerulesspanspan-idpointandlinerulesspanspan-idpointandlinerulesspanpoint-and-line-rules"></a><span id="Point_and_Line_Rules"></span><span id="point_and_line_rules"></span><span id="POINT_AND_LINE_RULES"></span>点和行规则
+## <a name="span-idpoint_and_line_rulesspanspan-idpoint_and_line_rulesspanspan-idpoint_and_line_rulesspanpoint-and-line-rules"></a><span id="Point_and_Line_Rules"></span><span id="point_and_line_rules"></span><span id="POINT_AND_LINE_RULES"></span>点和线条规则
 
 
 点的渲染方式与点子画面的渲染方式相同，它们都被渲染为与屏幕对齐的四边形，因此遵守与多边形渲染相同的规则。
 
-非抗锯齿线的渲染规则与 [GDI 线](https://docs.microsoft.com/windows/desktop/gdi/lines)的渲染规则完全相同。
+非抗锯齿线的渲染规则与 [GDI 线](/windows/desktop/gdi/lines)的渲染规则完全相同。
 
-## <a name="span-idpointspriterulesspanspan-idpointspriterulesspanspan-idpointspriterulesspanpoint-sprite-rules"></a><span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>点子画面规则
+## <a name="span-idpoint_sprite_rulesspanspan-idpoint_sprite_rulesspanspan-idpoint_sprite_rulesspanpoint-sprite-rules"></a><span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>点子画面规则
 
 
 点子画面和面片基元按如下方式光栅化：首先将基元网格化成三角形，然后将生成的三角形光栅化。
@@ -76,7 +76,3 @@ Direct3D 使用的三角形光栅化规则的描述不一定适用于所有可�
  
 
  
-
-
-
-

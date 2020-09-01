@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 386ea9a5ea9b66b0756963da10f72c3dbed53ff9
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a790af10f6cfc06029e269dba4c984a041932239
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969652"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163431"
 ---
 # <a name="accessibility-overview"></a>辅助功能概述
 
@@ -43,7 +43,7 @@ ms.locfileid: "82969652"
 
 ## <a name="ui-automation"></a>UI 自动化
 
-辅助功能支持主要来自 Microsoft UI 自动化框架的集成支持。 该支持通过控件类型类实现的基类和内置行为以及 UI 自动化提供程序 API 的接口表示形式提供。 每个控件类都使用自动化对等和自动化模式的 UI 自动化概念，以便向 UI 自动化客户端报告控件的角色和内容。 UI 自动化将该应用视为顶级窗口，通过 UI 自动化框架，该应用窗口内的所有辅助功能相关内容均可供 UI 自动化客户端使用。 有关 UI 自动化的详细信息，请参阅 [UI 自动化概述](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-uiautomationoverview)。
+辅助功能支持主要来自 Microsoft UI 自动化框架的集成支持。 该支持通过控件类型类实现的基类和内置行为以及 UI 自动化提供程序 API 的接口表示形式提供。 每个控件类都使用自动化对等和自动化模式的 UI 自动化概念，以便向 UI 自动化客户端报告控件的角色和内容。 UI 自动化将该应用视为顶级窗口，通过 UI 自动化框架，该应用窗口内的所有辅助功能相关内容均可供 UI 自动化客户端使用。 有关 UI 自动化的详细信息，请参阅 [UI 自动化概述](/windows/desktop/WinAuto/uiauto-uiautomationoverview)。
 
 <span id="Assistive_technology"/>
 <span id="assistive_technology"/>
@@ -85,7 +85,7 @@ ms.locfileid: "82969652"
 
 ## <a name="keyboard-support"></a>键盘支持
 
-为了提供良好的键盘支持，必须确保应用程序的每个部分都可与键盘结合使用。 如果你的应用主要使用标准控件而不使用任何自定义控件，则说明你已经做到了这一点。 基本 XAML 控件模型提供了内置的键盘支持，包括 Tab 导航、文本输入以及控件特定的支持。 充当布局容器（如面板）的元素使用布局顺序来建立默认的 Tab 键顺序。 该顺序通常是适合 UI 的辅助表示形式的 Tab 键顺序。 如果使用 [**ListBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 控件显示数据，则它们会提供内置的箭头键导航。 或者，如果使用 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 控件，则它已经为按钮激活而处理空格键或 Enter 键。
+为了提供良好的键盘支持，必须确保应用程序的每个部分都可与键盘结合使用。 如果你的应用主要使用标准控件而不使用任何自定义控件，则说明你已经做到了这一点。 基本 XAML 控件模型提供了内置的键盘支持，包括 Tab 导航、文本输入以及控件特定的支持。 充当布局容器（如面板）的元素使用布局顺序来建立默认的 Tab 键顺序。 该顺序通常是适合 UI 的辅助表示形式的 Tab 键顺序。 如果使用 [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) 和 [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView) 控件显示数据，则它们会提供内置的箭头键导航。 或者，如果使用 [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) 控件，则它已经为按钮激活而处理空格键或 Enter 键。
 
 有关键盘支持的各个方面的详细信息（包括 Tab 键顺序和基于键的激活或导航），请参阅[键盘辅助功能](keyboard-accessibility.md)。
 
@@ -95,7 +95,7 @@ ms.locfileid: "82969652"
 
 ## <a name="media-and-captioning"></a>媒体和字幕
 
-通常通过 [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 对象显示视听媒体。 你可以使用 **MediaElement** API 控制媒体播放。 为实现辅助功能，所提供的控件应能使用户根据需要播放、暂停和停止媒体。 有时，媒体包括面向辅助功能的额外组件，如字幕或包括叙述性描述的可选音轨。
+通常通过 [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 对象显示视听媒体。 你可以使用 **MediaElement** API 控制媒体播放。 为实现辅助功能，所提供的控件应能使用户根据需要播放、暂停和停止媒体。 有时，媒体包括面向辅助功能的额外组件，如字幕或包括叙述性描述的可选音轨。
 
 <span id="Accessible_text"/>
 <span id="accessible_text"/>
@@ -127,7 +127,7 @@ UI 控件使用一种定义为 XAML 资源主题字典一部分的视觉表示�
 
 很多情况下，可以使用多种技术传递重要信息以便扩宽受众范围。 例如，可以同时使用图标和颜色信息来突出显示信息以帮助色盲用户，并可显示视觉警报和声音效果以帮助听力受损的用户。
 
-如有必要，可以提供可完全删除非必要元素和动画的辅助性替换用户界面元素，并提供其他简化措施以简化用户体验。 以下代码示例演示了如何根据用户设置显示一个 [**UserControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) 实例以代替另一实例。
+如有必要，可以提供可完全删除非必要元素和动画的辅助性替换用户界面元素，并提供其他简化措施以简化用户体验。 以下代码示例演示了如何根据用户设置显示一个 [**UserControl**](/uwp/api/Windows.UI.Xaml.Controls.UserControl) 实例以代替另一实例。
 
 XAML
 
@@ -192,7 +192,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 
 ## <a name="assistive-technology-support-in-custom-controls"></a>自定义控件中的辅助技术支持
 
-创建自定义控件时，建议你同时实现或扩展一个或多个 [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 子类以提供辅助功能支持。 在某些情况下，只要你使用与基本控件类所用相同的对等类，对你的派生类的自动化支持在基本级别上便足够了。 但是，你应该对此进行测试，并且作为最佳做法，仍然建议你实现一个对等，以便对等可以正确地报告你的新控件类的类名称。 实现自定义自动化对等涉及多个步骤。 有关详细信息，请参阅[自定义的自动化对等](custom-automation-peers.md)。
+创建自定义控件时，建议你同时实现或扩展一个或多个 [**AutomationPeer**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 子类以提供辅助功能支持。 在某些情况下，只要你使用与基本控件类所用相同的对等类，对你的派生类的自动化支持在基本级别上便足够了。 但是，你应该对此进行测试，并且作为最佳做法，仍然建议你实现一个对等，以便对等可以正确地报告你的新控件类的类名称。 实现自定义自动化对等涉及多个步骤。 有关详细信息，请参阅[自定义的自动化对等](custom-automation-peers.md)。
 
 <span id="Assistive_technology_support_in_apps_that_support_XAML___Microsoft_DirectX_interop"/>
 <span id="assistive_technology_support_in_apps_that_support_xaml___microsoft_directx_interop"/>
@@ -200,12 +200,12 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>支持 XAML / Microsoft DirectX 互操作的应用中的辅助技术支持
 
-默认情况下，无法访问 XAML UI 中托管的 Microsoft DirectX 内容（使用 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 或 [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)）。 [XAML SwapChainPanel DirectX 互操作示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample)显示如何为托管的 DirectX 内容创建 UI 自动化对等。 这种技术让托管的内容可通过 UI 自动化进行访问。
+默认情况下，无法访问 XAML UI 中托管的 Microsoft DirectX 内容（使用 [**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 或 [**SurfaceImageSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)）。 [XAML SwapChainPanel DirectX 互操作示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample)显示如何为托管的 DirectX 内容创建 UI 自动化对等。 这种技术让托管的内容可通过 UI 自动化进行访问。
 
 ## <a name="related-topics"></a>相关主题
 
-* [**Windows。**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
-* [辅助功能设计](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
+* [**Windows。**](/uwp/api/Windows.UI.Xaml.Automation)
+* [辅助功能设计]()
 * [XAML 辅助功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
 * [辅助功能](accessibility.md)
 * [讲述人入门](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

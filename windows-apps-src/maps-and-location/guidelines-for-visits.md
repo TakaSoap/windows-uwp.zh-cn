@@ -6,12 +6,12 @@ ms.date: 05/18/2017
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, geovisit, geovisits
 ms.localizationpriority: medium
-ms.openlocfilehash: db351660722cd13a4e8f14bebb651d60f33d1671
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3b1766d0f883fa42b005908dcc63102e97ff0d4f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640772"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162511"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>有关使用访问跟踪的指南
 
@@ -19,7 +19,7 @@ ms.locfileid: "57640772"
 
 ## <a name="preliminary-setup"></a>初步设置
 
-在继续之前，请确保你的应用能够访问设备的位置。 将需要在清单中声明 `Location`功能并调用 **[Geolocator.RequestAccessAsync](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator.RequestAccessAsync)** 方法，以确保用户为应用提供位置权限。 请参阅[获取用户的位置](get-location.md)，了解有关如何执行该操作的详细信息。 
+在继续之前，请确保你的应用能够访问设备的位置。 将需要在清单中声明 `Location`功能并调用 **[Geolocator.RequestAccessAsync](/uwp/api/Windows.Devices.Geolocation.Geolocator.RequestAccessAsync)** 方法，以确保用户为应用提供位置权限。 请参阅[获取用户的位置](get-location.md)，了解有关如何执行该操作的详细信息。 
 
 请记住将 `Geolocation` 命名空间添加到类中。 若要使本指南中的所有代码段都能起作用，将需要执行此操作。
 
@@ -28,7 +28,7 @@ using Windows.Devices.Geolocation;
 ```
 
 ## <a name="check-the-latest-visit"></a>检查最新访问
-使用访问跟踪功能的最简单方法是检索与访问相关的上一个已知状态更改。 状态更改是一个平台记录事件，在此事件中，用户进入/退出了重要位置、自上次报告以来有重大变化，或者用户位置丢失（请参阅 **[VisitStateChange](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.visitstatechange)** 枚举）。 状态更改由 **[Geovisit](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geovisit)** 实例来表示。 若要检索上次记录的状态更改的 **Geovisit** 实例，只需使用 **[GeovisitMonitor](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geovisitmonitor)** 类中的指定方法。
+使用访问跟踪功能的最简单方法是检索与访问相关的上一个已知状态更改。 状态更改是一个平台记录事件，在此事件中，用户进入/退出了重要位置、自上次报告以来有重大变化，或者用户位置丢失（请参阅 **[VisitStateChange](/uwp/api/windows.devices.geolocation.visitstatechange)** 枚举）。 状态更改由 **[Geovisit](/uwp/api/windows.devices.geolocation.geovisit)** 实例来表示。 若要检索上次记录的状态更改的 **Geovisit** 实例，只需使用 **[GeovisitMonitor](/uwp/api/windows.devices.geolocation.geovisitmonitor)** 类中的指定方法。
 
 > [!NOTE]
 > 检查上次记录的访问并不能保证系统当前正在跟踪访问。 为了在访问发生时跟踪访问，你必须在前台监视它们或注册后台跟踪（请参阅下面的部分）。
@@ -131,7 +131,7 @@ public void UnregisterFromVisits() {
 
 你还可以在后台任务中执行访问监视，以便即使在你的应用未打开时，也可以在设备上处理与访问相关的活动。 这是推荐的方法，因为它更通用、更节能。 
 
-本指南将使用[创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)中的模型，其中主应用程序文件位于一个项目中，而后台任务文件位于相同解决方案内的单独项目中。 如果你对执行后台任务不熟悉，建议你首先遵循该指导原则，并在下面进行必要的替换以创建访问处理后台任务。
+本指南将使用[创建和注册进程外后台任务](../launch-resume/create-and-register-a-background-task.md)中的模型，其中主应用程序文件位于一个项目中，而后台任务文件位于相同解决方案内的单独项目中。 如果你对执行后台任务不熟悉，建议你首先遵循该指导原则，并在下面进行必要的替换以创建访问处理后台任务。
 
 > [!NOTE]
 > 为了简单起见，下面的代码段中省略了一些重要的功能，如错误处理和本地存储。 为了可靠地执行后台访问处理，请参阅[示例应用](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)。
@@ -269,6 +269,6 @@ private async void RegisterBackgroundTask(object sender, RoutedEventArgs e) {
 你的应用现在应该能够注册访问处理后台任务，并且每当设备记录与访问相关的状态变化时，应该会激活此任务。 你将需要在后台任务类中填写逻辑，以确定如何处理此状态变化信息。
 
 ## <a name="related-topics"></a>相关主题
-* [创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+* [创建和注册进程外后台任务](../launch-resume/create-and-register-a-background-task.md)
 * [获取用户位置](get-location.md)
-* [Windows.Devices.Geolocation 命名空间](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)
+* [Windows. 地理位置命名空间](/uwp/api/windows.devices.geolocation)

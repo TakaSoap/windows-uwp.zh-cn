@@ -10,31 +10,31 @@ dev_langs:
 - vb
 - cppcx
 - cppwinrt
-ms.openlocfilehash: 768509b3b22eef32e26d9e5423c00e2ee65f4b81
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 315427d2f9212cb9ecfec01e71ed9373deb5cfba
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318033"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163541"
 ---
 # <a name="xaml-lighting"></a>XAML 照明
 
-[**CompositionLight** ](/uwp/api/Windows.UI.Composition.CompositionLight)结合使用对象[ **SceneLightingEffect** ](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect)来模拟动态照明和反射。
+[**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) 对象与 [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) 结合使用来模拟动态照明和反射性。
 
-可以将光应用于[**视觉对象**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual)和 XAML [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement)。
+可以将光应用于[**视觉对象**](/uwp/api/Windows.UI.Composition.Visual)和 XAML [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement)。
 
 ## <a name="applying-lights-to-xaml-uielements"></a>将光应用于 XAML UIElement
 
-[**XamlLight** ](/uwp/api/windows.ui.xaml.media.xamllight)对象用于将应用[ **CompositionLights** ](/uwp/api/Windows.UI.Composition.CompositionLight)动态更 XAML Uielement。 XamlLight 提供面向 UIElements 或 XAML 画笔，将光应用到的 Uielement，树的方法和帮助管理 CompositionLight 的生存期资源根据它们是在当前正在使用。
+[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) 对象用于应用 [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) 以动态照明 XAML UIElement。 XamlLight 提供了针对 UIElements 或 XAML 画笔的方法，将灯光应用到 UIElements 的树，并基于当前是否正在使用来帮助管理 CompositionLight 资源的生存期。
 
 - 如果使用 XamlLight 面向某个 **Brush**，则光会照亮使用该画笔的任何 UIElement 的位置。
 - 如果使用 XamlLight 面向某个 **UIElement**，则光会照亮整个 UIElement 及其子 UIElement。
 
 ## <a name="creating-and-using-a-xamllight"></a>创建和使用 XamlLight
 
-[**XamlLight** ](/uwp/api/windows.ui.xaml.media.xamllight)是可用于创建自定义的光源的基类。
+[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) 是基类，可以用于创建自定义光。
 
-此示例显示了适用于目标 UIElements 和画笔的彩色的聚焦自定义 XamlLight 的定义。
+此示例显示了自定义 XamlLight 的定义，该定义将一个多色聚焦应用于目标 UIElements 和画笔。
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight
@@ -457,10 +457,10 @@ Platform::String^ OrangeSpotLight::GetId()
 }
 ```
 
-您可以将此 light 应用到更它们的任何 XAML UIElement 或画笔。 此示例演示不同的可能用法。
+然后，你可以将此灯光应用到任何 XAML UIElement 或画笔以使其变亮。 此示例显示了不同的可能用法。
 
 > [!Important]
-> 有关[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，删除的两个实例`local:OrangeSpotLight.IsTarget="True"`从下面的标记。 已在代码隐藏中设置附加的属性。
+> 对于 [c + +/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)，请 `local:OrangeSpotLight.IsTarget="True"` 从下面的标记中删除的两个匹配项。 已在代码隐藏中设置附加属性。
 
 ```xaml
 <StackPanel Width="100">
@@ -491,11 +491,11 @@ Platform::String^ OrangeSpotLight::GetId()
 
 此 XAML 的结果如下所示。
 
-![通过 xaml 指示灯亮起的元素的示例](images/orange-spot-light.png)
+![按 xaml 灯光发亮的元素示例](images/orange-spot-light.png)
 
 > [!Important]
 > 仅对于“最低版本”等于 Windows 10 创意者更新或更高版本的应用，才支持如以上示例所示在标记中设置 UIElement.Lights。 对于面向早期版本的应用，必须在代码隐藏中创建光。
 
 ## <a name="additional-resources"></a>其他资源
 
-* [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples) 中的高级 UI 和合成示例。
+* [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples)中的高级 UI 和组合示例。

@@ -7,26 +7,26 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cd23938387b40c8ce268c65209d1fb11d5da529c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2d9c33e9625f36bbf183df46d5cd590f9e66d3c4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370632"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162801"
 ---
-# <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>配置深度模具功能
+# <a name="span-iddirect3dconceptsconfiguring_depth-stencil_functionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>配置深度模具功能
 
 
 本节介绍了设置深度模板缓冲区的步骤以及输出合并阶段的深度模板状态。
 
 了解如何使用深度模具缓冲区和相应的深度模具状态，请参阅[高级模具技术](#advanced-stencil-techniques)。
 
-## <a name="span-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespancreate-depth-stencil-state"></a><span id="Create_Depth_Stencil_State"></span><span id="create_depth_stencil_state"></span><span id="CREATE_DEPTH_STENCIL_STATE"></span>创建深度模具状态
+## <a name="span-idcreate_depth_stencil_statespanspan-idcreate_depth_stencil_statespanspan-idcreate_depth_stencil_statespancreate-depth-stencil-state"></a><span id="Create_Depth_Stencil_State"></span><span id="create_depth_stencil_state"></span><span id="CREATE_DEPTH_STENCIL_STATE"></span>创建深度模具状态
 
 
-输出合并器阶段通过深度模具状态来判断如何执行[深度模具测试](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)。 深度模具测试确定是否应该绘制给定像素。
+输出合并器阶段通过深度模具状态来判断如何执行[深度模具测试](/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)。 深度模具测试确定是否应该绘制给定像素。
 
-## <a name="span-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanbind-depth-stencil-data-to-the-om-stage"></a><span id="Bind_Depth_Stencil_to_the_OM_Stage"></span><span id="bind_depth_stencil_to_the_om_stage"></span><span id="BIND_DEPTH_STENCIL_TO_THE_OM_STAGE"></span>将深度模具数据绑定到 OM 阶段
+## <a name="span-idbind_depth_stencil_to_the_om_stagespanspan-idbind_depth_stencil_to_the_om_stagespanspan-idbind_depth_stencil_to_the_om_stagespanbind-depth-stencil-data-to-the-om-stage"></a><span id="Bind_Depth_Stencil_to_the_OM_Stage"></span><span id="bind_depth_stencil_to_the_om_stage"></span><span id="BIND_DEPTH_STENCIL_TO_THE_OM_STAGE"></span>将深度模具数据绑定到 OM 阶段
 
 
 绑定深度模具状态。
@@ -38,22 +38,22 @@ ms.locfileid: "66370632"
 当使用缓冲区作为呈现器目标时，深度模具测试和多个呈现器目标不受支持。
 
 -   可以同时绑定多达 8 个呈现器目标。
--   所有呈现器目标必须在所有维度中具有相同的大小 (宽度和高度，并为 3D 或数组大小的深度\*数组类型)。
+-   所有呈现器目标的大小必须等于 (宽度和高度的所有尺寸、三维的深度或数组类型的数组大小 \*) 。
 -   每个呈现器目标都可能有不同的数据格式。
 -   写掩码控制将哪些数据写入呈现器目标。 输出写掩码控制在每个呈现器目标、每个组件级别上将哪些数据写入呈现器目标。
 
-## <a name="span-idadvancedstenciltechniquesspanspan-idadvancedstenciltechniquesspanspan-idadvancedstenciltechniquesspanspan-idadvanced-stencil-techniquesspanadvanced-stencil-techniques"></a><span id="Advanced_Stencil_Techniques"></span><span id="advanced_stencil_techniques"></span><span id="ADVANCED_STENCIL_TECHNIQUES"></span><span id="advanced-stencil-techniques"></span>高级的模具技术
+## <a name="span-idadvanced_stencil_techniquesspanspan-idadvanced_stencil_techniquesspanspan-idadvanced_stencil_techniquesspanspan-idadvanced-stencil-techniquesspanadvanced-stencil-techniques"></a><span id="Advanced_Stencil_Techniques"></span><span id="advanced_stencil_techniques"></span><span id="ADVANCED_STENCIL_TECHNIQUES"></span><span id="advanced-stencil-techniques"></span>高级模具技术
 
 
 深度模具缓冲区的模具部分可用于创建合成、贴纸和轮廓等呈现效果。
 
--   [组合的情况下](#compositing)
--   [Decaling](#decaling)
--   [概述了和轮廓](#outlines-and-silhouettes)
--   [双侧模具](#two-sided-stencil)
--   [深度模具缓冲区读取作为纹理](#reading-the-depth-stencil-buffer-as-a-texture)
+-   [合成](#compositing)
+-   [贴纸](#decaling)
+-   [大纲和 Silhouettes](#outlines-and-silhouettes)
+-   [双面模具](#two-sided-stencil)
+-   [以纹理形式读取深度模具缓冲区](#reading-the-depth-stencil-buffer-as-a-texture)
 
-### <a name="span-idcompositingspanspan-idcompositingspanspan-idcompositingspancompositing"></a><span id="Compositing"></span><span id="compositing"></span><span id="COMPOSITING"></span>组合的情况下
+### <a name="span-idcompositingspanspan-idcompositingspanspan-idcompositingspancompositing"></a><span id="Compositing"></span><span id="compositing"></span><span id="COMPOSITING"></span>合成
 
 你的应用程序可以使用模具缓冲区将 2D 或 3D 图像合成到 3D 场景中。 模具缓冲区中的掩码用于遮挡渲染目标图面的区域。 然后，可以将已存储 2D 信息（如文本或位图）写入遮挡区域。 或者，你的应用程序也可以将额外的 3D 基元渲染到渲染目标图面的已屏蔽模具区域。 它甚至可以渲染整个场景。
 
@@ -69,7 +69,7 @@ Direct3D 应用程序使用贴纸来控制将特定基元图像中的哪些像�
 
 可以使用多个纹理混合来解决此问题。
 
-### <a name="span-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlines-and-silhouettesoutlines-and-silhouettes"></a><span id="Outlines_and_Silhouettes"></span><span id="outlines_and_silhouettes"></span><span id="OUTLINES_AND_SILHOUETTES"></span><span id="outlines-and-silhouettes">概述了和轮廓
+### <a name="span-idoutlines_and_silhouettesspanspan-idoutlines_and_silhouettesspanspan-idoutlines_and_silhouettesspanspan-idoutlines-and-silhouettesoutlines-and-silhouettes"></a><span id="Outlines_and_Silhouettes"></span><span id="outlines_and_silhouettes"></span><span id="OUTLINES_AND_SILHOUETTES"></span><span id="outlines-and-silhouettes">轮廓与剪影
 
 你可以使用模具缓冲区生成更抽象的效果，例如轮廓与剪影。
 
@@ -77,7 +77,7 @@ Direct3D 应用程序使用贴纸来控制将特定基元图像中的哪些像�
 
 如果模具掩码与你正在渲染的基元的大小和形状相同，则在生成的图像中，基元应在的位置有一个洞。 然后，应用程序可以用黑色填充这个洞，以生成基元剪影。
 
-### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwo-sided-stenciltwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span><span id="two-sided-stencil">双侧模具
+### <a name="span-idtwo_sided_stencilspanspan-idtwo_sided_stencilspanspan-idtwo_sided_stencilspanspan-idtwo-sided-stenciltwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span><span id="two-sided-stencil">双面模具
 
 阴影卷用于在模具缓冲区中绘制阴影。 应用程序通过遮挡几何图形计算阴影卷大小，方法是计算剪影边缘并将它们从光线中挤压到一组 3D 卷中。 然后，这些卷将两次渲染到模具缓冲区中。
 
@@ -87,15 +87,15 @@ Direct3D 应用程序使用贴纸来控制将特定基元图像中的哪些像�
 
 这意味着每个光源的阴影几何图形将绘制两次，因此为 GPU 的顶点吞吐量带来了压力。 双面模具功能旨在缓解此问题。 这种方法使用两组模具状态（如下文所列），一组用于前向三角形，另一组用于后向三角形。 这样，每个阴影卷每个光源只需绘制一次。
 
-### <a name="span-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreading-the-depth-stencil-buffer-as-a-texturespanreading-the-depth-stencil-buffer-as-a-texture"></a><span id="Reading_the_Depth-Stencil_Buffer_as_a_Texture"></span><span id="reading_the_depth-stencil_buffer_as_a_texture"></span><span id="READING_THE_DEPTH-STENCIL_BUFFER_AS_A_TEXTURE"></span><span id="reading-the-depth-stencil-buffer-as-a-texture"></span>深度模具缓冲区读取作为纹理
+### <a name="span-idreading_the_depth-stencil_buffer_as_a_texturespanspan-idreading_the_depth-stencil_buffer_as_a_texturespanspan-idreading_the_depth-stencil_buffer_as_a_texturespanspan-idreading-the-depth-stencil-buffer-as-a-texturespanreading-the-depth-stencil-buffer-as-a-texture"></a><span id="Reading_the_Depth-Stencil_Buffer_as_a_Texture"></span><span id="reading_the_depth-stencil_buffer_as_a_texture"></span><span id="READING_THE_DEPTH-STENCIL_BUFFER_AS_A_TEXTURE"></span><span id="reading-the-depth-stencil-buffer-as-a-texture"></span>以纹理形式读取深度模具缓冲区
 
 着色器可以将非活动深度模具缓冲区读作纹理。 将深度模具缓冲区读作纹理的应用程序在两个通道中呈现，第一个通道写入深度模具缓冲区，第二个通道从缓冲区读取。 这样着色器可以将之前写入缓冲区的深度或模具值与当前正在呈现的像素值进行比较。 比较结果可用于创建效果，例如阴影贴图或粒子系统中的软粒子。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[输出合并器 (OM) 阶段](output-merger-stage--om-.md)
+[输出合并 (OM) 阶段](output-merger-stage--om-.md)
 
 [图形管道](graphics-pipeline.md)
 
-[输出合并器阶段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)
+[输出合并器阶段](/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)

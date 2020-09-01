@@ -1,17 +1,17 @@
 ---
 title: 在 Xbox 开发环境上设置 UWP
-description: 在 Xbox 开发环境上设置和测试你的 UWP 的步骤。
+description: 了解如何设置和测试 Xbox 开发环境中的 UWP，其中包含通过本地网络连接到 Xbox One 控制台的开发 PC。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
-ms.openlocfilehash: 844aaf8ff1e85836683bf752d301c1254066ea5a
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 408568e38bd9147564e7ebece17466e22364f3cc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258739"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164181"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>在 Xbox 开发环境上设置 UWP
 
@@ -26,7 +26,7 @@ Xbox 开发环境上的通用 Windows 平台 (UWP) 由通过本地网络连接�
 1. 安装 Visual Studio 2015 Update 3、Visual Studio 2017 或 Visual Studio 2019。 有关详细信息以及安装方式，请参阅[适用于 Windows 10 的下载和工具](https://dev.windows.com/downloads)。 建议使用最新版本的 Visual Studio，以便为开发人员和安全接收最新更新。
 
 
-2. 如果要安装 Visual Studio 2017 或 Visual Studio 2019，请确保选择**通用 Windows 平台开发**工作负载。 如果你是 C++ 开发人员，请确保还要在右侧的**摘要**窗格中选择**通用 Windows 平台开发**下的 **C++ 通用 Windows 平台工具**复选框。 它不是默认安装的一部分。
+2. 如果要安装 Visual Studio 2017 或 Visual Studio 2019，请确保选择 **通用 Windows 平台开发** 工作负载。 如果你是 C++ 开发人员，请确保还要在右侧的**摘要**窗格中选择**通用 Windows 平台开发**下的 **C++ 通用 Windows 平台工具**复选框。 它不是默认安装的一部分。
 
     ![安装 Visual Studio 2019](images/development-environment-setup-1.png)
 
@@ -39,7 +39,7 @@ Xbox 开发环境上的通用 Windows 平台 (UWP) 由通过本地网络连接�
 安装最新的 Windows 10 SDK。 它将随 Visual Studio 安装程序提供，但如果你想单独下载它，请参阅 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。
 
 
-## <a name="enabling-developer-mode"></a>启用开发人员模式
+## <a name="enabling-developer-mode"></a>启用“开发人员模式”
 
 在从开发电脑部署应用之前，你必须启用开发人员模式。 在**设置**应用中，导航到**更新和安全** / **对于开发人员**，在**使用开发人员功能**下选择**开发人员模式**。
 
@@ -57,7 +57,7 @@ Xbox 开发环境上的通用 Windows 平台 (UWP) 由通过本地网络连接�
 
 4. 在开发电脑的 Visual Studio 中，选择**新建/项目**。
 
-5. 在**新建项目**窗口中，选择 **Windows 通用/空白应用（通用 Windows）** 。
+5. 在**新建项目**窗口中，选择 **Windows 通用/空白应用（通用 Windows）**。
 
 ### <a name="starting-a-c-project"></a>启动 C# 项目
 
@@ -75,7 +75,7 @@ Xbox 开发环境上的通用 Windows 平台 (UWP) 由通过本地网络连接�
 
     d. 在**远程计算机**中，输入系统 IP 地址或 Xbox One 主机的主机名。 有关获取 IP 地址或主机名的信息，请参阅 [Xbox One 工具简介](introduction-to-xbox-tools.md)。
 
-    e. 在**身份验证模式**下拉列表中，选择**通用（未加密协议）** 。
+    e. 在**身份验证模式**下拉列表中，选择**通用（未加密协议）**。
 
     ![C# BlankApp 属性页](images/vs_remote.jpg)
 
@@ -93,7 +93,7 @@ Xbox 开发环境上的通用 Windows 平台 (UWP) 由通过本地网络连接�
 
    c. 在**计算机名称**中，输入系统 IP 地址或 Xbox One 主机的主机名。 有关获取 IP 地址或主机名的信息，请参阅 [Xbox One 工具简介](introduction-to-xbox-tools.md)。
 
-   d. 在**身份验证类型**下拉列表中，选择**通用（未加密协议）** 。
+   d. 在**身份验证类型**下拉列表中，选择**通用（未加密协议）**。
 
    e. 在**平台**下拉列表中选择 **x64**。
 
@@ -125,5 +125,5 @@ Xbox 开发环境上的通用 Windows 平台 (UWP) 由通过本地网络连接�
 - [Xbox One 开发人员模式激活](devkit-activation.md)  
 - [适用于 Windows 10 的下载和工具](https://developer.microsoft.com/windows/downloads)  
 - [Windows 预览体验计划](https://insider.windows.com/)  
-- [Xbox 简介工具简介](introduction-to-xbox-tools.md) 
-- [Xbox one 上的 UWP](index.md)
+- [Xbox One 工具简介](introduction-to-xbox-tools.md) 
+- [Xbox One 上的 UWP](index.md)

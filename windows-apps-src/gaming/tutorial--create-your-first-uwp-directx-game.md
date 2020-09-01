@@ -1,24 +1,24 @@
 ---
 title: 创建 DirectX 通用 Windows 平台 (UWP) 游戏
-description: 在此教程集中，你将学习如何使用 DirectX 和[c + +/WinRT](/windows/uwp/cpp-and-winrt-apis/)创建名为**Simple3DGameDX**的基本通用 Windows 平台（UWP）示例游戏。
+description: 在此教程集中，你将学习如何使用 DirectX 和 [c + +/WinRT](../cpp-and-winrt-apis/index.md) 创建名为 **Simple3DGameDX**的基本通用 Windows 平台 (UWP) 示例游戏。
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
-keywords: DirectX 示例游戏，示例游戏，通用 Windows 平台（UWP），Direct3D 11 游戏
+keywords: 通用 Windows 平台 (UWP) 、Direct3D 11 游戏的 DirectX 示例游戏
 ms.date: 06/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e3007cd79546cba8961000cb2aae44b0b0536fe
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: 284aa821cc58a49f45bed3b0d7e28c20f9d19ba1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409566"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163021"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>使用 DirectX 创建简单的通用 Windows 平台 (UWP) 游戏
 
-在此教程集中，你将学习如何使用 DirectX 和[c + +/WinRT](/windows/uwp/cpp-and-winrt-apis/)创建名为**Simple3DGameDX**的基本通用 Windows 平台（UWP）示例游戏。 游戏在简单的第一人称3D 拍摄库中发生。
+在此教程集中，你将学习如何使用 DirectX 和 [c + +/WinRT](../cpp-and-winrt-apis/index.md) 创建名为 **Simple3DGameDX**的基本通用 Windows 平台 (UWP) 示例游戏。 游戏在简单的第一人称3D 拍摄库中发生。
 
 > [!NOTE]
-> 可从中下载**Simple3DGameDX**示例游戏的链接是[Direct3D 示例游戏](/samples/microsoft/windows-universal-samples/simple3dgamedx/)。 C + +/WinRT 源代码位于名为的文件夹中 `cppwinrt` 。 有关其他 UWP 示例应用的信息，请参阅[获取 UWP 应用示例](/windows/uwp/get-started/get-uwp-app-samples)。
+> 可从中下载 **Simple3DGameDX** 示例游戏的链接是 [Direct3D 示例游戏](/samples/microsoft/windows-universal-samples/simple3dgamedx/)。 C + +/WinRT 源代码位于名为的文件夹中 `cppwinrt` 。 有关其他 UWP 示例应用的信息，请参阅 [获取 UWP 应用示例](../get-started/get-app-samples.md)。
 
 这些教程涵盖了游戏的所有主要部分，其中包括用于加载资产（如艺术和网格）的流程、创建主要游戏循环、实现简单渲染管道以及添加声音和控制。
 
@@ -28,11 +28,11 @@ ms.locfileid: "85409566"
 
 了解 UWP DirectX 游戏的基本概念和组件，并更轻松地使用 DirectX 设计 UWP 游戏。
 
-## <a name="what-you-need-to-know"></a>需要了解的事项
+## <a name="what-you-need-to-know"></a>须知内容
 
 对于本教程，您需要熟悉这些主题。
 
-- [C + +/WinRT](/windows/uwp/cpp-and-winrt-apis/)。 C + +/WinRT 是适用于 Windows 运行时（WinRT） Api 的标准新式 c + + 17 语言投影，作为基于标头文件的库实现，旨在向您提供对新式 Windows Api 的一流访问。
+- [C + +/WinRT](../cpp-and-winrt-apis/index.md)。 C + +/WinRT 是标准的新式 c + + 17 语言投影，适用于作为基于标头文件的库实现 Windows 运行时 (WinRT) Api，并旨在提供对新式 Windows Api 的一流访问。
 - 基本线性代数和牛顿物理学概念。
 - 基本图形编程术语。
 - 基本的 Windows 编程概念。
@@ -54,10 +54,10 @@ ms.locfileid: "85409566"
 
 ![操作中的示例游戏](images/simple-dx-game-overview.png)
 
-|主题|说明|
+|主题|描述|
 |-------|-------------|
 |[设置游戏项目](tutorial--setting-up-the-games-infrastructure.md)|开发游戏的第一步是在 Microsoft Visual Studio 中设置一个项目。 为游戏开发专门配置项目后，可以在以后将其重新用作模板类型。|
-|[定义游戏的 UWP 应用框架](tutorial--building-the-games-uwp-app-framework.md)|编写通用 Windows 平台（UWP）游戏的第一步是生成框架，该框架使应用对象能够与 Windows 交互。|
+|[定义游戏的 UWP 应用框架](tutorial--building-the-games-uwp-app-framework.md)|使用 (UWP) 游戏编写通用 Windows 平台的第一步是生成框架，该框架使应用对象与 Windows 交互。|
 |[游戏流管理](tutorial-game-flow-management.md)|定义支持玩家和系统交互的高级状态机。 了解 UI 如何与整个游戏的状态机交互以及如何为 UWP 游戏创建事件处理程序。|
 |[定义主游戏对象](tutorial--defining-the-main-game-loop.md)|现在，我们将查看示例游戏的主对象的详细信息，以及它实现的规则如何转换为与游戏世界的交互。|
 |[呈现框架 I：呈现简介](tutorial--assembling-the-rendering-pipeline.md)|了解如何开发呈现管道以显示图形。 呈现简介。|

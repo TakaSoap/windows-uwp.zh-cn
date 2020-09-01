@@ -9,16 +9,16 @@ dev_langs:
 - vb
 keywords: windows 10, uwp, 屏幕捕获
 ms.localizationpriority: medium
-ms.openlocfilehash: fce0dbad0e36fe2470d8e07944afa80054cfb3d7
-ms.sourcegitcommit: a5031e95b90ee72babace8e80370551f3fa88593
+ms.openlocfilehash: 829b99932c8035c2e9d493ed7319f640386f88ed
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88722022"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163621"
 ---
 # <a name="screen-capture"></a>屏幕捕获
 
-从 Windows 10 版本 1803 开始，[Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) 命名空间提供用于从屏幕或应用程序窗口获取帧的 API，以创建用于生成协作和交互式体验的视频流或快照。
+从 Windows 10 版本 1803 开始，[Windows.Graphics.Capture](/uwp/api/windows.graphics.capture) 命名空间提供用于从屏幕或应用程序窗口获取帧的 API，以创建用于生成协作和交互式体验的视频流或快照。
 
 通过屏幕捕获，开发人员调用安全系统 UI 以便最终用户选取要捕获的屏幕或应用程序窗口，然后系统会在当前正在捕获的项目四周绘制黄色通知边框。 如果同时存在多个捕获会话，系统会在每个正在捕获的项目四周绘制黄色边框。
 
@@ -37,7 +37,7 @@ ms.locfileid: "88722022"
 
 ## <a name="launch-the-system-ui-to-start-screen-capture"></a>启动系统 UI 以开始捕获屏幕
 
-在启动系统 UI 前，可以检查应用程序当前是否能够捕获屏幕。 有多种原因可能导致应用程序无法使用屏幕捕获，如设备不符合硬件要求，或要对其实施屏幕捕获的应用程序会阻止屏幕捕获。 使用 [GraphicsCaptureSession](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturesession) 类中的 **IsSupported** 方法来确定是否支持 UWP 屏幕捕获：
+在启动系统 UI 前，可以检查应用程序当前是否能够捕获屏幕。 有多种原因可能导致应用程序无法使用屏幕捕获，如设备不符合硬件要求，或要对其实施屏幕捕获的应用程序会阻止屏幕捕获。 使用 [GraphicsCaptureSession](/uwp/api/windows.graphics.capture.graphicscapturesession) 类中的 **IsSupported** 方法来确定是否支持 UWP 屏幕捕获：
 
 ```csharp
 // This runs when the application starts.
@@ -59,7 +59,7 @@ Public Sub OnInitialization()
 End Sub
 ```
 
-验证并确定支持屏幕捕获后，使用 [GraphicsCapturePicker](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturepicker) 类调用系统选取器 UI。 最终用户使用此 UI 选择要对其实施屏幕捕获的屏幕或应用程序窗口。 选取器会返回将用于创建 **GraphicsCaptureSession** 的 [GraphicsCaptureItem](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscaptureitem)：
+验证并确定支持屏幕捕获后，使用 [GraphicsCapturePicker](/uwp/api/windows.graphics.capture.graphicscapturepicker) 类调用系统选取器 UI。 最终用户使用此 UI 选择要对其实施屏幕捕获的屏幕或应用程序窗口。 选取器会返回将用于创建 **GraphicsCaptureSession** 的 [GraphicsCaptureItem](/uwp/api/windows.graphics.capture.graphicscaptureitem)：
 
 ```csharp
 public async Task StartCaptureAsync()
@@ -113,7 +113,7 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>创建捕获帧池和捕获会话
 
-使用 **GraphicsCaptureItem**，你将使用 D3D 设备创建 [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) ， (**DXGI \_ format \_ B8G8R8A8 \_ UNORM**) ，所需帧数 (，可以是) 的任何整数和帧大小。 **GraphicsCaptureItem** 类的 **ContentSize** 属性可以用作帧的大小：
+使用 **GraphicsCaptureItem**，你将使用 D3D 设备创建 [Direct3D11CaptureFramePool](/uwp/api/windows.graphics.capture.direct3d11captureframepool) ， (**DXGI \_ format \_ B8G8R8A8 \_ UNORM**) ，所需帧数 (，可以是) 的任何整数和帧大小。 **GraphicsCaptureItem** 类的 **ContentSize** 属性可以用作帧的大小：
 
 ```csharp
 private GraphicsCaptureItem _item;
@@ -176,7 +176,7 @@ _session.StartCapture();
 _session.StartCapture()
 ```
 
-若要获取这些捕获帧（即 [Direct3D11CaptureFrame](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframe) 对象），可以使用 **Direct3D11CaptureFramePool.FrameArrived** 事件：
+若要获取这些捕获帧（即 [Direct3D11CaptureFrame](/uwp/api/windows.graphics.capture.direct3d11captureframe) 对象），可以使用 **Direct3D11CaptureFramePool.FrameArrived** 事件：
 
 ```csharp
 _framePool.FrameArrived += (s, a) =>
@@ -216,15 +216,15 @@ End Sub
 
 或者，可以使用 **Direct3D11CaptureFramePool.TryGetNextFrame** 方法手动请求帧，直到获取所有需要的帧。
 
-**Direct3D11CaptureFrame** 对象包含 **ContentSize**、**Surface** 和 **SystemRelativeTime** 属性。 **SystemRelativeTime** 是可用于同步其他媒体元素的 QPC ([QueryPerformanceCounter](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)) 时间。
+**Direct3D11CaptureFrame** 对象包含 **ContentSize**、**Surface** 和 **SystemRelativeTime** 属性。 **SystemRelativeTime** 是可用于同步其他媒体元素的 QPC ([QueryPerformanceCounter](/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)) 时间。
 
 ## <a name="process-capture-frames"></a>进程捕获帧
 
-调用 **TryGetNextFrame** 时会签出 **Direct3D11CaptureFramePool** 中的每一帧，然后根据 **Direct3D11CaptureFrame** 对象的生存期重新签入。 对于本机应用程序，发布 **Direct3D11CaptureFrame** 对象便可以将帧重新签入到帧池中。 对于托管的应用程序，建议使用 **Direct3D11CaptureFrame.Dispose**（C++ 中的 **Close**）方法。 **Direct3D11CaptureFrame** 实现 [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable) 界面，该界面投射为 C# 调用方的 [IDisposable](https://docs.microsoft.com/dotnet/api/system.idisposable)。
+调用 **TryGetNextFrame** 时会签出 **Direct3D11CaptureFramePool** 中的每一帧，然后根据 **Direct3D11CaptureFrame** 对象的生存期重新签入。 对于本机应用程序，发布 **Direct3D11CaptureFrame** 对象便可以将帧重新签入到帧池中。 对于托管的应用程序，建议使用 **Direct3D11CaptureFrame.Dispose**（C++ 中的 **Close**）方法。 **Direct3D11CaptureFrame** 实现 [IClosable](/uwp/api/Windows.Foundation.IClosable) 界面，该界面投射为 C# 调用方的 [IDisposable](/dotnet/api/system.idisposable)。
 
 应用程序不应将引用保存到 **Direct3D11CaptureFrame** 对象，也不应在重新签入帧之后将引用保存到基础 Direct3D 图面。
 
-处理帧时，建议应用程序在与 **Direct3D11CaptureFramePool** 对象关联的相同设备上采用 [ID3D11Multithread](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) 锁定。
+处理帧时，建议应用程序在与 **Direct3D11CaptureFramePool** 对象关联的相同设备上采用 [ID3D11Multithread](/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) 锁定。
 
 基础 Direct3D 图面始终为创建（或重新创建）**Direct3D11CaptureFramePool** 时所指定的大小。 如果内容超过帧的大小，内容将剪裁为帧的大小。 如果内容小于帧的大小，帧的剩余部分会包含未定义的数据。 建议应用程序使用 **ContentSize** 属性为该 **Direct3D11CaptureFrame** 拷贝出一个 sub-rect，以避免显示未定义的内容。
 
@@ -686,8 +686,8 @@ End Class
 
 ## <a name="record-a-video"></a>录制视频
 
-如果要录制应用程序的视频，可以使用 [AppRecording 命名空间](https://docs.microsoft.com/uwp/api/windows.media.apprecording)来更轻松地执行此操作。 这是桌面扩展 SDK 的一部分，因此它仅适用于桌面，并要求你从项目中添加对它的引用。 有关详细信息，请参阅 [设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) 。
+如果要录制应用程序的视频，可以使用 [AppRecording 命名空间](/uwp/api/windows.media.apprecording)来更轻松地执行此操作。 这是桌面扩展 SDK 的一部分，因此它仅适用于桌面，并要求你从项目中添加对它的引用。 有关详细信息，请参阅 [设备系列概述](/uwp/extension-sdks/device-families-overview) 。
 
 ## <a name="see-also"></a>另请参阅
 
-* [Windows.Graphics.Capture 命名空间](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Windows.Graphics.Capture 命名空间](/uwp/api/windows.graphics.capture)

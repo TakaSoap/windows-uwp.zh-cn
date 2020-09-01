@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5d2ab873774ce8b48252b82ce6cf7521165554d4
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 70226b45a50e0d340c3de316902033d5563106d2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043439"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163281"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>获取并了解条形码数据
 
-设置条形码扫描器后，您需要一种了解所扫描的数据的方式。 在扫描条形码时，将引发 [DataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived) 事件。 [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)应订阅此事件。 **DataReceived**事件传递一个[BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)对象，该对象可用于访问条码数据。
+设置条形码扫描器后，您需要一种了解所扫描的数据的方式。 在扫描条形码时，将引发 [DataReceived](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived) 事件。 [ClaimedBarcodeScanner](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)应订阅此事件。 **DataReceived**事件传递一个[BarcodeScannerDataReceivedEventArgs](/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)对象，该对象可用于访问条码数据。
 
 ## <a name="subscribe-to-the-datareceived-event"></a>订阅 DataReceived 事件
 
@@ -25,7 +25,7 @@ ms.locfileid: "89043439"
 claimedBarcodeScanner.DataReceived += ClaimedBarcodeScanner_DataReceived;
 ```
 
-事件处理程序将传递给 **ClaimedBarcodeScanner** 和 **BarcodeScannerDataReceivedEventArgs** 对象。 您可以通过此对象的 [报表](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) 属性（类型为 [BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)）访问条码数据。
+事件处理程序将传递给 **ClaimedBarcodeScanner** 和 **BarcodeScannerDataReceivedEventArgs** 对象。 您可以通过此对象的 [报表](/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) 属性（类型为 [BarcodeScannerReport](/uwp/api/windows.devices.pointofservice.barcodescannerreport)）访问条码数据。
 
 ```cs
 private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner sender, BarcodeScannerDataReceivedEventArgs args)
@@ -38,11 +38,11 @@ private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner send
 
 有了 **BarcodeScannerReport**后，就可以访问和分析条码数据了。 **BarcodeScannerReport** 有三个属性：
 
-* [ScanData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandata)：完整的原始条形码数据。
-* [ScanDataLabel](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel)：解码的条形码标签，不包括标头、校验和和其他杂项信息。
-* [ScanDataType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatatype)：已解码的条形码标签类型。 可能的值是在 [BarcodeSymbologies](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies) 类中定义的。
+* [ScanData](/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandata)：完整的原始条形码数据。
+* [ScanDataLabel](/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel)：解码的条形码标签，不包括标头、校验和和其他杂项信息。
+* [ScanDataType](/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatatype)：已解码的条形码标签类型。 可能的值是在 [BarcodeSymbologies](/uwp/api/windows.devices.pointofservice.barcodesymbologies) 类中定义的。
 
-如果要访问 **ScanDataLabel** 或 **ScanDataType**，必须首先将 [IsDecodeDataEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDecodeDataEnabled) 设置为 **true**。
+如果要访问 **ScanDataLabel** 或 **ScanDataType**，必须首先将 [IsDecodeDataEnabled](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDecodeDataEnabled) 设置为 **true**。
 
 ```cs
 claimedBarcodeScanner.IsDecodeDataEnabled = true;
@@ -50,7 +50,7 @@ claimedBarcodeScanner.IsDecodeDataEnabled = true;
 
 ### <a name="get-the-scan-data-type"></a>获取扫描数据类型
 
-获取解码的条形码标签类型相当简单， &mdash; 只需在**ScanDataType**上调用[GetName](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)即可。
+获取解码的条形码标签类型相当简单， &mdash; 只需在**ScanDataType**上调用[GetName](/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)即可。
 
 ```cs
 private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
@@ -134,9 +134,9 @@ private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 * [条形码扫描仪](pos-barcodescanner.md)
-* [ClaimedBarcodeScanner 类](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
-* [BarcodeScannerDataReceivedEventArgs 类](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)
-* [BarcodeScannerReport 类](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)
-* [BarcodeSymbologies 类](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)
+* [ClaimedBarcodeScanner 类](/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
+* [BarcodeScannerDataReceivedEventArgs 类](/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)
+* [BarcodeScannerReport 类](/uwp/api/windows.devices.pointofservice.barcodescannerreport)
+* [BarcodeSymbologies 类](/uwp/api/windows.devices.pointofservice.barcodesymbologies)

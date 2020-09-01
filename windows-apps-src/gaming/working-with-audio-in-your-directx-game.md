@@ -1,27 +1,27 @@
 ---
 title: 游戏音频
-description: 学习如何开发音乐和声音并将其融入你的 DirectX 游戏，以及如何处理音频信号以创建动态和有方位感的声音。
+description: 了解如何开发音乐和声音并将其融入你的 DirectX 游戏，以及如何处理音频信号以创建动态和有方位感的声音。
 ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 音频, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 47190e98bd20f217742709e600f260776e1615a6
-ms.sourcegitcommit: 520a858435cad1900d4dc9a29fde61c168c8ce23
+ms.openlocfilehash: f0493c68fcb3453890f95c123b0c870cf321fe7e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80229441"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162911"
 ---
 # <a name="audio-for-games"></a>游戏音频
 
-学习如何开发音乐和声音并将其融入你的 DirectX 游戏，以及如何处理音频信号以创建动态和有方位感的声音。
+了解如何开发音乐和声音并将其融入你的 DirectX 游戏，以及如何处理音频信号以创建动态和有方位感的声音。
 
-对于音频编程，建议使用 DirectX 中的[XAudio2](/windows/win32/xaudio2/xaudio2-apis-portal)库，或者使用 Windows 运行时[音频图形](/windows/uwp/audio-video-camera/audio-graphs)api。 这里我们使用了 XAudio2。 XAudio2 是一个低级别的音频库，可为游戏提供信号处理 和混合的基础，并支持各种格式。
+对于音频编程，建议使用 DirectX 中的 [XAudio2](/windows/win32/xaudio2/xaudio2-apis-portal) 库，或者使用 Windows 运行时 [音频图形](../audio-video-camera/audio-graphs.md) api。 这里我们使用了 XAudio2。 XAudio2 是一个低级别的音频库，可为游戏提供信号处理 和混合的基础，并支持各种格式。
 
-你还可以使用 [Microsoft 媒体基础](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)实现简单的声音和音乐播放。 Microsoft Media Foundation 专门为播放媒体文件和音频和视频流而设计，但也可以用于游戏，而且对游戏的影院场景或非交互式组件非常有用。
+你还可以使用 [Microsoft 媒体基础](/windows/desktop/medfound/microsoft-media-foundation-sdk)实现简单的声音和音乐播放。 Microsoft Media Foundation 专门为播放媒体文件和音频和视频流而设计，但也可以用于游戏，而且对游戏的影院场景或非交互式组件非常有用。
 
-## <a name="concepts-at-a-glance"></a>简要介绍相关的概念
+## <a name="concepts-at-a-glance"></a>概念概览
 
 下面是我们在此部分中使用的一些音频编程概念。
 
@@ -53,7 +53,7 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -62,11 +62,11 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 <td align="left"><p>本主题提供 XAudio2 支持的音频编程功能列表。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/getting-started">入门与 XAudio2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/getting-started">XAudio2 入门</a></p></td>
 <td align="left"><p>本主题提供有关重要 XAudio2 概念、XAudio2 转换版本以及 RIFF 音频格式的信息。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/common-audio-concepts">常见音频编程概念</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/common-audio-concepts">通用音频编程概念</a></p></td>
 <td align="left"><p>本主题提供音频开发人员应该熟悉的通用音频概念的概述。</p></td>
 </tr>
 <tr class="even">
@@ -78,7 +78,7 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 <td align="left"><p>本主题介绍用于防止在音频播放时发生中断的 XAudio 2 回调。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/audio-graphs">XAudio2 音频图形</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/audio-graphs">XAudio2 音频图</a></p></td>
 <td align="left"><p>本主题介绍 XAudio2 音频处理图形，这些处理图像从客户端获取一组音频流作为输入、处理它们并将最终结果提交给音频设备。</p></td>
 </tr>
 <tr class="odd">
@@ -86,7 +86,7 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 <td align="left"><p>本主题介绍 XAudio2 音频效果，该效果获取传入的音频数据并对该数据进行一些操作（如混响效果），然后再传递该数据。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-streaming-audio-data">用 XAudio2 流式传输音频数据</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-streaming-audio-data">使用 XAudio2 对音频数据进行流式处理</a></p></td>
 <td align="left"><p>本主题介绍使用 XAudio2 对音频进行流式处理。</p></td>
 </tr>
 <tr class="odd">
@@ -110,7 +110,7 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -127,7 +127,7 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 <td align="left"><p>了解如何在 XAudio2 中播放之前加载的音频数据。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-submix-voices">如何：使用 Submix 语音</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-submix-voices">如何：使用提交语音</a></p></td>
 <td align="left"><p>了解如何将语音组设置为将其输出发送到相同的提交语音。</p></td>
 </tr>
 <tr class="odd">
@@ -139,11 +139,11 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 <td align="left"><p>了解如何使用 XAudio2 引擎回调。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--build-a-basic-audio-processing-graph">如何：生成基本音频处理图</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--build-a-basic-audio-processing-graph">如何：构建基本的音频处理图</a></p></td>
 <td align="left"><p>了解如何创建一个从单个控制语音和单个源语音构造的音频处理图。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--dynamically-add-or-remove-voices-from-an-audio-graph">如何：在音频图形中动态添加或删除语音</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--dynamically-add-or-remove-voices-from-an-audio-graph">如何：从音频图中动态添加或删除语音</a></p></td>
 <td align="left"><p>了解如何向按照<a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--build-a-basic-audio-processing-graph">如何：生成基本的音频处理图</a>中的步骤创建的图中添加或从中删除提交语音。</p></td>
 </tr>
 <tr class="odd">
@@ -155,7 +155,7 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 <td align="left"><p>了解如何实现 <a href="https://docs.microsoft.com/windows/desktop/api/xapo/nn-xapo-ixapo"><strong>IXAPO</strong></a> 以创建处理对象 (XAPO) 的 XAudio2 音频。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--add-run-time-parameter-support-to-an-xapo">如何：向 XAPO 添加运行时参数支持</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--add-run-time-parameter-support-to-an-xapo">如何：向 XAPO 中添加运行时参数支持</a></p></td>
 <td align="left"><p>了解如何通过实现 <a href="https://docs.microsoft.com/windows/desktop/api/xapo/nn-xapo-ixapoparameters"><strong>IXAPOParameters</strong></a> 接口向 XAPO 中添加运行时参数支持。</p></td>
 </tr>
 <tr class="even">
@@ -167,7 +167,7 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 <td align="left"><p>了解如何在 XAudio2 效果链中使用 XAPOFX 中包含的效果之一。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--stream-a-sound-from-disk">如何：从磁盘流式传输声音</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--stream-a-sound-from-disk">如何：对磁盘中的声音进行流式处理</a></p></td>
 <td align="left"><p>了解如何通过创建单独的线程来读取音频缓冲，从而在 XAudio2 中流入音频数据，以及如何使用回调来控制该线程。</p></td>
 </tr>
 <tr class="odd">
@@ -175,11 +175,11 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 <td align="left"><p>了解如何使用 X3DAudio 为 XAudio2 语音提供音量和音调值以及如何为 XAudio2 内置的混响效果提供参数。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--group-audio-methods-as-an-operation-set">如何：将音频方法分组为操作集</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--group-audio-methods-as-an-operation-set">如何：按操作集组合音频方法</a></p></td>
 <td align="left"><p>了解如何使用 XAudio2 操作集使一组方法调用同时起作用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/debugging-audio-glitches-in-xaudio2">调试 XAudio2 中的音频故障</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/debugging-audio-glitches-in-xaudio2">在 XAudio2 中调试音频故障</a></p></td>
 <td align="left"><p>了解如何为 XAudio2 设置调试日志记录级别。</p></td>
 </tr>
 </tbody>
@@ -197,7 +197,7 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -206,11 +206,11 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 <td align="left"><p>本部分包含有关 Media Foundation API 的常规信息，以及用于支持它们的工具。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/media-foundation-programming--essential-concepts">媒体基础：基本概念</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/media-foundation-programming--essential-concepts">Media Foundation：基本概念</a></p></td>
 <td align="left"><p>本主题介绍编写 Media Foundation 应用程序之前你将需要了解的一些概念。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/media-foundation-architecture">媒体基础体系结构</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/media-foundation-architecture">Media Foundation 体系结构</a></p></td>
 <td align="left"><p>本部分介绍 Microsoft Media Foundation 的常规设计，以及媒体基元及其使用的处理管道。</p></td>
 </tr>
 <tr class="even">
@@ -222,7 +222,7 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 <td align="left"><p>本主题介绍如何在应用中实现音频/视频播放。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/supported-media-formats-in-media-foundation">媒体基础中支持的媒体格式</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/supported-media-formats-in-media-foundation">Media Foundation 中支持的媒体格式</a></p></td>
 <td align="left"><p>本主题列出了 Microsoft Media Foundation 本机支持的媒体格式。 （第三方可以通过编写自定义插件支持其他格式。）</p></td>
 </tr>
 <tr class="odd">
@@ -234,11 +234,11 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 <td align="left"><p>本主题介绍如何使用 Windows Media 音频和视频编解码器的功能来生成和使用压缩的数据流。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/media-foundation-programming-reference">媒体基础编程参考</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/media-foundation-programming-reference">Media Foundation 编程参考</a></p></td>
 <td align="left"><p>本部分包含 Media Foundation API 的参考信息。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/media-foundation-sdk-samples">媒体基础 SDK 示例</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/media-foundation-sdk-samples">Media Foundation SDK 示例</a></p></td>
 <td align="left"><p>本部分列出了演示如何使用 Media Foundation 的示例应用。</p></td>
 </tr>
 </tbody>
@@ -246,7 +246,7 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 
 ### <a name="windows-runtime-xaml-media-types"></a>Windows 运行时 XAML 媒体类型
 
-如果使用 [DirectX-XAML 互操作](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10))，你可以将 Windows 运行时 XAML 媒体 API 合并到使用 DirectX 和 C++ 的 UWP 应用中，从而获得更简单的游戏方案。
+如果使用 [DirectX-XAML 互操作](/previous-versions/windows/apps/hh825871(v=win.10))，你可以将 Windows 运行时 XAML 媒体 API 合并到使用 DirectX 和 C++ 的 UWP 应用中，从而获得更简单的游戏方案。
 
 <table>
 <colgroup>
@@ -256,12 +256,12 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement"><strong>MediaElement （& e）</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement"><strong>Windows.UI.Xaml.Controls.MediaElement</strong></a></p></td>
 <td align="left"><p>XAML 元素，它表示包含音频和/或视频的对象。</p></td>
 </tr>
 <tr class="even">
@@ -285,10 +285,10 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 
 ## <a name="reference"></a>参考
 
--   [XAudio2 简介](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-introduction)
--   [XAudio2 编程指南](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide)
--   [Microsoft 媒体基础概述](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)
+-   [XAudio2 简介](/windows/desktop/xaudio2/xaudio2-introduction)
+-   [XAudio2 编程指南](/windows/desktop/xaudio2/programming-guide)
+-   [Microsoft 媒体基础概述](/windows/desktop/medfound/microsoft-media-foundation-sdk)
 
 ## <a name="related-topics"></a>相关主题
 
--   [XAudio2 编程指南](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide)
+-   [XAudio2 编程指南](/windows/desktop/xaudio2/programming-guide)

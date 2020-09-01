@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4145fbc67c6788a1d742fb0db616ecbc719e4b34
-ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
+ms.openlocfilehash: e5ac10a1cc4e9feee609a56e5db6285284c41b98
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619311"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163691"
 ---
 # <a name="playready-encrypted-media-extension"></a>PlayReady 加密媒体扩展
 
@@ -34,7 +34,7 @@ ms.locfileid: "82619311"
 -   可主动获取非永久性许可证。
 -   在一条消息中可获取多个许可证。
 
-    可结合多个密钥标识符 (KeyID) 使用 PlayReady 对象（与在 Windows 8.1 中一样），或结合多个 KeyID 使用[内容解密模型数据 (CDMData)](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN)。
+    可结合多个密钥标识符 (KeyID) 使用 PlayReady 对象（与在 Windows 8.1 中一样），或结合多个 KeyID 使用[内容解密模型数据 (CDMData)](/previous-versions/windows/apps/dn457361(v=ieb.10))。
 
     > [!NOTE]
     > 在 Windows 10 中，在 CDMData 中的 &lt;KeyID&gt; 下支持多个密钥标识符。
@@ -72,7 +72,7 @@ ms.locfileid: "82619311"
 硬件 DRM 有时不支持某些内容。 硬件 DRM 从不支持 Cocktail 内容；如果想要播放 Cocktail 内容，必须选择退出硬件 DRM。 一些硬件 DRM 支持 HEVC，而一些则不支持；如果希望播放 HEVC 内容，但硬件 DRM 不支持该内容，你也可能想要选择退出。
 
 > [!NOTE]
-> 若要确定 HEVC 内容是否受支持，请在实例化 `com.microsoft.playready` 后，使用 [**PlayReadyStatics.CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware) 方法。
+> 若要确定 HEVC 内容是否受支持，请在实例化 `com.microsoft.playready` 后，使用 [**PlayReadyStatics.CheckSupportedHardware**](/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware) 方法。
 
 ## <a name="add-secure-stop-to-your-web-app"></a>向 Web 应用添加安全停止
 
@@ -262,13 +262,13 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 ```
 
 > [!NOTE]
-> 上面示例`<SessionID>B64 encoded session ID</SessionID>`中的安全停止数据可以是星号（\*），它是记录的所有安全停止会话的通配符。 也就是说， **SessionID**标记可以是特定的会话，也可以是通配符（\*）以选择所有安全的停止会话。
+> 上面示例中的安全停止数据 `<SessionID>B64 encoded session ID</SessionID>` 可以是星号 (\*) ，这是记录的所有安全停止会话的通配符。 也就是说， **SessionID** 标记可以是特定的会话，也可以是 (\*) ，以选择所有安全的停止会话。
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>加密媒体扩展的编程注意事项
 
 本部分列出了在为 Windows 10 创建支持 PlayReady 的 Web 应用时，应考虑的编程注意事项。
 
-应用创建的 **MSMediaKeys** 和 **MSMediaKeySession** 对象必须保持活动状态，直到你的应用关闭。 确保这些对象保持活动状态的一种方法是将它们作为全局变量分配（如果声明为函数内的本地变量，这些变量将超出范围并遵循垃圾回收）。 例如，下面的示例将*g\_msMediaKeys*和*g\_mediaKeySession*变量作为全局变量分配，然后将其分配给函数中的**msMediaKeys**和**MSMediaKeySession**对象。
+应用创建的 **MSMediaKeys** 和 **MSMediaKeySession** 对象必须保持活动状态，直到你的应用关闭。 确保这些对象保持活动状态的一种方法是将它们作为全局变量分配（如果声明为函数内的本地变量，这些变量将超出范围并遵循垃圾回收）。 例如，下面的示例将 *g \_ msMediaKeys* 和 *g \_ mediaKeySession* 变量作为全局变量分配，然后将其分配给函数中的 **msMediaKeys** 和 **MSMediaKeySession** 对象。
 
 ``` syntax
 var g_msMediaKeys;
@@ -298,9 +298,5 @@ function foo() {
 
 有关详细信息，请参阅[示例应用程序](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/PlayReady)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 - [PlayReady DRM](playready-client-sdk.md)
-
-
-
-

@@ -1,17 +1,17 @@
 ---
-description: 使用当前的 Mac 计算机开发 Windows 应用。
+description: 了解如何将 Mac 与 Apple Boot Camp、Oracle VirtualBox、VMware 合成和同类桌面等第三方解决方案配合使用来开发 UWP 应用。
 title: 在 Mac 上设置 Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b8ff6d6b3b15992f0598bfb371e6bfb1023d6dc1
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 1f8b27eb9555633a9a092f3d324e0966d3ec453f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685005"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162221"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>在 Mac 上设置 Windows 10
 
@@ -20,17 +20,17 @@ ms.locfileid: "75685005"
 
 ## <a name="run-windows-on-your-mac-and-use-visual-studio"></a>在 Mac 上运行 Windows 并使用 Visual Studio
 
-准备好开始开发通用 Windows 应用，却没有一台随手可用的电脑？ 没关系 - 你可以使用 Mac！ 借助 Apple Boot Camp、Oracle VirtualBox、VMware 合成和同类桌面等常见的第三方解决方案，你可以在 Apple 计算机上安装 Windows 10 和 Microsoft Visual Studio。
+准备好开始开发通用 Windows 应用，却没有一台随手可用的电脑？ 没关系 - 你可以使用 Mac！ 使用目前流行的第三方解决方案（如 Apple Boot Camp、Oracle VirtualBox、VMware Fusion 以及 Parallels Desktop 等），可以在你的 Apple 计算机上安装 Windows 10 和 Microsoft Visual Studio。
 
-**请注意**  你将需要在磁盘或 u 盘上使用 Windows 10 可启动映像。 如果你是 MSDN 订户，可以从 MSDN 订户下载中心下载安装映像。 如果您不是订阅者，则可以从[Microsoft Store](https://www.microsoft.com/store/apps)购买安装程序。 也可以从[此位置](https://www.microsoft.com/software-download/windows10)下载安装程序，这在你已运行 Windows 并希望升级时很有用。
+**注意**   你将需要在磁盘或 u 盘上使用 Windows 10 可启动映像。 如果你是 MSDN 订户，可以从 MSDN 订户下载中心下载安装映像。 如果您不是订阅者，则可以从 [Microsoft Store](https://www.microsoft.com/store/apps)购买安装程序。 也可以从[此位置](https://www.microsoft.com/software-download/windows10)下载安装程序，这在你已运行 Windows 并希望升级时很有用。
 
-运行 Windows 后，可以从[适用于 windows 10 的开发人员下载](https://developer.microsoft.com/windows/downloads)安装最新版本的 Visual Studio 并开始编写应用！
+运行 Windows 后，可以从 [适用于 windows 10 的开发人员下载](https://developer.microsoft.com/windows/downloads) 安装最新版本的 Visual Studio 并开始编写应用！
 
-**请注意**  如果计划使用 Visual Studio 设备仿真程序，则**必须**安装64位（X64）版本的 Windows 10 专业版或更高版本。 遗憾的是，某些较旧的 Mac 电脑无法运行 64 位 Windows。 请在此 [Apple 支持页面](https://support.apple.com/kb/HT5634)上与 Apple 联系以核实你的硬件是否兼容。
+**注意**   如果计划使用 Visual Studio 设备仿真程序，则**必须**安装64位 (x64) 版本的 Windows 10 专业版或更高版本。 遗憾的是，某些较旧的 Mac 电脑无法运行 64 位 Windows。 请在此 [Apple 支持页面](https://support.apple.com/kb/HT5634)上与 Apple 联系以核实你的硬件是否兼容。
 
 ## <a name="apple-boot-camp"></a>Apple Boot Camp
 
-每个最近的 Mac 上都预安装了 Boot Camp Assistant 应用，启动它将引导你完成安装 Windows 10 的过程。 你只需要一个 Windows 的副本（来自上面列出的源）和至少 30 GB 的可用磁盘空间。 安装后，你可以选择启动到 Mac OSX 或 Windows 10 中。 有关详细信息，请参阅 Apple 的 [Boot Camp 说明页面](https://support.apple.com/HT201468)。
+在每个新的 Mac 上都预安装了 Boot Camp Assistant 应用，启动后，它将引导你完成安装 Windows 10 的过程。 你只需要一个 Windows 的副本（来自上面列出的源）和至少 30 GB 的可用磁盘空间。 安装后，你可以选择启动到 Mac OSX 或 Windows 10 中。 有关详细信息，请参阅 Apple 的 [Boot Camp 说明页面](https://support.apple.com/HT201468)。
 
 ## <a name="parallels-desktop"></a>Parallels Desktop
 

@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ab10acab42ab3f03121a7c5a462cb651b0f3f31b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dd1048ad0d3c5d542c5d7fb398261f3e29316396
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595562"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162611"
 ---
 # <a name="launch-the-people-app"></a>启动“人脉”应用
 
-本主题介绍**ms 人：** URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。
+本主题介绍了 **ms 人脉：** URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。
 
-## <a name="ms-people-uri-scheme-reference"></a>ms-people:URI 方案引用
+## <a name="ms-people-uri-scheme-reference"></a>ms-people: URI 方案引用
 
 <table>
 <colgroup>
@@ -40,7 +40,7 @@ ms.locfileid: "57595562"
 <td align="left">ms-people:settings</td>
 </tr>
 <tr class="odd">
-<td align="left">允许其他应用通过搜索的结果页提供将启动“人脉”应用的搜索字符串。
+<td align="left">允许其他应用通过搜索的结果页提供会启动“人脉”应用的搜索字符串。
 <div class="alert">
 <p>参数区分大小写。</p>
 <p>如果未正确输入语法或缺少搜索字符串值，默认行为是返回未经过任何筛选的联系人的完整列表。</p>
@@ -58,7 +58,7 @@ ms.locfileid: "57595562"
 </div>
 <div> 
 </div></td>
-<td align="left">ms-人： viewcontact？ContactId =&lt;contactid&gt;&amp;AggregatedId =&lt;aggid&gt;&amp;PhoneNumber = &lt;phonenum&gt;&amp;电子邮件 =&lt;电子邮件&gt; &amp;ContactName =&lt;名称&gt;&amp;联系人 =&lt;contactobj&gt;</td>
+<td align="left">ms-人员： viewcontact？ContactId = &lt; ContactId &gt; &amp; AggregatedId = &lt; aggid &gt; &amp; PhoneNumber = &lt; phonenum &gt; &amp; email = &lt; email 联系人 &gt; &amp; = &lt; name &gt; &amp; Contact = &lt; contactobj&gt;</td>
 </tr>
 <tr class="odd">
 <td align="left">启动到“人脉”应用内的保存联系人页面，以使用提供的电话号码或电子邮件地址保存给定的联系人。
@@ -72,7 +72,7 @@ ms.locfileid: "57595562"
 </tr>
 <tr class="even">
 <td align="left">启动以在“人脉”应用中添加新联系人页面，用于保存给定联系人。
-<div class="alert"><p>使用 <a href="https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriForResultsAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_Windows_Foundation_Collections_ValueSet_">LaunchUriForResultsAsync</a> 打开“保存新联系人”页面。 使用 <strong>LaunchUriAsync</strong> 将只启动“人脉”应用的主页。</p>
+<div class="alert"><p>使用 <a href="/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriForResultsAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_Windows_Foundation_Collections_ValueSet_">LaunchUriForResultsAsync</a> 打开“保存新联系人”页面。 使用 <strong>LaunchUriAsync</strong> 将只启动“人脉”应用的主页。</p>
 <p>参数区分大小写。</p>
 <p>参数的顺序无关紧要。</p>
 <p>你可以使用受支持参数的任意组合。</p>
@@ -133,7 +133,7 @@ ms.locfileid: "57595562"
 <td align="left"><p>ms-people:viewcontact?ContactId={ContactId}</p></td>
 </tr>
 <tr class="even">
-<td align="left"><b>电话号码</b></td>
+<td align="left"><b>PhoneNumber</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的电话号码。</p></td>
 <td align="left"><p>ms-people:viewcontact?PhoneNumber=%2014257069326</p></td>
@@ -145,13 +145,13 @@ ms.locfileid: "57595562"
 <td align="left"><p>ms-people:viewcontact?Email=johnsmith@contsco.com</p></td>
 </tr>
 <tr class="even">
-<td align="left"><b>联系人姓名</b></td>
+<td align="left"><b>联系人</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的姓名。</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactName=John%20%Smith</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><b>请联系</b></td>
+<td align="left"><b>联系人</b></td>
 <td align="left"><p>可选。</p>
 <p>Contact 对象。</p></td>
 <td align="left"><p>ms-people:viewcontact?Contact={Serialized Contact}</p></td>
@@ -176,7 +176,7 @@ ms.locfileid: "57595562"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><b>电话号码</b></td>
+<td align="left"><b>PhoneNumber</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的电话号码。</p></td>
 <td align="left"><p>ms-people:savetocontact?PhoneNumber=%2014257069326</p></td>
@@ -188,7 +188,7 @@ ms.locfileid: "57595562"
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><b>联系人姓名</b></td>
+<td align="left"><b>联系人</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的姓名。</p></td>
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com&amp;ContactName= John%20%Smith</p></td>
@@ -213,13 +213,13 @@ ms.locfileid: "57595562"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><b>公司</b></td>
+<td align="left"><b>Company</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的公司名称。</p></td>
 
 </tr>
 <tr class="even">
-<td align="left"><b>FirstName</b></td>
+<td align="left"><b>名字</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的名字。</p></td>
 </tr>
@@ -255,7 +255,7 @@ ms.locfileid: "57595562"
 
 </tr>
 <tr class="even">
-<td align="left"><b>住宅电话</b></td>
+<td align="left"><b>HomePhone</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的家庭电话。</p></td>
 </tr>
@@ -285,13 +285,13 @@ ms.locfileid: "57595562"
 </tr>
 
 <tr class="odd">
-<td align="left"><b>昵称</b></td>
+<td align="left"><b>别名</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的昵称。</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>注意</b></td>
+<td align="left"><b>备注</b></td>
 <td align="left"><p>可选。</p>
 <p>关于联系人的备注。</p></td>
 </tr>
@@ -315,7 +315,7 @@ ms.locfileid: "57595562"
 </tr>
 
 <tr class="even">
-<td align="left"><b>Title</b></td>
+<td align="left"><b>标题</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的职务。</p></td>
 </tr>
@@ -357,13 +357,13 @@ ms.locfileid: "57595562"
 </tr>
 
 <tr class="odd">
-<td align="left"><b>工作电子邮件</b></td>
+<td align="left"><b>WorkEmail</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的工作电子邮件。</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>办公电话</b></td>
+<td align="left"><b>WorkPhone</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的工作电话号码。</p></td>
 </tr>

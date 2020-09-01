@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 价格, 可用, 可发现, 免费试用版, 试用版, 试用, 应用, 发布日期
 ms.localizationpriority: medium
-ms.openlocfilehash: e9f516aeabae142c1975de2f9df343a43e642bab
-ms.sourcegitcommit: c0a859e4b8b46dea33e381ed5ae5197437902a41
+ms.openlocfilehash: 9956463471b310835aedf517817878d526cc810d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87120111"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164101"
 ---
 # <a name="set-app-pricing-and-availability"></a>设置应用定价和可用性
 
@@ -23,10 +23,10 @@ ms.locfileid: "87120111"
 
 Microsoft Store 在世界各地240多个国家/地区和地区的客户。 默认情况下，我们将在所有潜在市场提供你的应用。 如果需要，可选择在特定市场提供应用。 
 
-有关详细信息，请参阅[定义市场选择](define-pricing-and-market-selection.md)。
+有关详细信息，请参阅[定义市场选择](./define-market-selection.md)。
 
 
-## <a name="visibility"></a>可见性
+## <a name="visibility"></a>能见度
 
 **可见性**部分允许你设置对如何发现和获取你的应用的限制，包括用户是能够在 Microsoft Store 中找到应用还是能够查看应用的 Microsoft Store 一览。
 
@@ -70,7 +70,7 @@ Microsoft Store 在世界各地240多个国家/地区和地区的客户。 默�
 >[!NOTE]
 > 这些日期仅适用于使用 Windows 10（包括 Xbox）的客户。 如果你的应用对使用更早操作系统版本的客户可用，则只要产品可用，试用版将一直向这些客户提供。 
 
-要设置何时应将试用版提供给 Windows 10 上的客户的日期，请将**开始日期**和/或**结束日期**下拉列表更改为**开始/结束时间**，然后选择日期和时间。 如果执行此操作，可选择 **UTC**，这样所选择的时间便为协调世界时 (UTC)，或选择**本地**，这样这些时间便会应用于分别与某个市场相关联的各时区。 （请注意，对于跨多个时区的市场，将仅使用该市场中的某一个时区。 对于美国，将使用东部时区。）如果要为任何市场设置不同的日期，可以选择 "**为特定市场自定义**"。
+要设置何时应将试用版提供给 Windows 10 上的客户的日期，请将**开始日期**和/或**结束日期**下拉列表更改为**开始/结束时间**，然后选择日期和时间。 如果执行此操作，可选择 **UTC**，这样所选择的时间便为协调世界时 (UTC)，或选择**本地**，这样这些时间便会应用于分别与某个市场相关联的各时区。 （请注意，对于跨多个时区的市场，将仅使用该市场中的某一个时区。 对于美国，将使用东部时区。如果要为任何市场 () 设置不同的日期，可以选择 " **为特定市场自定义** " ) 。
 
 
 ## <a name="sale-pricing"></a>销售定价
@@ -90,5 +90,3 @@ Microsoft Store 在世界各地240多个国家/地区和地区的客户。 默�
 ## <a name="publish-date"></a>发布日期
 
 以前，**发布日期**部分出现在此页面上。 现在可以在[提交选项](manage-submission-options.md)页的**发布暂停选项**部分找到此功能。 （请注意，要控制应用应在何时发布到 Microsoft Store，我们建议使用**定价和可用性**页面的[计划](configure-precise-release-scheduling.md)部分。）
-
-

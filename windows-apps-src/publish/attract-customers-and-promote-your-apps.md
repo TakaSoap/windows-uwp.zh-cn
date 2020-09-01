@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2532683c7f5762f35640ef7e80180827404cde73
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: b6ffbbb13646fe085fa81c99f4ecf45e328a01f7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943027"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164261"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>吸引客户并推广应用
 
@@ -105,21 +105,21 @@ ms.locfileid: "88943027"
 
 [在仪表板中创建广告活动](create-an-ad-campaign-for-your-app.md)
 
-[使用我们的 REST API 创建 ad 市场活动](https://docs.microsoft.com/windows/uwp/monetize/run-ad-campaigns-using-windows-store-services)
+[使用我们的 REST API 创建 ad 市场活动](../monetize/run-ad-campaigns-using-windows-store-services.md)
 
-[查看仪表板中的市场活动性能数据](promote-your-app-report.md)
+[查看仪表板中的市场活动性能数据](/windows/uwp/publish/ad-campaign-report)
 
-[使用我们的 REST API 获取市场活动性能数据](https://docs.microsoft.com/windows/uwp/monetize/)
+[使用我们的 REST API 获取市场活动性能数据](../monetize/index.md)
 
 ## <a name="promotion-analytics"></a>升级分析
 
 ![升级分析](images/ads-promotion-analytics.png)
 
-[广告市场活动报告](promote-your-app-report.md)
+[广告市场活动报告](/windows/uwp/publish/ad-campaign-report)
 
 [购置报告](acquisitions-report.md)
 
-[使用我们的 REST API 获取分析数据](https://docs.microsoft.com/windows/uwp/monetize/access-analytics-data-using-windows-store-services)
+[使用我们的 REST API 获取分析数据](../monetize/access-analytics-data-using-windows-store-services.md)
 
 ## <a name="other-ways-to-promote-your-app"></a>升级应用的其他方法
 

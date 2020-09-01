@@ -1,27 +1,27 @@
 ---
 title: 游戏输入
-description: 本部分演示了如何使用游戏板和通用 Windows 平台 (UWP) 游戏的其他输入设备。
+description: 本节演示了如何使用游戏板和通用 Windows 平台 (UWP) 游戏的其他输入设备。
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f1daac8bc94d49c501307728c1e966ba89435f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0c9565f02356b776738bb325eb9a29e84582f4ad
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631662"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163091"
 ---
 # <a name="input-for-games"></a>游戏输入
 
 本部分描述了可在 Windows 10 和 Xbox One 的通用 Windows 平台 (UWP) 游戏中使用的不同类型的输入设备，演示了它们的基本用法，并推荐了在游戏中实现有效输入编程的模式和技术。
 
-> **注意**    存在可在 UWP 游戏中使用的其他类型的输入设备，例如，可能特定于流派或特定于游戏的自定义输入设备。 本部分不讨论此类设备及其编程。 有关用于加快自定义输入设备的接口的信息，请参阅 [Windows.Gaming.Input.Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom) 命名空间。
+> **注意**    存在可在 UWP 游戏中使用的其他类型的输入设备，例如，可能特定于流派或特定于游戏的自定义输入设备。 本部分不讨论此类设备及其编程。 有关用于加快自定义输入设备的接口的信息，请参阅 [Windows.Gaming.Input.Custom](/uwp/api/windows.gaming.input.custom) 命名空间。
 
 ## <a name="gaming-input-devices"></a>游戏输入设备
 
-游戏输入设备在 Windows 10 和 Xbox One 的 UWP 游戏和应用中受 [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) 命名空间支持。
+游戏输入设备在 Windows 10 和 Xbox One 的 UWP 游戏和应用中受 [Windows.Gaming.Input](/uwp/api/windows.gaming.input) 命名空间支持。
 
 ### <a name="gamepads"></a>游戏板
 
@@ -73,6 +73,6 @@ UI 导航控制器是为提供 UI 导航命令的常用词汇而存在的逻辑�
 
 ## <a name="see-also"></a>另请参阅
 
-* [输入的游戏方案](input-practices-for-games.md)
-* [Windows.Gaming.Input 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [游戏输入实践](input-practices-for-games.md)
+* [Windows.Gaming.Input 命名空间](/uwp/api/windows.gaming.input)
+* [自定义命名空间](/uwp/api/windows.gaming.input.custom)
