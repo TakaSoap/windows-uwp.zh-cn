@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 用户界面, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: cbe67a50cd51f17aa628ff2e02955fd90781392f
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: eca248887985fc6d33ca6d6b552a0b61a98ce428
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942817"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173101"
 ---
 # <a name="add-a-user-interface"></a>添加用户界面
 
@@ -21,7 +21,7 @@ ms.locfileid: "88942817"
 现在，我们的游戏已经有了三维视觉对象，可以将重点放在添加一些2D 元素上，使游戏可以向播放机提供游戏状态反馈。 这可以通过在三维图形管道输出的顶层添加简单菜单选项和打印头显示组件来实现。
 
 >[!Note]
->如果尚未下载此示例的最新游戏代码，请参阅 [Direct3D 示例游戏](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此示例是大型 UWP 功能示例集合的一部分。 有关如何下载示例的说明，请参阅[从 GitHub 获取 UWP 示例](/windows/uwp/get-started/get-uwp-app-samples)。
+>如果尚未下载此示例的最新游戏代码，请参阅 [Direct3D 示例游戏](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此示例是大型 UWP 功能示例集合的一部分。 有关如何下载示例的说明，请参阅[从 GitHub 获取 UWP 示例](../get-started/get-app-samples.md)。
 
 ## <a name="objective"></a>目标
 

@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 65a4643e6a73e0eb015fc40c7354d0cd307fa0d1
-ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
+ms.openlocfilehash: b4cf26d4f4fe5fa33f9f214da32263031188c5f0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469542"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172251"
 ---
 # <a name="bluetooth-gatt-server"></a>蓝牙 GATT 服务器
 
@@ -23,14 +23,14 @@ ms.locfileid: "85469542"
 - 向订阅的客户端发送通知
 
 > [!Important]
-> 必须在*appxmanifest.xml*中声明 "蓝牙" 功能。
+> 必须在 *appxmanifest.xml*中声明 "蓝牙" 功能。
 >
 > `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 **重要的 API**
 
-- [**Windows. 蓝牙**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-- [**Bluetooth.genericattributeprofile 替换。**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
+- [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices.Bluetooth)
+- [**Bluetooth.genericattributeprofile 替换。**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 ## <a name="overview"></a>概述
 
@@ -45,7 +45,7 @@ Windows 通常采用客户端角色进行操作。 不过在许多方案中，�
 每个服务、特征和描述符都通过自己的唯一 128 位 UUID 进行定义。
 > 所有 Windows API 都使用术语 GUID，但是蓝牙标准将这些定义为 UUID。 对于我们的用途，这两个术语可以互换，因此我们会继续使用术语 UUID。 
 
-如果该属性是标准的并且由蓝牙 SIG 定义定义，则它还会有一个相应的16位短 ID （例如，电池级别 UUID 为 0000**2A19**-0000-1000-8000-00805F9B34FB，short ID 为0x2A19）。 这些标准 UUID 可以在 [GattServiceUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids) 和 [GattCharacteristicUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids) 中进行查看。
+如果该属性是标准的并且由蓝牙 SIG 定义定义，则它还会有一个相应的16位短 ID (例如，电池级别 UUID 为 0000**2A19**-0000-1000-8000-00805F9B34FB，short ID 为 0x2A19) 。 这些标准 UUID 可以在 [GattServiceUuids](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids) 和 [GattCharacteristicUuids](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids) 中进行查看。
 
 如果应用在实现自己的自定义服务，则必须生成自定义 UUID。 这可以在 Visual Studio 中通过“工具”->“创建 Guid”轻松实现（使用选项 5 可采用“xxxxxxxx-xxxx-...xxxx”格式获取它）。 此 uuid 现在可以用于声明新的本地服务、特征或描述符。
 
@@ -182,7 +182,7 @@ async void ReadCharacteristic_ReadRequested(GattLocalCharacteristic sender, Gatt
 }
 ``` 
 
-### <a name="write"></a>写入
+### <a name="write"></a>Write
 当远程设备尝试向特征写入值时，会使用有关远程设备的详细信息、要向其写入的特征和值本身来调用 WriteRequested 事件： 
 
 ```csharp

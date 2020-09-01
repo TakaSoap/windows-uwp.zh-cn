@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0de537ec8b3b1fde0692234f7b4f39350459b7fe
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: f5864be7a4a7f80e376439e8db387e2b2853dfd7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82558793"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172481"
 ---
 # <a name="optical-zoom-and-resizing"></a>视觉缩放和调整大小
 
@@ -21,7 +21,7 @@ ms.locfileid: "82558793"
 
 本文介绍 Windows 缩放和调整大小元素，并提供在你的应用中使用这些交互机制时的用户体验指南。
 
-> **重要 API**：[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Input (XAML)**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API**：[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Input (XAML)**](/uwp/api/Windows.UI.Xaml.Input)
 
 使用视觉缩放，用户可以放大内容区域中内容的视图（在内容区域自身上执行），而使用调整大小，用户则可以更改一个或多个对象的相对大小，而不更改内容区域的视图（在内容区域中的对象上执行）。
 
@@ -37,7 +37,7 @@ ms.locfileid: "82558793"
 
 ![将手指并拢可缩小对象，将手指分开可放大](images/objectresize.png)
 
-**请注意**   ，视觉缩放不应与[语义缩放](../controls-and-patterns/semantic-zoom.md)混淆。 尽管两种交互使用相同的手势，但语义式缩放是指在单个视图中组织的内容的表示和导航（如计算机的文件夹结构、文档库或相册）。
+**注意**   光学缩放不应与[语义缩放](../controls-and-patterns/semantic-zoom.md)混淆。 尽管两种交互使用相同的手势，但语义式缩放是指在单个视图中组织的内容的表示和导航（如计算机的文件夹结构、文档库或相册）。
 
  
 
@@ -49,7 +49,7 @@ ms.locfileid: "82558793"
 -   如果定义了最大和最小大小限制或边界，则使用视觉反馈演示用户何时达到或超过这些边界。
 -   可以使用吸附点通过提供内容中要停止操作的逻辑点来影响缩放和重新调整行为，并确保内容的特定子集显示在视口中。 为常用的缩放级别或逻辑视图提供吸附点，以便于用户选择这些级别。 例如，照片应用可能会提供 100% 级别的吸附点，而对于地图应用，吸附点对于市、州/省以及国家/地区视图可能非常有用。
 
-    用户通过对齐点虽然不够精确，但仍能实现其目标。 如果你使用 XAML，请参阅 [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 的吸附点属性。 对于 JavaScript 和 HTML，请使用 [**-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895)。
+    用户通过对齐点虽然不够精确，但仍能实现其目标。 如果你使用 XAML，请参阅 [**ScrollViewer**](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 的吸附点属性。 对于 JavaScript 和 HTML，请使用 [**-ms-content-zoom-snap-points**](/previous-versions/hh771895(v=vs.85))。
 
     吸附点有两种类型：
 
@@ -65,7 +65,7 @@ ms.locfileid: "82558793"
     -   可调整大小的项可以显示在可调整大小的画布或画板上的绘图应用程序中。
     -   具有嵌入对象（如地图）的网页。
 
-    **请注意**   ，在所有情况下，将调整内容区域的大小，除非所有触控点都在可调整大小的对象内。
+    **注意**   在所有情况下，都会调整内容区域的大小，除非所有触控点都在可调整大小的对象内。
 
 ## <a name="related-articles"></a>相关文章
 
@@ -83,6 +83,6 @@ ms.locfileid: "82558793"
 - [输入：触摸点击测试示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
 - [XAML 滚动、平移和缩放示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [输入：简化的墨迹示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [输入：Windows 8 手势示例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [输入：Windows 8 手势示例](/samples/browse/?redirectedfrom=MSDN-samples)
 - [输入：操作和笔势示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX 触控输入示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

@@ -6,18 +6,18 @@ ms.date: 07/03/2020
 ms.topic: article
 keywords: windows 10，uwp，打印
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bcfc5a24ff9202840b59166de625ac619c05670
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 779965ca46efe7fb63adac46ef2568c2ecff66f1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493392"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172191"
 ---
 # <a name="customize-the-print-workflow"></a>自定义打印工作流
 
 ## <a name="overview"></a>概述
 
-开发人员可以使用打印工作流应用自定义打印工作流。 打印工作流应用是对 [Microsoft Store 设备应用 (WSDA)](https://docs.microsoft.com/windows-hardware/drivers/devapps/) 功能进行扩展的 UWP 应用，因此在继续之前，熟悉一下 WSDA 将很有帮助。
+开发人员可以使用打印工作流应用自定义打印工作流。 打印工作流应用是对 [Microsoft Store 设备应用 (WSDA)](/windows-hardware/drivers/devapps/) 功能进行扩展的 UWP 应用，因此在继续之前，熟悉一下 WSDA 将很有帮助。
 
 在使用 WSDA 的情况下，当源应用程序的用户选择打印某些内容，并通过打印对话框进行浏览时，系统会检查工作流应用是否与该打印机关联。 如果关联，则打印工作流应用将启动（主要以后台任务形式运行；下方提供了相关详细信息）。 工作流应用能够改变打印票证（配置当前打印任务的打印机设备设置的 XML 文档）和要打印的实际 XPS 内容。 它可以选择通过在过程进行到一半时启动 UI 向用户显示此功能。 完成后其工作之后，它将打印内容和打印票证传递给驱动程序。
 
@@ -39,7 +39,7 @@ ms.locfileid: "86493392"
 
 ## <a name="do-background-work-on-the-print-ticket"></a>执行打印票证上的后台工作
 
-打印系统对工作流应用首先要做的是激活其后台任务（在本例中为 `WFBackgroundTasks` 命名空间中的 `WfBackgroundTask` 类）。 在后台任务的 `Run` 方法中，应该将任务触发器的详细信息转换为 **[PrintWorkflowTriggerDetails](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails)** 实例。 这将为打印工作流后台任务提供特殊的功能。 它显示 **[PrintWorkflowSession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails.PrintWorkflowSession)** 属性，这个属性是 **[PrintWorkFlowBackgroundSession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession)** 的一个实例。 打印工作流会话类（后台和前台变体）将控制打印工作流应用中的后续步骤。
+打印系统对工作流应用首先要做的是激活其后台任务（在本例中为 `WFBackgroundTasks` 命名空间中的 `WfBackgroundTask` 类）。 在后台任务的 `Run` 方法中，应该将任务触发器的详细信息转换为 **[PrintWorkflowTriggerDetails](/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails)** 实例。 这将为打印工作流后台任务提供特殊的功能。 它显示 **[PrintWorkflowSession](/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails.PrintWorkflowSession)** 属性，这个属性是 **[PrintWorkFlowBackgroundSession](/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession)** 的一个实例。 打印工作流会话类（后台和前台变体）将控制打印工作流应用中的后续步骤。
 
 然后为此会话类将触发的两个事件注册处理程序方法。 这些方法将在以后定义。
 
@@ -67,7 +67,7 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-调用 `Start` 方法时，会话管理器首先引发 **[SetupRequested](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.SetupRequested)** 事件。 此事件公开有关打印任务的一般信息，以及打印票证。 在这个阶段，打印票证可以在后台进行编辑。
+调用 `Start` 方法时，会话管理器首先引发 **[SetupRequested](/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.SetupRequested)** 事件。 此事件公开有关打印任务的一般信息，以及打印票证。 在这个阶段，打印票证可以在后台进行编辑。
 
 ```csharp
 private void OnSetupRequested(PrintWorkflowBackgroundSession sessionManager, PrintWorkflowBackgroundSetupRequestedEventArgs printTaskSetupArgs) {
@@ -104,14 +104,14 @@ setupRequestedDeferral.Complete();
 
 ## <a name="do-foreground-work-on-the-print-job-optional"></a>执行打印作业的前台工作（可选）
 
-如果调用了 **[SetRequiresUI](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsetuprequestedeventargs.SetRequiresUI)** 方法，则打印系统将在清单文件中查找前台应用程序的入口点。 *package.appxmanifest* 文件的 `Application/Extensions` 元素必须包含以下几行。 将 `EntryPoint` 的值替换为前台应用的名称。
+如果调用了 **[SetRequiresUI](/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsetuprequestedeventargs.SetRequiresUI)** 方法，则打印系统将在清单文件中查找前台应用程序的入口点。 *package.appxmanifest* 文件的 `Application/Extensions` 元素必须包含以下几行。 将 `EntryPoint` 的值替换为前台应用的名称。
 
 ```xml
 <uap:Extension Category="windows.printWorkflowForegroundTask"  
     EntryPoint="MyWorkFlowForegroundApp.App" />
 ```
 
-接下来，打印系统将对给定应用入口点调用 **OnActivated** 方法。 在其 _App.xaml.cs_ 文件的 **OnActivated** 方法中，工作流应用应该检查此激活操作的类型，验证这是否为工作流激活。 如果是，则工作流应用可以将激活参数作为属性转换为 **[PrintWorkflowUIActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowuiactivatedeventargs)** 对象，它将 **[PrintWorkflowForegroundSession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession)** 对象作为属性公开。 此对象与在之前的部分中的后台对象一样，包含由打印系统触发的事件，你可以对这些事件分配处理程序。 在本例中，事件处理功能在另一个名为 `WorkflowPage` 的类中实现。
+接下来，打印系统将对给定应用入口点调用 **OnActivated** 方法。 在其 _App.xaml.cs_ 文件的 **OnActivated** 方法中，工作流应用应该检查此激活操作的类型，验证这是否为工作流激活。 如果是，则工作流应用可以将激活参数作为属性转换为 **[PrintWorkflowUIActivatedEventArgs](/uwp/api/windows.graphics.printing.workflow.printworkflowuiactivatedeventargs)** 对象，它将 **[PrintWorkflowForegroundSession](/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession)** 对象作为属性公开。 此对象与在之前的部分中的后台对象一样，包含由打印系统触发的事件，你可以对这些事件分配处理程序。 在本例中，事件处理功能在另一个名为 `WorkflowPage` 的类中实现。
 
 首先，在 _App.xaml.cs_ 文件中：
 
@@ -151,7 +151,7 @@ protected override void OnActivated(IActivatedEventArgs args){
 }
 ```
 
-在 UI 已连接事件处理程序，并且 **OnActivated** 方法已退出后，打印系统将引发 **[SetupRequested](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.SetupRequested)** 事件以便 UI 处理。 此事件提供的数据与后台任务设置事件提供的数据相同，包括打印作业信息和打印票证文档，但不能请求启动其他 UI。 在 _WorkflowPage.xaml.cs_ 文件中：
+在 UI 已连接事件处理程序，并且 **OnActivated** 方法已退出后，打印系统将引发 **[SetupRequested](/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.SetupRequested)** 事件以便 UI 处理。 此事件提供的数据与后台任务设置事件提供的数据相同，包括打印作业信息和打印票证文档，但不能请求启动其他 UI。 在 _WorkflowPage.xaml.cs_ 文件中：
 
 ```csharp
 internal void OnSetupRequested(PrintWorkflowForegroundSession sessionManager, PrintWorkflowForegroundSetupRequestedEventArgs printTaskSetupArgs) {
@@ -185,7 +185,7 @@ internal void OnSetupRequested(PrintWorkflowForegroundSession sessionManager, Pr
 }
 ```
 
-接下来，打印系统将为 UI 引发 **[XpsDataAvailable](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.XpsDataAvailable)** 事件。 在此事件的处理程序中，工作流应用可以访问提供给设置事件的所有数据，并且还可以采取原始字节流或对象模型的形式直接读取 XPS 数据。 对 XPS 数据的访问权限让 UI 能够提供打印预览服务，并为用户提供有关工作流应用可对数据执行的操作的信息。
+接下来，打印系统将为 UI 引发 **[XpsDataAvailable](/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.XpsDataAvailable)** 事件。 在此事件的处理程序中，工作流应用可以访问提供给设置事件的所有数据，并且还可以采取原始字节流或对象模型的形式直接读取 XPS 数据。 对 XPS 数据的访问权限让 UI 能够提供打印预览服务，并为用户提供有关工作流应用可对数据执行的操作的信息。
 
 作为此事件处理程序的一部分，如果工作流应用将继续与用户交付，则必须获取延迟对象。 如果没有延迟，当 **XpsDataAvailable** 事件处理程序退出或它调用异步方法时，打印系统将认为 UI 任务已完成。 当应用已从用户与 UI 的交互中收集了所需的所有信息时，它应该会结束延迟以便打印系统继续。
 
@@ -216,14 +216,14 @@ internal async void OnXpsDataAvailable(PrintWorkflowForegroundSession sessionMan
 }
 ```
 
-此外，事件参数公开的 **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** 实例提供了选项来取消打印作业，或指示打印作业成功完成但是无需输出打印作业。 这是通过使用 **[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** 值调用 **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation.Complete)** 方法完成的。
+此外，事件参数公开的 **[PrintWorkflowSubmittedOperation](/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** 实例提供了选项来取消打印作业，或指示打印作业成功完成但是无需输出打印作业。 这是通过使用 **[PrintWorkflowSubmittedStatus](/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** 值调用 **[Complete](/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation.Complete)** 方法完成的。
 
 > [!NOTE]
 > 如果工作流应用取消打印作业，强烈建议它提供指示取消打印作业原因的 toast 通知。
 
 ## <a name="do-final-background-work-on-the-print-content"></a>对打印内容执行最终后台工作
 
-UI 在 **PrintTaskXpsDataAvailable** 事件中完成延迟（或绕过 UI 步骤）之后，打印系统将为后台任务引发 **[Submitted](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.Submitted)** 事件。 在对此事件的处理程序中，工作流应用可以访问 **XpsDataAvailable** 事件提供的所有相同数据。 但是，与之前的所有事件都不同的是，**Submitted** 还通过 **[PrintWorkflowTarget](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtarget)** 实例提供对最终打印作业的*写入*访问权限。
+UI 在 **PrintTaskXpsDataAvailable** 事件中完成延迟（或绕过 UI 步骤）之后，打印系统将为后台任务引发 **[Submitted](/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.Submitted)** 事件。 在对此事件的处理程序中，工作流应用可以访问 **XpsDataAvailable** 事件提供的所有相同数据。 但是，与之前的所有事件都不同的是，**Submitted** 还通过 **[PrintWorkflowTarget](/uwp/api/windows.graphics.printing.workflow.printworkflowtarget)** 实例提供对最终打印作业的*写入*访问权限。
 
 用于为进行最终打印而在后台打印数据的对象取决于是以原始字节流还是以 XPS 对象模型的形式访问源数据。 当工作流应用通过字节流访问源数据时，将提供用来写入最终作业数据的输出字节流。 当工作流应用通过对象模型访问源数据时，将提供用来将对象写入输出作业的文档写入程序。 无论是哪一种情况，工作流应用都应该读取所有源数据、根据需要修改任何数据，并将修改后的数据写入输出目标。
 
@@ -233,7 +233,7 @@ UI 在 **PrintTaskXpsDataAvailable** 事件中完成延迟（或绕过 UI 步骤
 
 ### <a name="register-the-print-workflow-app-to-the-printer"></a>向打印机注册打印工作流应用
 
-工作流应用使用与 WSDA 相同类型的元数据文件提交与打印机关联。 实际上，一个 UWP 应用程序既可以充当工作流应用，又可以充当提供打印任务设置功能的 WSDA。 按照相应[创建元数据关联的 WSDA 步骤](https://docs.microsoft.com/windows-hardware/drivers/devapps/step-2--create-device-metadata)操作。
+工作流应用使用与 WSDA 相同类型的元数据文件提交与打印机关联。 实际上，一个 UWP 应用程序既可以充当工作流应用，又可以充当提供打印任务设置功能的 WSDA。 按照相应[创建元数据关联的 WSDA 步骤](/windows-hardware/drivers/devapps/step-2--create-device-metadata)操作。
 
 区别是 WSDA 会自动为用户激活（该应用将始终在用户通过关联设备打印时启动），而工作流应用不会。 后者有一个不同的策略，必须对其进行设置。
 
@@ -257,4 +257,4 @@ Set-Printer –Name "Microsoft XPS Document Writer" -WorkflowPolicy Enabled
 
 [工作流应用示例](https://github.com/Microsoft/print-oem-samples)
 
-[Windows.Graphics.Printing.Workflow 命名空间](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)
+[Windows.Graphics.Printing.Workflow 命名空间](/uwp/api/windows.graphics.printing.workflow)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 输入, 示例
 ms.localizationpriority: medium
-ms.openlocfilehash: f078cd721406120105efb35d1519e7fd0b36e74c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d4c3742ed843deca9d7d8edba033addd2e4888fe
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258610"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172071"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>向 Marble Maze 添加输入和交互性示例
 
@@ -28,7 +28,7 @@ ms.locfileid: "74258610"
 
 -   如果可能，支持多种输入设备，使你的游戏能够适应更广泛的客户偏好和能力。 尽管游戏控制器和传感器的使用是可选的，但我们强烈建议使用它来增强玩家体验。 我们设计了游戏控制器和传感器 API 来帮助你更轻松地集成这些输入设备。
 
--   要初始化触摸，必须注册窗口事件，例如在指针被激活、释放和移动时。 要初始化加速计，可在初始化应用程序时创建一个 [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer) 对象。 Xbox 控制器不需要初始化。
+-   要初始化触摸，必须注册窗口事件，例如在指针被激活、释放和移动时。 要初始化加速计，可在初始化应用时创建一个 [Windows::Devices::Sensors::Accelerometer](/uwp/api/Windows.Devices.Sensors.Accelerometer) 对象。 Xbox 控制器不需要初始化。
 
 -   对于单人游戏，考虑是否组合来自所有可能 Xbox 控制器的输入。 这样，你无需跟踪何种输入来自哪个控制器。 或者，只需跟踪仅来自最近添加的控制器的输入，如我们在此示例中所做的。
 
@@ -41,7 +41,7 @@ ms.locfileid: "74258610"
 ## <a name="input-devices-supported-by-marble-maze"></a>Marble Maze 支持的输入设备
 
 
-Marble Maze 支持通过 Xbox 控制器、鼠标和触摸来选择菜单项，支持通过 Xbox 控制器、鼠标、触摸和加速计来控制游戏。 Marble Maze 使用 [Windows::Gaming::Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) API 在控制器中轮询输入。 触摸让应用程序能够跟踪和响应指尖输入。 加速计是一种度量力量的传感器，它沿 X、Y 和 Z 轴应用。 通过使用 Windows 运行时，可轮询加速计设备的当前状态，以及通过 Windows 运行时事件处理机制接收触摸事件。
+Marble Maze 支持通过 Xbox 控制器、鼠标和触摸来选择菜单项，支持通过 Xbox 控制器、鼠标、触摸和加速计来控制游戏。 Marble Maze 使用 [Windows::Gaming::Input](/uwp/api/windows.gaming.input) API 在控制器中轮询输入。 触摸让应用程序能够跟踪和响应指尖输入。 加速计是一种度量力量的传感器，它沿 X、Y 和 Z 轴应用。 通过使用 Windows 运行时，可轮询加速计设备的当前状态，以及通过 Windows 运行时事件处理机制接收触摸事件。
 
 > [!NOTE]
 > 本文档使用触摸表示触摸和鼠标输入，使用指针表示任何使用指针事件的设备。 因为触摸和鼠标使用标准指针事件，所以你可使用任何一种设备来选择菜单项和控制游戏。
@@ -56,9 +56,9 @@ Marble Maze 支持通过 Xbox 控制器、鼠标和触摸来选择菜单项，�
 ## <a name="initializing-input-devices"></a>初始化输入设备
 
 
-Xbox 控制器不需要初始化。 要初始化触摸，必须注册窗口事件，例如指针被激活（例如，玩家按下鼠标按钮或触摸屏幕）、释放和移动时。 若要初始化加速计，必须在初始化应用程序时创建一个 [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer) 对象。
+Xbox 控制器不需要初始化。 要初始化触摸，必须注册窗口事件，例如指针被激活（例如，玩家按下鼠标按钮或触摸屏幕）、释放和移动时。 若要初始化加速计，必须在初始化应用程序时创建一个 [Windows::Devices::Sensors::Accelerometer](/uwp/api/Windows.Devices.Sensors.Accelerometer) 对象。
 
-下面的示例展示了 **App::SetWindow** 方法如何注册 [Windows::UI::Core::CoreWindow::PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerPressed)、[Windows::UI::Core::CoreWindow::PointerReleased](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerReleased) 和 [Windows::UI::Core::CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerMoved) 指针事件。 这些事件在应用程序初始化期间和游戏循环之前注册。
+下面的示例展示了 **App::SetWindow** 方法如何注册 [Windows::UI::Core::CoreWindow::PointerPressed](/uwp/api/windows.ui.core.corewindow.PointerPressed)、[Windows::UI::Core::CoreWindow::PointerReleased](/uwp/api/windows.ui.core.corewindow.PointerReleased) 和 [Windows::UI::Core::CoreWindow::PointerMoved](/uwp/api/windows.ui.core.corewindow.PointerMoved) 指针事件。 这些事件在应用程序初始化期间和游戏循环之前注册。
 
 这些事件在调用事件处理程序的单独线程中处理。
 
@@ -85,13 +85,13 @@ typedef std::map<int, XMFLOAT2> TouchMap;
 TouchMap        m_touches;
 ```
 
-**MarbleMazeMain** 类还持有一个 [Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer) 对象。
+**MarbleMazeMain** 类还持有一个 [Accelerometer](/uwp/api/Windows.Devices.Sensors.Accelerometer) 对象。
 
 ```cpp
 Windows::Devices::Sensors::Accelerometer^           m_accelerometer;
 ```
 
-**Accelerometer** 对象在 **MarbleMazeMain** 构造函数中初始化，如下面的示例中所示。 [Windows::Devices::Sensors::Accelerometer::GetDefault](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer.GetDefault) 方法返回默认加速计的一个实例。 如果没有默认加速计，**Accelerometer::GetDefault** 将返回 **nullptr**。
+**Accelerometer** 对象在 **MarbleMazeMain** 构造函数中初始化，如下面的示例中所示。 [Windows：:D evices：：传感器：：加速度：： adaptivesourcemanager.getdefault](/uwp/api/Windows.Devices.Sensors.Accelerometer.GetDefault)方法返回默认加速度的实例。 如果没有默认加速计，**Accelerometer::GetDefault** 将返回 **nullptr**。
 
 ```cpp
 // Returns accelerometer ref if there is one; nullptr otherwise.
@@ -109,7 +109,7 @@ m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 
 ###  <a name="tracking-xbox-controller-input"></a>跟踪 Xbox 控制器输入
 
-为了跟踪当前连接到设备的游戏板，**MarbleMazeMain** 定义成员变量 **m_myGamepads**，这是 [Windows::Gaming::Input::Gamepad](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad) 对象的集合。 这在构造函数中初始化，如下所示：
+为了跟踪当前连接到设备的游戏板，**MarbleMazeMain** 定义成员变量 **m_myGamepads**，这是 [Windows::Gaming::Input::Gamepad](/uwp/api/windows.gaming.input.gamepad) 对象的集合。 这在构造函数中初始化，如下所示：
 
 ```cpp
 m_myGamepads = ref new Vector<Gamepad^>();
@@ -198,7 +198,7 @@ if (m_gamepad != nullptr)
 }
 ```
 
-我们使用 **m_oldReading** 跟踪在最后一帧中获取的输入读数，并使用 **m_newReading** 跟踪最新输入读数，我们通过调用 [Gamepad::GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.GetCurrentReading) 获取这些数据。 这将返回 [GamepadReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadreading) 对象，其中包含游戏板当前状态的信息。
+我们使用 **m_oldReading** 跟踪在最后一帧中获取的输入读数，并使用 **m_newReading** 跟踪最新输入读数，我们通过调用 [Gamepad::GetCurrentReading](/uwp/api/windows.gaming.input.gamepad.GetCurrentReading) 获取这些数据。 这将返回 [GamepadReading](/uwp/api/windows.gaming.input.gamepadreading) 对象，其中包含游戏板当前状态的信息。
 
 为了检查按钮是按下还是释放，我们定义 **MarbleMazeMain::ButtonJustPressed** 和 **MarbleMazeMain::ButtonJustReleased**，这将比较此帧和最后一帧的按钮读数。 这样，我们可以仅在最初按下或释放按钮时执行操作，而不是在按住按钮时执行操作：
 
@@ -222,7 +222,7 @@ bool MarbleMaze::MarbleMazeMain::ButtonJustReleased(GamepadButtons selection)
 }
 ```
 
-[GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons) 读数使用按位运算进行比较&mdash;我们检查是否使用*按位 and* (&) 按下按钮。 我们将确定是否通过比较旧读数和新读数按下或释放按钮。
+[GamepadButtons](/uwp/api/windows.gaming.input.gamepadbuttons) 读数使用按位运算进行比较&mdash;我们检查是否使用*按位 and* (&) 按下按钮。 我们将确定是否通过比较旧读数和新读数按下或释放按钮。
 
 我们使用上述方法检查是否按下了某些按钮，然后执行任何必须发生的相应操作。 例如，按下“菜单”按钮 (**GamepadButtons::Menu**) 时，游戏状态会从活动更改为暂停，或者从暂停更改为活动。
 
@@ -324,7 +324,7 @@ case GameState::InGamePaused:
 
 ### <a name="tracking-touch-and-mouse-input"></a>跟踪触摸和鼠标输入
 
-对于触摸和鼠标输入，用户可通过触摸或单击一个菜单项来选择它。 下面的示例展示了 **MarbleMazeMain::Update** 方法如何处理指针输入来选择菜单项。 **M\_pointQueue**成员变量跟踪用户在屏幕上接触或单击的位置。 Marble Maze 收集指针输入的方式将在本文档后面[处理指针输入](#processing-pointer-input)一节中详细介绍。
+对于触摸和鼠标输入，用户可通过触摸或单击一个菜单项来选择它。 下面的示例展示了 **MarbleMazeMain::Update** 方法如何处理指针输入来选择菜单项。 **M \_ pointQueue**成员变量跟踪用户在屏幕上接触或单击的位置。 在本文档的 [处理指针输入](#processing-pointer-input)部分中，稍后将更详细地介绍了大理石迷宫收集指针输入的方式。
 
 ```cpp
 // Check whether the user chose a button from the UI. 
@@ -388,7 +388,7 @@ float combinedTiltY = 0.0f;
 
 ###  <a name="processing-pointer-input"></a>处理指针输入
 
-处理指针输入时，可调用 [Windows::UI::Core::CoreDispatcher::ProcessEvents](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) 方法来处理窗口事件。 在更新或呈现场景之前，在游戏循环中调用此方法。 Marble Maze 在 **App::Run** 方法中执行此调用： 
+处理指针输入时，可调用 [Windows::UI::Core::CoreDispatcher::ProcessEvents](/uwp/api/windows.ui.core.coredispatcher.processevents) 方法来处理窗口事件。 在更新或呈现场景之前，在游戏循环中调用此方法。 Marble Maze 在 **App::Run** 方法中执行此调用： 
 
 ```cpp
 while (!m_windowClosed)
@@ -490,7 +490,7 @@ for (TouchMap::const_iterator iter = m_touches.cbegin();
 
 ### <a name="processing-accelerometer-input"></a>处理加速计输入
 
-若要处理加速计输入，**MarbleMazeMain::Update** 方法会调用 [Windows::Devices::Sensors::Accelerometer::GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer.getcurrentreading) 方法。 此方法返回一个 [Windows::Devices::Sensors::AccelerometerReading](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.AccelerometerReading) 对象，它表示一个加速计读数。 **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** 和 **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** 属性具有分别沿 X 和 Y 轴的 G-Force 加速。
+若要处理加速计输入，**MarbleMazeMain::Update** 方法会调用 [Windows::Devices::Sensors::Accelerometer::GetCurrentReading](/uwp/api/windows.devices.sensors.accelerometer.getcurrentreading) 方法。 此方法返回一个 [Windows::Devices::Sensors::AccelerometerReading](/uwp/api/Windows.Devices.Sensors.AccelerometerReading) 对象，它表示一个加速计读数。 **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** 和 **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** 属性具有分别沿 X 和 Y 轴的 G-Force 加速。
 
 下面的示例展示了 **MarbleMazeMain::Update** 方法如何轮询加速计并更新组合的输入值。 倾斜设备时，重力会导致弹珠移动速度更快。
 
@@ -512,7 +512,7 @@ if (m_accelerometer != nullptr)
 }
 ```
 
-因为无法确保用户计算机上是否有加速计，所以始终要在轮询加速计之前确保你有一个有效的 [Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer) 对象。
+因为无法确保用户计算机上是否有加速计，所以始终要在轮询加速计之前确保你有一个有效的 [Accelerometer](/uwp/api/Windows.Devices.Sensors.Accelerometer) 对象。
 
 ### <a name="processing-xbox-controller-input"></a>处理 Xbox 控制器输入
 
@@ -541,14 +541,14 @@ if ((oppositeSquared + adjacentSquared) > m_deadzoneSquared)
 
 ###  <a name="applying-input-to-the-game-state"></a>将输入应用到游戏状态
 
-设备以不同方式报告输入值。 例如，指针输入可能采用屏幕坐标格式，而控制器输入可能采用完全不同的格式。 将来自多台设备的输入组合到一组输入值中的一项挑战是标准化，或者将值转换为通用格式。 大理石迷宫通过将值缩放到 \[-1.0，1.0\]的范围来规范化值。 **PointToTouch** 函数（本节前面已介绍）将屏幕坐标转换为大体在 -1.0 与 +1.0 之间的规范化值。
+设备以不同方式报告输入值。 例如，指针输入可能采用屏幕坐标格式，而控制器输入可能采用完全不同的格式。 将来自多台设备的输入组合到一组输入值中的一项挑战是标准化，或者将值转换为通用格式。 大理石迷宫通过将值缩放到范围 \[ -1.0，1.0 来规范化值 \] 。 **PointToTouch** 函数（本节前面已介绍）将屏幕坐标转换为大体在 -1.0 与 +1.0 之间的规范化值。
 
 > [!TIP]
 > 即使你的应用程序仅使用一种输入方法，我们也建议你始终规范输入值。 执行此操作可简化游戏的其他组件如何解释输入（例如力学模拟），以及使编写适用于不同屏幕分辨率的游戏更容易。
 
  
 
-在 **MarbleMazeMain::Update** 方法处理输入后，将会创建一个矢量来表示在倾斜迷宫时对弹珠的影响。 下面的示例展示了 Marble Maze 如何使用 [XMVector3Normalize](https://docs.microsoft.com/windows/desktop/api/directxmath/nf-directxmath-xmvector3normalize) 函数创建一个规范化的重力矢量。 **maxTilt** 变量约束迷宫倾斜的程度并阻止迷宫朝一侧倾斜。
+在 **MarbleMazeMain::Update** 方法处理输入后，将会创建一个矢量来表示在倾斜迷宫时对弹珠的影响。 下面的示例展示了 Marble Maze 如何使用 [XMVector3Normalize](/windows/desktop/api/directxmath/nf-directxmath-xmvector3normalize) 函数创建一个规范化的重力矢量。 **maxTilt** 变量约束迷宫倾斜的程度并阻止迷宫朝一侧倾斜。
 
 ```cpp
 const float maxTilt = 1.0f / 8.0f;
@@ -603,7 +603,7 @@ if (marblePosition.z >= resetDepth)
 }
 ```
 
-本节没有介绍力学模拟的工作原理。 有关这方面的细节，请参阅 Marble Maze 源代码中的 **Physics.h** 和 **Physics.cpp**。
+本节没有介绍力学模拟的工作原理。 有关此情况的详细信息，请参阅大理石迷宫源中的**物理 .h**和**物理学。**
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -613,14 +613,10 @@ if (marblePosition.z >= resetDepth)
 ## <a name="related-topics"></a>相关主题
 
 
-* [向大理石迷宫示例添加音频](adding-audio-to-the-marble-maze-sample.md)
-* [向大理石迷宫示例中添加视觉内容](adding-visual-content-to-the-marble-maze-sample.md)
-* [开发大理石迷宫，其中的 UWP 游戏C++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [向 Marble Maze 添加音频示例](adding-audio-to-the-marble-maze-sample.md)
+* [向 Marble Maze 示例添加可视内容](adding-visual-content-to-the-marble-maze-sample.md)
+* [开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 
  
-
-
-
-

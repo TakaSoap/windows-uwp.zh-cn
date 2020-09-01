@@ -1,32 +1,32 @@
 ---
 title: 获取并了解磁条数据
-description: 了解如何获取和解释磁条中的数据。
+description: 了解如何从磁条获取和解释数据。
 ms.date: 10/04/2018
 ms.topic: article
-keywords: windows 10，uwp，点的服务、 pos、 磁条阅读器
+keywords: windows 10，uwp，服务点，pos，磁条纹读取器
 ms.localizationpriority: medium
-ms.openlocfilehash: 12b88d942e4b5a9c90880f6bd362ba9e7e011186
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: eb4238d35497bdd90671dd0b6fa63d589c0ec740
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321554"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173261"
 ---
 # <a name="obtain-and-understand-magnetic-stripe-data"></a>获取并了解磁条数据
 
-一旦设置了应用程序中所述的步骤中你磁条阅读器[开始使用服务点](pos-basics.md)，已准备好开始从其获取数据。
+使用 [服务点](pos-basics.md)入门中所述的步骤在应用程序中设置磁条阅读器后，便可以开始获取数据了。
 
 ## <a name="subscribe-to-datareceived-events"></a>订阅 * DataReceived 事件
 
-每当读取器可以识别重击的卡，它会引发三个事件之一：
+只要读者识别重击卡，它就会引发三个事件之一：
 
-* [AamvaCardDataReceived 事件](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived):刷机动车辆卡时发生。
-* [BankCardDataReceived 事件](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived):刷银行卡时发生。
-* [VendorSpecificDataReceived 事件](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.vendorspecificdatareceived):实现特定于供应商的卡时发生。
+* [AamvaCardDataReceived 事件](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived)：当电动机卡为重击时出现。
+* [BankCardDataReceived 事件](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived)：在银行卡为重击时发生。
+* [VendorSpecificDataReceived 事件](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.vendorspecificdatareceived)：在特定于供应商的卡为重击时发生。
 
-你的应用程序只需订阅事件支持的磁条阅读器。 您可以看到与支持哪些类型的卡[MagneticStripeReader.SupportedCardTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes)。
+应用程序只需订阅磁条纹读取器支持的事件。 可以查看 [MagneticStripeReader](/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes)支持的卡类型。
 
-下面的代码演示的三个订阅 ***DataReceived**事件：
+以下代码演示了如何订阅三个 ***DataReceived** 事件：
 
 ```cs
 private void SubscribeToEvents(ClaimedMagneticStripeReader claimedReader, MagneticStripeReader reader)
@@ -49,15 +49,15 @@ private void SubscribeToEvents(ClaimedMagneticStripeReader claimedReader, Magnet
 }
 ```
 
-将传递的事件处理程序[ClaimedMagneticStripeReader](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader)和一个*args*对象，其类型将事件而异：
+将向事件处理程序传递 [ClaimedMagneticStripeReader](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader) 和 *参数* 对象，其类型将因事件而异：
 
-* **AamvaCardDataReceived**事件：[MagneticStripeReaderAamvaCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
-* **BankCardDataReceived**事件：[MagneticStripeReaderBankCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
-* **VendorSpecificDataReceived**事件：[MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
+* **AamvaCardDataReceived** 事件： [MagneticStripeReaderAamvaCardDataReceivedEventArgs 类](/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
+* **BankCardDataReceived** 事件： [MagneticStripeReaderBankCardDataReceivedEventArgs 类](/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
+* **VendorSpecificDataReceived** 事件： [MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs 类](/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
 
 ## <a name="get-the-data"></a>获取数据
 
-有关**AamvaCardDataReceived**并**BankCardDataReceived**事件，可以获取直接来自数据的一些*args*对象。 下面的示例演示获取一些属性并将其分配给成员变量：
+对于 **AamvaCardDataReceived** 和 **BankCardDataReceived** 事件，可以直接从 *args* 对象获取一些数据。 下面的示例演示如何获取一些属性并将其分配给成员变量：
 
 ```cs
 private string _accountNumber;
@@ -75,17 +75,17 @@ private void Reader_BankCardDataReceived(
 }
 ```
 
-但是，一些数据，包括中的所有数据**VendorSpecificDataReceived**事件，必须通过检索**报表**对象，它是一个属性的*args*参数。 此项的类型[MagneticStripeReaderReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport)。
+但是，某些数据（包括 **VendorSpecificDataReceived** 事件中的所有数据）必须通过 **报表** 对象进行检索，该对象是 *参数参数的* 属性。 这是 [MagneticStripeReaderReport](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport)类型。
 
-可以使用[CardType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.cardtype)属性，找出重击哪些类型的卡，然后使用，以通知如何解释将数据从[Track1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track1)， [Track2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track2)， [Track3](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track3)，并[Track4](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track4)。
+您可以使用 [CardType](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.cardtype) 属性来确定已重击的卡类型，然后使用该属性来通知您如何解释 [Track1](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track1)、 [Track2](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track2)、 [Track3](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track3)和 [Track4](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track4)中的数据。
 
-从每个跟踪的数据表示为[MagneticStripeReaderTrackData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata)对象。 此类可以获取以下类型的数据：
+每个轨迹的数据表示为 [MagneticStripeReaderTrackData](/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata) 对象。 从此类中，你可以获取以下类型的数据：
 
-* [数据](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.data):原始或已解码的数据。
-* [DiscretionaryData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.discretionarydata):自定义的数据。 
-* [EncryptedData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.encrypteddata):加密的数据。
+* [数据](/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.data)：原始或已解码的数据。
+* [DiscretionaryData](/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.discretionarydata)：任意数据。 
+* [EncryptedData](/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.encrypteddata)：已加密的数据。
 
-以下代码片段获取报表和跟踪数据，然后检查卡类型：
+以下代码段将获取报表和跟踪数据，然后检查卡类型：
 
 ```cs
 private void GetTrackData(MagneticStripeReaderBankCardDataReceivedEventArgs args)
@@ -117,12 +117,12 @@ private void GetTrackData(MagneticStripeReaderBankCardDataReceivedEventArgs args
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-* [磁条阅读器](pos-magnetic-stripe-reader.md)
-* [ClaimedMagneticStripeReader 类](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader)
-* [MagneticStripeReaderAamvaCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
-* [MagneticStripeReaderBankCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
-* [MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
-* [MagneticStripeReaderReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport)
-* [MagneticStripeReaderTrackData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata)
+* [磁条读取器](pos-magnetic-stripe-reader.md)
+* [ClaimedMagneticStripeReader 类](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader)
+* [MagneticStripeReaderAamvaCardDataReceivedEventArgs 类](/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
+* [MagneticStripeReaderBankCardDataReceivedEventArgs 类](/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
+* [MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs 类](/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
+* [MagneticStripeReaderReport](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport)
+* [MagneticStripeReaderTrackData](/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata)

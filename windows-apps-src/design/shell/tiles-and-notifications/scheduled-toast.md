@@ -7,35 +7,35 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: windows 10，uwp，计划 toast 通知，scheduledtoastnotification，如何，快速入门，入门，代码示例，演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 07339cf793bdada51f79d70d9e9e6b6d4a41851b
-ms.sourcegitcommit: 017f2f1492f3220da0fae8b4c99de7206a185dff
+ms.openlocfilehash: bc80cf04c1e1461612401ef4ced898058e2dd4ac
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81386426"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172351"
 ---
 # <a name="schedule-a-toast-notification"></a>计划 toast 通知
 
 计划 toast 通知允许您将通知计划为稍后显示，而不管应用程序是否正在运行。 这适用于显示提醒或用户的其他后续任务的方案，其中通知的时间和内容是提前知道的。
 
-请注意，计划 toast 通知的传递时段为5分钟。 如果计算机在计划的传递时间内处于关闭状态，并且保持不变超过5分钟，则通知将被 "删除"，因此不再与用户相关。 如果需要有保证的通知送达，而不考虑计算机的持续时间，我们建议使用带有时间触发器的后台任务，如[此代码示例](https://github.com/WindowsNotifications/quickstart-snoozable-toasts-even-if-computer-is-off)中所示。
+请注意，计划 toast 通知的传递时段为5分钟。 如果计算机在计划的传递时间内处于关闭状态，并且保持不变超过5分钟，则通知将被 "删除"，因此不再与用户相关。 如果需要有保证的通知送达，而不考虑计算机的持续时间，我们建议使用带有时间触发器的后台任务，如 [此代码示例](https://github.com/WindowsNotifications/quickstart-snoozable-toasts-even-if-computer-is-off)中所示。
 
 > [!IMPORTANT]
-> 桌面应用程序（.MSIX/稀疏包和经典 Win32）的发送通知和处理激活步骤略有不同。 按照下面的说明进行操作，但将 `ToastNotificationManager` 替换为[桌面应用](toast-desktop-apps.md)文档中的 `DesktopNotificationManagerCompat` 类。
+> 桌面应用程序 (.MSIX/稀疏包和经典 Win32) 用于发送通知和处理激活的步骤略有不同。 请按照下面的说明进行操作，但 `ToastNotificationManager` 将替换为 `DesktopNotificationManagerCompat` [桌面应用](toast-desktop-apps.md) 文档中的类。
 
-> **重要 api**： [ScheduledToastNotification 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+> **重要 api**： [ScheduledToastNotification 类](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要完全理解此主题，事先掌握以下内容会很有用...
 
-* Toast 通知术语和概念的应用知识。 有关详细信息，请参阅 [Toast 和操作中心概述](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/)。
+* Toast 通知术语和概念的应用知识。 有关详细信息，请参阅 [Toast 和操作中心概述](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10)。
 * 熟悉 Windows 10 toast 通知内容。 有关详细信息，请参阅 [toast 内容文档](adaptive-interactive-toasts.md)。
 * Windows 10 UWP 应用项目
 
 
-## <a name="install-nuget-packages"></a>安装 NuGet 程序包
+## <a name="install-nuget-packages"></a>安装 NuGet 包
 
 我们建议你对你的项目安装以下两个 NuGet 程序包。 代码示例将使用这些程序包。
 
@@ -101,7 +101,7 @@ ToastContent toastContent = new ToastContent()
 
 ## <a name="create-the-scheduled-toast"></a>创建计划 toast
 
-初始化 toast 内容后，创建新的[ScheduledToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)并传入内容的 XML，并传入要传递通知的时间。
+初始化 toast 内容后，创建新的 [ScheduledToastNotification](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification) 并传入内容的 XML，并传入要传递通知的时间。
 
 ```csharp
 // Create the scheduled notification
@@ -111,11 +111,11 @@ var toast = new ScheduledToastNotification(toastContent.GetXml(), DateTime.Now.A
 
 ## <a name="provide-a-primary-key-for-your-toast"></a>为 toast 提供主键
 
-如果要以编程方式取消、删除或替换计划的通知，则需要使用 Tag 属性（也可以是组属性）来提供通知的主密钥。 然后，你可以在将来使用此主密钥来取消、删除或替换通知。
+如果要以编程方式取消、删除或替换计划的通知，则需要使用 Tag 属性 (，并选择性地) 组属性，以提供通知的主密钥。 然后，你可以在将来使用此主密钥来取消、删除或替换通知。
 
-要查看有关替换/删除已发送的 toast 通知的更多详细信息，请参阅[快速入门：在操作中心 (XAML) 中管理 toast 通知](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))。
+要查看有关替换/删除已发送的 toast 通知的更多详细信息，请参阅[快速入门：在操作中心 (XAML) 中管理 toast 通知](/previous-versions/windows/apps/dn631260(v=win.10))。
 
-Tag 和 Group 组合充当复合主键。 Group 是两者中较为通用的标识符，你可以用它来分配如“wallPosts”、“messages”、“friendRequests”等组。而 Tag 应该唯一标识组中的通知本身。 使用通用组时，可以使用 [RemoveGroup API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) 删除该组中的所有通知。
+Tag 和 Group 组合充当复合主键。 Group 是两者中较为通用的标识符，你可以用它来分配如“wallPosts”、“messages”、“friendRequests”等组。而 Tag 应该唯一标识组中的通知本身。 使用通用组时，可以使用 [RemoveGroup API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) 删除该组中的所有通知。
 
 ```csharp
 toast.Tag = "18365";
@@ -125,7 +125,7 @@ toast.Group = "ASTR 170B1";
 
 ## <a name="schedule-the-notification"></a>计划通知
 
-最后，创建[ToastNotifier](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotifier)并调用 AddToSchedule （），并传入你计划的 toast 通知。
+最后，创建 [ToastNotifier](/uwp/api/windows.ui.notifications.toastnotifier) 并调用 AddToSchedule ( # A1，并传入计划的 toast 通知。
 
 ```csharp
 // And your scheduled toast to the schedule
@@ -133,11 +133,11 @@ ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 ```
 
 
-## <a name="cancel-scheduled-notifications"></a>取消计划的通知
+## <a name="cancel-scheduled-notifications"></a>取消预定通知
 
 若要取消计划的通知，必须首先检索所有计划的通知的列表。
 
-然后，找到与之前指定的标记（和选择性组）匹配的计划 toast，并调用 RemoveFromSchedule （）。
+然后，找到与标记 (匹配的计划 toast，还可以选择) 之前指定的组，然后调用 RemoveFromSchedule ( # A3。
 
 ```csharp
 // Create the toast notifier
@@ -158,15 +158,15 @@ if (toRemove != null)
 
 ## <a name="activation-handling"></a>激活处理
 
-若要详细了解如何处理激活，请参阅[发送本地 toast](send-local-toast.md)文档。 激活计划 toast 通知的方式与激活本地 toast 通知相同。
+若要详细了解如何处理激活，请参阅 [发送本地 toast](send-local-toast.md) 文档。 激活计划 toast 通知的方式与激活本地 toast 通知相同。
 
 
 ## <a name="adding-actions-inputs-and-more"></a>添加操作、输入和其他内容
 
-若要详细了解操作和输入等高级主题，请参阅[发送本地 toast](send-local-toast.md)文档。 操作和输入在本地 toast 中的工作方式与在计划 toast 中的工作方式相同。
+若要详细了解操作和输入等高级主题，请参阅 [发送本地 toast](send-local-toast.md) 文档。 操作和输入在本地 toast 中的工作方式与在计划 toast 中的工作方式相同。
 
 
 ## <a name="resources"></a>资源
 
-* [Toast 内容文档](adaptive-interactive-toasts.md)
-* [ScheduledToastNotification 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+* [toast 内容文档](adaptive-interactive-toasts.md)
+* [ScheduledToastNotification 类](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)

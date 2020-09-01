@@ -10,20 +10,20 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 79e511d20874470dfea8413bdf88365bba86d087
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 9c6fb40d64d0826a5cbbfa7c97694e6650df9dbe
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260463"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172971"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>监视后台任务进度和完成
 
 **重要的 API**
 
-- [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)
-- [**BackgroundTaskProgressEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskprogresseventhandler)
-- [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler)
+- [**BackgroundTaskRegistration**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)
+- [**BackgroundTaskProgressEventHandler**](/uwp/api/windows.applicationmodel.background.backgroundtaskprogresseventhandler)
+- [**BackgroundTaskCompletedEventHandler**](/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler)
 
 了解应用如何识别在进程外运行的后台任务报告的进度和完成情况。 （对于进程内后台任务，可以设置共享变量来表示进度和完成情况。）
 
@@ -34,9 +34,9 @@ ms.locfileid: "74260463"
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>创建一个事件处理程序以处理完成的后台任务
 
 ### <a name="step-1"></a>步骤 1
-创建一个事件处理程序函数以处理完成的后台任务。 此代码需要遵循特定的占用空间，这需要使用[**IBackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration)对象和[**BackgroundTaskCompletedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskCompletedEventArgs)对象。
+创建一个事件处理程序函数以处理完成的后台任务。 此代码需要遵循特定的占用空间，这需要使用 [**IBackgroundTaskRegistration**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) 对象和 [**BackgroundTaskCompletedEventArgs**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskCompletedEventArgs) 对象。
 
-对于**OnCompleted**后台任务事件处理程序方法，请使用以下需求量。
+对于 **OnCompleted** 后台任务事件处理程序方法，请使用以下需求量。
 
 ```csharp
 private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
@@ -92,7 +92,7 @@ auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskComplete
 ## <a name="create-an-event-handler-function-to-handle-background-task-progress"></a>创建一个事件处理程序函数以处理后台任务进度。
 
 ### <a name="step-1"></a>步骤 1
-创建一个事件处理程序函数以处理完成的后台任务。 该代码需遵循特定的足迹，即获取 [**IBackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) 对象和 [**BackgroundTaskProgressEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs) 对象：
+创建一个事件处理程序函数以处理完成的后台任务。 该代码需遵循特定的足迹，即获取 [**IBackgroundTaskRegistration**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) 对象和 [**BackgroundTaskProgressEventArgs**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs) 对象：
 
 对 OnProgress 后台任务事件处理程序方法使用以下足迹：
 
@@ -215,7 +215,7 @@ void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskReg
 ```
 
 ### <a name="step-2"></a>步骤 2
-当应用启动或导航到后台任务状态相关的新页面时，它应用获取档期已注册的后台任务列表并将它们与进度和完成事件处理程序函数关联。 应用程序当前已注册的后台任务列表位于 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration).[**AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) 属性中。
+当应用启动或导航到后台任务状态相关的新页面时，它应用获取档期已注册的后台任务列表并将它们与进度和完成事件处理程序函数关联。 应用程序当前已注册的后台任务列表位于 [**BackgroundTaskRegistration**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration).[**AllTasks**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) 属性中。
 
 例如，[后台任务示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)在导航到 SampleBackgroundTask 页面时使用以下代码附加事件处理程序：
 
@@ -287,7 +287,7 @@ void SampleBackgroundTask::OnNavigatedTo(NavigationEventArgs^ e)
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
+* [创建并注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 * [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
@@ -299,4 +299,4 @@ void SampleBackgroundTask::OnNavigatedTo(NavigationEventArgs^ e)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在 UWP 应用中触发挂起、继续和后台事件（调试时）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](/previous-versions/hh974425(v=vs.110))

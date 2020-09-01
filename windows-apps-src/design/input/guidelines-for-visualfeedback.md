@@ -8,26 +8,26 @@ keywords: 视觉反馈, 焦点反馈, 触摸反馈, 接触可视化, 输入, 交
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fcb6945c488bc1b715c339fa39949ea62bdb2a12
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 9ced83ca771f4954f8e42dc42e0882d1a5b7c6b1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970072"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172451"
 ---
 # <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
 当检测、解释和处理用户的交互时，可使用视觉反馈显示给用户。 视觉反馈可通过鼓励交互来帮助用户。 它将指示交互是否成功，以加强用户的控制感觉。 它还可以传送系统状态并减少错误。
 
-> **重要 API**：[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+> **重要 API**：[**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input)、[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Windows.UI.Core**](/uwp/api/Windows.UI.Core)
 
 ## <a name="recommendations"></a>建议
 
 - 尝试将控件模板的修改限制为与设计意图直接相关的部分，因为大量更改可能会影响控件和应用程序的性能及辅助功能。 
-    - 有关自定义控件属性（包括视觉状态属性）的详细信息，请参阅 [XAML 样式](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles)。
-    - 有关更改控件模板的详细信息，请参阅 [UserControl 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)
+    - 有关自定义控件属性（包括视觉状态属性）的详细信息，请参阅 [XAML 样式](../controls-and-patterns/xaml-styles.md)。
+    - 有关更改控件模板的详细信息，请参阅 [UserControl 类](/uwp/api/windows.ui.xaml.controls.usercontrol)
     - 如果需要对控件模板进行重大更改，请考虑创建自定义模板化控件。 有关自定义模板化控件的示例，请参阅[自定义编辑控件示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)。
-- 请勿使用可能会干扰应用使用的触摸视觉化。 有关详细信息，请参阅 [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback)。
+- 请勿使用可能会干扰应用使用的触摸视觉化。 有关详细信息，请参阅 [**ShowGestureFeedback**](/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback)。
 - 除非绝对有必要，否则不要显示反馈。 除非你要添加的值在其他任何地方都不可用，否则，请不要显示视觉反馈来保持 UI 干净整洁。
 - 尽量不要大幅自定义内置 Windows 手势的视觉反馈行为，因为这样会产生不一致的情况，并且会带来混淆的用户体验。
 
@@ -44,7 +44,7 @@ ms.locfileid: "82970072"
 
 视觉反馈通常依赖输入设备（触摸、触摸板、鼠标、笔/触笔、键盘等）。 例如，鼠标的内置反馈通常涉及到移动和更改光标，而触摸和笔需要接触可视化，键盘输入和导航使用焦点矩形和突出显示。
 
-使用 [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback) 设置平台手势的反馈行为。
+使用 [**ShowGestureFeedback**](/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback) 设置平台手势的反馈行为。
 
 如果要自定义反馈 UI，请确保你提供支持而且适合所有输入模式的反馈。
 
@@ -58,13 +58,13 @@ ms.locfileid: "82970072"
 
 所有 Windows 应用都在应用程序内的可互动控件的周围明显定义了许多焦点视觉。 这些新的焦点视觉完全可以根据需要进行自定义以及禁用。
 
-对于 Xbox 和电视通常使用的 **10 英尺体验**，Windows 支持**显示焦点** - 一种灯光效果，当可聚焦元素（例如按钮）通过游戏板或键盘输入获得焦点时，其边框将显示动画效果。 有关详细信息，请参阅[针对 Xbox 和电视进行设计](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv#reveal-focus)。
+对于 Xbox 和电视通常使用的 **10 英尺体验**，Windows 支持**显示焦点** - 一种灯光效果，当可聚焦元素（例如按钮）通过游戏板或键盘输入获得焦点时，其边框将显示动画效果。 有关详细信息，请参阅[针对 Xbox 和电视进行设计](../devices/designing-for-tv.md#reveal-focus)。
 
 ## <a name="color-branding--customizing"></a>颜色外观方案和自定义
 
 ### <a name="border-properties"></a>边框属性
 
-高可见性焦点视觉分为两部分：主边框和辅助边框。 主边框为 2px 粗，在辅助边框的“外部”周围运行******。 辅助边框为 1px 粗，在主边框的“内部”周围运行******。
+高可见性焦点视觉分为两部分：主边框和辅助边框。 主边框为 2px 粗，在辅助边框的“外部”周围运行   。 辅助边框为 1px 粗，在主边框的“内部”周围运行   。
 ![高可见性焦点视觉去除](images/FocusRectRedlines.png)
 
 若要更改任一边框类型（主或辅助）的粗细，请分别使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**。
@@ -73,9 +73,9 @@ ms.locfileid: "82970072"
 ```
 ![高可见性焦点视觉边距厚度](images/FocusMargin.png)
 
-边距是类型 [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness) 的属性，因此可以自定义边距以仅显示在控件的特定侧。 请参阅下面![的内容：高可见性焦点视觉对象边距粗细](images/FocusThicknessSide.png)
+边距是类型 [**Thickness**](/dotnet/api/system.windows.thickness) 的属性，因此可以自定义边距以仅显示在控件的特定侧。 请参阅下面的内容： ![ 高可见性焦点视觉对象边距粗细](images/FocusThicknessSide.png)
 
-边距是控件的可视边界与焦点视觉对象*辅助边框*开头之间的空间。 默认边距**1px**远离控件边界。 可以通过更改**FocusVisualMargin**属性，按控件编辑此边距：
+边距是控件的可视边界与焦点视觉对象 *辅助边框*开头之间的空间。 默认边距 **1px** 远离控件边界。 可以通过更改 **FocusVisualMargin** 属性，按控件编辑此边距：
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```
@@ -114,7 +114,7 @@ ms.locfileid: "82970072"
 
 ### <a name="for-developers"></a>面向开发人员
 
-- [自定义用户交互](https://docs.microsoft.com/windows/uwp/design/layout/index)
+- [自定义用户交互](../layout/index.md)
 
 ### <a name="samples"></a>示例
 
@@ -130,7 +130,7 @@ ms.locfileid: "82970072"
 - [输入：触摸点击测试示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
 - [XAML 滚动、平移和缩放示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [输入：简化的墨迹示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [输入：Windows 8 手势示例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [输入：Windows 8 手势示例](/samples/browse/?redirectedfrom=MSDN-samples)
 - [输入：操作和笔势示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX 触控输入示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
  

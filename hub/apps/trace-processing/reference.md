@@ -5,13 +5,13 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: reference
-ms.openlocfilehash: dcad0c99ec0c9ba8aa7990793f18441b00720808
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 33a508bdd5fb3929ee4b77e74225aa54c7d8bd72
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629128"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172641"
 ---
 # <a name="net-traceprocessing-api-reference"></a>.NET TraceProcessing API 参考
 
-请参阅[.NET API browser For TraceProcessing](https://docs.microsoft.com/dotnet/api/?view=trace-processor-dotnet-1.0)。
+请参阅 [.NET API browser For TraceProcessing](/dotnet/api/?view=trace-processor-dotnet-1.0)。

@@ -7,12 +7,12 @@ ms.date: 11/28/2018
 ms.topic: article
 keywords: windows 10，uwp，固定到任务栏，辅助磁贴，将辅助磁贴固定到任务栏，快捷方式
 ms.localizationpriority: medium
-ms.openlocfilehash: a57fa9c6a268b22df3c1772e0aec111c769d907b
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 23feaf6cbc2293951116167662ab5647e3d35c44
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054187"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172321"
 ---
 # <a name="pin-secondary-tiles-to-taskbar"></a>将辅助磁贴固定到任务栏
 
@@ -35,9 +35,9 @@ ms.locfileid: "89054187"
 
 如果面向的是较旧版本的 Windows 10) ，较旧的设备不会 (任务栏固定 Api。 因此，不应在无法固定的设备上显示固定按钮。
 
-此外，此功能在受限访问下被锁定。 若要获取访问权限，请与 Microsoft 联系。 对 TaskbarManager、 **[RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync#Windows_UI_Shell_TaskbarManager_RequestPinSecondaryTileAsync_Windows_UI_StartScreen_SecondaryTile_)**、 **[TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** 和 **[TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** 的 API 调用将失败，并出现 "拒绝访问" 异常。 不允许应用在没有权限的情况下使用此 API，API 定义随时可能会更改。
+此外，此功能在受限访问下被锁定。 若要获取访问权限，请与 Microsoft 联系。 对 TaskbarManager、 **[RequestPinSecondaryTileAsync](/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync#Windows_UI_Shell_TaskbarManager_RequestPinSecondaryTileAsync_Windows_UI_StartScreen_SecondaryTile_)**、 **[TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** 和 **[TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** 的 API 调用将失败，并出现 "拒绝访问" 异常。 不允许应用在没有权限的情况下使用此 API，API 定义随时可能会更改。
 
-使用 [ApiInformation. IsMethodPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.ismethodpresent#Windows_Foundation_Metadata_ApiInformation_IsMethodPresent_System_String_System_String_) 方法确定是否存在 api。 然后使用 **[LimitedAccessFeatures](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures)** api 尝试对 API 进行解锁。
+使用 [ApiInformation. IsMethodPresent](/uwp/api/windows.foundation.metadata.apiinformation.ismethodpresent#Windows_Foundation_Metadata_ApiInformation_IsMethodPresent_System_String_System_String_) 方法确定是否存在 api。 然后使用 **[LimitedAccessFeatures](/uwp/api/windows.applicationmodel.limitedaccessfeatures)** api 尝试对 API 进行解锁。
 
 ```csharp
 if (ApiInformation.IsMethodPresent("Windows.UI.Shell.TaskbarManager", "RequestPinSecondaryTileAsync"))
@@ -70,7 +70,7 @@ else
 
 ## <a name="2-get-the-taskbarmanager-instance"></a>2. 获取 TaskbarManager 实例
 
-Windows 应用可在各种设备上运行;并不是所有的都支持任务栏。 现在，仅桌面设备支持任务栏。 此外，还可能会出现任务栏。 若要检查任务栏当前是否存在，请调用 **[TaskbarManager. adaptivesourcemanager.getdefault](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** 方法，并检查返回的实例是否不为 null。 如果任务栏不存在，请勿显示 "固定" 按钮。
+Windows 应用可在各种设备上运行;并不是所有的都支持任务栏。 现在，仅桌面设备支持任务栏。 此外，还可能会出现任务栏。 若要检查任务栏当前是否存在，请调用 **[TaskbarManager. adaptivesourcemanager.getdefault](/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** 方法，并检查返回的实例是否不为 null。 如果任务栏不存在，请勿显示 "固定" 按钮。
 
 建议在单个操作的持续时间内（例如，固定，然后在下一次需要执行其他操作时获取一个新实例）进行保存。
 
@@ -90,7 +90,7 @@ else
 
 ## <a name="3-check-whether-your-tile-is-currently-pinned-to-the-taskbar"></a>3. 检查磁贴当前是否固定到任务栏
 
-如果磁贴已固定，则应改为显示 "取消固定" 按钮。 你可以使用 **[IsSecondaryTilePinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** 方法来检查磁贴当前是否处于固定状态 (用户是否可以在) 随时对其进行解锁。 在此方法中，传递要知道的磁贴的 **TileId** 。
+如果磁贴已固定，则应改为显示 "取消固定" 按钮。 你可以使用 **[IsSecondaryTilePinnedAsync](/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** 方法来检查磁贴当前是否处于固定状态 (用户是否可以在) 随时对其进行解锁。 在此方法中，传递要知道的磁贴的 **TileId** 。
 
 ```csharp
 if (await taskbarManager.IsSecondaryTilePinnedAsync("myTileId"))
@@ -107,7 +107,7 @@ else
 
 ## <a name="4-check-whether-pinning-is-allowed"></a>4. 检查是否允许锁定
 
-可以通过组策略禁用锁定任务栏。 [TaskbarManager. IsPinningAllowed](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.ispinningallowed)属性允许你检查是否允许锁定。
+可以通过组策略禁用锁定任务栏。 [TaskbarManager. IsPinningAllowed](/uwp/api/windows.ui.shell.taskbarmanager.ispinningallowed)属性允许你检查是否允许锁定。
 
 当用户单击你的 pin 按钮时，你应该选中此属性，如果该属性为 false，则应显示消息对话框，通知用户此计算机上不允许锁定。
 
@@ -136,7 +136,7 @@ else
 
 首先，构造辅助磁贴，就像固定到开始时所做的一样。 可以通过读取 [Pin 辅助磁贴来启动来](secondary-tiles-pinning.md)了解有关辅助磁贴属性的详细信息。 但是，在固定到任务栏时，除了先前必需的属性，Square44x44Logo (这是任务栏使用的徽标) 也是必需的。 否则，将引发异常。
 
-然后，将磁贴传递到 **[RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync)** 方法。 由于这是受限访问权限，因此不会显示确认对话框，也不需要 UI 线程。 但在未来，如果超出限制访问权限，调用方不会使用有限访问权限，将收到一个对话框，并要求使用 UI 线程。
+然后，将磁贴传递到 **[RequestPinSecondaryTileAsync](/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync)** 方法。 由于这是受限访问权限，因此不会显示确认对话框，也不需要 UI 线程。 但在未来，如果超出限制访问权限，调用方不会使用有限访问权限，将收到一个对话框，并要求使用 UI 线程。
 
 ```csharp
 // Initialize the tile (all properties below are required)
@@ -155,7 +155,7 @@ bool isPinned = await taskbarManager.RequestPinSecondaryTileAsync(tile);
 
 ## <a name="enumerate-tiles"></a>枚举磁贴
 
-若要查看创建的所有磁贴，并将其固定 ("开始"、"任务栏" 或这两个) 中的某个位置，请使用 **[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.findallasync)**。 随后可以检查这些磁贴是否固定到任务栏和/或 "开始"。 如果不支持该图面，则这些方法返回 false。
+若要查看创建的所有磁贴，并将其固定 ("开始"、"任务栏" 或这两个) 中的某个位置，请使用 **[FindAllAsync](/uwp/api/windows.ui.startscreen.secondarytile.findallasync)**。 随后可以检查这些磁贴是否固定到任务栏和/或 "开始"。 如果不支持该图面，则这些方法返回 false。
 
 ```csharp
 var taskbarManager = TaskbarManager.GetDefault();
@@ -179,12 +179,12 @@ foreach (SecondaryTile tile in await SecondaryTile.FindAllAsync())
 
 ## <a name="update-a-tile"></a>更新磁贴
 
-若要更新已固定的磁贴，可以使用 [**SecondaryTile. UpdateAsync**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.updateasync) 方法，如 [更新辅助磁贴](secondary-tiles-pinning.md#updating-a-secondary-tile)中所述。
+若要更新已固定的磁贴，可以使用 [**SecondaryTile. UpdateAsync**](/uwp/api/windows.ui.startscreen.secondarytile.updateasync) 方法，如 [更新辅助磁贴](secondary-tiles-pinning.md#updating-a-secondary-tile)中所述。
 
 
 ## <a name="unpin-a-tile"></a>取消固定磁贴
 
-如果磁贴当前已固定，则应用应提供取消固定按钮。 若要取消固定磁贴，只需调用 **[TryUnpinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)**，传入辅助磁贴的 **TileId** 即可取消固定。
+如果磁贴当前已固定，则应用应提供取消固定按钮。 若要取消固定磁贴，只需调用 **[TryUnpinSecondaryTileAsync](/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)**，传入辅助磁贴的 **TileId** 即可取消固定。
 
 此方法返回一个布尔值，该值指示磁贴是否不再固定到任务栏。 如果第一次未固定磁贴，还会返回 true。 如果不允许取消固定，则返回 false。
 
@@ -201,7 +201,7 @@ if (taskbarManager != null)
 
 ## <a name="delete-a-tile"></a>删除磁贴
 
-如果要从 (开始的任何位置取消固定磁贴，) 请使用 **[RequestDeleteAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync)** 方法。
+如果要从 (开始的任何位置取消固定磁贴，) 请使用 **[RequestDeleteAsync](/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync)** 方法。
 
 这适用于用户固定的内容不再适用的情况。 例如，如果你的应用程序允许你将笔记本固定到 "开始" 和 "任务栏"，然后用户删除笔记本，则只需删除与笔记本关联的磁贴。
 
@@ -217,7 +217,7 @@ await toBeDeleted.RequestDeleteAsync();
 
 ## <a name="unpin-only-from-start"></a>仅从开始处取消固定
 
-如果只是想要在将辅助磁贴置于任务栏上时从该磁贴取消固定该磁贴，则可以调用 **[StartScreenManager. TryRemoveSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager.tryremovesecondarytileasync)** 方法。 如果磁贴不再固定到任何其他表面，这同样会删除该磁贴。
+如果只是想要在将辅助磁贴置于任务栏上时从该磁贴取消固定该磁贴，则可以调用 **[StartScreenManager. TryRemoveSecondaryTileAsync](/uwp/api/windows.ui.startscreen.startscreenmanager.tryremovesecondarytileasync)** 方法。 如果磁贴不再固定到任何其他表面，这同样会删除该磁贴。
 
 此方法返回一个布尔值，该值指示磁贴是否不再固定到开始处。 如果第一次未固定磁贴，还会返回 true。 如果不允许取消固定或不支持启动，则返回 false。
 
@@ -228,5 +228,5 @@ await StartScreenManager.GetDefault().TryRemoveSecondaryTileAsync("myTileId");
 
 ## <a name="resources"></a>资源
 
-* [TaskbarManager 类](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
+* [TaskbarManager 类](/uwp/api/windows.ui.shell.taskbarmanager)
 * [将辅助磁贴固定到“开始”菜单](secondary-tiles-pinning.md)

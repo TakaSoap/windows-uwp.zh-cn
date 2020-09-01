@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 78adc32dccc66b98e413796d9cfe20b2a158261e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: f21e529d519913e5b7fd2b19bd63f40c5a3d2009
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970532"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172381"
 ---
 # <a name="pop-up-ui-animations"></a>弹出 UI 动画
 
@@ -21,7 +21,7 @@ ms.locfileid: "82970532"
 
 使用弹出动画显示和隐藏浮出控件或自定义弹出 UI 元素的弹出 UI。 弹出元素是显示在应用内容上方的容器，并且将在用户点击或单击弹出元素外部时取消。
 
-> **重要 API**：[**PopInThemeAnimation 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation)、[**PopupThemeTransition 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
+> **重要 API**：[**PopInThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation)、[**PopupThemeTransition 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -33,17 +33,13 @@ ms.locfileid: "82970532"
 
 ## <a name="related-articles"></a>相关文章
 
-* [动画概述](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [创建弹出 UI 动画](https://docs.microsoft.com/previous-versions/windows/apps/jj649433(v=win.10))
-* [快速入门：使用库动画创建 UI 动画](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**PopInThemeAnimation 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation)
-* [**PopOutThemeAnimation 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation)
-* [**PopupThemeTransition 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
+* [动画概述](./xaml-animation.md)
+* [创建弹出 UI 动画](/previous-versions/windows/apps/jj649433(v=win.10))
+* [快速入门：使用库动画创建 UI 动画](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**PopInThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation)
+* [**PopOutThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation)
+* [**PopupThemeTransition 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
 
  
 
  
-
-
-
-

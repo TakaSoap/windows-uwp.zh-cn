@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，打印，3dprinting，3d 打印
 ms.localizationpriority: medium
-ms.openlocfilehash: 7212f2e2b755d9b9cbefc3d47f3199139df45794
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 92a86b57b4e9f496b48c4a93b55325e421541715
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258628"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172181"
 ---
 # <a name="printing-and-scanning"></a>打印和扫描
 
 
 本部分介绍了如何从你的通用 Windows 应用进行打印和扫描。
 
-| 主题 | 说明 | 
+| 主题 | 描述 | 
 |-------|-------------|
 | [从应用打印](print-from-your-app.md) | 了解如何从通用 Windows 应用中打印文档。 本主题还介绍了如何打印特定页面。 |
 | [自定义打印预览 UI](customize-the-print-preview-ui.md) | 本部分介绍了如何在打印预览 UI 中自定义打印选项和设置。 |
@@ -27,8 +27,7 @@ ms.locfileid: "74258628"
 
 ## <a name="related-topics"></a>相关主题
 
-* [打印设计准则](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
-* [生成2015视频：开发在 Windows 10 中打印的应用](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [打印的设计指南]()
+* [//Build 2015 视频：开发可在 Windows 10 中打印的应用](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP 打印示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)
  
-

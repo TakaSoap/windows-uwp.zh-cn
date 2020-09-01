@@ -6,12 +6,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 685c71ca0e6ed0989932b7c9a0169088d5b83bd2
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: e5f86da29900e0ef83fb0bf41d2c8d9fe59727f2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82558836"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172511"
 ---
 # <a name="guidelines-for-cross-slide"></a>交叉滑动指南
 
@@ -20,9 +20,9 @@ ms.locfileid: "82558836"
 
 **重要的 API**
 
--   [**CrossSliding**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
--   [**CrossSlideThresholds**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
--   [**Windows UI 输入**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+-   [**CrossSliding**](/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
+-   [**CrossSlideThresholds**](/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
+-   [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)
 
 使用交叉滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。
 
@@ -54,9 +54,9 @@ ms.locfileid: "82558836"
 
 如果应用中包括横向滑动功能，请考虑以下指南。
 
-对在单个方向上滚动的列表或集合使用横向滑动。 有关详细信息，请参阅[添加 ListView 控件](https://docs.microsoft.com/previous-versions/windows/apps/hh465382(v=win.10))。
+对在单个方向上滚动的列表或集合使用横向滑动。 有关详细信息，请参阅[添加 ListView 控件](/previous-versions/windows/apps/hh465382(v=win.10))。
 
-**请注意**  ，在内容区域可在两个方向（如 web 浏览器或电子读者）中平移的情况下，应使用 "按住" 计时交互来调用对象（如图像和超链接）的上下文菜单。
+**注意**   如果内容区域可以在两个方向（如 web 浏览器或电子读者）中平移，则应使用 "按住" 计时交互来调用对象（如图像和超链接）的上下文菜单。
 
  
 
@@ -145,13 +145,9 @@ ms.locfileid: "82558836"
 - [输入：触摸点击测试示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
 - [XAML 滚动、平移和缩放示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [输入：简化的墨迹示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [输入：Windows 8 手势示例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [输入：Windows 8 手势示例](/samples/browse/?redirectedfrom=MSDN-samples)
 - [输入：操作和笔势示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX 触控输入示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
  
 
  
-
-
-
-

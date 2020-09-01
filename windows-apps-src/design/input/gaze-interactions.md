@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4cfd84d54ecd1425b3b7e66c54c96fbd78c2dd46
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: c91de7eb0200780b04bad1853cb49caf41a22bc0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970122"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172501"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>Windows 应用中的目视交互和目视跟踪
 
@@ -25,26 +25,26 @@ ms.locfileid: "82970122"
 为根据用户眼睛的位置及移动，跟踪用户的凝视、注意和状态提供支持。
 
 > [!NOTE]
-> 对于 [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/) 中的凝视，请参阅[凝视](https://docs.microsoft.com/windows/mixed-reality/gaze)。
+> 对于 [Windows Mixed Reality](/windows/mixed-reality/) 中的凝视，请参阅[凝视](/windows/mixed-reality/gaze)。
 
-**重要 API**：[Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)、[GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview)、[GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview)、[GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**重要 API**：[Windows.Devices.Input.Preview](/uwp/api/windows.devices.input.preview)、[GazeDevicePreview](/uwp/api/windows.devices.input.preview.gazedevicepreview)、[GazePointPreview](/uwp/api/windows.devices.input.preview.gazepointpreview)、[GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>概述
 
-"注视输入" 是一种交互和使用 Windows 应用程序的强大方法，这些应用程序特别适用于具有神经-muscular 疾病（如 ALS）的用户的辅助技术，以及涉及障碍判断力或勇气函数的其他残障人士。
+"注视输入" 是一种交互和使用 Windows 应用程序的强大方法，此类应用程序特别有用，这种技术是使用神经-muscular 疾病 (的用户的辅助技术，如 ALS) 和其他涉及障碍的判断力或勇气函数的障碍。
 
 此外，凝视输入还为游戏（包括目标获取和跟踪）和传统的生产力应用程序、展台及其他交互式场景提供同样具有吸引力的机会，如传统输入设备（键盘、鼠标和触控）不可用或可能对释放用户双手以执行其他任务（如提购物袋）非常有用/有帮助的情况。
 
 > [!NOTE]
-> **Windows 10 Fall Creators Update** 以及[目视控制](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control)中引入了对目视跟踪硬件的支持，这是一项内置功能，让你可以使用眼睛控制屏幕指针，使用屏幕键盘键入，并使用文本到语音转换与其他人交流。 **Windows 10 4 月2018更新（版本1803、版本17134）** 和更高版本提供了一组用于构建可与目视跟踪硬件交互的应用程序的 Windows 运行时 Api （[windows.](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)
+> **Windows 10 Fall Creators Update** 以及[目视控制](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control)中引入了对目视跟踪硬件的支持，这是一项内置功能，让你可以使用眼睛控制屏幕指针，使用屏幕键盘键入，并使用文本到语音转换与其他人交流。 用于生成可与目视跟踪硬件交互的应用程序的一组 Windows 运行时 Api [)  (windows](/uwp/api/windows.devices.input.preview) **10 2018 年4月更新 (1803 版、版本 17134) ** 和更高版本。
 
 ## <a name="privacy"></a>隐私
 
-由于目视跟踪设备收集的可能敏感的个人数据，因此需要在应用程序的应用`gazeInput`程序清单中声明功能（请参阅以下**设置**部分）。 声明后，Windows 将自动向用户提示同意对话框（首次运行应用时），用户必须在对话框内为应用授予与目视跟踪设备交互以及访问此数据的权限。
+由于目视跟踪设备收集的可能敏感的个人数据，因此需要 `gazeInput` 在应用程序的应用程序清单中声明功能 (参阅以下 **设置** 部分) 。 声明后，Windows 将自动向用户提示同意对话框（首次运行应用时），用户必须在对话框内为应用授予与目视跟踪设备交互以及访问此数据的权限。
 
-此外，如果你的应用收集、存储或传输目视跟踪数据，你还必须在应用的隐私声明中加以说明，并遵循[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和 [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)中的所有其他**个人信息**相关要求。
+此外，如果你的应用收集、存储或传输目视跟踪数据，你还必须在应用的隐私声明中加以说明，并遵循[应用开发人员协议](/legal/windows/agreements/app-developer-agreement)和 [Microsoft Store 策略](/legal/windows/agreements/store-policies)中的所有其他**个人信息**相关要求。
 
-## <a name="setup"></a>安装
+## <a name="setup"></a>设置
 
 若要在 Windows 应用中使用注视输入 Api，需要： 
 
@@ -66,13 +66,13 @@ ms.locfileid: "82970122"
 
 在此示例中，我们将演示如何在 Windows 应用程序中跟踪用户的注视，并使用计时函数和基本命中测试来指示它们在特定元素上保持其看不到的效果。
 
-一个小椭圆形用于显示凝视点在应用程序视区内的位置，同时来自 [Windows 社区工具包](https://docs.microsoft.com/windows/communitytoolkit/)的 [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) 随机放在画布上。 当在进度栏上检测到凝视焦点时，计时器将启动，当进度栏到达 100% 时会在画布上随机重新定位。
+一个小椭圆形用于显示凝视点在应用程序视区内的位置，同时来自 [Windows 社区工具包](/windows/communitytoolkit/)的 [RadialProgressBar](/windows/communitytoolkit/controls/radialprogressbar) 随机放在画布上。 当在进度栏上检测到凝视焦点时，计时器将启动，当进度栏到达 100% 时会在画布上随机重新定位。
 
 ![带计时器的凝视跟踪示例](images/gaze/gaze-input-timed2.gif)
 
 *带计时器的凝视跟踪示例*
 
-**从[注视输入示例下载此示例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
+**从[注视输入示例 (基本) ](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)下载此示例**
 
 1. 首先，我们设置 UI (MainPage.xaml)。
 
@@ -154,7 +154,7 @@ ms.locfileid: "82970122"
 
 2. 接下来，我们将初始化应用。
 
-    在此代码段中，我们声明全局对象并覆盖 [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) 页面事件来启动[凝视设备观察程序](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview)，并覆盖 [OnNavigatedFrom](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) 页面事件来停止[凝视设备观察程序](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview)。
+    在此代码段中，我们声明全局对象并覆盖 [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) 页面事件来启动[凝视设备观察程序](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview)，并覆盖 [OnNavigatedFrom](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) 页面事件来停止[凝视设备观察程序](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview)。
 
     ```csharp
     using System;
@@ -233,7 +233,7 @@ ms.locfileid: "82970122"
 
 3. 接下来，我们添加凝视设备观察程序的方法。 
     
-    在 `StartGazeDeviceWatcher` 中，我们调用 [CreateWatcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher) 并声明目视跟踪设备事件侦听器（[DeviceAdded](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added)、[DeviceUpdated](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated) 和 [DeviceRemoved](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed)）。
+    在 `StartGazeDeviceWatcher` 中，我们调用 [CreateWatcher](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher) 并声明目视跟踪设备事件侦听器（[DeviceAdded](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added)、[DeviceUpdated](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated) 和 [DeviceRemoved](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed)）。
 
     在 `DeviceAdded` 中，我们检查目视跟踪设备的状态。 如果是可用设备，我们将增加设备计数并启用凝视跟踪。 详细信息请参见下一步。
 
@@ -330,10 +330,10 @@ ms.locfileid: "82970122"
 
 4. 在这里，我们检查设备在 `IsSupportedDevice` 中是否可用，如果可用，尝试在 `TryEnableGazeTrackingAsync` 中启用凝视跟踪。
 
-    在 `TryEnableGazeTrackingAsync` 中，我们声明凝视事件处理程序，并调用 [GazeInputSourcePreview.GetForCurrentView()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) 来获取对输入源的引用（这必须在 UI 线程上调用，请参阅[保持 UI 线程响应](https://docs.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive)）。
+    在 `TryEnableGazeTrackingAsync` 中，我们声明凝视事件处理程序，并调用 [GazeInputSourcePreview.GetForCurrentView()](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) 来获取对输入源的引用（这必须在 UI 线程上调用，请参阅[保持 UI 线程响应](../../debug-test-perf/keep-the-ui-thread-responsive.md)）。
 
     > [!NOTE]
-    > 应该仅在兼容的目视跟踪设备已连接并且你的应用程序需要时才调用 [GazeInputSourcePreview.GetForCurrentView()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview)。 否则，不必要提供同意对话框。
+    > 应该仅在兼容的目视跟踪设备已连接并且你的应用程序需要时才调用 [GazeInputSourcePreview.GetForCurrentView()](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview)。 否则，不必要提供同意对话框。
 
 ```csharp
     /// <summary>
@@ -405,7 +405,7 @@ ms.locfileid: "82970122"
 
     我们分别在 `GazeEntered` 和 `GazeExited` 中显示和隐藏凝视跟踪椭圆。
 
-    在 `GazeMoved` 中，我们根据 [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs) 的 [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) 提供的 [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) 移动凝视跟踪椭圆。 我们还在 [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) 上管理凝视焦点计时器，这将触发进度栏的重新定位。 详细信息请参见下一步。
+    在 `GazeMoved` 中，我们根据 [GazeEnteredPreviewEventArgs](/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs) 的 [CurrentPoint](/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) 提供的 [EyeGazePosition](/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) 移动凝视跟踪椭圆。 我们还在 [RadialProgressBar](/windows/communitytoolkit/controls/radialprogressbar) 上管理凝视焦点计时器，这将触发进度栏的重新定位。 详细信息请参见下一步。
 
     ```csharp
     /// <summary>
@@ -499,9 +499,9 @@ ms.locfileid: "82970122"
     ```
 6. 最后，下面是用于管理此应用的凝视焦点计时器的方法。
 
-    `DoesElementContainPoint`检查注视指针是否在进度栏上。 如果在，它将启动凝视计时器并增加每次凝视计时器滴答的进度栏。
+    `DoesElementContainPoint` 检查注视指针是否在进度栏上。 如果在，它将启动凝视计时器并增加每次凝视计时器滴答的进度栏。
 
-    `SetGazeTargetLocation`设置进度栏的初始位置，如果进度栏完成（取决于 "注视" 焦点计时器），则将进度条移动到随机位置。
+    `SetGazeTargetLocation` 设置进度栏的初始位置，并且如果进度栏完成 (根据注视的 "注视") ，将进度条移动到随机位置。
 
     ```csharp
     /// <summary>
@@ -596,11 +596,11 @@ ms.locfileid: "82970122"
     }
     ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 ### <a name="resources"></a>资源
 
-- [Windows 社区工具包凝视资源库](https://docs.microsoft.com/windows/communitytoolkit/gaze/gazeinteractionlibrary)
+- [Windows 社区工具包凝视资源库](/windows/communitytoolkit/gaze/gazeinteractionlibrary)
 
 ### <a name="topic-samples"></a>主题示例
 

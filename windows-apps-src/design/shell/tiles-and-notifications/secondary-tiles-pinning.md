@@ -1,20 +1,20 @@
 ---
 Description: 了解如何从 Windows 应用程序中固定辅助磁贴。
-title: 固定辅助磁贴以开始
+title: 将辅助磁贴固定到“开始”菜单
 label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c535e7e2abaf68212cb0a2f6daac8741b6548a5
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 7499a9a4040850595f616a5de0badb9efeab635f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971042"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172311"
 ---
-# <a name="pin-secondary-tiles-to-start"></a>固定辅助磁贴以开始
+# <a name="pin-secondary-tiles-to-start"></a>将辅助磁贴固定到“开始”菜单
 
 
 本主题将指导你完成为 Windows 应用程序创建辅助磁贴的步骤，并将其固定到 "开始" 菜单。
@@ -181,6 +181,6 @@ var tiles = await SecondaryTile.FindAllAsync();
 
 * [辅助磁贴概述](secondary-tiles.md)
 * [辅助磁贴指南](secondary-tiles-guidance.md)
-* [磁贴资源](app-assets.md)
+* [磁贴资源](../../style/app-icons-and-logos.md)
 * [磁贴内容文档](create-adaptive-tiles.md)
 * [发送本地磁贴通知](sending-a-local-tile-notification.md)

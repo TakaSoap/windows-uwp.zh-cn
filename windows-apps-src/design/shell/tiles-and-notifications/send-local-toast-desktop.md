@@ -8,16 +8,16 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: 'windows 10，uwp，win32，桌面，toast 通知，发送 toast，发送本地 toast，桌面桥，.msix，稀疏包，c #，c 清晰，toast 通知，wpf，发送 toast 通知 wpf，发送 toast 通知 winforms，发送 toast 通知 c #，发送通知 wpf，发送 toast 通知 c #，toast 通知 wpf，toast 通知 c#'
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a339a4f2dca52a9bc04b1bba92f149a3e627878
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 1e78e68cdd44890b50209f3f900c538278bd523c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846747"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172291"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>从桌面 C# 应用发送本地 toast 通知
 
-桌面应用 (包括打包的 [.msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包的 Win32 应用) 可以像 Windows 应用一样发送交互式 toast 通知。 但对于桌面应用程序，有几个特殊步骤，因为不同的激活方案，如果你未使用 .MSIX 或稀疏包，则可能缺少包标识。
+桌面应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包的 Win32 应用) 可以像 Windows 应用一样发送交互式 toast 通知。 但对于桌面应用程序，有几个特殊步骤，因为不同的激活方案，如果你未使用 .MSIX 或稀疏包，则可能缺少包标识。
 
 > [!IMPORTANT]
 > 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 有关其他桌面语言，请参阅[桌面 C++ WRL](send-local-toast-desktop-cpp-wrl.md)。
@@ -60,7 +60,7 @@ public class MyNotificationActivator : NotificationActivator
 
 #### <a name="msixsparse-packages"></a>[.MSIX/稀疏包](#tab/msix-sparse)
 
-如果你使用的是 [.msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) 或 [稀疏包](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (或者如果你同时支持) ，请在 **appxmanifest.xml**中添加：
+如果你使用的是 [.msix](/windows/msix/desktop/source-code-overview) 或 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (或者如果你同时支持) ，请在 **appxmanifest.xml**中添加：
 
 1. **xmlns:com** 声明
 2. **xmlns:desktop** 声明
@@ -338,7 +338,7 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="step-8-deploying-and-debugging"></a>步骤8：部署和调试
 
-若要部署和调试 .MSIX 应用，请参阅 [运行、调试和测试打包的桌面应用](/windows/uwp/porting/desktop-to-uwp-debug)。
+若要部署和调试 .MSIX 应用，请参阅 [运行、调试和测试打包的桌面应用](/windows/msix/desktop/desktop-to-uwp-debug)。
 
 若要部署和调试经典 Win32 应用，必须在正常调试之前通过安装程序安装应用，以便显示包含有 AUMID 和 CLSID 的“开始”快捷方式。 出现“开始”快捷方式后，可以从 Visual Studio 中使用 F5 进行调试。
 
@@ -359,4 +359,3 @@ DesktopNotificationManagerCompat.History.Clear();
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/desktop-toasts)
 * [来自桌面应用的 Toast 通知](toast-desktop-apps.md)
 * [toast 内容文档](adaptive-interactive-toasts.md)
-

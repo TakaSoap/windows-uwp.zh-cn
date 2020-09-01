@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 加载资源
 ms.localizationpriority: medium
-ms.openlocfilehash: 56eaebfeb6d644c4c15f14f0613b1e3b1781f637
-ms.sourcegitcommit: 22ed0d4edad5e6bab352e641cf86cf455cf83825
+ms.openlocfilehash: fae4906c93dc1016933b4fade0b0da447c8a0e20
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133990"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172021"
 ---
 # <a name="load-resources-in-your-directx-game"></a>在 DirectX 游戏中加载资源
 
@@ -21,14 +21,14 @@ ms.locfileid: "85133990"
 
 例如，游戏中的多边形对象网格可能是使用其他工具创建的，并且已导出为某个特定格式。 纹理等也是一样：尽管大多数工具通常可以编写平面的未压缩的位图并且大多数图形 API 都可以理解，但这对于在游戏中的使用来说还远远不够。 下面我们将指导你完成加载三个不同类型的图形资源以便用于 Direct3D 的基本步骤：网格（模型）、纹理（位图）以及编译的着色器对象。
 
-## <a name="what-you-need-to-know"></a>需要了解的事项
+## <a name="what-you-need-to-know"></a>须知内容
 
 
 ### <a name="technologies"></a>技术
 
 -   并行模式库 (ppltasks.h)
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>必备条件
 
 -   了解基本的 Windows 运行时
 -   了解异步任务
@@ -50,7 +50,7 @@ ms.locfileid: "85133990"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -81,7 +81,7 @@ ms.locfileid: "85133990"
 
 可以使用 **.then\(\)** 语法将任务链接在一起，以便当一个操作完成后，可以运行依赖之前操作的结果的另一个异步操作。 这样，你便可以在单独的线程上加载、转换和管理复杂的资源，而这种方式玩家几乎看不到。
 
-有关更多详细信息，请阅读[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+有关更多详细信息，请阅读[使用 C++ 进行异步编程](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
 现在，让我们看一看用于声明和创建异步文件加载方法（即 **ReadDataAsync**）的基本结构。
 
@@ -112,7 +112,7 @@ task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
 }
 ```
 
-在该代码中，当你的代码调用上面定义的 **ReadDataAsync** 方法时，会创建一个任务来从文件系统中读取缓冲区。 完成后，链接的任务便获取该缓冲区并使用静态的 [**DataReader**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 类型将该缓冲区中的字节流入一个数组。
+在该代码中，当你的代码调用上面定义的 **ReadDataAsync** 方法时，会创建一个任务来从文件系统中读取缓冲区。 完成后，链接的任务便获取该缓冲区并使用静态的 [**DataReader**](/uwp/api/Windows.Storage.Streams.DataReader) 类型将该缓冲区中的字节流入一个数组。
 
 ```cpp
 m_basicReaderWriter = ref new BasicReaderWriter();
@@ -126,11 +126,11 @@ return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Arr
 
 下面是对 **ReadDataAsync** 进行的调用。 完成调用后，你的代码便会收到从提供的文件中读取的字节数组。 由于 **ReadDataAsync** 自身定义为任务，因此当返回字节数组时你可以使用 lambda 来执行特定的操作，如将该字节数据传递给可以使用该数据的 DirectX 函数。
 
-如果你的游戏十分简单，当用户启动游戏时可以使用此类方法来加载你的资源。 可以在 [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run) 实现的调用序列中从某些点启动主游戏之前，完成该操作。 而且，异步调用你的自由加载方法，以便游戏可以快速启动，并且玩家无需等待加载完成即可参与早期交互。
+如果你的游戏十分简单，当用户启动游戏时可以使用此类方法来加载你的资源。 可以在 [**IFrameworkView::Run**](/uwp/api/windows.applicationmodel.core.iframeworkview.run) 实现的调用序列中从某些点启动主游戏之前，完成该操作。 而且，异步调用你的自由加载方法，以便游戏可以快速启动，并且玩家无需等待加载完成即可参与早期交互。
 
 但是，你希望在所有异步加载都完成之后再正确启动游戏！ 创建用于指示何时加载完成的一些方法（如某个特定字段）并在你的加载方法上使用 lambda 来设置完成时的指示。 在启动使用这些加载的资源的任何组件之前，检查变量。
 
-下面是游戏启动时，使用 BasicLoader.cpp 中定义的异步方法加载着色器、网格以及纹理的示例。 请注意，当所有加载方法完成时，它将在游戏对象**m \_ loadingComplete**上设置一个特定字段。
+下面是游戏启动时，使用 BasicLoader.cpp 中定义的异步方法加载着色器、网格以及纹理的示例。 请注意，当所有加载方法完成时，它将在游戏对象 **m \_ loadingComplete**上设置一个特定字段。
 
 ```cpp
 void ResourceLoading::CreateDeviceResources()
@@ -209,8 +209,8 @@ void ResourceLoading::CreateDeviceResources()
 
 -   数据流的第一个 32 位（4 个字节）包含网格中的顶点数量 \(numVertices\)，表示为 uint32 值。
 -   数据流的下一个 32 位（4 个字节）包含网格中的索引数量 \(numIndices\)，表示为 uint32 值。
--   之后，后续（numVertices \* sizeof （**BasicVertex**））位包含顶点数据。
--   最后（numIndices \* 16）的数据位包含索引数据，以 uint16 值的序列表示。
+-   之后，后续 (numVertices \* sizeof (**BasicVertex**) # A3 位包含顶点数据。
+-   最后一个 (numIndices \* 16) 位数据包含索引数据，以 uint16 值的序列表示。
 
 重点是要知道你加载的网格数据的位级布局。 而且还要确保你符合字节序。 所有 Windows 8 平台都是低字节序。
 
@@ -239,7 +239,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-**CreateMesh**解释从文件加载的字节数据，并通过分别将顶点和索引列表传递到[**ID3D11Device：： CREATEBUFFER**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer)并指定 D3D11 \_ 绑定 \_ 顶点 \_ 缓冲区或 D3D11 \_ 绑定 \_ 索引 \_ 缓冲区，为网格创建顶点缓冲区和索引缓冲区。 下面是 **BasicLoader** 中使用的代码：
+**CreateMesh** 解释从文件加载的字节数据，并通过分别将顶点和索引列表传递到 [**ID3D11Device：： CREATEBUFFER**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) 并指定 D3D11 \_ 绑定 \_ 顶点 \_ 缓冲区或 D3D11 \_ 绑定 \_ 索引 \_ 缓冲区，为网格创建顶点缓冲区和索引缓冲区。 下面是 **BasicLoader** 中使用的代码：
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -302,7 +302,7 @@ void BasicLoader::CreateMesh(
 
 通常为你在游戏中使用的每个网格创建一个顶点/索引缓冲区对。 在哪里以及何时加载网格都由你决定。 如果你有很多网格，那么你可能只希望在游戏中的特定点上从磁盘加载某些网格，如在特定的、预先定义的加载状态期间。 对于较大的网格，如地形数据，则可以从缓存中流入顶点，但该过程比较复杂，不在本主题的范围之内。
 
-再次了解你的顶点数据格式！ 在用于创建模型的工具中，有很多很多方法可用来表示顶点数据。 还有很多不同的方法可用来将顶点数据的输入布局表示为 Direct3D，如三角形列表和带。 有关顶点数据的详细信息，请阅读 [Direct3D 11 中的缓冲区简介](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro)和[基元](https://docs.microsoft.com/windows/desktop/direct3d9/primitives)。
+再次了解你的顶点数据格式！ 在用于创建模型的工具中，有很多很多方法可用来表示顶点数据。 还有很多不同的方法可用来将顶点数据的输入布局表示为 Direct3D，如三角形列表和带。 有关顶点数据的详细信息，请阅读 [Direct3D 11 中的缓冲区简介](/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro)和[基元](/windows/desktop/direct3d9/primitives)。
 
 接下来，让我们看一看如何加载纹理。
 
@@ -310,7 +310,7 @@ void BasicLoader::CreateMesh(
 
 游戏中最常用的资源（以及由磁盘上和内存中的大多数文件组成的资源）就是纹理。 与网格一样，纹理可以采用各种格式，并且你可以将它们转换为加载时 Direct3D 可以使用的格式。 纹理也有各种类型，用于创建不同的效果。 可以使用纹理的 MIP 级别来改进远距离对象的外观和性能；可以使用深色和浅色映射来产生分层效果并在顶部产生基本纹理；在每个像素照明计算中使用法线贴图 。 在现代游戏中，典型场景可能会有数千个单个纹理，你的代码必须有效地管理它们！
 
-而且与网格一样，用来使内存使用有效的特定格式有很多。 由于纹理可以轻松使用大部分 GPU（以及系统）内存，因此通常会采用某些方式对它们进行压缩。 你不需要在游戏的纹理上使用压缩，你可以使用所需的任何压缩/解压缩算法，只要为 Direct3D 着色器提供它可以理解的格式的数据即可（如 [**Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) 位图）。
+而且与网格一样，用来使内存使用有效的特定格式有很多。 由于纹理可以轻松使用大部分 GPU（以及系统）内存，因此通常会采用某些方式对它们进行压缩。 你不需要在游戏的纹理上使用压缩，你可以使用所需的任何压缩/解压缩算法，只要为 Direct3D 着色器提供它可以理解的格式的数据即可（如 [**Texture2D**](/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) 位图）。
 
 Direct3D 提供对 DXT 纹理压缩算法的支持，但在玩家的图形硬件可能并不支持每个 DXT 格式. DDS 文件包含 DXT 纹理（以及其他纹理压缩格式），后缀为 .dds。
 
@@ -320,14 +320,14 @@ DDS 文件是包含以下信息的二进制文件：
 
 -   文件中数据的描述。
 
-    使用[**dds \_ 标题**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header)对数据进行了标头说明; 像素格式是使用[**dds \_ PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat)定义的。 请注意， **dds \_ 标头**和**dds \_ PIXELFORMAT**结构将替换弃用的 DDSURFACEDESC2、DDSCAPS2 和 DDPIXELFORMAT DirectDraw 7 结构。 **DDS \_标头**是 DDSURFACEDESC2 和 DDSCAPS2 的二进制等效项。 **DDS \_PIXELFORMAT**是 DDPIXELFORMAT 的二进制等效项。
+    使用 [**dds \_ 标题**](/windows/desktop/direct3ddds/dds-header)对数据进行了标头说明; 像素格式是使用 [**dds \_ PIXELFORMAT**](/windows/desktop/direct3ddds/dds-pixelformat)定义的。 请注意， **dds \_ 标头** 和 **dds \_ PIXELFORMAT** 结构将替换弃用的 DDSURFACEDESC2、DDSCAPS2 和 DDPIXELFORMAT DirectDraw 7 结构。 **DDS \_标头** 是 DDSURFACEDESC2 和 DDSCAPS2 的二进制等效项。 **DDS \_PIXELFORMAT** 是 DDPIXELFORMAT 的二进制等效项。
 
     ```cpp
     DWORD               dwMagic;
     DDS_HEADER          header;
     ```
 
-    如果将[**DDS \_ PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat)中**dwFlags**的值设置为 DDPF \_ FOURCC，并将**dwFourCC**设置为 "DX10"，则将存在一个额外的[**DDS \_ 标头 \_ DXT10**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header-dxt10)结构，以容纳无法表示为 RGB 像素格式（如浮点格式、sRGB 格式等）的纹理数组或 DXGI 格式。当存在**DDS \_ 标头 \_ DXT10**结构时，整个数据说明将如下所示。
+    如果将[**DDS \_ PIXELFORMAT**](/windows/desktop/direct3ddds/dds-pixelformat)中**dwFlags**的值设置为 DDPF \_ FOURCC，并将**dwFourCC**设置为 "DX10"，则将存在一个额外的[**DDS \_ 标头 \_ DXT10**](/windows/desktop/direct3ddds/dds-header-dxt10)结构，以容纳无法表示为 RGB 像素格式（如浮点格式、sRGB 格式等）的纹理数组或 DXGI 格式。当存在**DDS \_ 标头 \_ DXT10**结构时，整个数据说明将如下所示。
 
     ```cpp
     DWORD               dwMagic;
@@ -340,13 +340,13 @@ DDS 文件是包含以下信息的二进制文件：
     BYTE bdata[]
     ```
 
--   指向包含其余图面的字节数组的指针；mipmap 级别、立方体贴图中的面以及体纹理中的深度。 跟随这些链接可获得有关以下内容的 DDS 文件布局的详细信息：[纹理](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-file-layout-for-textures)、[立方体贴图](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-file-layout-for-cubic-environment-maps)或[体纹理](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-file-layout-for-volume-textures)。
+-   指向包含其余图面的字节数组的指针；mipmap 级别、立方体贴图中的面以及体纹理中的深度。 跟随这些链接可获得有关以下内容的 DDS 文件布局的详细信息：[纹理](/windows/desktop/direct3ddds/dds-file-layout-for-textures)、[立方体贴图](/windows/desktop/direct3ddds/dds-file-layout-for-cubic-environment-maps)或[体纹理](/windows/desktop/direct3ddds/dds-file-layout-for-volume-textures)。
 
     ```cpp
     BYTE bdata2[]
     ```
 
-很多工具都导出到 DDS 格式。 如果你没有将纹理导出到该格式的工具，请考虑创建一个工具。 有关 DDS 格式以及如何在代码中使用该格式的详细信息，请阅读 [DDS 编程指南](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide)。 在我们的示例中，我们将使用 DDS。
+很多工具都导出到 DDS 格式。 如果你没有将纹理导出到该格式的工具，请考虑创建一个工具。 有关 DDS 格式以及如何在代码中使用该格式的详细信息，请阅读 [DDS 编程指南](/windows/desktop/direct3ddds/dx-graphics-dds-pguide)。 在我们的示例中，我们将使用 DDS。
 
 与其他资源类型一样，从文件中以字节流的形式读取数据。 加载完任务之后，lambda 调用运行代码（**CreateTexture** 方法）将字节流处理成 Direct3D 可以使用的格式。
 
@@ -371,7 +371,7 @@ task<void> BasicLoader::LoadTextureAsync(
 }
 ```
 
-在上面的代码段中，lambda 查看文件名是否具有“dds”扩展名。 如果有，则认为它是 DDS 纹理。 如果没有，则使用 Windows 图像处理组件 \(WIC\) API 发现该格式并将数据解码为位图。 无论采用哪种方法，结果都是 [**Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) 位图（或错误）。
+在上面的代码段中，lambda 查看文件名是否具有“dds”扩展名。 如果有，则认为它是 DDS 纹理。 如果没有，则使用 Windows 图像处理组件 \(WIC\) API 发现该格式并将数据解码为位图。 无论采用哪种方法，结果都是 [**Texture2D**](/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) 位图（或错误）。
 
 ```cpp
 void BasicLoader::CreateTexture(
@@ -511,7 +511,7 @@ void BasicLoader::CreateTexture(
 }
 ```
 
-当该代码完成时，你在内存中拥有一个 [**Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)，它是从图像文件加载的。 与网格一样，你可能会在游戏和任何给定场景中拥有很多 Texture2D。 考虑为定期访问每个场景或每个级别的纹理创建缓存，而不是当游戏或级别启动时将它们全部加载。
+当该代码完成时，你在内存中拥有一个 [**Texture2D**](/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)，它是从图像文件加载的。 与网格一样，你可能会在游戏和任何给定场景中拥有很多 Texture2D。 考虑为定期访问每个场景或每个级别的纹理创建缓存，而不是当游戏或级别启动时将它们全部加载。
 
 （在 [DDSTextureLoader 的完整代码](complete-code-for-ddstextureloader.md)中全面探究在上一示例中调用的 **CreateDDSTextureFromMemory** 方法。）
 
@@ -551,7 +551,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-在此示例中，使用**BasicReaderWriter**实例（**m \_ BasicReaderWriter**）以字节流的形式读入提供的已编译的着色器对象（cso）文件。 该任务完成后，lambda 使用从文件加载的字节数据调用 [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)。 你的回调必须设置某些指示加载成功的标志，并且你的代码必须在运行着色器之前检查该标志。
+在此示例中，将使用 **BasicReaderWriter** 实例 (**m \_ BasicReaderWriter**) 将提供的编译的着色器对象作为字节流读入 ( cso) 文件中。 该任务完成后，lambda 使用从文件加载的字节数据调用 [**ID3D11Device::CreatePixelShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)。 你的回调必须设置某些指示加载成功的标志，并且你的代码必须在运行着色器之前检查该标志。
 
 顶点着色器稍微有点复杂。 对于顶点着色器，你还要加载一个单独的定义顶点数据的输入布局。 可以使用下列代码来异步加载顶点着色器以及自定义顶点输入布局。 确保你从网格加载的顶点信息可以由该输入布局正确表示！
 
@@ -601,7 +601,7 @@ void BasicLoader::CreateInputLayout(
 -   顶点的法线向量还表示为三个 32 位浮点值。
 -   转换后的 2D 纹理坐标值 \(u, v\) 表示为一个 32 位浮点值对。
 
-这些每个顶点的输入元素称为 [HLSL 语义](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)，并且它们是 一组定义的注册，用于在编译的着色器对象之间来回传递数据。 你的管道为加载的网格中的每个顶点运行一次顶点着色器。 语义定义运行时顶点着色器的输入（以及输出），并且在着色器的 HLSL 代码中为每个顶点的计算提供该数据。
+这些每个顶点的输入元素称为 [HLSL 语义](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)，并且它们是 一组定义的注册，用于在编译的着色器对象之间来回传递数据。 你的管道为加载的网格中的每个顶点运行一次顶点着色器。 语义定义运行时顶点着色器的输入（以及输出），并且在着色器的 HLSL 代码中为每个顶点的计算提供该数据。
 
 现在，加载顶点着色器对象。
 
@@ -687,11 +687,11 @@ task<void> BasicLoader::LoadShaderAsync(
 }
 ```
 
-在该代码中，你读取顶点着色器 CSO 文件中的字节数据之后，通过调用 [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) 创建顶点着色器。 之后，在同一个 lambda 中为着色器创建输入布局。
+在该代码中，你读取顶点着色器 CSO 文件中的字节数据之后，通过调用 [**ID3D11Device::CreateVertexShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) 创建顶点着色器。 之后，在同一个 lambda 中为着色器创建输入布局。
 
 其他着色器类型（如外壳着色器和几何体着色器）可能还需要特定配置。 [BasicLoader 的完整代码](complete-code-for-basicloader.md)和 [Direct3D 资源加载示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/Direct3D%20resource%20loading%20sample%20(Windows%208)/C%2B%2B)中提供了各种着色器加载方法的完整代码。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 此时，你应该已了解并且能够创建或修改用于异步加载常用游戏资源（如网格、纹理以及编译的着色器）的方法。
 
@@ -705,7 +705,3 @@ task<void> BasicLoader::LoadShaderAsync(
  
 
  
-
-
-
-

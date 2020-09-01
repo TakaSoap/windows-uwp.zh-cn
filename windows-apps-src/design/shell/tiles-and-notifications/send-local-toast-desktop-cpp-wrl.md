@@ -7,16 +7,16 @@ ms.date: 03/07/2018
 ms.topic: article
 keywords: windows 10，uwp，win32，桌面，toast 通知，发送 toast，发送本地 toast，desktop bridge，.msix，稀疏包，c + +，cpp，cplusplus，WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e103c41de7bf169629085fd259e23e17804360d
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: e1aae390cf9047c8c93b4d24084c87bc90af8d80
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234659"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172301"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>从桌面 C++ WRL 应用发送本地 toast 通知
 
-桌面应用（包括打包的[.msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)应用、使用[稀疏包](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)获取包标识和经典非打包 Win32 应用的应用）可以像 Windows 应用一样发送交互式 toast 通知。 但对于桌面应用程序，有几个特殊步骤，因为不同的激活方案，如果你未使用 .MSIX 或稀疏包，则可能缺少包标识。
+桌面应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包的 Win32 应用) 可以像 Windows 应用一样发送交互式 toast 通知。 但对于桌面应用程序，有几个特殊步骤，因为不同的激活方案，如果你未使用 .MSIX 或稀疏包，则可能缺少包标识。
 
 > [!IMPORTANT]
 > 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 有关其他桌面语言，请参阅[桌面 C#](send-local-toast-desktop.md)。
@@ -94,7 +94,7 @@ CoCreatableClass(NotificationActivator);
 
 ### <a name="msixsparse-package"></a>.MSIX/稀疏包
 
-如果你使用的是[.msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)或[稀疏包](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)（或同时支持两者），请在**appxmanifest.xml**中添加：
+如果你使用的是 [.msix](/windows/msix/desktop/source-code-overview) 或 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (或者如果你同时支持) ，请在 **appxmanifest.xml**中添加：
 
 1. **xmlns:com** 声明
 2. **xmlns:desktop** 声明
@@ -102,7 +102,7 @@ CoCreatableClass(NotificationActivator);
 4. 使用步骤 4 中 GUID 的 COM 激活器的 **com:Extension**。 务必包括 `Arguments="-ToastActivated"`，以便了解是从 toast 启动
 5. **windows.toastNotificationActivation** 的 **desktop:Extension**，用于声明 toast 激活器 CLSID（步骤 #4 中的 GUID）。
 
-**Appxmanifest.xml**
+**Package.appxmanifest**
 
 ```xml
 <Package
@@ -395,7 +395,7 @@ if (SUCCEEDED(hr))
 
 ## <a name="step-10-deploying-and-debugging"></a>步骤 10：部署和调试
 
-若要部署和调试 .MSIX/稀疏包应用，请参阅[运行、调试和测试打包的桌面应用](/windows/uwp/porting/desktop-to-uwp-debug)。
+若要部署和调试 .MSIX/稀疏包应用，请参阅 [运行、调试和测试打包的桌面应用](/windows/msix/desktop/desktop-to-uwp-debug)。
 
 若要部署和调试经典 Win32 应用，必须在正常调试之前通过安装程序安装应用，以便显示包含有 AUMID 和 CLSID 的“开始”快捷方式。 出现“开始”快捷方式后，可以从 Visual Studio 中使用 F5 进行调试。
 
@@ -407,7 +407,7 @@ if (SUCCEEDED(hr))
 
 如果收到 `HRESULT 0x800401f0 CoInitialize has not been called.`，请务必先在应用中调用 `CoInitialize(nullptr)`，然后再调用 API。
 
-如果在 `HRESULT 0x8000000e A method was called at an unexpected time.` 调用兼容 api 时收到，这可能意味着你无法调用所需的寄存器方法（或者，如果 .msix/稀疏包应用程序当前未在 .msix/稀疏上下文下运行你的应用程序）。
+如果在 `HRESULT 0x8000000e A method was called at an unexpected time.` 调用兼容 api 时收到，这可能意味着你无法调用所需的寄存器方法 (或者如果是 .msix/稀疏包应用，则当前未在 .msix/稀疏上下文) 下运行你的应用。
 
 如果收到大量 `unresolved external symbol` 编译错误，则很可能是因为忘记在步骤 1 中将 `runtimeobject.lib` 添加到**其他依赖项**中（或者只将其添加到“调试”配置而未添加到“发布”配置）。
 
@@ -416,13 +416,13 @@ if (SUCCEEDED(hr))
 
 如果支持 Windows 8.1 或更低版本，则在调用任何 **DesktopNotificationManagerCompat** API 或发送任何 ToastGeneric toast 前，需要在运行时检查是否是在 Windows 10 中运行。
 
-Windows 8 引入了 toast 通知，但使用的是[旧版 toast 模板](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10))，如 ToastText01。 激活由 **ToastNotification** 类上的内存中 **Activated** 事件处理，因为 toast 只会短暂弹出而不会持久存在。 Windows 10 引入了[交互式 ToastGeneric toast](adaptive-interactive-toasts.md)，还引入了操作中心，通知可在操作中心内保留数天。 要引入操作中心，则需要引入 COM 激活器，这样 toast 才能在创建数天后被激活。
+Windows 8 引入了 toast 通知，但使用的是[旧版 toast 模板](/previous-versions/windows/apps/hh761494(v=win.10))，如 ToastText01。 激活由 **ToastNotification** 类上的内存中 **Activated** 事件处理，因为 toast 只会短暂弹出而不会持久存在。 Windows 10 引入了[交互式 ToastGeneric toast](adaptive-interactive-toasts.md)，还引入了操作中心，通知可在操作中心内保留数天。 要引入操作中心，则需要引入 COM 激活器，这样 toast 才能在创建数天后被激活。
 
-| 操作系统 | ToastGeneric | COM 激活器 | 旧版 toast 模板 |
+| OS | ToastGeneric | COM 激活器 | 旧版 toast 模板 |
 | -- | ------------ | ------------- | ---------------------- |
 | Windows 10 | 支持 | 支持 | 支持（但不会激活 COM 服务器） |
-| Windows 8.1/8 | N/A | N/A | 支持 |
-| Windows 7 及更低版本 | N/A | N/A | N/A |
+| Windows 8.1/8 | 不适用 | 空值 | 支持 |
+| Windows 7 及更低版本 | 不适用 | 不适用 | 不适用 |
 
 若要检查是否是在 Windows 10 上运行，请包含 `<VersionHelpers.h>` 标头并检查 **IsWindows10OrGreater** 方法。 如果返回 true，则继续调用本文档中所述的所有方法！ 
 

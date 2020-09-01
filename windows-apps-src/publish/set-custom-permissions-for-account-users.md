@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 用户角色, 用户权限, 自定义角色, 用户访问权限, 自定义权限, 标准角色
 ms.localizationpriority: medium
-ms.openlocfilehash: edf81c0d64c0c3fc53d85fcc7fbd5854a59cba01
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 10c75d117320a947ce33ebd732c1956a9b3ae0e6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043419"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172851"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>为帐户用户设置角色或自定义权限
 
@@ -26,7 +26,7 @@ ms.locfileid: "89043419"
 -   具有某个角色（或自定义权限集）的用户还可加入具有其他角色（或权限集）的组。 在该情况下，用户可访问与组和个人帐户关联的所有功能。
 
 > [!TIP]
-> 本主题特定于 [合作伙伴中心](https://partner.microsoft.com/dashboard)的 Windows apps 开发人员计划。 有关硬件开发人员计划中用户角色的信息，请参阅[管理用户角色](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)。 有关 Windows 桌面应用程序计划中的用户角色的信息，请参阅 [Windows 桌面应用程序计划](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)。
+> 本主题特定于 [合作伙伴中心](https://partner.microsoft.com/dashboard)的 Windows apps 开发人员计划。 有关硬件开发人员计划中用户角色的信息，请参阅[管理用户角色](/windows-hardware/drivers/dashboard/managing-user-roles)。 有关 Windows 桌面应用程序计划中的用户角色的信息，请参阅 [Windows 桌面应用程序计划](/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)。
 
 
 <span id="roles" />
@@ -41,7 +41,7 @@ ms.locfileid: "89043419"
 > 该帐户的**所有者**是第一个使用 Microsoft 帐户创建它的人员（而不是任何通过 Azure AD 添加的用户）。 此帐户所有者是唯一具有该帐户的完整访问权限的人员，其中包括删除应用、创建和编辑所有帐户用户以及更改所有财务和帐户设置的功能。 
 
 
-| 角色                 | 说明              |
+| 角色                 | 描述              |
 |----------------------|--------------------------|
 | Manager              | 具有对该帐户的完整访问权限，除了更改税收和付款设置。 这包括在合作伙伴中心管理用户，但是请注意，在 Azure AD 租户中创建和删除用户的能力取决于帐户在 Azure AD 中的权限。 也就是说，如果为某个用户分配了管理员角色，但在组织的 Azure AD 中没有全局管理员权限，则他们将无法创建新用户或从目录中删除用户 (不过，他们可以更改用户的合作伙伴中心角色) 。 <p> 请注意，如果合作伙伴中心帐户与多个 Azure AD 租户相关联，则管理器无法查看用户 (的完整详细信息，包括名字、姓氏、密码恢复电子邮件以及这些用户是否是 Azure AD 全局管理员) ，除非他们使用具有该租户的全局管理员权限的帐户登录到同一租户。 但是，用户可以在与合作伙伴中心帐户关联的任何租户中添加和删除用户。 |
 | 开发人员            | 可以上传程序包并提交应用和加载项，并且可以查看[使用情况报告](usage-report.md)获取遥测详细信息。 可以访问 [跨设备体验](https://developer.microsoft.com/windows/project-rome) 功能。 无法查看财务信息或帐户设置。   |
@@ -101,19 +101,19 @@ ms.locfileid: "89043419"
     </tr>
     </thead>
     <tbody>
-<tr><td align="left">    <b>帐户设置</b>                    </td><td align="left">  可以查看 " <b>帐户设置</b> " 部分中的所有页面，包括 <a href="managing-your-profile.md">联系信息</a>。       </td><td align="left">  可以在 " <b>帐户设置</b> " 部分查看所有页。 可更改<a href="managing-your-profile.md">联系人信息</a>和其他页面，但无法更改付款帐户或税务配置文件（除非单独授予该权限）。            </td></tr>
+<tr><td align="left">    <b>帐户设置</b>                    </td><td align="left">  可以查看 " <b>帐户设置</b> " 部分中的所有页面，包括 <a href="managing-your-profile.md">联系信息</a>。       </td><td align="left">  可以在 " <b>帐户设置</b> " 部分查看所有页。 可更改<a href="/windows/uwp/publish/manage-account-settings-and-profile">联系人信息</a>和其他页面，但无法更改付款帐户或税务配置文件（除非单独授予该权限）。            </td></tr>
 <tr><td align="left">    <b>帐户用户</b>                       </td><td align="left">  可在<b>用户</b>部分查看已添加到帐户的用户。          </td><td align="left">  可将用户添加到帐户，并在<b>用户</b>部分更改现有的用户。             </td></tr>
 <tr><td align="left">    <b>帐户级别 ad 性能报表</b> </td><td align="left">  可查看帐户级的<a href="advertising-performance-report.md">广告性能报告</a>。      </td><td align="left">  不适用   </td></tr>
 <tr><td align="left">    <b>广告活动</b>                        </td><td align="left">  可查看在帐户中创建的<a href="create-an-ad-campaign-for-your-app.md">广告市场活动</a>。      </td><td align="left">  可在帐户中创建、管理和查看<a href="create-an-ad-campaign-for-your-app.md">广告市场活动</a>。          </td></tr>
 <tr><td align="left">    <b>Ad 中介</b>                        </td><td align="left">  可查看帐户中所有产品的广告中介配置。    </td><td align="left">  可查看和更改帐户中所有产品的广告中介配置。        </td></tr>
-<tr><td align="left">    <b>Ad 采集报表</b>                </td><td align="left">  可查看帐户中所有产品的<a href="ad-mediation-report.md">广告中介报告</a>。    </td><td align="left">  不适用    </td></tr>
+<tr><td align="left">    <b>Ad 采集报表</b>                </td><td align="left">  可查看帐户中所有产品的<a href="/windows/uwp/publish/advertising-performance-report">广告中介报告</a>。    </td><td align="left">  不适用    </td></tr>
 <tr><td align="left">    <b>Ad 性能报告</b>              </td><td align="left">  可查看帐户中所有产品的<a href="advertising-performance-report.md">广告性能报告</a>。       </td><td align="left">  不适用         </td></tr>
 <tr><td align="left">    <b>Ad 单位</b>                            </td><td align="left">  可查看为帐户创建的<a href="in-app-ads.md">广告单元</a>。    </td><td align="left">  可创建、管理和查看帐户<a href="in-app-ads.md">广告单元</a>。             </td></tr>
-<tr><td align="left">    <b>关联广告</b>                       </td><td align="left">  可查看帐户中所有产品的<a href="about-affiliate-ads.md">联盟广告</a>使用情况。    </td><td align="left">  可管理和查看帐户中所有产品的<a href="about-affiliate-ads.md">联盟广告</a>使用情况。                </td></tr>
-<tr><td align="left">    <b>子公司性能报表</b>      </td><td align="left">  可查看帐户中所有产品的<a href="affiliates-performance-report.md">联盟性能报告</a>。   </td><td align="left">  不适用   </td></tr>
+<tr><td align="left">    <b>关联广告</b>                       </td><td align="left">  可查看帐户中所有产品的<a href="/windows/uwp/publish/in-app-ads">联盟广告</a>使用情况。    </td><td align="left">  可管理和查看帐户中所有产品的<a href="/windows/uwp/publish/in-app-ads">联盟广告</a>使用情况。                </td></tr>
+<tr><td align="left">    <b>子公司性能报表</b>      </td><td align="left">  可查看帐户中所有产品的<a href="/windows/uwp/publish/advertising-performance-report">联盟性能报告</a>。   </td><td align="left">  不适用   </td></tr>
 <tr><td align="left">    <b>应用安装广告报表</b>             </td><td align="left">  可查看<a href="promote-your-app-report.md">广告活动报告</a>。           </td><td align="left">  不适用   </td></tr>
 <tr><td align="left">    <b>社区广告</b>                       </td><td align="left">  可查看帐户中所有产品的免费<a href="about-community-ads.md">社区广告</a>使用情况。          </td><td align="left">  可创建、管理和查看帐户中所有产品的免费<a href="about-community-ads.md">社区广告</a>使用情况。               </td></tr>
-<tr><td align="left">    <b>联系人信息</b>                        </td><td align="left">  可查看“帐户设置”部分中的<a href="managing-your-profile.md">联系人信息</a>。        </td><td align="left">  可编辑和查看“帐户设置”部分中的<a href="managing-your-profile.md">联系人信息</a>。            </td></tr>
+<tr><td align="left">    <b>联系人信息</b>                        </td><td align="left">  可查看“帐户设置”部分中的<a href="/windows/uwp/publish/manage-account-settings-and-profile">联系人信息</a>。        </td><td align="left">  可编辑和查看“帐户设置”部分中的<a href="/windows/uwp/publish/manage-account-settings-and-profile">联系人信息</a>。            </td></tr>
 <tr><td align="left">    <b>COPPA 合规性</b>                    </td><td align="left">  可查看帐户中所有产品的 <a href="in-app-ads.md#coppa-compliance">COPPA 合规性</a>选择（指示产品是否面向年龄在 13 岁以下的儿童）。                                            </td><td align="left">  可编辑和查看帐户中所有产品的 <a href="in-app-ads.md#coppa-compliance">COPPA 合规性</a> 选择（指示产品是否面向年龄在 13 岁以下的儿童）。         </td></tr>
 <tr><td align="left">    <b>客户组</b>                     </td><td align="left">  可以查看 <a href="create-customer-groups.md">客户组</a> (段和已知用户组) 。      </td><td align="left">  可以创建、编辑和查看)  (段和已知用户组的 <a href="create-customer-groups.md">客户组</a> 。       </td></tr>
 <tr><td align="left">    <b>管理产品组</b>&nbsp;*                            </td><td align="left">  可查看新产品组创建页面，但实际上无法创建新产品组。    </td><td align="left">  可以创建并编辑产品组。     </td></tr>
@@ -247,4 +247,4 @@ ms.locfileid: "89043419"
 </tbody>
 </table>
 
-\* 用星号标记的权限 ( * ) 授予对所有帐户不可用的功能的访问权限。 如果帐户尚未启用这些功能，则选择这些权限不会有任何效果。  
+\* 用星号标记的权限 ( * ) 授予对所有帐户不可用的功能的访问权限。 如果帐户尚未启用这些功能，则选择这些权限不会有任何效果。

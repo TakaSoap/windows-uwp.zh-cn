@@ -1,23 +1,23 @@
 ---
-title: 打开 Microsoft Store 应用
-description: 本主题介绍了 ms-windows-store URI 方案。 您的应用程序可以使用此 URI 方案以启动 Microsoft Store 应用到应用商店中的特定页。
+title: 启动 Microsoft Store 应用
+description: 本主题介绍了 ms-windows-store URI 方案。 应用可以使用此 URI 方案将 Microsoft Store 应用启动到存储中的特定页面。
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fd0e7137f31a8f1620f7937b52efe1ca84a6b99a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1a31c762c002e711a87e99e2f97de6c26e2c8b48
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370785"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172981"
 ---
-# <a name="launch-the-microsoft-store-app"></a>打开 Microsoft Store 应用
+# <a name="launch-the-microsoft-store-app"></a>启动 Microsoft Store 应用
 
 
 
-本主题介绍**ms windows 应用商店：** URI 方案。 您的应用程序可以使用此 URI 方案通过启动到存储区中的特定页的 Microsoft Store 应用[ **LaunchUriAsync** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)方法。
+本主题介绍了 **ms-windows-store:** URI 方案。 应用可以使用此 URI 方案，通过 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 方法，将 Microsoft Store 应用启动到存储中的特定页面。
 
 此示例显示了如何在“游戏”页面中打开 Microsoft Store：
 
@@ -25,12 +25,12 @@ ms.locfileid: "66370785"
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));
 ```
 
-## <a name="ms-windows-store-uri-scheme-reference"></a>ms-windows-应用商店：URI 方案引用
+## <a name="ms-windows-store-uri-scheme-reference"></a>ms-windows-store: URI 方案引用
 
 <table>
 <tr><th>描述</th><th></th><th>URI 方案</th></tr>
 <tr><td>启动应用商店的主页。</td><td /><td>ms-windows-store://home</td></tr>
-<tr><td>启动应用商店中的顶级垂直类别内容。<p>注意：并非所有用户都有权访问所有纵向市场。</p>
+<tr><td>启动应用商店中的顶级垂直类别内容。<p>请注意：并非所有用户都可以访问所有垂直类别内容。</p>
 </td><td /><td>
 <p>ms-windows-store://navigatetopage/?Id=Apps </p>
 <p>ms-windows-store://navigatetopage/?Id=Games</p>
@@ -40,11 +40,11 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </td>
 </tr>
 <tr>
-<td rowspan="4">启动产品的产品详细信息页面 (PDP)。 <p>Store ID 推荐用于 Windows 10 上的客户，其将适用于所有操作系统版本，但执行此操作时的早期方法 (例如：PFN) 仍然是支持的。</p>
-<p>这些值可在<a href="https://partner.microsoft.com/dashboard">合作伙伴中心</a>上<a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">应用标识</a>页为每个应用的应用程序管理部分。</p>
+<td rowspan="4">启动产品的产品详细信息页面 (PDP)。 <p>应用商店 ID 已向所有使用 Windows 10 的客户推荐，并且将适用于所有操作系统版本，但执行此操作的早期方法（例如：PFN）仍受支持。</p>
+<p>可以在 <a href="https://partner.microsoft.com/dashboard">合作伙伴中心</a> 的每个应用的 "应用管理" 部分中的 " <a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">应用标识</a> " 页上找到这些值。</p>
 </td>
 <td>
-Store ID <p>（建议）</p>
+应用商店 ID <p>（建议）</p>
 </td>
 <td>
 <p>ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL</p>
@@ -66,7 +66,7 @@ Store ID <p>（建议）</p>
 </tr>
 <tr>
 <td rowspan="4">启动产品的写评论体验。</td>
-<td>Store ID <p>（建议）</p></td>
+<td>应用商店 ID <p>（建议）</p></td>
 <td>ms-windows-store://review/?ProductId=9WZDNCRFHVJL </td>
 </tr>
 <tr>

@@ -1,18 +1,18 @@
 ---
 title: 流式资源功能层
-description: Direct3D 具有三层功能，可为流式资源提供支持。
+description: 访问有关 Direct3D 流式处理资源的三层功能功能的文章，以前称为平铺资源。
 ms.assetid: 6AE7EA72-3929-4BB4-8780-F0CF26192D87
 keywords:
 - 流式资源功能层
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c872d289c67161e414671d3d509401f0539a7675
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ee27244c4d4c2797b71c9d5c8c2c5185a99596b5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631442"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173051"
 ---
 # <a name="streaming-resources-features-tiers"></a>流式资源功能层
 
@@ -52,7 +52,7 @@ Direct3D 版本提供查询功能，可验证支持流式资源的硬件和驱�
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="tier-3.md">第 3 层</a></p></td>
-<td align="left"><p>第 3 层除了具有<a href="tier-2.md">第 2 层</a>功能之外，还增加了用于流式资源的 Texture3D 支持。</p></td>
+<td align="left"><p>第3层除了 <a href="tier-2.md">第2层</a> 功能外，还添加了对 Texture3D for 流式处理资源的支持。</p></td>
 </tr>
 </tbody>
 </table>

@@ -5,12 +5,12 @@ keywords: windows 10, uwp, 订阅, 加载项, 应用内购买, IAP, Windows.Serv
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ba436ab760f589debeaf6909acd64d61df89a43d
-ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
+ms.openlocfilehash: 39f319d272e4dde465af68d4c5b7af7fb7a17799
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295730"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167711"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>为应用启用订阅加载项
 
@@ -27,7 +27,7 @@ UWP 应用的订阅加载项支持以下功能：
 * 你可以在你的订阅中添加 1 周或 1 个月的免费试用期间。
 * Windows SDK [提供了一些 API](#code-examples)，可用于在应用中获取有关应用的可用订阅加载项的信息并支持购买订阅加载项。 我们还提供你可以从你的服务调用的 REST API 来[管理用户订阅](#manage-subscriptions)。
 * 你可以查看分析报告，其中提供了订阅购置、活动订户以及在指定的时间段内取消的订阅的数量。
-* 客户可以在他们的 Microsoft 帐户的 [https://account.microsoft.com/services](https://account.microsoft.com/services) 页面管理他们的订阅。 客户可以使用此页面查看他们购买的所有订阅、取消订阅，以及更改与其订阅关联的付款方式。
+* 客户可在页面上管理其 [https://account.microsoft.com/services](https://account.microsoft.com/services) Microsoft 帐户的订阅。 客户可以使用此页面查看他们购买的所有订阅、取消订阅，以及更改与其订阅关联的付款方式。
 
 ## <a name="steps-to-enable-a-subscription-add-on-for-your-app"></a>为你的应用启用订阅加载项的步骤
 
@@ -54,7 +54,7 @@ UWP 应用的订阅加载项支持以下功能：
         > [!IMPORTANT]
         > 默认情况下，当你创建任何加载项时，价格最初都设置为**免费**。 因为你在完成加载项提交之后不能提高订阅加载项的价格，请确保在此处选择你的订阅的价格。
 
-2. 在你的应用中，使用 [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中的 API 来确定当前用户是否已获取你的订阅加载项，然后以应用内购买的形式将它提供给用户。 请参阅本文中的[代码示例](#code-examples)以了解更多详细信息。
+2. 在你的应用中，使用 [**Windows.Services.Store**](/uwp/api/windows.services.store) 命名空间中的 API 来确定当前用户是否已获取你的订阅加载项，然后以应用内购买的形式将它提供给用户。 请参阅本文中的[代码示例](#code-examples)以了解更多详细信息。
 
 3. 测试你的应用中订阅的应用内购买实现情况。 你需要将你的应用从应用商店下载到你的开发设备，才能使用其许可证进行测试。 有关详细信息，请参阅我们的应用内购买[测试指南](in-app-purchases-and-trials.md#testing)。  
 
@@ -64,35 +64,35 @@ UWP 应用的订阅加载项支持以下功能：
 
 ## <a name="code-examples"></a>代码示例
 
-此部分中的代码示例介绍如何使用 [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中的 API 来获取有关当前应用的订阅加载项的信息，以及代表当前用户请求购买订阅加载项。
+此部分中的代码示例介绍如何使用 [**Windows.Services.Store**](/uwp/api/windows.services.store) 命名空间中的 API 来获取有关当前应用的订阅加载项的信息，以及代表当前用户请求购买订阅加载项。
 
 这些示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你已在合作伙伴中心[创建了一个应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，此应用在应用商店中发布。 在测试应用期间，你可以选择将应用配置为在 Microsoft Store 中隐藏。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
-* 已在合作伙伴中心[为应用创建订阅外接程序](../publish/add-on-submissions.md)。
+* 你已在合作伙伴中心 [创建了一个应用提交](../publish/app-submissions.md) ，此应用在应用商店中发布。 在测试应用期间，你可以选择将应用配置为在 Microsoft Store 中隐藏。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
+* 已在合作伙伴中心 [为应用创建订阅外接程序](../publish/add-on-submissions.md) 。
 
 这些示例中的代码假设：
 * 此代码文件包含对 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空间的 **using** 语句。
 * 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md#api_intro)。
 
 > [!NOTE]
-> 如果你有使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的桌面应用程序，可能需要添加未在这些示例中显示的额外代码来配置 [**StoreContext**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) 对象。 有关详细信息，请参阅[在使用桌面桥的桌面应用程序中使用 StoreContext 类](in-app-purchases-and-trials.md#desktop)。
+> 如果你有使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的桌面应用程序，可能需要添加未在这些示例中显示的额外代码来配置 [**StoreContext**](/uwp/api/Windows.Services.Store.StoreContext) 对象。 有关更多信息，请参阅[在使用桌面桥的桌面应用程序中使用 StoreContext 类](in-app-purchases-and-trials.md#desktop)。
 
 ### <a name="purchase-a-subscription-add-on"></a>购买订阅加载项
 
 此示例演示如何代表当前客户请求购买已知订阅加载项。 此示例还显示如何处理订阅有试用期的情况。
 
 1. 这段代码首先确定客户是否已经拥有一个活动订阅许可证。 如果客户已经有活动的许可证，则你的代码应根据需要解锁订阅功能（因为它专用于你的应用，这在示例中已用注释指明）。
-2. 接下来，这段代码获取表示你想要代表客户购买的订阅的 [**StoreProduct**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 对象。 代码假定你已知道你想要购买的订阅的 [Store ID](in-app-purchases-and-trials.md#store-ids)，并且你已对 *subscriptionStoreId* 变量指定此值。
+2. 接下来，这段代码获取表示你想要代表客户购买的订阅的 [**StoreProduct**](/uwp/api/windows.services.store.storeproduct) 对象。 代码假定你已知道你想要购买的订阅的 [Store ID](in-app-purchases-and-trials.md#store-ids)，并且你已对 *subscriptionStoreId* 变量指定此值。
 3. 然后代码确定该订阅是否有试用版。 （可选）你的应用可以使用此信息向客户显示详情，说明存在可用的试用版或完整订阅。
-4. 最后，代码调用 [**RequestPurchaseAsync**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.RequestPurchaseAsync) 方法来请求购买订阅。 如果该订阅有试用版，则会向客户提供试用版以便购买。 否则，将提供完整订阅以便其购买。
+4. 最后，代码调用 [**RequestPurchaseAsync**](/uwp/api/windows.services.store.storeproduct.RequestPurchaseAsync) 方法来请求购买订阅。 如果该订阅有试用版，则会向客户提供试用版以便购买。 否则，将提供完整订阅以便其购买。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
 
 ### <a name="get-info-about-subscription-add-ons-for-the-current-app"></a>获取有关当前应用的订阅加载项的信息
 
-此代码示例介绍如何获取有关可用于你的应用的所有订阅加载项的信息。 要获取此信息，请先使用 [**GetAssociatedStoreProductsAsync**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync) 方法来获取表示应用提供的每个可用加载项的 [**StoreProduct**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct) 对象的集合。 然后，获取每个产品的 [**StoreSku**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku)，并使用 [**IsSubscription**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.IsSubscription) 和 [**SubscriptionInfo**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.SubscriptionInfo) 属性访问订阅信息。
+此代码示例介绍如何获取有关可用于你的应用的所有订阅加载项的信息。 要获取此信息，请先使用 [**GetAssociatedStoreProductsAsync**](/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync) 方法来获取表示应用提供的每个可用加载项的 [**StoreProduct**](/uwp/api/Windows.Services.Store.StoreProduct) 对象的集合。 然后，获取每个产品的 [**StoreSku**](/uwp/api/windows.services.store.storesku)，并使用 [**IsSubscription**](/uwp/api/windows.services.store.storesku.IsSubscription) 和 [**SubscriptionInfo**](/uwp/api/windows.services.store.storesku.SubscriptionInfo) 属性访问订阅信息。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
@@ -109,7 +109,7 @@ UWP 应用的订阅加载项支持以下功能：
 
 ## <a name="cancellations"></a>取消
 
-客户可以使用其 Microsoft 帐户的 [https://account.microsoft.com/services](https://account.microsoft.com/services) 页面查看他们购买的所有订阅、取消订阅，以及更改与其订阅关联的付款方式。 当客户使用此页面取消订阅时，他们在当前帐单期间内将仍然拥有对该订阅的访问权限。 他们不能获得当前帐单周期任何部分的退款。 在当前帐单周期结束时，他们的订阅会停止。
+客户可以使用页来查看他们的 [https://account.microsoft.com/services](https://account.microsoft.com/services) Microsoft 帐户，查看他们获得的所有订阅、取消订阅，并更改与订阅相关联的付款的形式。 当客户使用此页面取消订阅时，他们在当前帐单期间内将仍然拥有对该订阅的访问权限。 他们不能获得当前帐单周期任何部分的退款。 在当前帐单周期结束时，他们的订阅会停止。
 
 你还可以使用我们的 REST API [更改给定用户的订阅的帐单状态](change-the-billing-state-of-a-subscription-for-a-user.md)，以代表用户取消订阅。
 
@@ -124,12 +124,12 @@ UWP 应用的订阅加载项支持以下功能：
 目前订阅加载项不支持以下情形。
 
 * 目前不支持直接通过应用商店向客户销售订阅。 订阅只能通过数字产品的应用内购买提供。
-* 客户不能使用他们的 Microsoft 帐户的 [https://account.microsoft.com/services](https://account.microsoft.com/services) 页面切换到不同订阅期。 若要切换到其他订阅期，客户必须取消其当前订阅，然后从你的应用购买包含不同订阅期限的订阅。
+* 客户无法使用页面来切换订阅期间 [https://account.microsoft.com/services](https://account.microsoft.com/services) 的 Microsoft 帐户。 若要切换到其他订阅期，客户必须取消其当前订阅，然后从你的应用购买包含不同订阅期限的订阅。
 * 订阅加载项目前不支持分级订阅（例如，将客户从基本订阅切换到包含更多功能的高级订阅）。
 * 目前订阅加载项不支持[销售](../publish/put-apps-and-add-ons-on-sale.md)和[促销代码](../publish/generate-promotional-codes.md)。
-* 在设置订阅外接程序的可见性以**停止购置**后，续订现有订阅。 有关更多详细信息，请参阅[设置附加定价和可用性](../publish/set-add-on-pricing-and-availability.md)。
+* 在设置订阅外接程序的可见性以 **停止购置**后，续订现有订阅。 有关更多详细信息，请参阅 [设置附加定价和可用性](../publish/set-add-on-pricing-and-availability.md) 。
 
 ## <a name="related-topics"></a>相关主题
 
 * [应用内购买和试用](in-app-purchases-and-trials.md)
-* [获取应用和外接程序的产品信息](get-product-info-for-apps-and-add-ons.md)
+* [获取应用和加载项的产品信息](get-product-info-for-apps-and-add-ons.md)

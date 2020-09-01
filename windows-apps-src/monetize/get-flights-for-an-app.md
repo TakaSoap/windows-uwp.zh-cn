@@ -1,23 +1,23 @@
 ---
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
-description: 在 Microsoft Store 提交 API 中使用此方法检索到合作伙伴中心帐户注册的应用包航班信息。
+description: 在 Microsoft Store 提交 API 中使用此方法来检索已注册到合作伙伴中心帐户的应用的包飞行信息。
 title: 获取应用的软件包外部测试版
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版, 软件包外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: 66e64f2c499835a345bb9563fd005b86a926a4d2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a5cfe7aa579e5d050ddf808e35c06d52c84eeca5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372016"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171431"
 ---
 # <a name="get-package-flights-for-an-app"></a>获取应用的软件包外部测试版
 
-在 Microsoft Store 提交 API 中使用此方法，若要列出到合作伙伴中心帐户注册的应用包航班。 有关软件包外部测试版的详细信息，请参阅[软件包外部测试版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。
+在 Microsoft Store 提交 API 中使用此方法列出注册到合作伙伴中心帐户的应用的包航班。 有关软件包外部测试版的详细信息，请参阅[软件包外部测试版](../publish/package-flights.md)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -35,16 +35,16 @@ ms.locfileid: "66372016"
 
 ### <a name="request-header"></a>请求头
 
-| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt; 。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
-|  名称  |  在任务栏的搜索框中键入  |  描述  |  必需  |
+|  名称  |  类型  |  描述  |  必需  |
 |------|------|------|------|
-|  applicationId  |  string  |  要检索软件包外部测试版的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
+|  applicationId  |  字符串  |  要检索软件包外部测试版的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](../publish/view-app-identity-details.md)。  |  是  |
 |  top  |  int  |  要在请求中返回的项数（即，要返回的软件包外部测试版数）。 如果你的帐户具有的软件包外部测试版超过在查询中指定的值，响应正文将包括可追加到方法 URI 的相对 URI 路径，用于请求下一页数据。  |  否  |
 |  skip  |  int  |  返回剩余项之前，在查询中绕过的项数。 使用此参数分页浏览数据集。 例如，top=10 和 skip=0 可检索项目 1 到 10，top=10 和 skip=10 可检索项目 11 到 20，依此类推。  |  否  |
 
@@ -99,9 +99,9 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| ReplTest1      | 在任务栏的搜索框中键入   | 描述       |
+| 值      | 类型   | 说明       |
 |------------|--------|---------------------|
-| @nextLink  | string | 如果存在数据的其他页，此字符串中包含可附加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 请求 URI 的相对路径，用于请求下一页数据。 例如，如果初始请求正文的 *top* 参数设置为 2，但应用中有 4 个软件包外部测试版，响应正文将包含 `applications/{applicationid}/listflights/?skip=2&top=2` 的 @nextLink 值，指示你可以调用 `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2` 请求接下来的 2 个软件包外部测试版。 |
+| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含可附加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 请求 URI 的相对路径，用于请求下一页数据。 例如，如果初始请求正文的 *top* 参数设置为 2，但应用中有 4 个软件包外部测试版，响应正文将包含 `applications/{applicationid}/listflights/?skip=2&top=2` 的 @nextLink 值，指示你可以调用 `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2` 请求接下来的 2 个软件包外部测试版。 |
 | value      | 数组  | 为指定的应用提供软件包外部测试版相关信息的对象数组。 有关每个对象中的数据的详细信息，请参阅[外部测试版资源](get-app-data.md#flight-object)。               |
 | totalCount | int    | 查询的数据结果中的行总数（即，指定应用的软件包外部测试版的总数）。   |
 
@@ -110,15 +110,15 @@ Authorization: Bearer <your access token>
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
-| 错误代码 |  描述   |
+| 错误代码 |  说明   |
 |--------|------------------|
 | 404  | 找不到任何软件包外部测试版。 |
-| 409  | 该应用使用的合作伙伴中心功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
+| 409  | 此应用使用的合作伙伴中心功能 [当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
+* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [获取所有应用](get-all-apps.md)
 * [获取应用](get-an-app.md)
-* [获取外接程序的应用](get-add-ons-for-an-app.md)
+* [获取应用的加载项](get-add-ons-for-an-app.md)

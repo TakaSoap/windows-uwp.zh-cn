@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bf17a6b835e0e594454f433770edb598ae637a0
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: e020972a8dff0b0721fd2c5726999a7896d359c4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942827"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167901"
 ---
 # <a name="launch-the-windows-maps-app"></a>启动 Windows 地图应用
 
@@ -51,7 +51,7 @@ URI 方案允许你通过单击超链接（或在你的应用中以编程方式�
 ## <a name="launch-a-uri-from-your-app"></a>从你的应用启动 URI
 
 
-若要从你的应用启动 Windows 地图应用，请使用 **bingmaps:**、**ms-drive-to:** 或 **ms-walk-to:** URI 调用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。 以下示例启动前一个示例中相同的 URI。 有关通过 URI 启动应用的详细信息，请参阅[启动 URI 的默认应用](launch-default-app.md)。
+若要从你的应用启动 Windows 地图应用，请使用 **bingmaps:**、**ms-drive-to:** 或 **ms-walk-to:** URI 调用 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 方法。 以下示例启动前一个示例中相同的 URI。 有关通过 URI 启动应用的详细信息，请参阅[启动 URI 的默认应用](launch-default-app.md)。
 
 ```cs
 // Center on New York City
@@ -63,7 +63,7 @@ launcherOptions.TargetApplicationPackageFamilyName = "Microsoft.WindowsMaps_8wek
 var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherOptions);
 ```
 
-在此示例中，[**LauncherOptions**](https://docs.microsoft.com/uwp/api/Windows.System.LauncherOptions) 类用于帮助确保启动 Windows 地图应用。
+在此示例中，[**LauncherOptions**](/uwp/api/Windows.System.LauncherOptions) 类用于帮助确保启动 Windows 地图应用。
 
 ## <a name="display-known-locations"></a>显示已知的位置
 
@@ -185,7 +185,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>cpval = degreeslat "~" degreeslon</p>
 <p>degreeslat = ["-"] 1*3DIGIT ["."1*7DIGIT]</p>
 <p>degreeslon = \["-"\] 1*2DIGIT \["." 1*7DIGIT]</p>
-<p>示例：</p>
+<p>例如：</p>
 <p>cp=40.726966~-74.006076</p></td>
 <td align="left"><p>这两个值都必须用小数表示，并用颚化符分隔 (<b>~</b>) 。</p>
 <p>有效的经度值范围为 -180 到 +180（包括这两者）。</p>
@@ -201,7 +201,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>eastlongitude = degreeslon</p>
 <p>degreeslat = ["-"] 13DIGIT ["." 17DIGIT]</p>
 <p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT]</p>
-<p>示例：</p>
+<p>例如：</p>
 <p>bb=39.719_-74.52~41.71_-73.5</p></td>
 <td align="left"><p>指定以小数表示的边界框的矩形区域，使用波形符 (<b>~</b>) 将左下角分隔到右上角。 各个矩形区域的经纬度由下划线 (<b>_</b>) 分隔。</p>
 <p>有效的经度值范围为 -180 到 +180（包括这两者）。</p>
@@ -212,7 +212,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p>位置</p></td>
 <td align="left"><p>where = "where=" whereval</p>
 <p>whereval = 1* ( ALPHA/数字/"-"/"."/"_"/pct 编码/"！"/"$"/"'"/" ("/") "/*""/""/"/"/"/ @" / " "/"") </p>
-<p>示例：</p>
+<p>例如：</p>
 <p>where=1600%20Pennsylvania%20Ave,%20Washington,%20DC</p></td>
 <td align="left"><p>特定位置、路标或地点的搜索词。</p></td>
 </tr>
@@ -221,7 +221,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p>查询词</p></td>
 <td align="left"><p>q = "q="</p>
 <p>whereval</p>
-<p>示例：</p>
+<p>例如：</p>
 <p>q=mexican%20restaurants</p></td>
 <td align="left"><p>本地商家或商家类别的搜索词。</p></td>
 </tr>
@@ -229,7 +229,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>lvl</b></p></td>
 <td align="left"><p>缩放级别</p></td>
 <td align="left"><p>lvl = "lvl=" 1<i>2DIGIT \["." 1</i>2DIGIT\]</p>
-<p>示例：</p>
+<p>例如：</p>
 <p>lvl=10.50</p></td>
 <td align="left"><p>定义地图视图的缩放级别。 有效值介于 1 至 20 之间，其中 1 表示缩到最小。</p></td>
 </tr>
@@ -237,7 +237,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>sty</b></p></td>
 <td align="left"><p>Style</p></td>
 <td align="left"><p>sty = "sty=" ("a" / "r"/"3d")</p>
-<p>示例：</p>
+<p>例如：</p>
 <p>sty=a</p></td>
 <td align="left"><p>定义地图样式 此参数的有效值包括：</p>
 <ul>
@@ -257,7 +257,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>rad></b></p></td>
 <td align="left"><p>半径</p></td>
 <td align="left"><p>rad = "rad=" 1*8DIGIT</p>
-<p>示例：</p>
+<p>例如：</p>
 <p>rad=1000</p></td>
 <td align="left"><p>一个圆形区域，可指定所需的地图视图。 半径值以米为单位进行测量。</p></td>
 </tr>
@@ -265,7 +265,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>pit</b></p></td>
 <td align="left"><p>音调</p></td>
 <td align="left"><p>pit = "pit=" pitch</p>
-<p>示例：</p>
+<p>例如：</p>
 <p>pit=60</p></td>
 <td align="left"><p>指示查看地图的角度，其中 90 是水平查看（最大），0 是俯视查看（最小）。</p><p>有效的俯仰值范围为 0 到 90（包括这两者）。</td>
 </tr>
@@ -273,7 +273,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>hdg</b></p></td>
 <td align="left"><p>方位</p></td>
 <td align="left"><p>hdg = "hdg=" heading</p>
-<p>示例：</p>
+<p>例如：</p>
 <p>hdg=180</p></td>
 <td align="left"><p>指示以角度表示的地图前进方向，其中 0 或 360 = 北、90 = 东、180 = 南和 270 = 西。</p></td>
 </tr>
@@ -281,7 +281,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>ss</b></p></td>
 <td align="left"><p>街景</p></td>
 <td align="left"><p>ss = "ss=" BIT</p>
-<p>示例：</p>
+<p>例如：</p>
 <p>ss=1</p></td>
 <td align="left"><p>指示在 <code>ss=1</code> 时所显示的街景图像。 省略 <b>ss</b> 参数将产生与 <code>ss=0</code> 相同的结果。 通过与 <b>cp</b> 参数结合使用，指定街道级视图的位置。</p>
 <div class="alert">
@@ -295,7 +295,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>trfc</b></p></td>
 <td align="left"><p>交通</p></td>
 <td align="left"><p>trfc = "trfc=" BIT</p>
-<p>示例：</p>
+<p>例如：</p>
 <p>trfc=1</p></td>
 <td align="left"><p>指定地图上是否包含路况信息。 省略 trfc 参数将产生与 <code>trfc=0</code> 时相同的结果。</p>
 <div class="alert">
@@ -338,7 +338,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>mode</b></p></td>
 <td align="left"><p>交通模式</p></td>
 <td align="left"><p>mode = "mode=" ("d" / "t" / "w")</p>
-<p>示例：</p>
+<p>例如：</p>
 <p>mode=d</p></td>
 <td align="left"><p>定义交通模式。 此参数的有效值包括：</p>
 <ul>
@@ -350,8 +350,8 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </tr>
 
 <tr class="even">
-<td align="left"><p><b>collection</b></p></td>
-<td align="left"><p>集合</p></td>
+<td align="left"><p><b>集合</b></p></td>
+<td align="left"><p>收集</p></td>
 <td align="left"><p>collection = "collection="(name"~"/)point["~"point]</p>
 <p>name = "name." whereval </p>
 <p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?") </p>
@@ -362,7 +362,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>title = whereval</p>
 
 
-<p>示例：</p>
+<p>例如：</p>
 <p>collection=name.My%20Trip%20Stops~point.36.116584_-115.176753_Las%20Vegas~point.37.8268_-122.4798_Golden%20Gate%20Bridge</p></td>
 <td align="left"><p>要添加到地图和列表的点的集合。 可以使用 name 参数命名点集合。 使用纬度、经度和可选标题指定点。</p>
 <p>用颚化符分隔名称和多个点 (<b>~</b>) 。</p>

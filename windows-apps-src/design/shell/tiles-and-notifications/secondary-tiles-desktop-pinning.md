@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, 桌面桥, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile, 桌面应用程序, win32, winforms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ddcd96eadbb6d2edbc3a72fa58ff3cc8931a09b
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 111d66e69ddb9cff56f36a26bd8094429fe808ef
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730367"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172371"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>从桌面应用程序固定辅助磁贴
 
@@ -29,12 +29,12 @@ ms.locfileid: "82730367"
 
 ## <a name="package-your-app-with-desktop-bridge"></a>用桌面桥打包应用
 
-如果尚未使用桌面桥打包应用程序，[则必须先执行此操作](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)，然后才能使用任何 Windows 运行时 api。
+如果尚未使用桌面桥打包应用程序， [则必须先执行此操作](/windows/msix/desktop/source-code-overview) ，然后才能使用任何 Windows 运行时 api。
 
 
 ## <a name="enable-access-to-iinitializewithwindow-interface"></a>启用对 IInitializeWithWindow 接口的访问
 
-如果应用程序使用托管语言（如 C# 或 Visual Basic）编写，则在应用代码中使用 [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute) 和 Guid 属性声明 IInitializeWithWindow 接口，如以下 C# 示例所示。 此示例假设代码文件具有 System.Runtime.InteropServices 命名空间的 using 语句。
+如果应用程序使用托管语言（如 C# 或 Visual Basic）编写，则在应用代码中使用 [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) 和 Guid 属性声明 IInitializeWithWindow 接口，如以下 C# 示例所示。 此示例假设代码文件具有 System.Runtime.InteropServices 命名空间的 using 语句。
 
 ```csharp
 [ComImport]
@@ -66,7 +66,7 @@ SecondaryTile tile = new SecondaryTile(
 
 ## <a name="assign-the-window-handle"></a>分配窗口句柄
 
-这是桌面应用程序的关键步骤。 将对象强制转换为 [IInitializeWithWindow](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) 对象。 然后，调用 [IInitializeWithWindow.Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) 方法，并传递你希望成为模式对话框所有者的窗口的句柄。 以下 C# 示例显示如何将应用主窗口的句柄传递到该方法。
+这是桌面应用程序的关键步骤。 将对象强制转换为 [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) 对象。 然后，调用 [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) 方法，并传递你希望成为模式对话框所有者的窗口的句柄。 以下 C# 示例显示如何将应用主窗口的句柄传递到该方法。
 
 ```csharp
 // Assign the window handle
@@ -100,5 +100,5 @@ bool isPinned = await tile.RequestCreateAsync();
 * [完整代码示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [辅助磁贴概述](secondary-tiles.md)
 * [固定辅助磁贴 (UWP)](secondary-tiles-pinning.md)
-* [桌面桥接](https://developer.microsoft.com/windows/bridges/desktop)
+* [桌面桥](https://developer.microsoft.com/windows/bridges/desktop)
 * [桌面桥代码示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)

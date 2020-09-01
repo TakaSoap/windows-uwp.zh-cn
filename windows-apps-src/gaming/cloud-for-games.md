@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 云服务
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c0cfd98a37c4822d80eded7fe69e23c54bcdc89
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: ca575975b27a71798b7cad1cac0cc83ec870d756
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054407"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173171"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>使用适用于 UWP 游戏的云服务
 
@@ -49,7 +49,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
     </colgroup>
     <tr class="header" align="left">
         <th>开发人员</th>
-        <th>说明</th>
+        <th>描述</th>
         <th>主要游戏方案</th>
         <th>了解详细信息</th>
     </tr>
@@ -170,7 +170,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 | 游戏数据的云存储       | 最新游戏数据存储在云中，并发送到客户端设备 | [Azure Blob 存储](https://azure.microsoft.com/services/storage/blobs/)| 可以存储的文件类型不受限制；对象存储适用于大量非结构化数据（如图像、音频、视频等）。  |
 | 临时数据存储表| 游戏事务（游戏状态的变化）临时存储在表中 | [Azure 表存储](https://azure.microsoft.com/services/storage/tables/)| 可以根据游戏需求以灵活模式存储游戏数据 |
 | 队列游戏事务/请求| 以队列形式处理游戏事务 | Azure 队列存储| 队列会吸收意外的突发流量，并可以防止服务器因游戏中突然产生的大量请求而不堪重负。   |
-| 可扩展的关系型游戏数据库| 关系型数据的结构化存储，如数据库中的游戏内事务 | [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database/)| SQL 数据库即服务（[比较 VM 上的 SQL](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)）  |
+| 可扩展的关系型游戏数据库| 关系型数据的结构化存储，如数据库中的游戏内事务 | [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database/)| SQL 数据库即服务（[比较 VM 上的 SQL](/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview)）  |
 | 可扩展分配的低延迟游戏数据库| 借助模式灵活性快速读、写以及查询游戏和玩家数据 | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)| 低延迟 NoSQL 文档数据库即服务   |
 | 借助 Azure 服务使用自己的数据中心 | 从你自己的数据中心检索游戏，并发送到客户端设备 | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | 使你的组织可以通过自己的数据中心提供 Azure 服务，以助你一臂之力  |
 | 大数据块传输| 可以通过 Azure CDN 从最近的内容分发网络 (CDN) pop 位置向用户发送游戏图像、音频和视频等大型文件。    | [Azure 内容分发网络](https://azure.microsoft.com/services/cdn/) | Azure CDN 基于现代网络拓扑的大型集中式节点构建，用于处理突发的大数据流量和严重负载以显著提升速度和可用性，从而明显改善用户体验  |
@@ -221,7 +221,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 
 ## <a name="related-links"></a>相关链接
 
-* [Windows 10 游戏开发指南](https://docs.microsoft.com/windows/uwp/gaming/e2e)
+* [Windows 10 游戏开发指南](./e2e.md)
 * [面向游戏的 Azure](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [启动 Microsoft](https://startups.microsoft.com)

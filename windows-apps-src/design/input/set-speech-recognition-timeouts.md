@@ -8,24 +8,24 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 026dd160ade3fa89af48e4f3ab8efaa85a80f490
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: c68b8aeb71ed4269b3a7fc52c6b616a8b0760b0b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997754"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173321"
 ---
 # <a name="set-speech-recognition-timeouts"></a>设置语音识别超时
 
 
 设置语音识别器忽略静音或无法识别的声音（干扰）并继续侦听语音输入的时长。
 
-> **重要 API**：[**Timeouts**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts)、[**SpeechRecognizerTimeouts**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts)
+> **重要 API**：[**Timeouts**](/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts)、[**SpeechRecognizerTimeouts**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts)
 
 ## <a name="set-a-timeout"></a>设置超时
 
 
-我们在此处指定各种 [**Timeouts**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts) 值：
+我们在此处指定各种 [**Timeouts**](/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts) 值：
 
 -   InitialSilenceTimeout - SpeechRecognizer 检测静默（在生成任何识别结果之前），并假定语音输入尚未进行的时长。
 -   BabbleTimeout - SpeechRecognizer 先继续侦听无法识别的声音（干扰），之后再假定语音输入已结束并结束识别操作的时长。

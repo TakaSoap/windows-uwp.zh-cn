@@ -1,5 +1,5 @@
 ---
-Description: 此中心主题涉及关于 Windows 信息保护 (EDP) 与文件、缓冲区、剪贴板、网络、后台任务以及锁屏下的数据保护有何关联的完整开发人员蓝图。
+Description: 此中心主题涉及关于 Windows 信息保护 (WIP) 与文件、缓冲区、剪贴板、网络、后台任务以及锁定情况下的数据保护有何关联的完整开发人员蓝图。
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp, Windows 信息保护, 企业数据, 企业数据保护, edp, 启发式应用
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: f6e3839ac2c15c1f976a9135b121ffea26174d41
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 69bab48836d7679d8bcec5f9132bca88d7607cdb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259618"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173241"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 信息保护 (WIP)
 
@@ -31,7 +31,7 @@ WIP 和 MDM 一起使组织可以更好地控制如何处理组织所管理的�
 
 通过使用 MDM 或 MAM，管理员可以标识允许哪些应用访问属于组织的文件，以及用户是否可以从这些文件复制数据，然后将该数据粘贴到个人文档中。
 
-它的工作原理如下。 用户将他们的设备注册到组织的移动设备管理 (MDM) 系统中。 管理组织中的管理员使用 Microsoft Intune 或 System Center Configuration Manager (SCCM) 定义一个策略，然后将其部署到注册的设备。
+工作原理如下。 用户将他们的设备注册到组织的移动设备管理 (MDM) 系统中。 管理组织中的管理员使用 Microsoft Intune 或 System Center Configuration Manager (SCCM) 定义一个策略，然后将其部署到注册的设备。
 
 如果不需要用户注册其设备，管理员将使用其 MAM 系统定义和部署适用于特定应用的策略。 当用户安装其中的任意应用时，他们将收到关联的策略。
 
@@ -41,9 +41,9 @@ WIP 和 MDM 一起使组织可以更好地控制如何处理组织所管理的�
 
 ![WIP 生命周期](images/wip-lifecycle.png)
 
-> **阅读有关 WIP 的详细信息** <br>
-* [Windows 信息保护简介](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
-* [使用 Windows 信息保护（WIP）保护企业数据](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
+> **阅读关于 WIP 的详细信息** <br>
+* [介绍 Windows 信息保护](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
+* [使用 Windows 信息保护 (WIP) 保护企业数据](/windows/whats-new/edp-whats-new-overview)
 
 如果你的应用在允许列表上，则你的应用生成的所有数据都将受到策略限制。 这意味着，如果管理员吊销用户对企业数据的访问权限，则这些用户将失去对你的应用所生成的所有数据的访问权限。
 
@@ -61,13 +61,13 @@ WIP 和 MDM 一起使组织可以更好地控制如何处理组织所管理的�
 
 如果你已准备好启发你的应用，请参阅以下指南之一：
 
-**对于使用生成的通用 Windows 平台（UWP）应用C#**
+**对于通用 Windows 平台 (UWP) 使用 C 生成的应用#**
 
 [Windows 信息保护 (WIP) 开发人员指南](wip-dev-guide.md)。
 
-**对于使用生成的桌面应用C++**
+**对于使用 C++ 生成的桌面应用**
 
-[Windows 信息保护 (WIP) 开发人员指南 (C++)](https://docs.microsoft.com/previous-versions/windows/desktop/EDP/wip-developer-guide?redirectedfrom=MSDN)。
+[Windows 信息保护 (WIP) 开发人员指南 (C++)](/previous-versions/windows/desktop/EDP/wip-developer-guide)。
 
 
 ## <a name="create-non-enlightened-enterprise-app"></a>创建非启发式企业应用

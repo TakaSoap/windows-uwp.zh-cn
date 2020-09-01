@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx 9, directx 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 3470c8153cc0f6ba6d272e5ed1163c7f2c911c4c
-ms.sourcegitcommit: 7c1711d68496b781ed7d5b54e8ef5442e58661fa
+ms.openlocfilehash: 8f7bdc8cef43ffa323cae89459ac9bcb549c10f1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88578221"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172041"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>将 DirectX 9 功能映射到 DirectX 11 API
 
@@ -21,23 +21,23 @@ ms.locfileid: "88578221"
 
 ## <a name="mapping-direct3d-9-to-directx-11-apis"></a>将 Direct3D 9 映射到 DirectX 11 API
 
-[Direct3D](https://docs.microsoft.com/windows/desktop/direct3d) 仍然是 DirectX 图形的基础，但是 API 自从 DirectX 9 起发生了更改。
+[Direct3D](/windows/desktop/direct3d) 仍然是 DirectX 图形的基础，但是 API 自从 DirectX 9 起发生了更改。
 
--   Microsoft DirectX 图形基础结构 (DXGI) 用于设置图形适配器。 使用 [DXGI](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dx-graphics-dxgi) 来选择缓冲区格式、创建交换链、呈现帧以及创建共享资源。 请参阅 [DXGI 概述](https://docs.microsoft.com/windows/desktop/direct3ddxgi/d3d10-graphics-programming-guide-dxgi)。
--   Direct3D 设备上下文用于设置管道状态以及生成呈现命令。 我们的大多数示例都使用即时上下文直接呈现到设备；Direct3D 11 还支持使用延迟上下文的多线程呈现。 请参阅 [Direct3D 11 中的设备简介](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-intro)。
--   一些功能已经被弃用，最值得一提的就是固定函数管道。 请参阅[已弃用的功能](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-programming-guide-api-features-deprecated)。
+-   Microsoft DirectX 图形基础结构 (DXGI) 用于设置图形适配器。 使用 [DXGI](/windows/desktop/direct3ddxgi/dx-graphics-dxgi) 来选择缓冲区格式、创建交换链、呈现帧以及创建共享资源。 请参阅 [DXGI 概述](/windows/desktop/direct3ddxgi/d3d10-graphics-programming-guide-dxgi)。
+-   Direct3D 设备上下文用于设置管道状态以及生成呈现命令。 我们的大多数示例都使用即时上下文直接呈现到设备；Direct3D 11 还支持使用延迟上下文的多线程呈现。 请参阅 [Direct3D 11 中的设备简介](/windows/desktop/direct3d11/overviews-direct3d-11-devices-intro)。
+-   一些功能已经被弃用，最值得一提的就是固定函数管道。 请参阅[已弃用的功能](/windows/desktop/direct3d10/d3d10-graphics-programming-guide-api-features-deprecated)。
 
-有关 Direct3D 11 功能的完整列表，请参阅 [Direct3D 11 功能](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-features)和 [Direct3D 11 功能](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-1-features)。
+有关 Direct3D 11 功能的完整列表，请参阅 [Direct3D 11 功能](/windows/desktop/direct3d11/direct3d-11-features)和 [Direct3D 11 功能](/windows/desktop/direct3d11/direct3d-11-1-features)。
 
 ## <a name="moving-from-direct2d-9-to-direct2d-11"></a>从 Direct2D 9 移动到 Direct2D 11
 
-[Direct2D (Windows)](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) 仍然是 DirectX 图形和 Windows 的重要组成部分。 你仍然可以使用 Direct2D 来绘制 2D 游戏，以及在 Direct3D 上面绘制覆盖 (HUD)。
+[Direct2D (Windows)](/windows/desktop/Direct2D/direct2d-portal) 仍然是 DirectX 图形和 Windows 的重要组成部分。 你仍然可以使用 Direct2D 来绘制 2D 游戏，以及在 Direct3D 上面绘制覆盖 (HUD)。
 
 Direct2D 在 Direct3D 上运行，因此可以使用任一 API 实现 2D 游戏。 例如，使用 Direct3D 实现的 2D 游戏可以使用正交投影、设置 Z 值以控制基元的绘制顺序，以及使用像素着色器添加特殊效果。
 
-由于 Direct2D 是基于 Direct3D 的，因此它也使用 DXGI 和设备上下文。 请参阅 [Direct2D API 概述](https://docs.microsoft.com/windows/desktop/Direct2D/the-direct2d-api)。
+由于 Direct2D 是基于 Direct3D 的，因此它也使用 DXGI 和设备上下文。 请参阅 [Direct2D API 概述](/windows/desktop/Direct2D/the-direct2d-api)。
 
-[DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal) API 增加了对使用 Direct2D 设置文本格式的支持。 请参阅 [DirectWrite 简介](https://docs.microsoft.com/windows/desktop/DirectWrite/introducing-directwrite)。
+[DirectWrite](/windows/desktop/DirectWrite/direct-write-portal) API 增加了对使用 Direct2D 设置文本格式的支持。 请参阅 [DirectWrite 简介](/windows/desktop/DirectWrite/introducing-directwrite)。
 
 ## <a name="replace-deprecated-helper-libraries"></a>替换已弃用的帮助程序库
 
@@ -49,56 +49,56 @@ D3DX 和 DXUT 已弃用，并且不能由 UWP 游戏使用。 这些帮助程序
 
 ## <a name="move-shader-programs-from-fx-to-hlsl"></a>将 FX 中的着色器程序移动到 HLSL
 
-对于 UWP 来说，D3DX 实用工具库（D3DX 9、D3DX 10 和 D3DX 11）（包括“效果”库）已被弃用。 UWP 的所有 DirectX 游戏都使用 [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl)（不使用“效果”库）驱动图形管道。
+对于 UWP 来说，D3DX 实用工具库（D3DX 9、D3DX 10 和 D3DX 11）（包括“效果”库）已被弃用。 UWP 的所有 DirectX 游戏都使用 [HLSL](/windows/desktop/direct3dhlsl/dx-graphics-hlsl)（不使用“效果”库）驱动图形管道。
 
 Visual Studio 仍然在后台使用 FXC 编译着色器对象。 将提前编译 UWP 游戏着色器。 在运行时加载字节码，然后 在相应的呈现传递过程中将每个着色器资源绑定到图形管道。 应将着色器移动到它们自己的 .HLSL 文件中，且应采用 C++ 代码实现呈现技术。
 
 若要快速浏览加载着色器资源，请参阅[从 Direct3D 9 到 UWP 的简单移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)。
 
-Direct3D 11 引入了着色器模型5，它需要 Direct3D 功能级别 11 \_ 0 (或更高) 。 请参阅 [Direct3D 11 的 HLSL 着色器模型 5 功能](https://docs.microsoft.com/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl)。
+Direct3D 11 引入了着色器模型5，它需要 Direct3D 功能级别 11 \_ 0 (或更高) 。 请参阅 [Direct3D 11 的 HLSL 着色器模型 5 功能](/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl)。
 
 ## <a name="replace-xnamath-and-d3dxmath"></a>替换 XNAMath 和 D3DXMath
 
-应该将使用 XNAMath（或 D3DXMath）的代码迁移到 [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal)。 DirectXMath 包括可以跨 x86、x64 和 ARM 进行移植的类型。 请参阅 [XNA Math 库中的代码迁移](https://docs.microsoft.com/windows/desktop/dxmath/pg-xnamath-migration)。
+应该将使用 XNAMath（或 D3DXMath）的代码迁移到 [DirectXMath](/windows/desktop/dxmath/directxmath-portal)。 DirectXMath 包括可以跨 x86、x64 和 ARM 进行移植的类型。 请参阅 [XNA Math 库中的代码迁移](/windows/desktop/dxmath/pg-xnamath-migration)。
 
-请注意，DirectXMath 浮点类型便于与着色器配合使用。 例如，[**XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) 和 [**XMFLOAT4X4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4x4) 便于对齐常量缓冲区的数据。
+请注意，DirectXMath 浮点类型便于与着色器配合使用。 例如，[**XMFLOAT4**](/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) 和 [**XMFLOAT4X4**](/windows/desktop/api/directxmath/ns-directxmath-xmfloat4x4) 便于对齐常量缓冲区的数据。
 
 ## <a name="replace-directsound-with-xaudio2-and-background-audio"></a>将 DirectSound 替换为 XAudio2（以及背景音频）
 
 UWP 不支持 DirectSound：
 
--   使用 [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) 向游戏中添加声音效果。
+-   使用 [XAudio2](/windows/desktop/xaudio2/xaudio2-apis-portal) 向游戏中添加声音效果。
 
 ##  <a name="replace-directinput-with-xinput-and-windows-runtime-apis"></a>将 DirectInput 替换为 XInput 和 Windows 运行时 Api
 
 UWP 不支持 DirectInput：
 
--   为鼠标、键盘和触摸输入使用 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 输入事件回调。
--   使用 [XInput](https://docs.microsoft.com/windows/desktop/xinput/getting-started-with-xinput) 1.4 以获得游戏控制器支持（以及游戏控制器耳机支持）。 如果使用桌面和 UWP 的共享代码库，请参阅 [XInput 版本](https://docs.microsoft.com/windows/desktop/xinput/xinput-versions)以获取有关向后兼容的信息。
--   如果你的游戏需要使用应用栏，请注册 [**EdgeGesture**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.EdgeGesture) 事件。
+-   为鼠标、键盘和触摸输入使用 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 输入事件回调。
+-   使用 [XInput](/windows/desktop/xinput/getting-started-with-xinput) 1.4 以获得游戏控制器支持（以及游戏控制器耳机支持）。 如果使用桌面和 UWP 的共享代码库，请参阅 [XInput 版本](/windows/desktop/xinput/xinput-versions)以获取有关向后兼容的信息。
+-   如果你的游戏需要使用应用栏，请注册 [**EdgeGesture**](/uwp/api/Windows.UI.Input.EdgeGesture) 事件。
 
 ## <a name="use-microsoft-media-foundation-instead-of-directshow"></a>使用 Microsoft Media Foundation 代替 DirectShow
 
-DirectShow 不再是 DirectX API（或 Windows API）的一部分。 [Microsoft 媒体基础](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)使用共享图面向 Direct3D 提供视频内容。 请参阅 [Direct3D 11 视频 API](https://docs.microsoft.com/windows/desktop/medfound/direct3d-11-video-apis)。
+DirectShow 不再是 DirectX API（或 Windows API）的一部分。 [Microsoft 媒体基础](/windows/desktop/medfound/microsoft-media-foundation-sdk)使用共享图面向 Direct3D 提供视频内容。 请参阅 [Direct3D 11 视频 API](/windows/desktop/medfound/direct3d-11-video-apis)。
 
 ## <a name="replace-directplay-with-networking-code"></a>将 DirectPlay 替换为网络代码
 
 Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要提供符合 UWP 要求的网络代码。 使用以下 API：
 
--   [适用于 UWP 应用的 Win32 和 COM（网络）(Windows)](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)
--   [**Windows.Networking 命名空间 (Windows)**](https://docs.microsoft.com/uwp/api/Windows.Networking)
--   [**Windows.Networking.Sockets 命名空间 (Windows)**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)
--   [**Windows.Networking.Connectivity 命名空间 (Windows)**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity)
--   [**Windows.ApplicationModel.Background 命名空间 (Windows)**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [适用于 UWP 应用的 Win32 和 COM（网络）(Windows)](/uwp/win32-and-com/win32-and-com-for-uwp-apps)
+-   [**Windows.Networking 命名空间 (Windows)**](/uwp/api/Windows.Networking)
+-   [**Windows.Networking.Sockets 命名空间 (Windows)**](/uwp/api/Windows.Networking.Sockets)
+-   [**Windows.Networking.Connectivity 命名空间 (Windows)**](/uwp/api/Windows.Networking.Connectivity)
+-   [**Windows.ApplicationModel.Background 命名空间 (Windows)**](/uwp/api/Windows.ApplicationModel.Background)
 
 以下文章将帮助你在应用包清单中添加网络功能并声明对网络的支持。
 
--   [使用套接字进行连接（使用 C#/VB/C++ 和 XAML 的 UWP 应用）(Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
--   [使用 WebSockets 进行连接（使用 C#/VB/C++ 和 XAML 的 UWP 应用）(Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh994396(v=win.10))
--   [连接到 Web 服务（使用 C#/VB/C++ 和 XAML 的 UWP 应用）(Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
--   [网络基础知识](https://docs.microsoft.com/windows/uwp/networking/networking-basics)
+-   [使用套接字进行连接（使用 C#/VB/C++ 和 XAML 的 UWP 应用）(Windows)](/previous-versions/windows/apps/hh452976(v=win.10))
+-   [使用 WebSockets 进行连接（使用 C#/VB/C++ 和 XAML 的 UWP 应用）(Windows)](/previous-versions/windows/apps/hh994396(v=win.10))
+-   [连接到 Web 服务（使用 C#/VB/C++ 和 XAML 的 UWP 应用）(Windows)](/previous-versions/windows/apps/hh761504(v=win.10))
+-   [网络基础知识](../networking/networking-basics.md)
 
-请注意，所有 UWP 应用（包括游戏）都使用特定类型的后台任务，以便在应用暂停时保持连接。 如果你的游戏需要在暂停时保持连接状态，请参阅[网络基础知识](https://docs.microsoft.com/windows/uwp/networking/networking-basics)。
+请注意，所有 UWP 应用（包括游戏）都使用特定类型的后台任务，以便在应用暂停时保持连接。 如果你的游戏需要在暂停时保持连接状态，请参阅[网络基础知识](../networking/networking-basics.md)。
 
 ## <a name="function-mapping"></a>功能映射
 
@@ -134,7 +134,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-testcooperativelevel">IDirect3DDevice9::TestCooperativeLevel</a></p></td>
-<td align="left"><p>调用设置了 DXGI_PRESENT_TEST 标志的 <a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1::Present1</a>。</p></td>
+<td align="left"><p>调用设置了 DXGI_PRESENT_TEST 标志的 <a href="/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1::Present1</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nn-d3d9helper-idirect3dbasetexture9">IDirect3DBaseTexture9</a></p>
@@ -194,7 +194,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-reset">IDirect3DDevice9::Reset</a></p></td>
-<td align="left"><p>LOST 设备和 POOL_MANAGED 不再存在。 <a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1::Present1</a> 可能失败，并带有 <a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_DEVICE_REMOVED</a> 返回值。</p></td>
+<td align="left"><p>LOST 设备和 POOL_MANAGED 不再存在。 <a href="/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1::Present1</a> 可能失败，并带有 <a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_DEVICE_REMOVED</a> 返回值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawrectpatch">IDirect3DDevice9:DrawRectPatch</a></p>

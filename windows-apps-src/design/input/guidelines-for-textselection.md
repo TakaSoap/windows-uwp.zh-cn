@@ -8,19 +8,19 @@ keywords: 键盘, 文本, 输入, 用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a118a7160842154a656e0f2d29783b1b2e676755
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 7a779053f0e14317c4142158fdface4c806a02aa
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970092"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172461"
 ---
 # <a name="selecting-text-and-images"></a>选择文本和图像
 
 
 本文介绍了选择和操作文本、图像和控件，并提供了将这些机制用于应用中时应考虑的用户体验指南。
 
-> **重要 API**：[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+> **重要 API**：[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)
  
 
 
@@ -78,7 +78,7 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 
 ![在所选内容内或在控制手柄上点击（或长按）可调用上下文菜单。](images/textselection-show-context.png)
 
-**请注意**  ，对于拼写错误的单词，这些交互各不相同。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
+**注意**   这些交互在拼写错误的单词的情况下会有所不同。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
 
  
 
@@ -92,7 +92,7 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 
 **对象操作**
 
-只要有可能，在 Windows 应用程序中实现自定义对象操作时，请使用与文本选择相同的（或类似的）抓取资源。 这有助于在平台内提供一致的交互体验。
+在 Windows 应用中实现自定义对象操作时，尽可能使用相同的 (或类似的) 手柄资源作为文本选择。 这有助于在平台内提供一致的交互体验。
 
 例如，控制手柄还可以用在支持大小调整和修剪的图像处理应用中或者用在提供可调整进度栏的媒体播放应用中，如下面的几幅图所示。
 
@@ -108,7 +108,7 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 
 ### <a name="for-developers"></a>面向开发人员
 
-- [自定义用户交互](https://docs.microsoft.com/windows/uwp/design/layout/index)
+- [自定义用户交互](../layout/index.md)
 
 ### <a name="samples"></a>示例
 
@@ -124,6 +124,6 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 - [输入：触摸点击测试示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
 - [XAML 滚动、平移和缩放示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [输入：简化的墨迹示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [输入：Windows 8 手势示例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [输入：Windows 8 手势示例](/samples/browse/?redirectedfrom=MSDN-samples)
 - [输入：操作和笔势示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX 触控输入示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

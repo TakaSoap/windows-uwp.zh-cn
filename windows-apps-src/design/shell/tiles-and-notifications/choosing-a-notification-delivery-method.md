@@ -1,5 +1,5 @@
 ---
-Description: 本文介绍了可提供磁贴和\#徽章更新和 toast 通知内容&"8212"、 \#"本地"、"计划"、"定期" 和 "推送&8212" 的四个通知选项。
+Description: 本文介绍了 \# \# 可提供磁贴和徽章更新和 toast 通知内容&"8212"、"本地"、"计划"、"定期" 和 "推送&8212" 的四个通知选项。
 title: 选择通知传递方法
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f1df2048ea54b3ffc7c62270841b2be650bb90ea
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 166ff20e792c5cf4a5969e954ed1b7d04e5c5c9f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970822"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173291"
 ---
 # <a name="choose-a-notification-delivery-method"></a>选择通知传递方法
 
@@ -27,10 +27,10 @@ ms.locfileid: "82970822"
 
 应用可使用 4 种机制传递通知：
 
--   **本地**
+-   本地
 -   **计划**
 -   **定期**
--   **推送**
+-   **Push**
 
 下表总结了通知传递类型。
 
@@ -51,7 +51,7 @@ ms.locfileid: "82970822"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">本地</td>
+<td align="left">Local</td>
 <td align="left">磁贴、锁屏提醒、Toast</td>
 <td align="left">一组在应用运行时发送通知的 API 调用，直接更新磁贴或锁屏提醒，或者发送 Toast 通知。</td>
 <td align="left"><ul>
@@ -151,10 +151,10 @@ ms.locfileid: "82970822"
 
 默认情况下，定期磁贴通知在从设备收到通知算起的三天后过期。 如果需要，你可以使用明确的过期时间（toast 的最长有效期为三天）替代此默认设置。
 
-有关详细信息，请参见:
+有关详情，请参阅：
 
 -   [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
--   [推送通知指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+-   [推送通知指南](./windows-push-notification-services--wns--overview.md)
 -   [Windows 应用通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
@@ -163,15 +163,11 @@ ms.locfileid: "82970822"
 
 * [发送本地磁贴通知](sending-a-local-tile-notification.md)
 * [发送本地 toast 通知](send-local-toast.md)
-* [推送通知指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
-* [Toast 通知指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
+* [推送通知指南](./windows-push-notification-services--wns--overview.md)
+* [Toast 通知指南](./index.md)
 * [定期通知概述](periodic-notification-overview.md)
 * [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
 * [GitHub 上的 Windows 应用通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  
-
-
-
-

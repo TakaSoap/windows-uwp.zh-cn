@@ -1,18 +1,18 @@
 ---
 ms.assetid: a56156e4-7adb-bf37-527b-fc3243e04b46
 title: 控制台上的开发人员主页（开发人员主页）
-description: 提供有关 Xbox One 开发主页应用的信息。
+description: 了解如何在 Xbox One 控制台开发工具包中获得开发人员主页工具体验，从而帮助开发人员提高工作效率。
 ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/dev-home.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 4113df37446d93883cf395e7c1e86b1de6c1b328
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 40100adb1bd9337d933b8ebd155847bde71e341a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620842"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172811"
 ---
 # <a name="developer-home-on-the-console-dev-home"></a>控制台上的开发人员主页（开发人员主页）
    
@@ -26,7 +26,7 @@ ms.locfileid: "57620842"
 若要在 2015 年 11 月或之后的恢复版本上启动“开发人员主页”：  
  
    1. 通过在主页上向左移动或双击 Nexus 按钮，打开指南  
-   1. 向下移动到“设置”（齿轮图标）   
+   1. 向下移动到“设置”****（齿轮图标）   
    1. 选择**所有设置**  
    1. 从默认的**开发人员**页面上，选择**开发人员主页**（主页图标）   
 
@@ -43,10 +43,10 @@ ms.locfileid: "57620842"
   
 “开发人员主页”用户界面的标头包含有关开发控制台的以下重要“概览”信息：   
  
-   *  **控制台 IP:** 在控制台当前 IP 地址。   
-   *  **控制台名称：** 在控制台的当前主机名。  
-   *  **沙盒：** 控制台是沙盒的名称。  
-   *  **操作系统版本：** 在控制台运行的当前恢复版本。
+   *  **控制台 IP**：控制台的当前 IP 地址。   
+   *  **控制台名称**：控制台的当前主机名。  
+   *  **沙盒**：控制台所在的沙盒的名称。  
+   *  **操作系统版本**：在控制台上运行的当前恢复版本。
    *  当前系统时间。   
 
    
@@ -56,7 +56,7 @@ ms.locfileid: "57620842"
    *  [主页](devhome-home.md)  
    *  [Xbox Live](devhome-live.md)  
    *  [设置](devhome-settings.md)  
-   *  [捕获媒体](devhome-capture.md)  
+   *  [媒体捕获](devhome-capture.md)  
    *  [网络](devhome-networking.md)  
    *  [性能](devhome-performance.md)  
 
@@ -119,7 +119,7 @@ ms.locfileid: "57620842"
 ### <a name="setting-the-default-application-for-a-package"></a>设置程序包的默认应用  
    
   
-如果程序包包含多个应用，“开发人员主页”将允许你设置要启动的默认应用。 突出显示启动器中的程序包，然后按**A**按钮以打开可用应用的列表。 突出显示你想要设置为默认应用的应用，按**视图**按钮，然后从上下文菜单中选择**设置为默认**。   
+如果程序包包含多个应用，“开发人员主页”将允许你设置要启动的默认应用。 突出显示启动器中的程序包，然后按** A **按钮以打开可用应用的列表。 突出显示你想要设置为默认应用的应用，按**视图**按钮，然后从上下文菜单中选择**设置为默认**。   
  ![](images/dev_home_setdefault.png)  
 <a id="ID4EGH"></a>
 
@@ -143,40 +143,40 @@ ms.locfileid: "57620842"
 
    
 
-## <a name="in-this-section"></a>本部分内容  
+## <a name="in-this-section"></a>本节内容  
   
-[主页 （适用于开发人员主页）](devhome-home.md)  
+[主页（开发人员主页）](devhome-home.md)  
 
 
-&nbsp;&nbsp;提供了对开发控制台定期执行的任务的快速访问。 
-  
-  
-[Xbox Live 页 （适用于开发人员主页）](devhome-live.md)  
-
-
-&nbsp;&nbsp;捕获多人游戏信息并显示的 Xbox Live 服务的当前状态。 
+&nbsp;&nbsp;快速访问在开发控制台上定期执行的任务。 
   
   
-[设置页 （适用于开发人员主页）](devhome-settings.md)  
+[Xbox Live 页面（开发人员主页）](devhome-live.md)  
 
 
-&nbsp;&nbsp;提供对各种设置开发控制台访问。 
+&nbsp;&nbsp;捕获多人游戏信息，并显示 Xbox Live 服务的当前状态。 
   
   
-[捕获媒体的页 （适用于开发人员主页）](devhome-capture.md)  
+[“设置”页面（开发人员主页）](devhome-settings.md)  
 
 
-&nbsp;&nbsp;**媒体捕获**页开发人员主页捕获当前正在运行的控制台的标题的视频。 
+&nbsp;&nbsp;提供对开发控制台的各个设置的访问。 
   
   
-[网络页 （适用于开发人员主页）](devhome-networking.md)  
+[“媒体捕获”页面（开发人员主页）](devhome-capture.md)  
 
 
-&nbsp;&nbsp;模拟各种网络条件进行故障排除。 
+&nbsp;&nbsp;“开发人员主页”的**媒体捕获**页面可捕获当前在控制台上运行的标题的相关视频。 
   
   
-[性能页 （适用于开发人员主页）](devhome-performance.md)  
+[“网络”页面（开发人员主页）](devhome-networking.md)  
 
 
-&nbsp;&nbsp;模拟不同的磁盘活动和 CPU 使用情况进行故障排除。 
+&nbsp;&nbsp;模拟各种网络条件，以便进行故障排除。 
+  
+  
+[“性能”页面（开发人员主页）](devhome-performance.md)  
+
+
+&nbsp;&nbsp;模拟各种磁盘活动和 CPU 使用情况，以便进行故障排除。 
  

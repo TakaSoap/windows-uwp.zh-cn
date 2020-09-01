@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b6e391354b34f00460eb5988f4e03c1ff07a9296
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e77485bd2febe2ee032f9a0c3ceada31c2807ee0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970112"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172491"
 ---
 # <a name="guidelines-for-panning"></a>平移指南
 
 
 平移或滚动允许用户在单个视图中导航，以显示在视口内不适合的视图内容。 示例视图包括计算机的文件夹结构、文档库或相册。
 
-> **重要 API**：[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API**：[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 
 ## <a name="dos-and-donts"></a>准则
@@ -32,7 +32,7 @@ ms.locfileid: "82970112"
 
 -   显示平移指示器和滚动条以提供位置和大小提示。如果你提供自定义导航功能，则隐藏它们。
 
-    **请注意**  ，与标准滚动条不同的是，平移指示器只是有意义的。 它们并不会向输入设备显示，因此无法采用任何方式对它们进行操作。
+    **注意**   与标准滚动条不同，平移指示器纯粹是信息性的。 它们并不会向输入设备显示，因此无法采用任何方式对它们进行操作。
 
      
 
@@ -79,7 +79,7 @@ ms.locfileid: "82970112"
 与使用鼠标滚动类似，通过一个或多个手指轻扫或滑动，以使用触控进行平移。 平移交互与滚动鼠标滚轮或滑动滚动框而不是单击滚动条最为相似。 除了在 API 中进行区别，或受到特定于设备的 Windows UI 要求，否则，我们将两种交互都称为平移。
 
 > <div id="main">
-> <strong>Windows 10 秋季创建者更新-行为更改</strong>默认情况下，活动笔在 Windows 应用（如触控、触摸板和被动笔）中现在滚动/平移，而不是文本选择。  
+> <strong>Windows 10 秋季创建者更新-行为更改</strong> 默认情况下，活动笔在 Windows 应用中的滚动/平移 (如触摸、触摸板和被动笔) ，而不是文本选择。  
 > 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 类</a>的 API 参考主题。
 > </div>
 
@@ -108,14 +108,14 @@ Windows 8 支持三种类型的平移：
 
 平移的交互体验对于每种输入装置有所不同，但提供类似的功能。
 
-**可平移区域**使用 JavaScript 开发人员在设计时通过级联样式表（CSS）向 Windows 应用公开可平移区域行为。
+**可平移区域** 使用 JavaScript 开发人员在设计时通过级联样式表 (CSS) 向 Windows 应用公开可平移区域行为。
 
 基于检测到的输入设备，存在两种平移显示模式：
 
 -   触摸平移指示器。
 -   用于其他输入设备（包括鼠标、触摸板、键盘和触笔）的滚动条。
 
-**注意**  仅当 touch 触点在可平移区域内时才会显示平移指示器。 同样，只有当鼠标光标、笔/触笔光标或键盘焦点位于可滚动的区域内时才能看到滚动条。
+**注意**   仅当 touch 触点在可平移区域内时才会显示平移指示器。 同样，只有当鼠标光标、笔/触笔光标或键盘焦点位于可滚动的区域内时才能看到滚动条。
 
  
 
@@ -125,8 +125,8 @@ Windows 8 支持三种类型的平移：
 
 ![显示两个长度不同的可平移区域及其平移指示器的图像。](images/scrolling-indicators.png)
 
-**平移行为**
-使**点**平移与滑动手势在提起触摸触点时向交互引入延迟行为。 无需用户直接输入，内容将借助惯性继续平移，直到达到某些距离阈值为止。 使用吸附点修改此类惯性行为。
+**平移行为** 
+**对齐点**通过轻扫手势平移，在提起触摸触点时，将惯性行为引入交互。 无需用户直接输入，内容将借助惯性继续平移，直到达到某些距离阈值为止。 使用吸附点修改此类惯性行为。
 
 吸附点可以在你的应用内容中指定逻辑停止。 从认知的角度看，在较大的可平移区域中，吸附点为用户充当分页机制，并尽量减少因过度滑动或轻扫而带来的疲劳。 借助它们，你可以处理不精确的用户输入，并确保在视口中显示内容或关键信息的特定子集。
 
@@ -170,9 +170,9 @@ Windows 8 支持三种类型的平移：
 
 ## <a name="related-articles"></a>相关文章
 
-- [自定义用户交互](https://docs.microsoft.com/windows/uwp/design/layout/index)
-- [优化 ListView 和 GridView](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)
-- [键盘辅助功能](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
+- [自定义用户交互](../layout/index.md)
+- [优化 ListView 和 GridView](../../debug-test-perf/optimize-gridview-and-listview.md)
+- [键盘辅助功能](../accessibility/keyboard-accessibility.md)
 
 **示例**
 - [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
@@ -186,6 +186,6 @@ Windows 8 支持三种类型的平移：
 - [输入：触摸点击测试示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
 - [XAML 滚动、平移和缩放示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [输入：简化的墨迹示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [输入：Windows 8 手势示例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [输入：Windows 8 手势示例](/samples/browse/?redirectedfrom=MSDN-samples)
 - [输入：操作和笔势示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX 触控输入示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

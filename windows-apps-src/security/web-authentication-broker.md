@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b870bd59cb5b6c524cf85165fa182314b93c855
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 52dc4364689ac04910c5b42cfe2dbcfd3b895b21
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259812"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172821"
 ---
 # <a name="web-authentication-broker"></a>Web 身份验证代理
 
 
 
 
-本文介绍了如何将通用 Windows 平台 (UWP) 应用连接到使用身份验证协议（如 OpenID 或 OAuth）的联机标识提供商（如 Facebook、Twitter、Flickr、Instagram 等）。 [  **AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 方法将请求发送给联机标识提供者，并取回描述应用有权访问的提供者资源的访问令牌。
+本文介绍了如何将通用 Windows 平台 (UWP) 应用连接到使用身份验证协议（如 OpenID 或 OAuth）的联机标识提供商（如 Facebook、Twitter、Flickr、Instagram 等）。 [**AuthenticateAsync**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 方法将请求发送给联机标识提供者，并取回描述应用有权访问的提供者资源的访问令牌。
 
 >[!NOTE]
 >有关完整的有效代码示例，请克隆 [GitHub 上的 WebAuthenticationBroker 存储库](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)。
@@ -35,7 +35,7 @@ ms.locfileid: "74259812"
 
 请求 URI 由以下内容组成：你将身份验证请求发送到联机提供商的地址，其中附有其他所需信息，例如应用 ID 或机密信息、用户在完成身份验证后发送的重定向 URI 以及预期响应类型。 你可以从你的提供商处找到需要的参数。
 
-请求 URI 作为AuthenticateAsync[**方法的**requestUri](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 参数进行发送。 必须是安全地址（即，必须以 `https://` 开头）
+请求 URI 作为 [**AuthenticateAsync**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 方法的 *requestUri* 参数进行发送。 必须是安全地址（即，必须以 `https://` 开头）
 
 下例介绍如何建立请求 URI。
 
@@ -50,7 +50,7 @@ System.Uri endURI = new System.Uri(endURL);
 ## <a name="connect-to-the-online-provider"></a>连接到联机提供商
 
 
-调用 [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 方法以连接到联机标识提供者并获取访问令牌。 该方法将上一步骤中构建的 URI 用作 *requestUri* 参数，并将你希望用户被重定向到的 URI 用作 *callbackUri* 参数。
+调用 [**AuthenticateAsync**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 方法以连接到联机标识提供者并获取访问令牌。 该方法将上一步骤中构建的 URI 用作 *requestUri* 参数，并将你希望用户被重定向到的 URI 用作 *callbackUri* 参数。
 
 ```cs
 string result;
@@ -87,14 +87,14 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->除 [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 之外，[**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web) 命名空间还包括 [**AuthenticateAndContinue**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker#methods) 方法。 请勿调用此方法。 它仅适用于面向 Windows Phone 8.1 的应用，从 Windows 10 开始已弃用。
+>除 [**AuthenticateAsync**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 之外，[**Windows.Security.Authentication.Web**](/uwp/api/Windows.Security.Authentication.Web) 命名空间还包括 [**AuthenticateAndContinue**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker#methods) 方法。 请勿调用此方法。 它仅为面向 Windows Phone 8.1 的应用设计，并从 Windows 10 开始已启用。
 
 ## <a name="connecting-with-single-sign-on-sso"></a>使用单一登录 (SSO) 连接。
 
 
-默认情况下，Web 身份验证代理不允许保留 cookie。 正因为如此，所以即使应用用户指示他们希望保留登录状态（例如，通过选择提供商的登录对话框中的复选框），他们也必须在每次希望访问该提供商的资源时登录。 若要使用 SSO 登录，则联机标识提供者必须为 Web 身份验证代理启用 SSO，而你的应用必须调用未获取 [callbackUri**参数的**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync)AuthenticateAsync 的重载。 借此，可通过 Web 身份验证代理存储永久 Cookie，同一应用将来进行身份验证调用时将无需要求用户重复登录（用户的有效“登录”将可持续至访问令牌过期）。
+默认情况下，Web 身份验证代理不允许保留 cookie。 正因为如此，所以即使应用用户指示他们希望保留登录状态（例如，通过选择提供商的登录对话框中的复选框），他们也必须在每次希望访问该提供商的资源时登录。 若要使用 SSO 登录，则联机标识提供者必须为 Web 身份验证代理启用 SSO，而你的应用必须调用未获取 *callbackUri* 参数的 [**AuthenticateAsync**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 的重载。 借此，可通过 Web 身份验证代理存储永久 Cookie，同一应用将来进行身份验证调用时将无需要求用户重复登录（用户的有效“登录”将可持续至访问令牌过期）。
 
-若要支持 SSO，联机提供商必须允许你采用 `ms-app://<appSID>` 形式注册重定向 URI，其中 `<appSID>` 为应用的 SID。 可从应用开发人员页面中找到应用的 SID，或通过调用 [**GetCurrentApplicationCallbackUri**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.getcurrentapplicationcallbackuri) 方法达到此目的。
+若要支持 SSO，联机提供商必须允许你采用 `ms-app://<appSID>` 形式注册重定向 URI，其中 `<appSID>` 为应用的 SID。 可从应用开发人员页面中找到应用的 SID，或通过调用 [**GetCurrentApplicationCallbackUri**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.getcurrentapplicationcallbackuri) 方法达到此目的。
 
 ```cs
 string result;
@@ -136,7 +136,7 @@ catch (Exception ex)
 
 ### <a name="operational-logs"></a>操作日志
 
-操作日志通常用来确定哪些内容不工作。 有一个专用的事件日志通道 Microsoft-WebAuth\\操作，使网站开发人员可以了解 Web 身份验证代理如何处理其网页。 若要启用它，请在应用程序和服务\\Microsoft\\Windows\\WebAuth 下启动 eventvwr.msc 并启用操作日志。 此外，Web 身份验证代理还在用户代理字符串后面附加一个用来在 Web 服务器上标识其本身的唯一字符串。 该字符串为“MSAuthHost/1.0”。 请注意，版本号可能会在将来更改，因此，不应当在代码中依赖该版本号。 如下所示是带有全部调试步骤的完整用户代理字符串示例。
+操作日志通常用来确定哪些内容不工作。 有一个专用的事件日志通道 Microsoft Windows WebAuth \\ 操作，使网站开发人员可以了解 web 身份验证代理如何处理其网页。 若要启用它，请在应用程序和服务 \\ Microsoft Windows WebAuth 下启动 eventvwr.exe 并启用操作日志 \\ \\ 。 此外，Web 身份验证代理还在用户代理字符串后面附加一个用来在 Web 服务器上标识其本身的唯一字符串。 该字符串为“MSAuthHost/1.0”。 请注意，版本号可能会在将来更改，因此，不应当在代码中依赖该版本号。 如下所示是带有全部调试步骤的完整用户代理字符串示例。
 
 `User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0; MSAuthHost/1.0)`
 
@@ -157,7 +157,7 @@ Fiddler Web 调试程序可与应用一起使用。
 
 1.  由于 AuthHost 在自己的应用容器中运行，若要为其指定专用网络功能，你必须设置一个注册表项： Windows 注册表编辑器版本5.00
 
-    **HKEY\_本地\_机**\\**软件**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**映像文件执行选项**\\**authhost**\\**EnablePrivateNetwork** = 00000001
+    **HKEY \_本地 \_ 计算机** \\ **软件** \\ **Microsoft** \\ **Windows NT** \\ **CurrentVersion** \\ **Image File 执行选项** \\ **authhost.exe** \\ **EnablePrivateNetwork** = 00000001
 
     如果没有此注册表项，可以在命令提示符下使用管理员权限创建该注册表项。
 

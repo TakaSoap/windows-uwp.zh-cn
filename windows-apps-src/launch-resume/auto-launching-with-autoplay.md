@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ab690fa3964fd9e9c517aedb6adb9e05154fad15
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f1a3e2eae72da7eb45104a023ce0fb75a4e4451f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259467"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173011"
 ---
-# <a name="span-iddev_launch_resumeauto-launching_with_autoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>自动自动启动
+# <a name="span-iddev_launch_resumeauto-launching_with_autoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>借助自动播放功能自动启动
 
-可以使用**自动播放**功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。 还可以使用**自动播放**功能在用户使用邻近感应（点击）在两台电脑之间共享文件时，将应用作为一个选项提供。
+当用户将设备连接到 PC 时，可以使用 **自动播放** 功能提供应用作为选项。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。 还可以使用**自动播放**功能在用户使用邻近感应（点击）在两台电脑之间共享文件时，将应用作为一个选项提供。
 
-> **请注意**  如果你是设备制造商，并且想要将你的[Microsoft Store 设备应用](https://msdn.microsoft.com/library/windows/hardware/Dn265154(v=vs.85).aspx)作为设备的**自动播放**处理程序，则可以在设备元数据中识别该应用。 有关详细信息，请参阅 [Microsoft Store 设备应用的自动播放](https://msdn.microsoft.com/library/windows/hardware/dn265136(v=vs.85).aspx)。
+> **注意**   如果你是设备制造商，并且想要将[Microsoft Store 设备应用](/windows-hardware/drivers/devapps/)程序作为设备的**自动播放**处理程序，则可以在设备元数据中标识该应用程序。 有关详细信息，请参阅 [Microsoft Store 设备应用的自动播放](/windows-hardware/drivers/devapps/autoplay-for-uwp-device-apps)。
 
 ## <a name="register-for-autoplay-content"></a>注册自动播放内容
 
@@ -37,27 +37,27 @@ ms.locfileid: "74259467"
 
 ### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>步骤 1：创建新项目并添加自动播放声明
 
-1.  打开 Microsoft Visual Studio，然后从**文件**菜单中选择**新建项目**。 在**Visual C#** 部分的**Windows**下，选择**空白应用(通用 Windows)** 。 将应用命名为 **AutoPlayDisplayOrCopyImages** 并单击**确定**。
+1.  打开 Microsoft Visual Studio，然后从**文件**菜单中选择**新建项目**。 在**Visual C#** 部分的**Windows**下，选择**空白应用(通用 Windows)**。 将应用命名为 **AutoPlayDisplayOrCopyImages** 并单击**确定**。
 2.  打开 Package.appxmanifest 文件，选择**功能**选项卡。选择**可移动存储**和**图片库**功能。 如此一来，该应用便可访问相机内存的可移动存储设备，也可访问本地图片。
 3.  在清单文件中，选择**声明**选项卡。在**可用声明**下拉列表中，选择**自动播放内容**，然后单击**添加**。 选择已添加到**支持的声明**列表中的新**自动播放内容**项。
-4.  **自动播放内容**声明会在自动播放引发内容事件时将你的应用标识为一个选项。 该事件基于卷设备（如 DVD 或 U 盘）的内容。 “自动播放”会检查卷设备的内容并确定要引发的内容事件。 如果卷的根包含 DCIM、AVCHD 或 PRIVATE\\ACHD 文件夹，或者用户已启用 "自动播放" 控制面板中的**每种类型的媒体的操作**，并且在卷的根目录中找到了图片，则自动播放将引发**ShowPicturesOnArrival**事件。 在**启动操作**部分中，为第一个启动操作输入表 1 中的以下值。
+4.  **自动播放内容**声明会在自动播放引发内容事件时将你的应用标识为一个选项。 该事件基于卷设备（如 DVD 或 U 盘）的内容。 “自动播放”会检查卷设备的内容并确定要引发的内容事件。 如果卷的根包含 DCIM、AVCHD 或 PRIVATE \\ ACHD 文件夹，或如果用户已启用 "自动播放" 控制面板中的 **每种类型的媒体的操作** ，并且在卷的根目录中找到了图片，则自动播放将引发 **ShowPicturesOnArrival** 事件。 在**启动操作**部分中，为第一个启动操作输入表 1 中的以下值。
 5.  在**自动播放内容**项的**启动操作**部分中，单击**新增**可添加第二个启动操作。 为第二个启动操作输入表 2 中的以下值。
-6.  在**可用声明**下拉列表中，选择**文件类型关联**，然后单击**添加**。 在新的**文件类型关联**声明的属性中，将 "**显示名称**" 字段设置为 "自动播放"，将 "显示名称" 字段**复制或显示图像**，并将 "**名称**" 字段 **\_association1** 在**支持的文件类型**部分中，单击**新增**。 将**文件类型**字段设置为 **.jpg**。 在**支持的文件类型**部分中，将新文件关联的**文件类型**字段设置为 **.png**。 对于内容事件，自动播放功能会筛选掉任何未与应用显式关联的文件类型。
+6.  在**可用声明**下拉列表中，选择**文件类型关联**，然后单击**添加**。 在新的**文件类型关联**声明的属性中，将 "**显示名称** **" 字段设置**为 "**自动播放** **"。 \_ ** 在**支持的文件类型**部分中，单击**新增**。 将**文件类型**字段设置为 **.jpg**。 在**支持的文件类型**部分中，将新文件关联的**文件类型**字段设置为 **.png**。 对于内容事件，自动播放功能会筛选掉任何未与应用显式关联的文件类型。
 7.  保存并关闭清单文件。
 
-**表1**
+**表 1**
 
-| 设置             | Value                 |
+| 设置             | 值                 |
 |---------------------|-----------------------|
-| 谓词                | 显示                  |
+| 谓词                | show                  |
 | 操作显示名称 | 显示图片         |
 | 内容事件       | ShowPicturesOnArrival |
 
-**操作显示名称**设置标识自动播放为你的应用显示的字符串。 **谓词**设置标识针对所选选项传递给你的应用的值。 你可以为自动播放事件指定多个启动操作并且可以使用**谓词**设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 **verb** 属性来标识用户选择的选项。 你可以为**谓词**设置使用任何值（但保留的 **open** 除外）。
+**操作显示名称**设置标识自动播放为你的应用显示的字符串。 **谓词**设置标识针对所选选项传递给你的应用的值。 可以为自动播放事件指定多个启动操作，并使用 " **谓词** " 设置来确定用户为应用选择的选项。 您可以通过检查传递到应用程序的启动事件参数的 **verb** 属性来确定用户选择的选项。 可以将任何值用于 **谓词** 设置，但必须 **打开**，这是保留的。
 
-**表2**  
+**表 2**  
 
-| 设置             | Value                      |
+| 设置             | 值                      |
 |--------------------:|----------------------------|
 | 谓词                | copy                       |
 | 操作显示名称 | 将图片复制到库 |
@@ -106,7 +106,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **请注意**  `DisplayImages` 和 `CopyImages` 方法将在以下步骤中添加。
+> **注意**   `DisplayImages` `CopyImages` 在以下步骤中添加了和方法。
 
 ### <a name="step-4-add-code-to-display-images"></a>步骤 4：添加用于显示图像的代码
 
@@ -217,42 +217,42 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 ### <a name="step-6-build-and-run-the-app"></a>步骤 6：生成并运行应用
 
 1.  按 F5 生成并部署应用（在调试模式下）。
-2.  若要运行应用，请将相机内存卡或相机的其他存储设备插入电脑。 然后，从自动播放选项列表中选择在你的 package.appxmanifest 文件中指定的内容事件选项之一。 此示例代码仅显示或复制相机内存卡的 DCIM 文件夹中的图片。 如果照相机内存卡将图片存储在 AVCHD 或 PRIVATE\\ACHD 文件夹中，则需要相应地更新代码。
-    **请注意**  如果没有照相机内存卡，则可以使用闪存驱动器（如果根中有一个名为**DCIM**的文件夹），并且 DCIM 文件夹具有包含图像的子文件夹。
+2.  若要运行应用，请将相机内存卡或相机的其他存储设备插入电脑。 然后，从自动播放选项列表中选择在你的 package.appxmanifest 文件中指定的内容事件选项之一。 此示例代码仅显示或复制相机内存卡的 DCIM 文件夹中的图片。 如果照相机内存卡将图片存储在 AVCHD 或 PRIVATE \\ ACHD 文件夹中，则需要相应地更新代码。
+    **注意**   如果没有照相机内存卡，则可以使用闪存驱动器（如果根中有一个名为**DCIM**的文件夹），并且 DCIM 文件夹具有包含图像的子文件夹。
 
 ## <a name="register-for-an-autoplay-device"></a>注册自动播放设备
 
 
 可以将应用注册为**自动播放**设备事件的选项。 **自动播放**设备事件会在设备连接到电脑时引发。
 
-下面显示了如何将应用标识为在将相机连接到电脑时的**自动播放**选项。 应用注册为**WPD\\ImageSourceAutoPlay**事件的处理程序。 当相机和其他图像设备通知事件它们为使用 MTP 的 ImageSource 时，此为 Windows Portable Device (WPD) 系统引发的常见事件。 有关详细信息，请参阅 [Windows Portable Device](https://docs.microsoft.com/previous-versions/ff597729(v=vs.85))。
+下面显示了如何将应用标识为在将相机连接到电脑时的**自动播放**选项。 应用注册为 **WPD \\ ImageSourceAutoPlay** 事件的处理程序。 当相机和其他图像设备通知事件它们为使用 MTP 的 ImageSource 时，此为 Windows Portable Device (WPD) 系统引发的常见事件。 有关详细信息，请参阅 [Windows Portable Device](/previous-versions/ff597729(v=vs.85))。
 
-**重要**  [**StorageDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice) api 是[桌面设备系列](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)的一部分。 应用只能在桌面设备家族中的 Windows 10 设备（如电脑）上使用这些 Api。
+**重要提示**   [**StorageDevice**](/uwp/api/Windows.Devices.Portable.StorageDevice) api 是[桌面设备系列](../get-started/universal-application-platform-guide.md)的一部分。 应用只能在属于桌面设备系列的 Windows 10 设备（例如电脑）上使用这些 API。
 
  
 
 ### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>步骤 1：创建新项目并添加自动播放声明
 
-1.  打开 Visual Studio，然后从**文件**菜单中选择**新建项目**。 在**Visual C#** 部分的**Windows**下，选择**空白应用(通用 Windows)** 。 将应用命名为**AutoPlayDevice\_照相机**，并单击 **"确定"。**
+1.  打开 Visual Studio，然后从**文件**菜单中选择**新建项目**。 在**Visual C#** 部分的**Windows**下，选择**空白应用(通用 Windows)**。 将应用命名为 **AutoPlayDevice \_ 相机** ，然后单击 **"确定"。**
 2.  打开 Package.appxmanifest 文件，选择**功能**选项卡。选择**可移动存储**功能。 这会使该应用能够访问作为可移动存储卷设备的相机上的数据。
 3.  在清单文件中，选择**声明**选项卡。在**可用声明**下拉列表中，选择**自动播放设备**，然后单击**添加**。 选择已添加到**支持的声明**列表中的新**自动播放设备**项。
 4.  **自动播放设备**声明会在“自动播放”引发已知事件的设备事件时将你的应用标识为一个选项。 在**启动操作**部分中，为第一个启动操作输入下表中的以下值。
-5.  在**可用声明**下拉列表中，选择**文件类型关联**，然后单击**添加**。 在新的**文件类型关联**声明的属性中，将 "**显示名称**" 字段设置为 "**显示照相机中的图像**"，将 "**名称**" 字段设置为 "**照相机\_association1**"。 在**支持的文件类型**部分中，单击**新增**（如果需要）。 将**文件类型**字段设置为 **.jpg**。 在**支持的文件类型**部分中，再次单击**新增**。 将新文件关联的**文件类型**字段设置为 **.png**。 对于内容事件，自动播放功能会筛选掉任何未与应用显式关联的文件类型。
+5.  在**可用声明**下拉列表中，选择**文件类型关联**，然后单击**添加**。 在新的 **文件类型关联** 声明的属性中，将 " **显示名称** " 字段设置为 " **显示照相机中的图像** "，将 " **名称** " 字段设置为 " **照相机 \_ association1**"。 在**支持的文件类型**部分中，单击**新增**（如果需要）。 将**文件类型**字段设置为 **.jpg**。 在**支持的文件类型**部分中，再次单击**新增**。 将新文件关联的**文件类型**字段设置为 **.png**。 对于内容事件，自动播放功能会筛选掉任何未与应用显式关联的文件类型。
 6.  保存并关闭清单文件。
 
-| 设置             | Value            |
+| 设置             | 值            |
 |---------------------|------------------|
-| 谓词                | 显示             |
+| 谓词                | show             |
 | 操作显示名称 | 显示图片    |
-| 内容事件       | WPD\\ImageSource |
+| 内容事件       | WPD \\ ImageSource |
 
-**操作显示名称**设置标识自动播放为你的应用显示的字符串。 **谓词**设置标识针对所选选项传递给你的应用的值。 你可以为自动播放事件指定多个启动操作并且可以使用**谓词**设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 **verb** 属性来标识用户选择的选项。 你可以为**谓词**设置使用任何值（但保留的 **open** 除外）。 有关在单个应用中使用多个谓词的示例，请参阅[注册自动播放内容](#register-for-autoplay-content)。
+**操作显示名称**设置标识自动播放为你的应用显示的字符串。 **谓词**设置标识针对所选选项传递给你的应用的值。 可以为自动播放事件指定多个启动操作，并使用 " **谓词** " 设置来确定用户为应用选择的选项。 您可以通过检查传递到应用程序的启动事件参数的 **verb** 属性来确定用户选择的选项。 可以将任何值用于 **谓词** 设置，但必须 **打开**，这是保留的。 有关在单个应用中使用多个谓词的示例，请参阅[注册自动播放内容](#register-for-autoplay-content)。
 
 ### <a name="step-2-add-assembly-reference-for-the-desktop-extensions"></a>步骤 2：添加桌面扩展的程序集引用
 
-访问 Windows 便携设备上的存储所需的 API [**Windows.Devices.Portable.StorageDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice) 是[桌面设备系列](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)的一部分。 这表示使用这些 API 需要特殊的程序集，并且这些调用仅适用于桌面设备系列中的设备（例如电脑）。
+访问 Windows 便携设备上的存储所需的 API [**Windows.Devices.Portable.StorageDevice**](/uwp/api/Windows.Devices.Portable.StorageDevice) 是[桌面设备系列](../get-started/universal-application-platform-guide.md)的一部分。 这表示使用这些 API 需要特殊的程序集，并且这些调用仅适用于桌面设备系列中的设备（例如电脑）。
 
-1.  在**解决方案资源管理器**中，右键单击**引用**，然后单击**添加引用...** 。
+1.  在**解决方案资源管理器**中，右键单击**引用**，然后单击**添加引用...**。
 2.  展开**通用 Windows** 并单击**扩展**。
 3.  然后选择**适用于 UWP 的 Windows 桌面扩展**并单击**确定**。
 
@@ -286,7 +286,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 ### <a name="step-4-add-activation-code"></a>步骤 4：添加激活代码
 
-此步骤中的代码通过将相机的设备信息 ID 传递给 [**FromId**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice) 方法来以 [**StorageDevice**](https://docs.microsoft.com/uwp/api/windows.devices.portable.storagedevice.fromid) 形式引用相机。 通过以下方法获取相机的设备信息 ID：首先将事件参数强制转换为 [**DeviceActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.DeviceActivatedEventArgs)，然后从 [**DeviceInformationId**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.deviceactivatedeventargs.deviceinformationid) 属性获取值。
+此步骤中的代码通过将相机的设备信息 ID 传递给 [**FromId**](/uwp/api/windows.devices.portable.storagedevice.fromid) 方法来以 [**StorageDevice**](/uwp/api/Windows.Devices.Portable.StorageDevice) 形式引用相机。 通过以下方法获取相机的设备信息 ID：首先将事件参数强制转换为 [**DeviceActivatedEventArgs**](/uwp/api/Windows.ApplicationModel.Activation.DeviceActivatedEventArgs)，然后从 [**DeviceInformationId**](/uwp/api/windows.applicationmodel.activation.deviceactivatedeventargs.deviceinformationid) 属性获取值。
 
 打开 App.xaml.cs 文件，然后将以下代码添加到 **App** 类。
 
@@ -336,11 +336,11 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-> **请注意**  在以下步骤中添加了 `ShowImages` 方法。
+> **注意**   此 `ShowImages` 方法在以下步骤中添加。
 
 ### <a name="step-5-add-code-to-display-device-information"></a>步骤 5：添加用于显示设备信息的代码
 
-可以从 [**StorageDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice) 类的属性中获取有关相机的信息。 此步骤中的代码在应用运行时，向用户显示设备名称和其他信息。 此代码随后调用 GetImageList 和 GetThumbnail 方法，这些方法将在下一步中添加，用于显示相机上所存储图像的缩略图。
+可以从 [**StorageDevice**](/uwp/api/Windows.Devices.Portable.StorageDevice) 类的属性中获取有关相机的信息。 此步骤中的代码在应用运行时，向用户显示设备名称和其他信息。 此代码随后调用 GetImageList 和 GetThumbnail 方法，这些方法将在下一步中添加，用于显示相机上所存储图像的缩略图。
 
 在 MainPage.xaml.cs 文件中，将以下代码添加到 **MainPage** 类。
 
@@ -364,7 +364,7 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 }
 ```
 
-> **请注意**  在以下步骤中添加 `GetImageList` 和 `GetThumbnail` 方法。
+> **注意**   `GetImageList` `GetThumbnail` 以下步骤添加了和方法。
 
 ### <a name="step-6-add-code-to-display-images"></a>步骤 6：添加用于显示图像的代码
 
@@ -407,7 +407,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 
 1.  按 F5 生成并部署应用（在调试模式下）。
 2.  若要运行你的应用，请将相机连接到你的计算机。 然后从“自动播放”选项列表中选择该应用。
-    **请注意**，  不是所有照相机都公布**WPD\\ImageSource**自动播放设备事件。
+    **注意**   并非所有照相机都公布**WPD \\ ImageSource**自动播放设备事件。
 
 ## <a name="configure-removable-storage"></a>配置可移动存储
 
@@ -415,7 +415,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 
 下面显示了如何将卷设备标识为**自动播放**设备。
 
-若要将卷设备标识为**自动播放**设备，请在设备的根驱动器中添加一个 autorun.inf 文件。 在 autorun.inf 文件中，向 **AutoRun** 部分中添加一个 **CustomEvent** 键。 当卷设备连接到电脑时，**自动播放**将查找 autorun.inf 文件并将你的卷视为一台设备。 **自动播放**将通过使用你为 **CustomEvent** 键提供的名称创建一个**自动播放**事件。 然后，你可以创建一个应用并将其注册为该**自动播放**事件的处理程序。 当设备连接到电脑时，**自动播放**功能会将该应用显示为卷设备的处理程序。 有关 autorun.inf 文件的详细信息，请参阅 [autorun.inf 条目](https://docs.microsoft.com/windows/desktop/shell/autorun-cmds)。
+若要将卷设备标识为**自动播放**设备，请在设备的根驱动器中添加一个 autorun.inf 文件。 在 autorun.inf 文件中，向 **AutoRun** 部分中添加一个 **CustomEvent** 键。 当卷设备连接到电脑时，**自动播放**将查找 autorun.inf 文件并将你的卷视为一台设备。 **自动播放**将通过使用你为 **CustomEvent** 键提供的名称创建一个**自动播放**事件。 然后，你可以创建一个应用并将其注册为该**自动播放**事件的处理程序。 当设备连接到电脑时，**自动播放**功能会将该应用显示为卷设备的处理程序。 有关 autorun.inf 文件的详细信息，请参阅 [autorun.inf 条目](/windows/desktop/shell/autorun-cmds)。
 
 ### <a name="step-1-create-an-autoruninf-file"></a>步骤 1：创建 autorun.inf 文件
 
@@ -428,22 +428,22 @@ CustomEvent=AutoPlayCustomEventQuickstart
 
 ### <a name="step-2-create-a-new-project-and-add-autoplay-declarations"></a>步骤 2：创建新项目并添加自动播放声明
 
-1.  打开 Visual Studio，然后从**文件**菜单中选择**新建项目**。 在**Visual C#** 部分的**Windows**下，选择**空白应用(通用 Windows)** 。 将该应用程序命名为 **AutoPlayCustomEvent**，然后单击**确定**。
+1.  打开 Visual Studio，然后从**文件**菜单中选择**新建项目**。 在**Visual C#** 部分的**Windows**下，选择**空白应用(通用 Windows)**。 将该应用程序命名为 **AutoPlayCustomEvent**，然后单击**确定**。
 2.  打开 Package.appxmanifest 文件，选择**功能**选项卡。选择**可移动存储**功能。 这使应用能够访问可移动存储设备上的文件和文件夹。
 3.  在清单文件中，选择**声明**选项卡。在**可用声明**下拉列表中，选择**自动播放内容**，然后单击**添加**。 选择已添加到**支持的声明**列表中的新**自动播放内容**项。
 
-    **请注意**  或者，还可以选择添加自定义自动播放事件的**自动播放设备**声明。  
+    **注意**   此外，还可以选择为自定义自动播放事件添加**自动播放设备**声明。  
 4.  在**自动播放内容**事件声明的**启动操作**部分中，为第一个启动操作输入下表中的以下值。
-5.  在**可用声明**下拉列表中，选择**文件类型关联**，然后单击**添加**。 在新的**文件类型关联**声明的属性中，将 "**显示名称**" 字段设置为 "ms 文件"，将 "**名称**" 字段**显示**为**ms\_关联**。 在**支持的文件类型**部分中，单击**新增**。 将**文件类型**字段设置为 **.ms**。 对于内容事件，“自动播放”功能会筛选掉任何未与应用显式关联的文件类型。
+5.  在**可用声明**下拉列表中，选择**文件类型关联**，然后单击**添加**。 在新的**文件类型关联**声明的属性中，将 "**显示名称**" 字段设置为 "ms 文件"，将 "**名称**" 字段**显示**为**ms \_ 关联**。 在**支持的文件类型**部分中，单击**新增**。 将**文件类型**字段设置为 **.ms**。 对于内容事件，“自动播放”功能会筛选掉任何未与应用显式关联的文件类型。
 6.  保存并关闭清单文件。
 
-| 设置             | Value                         |
+| 设置             | 值                         |
 |---------------------|-------------------------------|
-| 谓词                | 显示                          |
+| 谓词                | show                          |
 | 操作显示名称 | 显示文件                    |
 | 内容事件       | AutoPlayCustomEventQuickstart |
 
-**内容事件**值是在 autorun.inf 文件中为 **CustomEvent** 键提供的文本。 **操作显示名称**设置标识自动播放为你的应用显示的字符串。 **谓词**设置标识针对所选选项传递给你的应用的值。 你可以为自动播放事件指定多个启动操作并且可以使用**谓词**设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 **verb** 属性来标识用户选择的选项。 你可以为**谓词**设置使用任何值（但保留的 **open** 除外）。
+**内容事件**值是在 autorun.inf 文件中为 **CustomEvent** 键提供的文本。 **操作显示名称**设置标识自动播放为你的应用显示的字符串。 **谓词**设置标识针对所选选项传递给你的应用的值。 可以为自动播放事件指定多个启动操作，并使用 " **谓词** " 设置来确定用户为应用选择的选项。 您可以通过检查传递到应用程序的启动事件参数的 **verb** 属性来确定用户选择的选项。 可以将任何值用于 **谓词** 设置，但必须 **打开**，这是保留的。
 
 ### <a name="step-3-add-xaml-ui"></a>步骤 3：添加 XAML UI
 
@@ -475,7 +475,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **请注意**  在以下步骤中添加了 `DisplayFiles` 方法。
+> **注意**   此 `DisplayFiles` 方法在以下步骤中添加。
 
  
 
@@ -514,7 +514,7 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 
 使用**自动播放**系统，应用可以注册各种设备和卷（磁盘）到达事件。 若要注册**自动播放**内容事件，则必须在程序包清单中启用**可移动存储**功能。 此表显示了可以注册的事件及其引发时间。
 
-| 方案                                                           | 事件                              | 说明   |
+| 方案                                                           | 事件                              | 描述   |
 |--------------------------------------------------------------------|------------------------------------|---------------|
 | 使用相机上的照片                                           | **WPD\ImageSource**                | 针对标识为 Windows Portable Devices 且提供 ImageSource 功能的相机引发。 |
 | 使用自动播放器上的音乐                                     | **WPD\AudioSource**                | 针对标识为 Windows Portable Devices 且提供 AudioSource 功能的媒体播放器引发。 |
@@ -522,11 +522,11 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 | 访问所连接的闪存驱动器或外部硬盘驱动器              | **StorageOnArrival**               | 在驱动器或卷连接到电脑时引发。   如果驱动器或卷的磁盘根目录中包含 DCIM、AVCHD 或 PRIVATE\ACHD 文件夹，则会改为引发 **ShowPicturesOnArrival** 事件。 |
 | 使用大容量存储（旧功能）中的照片                            | **ShowPicturesOnArrival**          | 当驱动器或卷的磁盘根目录中包含 DCIM、AVCHD 或 PRIVATE\ACHD 文件夹时引发。 如果用户已启用自动播放控制面板中的**为每种媒体类型选择相应的操作**，则自动播放会检查连接到电脑的卷以确定磁盘中内容的类型。 找到图片时，将引发 **ShowPicturesOnArrival**。 |
 | 使用邻近感应共享（点击并发送）接收照片             | **ShowPicturesOnArrival**          | 当用户使用邻近感应（点击并发送）发送内容时，自动播放会检查共享文件以确定内容的类型。 如果找到图片，则会引发 **ShowPicturesOnArrival**。 |
-| 使用大容量存储（旧功能）中的音乐                             | **PlayMusicFilesOnArrival**        | 如果用户已启用自动播放控制面板中的**为每种媒体类型选择相应的操作**，则自动播放会检查连接到电脑的卷以确定磁盘中内容的类型。  找到音乐文件时，将引发 **PlayMusicFilesOnArrival**。 |
+| 使用大容量存储（旧功能）中的音乐                             | **PlayMusicFilesOnArrival**        | 如果用户已启用 "自动播放" 控制面板中 **每种类型媒体的操作** ，则自动播放将检查连接到电脑的卷以确定磁盘上的内容类型。  找到音乐文件时，将引发 **PlayMusicFilesOnArrival**。 |
 | 使用邻近感应共享（点击并发送）接收音乐              | **PlayMusicFilesOnArrival**        | 当用户使用邻近感应（点击并发送）发送内容时，自动播放会检查共享文件以确定内容的类型。 如果找到音乐文件，则会引发 **PlayMusicFilesOnArrival**。 |
-| 使用大容量存储（旧功能）中的视频                            | **PlayVideoFilesOnArrival**        | 如果用户已启用自动播放控制面板中的**为每种媒体类型选择相应的操作**，则自动播放会检查连接到电脑的卷以确定磁盘中内容的类型。 找到视频文件时，将引发 **PlayVideoFilesOnArrival**。 |
+| 使用大容量存储（旧功能）中的视频                            | **PlayVideoFilesOnArrival**        | 如果用户已启用 "自动播放" 控制面板中 **每种类型媒体的操作** ，则自动播放将检查连接到电脑的卷以确定磁盘上的内容类型。 找到视频文件时，将引发 **PlayVideoFilesOnArrival**。 |
 | 使用邻近感应共享（点击并发送）接收视频             | **PlayVideoFilesOnArrival**        | 当用户使用邻近感应（点击并发送）发送内容时，自动播放会检查共享文件以确定内容的类型。 如果找到视频文件，则会引发 **PlayVideoFilesOnArrival**。 |
-| 处理所连接设备中的混合文件集               | **MixedContentOnArrival**          | 如果用户已启用自动播放控制面板中的**为每种媒体类型选择相应的操作**，则自动播放会检查连接到电脑的卷以确定磁盘中内容的类型。 如果未找到特定的内容类型（例如，图片），则会引发 **MixedContentOnArrival**。 |
+| 处理所连接设备中的混合文件集               | **MixedContentOnArrival**          | 如果用户已启用 "自动播放" 控制面板中 **每种类型媒体的操作** ，则自动播放将检查连接到电脑的卷以确定磁盘上的内容类型。 如果未找到特定的内容类型（例如，图片），则会引发 **MixedContentOnArrival**。 |
 | 使用邻近感应共享（点击并发送）处理混合文件集 | **MixedContentOnArrival**          | 当用户使用邻近感应（点击并发送）发送内容时，自动播放会检查共享文件以确定内容的类型。 如果未找到特定的内容类型（例如，图片），则会引发 **MixedContentOnArrival**。 |
 | 处理光学媒体上的视频                                    | **PlayDVDMovieOnArrival**<br />**PlayBluRayOnArrival**<br />**PlayVideoCDMovieOnArrival**<br />**PlaySuperVideoCDMovieOnArrival** | 将光盘插入光驱时，自动播放将检查文件以确定内容的类型。 发现视频文件时，会引发与光盘类型相对应的事件。 |
 | 处理光学媒体上的音乐                                    | **PlayCDAudioOnArrival**<br />**PlayDVDAudioOnArrival** | 将光盘插入光驱时，自动播放将检查文件以确定内容的类型。 发现音乐文件时，会引发与光盘类型相对应的事件。 |
@@ -534,9 +534,9 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 | 处理可写入的光盘                                     | **HandleCDBurningOnArrival** <br />**HandleDVDBurningOnArrival** <br />**HandleBDBurningOnArrival** | 将光盘插入光驱时，自动播放将检查文件以确定内容的类型。 发现可写磁盘时，会引发与光盘类型相对应的事件。 |
 | 处理任何其他设备或卷连接                       | **UnknownContentOnArrival**        | 在找到与任何“自动播放内容”事件都不匹配的内容时，会针对所有事件引发。 不建议使用此事件。 只应当针对你的应用可以处理的特定“自动播放”事件注册你的应用程序。 |
 
-你可以指定“自动播放”使用 autorun.inf 文件中的 **CustomEvent** 条目来为卷引发自定义的“自动播放内容”事件。 有关详细信息，请参阅 [Autorun.inf 条目](https://docs.microsoft.com/windows/desktop/shell/autorun-cmds)。
+你可以指定“自动播放”使用 autorun.inf 文件中的 **CustomEvent** 条目来为卷引发自定义的“自动播放内容”事件。 有关详细信息，请参阅 [Autorun.inf 条目](/windows/desktop/shell/autorun-cmds)。
 
-你可以通过向应用的 package.appxmanifest 文件添加扩展，将应用注册为“自动播放内容”或“自动播放设备”事件处理程序。 如果使用 Visual Studio，则可以在**声明选项卡**中添加**自动播放内容**或**自动播放设备**。如果要直接编辑应用的 package.appxmanifest 文件，请向将 [windows.autoPlayContent**或**windows.autoPlayDevice](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-extension) 指定为**类别**的程序包清单添加Extension 元素。 例如，程序包清单中的以下条目添加**自动播放内容**扩展，以将应用注册为 **ShowPicturesOnArrival** 事件的处理程序。
+你可以通过向应用的 package.appxmanifest 文件添加扩展，将应用注册为“自动播放内容”或“自动播放设备”事件处理程序。 如果使用 Visual Studio，则可以在**声明选项卡**中添加**自动播放内容**或**自动播放设备**。如果要直接编辑应用的 package.appxmanifest 文件，请向将 **windows.autoPlayContent** 或 **windows.autoPlayDevice** 指定为**类别**的程序包清单添加 [**Extension**](/uwp/schemas/appxpackage/appxmanifestschema/element-1-extension) 元素。 例如，程序包清单中的以下条目添加**自动播放内容**扩展，以将应用注册为 **ShowPicturesOnArrival** 事件的处理程序。
 
 ```xml
   <Applications>
