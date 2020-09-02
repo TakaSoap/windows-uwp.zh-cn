@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c871149f764024de41309f21dbd036848633a2af
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: d2ae73cc32fd4e3717fe40b8a6ec8c3397b40619
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846727"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161531"
 ---
 # <a name="modernize-your-desktop-apps"></a>实现桌面应用的现代化
 
@@ -20,7 +20,7 @@ Windows 10 和通用 Windows 平台 (UWP) 提供的许多功能可以用来在�
 本文介绍目前可以在桌面应用中使用的 Windows 10 和 UWP 功能。 有关演示如何实现现有应用的现代化以使用本文中所述的许多功能的教程，请参阅[实现 WPF 应用现代化](modernize-wpf-tutorial.md)教程。
 
 > [!NOTE]
-> 在将桌面应用迁移到 Windows 10 的过程中，你是否需要帮助？ [桌面应用保证](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure)服务为需要将应用移植到 Windows 10 的开发人员提供直接的免费支持。 该计划适用于所有 ISV 和合格的企业。 若要更详细地了解相关资格和计划本身，请访问 [https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered](https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered)。 若要立即开始体验，请[提交请求](https://fasttrack.microsoft.com/dl/daa)。
+> 在将桌面应用迁移到 Windows 10 的过程中，你是否需要帮助？ [桌面应用保证](/FastTrack/win-10-desktop-app-assure)服务为需要将应用移植到 Windows 10 的开发人员提供直接的免费支持。 该计划适用于所有 ISV 和合格的企业。 若要更详细地了解相关资格和计划本身，请访问 [/fasttrack/win-10-app-assure-assistance-offered](/fasttrack/win-10-app-assure-assistance-offered)。 若要立即开始体验，请[提交请求](https://fasttrack.microsoft.com/dl/daa)。
 
 ## <a name="windows-ui-library"></a>Windows UI 库
 
@@ -45,7 +45,7 @@ MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（
 
 .NET Core 3 是 .NET Core 的最新主要版本。 这个版本的主要特点是支持 Windows 桌面应用，包括 Windows Forms 应用和 WPF 应用。 你可以在 .NET Core 3 上运行新的和现有的 Windows 桌面应用并体验 .NET Core 提供的所有优势。 托管在 [XAML 岛](xaml-islands.md)中的 UWP 控件也可在面向 .NET Core 3 的 Windows 窗体和 WPF 应用中使用。
 
-有关详细信息，请参阅 [.NET Core 3.0 中的新增功能](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0)。
+有关详细信息，请参阅 [.NET Core 3.0 中的新增功能](/dotnet/core/whats-new/dotnet-core-3-0)。
 
 ## <a name="windows-runtime-apis"></a>Windows 运行时 API
 
@@ -67,11 +67,11 @@ MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（
 
 ## <a name="additional-features-available-to-apps-with-package-identity"></a>适用于具有包标识的应用的其他功能
 
-某些新式 Windows 10 体验仅适用于具有 [包标识](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)的桌面应用。 这些功能包括一些 Windows 运行时 API、包扩展和 UWP 组件。 有关详细信息，请参阅 [Features that require package identity](modernize-packaged-apps.md)（需要包标识的功能）。
+某些新式 Windows 10 体验仅适用于具有 [包标识](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)的桌面应用。 这些功能包括一些 Windows 运行时 API、包扩展和 UWP 组件。 有关详细信息，请参阅 [Features that require package identity](modernize-packaged-apps.md)（需要包标识的功能）。
 
 可通过多种方式向桌面应用授予标识：
 
-* 将其打包到 [MSIX 包](/windows/msix/desktop/desktop-to-uwp-root)中。 MSIX 是一种新式应用包格式，提供适合所有 Windows 应用、WPF、Windows 窗体和 Win32 应用的通用打包体验。 它提供了可靠的安装和更新体验、功能系统灵活的托管安全模型、对 Microsoft Store 的支持、企业管理以及许多自定义分发模型。 有关详细信息，请参阅 MSIX 文档中的[打包桌面应用程序](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。
+* 将其打包到 [MSIX 包](/windows/msix/desktop/desktop-to-uwp-root)中。 MSIX 是一种新式应用包格式，提供适合所有 Windows 应用、WPF、Windows 窗体和 Win32 应用的通用打包体验。 它提供了可靠的安装和更新体验、功能系统灵活的托管安全模型、对 Microsoft Store 的支持、企业管理以及许多自定义分发模型。 有关详细信息，请参阅 MSIX 文档中的[打包桌面应用程序](/windows/msix/desktop/desktop-to-uwp-root)。
 * 如果无法采用 MSIX 打包来部署桌面应用，那么，自 Windows 10 版本 2004 起，你可通过创建一个仅包含程序包清单的稀疏 MSIX 包来授予包标识。 有关详细信息，请参阅[向未打包的桌面应用授予标识](grant-identity-to-nonpackaged-apps.md)。
 
 <a id="desktop-uwp-controls"></a>
@@ -82,14 +82,14 @@ MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（
 
 | 控件 |  说明 |
 |------ |--------------|
-| [MenuBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | 为那些需要的组织或分组功能可能无法通过 **CommandBar** 来满足的应用提供一种公开命令集的方式，这种方式既快速又简单。 |
-| [DropDownButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | 显示一个 V 形图标作为视觉指示器，表明其附加的浮出控件包含更多选项。  |
-| [SplitButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button) | 提供的按钮有两个部分，可以分别调用。 一个部分的行为类似于标准按钮，可以调用即时操作。 另一个部分调用浮出控件，该控件包含可供用户选择的其他选项。|
-| [ToggleSplitButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-toggle-split-button) | 提供的按钮有两个部分，可以分别调用。 一个部分的行为类似于可以打开或关闭的切换按钮。 另一个部分调用浮出控件，该控件包含可供用户选择的其他选项。 |
-| [CommandBarFlyout](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/command-bar-flyout) |  用于在 UI 画布的项上下文中显示常见用户任务。 |
-| [ComboBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) | 现在可以将组合框设置为可编辑，这样用户就能输入控件中未列出的值。  |
-| [TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) | 现在可以配置树视图，以便启用数据绑定、项模板和拖放功能。  |
-| [DataGridView](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) |   用于在行和列中灵活地显示数据集合。 此控件在 [Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中可用。  |
+| [MenuBar](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | 为那些需要的组织或分组功能可能无法通过 **CommandBar** 来满足的应用提供一种公开命令集的方式，这种方式既快速又简单。 |
+| [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | 显示一个 V 形图标作为视觉指示器，表明其附加的浮出控件包含更多选项。  |
+| [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button) | 提供的按钮有两个部分，可以分别调用。 一个部分的行为类似于标准按钮，可以调用即时操作。 另一个部分调用浮出控件，该控件包含可供用户选择的其他选项。|
+| [ToggleSplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-toggle-split-button) | 提供的按钮有两个部分，可以分别调用。 一个部分的行为类似于可以打开或关闭的切换按钮。 另一个部分调用浮出控件，该控件包含可供用户选择的其他选项。 |
+| [CommandBarFlyout](/windows/uwp/design/controls-and-patterns/command-bar-flyout) |  用于在 UI 画布的项上下文中显示常见用户任务。 |
+| [ComboBox](/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) | 现在可以将组合框设置为可编辑，这样用户就能输入控件中未列出的值。  |
+| [TreeView](/windows/uwp/design/controls-and-patterns/tree-view) | 现在可以配置树视图，以便启用数据绑定、项模板和拖放功能。  |
+| [DataGridView](/windows/communitytoolkit/controls/datagrid) |   用于在行和列中灵活地显示数据集合。 此控件在 [Windows 社区工具包](/windows/uwpcommunitytoolkit/)中可用。  |
 
 ## <a name="other-technologies-for-modern-desktop-apps"></a>新式桌面应用的其他技术
 
@@ -101,10 +101,10 @@ Microsoft Graph 是一系列 API，这些 API 可以用来为组织和消费者�
 * 企业移动性和安全性服务：Identity Manager、Intune、高级威胁分析、高级威胁防护。
 * Windows 10 服务：活动和设备
 
-有关详细信息，请参阅 [Microsoft Graph 文档](https://developer.microsoft.com/graph/docs/concepts/overview)。
+有关详细信息，请参阅 [Microsoft Graph 文档](/graph/overview)。
 
 ### <a name="adaptive-cards"></a>自适应卡片
 
 自适应卡片是一种开放式跨平台框架，可以通过一种常见且一致的方法跨设备和平台交换基于卡的 UI 内容。
 
-有关详细信息，请参阅[自适应卡片文档](https://docs.microsoft.com/adaptive-cards/)。
+有关详细信息，请参阅[自适应卡片文档](/adaptive-cards/)。

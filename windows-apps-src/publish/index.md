@@ -1,17 +1,17 @@
 ---
-Description: 了解如何将 Windows 应用发布到 Microsoft Store。
+description: 了解如何注册和使用合作伙伴中心将 Windows 应用和游戏发布到 Microsoft Store。
 title: 发布 Windows 应用
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 发布, publish, 销售, sell, distribute, 分发, store, 仪表板
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d30eb37e9633496e510a2e05ec48cc819bd51c9
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 19607823ce98aa71a8e3abecb94b82ff06a08352
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614969"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164121"
 ---
 # <a name="publish-windows-apps-and-games"></a>发布 Windows 应用和游戏  
 
@@ -29,7 +29,7 @@ ms.locfileid: "80614969"
         <a href="the-app-certification-process.md">认证过程</a><br/>
         <a href="store-policies.md">Microsoft Store 策略</a><br/>
         <a href="//docs.microsoft.com/legal/windows/agreements/app-developer-agreement">应用开发人员协议</a><br/>
-        <a href="distribute-lob-apps-to-enterprises.md">LOB 应用分发</a><br/>
+        <a href="distribute-lob-apps-to-enterprises.md">LOB 分发</a><br/>
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/bcs-partner-advanced-management- billing-7.svg" alt="Pricing illustration" />

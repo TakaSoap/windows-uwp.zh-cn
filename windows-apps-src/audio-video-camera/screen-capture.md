@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: windows 10, uwp, 屏幕捕获
 ms.localizationpriority: medium
-ms.openlocfilehash: 829b99932c8035c2e9d493ed7319f640386f88ed
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b57be844e5ee10d384046aac651ab4f198f37d9e
+ms.sourcegitcommit: 14c0b1ea2447a81ddf31982b40e19a74ecc6d59e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163621"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89310068"
 ---
 # <a name="screen-capture"></a>屏幕捕获
 
@@ -24,6 +24,8 @@ ms.locfileid: "89163621"
 
 > [!NOTE]
 > 只有桌面和 Windows Mixed Reality 沉浸式耳机支持屏幕捕获 Api。
+
+本文介绍如何捕获显示或应用程序窗口的单个映像。 有关将从屏幕捕获的帧编码到视频文件的信息，请参阅 [屏幕截图到视频](screen-capture-video.md)
 
 ## <a name="add-the-screen-capture-capability"></a>添加屏幕捕获功能
 
@@ -686,8 +688,9 @@ End Class
 
 ## <a name="record-a-video"></a>录制视频
 
-如果要录制应用程序的视频，可以使用 [AppRecording 命名空间](/uwp/api/windows.media.apprecording)来更轻松地执行此操作。 这是桌面扩展 SDK 的一部分，因此它仅适用于桌面，并要求你从项目中添加对它的引用。 有关详细信息，请参阅 [设备系列概述](/uwp/extension-sdks/device-families-overview) 。
+如果要录制应用程序的视频，可以按照 [屏幕截图到视频](screen-capture-video.md)一文中介绍的演练进行操作。 或者，可以使用 [AppRecording 命名空间](/uwp/api/windows.media.apprecording)。 这是桌面扩展 SDK 的一部分，因此它仅适用于桌面，并要求你从项目中添加对它的引用。 有关详细信息，请参阅 [设备系列概述](/uwp/extension-sdks/device-families-overview) 。
 
 ## <a name="see-also"></a>另请参阅
 
-* [Windows.Graphics.Capture 命名空间](/uwp/api/windows.graphics.capture)
+* [Windows.Graphics.Capture 命名空间](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [屏幕捕获到视频](screen-capture-video.md)

@@ -1,18 +1,18 @@
 ---
 title: Direct3D 图形术语表
-description: 阐述了 Microsoft Direct3D 使用的图形术语的定义。
+description: 请查看术语表，它概述了 Direct3D 游戏和应用开发中使用的一般 3D 计算机图形术语的定义。
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
 - Direct3D 图形术语表
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cb6a2466ea201c9b5047f7eb159477a0d584429
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 3359b81c6932bfc63c3939d2f857aaef9248e52f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63805642"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173071"
 ---
 # <a name="direct3d-graphics-glossary"></a>Direct3D 图形术语表
 
@@ -63,7 +63,7 @@ ms.locfileid: "63805642"
 <td align="left"><p>Direct3D 图形管道设计用于为实时游戏应用程序生成图形。 数据通过各个可配置或可编程的阶段从输入流到输出。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="views.md">视图</a></p></td>
+<td align="left"><p><a href="views.md">Views</a></p></td>
 <td align="left"><p>术语&quot;视图&quot;用于表示&quot;采用所需格式的数据&quot;。 例如，常量缓冲区视图 (CBV) 是格式正确的常量缓冲区数据。 本部分介绍了最常见和最有用的视图。</p></td>
 </tr>
 <tr class="odd">
