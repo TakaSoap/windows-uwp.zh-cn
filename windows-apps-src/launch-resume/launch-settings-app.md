@@ -10,12 +10,12 @@ ms.custom: 19H1
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 5f62fa915c7a00d2e359989e6e10718f704854ab
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d90669e03ae15acdc826d9e0b227f12d4ecf3cbc
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173001"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304709"
 ---
 # <a name="launch-the-windows-settings-app"></a>启动 Windows 设置应用
 
@@ -25,7 +25,7 @@ ms.locfileid: "89173001"
 -   [**PreferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
 -   [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
-了解如何启动 Windows"设置"应用。 本主题介绍 **ms-settings:** URI 方案。 使用此 URI 方案将 Windows 设置应用启动到特定设置页面。
+了解如何启动 Windows"设置"应用。 本主题介绍了 **ms settings：** URI 方案。 使用此 URI 方案将 Windows 设置应用启动到特定设置页面。
 
 启动为设置应用是编写隐私感知应用的重要组成部分。 如果你的应用无法访问敏感资源，我们建议为用户提供到该资源的隐私设置的方便链接。 有关详细信息，请参阅[隐私感知应用指南](../security/index.md)。
 
@@ -122,7 +122,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 |设置页面| URI |
 |-------------|-----|
 | 自动播放 | ms-settings:autoplay |
-| Bluetooth | ms-settings:bluetooth |
+| 蓝牙 | ms-settings:bluetooth |
 | 连接的设备 | ms-settings:connecteddevices |
 | 默认相机 | ms-设置： **在 Windows 10 版本1809及更高版本中，** 照相机 (弃用)  |
 | 鼠标和触摸板 | ms-settings:mousetouchpad（仅具有触摸板的设备可使用触摸板设置） |
@@ -146,7 +146,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 目视控制 | ms-settings:easeofaccess-eyecontrol |
 | 字体 | ms-settings:fonts |
 | 高对比度 | ms-settings:easeofaccess-highcontrast |
-| 键盘 | ms-settings:easeofaccess-keyboard |
+| Keyboard | ms-settings:easeofaccess-keyboard |
 | 放大镜 | ms-settings:easeofaccess-magnifier |
 | 鼠标 | ms-settings:easeofaccess-mouse |
 | 讲述人 | ms-settings:easeofaccess-narrator |
@@ -168,7 +168,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 游戏 DVR | ms-settings:gaming-gamedvr |
 | 游戏模式 | ms-settings:gaming-gamemode |
 | 全屏玩游戏 | ms-settings:quietmomentsgame |
-| TruePlay | ms 设置： trueplay (已 **在 Windows 10 版本1809及更高版本中弃用**)  |
+| TruePlay | ms-设置： trueplay (从 **Windows 10 版本 1809 (10.0;生成 17763) 中，将从 Windows 中删除此功能**)  |
 | Xbox 网络 | ms-settings:gaming-xboxnetworking |
 
 ## <a name="home-page"></a>主页
@@ -291,7 +291,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 显示 | ms-settings:screenrotation |
 | 复制我的屏幕 | ms-settings:quietmomentspresentation |
 | 在这些时间内 | ms-settings:quietmomentsscheduled |
-| 加密 | ms-settings:deviceencryption |
+| Encryption | ms-settings:deviceencryption |
 | 专注助手 | ms-settings:quiethours <br> ms-settings:quietmomentshome |
 | 图形设置 | ms-settings:display-advancedgraphics（仅适用于支持高级图形选项的设备） |
 | 消息传递 | ms-settings:messaging |
@@ -317,7 +317,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 日期和时间 | ms-settings:dateandtime |
 | 日本输入法设置 | ms-settings:regionlanguage-jpnime（在安装了 Microsoft 日本输入法编辑器的情况下可用） |
 | 区域 | ms-设置： regionformatting |
-| 语言 | ms-设置：键盘<br/>ms-settings:regionlanguage<br/>ms-settings： regionlanguage-bpmfime<br/>ms-settings： regionlanguage-cangjieime<br/>ms-settings： regionlanguage-chsime-domainlexicon<br/>ms-settings： regionlanguage-chsime-keyconfig<br/>ms-settings： regionlanguage-chsime-udp<br/>ms-settings： regionlanguage-chsime-五笔-udp<br/>ms-settings： regionlanguage-quickime |
+| Language | ms-设置：键盘<br/>ms-settings:regionlanguage<br/>ms-settings： regionlanguage-bpmfime<br/>ms-settings： regionlanguage-cangjieime<br/>ms-settings： regionlanguage-chsime-domainlexicon<br/>ms-settings： regionlanguage-chsime-keyconfig<br/>ms-settings： regionlanguage-chsime-udp<br/>ms-settings： regionlanguage-chsime-五笔-udp<br/>ms-settings： regionlanguage-quickime |
 | 拼音输入法设置 | ms-settings:regionlanguage-chsime-pinyin（在安装了 Microsoft 拼音输入法编辑器的情况下可用） |
 | 语音 | ms-settings:speech |
 | 五笔输入法设置  | ms-settings:regionlanguage-chsime-wubi（在安装了 Microsoft 五笔输入法编辑器的情况下可用） |
@@ -332,7 +332,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 查找我的设备 | ms-settings:findmydevice |
 | 面向开发人员 | ms-settings:developers |
 | 恢复 | ms-settings:recovery |
-| 故障排除 | ms-settings:troubleshoot |
+| 疑难解答 | ms-settings:troubleshoot |
 | Windows 安全性 | ms-settings:windowsdefender |
 | Windows 预览体验计划 | ms-settings:windowsinsider（仅当用户在 WIP 中注册时显示）<br/>ms-settings： windowsinsider-optin |
 | Windows 更新 | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |

@@ -1,18 +1,18 @@
 ---
 title: 环境光
-description: 环境光为场景提供恒定照明。
+description: 了解环境照明如何为场景提供恒定照明，并了解如何使用 c + + 在 Direct3D 中设置环境照明。
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
 keywords:
 - 环境光
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ac958a93fcafbb33a9025196b49398e2e3269e55
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: c21a674b0961836752c879bcea681b568f31053c
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291835"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304459"
 ---
 # <a name="ambient-lighting"></a>环境光
 
@@ -22,38 +22,38 @@ ms.locfileid: "58291835"
 
 通过以下公式介绍场景的环境光。
 
-环境照明 = Cₐ\*\[Gₐ + sum (输入<sub>我</sub>\*位置<sub>我</sub>\*L<sub>ai</sub>)\]
+环境照明 = C ₐ \* \[ g ₐ + Sum (Atten<sub>i</sub> \* 点焊<sub>i</sub> \* L<sub>ai</sub>) \]
 
 其中：
 
-| 参数         | 默认值 | 在任务栏的搜索框中键入          | 描述                                                                                                       |
+| 参数         | 默认值 | 类型          | 说明                                                                                                       |
 |-------------------|---------------|---------------|-------------------------------------------------------------------------------------------------------------------|
 | Cₐ                | (0,0,0,0)     | D3DCOLORVALUE | 材料环境颜色                                                                                            |
 | Gₐ                | (0,0,0,0)     | D3DCOLORVALUE | 全局环境颜色                                                                                              |
 | Atten<sub>i</sub> | (0,0,0,0)     | D3DCOLORVALUE | 第 i 道光的光线衰减。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。 |
-| Spot<sub>i</sub>  | (0,0,0,0)     | D3DVECTOR     | 第 i 道光的聚焦因素。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。  |
-| 总和               | 不可用           | 不可用           | 环境光的总和                                                                                          |
+| 专色<sub>i</sub>  | (0,0,0,0)     | D3DVECTOR     | 第 i 道光的聚焦因素。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。  |
+| sum               | 不适用           | 不适用           | 环境光的总和                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | 第 i 道光的光环境颜色                                                                              |
 
  
 
 Cₐ 的值为：
 
--   顶点 color1 如果 AMBIENTMATERIALSOURCE = D3DMCS\_顶点声明中提供 COLOR1 和的第一个顶点的颜色。
--   顶点 color2 如果 AMBIENTMATERIALSOURCE = D3DMCS\_顶点声明中提供 COLOR2 和的第二个顶点的颜色。
+-   顶点 color1，如果 AMBIENTMATERIALSOURCE = D3DMCS \_ color1，则在顶点声明中提供第一个顶点颜色。
+-   顶点 color2 （如果 AMBIENTMATERIALSOURCE = D3DMCS \_ color2）和第二个顶点颜色是在顶点声明中提供的。
 -   材料环境颜色。
 
-**请注意**  如果使用任一 AMBIENTMATERIALSOURCE 选项，并且未提供的顶点的颜色，则使用材料环境颜色。
+**注意**   如果使用了任一 AMBIENTMATERIALSOURCE 选项，并且未提供顶点颜色，则使用材料环境颜色。
 
  
 
 若要使用材料环境颜色，请使用 SetMaterial，如以下示例代码所示。
 
-Gₐ 是全局环境颜色。 设置使用 SetRenderState (D3DRS\_AMBIENT)。 Direct3D 场景中有一种全局环境颜色。 此参数不与 Direct3D 光对象关联。
+Gₐ 是全局环境颜色。 它使用 SetRenderState (D3DRS \_ 环境) 进行设置。 Direct3D 场景中有一种全局环境颜色。 此参数不与 Direct3D 光对象关联。
 
 L<sub>ai</sub> 是场景中第 i 道光的环境颜色。 每个 Direct3D 灯都有一组属性，其中一个属性是环境光。 sum(L<sub>ai</sub>) 术语是场景中所有环境光的总和。
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>实例
 
 
 在此示例中，使用场景环境光和材料环境光为对象着色。
@@ -82,7 +82,7 @@ Ambient.a = 0.0f;
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[照明的数学](mathematics-of-lighting.md)
+[照明的数学运算](mathematics-of-lighting.md)
 
  
 

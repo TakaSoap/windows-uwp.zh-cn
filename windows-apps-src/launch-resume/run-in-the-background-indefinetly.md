@@ -6,12 +6,12 @@ keywords: 后台任务，扩展执行，资源，限制，后台任务
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ec77b0f4777f12d20ec13bcfbac864993afd441
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 33b41c432edde42bc31daa1d5631f60fb38d8397
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175111"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304499"
 ---
 # <a name="run-in-the-background-indefinitely"></a>在后台无限期运行
 
@@ -27,9 +27,14 @@ UWP 应用未在前台运行时将变为暂停状态。 在桌面上，用户最
 
 `extendedExecutionUnconstrained` 功能已作为受限功能添加到应用清单中。 有关受限功能的详细信息，请参阅[应用功能声明](../packaging/app-capability-declarations.md)。
 
-> **注意：** 添加 *xmlns： rescap* XML 命名空间声明，并使用 *rescap* 前缀来声明该功能。
+> [!NOTE]
+> 添加 *xmlns： rescap* XML 命名空间声明，并使用 *rescap* 前缀来声明该功能。
+>
+> 有关详细信息，请参阅 [应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)的 "限制功能" 部分。
+>
 
 _Package.appxmanifest_
+
 ```xml
 <Package
     ...
@@ -71,9 +76,14 @@ switch (result)
 
 在通用 Windows 平台上，后台任务是在没有任何形式用户界面的后台运行的进程。 在取消之前，后台任务一般最多可以运行二十五秒。 一些长时间运行的任务也会进行检查，以确保后台任务未处于空闲状态或未使用内存。 Windows 创意者更新（版本 1703）中引入了 [extendedBackgroundTaskTime](../packaging/app-capability-declarations.md) 受限功能，以删除这些限制。 **extendedBackgroundTaskTime** 功能已作为受限功能添加到应用清单文件中：
 
-> **注意：** 添加 *xmlns： rescap* XML 命名空间声明，并使用 *rescap* 前缀来声明该功能。
+> [!NOTE]
+> 添加 *xmlns： rescap* XML 命名空间声明，并使用 *rescap* 前缀来声明该功能。
+>
+> 有关详细信息，请参阅 [应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)的 "限制功能" 部分。
+>
 
 _Package.appxmanifest_
+
 ```xml
 <Package
     ... 

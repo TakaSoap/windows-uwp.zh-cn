@@ -1,15 +1,15 @@
 ---
 title: 设备门户 HTTP 监视器 API 参考
-description: 了解如何从 Xbox 上的侧重型应用访问 HTTP 流量。
+description: 了解如何使用/ext/httpmonitor/sessions Xbox 设备门户 REST API 通过 Xbox 上的聚焦应用访问实时 HTTP 流量。
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 1e7c07c92c1671cd9051393586e1e8562fa756d0
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 6ea53f6356aa89a83f3b267a65f65b32aad5749d
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244093"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304529"
 ---
 # <a name="http-monitor-api-reference"></a>HTTP 监视器 API 参考   
 如果已通过在开发人员主页选中相应的框在 Xbox 主机上启用 HTTP 监视器，则可使用此 API 访问侧重型应用的实时 HTTP 流量。
@@ -36,7 +36,7 @@ GET | /ext/httpmonitor/sessions
 
 - 无
 
-**响应**   
+**回复**   
 具有以下字段的 JSON 对象：
 
 * 已启用 -（布尔型）是否已通过在开发人员主页中选中相应的框来在 Xbox 主机上启用 HTTP 监视器。
@@ -45,7 +45,7 @@ GET | /ext/httpmonitor/sessions
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 描述
+HTTP 状态代码      | 说明
 :------     | :-----
 200 | 请求已成功
 4XX | 错误代码
@@ -73,7 +73,7 @@ Websocket | /ext/httpmonitor/sessions
 
 - 无
 
-**响应**   
+**回复**   
 具有以下字段的 JSON 对象：
 
 * 会话
@@ -92,7 +92,7 @@ Websocket | /ext/httpmonitor/sessions
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 描述
+HTTP 状态代码      | 说明
 :------     | :-----
 200 | 请求已成功
 4XX | 错误代码

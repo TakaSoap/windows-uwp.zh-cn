@@ -1,5 +1,5 @@
 ---
-description: 介绍辅助功能的特征点和标题功能。
+description: 了解如何使用 UI 自动化的特征点和标题功能在你的应用程序中定义内容的各个部分，提高辅助功能并帮助) 导航 UI (辅助技术的用户。
 ms.assetid: 019CC63D-D915-4EBD-9442-DE899AB973C9
 title: 标志和标题
 label: Landmarks and Headings
@@ -8,12 +8,12 @@ ms.date: 01/24/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c05f39c0497a2e2ef369abd04ed437f8387e60f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 65af556180e39ea66bbeb553a50c0746f952a08c
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173991"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304739"
 ---
 # <a name="landmarks-and-headings"></a>标志和标题
 

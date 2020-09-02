@@ -1,17 +1,17 @@
 ---
 ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
-description: 了解如何使用 C# 启动间隙广告。
+description: '了解如何使用 c # 和 XAML 在通用 Windows 平台 (UWP) 应用中显示和启动插播式广告。'
 title: C# 中的间隙广告示例代码
 ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 间隙, c#, 示例代码
 ms.localizationpriority: medium
-ms.openlocfilehash: 18e38e9b672b5e96733131c33b3a632cd7a95aeb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 63804fea6fc1657ead6c658814dfc7e0694f114f
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164591"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304729"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>C 中的插播式 ad 示例代码\# #  
 

@@ -1,5 +1,5 @@
 ---
-description: 显示如何将你的应用添加到联系人卡片中的操作旁边
+description: 了解如何将你的应用程序连接到联系人卡片上的操作，以便用户可以选择你的应用程序以打开配置文件页、发出呼叫或发送消息。
 MSHAttr: PreferredLib:/library/windows/apps
 title: 将你的应用与联系人卡片上的操作关联起来
 ms.date: 02/08/2017
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, 联系人, 联系人卡片, 注释
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
-ms.openlocfilehash: 246a74ca008e1b8c89460aabb652accf35c842b1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 92c8517bca9bdfda9e8f8d01e07e4ca3918d03a1
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154711"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304749"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>将你的应用与联系人卡片上的操作关联起来
 

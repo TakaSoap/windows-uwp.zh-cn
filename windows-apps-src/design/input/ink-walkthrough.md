@@ -1,17 +1,17 @@
 ---
 ms.assetid: ''
 title: 在 Windows 应用中支持墨迹
-description: 向 Windows 应用添加墨迹支持的分步教程。
-keywords: 墨迹, 墨迹书写, 教程
+description: 按照此分步教程操作教程，了解如何支持在基本通用 Windows 平台 (UWP) 应用中使用 Windows Ink 编写和绘制 Windows Ink。
+keywords: 墨迹，墨迹书写，教程
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1972a266297d41e357bd2086f8485c154153d582
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0ed230fc9beb158df050f314a0142f250c2a8691
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157031"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304599"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>教程：在 Windows 应用程序中支持墨迹
 
@@ -64,7 +64,7 @@ ms.locfileid: "89157031"
 
 这些对象为 Windows 应用程序提供了大量墨迹书写体验。
 
-| 组件 | 描述 |
+| 组件 | 说明 |
 | --- | --- |
 | [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) | 默认情况下，XAML UI 平台控件将所有笔输入接收和显示为笔划墨迹或擦除笔划。 |
 | [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 代码隐藏对象，与 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件（通过 [**InkCanvas.InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) 属性公开）一起进行实例化。 此对象提供由 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas)公开的所有默认墨迹功能，还提供了一组全面的 api，用于其他自定义和个性化。 |
@@ -335,7 +335,7 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
 - 平行四边形
 - 五角形
 - 四边形
-- 矩形
+- Rectangle
 - 直角三角形
 - Square
 - 梯形
@@ -458,7 +458,7 @@ Windows Ink 还支持从剪贴板复制和粘贴笔划墨迹。
 </tr>
 </table>
 
-## <a name="summary"></a>“摘要”
+## <a name="summary"></a>总结
 
 恭喜，你已完成了 **输入： Windows 应用中的支持墨迹** 教程！ 我们向您展示了在您的 Windows 应用程序中支持墨迹所需的基本代码，以及如何提供 Windows Ink 平台支持的一些更丰富的用户体验。
 

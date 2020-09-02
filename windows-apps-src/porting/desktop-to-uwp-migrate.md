@@ -1,16 +1,16 @@
 ---
-Description: 在桌面应用程序和 UWP 应用之间共享代码
 title: 在桌面应用程序和 UWP 应用之间共享代码
+description: 了解如何将桌面应用程序从 .NET Framework (与 WPF 一起移动，并 Windows 窗体) 或 c + + Win32 Api 通用 Windows 平台 (UWP) 和 Windows 10。
 ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e13c656f02531d500a72aa74b2d3c5d6cc29aa4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ed23f77936378f2348abf868a67041be84978123
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174931"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304679"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>从桌面应用程序移至 UWP
 

@@ -1,15 +1,15 @@
 ---
 title: '启用语音的 Shell (Xbox) '
-description: 了解如何在 Xbox 上向 UWP 应用添加语音控制支持。
+description: 了解如何使用启用了语音的 Shell (VES) ，将语音控件支持添加到通用 Windows 平台 (UWP) Xbox 上的应用。
 ms.date: 10/19/2017
 ms.topic: article
 keywords: windows 10、uwp、xbox、speech、speech enabled shell
-ms.openlocfilehash: db846e906917f29781200f3c312f6dbd6e2b2dd1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 38afa2473dd74ab580cf38cc21d1f2b192f9b72a
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161661"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304649"
 ---
 # <a name="using-speech-to-invoke-ui-elements"></a>使用语音调用 UI 元素
 
