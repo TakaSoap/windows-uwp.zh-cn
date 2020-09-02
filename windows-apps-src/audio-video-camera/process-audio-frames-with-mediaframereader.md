@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d1d4f7e24caf50db41851e237a832301df75cd0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 18ef0ee1efb7a69a8b305c9b95e84938fe6fde32
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163651"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363890"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理音频帧
 
@@ -43,7 +43,7 @@ ms.locfileid: "89163651"
 
 如果查询返回一个或多个帧源，可以检查 [**CurrentFormat**](/uwp/api/windows.media.capture.frames.mediaframesource.currentformat) 属性以查看源是否支持所需音频格式 - 此示例中是音频浮点数据。 检查 [**AudioEncodingProperties**](/uwp/api/windows.media.capture.frames.mediaframeformat.audioencodingproperties) 以确保源支持所需音频编码。
 
-[!code-cs[InitAudioFrameSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitAudioFrameSource)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetInitAudioFrameSource":::
 
 ## <a name="create-and-start-the-mediaframereader"></a>创建并启动 MediaFrameReader
 
@@ -51,7 +51,7 @@ ms.locfileid: "89163651"
 
 为音频数据的新帧可用时系统引发的 [**MediaFrameReader.FrameArrived**](/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) 事件注册处理程序。 调用 [**StartAsync**](/uwp/api/windows.media.capture.frames.mediaframereader.startasync) 以开始获取音频帧。 如果帧阅读器无法启动，从调用返回的状态值将包含 [**Success**](/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus) 以外的值。
 
-[!code-cs[CreateAudioFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateAudioFrameReader)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetCreateAudioFrameReader":::
 
 在 **FrameArrived** 事件处理程序中，调用作为发件人传递到处理程序的 **MediaFrameReader** 对象上的 [**TryAcquireLatestFrame**](/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe) 以尝试检索对最新媒体帧的引用。 请注意，此对象可以为 null，因此在使用对象前应始终进行检查。 从 **TryAcquireLatestFrame** 返回的 **MediaFrameReference** 中包装的媒体帧的类型取决于配置帧阅读器要获取的帧源或源的类型。 由于此示例中的帧阅读器设置为获取音频帧，因此它使用 [**AudioMediaFrame**](/uwp/api/windows.media.capture.frames.mediaframereference.audiomediaframe) 属性获取基础帧。 
 
@@ -59,18 +59,18 @@ ms.locfileid: "89163651"
 
 数据的格式取决于帧源。 在此示例中，在选择媒体帧源时，我们确保所选帧源使用浮点数据的单个频道。 其余的示例代码演示了如何确定帧中音频数据的持续时间和示例计数。  
 
-[!code-cs[ProcessAudioFrame](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetProcessAudioFrame)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetProcessAudioFrame":::
 
 > [!NOTE] 
 > 要对音频数据执行操作，必须访问本机内存缓冲区。 为此，必须通过添加以下代码列表来使用 **IMemoryBufferByteAccess** COM 接口。 对本机缓冲区的操作必须在使用**不安全**关键字的方法中执行。 还需要选中该框，以便在**项目 -> 属性**对话框的**版本**选项卡中允许不安全代码。
 
-[!code-cs[IMemoryBufferByteAccess](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetIMemoryBufferByteAccess)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/FrameRenderer.cs" id="SnippetIMemoryBufferByteAccess":::
 
 ## <a name="additional-information-on-using-mediaframereader-with-audio-data"></a>有关使用带有音频数据的 MediaFrameReader 的详细信息
 
 可以通过访问 [**MediaFrameSource.Controller**](/uwp/api/windows.media.capture.frames.mediaframesource.controller) 属性来检索与音频帧源相关联的[**AudioDeviceController**](/uwp/api/Windows.Media.Devices.AudioDeviceController)。 此对象可用于获取或设置捕获设备的流属性或控制捕获级别。 下面的示例使音频设备静音，以便帧阅读器继续获取帧，但所有样本的值都为 0。
 
-[!code-cs[AudioDeviceControllerMute](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetAudioDeviceControllerMute)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetAudioDeviceControllerMute":::
 
 可以使用 [**AudioFrame**](/uwp/api/windows.media.audioframe) 对象将媒体帧捕获的音频数据传递到 [**AudioGraph**](/uwp/api/windows.media.audio.audiograph)。 将帧传递到 [**AudioFrameInputNode**](/uwp/api/windows.media.audio.audioframeinputnode)的 [**AddFrame**](/uwp/api/windows.media.audio.audioframeinputnode.addframe) 方法。 有关使用音频图捕获、处理和混合音频信号的详细信息，请参阅[音频图](audio-graphs.md)。
 

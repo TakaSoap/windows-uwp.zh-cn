@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9958aab20c13f0104ca1a52c6fccda33c00f6281
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0e661eb0859e9720e31fabb6e5a7b33857de28b7
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159961"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363670"
 ---
 # <a name="drag-and-drop"></a>拖放
 
@@ -43,7 +43,7 @@ ms.locfileid: "89159961"
 
 下面显示了如何设置 [**CanDrag**](/uwp/api/windows.ui.xaml.uielement.candrag)。
 
-[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml" id="SnippetDragArea":::
 
 你不必执行其他任何操作即可允许拖动，除非你想要自定义 UI（将在本文后面介绍）。 执行放置操作还需要几个步骤。
 
@@ -59,14 +59,14 @@ ms.locfileid: "89159961"
 
 以下标记显示了如何在 XAML 中使用 [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) 将应用的特定区域设置为放置操作的有效区域。 如果用户尝试释放到别处，则系统将不会允许他们如此操作。 如果你希望用户能够将项目释放到应用上的任何位置，请将整个背景设置为拖放目标。
 
-[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml" id="SnippetDropArea":::
 
 
 ## <a name="handle-the-dragover-event"></a>处理 DragOver 事件
 
 当用户将某个项拖动到你的应用上方但尚未释放时，将触发 [**DragOver**](/uwp/api/windows.ui.xaml.uielement.dragover) 事件。 在此处理程序中，你需要使用 [**AcceptedOperation**](/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation) 属性指定你的应用支持哪些类型的操作。 复制是最常见的操作。
 
-[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml.cs" id="SnippetGrid_DragOver":::
 
 ## <a name="process-the-drop-event"></a>处理 Drop 事件
 
@@ -74,13 +74,13 @@ ms.locfileid: "89159961"
 
 为简单起见，在下面的示例中，我们假设用户已放置一张照片并直接进行访问。 实际上，用户可以同时放置格式不同的多个项目。 你的应用应通过以下方式处理这种可能情况：检查已放置文件的类型和数量并相应地进行处理。 如果用户正在尝试执行你的应用不支持的操作，你还应考虑通知用户。
 
-[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml.cs" id="SnippetGrid_Drop":::
 
 ## <a name="customize-the-ui"></a>自定义 UI
 
 系统提供用于拖放的默认 UI。 但是，你还可以选择通过设置自定义字幕和字形，或者选择完全不显示 UI 来自定义 UI 的各个部分。 若要自定义 UI，请使用 [**DragEventArgs.DragUIOverride**](/uwp/api/windows.ui.xaml.drageventargs.draguioverride) 属性。
 
-[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml.cs" id="SnippetGrid_DragOverCustom":::
 
 ## <a name="open-a-context-menu-on-an-item-you-can-drag-with-touch"></a>在可通过触摸拖动的项目上打开上下文菜单
 

@@ -6,12 +6,12 @@ keywords: uwp, 易耗品, 加载项, 应用内购买, IAP, Windows.ApplicationMo
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fd4bc4d21a5f292cd50655c452522e07424f920
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fb4119296b11e805fa72ff027383d13e6fb43818
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172921"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363690"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>启用可消费应用内产品购买
 
@@ -20,7 +20,7 @@ ms.locfileid: "89172921"
 > [!IMPORTANT]
 > 本文介绍如何使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空间的成员来支持易耗型应用内产品购买。 此命名空间不再更新新功能，我们建议你使用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空间。 **Windows 服务**命名空间支持最新的加载项类型，如存储管理的可使用的加载项和订阅，旨在与合作伙伴中心和应用商店支持的未来类型的产品和功能兼容。 **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 有关使用 **Windows.Services.Store** 命名空间支持易耗型应用内产品购买的更多信息，请参阅[本文](enable-consumable-add-on-purchases.md)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 -   本主题介绍可消费应用内产品的购买和实施报告。 如果你不熟悉应用内产品，请查看[启用应用内产品购买](enable-in-app-product-purchases.md)，了解许可证相关信息以及如何在应用商店中恰当地列出应用内产品。
 -   首次编码和测试新的应用内产品时，必须使用 [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 对象而不是 [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 对象。 这样，你可以使用对许可证服务器的模拟调用验证许可证逻辑，而不是调用实时服务器。 要执行此操作，需要在% userprofile% \\ AppData \\ 本地 \\ 包 \\ &lt; 包名称 &gt; \\ LocalState \\ Microsoft \\ Windows Store \\ ApiData 中自定义名为 WindowsStoreProxy.xml 的文件。 Microsoft Visual Studio 仿真器会在你首次运行应用时创建此文件，你也可以在运行时加载一个自定义文件。 有关详细信息，请参阅[将 WindowsStoreProxy.xml 文件与 CurrentAppSimulator 一起使用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy)。
@@ -33,7 +33,7 @@ ms.locfileid: "89172921"
 下面的示例显示了一个可消费应用内产品的购买请求。 你会注意到代码注释，指明应用何时应该为下面两种不同情况的易耗型应用内产品执行本地实施：已成功提出请求的情况和请求因同一产品未实施购买而失败的情况。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#MakePurchaseRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="MakePurchaseRequest":::
 
 ## <a name="step-2-tracking-local-fulfillment-of-the-consumable"></a>步骤 2：跟踪易耗型应用内产品的本地实施
 
@@ -45,7 +45,7 @@ ms.locfileid: "89172921"
 以下示例说明了使用上一步骤中 [RequestProductPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) 调用的 [PurchaseResults](/uwp/api/Windows.ApplicationModel.Store.PurchaseResults) 属性，标识要实施的已购买产品。 使用一个集合将产品信息存储在可供稍后引用的位置中，以便确认成功完成本地的实施。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GrantFeatureLocally)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="GrantFeatureLocally":::
 
 下一个示例显示了如何使用上一个示例的数组来访问产品 ID/交易 ID 对，稍后将使用它们向应用商店报告实施情况。
 
@@ -53,7 +53,7 @@ ms.locfileid: "89172921"
 > 无论应用使用何种方法来跟踪和确认实施，应用都必须恪尽职守，确保客户不会为没有收到的项目付费。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#IsLocallyFulfilled)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="IsLocallyFulfilled":::
 
 ## <a name="step-3-reporting-product-fulfillment-to-the-store"></a>步骤 3：向 Microsoft Store 报告产品实施情况
 
@@ -63,7 +63,7 @@ ms.locfileid: "89172921"
 > 如果无法向应用商店报告已实施的易耗型应用内产品，则会导致在上次购买的实施情况得到报告之前，用户无法再次购买该产品。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#ReportFulfillment)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="ReportFulfillment":::
 
 ## <a name="step-4-identifying-unfulfilled-purchases"></a>步骤 4：标识未实施的购买
 
@@ -72,7 +72,7 @@ ms.locfileid: "89172921"
 以下示例说明了如何使用 [GetUnfulfilledConsumablesAsync](/uwp/api/windows.applicationmodel.store.currentapp.getunfulfilledconsumablesasync) 枚举未实施的易耗品，以及应用如何通过此列表进行迭代以便完成本地实施。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GetUnfulfilledConsumables)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="GetUnfulfilledConsumables":::
 
 ## <a name="related-topics"></a>相关主题
 

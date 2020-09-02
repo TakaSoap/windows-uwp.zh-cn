@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b9cb30d2a87d93df1790fb42ad3b4b243f0f713
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 74afbda1cc93aa0602618d6d94efe6baadf59ecb
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164551"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363700"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>使用 Microsoft Store 服务开展广告活动
 
@@ -86,7 +86,7 @@ grant_type=client_credentials
 有关这些对象及其相关方法的详细信息，请参阅下表。
 
 
-| 对象       | 描述   |
+| 对象       | 说明   |
 |---------------|-----------------|
 | 营销活动 |  此对象代表广告活动，位于广告活动对象模型层次结构的顶部。 此对象标识了你目前开展的活动类型（付费广告、自家广告或社区广告）、活动目标、活动的投放渠道及其他详细信息。 每项活动可能仅与一个应用相关联。<br/><br/>有关此对象相关方法的详细信息，请参阅[管理广告活动](manage-ad-campaigns.md)。<br/><br/>**Note** &nbsp; 注意 &nbsp;创建广告营销活动后，可以通过使用[Microsoft Store ANALYTICS API](access-analytics-data-using-windows-store-services.md)中的[获取 ad 市场活动性能数据](get-ad-campaign-performance-data.md)方法来检索该市场活动的性能数据。  |
 | 投放渠道 | 每项广告活动具有一个或多个投放渠道，用于购买存货和投放广告。 你可以针对每个投放渠道设定目标市场、标价，并通过设定预算及与你希望启用的创意连接来判断你的预期费用。<br/><br/>有关此对象相关方法的详细信息，请参阅[管理广告活动的投放渠道](manage-delivery-lines-for-ad-campaigns.md)。 |
@@ -102,7 +102,7 @@ grant_type=client_credentials
 
 以下代码示例演示如何获取 Azure AD 访问令牌以及如何从 C# 控制台应用调用 Microsoft Store 促销 API。 若要使用此代码示例，请将 *tenantId*、*clientId*、*clientSecret* 和 *appID* 变量分配给你的方案的相应值。 此示例需要 Newtonsoft 中的 [Json.NET 程序包](https://www.newtonsoft.com/json)，以便反序列化 Microsoft Store 促销 API 返回的 JSON 数据。
 
-[!code-csharp[PromotionsApi](./code/StoreServicesExamples_Promotions/cs/Program.cs#PromotionsApiExample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Promotions/cs/Program.cs" id="PromotionsApiExample":::
 
 ## <a name="related-topics"></a>相关主题
 

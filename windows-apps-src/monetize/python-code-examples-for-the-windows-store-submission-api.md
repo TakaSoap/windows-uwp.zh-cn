@@ -6,23 +6,23 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, python
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e242bc200c9bdfa8ba829b7c48a562cb17fdc91
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: f551a7de85e493f4fbc1a027fb3ab9c3ca2dd598
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735082"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363860"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python 示例：应用、加载项和外部测试版的提交
 
 本文提供 Python 代码示例演示如何使用 [Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md) 执行以下任务：
 
 * [获取 Azure AD 访问令牌](#token)
-* [创建外接程序](#create-add-on)
-* [创建包航班](#create-package-flight)
+* [创建加载项](#create-add-on)
+* [创建软件包外部测试版](#create-package-flight)
 * [创建应用提交](#create-app-submission)
-* [创建附加项提交](#create-add-on-submission)
-* [创建包航班提交](#create-flight-submission)
+* [创建加载项提交](#create-add-on-submission)
+* [创建软件包外部测试版提交](#create-flight-submission)
 
 <span id="token" />
 
@@ -30,7 +30,7 @@ ms.locfileid: "74735082"
 
 以下示例演示如何[获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，你可以使用此令牌在 Microsoft Store 提交 API 中调用方法。 获取令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用“Microsoft Store 提交 API”。 该令牌到期后，可以重新生成一个。
 
-[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
+:::code language="python" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/python/Examples.py" range="1-20":::
 
 <span id="create-add-on" />
 
@@ -38,7 +38,7 @@ ms.locfileid: "74735082"
 
 以下示例演示如何[创建](create-an-add-on.md)再[删除](delete-an-add-on.md)加载项。
 
-[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
+:::code language="python" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/python/Examples.py" range="26-52":::
 
 <span id="create-package-flight" />
 
@@ -46,7 +46,7 @@ ms.locfileid: "74735082"
 
 以下示例演示如何[创建](create-a-flight.md) 和[删除](delete-a-flight.md) 软件包外部测试版。
 
-[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L58-L87)]
+:::code language="python" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/python/Examples.py" range="58-87":::
 
 <span id="create-app-submission" />
 
@@ -58,10 +58,10 @@ ms.locfileid: "74735082"
 2. 接下来，此方法会[删除应用的挂起提交](delete-an-app-submission.md)（如果存在）。
 3. 然后，此方法会[创建新的应用提交](create-an-app-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会更改新提交的部分详细信息并将新的提交包上载到 Azure Blob 存储。
-5. 接下来，它将[更新](update-an-app-submission.md)并[提交](commit-an-app-submission.md)到合作伙伴中心的新提交。
+5. 接下来，它将 [更新](update-an-app-submission.md) 并 [提交](commit-an-app-submission.md) 到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-app-submission.md)，直到其成功提交。
 
-[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
+:::code language="python" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/python/Examples.py" range="93-166":::
 
 <span id="create-add-on-submission" />
 
@@ -73,10 +73,10 @@ ms.locfileid: "74735082"
 2. 接下来，此方法会[删除加载项的挂起提交](delete-an-add-on-submission.md)（如果存在）。
 3. 然后，该方法会 [创建新的加载项提交](create-an-add-on-submission.md)（新提交是上次发布的提交的副本）。
 4. 该方法会将包含提交图标的 ZIP 存档上传至 Azure Blob 存储。 有关详细信息，请参阅[创建加载项提交](manage-add-on-submissions.md#create-an-add-on-submission)中关于将 ZIP 存档上载至 Azure Blob 存储的相关说明。
-5. 接下来，它将[更新](update-an-add-on-submission.md)并[提交](commit-an-add-on-submission.md)到合作伙伴中心的新提交。
+5. 接下来，它将 [更新](update-an-add-on-submission.md) 并 [提交](commit-an-add-on-submission.md) 到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-add-on-submission.md)，直到其成功提交。
 
-[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
+:::code language="python" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/python/Examples.py" range="172-245":::
 
 <span id="create-flight-submission" />
 
@@ -88,11 +88,11 @@ ms.locfileid: "74735082"
 2. 接下来，此方法会[删除软件包外部测试版的挂起提交](delete-a-flight-submission.md)（如果存在）。
 3. 然后，此方法[会创建新的软件包外部测试版提交](create-a-flight-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会将新的提交程序包上载到 Azure Blob 存储。 有关详细信息，请参阅[创建软件包外部测试版提交](manage-flight-submissions.md#create-a-package-flight-submission)中关于将 ZIP 存档上载至 Azure Blob 存储的相关说明。
-5. 接下来，它将[更新](update-a-flight-submission.md)并[提交](commit-a-flight-submission.md)到合作伙伴中心的新提交。
+5. 接下来，它将 [更新](update-a-flight-submission.md) 并 [提交](commit-a-flight-submission.md) 到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-a-flight-submission.md)，直到其成功提交。
 
-[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]
+:::code language="python" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/python/Examples.py" range="251-325":::
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Microsoft Store services 创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)

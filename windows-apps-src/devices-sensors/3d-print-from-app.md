@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，3dprinting，3d 打印
 ms.localizationpriority: medium
-ms.openlocfilehash: b89fb14b8e554452674e0c7b0bc31b6314cce253
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 357d8bd3a460e61c436750fc4c9cbfbf8a8fcbfc
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175491"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362850"
 ---
 # <a name="3d-printing-from-your-app"></a>从应用进行 3D 打印
 
@@ -24,30 +24,30 @@ ms.locfileid: "89175491"
 > [!NOTE]
 > 在本指南中的示例代码中，为了简洁而极大简化了错误报告和处理。
 
-## <a name="setup"></a>设置
+## <a name="setup"></a>安装
 
 
 在将具有 3D 打印功能的应用程序类中，添加 [**Windows.Graphics.Printing3D**](/uwp/api/Windows.Graphics.Printing3D) 命名空间。
 
-[!code-cs[3DPrintNamespace](./code/3dprinthowto/cs/MainPage.xaml.cs#Snippet3DPrintNamespace)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="Snippet3DPrintNamespace":::
 
 将在本指南中使用以下其他命名空间。
 
-[!code-cs[OtherNamespaces](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOtherNamespaces)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetOtherNamespaces":::
 
 接下来，为你的类提供有用的成员字段。 声明一个 [**Print3DTask**](/uwp/api/Windows.Graphics.Printing3D.Print3DTask) 对象以表示对要传递到打印驱动程序的打印任务。 声明一个 [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) 对象以保留要加载到应用中的原始 3D 数据文件。 声明一个 [**Printing3D3MFPackage**](/uwp/api/Windows.Graphics.Printing3D.Printing3D3MFPackage) 对象，它表示具有所有必要元数据的打印就绪 3D 模型。
 
-[!code-cs[DeclareVars](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeclareVars)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetDeclareVars":::
 
 ## <a name="create-a-simple-ui"></a>创建一个简单的 UI
 
 此示例介绍三个用户控件：一个加载按钮（将文件移入程序内存中）、一个修复按钮（将在必要时修改文件）和一个打印按钮（将启动打印作业）。 以下代码会在 .cs 类的相应 XAML 文件中创建这些按钮（及其单击事件处理程序）。
 
-[!code-xml[Buttons](./code/3dprinthowto/cs/MainPage.xaml#SnippetButtons)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml" id="SnippetButtons":::
 
 针对 UI 反馈添加 **TextBlock**。
 
-[!code-xml[OutputText](./code/3dprinthowto/cs/MainPage.xaml#SnippetOutputText)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml" id="SnippetOutputText":::
 
 
 
@@ -58,7 +58,7 @@ ms.locfileid: "89175491"
 
 在 `OnLoadClick` 方法中，使用 [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 类将单个文件加载到应用的内存中。
 
-[!code-cs[FileLoad](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileLoad)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetFileLoad":::
 
 ## <a name="use-3d-builder-to-convert-to-3d-manufacturing-format-3mf"></a>使用 3D Builder 转换为 3D 制造格式 (.3mf)
 
@@ -72,7 +72,7 @@ ms.locfileid: "89175491"
 > [!NOTE]  
 > 除了转换文件格式之外，3D Builder 还提供了一些简单的工具，可用于编辑模型、添加颜色数据和执行其他特定于打印的操作，因此将其集成到处理 3D 打印的应用通常很有用。
 
-[!code-cs[FileCheck](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileCheck)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetFileCheck":::
 
 ## <a name="repair-model-data-for-3d-printing"></a>修复模型数据以供 3D 打印
 
@@ -80,18 +80,18 @@ ms.locfileid: "89175491"
 
 3D 数据文件必须经过转换才能实现 [**IRandomAccessStream**](/uwp/api/Windows.Storage.Streams.IRandomAccessStream)，然后可以使用后者生成 [**Printing3DModel**](/uwp/api/Windows.Graphics.Printing3D.Printing3DModel) 对象。
 
-[!code-cs[RepairModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRepairModel)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetRepairModel":::
 
 **Printing3DModel** 现已修复并且可打印。 使用 [**SaveModelToPackageAsync**](/uwp/api/windows.graphics.printing3d.printing3d3mfpackage.savemodeltopackageasync) 将模型分配给创建类时声明的 **Printing3D3MFPackage** 对象。
 
-[!code-cs[SaveModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSaveModel)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetSaveModel":::
 
 ## <a name="execute-printing-task-create-a-taskrequested-handler"></a>执行打印任务：创建一个 TaskRequested 处理程序
 
 
 稍后，在向用户显示 3D 打印对话框并且用户选择开始打印时，应用将需要向 3D 打印管道传递所需的参数。 3D 打印 API 将引发 **[TaskRequested](/uwp/api/Windows.Graphics.Printing3D.Print3DManager.TaskRequested)** 事件。 必须编写一种方法来适当地处理此事件。 如往常一样，处理程序方法必须与其事件的类型相同：**TaskRequested** 事件具有参数 [**Print3DManager**](/uwp/api/Windows.Graphics.Printing3D.Print3DManager)（对其发送方对象的引用）和一个 [**Print3DTaskRequestedEventArgs**](/uwp/api/Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs) 对象，该对象包含大部分相关信息。
 
-[!code-cs[MyTaskTitle](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetMyTaskTitle)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetMyTaskTitle":::
 
 此方法的核心用途是使用 *args* 参数沿管道发送 **Printing3D3MFPackage**。 **Print3DTaskRequestedEventArgs** 类型有一个属性：[**Request**](/uwp/api/windows.graphics.printing3d.print3dtaskrequestedeventargs.request)。 它属于 [**Print3DTaskRequest**](/uwp/api/Windows.Graphics.Printing3D.Print3DTaskRequest) 类型，表示一个打印作业请求。 它的方法 [**CreateTask**](/uwp/api/windows.graphics.printing3d.print3dtaskrequest.createtask) 使程序能够为打印作业提交正确的信息，并且它将返回一个对 **Print3DTask** 对象（已沿 3D 打印管道发送）的引用。
 
@@ -99,15 +99,15 @@ ms.locfileid: "89175491"
 
 **Print3DTaskSourceRequestedHandler** 将接受一个参数，即可提供要发送的数据的 [**Print3DTaskSourceRequestedArgs**](/uwp/api/Windows.Graphics.Printing3D.Print3DTaskSourceRequestedArgs) 对象。 作为此类的一种公共方法，[**SetSource**](/uwp/api/windows.graphics.printing3d.print3dtasksourcerequestedargs.setsource) 将接受要打印的程序包。 实现 **Print3DTaskSourceRequestedHandler** 委托，如下所示：
 
-[!code-cs[SourceHandler](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSourceHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetSourceHandler":::
 
 接下来，使用新定义的委托 `sourceHandler` 调用 **CreateTask**。
 
-[!code-cs[CreateTask](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetCreateTask)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetCreateTask":::
 
 返回的 **Print3DTask** 会分配给开始时声明的类变量。 你现在可以（可选）使用此引用来处理该任务引发的某些事件：
 
-[!code-cs[Optional](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOptional)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetOptional":::
 
 > [!NOTE]  
 > 必须实现 `Task_Submitting` 和 `Task_Completed` 方法才能向这些事件注册它们。
@@ -119,15 +119,15 @@ ms.locfileid: "89175491"
 
 向 **TaskRequested** 事件注册 `MyTaskRequested` 方法。
 
-[!code-cs[RegisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRegisterMyTaskRequested)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetRegisterMyTaskRequested":::
 
 注册 **TaskRequested** 事件处理程序后，可以调用方法 [**ShowPrintUIAsync**](/uwp/api/windows.graphics.printing3d.print3dmanager.showprintuiasync)，从而在当前应用程序窗口中显示 3D 打印对话框。
 
-[!code-cs[ShowDialog](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetShowDialog)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetShowDialog":::
 
 最后，在应用恢复控制后注销事件处理程序是良好的做法。  
 
-[!code-cs[DeregisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeregisterMyTaskRequested)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetDeregisterMyTaskRequested":::
 
 ## <a name="related-topics"></a>相关主题
 

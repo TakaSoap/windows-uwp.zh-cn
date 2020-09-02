@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5924ad4b969fbf29021b2b48440ce071a516fe09
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c0e94e0ddaba027b38ecc76b1c97126204990f1a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175721"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363980"
 ---
 # <a name="connect-to-remote-cameras"></a>连接到远程摄像头
 
@@ -43,7 +43,7 @@ ms.locfileid: "89175721"
 
 此外，此示例还处理**已添加**和**已删除**事件之外的[**DeviceWatcher**](/uwp/api/windows.devices.enumeration.devicewatcher.updated)事件。 在 **更新** 的处理程序中，将从中移除关联的远程照相机设备，然后将其添加回集合。
 
-[!code-cs[SnippetRemoteCameraPairingHelper](./code/Frames_Win10/Frames_Win10/RemoteCameraPairingHelper.cs#SnippetRemoteCameraPairingHelper)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/RemoteCameraPairingHelper.cs" id="SnippetRemoteCameraPairingHelper":::
 
 
 ## <a name="related-topics"></a>相关主题

@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 加载项, 目录, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: a6bd4d95365e33ee30df87247b3aec72f70fc5b1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e3eb35e2fccede9dc6f0412a3762d3d6245847c0
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158421"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364090"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>管理应用内产品的大目录
 
@@ -24,7 +24,7 @@ ms.locfileid: "89158421"
 
 应用商店将仅使用生成的 [PurchaseResults](/uwp/api/Windows.ApplicationModel.Store.PurchaseResults) 的购买请求中的 *offerId*。 此过程不会直接修改[在应用商店中列出应用内产品](../publish/add-on-submissions.md)时提供的原始信息。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 -   本主题介绍应用商店对于使用应用商店中列出的单个应用内产品表现多个应用内付费内容的支持。 如果你不熟悉应用内购买，请查看[启用应用内产品购买](enable-in-app-product-purchases.md)，以了解许可证信息以及如何在应用商店中恰当地列出你的应用内产品。
 -   首次编码和测试新应用内付费内容时，必须使用 [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 对象而不是 [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 对象。 这样，你可以使用对许可证服务器的模拟调用验证许可证逻辑，而不是调用实时服务器。 要执行此操作，需要在% userprofile% \\ AppData \\ 本地 \\ 包 \\ &lt; 包名称 &gt; \\ LocalState \\ Microsoft \\ Windows Store \\ ApiData 中自定义名为 WindowsStoreProxy.xml 的文件。 Microsoft Visual Studio 仿真器会在你首次运行应用时创建此文件，你也可以在运行时加载一个自定义文件。 有关详细信息，请参阅[将 WindowsStoreProxy.xml 文件与 CurrentAppSimulator 一起使用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy)。
@@ -35,7 +35,7 @@ ms.locfileid: "89158421"
 针对大目录内特定产品的购买请求的处理方式与任何其他应用内购买请求的处理方式相同。 当你的应用调用新的 [RequestProductPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) 方法重载时，你的应用将提供 *OfferId* 和由应用内产品名称填充的 [ProductPurchaseDisplayProperties](/uwp/api/windows.applicationmodel.store.productpurchasedisplayproperties) 对象。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#MakePurchaseRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/ManageCatalog.cs" id="MakePurchaseRequest":::
 
 ## <a name="report-fulfillment-of-the-in-app-offer"></a>报告应用产品/服务的实施情况
 
@@ -46,7 +46,7 @@ ms.locfileid: "89158421"
 下列代码将演示实施调用，以及插入特定产品/服务信息所采用的 UI 消息模式。 当不存在该特定产品信息时，示例将使用产品 [ListingInformation](/uwp/api/Windows.ApplicationModel.Store.ListingInformation) 中的信息。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#ReportFulfillment)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/ManageCatalog.cs" id="ReportFulfillment":::
 
 ## <a name="related-topics"></a>相关主题
 

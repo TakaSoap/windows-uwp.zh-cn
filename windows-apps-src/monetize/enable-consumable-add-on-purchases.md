@@ -6,12 +6,12 @@ keywords: windows 10, uwp, 易耗品, 加载项, 应用内购买, IAP, Windows.S
 ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f09b9a5c1f53c6a33f830c72514e061dc893348
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 01f1646c05b66d354a403e2621e3b032c22734d3
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171581"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363650"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>支持购买可消耗加载项
 
@@ -41,7 +41,7 @@ ms.locfileid: "89171581"
 
 你还可以随时获取应用商店管理的易耗品的[剩余余额](enable-consumable-add-on-purchases.md#get_balance)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 这些示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
@@ -73,7 +73,7 @@ ms.locfileid: "89171581"
 此示例演示如何将 Microsoft Store 管理的易耗品报告为已完成。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs#ConsumeAddOn)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs" id="ConsumeAddOn":::
 
 <span id="get_balance" />
 
@@ -82,7 +82,7 @@ ms.locfileid: "89171581"
 此示例演示如何使用 [StoreContext](/uwp/api/windows.services.store.storecontext) 类的 [GetConsumableBalanceRemainingAsync](/uwp/api/windows.services.store.storecontext.getconsumablebalanceremainingasync) 方法获取应用商店管理的易耗型加载项的剩余余额。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs#GetRemainingAddOnBalance)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs" id="GetRemainingAddOnBalance":::
 
 ## <a name="related-topics"></a>相关主题
 

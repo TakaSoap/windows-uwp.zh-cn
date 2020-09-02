@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 365f6ddde709d81a308059af2ec6fa9051e8ad92
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 56f828268980eb7ccc63a84729365bb5d17a609c
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173651"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363750"
 ---
 # <a name="effects-for-analyzing-camera-frames"></a>分析相机帧的效果
 
@@ -35,13 +35,13 @@ ms.locfileid: "89173651"
 
 若要使用场景分析，你的应用必须包含以下命名空间以及基本媒体捕获所需的命名空间。
 
-[!code-cs[SceneAnalysisUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalysisUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetSceneAnalysisUsing":::
 
 ### <a name="initialize-the-scene-analysis-effect-and-add-it-to-the-preview-stream"></a>初始化场景分析效果并将其添加到预览流
 
 使用两个 API、一个效果定义（可提供捕获设备初始化效果所需的设置）和一个效果实例（可用于控制效果）实现视频效果。 因为你可能想要从代码内的多个位置访问效果实例，因此你通常应声明成员变量以保留对象。
 
-[!code-cs[DeclareSceneAnalysisEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSceneAnalysisEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetDeclareSceneAnalysisEffect":::
 
 在你的应用中，在初始化 **MediaCapture** 对象后，创建 [**SceneAnalysisEffectDefinition**](/uwp/api/Windows.Media.Core.SceneAnalysisEffectDefinition) 的新实例。
 
@@ -51,13 +51,13 @@ ms.locfileid: "89173651"
 
 当前，场景分析效果仅包含高动态范围分析器。 通过将效果的 [**HighDynamicRangeControl.Enabled**](/uwp/api/windows.media.core.highdynamicrangecontrol.enabled) 设置为 true 启用 HDR 分析。
 
-[!code-cs[CreateSceneAnalysisEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateSceneAnalysisEffectAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetCreateSceneAnalysisEffectAsync":::
 
 ### <a name="implement-the-sceneanalyzed-event-handler"></a>实现 SceneAnalyzed 事件处理程序
 
 场景分析的结果在 **SceneAnalyzed** 事件处理程序中返回。 传入处理程序中的 [**SceneAnalyzedEventArgs**](/uwp/api/Windows.Media.Core.SceneAnalyzedEventArgs) 对象具有包含 [**HighDynamicRangeOutput**](/uwp/api/Windows.Media.Core.HighDynamicRangeOutput) 对象的 [**SceneAnalysisEffectFrame**](/uwp/api/Windows.Media.Core.SceneAnalysisEffectFrame) 对象。 高动态范围输出的 [**Certainty**](/uwp/api/windows.media.core.highdynamicrangeoutput.certainty) 属性提供了一个介于 0 到 1.0 的值，其中 0 指示 HDR 处理不会帮助改进捕获结果，1.0 指示 HDR 处理会帮助改进捕获结果。 你可以确定要使用 HDR 的阈值点，或向用户显示结果并让用户作出决定。
 
-[!code-cs[SceneAnalyzed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalyzed)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetSceneAnalyzed":::
 
 传入处理程序中的 [**HighDynamicRangeOutput**](/uwp/api/Windows.Media.Core.HighDynamicRangeOutput) 对象还具有 [**FrameControllers**](/uwp/api/windows.media.core.highdynamicrangeoutput.framecontrollers) 属性，它包含用于捕获可变照片序列进行 HDR 处理的建议帧控制器。 有关详细信息，请参阅[可变照片序列](variable-photo-sequence.md)。
 
@@ -65,7 +65,7 @@ ms.locfileid: "89173651"
 
 当你的应用完成捕获时，在处理 **MediaCapture** 对象之前，你应该通过将效果的 [**HighDynamicRangeAnalyzer.Enabled**](/uwp/api/windows.media.core.highdynamicrangecontrol.enabled) 属性设置为 false 来禁用场景分析效果，并取消注册 [**SceneAnalyzed**](/uwp/api/windows.media.core.sceneanalysiseffect.sceneanalyzed) 事件处理程序。 请调用 [**MediaCapture.ClearEffectsAsync**](/uwp/api/windows.media.capture.mediacapture.cleareffectsasync)，从而指定视频预览流，因为该流是已添加效果的流。 最后，将你的成员变量设置为 null。
 
-[!code-cs[CleanUpSceneAnalysisEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpSceneAnalysisEffectAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetCleanUpSceneAnalysisEffectAsync":::
 
 ## <a name="face-detection-effect"></a>人脸检测效果
 
@@ -75,13 +75,13 @@ ms.locfileid: "89173651"
 
 若要使用人脸检测，你的应用必须包含以下命名空间，以及基本媒体捕获所需的命名空间。
 
-[!code-cs[FaceDetectionUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetectionUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetFaceDetectionUsing":::
 
 ### <a name="initialize-the-face-detection-effect-and-add-it-to-the-preview-stream"></a>初始化人脸检测效果并将其添加到预览流
 
 使用两个 API、一个效果定义（可提供捕获设备初始化效果所需的设置）和一个效果实例（可用于控制效果）实现视频效果。 因为你可能想要从代码内的多个位置访问效果实例，因此你通常应声明成员变量以保留对象。
 
-[!code-cs[DeclareFaceDetectionEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareFaceDetectionEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetDeclareFaceDetectionEffect":::
 
 在你的应用中，在初始化 **MediaCapture** 对象后，创建 [**FaceDetectionEffectDefinition**](/uwp/api/Windows.Media.Core.FaceDetectionEffectDefinition) 的新实例。 设置 [**DetectionMode**](/uwp/api/windows.media.core.facedetectioneffectdefinition.detectionmode) 属性以设置优先级：更快的人脸检测优先或更精确的人脸检测优先。 设置 [**SynchronousDetectionEnabled**](/uwp/api/windows.media.core.facedetectioneffectdefinition.synchronousdetectionenabled) 以指定传入的帧不会延迟等待人脸检测完成，因为这可能导致不连贯的预览体验。
 
@@ -89,29 +89,29 @@ ms.locfileid: "89173651"
 
 通过设置 [**FaceDetectionEffect.Enabled**](/uwp/api/windows.media.core.facedetectioneffect.enabled) 属性，启用或禁用效果。 通过设置 [**FaceDetectionEffect.DesiredDetectionInterval**](/uwp/api/windows.media.core.facedetectioneffect.desireddetectioninterval) 属性调整效果分析帧的频率。 在正在运行媒体捕获时，可同时调整这两个属性。
 
-[!code-cs[CreateFaceDetectionEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateFaceDetectionEffectAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetCreateFaceDetectionEffectAsync":::
 
 ### <a name="receive-notifications-when-faces-are-detected"></a>在检测到人脸时接收通知
 
 如果你想要在检测到人脸时执行某些操作（例如，在视频预览中检测到的人脸周围绘制一个框），你可以注册 [**FaceDetected**](/uwp/api/windows.media.core.facedetectioneffect.facedetected) 事件。
 
-[!code-cs[RegisterFaceDetectionHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetRegisterFaceDetectionHandler":::
 
 在该事件的处理程序中，你可以通过访问 [**FaceDetectedEventArgs**](/uwp/api/Windows.Media.Core.FaceDetectedEventArgs) 的 [**FaceDetectionEffectFrame.DetectedFaces**](/uwp/api/windows.media.core.facedetectioneffectframe.detectedfaces) 属性，获取帧中所有检测到的人脸列表。 [**FaceBox**](/uwp/api/windows.media.faceanalysis.detectedface.facebox) 属性是 [**BitmapBounds**](/uwp/api/Windows.Graphics.Imaging.BitmapBounds) 结构，用于描述包含检测到的人脸的矩形，其单位相对于预览流尺寸。 若要查看将预览流坐标转换到屏幕坐标的示例代码，请参阅[人脸检测 UWP 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFaceDetection)。
 
-[!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetFaceDetected":::
 
 ### <a name="clean-up-the-face-detection-effect"></a>清理人脸检测效果
 
 当你的应用完成捕获时，在处理 **MediaCapture** 对象之前，应该使用 [**FaceDetectionEffect.Enabled**](/uwp/api/windows.media.core.facedetectioneffect.enabled) 禁用人脸检测效果并取消注册 [**FaceDetected**](/uwp/api/windows.media.core.facedetectioneffect.facedetected) 事件处理程序（如果你之前已注册一个处理程序）。 请调用 [**MediaCapture.ClearEffectsAsync**](/uwp/api/windows.media.capture.mediacapture.cleareffectsasync)，从而指定视频预览流，因为该流是已添加效果的流。 最后，将你的成员变量设置为 null。
 
-[!code-cs[CleanUpFaceDetectionEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpFaceDetectionEffectAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetCleanUpFaceDetectionEffectAsync":::
 
 ### <a name="check-for-focus-and-exposure-support-for-detected-faces"></a>查看对检测到的人脸的焦点和曝光支持
 
 并非所有设备都具有可根据检测到的人脸调整其焦点和曝光的捕获设备。 因为人脸检测会消耗设备资源，因此你可能只希望在可使用该功能增强捕获的设备上启用人脸检测。 若要查看基于人脸的捕获优化是否可用，请为初始化的 [MediaCapture](./index.md) 获取 [**VideoDeviceController**](/uwp/api/Windows.Media.Devices.VideoDeviceController)，然后获取视频设备控制器的 [**RegionsOfInterestControl**](/uwp/api/Windows.Media.Devices.RegionsOfInterestControl)。 查看 [**MaxRegions**](/uwp/api/windows.media.devices.regionsofinterestcontrol.maxregions) 是否支持至少一个区域。 然后，查看 [**AutoExposureSupported**](/uwp/api/windows.media.devices.regionsofinterestcontrol.autoexposuresupported) 或 [**AutoFocusSupported**](/uwp/api/windows.media.devices.regionsofinterestcontrol.autofocussupported) 是否为 true。 如果满足这些条件，则设备可以充分利用人脸检测来增强捕获。
 
-[!code-cs[AreFaceFocusAndExposureSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAreFaceFocusAndExposureSupported)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetAreFaceFocusAndExposureSupported":::
 
 ## <a name="related-topics"></a>相关主题
 

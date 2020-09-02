@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 89bb542e0da8249253e40085163defe3ac24e805
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a80e00a44bbb1c401811f72eb7024aef25013f29
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170601"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363950"
 ---
 # <a name="custom-video-effects"></a>自定义视频效果
 
@@ -33,17 +33,17 @@ ms.locfileid: "89170601"
 1.  在 Microsoft Visual Studio 中打开解决方案后，请在 " **文件** " 菜单中选择 " **添加- &gt; 新建项目**"。
 2.  ** (通用 Windows) **项目类型中选择 "Windows 运行时" 组件。
 3.  对于此示例，将项目命名为*VideoEffectComponent*。 此名称稍后将在代码中引用。
-4.  单击" **确定**"。
+4.  单击 **“确定”** 。
 5.  项目模板将创建一个名为 Class1.cs 的类。 在 **解决方案资源管理器**中，右键单击 Class1.cs 的图标，然后选择 " **重命名**"。
 6.  将文件重命名为*ExampleVideoEffect.cs*。 Visual Studio 将显示一条提示，询问你是否想要更新对新名称的所有引用。 单击 **“是”** 。
 7.  打开**ExampleVideoEffect.cs**，并更新类定义以实现 [**IBasicVideoEffect**](/uwp/api/Windows.Media.Effects.IBasicVideoEffect) 接口。
 
-[!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetImplementIBasicVideoEffect":::
 
 
 你需要在效果类文件中包含以下命名空间，以便访问本文中示例所使用的所有类型。
 
-[!code-cs[EffectUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetEffectUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetEffectUsing":::
 
 
 ## <a name="implement-the-ibasicvideoeffect-interface-using-software-processing"></a>使用软件处理实现 IBasicVideoEffect 接口
@@ -55,7 +55,7 @@ ms.locfileid: "89170601"
 
 当效果关闭时，系统将对你的类调用 [**Close**](/uwp/api/windows.media.effects.ibasicvideoeffect.close) 方法。 你应当使用此方法来处理你创建的任何资源。 该方法的参数是 [**MediaEffectClosedReason**](/uwp/api/Windows.Media.Effects.MediaEffectClosedReason)，该参数使你知道效果是否正常关闭、是否发生错误或者效果是否不支持所需的编码格式。
 
-[!code-cs[Close](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetClose)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetClose":::
 
 
 ### <a name="discardqueuedframes-method"></a>DiscardQueuedFrames 方法
@@ -63,7 +63,7 @@ ms.locfileid: "89170601"
 当效果应重置时，将调用 [**DiscardQueuedFrames**](/uwp/api/windows.media.effects.ibasicvideoeffect.discardqueuedframes) 方法。 此方法的一个典型方案是当你的效果之前存储了处理后的帧以供在处理当前帧时使用的情况。 当调用此方法时，你应当处理保存的上一组帧。 此方法可用于重置与之前的帧（而不仅仅是累计的视频帧）相关的任何状态。
 
 
-[!code-cs[DiscardQueuedFrames](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetDiscardQueuedFrames)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetDiscardQueuedFrames":::
 
 
 
@@ -75,13 +75,13 @@ ms.locfileid: "89170601"
 > 当 [**IsReadOnly**](/uwp/api/windows.media.effects.ibasicvideoeffect.isreadonly) 属性设置为 true 时，系统会在调用 [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) 之前，将输入帧复制到输出帧。 将 **IsReadOnly** 属性设置为 true 不会限制在 **ProcessFrame** 中对效果的输出帧执行写入操作。
 
 
-[!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetIsReadOnly":::
 
 ### <a name="setencodingproperties-method"></a>SetEncodingProperties 方法
 
 系统会对你的效果调用 [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties)，以便让你知道要应用该效果的视频流的编码属性。 此方法还提供了对用于硬件呈现的 Direct3D 设备的引用。 此设备的用法会在本文后面的硬件处理示例中介绍。
 
-[!code-cs[SetEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetEncodingProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSetEncodingProperties":::
 
 
 ### <a name="supportedencodingproperties-property"></a>SupportedEncodingProperties 属性
@@ -89,7 +89,7 @@ ms.locfileid: "89170601"
 系统将检查 [**SupportedEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedencodingproperties) 属性以确定你的效果支持哪些编码属性。 请注意，如果你的效果的使用者无法使用你指定的属性对视频进行编码，它将对你的效果调用 [**Close**](/uwp/api/windows.media.effects.ibasicvideoeffect.close) 并且会从视频管道中删除你的效果。
 
 
-[!code-cs[SupportedEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedEncodingProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSupportedEncodingProperties":::
 
 
 > [!NOTE] 
@@ -101,7 +101,7 @@ ms.locfileid: "89170601"
 
 系统将检查 [**SupportedMemoryTypes**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) 属性以确定你的效果是否将访问软件内存或硬件 (GPU) 内存中的视频帧。 如果你返回 [**MediaMemoryTypes.Cpu**](/uwp/api/Windows.Media.Effects.MediaMemoryTypes)，系统会将使图像数据包含在 [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 对象中的输入和输出帧传递给你的效果。 如果返回 **MediaMemoryTypes.Gpu**，系统会将使图像数据包含在 [**IDirect3DSurface**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 对象中的输入和输出帧传递给效果。
 
-[!code-cs[SupportedMemoryTypes](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedMemoryTypes)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSupportedMemoryTypes":::
 
 
 > [!NOTE]
@@ -113,19 +113,19 @@ ms.locfileid: "89170601"
 
 [**TimeIndependent**](/uwp/api/windows.media.effects.ibasicvideoeffect.timeindependent) 属性使系统能够知道你的效果不需要统一计时。 当设置为 true 时，系统可以使用优化功能增强效果性能。
 
-[!code-cs[TimeIndependent](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetTimeIndependent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetTimeIndependent":::
 
 ### <a name="setproperties-method"></a>SetProperties 方法
 
 [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties) 方法允许正在使用你的效果的应用调整效果参数。 属性将作为属性名称和值的 [**IPropertySet**](/uwp/api/Windows.Foundation.Collections.IPropertySet) 映射传递。
 
 
-[!code-cs[SetProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSetProperties":::
 
 
 此简单示例将根据指定值使每个视频帧中的像素变暗。 已声明了某个属性，并已使用 TryGetValue 来获取通过调用应用设置的值。 如果未设置任何值，使用默认值 0.5。
 
-[!code-cs[FadeValue](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetFadeValue)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetFadeValue":::
 
 
 ### <a name="processframe-method"></a>ProcessFrame 方法
@@ -136,12 +136,12 @@ ms.locfileid: "89170601"
 
 访问 **SoftwareBitmap** 的数据缓冲区需要 COM 互操作，所以应当在效果类文件中包含 **System.Runtime.InteropServices** 命名空间。
 
-[!code-cs[COMUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetCOMUsing":::
 
 
 在该命名空间内为效果添加以下代码，以导入访问该图像缓冲区的接口。
 
-[!code-cs[COMImport](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMImport)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetCOMImport":::
 
 
 > [!NOTE]
@@ -156,7 +156,7 @@ ms.locfileid: "89170601"
 
 现在已获取数据缓冲区，你可以从输入缓冲区进行读取，并对输出缓冲区进行写入。 通过调用 [**GetPlaneDescription**](/uwp/api/windows.graphics.imaging.bitmapbuffer.getplanedescription) 获取缓冲区的布局，它提供了有关缓冲区的宽度、步幅和初始偏移的信息。 每像素位数由与之前通过 [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) 方法设置的编码属性确定。 缓冲区格式信息用于查找每个像素的缓冲区中的索引。 源缓冲区的像素值已复制到目标缓冲区中，并且颜色值乘以为此效果定义的 FadeValue 属性，以使其按指定的量变暗。
 
-[!code-cs[ProcessFrameSoftwareBitmap](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetProcessFrameSoftwareBitmap)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetProcessFrameSoftwareBitmap":::
 
 
 ## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>使用硬件处理实现 IBasicVideoEffect 接口
@@ -172,41 +172,41 @@ ms.locfileid: "89170601"
 2.  在窗口顶部，选择 " **浏览** " 选项卡。
 3.  在搜索框中，输入 **Win2D**。
 4.  选择 " **Win2D**"，然后在右窗格中选择 " **安装** "。
-5.  " **查看更改** " 对话框显示要安装的程序包。 单击" **确定**"。
+5.  " **查看更改** " 对话框显示要安装的程序包。 单击 **“确定”** 。
 6.  接受程序包许可证。
 
 除了基本项目设置中包含的命名空间外，还需要包含 Win2D 提供的以下命名空间。
 
-[!code-cs[UsingWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetUsingWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetUsingWin2D":::
 
 
 由于此效果将使用 GPU 内存来处理图像数据，因此应当从 [**SupportedMemoryTypes**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) 属性返回 [**MediaMemoryTypes.Gpu**](/uwp/api/Windows.Media.Effects.MediaMemoryTypes)。
 
-[!code-cs[SupportedMemoryTypesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedMemoryTypesWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetSupportedMemoryTypesWin2D":::
 
 
 使用 [**SupportedEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedencodingproperties) 属性来设置效果将支持的编码属性。 当处理 Win2D 时，必须使用 ARGB32 编码。
 
-[!code-cs[SupportedEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedEncodingPropertiesWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetSupportedEncodingPropertiesWin2D":::
 
 
 使用 [**SetEncodingProperties**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) 方法，从传入到该方法中的 [**IDirect3DDevice**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice) 创建新的 Win2D **CanvasDevice** 对象。
 
-[!code-cs[SetEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetEncodingPropertiesWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetSetEncodingPropertiesWin2D":::
 
 
 [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties) 实现与之前的软件处理示例相同。 此示例使用 **BlurAmount** 属性配置 Win2D 模糊效果。
 
-[!code-cs[SetPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetPropertiesWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetSetPropertiesWin2D":::
 
-[!code-cs[BlurAmountWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetBlurAmountWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetBlurAmountWin2D":::
 
 
 最后一步是实现实际处理图像数据的 [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) 方法。
 
 使用 Win2D API，从输入帧的 [**Direct3DSurface**](/uwp/api/windows.media.videoframe.direct3dsurface) 属性创建 **CanvasBitmap**。 从输出帧的 **Direct3DSurface** 创建一个 **CanvasRenderTarget**，从此呈现目标创建一个 **CanvasDrawingSession**。 新的 Win2D **GaussianBlurEffect** 已使用我们的效果通过 [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties) 公开的 **BlurAmount** 属性进行了初始化。 最后，调用 **CanvasDrawingSession.DrawImage** 方法，使用模糊效果将输入位图绘制到呈现目标。
 
-[!code-cs[ProcessFrameWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetProcessFrameWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetProcessFrameWin2D":::
 
 
 ## <a name="adding-your-custom-effect-to-your-app"></a>向应用添加自定义效果
@@ -216,7 +216,7 @@ ms.locfileid: "89170601"
 
 1.  在解决方案资源管理器中，右键单击 " **引用** "，然后选择 " **添加引用**"。
 2.  展开 " **项目** " 选项卡，选择 " **解决方案**"，然后选中效果项目名称对应的复选框。 对于此示例，名称为 *VideoEffectComponent*。
-3.  单击" **确定**"。
+3.  单击 **“确定”** 。
 
 ### <a name="add-your-custom-effect-to-a-camera-video-stream"></a>向相机视频流添加自定义效果
 
@@ -226,7 +226,7 @@ ms.locfileid: "89170601"
 
 添加效果后，将调用 [**StartPreviewAsync**](/uwp/api/windows.media.capture.mediacapture.startpreviewasync) 来启动预览流。
 
-[!code-cs[AddVideoEffectAsync](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddVideoEffectAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs" id="SnippetAddVideoEffectAsync":::
 
 
 
@@ -235,7 +235,7 @@ ms.locfileid: "89170601"
 有关从视频剪辑创建媒体合成的一般指南，请参阅[媒体合成和编辑](media-compositions-and-editing.md)。 以下代码片段展示了使用自定义视频效果创建简单媒体合成的过程。 通过调用 [**CreateFromFileAsync**](/uwp/api/windows.media.editing.mediaclip.createfromfileasync)、传入用户通过 [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 选择的视频文件创建一个 [**MediaClip**](/uwp/api/Windows.Media.Editing.MediaClip) 对象，并将剪辑添加到新的 [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition)。 接下来，创建新的 [**VideoEffectDefinition**](/uwp/api/Windows.Media.Effects.VideoEffectDefinition) 对象，从而将效果的命名空间和类名称传入到构造函数。 最后，将效果定义添加到 **MediaClip** 对象的 [**VideoEffectDefinitions**](/uwp/api/windows.media.editing.mediaclip.videoeffectdefinitions) 集合。
 
 
-[!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs" id="SnippetAddEffectToComposition":::
 
 
 ## <a name="related-topics"></a>相关主题

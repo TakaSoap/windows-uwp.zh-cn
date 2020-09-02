@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK, 日志事件
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: ec4bee888d055b5331252e91bfd979d81b976f3c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5a1df08b62199bf1249af8bfbbb00921874a671c
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158431"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364100"
 ---
 # <a name="log-custom-events-for-partner-center"></a>记录合作伙伴中心的自定义事件
 
@@ -22,7 +22,7 @@ ms.locfileid: "89158431"
 > [!NOTE]
 > 你记录到合作伙伴中心的自定义事件与 [Windows 事件](/windows/desktop/Events/windows-events)无关，它们不显示在 **事件查看器**中。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 你的应用必须在应用商店中发布，然后才能在合作伙伴中心内的应用的 **使用情况报告** 中查看自定义日志记录事件。
 
@@ -39,10 +39,10 @@ ms.locfileid: "89158431"
 5. 在 Sdk 列表中，单击 " **Microsoft Engagement 框架** " 旁边的复选框，然后单击 **"确定"**。
 
 6. 将以下语句添加到要记录自定义事件的每个代码文件的顶部。
-    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/LogEvents.cs" id="EngagementNamespace":::
 
 7. 在要记录自定义事件的每个代码部分中，获取 [StoreServicesCustomEventLogger](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 对象，然后调用 [Log](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 方法。 将自定义事件字符串传递到该方法。
-    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/LogEvents.cs" id="Log":::
 
     > [!NOTE]
     > 如果应用记录了很多名称很长的自定义事件，则[使用情况报告](../publish/usage-report.md)的加载时间可能很长。 建议为自定义事件使用简短的名称。 

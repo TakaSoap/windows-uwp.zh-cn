@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 458b610ac3fcc651f68ccf07c4a3cb30813239d9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d7248b4f3fe515a164410305bac074f44cae53e6
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160981"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362860"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>用于照片和视频捕获的手动相机控件
 
@@ -28,7 +28,7 @@ ms.locfileid: "89160981"
 
 本文中讨论的所有设备控件 API 都是 [**Windows.Media.Devices**](/uwp/api/Windows.Media.Devices) 命名空间的成员。
 
-[!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetVideoControllersUsing":::
 
 ## <a name="exposure"></a>曝光
 
@@ -36,7 +36,7 @@ ms.locfileid: "89160981"
 
 该示例使用 [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider) 控件来调整当前曝光值，并使用复选框来切换自动曝光调整。
 
-[!code-xml[ExposureXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetExposureXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml" id="SnippetExposureXAML":::
 
 通过检查 [**Supported**](/uwp/api/windows.media.devices.exposurecontrol.supported) 属性来检查当前捕获设备是否支持 **ExposureControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 将用于指示自动曝光调整当前是否处于活动状态的复选框的选中状态设置为 [**Auto**](/uwp/api/windows.media.devices.exposurecontrol.auto) 属性的值。
 
@@ -44,15 +44,15 @@ ms.locfileid: "89160981"
 
 在将滑块控件的值设置为 **ExposureControl** 的当前值之前，需先注销 [**ValueChanged**](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) 事件处理程序，以便在设置该值时不触发该事件。
 
-[!code-cs[ExposureControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetExposureControl)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetExposureControl":::
 
 在 **ValueChanged** 事件处理程序中，获取该控件的当前值并通过调用 [**SetValueAsync**](/uwp/api/windows.media.devices.exposurecontrol.setvalueasync) 设置曝光值。
 
-[!code-cs[ExposureSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetExposureSlider)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetExposureSlider":::
 
 在自动曝光复选框的 **CheckedChanged** 事件处理程序中，通过调用 [**SetAutoAsync**](/uwp/api/windows.media.devices.exposurecontrol.setautoasync) 并以布尔值的形式进行传递，打开或关闭自动曝光调整。
 
-[!code-cs[ExposureCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetExposureCheckBox)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetExposureCheckBox":::
 
 > [!IMPORTANT]
 > 自动曝光模式仅在预览流运行时才受支持。 在打开自动曝光之前，检查以确保预览流正在运行。
@@ -63,7 +63,7 @@ ms.locfileid: "89160981"
 
 此示例使用 [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider) 控件调整当前曝光补偿值。
 
-[!code-xml[EvXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetEvXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml" id="SnippetEvXAML":::
 
 通过检查 [Supported](supported-codecs.md) 属性来检查当前捕获设备是否支持 **ExposureCompensationControl**。 如果该控件受支持，可针对此功能显示和启用 UI。
 
@@ -71,11 +71,11 @@ ms.locfileid: "89160981"
 
 在将滑块控件的值设置为 **ExposureCompensationControl** 的当前值之前，需先注销 [**ValueChanged**](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) 事件处理程序，以便在设置该值时不触发该事件。
 
-[!code-cs[EvControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEvControl)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetEvControl":::
 
 在 **ValueChanged** 事件处理程序中，获取该控件的当前值并通过调用 [**SetValueAsync**](/uwp/api/windows.media.devices.exposurecompensationcontrol.setvalueasync) 设置曝光值。
 
-[!code-cs[EvValueChanged](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEvValueChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetEvValueChanged":::
 
 ## <a name="flash"></a>闪烁
 
@@ -83,23 +83,23 @@ ms.locfileid: "89160981"
 
 此示例使用一组单选按钮，以便用户可以在打开、关闭和自动闪光设置之间切换。 还提供了一个复选框，以便可以在消除红眼和视频聚光之间切换。
 
-[!code-xml[FlashXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFlashXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml" id="SnippetFlashXAML":::
 
 通过检查 [**Supported**](/uwp/api/windows.media.devices.focuscontrol.supported) 属性来检查当前捕获设备是否支持 **FlashControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 如果 **FlashControl** 受支持，自动消除红眼不一定受支持，因此请在启用 UI 前检查 [**RedEyeReductionSupported**](/uwp/api/windows.media.devices.flashcontrol.redeyereductionsupported) 属性。 由于 **TorchControl** 独立于闪光控件，因此在使用它之前，你也必须先检查它的 [**Supported**](/uwp/api/windows.media.devices.torchcontrol.supported) 属性。
 
 对于每个闪光单选按钮，可在 [**Checked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) 事件处理程序中启用或禁用相应的闪光设置。 注意，如果要将闪光设置为始终使用，你必须将 [**Enabled**](/uwp/api/windows.media.devices.flashcontrol.enabled) 属性设置为 true，而将 [**Auto**](/uwp/api/windows.media.devices.flashcontrol.auto) 属性设置为 false。
 
-[!code-cs[FlashControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFlashControl)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetFlashControl":::
 
-[!code-cs[FlashRadioButtons](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFlashRadioButtons)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetFlashRadioButtons":::
 
 在红眼消除复选框的处理程序中，将 [**RedEyeReduction**](/uwp/api/windows.media.devices.flashcontrol.redeyereduction) 属性设置为相应值。
 
-[!code-cs[RedEye](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetRedEye)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetRedEye":::
 
 最后，在视频聚光复选框的处理程序中，将 [**Enabled**](/uwp/api/windows.media.devices.torchcontrol.enabled) 属性设置为相应值。
 
-[!code-cs[Torch](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTorch)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetTorch":::
 
 > [!NOTE] 
 >  在某些设备上，除非设备正在运行预览流并且正在主动捕获视频，否则即使 [**TorchControl.Enabled**](/uwp/api/windows.media.devices.torchcontrol.enabled) 设置为 true，手电筒也不会发光。 建议按如下顺序执行操作：先打开视频预览，然后通过将 **Enabled** 设置为 true 打开手电筒，最后启动视频捕获。 在某些设备上，手电筒将在预览启动后亮起。 在其他设备上，在视频捕获启动后，聚光才会亮起。
@@ -112,17 +112,17 @@ ms.locfileid: "89160981"
 
 启用连续自动对焦将指示相机动态调整对焦，以尝试将焦点集中在照片或视频的捕获对象上。 该示例使用单选按钮打开或关闭连续自动对焦。
 
-[!code-xml[CAFXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetCAFXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml" id="SnippetCAFXAML":::
 
 通过检查 [**Supported**](/uwp/api/windows.media.devices.flashcontrol.supported) 属性来检查当前捕获设备是否支持 **FocusControl**。 接下来，确定连续自动对焦是否受支持，方法是检查 [**SupportedFocusModes**](/uwp/api/windows.media.devices.focuscontrol.supportedfocusmodes) 列表中是否包含值 [**FocusMode.Continuous**](/uwp/api/Windows.Media.Devices.FocusMode)；如果包含，将显示连续自动对焦单选按钮。
 
-[!code-cs[CAF](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetCAF)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetCAF":::
 
 在连续自动对焦单选按钮的 [**Checked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) 事件处理程序中，使用 [**VideoDeviceController.FocusControl**](/uwp/api/windows.media.devices.videodevicecontroller.focuscontrol) 属性可获取该控件的一个实例。 如果你的应用先前调用了 [**LockAsync**](/uwp/api/windows.media.devices.focuscontrol.lockasync)，则调用 [**UnlockAsync**](/uwp/api/windows.media.devices.focuscontrol.unlockasync) 以解锁该控件，以便启用两种对焦模式中的另外一种。
 
 创建新的 [**FocusSettings**](/uwp/api/Windows.Media.Devices.FocusSettings) 对象并将 [**Mode**](/uwp/api/windows.media.devices.focussettings.mode) 属性设置为 **Continuous**。 将 [**AutoFocusRange**](/uwp/api/windows.media.devices.focussettings.autofocusrange) 属性设置为适合你的应用方案的值，或设置为由用户从你的 UI 中选择的值。 将 **FocusSettings** 对象传入 [**Configure**](/uwp/api/windows.media.devices.focuscontrol.configure) 方法，然后调用 [**FocusAsync**](/uwp/api/windows.media.devices.focuscontrol.focusasync) 以启动连续自动对焦。
 
-[!code-cs[CafFocusRadioButton](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetCafFocusRadioButton)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetCafFocusRadioButton":::
 
 > [!IMPORTANT]
 > 自动对焦模式仅在预览流运行时才受支持。 在打开连续自动对焦之前，检查以确保预览流正在运行。
@@ -133,19 +133,19 @@ ms.locfileid: "89160981"
 
 此示例使用单选按钮启用和禁用点按对焦模式。
 
-[!code-xml[TapFocusXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetTapFocusXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml" id="SnippetTapFocusXAML":::
 
 通过检查 [**Supported**](/uwp/api/windows.media.devices.flashcontrol.supported) 属性来检查当前捕获设备是否支持 **FocusControl**。 **RegionsOfInterestControl** 必须受支持，且必须至少支持一个区域才能使用该技术。 选中 [**AutoFocusSupported**](/uwp/api/windows.media.devices.regionsofinterestcontrol.autofocussupported) 和 [**MaxRegions**](/uwp/api/windows.media.devices.regionsofinterestcontrol.maxregions) 属性，以确定是显示还是隐藏用于点按对焦的单选按钮。
 
-[!code-cs[TapFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocus)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetTapFocus":::
 
 在点按对焦单选按钮的 [**Checked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) 事件处理程序中，使用 [**VideoDeviceController.FocusControl**](/uwp/api/windows.media.devices.videodevicecontroller.focuscontrol) 属性获取该控件的一个实例。 如果你的应用之前调用了 [**UnlockAsync**](/uwp/api/windows.media.devices.focuscontrol.unlockasync) 来启用连续对焦，则调用 [**LockAsync**](/uwp/api/windows.media.devices.focuscontrol.lockasync) 以解锁该控件，然后等待用户点击屏幕更改焦点。
 
-[!code-cs[TapFocusRadioButton](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusRadioButton)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetTapFocusRadioButton":::
 
 该示例会在用户点击屏幕时对焦于某一区域，然后在用户再次点击时删除该对焦，就像切换一样。 使用布尔变量跟踪当前切换的状态。
 
-[!code-cs[IsFocused](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsFocused)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetIsFocused":::
 
 下一步是，在用户点击屏幕时通过处理当前正在显示捕获预览流的 [**CaptureElement**](/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) 的 [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped) 事件来侦听相关事件。 如果相机当前未进行预览，或者如果点按对焦模式处于禁用状态，则从该处理程序返回而不执行任何操作。
 
@@ -153,7 +153,7 @@ ms.locfileid: "89160981"
 
 如果 " * \_ isFocused* " 切换设置为 "true"，则用户点击应从上一个区域中清除焦点。 这将在下面显示的 **TapUnfocus** 帮助程序方法中执行。
 
-[!code-cs[TapFocusPreviewControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusPreviewControl)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetTapFocusPreviewControl":::
 
 在**TapToFocus** helper 方法中，首先将* \_ isFocused*切换为 true，以便下一个屏幕点击将从分攻区域中释放焦点。
 
@@ -176,25 +176,25 @@ ms.locfileid: "89160981"
 > 2. [**RegionsOfInterestControl.SetRegionsAsync**](/uwp/api/windows.media.devices.regionsofinterestcontrol.setregionsasync)
 > 3. [**FocusControl.FocusAsync**](/uwp/api/windows.media.devices.focuscontrol.focusasync)
 
-[!code-cs[TapToFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapToFocus)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetTapToFocus":::
 
 在 **TapUnfocus** 帮助程序方法中，获取 **RegionsOfInterestControl**，然后调用 [**ClearRegionsAsync**](/uwp/api/windows.media.devices.regionsofinterestcontrol.clearregionsasync) 以清除 **TapToFocus** 帮助程序方法内已注册该控件的区域。 接下来，获取 **FocusControl** 并调用 [**FocusAsync**](/uwp/api/windows.media.devices.focuscontrol.focusasync)，以使设备在没有关注区域的情况下重新对焦。
 
-[!code-cs[TapUnfocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapUnfocus)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetTapUnfocus":::
 
 **GetPreviewStreamRectInControl** 帮助程序方法使用预览流的分辨率和设备方向来确定包含预览流的预览元素内的矩形，并修去控件可能提供的任何上下黑边形式的填充，以保持该流的纵横比。 此方法使用[使用 MediaCapture 的照片、视频和音频捕获](basic-photo-video-and-audio-capture-with-MediaCapture.md)中提供的基本媒体捕获示例代码中定义的类成员变量。
 
-[!code-cs[GetPreviewStreamRectInControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetGetPreviewStreamRectInControl)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetGetPreviewStreamRectInControl":::
 
 **ConvertUiTapToPreviewRect** 帮助程序方法用参数来表示点击事件的位置、所需的对焦区域大小，以及包含从 **GetPreviewStreamRectInControl** 帮助程序方法获取的预览流的矩形。 该方法使用上述值和设备的当前方向，来计算包含所需区域的预览流内的矩形。 同样地，此方法使用基本媒体捕获示例代码中定义的类成员变量，该代码可从[使用 MediaCapture 捕获照片和视频](./index.md)中获取。
 
-[!code-cs[ConvertUiTapToPreviewRect](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetConvertUiTapToPreviewRect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetConvertUiTapToPreviewRect":::
 
 ### <a name="manual-focus"></a>手动对焦
 
 手动对焦技术使用 **Slider** 控件来设置捕获设备的当前对焦深度。 使用单选按钮来打开或关闭手动对焦。
 
-[!code-xml[ManualFocusXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetManualFocusXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml" id="SnippetManualFocusXAML":::
 
 通过检查 [**Supported**](/uwp/api/windows.media.devices.focuscontrol.supported) 属性来检查当前捕获设备是否支持 **FocusControl**。 如果该控件受支持，可针对此功能显示和启用 UI。
 
@@ -202,29 +202,29 @@ ms.locfileid: "89160981"
 
 在将滑块控件的值设置为 **FocusControl** 的当前值之前，需先注销 [**ValueChanged**](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) 事件处理程序，以便在设置该值时不触发该事件。
 
-[!code-cs[Focus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetFocus":::
 
 在手动对焦单选按钮的 **Checked** 事件处理程序中，如果你的应用之前通过调用 [**UnlockAsync**](/uwp/api/windows.media.devices.focuscontrol.unlockasync) 解锁了对焦，则获取 **FocusControl** 对象并调用 [**LockAsync**](/uwp/api/windows.media.devices.focuscontrol.lockasync)。
 
-[!code-cs[ManualFocusChecked](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetManualFocusChecked)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetManualFocusChecked":::
 
 在手动对焦滑块的 **ValueChanged** 事件处理程序中，获取该控件的当前值并通过调用 [**SetValueAsync**](/uwp/api/windows.media.devices.focuscontrol.setvalueasync) 设置对焦值。
 
-[!code-cs[FocusSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusSlider)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetFocusSlider":::
 
 ### <a name="enable-the-focus-light"></a>启用对焦灯
 
 你可以在支持对焦辅助灯的设备上启用该灯，以帮助设备对焦。 此示例使用复选框来启用或禁用对焦辅助灯。
 
-[!code-xml[FocusLightXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFocusLightXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml" id="SnippetFocusLightXAML":::
 
 通过检查 [**Supported**](/uwp/api/windows.media.devices.flashcontrol.supported) 属性来检查当前捕获设备是否支持 **FlashControl**。 还应检查 [**AssistantLightSupported**](/uwp/api/windows.media.devices.flashcontrol.assistantlightsupported)以确保辅助灯也受支持。 如果两者均受支持，可针对此功能显示和启用 UI。
 
-[!code-cs[FocusLight](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLight)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetFocusLight":::
 
 在 **CheckedChanged** 事件处理程序中，获取捕获设备 [**FlashControl**](/uwp/api/Windows.Media.Devices.FlashControl) 对象。 设置 [**AssistantLightEnabled**](/uwp/api/windows.media.devices.flashcontrol.assistantlightenabled) 属性以启用或禁用对焦灯。
 
-[!code-cs[FocusLightCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLightCheckBox)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetFocusLightCheckBox":::
 
 ## <a name="iso-speed"></a>ISO 感光度
 
@@ -232,7 +232,7 @@ ms.locfileid: "89160981"
 
 该示例使用 [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider) 控件来调整当前曝光补偿，而使用复选框来切换自动 ISO 感光度调整。
 
-[!code-xml[IsoXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetIsoXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml" id="SnippetIsoXAML":::
 
 通过检查 [**Supported**](/uwp/api/windows.media.devices.isospeedcontrol.supported) 属性来检查当前捕获设备是否支持 **IsoSpeedControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 将用于指示自动 ISO 感光度调整当前是否处于活动状态的复选框的选中状态设置为 [**Auto**](/uwp/api/windows.media.devices.isospeedcontrol.auto) 属性的值。
 
@@ -240,15 +240,15 @@ ISO 感光度值必须在设备支持的范围内，且必须是受支持步长�
 
 在将滑块控件的值设置为 **IsoSpeedControl** 的当前值之前，需先注销 [**ValueChanged**](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) 事件处理程序，以便在设置该值时不触发该事件。
 
-[!code-cs[IsoControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsoControl)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetIsoControl":::
 
 在 **ValueChanged** 事件处理程序中，获取该控件的当前值并通过调用 [**SetValueAsync**](/uwp/api/windows.media.devices.isospeedcontrol.setvalueasync) 设置 ISO 感光度值。
 
-[!code-cs[IsoSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsoSlider)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetIsoSlider":::
 
 在自动 ISO 感光度复选框的 **CheckedChanged** 事件处理程序中，通过调用 [**SetAutoAsync**](/uwp/api/windows.media.devices.isospeedcontrol.setautoasync) 可打开自动 ISO 感光度调整。 通过调用 [**SetValueAsync**](/uwp/api/windows.media.devices.isospeedcontrol.setvalueasync) 并传入滑块控件的当前值，可关闭自动 ISO 感光度调整。
 
-[!code-cs[IsoCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsoCheckBox)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetIsoCheckBox":::
 
 ## <a name="optical-image-stabilization"></a>光学图像防抖动
 
@@ -260,14 +260,14 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 通过将 [**OpticalImageStabilizationControl.Mode**](/uwp/api/Windows.Media.Devices.OpticalImageStabilizationMode) 设置为所需模式，以便启用或禁用 OIS。
 
-[!code-cs[SetOpticalImageStabilizationMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetOpticalImageStabilizationMode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetSetOpticalImageStabilizationMode":::
 
 ## <a name="powerline-frequency"></a>Powerline frequency
 某些相机设备支持防闪烁处理，该功能依赖于获知当前环境中的电力线 AC 频率。 某些设备支持自动确定电力线频率，而另一些设备需要手动设置该频率。 以下代码示例显示如何确定设备上的电力线频率支持以及如何手动设置该频率（如果需要）。 
 
 首先，调用 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](/uwp/api/windows.media.devices.videodevicecontroller.trygetpowerlinefrequency)，从而传入 [**PowerlineFrequency**](/uwp/api/Windows.Media.Capture.PowerlineFrequency) 类型的输出参数；如果此调用失败，则电力线频率控制在当前设备上不受支持。 如果该功能受支持，则你可以通过尝试设置自动模式来确定自动模式在设备上是否可用。 为此，请调用 [**TrySetPowerlineFrequency**](/uwp/api/windows.media.devices.videodevicecontroller.trysetpowerlinefrequency) 并传入值 **Auto**。如果调用成功，则表示支持自动 powerline 频率。 如果设备上支持电力线频率控制器，但不支持自动频率检测，你仍然可以使用 **TrySetPowerlineFrequency** 手动设置频率。 在此示例中，**MyCustomFrequencyLookup** 是你实现的自定义方法，用于为设备的当前位置确定正确的频率。 
 
-[!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetPowerlineFrequency":::
 
 ## <a name="white-balance"></a>白平衡
 
@@ -275,7 +275,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 该示例使用 [**ComboBox**](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) 控件以从内置色温预设中进行选择，而使用 [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider) 控件进行白平衡调整。
 
-[!code-xml[WhiteBalanceXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetWhiteBalanceXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml" id="SnippetWhiteBalanceXAML":::
 
 通过检查 [**Supported**](/uwp/api/windows.media.devices.whitebalancecontrol.supported) 属性来检查当前捕获设备是否支持 **WhiteBalanceControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 将组合框的项目设置为 [**ColorTemperaturePreset**](/uwp/api/Windows.Media.Devices.ColorTemperaturePreset) 枚举的值。 并且将选定项设置为 [**Preset**](/uwp/api/windows.media.devices.whitebalancecontrol.preset) 属性的当前值。
 
@@ -283,15 +283,15 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 在将滑块控件的值设置为 **WhiteBalanceControl** 的当前值之前，需先注销 [**ValueChanged**](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) 事件处理程序，以便在设置该值时不触发该事件。
 
-[!code-cs[WhiteBalance](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalance)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetWhiteBalance":::
 
 在色温预设组合框的 [**SelectionChanged**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) 事件处理程序中，获取当前选定的预设并通过调用 [**SetPresetAsync**](/uwp/api/windows.media.devices.whitebalancecontrol.setpresetasync) 来设置控件值。 如果选定的预设值不为 **Manual**，将禁用手动白平衡滑块。
 
-[!code-cs[WhiteBalanceComboBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalanceComboBox)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetWhiteBalanceComboBox":::
 
 在 **ValueChanged** 事件处理程序中，获取该控件的当前值并通过调用 [**SetValueAsync**](/uwp/api/windows.media.devices.exposurecontrol.setvalueasync) 设置白平衡值。
 
-[!code-cs[WhiteBalanceSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalanceSlider)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetWhiteBalanceSlider":::
 
 > [!IMPORTANT]
 > 调整白平衡仅在预览流运行时才受支持。 在设置白平衡值或预设前，检查以确保预览流正在运行。
@@ -305,7 +305,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 此示例使用 [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider) 控件调整当前缩放级别。 以下部分将介绍如何基于屏幕上的收缩手势调整缩放。
 
-[!code-xml[ZoomXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetZoomXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml" id="SnippetZoomXAML":::
 
 通过检查 [**Supported**](/uwp/api/windows.media.devices.zoomcontrol.supported) 属性来检查当前捕获设备是否支持 **ZoomControl**。 如果该控件受支持，可针对此功能显示和启用 UI。
 
@@ -313,13 +313,13 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 在将滑块控件的值设置为 **ZoomControl** 的当前值之前，需先注销 [**ValueChanged**](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) 事件处理程序，以便在设置该值时不触发该事件。
 
-[!code-cs[ZoomControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetZoomControl)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetZoomControl":::
 
 在 **ValueChanged** 事件处理程序中，为 [**ZoomSettings**](/uwp/api/Windows.Media.Devices.ZoomSettings) 类创建一个新实例，并将 [**Value**](/uwp/api/windows.media.devices.zoomsettings.value) 属性设置为缩放滑块控件的当前值。 如果 **ZoomControl** 的 [**SupportedModes**](/uwp/api/windows.media.devices.zoomcontrol.supportedmodes) 属性包含 [**ZoomTransitionMode.Smooth**](/uwp/api/Windows.Media.Devices.ZoomTransitionMode)，这表示设备支持在不同的缩放级别之间进行平滑过渡。 由于此模式能提供更好的用户体验，因此通常你会希望针对 **ZoomSettings** 对象的 [**Mode**](/uwp/api/windows.media.devices.zoomsettings.mode) 属性使用该值。
 
 最后，通过将 **ZoomSettings** 对象传递给 **ZoomControl** 对象的 [**Configure**](/uwp/api/windows.media.devices.zoomcontrol.configure) 方法来更改当前缩放设置。
 
-[!code-cs[ZoomSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetZoomSlider)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetZoomSlider":::
 
 ### <a name="smooth-zoom-using-pinch-gesture"></a>借助收缩手势的平滑缩放
 
@@ -327,11 +327,11 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 首先，通过检查 [**ZoomControl.Supported**](/uwp/api/windows.media.devices.zoomcontrol.supported) 属性，确定数字缩放控件在当前设备上是否受支持。 接下来，通过检查 [**ZoomControl.SupportedModes**](/uwp/api/windows.media.devices.zoomcontrol.supportedmodes) 以查看它是否包含值 [**ZoomTransitionMode.Smooth**](/uwp/api/Windows.Media.Devices.ZoomTransitionMode)，确定是否可以使用平滑缩放模式。
 
-[!code-cs[IsSmoothZoomSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsSmoothZoomSupported)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetIsSmoothZoomSupported":::
 
 在启用多点触控的设备上，典型方案是基于两指收缩手势来调整缩放系数。 将 [**CaptureElement**](/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) 控件的 [**ManipulationMode**](/uwp/api/windows.ui.xaml.uielement.manipulationmode) 属性设置为 [**ManipulationModes.Scale**](/uwp/api/Windows.UI.Xaml.Input.ManipulationModes) 以启用收缩手势。 然后，注册收缩手势更改大小时引发的 [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件。
 
-[!code-cs[RegisterPinchGestureHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterPinchGestureHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetRegisterPinchGestureHandler":::
 
 在针对 **ManipulationDelta** 事件的处理程序中，将根据用户的收缩手势的变化更新缩放系数。 [**ManipulationDelta.Scale**](/uwp/api/Windows.UI.Input.ManipulationDelta) 值表示收缩手势的比例变化，如此收缩大小的小幅上升是略大于 1.0 的数字，并且收缩大小的小幅下降是略小于 1.0 的数字。 在此示例中，缩放控制的当前值乘以比例增量。
 
@@ -339,7 +339,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 通过创建新的 [**ZoomSettings**](/uwp/api/Windows.Media.Devices.ZoomSettings) 对象，在捕获设备上设置缩放级别。 将 [**Mode**](/uwp/api/windows.media.devices.zoomsettings.mode) 属性设置为 [**ZoomTransitionMode.Smooth**](/uwp/api/Windows.Media.Devices.ZoomTransitionMode)，然后将 [**Value**](/uwp/api/windows.media.devices.zoomsettings.value) 属性设置为你想要的缩放系数。 最后，调用 [**ZoomControl.Configure**](/uwp/api/windows.media.devices.zoomcontrol.configure) 在设备上设置新的缩放值。 该设备将平滑过渡到新的缩放值。
 
-[!code-cs[ManipulationDelta](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetManipulationDelta":::
 
 ## <a name="related-topics"></a>相关主题
 

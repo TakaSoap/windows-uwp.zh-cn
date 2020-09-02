@@ -6,12 +6,12 @@ keywords: windows 10, uwp, 试用, 应用内购买, IAP, Windows.ApplicationMode
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 73ab8c2a525e741695051025f46da9a98c765a84
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a0ecc6a6d219262513508114cee226d72d91e386
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162481"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362740"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>排除或限制试用版中的功能
 
@@ -20,7 +20,7 @@ ms.locfileid: "89162481"
 > [!IMPORTANT]
 > 本文介绍如何使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空间的成员来实现试用功能。 此命名空间不再更新新功能，我们建议你使用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空间。 **Windows 服务**命名空间支持最新的加载项类型，如存储管理的可使用的加载项和订阅，旨在与合作伙伴中心和应用商店支持的未来类型的产品和功能兼容。 **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 有关使用 **Windows.Services.Store** 命名空间实现试用功能的更多信息，请参阅[此文章](implement-a-trial-version-of-your-app.md)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 可添加供客户购买的功能的 Windows 应用。
 
@@ -66,12 +66,12 @@ ms.locfileid: "89162481"
 现在，你将通过使用 [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 而不是 [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 获取模拟的许可证信息。 在将应用的发行版本提交到**应用商店**之前，必须将代码中的所有 **CurrentAppSimulator** 引用替换为 **CurrentApp**。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseTest":::
 
 接下来，添加事件处理程序，以便许可证在应用运行的情况下发生更改时接收通知。 如果在试用期到期或客户通过 Microsoft Store 购买应用等情况下，应用的许可证将发生更改。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTestWithEvent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseTestWithEvent":::
 
 ## <a name="step-3-code-the-features-in-conditional-blocks"></a>步骤 3：将功能编码到条件块中
 
@@ -80,7 +80,7 @@ ms.locfileid: "89162481"
 此示例显示如何评估应用的许可证状态，以便你可以相应启用或禁用应用的功能。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#ReloadLicense)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="ReloadLicense":::
 
 ## <a name="step-4-get-an-apps-trial-expiration-date"></a>步骤 4：获取应用的试用过期日期
 
@@ -89,7 +89,7 @@ ms.locfileid: "89162481"
 此示例中的代码定义一个函数来获取应用试用许可证的过期日期。 如果许可证仍然有效，则显示到期日期及试用到期之前剩余的天数。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#DisplayTrialVersionExpirationTime)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="DisplayTrialVersionExpirationTime":::
 
 ## <a name="step-5-test-the-features-using-simulated-calls-to-the-license-api"></a>步骤 5：使用对许可证 API 的模拟调用测试功能
 
@@ -105,7 +105,7 @@ ms.locfileid: "89162481"
 > 在将应用提交到 Microsoft Store 时，你的应用必须使用 **CurrentApp** 对象，否则它将无法通过认证。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseRetailWithEvent":::
 
 ## <a name="step-7-describe-how-the-free-trial-works-to-your-customers"></a>步骤 7：描述免费试用版如何为你的客户所用
 

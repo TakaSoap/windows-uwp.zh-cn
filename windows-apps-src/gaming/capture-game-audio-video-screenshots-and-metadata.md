@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, 游戏, 捕获, 音频, 视频, 元数据
 ms.localizationpriority: medium
-ms.openlocfilehash: b8c7c285f95302d5aa78a9f4e2d5ab33a206ee62
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ea01139d4945d1e1b7e9a49078cd93725388e946
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173181"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364140"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>捕获游戏音频、视频、屏幕截图和元数据
 本文介绍如何捕获游戏视频、音频和屏幕截图，以及如何提交元数据。系统将该元数据嵌入到捕获和广播的媒体中，使你的应用和其他人可以创建被同步到游戏事件的动态体验。 
@@ -31,17 +31,17 @@ ms.locfileid: "89173181"
 
 若要启用或禁用系统应用捕获，只需调用静态方法 **[AppCapture.SetAllowedAsync](/uwp/api/windows.media.capture.appcapture.setallowedasync)** 并传递 **false** 禁用捕获或传递 **true** 启用捕获。
 
-[!code-cpp[SetAppCaptureAllowed](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetSetAppCaptureAllowed)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetSetAppCaptureAllowed":::
 
 
 ## <a name="receive-notifications-when-system-app-capture-starts-and-stops"></a>当系统应用捕获开始和停止时接收通知
 若要在系统应用捕获开始或结束时接收通知，请先通过调用工厂方法 **[GetForCurrentView](/uwp/api/windows.media.capture.appcapture.GetForCurrentView)** 获取 **[AppCapture](/uwp/api/windows.media.capture.appcapture)** 类的一个实例。 接下来，为 **[CapturingChanged](/uwp/api/windows.media.capture.appcapture.CapturingChanged)** 事件注册处理程序。
 
-[!code-cpp[RegisterCapturingChanged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterCapturingChanged)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetRegisterCapturingChanged":::
 
 在 **CapturingChanged** 事件的处理程序中，你可以查看 **[IsCapturingAudio](/uwp/api/windows.media.capture.appcapture.IsCapturingAudio)** 和 **[IsCapturingVideo](/uwp/api/windows.media.capture.appcapture.IsCapturingVideo)** 属性，以确定是否正在分别捕获音频或视频。 你可能想要更新你的应用的 UI，以指示当前的捕获状态。
 
-[!code-cpp[OnCapturingChanged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetOnCapturingChanged)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetOnCapturingChanged":::
 
 ## <a name="add-the-windows-desktop-extensions-for-the-uwp-to-your-app"></a>将适用于 UWP 的 Windows 桌面扩展添加到你的应用
 录制音频和视频以及直接从你的应用捕获屏幕截图的 API 位于 **[Windows.Media.AppRecording](/uwp/api/windows.media.apprecording)** 命名空间中，不包括在通用 API 协定中。 若要访问 API，你必须按照以下步骤将适用于 UWP 的 Windows 桌面扩展的引用添加到你的应用。
@@ -49,19 +49,19 @@ ms.locfileid: "89173181"
 1. 在 Visual Studio 的**解决方案资源管理器**中，展开你的 UWP 项目并右键单击**引用**，然后选择**添加引用...**。 
 2. 展开**通用 Windows** 节点并选择**扩展**。
 3. 在扩展列表中，选中与你的项目的目标版本匹配的**适用于 UWP 的 Windows 桌面扩展**条目旁边的复选框。 对于应用广播功能，版本必须为 1709 或更高版本。
-4. 单击" **确定**"。
+4. 单击 **“确定”** 。
 
 ## <a name="get-an-instance-of-apprecordingmanager"></a>获取 AppRecordingManager 的一个实例
 **[AppRecordingManager](/uwp/api/windows.media.apprecording.apprecordingmanager)** 类是用于管理应用录制的中央 API。 通过调用工厂方法 **[GetDefault](/uwp/api/windows.media.apprecording.apprecordingmanager.GetDefault)** 来获取此类的一个实例。 使用 **Windows.Media.AppRecording** 命名空间中的任何 API 之前，应检查该 API 在当前设备上是否存在。 在操作系统版本早于 Windows 10 版本 1709 的设备上，这些 API 不可用。 也可以不检查具体的操作系统版本，改用 **[ApiInformation.IsApiContractPresent](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 方法查询 *Windows.Media.AppBroadcasting.AppRecordingContract* 版本 1.0。 如果此协定存在，则录制 API 在该设备上可用。 本文中的示例代码检查 API 一次，然后在执行后续操作前检查 **AppRecordingManager** 是否为空。
 
-[!code-cpp[GetAppRecordingManager](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetAppRecordingManager)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetGetAppRecordingManager":::
 
 ## <a name="determine-if-your-app-can-currently-record"></a>确定你的应用当前是否可以录制
 有几种原因导致你的应用当前可能无法捕获音频或视频，包括当前设备不满足录制所需的硬件要求，或另一个应用当前正在广播。 在开始录制前，你可以检查你的应用当前是否能够录制。 调用 **AppRecordingManager** 对象的 **[GetStatus](/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** 方法，然后检查返回的 **[AppRecordingStatus](/uwp/api/windows.media.apprecording.apprecordingstatus)** 对象的 **[CanRecord](/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** 属性。 如果 **CanRecord** 返回 **false**，表示你的应用当前无法录制，则可以查看 **[详细信息](/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** 属性来确定原因。 根据具体原因，你可能要向用户显示状态或显示启用应用录制的说明。
 
 
 
-[!code-cpp[CanRecord](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetCanRecord)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetCanRecord":::
 
 ## <a name="manually-start-and-stop-recording-your-app-to-a-file"></a>手动开始和停止将你的应用录制到文件
 
@@ -69,32 +69,32 @@ ms.locfileid: "89173181"
 
 在以下示例中，当异步任务失败时，执行第一个**然后**块。 第二个**然后**块尝试访问任务结果，如果结果为空，则表示任务已完成。 在这两种情况下，调用下方显示的 **OnRecordingComplete** 帮助程序方法处理结果。 
 
-[!code-cpp[StartRecordToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetStartRecordToFile)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetStartRecordToFile":::
 
 录制操作完成后，检查返回的 **[AppRecordingResult](/uwp/api/windows.media.apprecording.apprecordingresult)** 对象的**[已成功](/uwp/api/windows.media.apprecording.apprecordingresult.Succeeded)** 属性以确定录制操作是否成功。 如果成功，你可以检查 **[IsFileTruncated](/uwp/api/windows.media.apprecording.apprecordingresult.IsFileTruncated)** 属性以确定系统是否因为存储原因而被强制截断捕获的文件。 你可以检查**[持续时间](/uwp/api/windows.media.apprecording.apprecordingresult.Duration)** 属性，如果文件被截断，你会发现录制文件的实际持续时间可能短于录制操作的持续时间。
 
-[!code-cpp[OnRecordingComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetOnRecordingComplete)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetOnRecordingComplete":::
 
 下面的示例显示了一些基本代码，这些代码用于开始和停止在上一示例中显示的录制操作。
 
-[!code-cpp[CallStartRecordToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetCallStartRecordToFile)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetCallStartRecordToFile":::
 
-[!code-cpp[FinishRecordToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetFinishRecordToFile)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetFinishRecordToFile":::
 
 ## <a name="record-a-historical-time-span-to-a-file"></a>将历史时间跨度录制到文件
 如果用户已经在系统设置中为你的应用启用历史录制，你可以录制之前已经发生的游戏的时间跨度。 本文的上一个示例演示了如何确认你的应用当前可以录制游戏。 你还可以通过其他检查确定是否已启用历史捕获。 再一次调用 **[GetStatus](/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** 并检查返回的 **AppRecordingStatus** 对象的 **[CanRecordTimeSpan](/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecordTimeSpan)** 属性。 此示例也返回 **AppRecordingStatus** 的 **[HistoricalBufferDuration](/uwp/api/windows.media.apprecording.apprecordingstatus.HistoricalBufferDuration)** 属性，它将用于确定录制操作的有效开始时间。
 
-[!code-cpp[CanRecordTimeSpan](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetCanRecordTimeSpan)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetCanRecordTimeSpan":::
 
 若要捕获历史时间跨度，你必须指定录制的开始时间和持续时间。 开始时间作为 **[DateTime](/uwp/api/windows.foundation.datetime)** 结构提供。 开始时间必须早于当前时间，且在历史录制缓冲区的长度内。 在此示例中，检查是否已启用历史录制时要检索缓冲区长度，如上一个代码示例中所示。 历史录制的持续时间作为 **[TimeSpan](/uwp/api/windows.foundation.timespan)** 结构提供，它也应等于或小于历史缓冲区的持续时间。 一旦你确定了所需的开始时间和持续时间，则调用 **[RecordTimeSpanToFileAsync](/uwp/api/windows.media.apprecording.apprecordingmanager.recordtimespantofileasync)** 开始录制操作。
 
 同手动开始和停止录制一样，当历史录制完成后，你可以检查返回的 **[AppRecordingResult](/uwp/api/windows.media.apprecording.apprecordingresult)** 对象的**[已成功](/uwp/api/windows.media.apprecording.apprecordingresult.Succeeded)** 属性以确定录制操作是否成功，还可以检查 **[IsFileTruncated](/uwp/api/windows.media.apprecording.apprecordingresult.IsFileTruncated)** 和**[持续时间](/uwp/api/windows.media.apprecording.apprecordingresult.Duration)** 属性，如果文件被截断，你会发现录制文件的实际持续时间可能短于请求的时间窗口的持续时间。
 
-[!code-cpp[RecordTimeSpanToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRecordTimeSpanToFile)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetRecordTimeSpanToFile":::
 
 下面的示例显示了一些基本代码，这些代码用于启动在上一示例中显示的历史录制操作。
 
-[!code-cpp[CallRecordTimeSpanToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetCallRecordTimeSpanToFile)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetCallRecordTimeSpanToFile":::
 
 ## <a name="save-screenshot-images-to-files"></a>将屏幕截图图像保存到文件
 你的应用可以启动屏幕截图捕获，将应用窗口的当前内容保存到一个图像文件或使用不同的图像编码保存到多个图像文件。 若要指定你希望使用的图像编码，可以创建一个字符串列表，其中每个字符串表示一个图像类型。 **[ImageEncodingSubtypes](/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)** 的属性为每个受支持的图像类型提供正确的字符串，如 **MediaEncodingSubtypes.Png** 或 **MediaEncodingSubtypes.JpegXr**。
@@ -105,11 +105,11 @@ ms.locfileid: "89173181"
 
 当异步调用 **SaveScreenshotToFilesAsync** 完成时，它将返回 **[AppRecordingSavedScreenshotInfo](/uwp/api/windows.media.apprecording.apprecordingsavedscreenshotinfo)** 对象，该对象提供 **StorageFile** 和关联的 **MediaEncodingSubtypes** 值，指示每个保存的图像的图像类型。
 
-[!code-cpp[SaveScreenShotToFiles](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetSaveScreenShotToFiles)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetSaveScreenShotToFiles":::
 
 下面的示例显示了一些基本代码，这些代码用于启动在上一示例中显示的屏幕截图操作。
 
-[!code-cpp[CallSaveScreenShotToFiles](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetCallSaveScreenShotToFiles)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetCallSaveScreenShotToFiles":::
 
 ## <a name="add-game-metadata-for-system-and-app-initiated-capture"></a>为系统和应用启动的捕获添加游戏元数据
 本文的以下部分介绍如何提供系统将嵌入到已捕获游戏或已广播游戏的 MP4 流中的元数据。 元数据可以嵌入到使用内置系统 UI 捕获的媒体中或由应用使用 **AppRecordingManager** 捕获的媒体中。 你的应用和其他应用在媒体播放过程中可以提取此元数据，以提供与捕获或广播的游戏同步的依赖于上下文的体验。
@@ -117,48 +117,48 @@ ms.locfileid: "89173181"
 ### <a name="get-an-instance-of-appcapturemetadatawriter"></a>获取 AppCaptureMetadataWriter 的一个实例
 用于管理应用捕获元数据的主要类是 **[AppCaptureMetadataWriter](/uwp/api/windows.media.capture.appcapturemetadatawriter)**。 在初始化此类的实例时，使用 **[ApiInformation.IsApiContractPresent](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 方法查询 *Windows.Media.Capture.AppCaptureMetadataContract* 1.0，以验证 API 在当前设备上可用。
 
-[!code-cpp[GetMetadataWriter](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetMetadataWriter)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetGetMetadataWriter":::
 
 ### <a name="write-metadata-to-the-system-cache-for-your-app"></a>将元数据写入到你的应用的系统缓存
 每个元数据项都有一个字符串标签，用于标识元数据项、关联的数据值（可能是字符串、整数或双值），以及一个来自 **[AppCaptureMetadataPriority](/uwp/api/windows.media.capture.appcapturemetadatapriority)** 枚举的值，该值指示数据项的相对优先级。 元数据项可以被视为发生在单个时间点的“事件”或在一个时间窗口内维持一个值的“状态”。 元数据被写入到内存缓存中，由系统为你的应用进行分配和管理。 系统对元数据的内存缓存强制执行大小限制，并且当达到此限制时，系统将基于每个元数据项被写入时的优先级清除数据。 本文的下一部分演示如何管理你的应用的元数据内存分配。
 
 一个典型的应用可以选择在捕获会话开始时写入一些元数据，以便为后续数据提供一些上下文。 在此方案中，建议你使用即时“事件”数据。 此示例调用 **[AddStringEvent](/uwp/api/windows.media.capture.appcapturemetadatawriter.addstringevent)**、**[AddDoubleEvent](/uwp/api/windows.media.capture.appcapturemetadatawriter.adddoubleevent)** 和 **[AddInt32Event](/uwp/api/windows.media.capture.appcapturemetadatawriter.addint32event)** 设置每个数据类型的即时值。
 
-[!code-cpp[StartSession](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetStartSession)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetStartSession":::
 
 使用在一段时间内持续存在的“状态”数据的一个常见方案是跟踪玩家目前所在的游戏地图。 此示例调用 **[StartStringState](/uwp/api/windows.media.capture.appcapturemetadatawriter.startstringstate)** 设置状态值。 
 
-[!code-cpp[StartMap](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetStartMap)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetStartMap":::
 
 调用 **[StopState](/uwp/api/windows.media.capture.appcapturemetadatawriter.stopstate)** 记录特定状态已结束。
 
-[!code-cpp[EndMap](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetEndMap)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetEndMap":::
 
 你可以通过使用现有状态标签设置新值的方式覆盖状态。
 
-[!code-cpp[LevelUp](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetLevelUp)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetLevelUp":::
 
 你可以通过调用 **[StopAllStates](/uwp/api/windows.media.capture.appcapturemetadatawriter.StopAllStates)** 的方式结束所有当前打开的状态。
 
-[!code-cpp[RaceComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRaceComplete)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetRaceComplete":::
 
 ### <a name="manage-metadata-cache-storage-limit"></a>管理元数据缓存存储限制
 你使用 **AppCaptureMetadataWriter** 写入的元数据由系统进行缓存，直到该元数据被写入到关联的媒体流。 系统定义每个应用的元数据缓存的大小限制。 一旦达到缓存大小限制，系统将开始清除缓存的元数据。 系统将删除用 **[AppCaptureMetadataPriority](/uwp/api/windows.media.capture.appcapturemetadatapriority)** 优先级值编写的元数据，然后再删除具有 **[AppCaptureMetadataPriority](/uwp/api/windows.media.capture.appcapturemetadatapriority)** 优先级的元数据。
 
 在任何时候，你都可以通过调用 **[RemainingStorageBytesAvailable](/uwp/api/windows.media.capture.appcapturemetadatawriter.RemainingStorageBytesAvailable)** 的方式检查在你的应用的元数据缓存中可用的字节数。 你可以选择设置你自己的应用定义的阈值，之后可以选择减少你写入到缓存的元数据量。 下面的示例演示了此模式的简单实现。
 
-[!code-cpp[CheckMetadataStorage](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetCheckMetadataStorage)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetCheckMetadataStorage":::
 
-[!code-cpp[ComboExecuted](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetComboExecuted)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetComboExecuted":::
 
 ### <a name="receive-notifications-when-the-system-purges-metadata"></a>当系统清除元数据时收到通知
 通过注册 **[MetadataPurged](/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** 事件的处理程序，你可以注册以便在系统开始清除应用程序的元数据时接收通知。
 
-[!code-cpp[RegisterMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterMetadataPurged)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetRegisterMetadataPurged":::
 
 在 **MetadataPurged** 事件的处理程序中，你可以通过结束低优先级状态的方式清除元数据缓存中的一些空间，可以实施由应用定义的减少写入到缓存的元数据量的逻辑，或者不执行任何操作，让系统继续基于写入的优先级清除缓存。
 
-[!code-cpp[OnMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetOnMetadataPurged)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppRecordingExample/cpp/AppRecordingExample/App.cpp" id="SnippetOnMetadataPurged":::
 
 ## <a name="related-topics"></a>相关主题
 

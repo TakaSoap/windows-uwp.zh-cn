@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c24e3bcc6ce10fb85f9e87ac213172e147d9e6b6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 032117349ea20cc3f4f6a3275969ff59a05502b4
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172271"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363940"
 ---
 # <a name="generate-a-3mf-package"></a>生成 3MF 程序包
 
@@ -37,7 +37,7 @@ ms.locfileid: "89172271"
 
 **Printing3D3MFPackage** 类表示完整的 3MF 文档，并且 3MF 文档的核心是其模型部分，由 [**Printing3DModel**](/uwp/api/windows.graphics.printing3d.printing3dmodel) 类表示。 我们希望指定的有关 3D 模型的大部分信息都将通过设置 **Printing3DModel** 类的属性和它们的基础类的属性来存储。
 
-[!code-cs[InitClasses](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetInitClasses)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetInitClasses":::
 
 <!-- >**Note** We do not yet associate the **Printing3D3MFPackage** with its corresponding **Printing3DModel** object. Only after fleshing out the **Printing3DModel** with all of the information we wish to specify will we make that association (see [link]). -->
 
@@ -45,7 +45,7 @@ ms.locfileid: "89172271"
 
 3MF 文档的模型部分可以将元数据以存储在 **Metadata** 属性中的字符串的键/值对的形式保存。 存在大量预定义的元数据名称，但其他对可以添加为扩展名的一部分（在 [3MF 规范](https://3mf.io/what-is-3mf/3mf-specification/)中有更详细的介绍）。 由程序包的接收器（一种 3D 制造设备）来确定是否以及如何处理元数据，但最好是在 3MF 程序包中包含尽可能多的基本信息：
 
-[!code-cs[Metadata](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMetadata)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetMetadata":::
 
 ## <a name="mesh-data"></a>网格数据
 
@@ -53,18 +53,18 @@ ms.locfileid: "89172271"
 
 以下方法将顶点添加到网格，然后提供它们在 3D 空间中的相应位置：
 
-[!code-cs[Vertices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetVertices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetVertices":::
 
 下一个方法定义在这些顶点上绘制的所有三角形：
 
-[!code-cs[TriangleIndices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTriangleIndices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetTriangleIndices":::
 
 > [!NOTE]
 > 所有三角形都必须以逆时针方向的顺序（当从网格对象外部查看三角形时）定义其索引，以便使它们的面法线矢量指向外部。
 
 当 Printing3DMesh 对象包含有效的顶点和三角形集时，应该随后将其添加到模型的 **Meshes** 属性。 程序包中的所有 **Printing3DMesh** 对象都必须存储在 **Printing3DModel** 类的 **Meshes** 属性下。
 
-[!code-cs[MeshAdd](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMeshAdd)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetMeshAdd":::
 
 
 ## <a name="create-materials"></a>创建材料
@@ -80,7 +80,7 @@ ms.locfileid: "89172271"
 
 默认材料类型为**基本材料**，该类型具有**颜色材料**值（如下所述）和旨在指定要使用的材料*类型*的名称属性。
 
-[!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetBaseMaterialGroup":::
 
 > [!NOTE]
 > 3D 制造设备将确定哪些可用物理材料映射到存储在 3MF 中的哪些虚拟材料元素。 材料映射并不一定是 1:1：如果 3D 打印机只使用一种材料，无论向哪些对象或面分配了不同的材料，它都将以该材料打印整个模型。
@@ -89,32 +89,32 @@ ms.locfileid: "89172271"
 
 **颜色材料**类似于**基本材料**，但它们不包含名称。 因此，它们不会提供有关计算机应使用哪些材料类型的说明。 它们仅保留颜色数据，并且让计算机选择材料类型（计算机随后可能提示用户进行选择）。 在以下代码中，独立使用上一方法中的 `colrMat` 对象。
 
-[!code-cs[ColorMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetColorMaterialGroup)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetColorMaterialGroup":::
 
 ### <a name="composite-materials"></a>复合材料
 
 **复合材料**仅指示制造设备使用不同**基本材料**的统一组合。 每个**复合材料组**都必须仅引用一个要从中抽取成分的**基本材料组**。 此外，此组内要提供的**基本材料**必须在**材料索引**列表中列出，以供每个**复合材料**在指定比率（每个**复合材料**只是**基本材料**的比率）时引用。
 
-[!code-cs[CompositeMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetCompositeMaterialGroup)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetCompositeMaterialGroup":::
 
 ### <a name="texture-coordinate-materials"></a>纹理坐标材料
 
 3MF 支持使用 2D 图形为 3D 模型的图面上色。 通过此方式，该模型可以在每个三角形面上传达更多的颜色数据（与每个三角形顶点只有一个颜色值相反）。 和**颜色材料**一样，纹理坐标材料仅传达颜色数据。 若要使用 2D 纹理，必须先声明纹理资源：
 
-[!code-cs[TextureResource](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTextureResource)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetTextureResource":::
 
 > [!NOTE]
 > 纹理数据属于 3MF 程序包本身，而不属于程序包内的模型部件。
 
 接下来，我们必须填写 **Texture3Coord 材料**。 其中每一个都引用一个纹理资源，并在图像上指定一个特定的点（在 UV 坐标中）。
 
-[!code-cs[Texture2CoordMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTexture2CoordMaterialGroup)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetTexture2CoordMaterialGroup":::
 
 ## <a name="map-materials-to-faces"></a>将材料映射到面
 
 为了指示哪些材料映射到每个三角形上的哪些顶点，我们必须在模型的网格对象上执行其他一些工作（如果模型包括多个网格，则每个网格都必须分别分配它们的材料）。 如上所述，材料按顶点、按三角形分配。 请参考下面的代码以查看如何输入和解释此信息。
 
-[!code-cs[MaterialIndices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMaterialIndices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetMaterialIndices":::
 
 ## <a name="components-and-build"></a>组件和版本
 
@@ -124,22 +124,22 @@ ms.locfileid: "89172271"
 
 所有 **Printing3DComponent** 组件都必须在模型的 **Components** 属性中直接引用。 要在打印作业中使用的单个特定组件存储在 **Build** 属性中。
 
-[!code-cs[Components](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetComponents)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetComponents":::
 
 ## <a name="save-package"></a>保存程序包
 现在我们具有包含已定义材料和组件的模型，我们可以将其保存到程序包。
 
-[!code-cs[SavePackage](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSavePackage)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetSavePackage":::
 
 此函数可确保正确指定纹理。
 
-[!code-cs[FixTexture](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetFixTexture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetFixTexture":::
 
 我们可以从此处在应用内启动打印作业（请参阅[从应用进行 3D 打印](./3d-print-from-app.md)），或者将此 **Printing3D3MFPackage** 另存为 .3mf 文件。
 
 以下方法选取已完成的 **Printing3D3MFPackage** 并将其数据保存到.3mf 文件。
 
-[!code-cs[SaveTo3mf](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSaveTo3mf)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetSaveTo3mf":::
 
 ## <a name="related-topics"></a>相关主题
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，连接的设备，远程系统，罗马，project 罗马，后台任务，应用服务
 ms.localizationpriority: medium
-ms.openlocfilehash: ccd0de91279b4466b662a5b5e85bbab55d0f7712
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 779205a47b85cf9f9a0aec9db910b97995dc2cd8
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156041"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363910"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>与远程应用服务通信
 
@@ -60,7 +60,7 @@ ms.locfileid: "89156041"
 
 本节中的代码需要以下 **using** 语句以按原样运行：
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetUsings)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetUsings":::
 
 
 首先必须实例化 [**AppServiceConnection**](/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection) 对象，就像本地调用应用服务一样。 [创建和使用应用服务](how-to-create-and-consume-an-app-service.md)对此过程做了更为详细的介绍。 在此示例中，要定向的应用服务是随机数字生成器服务。
@@ -68,11 +68,11 @@ ms.locfileid: "89156041"
 > [!NOTE]
 > 假定在调用以下方法的代码中已通过某种方法获取了 [RemoteSystem](/uwp/api/Windows.System.RemoteSystems.RemoteSystem) 对象。 有关如何设置的说明，请参阅[启动远程应用](launch-a-remote-app.md)。
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetAppService)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetAppService":::
 
 接下来，为计划的远程设备创建 [**RemoteSystemConnectionRequest**](/uwp/api/Windows.System.RemoteSystems.RemoteSystemConnectionRequest) 对象。 随后它将用于向该设备打开 **AppServiceConnection**。 请注意，在以下示例中，极大地简化了错误处理和报告以实现简便性。
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetRemoteConnection)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetRemoteConnection":::
 
 此时，在远程计算机上，你应该拥有应用服务的开放连接。
 
@@ -80,7 +80,7 @@ ms.locfileid: "89156041"
 
 在此处，你可以 [**ValueSet**](/uwp/api/windows.foundation.collections.valueset) 对象的形式发送或接收通过该服务传递的消息（有关详细信息，请参阅[创建和使用应用服务](how-to-create-and-consume-an-app-service.md)）。 随机数字生成器服务采用将密钥 `"minvalue"` 和 `"maxvalue"` 用作输入的两个整数、随机选择这两个整数范围内的一个整数，并通过密钥 `"Result"` 将其返回到调用进程。
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetSendMessage)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetSendMessage":::
 
 此时你已连接到目标主设备上的应用服务、已在该设备上运行操作，并作为响应收到了客户端设备的数据。
 

@@ -6,12 +6,12 @@ keywords: windows 10, uwp, 试用, 应用内购买, Windows.Services.Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cac33f36e66c1a5f22fc246daab192298e9f876
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c07be51de312ab5a8483cb67537e809d3a55e14a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167551"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363639"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>实现应用的试用版
 
@@ -57,7 +57,7 @@ ms.locfileid: "89167551"
 
 请务必阐述你的应用在免费试用期间及之后的行为，以便客户不会对应用行为感到惊讶。 有关描述应用的详细信息，请参阅[创建应用提要](../publish/create-app-store-listings.md)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 本示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
@@ -78,7 +78,7 @@ ms.locfileid: "89167551"
 此时，如果用户购买了应用，则向用户提供许可状态已发生更改的反馈是一个好做法。 你可能需要请求用户重新启动应用（如果你已经这样编码）。 但是一定要让这一过渡尽可能无缝和轻松地进行。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[ImplementTrial](./code/InAppPurchasesAndLicenses_RS1/cs/ImplementTrialPage.xaml.cs#ImplementTrial)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/ImplementTrialPage.xaml.cs" id="ImplementTrial":::
 
 有关完整的应用程序示例，请参阅 [Microsoft Store 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 

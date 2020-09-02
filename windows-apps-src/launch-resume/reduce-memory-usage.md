@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a457b5eb976d1c34daa79a88113174fa664804ae
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8a65e7e8c47af2d0536cecea2725fd06d6d48868
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175151"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362821"
 ---
 # <a name="free-memory-when-your-app-moves-to-the-background"></a>在将应用移动到后台时释放内存
 
@@ -38,11 +38,11 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 由于在后台运行会减少允许应用保留的内存资源，因此还应该注册 [**AppMemoryUsageIncreased**](/uwp/api/windows.system.memorymanager.appmemoryusageincreased) 和 [**AppMemoryUsageLimitChanging**](/uwp/api/windows.system.memorymanager.appmemoryusagelimitchanging) 事件，这两个事件可用于检查应用的当前内存使用量和当前限制。 这些事件的处理程序如以下示例中所示。 有关 UWP 应用的应用程序生命周期的详细信息，请参阅[应用生命周期](..//launch-resume/app-lifecycle.md)。
 
-[!code-cs[RegisterEvents](./code/ReduceMemory/cs/App.xaml.cs#SnippetRegisterEvents)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetRegisterEvents":::
 
 当引发 [**EnteredBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) 事件时，请设置跟踪变量以指示当前正在后台运行。 当你编写代码来减少内存使用量时，这将非常有用。
 
-[!code-cs[EnteredBackground](./code/ReduceMemory/cs/App.xaml.cs#SnippetEnteredBackground)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetEnteredBackground":::
 
 当应用过渡到后台时，系统会降低该应用的内存限制，以确保当前的前台应用具有足够的资源来提供响应迅速的用户体验
 
@@ -50,7 +50,7 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 在此示例中，是在帮助程序方法 **ReduceMemoryUsage** 中编写此代码，此方法将在后文中进行定义。
 
-[!code-cs[MemoryUsageLimitChanging](./code/ReduceMemory/cs/App.xaml.cs#SnippetMemoryUsageLimitChanging)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetMemoryUsageLimitChanging":::
 
 > [!NOTE]
 > 某些设备配置会允许应用程序在超出新内存限制的情况下继续运行，直到系统遇到资源压力，而有些设备则不允许。 尤其是在 Xbox 上，如果应用在 2 秒内未将内存使用降低至新限制以下，应用将暂停或终止。 这意味着，通过使用此事件在引发该事件的 2 秒内将资源使用量降低至限制下，就可以在大部分设备上实现最佳体验。
@@ -59,26 +59,26 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 查看 [**AppMemoryUsageLevel**](/uwp/api/Windows.System.AppMemoryUsageLevel) 是否为 **High** 或 **OverLimit**，如果是，请降低内存使用量。 在此示例中，这将由帮助程序方法 **ReduceMemoryUsage** 处理。 还可以订阅 [**AppMemoryUsageDecreased**](/uwp/api/windows.system.memorymanager.appmemoryusagedecreased) 事件，查看应用是否低于限制，如果是，你便知道可以分配其他资源。
 
-[!code-cs[MemoryUsageIncreased](./code/ReduceMemory/cs/App.xaml.cs#SnippetMemoryUsageIncreased)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetMemoryUsageIncreased":::
 
 **ReduceMemoryUsage** 是一个帮助程序方法，当应用超过在后台运行的使用量限制时，可实现该方法来释放内存。 释放内存的方法视应用的具体情况而定，但用于释放内存的一个建议方法是释放 UI 以及与应用视图关联的其他资源。 为此，请确保正在后台状态下运行，然后将应用窗口的 [**Content**](/uwp/api/windows.ui.xaml.window.content) 属性设置为 `null`、注销 UI 事件处理程序，并删除可能具有的对页面的任何其他引用。 如果未能注销 UI 事件处理程序和清除可能具有的对页面的任何其他引用，将阻止释放页面资源。 然后，调用 **GC.Collect** 立即回收释放的内存。 通常，不用强制执行垃圾回收，因为系统会自行处理此操作。 在此特定情况下，我们会减少用于此应用程序的内存量，因为它会进入后台，进而降低系统为回收内存而决定终止应用的可能性。
 
-[!code-cs[UnloadViewContent](./code/ReduceMemory/cs/App.xaml.cs#SnippetUnloadViewContent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetUnloadViewContent":::
 
 当窗口内容收集完成时，每个框架都开始其断开连接处理。 如果窗口内容下的可视化对象树中存在页面，这些页面将开始引发其 Unloaded 事件。 除非已删除对页面的所有引用，否则无法从内存中彻底清除它们。 在 Unloaded 回调中，执行以下操作以确保快速释放内存：
 * 清除页面中任何较大的数据结构，并将它们设置为 `null`。
 * 注销页面内具有回调方法的所有事件处理程序。 确保在页面的 Loaded 事件处理程序期间注册这些回调。 当 UI 已完成重建，并且页面已添加到可视化对象树时，将引发 Loaded 事件。
 * 在 Unloaded 回调的末尾调用 `GC.Collect`，以便快速对刚设为 `null` 的任何大数据结构进行垃圾回收。 同样，通常不用强制进行垃圾回收，因为系统会自行处理该操作。 在此特定情况下，我们会减少用于此应用程序的内存量，因为它会进入后台，进而降低系统为回收内存而决定终止应用的可能性。
 
-[!code-cs[MainPageUnloaded](./code/ReduceMemory/cs/App.xaml.cs#SnippetMainPageUnloaded)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetMainPageUnloaded":::
 
 在 [**LeavingBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground) 事件处理程序中，设置跟踪变量 (`isInBackgroundMode`) 以指示应用已不在后台运行。 接下来，查看当前窗口的 [**Content**](/uwp/api/windows.ui.xaml.window.content) 是否为 `null`，如果已释放应用视图来清除内存（在后台运行时），它将为 null。 如果窗口内容为 `null`，请重新生成应用视图。 在此示例中，使用帮助程序方法 **CreateRootFrame** 创建窗口内容。
 
-[!code-cs[LeavingBackground](./code/ReduceMemory/cs/App.xaml.cs#SnippetLeavingBackground)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetLeavingBackground":::
 
 **CreateRootFrame** 帮助程序方法用于重新创建应用的视图内容。 此方法中的代码几乎默认项目模板中提供的 [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) 处理程序代码完全相同。 一个区别是：**Launching** 处理程序确定 [**LaunchActivatedEventArgs**](/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) 的 [**PreviousExecutionState**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.previousexecutionstate) 属性中的先前执行状态，而 **CreateRootFrame** 方法只是获取作为参数传入的先前执行状态。 若要最大程度地减少重复代码，可以重构默认的 **Launching** 事件处理程序代码以调用 **CreateRootFrame**。
 
-[!code-cs[CreateRootFrame](./code/ReduceMemory/cs/App.xaml.cs#SnippetCreateRootFrame)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetCreateRootFrame":::
 
 ## <a name="guidelines"></a>指南
 

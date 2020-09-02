@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, ad control, interstitial
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ada6ad04150d6a0f20e9286122ce02933091236
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: eedb3f12bfc9da51afb2d5205122cbd42d7b31bf
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174971"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363090"
 ---
 # <a name="interstitial-ads"></a>间隙广告
 
@@ -37,7 +37,7 @@ ms.locfileid: "89174971"
 > [!NOTE]
 > 间隙广告的 API 不会处理任何用户界面，播放视频时除外。 在考虑如何在应用中集成间隙广告时，可就有关处理方法、避免内容的指南参考[间隙最佳做法](ui-and-user-experience-guidelines.md#interstitialbestpractices10)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 * 使用 Visual Studio 2015 或更高版本的 Visual Studio 安装 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 有关安装说明，请参阅[此文章](install-the-microsoft-advertising-libraries.md)。
 
@@ -69,22 +69,22 @@ ms.locfileid: "89174971"
 
 3.  在应用的相应代码文件中（例如，在 MainPage.xaml.cs 或部分其他页面的代码文件中）添加以下命名空间引用。
 
-    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="Snippet1":::
 
 4.  在应用的相应位置（例如，在 ```MainPage``` 或部分其他页面）声明 [InterstitialAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 对象和几个字符串字段，这些字段代表间隙广告的应用程序 ID 和广告单元 ID。 以下代码示例将 `myAppId` 和 `myAdUnitId` 字段分配给间隙广告的[测试值](set-up-ad-units-in-your-app.md#test-ad-units)。
 
     > [!NOTE]
     > 每个 **InterstitialAd** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 在将应用发布到应用商店之前，必须将 [这些测试值替换为](#release) 合作伙伴中心的实时值。
 
-    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="Snippet2":::
 
 5.  在启动时运行的代码中（例如，在页面的构造函数中）实例化 **InterstitialAd** 对象，并安装对象事件的事件处理程序。
 
-    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="Snippet3":::
 
 6.  如果你需要显示*间隙视频*广告：在需要广告之前大约 30-60 秒，请使用 [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法预取广告。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **AdType.Video**。
 
-    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="Snippet4":::
 
     如果你需要显示*间隙横幅*广告：在需要广告之前大约 5-8 秒，请使用 [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法预取广告。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请确保为 ad 类型指定 **AdType** 。
 
@@ -94,11 +94,11 @@ ms.locfileid: "89174971"
 
 6.  此时在你想要显示间隙视频或间隙横幅广告的代码中，确认是否已准备好显示 **InterstitialAd**，然后使用 [Show](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法显示它。
 
-    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="Snippet5":::
 
 7.  定义 **InterstitialAd** 对象的事件处理程序。
 
-    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="Snippet6":::
 
 8.  生成并测试你的应用，以确认它会显示测试广告。
 
@@ -129,15 +129,15 @@ ms.locfileid: "89174971"
     > [!NOTE]
     > 每个 **InterstitialAd** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 在将应用发布到应用商店之前，必须将 [这些测试值替换为](#release) 合作伙伴中心的实时值。
 
-    [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet1)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/script.js" id="Snippet1":::
 
 5.  在启动时运行的代码中（例如，在页面的构造函数中）实例化 **InterstitialAd** 对象，并安装对象的事件处理程序。
 
-    [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet2)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/script.js" id="Snippet2":::
 
 5. 如果你需要显示*间隙视频*广告：在需要广告之前大约 30-60 秒，请使用 [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法预取广告。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **InterstitialAdType.video**。
 
-    [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet3)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/script.js" id="Snippet3":::
 
     如果你需要显示*间隙横幅*广告：在需要广告之前大约 5-8 秒，请使用 [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法预取广告。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **InterstitialAdType.display**。
 
@@ -149,11 +149,11 @@ ms.locfileid: "89174971"
 
 6.  此时在你想要显示广告的代码中，确认是否已准备好显示 **InterstitialAd**，然后使用 [Show](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法显示它。
 
-    [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/samples.js#Snippet4)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/samples.js" id="Snippet4":::
 
 7.  定义 **InterstitialAd** 对象的事件处理程序。
 
-    [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/samples.js#Snippet5)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/samples.js" id="Snippet5":::
 
 9.  生成并测试你的应用，以确认它会显示测试广告。
 
@@ -173,26 +173,26 @@ ms.locfileid: "89174971"
 
 2.  在应用的相应头文件（例如，DirectXPage.xaml.h）中，声明 [InterstitialAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 对象和相关的事件处理程序方法。  
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet1)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h" id="Snippet1":::
 
 3.  在相同的头文件中声明几个字符串字段，这些字段代表间隙广告的应用程序 ID 和广告单元 ID。 以下代码示例将 `myAppId` 和 `myAdUnitId` 字段分配给间隙广告的[测试值](set-up-ad-units-in-your-app.md#test-ad-units)。
 
     > [!NOTE]
     > 每个 **InterstitialAd** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 在将应用发布到应用商店之前，必须将 [这些测试值替换为](#release) 合作伙伴中心的实时值。
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet2)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h" id="Snippet2":::
 
 4.  在要添加代码以显示间隙广告的 .cpp 文件中，添加以下命名空间引用。 以下示例假设你要将代码添加到应用的 DirectXPage.xaml.cpp 文件中。
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet3)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp" id="Snippet3":::
 
 6.  在启动时运行的代码中（例如，在页面的构造函数中）实例化 **InterstitialAd** 对象，并安装对象事件的事件处理程序。 在以下示例中，```InterstitialAdSamplesCpp``` 是项目的命名空间；请根据需要针对代码更改此名称。
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet4)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp" id="Snippet4":::
 
 7. 如果你需要显示*间隙视频*广告：在需要间隙广告之前大约 30-60 秒，请使用 [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法预取广告。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请确保为 ad 类型指定 **AdType：： Video** 。
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet5)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp" id="Snippet5":::
 
     如果你需要显示*间隙横幅*广告：在需要广告之前大约 5-8 秒，请使用 [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法预取广告。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **AdType::Display**。
 
@@ -202,11 +202,11 @@ ms.locfileid: "89174971"
 
 7.  此时在你想要显示广告的代码中，确认是否已准备好显示 **InterstitialAd**，然后使用 [Show](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法显示它。
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet6)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp" id="Snippet6":::
 
 8.  定义 **InterstitialAd** 对象的事件处理程序。
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet7)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp" id="Snippet7":::
 
 9. 生成并测试你的应用，以确认它会显示测试广告。
 

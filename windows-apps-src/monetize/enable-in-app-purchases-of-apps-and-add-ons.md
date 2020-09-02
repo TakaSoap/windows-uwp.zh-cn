@@ -6,12 +6,12 @@ keywords: windows 10, uwp, 加载项, 应用内购买, IAP, Windows.Services.Sto
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 36140b18c2358bf0b7ed497138ca7f9059900736
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3064a651715329a3602c0c3539394d2ce72f90a7
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171561"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362810"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>支持应用内购买应用和加载项
 
@@ -26,7 +26,7 @@ ms.locfileid: "89171561"
 > [!NOTE]
 > **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[此文章](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 本示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
@@ -46,7 +46,7 @@ ms.locfileid: "89171561"
 此示例演示如何使用 [StoreContext](/uwp/api/windows.services.store.storecontext) 类的 [RequestPurchaseAsync](/uwp/api/windows.services.store.storecontext.requestpurchaseasync) 方法，购置具有已知[应用商店 ID](in-app-purchases-and-trials.md#store-ids) 的应用或加载项。 有关完整的应用程序示例，请参阅 [Microsoft Store 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnablePurchases](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs#PurchaseAddOn)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs" id="PurchaseAddOn":::
 
 ## <a name="video"></a>视频
 

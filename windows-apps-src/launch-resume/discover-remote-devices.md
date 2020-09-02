@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，连接的设备，远程系统，罗马，project 罗马
 ms.localizationpriority: medium
-ms.openlocfilehash: 01c13a30c8869643badc69c546b0a5212308956f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a479cb20943b9c4b2df53b22751c9de2f5a8402c
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155921"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363730"
 ---
 # <a name="discover-remote-devices"></a>发现远程设备
 你的应用可以使用无线网络、蓝牙和云连接来发现使用发现设备的相同 Microsoft 帐户登录的 Windows 设备。 无需安装任何特殊软件，即可发现远程设备。
@@ -27,7 +27,7 @@ ms.locfileid: "89155921"
 > [!NOTE]
 > 这些示例中的代码要求文件中具有 `using Windows.System.RemoteSystems` 语句。
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/DiscoverDevices/cs/MainPage.xaml.cs" id="SnippetMakeFilterList":::
 
 > [!NOTE]
 > “proximal”筛选器值不能保证位置邻近的程度。 对于需要可靠的位置邻近的情形，请在你的筛选器中使用值 [**RemoteSystemDiscoveryType.SpatiallyProximal**](/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype)。 当前，此筛选器只允许通过蓝牙发现的设备。 当支持新发现机制和保证位置邻近的协议时，此处也会将其包括进来。  
@@ -38,7 +38,7 @@ ms.locfileid: "89155921"
 
 创建 [**IRemoteSystemFilter**](/uwp/api/Windows.System.RemoteSystems.IRemoteSystemFilter) 对象列表后，可以将其传入 **RemoteSystemWatcher** 的构造函数。
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetCreateWatcher)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/DiscoverDevices/cs/MainPage.xaml.cs" id="SnippetCreateWatcher":::
 
 当调用该观察程序的 [**Start**](/uwp/api/windows.system.remotesystems.remotesystemwatcher.start) 方法时，只有检测到满足以下全部条件的设备，才会引发 [**RemoteSystemAdded**](/uwp/api/windows.system.remotesystems.remotesystemwatcher.remotesystemadded) 事件。
 * 可以通过邻近连接发现该设备
@@ -52,7 +52,7 @@ ms.locfileid: "89155921"
 
 如果提供了有效的 **HostName** 对象，即可检索 **RemoteSystem** 对象。 如果地址数据无效，将返回 `null` 对象引用。
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetFindByHostName)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/DiscoverDevices/cs/MainPage.xaml.cs" id="SnippetFindByHostName":::
 
 ## <a name="querying-a-capability-on-a-remote-system"></a>查询远程系统上的功能
 

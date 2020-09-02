@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10，uwp，连接的设备，远程系统，罗马，project 罗马
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
-ms.openlocfilehash: 784403ede6b21b79dcb14d1da6dde22df68c410e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4163106c5439ec8881c1b5042f63fb7abf4fd668
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158781"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362500"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>启动远程设备上的应用
 
@@ -45,18 +45,18 @@ ms.locfileid: "89158781"
 
 这些示例中的代码要求类文件中具有 `using Windows.System.RemoteSystems` 语句。
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetBuildDeviceList)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetBuildDeviceList":::
 
 在进行远程启动前，必须先调用 `RemoteSystem.RequestAccessAsync()`。 检查返回值以确保你的应用可以访问远程设备。 此检查可能失败的原因之一是未将 `remoteSystem` 功能添加到应用。
 
 当发现可以连接的设备或此类设备不再可用时，调用系统观察程序事件处理程序。 我们将使用这些事件处理程序来保持可连接的设备更新列表。
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetEventHandlers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetEventHandlers":::
 
 
 我们将使用**字典**按远程系统 ID 跟踪设备。 **ObservableCollection** 用于保存我们可以枚举的设备列表。 借助 **ObservableCollection**，还可以轻松将设备列表绑定到 UI，不过在该示例中我们不会执行此操作。
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetMembers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetMembers":::
 
 尝试启动远程应用前，在应用启动代码中添加对 `BuildDeviceList()` 的调用。
 
@@ -68,7 +68,7 @@ ms.locfileid: "89158781"
 
 在实际情况下，可能会提供 UI 以选择你要面向的设备。 但为了简化该示例，我们将只使用列表中的第一个远程设备。
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetRemoteUriLaunch":::
 
 从 **RemoteLauncher.LaunchUriAsync()** 返回的 [**RemoteLaunchUriStatus**](/uwp/api/windows.system.remotelaunchuristatus) 对象提供有关远程启动是否成功以及失败原因（如果失败）的信息。
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 71743459227b05fff23524a81d8d192c382d4973
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 626a80b1c3962f5bf12d7a906a61f2f600da5eed
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157431"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362530"
 ---
 # <a name="import-media-from-a-device"></a>从设备导入媒体
 
@@ -29,22 +29,22 @@ ms.locfileid: "89157431"
 * 一个**按钮**，用于发起对已从选定源中导入的项进行删除的操作。
 * 一个**按钮**，用于取消异步媒体导入操作。
 
-[!code-xml[ImportXAML](./code/PhotoImport_Win10/cs/MainPage.xaml#SnippetImportXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml" id="SnippetImportXAML":::
 
 ## <a name="set-up-your-code-behind-file"></a>设置代码隐藏文件
 添加 *using* 指令以包括此示例使用但尚未包括在默认项目模板中的命名空间。
 
-[!code-cs[Using](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetUsing":::
 
 ## <a name="set-up-task-cancellation-for-media-import-operations"></a>为媒体导入操作设置任务取消
 
 由于媒体导入操作可能需要很长时间，因此使用 [**IAsyncOperationWithProgress**](/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_) 异步执行它们。 声明一个 [**CancellationTokenSource**](/dotnet/api/system.threading.cancellationtokensource) 类型的类成员变量，该变量将用于在用户单击取消按钮时取消正在进行的操作。
 
-[!code-cs[DeclareCts](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareCts)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareCts":::
 
 实现取消按钮的处理程序。 本文后面部分介绍的示例将在操作开始时初始化 **CancellationTokenSource**，并在操作完成时将其设置为 null。 在取消按钮处理程序中，检查令牌是否为 null，如果不是，则调用 [**Cancel**](/dotnet/api/system.threading.cancellationtokensource.cancel#System_Threading_CancellationTokenSource_Cancel) 来取消该操作。
 
-[!code-cs[OnCancel](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetOnCancel)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetOnCancel":::
 
 ## <a name="data-binding-helper-classes"></a>数据绑定帮助程序类
 
@@ -56,28 +56,28 @@ ms.locfileid: "89157431"
 
 这些类在 [**MediaImport 示例**中提供，并且无需修改即可添加到你的项目。](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport) 在将帮助程序类添加到你的项目后，声明一个 **GeneratorIncrementalLoadingClass** 类型的类成员变量，此变量将在本示例后面部分中使用。
 
-[!code-cs[GeneratorIncrementalLoadingClass](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetGeneratorIncrementalLoadingClass)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetGeneratorIncrementalLoadingClass":::
 
 
 ## <a name="find-available-sources-from-which-media-can-be-imported"></a>查找可从中导入媒体的可用源
 
 在查找源按钮的单击处理程序中，调用静态方法 [**PhotoImportManager.FindAllSourcesAsync**](/uwp/api/windows.media.import.photoimportmanager.findallsourcesasync) 来针对可从中导入媒体的设备启动系统搜索。 等待该操作完成后，循环访问返回的列表中的每个 [**PhotoImportSource**](/uwp/api/Windows.Media.Import.PhotoImportSource) 对象，并向**组合框** 添加一个条目，从而将 **Tag** 属性设置为源对象本身，以便在用户进行选择时可以轻松地检索它。
 
-[!code-cs[FindSourcesClick](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetFindSourcesClick)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetFindSourcesClick":::
 
 声明一个类成员变量，用于存储用户选定的导入源。
 
-[!code-cs[DeclareImportSource](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImportSource)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareImportSource":::
 
 在导入源 **ComboBox** 的 [**SelectionChanged**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) 处理程序中，将类成员变量设置为选定的源，然后调用 **FindItems** 帮助程序方法，此方法将在本文后面部分中进行介绍。 
 
-[!code-cs[SourcesSelectionChanged](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetSourcesSelectionChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetSourcesSelectionChanged":::
 
 ## <a name="find-items-to-import"></a>查找要导入的项
 
 添加 [**PhotoImportSession**](/uwp/api/Windows.Media.Import.PhotoImportSession) 和 [**PhotoImportFindItemsResult**](/uwp/api/Windows.Media.Import.PhotoImportFindItemsResult) 类型的类成员变量，这些变量将在以下步骤中使用。
 
-[!code-cs[DeclareImport](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImport)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareImport":::
 
 在 **FindItems** 方法中，初始化 **CancellationTokenSource** 变量，以便可以使用它在必要时取消查找操作。 在 **try** 块内，通过在用户选择的 [**PhotoImportSource**](/uwp/api/Windows.Media.Import.PhotoImportSource) 对象上调用 [**CreateImportSession**](/uwp/api/windows.media.import.photoimportsource.createimportsession) 来创建新的导入会话。 创建新的 [**Progress**](/dotnet/api/system.progress-1) 对象以提供用于显示查找操作进度的回调。 接下来，调用 **[FindItemsAsync](/uwp/api/windows.media.import.photoimportsession.finditemsasync)** 以启动查找操作。 提供一个 [**PhotoImportContentTypeFilter**](/uwp/api/Windows.Media.Import.PhotoImportContentTypeFilter) 值来指定应返回照片、视频还是两者都返回。 提供一个 [**PhotoImportItemSelectionMode**](/uwp/api/Windows.Media.Import.PhotoImportItemSelectionMode) 值来指定是返回全部媒体项、不返回任何媒体项还是仅返回新的媒体项，同时将它们的 [**IsSelected**](/uwp/api/windows.media.import.photoimportitem.isselected) 属性设置为 true。 此属性绑定到我们的 ListBox 项模板中的每个媒体项的复选框。
 
@@ -87,13 +87,13 @@ ms.locfileid: "89157431"
 
 接下来，输出查找操作的状态信息。 典型应用会在 UI 中向用户显示此信息，但本示例仅将该信息输出到调试控制台。 最后，由于操作已完成，将取消令牌设置为 null。
 
-[!code-cs[FindItems](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetFindItems)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetFindItems":::
 
 ## <a name="import-media-items"></a>导入媒体项
 
 在实现导入操作前，声明一个 [**PhotoImportImportItemsResult**](/uwp/api/Windows.Media.Import.PhotoImportImportItemsResult) 对象来存储导入操作的结果。 稍后将使用此对象删除已从源成功导入的媒体项。
 
-[!code-cs[DeclareImportResult](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImportResult)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareImportResult":::
 
 在启动媒体导入操作前，通过将 [**ProgressBar**](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar) 控件的值设置为 0 来初始化 **CancellationTokenSource** 变量。
 
@@ -103,12 +103,12 @@ ms.locfileid: "89157431"
 
 在导入操作完成后，可以从 [**ImportItemsAsync**](/uwp/api/windows.media.import.photoimportfinditemsresult.importitemsasync) 返回的 [**PhotoImportImportItemsResult**](/uwp/api/Windows.Media.Import.PhotoImportImportItemsResult) 对象获取操作状态。 本示例将状态信息输出到调试控制台，然后最终将取消令牌设置为 null。
 
-[!code-cs[ImportClick](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetImportClick)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetImportClick":::
 
 ## <a name="delete-imported-items"></a>删除导入的项
 若要从导入项的源中删除成功导入的项，请先初始化取消令牌，以便可以取消删除操作，并将进度栏值设置为 0。 确保从 [**ImportItemsAsync**](/uwp/api/windows.media.import.photoimportfinditemsresult.importitemsasync) 返回的 [**PhotoImportImportItemsResult**](/uwp/api/Windows.Media.Import.PhotoImportImportItemsResult) 不为 null。 如果不是，则再次创建一个 [**Progress**](/dotnet/api/system.progress-1) 对象来为删除操作提供进度回调。 调用 [**DeleteImportedItemsFromSourceAsync**](/uwp/api/windows.media.import.photoimportimportitemsresult.deleteimporteditemsfromsourceasync) 以开始删除导入的项。 使用 **AsTask** 将结果转换为具有进度和取消功能的可等待任务。 在等待后，返回的 [**PhotoImportDeleteImportedItemsFromSourceResult**](/uwp/api/Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult) 对象可用于获取和显示关于删除操作的状态信息。
 
-[!code-cs[DeleteClick](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeleteClick)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetDeleteClick":::
 
 
 

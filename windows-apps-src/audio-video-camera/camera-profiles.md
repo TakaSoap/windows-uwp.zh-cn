@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08b5bda92535bc324589105ce37f4a6458c523be
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f42b58794b62753ff325cb4fc23202e5a48047d4
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161041"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364020"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>通过相机配置文件发现和选择相机功能
 
@@ -30,7 +30,7 @@ ms.locfileid: "89161041"
 
 在初始化你的 [MediaCapture](./index.md) 对象之前，你可以在当前设备上查询捕获设备，以查看支持哪些配置文件。 当你选择某个受支持的配置文件时，你知道捕获设备支持该配置文件的媒体说明中的所有功能。 这样就无需采用试错方法来确定特定设备支持哪些功能组合。
 
-[!code-cs[BasicInitExample](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetBasicInitExample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetBasicInitExample":::
 
 本文中的代码示例将这一最简单的初始化过程替换为支持各种功能的相机配置文件的发现过程，后者随后用于初始化媒体捕获设备。
 
@@ -40,11 +40,11 @@ ms.locfileid: "89161041"
 
 如果在指定的面板中发现支持相机配置文件的设备，将返回包含设备 ID 字符串的 [**Id**](/uwp/api/windows.devices.enumeration.deviceinformation.id) 值。
 
-[!code-cs[GetVideoProfileSupportedDeviceIdAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetVideoProfileSupportedDeviceIdAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetGetVideoProfileSupportedDeviceIdAsync":::
 
 如果从 **GetVideoProfileSupportedDeviceIdAsync** 帮助程序方法返回的设备 ID 为 null 或是一个空字符串，则指定面板上不存在支持相机配置文件的设备。 在此情况下，应在不使用配置文件的情况下初始化媒体捕获设备。
 
-[!code-cs[GetDeviceWithProfileSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetDeviceWithProfileSupport)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetGetDeviceWithProfileSupport":::
 
 ## <a name="select-a-profile-based-on-supported-resolution-and-frame-rate"></a>基于受支持的分辨率和帧速率选择配置文件
 
@@ -54,11 +54,11 @@ ms.locfileid: "89161041"
 
 此示例使用包含在 using **System.Linq** 命名空间中的 Linq 查询方法，来选择包含 [**SupportedRecordMediaDescription**](/uwp/api/windows.media.capture.mediacapturevideoprofile.supportedrecordmediadescription) 对象的配置文件，其中的 [**Width**](/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.width)、[**Height**](/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.height) 和 [**FrameRate**](/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.framerate) 属性与请求的值相匹配。 如果找到匹配项，则 **MediaCaptureInitializationSettings** 的 [**VideoProfile**](/uwp/api/windows.media.capture.mediacaptureinitializationsettings.videoprofile) 和 [**RecordMediaDescription**](/uwp/api/windows.media.capture.mediacaptureinitializationsettings.recordmediadescription) 将设置为从 Linq 查询返回的匿名类型中的值。 如果未找到匹配项，则使用默认配置文件。
 
-[!code-cs[FindWVGA30FPSProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindWVGA30FPSProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetFindWVGA30FPSProfile":::
 
 使用你所需的相机配置文件填充 **MediaCaptureInitializationSettings** 后，你只需对你的媒体捕获对象调用 [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync) 即可将其配置为所需的配置文件。
 
-[!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetInitCaptureWithProfile":::
 
 ## <a name="use-media-frame-source-groups-to-get-profiles"></a>使用媒体帧源组来获取配置文件
 
@@ -66,7 +66,7 @@ ms.locfileid: "89161041"
 
 以下示例方法演示了如何使用 **MediaFrameSourceGroup** 对象查找支持已知视频配置文件的相机配置文件，例如支持 HDR 或可变照片序列的相机配置文件。 首先，通过调用 [**MediaFrameSourceGroup.FindAllAsync**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync) 获取当前设备上可用的所有媒体帧源组的列表。 循环访问每个源组，并通过调用 [**MediaCapture.FindKnownVideoProfiles**](/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) 获取当前源组中支持特定配置文件（本例中为带 WCG 照片的 HDR）的所有视频配置文件的列表。 如果找到符合条件的配置文件，则新建一个 **MediaCaptureInitializationSettings** 对象，将 **VideoProfile** 设置为选择配置文件并将 **VideoDeviceId** 设置为当前媒体帧源组的 **Id** 属性。 这样一来，你可以将 **KnownVideoProfile.HdrWithWcgVideo** 值代入此方法来获取支持 HDR 视频的媒体捕获设置。 通过代入 **KnownVideoProfile.VariablePhotoSequence** 获取支持可变照片序列的设置。
 
- [!code-cs[FindKnownVideoProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindKnownVideoProfile)]
+ :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetFindKnownVideoProfile":::
 
 ## <a name="use-known-profiles-to-find-a-profile-that-supports-hdr-video-legacy-technique"></a>使用已知的配置文件来查找支持 HDR 视频的配置文件（旧技术）
 
@@ -75,23 +75,23 @@ ms.locfileid: "89161041"
 
 在选择支持 HDR 的配置文件时，最初的操作与其他方案类似。 创建一个 **MediaCaptureInitializationSettings** 和一个用于保存捕获设备 ID 的字符串。 添加一个将跟踪是否支持 HDR 视频的布尔变量。
 
-[!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetGetHdrProfileSetup":::
 
 使用上面定义的 **GetVideoProfileSupportedDeviceIdAsync** 帮助程序方法，获取支持相机配置文件的捕获设备的设备 ID。
 
-[!code-cs[FindDeviceHDR](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindDeviceHDR)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetFindDeviceHDR":::
 
 静态方法 [**MediaCapture.FindKnownVideoProfiles**](/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) 将返回受指定设备（按指定的 [**KnownVideoProfile**](/uwp/api/Windows.Media.Capture.KnownVideoProfile) 值进行分类）支持的相机配置文件。 在此方案中，指定 **VideoRecording** 值是为了将返回的相机配置文件限制为支持视频录制的配置文件。
 
 循环访问返回的相机配置文件列表。 对于每个相机配置文件，循环访问配置文件中的每个 [**VideoProfileMediaDescription**](/uwp/api/Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription)，同时检查 [**IsHdrVideoSupported**](/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.ishdrvideosupported) 属性是否为 true。 找到合适的媒体描述后，中断循环并将配置文件和描述对象分配给 **MediaCaptureInitializationSettings** 对象。
 
-[!code-cs[FindHDRProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindHDRProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetFindHDRProfile":::
 
 ## <a name="determine-if-a-device-supports-simultaneous-photo-and-video-capture"></a>确定设备是否支持同时进行照片和视频捕获
 
 许多设备支持同时捕获照片和视频。 若要确定捕获设备是否支持此功能，请调用 [**MediaCapture.FindAllVideoProfiles**](/uwp/api/windows.media.capture.mediacapture.findallvideoprofiles) 以获取设备支持的所有相机配置文件。 使用链接查询来查找至少具有一个同时用于 [**SupportedPhotoMediaDescription**](/uwp/api/windows.media.capture.mediacapturevideoprofile.supportedphotomediadescription) 和 [**SupportedRecordMediaDescription**](/uwp/api/windows.media.capture.mediacapturevideoprofile.supportedrecordmediadescription) 的条目的配置文件，这表示该配置文件支持同时捕获。
 
-[!code-cs[GetPhotoAndVideoSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPhotoAndVideoSupport)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetGetPhotoAndVideoSupport":::
 
 可优化此查询，查找支持特定分辨率或支持除同时录制视频功能外的其他功能的配置文件。 你还可以使用 [**MediaCapture.FindKnownVideoProfiles**](/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) 并指定 [**BalancedVideoAndPhoto**](/uwp/api/Windows.Media.Capture.KnownVideoProfile) 值，以检索支持同时捕获的配置文件，但查询所有配置文件将提供更完整的结果。
 

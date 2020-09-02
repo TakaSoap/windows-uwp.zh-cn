@@ -5,12 +5,12 @@ keywords: windows 10, uwp, 订阅, 加载项, 应用内购买, IAP, Windows.Serv
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f319d272e4dde465af68d4c5b7af7fb7a17799
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 844af95545e34dab8adb6698624fcd0dccb2ab30
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167711"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362800"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>为应用启用订阅加载项
 
@@ -88,14 +88,14 @@ UWP 应用的订阅加载项支持以下功能：
 4. 最后，代码调用 [**RequestPurchaseAsync**](/uwp/api/windows.services.store.storeproduct.RequestPurchaseAsync) 方法来请求购买订阅。 如果该订阅有试用版，则会向客户提供试用版以便购买。 否则，将提供完整订阅以便其购买。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs" id="PurchaseTrialSubscription":::
 
 ### <a name="get-info-about-subscription-add-ons-for-the-current-app"></a>获取有关当前应用的订阅加载项的信息
 
 此代码示例介绍如何获取有关可用于你的应用的所有订阅加载项的信息。 要获取此信息，请先使用 [**GetAssociatedStoreProductsAsync**](/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync) 方法来获取表示应用提供的每个可用加载项的 [**StoreProduct**](/uwp/api/Windows.Services.Store.StoreProduct) 对象的集合。 然后，获取每个产品的 [**StoreSku**](/uwp/api/windows.services.store.storesku)，并使用 [**IsSubscription**](/uwp/api/windows.services.store.storesku.IsSubscription) 和 [**SubscriptionInfo**](/uwp/api/windows.services.store.storesku.SubscriptionInfo) 属性访问订阅信息。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs" id="GetSubscriptions":::
 
 <span id="manage-subscriptions" />
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b52cd60e14370970ddb3c85a2a5e4c91107bed45
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ffb379110a42579cd5bb2427f9c851637ff191be
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160871"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362670"
 ---
 # <a name="effects-for-video-capture"></a>视频捕获的效果
 
@@ -29,17 +29,17 @@ ms.locfileid: "89160871"
 
 以下示例将效果添加到相机预览流和录制流。 此示例说明用于查看录制流和预览流是否相同的相关检查。
 
-[!code-cs[BasicAddEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetBasicAddEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetBasicAddEffect":::
 
 请注意，**AddVideoEffectAsync** 返回可实现 [**IMediaExtension**](/uwp/api/Windows.Media.IMediaExtension) 的对象，它表示添加的视频效果。 某些效果允许你通过将 [**PropertySet**](/uwp/api/Windows.Foundation.Collections.PropertySet) 传递到 [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties) 方法更改效果设置。
 
 从 Windows 10 版本 1607 开始，你还可以使用 **AddVideoEffectAsync** 返回的对象，通过将效果传入到 [**RemoveEffectAsync**](/uwp/api/windows.media.capture.mediacapture.removeeffectasync) 从视频管道中删除该效果。 **RemoveEffectAsync** 自动确定效果对象参数是否已添加到预览流或录制流，因此无需在进行调用时指定流类型。
 
-[!code-cs[RemoveOneEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetRemoveOneEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetRemoveOneEffect":::
 
 你还可以通过调用 [**ClearEffectsAsync**](/uwp/api/windows.media.capture.mediacapture.cleareffectsasync) 并指定应删除所有效果的流，从预览流或捕获流中删除所有效果。
 
-[!code-cs[ClearAllEffects](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetClearAllEffects)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetClearAllEffects":::
 
 ## <a name="video-stabilization-effect"></a>视频防抖动效果
 
@@ -51,15 +51,15 @@ ms.locfileid: "89160871"
 
 除了基本媒体捕获所需的命名空间，使用视频防抖动效果还需要以下命名空间。
 
-[!code-cs[VideoStabilizationEffectUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetVideoStabilizationEffectUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetVideoStabilizationEffectUsing":::
 
 声明成员变量以存储 [**VideoStabilizationEffect**](/uwp/api/Windows.Media.Core.VideoStabilizationEffect) 对象。 作为效果实现的一部分，你将修改用于编码已捕获视频的编码属性。 声明两个变量以存储初始输入和输出编码属性的备份副本，以便以后当禁用该效果时你可以还原它们。 最后，声明类型 [**MediaEncodingProfile**](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) 的成员变量，因为将从代码内的多个位置访问此对象。
 
-[!code-cs[DeclareVideoStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetDeclareVideoStabilizationEffect":::
 
 对于此方案，你应该将媒体编码配置文件对象分配给成员变量以便以后进行访问。
 
-[!code-cs[EncodingProfileMember](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetEncodingProfileMember)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetEncodingProfileMember":::
 
 ### <a name="initialize-the-video-stabilization-effect"></a>初始化视频防抖动效果
 
@@ -67,7 +67,7 @@ ms.locfileid: "89160871"
 
 注册 [**EnabledChanged**](/uwp/api/windows.media.core.videostabilizationeffect.enabledchanged) 事件的事件处理程序并调用帮助程序方法 **SetUpVideoStabilizationRecommendationAsync**，两者将在本文稍后部分讨论。 最后，将该效果的 [**Enabled**](/uwp/api/windows.media.core.videostabilizationeffect.enabled) 属性设置为 True 以启用该效果。
 
-[!code-cs[CreateVideoStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetCreateVideoStabilizationEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetCreateVideoStabilizationEffect":::
 
 ### <a name="use-recommended-encoding-properties"></a>使用建议的编码属性
 
@@ -83,7 +83,7 @@ ms.locfileid: "89160871"
 
 设置 **MediaEncodingProfile** 对象的 [**Video**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.video) 属性。 在设置新的属性之前，使用成员变量来存储初始编码属性，以便当你禁用该效果时可以改回该设置。
 
-[!code-cs[SetUpVideoStabilizationRecommendationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetSetUpVideoStabilizationRecommendationAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetSetUpVideoStabilizationRecommendationAsync":::
 
 ### <a name="handle-the-video-stabilization-effect-being-disabled"></a>处理禁用的视频防抖动效果
 
@@ -91,13 +91,13 @@ ms.locfileid: "89160871"
 
 通常使用此事件来调节应用的 UI 以指示视频防抖动的当前状态。
 
-[!code-cs[VideoStabilizationEnabledChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetVideoStabilizationEnabledChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetVideoStabilizationEnabledChanged":::
 
 ### <a name="clean-up-the-video-stabilization-effect"></a>清除视频防抖动效果
 
 若要清理视频防抖动效果，请调用 [**RemoveEffectAsync**](/uwp/api/windows.media.capture.mediacapture.removeeffectasync) 以从视频管道中删除该效果。 如果包含初始编码属性的成员变量都不为 Null，可使用它们还原编码属性。 最后，删除 **EnabledChanged** 事件处理程序并将该效果设置为 Null。
 
-[!code-cs[CleanUpVisualStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetCleanUpVisualStabilizationEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetCleanUpVisualStabilizationEffect":::
 
 ## <a name="related-topics"></a>相关主题
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 388d1bc2af9d39d08087c7ec5b9dcbc710e74bba
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2b847b7162de19b81c83be2f3769042a5acc8a3a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163571"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363790"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>为 MediaCapture 设置格式、分辨率和帧速率
 
@@ -36,15 +36,15 @@ ms.locfileid: "89163571"
 
 必须将 [**Windows.Media.MediaProperties**](/uwp/api/Windows.Media.MediaProperties) 命名空间包含在帮助程序类的源文件中。
 
-[!code-cs[MediaEncodingPropertiesUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaEncodingPropertiesUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetMediaEncodingPropertiesUsing":::
 
-[!code-cs[StreamPropertiesHelper](./code/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs#SnippetStreamPropertiesHelper)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs" id="SnippetStreamPropertiesHelper":::
 
 ## <a name="determine-if-the-preview-and-capture-streams-are-independent"></a>确定预览流和捕获流是否独立。
 
 在某些设备上，相同的硬件引脚可同时用于预览流和捕获流。 在这些设备上，设置某个流的编码属性也将设置其他流的编码属性。 在将不同的硬件引脚用于捕获和预览的设备上，可单独为每个流设置属性。 使用以下代码确定预览流和捕获流是否独立。 你应该根据此测试结果，将 UI 调整为独立启用或禁用流设置。
 
-[!code-cs[CheckIfStreamsAreIdentical](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCheckIfStreamsAreIdentical)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetCheckIfStreamsAreIdentical":::
 
 ## <a name="get-a-list-of-available-stream-properties"></a>获取可用流属性列表
 
@@ -52,17 +52,17 @@ ms.locfileid: "89163571"
 
 如果你的应用具有特定分辨率或帧速率要求，你可以按编程方式选择一组媒体编码属性。 典型的相机应用将公开 UI 中的可用属性列表，并允许用户选择所需设置。 在列表中为 **StreamPropertiesHelper** 对象列表中的每个项创建 **ComboBoxItem**。 内容设置为帮助程序类返回的友好名称，而标记设置为帮助程序类本身，以便可以在稍后用于检索相关联的编码属性。 然后将每个 **ComboBoxItem** 添加到传递到该方法中的 **ComboBox**。
 
-[!code-cs[PopulateStreamPropertiesUI](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPopulateStreamPropertiesUI)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetPopulateStreamPropertiesUI":::
 
 ## <a name="set-the-desired-stream-properties"></a>设置所需的流属性
 
 通过调用 [**SetMediaStreamPropertiesAsync**](/uwp/api/windows.media.devices.videodevicecontroller.setmediastreampropertiesasync)、传递指示是应设置照片属性、视频属性还是预览属性的 **MediaStreamType**，告知视频设备控制器使用所需的编码属性。 本示例在用户选择使用 **PopulateStreamPropertiesUI** 帮助程序方法填充的 **ComboBox** 对象之一中的项目时，设置所请求的编码属性。
 
-[!code-cs[PreviewSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewSettingsChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetPreviewSettingsChanged":::
 
-[!code-cs[PhotoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhotoSettingsChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetPhotoSettingsChanged":::
 
-[!code-cs[VideoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetVideoSettingsChanged":::
 
 ## <a name="match-the-aspect-ratio-of-the-preview-and-capture-streams"></a>匹配预览流和捕获流的纵横比
 
@@ -79,7 +79,7 @@ ms.locfileid: "89163571"
 
 为确保照片或视频捕获流与预览流的纵横比相匹配，此示例调用 [**VideoDeviceController.GetMediaStreamProperties**](/uwp/api/windows.media.devices.videodevicecontroller.getmediastreamproperties) 并传递 **VideoPreview** 枚举值以请求预览流的当前流属性。 接下来定义纵横比容差较小的窗口，以便我们可以包括可能不同于预览流（只要相近即可）的纵横比。 接下来，Linq 扩展方法用于选择纵横比处于预览流的定义容差范围内的 **StreamPropertiesHelper** 对象。
 
-[!code-cs[MatchPreviewAspectRatio](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMatchPreviewAspectRatio)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetMatchPreviewAspectRatio":::
 
  
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c11c4b630e6b38dd567fece782686743925e214
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4ed74149552e6582bf133550d4db1a45625e8c39
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161321"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364040"
 ---
 # <a name="share-data"></a>共享数据
 
@@ -25,11 +25,11 @@ ms.locfileid: "89161321"
 
 添加 [**DataRequested**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) 事件处理程序以在用户每次调用共享时调用。 这种情况既会在用户点击应用中的控件（例如按钮或应用栏命令）时发生，也会在特定情况下（例如，如果用户完成某一关并获得了较高分数）自动发生。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetPrepareToShare":::
 
 发生 [**DataRequested**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) 事件时，应用会收到 [**DataRequest**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest) 对象。 该对象包含 [**DataPackage**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage)，可用来提供用户要共享的内容。 你必须提供标题和要共享的数据。 描述是可选的，但建议提供。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetCreateRequest":::
 
 ## <a name="choose-data"></a>选择数据
 
@@ -45,7 +45,7 @@ ms.locfileid: "89161321"
 
 [**DataPackage**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 对象可以包含其中一种或多种格式（可任意组合）。 下面的示例演示如何共享文本。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetSetContent":::
 
 ## <a name="set-properties"></a>设置属性
 
@@ -53,13 +53,13 @@ ms.locfileid: "89161321"
 
 除了 Title，所有属性都是可选的。 Title 属性是强制性的，必须进行设置。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetSetProperties":::
 
 ## <a name="launch-the-share-ui"></a>启动共享 UI
 
 用于共享的 UI 由系统提供。 若要启动它，请调用 [**ShowShareUI**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui) 方法。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetShowUI":::
 
 ## <a name="handle-errors"></a>处理错误
 

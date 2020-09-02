@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e0c96eb4171e752faf0a8f6de2fbcf60479c62c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 72a6fe2e704bc419306c74f410ed51e8e8560fa6
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161171"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362970"
 ---
 # <a name="audio-graphs"></a>音频图
 
@@ -50,9 +50,9 @@ Windows 运行时音频图 API：
 
 [**AudioGraph**](/uwp/api/Windows.Media.Audio.AudioGraph) 类是构成音频图的所有节点的父类。 使用此对象创建所有音频节点类型的实例。 可通过以下方式创建 **AudioGraph** 类的实例：初始化包含音频图的配置设置的 [**AudioGraphSettings**](/uwp/api/Windows.Media.Audio.AudioGraphSettings) 对象，然后调用 [**AudioGraph.CreateAsync**](/uwp/api/windows.media.audio.audiograph.createasync)。 返回的 [**CreateAudioGraphResult**](/uwp/api/Windows.Media.Audio.CreateAudioGraphResult) 将提供对创建的音频图的访问权限；如果音频图创建失败，则提供一个错误值。
 
-[!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetDeclareAudioGraph":::
 
-[!code-cs[InitAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetInitAudioGraph":::
 
 -   所有音频节点类型都是通过使用 \* **AudioGraph** 类的 Create 方法创建的。
 -   [**AudioGraph.Start**](/uwp/api/windows.media.audio.audiograph.start) 方法可使音频图开始处理音频数据。 [**AudioGraph.Stop**](/uwp/api/windows.media.audio.audiograph.stop) 方法终止音频处理。 在音频图运行时，音频图中的每一个节点都可以单独启动和停止，但在音频图停止运行时，没有任何节点会处于活动状态。 [**ResetAllNodes**](/uwp/api/windows.media.audio.audiograph.resetallnodes) 将使图形中的所有节点丢弃当前处于其音频缓冲区中的任何数据。
@@ -69,37 +69,37 @@ Windows 运行时音频图 API：
 
 你可以让音频图使用默认的音频呈现设备，或者通过调用 [**FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) 并传入由 [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](/uwp/api/windows.media.devices.mediadevice.getaudiorenderselector) 返回的音频呈现设备选择器，使用 [**Windows.Devices.Enumeration.DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 类来获取系统的可用音频呈现设备列表。 你可以以编程方式选择返回的 **DeviceInformation** 对象之一，或显示 UI 以允许用户选择某台设备，然后使用它来设置 [**PrimaryRenderDevice**](/uwp/api/windows.media.audio.audiographsettings.primaryrenderdevice) 属性。
 
-[!code-cs[EnumerateAudioRenderDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioRenderDevices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetEnumerateAudioRenderDevices":::
 
 ##  <a name="device-input-node"></a>设备输入节点
 
 设备输入节点通过连接到系统的音频捕获设备（例如麦克风）将音频送入音频图中。 通过调用 [**CreateDeviceInputNodeAsync**](/uwp/api/windows.media.audio.audiograph.createdeviceinputnodeasync) 创建使用系统的默认音频捕获设备的 [**DeviceInputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceInputNode) 对象。 提供 [**AudioRenderCategory**](/uwp/api/Windows.Media.Render.AudioRenderCategory)，让系统能够优化指定类别的音频管道。
 
-[!code-cs[DeclareDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceInputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetDeclareDeviceInputNode":::
 
 
-[!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetCreateDeviceInputNode":::
 
 如果要为设备输入节点指定特定的音频捕获设备，则可以使用 [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 类通过调用 [**FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) 并传入 Windows MediaDevice 返回的音频呈现器设备选择器来获取系统的可用音频捕获设备的列表。 [**.. GetAudioCaptureSelector**](/uwp/api/windows.media.devices.mediadevice.getaudiocaptureselector)。 你可以以编程方式选择返回的 **DeviceInformation** 对象之一，或显示 UI 以允许用户选择某台设备，然后将其传递到 [**CreateDeviceInputNodeAsync**](/uwp/api/windows.media.audio.audiograph.createdeviceinputnodeasync) 中。
 
-[!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetEnumerateAudioCaptureDevices":::
 
 ##  <a name="device-output-node"></a>设备输出节点
 
 设备输出节点可将音频从音频图推送到音频呈现设备，例如扬声器或耳机。 通过调用 [**CreateDeviceOutputNodeAsync**](/uwp/api/windows.media.audio.audiograph.createdeviceoutputnodeasync) 创建 [**DeviceOutputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode)。 输出节点使用音频图的 [**PrimaryRenderDevice**](/uwp/api/windows.media.audio.audiographsettings.primaryrenderdevice)。
 
-[!code-cs[DeclareDeviceOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceOutputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetDeclareDeviceOutputNode":::
 
-[!code-cs[CreateDeviceOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceOutputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetCreateDeviceOutputNode":::
 
 ##  <a name="file-input-node"></a>文件输入节点
 
 文件输入节点允许你将音频文件中的数据送入音频图。 通过调用 [**CreateFileInputNodeAsync**](/uwp/api/windows.media.audio.audiograph.createfileinputnodeasync) 创建 [**AudioFileInputNode**](/uwp/api/Windows.Media.Audio.AudioFileInputNode)。
 
-[!code-cs[DeclareFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileInputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetDeclareFileInputNode":::
 
 
-[!code-cs[CreateFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileInputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetCreateFileInputNode":::
 
 -   文件输入节点支持以下文件格式：mp3、wav、wma、m4a。
 -   设置 [**StartTime**](/uwp/api/windows.media.audio.audiofileinputnode.starttime) 属性，指定文件应开始播放时的时间偏移。 如果此属性为 null，则使用文件的开头。 设置 [**EndTime**](/uwp/api/windows.media.audio.audiofileinputnode.endtime) 属性，指定文件应结束播放时的时间偏移。 如果此属性为 null，则使用文件的末尾。 开始时间值必须小于结束时间值，并且结束时间值必须小于或等于音频文件的持续时间，后者可以通过检查 [**Duration**](/uwp/api/windows.media.audio.audiofileinputnode.duration) 属性值来确定。
@@ -111,30 +111,30 @@ Windows 运行时音频图 API：
 
 [**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) 类提供从不同的源引用媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式（可能是磁盘上的文件或自适应流式处理网络源）。 可使用 [**MediaSourceAudioInputNode](/uwp/api/windows.media.audio.mediasourceaudioinputnode) 节点将 **MediaSource** 中的音频数据定向到音频图中。 通过调用 [**CreateMediaSourceAudioInputNodeAsync**](/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_) 创建 **MediaSourceAudioInputNode**，进而传入代表想要播放的内容的 **MediaSource** 对象。 返回了 [**CreateMediaSourceAudioInputNodeResult](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult)，你可以使用它检查 [**Status**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status) 属性，从而确定操作的状态。 如果状态是**成功**，可通过访问 [**Node**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node) 属性获取所创建的 **MediaSourceAudioInputNode**。 以下示例介绍如何使用代表通过网络进行内容流式处理的 AdaptiveMediaSource 对象创建节点。 若要详细了解如何使用 **MediaSource**，请参阅[媒体项、播放列表和曲目](media-playback-with-mediasource.md)。 若要详细了解如何通过 Internet 流式处理媒体内容，请参阅[自适应流式处理](adaptive-streaming.md)。
 
-[!code-cs[DeclareMediaSourceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareMediaSourceInputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetDeclareMediaSourceInputNode":::
 
-[!code-cs[CreateMediaSourceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateMediaSourceInputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetCreateMediaSourceInputNode":::
 
 若要在播放到 **MediaSource** 内容的末尾时收到通知，请注册 [**MediaSourceCompleted**](/uwp/api/windows.media.audio.mediasourceaudioinputnode.mediasourcecompleted) 事件的处理程序。 
 
-[!code-cs[RegisterMediaSourceCompleted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetRegisterMediaSourceCompleted)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetRegisterMediaSourceCompleted":::
 
-[!code-cs[MediaSourceCompleted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetMediaSourceCompleted)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetMediaSourceCompleted":::
 
 虽然从磁盘播放文件的成功率很大，但由于网络连接的更改或其他音频图无法控制的问题，从网络源中流式处理的媒体仍有可能在播放时出现问题。 如果播放期间无法播放 **MediaSource**，音频图将发起 [**UnrecoverableErrorOccurred**](/uwp/api/windows.media.audio.audiograph.unrecoverableerroroccurred) 事件。 可使用该事件的处理程序停止并处理音频图，然后重新初始化音频图。 
 
-[!code-cs[RegisterUnrecoverableError](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetRegisterUnrecoverableError)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetRegisterUnrecoverableError":::
 
-[!code-cs[UnrecoverableError](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetUnrecoverableError)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetUnrecoverableError":::
 
 ##  <a name="file-output-node"></a>文件输出节点
 
 可以使用文件输出节点将音频图中的音频数据定向到音频文件中。 通过调用 [**CreateFileOutputNodeAsync**](/uwp/api/windows.media.audio.audiograph.createfileoutputnodeasync) 创建 [**AudioFileOutputNode**](/uwp/api/Windows.Media.Audio.AudioFileOutputNode)。
 
-[!code-cs[DeclareFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileOutputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetDeclareFileOutputNode":::
 
 
-[!code-cs[CreateFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileOutputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetCreateFileOutputNode":::
 
 -   文件输出节点支持以下文件格式：mp3、wav、wma、m4a。
 -   在调用 [**AudioFileOutputNode.FinalizeAsync**](/uwp/api/windows.media.audio.audiofileoutputnode.finalizeasync) 前，必须先调用 [**AudioFileOutputNode.Stop**](/uwp/api/windows.media.audio.audiofileoutputnode.stop) 以停止节点处理，否则将引发异常。
@@ -143,14 +143,14 @@ Windows 运行时音频图 API：
 
 音频帧输入节点允许你将使用自己的代码生成的音频数据推送到音频图中。 这可实现创建自定义软件合成器等方案。 通过调用 [**CreateFrameInputNode**](/uwp/api/windows.media.audio.audiograph.createframeinputnode) 创建 [**AudioFrameInputNode**](/uwp/api/Windows.Media.Audio.AudioFrameInputNode)。
 
-[!code-cs[DeclareFrameInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameInputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetDeclareFrameInputNode":::
 
 
-[!code-cs[CreateFrameInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameInputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetCreateFrameInputNode":::
 
 当音频图准备开始处理下一音频数据量子时，将引发 [**FrameInputNode.QuantumStarted**](/uwp/api/windows.media.audio.audioframeinputnode.quantumstarted) 事件。 你将提供从此事件的处理程序中生成的自定义音频数据。
 
-[!code-cs[QuantumStarted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStarted)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetQuantumStarted":::
 
 -   传递到 **QuantumStarted** 事件处理程序中的 [**FrameInputNodeQuantumStartedEventArgs**](/uwp/api/Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs) 对象将公开 [**RequiredSamples**](/uwp/api/windows.media.audio.frameinputnodequantumstartedeventargs.requiredsamples) 属性，该属性指示音频图需要多少样本才能填满待处理的量子。
 -   调用 [**AudioFrameInputNode.AddFrame**](/uwp/api/windows.media.audio.audioframeinputnode.addframe)，将已填充音频数据的 [**AudioFrame**](/uwp/api/Windows.Media.AudioFrame) 对象传递到音频图中。
@@ -159,11 +159,11 @@ Windows 运行时音频图 API：
 
 若要使用音频数据填充 [**AudioFrame**](/uwp/api/Windows.Media.AudioFrame)，则必须访问音频帧的基础内存缓冲区。 为此，必须通过在命名空间内添加以下代码来初始化 **IMemoryBufferByteAccess** COM 接口。
 
-[!code-cs[ComImportIMemoryBufferByteAccess](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetComImportIMemoryBufferByteAccess)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetComImportIMemoryBufferByteAccess":::
 
 以下代码显示 **GenerateAudioData** 帮助程序方法的示例实现，该方法将创建 [**AudioFrame**](/uwp/api/Windows.Media.AudioFrame) 并使用音频数据填充它。
 
-[!code-cs[GenerateAudioData](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetGenerateAudioData)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetGenerateAudioData":::
 
 -   此方法访问以 Windows 运行时类型为基础的原始缓冲区，因此必须使用 **unsafe** 关键字进行声明。 你还必须使用 Microsoft Visual Studio 配置你的项目，以允许通过以下操作编译不安全的代码：打开项目的 **“属性”** 页面、单击 **“生成”** 属性页，然后选中 **“允许不安全代码”** 复选框。
 -   通过将所需的缓冲区大小传入构造函数，在 **Windows.Media** 命名空间中初始化 [**AudioFrame**](/uwp/api/Windows.Media.AudioFrame) 的新实例。 缓冲区大小等于样本数乘以每个样本的大小。
@@ -176,21 +176,21 @@ Windows 运行时音频图 API：
 
 音频帧输出节点允许你使用你创建的自定义代码来接收和处理来自音频图的音频数据输出。 其示例方案是：对音频输出执行信号分析。 通过调用 [**CreateFrameOutputNode**](/uwp/api/windows.media.audio.audiograph.createframeoutputnode) 创建 [**AudioFrameOutputNode**](/uwp/api/Windows.Media.Audio.AudioFrameOutputNode)。
 
-[!code-cs[DeclareFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameOutputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetDeclareFrameOutputNode":::
 
-[!code-cs[CreateFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetCreateFrameOutputNode":::
 
 当音频图开始处理音频数据量子时，将引发 [**AudioGraph.QuantumStarted**](/uwp/api/Windows.Media.Audio.AudioGraph.QuantumStarted) 事件。 你可以访问来自此事件的处理程序中的音频数据。 
 
 > [!NOTE]
 > 如果你想按照规律的节奏检索与音频图同步的音频帧，可从同步的 **QuantumStarted** 事件处理程序中调用 [AudioFrameOutputNode.GetFrame](/uwp/api/windows.media.audio.audioframeoutputnode.GetFrame)。 音频引擎在完成音频处理后，将异步引发 **QuantumProcessed** 事件，这表示其节奏可能没有规律。 因此，不应使用 **QuantumProcessed** 事件来同步处理音频帧数据。
 
-[!code-cs[SnippetQuantumStartedFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStartedFrameOutput)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetQuantumStartedFrameOutput":::
 
 -   调用 [**GetFrame**](/uwp/api/windows.media.audio.audioframeoutputnode.getframe) 以获取已填充音频图中音频数据的 [**AudioFrame**](/uwp/api/Windows.Media.AudioFrame) 对象。
 -   以下显示了 **ProcessFrameOutput** 帮助程序方法的一个示例实现。
 
-[!code-cs[ProcessFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetProcessFrameOutput)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetProcessFrameOutput":::
 
 -   与上述音频帧输入节点示例类似，你将需要声明 **IMemoryBufferByteAccess** COM 接口并将你的项目配置为允许不安全代码，才能访问基础音频缓冲区。
 -   通过调用 [**LockBuffer**](/uwp/api/windows.media.audioframe.lockbuffer) 获取音频帧的 [**AudioBuffer**](/uwp/api/Windows.Media.AudioBuffer)。
@@ -201,19 +201,19 @@ Windows 运行时音频图 API：
 
 所有输入节点类型都将公开 **AddOutgoingConnection** 方法，该方法可将节点产生的音频路由到传入该方法的节点。 以下示例将 [**AudioFileInputNode**](/uwp/api/Windows.Media.Audio.AudioFileInputNode) 连接到 [**AudioDeviceOutputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode)，这是一种用于在设备扬声器上播放音频文件的简单设置。
 
-[!code-cs[AddOutgoingConnection1](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection1)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetAddOutgoingConnection1":::
 
 可创建多个从某个输入节点到其他节点的连接。 下面的示例添加了从 [**AudioFileInputNode**](/uwp/api/Windows.Media.Audio.AudioFileInputNode) 到 [**AudioFileOutputNode**](/uwp/api/Windows.Media.Audio.AudioFileOutputNode) 的另一种连接方法。 现在，音频文件中的音频将在设备的扬声器中播放，还将写出到音频文件。
 
-[!code-cs[AddOutgoingConnection2](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection2)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetAddOutgoingConnection2":::
 
 输出节点也可以接收来自其他节点的多个连接。 下面的示例将建立从 [**AudioDeviceInputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceInputNode) 到 [**AudioDeviceOutput**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode) 节点的连接。 由于输出节点具有来自文件输入节点和设备输入节点的连接，输出将包含来自这两个源的混合音频。 **AddOutgoingConnection** 将提供一个重载，可使用它为通过连接传递的信号指定增益值。
 
-[!code-cs[AddOutgoingConnection3](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection3)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetAddOutgoingConnection3":::
 
 虽然输出节点可以接受来自多个节点的连接，但是你可能希望在将混合音频传递到输出之前，先从一个或多个节点创建中级混合信号。 例如，你可能想要设置级别或将效果应用到音频图中音频信号的子集。 若要执行此操作，请使用 [**AudioSubmixNode**](/uwp/api/Windows.Media.Audio.AudioSubmixNode)。 你可以从一个或多个输入节点或其他子混合节点连接到某个子混合节点。 下面的示例将使用 [**AudioGraph.CreateSubmixNode**](/uwp/api/windows.media.audio.audiograph.createsubmixnode) 创建一个新的子混合节点。 然后，将添加从文件输入节点和帧输出节点到子混合节点的连接。 最后，子混合节点将连接到文件输出节点。
 
-[!code-cs[CreateSubmixNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateSubmixNode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetCreateSubmixNode":::
 
 ## <a name="starting-and-stopping-audio-graph-nodes"></a>启动和停止音频图节点
 
@@ -227,7 +227,7 @@ Windows 运行时音频图 API：
 
 可以使用音频图 API 将音频效果添加到音频图中各种类型的节点。 输出节点、输入节点和子混合节点分别可以具有无数音频效果，仅受硬件功能限制。下面的示例将演示如何将内置回音效果添加到子混合节点。
 
-[!code-cs[AddEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetAddEffect":::
 
 -   所有音频效果都可实现 [**IAudioEffectDefinition**](/uwp/api/Windows.Media.Effects.IAudioEffectDefinition)。 每个节点都将公开 **EffectDefinitions** 属性，它表示应用于该节点的效果的列表。 通过将效果的定义对象添加到列表来添加效果。
 -   **Windows.Media.Audio** 命名空间中提供了多个效果定义类。 这些方法包括：
@@ -248,19 +248,19 @@ Windows 运行时音频图 API：
 
 当使用适用于所需节点类型的重载创建方法创建音频节点时，请将发射器分配给它。 在此示例中，[**CreateFileInputNodeAsync**](/uwp/api/windows.media.audio.audiograph.createfileinputnodeasync) 用于从指定文件创建文件输入节点以及要与该节点关联的 [**AudioNodeEmitter**](/uwp/api/Windows.Media.Audio.AudioNodeEmitter) 对象。
 
-[!code-cs[CreateEmitter](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateEmitter)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetCreateEmitter":::
 
 将音频图中的音频输出到用户的 [**AudioDeviceOutputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode) 具有侦听器对象（可使用 [**Listener**](/uwp/api/windows.media.audio.audiodeviceoutputnode.listener) 属性访问），它表示 3D 空间中用户的位置、方向和速度。 音频图中所有发射器的位置都与发射器对象的位置和方向有关。 默认情况下，侦听器位于原点 (0,0,0)（沿 Z 轴正面向前），但可以使用 [**Position**](/uwp/api/windows.media.audio.audionodelistener.position) 和 [**Orientation**](/uwp/api/windows.media.audio.audionodelistener.orientation) 属性设置其位置和方向。
 
-[!code-cs[Listener](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetListener)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetListener":::
 
 可更新运行时发射器的位置、速度和方向，以模拟音频源在 3D 空间中的移动。
 
-[!code-cs[UpdateEmitter](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetUpdateEmitter)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetUpdateEmitter":::
 
 还可以更新运行时侦听器对象的位置、速度和方向，以模拟用户在 3D 空间中的移动。
 
-[!code-cs[UpdateListener](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetUpdateListener)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetUpdateListener":::
 
 默认情况下，将使用 Microsoft 的头部相关传输函数 (HRTF) 算法计算空间音频，以根据相对于侦听器的音频的形状、速度和位置衰减音频。 可以将 [**SpatialAudioModel**](/uwp/api/windows.media.audio.audionodeemitter.spatialaudiomodel) 属性设置为 **FoldDown**，以使用简单立体声混音方法模拟空间音频（该方法不太精确，但需要的 CPU 和内存资源也较少）。
 

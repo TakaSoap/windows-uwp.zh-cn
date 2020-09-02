@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, AdControl, 广告控件, javascript, HTML
 ms.localizationpriority: medium
-ms.openlocfilehash: d770e8a9a15835d7fab52e7383acca3a3df6c6cd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b99432c40bf2b4633e8902a5bb7b7eedab3119dc
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155671"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364050"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>HTML 5 和 JavaScript 中的 AdControl
 
@@ -22,7 +22,7 @@ ms.locfileid: "89155671"
 
 有关演示如何将横幅广告添加到 JavaScript/HTML 应用的完整示例项目，请参阅 [GitHub 上的广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 * 使用 Visual Studio 2015 或更高版本的 Visual Studio 安装 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 有关安装说明，请参阅[此文章](install-the-microsoft-advertising-libraries.md)。
 
@@ -103,7 +103,7 @@ ms.locfileid: "89155671"
 上述步骤显示了如何在 HTML 标注中声明 **AdControl**。 或者，你可以使用 JavaScript 以编程方式创建 **AdControl**。 本示例假定在带有 ID **myAd** 的 HTML 中使用现有的 **div**。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-javascript[AdControl](./code/AdvertisingSamples/AdControlSamples/js/main.js#DeclareAdControl)]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/js/main.js" id="DeclareAdControl":::
 
 此示例假定你已经声明了名为 **myAdError**、**myAdRefreshed** 和 **myAdEngagedChanged** 的事件处理程序方法。
 

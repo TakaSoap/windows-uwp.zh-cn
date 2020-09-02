@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 视频, scheduler, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 6baf26b083cce08557a9b09f2ba95d5ad889f4a4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9d1a5c08d9965422d6fcd543ee38d3e628be8432
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175101"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364060"
 ---
 # <a name="show-ads-in-video-content"></a>在视频内容中显示广告
 
@@ -27,7 +27,7 @@ ms.locfileid: "89175101"
 
 视频内容的广告根据程序短于十分钟（简短形式）还是长于十分钟（较长形式）而有所不同。 虽然后者在服务上设置时更为复杂，但实际上在用户编写客户端代码方式方面没有任何不同。 如果 **AdScheduler** 接收具有单个广告（而不是清单）的 VAST 负载，它将被视为针对单个前导广告调用的清单（在 00:00 时中断一次）。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 * 使用 Visual Studio 2015 安装 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 或更高版本。
 
@@ -44,7 +44,7 @@ ms.locfileid: "89175101"
 
   以下示例演示如何使用 JavaScript 代码建立 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview)。
 
-  [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet1)]
+  :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet1":::
 
 ## <a name="how-to-use-the-adscheduler-class-in-your-code"></a>如何在你的代码中使用 AdScheduler 类
 
@@ -75,7 +75,7 @@ ms.locfileid: "89175101"
 
 6.  在你的项目的 main.js 文件中，添加可创建新 **AdScheduler** 对象的代码。 传入可托管视频内容的 **MediaPlayer**。 必须放置代码，以便它在 [WinJS.UI.processAll](/previous-versions/windows/apps/hh440975) 后运行。
 
-    [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet2":::
 
 7.  使用 **AdScheduler** 对象的 **requestSchedule** 或 **requestScheduleByUrl** 方法从服务器请求广告计划，并将其插入到 **MediaPlayer** 时间线，然后播放视频媒体。
 
@@ -83,18 +83,18 @@ ms.locfileid: "89175101"
 
         此方法采用 [Promise](../threading-async/asynchronous-programming-universal-windows-platform-apps.md#asynchronous-patterns-in-uwp-using-javascript)形式，这是一个异步构造，在其中传递两个函数指针：一个是 **onComplete** 函数的指针，在承诺成功完成时调用，另一个是 **onError** 函数的指针，在遇到错误时调用。 在 **onComplete** 函数中，开始播放视频内容。 广告将在计划的时间开始播放。 在 **onError** 函数中，处理错误，然后开始播放视频。 视频内容将无广告播放。 **onError** 函数的参数是一个包含以下成员的对象。
 
-        [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet3)]
+        :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet3":::
 
     * 若要从非 Microsoft 广告服务器请求广告计划，请使用 **requestScheduleByUrl**，然后传入服务器 URI 中。 此方法也采用 **Promise** 形式，它会接受 **onComplete** 和 **onError** 函数的指针。 从服务器返回的广告负载必须遵从视频广告服务模板 (VAST) 或视频多广告播放列表 (VMAP) 负载格式。
 
-        [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet4)]
+        :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet4":::
 
     > [!NOTE]
     > 在 **MediaPlayer** 中开始播放主要视频内容之前，应该等待 **requestSchedule** 或 **requestScheduleByUrl** 返回。 在 **requestSchedule** 返回之前开始播放媒体（就前导广告而言），前导广告的播放将中断主要视频内容。 即使函数失败，也必须调用 **play**，因为 **AdScheduler** 将告诉 **MediaPlayer** 跳过广告，直接转到内容。 你可能具有不同的业务要求，例如插入内置广告（如果无法成功远程获取广告）。
 
 8.  在播放期间，你可以处理让你的应用跟踪进度和/或在初始广告匹配进程后可能发生的错误的其他事件。 以下代码显示了部分事件，包括 **onPodStart**、**onPodEnd**、**onPodCountdown**、**onAdProgress**、**onAllComplete** 和 **onErrorOccurred**。
 
-    [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet5":::
 
 ## <a name="adscheduler-members"></a>AdScheduler 成员
 

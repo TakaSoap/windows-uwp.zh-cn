@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8650ed0d7dc5caceca5d58de61f48f254a571914
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d592b516db32c2602c8b51d82f3ea56c037e5164
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175681"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363780"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a>手动控制系统媒体传输控件
 
@@ -26,19 +26,19 @@ ms.locfileid: "89175681"
 > [!NOTE] 
 > 如果你通过将 [**IsEnabled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled) 设置为 false 禁用 [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) 的 [**MediaPlaybackCommandManager**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager)，它将中断 **MediaPlayer** 和 **MediaPlayerElement** 提供的 [**TransportControls**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) 之间的链接，以致内置传输控件不再自动控制播放器的播放。 作为替代方法，你必须实现自己的控件才能控制 **MediaPlayer**。
 
-[!code-cs[InitSMTCMediaPlayer](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaPlayer)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetInitSMTCMediaPlayer":::
 
 还可以通过调用 [**GetForCurrentView**](/uwp/api/windows.media.systemmediatransportcontrols.getforcurrentview) 获取 [**SystemMediaTransportControls**](/uwp/api/Windows.Media.SystemMediaTransportControls) 的实例。 如果使用 **MediaElement** 播放媒体，必须使用此方法获取该对象。
 
-[!code-cs[InitSMTCMediaElement](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaElement)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetInitSMTCMediaElement":::
 
 通过设置 **SystemMediaTransportControls** 对象的相应“已启用”属性（例如 [**IsPlayEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.isplayenabled)、[**IsPauseEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.ispauseenabled)、[**IsNextEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.isnextenabled) 和 [**IsPreviousEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.ispreviousenabled)），启用应用将使用的按钮。 有关可用控件的完整列表，请参阅 **SystemMediaTransportControls** 参考文档。
 
-[!code-cs[EnableContols](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetEnableContols)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetEnableContols":::
 
 为 [**ButtonPressed**](/uwp/api/windows.media.systemmediatransportcontrols.buttonpressed) 事件注册处理程序，以在用户按下按钮时接收通知。
 
-[!code-cs[RegisterButtonPressed](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterButtonPressed)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetRegisterButtonPressed":::
 
 ## <a name="handle-system-media-transport-controls-button-presses"></a>处理系统媒体传输控件按钮按下操作
 
@@ -46,13 +46,13 @@ ms.locfileid: "89175681"
 
 要从 [**ButtonPressed**](/uwp/api/windows.media.systemmediatransportcontrols.buttonpressed) 事件处理程序更新 UI 线程上的对象（例如 [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 对象），你必须通过 [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) 来封送调用。 这是因为 **ButtonPressed** 事件处理程序不会从 UI 线程中调用，因此如果你尝试直接修改 UI，将会引发异常。
 
-[!code-cs[SystemMediaTransportControlsButtonPressed](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsButtonPressed)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetSystemMediaTransportControlsButtonPressed":::
 
 ## <a name="update-the-system-media-transport-controls-with-the-current-media-status"></a>使用当前的媒体状态更新系统媒体传输控件
 
 当媒体的状态发生更改时，应该通知 [**SystemMediaTransportControls**](/uwp/api/Windows.Media.SystemMediaTransportControls)，以便系统可以更新控件来反映当前状态。 若要执行此操作，请将 [**PlaybackStatus**](/uwp/api/windows.media.systemmediatransportcontrols.playbackstatus) 属性设置为 [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 的 [**CurrentStateChanged**](/uwp/api/windows.ui.xaml.controls.mediaelement.currentstatechanged) 事件内的适当 [**MediaPlaybackStatus**](/uwp/api/Windows.Media.MediaPlaybackStatus) 值，该事件将在媒体状态更改时引发。
 
-[!code-cs[SystemMediaTransportControlsStateChange](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsStateChange)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetSystemMediaTransportControlsStateChange":::
 
 ## <a name="update-the-system-media-transport-controls-with-media-info-and-thumbnails"></a>使用媒体信息和缩略图更新系统媒体传输控件
 
@@ -60,11 +60,11 @@ ms.locfileid: "89175681"
 
 调用 [**Update**](/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.update) 会导致系统媒体传输控件使用新的元数据和缩略图更新其 UI。
 
-[!code-cs[SystemMediaTransportControlsUpdater](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsUpdater)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetSystemMediaTransportControlsUpdater":::
 
 如果你的方案需要它，你可以通过设置 [**DisplayUpdater**](/uwp/api/windows.media.systemmediatransportcontrols.displayupdater) 类公开的 [**MusicProperties**](/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.musicproperties)、[**ImageProperties**](/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.imageproperties) 或 [**VideoProperties**](/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.videoproperties) 对象的值，手动更新由系统媒体传输控件显示的元数据。
 
-[!code-cs[SystemMediaTransportControlsUpdaterManual](./code/SMTCWin10/cs/MainPage.xaml.cs#SystemMediaTransportControlsUpdaterManual)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SystemMediaTransportControlsUpdaterManual":::
 
 > [!Note]
 > 即使应用程序未提供由系统媒体传输控件显示的其他媒体元数据，也应为 [SystemMediaTransportControlsDisplayUpdater](/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.type#Windows_Media_SystemMediaTransportControlsDisplayUpdater_Type
@@ -75,7 +75,7 @@ ms.locfileid: "89175681"
 
 系统传输控件显示有关当前播放的媒体项时间线的信息，包括媒体项的当前播放位置、开始时间和结束时间。 若要更新系统传输控件时间线属性，请创建一个新的 [**SystemMediaTransportControlsTimelineProperties**](/uwp/api/Windows.Media.SystemMediaTransportControlsTimelineProperties) 对象。 设置对象的属性以反映正在播放的媒体项的当前状态。 调用 [**SystemMediaTransportControls.UpdateTimelineProperties**](/uwp/api/windows.media.systemmediatransportcontrols.updatetimelineproperties) 会导致控件更新时间线。
 
-[!code-cs[UpdateTimelineProperties](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetUpdateTimelineProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetUpdateTimelineProperties":::
 
 -   必须提供 [**StartTime**](/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.starttime)、[**EndTime**](/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.endtime) 和 [**Position**](/uwp/api/windows.media.systemmediatransportcontrols.playbackpositionchangerequested) 的值，才能使系统控件显示正在播放的项的时间线。
 
@@ -98,11 +98,11 @@ ms.locfileid: "89175681"
  
 若要处理用户与其中一个控件的交互，请先为关联的事件注册一个处理程序。
 
-[!code-cs[RegisterPlaybackChangedHandler](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterPlaybackChangedHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetRegisterPlaybackChangedHandler":::
 
 在该事件的处理程序中，首先确保请求的值在有效的预期范围内。 如果在此范围内，则在 [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 上设置相应的属性，然后在 [**SystemMediaTransportControls**](/uwp/api/Windows.Media.SystemMediaTransportControls) 对象上设置相应的属性。
 
-[!code-cs[PlaybackChangedHandler](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetPlaybackChangedHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetPlaybackChangedHandler":::
 
 -   为了引发其中一个播放器属性事件，必须为该属性设置初始值。 例如，直到你为 [**PlaybackRate**](/uwp/api/windows.media.systemmediatransportcontrols.playbackrate) 属性设置了某个值至少一次后，才会引发 [**PlaybackRateChangeRequested**](/uwp/api/windows.media.systemmediatransportcontrols.playbackratechangerequested)。
 

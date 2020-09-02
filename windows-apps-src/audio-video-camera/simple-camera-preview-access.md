@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f30611d649e0485a9cc89a162ae49768b05e00d7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3487e79b689e5c47cc94ffc29a559a333fe66f47
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174501"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363770"
 ---
 # <a name="display-the-camera-preview"></a>显示相机预览
 
@@ -34,7 +34,7 @@ ms.locfileid: "89174501"
 
 使用 [**CaptureElement**](/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) 以在你的 XAML 页面内显示预览流。
 
-[!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml" id="SnippetCaptureElement":::
 
 
 
@@ -44,15 +44,15 @@ ms.locfileid: "89174501"
 
 添加 using 指令以将以下命名空间包含在你的页面的 .cs 文件中。
 
-[!code-cs[SimpleCameraPreviewUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSimpleCameraPreviewUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetSimpleCameraPreviewUsing":::
 
 为 **MediaCapture** 对象和布尔值声明类成员变量，以跟踪相机当前是否在预览。 
 
-[!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareMediaCapture":::
 
 声明用于确保屏幕在运行预览时不会关闭的 [**DisplayRequest**](/uwp/api/Windows.System.Display.DisplayRequest) 类型的变量。
 
-[!code-cs[DeclareDisplayRequest](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareDisplayRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareDisplayRequest":::
 
 创建帮助程序方法以启动相机预览，在本示例中被称为 **StartPreviewAsync**。 根据应用方案的不同，你可能想要通过在加载页面时调用的 **OnNavigatedTo** 事件处理程序调用它，或者等待并启用预览以响应 UI 事件。
 
@@ -64,12 +64,12 @@ ms.locfileid: "89174501"
 
 调用 [**RequestActive**](/uwp/api/windows.system.display.displayrequest.requestactive) 确保在运行预览时设备不会进入睡眠状态。 最后，将 [**DisplayInformation.AutoRotationPreferences**](/uwp/api/windows.graphics.display.displayinformation.autorotationpreferences) 属性设为 [**Landscape**](/uwp/api/Windows.Graphics.Display.DisplayOrientations)，防止 UI 和 **CaptureElement** 在用户更改设备方向时旋转。 有关处理设备方向更改的详细信息，请参阅[**使用 MediaCapture 处理设备方向**](handle-device-orientation-with-mediacapture.md)。  
 
-[!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStartPreviewAsync":::
 
 ## <a name="handle-changes-in-exclusive-control"></a>处理独占控制权更改
 如前面的部分所述，如果其他应用拥有捕获设备的独占控制权，则 **StartPreviewAsync** 会引发 **FileLoadException**。 从 Windows 10 版本 1703 开始，可以为每当设备的独占控制权状态更改时都会引发的 [MediaCapture.CaptureDeviceExclusiveControlStatusChanged](/uwp/api/Windows.Media.Capture.MediaCapture.CaptureDeviceExclusiveControlStatusChanged) 事件注册处理程序。 在此事件的处理程序中，检查 [MediaCaptureDeviceExclusiveControlStatusChangedEventArgs.Status](/uwp/api/windows.media.capture.mediacapturedeviceexclusivecontrolstatuschangedeventargs.Status) 属性以查看当前具体状态。 如果新状态是 **SharedReadOnlyAvailable**，则你知道当前无法启动预览，并且可能要更新 UI 以向用户发出警报。 如果新状态是 **ExclusiveControlAvailable**，则你可以尝试再次启动相机预览。
 
-[!code-cs[ExclusiveControlStatusChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetExclusiveControlStatusChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetExclusiveControlStatusChanged":::
 
 ## <a name="shut-down-the-preview-stream"></a>关闭预览流
 
@@ -81,19 +81,19 @@ ms.locfileid: "89174501"
 -   将 **MediaCapture** 成员变量设置为 null。
 -   调用 [**RequestRelease**](/uwp/api/windows.system.display.displayrequest.requestrelease) 以支持在屏幕处于非活动状态时关闭屏幕。
 
-[!code-cs[CleanupCameraAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetCleanupCameraAsync":::
 
 当用户通过替代 [**OnNavigatedFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) 方法导航离开你的页面时，应当关闭预览流。
 
-[!code-cs[OnNavigatedFrom](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetOnNavigatedFrom":::
 
 你还应当在应用暂停时正确关闭预览流。 若要执行此操作，请在你的页面的构造函数中注册 [**Application.Suspending**](/uwp/api/windows.applicationmodel.core.coreapplication.suspending) 事件的处理程序。
 
-[!code-cs[RegisterSuspending](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterSuspending)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetRegisterSuspending":::
 
 在 **Suspending** 事件处理程序中，首先进行查看以通过比较 [**CurrentSourcePageType**](/uwp/api/windows.ui.xaml.controls.frame.currentsourcepagetype) 属性的页面类型，确保应用程序的 [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) 正显示该页面。 如果当前未显示该页面，则应当已引发 **OnNavigatedFrom** 事件并关闭预览流。 如果当前显示该页面，从已传入到处理程序中的事件参数中获取 [**SuspendingDeferral**](/uwp/api/Windows.ApplicationModel.SuspendingDeferral) 对象，以确保直到关闭预览流系统才暂停你的应用。 关闭流后，调用延迟的 [**Complete**](/uwp/api/windows.applicationmodel.suspendingdeferral.complete) 方法以使系统继续暂停你的应用。
 
-[!code-cs[SuspendingHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSuspendingHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetSuspendingHandler":::
 
 
 ## <a name="related-topics"></a>相关主题

@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, 广告, AdControl, 疑难解答, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 719e05d67d68627fcd631edfd6c688b17f8507bd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: db1f1b7c3a60aa651cce5ada4200ddf3e249c72f
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164381"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363020"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 疑难解答指南
 
@@ -174,7 +174,7 @@ ms.locfileid: "89164381"
 2.  确保 **AdControl** 已实例化。 如果 **AdControl** 未实例化，它将不可用。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs" id="Snippet1":::
 
 3.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须与在合作伙伴中心获取的应用程序 ID 和 ad 单元 ID 匹配。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
@@ -239,7 +239,7 @@ ms.locfileid: "89164381"
     此 C# 代码检索错误消息，并将其显示在 **TextBlock** 中。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs" id="Snippet2":::
 
     导致黑盒的最常见错误是“无广告可用”。 此错误意味着请求返回不了任何广告。
 
@@ -256,7 +256,7 @@ ms.locfileid: "89164381"
     以下示例展示了如何调用 **Refresh** 方法。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs" id="Snippet3":::
 
 3.  **AdControl** 行为正常。 有时如果广告不刷新，相同的广告会连续出现多次。
 

@@ -6,12 +6,12 @@ ms.date: 12/04/2017
 ms.topic: article
 keywords: windows 10, uwp, 许可证, 应用, 加载项, 应用内购买, IAP, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c83ecc7b5bfc8158d80469eab12710719fa0834
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 29f2e5ceee6d7d9c779c7fb544d507e31456b3fd
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164671"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363160"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>获取应用和加载项的许可证信息
 
@@ -20,7 +20,7 @@ ms.locfileid: "89164671"
 > [!NOTE]
 > **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[此文章](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 本示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
@@ -42,7 +42,7 @@ ms.locfileid: "89164671"
 若要访问用户有权使用的当前应用的持久性加载项的许可证，请使用 [StoreAppLicense](/uwp/api/windows.services.store.storeapplicense) 对象的 [AddOnLicenses](/uwp/api/windows.services.store.storeapplicense.addonlicenses) 属性。 此属性返回 [StoreLicense](/uwp/api/windows.services.store.storelicense) 对象集合，表示加载项许可证。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[GetLicenseInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs#GetLicenseInfo)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs" id="GetLicenseInfo":::
 
 有关完整的应用程序示例，请参阅 [Microsoft Store 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 

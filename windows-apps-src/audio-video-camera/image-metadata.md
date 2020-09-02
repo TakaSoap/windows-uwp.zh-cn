@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ca2a5abe5c0a7f60246322dd81fad9af8f0def77
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c020a2ca66c81bee81813402e546fc01ce77c7f3
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157491"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362560"
 ---
 # <a name="image-metadata"></a>图像元数据
 
@@ -23,11 +23,11 @@ ms.locfileid: "89157491"
 
 [**StorageFile.Properties**](/uwp/api/windows.storage.storagefile.properties) 属性返回对关于文件的相关内容信息提供访问的 [**StorageItemContentProperties**](/uwp/api/Windows.Storage.FileProperties.StorageItemContentProperties) 对象。 通过调用 [**GetImagePropertiesAsync**](/uwp/api/windows.storage.fileproperties.storageitemcontentproperties.getimagepropertiesasync) 获取特定于图像的属性。 返回的 [**ImageProperties**](/uwp/api/Windows.Storage.FileProperties.ImageProperties) 对象公开包含基本图像元数据字段（如图像的标题和捕获日期）的成员。
 
-[!code-cs[GetImageProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetImageProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetGetImageProperties":::
 
 若要访问较大的文件元数据集，请使用 Windows 属性系统，一组可以使用唯一的字符串标识符进行检索的文件元数据。 创建字符串列表，并为想要检索的每个属性添加标识符。 [**ImageProperties.RetrievePropertiesAsync**](/uwp/api/windows.storage.fileproperties.imageproperties.retrievepropertiesasync) 方法采用此字符串列表，并返回键/值对的字典，其中键是属性标识符，值是属性值。
 
-[!code-cs[GetWindowsProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetWindowsProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetGetWindowsProperties":::
 
 -   有关 Windows 属性的完整列表（包括标识符和每个属性的类型），请参阅 [Windows 属性](/windows/desktop/properties/props)。
 
@@ -41,11 +41,11 @@ GeotagHelper 是一个实用工具类，可以方便地直接使用 [**Windows.D
 
 如果你已拥有表示要在图像（来自先前使用的地理位置 API 或某些其他源）中标记的位置的 [**Geopoint**](/uwp/api/Windows.Devices.Geolocation.Geopoint) 对象，你可以通过调用 [**GeotagHelper.SetGeotagAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.setgeotagasync) 并传入 [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) 和 **Geopoint** 来设置地理标签数据。
 
-[!code-cs[SetGeoDataFromPoint](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromPoint)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetSetGeoDataFromPoint":::
 
 若要使用设备的当前位置设置地理标签数据，则创建一个新的 [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象，并调用传入 **Geolocator** 和要标记文件的 [**GeotagHelper.SetGeotagFromGeolocatorAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.setgeotagfromgeolocatorasync)。
 
-[!code-cs[SetGeoDataFromGeolocator](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromGeolocator)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetSetGeoDataFromGeolocator":::
 
 -   必须在应用部件清单中包含 **location** 设备功能，以便使用 [**SetGeotagFromGeolocatorAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.setgeotagfromgeolocatorasync) API。
 
@@ -55,7 +55,7 @@ GeotagHelper 是一个实用工具类，可以方便地直接使用 [**Windows.D
 
 若要获取表示图像文件的已加注地理标签位置的 GeoPoint，请调用 [**GetGeotagAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.getgeotagasync)。
 
-[!code-cs[GetGeoData](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetGeoData)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetGetGeoData":::
 
 ## <a name="decode-and-encode-image-metadata"></a>解码和编码图像元数据
 
@@ -65,7 +65,7 @@ GeotagHelper 是一个实用工具类，可以方便地直接使用 [**Windows.D
 
 安装解码器后，创建一个字符串列表，并为要使用 Windows 属性标识符字符串或 WIC 元数据查询进行检索的每个元数据属性添加一个新项。 调用解码器的 [**BitmapProperties**](/uwp/api/Windows.Graphics.Imaging.BitmapProperties) 成员上的 [**BitmapPropertiesView.GetPropertiesAsync**](/uwp/api/windows.graphics.imaging.bitmappropertiesview.getpropertiesasync) 方法以请求指定的属性。 在包含属性名称或路径和属性值的键/值对的字典中将返回属性。
 
-[!code-cs[ReadImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetReadImageMetadata)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetReadImageMetadata":::
 
 -   有关 WIC 元数据查询语言和支持的属性的信息，请参阅 [WIC 图像格式本机元数据查询](/windows/desktop/wic/-wic-native-image-format-metadata-queries)。
 
@@ -76,7 +76,7 @@ GeotagHelper 是一个实用工具类，可以方便地直接使用 [**Windows.D
 
 创建 [**BitmapPropertySet**](/uwp/api/Windows.Graphics.Imaging.BitmapPropertySet) 对象以包含要设置的属性值。 创建 [**BitmapTypedValue**](/uwp/api/Windows.Graphics.Imaging.BitmapTypedValue) 对象以表示属性值。 此对象将 **object** 用作值和定义值类型的 [**PropertyType**](/uwp/api/Windows.Foundation.PropertyType) 枚举的成员。 将 **BitmapTypedValue** 添加到 **BitmapPropertySet**，然后调用 [**BitmapProperties.SetPropertiesAsync**](/uwp/api/windows.graphics.imaging.bitmapproperties.setpropertiesasync) 会导致编码器将属性写入流中。
 
-[!code-cs[WriteImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteImageMetadata)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetWriteImageMetadata":::
 
 -   有关图像文件类型支持的属性的详细信息，请参阅 [Windows 属性](/windows/desktop/properties/props)、[照片元数据策略](/windows/desktop/wic/photo-metadata-policies)和 [WIC 图像格式本机元数据查询](/windows/desktop/wic/-wic-native-image-format-metadata-queries)。
 
