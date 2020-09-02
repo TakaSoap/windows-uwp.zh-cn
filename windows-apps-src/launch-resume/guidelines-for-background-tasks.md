@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: fb585b46399d7b24eaafa531b2aae34f397dbeb2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 00717a64135ef32a99b06c61b31e2ff59a587878
+ms.sourcegitcommit: b66796c73f14da63794efa66c8ded2caa25da0f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155841"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89285448"
 ---
 # <a name="guidelines-for-background-tasks"></a>后台任务指南
 
@@ -61,7 +61,7 @@ ms.locfileid: "89155841"
 
 > **重要提示**   从 Windows 10 开始，应用程序不再需要在锁定屏幕上作为运行后台任务的先决条件。
 
-通用 Windows 平台 (UWP) 应用无需固定到锁屏界面，即可运行所有受支持的任务类型。 但是，应用程序必须调用 [**GetAccessState**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，并检查应用是否未被拒绝在后台运行。 确保 [**GetAccessStatus**] 不返回拒绝的 [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 枚举中的一个。 例如， https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundAccessStatus) 如果用户已在设备的设置中明确拒绝应用的后台任务权限，则此方法将返回 (。
+通用 Windows 平台 (UWP) 应用无需固定到锁屏界面，即可运行所有受支持的任务类型。 但是，应用程序必须调用 [**GetAccessState**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，并检查应用是否未被拒绝在后台运行。 确保 **GetAccessStatus** 不返回拒绝的 [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 枚举中的一个。 例如，如果用户已在设备的设置中明确拒绝应用的后台任务权限，则此方法将返回**BackgroundAccessStatus。**
 
 如果你的应用被拒绝在后台运行，则你的应用应调用 [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，并确保在注册后台任务之前未拒绝响应。
 
