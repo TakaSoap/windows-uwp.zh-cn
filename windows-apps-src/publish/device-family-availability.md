@@ -1,16 +1,16 @@
 ---
-Description: 成功上传程序包后，将看到一个表格，指示将以排名顺序向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包。
+description: 成功上传程序包后，将看到一个表格，指示将以排名顺序向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包。
 title: 设备系列可用性
 ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, 程序包, 上传, 设备系列可用性
 ms.localizationpriority: medium
-ms.openlocfilehash: f0b30b5805ffaf0cd591147bcfed9744b64afdb7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 48cbb0fd9ecf27c9926d55e22abc17d039d3674b
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161971"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411961"
 ---
 # <a name="device-family-availability"></a>设备系列可用性
 
@@ -55,7 +55,7 @@ ms.locfileid: "89161971"
 
 请务必了解：你在**设备系列可用性**部分中所做的选择仅应用于全新购买。 已拥有你的应用的任何用户都可以继续使用它，并且将获得你提交的任何更新，即使你在此处删除了设备系列也是如此。 这甚至适用于在升级到 Windows 10 之前获取你的应用的客户。 例如，如果你有一个已发布的应用程序，其中包含 Windows Phone 8.1 包，并且你添加了面向 Windows 通用设备系列的 Windows 10 (UWP) 包，则拥有你的 Windows Phone 8.1 包的 Windows 10 移动客户将获得此 Windows 10 (UWP) 包的更新，即使你已取消选中 **Windows 10 移动**版的复选框也是如此。
 
-有关设备系列的详细信息，请参阅[**设备系列概述**](/uwp/extension-sdks/device-families-overview)。
+有关设备系列的详细信息，请参阅 [通过扩展 sdk 进行编程](/uwp/extension-sdks/device-families-overview)。
 
 
 ## <a name="understanding-ranking"></a>了解分级

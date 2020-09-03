@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: windows 10, uwp, 屏幕捕获
 ms.localizationpriority: medium
-ms.openlocfilehash: b57be844e5ee10d384046aac651ab4f198f37d9e
-ms.sourcegitcommit: 14c0b1ea2447a81ddf31982b40e19a74ecc6d59e
+ms.openlocfilehash: 96b8c52d8c1c6b6947b7b151df0b1b8bbfe42869
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89310068"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411921"
 ---
 # <a name="screen-capture"></a>屏幕捕获
 
@@ -688,7 +688,7 @@ End Class
 
 ## <a name="record-a-video"></a>录制视频
 
-如果要录制应用程序的视频，可以按照 [屏幕截图到视频](screen-capture-video.md)一文中介绍的演练进行操作。 或者，可以使用 [AppRecording 命名空间](/uwp/api/windows.media.apprecording)。 这是桌面扩展 SDK 的一部分，因此它仅适用于桌面，并要求你从项目中添加对它的引用。 有关详细信息，请参阅 [设备系列概述](/uwp/extension-sdks/device-families-overview) 。
+如果要录制应用程序的视频，可以按照 [屏幕截图到视频](screen-capture-video.md)一文中介绍的演练进行操作。 或者，可以使用 [AppRecording 命名空间](/uwp/api/windows.media.apprecording)。 这是桌面扩展 SDK 的一部分，因此它仅适用于桌面，并要求你从项目中添加对它的引用。 有关详细信息，请参阅 [通过扩展 sdk 进行编程](/uwp/extension-sdks/device-families-overview) 。
 
 ## <a name="see-also"></a>另请参阅
 

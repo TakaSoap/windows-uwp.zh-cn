@@ -1,17 +1,17 @@
 ---
-Description: 本主题说明限定符的常规概念、如何使用它们以及每个限定符名称的用途。
+description: 本主题说明限定符的常规概念、如何使用它们以及每个限定符名称的用途。
 title: 定制语言、比例、高对比度和其他限定符的资源
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 3678d525fa00df07408b9d85af34a3dd825b4fcf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 59f0b636384ba133e985f0704e2033c1acc5f15e
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161331"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412011"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>定制语言、比例、高对比度和其他限定符的资源
 
@@ -286,7 +286,7 @@ Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为�
 * [资源管理系统](resource-management-system.md)
 * [如何为本地化做好准备](/previous-versions/windows/apps/hh967762(v=win.10))
 * [检测正运行应用的平台](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [设备系列概述](/uwp/extension-sdks/device-families-overview)
+* [用扩展 Sdk 编程](/uwp/extension-sdks/device-families-overview)
 * [本地化 UI 字符串](localize-strings-ui-manifest.md)
 * [BCP-47](https://tools.ietf.org/html/bcp47)
 * [联合国统计部门 M49 区域代码构成](https://unstats.un.org/unsd/methods/m49/m49regin.htm)

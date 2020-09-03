@@ -1,17 +1,17 @@
 ---
-Description: 了解如何向你的客户提供应用的程序包，以及如何管理特定的程序包方案。
+description: 了解如何向你的客户提供应用的程序包，以及如何管理特定的程序包方案。
 title: 应用包管理指南
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ecd8cc96196c31615eac032183956de3bee9e4b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6035f5f21cd1b704415193c393ae0637d3e5dc37
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171051"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411971"
 ---
 # <a name="guidance-for-app-package-management"></a>应用包管理指南
 
@@ -49,15 +49,13 @@ ms.locfileid: "89171051"
 > [!NOTE]
 > 如果你想要保持应用可用，但又不想继续将它提供给使用特定操作系统版本的新用户，你可以创建新提交，并删除要阻止新获取的操作系统版本的所有程序包。 例如，如果你先前有适用于 Windows Phone 8.1 和 Windows 10 的程序包，但你不想将该应用继续提供给使用 Windows Phone 8.1 的新客户，则可从提交中删除所有 Windows Phone 8.1 程序包。 发布更新后，使用 Windows Phone 8.1 的任何新客户将不能够获取该应用（尽管已拥有它的客户可以继续使用它）。 但是，该应用仍将提供给使用 Windows 10 的新客户。
 
-
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>删除以前受支持的设备系列中的程序包
 
-如果你删除了应用以前支持的某个 [设备系列](/uwp/extension-sdks/device-families-overview) 的所有包，系统将提示你确认这是你的意图，然后才能在 " **包** " 页上保存更改。
+如果你删除了某个设备系列的所有程序包 (参阅 [使用扩展 sdk 进行编程](/uwp/extension-sdks/device-families-overview)) 你的应用以前受支持，系统将提示你确认这是你的意图，然后才能在 " **包** " 页上保存所做的更改。
 
 如果你发布的提交将删除可以在你的应用之前支持的设备系列上运行的所有包，新客户将无法在该设备系列上获取该应用。 稍后你可以始终发布其他更新以为该设备系列重新提供程序包。
 
 请注意，即使你删除支持某些设备系列的所有程序包，已在该设备类型上安装应用的任何现有客户仍可以使用它，并且他们将获取你以后提供的任何更新。
-
 
 <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>
 

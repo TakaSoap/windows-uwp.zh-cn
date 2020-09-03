@@ -6,20 +6,20 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
-ms.openlocfilehash: 52421d17de5f26fe29060c39d33b51cc85fa197a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7867b26849019c517c0e3d2e3ad9aa0cf86158fc
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174551"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411991"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 开发人员计划上的 UWP 已知问题
 
 本主题介绍 Xbox One 开发人员计划上的 UWP 已知问题。 有关此计划的详细信息，请参阅 [Xbox 上的 UWP](index.md)。 
 
-\[如果你从 API 参考主题的链接中获得，并且正在查找通用设备系列 API 信息，请参阅 [Xbox 上尚不支持的 UWP 功能](/uwp/extension-sdks/uwp-limitations-on-xbox)。\]
+\[如果你从 API 参考主题的链接获得，并正在寻找通用设备家族 API 信息，请参阅 [Xbox 上不支持的 UWP 功能](/uwp/extension-sdks/uwp-limitations-on-xbox)。\]
 
-下表重点介绍可能遇到的某些已知问题，但该列表并没有包括所有问题。 
+下表重点介绍可能遇到的某些已知问题，但该列表并没有包括所有问题。
 
 **我们希望收到你的反馈**，因此请在[开发通用 Windows 平台应用](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop)论坛上报告你发现的任何问题。 
 
@@ -60,8 +60,7 @@ System.UnauthorizedAccessException: Access is denied. (Excep_FromHResult 0x80070
 
 ## <a name="windows-runtime-api-coverage"></a>Windows 运行时 API 覆盖范围
 
-Xbox 不支持所有 Windows 运行时 Api。 对于我们已知不起作用的 API 列表，请参阅 [Xbox 上尚不支持的 UWP 功能](/uwp/extension-sdks/uwp-limitations-on-xbox)。 如果你发现其他 API 的问题，请通过论坛报告它们。 
-
+Xbox 不支持所有 Windows 运行时 Api。 有关我们知道不起作用的 Api 的列表，请参阅 [Xbox 上不支持的 UWP 功能](/uwp/extension-sdks/uwp-limitations-on-xbox)。 如果你发现其他 API 的问题，请通过论坛报告它们。
 
 ## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>导航到 WDP 导致证书警告
 
