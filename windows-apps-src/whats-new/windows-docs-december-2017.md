@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 12 月
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f785ad5d7898f838435e0a05cf8dea5c778e70f3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8d58fe1662c5ba13c2952fbd96414ab201f5ba27
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684754"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174381"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 开发人员文档中的新增功能
 
@@ -22,7 +22,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality：发烧友指南
 
-[发烧友指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/)面向探索混合现实领域的技术发烧友，回答了大家对 Windows Mixed Reality 的主要问题。 
+[发烧友指南](/windows/mixed-reality/enthusiast-guide/)面向探索混合现实领域的技术发烧友，回答了大家对 Windows Mixed Reality 的主要问题。 
 
 在该指南中，你将了解： 
 - 购买前常见问题解答， 
@@ -38,13 +38,13 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 设计和优化 UWP 应用，以便使用更新的[键盘交互](../design/input/keyboard-interactions.md)为高级用户提供更轻松的访问体验和强大的功能。 我们更新了相关建议和指南，以反映 Fall Creators Update 中交互方面的新增改进。
 
-请参阅[键盘快捷方式](../design/input/keyboard-accelerators.md)和[自定义键盘交互](../design/input/custom-keyboard-interactions.md)以扩展应用的键盘功能。
+请参阅[键盘快捷方式](../design/input/keyboard-accelerators.md)和[自定义键盘交互](../design/input/focus-navigation.md)以扩展应用的键盘功能。
 
 在支持触摸交互的设备上，根据[响应触摸键盘的状态](../design/input/respond-to-the-presence-of-the-touch-keyboard.md)以及[使用输入范围更改触摸键盘](../design/input/use-input-scope-to-change-the-touch-keyboard.md)文章添加键盘功能。
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享工程系统工作项（bug、功能请求等）以及分配内容（版本、文档、规范）来简化 Microsoft 生态系统中的工程协作。 [了解详细信息](https://docs.microsoft.com/collaborate/)。
+Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享工程系统工作项（bug、功能请求等）以及分配内容（版本、文档、规范）来简化 Microsoft 生态系统中的工程协作。 [了解详细信息](/collaborate/)。
 
 ![合作伙伴中心内的 Microsoft Collaborate](images/microsoft_collaborate_screenshot.PNG)
 
@@ -52,9 +52,9 @@ Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享�
 
 Visual Studio 2017 第 15.5 版已更新 **Windows 应用程序包项目**模板，因此更方便添加 UWP 项目。 不再需要使用基于 JavaScript 的程序包项目，然后手动调整程序包清单。  
 
-请参阅[使用 Visual Studio 创建应用包](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)获取有关如何使用新模板打包桌面应用程序的指南。
+请参阅[使用 Visual Studio 创建应用包](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)获取有关如何使用新模板打包桌面应用程序的指南。
 
-请参阅[使用现代 UWP 组件扩展桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend)获取有关如何将 UWP 项目添加到程序包的指南。
+请参阅[使用现代 UWP 组件扩展桌面应用程序](/windows/apps/desktop/modernize/desktop-to-uwp-extend)获取有关如何将 UWP 项目添加到程序包的指南。
 
 ### <a name="subscription-add-ons-are-now-available-to-developers-in-the-windows-dev-center-insider-program"></a>参加 Windows 开发人员中心会员计划的开发人员现在可以使用订阅加载项
 
@@ -97,4 +97,4 @@ Visual Studio 2017 第 15.5 版已更新 **Windows 应用程序包项目**模板
 
 ### <a name="package-a-net-app-in-visual-studio"></a>在 Visual Studio 中打包 .NET 应用
 
-将桌面应用发布到通用 Windows 平台变得前所未有的简单。 [观看视频](https://www.youtube.com/watch?v=fJkbYPyd08w)了解如何打包要分发的 .NET 应用，然后[查看此页面](../porting/desktop-to-uwp-packaging-dot-net.md)了解更多详细信息。
+将桌面应用发布到通用 Windows 平台变得前所未有的简单。 [观看视频](https://www.youtube.com/watch?v=fJkbYPyd08w)了解如何打包要分发的 .NET 应用，然后[查看此页面](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)了解更多详细信息。

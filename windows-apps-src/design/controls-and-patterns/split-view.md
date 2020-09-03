@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e5df29f4ce91bd272fd921b23b5fc05b6655d4c0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4c942c5748ef1d62dc86f6fa3d041bae651167f2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081542"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173901"
 ---
 # <a name="split-view-control"></a>拆分视图控件
 
 拆分视图控件具有一个可展开/可折叠的窗格和一个内容区域。
 
-> **重要的 API**：[SplitView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)
+> **重要的 API**：[SplitView 类](/uwp/api/Windows.UI.Xaml.Controls.SplitView)
 
 下面是使用 SplitView 显示其中心的 Microsoft Edge 应用的示例。
 

@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, file paths, PYTHONPATH, python deployment, python packaging
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 2541186a1dd0f205d88e1e14c146934490afff55
-ms.sourcegitcommit: b6138f9565252460ace6fa0acdc2a902e591681a
+ms.openlocfilehash: 4504e7550d19d2cc713284abebed43b6305b5dbd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88243259"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174121"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>有关在 Windows 上使用 Python 的常见问题解答
 
@@ -65,7 +65,7 @@ Python 使用 PYTHONPATH 环境变量来指定可以从中导入模块的目录�
 
 [Docker](https://code.visualstudio.com/docs/azure/docker)：[VSCode 扩展](https://code.visualstudio.com/docs/azure/docker)有助于快速打包和部署 Dockerfile 和 docker-compose.yml 模板（为项目生成正确的 Docker 文件）。
 
-借助 [Azure Kubernetes 服务 (AKS)](https://docs.microsoft.com/azure/aks/)，可以在按需缩放资源的同时部署和管理容器化应用程序。
+借助 [Azure Kubernetes 服务 (AKS)](/azure/aks/)，可以在按需缩放资源的同时部署和管理容器化应用程序。
 
 ## <a name="what-if-i-need-to-work-across-different-machines"></a>如果需要在不同的计算机上工作，该怎么办？
 

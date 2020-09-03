@@ -6,12 +6,12 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: Windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 059ce14f85ebe7d955ba2da8897ab47109f74a72
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5cf8dc0912420895091815e54f6399235fca552f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79401966"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173581"
 ---
 # <a name="device-portal-for-hololens"></a>适用于 HoloLens 的 Device Portal
 
@@ -21,8 +21,8 @@ ms.locfileid: "79401966"
 ### <a name="enable-device-portal"></a>启用 Device Portal
 
 1. 打开 HoloLens 的电源，然后戴上设备。
-2. 在 HoloLens（第一代）上执行[开始手势](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture)或[开花手势](https://developer.microsoft.com/mixed-reality#Bloom)，以启动主菜单。
-3. 凝视“设置”磁贴，然后在 HoloLens（第一代）上执行[敲击](https://developer.microsoft.com/mixed-reality#Press_and_release)手势，或者在 HoloLens 2 上通过[触摸或手部射线](https://docs.microsoft.com/hololens/hololens2-basic-usage)选择该磁贴  。 在选择“设置”应用后，将启动该应用。
+2. 在 HoloLens（第一代）上执行[开始手势](/hololens/hololens2-basic-usage#start-gesture)或[开花手势](https://developer.microsoft.com/mixed-reality#Bloom)，以启动主菜单。
+3. 凝视“设置”磁贴，然后在 HoloLens（第一代）上执行[敲击](https://developer.microsoft.com/mixed-reality#Press_and_release)手势，或者在 HoloLens 2 上通过[触摸或手部射线](/hololens/hololens2-basic-usage)选择该磁贴  。 在选择“设置”应用后，将启动该应用。
 4. 选择“更新”  菜单项。
 5. 选择“面向开发人员”  菜单项。
 6. 启用“开发人员模式”  。
@@ -177,5 +177,5 @@ HoloLens 上的“系统性能”工具有 3 个可以记录的附加指标。
 ## <a name="see-also"></a>另请参阅
 
 * [Windows 设备门户概述](device-portal.md)
-* [设备门户核心 API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)（所有 Windows 10 设备通用的 API）
-* [设备门户混合现实 API 参考](https://docs.microsoft.com/windows/mixed-reality/device-portal-api-reference)（适用于 HoloLens 的所有 REST API 的扩展列表）
+* [设备门户核心 API 参考](./device-portal-api-core.md)（所有 Windows 10 设备通用的 API）
+* [设备门户混合现实 API 参考](/windows/mixed-reality/device-portal-api-reference)（适用于 HoloLens 的所有 REST API 的扩展列表）

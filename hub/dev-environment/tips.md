@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Microsoft, Windows, 开发人员, 使用技巧, 性能, WSL
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 8c094e7871e9de4fdf7eca2e0e1b425af295f252
-ms.sourcegitcommit: 5ba2524d237be82d3621551e48cac938fe81d2ea
+ms.openlocfilehash: 1135be4797893a74e398e69fcbc1c43d60e9fdb9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87255011"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172661"
 ---
 # <a name="tips-for-improving-performance-and-development-workflows"></a>改进性能和开发工作流的技巧
 
@@ -28,7 +28,7 @@ ms.locfileid: "87255011"
 
 ## <a name="use-the-credential-manager-to-your-streamline-authentication-process"></a>使用凭据管理器简化身份验证过程
 
-如果使用 Git 进行版本控制和协作，则可以[设置 Git 凭据管理器](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)以将令牌存储在 Windows 凭据管理器中，从而简化身份验证过程。 我们还建议[向项目添加 .gitignore 文件](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git#adding-a-git-ignore-file)。
+如果使用 Git 进行版本控制和协作，则可以[设置 Git 凭据管理器](/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)以将令牌存储在 Windows 凭据管理器中，从而简化身份验证过程。 我们还建议[向项目添加 .gitignore 文件](/windows/wsl/tutorials/wsl-git#adding-a-git-ignore-file)。
 
 ## <a name="use-wsl-for-testing-your-production-pipeline-before-deploying-to-the-cloud"></a>在部署到云之前，使用 WSL 测试生产管道
 
@@ -40,17 +40,17 @@ WSL 面向开发人员受众，旨在用作内部开发流程的一部分。 假
 
 ## <a name="improve-performance-speed-for-wsl-by-not-crossing-over-file-systems"></a>通过避免跨越文件系统提高 WSL 的性能速度
 
-如果同时使用 Windows 和适用于 Linux 的 Windows 子系统，则安装了两个文件系统：NTSF (Windows) 和 WSL（Linux 分发版）。 为了提高性能，请确保项目文件与所使用的工具存储在同一系统中。 了解有关[选择正确的文件系统以提高性能](https://docs.microsoft.com/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance)的详细信息。
+如果同时使用 Windows 和适用于 Linux 的 Windows 子系统，则安装了两个文件系统：NTSF (Windows) 和 WSL（Linux 分发版）。 为了提高性能，请确保项目文件与所使用的工具存储在同一系统中。 了解有关[选择正确的文件系统以提高性能](/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance)的详细信息。
 
 ## <a name="improve-build-speeds-by-adding-windows-defender-exclusions"></a>通过添加 Windows Defender 排除项提高生成速度
 
-可以通过更新 Windows Defender 设置针对足够信任的项目文件夹或文件类型添加排除项，以避免对其进行安全威胁扫描，从而提高生成速度。 了解有关如何[更新 Windows Defender 设置以提高性能](https://docs.microsoft.com/windows/android/defender-settings)的详细信息。
+可以通过更新 Windows Defender 设置针对足够信任的项目文件夹或文件类型添加排除项，以避免对其进行安全威胁扫描，从而提高生成速度。 了解有关如何[更新 Windows Defender 设置以提高性能](../android/defender-settings.md)的详细信息。
 
 ![Windows Defender 屏幕截图](../images/windows-defender-exclusions.png)
 
 ## <a name="launch-all-your-command-lines-in-windows-terminal-at-once"></a>在 Windows 终端一次性启动所有命令行
 
-* 可以使用 [Windows 终端命令行参数](https://docs.microsoft.com/windows/terminal/command-line-arguments?tabs=powershell#multiple-panes)在具有多个窗格的单个窗口中启动多个命令行（如 PowerShell、Ubuntu 和 Azure CLI）。 安装 [Windows 终端](https://docs.microsoft.com/windows/terminal/get-started)、[WSL/Ubuntu](https://docs.microsoft.com/windows/wsl/install-win10)和 [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) 后，请在 PowerShell 中输入以下命令，以打开包含全部三个命令行的新的多窗格窗口：
+* 可以使用 [Windows 终端命令行参数](/windows/terminal/command-line-arguments?tabs=powershell#multiple-panes)在具有多个窗格的单个窗口中启动多个命令行（如 PowerShell、Ubuntu 和 Azure CLI）。 安装 [Windows 终端](/windows/terminal/get-started)、[WSL/Ubuntu](/windows/wsl/install-win10)和 [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) 后，请在 PowerShell 中输入以下命令，以打开包含全部三个命令行的新的多窗格窗口：
 
     ```powershell
     wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe

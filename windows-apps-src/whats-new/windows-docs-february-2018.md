@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 2 月
 ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cac61f398fff17ecfb824f2d869364097f38d5d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5277f3a35fc4390c8000bd13782cc9c71995677f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258812"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174371"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>2018 年 2 月 Windows 开发人员文档中的新增功能
 
@@ -73,4 +73,4 @@ Xbox Live 创意者计划支持开发人员快速将 UWP 游戏发布到 Xbox On
 
 ### <a name="motion-controller-tracking"></a>运动控制器跟踪
 
-运动控制器在 Windows Mixed Reality 中代表用户的手。 [观看视频](https://www.youtube.com/watch?v=rkDpRllbLII)了解运动控制器在混合现实头戴显示设备的视野内外如何工作，并[在此处阅读有关控制器跟踪的详细信息。](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D)
+运动控制器在 Windows Mixed Reality 中代表用户的手。 [观看视频](https://www.youtube.com/watch?v=rkDpRllbLII)了解运动控制器在混合现实头戴显示设备的视野内外如何工作，并[在此处阅读有关控制器跟踪的详细信息。](/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D)

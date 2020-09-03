@@ -7,12 +7,12 @@ ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e091cc7ad62f69b9e76541101555493609b8a06
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c8615620e09d6f00881c1bb229d98f876a95978c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75955311"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173611"
 ---
 # <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 参考
 
@@ -73,7 +73,7 @@ ms.locfileid: "75955311"
 
 **请求**
 
-可以使用以下请求格式安装[相关集](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)。
+可以使用以下请求格式安装[相关集](/windows/msix/)。
 
 | 方法      | 请求 URI |
 | :------     | :------ |
@@ -174,7 +174,7 @@ ms.locfileid: "75955311"
 
 **请求**
 
-可以使用以下请求格式注册松散文件夹中的[相关集](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)。
+可以使用以下请求格式注册松散文件夹中的[相关集](/windows/msix/)。
 
 | 方法      | 请求 URI |
 | :------     | :----- |
@@ -1373,7 +1373,7 @@ ms.locfileid: "75955311"
 | URI 参数 | 说明 |
 | :---          | :--- |
 | autoreboot   | （**可选**）True 或 False。 这指示系统在出现故障或锁定后是否自动重新启动。 |
-| dumptype   | （**可选**）转储类型。 有关支持的值，请参阅 [CrashDumpType 枚举](https://docs.microsoft.com/previous-versions/azure/reference/dn802457(v=azure.100))。|
+| dumptype   | （**可选**）转储类型。 有关支持的值，请参阅 [CrashDumpType 枚举](/previous-versions/azure/reference/dn802457(v=azure.100))。|
 | maxdumpcount   | （**可选**）要保存的最大转储数。 |
 | overwrite   | （**可选**）True 或 False。 这指示在达到 *maxdumpcount* 指定的转储计数器限制时是否覆盖旧转储。 |
 

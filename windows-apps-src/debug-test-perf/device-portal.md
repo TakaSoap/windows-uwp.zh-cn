@@ -6,12 +6,12 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 2292d97166d34905bb895aa3f53f864510a21f46
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a4fc5cc5b8bc99e830d3c31604e581f8e57c1007
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74254765"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173631"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概述
 
@@ -45,8 +45,8 @@ Xbox | 在开发人员模式内启用 | 禁用 | 11443 | N/A
 
 有关特定于设备的设置说明，请参阅：
 
-- [适用于 HoloLens 的设备门户](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
-- [适用于 IoT 的设备门户](https://docs.microsoft.com/windows/iot-core/manage-your-device/DevicePortal)
+- [适用于 HoloLens 的设备门户](./device-portal-hololens.md)
+- [适用于 IoT 的设备门户](/windows/iot-core/manage-your-device/DevicePortal)
 - [适用于移动设备的设备门户](device-portal-mobile.md)
 - [适用于 Xbox 的设备门户](../xbox-apps/device-portal-xbox.md)
 - [适用于台式机的设备门户](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
@@ -169,7 +169,7 @@ ETW 日志记录页管理设备上 Windows 事件跟踪 (ETW) 的实时信息。
 
 ### <a name="performance-tracing"></a>性能跟踪
 
-在“性能跟踪”页上，可以从主机设备上查看 [Windows 性能记录器 (WPR)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) 跟踪。
+在“性能跟踪”页上，可以从主机设备上查看 [Windows 性能记录器 (WPR)](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) 跟踪。
 
 ![设备门户“性能跟踪”页](images/device-portal/mob-device-portal-perf-tracing.png)
 
@@ -178,7 +178,7 @@ ETW 日志记录页管理设备上 Windows 事件跟踪 (ETW) 的实时信息。
 
 若要停止跟踪，请单击“停止”  。 停留在此页面上，直到跟踪文件 (.ETL) 完成下载。
 
-可以打开捕获的 ETL 文件以供在 [Windows 性能分析器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))中进行分析。
+可以打开捕获的 ETL 文件以供在 [Windows 性能分析器](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))中进行分析。
 
 ### <a name="device-manager"></a>设备管理器
 

@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 5 月, �
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cd84892f9d90a69379ac5a7f84dfa188adf1211e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d9864c59a8bb8569861e9c239710a09602ffdcba
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258785"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174351"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>2018 年 5 月 Windows 开发人员文档中的新增功能
 
@@ -38,7 +38,7 @@ Fluent Design System 中，动作的使用基于计时、缓动、方向性和�
 * [对齐、填充、边距](../design/layout/alignment-margin-padding.md)
 * [颜色](../design/style/color.md)
 * [命令基础知识](../design/basics/commanding-basics.md)
-* [适用于 Windows 应用的 Fluent Design](../design/fluent-design-system/index.md)
+* [适用于 Windows 应用的 Fluent Design](/windows/apps/fluent-design-system)
 * [应用设计简介](../design/basics/design-and-ui-intro.md)
 * [导航基础知识](../design/basics/navigation-basics.md)
 * [响应式设计技术](../design/layout/responsive-design.md)
@@ -55,13 +55,13 @@ Fluent Design System 中，动作的使用基于计时、缓动、方向性和�
 
 ### <a name="app-installer-files-in-visual-studio"></a>Visual Studio 中的应用安装程序文件
 
-现在可以使用 Visual Studio 2017 Update 15.7 及更高版本创建应用安装程序文件。 [了解如何使用 Visual Studio 创建应用安装程序文件](../packaging/create-appinstallerfile-vs.md)并启用应用自动更新。 如果遇到问题，请参阅[排查应用安装程序文件的安装问题](../packaging/troubleshoot-appinstaller-issues.md)，以查看常见问题和解决方法。
+现在可以使用 Visual Studio 2017 Update 15.7 及更高版本创建应用安装程序文件。 [了解如何使用 Visual Studio 创建应用安装程序文件](/windows/msix/app-installer/create-appinstallerfile-vs)并启用应用自动更新。 如果遇到问题，请参阅[排查应用安装程序文件的安装问题](/windows/msix/app-installer/troubleshoot-appinstaller-issues)，以查看常见问题和解决方法。
 
 ### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>Windows 窗体和 WPF 应用程序的 Edge WebView 控件
 
-使用 WebView 控件显示桌面应用程序中的 Web 内容，以前此功能仅适用于 UWP 应用程序。 此控件使用 Microsoft Edge 呈现引擎嵌入一个视图，用于呈现远程 Web 服务器、动态生成的代码或内容文件中丰富格式的 HTML 内容。 可以在最新版本的 [Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中找到 WebView 控件。
+使用 WebView 控件显示桌面应用程序中的 Web 内容，以前此功能仅适用于 UWP 应用程序。 此控件使用 Microsoft Edge 呈现引擎嵌入一个视图，用于呈现远程 Web 服务器、动态生成的代码或内容文件中丰富格式的 HTML 内容。 可以在最新版本的 [Windows 社区工具包](/windows/uwpcommunitytoolkit/)中找到 WebView 控件。
 
-可以在将来版本的 Windows 社区工具包中找到 WebView 等其他控件。 有关详细信息，请参阅[在 WPF 和 Windows 窗体应用程序中承载 UWP 控件](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)。
+可以在将来版本的 Windows 社区工具包中找到 WebView 等其他控件。 有关详细信息，请参阅[在 WPF 和 Windows 窗体应用程序中承载 UWP 控件](/windows/apps/desktop/modernize/xaml-islands)。
 
 ### <a name="gaze-input-and-interactions"></a>凝视输入和交互
 
@@ -91,7 +91,7 @@ MSIX 打包格式是一种开源格式，可让我们的合作伙伴更轻松地
 
 ### <a name="project-rome"></a>Project Rome
 
-Project Rome 团队已大幅修改了其 iOS 和 Android SDK，添加了“用户活动”等新功能，并重构了大量的代码以跨不同的 SDK 提供一致的编程体验。 在 Build 2018 开发人员大会期间，[所有新 API 的参考和操作指南文档](https://docs.microsoft.com/windows/project-rome/)将会发布。
+Project Rome 团队已大幅修改了其 iOS 和 Android SDK，添加了“用户活动”等新功能，并重构了大量的代码以跨不同的 SDK 提供一致的编程体验。 在 Build 2018 开发人员大会期间，[所有新 API 的参考和操作指南文档](/windows/project-rome/)将会发布。
 
 ### <a name="sets"></a>集
 

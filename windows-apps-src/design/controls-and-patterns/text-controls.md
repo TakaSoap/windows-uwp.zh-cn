@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f2421316be30d24ef44784974fc2c6c199a6570
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9b06767e5009a4d7654fa7937498319a1bbed671
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081490"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173881"
 ---
 # <a name="text-controls"></a>文本控件
 
@@ -25,7 +25,7 @@ ms.locfileid: "80081490"
 - 用于显示只读文本的控件是 [TextBlock](text-block.md) 和 [RichTextBlock](rich-text-block.md)。
 - 用于文本输入和编辑的控件是：[TextBox](text-box.md)、[RichEditBox](rich-edit-box.md)、[AutoSuggestBox](auto-suggest-box.md) 和 [PasswordBox](password-box.md)。
 
-> **重要的 API**：[TextBlock class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[RichTextBlock class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、[TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[RichEditBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)、[AutoSuggestBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)、[PasswordBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+> **重要的 API**：[TextBlock class](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[RichTextBlock class](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、[TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[RichEditBox class](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)、[AutoSuggestBox class](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)、[PasswordBox class](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -35,17 +35,17 @@ ms.locfileid: "80081490"
 
 使用 **TextBlock** 显示应用中大部分只读文本。 你可以使用它来显示单行或多行文本、内联超链接以及粗体、斜体或带下划线格式的文本。
 
-TextBlock 相比 RichTextBlock 通常更易于使用，并且提供更好的文本呈现性能，因此它优先用于大部分应用 UI 文本。 你可以通过获取 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 属性的值轻松地访问和使用应用的 TextBlock 中的文本。
+TextBlock 相比 RichTextBlock 通常更易于使用，并且提供更好的文本呈现性能，因此它优先用于大部分应用 UI 文本。 你可以通过获取 [Text](/uwp/api/windows.ui.xaml.controls.textblock.text) 属性的值轻松地访问和使用应用的 TextBlock 中的文本。
 
 它还提供许多用于自定义文本呈现方式的相同格式设置选项。 虽然可以在文本中放入换行符，但 TextBlock 旨在显示一个段落且不支持文本缩进。
 
 如果你需要支持多段落、多列文本或其他复杂文本布局或者内联 UI 元素（例如图像），请使用 **RichTextBlock**。 RichTextBlock 提供适用于高级文本布局的若干功能。
 
-RichTextBlock 的内容属性是 [Blocks](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.blocks) 属性，它通过 [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph) 元素支持基于段落的文本。 它没有可以用来轻松访问应用中控件的文本内容的 **Text** 属性。  
+RichTextBlock 的内容属性是 [Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks) 属性，它通过 [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) 元素支持基于段落的文本。 它没有可以用来轻松访问应用中控件的文本内容的 **Text** 属性。  
 
 ### <a name="text-input"></a>文本输入
 
-使用 TextBox 控件允许用户输入和编辑无格式文本（例如在表单中）  。 你可以使用 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) 属性在 TextBox 中获取和设置文本。
+使用 TextBox 控件允许用户输入和编辑无格式文本（例如在表单中）  。 你可以使用 [Text](/uwp/api/windows.ui.xaml.controls.textbox.text) 属性在 TextBox 中获取和设置文本。
 
 你可以使 TextBox 只读，但只应是临时的、有条件的状态。 如果文本永远不可编辑，请考虑改用 TextBlock。
 
@@ -64,7 +64,7 @@ RichTextBlock 的内容属性是 [Blocks](https://docs.microsoft.com/uwp/api/win
 -   **高效枚举所有有效值是否可行？** 如果是，请考虑使用选择控件之一，例如[复选框](checkbox.md)、[下拉列表](lists.md)、列表框、[单选按钮](radio-button.md)、[滑块](slider.md)、[切换开关](toggles.md)、[日期选取器](date-and-time.md)或时间选取器。
 -   **有效值集是否非常小？** 如果是，请考虑使用[下拉列表](lists.md)或列表框，在值的长度超过几个字符的情况下尤其如此。
 -   **有效数据是否完全不受限制？或者有效数据是否仅受格式限制（长度或字符类型受限制）？** 如果是，请使用文本输入控件。 你可以限制可输入的字符数，并且可以在应用代码中验证格式。
--   **该值是否表示具有常见专用控件的数据类型？** 如果是，请使用相应的控件，而不要使用文本输入控件。 例如，使用 [DatePicker](https://docs.microsoft.com/previous-versions/windows/apps/br211681(v=win.10))（而非文本输入控件）接受日期输入。
+-   **该值是否表示具有常见专用控件的数据类型？** 如果是，请使用相应的控件，而不要使用文本输入控件。 例如，使用 [DatePicker](/previous-versions/windows/apps/br211681(v=win.10))（而非文本输入控件）接受日期输入。
 -   如果数据完全为数值：
     -   **输入的值是否为近似值，并且/或者与同一页面的另一个数量相关？** 如果是，请使用[滑块](slider.md)。
     -   **用户是否会从设置更改效果的即时反馈中获益？** 如果是，请使用[滑块](slider.md)（可能带有随附控件）。
@@ -135,12 +135,12 @@ RichTextBlock 的内容属性是 [Blocks](https://docs.microsoft.com/uwp/api/win
 
 当应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 TextBox 或 RichEditBox）时，系统会调用触摸键盘。 通过将文本控件的输入范围设置为匹配你期望用户输入的数据类型，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
 
-例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性设置为 Number  。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
+例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性设置为 Number  。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
 
 >要点  
 >输入范围不会导致任何输入验证的执行，并且不会阻止用户通过硬件键盘或其他输入设备提供任何输入。 你仍然负责按需在代码中验证输入。
 
-有关详细信息，请参阅[使用输入范围更改触摸键盘](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard)。
+有关详细信息，请参阅[使用输入范围更改触摸键盘](../input/use-input-scope-to-change-the-touch-keyboard.md)。
 
 ## <a name="color-fonts"></a>颜色字体
 
@@ -158,7 +158,7 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 
 ![带有颜色字体的文本块](images/text-block-color-fonts.png)
 
-有关详细信息，请参阅 [IsColorFontEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.iscolorfontenabled) 属性。
+有关详细信息，请参阅 [IsColorFontEnabled](/uwp/api/windows.ui.xaml.controls.textblock.iscolorfontenabled) 属性。
 
 ## <a name="guidelines-for-line-and-paragraph-separators"></a>行和段落分隔符指南
 
@@ -203,9 +203,9 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 **面向设计人员**
 - [版式指南](../style/typography.md)
 - [Segoe MDL2 图标列表和指南](../style/segoe-ui-symbol-font.md)
-- [添加搜索](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
+- [添加搜索](/previous-versions/windows/apps/hh465231(v=win.10))
 
 **面向开发人员 (XAML)**
-- [TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 属性](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox 类](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox 类](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length 属性](/dotnet/api/system.string.length)

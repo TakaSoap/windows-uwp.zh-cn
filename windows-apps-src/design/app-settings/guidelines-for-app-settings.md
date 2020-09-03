@@ -8,12 +8,12 @@ ms.date: 08/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 418c33952c4be6be08683b5e396f423f771bb997
-ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
+ms.openlocfilehash: e3fcbcaa88fa39795ac078617c9a958ff3a997ac
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88502373"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173981"
 ---
 # <a name="guidelines-for-app-settings"></a>应用设置指南
 
@@ -27,7 +27,7 @@ ms.locfileid: "88502373"
 - 取决于用户首选项的选项，如音乐、音效或颜色主题。
 - 不经常访问的应用信息，例如隐私策略、帮助、应用版本或版权信息。
 
-包含在典型应用工作流中的命令（例如在艺术应用中更改画笔大小）不应该在设置页面上。 若要了解有关命令放置的详细信息，请参阅[命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)。
+包含在典型应用工作流中的命令（例如在艺术应用中更改画笔大小）不应该在设置页面上。 若要了解有关命令放置的详细信息，请参阅[命令设计基础知识](../basics/commanding-basics.md)。
 
 ## <a name="general-recommendations"></a>常规建议
 
@@ -125,17 +125,17 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
     - [超链接](../controls-and-patterns/hyperlinks.md)：用于将用户带到应用中的其他页面或外部网站。 当用户单击超链接时，“设置”浮出控件将会消失。
     - [按钮](../controls-and-patterns/buttons.md)：用于让用户立即启动操作，不会消除当前的“设置”浮出控件。
 - 如果禁用其中一个控件，则添加描述性消息。 将此消息置于禁用的控件上。
-- 在为“设置”浮出控件和标头设置动画后，将内容和控件作为单个块进行动画处理。 使用左偏移 100px 的 [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) 或 [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 动画为内容创建动画。
+- 在为“设置”浮出控件和标头设置动画后，将内容和控件作为单个块进行动画处理。 使用左偏移 100px 的 [**enterPage**](/previous-versions/windows/apps/br212672(v=win.10)) 或 [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 动画为内容创建动画。
 - 使用节标题、段落和标签来协助组织和阐述内容（如果需要）。
 - 如果你需要重复设置，请使用 UI 的其他级别或展开/折叠模式，但避免两级以上深度的层次结构。 例如，天气应用提供按城市设置（即，列出各个城市）并让用户在城市上点击以打开一个新浮出控件或展开以显示设置选项。
-- 如果加载控件或 Web 内容需要花费时间，请使用不确定的进度控件以指示用户该信息正在加载。 有关详细信息，请参阅[进度控件指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)。
+- 如果加载控件或 Web 内容需要花费时间，请使用不确定的进度控件以指示用户该信息正在加载。 有关详细信息，请参阅[进度控件指南](../controls-and-patterns/progress-controls.md)。
 - 请勿使用导航按钮或提交更改按钮。 使用超链接导航到其他页面（而不是使用提交更改按钮）从而自动保存在用户取消“设置”浮出控件时对应用设置所做的更改。
 
 
 
 ## <a name="related-articles"></a>相关文章
 
-* [命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-* [进度控件指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
-* [存储和检索应用数据](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [EntranceThemeTransition](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)
+* [命令设计基础知识](../basics/commanding-basics.md)
+* [进度控件指南](../controls-and-patterns/progress-controls.md)
+* [存储和检索应用数据](./store-and-retrieve-app-data.md)
+* [EntranceThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

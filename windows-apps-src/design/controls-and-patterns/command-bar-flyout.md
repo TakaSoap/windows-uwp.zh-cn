@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bdd18fea2fe563fcee835e6b61e24d6a9b03d029
-ms.sourcegitcommit: f945df77f8a19961ba053ee62e593ec8e015038f
+ms.openlocfilehash: f7f273f3eb92efd30b432691f9faa05db0d6d013
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82989800"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173501"
 ---
 # <a name="command-bar-flyout"></a>命令栏浮出控件
 
@@ -36,13 +36,13 @@ ms.locfileid: "82989800"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) |  CommandBarFlyout 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) |  CommandBarFlyout 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
 
 >**Windows UI 库 API**：[CommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >
 >**平台 API**：[CommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、[AppBarButton 类](/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 类](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 类](/uwp/api/windows.ui.xaml.controls.appbarseparator)
 >
-> CommandBarFlyout 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> CommandBarFlyout 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](/uwp/toolkits/winui/)。
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -160,7 +160,7 @@ CommandBarFlyout 控件有 2 个可用于添加命令和内容的属性：[Prima
 
 ### <a name="app-bar-buttons"></a>应用栏按钮
 
-可以直接使用 [AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)、[AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton) 和 [AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) 控件填充 PrimaryCommands 和 SecondaryCommands。
+可以直接使用 [AppBarButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)、[AppBarToggleButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton) 和 [AppBarSeparator](/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) 控件填充 PrimaryCommands 和 SecondaryCommands。
 
 应用栏按钮控件以一个图标和文本标签为特征。 这些控件经优化后适合在命令栏中使用，其外观会变化，具体取决于控件是显示在命令栏中还是显示在溢出菜单中。
 
@@ -181,7 +181,7 @@ CommandBarFlyout 控件有 2 个可用于添加命令和内容的属性：[Prima
 > [!TIP]
 > 默认情况下，为应用画布设计的元素可能会在应用栏中显示不正常。 使用 AppBarElementContainer 添加某个元素时，应该执行某些步骤，使该元素与其他命令栏元素匹配：
 >
-> - 使用[轻型样式设置](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling)覆盖默认的画笔，使该元素的背景和边框与应用栏按钮匹配。
+> - 使用[轻型样式设置](./xaml-styles.md#lightweight-styling)覆盖默认的画笔，使该元素的背景和边框与应用栏按钮匹配。
 > - 调整元素的大小和位置。
 > - 将图标包装在宽度和高度为 16px 的 Viewbox 中。
 
@@ -418,4 +418,4 @@ TextCommandBarFlyout 不能自定义，由每个文本控件自动管理。 不�
 ## <a name="related-articles"></a>相关文章
 
 - [Windows 应用的命令设计基础知识](../basics/commanding-basics.md)
-- [CommandBar 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
+- [CommandBar 类](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

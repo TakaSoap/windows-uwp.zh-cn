@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 65c3c2fb4b7a5a7f0b5f4b3c89773f3e21bd654d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: acec4384b5ce04548818a512270e66d7b4500e16
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684743"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174401"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>2017 年 7 月 Windows 开发人员文档中的新增功能
 
@@ -98,21 +98,21 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="media-playback"></a>媒体播放
 
-新增部分已添加到基本媒体播放文章，[使用 MediaPlayer 播放音频和视频](../audio-video-camera/play-audio-and-video-with-mediaplayer.md)。 [使用 MediaPlayer 播放球面视频](../audio-video-camera/play-audio-and-video-with-mediaplayer.md)部分显示如何播放球面编码的视频，包括调整视野和受支持的格式的视图方向。 [在帧服务器模式中使用 MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) 部分显示如何将使用 [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 播放的媒体的帧复制到 Direct3D 表面。 这将启用应用像素着色器的实时效果等方案。 示例代码显示如何使用 Win2D 为视频播放快速实现模糊效果。
+新增部分已添加到基本媒体播放文章，[使用 MediaPlayer 播放音频和视频](../audio-video-camera/play-audio-and-video-with-mediaplayer.md)。 [使用 MediaPlayer 播放球面视频](../audio-video-camera/play-audio-and-video-with-mediaplayer.md)部分显示如何播放球面编码的视频，包括调整视野和受支持的格式的视图方向。 [在帧服务器模式中使用 MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) 部分显示如何将使用 [MediaPlayer](/uwp/api/Windows.Media.Playback.MediaPlayer) 播放的媒体的帧复制到 Direct3D 表面。 这将启用应用像素着色器的实时效果等方案。 示例代码显示如何使用 Win2D 为视频播放快速实现模糊效果。
 
 ### <a name="media-capture"></a>媒体捕获
 
-文章[使用 MediaFrameReader 处理媒体帧](../audio-video-camera/process-media-frames-with-mediaframereader.md) 已更新，以显示新的 [MultiSourceMediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) 类的使用，你可以通过此类获取来自多个媒体源的与时间关联的帧。 如果需要处理来自不同源（例如深度相机和彩色相机）的帧，并且需要确保从每个源捕获帧的时间彼此接近，那么这非常有用。 有关详细信息，请参阅[使用 MultiSourceMediaFrameReader 从多个源获取与时间关联的帧](../audio-video-camera/process-media-frames-with-mediaframereader.md#use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources)。
+文章[使用 MediaFrameReader 处理媒体帧](../audio-video-camera/process-media-frames-with-mediaframereader.md) 已更新，以显示新的 [MultiSourceMediaFrameReader](/uwp/api/windows.media.capture.frames.multisourcemediaframereader) 类的使用，你可以通过此类获取来自多个媒体源的与时间关联的帧。 如果需要处理来自不同源（例如深度相机和彩色相机）的帧，并且需要确保从每个源捕获帧的时间彼此接近，那么这非常有用。 有关详细信息，请参阅[使用 MultiSourceMediaFrameReader 从多个源获取与时间关联的帧](../audio-video-camera/process-media-frames-with-mediaframereader.md#use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources)。
 
 ### <a name="scoped-search"></a>范围搜索
 
-“UWP”范围已添加到 docs.microsoft.com 上的 [UWP 概念](../get-started/universal-application-platform-guide.md)和 [API 参考](https://docs.microsoft.com/uwp/api/)文档。 除非已停用此范围，否则从这些区域中执行的搜索将仅返回 UWP 文档。
+“UWP”范围已添加到 docs.microsoft.com 上的 [UWP 概念](../get-started/universal-application-platform-guide.md)和 [API 参考](/uwp/api/)文档。 除非已停用此范围，否则从这些区域中执行的搜索将仅返回 UWP 文档。
 
 ![范围搜索](images/scoped-search.png)
 
 ### <a name="test-your-windows-app-for-windows-10-s"></a>测试适用于 Windows 10 S 的 Windows 应用
 
-测试 Windows 应用，以确保其在运行 Windows S 的设备上正常运行。使用[此新指南](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s) 了解测试方法。
+测试 Windows 应用，以确保其在运行 Windows S 的设备上正常运行。使用[此新指南](/windows/msix/desktop/desktop-to-uwp-test-windows-s) 了解测试方法。
 
 ## <a name="samples"></a>示例
 
@@ -124,7 +124,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="shopping-app-sample"></a>购物应用示例
 
-[一款迷你应用，提供用户可以购买表情符号的基本购物体验](https://github.com/Microsoft/Windows-appsample-shopping)。 此应用显示如何使用[付款请求 API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments) 实现结帐体验。
+[一款迷你应用，提供用户可以购买表情符号的基本购物体验](https://github.com/Microsoft/Windows-appsample-shopping)。 此应用显示如何使用[付款请求 API](/uwp/api/windows.applicationmodel.payments) 实现结帐体验。
 
 ![购买应用示例的屏幕截图](images/shoppingcart.png)  
 

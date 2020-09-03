@@ -5,27 +5,27 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dcbeffc7e3db8f3df9c197e8c388f30faf7ad03d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 844e1da1a4108673c353e91b8624376d9b98e976
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685241"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173251"
 ---
 # <a name="best-practices-for-writing-to-files"></a>向文件进行写入的最佳做法
 
 **重要的 API**
 
-* [FileIO 类](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) 
-* [**PathIO 类**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)
+* [FileIO 类](/uwp/api/Windows.Storage.FileIO) 
+* [**PathIO 类**](/uwp/api/windows.storage.pathio)
 
-开发人员在使用 [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) 和 [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) 类的 **Write** 方法执行文件系统 I/O 操作时，偶尔会遇到一系列常见问题。 例如，这些常见问题包括：
+开发人员在使用 [**FileIO**](/uwp/api/Windows.Storage.FileIO) 和 [**PathIO**](/uwp/api/windows.storage.pathio) 类的 **Write** 方法执行文件系统 I/O 操作时，偶尔会遇到一系列常见问题。 例如，这些常见问题包括：
 
 * 不完整地写入某个文件。
 * 应用在调用某个方法时收到异常。
 * 操作留下一些文件名类似于目标文件名的 .TMP 文件。
 
-[**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) 和 [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) 类的 **Write** 方法包括：
+[**FileIO**](/uwp/api/Windows.Storage.FileIO) 和 [**PathIO**](/uwp/api/windows.storage.pathio) 类的 **Write** 方法包括：
 
 * **WriteBufferAsync**
 * **WriteBytesAsync**
@@ -39,31 +39,31 @@ ms.locfileid: "75685241"
 
 ## <a name="convenience-vs-control"></a>便利性与控制度
 
-[**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) 对象并非本机 Win32 编程模型那样的文件句柄。 [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) 是文件的一种表示形式，该文件包含用于操作其内容的方法。
+[**StorageFile**](/uwp/api/windows.storage.storagefile) 对象并非本机 Win32 编程模型那样的文件句柄。 [**StorageFile**](/uwp/api/windows.storage.storagefile) 是文件的一种表示形式，该文件包含用于操作其内容的方法。
 
 使用 **StorageFile** 执行 I/O 时，了解这一概念很有好处。 例如，[写入文件](quickstart-reading-and-writing-files.md#writing-to-a-file)部分演示了写入文件的三种方式：
 
-* 使用 [**FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync) 方法。
-* 创建一个缓冲区，然后调用 [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writebufferasync) 方法。
+* 使用 [**FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync) 方法。
+* 创建一个缓冲区，然后调用 [**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync) 方法。
 * 使用流的四步模型：
-  1. [打开](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync)文件以获取流。
-  2. [获取](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)输出流。
-  3. 创建 [**DataWriter**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) 对象并调用相应的 **Write** 方法。
-  4. 在数据写入器中[提交](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter.storeasync)数据，然后[刷新](https://docs.microsoft.com/uwp/api/windows.storage.streams.ioutputstream.flushasync)输出流。
+  1. [打开](/uwp/api/windows.storage.storagefile.openasync)文件以获取流。
+  2. [获取](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)输出流。
+  3. 创建 [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) 对象并调用相应的 **Write** 方法。
+  4. 在数据写入器中[提交](/uwp/api/windows.storage.streams.datawriter.storeasync)数据，然后[刷新](/uwp/api/windows.storage.streams.ioutputstream.flushasync)输出流。
 
 前两种方案是应用最常用的方案。 以单个操作写入文件更易于编程和维护，同样，使应用不必要应对文件 I/O 存在的多种复杂性。 但是，获得这种便利性也需要付出一定的代价：损失了整个操作的控制度，并且无法捕获特定时间点发生的错误。
 
 ## <a name="the-transactional-model"></a>事务模型
 
-[**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) 和 [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) 类的 **Write** 方法通过一个附加层整合了上述第三个写入模型的步骤。 此层封装在存储事务中。
+[**FileIO**](/uwp/api/Windows.Storage.FileIO) 和 [**PathIO**](/uwp/api/windows.storage.pathio) 类的 **Write** 方法通过一个附加层整合了上述第三个写入模型的步骤。 此层封装在存储事务中。
 
-如果在写入数据时出错，为了保护原始文件的完整性，**Write** 方法将通过 [**OpenTransactedWriteAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.opentransactedwriteasync) 打开该文件，以使用事务模型。 此过程将创建 [**StorageStreamTransaction**](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction) 对象。 创建此事务对象后，API 会按照 [**StorageStreamTransaction**](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction) 一文中的[文件访问](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)示例或代码示例所述的类似方式写入数据。
+如果在写入数据时出错，为了保护原始文件的完整性，**Write** 方法将通过 [**OpenTransactedWriteAsync**](/uwp/api/windows.storage.storagefile.opentransactedwriteasync) 打开该文件，以使用事务模型。 此过程将创建 [**StorageStreamTransaction**](/uwp/api/windows.storage.storagestreamtransaction) 对象。 创建此事务对象后，API 会按照 [**StorageStreamTransaction**](/uwp/api/windows.storage.storagestreamtransaction) 一文中的[文件访问](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)示例或代码示例所述的类似方式写入数据。
 
 下图演示了成功的写入操作中 **WriteTextAsync** 方法执行的基础任务。 此图提供了操作的简化视图。 例如，它跳过了在不同的线程上执行文本编码和异步完成的步骤。
 
 ![用于写入文件的 UWP API 调用顺序图](images/file-write-call-sequence.svg)
 
-使用 [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) 和 [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) 类的 **Write** 方法，而不是使用利用流的更复杂四步模型的优势包括：
+使用 [**FileIO**](/uwp/api/Windows.Storage.FileIO) 和 [**PathIO**](/uwp/api/windows.storage.pathio) 类的 **Write** 方法，而不是使用利用流的更复杂四步模型的优势包括：
 
 * 执行一次 API 调用即可处理所有中间步骤，包括错误处理。
 * 出错时可以保留原始文件。
@@ -94,11 +94,11 @@ ms.locfileid: "75685241"
 
 ### <a name="readers"></a>Readers
 
-如果写入到的文件同时由某个正常的读取器（即，文件是使用 [**FileAccessMode.Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode) 打开的），则后续读取将会失败并出现错误 ERROR_OPLOCK_HANDLE_CLOSED (0x80070323)。 有时，当 **Write** 操作正在进行时，应用会重试再次打开文件进行读取。 这可能会导致争用状态，使 **Write** 最终在尝试覆盖原始文件时失败，因为无法替换该文件。
+如果写入到的文件同时由某个正常的读取器（即，文件是使用 [**FileAccessMode.Read**](/uwp/api/Windows.Storage.FileAccessMode) 打开的），则后续读取将会失败并出现错误 ERROR_OPLOCK_HANDLE_CLOSED (0x80070323)。 有时，当 **Write** 操作正在进行时，应用会重试再次打开文件进行读取。 这可能会导致争用状态，使 **Write** 最终在尝试覆盖原始文件时失败，因为无法替换该文件。
 
 ### <a name="files-from-knownfolders"></a>KnownFolders 中的文件
 
-你的应用可能不是唯一一个尝试访问任何 [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) 中的文件的应用。 无法保证当操作成功时，应用写入到该文件的内容在下一次尝试读取该文件时保持不变。 此外，在这种情况下，拒绝共享或访问错误会更常见。
+你的应用可能不是唯一一个尝试访问任何 [**KnownFolders**](/uwp/api/Windows.Storage.KnownFolders) 中的文件的应用。 无法保证当操作成功时，应用写入到该文件的内容在下一次尝试读取该文件时保持不变。 此外，在这种情况下，拒绝共享或访问错误会更常见。
 
 ### <a name="conflicting-io"></a>有冲突的 I/O
 
@@ -114,7 +114,7 @@ ms.locfileid: "75685241"
 
 * 由用户在应用的本地数据文件夹中创建和编辑的文件。 只能在使用应用时创建和编辑这些文件，并且它们只会在该应用中存在。
 * 应用元数据。 应用使用这些文件来跟踪自身的状态。
-* 文件系统位置中的其他文件，应用在其中声明了访问功能。 这些文件通常位于某个 [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) 中。
+* 文件系统位置中的其他文件，应用在其中声明了访问功能。 这些文件通常位于某个 [**KnownFolders**](/uwp/api/Windows.Storage.KnownFolders) 中。
 
 应用对前两个类别的文件拥有完全控制权，因为这些文件是该应用的包文件的一部分，并由该应用独占访问。 对于最后一个类别中的文件，应用必须注意，其他应用和 OS 服务可能同时正在访问这些文件。
 

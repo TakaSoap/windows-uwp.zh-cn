@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 825f2cec4723139f187da6e9ea0d4b2dbb14457c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e304f7b3df5ffbf00fb11554b11c0e48ddadc4b5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970672"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173921"
 ---
 # <a name="text-box"></a>文本框
 
@@ -28,13 +28,13 @@ TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置�
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](../style/rounded-corner.md)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
 
-> **平台 API**：[TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
+> **平台 API**：[TextBox 类](/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text 属性](/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-使用 TextBox 控件允许用户输入和编辑无格式文本（例如在表单中）  。 你可以使用 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) 属性在 TextBox 中获取和设置文本。
+使用 TextBox 控件允许用户输入和编辑无格式文本（例如在表单中）  。 你可以使用 [Text](/uwp/api/windows.ui.xaml.controls.textbox.text) 属性在 TextBox 中获取和设置文本。
 
 你可以使 TextBox 只读，但只应是临时的、有条件的状态。 如果文本永远不可编辑，请考虑改用 [TextBlock](text-block.md)。
 
@@ -87,7 +87,7 @@ rootGrid.Children.Add(textBox);
 
 ### <a name="use-a-text-box-for-data-input-in-a-form"></a>为表单中的数据输入使用文本框
 
-通常使用文本框接受表单上的数据输入，并使用 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) 属性获取来自文本框的完整文本字符串。 通常使用提交按钮单击之类的事件来访问 Text 属性，但如果你需要在文本发生更改时执行某些操作，可以处理 [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) 或 [TextChanging](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanging) 事件。
+通常使用文本框接受表单上的数据输入，并使用 [Text](/uwp/api/windows.ui.xaml.controls.textbox.text) 属性获取来自文本框的完整文本字符串。 通常使用提交按钮单击之类的事件来访问 Text 属性，但如果你需要在文本发生更改时执行某些操作，可以处理 [TextChanged](/uwp/api/windows.ui.xaml.controls.textbox.textchanged) 或 [TextChanging](/uwp/api/windows.ui.xaml.controls.textbox.textchanging) 事件。
 
 此示例显示如何获取和设置文本框的当前内容。
 
@@ -101,9 +101,9 @@ string sampleText = SampleTextBox.Text;
 SampleTextBox.Text = "Sample text retrieved";
 ```
 
-你可以将 [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.header)（或标签）和 [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.placeholdertext)（或水位线）添加到文本框，以向用户指示文本框的用途。 若要自定义标题外观，可设置 [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.headertemplate) 属性而非 Header。 有关设计信息，请参阅标签指南  。
+你可以将 [Header](/uwp/api/windows.ui.xaml.controls.textbox.header)（或标签）和 [PlaceholderText](/uwp/api/windows.ui.xaml.controls.textbox.placeholdertext)（或水位线）添加到文本框，以向用户指示文本框的用途。 若要自定义标题外观，可设置 [HeaderTemplate](/uwp/api/windows.ui.xaml.controls.textbox.headertemplate) 属性而非 Header。 有关设计信息，请参阅标签指南  。
 
-可以通过设置 [MaxLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.maxlength) 属性来限制用户可键入的字符数。 但是，MaxLength 不会限制粘贴文本的长度。 使用 [Paste](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.paste) 事件修改粘贴文本（如果这对你的应用很重要）。
+可以通过设置 [MaxLength](/uwp/api/windows.ui.xaml.controls.textbox.maxlength) 属性来限制用户可键入的字符数。 但是，MaxLength 不会限制粘贴文本的长度。 使用 [Paste](/uwp/api/windows.ui.xaml.controls.textbox.paste) 事件修改粘贴文本（如果这对你的应用很重要）。
 
 文本框包含“清除所有”按钮（“X”），该按钮会在框中输入文本时显示。 当用户单击“X”时，将清除文本框中的文本。 它的外观如下所示。
 
@@ -132,7 +132,7 @@ SampleTextBox.Text = "Sample text retrieved";
 
 ### <a name="make-a-text-box-read-only"></a>使文本框变为只读
 
-可以通过将 [IsReadOnly](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isreadonly) 属性设置为 true 使文本框变为只读  。 通常根据应用中的条件在应用代码中切换此属性。 如果需要始终为只读的文本，请考虑改用 TextBlock。
+可以通过将 [IsReadOnly](/uwp/api/windows.ui.xaml.controls.textbox.isreadonly) 属性设置为 true 使文本框变为只读  。 通常根据应用中的条件在应用代码中切换此属性。 如果需要始终为只读的文本，请考虑改用 TextBlock。
 
 可以通过将 IsReadOnly 属性设置为 true 使 TextBox 变为只读。 例如，你可以提供一个供用户输入评论的 TextBox，该文本框仅在特定条件下启用。 你可以使 TextBox 在不满足特定条件时变为只读。 如果你只需要显示文本，仅考虑改用 TextBlock 或 RichTextBlock。
 
@@ -144,14 +144,14 @@ IsEnabled
 
 有两个可用于控制文本框是否在多行上显示文本的属性。 通常同时设置这两个属性来创建多行文本框。
 
-- 若要使文本框允许和显示新行或返回字符，请将 [AcceptsReturn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn) 属性设置为“true”  。
-- 若要启用文本换行，请将 [TextWrapping](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textwrapping) 属性设置为“Wrap”  。 这会导致文本在其到达文本框边缘时独立于行分隔符换行。
+- 若要使文本框允许和显示新行或返回字符，请将 [AcceptsReturn](/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn) 属性设置为“true”  。
+- 若要启用文本换行，请将 [TextWrapping](/uwp/api/windows.ui.xaml.controls.textbox.textwrapping) 属性设置为“Wrap”  。 这会导致文本在其到达文本框边缘时独立于行分隔符换行。
 
 > **注意**&nbsp;&nbsp;TextBox 和 RichEditBox 不支持其 TextWrapping 属性的“WrapWholeWords”值  。 如果你尝试使用 WrapWholeWords 作为 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，将引发无效参数异常。
 
-在输入文本时多行文本框将持续在垂直方向上增长，除非它受到其 [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 或 [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) 属性或父容器的约束。 应测试多行文本框是否会增长到其可见区域之外，如果确实如此，则约束其增长。 我们建议你始终为多行文本框指定相应的高度，使其在用户键入时高度不会增长。
+在输入文本时多行文本框将持续在垂直方向上增长，除非它受到其 [Height](/uwp/api/windows.ui.xaml.frameworkelement.height) 或 [MaxHeight](/uwp/api/windows.ui.xaml.frameworkelement.maxheight) 属性或父容器的约束。 应测试多行文本框是否会增长到其可见区域之外，如果确实如此，则约束其增长。 我们建议你始终为多行文本框指定相应的高度，使其在用户键入时高度不会增长。
 
-在需要时自动启用使用滚轮或触摸的滚动。 但是，垂直滚动条默认不可见。 你可以通过在嵌入的 ScrollViewer 上将 [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) 设置为 Auto 来显示垂直滚动条，如下所示  。
+在需要时自动启用使用滚轮或触摸的滚动。 但是，垂直滚动条默认不可见。 你可以通过在嵌入的 ScrollViewer 上将 [ScrollViewer.VerticalScrollBarVisibility](/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) 设置为 Auto 来显示垂直滚动条，如下所示  。
 
 ```xaml
 <TextBox AcceptsReturn="True" TextWrapping="Wrap"
@@ -175,9 +175,9 @@ ScrollViewer.SetVerticalScrollBarVisibility(textBox, ScrollBarVisibility.Auto);
 
 ### <a name="format-the-text-display"></a>设置文本显示的格式
 
-使用 [TextAlignment](/uwp/api/windows.ui.xaml.controls.textbox.textalignment) 属性使文本在文本框内对齐。 若要使文本框在页面布局内对齐，请使用 [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) 和 [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) 属性。
+使用 [TextAlignment](/uwp/api/windows.ui.xaml.controls.textbox.textalignment) 属性使文本在文本框内对齐。 若要使文本框在页面布局内对齐，请使用 [HorizontalAlignment](/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) 和 [VerticalAlignment](/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) 属性。
 
-尽管文本框仅支持无格式文本，但你可以自定义文本在文本框中的显示方式来匹配你的品牌。 你可以设置标准 [Control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 属性（如 [FontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontfamily)、[FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize)、[FontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontstyle)、[Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)、[Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground) 和 [CharacterSpacing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.characterspacing)）以更改文本外观。 这些属性仅影响文本框在本地显示文本的方式，所以举例来说，如果你要将文本复制并粘贴到 RTF 控件，将不会应用任何格式。
+尽管文本框仅支持无格式文本，但你可以自定义文本在文本框中的显示方式来匹配你的品牌。 你可以设置标准 [Control](/uwp/api/Windows.UI.Xaml.Controls.Control) 属性（如 [FontFamily](/uwp/api/windows.ui.xaml.controls.control.fontfamily)、[FontSize](/uwp/api/windows.ui.xaml.controls.control.fontsize)、[FontStyle](/uwp/api/windows.ui.xaml.controls.control.fontstyle)、[Background](/uwp/api/windows.ui.xaml.controls.control.background)、[Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground) 和 [CharacterSpacing](/uwp/api/windows.ui.xaml.controls.control.characterspacing)）以更改文本外观。 这些属性仅影响文本框在本地显示文本的方式，所以举例来说，如果你要将文本复制并粘贴到 RTF 控件，将不会应用任何格式。
 
 此示例显示一个设置了多个属性以自定义文本外观的只读文本框。
 
@@ -221,15 +221,15 @@ rootGrid.Children.Add(textBox);
 全选 | TextBox 包含文本。
 撤消 | 文本已更改。
 
-若要修改上下文菜单中显示的命令，请处理 [ContextMenuOpening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening) 事件。 有关这种情况的示例，请参阅 <a href="xamlcontrolsgallery:/item/RichEditBox">XAML 控件库</a>中的“自定义 RichEditBox 的 CommandBarFlyout - 添加‘共享’”示例  。 有关设计信息，请参阅[上下文菜单](menus.md)指南。
+若要修改上下文菜单中显示的命令，请处理 [ContextMenuOpening](/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening) 事件。 有关这种情况的示例，请参阅 <a href="xamlcontrolsgallery:/item/RichEditBox">XAML 控件库</a>中的“自定义 RichEditBox 的 CommandBarFlyout - 添加‘共享’”示例  。 有关设计信息，请参阅[上下文菜单](menus.md)指南。
 
 ### <a name="select-copy-and-paste"></a>选择、复制和粘贴
 
-你可以使用 [SelectedText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectedtext) 属性在文本框中获取或设置所选文本。 使用 [SelectionStart](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionstart) 和 [SelectionLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionlength) 属性以及 [Select](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.select) 和 [SelectAll](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectall) 方法来操作文本选择。 当用户选择或取消选择文本时，处理 [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionchanged) 事件以执行某些操作。 可以通过设置 [SelectionHighlightColor](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionhighlightcolor) 属性更改用于突出显示所选文本的颜色。
+你可以使用 [SelectedText](/uwp/api/windows.ui.xaml.controls.textbox.selectedtext) 属性在文本框中获取或设置所选文本。 使用 [SelectionStart](/uwp/api/windows.ui.xaml.controls.textbox.selectionstart) 和 [SelectionLength](/uwp/api/windows.ui.xaml.controls.textbox.selectionlength) 属性以及 [Select](/uwp/api/windows.ui.xaml.controls.textbox.select) 和 [SelectAll](/uwp/api/windows.ui.xaml.controls.textbox.selectall) 方法来操作文本选择。 当用户选择或取消选择文本时，处理 [SelectionChanged](/uwp/api/windows.ui.xaml.controls.textbox.selectionchanged) 事件以执行某些操作。 可以通过设置 [SelectionHighlightColor](/uwp/api/windows.ui.xaml.controls.textbox.selectionhighlightcolor) 属性更改用于突出显示所选文本的颜色。
 
-默认情况下，TextBox 支持复制和粘贴。 你可以在应用中的可编辑文本控件上提供 [Paste](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.paste) 事件的自定义处理。 例如，在将多行地址粘贴到单行搜索框中时，你可以从该地址中删除换行符。 或者，你可以检查粘贴文本的长度，如果它超出可保存到数据库的最大长度，则警告用户。 有关详细信息和示例，请参阅 [Paste](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.paste) 事件。
+默认情况下，TextBox 支持复制和粘贴。 你可以在应用中的可编辑文本控件上提供 [Paste](/uwp/api/windows.ui.xaml.controls.textbox.paste) 事件的自定义处理。 例如，在将多行地址粘贴到单行搜索框中时，你可以从该地址中删除换行符。 或者，你可以检查粘贴文本的长度，如果它超出可保存到数据库的最大长度，则警告用户。 有关详细信息和示例，请参阅 [Paste](/uwp/api/windows.ui.xaml.controls.textbox.paste) 事件。
 
-下面是使用这些属性和方法的一个示例。 当你在第一个文本框中选择文本时，所选文本在第二个文本框中显示，该文本框为只读。 [SelectionLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionlength) 和 [SelectionStart](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionstart) 属性的值在两个文本块中显示。 此操作使用 [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionchanged) 事件完成。
+下面是使用这些属性和方法的一个示例。 当你在第一个文本框中选择文本时，所选文本在第二个文本框中显示，该文本框为只读。 [SelectionLength](/uwp/api/windows.ui.xaml.controls.textbox.selectionlength) 和 [SelectionStart](/uwp/api/windows.ui.xaml.controls.textbox.selectionstart) 属性的值在两个文本块中显示。 此操作使用 [SelectionChanged](/uwp/api/windows.ui.xaml.controls.textbox.selectionchanged) 事件完成。
 
 ```xaml
 <StackPanel>
@@ -263,13 +263,13 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 当应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 TextBox 或 RichEditBox）时，系统会调用触摸键盘。 通过将文本控件的输入范围设置为匹配你期望用户输入的数据类型，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
 
-例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性设置为 Number  。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
+例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性设置为 Number  。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
 
 > **重要提示**&nbsp;&nbsp;输入范围不会导致任何输入验证的执行，并且不会阻止用户通过硬件键盘或其他输入设备提供任何输入。 你仍然负责按需在代码中验证输入。
 
-影响触摸键盘的其他属性是 [IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isspellcheckenabled)、[IsTextPredictionEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) 和 [PreventKeyboardDisplayOnProgrammaticFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus)。 （IsSpellCheckEnabled 还会在使用硬件键盘时影响 TextBox。）
+影响触摸键盘的其他属性是 [IsSpellCheckEnabled](/uwp/api/windows.ui.xaml.controls.textbox.isspellcheckenabled)、[IsTextPredictionEnabled](/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) 和 [PreventKeyboardDisplayOnProgrammaticFocus](/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus)。 （IsSpellCheckEnabled 还会在使用硬件键盘时影响 TextBox。）
 
-有关详细信息和示例，请参阅[使用输入范围更改触摸键盘](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard)和属性文档。
+有关详细信息和示例，请参阅[使用输入范围更改触摸键盘](../input/use-input-scope-to-change-the-touch-keyboard.md)和属性文档。
 
 ## <a name="recommendations"></a>建议
 
@@ -321,8 +321,8 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 - [文本控件](text-controls.md)
 - [拼写检查指南](text-controls.md)
-- [添加搜索](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
+- [添加搜索](/previous-versions/windows/apps/hh465231(v=win.10))
 - [文本输入指南](text-controls.md)
-- [TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 属性](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox 类](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [PasswordBox 类](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length 属性](/dotnet/api/system.string.length)

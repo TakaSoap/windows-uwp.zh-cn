@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 八月
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 723cae783ba16fe5be9bb2076f96d4a5f823d733
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: eb6900b4d5ad529ee2e94f09439dda6abcaebac8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258837"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174391"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>2018 年 8 月 Windows 开发人员文档中的新增功能
 
@@ -24,7 +24,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 Windows 预览体验成员预览版本增加了以下功能，可通过 [Windows 预览体验成员](https://insider.windows.com/)计划获取。
 
-* [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)是一组 NuGet 程序包，提供用于 UWP 应用的控件和其他用户界面元素。 这些程序包还与 Windows 10 的早期版本兼容，所以即使用户未使用最新操作系统版本，应用也可以正常工作。
+* [Windows UI 库](/uwp/toolkits/winui/)是一组 NuGet 程序包，提供用于 UWP 应用的控件和其他用户界面元素。 这些程序包还与 Windows 10 的早期版本兼容，所以即使用户未使用最新操作系统版本，应用也可以正常工作。
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、[SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button) 和 [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) 提供具有专门功能的按钮控件，可增强应用的用户界面。
 
@@ -38,7 +38,7 @@ Windows 预览体验成员预览版本增加了以下功能，可通过 [Windows
 
 包支持框架是一个开放源代码工具包，有助于在无权访问源代码时将修补程序应用于 win32 应用程序，以便其在 MSIX 容器中运行。
 
-若要了解详细信息，请参阅[使用包支持框架将运行时修补程序应用到 MSIX 包](../porting/package-support-framework.md)。
+若要了解详细信息，请参阅[使用包支持框架将运行时修补程序应用到 MSIX 包](/windows/msix/psf/package-support-framework)。
 
 ## <a name="developer-guidance"></a>开发人员指南
 
@@ -52,7 +52,7 @@ Windows 预览体验成员预览版本增加了以下功能，可通过 [Windows
 
 ### <a name="project-rome"></a>Project Rome
 
-[Project Rome 文档](https://docs.microsoft.com/windows/project-rome/)站点已重组为功能优先的方法。 这将使开发人员可以更轻松地查找到所需内容，并跨多个平台实现所选功能。
+[Project Rome 文档](/windows/project-rome/)站点已重组为功能优先的方法。 这将使开发人员可以更轻松地查找到所需内容，并跨多个平台实现所选功能。
 
 ## <a name="videos"></a>视频
 

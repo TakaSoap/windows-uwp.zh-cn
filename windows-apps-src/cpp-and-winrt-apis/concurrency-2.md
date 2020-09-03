@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: ff00264d0806e7fbdfcabd000ec68857b1485dcd
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: e916465d664b5658eeb155874dfa00795a772622
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296151"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170391"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>C++/WinRT 的更高级并发和异步
 
@@ -24,7 +24,7 @@ ms.locfileid: "87296151"
 
 因此，在协同例程中执行受计算限制的工作之前，需要将执行返回给调用方（换句话说，引入暂停点），使调用方不被阻塞。 如果还没有对其他某个操作运行 `co_await` 来做到这一点，则可以对 [**winrt::resume_background**](/uwp/cpp-ref-for-winrt/resume-background) 函数运行 `co_await`。 这会将控制权返回给调用方，然后立即在某个线程池线程上恢复执行。
 
-实现中使用的线程池是底层 [Windows 线程池](https://docs.microsoft.com/windows/desktop/ProcThread/thread-pool-api)，因此具有极高的效率。
+实现中使用的线程池是底层 [Windows 线程池](/windows/desktop/ProcThread/thread-pool-api)，因此具有极高的效率。
 
 ```cppwinrt
 IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
@@ -639,7 +639,7 @@ int main()
 }
 ```
 
-**winrt::fire_and_forget** 也可用作事件处理程序的返回类型，前提是需在其中执行异步操作。 下面是一个示例（另请参阅 [C++/WinRT 中的强引用和弱引用](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)）。
+**winrt::fire_and_forget** 也可用作事件处理程序的返回类型，前提是需在其中执行异步操作。 下面是一个示例（另请参阅 [C++/WinRT 中的强引用和弱引用](./weak-references.md#safely-accessing-the-this-pointer-in-a-class-member-coroutine)）。
 
 ```cppwinrt
 winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, MediaBindingEventArgs args)

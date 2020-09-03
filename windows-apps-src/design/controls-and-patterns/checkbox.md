@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fca2695cbb57375964beff0f8a3fd9be603228c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5c5784490da53f15f4b7ac79d83b59391031748d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968922"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173561"
 ---
 # <a name="check-boxes"></a>复选框
 
@@ -29,7 +29,7 @@ ms.locfileid: "82968922"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](../style/rounded-corner.md)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
 
 > **平台 API：** [CheckBox 类](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、[Checked 事件](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、[IsChecked 属性](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
@@ -71,7 +71,7 @@ ms.locfileid: "82968922"
 
 ## <a name="create-a-checkbox"></a>创建复选框
 
-若要为复选框分配标签，请设置 [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 属性。 标签显示在复选框旁边。
+若要为复选框分配标签，请设置 [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 属性。 标签显示在复选框旁边。
 
 此 XAML 创建用于在提交表格前同意服务条款的单个复选框。 
 
@@ -89,14 +89,14 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>绑定到 IsChecked
 
-使用 [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 属性确定复选框是已选中还是已清除。 你可以将 IsChecked 属性的值绑定到其他二进制值。
-但是，由于 IsChecked 是一个[可空](https://docs.microsoft.com/dotnet/api/system.nullable-1)布尔值，因此必须使用转换或值转换器才能将它绑定到某个布尔属性。 这取决于所使用的实际绑定类型，并且会找到每种可能类型的以下示例。 
+使用 [IsChecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 属性确定复选框是已选中还是已清除。 你可以将 IsChecked 属性的值绑定到其他二进制值。
+但是，由于 IsChecked 是一个[可空](/dotnet/api/system.nullable-1)布尔值，因此必须使用转换或值转换器才能将它绑定到某个布尔属性。 这取决于所使用的实际绑定类型，并且会找到每种可能类型的以下示例。 
 
-在本示例中，同意服务条款的复选框的 **IsChecked** 属性绑定到了“提交”按钮的 [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) 属性。 “提交”按钮仅在服务条款得到同意时才启用。
+在本示例中，同意服务条款的复选框的 **IsChecked** 属性绑定到了“提交”按钮的 [IsEnabled](/uwp/api/windows.ui.xaml.controls.control.isenabled) 属性。 “提交”按钮仅在服务条款得到同意时才启用。
 
 #### <a name="using-xbind"></a>使用 x:Bind
 
-> 注意&nbsp;&nbsp;我们仅在此处显示相关代码。 有关数据绑定的详细信息，请参阅[数据绑定概述](../../data-binding/data-binding-quickstart.md)。 [此处](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)详细介绍了特定 {x:Bind} 信息（例如强制转换）。
+> 注意&nbsp;&nbsp;我们仅在此处显示相关代码。 有关数据绑定的详细信息，请参阅[数据绑定概述](../../data-binding/data-binding-quickstart.md)。 [此处](../../xaml-platform/x-bind-markup-extension.md)详细介绍了特定 {x:Bind} 信息（例如强制转换）。
 
 ```xaml
 <StackPanel Grid.Column="2" Margin="40">
@@ -106,7 +106,7 @@ checkBox1.Content = "I agree to the terms of service.";
 </StackPanel>
 ```
 
-如果该复选框还可以处于“不确定”状态  ，我们将使用该绑定的 [FallbackValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) 属性来指定表示此状态的布尔值。 在这种情况下，我们不想同时启用“提交”按钮：
+如果该复选框还可以处于“不确定”状态  ，我们将使用该绑定的 [FallbackValue](/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) 属性来指定表示此状态的布尔值。 在这种情况下，我们不想同时启用“提交”按钮：
 
 ```xaml
 <Button Content="Submit" 
@@ -157,7 +157,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 ### <a name="handle-click-and-checked-events"></a>处理 Click 和 Checked 事件
 
-若要在复选框状态更改时执行某项操作，可以处理 [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件或 [Checked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) 和 [Unchecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.unchecked) 事件。 
+若要在复选框状态更改时执行某项操作，可以处理 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件或 [Checked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) 和 [Unchecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.unchecked) 事件。 
 
 每当选中的状态更改时都会发生 **Click** 事件。 如果你处理 Click 事件，请使用 **IsChecked** 属性确定复选框状态。
 
@@ -210,7 +210,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 
 ### <a name="use-the-indeterminate-state"></a>使用不确定状态
 
-CheckBox 控件继承自 [ToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)，可拥有三种状态： 
+CheckBox 控件继承自 [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)，可拥有三种状态： 
 
 State | 属性 | 值
 ------|----------|------
@@ -218,7 +218,7 @@ State | 属性 | 值
 取消选中 | IsChecked | **false** 
 不确定 | IsChecked | **null** 
 
-对于报告不确定状态的复选框，必须将 [IsThreeState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate) 属性设置为 **true**。 
+对于报告不确定状态的复选框，必须将 [IsThreeState](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate) 属性设置为 **true**。 
 
 当选项可以分组时，你可以使用不确定复选框来表示整个分组。 当用户选择分组的一些（而非所有）子项时，请使用复选框的不确定状态。
 
@@ -331,6 +331,6 @@ private void SetCheckedState()
 
 ## <a name="related-articles"></a>相关文章
 
-- [CheckBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
+- [CheckBox 类](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
 - [单选按钮](radio-button.md)
 - [切换开关](toggles.md)

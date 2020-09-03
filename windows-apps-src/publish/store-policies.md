@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 4d7c30b49ea0e6276e1d7959a17086f7ff829915
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209352"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170907"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 策略
 
@@ -113,7 +113,7 @@ ms.locfileid: "79209352"
 
 **10.2.3**
 
-你的产品不得包含或启用恶意软件（Microsoft 在[不需要的软件和恶意软件](https://docs.microsoft.com/windows/security/threat-protection/intelligence/criteria)中对恶意软件进行了定义）。
+你的产品不得包含或启用恶意软件（Microsoft 在[不需要的软件和恶意软件](/windows/security/threat-protection/intelligence/criteria)中对恶意软件进行了定义）。
 
 **10.2.4**
 
@@ -296,7 +296,7 @@ ms.locfileid: "79209352"
 
 你的产品所显示的所有广告内容都必须遵循 Microsoft 的 [创意认可策略](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies)。
 
-如果你的产品需要显示广告，则所显示的所有内容都必须符合[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的广告要求，其中包括以下要求：
+如果你的产品需要显示广告，则所显示的所有内容都必须符合[应用开发人员协议](/legal/windows/agreements/app-developer-agreement)的广告要求，其中包括以下要求：
 
 **10.10.4**
 
@@ -355,7 +355,7 @@ Xbox One 上的游戏产品不得显示经由非 Xbox Live 服务获取的备用
 
 对于使用 Xbox Live 和提供多玩家游戏的游戏产品，用户生成的内容或用户通信应遵守：
 - 用户登录到 Xbox Live 之前不得允许开始游戏。
-- 必须遵守[家长和服务的管控](https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity)。
+- 必须遵守[家长和服务的管控](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity)。
 
 **10.13.7**
 
@@ -477,4 +477,4 @@ Xbox Live 的游戏产品必须遵守针对服务使用量的以下要求：
 
 - [Microsoft Store 策略更改历史记录](store-policies-change-history.md)
 - [Microsoft Store 策略和行为准则](store-policies-and-code-of-conduct.md)
-- [应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [应用开发人员协议](/legal/windows/agreements/app-developer-agreement)

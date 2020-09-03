@@ -6,12 +6,12 @@ ms.date: 08/20/2020
 ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: dc3ca2379ae7dd704d96e383cc02314ee9423fb7
-ms.sourcegitcommit: 508fb9e763aa5967beebf7bf5e77d7ad12baa566
+ms.openlocfilehash: e485fcb5d6ca6ecf8c19124c482492ddfb2c5233
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88714483"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173601"
 ---
 # <a name="device-portal-for-windows-desktop"></a>适用于 Windows 桌面的设备门户
 
@@ -34,7 +34,7 @@ Windows 设备门户是一个调试工具，利用它可以查看诊断信息，
 从 Windows 10 版本 1607 开始，适用于桌面的一些较新功能仅在启用开发人员模式时可用。 有关如何启用开发人员模式的信息，请参阅[启用设备进行开发](../get-started/enable-your-device-for-development.md)。
 
 > [!IMPORTANT]
-> 有时，由于网络或兼容性问题，开发人员模式无法在你的设备上正确安装。 有关解决这些问题的帮助，请参阅[启用设备进行开发的相关部分](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package)。
+> 有时，由于网络或兼容性问题，开发人员模式无法在你的设备上正确安装。 有关解决这些问题的帮助，请参阅[启用设备进行开发的相关部分](../get-started/enable-your-device-for-development.md#failure-to-install-developer-mode-package)。
 
 ### <a name="turn-on-device-portal"></a>打开设备门户
 
@@ -117,11 +117,11 @@ Windows 桌面上的设备门户将显示 [Windows 设备门户概述](device-po
 - `-DeleteSSL` 
     - 这将重置用于 HTTPS 连接的 SSL 证书缓存。 如果你遇到无法避免的 TLS 连接错误（而不是预期的证书警告），此选项可为你解决该问题。 
 - `-SetCert <pfxPath> <pfxPassword>`
-    - 有关详细信息，请参阅[使用自定义的 SSL 证书预配设备门户](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-ssl)。  
+    - 有关详细信息，请参阅[使用自定义的 SSL 证书预配设备门户](./device-portal-ssl.md)。  
     - 这将允许你安装自己的 SSL 证书来修复通常显示在设备门户中的 SSL 警告页面。 
 - `-Debug <various options for authentication, port selection, and tracing level>`
-    - 运行独立版本的具有特定配置和可见调试消息的设备门户。 这对于生成[打包的插件](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin)最为有用。 
-    - 有关如何作为系统运行此项以完全测试你的打包插件的详细信息，请参阅 [MSDN 杂志文章](https://msdn.microsoft.com/magazine/mt826332.aspx)。
+    - 运行独立版本的具有特定配置和可见调试消息的设备门户。 这对于生成[打包的插件](./device-portal-plugin.md)最为有用。 
+    - 有关如何作为系统运行此项以完全测试你的打包插件的详细信息，请参阅 [MSDN 杂志文章](/archive/msdn-magazine/2017/october/windows-device-portal-write-a-windows-device-portal-packaged-plug-in)。
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -150,4 +150,4 @@ Windows 桌面上的设备门户将显示 [Windows 设备门户概述](device-po
 ## <a name="see-also"></a>请参阅
 
 * [Windows 设备门户概述](device-portal.md)
-* [Device Portal 核心 API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Device Portal 核心 API 参考](./device-portal-api-core.md)

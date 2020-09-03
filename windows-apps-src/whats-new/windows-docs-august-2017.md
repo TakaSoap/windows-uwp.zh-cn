@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 1708
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 824cdb74a809ae3f9ae2ed202a9889535021f711
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: cbaf2726e8f3e517fd0664c3d00b9a82ca018fbc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684725"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174411"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>2017 年 8 月 Windows 开发人员文档中的新增功能
 
@@ -32,7 +32,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="game-mode"></a>游戏模式
 
-适用于通用 Windows 平台 (UWP) 的[游戏模式](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) API 让你可以利用 Windows 10 中的游戏模式产生最优化的游戏体验。 这些 API 位于 **&lt;expandedresources.h&gt;** 标头中。
+适用于通用 Windows 平台 (UWP) 的[游戏模式](/previous-versions/windows/desktop/gamemode/game-mode-portal) API 让你可以利用 Windows 10 中的游戏模式产生最优化的游戏体验。 这些 API 位于 **&lt;expandedresources.h&gt;** 标头中。
 
 ![游戏模式](images/game-mode.png)
 
@@ -45,29 +45,29 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="data-schemas-for-store-products"></a>Microsoft Store 产品的数据架构
 
-我们添加了 [Store 产品的数据架构](../monetize/data-schemas-for-store-products.md)文章。 此文章提供了对 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中的多个对象可用的与 Store 相关的数据的架构，包括 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 和 [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)。
+我们添加了 [Store 产品的数据架构](../monetize/data-schemas-for-store-products.md)文章。 此文章提供了对 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空间中的多个对象可用的与 Store 相关的数据的架构，包括 [StoreProduct](/uwp/api/windows.services.store.storeproduct) 和 [StoreAppLicense](/uwp/api/windows.services.store.storeapplicense)。
 
 ### <a name="desktop-bridge"></a>桌面桥
 
 我们添加了两个指南帮助你添加让 Windows 10 用户感到喜悦的现代化体验。
 
-请参阅[增强用于 Windows 10 的桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance)查找和引用正确的文件，然后编写能够增强 Windows 10 用户 UWP 体验的代码。  
+请参阅[增强用于 Windows 10 的桌面应用程序](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)查找和引用正确的文件，然后编写能够增强 Windows 10 用户 UWP 体验的代码。  
 
-请参阅[使用现代 UWP 组件扩展桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend)，以整合必须在 UWP 应用容器中运行的现代 XAML UI 以及其他的 UWP 体验。
+请参阅[使用现代 UWP 组件扩展桌面应用程序](/windows/apps/desktop/modernize/desktop-to-uwp-extend)，以整合必须在 UWP 应用容器中运行的现代 XAML UI 以及其他的 UWP 体验。
 
 ### <a name="getting-started-with-point-of-service"></a>服务点入门
 
-我们添加了帮助你[了解服务点设备](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-get-started)的新指南。 它涵盖的主题包括设备枚举、检查设备功能、声明设备和设备共享等。 
+我们添加了帮助你[了解服务点设备](../devices-sensors/pos-get-started.md)的新指南。 它涵盖的主题包括设备枚举、检查设备功能、声明设备和设备共享等。 
 
 ### <a name="xbox-live"></a>Xbox Live
 
 我们添加了面向 Xbox Live 开发人员、适用于 UWP 和 Xbox 开发人员工具包 (XDK) 游戏的文档。
 
-请参阅 [Xbox Live 开发人员指南](https://docs.microsoft.com//gaming/xbox-live/index)了解如何使用 Xbox Live API 将游戏连接到 Xbox Live 社交游戏网络。
+请参阅 [Xbox Live 开发人员指南](//gaming/xbox-live/index)了解如何使用 Xbox Live API 将游戏连接到 Xbox Live 社交游戏网络。
 
-借助 [Xbox Live 创意者计划](https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)，任何 UWP 游戏开发人员都可以在电脑和 Xbox One 上开发和发布支持 Xbox Live 的游戏。
+借助 [Xbox Live 创意者计划](//gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)，任何 UWP 游戏开发人员都可以在电脑和 Xbox One 上开发和发布支持 Xbox Live 的游戏。
 
-请参阅 [Xbox Live 开发人员计划概述](https://docs.microsoft.com//gaming/xbox-live/developer-program-overview)，获取有关 Xbox Live 开发人员可用程序和功能的信息。
+请参阅 [Xbox Live 开发人员计划概述](//gaming/xbox-live/developer-program-overview)，获取有关 Xbox Live 开发人员可用程序和功能的信息。
 
 ## <a name="videos"></a>视频
 

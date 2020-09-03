@@ -6,18 +6,18 @@ ms.date: 08/3/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 84766bb8d3fe22f947add2a3694e546738fc67a3
-ms.sourcegitcommit: dccba7256765116f06cf96143eb3cbaa12d7fe0b
+ms.openlocfilehash: 95f11f5bd9ff756611dfef96f260489a881fdd6d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87523523"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173701"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Windows 开发人员文档的最新更新
 
 Windows 开发人员文档会定期更新有新的、经过改进的信息和内容。 以下文档介绍了截至 2020 年 8 月 3 日的最近重要更新。
 
-注意：有关作为 Windows 10 版本 19041（也称为 2004）的一部分添加的特定 API 列表，请参阅[此列表](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-19041-api-diff)。
+注意：有关作为 Windows 10 版本 19041（也称为 2004）的一部分添加的特定 API 列表，请参阅[此列表](/windows/uwp/whats-new/windows-10-build-19041-api-diff)。
 
 ## <a name="winrt-conceptual"></a>WinRT 概念
 <ul>

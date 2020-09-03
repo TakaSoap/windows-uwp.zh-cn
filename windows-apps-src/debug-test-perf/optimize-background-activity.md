@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eb3ff12e4b616edd7b87cab7f13aa060f301fc52
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5da6dcced0dfa563b5baf69d2b2cb1f64843af1b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75683830"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173571"
 ---
 # <a name="optimize-background-activity"></a>优化后台活动
 
 通用 Windows 应用应跨所有设备系列一致地执行。 在电池供电的设备上，电源消耗在应用的用户整体体验中是一个关键因素。 全天的电池使用时间对每个用户都是想要的功能，但它要求设备上安装的所有软件（包括你自己的软件）都可节电。 
 
-后台任务行为可以说是影响应用总能耗的最重要因素。 后台任务是已在系统上注册为无需打开应用即可运行的任何程序活动。 有关详细信息，请参阅[创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)。
+后台任务行为可以说是影响应用总能耗的最重要因素。 后台任务是已在系统上注册为无需打开应用即可运行的任何程序活动。 有关详细信息，请参阅[创建和注册进程外后台任务](../launch-resume/create-and-register-a-background-task.md)。
 
 ## <a name="background-activity-permissions"></a>后台活动权限
 
@@ -39,23 +39,23 @@ ms.locfileid: "75683830"
 
 ![后台任务权限关闭](images/background-task-permissions-off.png)
 
-在应用中，可以使用 [BackgroundExecutionManager.RequestAccessAsync()  ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 方法调用返回的 [BackgroundAccessStatus  ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) 枚举值来确定其当前后台活动权限设置。
+在应用中，可以使用 [BackgroundExecutionManager.RequestAccessAsync()  ](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 方法调用返回的 [BackgroundAccessStatus  ](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) 枚举值来确定其当前后台活动权限设置。
 
-这表示如果你的应用不实现负责的后台活动管理，用户可能完全拒绝应用的后台权限，这对任何一方都是不想看到的。 如果已拒绝应用在后台运行，但是需要后台活动才能为用户完成操作，可以通知用户并引导其进入“设置”应用。 可以通过[启动“设置”应用](https://docs.microsoft.com/windows/uwp/launch-resume/launch-settings-app)并打开“后台应用”或“电池使用详细信息”页面来完成此操作。
+这表示如果你的应用不实现负责的后台活动管理，用户可能完全拒绝应用的后台权限，这对任何一方都是不想看到的。 如果已拒绝应用在后台运行，但是需要后台活动才能为用户完成操作，可以通知用户并引导其进入“设置”应用。 可以通过[启动“设置”应用](../launch-resume/launch-settings-app.md)并打开“后台应用”或“电池使用详细信息”页面来完成此操作。
 
 ## <a name="work-with-the-battery-saver-feature"></a>使用节电模式功能
 节电模式是一种系统级功能，用户可以在“设置”中配置。 当电池电量低于用户定义的阈值时，它将关闭所有应用的所有后台活动，*除了*已设置为“始终允许”的应用的后台活动。
 
-通过引用 [PowerManager.EnergySaverStatus  ](https://docs.microsoft.com/uwp/api/windows.system.power.energysaverstatus) 属性，在应用中检查节电模式状态。 它是枚举值：EnergySaverStatus.Disabled  、EnergySaverStatus.Off  或 EnergySaverStatus.On  。 如果应用需要后台活动而未设置为“始终允许”，则其应当这样处理 EnergySaverStatus.On  ：通知用户，给定后台任务在关闭节电模式后方可运行。 尽管后台活动管理是节电模式功能的主要用途，但你的应用可以进行其他调整，以进一步在节电模式打开时节省能源。  在节电模式打开的情况下，应用可以减少其使用的动画、停止位置轮询，或延迟同步和备份。 
+通过引用 [PowerManager.EnergySaverStatus  ](/uwp/api/windows.system.power.energysaverstatus) 属性，在应用中检查节电模式状态。 它是枚举值：EnergySaverStatus.Disabled  、EnergySaverStatus.Off  或 EnergySaverStatus.On  。 如果应用需要后台活动而未设置为“始终允许”，则其应当这样处理 EnergySaverStatus.On  ：通知用户，给定后台任务在关闭节电模式后方可运行。 尽管后台活动管理是节电模式功能的主要用途，但你的应用可以进行其他调整，以进一步在节电模式打开时节省能源。  在节电模式打开的情况下，应用可以减少其使用的动画、停止位置轮询，或延迟同步和备份。 
 
 ## <a name="further-optimize-background-tasks"></a>进一步优化后台任务
 以下是注册后台任务时可以采取的其他步骤，以使它们更省电。
 
 ### <a name="use-a-maintenance-trigger"></a>使用维护触发器 
-可以使用 [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.maintenancetrigger) 对象而不是 [**SystemTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.systemtrigger) 对象来确定后台任务的启动时间。 当设备连接到交流电源且允许它们运行较长时间时，使用维护触发器的任务才会运行。 有关说明，请参阅[使用维护触发器](https://docs.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger)。
+可以使用 [**MaintenanceTrigger**](/uwp/api/windows.applicationmodel.background.maintenancetrigger) 对象而不是 [**SystemTrigger**](/uwp/api/windows.applicationmodel.background.systemtrigger) 对象来确定后台任务的启动时间。 当设备连接到交流电源且允许它们运行较长时间时，使用维护触发器的任务才会运行。 有关说明，请参阅[使用维护触发器](../launch-resume/use-a-maintenance-trigger.md)。
 
 ### <a name="use-the-backgroundworkcostnothigh-system-condition-type"></a>使用 BackgroundWorkCostNotHigh  系统条件类型
-必须满足系统条件才能使后台任务运行（请参阅[设置运行后台任务的条件](https://docs.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task)以获取详细信息)。 后台工作成本是表示运行后台任务的*相对*能量影响的度量方法。 在设备接通交流电源时运行的任务会标记为“low”  （对电池没有或几乎没有影响）。 在设备使用电池电量且关闭显示器时运行的任务会标记为“high”  ，因为在这种情况下，可以推测设备上只运行着很少的程序活动，因而后台任务的相对能耗较高。 在设备使用电池电量且打开显示器时运行的任务会标记为“medium”，因为可以推测已经运行着某些程序活动，后台任务将稍微增加能耗。   **BackgroundWorkCostNotHigh** 系统条件只会延迟你的任务运行，直到屏幕打开或设备连接到交流电源。
+必须满足系统条件才能使后台任务运行（请参阅[设置运行后台任务的条件](../launch-resume/set-conditions-for-running-a-background-task.md)以获取详细信息)。 后台工作成本是表示运行后台任务的*相对*能量影响的度量方法。 在设备接通交流电源时运行的任务会标记为“low”  （对电池没有或几乎没有影响）。 在设备使用电池电量且关闭显示器时运行的任务会标记为“high”  ，因为在这种情况下，可以推测设备上只运行着很少的程序活动，因而后台任务的相对能耗较高。 在设备使用电池电量且打开显示器时运行的任务会标记为“medium”，因为可以推测已经运行着某些程序活动，后台任务将稍微增加能耗。   **BackgroundWorkCostNotHigh** 系统条件只会延迟你的任务运行，直到屏幕打开或设备连接到交流电源。
 
 ## <a name="test-battery-efficiency"></a>测试电池效率
 
@@ -63,6 +63,5 @@ ms.locfileid: "75683830"
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
-* [规划性能](https://docs.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
-
+* [创建和注册进程外后台任务](../launch-resume/create-and-register-a-background-task.md)  
+* [规划性能](./planning-and-measuring-performance.md)

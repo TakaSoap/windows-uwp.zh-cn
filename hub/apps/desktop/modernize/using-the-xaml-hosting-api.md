@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 36c3aeb7a51c84e92c5bca461aee7efe50740237
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8427519dd010553eb1f4f00f951dcc747a94b0c0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80218457"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174181"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>在 C++ Win32 应用中使用 UWP XAML 托管 API
 
@@ -56,11 +56,11 @@ UWP XAML 托管 API 提供了用于在桌面应用中托管 UWP 控件的低级�
 
 ### <a name="wpf-and-windows-forms"></a>WPF 和 Windows 窗体
 
-Windows 社区工具包中的 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件用作在 WPF 和 Windows 窗体应用中使用 UWP 托管 API 的参考示例。 源代码在以下位置提供：
+Windows 社区工具包中的 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件用作在 WPF 和 Windows 窗体应用中使用 UWP 托管 API 的参考示例。 源代码在以下位置提供：
 
-* 对于 WPF 版本的控件，请[转到此处](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Wpf.UI.XamlHost)。 WPF 版本派生自 [System.Windows.Interop.HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)。
+* 对于 WPF 版本的控件，请[转到此处](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Wpf.UI.XamlHost)。 WPF 版本派生自 [System.Windows.Interop.HwndHost](/dotnet/api/system.windows.interop.hwndhost)。
 
-* 对于 Windows 窗体版本的控件，请[转到此处](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Forms.UI.XamlHost)。 Windows 窗体版本派生自 [System.Windows.Forms.Control](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)。
+* 对于 Windows 窗体版本的控件，请[转到此处](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Forms.UI.XamlHost)。 Windows 窗体版本派生自 [System.Windows.Forms.Control](/dotnet/api/system.windows.forms.control)。
 
 > [!NOTE]
 > 强烈建议你在 Windows 社区工具包中使用 [XAML 岛 .NET 控件](xaml-islands.md#wpf-and-windows-forms-applications)，而不是直接在 WPF 和 Windows 窗体应用中使用 UWP XAML 托管 API。 本文中的 WPF 和 Windows 窗体示例链接仅用于说明目的。
@@ -71,25 +71,25 @@ UWP XAML 托管 API 包含这些主要 Windows 运行时类型和 COM 接口。
 
 |  类型或接口 | 说明 |
 |--------------------|-------------|
-| [WindowsXamlManager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) | 此类表示 UWP XAML 框架。 此类提供单个静态 [InitializeForCurrentThread](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) 方法，该方法可在桌面应用中的当前线程上初始化 UWP XAML 框架。 |
-| [DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) | 此类表示你在桌面应用中托管的 UWP XAML 内容的实例。 此类最重要的成员是 [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) 属性。 需将此属性分配给要托管的 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)。 此类还有其他成员，这些成员用于将键盘焦点导航入和导航出 XAML 岛。 |
+| [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) | 此类表示 UWP XAML 框架。 此类提供单个静态 [InitializeForCurrentThread](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) 方法，该方法可在桌面应用中的当前线程上初始化 UWP XAML 框架。 |
+| [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) | 此类表示你在桌面应用中托管的 UWP XAML 内容的实例。 此类最重要的成员是 [Content](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) 属性。 需将此属性分配给要托管的 [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement)。 此类还有其他成员，这些成员用于将键盘焦点导航入和导航出 XAML 岛。 |
 | IDesktopWindowXamlSourceNative | 此 COM 接口提供 AttachToWindow 方法，可使用该方法将应用中的 XAML 岛附加到父 UI 元素  。 每个 DesktopWindowXamlSource 对象都实现此接口  。 此接口在 windows.ui.xaml.hosting.desktopwindowxamlsource.h 中声明。 |
 | IDesktopWindowXamlSourceNative2 | 此 COM 接口提供 PreTranslateMessage 方法，该方法使 UWP XAML 框架能够正确处理某些 Windows 消息  。 每个 DesktopWindowXamlSource 对象都实现此接口  。 此接口在 windows.ui.xaml.hosting.desktopwindowxamlsource.h 中声明。 |
 
 下图说明了在桌面应用中托管的 XAML 岛中对象的层次结构。
 
-* 基本级别是你希望在其中托管 XAML 岛的应用中的 UI 元素。 此 UI 元素必须具有一个窗口句柄 (HWND)。 可在其中托管 XAML 岛的 UI 元素示例包括适用于 C++ Win32 应用的[窗口](https://docs.microsoft.com/windows/desktop/winmsg/about-windows)、适用于 WPF 应用的 [System.Windows.Interop.HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)，以及适用于 Windows 窗体应用的 [System.Windows.Forms.Control](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)。
+* 基本级别是你希望在其中托管 XAML 岛的应用中的 UI 元素。 此 UI 元素必须具有一个窗口句柄 (HWND)。 可在其中托管 XAML 岛的 UI 元素示例包括适用于 C++ Win32 应用的[窗口](/windows/desktop/winmsg/about-windows)、适用于 WPF 应用的 [System.Windows.Interop.HwndHost](/dotnet/api/system.windows.interop.hwndhost)，以及适用于 Windows 窗体应用的 [System.Windows.Forms.Control](/dotnet/api/system.windows.forms.control)。
 
 * 下一级别是 DesktopWindowXamlSource 对象  。 此对象提供用于托管 XAML 岛的基础结构。 你的代码负责创建此对象并将其附加到父 UI 元素。
 
 * 创建 DesktopWindowXamlSource 时，此对象将自动创建一个本机子窗口以托管 UWP 控件  。 此本机子窗口主要提取自代码，但如果需要，你可以访问其句柄 (HWND)。
 
-* 最后，最高级别是要在桌面应用中托管的 UWP 控件。 这可以是派生自 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 的任何 UWP 对象，包括 Windows SDK 提供的任何 UWP 控件以及自定义用户控件。
+* 最后，最高级别是要在桌面应用中托管的 UWP 控件。 这可以是派生自 [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) 的任何 UWP 对象，包括 Windows SDK 提供的任何 UWP 控件以及自定义用户控件。
 
 ![DesktopWindowXamlSource 体系结构](images/xaml-islands/xaml-hosting-api-rev2.png)
 
 > [!NOTE]
-> 在桌面应用中托管 XAML 岛时，可以同时在同一线程上运行多个 XAML 内容树。 若要访问 XAML 岛中 XAML 内容树的根元素并获取在其中托管它的上下文的相关信息，请使用 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 类。 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)、[ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) 和[窗口](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) API 不会为 XAML 岛提供正确的信息。 有关详情，请参阅[本部分](xaml-islands.md#window-host-context-for-xaml-islands)。
+> 在桌面应用中托管 XAML 岛时，可以同时在同一线程上运行多个 XAML 内容树。 若要访问 XAML 岛中 XAML 内容树的根元素并获取在其中托管它的上下文的相关信息，请使用 [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) 类。 [CoreWindow](/uwp/api/windows.ui.core.corewindow)、[ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) 和[窗口](/uwp/api/windows.ui.xaml.window) API 不会为 XAML 岛提供正确的信息。 有关详情，请参阅[本部分](xaml-islands.md#window-host-context-for-xaml-islands)。
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -97,7 +97,7 @@ UWP XAML 托管 API 包含这些主要 Windows 运行时类型和 COM 接口。
 
 | 问题 | 解决方法 |
 |-------|------------|
-| 你的应用收到 COMException，其中包含以下消息  ：“无法激活 DesktopWindowXamlSource。 此类型不能在 UWP 应用中使用。” 或者“无法激活 WindowsXamlManager。 此类型不能在 UWP 应用中使用。” | 此错误表示你正尝试在 UWP 应用中使用 UWP XAML 托管 API（具体而言，你正尝试实例化 [DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) 或 [WindowsXamlManager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) 类型）。 UWP XAML 托管 API 仅适用于非 UWP 桌面应用，如 WPF、Windows 窗体和 C++ Win32 应用程序。 |
+| 你的应用收到 COMException，其中包含以下消息  ：“无法激活 DesktopWindowXamlSource。 此类型不能在 UWP 应用中使用。” 或者“无法激活 WindowsXamlManager。 此类型不能在 UWP 应用中使用。” | 此错误表示你正尝试在 UWP 应用中使用 UWP XAML 托管 API（具体而言，你正尝试实例化 [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) 或 [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) 类型）。 UWP XAML 托管 API 仅适用于非 UWP 桌面应用，如 WPF、Windows 窗体和 C++ Win32 应用程序。 |
 
 ### <a name="error-trying-to-use-the-windowsxamlmanager-or-desktopwindowxamlsource-types"></a>尝试使用 WindowsXamlManager 或 DesktopWindowXamlSource 类型时出错
 
@@ -115,7 +115,7 @@ UWP XAML 托管 API 包含这些主要 Windows 运行时类型和 COM 接口。
 
 | 问题 | 解决方法 |
 |-------|------------|
-| 你的应用收到 COMException，其中包含以下消息  ：“AttachToWindow 方法失败，因为指定的 HWND 来自于与先前在同一线程上传递给 AttachToWindow 的 HWND 不同的最高级别窗口。” | 此错误表示你的应用程序调用了 IDesktopWindowXamlSourceNative::AttachToWindow 方法，并向其传递了一个窗口的 HWND，该 HWND 来自于与你在同一线程上对此方法的先前调用中所指定的窗口不同的最高级别窗口  。</p></p>在应用程序调用特定线程上的 AttachToWindow 后，同一线程上的所有其他 [DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) 对象只能附加到首次调用时传递到 AttachToWindow 的相同最高级别窗口的后代窗口   。 当特定线程的所有 DesktopWindowXamlSource 对象均关闭时，下一个 DesktopWindowXamlSource 就可以自由附加到任何窗口   。</p></p>若要解决此问题，请关闭与此线程上的其他最高级别窗口绑定的所有 DesktopWindowXamlSource 对象，或为此 DesktopWindowXamlSource 创建一个新线程   。 |
+| 你的应用收到 COMException，其中包含以下消息  ：“AttachToWindow 方法失败，因为指定的 HWND 来自于与先前在同一线程上传递给 AttachToWindow 的 HWND 不同的最高级别窗口。” | 此错误表示你的应用程序调用了 IDesktopWindowXamlSourceNative::AttachToWindow 方法，并向其传递了一个窗口的 HWND，该 HWND 来自于与你在同一线程上对此方法的先前调用中所指定的窗口不同的最高级别窗口  。</p></p>在应用程序调用特定线程上的 AttachToWindow 后，同一线程上的所有其他 [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) 对象只能附加到首次调用时传递到 AttachToWindow 的相同最高级别窗口的后代窗口   。 当特定线程的所有 DesktopWindowXamlSource 对象均关闭时，下一个 DesktopWindowXamlSource 就可以自由附加到任何窗口   。</p></p>若要解决此问题，请关闭与此线程上的其他最高级别窗口绑定的所有 DesktopWindowXamlSource 对象，或为此 DesktopWindowXamlSource 创建一个新线程   。 |
 
 ## <a name="related-topics"></a>相关主题
 

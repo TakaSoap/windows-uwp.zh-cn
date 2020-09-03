@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f9e7cc16b65f4ee2727fae5a711da9372ee91c01
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 56e94b72b76df74cb006ef3bfb145171e335952e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72282190"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174031"
 ---
 # <a name="improve-garbage-collection-performance"></a>改进垃圾回收性能
 
 
-使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应用从 .NET 垃圾回收器获取自动内存管理。 本部分汇总了 UWP 应用中的 .NET 垃圾回收器的行为和性能最佳实践。 有关 .NET 垃圾回收器的工作原理以及调试和分析垃圾回收器性能的工具的详细信息，请参阅[垃圾回收](https://docs.microsoft.com/dotnet/standard/garbage-collection/index)。
+使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应用从 .NET 垃圾回收器获取自动内存管理。 本部分汇总了 UWP 应用中的 .NET 垃圾回收器的行为和性能最佳实践。 有关 .NET 垃圾回收器的工作原理以及调试和分析垃圾回收器性能的工具的详细信息，请参阅[垃圾回收](/dotnet/standard/garbage-collection/index)。
 
 **注意**  需要干涉垃圾回收器的默认行为是应用存在一般内存问题的显著特征。 有关详细信息，请参阅[在 Visual Studio 2015 中调试时使用的内存使用工具](https://devblogs.microsoft.com/devops/memory-usage-tool-while-debugging-in-visual-studio-2015/)。 本主题仅适用于 C# 和 Visual Basic。
 
@@ -34,23 +34,23 @@ ms.locfileid: "72282190"
 
 ### <a name="release-references"></a>释放引用
 
-对应用中的某个对象的引用会禁止回收该对象以及该对象引用的所有对象。 .NET 实时编译器可以很好地检测何时不再使用某个变量，以便该变量所保留的对象将可以回收。 但在某些情况下，虽然某些对象包含对其他对象的引用，但这种关系可能不是很明显，因为对象图的一部分可能归应用使用的库所有。 要了解用于查明哪些对象在垃圾回收之后还会留存下来的工具和技术，请参阅[垃圾回收和性能](https://docs.microsoft.com/dotnet/standard/garbage-collection/performance)。
+对应用中的某个对象的引用会禁止回收该对象以及该对象引用的所有对象。 .NET 实时编译器可以很好地检测何时不再使用某个变量，以便该变量所保留的对象将可以回收。 但在某些情况下，虽然某些对象包含对其他对象的引用，但这种关系可能不是很明显，因为对象图的一部分可能归应用使用的库所有。 要了解用于查明哪些对象在垃圾回收之后还会留存下来的工具和技术，请参阅[垃圾回收和性能](/dotnet/standard/garbage-collection/performance)。
 
 ### <a name="induce-a-garbage-collection-if-its-useful"></a>引发垃圾回收（如果有用）
 
 仅当你已衡量应用的性能且已确定引发回收将改进其性能之后，才引发垃圾回收。
 
-可以通过调用 [**GC.Collect(n)** ](https://docs.microsoft.com/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 来引发某一代的垃圾回收，其中 n 是要回收的代（0、1 或 2）。
+可以通过调用 [**GC.Collect(n)** ](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 来引发某一代的垃圾回收，其中 n 是要回收的代（0、1 或 2）。
 
 **注意**  我们建议，不要强制在应用中进行垃圾回收，因为垃圾回收器使用许多启发式技术来确定执行回收的最佳时间，且强制进行回收在许多情况下会造成不必要的 CPU 消耗。 但是，如果你知道自己的应用中有大量不再使用的对象，并且你希望将此内存返回给系统，此时则适合强制进行垃圾回收。 例如，在游戏中，在某个加载序列结束时你可以引发回收，以在游戏开始之前释放内存。
  
-为了避免意外引发过多垃圾回收，可以将 [**GCCollectionMode**](https://docs.microsoft.com/dotnet/api/system.gccollectionmode) 设置为 **Optimized**。 这会指导垃圾回收器仅在确定回收将足够富有成效，可证明其合理性时才启动回收。
+为了避免意外引发过多垃圾回收，可以将 [**GCCollectionMode**](/dotnet/api/system.gccollectionmode) 设置为 **Optimized**。 这会指导垃圾回收器仅在确定回收将足够富有成效，可证明其合理性时才启动回收。
 
 ## <a name="reduce-garbage-collection-time"></a>缩短垃圾回收时间
 
 如果你已分析应用并观察到大量垃圾回收时间，此部分将适用。 与垃圾回收相关的暂停时间包括：运行单一垃圾回收过程所花费的时间；以及应用执行垃圾回收花费的总时间。 进行回收所花费的时间取决于回收器必须分析的实时数据量。 第 0 代和第 1 代在大小上是有限制的，但随着越来越多的长生存期对象在你的应用中处于活动状态，第 2 代会不断增多。 这意味着第 0 代和第 1 代的回收时间是有限制的，而第 2 代回收有可能会花费较长的时间。 垃圾回收运行的频率大多取决于你分配的内存量，因为垃圾回收通过释放内存来满足分配请求。
 
-垃圾回收有时会使你的应用暂停执行工作，但并不需要在它执行回收的整个时间内都暂停你的应用。 用户通常在你的应用中觉察不到暂停时间，特别是对于第 0 代和第 1 代回收。 .NET 垃圾回收器的[后台垃圾回收](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals)功能允许在你的应用运行的同时并发执行第 2 代回收，并且仅会使你的应用暂停很短的一段时间。 但并非始终可以将第 2 代回收作为后台回收执行。 在这种情况下，如果你有足够大的堆栈（超过 100MB），那么用户将可以觉察到暂停。
+垃圾回收有时会使你的应用暂停执行工作，但并不需要在它执行回收的整个时间内都暂停你的应用。 用户通常在你的应用中觉察不到暂停时间，特别是对于第 0 代和第 1 代回收。 .NET 垃圾回收器的[后台垃圾回收](/dotnet/standard/garbage-collection/fundamentals)功能允许在你的应用运行的同时并发执行第 2 代回收，并且仅会使你的应用暂停很短的一段时间。 但并非始终可以将第 2 代回收作为后台回收执行。 在这种情况下，如果你有足够大的堆栈（超过 100MB），那么用户将可以觉察到暂停。
 
 频繁的垃圾回收可能会导致 CPU 消耗增加（并因此导致功率消耗增加）、加载时间更长或应用程序中的帧速率降低。 可使用下列技术缩短垃圾回收时间、减少托管 UWP 应用中与回收相关的暂停。
 
@@ -74,14 +74,10 @@ ms.locfileid: "72282190"
 
 ### <a name="avoid-reference-rich-objects"></a>避免引用丰富的对象
 
-垃圾回收器通过追踪对象之间的引用（从你的应用中的根开始）来确定哪些对象是实时的。 有关详细信息，请参阅[垃圾回收期间发生了什么情况](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals)。 如果某个对象包含许多引用，那么垃圾回收器将有更多工作要做。 一项常见的技术（特别是对于大型对象）是将引用丰富的对象转换为无引用的对象（例如，不是存储引用，而是存储索引）。 当然，此技术仅适合逻辑上可能这样做时。
+垃圾回收器通过追踪对象之间的引用（从你的应用中的根开始）来确定哪些对象是实时的。 有关详细信息，请参阅[垃圾回收期间发生了什么情况](/dotnet/standard/garbage-collection/fundamentals)。 如果某个对象包含许多引用，那么垃圾回收器将有更多工作要做。 一项常见的技术（特别是对于大型对象）是将引用丰富的对象转换为无引用的对象（例如，不是存储引用，而是存储索引）。 当然，此技术仅适合逻辑上可能这样做时。
 
 将对象引用替换为索引可能是对应用的一种破坏性复杂更改，且对于包含大量引用的大型对象最有效。 仅当你注意到在你的应用中存在与引用频繁的对象相关的大量垃圾回收时间时，才这样做。
 
  
 
  
-
-
-
-

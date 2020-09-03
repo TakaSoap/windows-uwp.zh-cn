@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ef4255c8ea1eb9db34f652e5974a4f341e5500d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ac9e572da995da644cab1fbc997ee79fc3a11560
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80759449"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172011"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>用 JavaScript 创建 UWP 游戏
 
@@ -52,7 +52,7 @@ ms.locfileid: "80759449"
 
 ![克隆存储库](images/JS2D_2.png)
 
-也可以将项目下载为 zip 文件，或者通过任何其他标准方式使用 [GitHub 项目](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
+也可以将项目下载为 zip 文件，或者通过任何其他标准方式使用 [GitHub 项目](./get-app-samples.md)。
 
 解决方案加载到 Visual Studio 后，你会看到多个文件，包括：
 
@@ -261,10 +261,10 @@ function animate_clouds()
 此流程包含几个步骤。
 
 1. 必须以 Windows 开发人员的身份[注册](https://developer.microsoft.com/store/register)。
-2. 必须使用应用提交[清单](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
-3. 必须提交此应用以进行[认证](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
+2. 必须使用应用提交[清单](../publish/app-submissions.md)。
+3. 必须提交此应用以进行[认证](../publish/the-app-certification-process.md)。
 
-有关更多详细信息，请参阅[发布 UWP 应用](https://docs.microsoft.com/windows/uwp/publish/)。
+有关更多详细信息，请参阅[发布 UWP 应用](../publish/index.md)。
 
 ## <a name="suggestions-for-other-features"></a>其他功能建议。
 

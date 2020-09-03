@@ -8,18 +8,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c90400c577110f326c693a6c06d28582033a86f6
-ms.sourcegitcommit: eae9859ee06c1e5e4afa08d8d3da072ad06d24a8
+ms.openlocfilehash: 6c2adc41fd33692d3cc3deb78ed8dd0659709a11
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84110386"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172701"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>向未打包的桌面应用授予标识
 
-许多 Windows 10 可扩展性功能需要在非 UWP 桌面应用中使用[程序包标识符](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)，包括后台任务、通知、动态磁贴和共享目标。 对于这些情况，OS 需要使用标识来识别相应 API 的调用方。
+许多 Windows 10 可扩展性功能需要在非 UWP 桌面应用中使用[程序包标识符](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)，包括后台任务、通知、动态磁贴和共享目标。 对于这些情况，OS 需要使用标识来识别相应 API 的调用方。
 
-在 Windows 10 版本 2004 之前的 OS 发行版中，向桌面应用授予标识符的唯一方式是[将该应用打包到已签名的 MSIX 包中](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。 对于这些应用，将在程序包清单中指定标识，并由 MSIX 部署管道根据清单中的信息处理标识注册。 程序包清单中引用的所有内容都存在于 MSIX 包中。
+在 Windows 10 版本 2004 之前的 OS 发行版中，向桌面应用授予标识符的唯一方式是[将该应用打包到已签名的 MSIX 包中](/windows/msix/desktop/desktop-to-uwp-root)。 对于这些应用，将在程序包清单中指定标识，并由 MSIX 部署管道根据清单中的信息处理标识注册。 程序包清单中引用的所有内容都存在于 MSIX 包中。
 
 从 Windows 10 版本 2004 开始，可以通过生成稀疏包并将其注册到应用，向未打包到 MSIX 包中的桌面应用授予包标识符。 通过此支持，尚不能采用 MSIX 打包方式进行部署的桌面应用可以使用需要程序包标识符的 Windows 10 可扩展性功能。 有关更多背景信息，请参阅[此博客文章](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97)。
 
@@ -43,20 +43,20 @@ ms.locfileid: "84110386"
 
 ### <a name="package-external-location"></a>包外部位置
 
-为了支持稀疏包，程序包清单架构现在已支持 [**Properties**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties) 元素下的可选元素 [**uap10:AllowExternalContent**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent)。 这使程序包清单可以在磁盘上的特定位置引用包外部的内容。
+为了支持稀疏包，程序包清单架构现在已支持 [**Properties**](/uwp/schemas/appxpackage/uapmanifestschema/element-properties) 元素下的可选元素 [**uap10:AllowExternalContent**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent)。 这使程序包清单可以在磁盘上的特定位置引用包外部的内容。
 
 例如，如果你的现有非打包桌面应用在 C:\Program Files\MyDesktopApp\, 中安装应用可执行文件和其他内容，则可以创建一个在清单中包含 **uap10:AllowExternalContent** 元素的稀疏包。 在应用安装过程中或第一次安装应用时，可以安装稀疏包并将 C:\Program Files\MyDesktopApp\ 声明为应用将使用的外部位置。
 
 ## <a name="create-a-package-manifest-for-the-sparse-package"></a>为稀疏包创建程序包清单
 
-在生成稀疏包之前，必须先创建一个[程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)（一个名为 AppxManifest.xml 的文件），该文件声明桌面应用的程序包标识符元数据和其他所需的详细信息。 为稀疏包创建程序包清单的最简单方法是使用以下示例，并使用[架构引用](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)为应用自定义它。
+在生成稀疏包之前，必须先创建一个[程序包清单](/uwp/schemas/appxpackage/appx-package-manifest)（一个名为 AppxManifest.xml 的文件），该文件声明桌面应用的程序包标识符元数据和其他所需的详细信息。 为稀疏包创建程序包清单的最简单方法是使用以下示例，并使用[架构引用](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)为应用自定义它。
 
 确保程序包清单包含以下项：
 
-* 一个 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 元素，用于描述桌面应用的标识属性。
-* [**Properties**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties) 元素下的 [**uap10:AllowExternalContent**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent) 元素。 应为此元素分配 `true` 值，该值允许程序包清单在磁盘上的特定位置引用包外部的内容。 在后面的步骤中，在从安装程序或应用中运行的代码注册稀疏包时，将指定外部位置的路径。 在清单中引用的不属于包本身的所有内容都应安装到外部位置。
-* 应将 [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 元素的 **MinVersion** 属性设置为 `10.0.19000.0` 或更高版本。
-* [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) 元素的 **TrustLevel=mediumIL** 和 **RuntimeBehavior=Win32App** 属性声明了与稀疏包关联的桌面应用的运行方式与标准未打包桌面应用类似，无需注册表和文件系统虚拟化以及其他运行时更改。
+* 一个 [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 元素，用于描述桌面应用的标识属性。
+* [**Properties**](/uwp/schemas/appxpackage/uapmanifestschema/element-properties) 元素下的 [**uap10:AllowExternalContent**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent) 元素。 应为此元素分配 `true` 值，该值允许程序包清单在磁盘上的特定位置引用包外部的内容。 在后面的步骤中，在从安装程序或应用中运行的代码注册稀疏包时，将指定外部位置的路径。 在清单中引用的不属于包本身的所有内容都应安装到外部位置。
+* 应将 [**TargetDeviceFamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 元素的 **MinVersion** 属性设置为 `10.0.19000.0` 或更高版本。
+* [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) 元素的 **TrustLevel=mediumIL** 和 **RuntimeBehavior=Win32App** 属性声明了与稀疏包关联的桌面应用的运行方式与标准未打包桌面应用类似，无需注册表和文件系统虚拟化以及其他运行时更改。
 
 下面的示例展示稀疏程序包清单 (AppxManifest.xml) 的完整内容。 此清单包含需要程序包标识符的 `windows.sharetarget` 扩展。
 
@@ -114,7 +114,7 @@ ms.locfileid: "84110386"
 
 ## <a name="build-and-sign-the-sparse-package"></a>生成稀疏包并为稀疏包签名
 
-创建程序包清单后，请使用 Windows SDK 中的 [MakeAppx.exe 工具](https://docs.microsoft.com/windows/msix/package/create-app-package-with-makeappx-tool)生成稀疏包。 由于稀疏包不包含清单中引用的文件，因此必须指定 `/nv` 选项，该选项将跳过对包的语义验证。
+创建程序包清单后，请使用 Windows SDK 中的 [MakeAppx.exe 工具](/windows/msix/package/create-app-package-with-makeappx-tool)生成稀疏包。 由于稀疏包不包含清单中引用的文件，因此必须指定 `/nv` 选项，该选项将跳过对包的语义验证。
 
 下面的示例演示如何从命令行创建稀疏包。  
 
@@ -122,7 +122,7 @@ ms.locfileid: "84110386"
 MakeAppx.exe pack /d <path to directory that contains manifest> /p <output path>\MyPackage.msix /nv
 ```
 
-在目标计算机上成功安装稀疏包之前，必须使用目标计算机上受信任的证书对其进行签名。 可以出于开发目的创建新的自签名证书，并使用 Windows SDK 中提供的 [SignTool](https://docs.microsoft.com/windows/msix/package/sign-app-package-using-signtool) 为稀疏包签名。
+在目标计算机上成功安装稀疏包之前，必须使用目标计算机上受信任的证书对其进行签名。 可以出于开发目的创建新的自签名证书，并使用 Windows SDK 中提供的 [SignTool](/windows/msix/package/sign-app-package-using-signtool) 为稀疏包签名。
 
 下面的示例演示如何从命令行对稀疏包进行签名。
 
@@ -132,7 +132,7 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 ### <a name="add-the-package-identity-metadata-to-your-desktop-application-manifest"></a>将程序包标识符元数据添加到桌面应用程序清单
 
-还必须在桌面应用中添加[并行应用程序清单](https://docs.microsoft.com/windows/win32/sbscs/application-manifests)，并添加一个 [**msix**](https://docs.microsoft.com/windows/win32/sbscs/application-manifests#msix) 元素，该元素的属性声明应用的标识属性。 OS 将使用这些属性的值在启动可执行文件时确定应用的标识。
+还必须在桌面应用中添加[并行应用程序清单](/windows/win32/sbscs/application-manifests)，并添加一个 [**msix**](/windows/win32/sbscs/application-manifests#msix) 元素，该元素的属性声明应用的标识属性。 OS 将使用这些属性的值在启动可执行文件时确定应用的标识。
 
 下面的示例展示了包含 **msix** 元素的并行应用程序清单。
 
@@ -150,16 +150,16 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 **msix** 元素的属性必须与稀疏包的程序包清单中的以下值匹配：
 
-* **packageName** 和 **publisher** 属性必须分别与程序包清单中 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 元素中的 **Name** 和 **Publisher** 属性相匹配。
-* **applicationId** 属性必须分别与程序包清单中 [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) 元素的 **Id** 属性相匹配。
+* **packageName** 和 **publisher** 属性必须分别与程序包清单中 [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 元素中的 **Name** 和 **Publisher** 属性相匹配。
+* **applicationId** 属性必须分别与程序包清单中 [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) 元素的 **Id** 属性相匹配。
 
 并行应用程序清单必须与桌面应用的可执行文件位于同一目录中，并且约定应与应用的可执行文件具有相同的名称，并带有 `.manifest` 扩展名。 例如，如果应用的可执行文件名为 `ContosoPhotoStore`，则应用程序清单文件名应为 `ContosoPhotoStore.exe.manifest`。
 
 ## <a name="register-your-sparse-package-at-run-time"></a>在运行时注册稀疏包
 
-若要向桌面应用授予包标识符，应用必须使用 [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) 类的 [AddPackageByUriAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync) 方法注册稀疏包 。 从 Windows 10 版本 2004 开始已提供此方法。 可以在首次运行应用时向应用添加代码以注册稀疏包，也可以在安装桌面应用时运行代码以注册该稀疏包（例如，如果你使用 MSI 安装桌面应用，可以通过自定义操作运行此代码）。
+若要向桌面应用授予包标识符，应用必须使用 [PackageManager](/uwp/api/windows.management.deployment.packagemanager) 类的 [AddPackageByUriAsync](/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync) 方法注册稀疏包 。 从 Windows 10 版本 2004 开始已提供此方法。 可以在首次运行应用时向应用添加代码以注册稀疏包，也可以在安装桌面应用时运行代码以注册该稀疏包（例如，如果你使用 MSI 安装桌面应用，可以通过自定义操作运行此代码）。
 
-下面的示例演示如何注册稀疏包。 此代码创建一个 [AddPackageOptions](https://docs.microsoft.com/uwp/api/windows.management.deployment.addpackageoptions) 对象，该对象包含程序包清单可以引用包外部内容的外部位置的路径。 然后，代码将此对象传递给 AddPackageByUriAsync 方法以注册稀疏包。 此方法还以 URI 形式接收已签名的稀疏包的位置。 有关更完整的示例，请参阅相关[示例](#sample)的 `StartUp.cs` 代码文件。
+下面的示例演示如何注册稀疏包。 此代码创建一个 [AddPackageOptions](/uwp/api/windows.management.deployment.addpackageoptions) 对象，该对象包含程序包清单可以引用包外部内容的外部位置的路径。 然后，代码将此对象传递给 AddPackageByUriAsync 方法以注册稀疏包。 此方法还以 URI 形式接收已签名的稀疏包的位置。 有关更完整的示例，请参阅相关[示例](#sample)的 `StartUp.cs` 代码文件。
 
 ```csharp
 private static bool registerSparsePackage(string externalLocation, string sparsePkgPath)

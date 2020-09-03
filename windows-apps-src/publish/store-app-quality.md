@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
-ms.openlocfilehash: d093a7b49a8c5ac00ca927614365d1b548e2f63a
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: ae4ade3cd7bef5434c8f5c9d9c6905c039e7e806
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77607259"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172841"
 ---
 # <a name="app-quality"></a>应用质量
 
@@ -42,7 +42,7 @@ Microsoft Store 页面上的元数据（图标、标题、屏幕截图和描述�
 
 - 崇尚原创和独特。 例如，当标题采用其他应用拼写的变体时可能会导致混淆，而独特的标题则可以帮助你的应用脱颖而出。
 - 选择传达充足信息的标题。 例如，“我的第一个应用”或“客户端应用”过于宽泛。
-- 查看[为应用命名](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name#choosing-your-apps-name)这篇文章，以获取更多有用的灵感。
+- 查看[为应用命名](./create-your-app-by-reserving-a-name.md#choosing-your-apps-name)这篇文章，以获取更多有用的灵感。
 
 **描述**用于介绍应用的主要功能。 描述要清晰、简洁并且具有说服力。
 
@@ -51,7 +51,7 @@ Microsoft Store 页面上的元数据（图标、标题、屏幕截图和描述�
 - 在元数据的功能部分列出应用功能，并在应用描述中总结应用的最佳功能，以便客户判断他们能够实现什么目标。 例如，在描述天文学应用时，不要只列出行星名称，要告知客户该应用的特殊卫星追踪功能。 在信息繁杂的 Microsoft Store 中，要着重向客户讲述应用的独特之处和优势。
 - 告诉客户事实。 描述应用中实际包含的内容。 例如，不要向客户介绍应用中目前没有的功能（除非将其标识为计划添加）。
 - 如果该应用需要借助另一个应用才能发挥作用，则应在应用描述的开头注明。 此举会让客户了解使用该应用时还需要哪些其他软件和应用。
-- 若要获取一些不错的建议，请参阅[撰写贴切的应用描述](https://docs.microsoft.com/windows/uwp/publish/write-a-great-app-description)。
+- 若要获取一些不错的建议，请参阅[撰写贴切的应用描述](./write-a-great-app-description.md)。
 
 **屏幕截图**和**预告片**是让客户预览应用精彩功能的好机会。 巧妙地使用它们突出应用质量：
 
@@ -88,4 +88,4 @@ Microsoft Store 页面上的元数据（图标、标题、屏幕截图和描述�
 ### <a name="see-also"></a>另请参阅
 
 - [Microsoft Store 策略和行为准则](store-policies-and-code-of-conduct.md)
-- [应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [应用开发人员协议](/legal/windows/agreements/app-developer-agreement)

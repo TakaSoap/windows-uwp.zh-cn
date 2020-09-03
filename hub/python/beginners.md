@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, 了解 python, windows 上的 python（初学者）, 使用 microsoft store 安装 python, python 与 vs code, windows 上的 pygame
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 5dee553fedc81f0b482d4b79f4d7d8be3a7bb106
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 076c62658431ba75bdbd7f385ced86f27fb2f7d0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493492"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174141"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>开始在 Windows 上使用 Python（初学者）
 
@@ -190,7 +190,7 @@ Pygame 是一种用于编写游戏的常用 Python 包 - 鼓励学生学习编�
 
 ### <a name="online-courses-for-learning-python"></a>学习 Python 的在线课程
 
-- [Microsoft Learn 上的 Python 简介](https://docs.microsoft.com/learn/modules/intro-to-python/)：尝试使用交互式 Microsoft Learn 平台，并获得完成该模块的经验积分，该模块涵盖了有关如何编写基本 Python 代码、声明变量以及使用控制台输入和输出的基础知识。 对于尚未设置 Python 开发环境的人员来说，交互式沙箱环境是一个不错的起点。
+- [Microsoft Learn 上的 Python 简介](/learn/modules/intro-to-python/)：尝试使用交互式 Microsoft Learn 平台，并获得完成该模块的经验积分，该模块涵盖了有关如何编写基本 Python 代码、声明变量以及使用控制台输入和输出的基础知识。 对于尚未设置 Python 开发环境的人员来说，交互式沙箱环境是一个不错的起点。
 
 - [Pluralsight 上的 Python：8 个课程，29 小时](https://app.pluralsight.com/paths/skills/python)：Pluralsight 上的 Python 学习路径提供了涵盖与 Python 相关的各种主题的在线课程，包括用于衡量技能和查找知识缺口的工具。
 
@@ -208,4 +208,4 @@ Pygame 是一种用于编写游戏的常用 Python 包 - 鼓励学生学习编�
 
 - [调试 Python](https://code.visualstudio.com/docs/python/debugging)：调试是在计算机程序中识别并消除错误的过程。 本文介绍如何使用 VS Code 初始化和配置 Python 的调试、如何设置和验证断点、如何附加本地脚本、如何针对不同应用类型或在远程计算机上执行调试以及一些基本的故障排除。
 
-- [对Python 进行单元测试](https://code.visualstudio.com/docs/python/unit-testing)：介绍了一些说明单元测试含义的背景、一个示例演练、如何启用测试框架、如何创建和运行测试、如何调试测试以及测试配置设置。 
+- [对Python 进行单元测试](https://code.visualstudio.com/docs/python/unit-testing)：介绍了一些说明单元测试含义的背景、一个示例演练、如何启用测试框架、如何创建和运行测试、如何调试测试以及测试配置设置。

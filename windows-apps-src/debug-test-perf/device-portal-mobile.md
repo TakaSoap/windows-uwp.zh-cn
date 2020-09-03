@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ff94c34c61dee4de8450ed0f4f89a1dfc6537f83
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72281889"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173591"
 ---
 # <a name="device-portal-for-mobile"></a>适用于移动设备的 Device Portal
 
@@ -84,4 +84,4 @@ Windows 移动版 Device Portal 中并未包含可以终止任意进程的功能
 ## <a name="see-also"></a>另请参阅
 
 * [Windows 设备门户概述](device-portal.md)
-* [设备门户核心 API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [设备门户核心 API 参考](./device-portal-api-core.md)

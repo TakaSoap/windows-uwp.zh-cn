@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ae8094ac3fbb1de8958b1cc138953d3e1b887cc
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b414a1177bbfad670e3b623babce068a299a713e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970382"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172591"
 ---
 # <a name="masterdetails-pattern"></a>大纲/细节模式
 
@@ -21,7 +21,7 @@ ms.locfileid: "82970382"
 
 大纲/细节模式具有一个大纲窗格（通常带有[列表视图](lists.md)）和一个内容细节窗格。 当选择大纲列表中的项时，将会更新细节窗格。 此模式通常用于电子邮件和通讯簿。
 
-> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[SplitView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
+> **重要的 API**：[ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[SplitView 类](/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![大纲-细节模式的示例](images/HIGSecOne_MasterDetail.png)
 
@@ -91,7 +91,7 @@ ms.locfileid: "82970382"
 ![自适应大纲细节布局](images/patterns_masterdetail.png)
 
 ### <a name="create-an-adaptive-masterdetails-pattern"></a>创建自适应大纲/细节模式
-要创建自适应布局，请为 UI 定义不同的 [VisualStates](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstate)，然后使用 [AdaptiveTriggers](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 为不同的状态声明断点   。
+要创建自适应布局，请为 UI 定义不同的 [VisualStates](/uwp/api/windows.ui.xaml.visualstate)，然后使用 [AdaptiveTriggers](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 为不同的状态声明断点   。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
@@ -110,5 +110,5 @@ ms.locfileid: "82970382"
 - [列表](lists.md)
 - [搜索](search.md)
 - [应用和命令栏](app-bars.md)
-- [ListView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [SplitView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
+- [ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [SplitView 类](/uwp/api/windows.ui.xaml.controls.splitview)

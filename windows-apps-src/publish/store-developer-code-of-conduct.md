@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: 2B84B877-794A-468F-A478-DA09E4694513
-ms.openlocfilehash: d81333b38908a10f88d886d766353aae455b1f47
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 5eab37c828483cea1e8343c953d155edab422e0f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77607233"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170981"
 ---
 # <a name="developer-code-of-conduct"></a>开发人员行为准则
 
-作为 Microsoft Store 的应用程序开发人员，你必须遵守[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)条款以及任何你与 Microsoft 签订的其他许可或合约。 此行为准则仅供参考，不替代任何协议。
+作为 Microsoft Store 的应用程序开发人员，你必须遵守[应用开发人员协议](/legal/windows/agreements/app-developer-agreement)条款以及任何你与 Microsoft 签订的其他许可或合约。 此行为准则仅供参考，不替代任何协议。
 
 
 ## <a name="1-publisher-name"></a>1. 发布者名称
@@ -36,4 +36,4 @@ ms.locfileid: "77607233"
 ### <a name="see-also"></a>另请参阅
 
 - [Microsoft Store 策略和行为准则](store-policies-and-code-of-conduct.md)
-- [应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [应用开发人员协议](/legal/windows/agreements/app-developer-agreement)

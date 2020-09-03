@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5f3e4eee486edd47901fc2b97a6e10c880cb04b1
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: b7f46679e03f367f8521630365362a4eb110332d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606296"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170561"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 岛在 WPF 应用中托管自定义 UWP 控件
 
-本文演示了如何使用 Windows 社区工具包中的 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件在面向 .NET Core 3 的 WPF 应用中托管自定义 UWP 控件。 此自定义控件包含 Windows SDK 中的多个第三方 UWP 控件，并将其中一个 UWP 控件的属性绑定到 WPF 应用中的字符串。 此外，本文还说明了如何托管 [WinUI 库](https://docs.microsoft.com/uwp/toolkits/winui/)中的 UWP 控件。
+本文演示了如何使用 Windows 社区工具包中的 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件在面向 .NET Core 3 的 WPF 应用中托管自定义 UWP 控件。 此自定义控件包含 Windows SDK 中的多个第三方 UWP 控件，并将其中一个 UWP 控件的属性绑定到 WPF 应用中的字符串。 此外，本文还说明了如何托管 [WinUI 库](/uwp/toolkits/winui/)中的 UWP 控件。
 
 尽管本文介绍了如何在 WPF 应用中实现此操作，但该过程类似于在 Windows 窗体中实现。 有关在 WPF 和 Windows 窗体应用中托管 UWP 控件的概述，请参阅[此文](xaml-islands.md#wpf-and-windows-forms-applications)。
 
@@ -25,7 +25,7 @@ ms.locfileid: "82606296"
 
 若要在 WPF（或 Windows 窗体）应用中托管自定义 UWP 控件，解决方案中需要有以下组件。 本文提供了创建各个组件的说明。
 
-* **项目和应用源代码**。 只能在面向 .NET Core 3 的应用中使用 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件来托管自定义 UWP 控件。 面向 .NET Framework 的应用不支持此方案。
+* **项目和应用源代码**。 只能在面向 .NET Core 3 的应用中使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件来托管自定义 UWP 控件。 面向 .NET Framework 的应用不支持此方案。
 
 * **自定义 UWP 控件**。 必须有要托管的自定义 UWP 控件的源代码，才能通过应用程序对其进行编译。 通常，在 UWP 类库项目中定义自定义控件，WPF 或 Windows 窗体项目的同一解决方案会引用此项目。
 
@@ -45,7 +45,7 @@ ms.locfileid: "82606296"
 
 2. 在 Visual Studio 2019 中，新建一个“WPF 应用(.NET Core)”项目  。
 
-3. 确保已启用[包引用](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files)：
+3. 确保已启用[包引用](/nuget/consume-packages/package-references-in-project-files)：
 
     1. 在 Visual Studio 中，单击“工具”->“NuGet 程序包管理器”->“程序包管理器设置”  。
     2. 确保为“默认程序包管理格式”选择了“PackageReference”   。
@@ -67,7 +67,7 @@ ms.locfileid: "82606296"
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>在 UWP 应用项目中定义 XamlApplication 类
 
-接下来，将 UWP 应用项目添加到解决方案，并将此项目中的默认 `App` 类修改为派生自 Windows 社区工具包提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类。 此类支持 [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 接口，该接口使应用能够在运行时发现和加载应用程序的当前目录内程序集中的自定义 UWP XAML 控件的元数据。 此类还为当前线程初始化 UWP XAML 框架。 
+接下来，将 UWP 应用项目添加到解决方案，并将此项目中的默认 `App` 类修改为派生自 Windows 社区工具包提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类。 此类支持 [IXamlMetadaraProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 接口，该接口使应用能够在运行时发现和加载应用程序的当前目录内程序集中的自定义 UWP XAML 控件的元数据。 此类还为当前线程初始化 UWP XAML 框架。 
 
 1. 在“解决方案资源管理器”中，右键单击解决方案节点，然后选择“添加” -> “新建项目”    。
 2. 向你的解决方案中添加一个空白应用（通用 Windows）  项目。 确保目标版本和最低版本均设置为 Windows 10 版本 1903 或更高版本  。
@@ -231,14 +231,14 @@ ms.locfileid: "82606296"
 
 ## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>将 WinUI 库中的控件添加到自定义控件
 
-按照传统，UWP 控件已作为 Windows 10 操作系统的一部分发布，并且已通过 Windows SDK 向开发人员提供。 [WinUI 库](https://docs.microsoft.com/uwp/toolkits/winui/)是备用方法，它将 Windows SDK 中 UWP 控件的更新版分发在未与 Windows SDK 版本关联的 NuGet 程序包中。 此库还包含不属于 Windows SDK 和默认 UWP 平台的新控件。 有关详细信息，请参阅 [WinUI 路线图](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
+按照传统，UWP 控件已作为 Windows 10 操作系统的一部分发布，并且已通过 Windows SDK 向开发人员提供。 [WinUI 库](/uwp/toolkits/winui/)是备用方法，它将 Windows SDK 中 UWP 控件的更新版分发在未与 Windows SDK 版本关联的 NuGet 程序包中。 此库还包含不属于 Windows SDK 和默认 UWP 平台的新控件。 有关详细信息，请参阅 [WinUI 路线图](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
 
 此部分演示了如何将 WinUI 库中的 UWP 控件添加到用户控件，以便于将此控件托管在 WPF 应用中。
 
 1. 在 UWP 应用项目中，安装 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包的最新发行版本或预发行版本。
 
     > [!NOTE]
-    > 如果桌面应用在 [MSIX 包](https://docs.microsoft.com/windows/msix)中打包，则可以使用 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet 包的预发行版本或发行版本。 如果桌面应用未使用 MSIX 打包，则必须安装 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包的预发行版本。
+    > 如果桌面应用在 [MSIX 包](/windows/msix)中打包，则可以使用 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet 包的预发行版本或发行版本。 如果桌面应用未使用 MSIX 打包，则必须安装 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包的预发行版本。
 
 2. 在此项目的 App.xaml 文件中，将以下子元素添加到 `<xaml:XamlApplication>` 元素。
 
@@ -271,7 +271,7 @@ ms.locfileid: "82606296"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. 在同一个文件中，添加 `<winui:RatingControl />` 元素作为 `<StackPanel>` 的子级。 此元素会添加 WinUI 库中 [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) 类的实例。 添加此元素后，现在 `<StackPanel>` 应如下所示。
+5. 在同一个文件中，添加 `<winui:RatingControl />` 元素作为 `<StackPanel>` 的子级。 此元素会添加 WinUI 库中 [RatingControl](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) 类的实例。 添加此元素后，现在 `<StackPanel>` 应如下所示。
 
     ```xml
     <StackPanel Background="LightCoral">
@@ -286,14 +286,14 @@ ms.locfileid: "82606296"
 
 ## <a name="package-the-app"></a>打包应用
 
-可以选择在 [MSIX 包](https://docs.microsoft.com/windows/msix)中打包 WPF 应用以供部署。 MSIX 是适用于 Windows 的新式应用打包技术，并且基于 MSI、.appx、App-V 和 ClickOnce 安装技术的组合。
+可以选择在 [MSIX 包](/windows/msix)中打包 WPF 应用以供部署。 MSIX 是适用于 Windows 的新式应用打包技术，并且基于 MSI、.appx、App-V 和 ClickOnce 安装技术的组合。
 
-下面的说明介绍了如何在 Visual Studio 2019 中使用 [Windows 应用程序打包项目](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)将解决方案中的所有组件打包到 MSIX 包。 只有在需要将 WPF 应用打包到 MSIX 包时，才需要使用这些步骤。 请注意，目前这些步骤包含一些特定于托管自定义 UWP 控件方案的解决方法。
+下面的说明介绍了如何在 Visual Studio 2019 中使用 [Windows 应用程序打包项目](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)将解决方案中的所有组件打包到 MSIX 包。 只有在需要将 WPF 应用打包到 MSIX 包时，才需要使用这些步骤。 请注意，目前这些步骤包含一些特定于托管自定义 UWP 控件方案的解决方法。
 
 > [!NOTE]
-> 如果选择不在 [MSIX 包](https://docs.microsoft.com/windows/msix)中打包应用程序以供部署，则运行应用的计算机必须安装有 [Visual C++ 运行时](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
+> 如果选择不在 [MSIX 包](/windows/msix)中打包应用程序以供部署，则运行应用的计算机必须安装有 [Visual C++ 运行时](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
 
-1. 向解决方案中添加一个新的 [Windows 应用程序打包项目](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)。 创建项目时，针对“目标版本”和“最低版本”选择“Windows 10 版本 1903 (10.0；版本 18362)”    。
+1. 向解决方案中添加一个新的 [Windows 应用程序打包项目](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)。 创建项目时，针对“目标版本”和“最低版本”选择“Windows 10 版本 1903 (10.0；版本 18362)”    。
 
 2. 在打包项目中，右键单击“应用程序”节点，然后选择“添加引用”   。 在项目列表中，选择解决方案中的 WPF 项目，然后单击“确认”  。
 
@@ -318,4 +318,4 @@ ms.locfileid: "82606296"
 
 * [在桌面应用中托管 UWP XAML 控件（XAML 岛）](xaml-islands.md)
 * [XAML 岛代码示例](https://github.com/microsoft/Xaml-Islands-Samples)
-* [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)
+* [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

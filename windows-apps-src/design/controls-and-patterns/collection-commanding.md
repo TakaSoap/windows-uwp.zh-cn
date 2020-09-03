@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b97041e305cfaac2a5fe202212741a282dccdb54
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 8138256dbde751768e5d9a707ffc1ad23ace7494
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968872"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173521"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>用于集合和列表的上下文命令
 
@@ -25,7 +25,7 @@ ms.locfileid: "82968872"
 
 许多应用包含用户可以操作的列表、网格和树形式的内容集合。 例如，用户可能能够删除、重命名、标记或刷新项。 本文演示如何通过为所有输入类型提供可能的最佳体验的方式，使用上下文命令来实现这些类型的操作。  
 
-> **重要的 API**：[ICommand 接口](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)、[UIElement.ContextFlyout 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)、[INotifyPropertyChanged 接口](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **重要的 API**：[ICommand 接口](/uwp/api/Windows.UI.Xaml.Input.ICommand)、[UIElement.ContextFlyout 属性](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)、[INotifyPropertyChanged 接口](/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![使用各种输入执行收藏命令](images/ContextualCommand_AddFavorites.png)
 
@@ -94,13 +94,13 @@ public class PodcastObject : INotifyPropertyChanged
 }
 ```
 
-请注意，PodcastObject 实现 [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.INotifyPropertyChanged) 以在用户切换 IsFavorite 属性时响应属性更改。
+请注意，PodcastObject 实现 [INotifyPropertyChanged](/uwp/api/Windows.UI.Xaml.Data.INotifyPropertyChanged) 以在用户切换 IsFavorite 属性时响应属性更改。
 
 ## <a name="defining-commands-with-the-icommand-interface"></a>使用 ICommand 接口定义命令
 
-[ICommand 接口](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)可帮助定义可用于多种输入类型的命令。 例如，可以将删除逻辑以 [ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) 的形式实现一次，然后使它可用于不同输入类型，而不是在两个不同的事件处理程序（一个在用户按下 Delete 键时使用，另一个在用户右键单击上下文菜单中的“删除”时使用）中为删除命令编写相同代码。
+[ICommand 接口](/uwp/api/Windows.UI.Xaml.Input.ICommand)可帮助定义可用于多种输入类型的命令。 例如，可以将删除逻辑以 [ICommand](/uwp/api/Windows.UI.Xaml.Input.ICommand) 的形式实现一次，然后使它可用于不同输入类型，而不是在两个不同的事件处理程序（一个在用户按下 Delete 键时使用，另一个在用户右键单击上下文菜单中的“删除”时使用）中为删除命令编写相同代码。
 
-需要定义表示“收藏”操作的 ICommand。 我们会使用命令的 [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) 方法收藏播客。 特定播客会通过命令参数（可以使用 CommandParameter 属性进行绑定）提供给执行方法。
+需要定义表示“收藏”操作的 ICommand。 我们会使用命令的 [Execute](/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) 方法收藏播客。 特定播客会通过命令参数（可以使用 CommandParameter 属性进行绑定）提供给执行方法。
 
 ```csharp
 public class FavoriteCommand: ICommand
@@ -127,7 +127,7 @@ public class FavoriteCommand: ICommand
 </Application.Resources>
 ```
 
-若要执行命令，请调用其 [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) 方法。
+若要执行命令，请调用其 [Execute](/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) 方法。
 
 ```csharp
 // Favorite the item using the defined command
@@ -138,7 +138,7 @@ favoriteCommand.Execute(PodcastObject);
 
 ## <a name="creating-a-usercontrol-to-respond-to-a-variety-of-inputs"></a>创建 UserControl 以响应各种输入
 
-具有项列表并且其中每个项都应响应多个输入时，可以通过为项定义 [UserControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) 并使用它定义项的上下文菜单和事件处理程序，来简化代码。 
+具有项列表并且其中每个项都应响应多个输入时，可以通过为项定义 [UserControl](/uwp/api/Windows.UI.Xaml.Controls.UserControl) 并使用它定义项的上下文菜单和事件处理程序，来简化代码。 
 
 在 Visual Studio 中创建 UserControl：
 1. 在解决方案资源管理器中，右键单击项目。 上下文菜单随即出现。
@@ -151,7 +151,7 @@ favoriteCommand.Execute(PodcastObject);
 - 显示悬停按钮
 - 执行轻扫手势
 
-为了封装这些行为并使用 FavoriteCommand，我们来创建名为“PodcastUserControl”的新 [UserControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl)，以表示列表中的播客。
+为了封装这些行为并使用 FavoriteCommand，我们来创建名为“PodcastUserControl”的新 [UserControl](/uwp/api/Windows.UI.Xaml.Controls.UserControl)，以表示列表中的播客。
 
 PodcastUserControl 将 PodcastObject 的字段显示为 TextBlock，并响应各种用户交互。 我们会在本文中通篇引用并扩展 PodcastUserControl。
 
@@ -246,7 +246,7 @@ public sealed partial class PodcastUserControl : UserControl
 
 ### <a name="contextflyout"></a>ContextFlyout
 
-通过 UIElement 类定义的 [ContextFlyout 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)支持轻松创建适用于所有输入类型的上下文菜单。 可使用 MenuFlyout 提供表示上下文菜单的浮出控件，当用户执行上面定义的“上下文操作”时，与项对应的 MenuFlyout 会显示。
+通过 UIElement 类定义的 [ContextFlyout 属性](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)支持轻松创建适用于所有输入类型的上下文菜单。 可使用 MenuFlyout 提供表示上下文菜单的浮出控件，当用户执行上面定义的“上下文操作”时，与项对应的 MenuFlyout 会显示。
 
 我们会将 ContextFlyout 添加到 PodcastUserControl。 指定为 ContextFlyout 的 MenuFlyout 包含用于收藏播客的单个项。 请注意，此 MenuFlyoutItem 将上面定义的 favoriteCommand 与绑定到 PodcastObject 的 CommandParamter 结合使用。
 
@@ -265,7 +265,7 @@ public sealed partial class PodcastUserControl : UserControl
 
 ```
 
-请注意，还可以使用 [ContextRequested 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested)响应上下文操作。 如果已指定 ContextFlyout，则不会触发 ContextRequested 事件。
+请注意，还可以使用 [ContextRequested 事件](/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested)响应上下文操作。 如果已指定 ContextFlyout，则不会触发 ContextRequested 事件。
 
 ## <a name="creating-input-accelerators"></a>创建输入快捷方式
 
@@ -281,7 +281,7 @@ public sealed partial class PodcastUserControl : UserControl
 
 根据内容的类型，可以确定应执行某个操作的特定组合件。 例如在邮件应用中，DEL 键可以用于删除选择的电子邮件。 在播客应用中，Ctrl+S 或 F 键可以收藏播客以供将来观看。 虽然某些命令具有常用的已知键盘快捷键（如用于删除的 DEL），其他命令也具有特定于应用或域的快捷键。 在可能的情况下使用已知快捷键，或考虑在工具提示中提供提醒文本以指导用户了解快捷键命令。
 
-应用可以使用 [KeyDown](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.KeyDownEvent) 事件在用户按某个键时进行响应。 一般情况下，用户期望应用在他们先按下键时进行响应，而不是等到他们释放键。
+应用可以使用 [KeyDown](/uwp/api/Windows.UI.Xaml.UIElement.KeyDownEvent) 事件在用户按某个键时进行响应。 一般情况下，用户期望应用在他们先按下键时进行响应，而不是等到他们释放键。
 
 此示例演练如何将 KeyDown 处理程序添加到 PodcastUserControl，以便在用户按 Ctrl+S 或 F 时收藏播客。它使用与前面相同的命令。
 
@@ -343,7 +343,7 @@ protected override void OnKeyDown(KeyRoutedEventArgs e)
 </UserControl>
 ```
 
-悬停按钮应在鼠标进入和退出项时出现和消失。 若要响应鼠标事件，可以对 PodcastUserControl 使用 [PointerEntered](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.PointerEnteredEvent) 和 [PointerExited](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.PointerExitedEvent) 事件。
+悬停按钮应在鼠标进入和退出项时出现和消失。 若要响应鼠标事件，可以对 PodcastUserControl 使用 [PointerEntered](/uwp/api/Windows.UI.Xaml.UIElement.PointerEnteredEvent) 和 [PointerExited](/uwp/api/Windows.UI.Xaml.UIElement.PointerExitedEvent) 事件。
 
 **PodcastUserControl.xaml.cs**
 ```csharp
@@ -448,10 +448,10 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 * 确保用户可以从所有类型的 Windows 设备访问所有命令。
 * 包含上下文菜单，通过它可以访问所有可用于集合项的命令。 
 * 为常用命令提供输入快捷方式。 
-* 使用 [ICommand 接口](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)实现命令。 
+* 使用 [ICommand 接口](/uwp/api/Windows.UI.Xaml.Input.ICommand)实现命令。 
 
 ## <a name="related-topics"></a>相关主题
-* [ICommand Interface](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)（ICommand 接口）
+* [ICommand Interface](/uwp/api/Windows.UI.Xaml.Input.ICommand)（ICommand 接口）
 * [菜单和上下文菜单](menus.md)
 * [轻扫](swipe.md)
 * [下拉刷新](pull-to-refresh.md)

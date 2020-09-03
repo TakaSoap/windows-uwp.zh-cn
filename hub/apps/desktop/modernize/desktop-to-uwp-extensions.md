@@ -8,23 +8,23 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: fb1daddeb743909417d6483223d5386e64ca5241
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: b18afdeecb3e70f958b3d8908027e59f8c4c1f9e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942777"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172721"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>将桌面应用与 Windows 10 和 UWP 集成
 
-如果桌面应用具有[程序包标识符](modernize-packaged-apps.md)，则可以使用扩展将应用与 Windows 10 集成，方法是使用[程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的预定义扩展。
+如果桌面应用具有[程序包标识符](modernize-packaged-apps.md)，则可以使用扩展将应用与 Windows 10 集成，方法是使用[程序包清单](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的预定义扩展。
 
 例如，使用扩展创建一个防火墙例外，使应用成为某一文件类型的默认应用程序，或将“开始”磁贴指向你的应用。 若要使用扩展，只需将某些 XML 添加到应用的程序包清单文件。 不需要任何代码。
 
 本文介绍这些扩展以及使用它们可执行的任务。
 
 > [!NOTE]
-> 本文中所述的功能要求桌面应用具备[程序包标识符](modernize-packaged-apps.md)（通过[在 MSIX 包中打包桌面应用](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)或[使用分散包授予应用标识](grant-identity-to-nonpackaged-apps.md)）。
+> 本文中所述的功能要求桌面应用具备[程序包标识符](modernize-packaged-apps.md)（通过[在 MSIX 包中打包桌面应用](/windows/msix/desktop/desktop-to-uwp-root)或[使用分散包授予应用标识](grant-identity-to-nonpackaged-apps.md)）。
 
 ## <a name="transition-users-to-your-app"></a>将用户切换到应用
 
@@ -57,7 +57,7 @@ ms.locfileid: "88942777"
 </Extension>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration)查找完整的架构参考。
 
 |名称 | 说明 |
 |-------|-------------|
@@ -98,7 +98,7 @@ ms.locfileid: "88942777"
 
 可确保用户默认对特定的文件类型打开新打包的应用程序，而不是打开桌面版应用。
 
-为达到该目的，需指定每个要从中继承文件关联的应用程序的[编程标识符 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids)。
+为达到该目的，需指定每个要从中继承文件关联的应用程序的[编程标识符 (ProgID)](/windows/desktop/shell/fa-progids)。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -117,13 +117,13 @@ ms.locfileid: "88942777"
 </Extension>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
 |名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 此名称可用于组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
-|MigrationProgId |[编程标识符 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids)，描述要从中继承文件关联的应用程序、组件和桌面应用程序版本。|
+|MigrationProgId |[编程标识符 (ProgID)](/windows/desktop/shell/fa-progids)，描述要从中继承文件关联的应用程序、组件和桌面应用程序版本。|
 
 #### <a name="example"></a>示例
 
@@ -176,7 +176,7 @@ ms.locfileid: "88942777"
 </Extension>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
 |名称 |说明 |
 |-------|-------------|
@@ -237,7 +237,7 @@ ms.locfileid: "88942777"
 </Extension>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
 |名称 |说明 |
 |-------|-------------|
@@ -301,7 +301,7 @@ ms.locfileid: "88942777"
 </Extension>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
 |名称 |说明 |
 |-------|-------------|
@@ -367,7 +367,7 @@ ms.locfileid: "88942777"
 </Extension>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules)查找完整的架构参考。
 
 |名称 |说明 |
 |-------|-------------|
@@ -406,15 +406,15 @@ ms.locfileid: "88942777"
 
 ### <a name="place-your-dll-files-into-any-folder-of-the-package"></a>将你的 DLL 文件放到程序包的任意文件夹中
 
-使用 [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) 扩展在应用包中声明最多五个相对于应用包根路径的文件夹路径，它们将在应用进程的加载程序搜索路径中使用。
+使用 [uap6:LoaderSearchPathOverride](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) 扩展在应用包中声明最多五个相对于应用包根路径的文件夹路径，它们将在应用进程的加载程序搜索路径中使用。
 
-Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dlls/dynamic-link-library-search-order)包含程序包依赖关系图中的包，前提是这些包具有执行权限。 默认情况下，这包括主包、可选包和框架包，但这可以被程序包清单中的 [uap6:AllowExecution](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution) 元素所覆盖。
+Windows 应用的 [DLL 搜索顺序](/windows/win32/dlls/dynamic-link-library-search-order)包含程序包依赖关系图中的包，前提是这些包具有执行权限。 默认情况下，这包括主包、可选包和框架包，但这可以被程序包清单中的 [uap6:AllowExecution](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution) 元素所覆盖。
 
-默认情况下，包含在 DLL 搜索顺序中的包将包括其有效路径。 关于有效路径的详细信息，请参阅 [EffectivePath](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.effectivepath) 属性 (WinRT) 和 [PackagePathType](https://docs.microsoft.com/windows/win32/api/appmodel/ne-appmodel-packagepathtype) 枚举 (Win32)。
+默认情况下，包含在 DLL 搜索顺序中的包将包括其有效路径。 关于有效路径的详细信息，请参阅 [EffectivePath](/uwp/api/windows.applicationmodel.package.effectivepath) 属性 (WinRT) 和 [PackagePathType](/windows/win32/api/appmodel/ne-appmodel-packagepathtype) 枚举 (Win32)。
 
-如果包指定了 [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride)，则使用此信息而不是包的有效路径。
+如果包指定了 [uap6:LoaderSearchPathOverride](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride)，则使用此信息而不是包的有效路径。
 
-每个包只能包含一个 [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) 扩展。 也就是说，你可以将其中一个扩展添加到主程序包，然后向你的每个[可选包和相关的集](/windows/msix/package/optional-packages)添加一个扩展。
+每个包只能包含一个 [uap6:LoaderSearchPathOverride](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) 扩展。 也就是说，你可以将其中一个扩展添加到主程序包，然后向你的每个[可选包和相关的集](/windows/msix/package/optional-packages)添加一个扩展。
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
@@ -496,7 +496,7 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 </Extension>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
 |名称 |说明 |
 |-------|-------------|
@@ -571,7 +571,7 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 </Extension>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
 |名称 |说明 |
 |-------|-------------|
@@ -633,7 +633,7 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 </Extension>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
 |名称 |说明 |
 |-------|-------------|
@@ -676,7 +676,7 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 
 在文件资源管理器中，用户可以使用该字段对这些文件进行分组。 系统组件也会将此字段用于不同的用途，例如建立索引。
 
-若要详细了解**类型**字段以及可对此字段使用的值，请参阅[使用类型名称](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。
+若要详细了解**类型**字段以及可对此字段使用的值，请参阅[使用类型名称](/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -698,14 +698,14 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 </Extension>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
 |名称 |说明 |
 |-------|-------------|
 |类别 |总是为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 此名称可用于组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |FileType |相关的文件扩展名。 |
-|value |有效的[类型值](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
+|value |有效的[类型值](/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
 #### <a name="example"></a>示例
 
@@ -759,7 +759,7 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 </uap:Extension>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
 |名称 |说明 |
 |-------|-------------|
@@ -797,7 +797,7 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 
 ### <a name="specify-a-context-menu-handler-for-a-file-type"></a>为文件类型指定上下文菜单处理程序
 
-如果桌面应用程序定义[上下文菜单处理程序](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers)，请使用此扩展插件来注册菜单处理程序。
+如果桌面应用程序定义[上下文菜单处理程序](/windows/desktop/shell/context-menu-handlers)，请使用此扩展插件来注册菜单处理程序。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -825,19 +825,19 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 </Extensions>
 ```
 
-在此处找到完整的架构参考：[com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) 和 [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus)。
+在此处找到完整的架构参考：[com:ComServer](/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) 和 [desktop4:FileExplorerContextMenus](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus)。
 
 #### <a name="instructions"></a>Instructions
 
 若要注册上下文菜单处理程序，请遵循以下说明。
 
-1. 在桌面应用程序中，通过实现 [IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) 或 [IExplorerCommandState](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) 接口来实现[上下文菜单处理程序](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers)。 有关示例，请参阅 [ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) 代码示例。 确保为每个实现对象定义类 GUID。 例如，以下代码定义 [IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) 实现的类 ID。
+1. 在桌面应用程序中，通过实现 [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) 或 [IExplorerCommandState](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) 接口来实现[上下文菜单处理程序](/windows/desktop/shell/context-menu-handlers)。 有关示例，请参阅 [ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) 代码示例。 确保为每个实现对象定义类 GUID。 例如，以下代码定义 [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) 实现的类 ID。
 
     ```cpp
     class __declspec(uuid("d0c8bceb-28eb-49ae-bc68-454ae84d6264")) CExplorerCommandVerb;
     ```
 
-2. 在程序包清单中，指定 [com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) 应用程序扩展，该扩展使用上下文菜单处理程序实现的类 ID 注册 COM 代理服务器。
+2. 在程序包清单中，指定 [com:ComServer](/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) 应用程序扩展，该扩展使用上下文菜单处理程序实现的类 ID 注册 COM 代理服务器。
 
     ```xml
     <com:Extension Category="windows.comServer">
@@ -849,7 +849,7 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
     </com:Extension>
     ```
 
-2. 在程序包清单中，指定注册上下文菜单处理程序实现的 [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) 应用程序扩展。
+2. 在程序包清单中，指定注册上下文菜单处理程序实现的 [desktop4:FileExplorerContextMenus](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) 应用程序扩展。
 
     ```xml
     <desktop4:Extension Category="windows.fileExplorerContextMenus">
@@ -985,7 +985,7 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 </Extension>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol)查找完整的架构参考。
 
 |名称 |说明 |
 |-------|-------------|
@@ -1069,7 +1069,7 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 </Package>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
 <a id="executable"></a>
 
@@ -1106,7 +1106,7 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 |-------|-------------|
 |类别 |总是为 ``windows.startupTask``。|
 |可执行文件 |要启动的可执行文件的相对路径。 |
-|TaskId |任务的唯一标识符。 应用程序可以使用此标识符调用 [Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) 类中的 API，以便以编程方式启用或禁用启动任务。 |
+|TaskId |任务的唯一标识符。 应用程序可以使用此标识符调用 [Windows.ApplicationModel.StartupTask](/uwp/api/Windows.ApplicationModel.StartupTask) 类中的 API，以便以编程方式启用或禁用启动任务。 |
 |已启用 |指示是启用还是禁用任务的首次启动。 启用的任务将在用户下次登录时运行（除非用户禁用它）。 |
 |DisplayName |任务管理器中显示的任务名称。 可以使用 ```ms-resource``` 本地化此字符串。 |
 
@@ -1162,13 +1162,13 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 |类别 |总是为 ``windows.autoPlayHandler``。
 |ActionDisplayName |表示用户可以对其连接到电脑的设备执行的操作的字符串（例如：“导入文件”或“播放视频”）。 |
 |ProviderDisplayName | 表示你的应用程序或服务的字符串（例如：“Contoso 视频播放器”）。 |
-|ContentEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的内容事件的名称。 当卷设备（如相机内存卡、U 盘或 DVD）插入到电脑时，会引发内容事件。 你可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到此类事件的完整列表。  |
+|ContentEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的内容事件的名称。 当卷设备（如相机内存卡、U 盘或 DVD）插入到电脑时，会引发内容事件。 你可以在[此处](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到此类事件的完整列表。  |
 |谓词 |“谓词”设置标识针对所选选项传递给你的应用程序的值。 你可以为自动播放事件指定多个启动操作并且可以使用谓词设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 verb 属性来标识用户选择的选项。 你可以为谓词设置使用任何值（但保留的 open 除外）。 |
-|DropTargetHandler |实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口的应用程序的类 ID。 系统会将可移动媒体中的文件传递给你的 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 实现的 [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) 方法。  |
-|参数 |你不必为所有内容事件实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于任意内容事件，你可以提供命令行参数，而不是实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于此类事件，自动播放将使用这些命令行参数启动你的应用程序。 你可以在应用的初始化代码中解析这些参数，确定应用是否由自动播放启动，然后提供自定义实现。 |
-|DeviceEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的设备事件的名称。 当有设备连接到电脑时，将引发设备事件。 设备事件以字符串 ``WPD`` 开头，你可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到设备事件列表。 |
-|HWEventHandler |实现 [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) 接口的应用程序的类 ID。 |
-|InitCmdLine |你要传递给 [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) 接口的 [Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) 方法的字符串参数。 |
+|DropTargetHandler |实现 [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口的应用程序的类 ID。 系统会将可移动媒体中的文件传递给你的 [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 实现的 [Drop](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) 方法。  |
+|参数 |你不必为所有内容事件实现 [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于任意内容事件，你可以提供命令行参数，而不是实现 [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于此类事件，自动播放将使用这些命令行参数启动你的应用程序。 你可以在应用的初始化代码中解析这些参数，确定应用是否由自动播放启动，然后提供自定义实现。 |
+|DeviceEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的设备事件的名称。 当有设备连接到电脑时，将引发设备事件。 设备事件以字符串 ``WPD`` 开头，你可以在[此处](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到设备事件列表。 |
+|HWEventHandler |实现 [IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) 接口的应用程序的类 ID。 |
+|InitCmdLine |你要传递给 [IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) 接口的 [Initialize](/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) 方法的字符串参数。 |
 
 ### <a name="example"></a>示例
 
@@ -1199,14 +1199,14 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 
 如果在用户安装应用程序更新时，你的应用程序已打开，则该应用程序将关闭。
 
-如果你希望该应用程序在更新完成后重新启动，请在要重新启动的每个进程中调用 [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) 函数。
+如果你希望该应用程序在更新完成后重新启动，请在要重新启动的每个进程中调用 [RegisterApplicationRestart](/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) 函数。
 
-应用程序中的每个活动窗口都会收到 [WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession) 消息。 此时，你的应用程序可在必要时再次调用 [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) 函数以更新命令行。
+应用程序中的每个活动窗口都会收到 [WM_QUERYENDSESSION](/windows/desktop/Shutdown/wm-queryendsession) 消息。 此时，你的应用程序可在必要时再次调用 [RegisterApplicationRestart](/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) 函数以更新命令行。
 
-当你的应用程序中的每个活动窗口都收到 [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) 消息时，应用程序应保存数据并关闭。
+当你的应用程序中的每个活动窗口都收到 [WM_ENDSESSION](/windows/desktop/Shutdown/wm-endsession) 消息时，应用程序应保存数据并关闭。
 
 >[!NOTE]
-> 如果该应用程序未处理 [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) 消息，你的活动窗口还会收到 [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) 消息。
+> 如果该应用程序未处理 [WM_ENDSESSION](/windows/desktop/Shutdown/wm-endsession) 消息，你的活动窗口还会收到 [WM_CLOSE](/windows/desktop/winmsg/wm-close) 消息。
 
 此时，你的应用程序有 30 秒时间来关闭自己的进程，或由平台强制终止这些进程。
 
@@ -1242,7 +1242,7 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 </Extension>
 ```
 
-在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-appprinter)查找完整的架构参考。
+在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-appprinter)查找完整的架构参考。
 
 |名称 |说明 |
 |-------|-------------|
@@ -1375,7 +1375,7 @@ Windows 应用的 [DLL 搜索顺序](https://docs.microsoft.com/windows/win32/dl
 
 如果要创建在所有设备上运行的通用 Windows 平台用户界面，但希望 Win32 应用程序的组件继续以完全信任方式运行，此扩展可能会很有用。
 
-只需为 Win32 应用创建 Windows 应用包。 然后，将此扩展添加到 UWP 应用的程序包文件。 此扩展指示你要在 Windows 应用包中启动可执行文件。  如果想要在 UWP 应用和 Win32 应用之间进行通信，可以设置一个或多个[应用服务](/windows/uwp/launch-resume/app-services)来执行此操作。 可以在[此处](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)阅读关于此方案的详细信息。
+只需为 Win32 应用创建 Windows 应用包。 然后，将此扩展添加到 UWP 应用的程序包文件。 此扩展指示你要在 Windows 应用包中启动可执行文件。  如果想要在 UWP 应用和 Win32 应用之间进行通信，可以设置一个或多个[应用服务](/windows/uwp/launch-resume/app-services)来执行此操作。 可以在[此处](/archive/blogs/appconsult/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app)阅读关于此方案的详细信息。
 
 ## <a name="next-steps"></a>后续步骤
 

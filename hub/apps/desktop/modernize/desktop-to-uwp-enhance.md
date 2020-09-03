@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fd561096dc53f85186698c981693693a6d3b9e64
-ms.sourcegitcommit: d95ccb47c616bd32c56e491490a6baf30185c8c5
+ms.openlocfilehash: 5a7c77f6c553408d2631fb3e324e67d79318f9b4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85295534"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170691"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>在桌面应用中调用 Windows 运行时 API
 
@@ -36,7 +36,7 @@ ms.locfileid: "85295534"
 
 #### <a name="to-use-the-nuget-option"></a>若要使用 NuGet 选项，请执行以下操作：
 
-1. 确保已启用[包引用](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files)：
+1. 确保已启用[包引用](/nuget/consume-packages/package-references-in-project-files)：
 
     1. 在 Visual Studio 中，单击“工具”->“NuGet 程序包管理器”->“程序包管理器设置”。
     2. 确保为“默认包管理格式”选择 PackageReference 。
@@ -76,7 +76,7 @@ ms.locfileid: "85295534"
 
 ### <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>修改 C++ Win32 项目以使用 Windows 运行时 API
 
-通过 [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) 来使用 Windows 运行时 API。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。
+通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) 来使用 Windows 运行时 API。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。
 
 若要为 C++/WinRT 配置项目，请执行以下操作：
 
@@ -186,7 +186,7 @@ void UWP::ShowToast()
 }
 ```
 
-若要了解有关通知的详细信息，请参阅[自适应和交互式 toast 通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)。
+若要了解有关通知的详细信息，请参阅[自适应和交互式 toast 通知](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)。
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>支持 Windows XP、Windows Vista 和 Windows 7/8 安装库
 
@@ -243,7 +243,7 @@ void UWP::ShowToast()
 
 可以不考虑用户所运行的 Windows 版本而为所有 Windows 用户编译一组二进制文件。 仅当用户在 Windows 10 上以打包的应用程序形式运行应用程序时，应用程序才会调用 Windows 运行时 API。
 
-向代码添加运行时检查最简单的方法是安装以下 Nuget 包：[桌面桥帮助程序](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然后使用 ``IsRunningAsUWP()`` 方法关闭调用 Windows 运行时 API 的所有代码。 有关更多详细信息，请参阅此博客文章：[桌面桥 - 标识应用程序的上下文](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)。
+向代码添加运行时检查最简单的方法是安装以下 Nuget 包：[桌面桥帮助程序](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然后使用 ``IsRunningAsUWP()`` 方法关闭调用 Windows 运行时 API 的所有代码。 有关更多详细信息，请参阅此博客文章：[桌面桥 - 标识应用程序的上下文](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context)。
 
 ## <a name="related-samples"></a>相关示例
 

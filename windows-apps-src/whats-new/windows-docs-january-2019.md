@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 一月
 ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7947fb6e71a9f2ddbedcd8e3ee8bab7b720dc444
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f1811e3b99077a3be676c57dc3420e88658f1d73
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74902471"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174361"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>2019 年 1 月 Windows 开发人员文档中的新增功能
 
@@ -64,7 +64,7 @@ WPF、Windows 窗体和 WinUI UX 框架现可用于 GitHub 上的开源内容。
 
 ### <a name="japanese-era-change"></a>日本年号更改
 
-[使应用程序做好应对日本年号更改的准备](../design/globalizing/japanese-era-change.md)展示如何确保 Windows 应用程序针对于 2019 年 5 月 1 日进行的日本纪元更改做好准备。 [本页也有日语版](/windows/uwp/design/globalizing/japanese-era-change)。
+[使应用程序做好应对日本年号更改的准备](../design/globalizing/japanese-era-change.md)展示如何确保 Windows 应用程序针对于 2019 年 5 月 1 日进行的日本纪元更改做好准备。 [本页也有日语版](../design/globalizing/japanese-era-change.md)。
 
 ## <a name="videos"></a>视频
 

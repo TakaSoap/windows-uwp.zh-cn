@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 884bd2e1eded5e3c0dfa92f1488fe0b8661af18d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: fab3cf710b50d3c8d643b3036eb1589a0fc113e3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970352"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172561"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -30,17 +30,17 @@ ms.locfileid: "82970352"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | MenuBar 控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | MenuBar 控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](/uwp/toolkits/winui/)。 |
 
 > **Windows UI 库 API：** [MenuBar 类](/uwp/api/microsoft.ui.xaml.controls.menubar)
 >
-> **平台 API：** [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 类](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties)
+> **平台 API：** [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 类](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 属性](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 菜单和上下文菜单通过在用户不需要使用时对命令进行组织和隐藏，从而节省空间。 如果需要经常使用某一特定命令并希望有可用的空间，请考虑将该命令直接置于其自己的元素（而非菜单）中，以便用户无需遍历菜单即可访问它。
 
-菜单和上下文菜单用于整理命令；若要显示任意内容（如通知）或请求确认，则使用[对话框或浮出控件](dialogs.md)。
+菜单和上下文菜单用于整理命令；若要显示任意内容（如通知）或请求确认，则使用[对话框或浮出控件](./dialogs-and-flyouts/index.md)。
 
 ### <a name="menubar-vs-menuflyout"></a>MenuBar 与MenuFlyout
 
@@ -72,7 +72,7 @@ MenuBar 和 CommandBar 都表示可用于向用户公开命令的表面。 MenuB
 
 ## <a name="menus-vs-context-menus"></a>菜单与上下文菜单
 
-菜单和上下文菜单在外观和可以包含的内容方面类似。 事实上，你可使用相同的控件 [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout) 来创建它们。 区别是允许用户访问它的方式。
+菜单和上下文菜单在外观和可以包含的内容方面类似。 事实上，你可使用相同的控件 [MenuFlyout](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout) 来创建它们。 区别是允许用户访问它的方式。
 
 何时应使用菜单或上下文菜单？
 
@@ -92,13 +92,13 @@ MenuBar 和 CommandBar 都表示可用于向用户公开命令的表面。 MenuB
 - 具有始终显示的单个入口点（例如，位于屏幕顶部的“文件”菜单）。
 - 通常附加到某个按钮或父菜单项。
 - 通过左键单击（或等效操作，例如用手指点击）进行调用。
-- 通过 [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) 或 [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) 属性与元素相关联，或在应用窗口顶部的菜单栏中进行分组。
+- 通过 [Flyout](/uwp/api/windows.ui.xaml.controls.button.flyout) 或 [FlyoutBase.AttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) 属性与元素相关联，或在应用窗口顶部的菜单栏中进行分组。
 
 ### <a name="context-menus"></a>上下文菜单
 
 - 附加到单个元素并显示辅助命令。
 - 通过右键单击（或等效操作，例如用手指按住）进行调用。
-- 通过 [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) 属性与元素相关联。
+- 通过 [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) 属性与元素相关联。
 
 ## <a name="icons"></a>图标
 
@@ -132,17 +132,17 @@ MenuBar 和 CommandBar 都表示可用于向用户公开命令的表面。 MenuB
 
 ## <a name="create-a-menu-flyout-or-a-context-menu"></a>创建菜单浮出控件或上下文菜单
 
-若要创建菜单浮出控件或上下文菜单，请使用 [MenuFlyout 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)。 通过将 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutitem)、[MenuFlyoutSubItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem)、[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)、[RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem) 和 [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) 对象添加到 MenuFlyout 来定义菜单的内容。
+若要创建菜单浮出控件或上下文菜单，请使用 [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)。 通过将 [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.menuflyoutitem)、[MenuFlyoutSubItem](/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem)、[ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)、[RadioMenuFlyoutItem](/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem) 和 [MenuFlyoutSeparator](/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) 对象添加到 MenuFlyout 来定义菜单的内容。
 
 这些对象如下：
 
-- [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutitem) - 执行即时操作。
-- [MenuFlyoutSubItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem) - 包含菜单项的级联列表。
-- [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) - 打开或关闭选项。
-- [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem) - 在互斥菜单项之间切换。
-- [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) - 直观地区分菜单项。
+- [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.menuflyoutitem) - 执行即时操作。
+- [MenuFlyoutSubItem](/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem) - 包含菜单项的级联列表。
+- [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) - 打开或关闭选项。
+- [RadioMenuFlyoutItem](/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem) - 在互斥菜单项之间切换。
+- [MenuFlyoutSeparator](/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) - 直观地区分菜单项。
 
-此示例将创建 [MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)，并使用 [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) 属性（该属性适用于大多数控件），以显示 MenuFlyout 作为上下文菜单。
+此示例将创建 [MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout)，并使用 [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) 属性（该属性适用于大多数控件），以显示 MenuFlyout 作为上下文菜单。
 
 ````xaml
 <Rectangle
@@ -173,7 +173,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-下一个示例几乎完全相同，但该示例使用 [FlyoutBase.ShowAttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) 属性将其显示为菜单，而不是使用 [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) 属性来显示 [MenuFlyout 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)作为上下文菜单。
+下一个示例几乎完全相同，但该示例使用 [FlyoutBase.ShowAttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) 属性将其显示为菜单，而不是使用 [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) 属性来显示 [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)作为上下文菜单。
 
 ````xaml
 <Rectangle
@@ -212,7 +212,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ### <a name="light-dismiss"></a>轻型消除
 
-轻型消除控件（如菜单、上下文菜单和其他浮出控件）会捕获瞬态 UI 内的键盘焦点和游戏板焦点，直到消除为止。 若要为此行为提供视觉提示，Xbox 上的轻型消除控件将绘制覆盖，以便使 UI 范围之外的可见性变暗。 可以使用 [LightDismissOverlayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode) 属性来修改此行为。 默认情况下，瞬态 UI 将在 Xbox（“自动”）上绘制轻型消除覆盖层，但不会绘制其他设备系列  。 你可选择强制覆盖始终为“On”或始终为“Off”   。
+轻型消除控件（如菜单、上下文菜单和其他浮出控件）会捕获瞬态 UI 内的键盘焦点和游戏板焦点，直到消除为止。 若要为此行为提供视觉提示，Xbox 上的轻型消除控件将绘制覆盖，以便使 UI 范围之外的可见性变暗。 可以使用 [LightDismissOverlayMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode) 属性来修改此行为。 默认情况下，瞬态 UI 将在 Xbox（“自动”）上绘制轻型消除覆盖层，但不会绘制其他设备系列  。 你可选择强制覆盖始终为“On”或始终为“Off”   。
 
 ```xaml
 <MenuFlyout LightDismissOverlayMode="Off" />
@@ -221,7 +221,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ## <a name="create-a-menu-bar"></a>创建菜单栏
 
 > [!IMPORTANT]
-> MenuBar 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> MenuBar 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](/uwp/toolkits/winui/)。
 
 可以使用相同的元素在菜单栏中创建菜单，就像在菜单浮出控件中一样。 但是，不是在 MenuFlyout 中对 MenuFlyoutItem 对象进行分组，而是在 MenuBarItem 元素中进行分组。 每个 MenuBarItem 都作为顶级菜单添加到 MenuBar。
 
@@ -275,5 +275,5 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相关文章
 
-- [MenuFlyout 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)
-- [MenuBar 类](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubar)
+- [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)
+- [MenuBar 类](/uwp/api/microsoft.ui.xaml.controls.menubar)

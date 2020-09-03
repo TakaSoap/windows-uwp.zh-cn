@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: 9de761a0b127d7218c7dc2bb4c6862626b7c60e4
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: bb647d844c32286a2d612231b3069430f11fcad0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089423"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174011"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
@@ -34,7 +34,7 @@ ms.locfileid: "77089423"
 
 在整个认证测试中，我们将测试应用的恢复能力和稳定性。
 
-Windows 应用认证工具包调用 [**IApplicationActivationManager::ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 来启动应用。 若要使 **ActivateApplication** 启动应用，必须启用用户帐户控制 (UAC) 并且屏幕分辨率必须至少为 1024 x 768 或 768 x 1024。 如果不满足任何条件，那么你的应用将无法通过此测试。
+Windows 应用认证工具包调用 [**IApplicationActivationManager::ActivateApplication**](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 来启动应用。 若要使 **ActivateApplication** 启动应用，必须启用用户帐户控制 (UAC) 并且屏幕分辨率必须至少为 1024 x 768 或 768 x 1024。 如果不满足任何条件，那么你的应用将无法通过此测试。
 
 ### <a name="corrective-actions"></a>更正操作
 
@@ -42,7 +42,7 @@ Windows 应用认证工具包调用 [**IApplicationActivationManager::ActivateAp
 
 确保在屏幕足够大的计算机上运行测试。
 
-如果你的应用无法启动并且你的测试平台满足 [**ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 的先决条件，那么你可以通过查看激活事件日志来解决此问题。 若要在事件日志中找到这些条目，请执行以下操作：
+如果你的应用无法启动并且你的测试平台满足 [**ActivateApplication**](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 的先决条件，那么你可以通过查看激活事件日志来解决此问题。 若要在事件日志中找到这些条目，请执行以下操作：
 
 1.  打开 eventvwr.exe 并导航至“Application and Services Log\\Microsoft\\Windows\\Immersive-Shell”文件夹。
 2.  筛选视图以显示事件 ID：5900-6000。
@@ -64,7 +64,7 @@ Windows App 认证工具包使用 HighVersionLie 来检测应用检查操作系�
 
 ### <a name="corrective-action"></a>更正操作
 
-应用应使用版本 API 帮助程序函数来检查此版本。 有关详细信息，请参阅[操作系统版本](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)。
+应用应使用版本 API 帮助程序函数来检查此版本。 有关详细信息，请参阅[操作系统版本](/windows/desktop/SysInfo/operating-system-version)。
 
 ## <a name="background-tasks-cancellation-handler-validation"></a>后台任务取消处理程序验证
 
@@ -80,7 +80,7 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 ### <a name="corrective-action"></a>更正操作
 
-将取消处理程序添加到你的应用。 有关详细信息，请参阅[使用后台任务支持应用](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
+将取消处理程序添加到你的应用。 有关详细信息，请参阅[使用后台任务支持应用](../launch-resume/support-your-app-with-background-tasks.md)。
 
 ## <a name="app-count"></a>应用计数
 
@@ -110,7 +110,7 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 ### <a name="test-details"></a>测试详细信息
 
-检查应用清单验证内容是否正确，如[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。
+检查应用清单验证内容是否正确，如[应用包要求](../publish/app-package-requirements.md)中所述。
 
 -   **文件扩展名和协议**
 
@@ -124,11 +124,11 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 -   **进程间通信 (IPC) 验证**
 
-    此测试强制要求 UWP 应用不在应用容器外部与桌面组件通信。 进程间通信仅适用于旁加载应用。 使用等效于“DesktopApplicationPath”的名称指定 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的应用无法通过此测试。
+    此测试强制要求 UWP 应用不在应用容器外部与桌面组件通信。 进程间通信仅适用于旁加载应用。 使用等效于“DesktopApplicationPath”的名称指定 [**ActivatableClassAttribute**](/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的应用无法通过此测试。
 
 ### <a name="corrective-action"></a>更正操作
 
-针对[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的要求检查应用清单。
+针对[应用包要求](../publish/app-package-requirements.md)中所述的要求检查应用清单。
 
 ## <a name="windows-security-features-test"></a>Windows 安全功能测试
 
@@ -224,11 +224,11 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性可以从签名程序集中�
 
 **Windows 应用认证工具包错误消息：** SharedSectionsCheck 测试失败。
 
-如果二进制文件包含标记为共享的可写入节，那么它就是一种安全威胁。 除非必须，否则不要构建包含共享的可写入节的应用。 使用 [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 创建受到适当保护的共享内存对象。
+如果二进制文件包含标记为共享的可写入节，那么它就是一种安全威胁。 除非必须，否则不要构建包含共享的可写入节的应用。 使用 [**CreateFileMapping**](/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 创建受到适当保护的共享内存对象。
 
 **在应用未通过此测试时怎么办**
 
-从应用中删除任何共享节，使用合适的安全属性调用 [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 来创建共享内存对象，然后重新生成你的应用。
+从应用中删除任何共享节，使用合适的安全属性调用 [**CreateFileMapping**](/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 来创建共享内存对象，然后重新生成你的应用。
 
 **备注**
 
@@ -315,11 +315,11 @@ PAGE\-SIZE 是可执行文件的默认 SectionAlignment 值。
 
 确保应用编译为一个发行版本，而不是调试版本。
 
-> **注意**   应用的调试版本将无法通过此测试，即使应用仅使用 [UWP 应用 API](https://docs.microsoft.com/uwp/) 也是如此。
+> **注意**   应用的调试版本将无法通过此测试，即使应用仅使用 [UWP 应用 API](/uwp/) 也是如此。
 
-检查错误消息，识别应用所用的哪些 API 不是 [UWP 应用 API](https://docs.microsoft.com/uwp/)。
+检查错误消息，识别应用所用的哪些 API 不是 [UWP 应用 API](/uwp/)。
 
-> **注意**   即使调试配置仅使用针对 UWP 应用的 Windows SDK 中的 API，内置于该调试配置中的 C++ 应用也会导致此测试失败。 有关详细信息，请参阅 [UWP 应用中 Windows API 的替代项](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)。
+> **注意**   即使调试配置仅使用针对 UWP 应用的 Windows SDK 中的 API，内置于该调试配置中的 C++ 应用也会导致此测试失败。 有关详细信息，请参阅 [UWP 应用中 Windows API 的替代项](/uwp/win32-and-com/win32-and-com-for-uwp-apps)。
 
 ## <a name="performance-tests"></a>性能测试
 
@@ -543,7 +543,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 ### <a name="corrective-action"></a>更正操作
 
-即使你希望它在更高的功能级别上运行，也要确保你的应用在 Direct3D 功能级别 9\-1 上正确呈现。 有关详细信息，请参阅[针对不同 Direct3D 功能级别开发](https://msdn.microsoft.com/library/windows/apps/hh994923.aspx)。
+即使你希望它在更高的功能级别上运行，也要确保你的应用在 Direct3D 功能级别 9\-1 上正确呈现。 有关详细信息，请参阅[针对不同 Direct3D 功能级别开发](/previous-versions/windows/apps/hh994923(v=win.10))。
 
 ### <a name="direct3d-trim-after-suspend"></a>Direct3D 暂停后修正
 
@@ -551,15 +551,15 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 ### <a name="background"></a>背景
 
-如果该应用不在其 Direct3D 设备上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim)，则该应用不会释放为其早期 3D 工作分配的内存。 这将增加由于系统内存压力而终止应用的风险。
+如果该应用不在其 Direct3D 设备上调用 [**Trim**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim)，则该应用不会释放为其早期 3D 工作分配的内存。 这将增加由于系统内存压力而终止应用的风险。
 
 ### <a name="test-details"></a>测试详细信息
 
-检查应用是否符合 d3d 要求，并确保应用在 Suspend 回调时调用新的 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
+检查应用是否符合 d3d 要求，并确保应用在 Suspend 回调时调用新的 [**Trim**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
 
 ### <a name="corrective-action"></a>更正操作
 
-每当应用即将暂停时应在其 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) 接口上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
+每当应用即将暂停时应在其 [**IDXGIDevice3**](/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) 接口上调用 [**Trim**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
 
 ## <a name="app-capabilities-test"></a>应用功能测试
 
@@ -668,5 +668,5 @@ WinJS 后台任务测试可确保 JavaScript 应用具有适当的 close 语句�
 ## <a name="related-topics"></a>相关主题
 
 * [Windows 桌面桥应用测试](windows-desktop-bridge-app-tests.md)
-* [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)
+* [Microsoft Store 策略](/legal/windows/agreements/store-policies)
  

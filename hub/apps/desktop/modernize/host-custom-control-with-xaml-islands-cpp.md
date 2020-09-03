@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8c2133c4f1132b55d62149ad5aaf42e04fc5da5b
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: d61abe8b59f916ed56c1fefe0bda4b9f25b673a4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493314"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173721"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 应用中托管自定义 UWP 控件
 
@@ -29,7 +29,7 @@ ms.locfileid: "86493314"
 
 * Visual Studio 2019 版本 16.4.3 或更高版本。
 * Windows 10，版本 1903 SDK（版本 10.0.18362）或更高版本。
-* 与 Visual Studio 一起安装的 [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 有关详细信息，请参阅 [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)。
+* 与 Visual Studio 一起安装的 [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 有关详细信息，请参阅 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)。
 
 ## <a name="create-a-desktop-application-project"></a>创建桌面应用程序项目
 
@@ -176,7 +176,7 @@ ms.locfileid: "86493314"
 
 ### <a name="define-a-xamlapplication-class"></a>定义 XamlApplication 类
 
-接下来，将 MyUWPApp 项目中的默认 App 类修改为派生自 Windows 社区工具包提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类   。 此类支持 [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 接口，该接口使应用能够在运行时发现和加载应用程序的当前目录内程序集中的自定义 UWP XAML 控件的元数据。 此类还为当前线程初始化 UWP XAML 框架。 在本演练中的后面部分，你将更新桌面项目以创建此类的实例。
+接下来，将 MyUWPApp 项目中的默认 App 类修改为派生自 Windows 社区工具包提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类   。 此类支持 [IXamlMetadaraProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 接口，该接口使应用能够在运行时发现和加载应用程序的当前目录内程序集中的自定义 UWP XAML 控件的元数据。 此类还为当前线程初始化 UWP XAML 框架。 在本演练中的后面部分，你将更新桌面项目以创建此类的实例。
 
   > [!NOTE]
   > 使用 XAML 岛的每个解决方案只能包含一个定义 `XamlApplication` 对象的项目。 应用中的所有自定义 UWP XAML 控件共享相同的 `XamlApplication` 对象。 
@@ -307,19 +307,19 @@ MyDesktopWin32App 应用必须先配置为使用 MyUWPApp 项目中的自定义�
 
 ### <a name="option-1-package-the-app-using-msix"></a>选项 1：使用 MSIX 打包应用
 
-你可以在 [MSIX 包](https://docs.microsoft.com/windows/msix)中打包应用以供部署。 MSIX 是适用于 Windows 的新式应用打包技术，它基于 MSI、.appx、App-V 和 ClickOnce 安装技术的组合。
+你可以在 [MSIX 包](/windows/msix)中打包应用以供部署。 MSIX 是适用于 Windows 的新式应用打包技术，它基于 MSI、.appx、App-V 和 ClickOnce 安装技术的组合。
 
-1. 向解决方案中添加一个新的 [Windows 应用程序打包项目](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)。 创建项目时，将其命名为 MyDesktopWin32Project，并选择“Windows 10，版本 1903 (10.0; 版本 18362)”作为“目标版本”和“最低版本”     。
+1. 向解决方案中添加一个新的 [Windows 应用程序打包项目](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)。 创建项目时，将其命名为 MyDesktopWin32Project，并选择“Windows 10，版本 1903 (10.0; 版本 18362)”作为“目标版本”和“最低版本”     。
 
 2. 在打包项目中，右键单击“应用程序”节点，然后选择“添加引用”   。 在项目列表中，选中 MyDesktopWin32App 项目旁边的复选框，然后单击“确定”   。
     ![引用项目](images/xaml-islands/xaml-island-cpp-6.png)
 
 > [!NOTE]
-> 如果选择不在 [MSIX 包](https://docs.microsoft.com/windows/msix)中打包应用程序以供部署，则运行应用的计算机必须安装有 [Visual C++ 运行时](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
+> 如果选择不在 [MSIX 包](/windows/msix)中打包应用程序以供部署，则运行应用的计算机必须安装有 [Visual C++ 运行时](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
 
 ### <a name="option-2-create-an-application-manifest"></a>选项 2：创建应用程序清单
 
-可以将[应用程序清单](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)添加到你的应用。
+可以将[应用程序清单](/windows/desktop/SbsCs/application-manifests)添加到你的应用。
 
 1. 右键单击 MyDesktopWin32App 项目，然后选择“添加” -> “新项”    。 
 2. 在“添加新项”对话框中，在左侧窗格中单击“Web”，然后选择“XML 文件(.xml)”    。 
@@ -514,16 +514,16 @@ MyDesktopWin32App 应用必须先配置为使用 MyUWPApp 项目中的自定义�
 
 ## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>将 WinUI 库中的控件添加到自定义控件
 
-按照传统，UWP 控件已作为 Windows 10 操作系统的一部分发布，并且已通过 Windows SDK 向开发人员提供。 [WinUI 库](https://docs.microsoft.com/uwp/toolkits/winui/)是备用方法，它将 Windows SDK 中 UWP 控件的更新版分发在未与 Windows SDK 版本关联的 NuGet 程序包中。 此库还包含不属于 Windows SDK 和默认 UWP 平台的新控件。 有关详细信息，请参阅 [WinUI 路线图](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
+按照传统，UWP 控件已作为 Windows 10 操作系统的一部分发布，并且已通过 Windows SDK 向开发人员提供。 [WinUI 库](/uwp/toolkits/winui/)是备用方法，它将 Windows SDK 中 UWP 控件的更新版分发在未与 Windows SDK 版本关联的 NuGet 程序包中。 此库还包含不属于 Windows SDK 和默认 UWP 平台的新控件。 有关详细信息，请参阅 [WinUI 路线图](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
 
 本部分演示了如何将 WinUI 库中的 UWP 控件添加到用户控件中。
 
 1. 在 MyUWPApp 项目中，安装 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包的最新预发行版本或发行版本  。
 
     > [!NOTE]
-    > 如果桌面应用在 [MSIX 包](https://docs.microsoft.com/windows/msix)中打包，则可以使用 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet 包的预发行版本或发行版本。 如果桌面应用未使用 MSIX 打包，则必须安装 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包的预发行版本。
+    > 如果桌面应用在 [MSIX 包](/windows/msix)中打包，则可以使用 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet 包的预发行版本或发行版本。 如果桌面应用未使用 MSIX 打包，则必须安装 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包的预发行版本。
 
-2. 在此项目的 pch.h 文件中，添加以下 `#include` 语句并保存所做的更改。 这些语句会将所需的一组投影标头从 WinUI 库引入你的项目中。 对于使用 WinUI 库的任何 C++/WinRT 项目，此步骤必不可少。 有关详细信息，请参阅[此文章](https://docs.microsoft.com/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project)。
+2. 在此项目的 pch.h 文件中，添加以下 `#include` 语句并保存所做的更改。 这些语句会将所需的一组投影标头从 WinUI 库引入你的项目中。 对于使用 WinUI 库的任何 C++/WinRT 项目，此步骤必不可少。 有关详细信息，请参阅[此文章](/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project)。
 
     ```cpp
     #include "winrt/Microsoft.UI.Xaml.Automation.Peers.h"

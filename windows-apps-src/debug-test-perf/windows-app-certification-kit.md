@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: 174ff4e588d75293ecb729312883f4792196c87a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 06ac1525a91426f6d39e20c9a9416154ad3d6f3e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79110103"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174021"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 应用认证工具包
 
-若要让应用[获得 Windows 认证](/windows/win32/win_cert/windows-certification-portal)或准备将其[发布到 Microsoft Store](/windows/uwp/publish/app-submissions)，应首先在本地进行验证和测试。 本主题演示了如何安装并运行 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)，以确保应用安全有效。
+若要让应用[获得 Windows 认证](/windows/win32/win_cert/windows-certification-portal)或准备将其[发布到 Microsoft Store](../publish/app-submissions.md)，应首先在本地进行验证和测试。 本主题演示了如何安装并运行 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)，以确保应用安全有效。
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -23,7 +23,7 @@ ms.locfileid: "79110103"
 
 - 必须安装并运行 Windows 10。
 - 必须安装 [Windows 应用认证工具包](https://developer.microsoft.com/windows/downloads/app-certification-kit/)，该版本包含在适用于 Windows 10 的 Windows 软件开发工具包 (SDK) 中。
-- 必须[启用设备进行开发](/windows/uwp/get-started/enable-your-device-for-development)。
+- 必须[启用设备进行开发](../get-started/enable-your-device-for-development.md)。
 - 必须将要测试的 Windows 应用部署到计算机。
 
 > [!NOTE]
@@ -83,11 +83,11 @@ ms.locfileid: "79110103"
 
 Windows 应用认证工具包的性能测试阈值基于低能耗电脑的性能。
 
-执行测试的计算机的特性会影响测试结果。 为了确定你的应用性能是否符合 [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)，我们建议你在低能耗计算机上测试应用，例如基于 Intel Atom 处理器的计算机，屏幕分辨率为 1366x768（或更高），使用旋转硬盘驱动器（相对于固态硬盘驱动器）。
+执行测试的计算机的特性会影响测试结果。 为了确定你的应用性能是否符合 [Microsoft Store 策略](/legal/windows/agreements/store-policies)，我们建议你在低能耗计算机上测试应用，例如基于 Intel Atom 处理器的计算机，屏幕分辨率为 1366x768（或更高），使用旋转硬盘驱动器（相对于固态硬盘驱动器）。
 
-随着低能耗计算机的发展，其性能特征可能会随时间的推移而改变。 请参考最新的 [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)，并使用最新版本的 Windows 应用认证工具包测试你的应用，以确保你的应用符合最新性能要求。
+随着低能耗计算机的发展，其性能特征可能会随时间的推移而改变。 请参考最新的 [Microsoft Store 策略](/legal/windows/agreements/store-policies)，并使用最新版本的 Windows 应用认证工具包测试你的应用，以确保你的应用符合最新性能要求。
 
 ## <a name="related-topics"></a>相关主题
 
 - [Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)
-- [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)
+- [Microsoft Store 策略](/legal/windows/agreements/store-policies)

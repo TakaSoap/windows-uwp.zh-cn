@@ -12,24 +12,24 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d0834a905c50b92003c3aa78ff8226d35c25e5dd
-ms.sourcegitcommit: ddc65c170834bcce524b5e1d36e6755eae1e3af2
+ms.openlocfilehash: 505e03124f345b8b32c6b3454ffa4aad32a72e29
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83729864"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172751"
 ---
 # <a name="item-containers-and-templates"></a>项目容器和模板
 
  
 
-ListView 和 GridView 控件用于管理其项目的排列方式（水平、垂直、环绕等）以及用户与项目的交互方式，而不是各个项目在屏幕上的显示方式 。 项目可视化效果由项目容器管理。 向列表视图添加项目时，它们会自动放置在容器中。 用于 ListView 的默认项目容器为 [ListViewItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewItem)；对于 GridView，其项目容器为 [GridViewItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridViewItem)。
+ListView 和 GridView 控件用于管理其项目的排列方式（水平、垂直、环绕等）以及用户与项目的交互方式，而不是各个项目在屏幕上的显示方式 。 项目可视化效果由项目容器管理。 向列表视图添加项目时，它们会自动放置在容器中。 用于 ListView 的默认项目容器为 [ListViewItem](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem)；对于 GridView，其项目容器为 [GridViewItem](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem)。
 
-> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)、[GridView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)、[ListViewItem 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewitem)、[GridViewItem 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridviewitem)、[ItemTemplate 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)、[ItemContainerStyle 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
+> **重要的 API**：[ListView 类](/uwp/api/windows.ui.xaml.controls.listview)、[GridView 类](/uwp/api/windows.ui.xaml.controls.gridview)、[ListViewItem 类](/uwp/api/windows.ui.xaml.controls.listviewitem)、[GridViewItem 类](/uwp/api/windows.ui.xaml.controls.gridviewitem)、[ItemTemplate 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)、[ItemContainerStyle 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
 
 
 > [!NOTE]
-> ListView 和 GridView 都从 [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) 类派生，因此它们的功能相同，但数据显示方式不同。 在本文中，涉及到列表视图时，信息适用于 ListView 和 GridView 控件，除非另行指定。 我们可能会引用 ListView 或 ListViewItem 等类，但 List 前缀可使用相应网格等效项（GridView 或 GridViewItem）的 Grid 代替 。 
+> ListView 和 GridView 都从 [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) 类派生，因此它们的功能相同，但数据显示方式不同。 在本文中，涉及到列表视图时，信息适用于 ListView 和 GridView 控件，除非另行指定。 我们可能会引用 ListView 或 ListViewItem 等类，但 List 前缀可使用相应网格等效项（GridView 或 GridViewItem）的 Grid 代替 。 
 
 ## <a name="listview-items-and-gridview-items"></a>ListView 项目和 GridView 项目
 如上所述，ListView 项目自动放置在 ListViewItem 容器中，GridView 项目放置在 GridViewItem 容器中。 这些项目容器是控件，它们具有自己的内置样式和交互，但也可以高度自定义。 但是，在自定义之前，请确保自己熟悉 ListViewItem 和 GridViewItem 的建议样式和准则：
@@ -40,8 +40,8 @@ ListView 和 GridView 控件用于管理其项目的排列方式（水平、垂�
 ## <a name="introduction-to-customization"></a>自定义简介
 容器控件（例如 ListViewItem 和 GridViewItem）包含两个重要部分，它们组合在一起以创建为某个项目显示的最终视觉对象：*数据模板*和*控件模板*。
 
-- **数据模板** - 为列表视图的 [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 属性分配 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)，以指定各个数据项的显示方式。
-- **控件模板** - 控件模板提供框架负责的部分项目可视化效果，如视觉状态。 你可以使用 [ItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) 属性修改控件模板。 通常，若要修改列表视图颜色以匹配品牌标记，或者更改所选项目的显示方式，则执行上述操作。
+- **数据模板** - 为列表视图的 [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 属性分配 [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate)，以指定各个数据项的显示方式。
+- **控件模板** - 控件模板提供框架负责的部分项目可视化效果，如视觉状态。 你可以使用 [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) 属性修改控件模板。 通常，若要修改列表视图颜色以匹配品牌标记，或者更改所选项目的显示方式，则执行上述操作。
 
 此图显示了如何将控件模板和数据模板组合使用来创建项目的最终可视化效果。
 
@@ -92,7 +92,7 @@ ListView 和 GridView 控件用于管理其项目的排列方式（水平、垂�
 
 在更深入地了解如何以列表视图形式显示数据项之前，我们需要了解要显示的数据。 在此示例中，将创建名为 `NamedColor` 的数据类型。 该数据类型将合并颜色名称、颜色值和颜色的 SolidColorBrush，它们作为以下 3 个属性公开：`Name`、`Color` 和 `Brush`。
  
-然后，对于 [Colors](https://docs.microsoft.com/uwp/api/windows.ui.colors) 类中的每种命名颜色，用 `NamedColor` 对象来填充“List”。 列表视图的列表将设置为 [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)。
+然后，对于 [Colors](/uwp/api/windows.ui.colors) 类中的每种命名颜色，用 `NamedColor` 对象来填充“List”。 列表视图的列表将设置为 [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)。
 
 下面是用于定义类并填充 `NamedColors` 列表的代码。
 
@@ -165,7 +165,7 @@ namespace ColorsListApp
 
 ![显示项目的字符串表示形式的列表视图](images/listview-no-template.png)
 
-通过将 [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) 设置到特定的属性，你可以显示数据项的特定属性的字符串表现形式。 你在此处将 DisplayMemberPath 设置为 `NamedColor` 项目的 `Name` 属性。
+通过将 [DisplayMemberPath](/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) 设置到特定的属性，你可以显示数据项的特定属性的字符串表现形式。 你在此处将 DisplayMemberPath 设置为 `NamedColor` 项目的 `Name` 属性。
 
 **XAML**
 ```xaml
@@ -176,15 +176,15 @@ namespace ColorsListApp
 
 ![显示项属性的字符串表示形式的列表视图](images/listview-display-member-path.png)
 
-你通常希望更丰富地呈现你的数据。 若要具体地指定列表视图中项的显示方式，可以创建 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)。 DataTemplate 中的 XAML 定义用于显示各项的控件的布局和外观。 该布局中的控件可绑定到数据对象的属性，或者具有在内联中定义的静态内容。 将 DataTemplate 分配给列表控件的 [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 属性。
+你通常希望更丰富地呈现你的数据。 若要具体地指定列表视图中项的显示方式，可以创建 [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate)。 DataTemplate 中的 XAML 定义用于显示各项的控件的布局和外观。 该布局中的控件可绑定到数据对象的属性，或者具有在内联中定义的静态内容。 将 DataTemplate 分配给列表控件的 [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 属性。
 
 > [!IMPORTANT]
 > 你不能同时使用 ItemTemplate 和 DisplayMemberPath 。 如果同时设置这两个属性，会发生异常。
 
-你在此处定义一个 DataTemplate，它通过项目的颜色以及颜色名称和 RGB 值显示 [Rectangle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle)。 
+你在此处定义一个 DataTemplate，它通过项目的颜色以及颜色名称和 RGB 值显示 [Rectangle](/uwp/api/windows.ui.xaml.shapes.rectangle)。 
 
 > [!NOTE]
-> 在 DataTemplate 中使用 [x:Bind 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)时，必须指定 DataTemplate 中的 DataType (`x:DataType`)。
+> 在 DataTemplate 中使用 [x:Bind 标记扩展](../../xaml-platform/x-bind-markup-extension.md)时，必须指定 DataTemplate 中的 DataType (`x:DataType`)。
 
 **XAML**
 ```xaml
@@ -219,8 +219,8 @@ namespace ColorsListApp
 ![使用数据模板的列表视图项目](images/listview-data-template-0.png)
 
 > [!IMPORTANT]
-> 默认情况下，Listviewitem 将其内容左对齐，即其 [HorizontalContentAlignmentProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment#Windows_UI_Xaml_Controls_Control_HorizontalContentAlignment) 设置为 Left。 如果在 ListViewItem 中有横向相邻的多个元素，例如横向堆叠的元素或放置在同一网格行中的元素，则这些元素均会左对齐，并且仅按其定义的边距分隔开。 
-<br/><br/> 为了使元素展开以便填充 ListItem 的整个主体，需要使用 ListView 内的 [Setter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter) 将 HorizontalContentAlignmentProperty 设置为 [Stretch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.horizontalalignment)：
+> 默认情况下，Listviewitem 将其内容左对齐，即其 [HorizontalContentAlignmentProperty](/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment#Windows_UI_Xaml_Controls_Control_HorizontalContentAlignment) 设置为 Left。 如果在 ListViewItem 中有横向相邻的多个元素，例如横向堆叠的元素或放置在同一网格行中的元素，则这些元素均会左对齐，并且仅按其定义的边距分隔开。 
+<br/><br/> 为了使元素展开以便填充 ListItem 的整个主体，需要使用 ListView 内的 [Setter](/uwp/api/windows.ui.xaml.setter) 将 HorizontalContentAlignmentProperty 设置为 [Stretch](/uwp/api/windows.ui.xaml.horizontalalignment)：
 
 ```xaml
 <ListView.ItemContainerStyle>
@@ -285,7 +285,7 @@ namespace ColorsListApp
 
 使用数据模板是定义列表视图外观的主要方法。 如果列表显示大量项目，它们也能对性能产生重大影响。 
 
-为列表视图中的每个项目创建数据模板中每个 XAML 元素的实例。 例如，前面示例中的网格模板具有 10 个 XAML 元素（1 个 Grid，1 个 Rectangle，3 个 Border，5 个 TextBlock）。 使用此数据模板在屏幕上显示 20 个项目的 GridView 至少会创建 200 个元素 (20*10=200)。 减少数据模板中元素的数量可以大大减少针对列表视图创建的元素总数。 有关详细信息，请参阅 [ListView 和 GridView UI 优化：按项目减少元素计数](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)。
+为列表视图中的每个项目创建数据模板中每个 XAML 元素的实例。 例如，前面示例中的网格模板具有 10 个 XAML 元素（1 个 Grid，1 个 Rectangle，3 个 Border，5 个 TextBlock）。 使用此数据模板在屏幕上显示 20 个项目的 GridView 至少会创建 200 个元素 (20*10=200)。 减少数据模板中元素的数量可以大大减少针对列表视图创建的元素总数。 有关详细信息，请参阅 [ListView 和 GridView UI 优化：按项目减少元素计数](../../debug-test-perf/optimize-gridview-and-listview.md)。
 
  考虑这一网格数据模板部分。 让我们看一下减少元素计数的一些事项。
 
@@ -313,7 +313,7 @@ namespace ColorsListApp
 
 - 悬停 - 在数据模板下方绘制的浅灰色矩形。  
 - 选择 - 在数据模板下方绘制的浅蓝色矩形。 
-- 键盘焦点 - 项目模板顶部绘制的[高可见性焦点视觉对象](/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)。
+- 键盘焦点 - 项目模板顶部绘制的[高可见性焦点视觉对象](../input/guidelines-for-visualfeedback.md#high-visibility-focus-visuals)。
 
 ![列表视图状态视觉对象](images/listview-state-visuals.png)
 
@@ -325,12 +325,12 @@ namespace ColorsListApp
 
 正如我们前面关于数据模板所提到的那样，针对每个项目创建的 XAML 元素数可能会对列表视图的性能产生重大影响。 由于合并使用数据模板和控件模板来显示每个项目，因此显示项目所需的实际元素数包括这两个模板中的元素。
 
-对 ListView 和 GridView 控件进行优化，以便减少针对每个项目创建的 XAML 元素数。 “ListViewItem”视觉对象由 [ListViewItemPresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter) 创建，后者是一个特殊的 XAML 元素，用于为对焦、选择和其他视觉状态显示复杂的视觉效果，而无需大量 UIElement 开销。
+对 ListView 和 GridView 控件进行优化，以便减少针对每个项目创建的 XAML 元素数。 “ListViewItem”视觉对象由 [ListViewItemPresenter](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter) 创建，后者是一个特殊的 XAML 元素，用于为对焦、选择和其他视觉状态显示复杂的视觉效果，而无需大量 UIElement 开销。
  
 > [!NOTE]
 > 在适用于 Windows 10 的 UWP 应用中，ListViewItem 和 GridViewItem 都使用 ListViewItemPresenter；GridViewItemPresenter 已弃用，你不应该使用  。 ListViewItem 和 GridViewItem 在 ListViewItemPresenter 上设置不同的属性值来实现不同的默认外观。）
 
-若要修改项目容器的外观，请使用 [ItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) 属性，并提供 [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style)，其中 [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) 已设为“ListViewItem”或“GridViewItem” 。
+若要修改项目容器的外观，请使用 [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) 属性，并提供 [Style](/uwp/api/windows.ui.xaml.style)，其中 [TargetType](/uwp/api/windows.ui.xaml.style.targettype) 已设为“ListViewItem”或“GridViewItem” 。
 
 在此示例中，将向 ListViewItem 添加边距，以便在列表中的不同项目之间留出一些间距。
 
@@ -352,7 +352,7 @@ namespace ColorsListApp
 
 ![已应用边距的列表视图项目](images/listview-data-template-1.png)
 
-在 ListViewItem 默认样式中，ListViewItemPresenter“ContentMargin”属性具有 ListViewItem“Padding”属性的 [TemplateBinding](https://docs.microsoft.com/windows/uwp/xaml-platform/templatebinding-markup-extension) (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`) 。 当我们设置 Padding 属性时，该值实际将传递给 ListViewItemPresenter ContentMargin 属性。
+在 ListViewItem 默认样式中，ListViewItemPresenter“ContentMargin”属性具有 ListViewItem“Padding”属性的 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`) 。 当我们设置 Padding 属性时，该值实际将传递给 ListViewItemPresenter ContentMargin 属性。
 
 若要修改未绑定到 ListViewItem 属性的模板的其他 ListViewItemPresenter 属性，你需要使用新的 ListViewItemPresenter（可在其上修改属性）为 ListViewItem 重新设置模板。 
 
@@ -424,11 +424,11 @@ namespace ColorsListApp
 
 #### <a name="inline-and-overlay-selection-visuals"></a>内联和覆盖选择视觉对象
 
-ListView 和 GridView 以不同方式指示所选项目，具体取决于控件和 [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode)。 有关列表视图选择的详细信息，请参阅 [ListView 和 GridView](listview-and-gridview.md)。 
+ListView 和 GridView 以不同方式指示所选项目，具体取决于控件和 [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode)。 有关列表视图选择的详细信息，请参阅 [ListView 和 GridView](listview-and-gridview.md)。 
 
-当 SelectionMode 设置为“多选”时，选择复选框将显示为项目控件模板的一部分 。 你可以在多选模式下使用 [SelectionCheckMarkVisualEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) 属性关闭选择复选框。 但是，此属性在其他选择模式中将忽略，因此你无法在扩展或单选模式下打开复选框。
+当 SelectionMode 设置为“多选”时，选择复选框将显示为项目控件模板的一部分 。 你可以在多选模式下使用 [SelectionCheckMarkVisualEnabled](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) 属性关闭选择复选框。 但是，此属性在其他选择模式中将忽略，因此你无法在扩展或单选模式下打开复选框。
 
-你可以设置 [CheckMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode) 属性，指定是使用内联样式还是覆盖样式显示复选框。
+你可以设置 [CheckMode](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode) 属性，指定是使用内联样式还是覆盖样式显示复选框。
 
 - **内联**：此样式将在内容左侧显示复选框，并设置项目容器背景色以指示选择。 这是 ListView 的默认样式。
 - **覆盖**：此样式将在内容顶部显示复选框，并且仅设置项目容器的边框颜色以指示选择。 这是 GridView 的默认样式。
@@ -473,7 +473,7 @@ ListViewItemPresenter 具有数据占位符和拖动状态的其他画笔属性�
 如前面所述，项模板中的 UIElement 数量会对列表视图的性能产生重大影响。 将 ListViewItemPresenter 替换为扩展的 XAML 模板会大大增加元素计数，当列表视图将显示大量项目或者性能成为关注的问题时，不建议这样做。
 
 > [!NOTE]
-> 仅在列表视图的 [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) 为 [ItemsWrapGrid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemswrapgrid) 或 [ItemsStackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel) 时才支持“ListViewItemPresenter”。 如果你将 ItemsPanel 更改为使用 [VariableSizedWrapGrid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid)、[WrapGrid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.wrapgrid) 或 [StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)，项模板将自动切换为扩展的 XAML 模板。 有关详细信息，请参阅 [ListView 和 GridView UI 优化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)。
+> 仅在列表视图的 [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) 为 [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid) 或 [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel) 时才支持“ListViewItemPresenter”。 如果你将 ItemsPanel 更改为使用 [VariableSizedWrapGrid](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid)、[WrapGrid](/uwp/api/windows.ui.xaml.controls.wrapgrid) 或 [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel)，项模板将自动切换为扩展的 XAML 模板。 有关详细信息，请参阅 [ListView 和 GridView UI 优化](../../debug-test-perf/optimize-gridview-and-listview.md)。
 
 若要自定义扩展的 XAML 模板，你需要在应用中为其创建副本，并将 ItemContainerStyle 属性设置为副本。
 
@@ -497,4 +497,3 @@ generic.xaml 中扩展模板的副本已在你的应用中创建，可根据需�
 
 - [列表](lists.md)
 - [ListView 和 GridView](listview-and-gridview.md)
-
