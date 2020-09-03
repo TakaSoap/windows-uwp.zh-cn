@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 设置, 保存设置, 加载设置
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 490dd8f0f3841fae089626ec9c283d54cc0d8cd9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 32594d14a9da62f9abeca81c048e4169a7e99029
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66370488"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168151"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>在 UWP 应用中保存和加载设置
 
@@ -25,14 +25,14 @@ ms.locfileid: "66370488"
 
 使用应用设置存储配置数据，如用户首选项和应用状态。  设备特定的设置存储在本地。 在安装应用的设备上应用的设置存储在漫游数据存储中。 设置在用户使用同一个 Microsoft 帐户登录并安装了相同应用版本的设备之间漫游。
 
-设置可以使用以下数据类型：整数、加倍、浮点、字符、字符串、点、DateTimes，等等。 还可以存储 [ApplicationDataCompositeValue](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) 类的实例，当存在应被视为单元的多个设置时这很有用。 例如，用于在应用的阅读面板中显示文本的字体名称和点大小应该作为单个单元保存/还原。 当由于在一个设置之前漫游另一个设置而出现延时，这将防止一个设置与另一个设置不同步。
+设置可以使用以下数据类型：整数、加倍、浮点、字符、字符串、点、DateTimes，等等。 还可以存储 [ApplicationDataCompositeValue](/uwp/api/Windows.Storage.ApplicationDataCompositeValue) 类的实例，当存在应被视为单元的多个设置时这很有用。 例如，用于在应用的阅读面板中显示文本的字体名称和点大小应该作为单个单元保存/还原。 当由于在一个设置之前漫游另一个设置而出现延时，这将防止一个设置与另一个设置不同步。
 
 下面是你需要了解的用于保存或加载应用设置的主要 API：
 
-- [Windows.Storage.ApplicationData.Current.LocalSettings](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalSettings) 从本地应用数据存储获取应用程序设置容器。 在此处存储由于表示特定于此设备的状态或太长而不适合在设备之间漫游的设置。
-- [Windows.Storage.ApplicationData.Current.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings#Windows_Storage_ApplicationData_RoamingSettings) 从漫游应用数据存储获取应用程序设置容器。 此数据在设备之间漫游。
-- [Windows.Storage.ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) 是将应用设置表示为键/值对的容器。 使用此类创建和检索设置值。
-- [Windows.Storage.ApplicationDataCompositeValue](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) 表示应作为单元序列化的多个应用设置。 当一个设置不应独立于其他设置单独更新时，这非常有用。
+- [Windows.Storage.ApplicationData.Current.LocalSettings](/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalSettings) 从本地应用数据存储获取应用程序设置容器。 在此处存储由于表示特定于此设备的状态或太长而不适合在设备之间漫游的设置。
+- [Windows.Storage.ApplicationData.Current.RoamingSettings](/uwp/api/windows.storage.applicationdata.roamingsettings#Windows_Storage_ApplicationData_RoamingSettings) 从漫游应用数据存储获取应用程序设置容器。 此数据在设备之间漫游。
+- [Windows.Storage.ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) 是将应用设置表示为键/值对的容器。 使用此类创建和检索设置值。
+- [Windows.Storage.ApplicationDataCompositeValue](/uwp/api/Windows.Storage.ApplicationDataCompositeValue) 表示应作为单元序列化的多个应用设置。 当一个设置不应独立于其他设置单独更新时，这非常有用。
 
 ## <a name="save-app-settings"></a>保存应用设置
 
@@ -86,17 +86,17 @@ if (composite != null)
 
 | API | 说明 |
 |------|---------------|
-| [ApplicationData.LocalSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) | 从本地应用数据存储获取应用程序设置容器。 |
-| [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | 从漫游应用数据存储获取应用程序设置容器。 |
-| [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | 支持创建、删除、枚举和遍历容器层次结构的应用设置的容器。 |
-| [Windows.UI.ApplicationSettings 命名空间](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | 提供用于定义显示在 Windows shell 的设置窗格中的应用设置的类。 |
+| [ApplicationData.LocalSettings](/uwp/api/windows.storage.applicationdata.temporaryfolder) | 从本地应用数据存储获取应用程序设置容器。 |
+| [ApplicationData.RoamingSettings](/uwp/api/windows.storage.applicationdata.roamingsettings) | 从漫游应用数据存储获取应用程序设置容器。 |
+| [ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) | 支持创建、删除、枚举和遍历容器层次结构的应用设置的容器。 |
+| [Windows.UI.ApplicationSettings 命名空间](/uwp/api/windows.ui.applicationsettings) | 提供用于定义显示在 Windows shell 的设置窗格中的应用设置的类。 |
 
 ### <a name="useful-docs"></a>有用的文档
 
 | 主题 | 说明 |
 |-------|----------------|
-| [应用设置指南](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | 介绍有关创建和显示应用设置的最佳做法。 |
-| [存储和检索设置以及其他应用数据](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | 保存和检索设置（包括漫游设置）演练。 |
+| [应用设置指南](../design/app-settings/guidelines-for-app-settings.md) | 介绍有关创建和显示应用设置的最佳做法。 |
+| [存储和检索设置以及其他应用数据](../design/app-settings/store-and-retrieve-app-data.md#create-and-read-a-local-file) | 保存和检索设置（包括漫游设置）演练。 |
 
 ## <a name="useful-code-samples"></a>有用的代码示例
 

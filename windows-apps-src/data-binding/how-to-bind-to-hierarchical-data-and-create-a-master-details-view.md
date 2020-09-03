@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 14b6ab96ac5423d1811618c6a3c91ccf56645664
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: adcdb638a2ccfb9684676eb205592a25b24c8432
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74255126"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169961"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>绑定分层数据和创建大纲/细节视图
 
@@ -19,9 +19,9 @@ ms.locfileid: "74255126"
 
 > 注意：  另请参阅  主/细节示例[。](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail)
 
-你可以通过将项目控件绑定到 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 实例（它们绑定在同一个链中），从而生成分层数据的多级主视图/详细信息视图（也称为列表详细信息视图）。 在本主题中，我们将尽可能使用 [{x:Bind} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)，并根据需要使用更为灵活（但性能较低）的 [{Binding} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension)。
+你可以通过将项目控件绑定到 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 实例（它们绑定在同一个链中），从而生成分层数据的多级主视图/详细信息视图（也称为列表详细信息视图）。 在本主题中，我们将尽可能使用 [{x:Bind} 标记扩展](../xaml-platform/x-bind-markup-extension.md)，并根据需要使用更为灵活（但性能较低）的 [{Binding} 标记扩展](../xaml-platform/binding-markup-extension.md)。
 
-通用 Windows 平台 (UWP) 应用的一个常见结构就是当用户在主列表中进行选择时导航到不同的详细信息页面。 当你想提供某个层次结构中每个级别上每个项目的丰富视觉表示时，该功能非常有用。 另一种选择是在一个页面上显示多级数据。 当你要显示几个简单的列表，方便用户快速下拉到感兴趣的项目时，该功能非常有用。 本主题介绍如何实现此交互。 [  **CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 实例将跟踪各分层级别的当前选择。
+通用 Windows 平台 (UWP) 应用的一个常见结构就是当用户在主列表中进行选择时导航到不同的详细信息页面。 当你想提供某个层次结构中每个级别上每个项目的丰富视觉表示时，该功能非常有用。 另一种选择是在一个页面上显示多级数据。 当你要显示几个简单的列表，方便用户快速下拉到感兴趣的项目时，该功能非常有用。 本主题介绍如何实现此交互。 [  **CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 实例将跟踪各分层级别的当前选择。
 
 我们将创建一个有关运动团队的层次结构视图，它分为联盟、分支和团队的列表，并包含团队详细信息视图。 当你从任一列表中选择一个项目时，会自动更新后续视图。
 
@@ -29,7 +29,7 @@ ms.locfileid: "74255126"
 
 ## <a name="prerequisites"></a>先决条件
 
-此主题假设你知道如何创建基本的 UWP 应用。 有关创建你的第一个 UWP 应用的说明，请参阅[使用 C# 或 Visual Basic 创建你的第一个 UWP 应用](https://docs.microsoft.com/previous-versions/windows/apps/hh974581(v=win.10))。
+此主题假设你知道如何创建基本的 UWP 应用。 有关创建你的第一个 UWP 应用的说明，请参阅[使用 C# 或 Visual Basic 创建你的第一个 UWP 应用](/previous-versions/windows/apps/hh974581(v=win.10))。
 
 ## <a name="create-the-project"></a>创建项目
 
@@ -130,7 +130,7 @@ namespace MasterDetailsBinding
 }
 ```
 
-最后，用以下标记来替代 MainPage.xaml 文件的内容，该标记声明了三个 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 实例并将其绑定到同一链中。 后续控件可以根据其在层次结构中的级别绑定到相应的 **CollectionViewSource**。
+最后，用以下标记来替代 MainPage.xaml 文件的内容，该标记声明了三个 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 实例并将其绑定到同一链中。 后续控件可以根据其在层次结构中的级别绑定到相应的 **CollectionViewSource**。
 
 ```xml
 <Page
@@ -220,9 +220,8 @@ namespace MasterDetailsBinding
 </Page>
 ```
 
-请注意，如果直接绑定到 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)，即表示你希望绑定到绑定控件中的当前项，其中在集合本身上无法找到路径。 无需将 **CurrentItem** 属性指定为绑定路径，尽管由于不确定性你可以这样做。 例如，[**ContentControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl) 表示团队视图的 [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 属性被绑定到 `Teams`**CollectionViewSource**。 然而，[**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) 中的控件被绑定到 `Team` 类的属性，因为 **CollectionViewSource** 会自动按需提供团队列表中当前所选的团队。
+请注意，如果直接绑定到 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)，即表示你希望绑定到绑定控件中的当前项，其中在集合本身上无法找到路径。 无需将 **CurrentItem** 属性指定为绑定路径，尽管由于不确定性你可以这样做。 例如，[**ContentControl**](/uwp/api/Windows.UI.Xaml.Controls.ContentControl) 表示团队视图的 [**Content**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 属性被绑定到 `Teams`**CollectionViewSource**。 然而，[**DataTemplate**](/uwp/api/Windows.UI.Xaml.DataTemplate) 中的控件被绑定到 `Team` 类的属性，因为 **CollectionViewSource** 会自动按需提供团队列表中当前所选的团队。
 
  
 
  
-

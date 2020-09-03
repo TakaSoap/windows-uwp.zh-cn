@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a8b53eef3538ca637fa5b351b74125eebdfe2b3
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: e2d727c9b5e4c7e2912f0bcae8848149c8073f3b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942837"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169741"
 ---
 # <a name="nested-ui-in-list-items"></a>列表项中嵌套的 UI
 
@@ -26,9 +26,9 @@ ms.locfileid: "88942837"
 
 你可以使用嵌套的 UI 来向用户显示附加选项，从而有助于促使用户采取重要的操作。 但是，公开的操作越多，UI 就变得越复杂。 在选择使用此 UI 模式时需要格外谨慎。 本文提供了指南来帮助你针对特定 UI 确定最佳做法。
 
-> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)、[GridView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
+> **重要的 API**：[ListView 类](/uwp/api/windows.ui.xaml.controls.listview)、[GridView 类](/uwp/api/windows.ui.xaml.controls.gridview)
 
-在本文中，我们将讨论如何在 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 和 [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) 项目中创建嵌套的 UI。 尽管本部分不讨论其他嵌套的 UI 情形，但是这些概念是可转移的。 在开始之前，你应当熟悉在 UI 中使用 ListView 或 GridView 控件的常规指南，可在[列表](lists.md)以及[列表视图和网格视图](listview-and-gridview.md)文章中找到它。
+在本文中，我们将讨论如何在 [ListView](/uwp/api/windows.ui.xaml.controls.listview) 和 [GridView](/uwp/api/windows.ui.xaml.controls.gridview) 项目中创建嵌套的 UI。 尽管本部分不讨论其他嵌套的 UI 情形，但是这些概念是可转移的。 在开始之前，你应当熟悉在 UI 中使用 ListView 或 GridView 控件的常规指南，可在[列表](lists.md)以及[列表视图和网格视图](listview-and-gridview.md)文章中找到它。
 
 在本文中，我们使用术语*列表*、*列表项目*和*嵌套的 UI*，其定义如下：
 - *列表*是指包含在列表视图或网格视图中的项目集合。
@@ -37,7 +37,7 @@ ms.locfileid: "88942837"
 
 ![嵌套的 UI 部分](images/nested-ui-example-1.png)
 
-> 注意&nbsp;&nbsp; ListView 和 GridView 都派生自 [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) 类，因此它们的功能相同，但数据显示方法不同。 在本文中，当涉及到列表时，信息会同时应用到 ListView 和 GridView 控件。
+> 注意&nbsp;&nbsp; ListView 和 GridView 都派生自 [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) 类，因此它们的功能相同，但数据显示方法不同。 在本文中，当涉及到列表时，信息会同时应用到 ListView 和 GridView 控件。
 
 ## <a name="primary-and-secondary-actions"></a>主要操作和辅助操作
 
@@ -137,7 +137,7 @@ ms.locfileid: "88942837"
 - 在位于列表项左侧的 UI 元素中，借助 Tab 键可将焦点放在 **A** 上。
 - 在位于列表项右侧的 UI 元素中，借助 Shift+Tab 键可将焦点放在 **C** 上。
 
-若要实现此 UI，请在列表上将 [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) 设置为 **true**。 [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) 可以是任意值。
+若要实现此 UI，请在列表上将 [IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) 设置为 **true**。 [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) 可以是任意值。
 
 有关用于实现此目的的代码，请参阅本文的[示例](#example)部分。
 
@@ -151,9 +151,9 @@ ms.locfileid: "88942837"
 
 
 若要实现此 UI，请在你的列表上设置以下属性：
-- 将 [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) 设置为 **None**。
-- 将 [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) 设置为 **false**。
-- 将 [IsFocusEngagementEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isfocusengagementenabled) 设置为 **true**。
+- 将 [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) 设置为 **None**。
+- 将 [IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) 设置为 **false**。
+- 将 [IsFocusEngagementEnabled](/uwp/api/windows.ui.xaml.controls.control.isfocusengagementenabled) 设置为 **true**。
 
 ```xaml
 <ListView SelectionMode="None" IsItemClickEnabled="False" >

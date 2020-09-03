@@ -11,16 +11,16 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a43c6592b5a9b243a19f3491ea54c05d10e7b0f7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 0f2c9a80dbe821feb910636eb26e783ec7eb309a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970832"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169641"
 ---
 # <a name="person-picture-control"></a>个人图片控件
 
-如果用户头像可用，个人图片控件将显示用户头像；否则，将显示该用户的姓名缩写或通用字形。 可以使用该控件来显示 [Contact 对象](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)（该对象管理用户的联系信息），也可以手动提供联系信息，例如显示名称和个人资料图片。
+如果用户头像可用，个人图片控件将显示用户头像；否则，将显示该用户的姓名缩写或通用字形。 可以使用该控件来显示 [Contact 对象](/uwp/api/Windows.ApplicationModel.Contacts.Contact)（该对象管理用户的联系信息），也可以手动提供联系信息，例如显示名称和个人资料图片。
 
 ![个人图片控件](images/person-picture/person-picture_hero.png)
 
@@ -30,9 +30,9 @@ ms.locfileid: "82970832"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | PersonPicture 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | PersonPicture 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
 
-> **平台 API**：[PersonPicture 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **平台 API**：[PersonPicture 类](/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 类](/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 类](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -86,7 +86,7 @@ ms.locfileid: "82970832"
 
 ## <a name="using-the-person-picture-control-to-display-a-contact-object"></a>使用个人图片控件来显示 Contact 对象
 
-可以使用用户选取器控件来显示 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象：
+可以使用用户选取器控件来显示 [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象：
 
 ```xaml
 <Page
@@ -174,11 +174,11 @@ namespace SampleApp
 ```
 
 > [!NOTE]
-> 为使代码简单，此示例中创建一个新的 Contact 对象。 在实际应用中，你会让用户选择一个联系人或使用 [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) 查询联系人列表。 有关检索和管理联系人的信息，请参阅[联系人和日历文章](../../contacts-and-calendar/index.md)。
+> 为使代码简单，此示例中创建一个新的 Contact 对象。 在实际应用中，你会让用户选择一个联系人或使用 [ContactManager](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) 查询联系人列表。 有关检索和管理联系人的信息，请参阅[联系人和日历文章](../../contacts-and-calendar/index.md)。
 
 ## <a name="determining-which-info-to-display"></a>确定要显示的信息
 
-提供 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象时，个人图片控件将对其进行评估，以确定它可以显示哪些信息。
+提供 [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象时，个人图片控件将对其进行评估，以确定它可以显示哪些信息。
 
 如果图像可用，该控件将显示它找到的第一个图像，顺序如下：
 

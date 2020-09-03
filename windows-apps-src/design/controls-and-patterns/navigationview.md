@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b1f3881081b22fd98e9956f3c2fe45922531677b
-ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
+ms.openlocfilehash: 7f71a11c76bc6318c9000a9468c7bd9574e0c5d0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448407"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170031"
 ---
 # <a name="navigation-view"></a>导航视图
 
@@ -152,7 +152,7 @@ NavigationView 窗格可以包含：
 - [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator) 对象。 用于对导航项进行分组的分隔器。 将 [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) 属性设置为 0 可将分隔器呈现为空间。
 - [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader) 对象。 用于标记项组的标题。
 - 允许应用级别搜索的可选 [AutoSuggestBox](auto-suggest-box.md) 控件。 可将该控件分配给 [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox) 属性。
-- [应用设置](../app-settings/app-settings-and-data.md)的可选入口点。 若要隐藏设置项，请将 [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) 属性设置为 false。
+- [应用设置](../app-settings/guidelines-for-app-settings.md)的可选入口点。 若要隐藏设置项，请将 [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) 属性设置为 false。
 
 左窗格还包含：
 
@@ -639,7 +639,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 ```
 
 > [!NOTE]
-> 对于此代码示例的 [C++ /WinRT](/windows/uwp/cpp-and-winrt-apis/index) 版本，请首先基于“空白应用(C++/WinRT)”项目模板创建一个新项目，然后将该列表中的代码添加到指示的源代码文件中。 若要完全按照列表中所示使用源代码，请将新项目命名为 NavigationViewCppWinRT
+> 对于此代码示例的 [C++ /WinRT](../../cpp-and-winrt-apis/index.md) 版本，请首先基于“空白应用(C++/WinRT)”项目模板创建一个新项目，然后将该列表中的代码添加到指示的源代码文件中。 若要完全按照列表中所示使用源代码，请将新项目命名为 NavigationViewCppWinRT
 
 ```cppwinrt
 // MainPage.idl
@@ -945,7 +945,7 @@ namespace winrt::NavigationViewCppWinRT::implementation
 
 上面所示的 C# 和 C++ /WinRT 代码设计为使你可以对这两个版本使用相同的 XAML 标记。 但是，你可能更希望通过另一种方法来实现此部分中所述的 C++/WinRT 版本。
 
-下面是 **NavView_ItemInvoked** 处理程序的替代版本。 此版本的处理程序中的技术涉及首先（在 [NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem) 的标记中）存储要导航到的页面的完整类型名称。 在处理程序中，对值取消装箱，将它转换 [Windows::UI::Xaml::Interop::TypeName](/uwp/api/windows.ui.xaml.interop.typename) 对象，并使用该对象导航到目标页。 不需要在上面的示例中看到的名为 `_pages` 的映射变量；你将能够创建单元测试，从而确认标记中的值是否属于有效类型。 另请参阅[通过 C++/WinRT 将标量值装箱到 IInspectable 和从 IInspectable 取消标量值装箱](/windows/uwp/cpp-and-winrt-apis/boxing)。
+下面是 **NavView_ItemInvoked** 处理程序的替代版本。 此版本的处理程序中的技术涉及首先（在 [NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem) 的标记中）存储要导航到的页面的完整类型名称。 在处理程序中，对值取消装箱，将它转换 [Windows::UI::Xaml::Interop::TypeName](/uwp/api/windows.ui.xaml.interop.typename) 对象，并使用该对象导航到目标页。 不需要在上面的示例中看到的名为 `_pages` 的映射变量；你将能够创建单元测试，从而确认标记中的值是否属于有效类型。 另请参阅[通过 C++/WinRT 将标量值装箱到 IInspectable 和从 IInspectable 取消标量值装箱](../../cpp-and-winrt-apis/boxing.md)。
 
 ```cppwinrt
 void MainPage::NavView_ItemInvoked(
@@ -1575,7 +1575,7 @@ MainPage::MainPage()
 
 ### <a name="keyboarding-within-hierarchical-navigationview"></a>分层 NavigationView 内的键盘操作
 
-用户可以使用[键盘](/windows/uwp/design/input/keyboard-interactions)在导航视图上移动焦点。 箭头键在窗格内公开“内部导航”，并按照[树视图](/windows/uwp/design/controls-and-patterns/tree-view)中提供的交互进行操作。 当在 NavigationView 或其浮出控件菜单（在 HierarchicalNavigationView 的顶部和左侧模式下显示）中导航时，键操作将发生变化。 下面是每个键可在分层 NavigationView 中执行的特定操作：
+用户可以使用[键盘](../input/keyboard-interactions.md)在导航视图上移动焦点。 箭头键在窗格内公开“内部导航”，并按照[树视图](./tree-view.md)中提供的交互进行操作。 当在 NavigationView 或其浮出控件菜单（在 HierarchicalNavigationView 的顶部和左侧模式下显示）中导航时，键操作将发生变化。 下面是每个键可在分层 NavigationView 中执行的特定操作：
 
 | 键      |      在左侧模式下      |  在顶部模式下 | 在浮出控件中  |
 |----------|------------------------|--------------|------------|
@@ -1659,7 +1659,7 @@ MainPage::MainPage()
 
 > `IsTitleBarAutoPaddingEnabled` 属性需要 [Windows UI 库](/uwp/toolkits/winui/) 2.2 或更高版本。
 
-某些应用选择[自定义其窗口的标题栏](/windows/uwp/design/shell/title-bar)，可能会将其应用内容扩展到标题栏区域中。 当 NavigationView 是**使用 [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API** 扩展到标题栏的应用中的根元素时，该控件会自动调整其交互式元素的位置，以防止与[可拖动区域](/windows/uwp/design/shell/title-bar#draggable-regions)重叠。
+某些应用选择[自定义其窗口的标题栏](../shell/title-bar.md)，可能会将其应用内容扩展到标题栏区域中。 当 NavigationView 是**使用 [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API** 扩展到标题栏的应用中的根元素时，该控件会自动调整其交互式元素的位置，以防止与[可拖动区域](../shell/title-bar.md#draggable-regions)重叠。
 
 ![扩展到标题栏中的应用](images/navigation-view-with-titlebar-padding.png)
 

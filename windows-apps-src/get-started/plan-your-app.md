@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 834bea47a566789926648098086c05c0a47b6065
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5c4ab2ac5a611d310abc177126cc92b88f9e3b8e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74260556"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165151"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>生成复杂的通用 Windows 平台 (UWP) 应用
 
@@ -128,7 +128,7 @@ ms.locfileid: "74260556"
 -   **播放到**  让用户尽情享受从你的应用流式传输到用户的家庭网络中其他设备上的音频、视频或图像。
 -   **文件选取器和文件选取器扩展**   让你的用户可以从本地文件系统、联网存储设备、HomeGroup 或者甚至从其他应用加载并保存文件。 你还可以提供文件选取器扩展，以便其他应用可以加载你的应用的内容。
 
-有关详细信息，请参阅[应用合约和扩展](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10))。
+有关详细信息，请参阅[应用合约和扩展](/previous-versions/windows/apps/hh464906(v=win.10))。
 <!-- Win 8 page. Should have replacement. -->
 
 **不同的视图、外形规格和硬件配置**  Windows 让用户获得主导权并将应用置于最前端。 你希望你的应用 UI 在任何设备上、在使用任何输入模式时、在任何方向中、在任何硬件配置下以及在用户决定使用它的任何情况下都光彩夺目。
@@ -141,22 +141,22 @@ ms.locfileid: "74260556"
 
 **有吸引力且新鲜**  使用这些标准体验，确保你的应用感觉新鲜且吸引用户：
 
--   **动画**  使用我们的动画库使你的应用快速且流畅地提供给用户。 帮助用户了解上下文更改，并将体验与视觉转换联系在一起。 了解有关[创建 UI 动画](../graphics/animations-overview.md)的详细信息。
+-   **动画**  使用我们的动画库使你的应用快速且流畅地提供给用户。 帮助用户了解上下文更改，并将体验与视觉转换联系在一起。 了解有关[创建 UI 动画](../design/motion/xaml-animation.md)的详细信息。
 -   **Toast 通知**  通过 Toast 通知，使用户了解有关时间敏感或个人相关的内容，甚至可以在应用关闭时邀请用户返回你的应用。 了解有关[磁贴、锁屏提醒和 Toast 通知](../design/shell/tiles-and-notifications/index.md)的详细信息。
 -   **应用磁贴**  提供新鲜和相关的更新来吸引用户返回你的应用。 有关此内容的详细信息，请参阅下一节。 了解有关[应用磁贴](../design/shell/tiles-and-notifications/creating-tiles.md)的详细信息。
 
 **个性化**
 
--   **设置**  支持用户通过保存应用设置来创建所希望的体验。 将所有设置合并到一个屏幕上，然后用户可以通过已熟悉的常用机制来配置你的应用。 了解有关[添加应用设置](../design/app-settings/app-settings-and-data.md)的详细信息。
--   **漫游**  通过漫游数据来在各种设备之间创建一种连续的体验，允许用户在他们离开的位置挑选一项任务并保留他们最关心的 UX，无论他们使用何种设备。 通过在漫游时保持设置和状态，更易于在任何位置（从厨房中的家庭电脑到其工作电脑再到个人平板电脑以及其他外形规格）使用你的应用。 了解有关[管理应用程序数据](../design/app-settings/store-and-retrieve-app-data.md)的详细信息，并参阅[漫游应用程序数据指南](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data)。
+-   **设置**  支持用户通过保存应用设置来创建所希望的体验。 将所有设置合并到一个屏幕上，然后用户可以通过已熟悉的常用机制来配置你的应用。 了解有关[添加应用设置](../design/app-settings/guidelines-for-app-settings.md)的详细信息。
+-   **漫游**  通过漫游数据来在各种设备之间创建一种连续的体验，允许用户在他们离开的位置挑选一项任务并保留他们最关心的 UX，无论他们使用何种设备。 通过在漫游时保持设置和状态，更易于在任何位置（从厨房中的家庭电脑到其工作电脑再到个人平板电脑以及其他外形规格）使用你的应用。 了解有关[管理应用程序数据](../design/app-settings/store-and-retrieve-app-data.md)的详细信息，并参阅[漫游应用程序数据指南](../design/app-settings/store-and-retrieve-app-data.md)。
 -   **用户磁贴**  支持用户加载自己的磁贴图像，或支持用户在整个 Windows 中将来自你的应用的内容设置为其个人磁贴，从而使你的应用更个性化。
 
 **设备功能**  确保你的应用完全利用当今设备的功能。
 
--   **邻近感应笔势**  让你的用户通过实际接触设备来连接设备，带来多个用户实际距离非常近的体验（如多玩家游戏）。 了解有关[邻近感应和点击](https://docs.microsoft.com/previous-versions/windows/apps/hh465229(v=win.10))的详细信息。
--   **相机和外部存储设备**  将用户与他们内置的或外接的相机相连，用于聊天、电话会议、记录视频博客、拍摄头像、记录周围的世界或进行任何你的应用擅长的活动。 了解有关[访问可移动存储上的内容](https://docs.microsoft.com/previous-versions/windows/apps/hh465189(v=win.10))的详细信息。
+-   **邻近感应笔势**  让你的用户通过实际接触设备来连接设备，带来多个用户实际距离非常近的体验（如多玩家游戏）。 了解有关[邻近感应和点击](/previous-versions/windows/apps/hh465229(v=win.10))的详细信息。
+-   **相机和外部存储设备**  将用户与他们内置的或外接的相机相连，用于聊天、电话会议、记录视频博客、拍摄头像、记录周围的世界或进行任何你的应用擅长的活动。 了解有关[访问可移动存储上的内容](/previous-versions/windows/apps/hh465189(v=win.10))的详细信息。
 -   **加速计和其他传感器**    如今的设备都带有若干个传感器。 你的应用可以根据环境光调暗或调亮屏幕、在用户旋转屏幕时重新排列 UI，或者对任何物理活动做出反应。 了解有关[传感器](../devices-sensors/sensors.md)的详细信息。
--   **地理位置**  使用标准 Web 数据或地理位置传感器的地理位置信息，有助于用户了解周围环境、在地图上定位或了解周围的人员、活动和目的地。 了解有关[地理位置](https://docs.microsoft.com/previous-versions/windows/apps/hh465139(v=win.10))的详细信息。
+-   **地理位置**  使用标准 Web 数据或地理位置传感器的地理位置信息，有助于用户了解周围环境、在地图上定位或了解周围的人员、活动和目的地。 了解有关[地理位置](/previous-versions/windows/apps/hh465139(v=win.10))的详细信息。
 
 我们再来看看旅行应用示例。 为了帮助好友共同创建团体旅行的行程，你可以使用以下一些功能（仅举几例）：
 
@@ -212,15 +212,15 @@ ms.locfileid: "74260556"
 -   **始终尝试使用内容。**   尽可能让用户在应用的画布上直接操纵内容，而不是添加作用于内容的命令。 例如，在旅行应用中，让用户通过在画布的列表中拖放活动来重新安排行程，而不是通过选择活动并使用“上移”或“下移”命令按钮。
 -   **如果无法使用内容。** 如果你无法使用内容，请将命令置于以下某个 UI 图面中：
 
-    -   在[命令栏](https://docs.microsoft.com/windows/uwp/controls-and-patterns/app-bars)中：应将大部分命令放在命令栏上，命令栏通常是隐藏的，直到用户点击才可见。
+    -   在[命令栏](../design/controls-and-patterns/app-bars.md)中：应将大部分命令放在命令栏上，命令栏通常是隐藏的，直到用户点击才可见。
     -   在应用画布上：如果用户位于仅具有单一用途的页面或视图上，则可以直接在画布上为此用途提供相应的命令。 这些命令应非常少。
-    -   在[上下文菜单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/menus)中：可以使用上下文菜单执行剪贴板操作（如剪切、复制和粘贴）或适用于无法选择的内容的命令（如将图钉添加到地图上的某个位置）。
+    -   在[上下文菜单](../design/controls-and-patterns/menus.md)中：可以使用上下文菜单执行剪贴板操作（如剪切、复制和粘贴）或适用于无法选择的内容的命令（如将图钉添加到地图上的某个位置）。
 
 **确定应用在每个视图中的布局方式。**   Windows 支持横向和纵向，并支持将应用大小调整为任意宽度，从全屏到最小宽度。 你希望你的应用在任何大小、任何屏幕以及任何方向上都正常显示和运行。 这意味着你需要为不同大小和视图规划 UI 元素的布局。 执行此操作时，应用 UI 会不断更改以满足用户的需求和偏好。
 
 ![应用的电脑和移动设备设计](images/ux-budgettracker1-md-notablet.png)
 
-有关针对不同屏幕大小进行设计的详细信息，请参阅[响应式设计的屏幕大小和断点](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)。
+有关针对不同屏幕大小进行设计的详细信息，请参阅[响应式设计的屏幕大小和断点](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)。
 
 ## <a name="make-a-good-first-impression"></a>留下良好的第一印象
 
@@ -238,4 +238,4 @@ ms.locfileid: "74260556"
 
 在进行更深层次的应用开发之前，应该根据指南、用户印象以及要求验证你的设计或原型，以避免以后返工。 每个功能都有一组可帮助你优化应用的 UX 指南以及一组 Store 要求，在 Microsoft Store 中发布应用时必须满足这些要求。 你可以使用 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)测试对应用商店要求的技术合规性。 还可以使用 Microsoft Visual Studio 中的性能工具以确保你在所有情况下都为用户提供极佳体验。
 
-使用 [UWP 应用的详细 UX 指南](https://developer.microsoft.com/windows/apps/design)确保你专注于重要功能。 使用 [Visual Studio 性能工具](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015)分析每个应用方案的性能。
+使用 [UWP 应用的详细 UX 指南](https://developer.microsoft.com/windows/apps/design)确保你专注于重要功能。 使用 [Visual Studio 性能工具](/visualstudio/profiling/profiling-tools?view=vs-2015)分析每个应用方案的性能。

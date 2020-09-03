@@ -5,16 +5,16 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: cd67ea63fc633716cabf9a293a5faeeed6d24b70
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: 2d2470b1aa52f8aa4be7e07bf1dfe5213054b005
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296177"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166241"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>在 C++/WinRT 中使用委托处理事件
 
-本主题介绍了如何使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 注册和撤销事件处理委托。 可以使用任何标准 C++ 函数类对象来处理事件。
+本主题介绍了如何使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 注册和撤销事件处理委托。 可以使用任何标准 C++ 函数类对象来处理事件。
 
 > [!NOTE]
 > 有关安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息，请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
@@ -314,6 +314,6 @@ winrt::hstring f(ListView listview)
 * [winrt::implements::get_strong 函数](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## <a name="related-topics"></a>相关主题
-* [在 C++/WinRT 中创作事件](/windows/uwp/cpp-and-winrt-apis/author-events)
-* [利用 C++/WinRT 实现的并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [C++/WinRT 中的弱引用](/windows/uwp/cpp-and-winrt-apis/weak-references)
+* [在 C++/WinRT 中创作事件](./author-events.md)
+* [利用 C++/WinRT 实现的并发和异步操作](./concurrency.md)
+* [C++/WinRT 中的弱引用](./weak-references.md)

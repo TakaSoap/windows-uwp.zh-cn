@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 入门
 ms.localizationpriority: medium
-ms.openlocfilehash: 85795ceccdde1ab49c0b6af65bf0299514879e6c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 83a6774180e2f2f0a65dc9a71ebfac5c273a4424
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685226"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168181"
 ---
 # <a name="start-coding"></a>开始编码
 
@@ -43,13 +43,13 @@ ms.locfileid: "75685226"
 
 **文档：**
 
-* [C# 入门](https://docs.microsoft.com/dotnet/csharp/getting-started/)
-* [C# 快速入门](https://docs.microsoft.com/dotnet/csharp/quick-starts/)
-* [Visual Studio 入门](https://docs.microsoft.com/visualstudio/ide/)
+* [C# 入门](/dotnet/csharp/getting-started/)
+* [C# 快速入门](/dotnet/csharp/quick-starts/)
+* [Visual Studio 入门](/visualstudio/ide/)
 
 **教程：**
 
-* [Microsoft Learn 上的 Windows](https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module)
+* [Microsoft Learn 上的 Windows](/learn/browse/?products=windows&resource_type=module)
 
 ## <a name="using-the-docs"></a>使用文档
 
@@ -57,9 +57,9 @@ ms.locfileid: "75685226"
 
 | 领域 | 说明 |
 | --- | --- |
-| **新增功能** | 每次发布 Windows 10 的主要更新，我们的文档库都会增加一些新的指南。 这些文档包含有关我们为每个版本添加的功能和开发人员指南的信息，以及新 API 的列表： </br>   [最新的 Windows 10 版本中面向开发人员的新增功能](../whats-new/windows-10-version-latest.md) </br> 但是，我们不是只在发布主要版本时才更新文档。 我们不断添加新的信息供你浏览，并且帮助你了解最新动向： </br>   [文档中的新增内容](../whats-new/windows-docs-latest.md) |
+| **新增功能** | 每次发布 Windows 10 的主要更新，我们的文档库都会增加一些新的指南。 这些文档包含有关我们为每个版本添加的功能和开发人员指南的信息，以及新 API 的列表： </br>   [最新的 Windows 10 版本中面向开发人员的新增功能](../whats-new/windows-10-build-19041.md) </br> 但是，我们不是只在发布主要版本时才更新文档。 我们不断添加新的信息供你浏览，并且帮助你了解最新动向： </br>   [文档中的新增内容](../whats-new/windows-docs-january-2019.md) |
 | **设计和 UI** | 有关应用的视觉元素和 UI 的所有信息都包含在此文档区域中。如果你对 XAML 标记语言的具体信息感兴趣，或者只是想要为文档创建独特的外观，请从此处着手： </br>   [UWP 应用的设计基础知识](../design/basics/index.md) |
-| **开发应用** | 如果要了解特定的 Windows 10 功能的详细信息，或只是想了解可以通过 UWP 开发做些什么事情，请查看文档的这一区域： </br>   [UWP 应用功能](../develop/index.md)。 </br> Windows 10 应用的 API 参考托管在一组相关的文档中，可以在这里找到它们： </br>   [Windows UWP 命名空间](https://docs.microsoft.com/uwp/api/) </br>   [文件和 XML 架构](https://docs.microsoft.com/uwp/schemas/) |
+| **开发应用** | 如果要了解特定的 Windows 10 功能的详细信息，或只是想了解可以通过 UWP 开发做些什么事情，请查看文档的这一区域： </br>   [UWP 应用功能](../develop/index.md)。 </br> Windows 10 应用的 API 参考托管在一组相关的文档中，可以在这里找到它们： </br>   [Windows UWP 命名空间](/uwp/api/) </br>   [文件和 XML 架构](/uwp/schemas/) |
 | **开发游戏** | 这些文档包含有关如何在 Windows 或 Xbox 上开发游戏的信息。 这包括设置说明、开发人员计划以及使用 DirectX 或 Xbox 功能进行编程的说明。 </br>   [游戏开发入门](../gaming/getting-started.md) |
 | **发布** | 这些文档包含有关如何将应用发布到 Windows Store（从应用提交到定价再到推广和客户互动）的信息： </br>   [将应用发布到 Windows Store](../publish/index.md) |
 
@@ -69,6 +69,6 @@ ms.locfileid: "75685226"
 
 | Docs | 说明 |
 | --- | --- |
-| **Microsoft Azure** | 可以在 [Microsoft Azure 开发人员文档](https://docs.microsoft.com/azure/)中找到有关云开发和 Microsoft Azure 的信息。 |
-| **Web 开发** | 可以在 [Microsoft Edge 开发人员文档](https://docs.microsoft.com/microsoft-edge/)中找到有关 Microsoft Edge、WebVR 和其他 Windows Web 开发功能的信息。 |
-| **Windows Mixed Reality** | 混合现实将现实世界和虚拟内容融合到真实对象与数字对象共存的体验之中。 可以在 [Windows Mixed Reality 文档](https://docs.microsoft.com/windows/mixed-reality/)中找到有关为 Microsoft HoloLens 和其他沉浸式头戴显示设备构建应用的信息。|
+| **Microsoft Azure** | 可以在 [Microsoft Azure 开发人员文档](/azure/)中找到有关云开发和 Microsoft Azure 的信息。 |
+| **Web 开发** | 可以在 [Microsoft Edge 开发人员文档](/microsoft-edge/)中找到有关 Microsoft Edge、WebVR 和其他 Windows Web 开发功能的信息。 |
+| **Windows Mixed Reality** | 混合现实将现实世界和虚拟内容融合到真实对象与数字对象共存的体验之中。 可以在 [Windows Mixed Reality 文档](/windows/mixed-reality/)中找到有关为 Microsoft HoloLens 和其他沉浸式头戴显示设备构建应用的信息。|

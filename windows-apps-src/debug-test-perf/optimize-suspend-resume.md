@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 610b6237071c9d7435ca167c1a89b4ef7c40b333
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2bd19f660569893f1f2211b7a35ecf1b51c44b71
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71339572"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169921"
 ---
 # <a name="optimize-suspendresume"></a>优化暂停/恢复
 
@@ -54,17 +54,17 @@ UWP 进程生存期系统可以出于各种原因暂停或终止应用。 此进
 
 ### <a name="serialize-only-when-necessary"></a>仅在需要时序列化
 
-许多应用会在挂起时序列化其所有数据。 但如果你仅需要存储少量的应用设置数据，则应使用 [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) 存储，而不应序列化数据。 对较多数量的数据和非设置数据使用序列化。
+许多应用会在挂起时序列化其所有数据。 但如果你仅需要存储少量的应用设置数据，则应使用 [**LocalSettings**](/uwp/api/windows.storage.applicationdata.localsettings) 存储，而不应序列化数据。 对较多数量的数据和非设置数据使用序列化。
 
 当执行数据序列化时，应避免在数据没有更改时重新对其进行序列化。 序列化和保存数据需要花费额外的时间，重新激活应用时还会花费额外的时间来读取和反序列化数据。 因而，我们建议应用确定其状态是否已实际更改，如果已更改，则仅需序列化和反序列化已更改的数据即可。 确保发生这种情况的一个好方法是在数据更改后在后台定期序列化数据。 如果使用此技术，那么暂停时需要进行序列化的所有数据都已进行过保存，因此，不需要进行任何操作，且应用会快速暂停。
 
 ### <a name="serializing-data-in-c-and-visual-basic"></a>使用 C# 和 Visual Basic 序列化数据
 
-对于 .NET 应用，可供选择的序列化技术有 [**System.Xml.Serialization.XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer)、[**System.Runtime.Serialization.DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) 和 [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer) 类。
+对于 .NET 应用，可供选择的序列化技术有 [**System.Xml.Serialization.XmlSerializer**](/dotnet/api/system.xml.serialization.xmlserializer)、[**System.Runtime.Serialization.DataContractSerializer**](/dotnet/api/system.runtime.serialization.datacontractserializer) 和 [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer) 类。
 
-从性能角度看，我们建议使用 [**XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer) 类。 **XmlSerializer** 的序列化和反序列化时间最短，并保持很低的内存占用。 **XmlSerializer** 对 .NET 框架的依赖很少；这意味着与其他序列化技术相比较，使用 **XmlSerializer** 时需要加载到你的应用中的模块会更少。
+从性能角度看，我们建议使用 [**XmlSerializer**](/dotnet/api/system.xml.serialization.xmlserializer) 类。 **XmlSerializer** 的序列化和反序列化时间最短，并保持很低的内存占用。 **XmlSerializer** 对 .NET 框架的依赖很少；这意味着与其他序列化技术相比较，使用 **XmlSerializer** 时需要加载到你的应用中的模块会更少。
 
-[**DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) 使自定义类序列化更加容易，尽管它具有比 **XmlSerializer** 更高的性能影响。 如果需要更好的性能，请考虑切换。 一般情况下，不应加载多个序列化程序，并且应首选 **XmlSerializer**，除非需要使用其他序列化程序的功能。
+[**DataContractSerializer**](/dotnet/api/system.runtime.serialization.datacontractserializer) 使自定义类序列化更加容易，尽管它具有比 **XmlSerializer** 更高的性能影响。 如果需要更好的性能，请考虑切换。 一般情况下，不应加载多个序列化程序，并且应首选 **XmlSerializer**，除非需要使用其他序列化程序的功能。
 
 ### <a name="reduce-memory-footprint"></a>减少内存占用
 
@@ -81,15 +81,11 @@ UWP 进程生存期系统可以出于各种原因暂停或终止应用。 此进
 
 在用户将应用移至前台时或在系统退出低功耗状态时，可恢复已暂停的应用。 应用从已暂停状态恢复时，它会从暂停的位置和时间处继续运行。 由于应用数据存储在内存中，所以不会丢失任何应用数据，即使应用已暂停很长一段时间也是如此。
 
-大多数应用不需要处理 [**Resuming**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming) 事件。 恢复应用时，变量和对象具有应用暂停时其所处的相同状态。 仅当你需要更新在暂停应用的时间与恢复应用的时间之间可能已更改的数据或对象（比如，内容（例如，更新源数据）、可能已经过时的网络连接）时，或者需要重新获取对设备（如摄像头）的访问时，才处理 **Resuming** 事件。
+大多数应用不需要处理 [**Resuming**](/uwp/api/windows.applicationmodel.core.coreapplication.resuming) 事件。 恢复应用时，变量和对象具有应用暂停时其所处的相同状态。 仅当你需要更新在暂停应用的时间与恢复应用的时间之间可能已更改的数据或对象（比如，内容（例如，更新源数据）、可能已经过时的网络连接）时，或者需要重新获取对设备（如摄像头）的访问时，才处理 **Resuming** 事件。
 
 ## <a name="related-topics"></a>相关主题
 
-* [应用暂停和恢复指南](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [应用暂停和恢复指南](../launch-resume/index.md)
  
 
  
-
-
-
-

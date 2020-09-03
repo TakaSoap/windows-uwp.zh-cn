@@ -5,18 +5,18 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 3dbdf8d006472c288369fd528e89663aca5a9e10
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 551d937836f0dcf0094e54a503d2a8cd80a2f28b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970882"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169521"
 ---
 # <a name="page-layout"></a>页面布局
 
-在 Windows 应用中，每个[页面  ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)通常都有导航、命令和内容元素。 
+在 Windows 应用中，每个[页面  ](/uwp/api/Windows.UI.Xaml.Controls.Page)通常都有导航、命令和内容元素。 
 
-应用可以有多个页面：当用户启动 Windows 应用时，应用程序代码会创建一个[帧  ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)放置在应用程序的[窗口  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window)内。 然后，帧可以在应用程序的[页面  ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)实例之间[导航](../basics/navigate-between-two-pages.md)。 
+应用可以有多个页面：当用户启动 Windows 应用时，应用程序代码会创建一个[帧  ](/uwp/api/Windows.UI.Xaml.Controls.Frame)放置在应用程序的[窗口  ](/uwp/api/windows.ui.xaml.window)内。 然后，帧可以在应用程序的[页面  ](/uwp/api/Windows.UI.Xaml.Controls.Page)实例之间[导航](../basics/navigate-between-two-pages.md)。 
 
 大多数页面都遵循常见的布局结构，本文介绍了需要哪些 UI 元素以及它们在页面上的位置。 
 
@@ -33,7 +33,7 @@ ms.locfileid: "82970882"
 - 应用设置中的入口点
 - 帐户设置中的入口点
 
-[NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview) 控件实现 UWP 的左侧导航模式。
+[NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview) 控件实现 UWP 的左侧导航模式。
 
 选中导航项后，帧应导航到选定项页。
 

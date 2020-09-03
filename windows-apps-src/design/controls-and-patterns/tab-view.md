@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 489215c0289695832cb895d8566063a93ae2336c
-ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
+ms.openlocfilehash: f59bb821b65eda89aa1fbc88e9c38d5789f61f6e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83867347"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163421"
 ---
 # <a name="tabview"></a>TabView
 
@@ -24,12 +24,12 @@ ms.locfileid: "83867347"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | TabView  控件需要 Windows UI 库，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | TabView  控件需要 Windows UI 库，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
 
 > **Windows UI 库 API**：[TabView 类](/uwp/api/microsoft.ui.xaml.controls.tabview)、[TabViewItem 类](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 > [!TIP]
-> 在本文档中，我们使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此项添加到我们的[页](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> 在本文档中，我们使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此项添加到我们的[页](/uwp/api/windows.ui.xaml.controls.page)元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >在后面的代码中，我们还使用 C# 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们在文件顶部添加了此 **using** 语句：`using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -44,7 +44,7 @@ ms.locfileid: "83867347"
 - 用户需要能够将文档或网页直接打开到选项卡中。
 - 用户需要能够在窗口之间拖放选项卡。
 
-如果 TabView 不适合你的应用，考虑使用 [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot) 或 [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) 之类的控件。
+如果 TabView 不适合你的应用，考虑使用 [Pivot](./pivot.md) 或 [NavigationView](./navigationview.md) 之类的控件。
 
 ## <a name="anatomy"></a>结构
 
@@ -104,7 +104,7 @@ private void TabView_TabCloseRequested(muxc.TabView sender, muxc.TabViewTabClose
 
 由于用户可以通过窗口的标题栏来拖动窗口，调整窗口的位置，因此不能让标题栏填满选项卡，这一点很重要。 因此，在标题栏中显示选项卡时，必须指定标题栏的一部分作为可拖动区域保留。 如果不指定可拖动区域，则整个标题栏会变得可拖动，这会妨碍选项卡接收输入事件。 如果 TabView 将显示在窗口的标题栏中，则应始终在 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 中包括一个 [TabStripFooter](/uwp/api/microsoft.ui.xaml.controls.tabview.tabstripfooter) 并将其标记为可拖动区域。
 
-有关详细信息，请参阅[标题栏自定义](https://docs.microsoft.com/windows/uwp/design/shell/title-bar)
+有关详细信息，请参阅[标题栏自定义](../shell/title-bar.md)
 
 ![标题栏中的选项卡](images/tabview/tab-extend-to-title.png)
 
@@ -329,6 +329,6 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## <a name="related-articles"></a>相关文章
 
-- [MasterDetails](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/master-details)
-- [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)
-- [透视表](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot)
+- [MasterDetails](./master-details.md)
+- [NavigationView](./navigationview.md)
+- [透视表](./pivot.md)

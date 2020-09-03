@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8d79d4f3394bcf8f7892f2c6dc3d4e0ca72972ab
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: c17d4c0aca4c59e18a13bf42bad16e6739938717
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970602"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168671"
 ---
 # <a name="writing-style"></a>写入样式
 
@@ -76,7 +76,7 @@ ms.locfileid: "82970602"
 
 ## <a name="style-conventions"></a>风格惯例
 
-如果你认为自己不会成为一名作家，那么尝试实施这些原则和建议可能会具有挑战性。 但不用担心，使用简单直接的语言是提供良好用户体验的好方法。 如果你仍然不确定如何组织语言，这里有一些有用的指南以供参考。 如果要了解详细信息，请查看 [Microsoft 样式指南](https://docs.microsoft.com/style-guide/welcome/)。
+如果你认为自己不会成为一名作家，那么尝试实施这些原则和建议可能会具有挑战性。 但不用担心，使用简单直接的语言是提供良好用户体验的好方法。 如果你仍然不确定如何组织语言，这里有一些有用的指南以供参考。 如果要了解详细信息，请查看 [Microsoft 样式指南](/style-guide/welcome/)。
 
 ### <a name="addressing-the-user"></a>称呼用户
 
@@ -228,7 +228,7 @@ ms.locfileid: "82970602"
 
 ## <a name="accessibility-and-localization"></a>辅助功能和本地化
 
-如果在编写文本时考虑到辅助功能和本地化，你的应用可能会接触到更多的受众。 这是仅通过文本无法达成的，尽管简单友好的语言是一个很好的开始。 有关详细信息，请参阅[辅助功能概述](https://docs.microsoft.com/windows/uwp/design/accessibility/accessibility-overview)和[本地化指南](https://docs.microsoft.com/windows/uwp/design/globalizing/globalizing-portal)。
+如果在编写文本时考虑到辅助功能和本地化，你的应用可能会接触到更多的受众。 这是仅通过文本无法达成的，尽管简单友好的语言是一个很好的开始。 有关详细信息，请参阅[辅助功能概述](../accessibility/accessibility-overview.md)和[本地化指南](../globalizing/globalizing-portal.md)。
 
 * 随时准备提供帮助  ：考虑到不同的体验。 避免使用可能对国际受众无意义的短语，并且请勿使用假设用户可以和不可以做什么的字词。
 

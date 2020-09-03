@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ce91e32b14bdf81b40b24e810e0bd86bcaa99b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4ee8eb8ea34205f2e597bf41da61f5ab63714566
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67321088"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162831"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 创建 3D JavaScript 游戏
 
@@ -442,7 +442,7 @@ scene.add(controls.getObject());
 
 摄像头现已连接，但我们仍需要让鼠标和控制器互动，从而使我们能够四处查看。 
 
-对于此情况，[指针锁 API](https://docs.microsoft.com/microsoft-edge/dev-guide/dom/pointer-lock) 派上了用场，它使我们能够将鼠标移动与我们的摄像头连接起来。 此外，指针锁 API 还可以使鼠标消失，从而获得一种让人更加沉醉的体验。 按 ESC 即可结束鼠标与摄像头之间的连接并让鼠标再次显示。 添加 `getPointerLock()` 和 `lockChange()` 函数可以帮助我们实现该操作。
+对于此情况，[指针锁 API](/microsoft-edge/dev-guide/dom/pointer-lock) 派上了用场，它使我们能够将鼠标移动与我们的摄像头连接起来。 此外，指针锁 API 还可以使鼠标消失，从而获得一种让人更加沉醉的体验。 按 ESC 即可结束鼠标与摄像头之间的连接并让鼠标再次显示。 添加 `getPointerLock()` 和 `lockChange()` 函数可以帮助我们实现该操作。
 
 `getPointerLock()` 函数可以侦听何时单击了鼠标。 单击后，我们呈现的游戏（位于 `container` 元素中）将尝试控制鼠标。 此外，我们还需添加一个事件侦听器，用于检测玩家何时启用或禁用锁，该锁随后将调用 `lockChange()`。 
 
@@ -1084,7 +1084,6 @@ function lockChange() {
 现在，你已经拥有一个 UWP 应用，假定你已先对其进行了改进，则可以将其发布到 Microsoft Store。此流程包含几个步骤。
 
 1.  必须以 Windows 开发人员的身份[注册](https://developer.microsoft.com/store/register)。
-2.  必须使用应用提交[清单](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
-3.  必须提交此应用以进行[认证](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
-有关更多详细信息，请参阅[发布 UWP 应用](https://docs.microsoft.com/windows/uwp/publish/)。
-
+2.  必须使用应用提交[清单](../publish/app-submissions.md)。
+3.  必须提交此应用以进行[认证](../publish/the-app-certification-process.md)。
+有关更多详细信息，请参阅[发布 UWP 应用](../publish/index.md)。

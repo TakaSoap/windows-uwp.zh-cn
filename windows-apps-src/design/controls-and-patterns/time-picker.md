@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b1ae96b3a66a2c4644789fe0e2e38d5bded80a4
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 71f9d7e42b39b91186c9a2aa3ab1b87ed7f4d8b4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82967952"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168711"
 ---
 # <a name="time-picker"></a>时间选取器
  
@@ -30,9 +30,9 @@ ms.locfileid: "82967952"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](../style/rounded-corner.md)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
 
-> **平台 API**：[TimePicker 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker)、[Time 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.time)
+> **平台 API**：[TimePicker 类](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)、[Time 属性](/uwp/api/windows.ui.xaml.controls.timepicker.time)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？

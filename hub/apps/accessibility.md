@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Windows 10 中的易访问性, 易访问性, 构建易访问的 win32 应用, 构建易访问的 UWP 应用, 构建易访问的 WPF 应用, 构建易访问的 WinForms 应用
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 04dc3571f6b2d8ddf57a3695330070d7c5b5061e
-ms.sourcegitcommit: 9beb6cce7375b726ad90ee84b72754268ae2819a
+ms.openlocfilehash: 7cdfa91bec648ab6f3d09d0aeff0d62e2962db86
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88047784"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169041"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 中的易访问性
 
@@ -37,13 +37,13 @@ ms.locfileid: "88047784"
 
       在新式平台上针对任何 Windows 设备（包括电脑、手机、Xbox One、HoloLens 等）上的 Windows 10 应用程序和游戏开发易访问的应用和工具，并将它们发布到 Microsoft Store。
 
-      [设计非独占软件](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
+      [设计非独占软件](/windows/uwp/accessibility/designing-inclusive-software)
 
-      [开发非独占 Windows 应用](https://docs.microsoft.com/windows/uwp/accessibility/developing-inclusive-windows-apps)
+      [开发非独占 Windows 应用](/windows/uwp/accessibility/developing-inclusive-windows-apps)
 
-      [辅助功能测试](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
+      [辅助功能测试](/windows/uwp/accessibility/accessibility-testing)
 
-      [Microsoft Store 中的辅助功能](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
+      [Microsoft Store 中的辅助功能](/windows/uwp/accessibility/accessibility-in-the-store)
    :::column-end:::
    :::column:::
       ![Win32 平台应用](images/platform-win32.png)
@@ -52,21 +52,21 @@ ms.locfileid: "88047784"
 
       在原始平台上针对 C/C++ Windows 应用程序开发易访问的应用和工具。
 
-      [Windows 辅助功能和自动化中的新增功能](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
+      [Windows 辅助功能和自动化中的新增功能](/windows/desktop/accessibility-whatsnew)
 
-      [针对 Windows 开发易访问的应用程序](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
+      [针对 Windows 开发易访问的应用程序](/windows/desktop/accessibility-appdev)
 
-      [针对 Windows 开发易访问的 UI 框架](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
+      [针对 Windows 开发易访问的 UI 框架](/windows/desktop/accessibility-uiframeworkdev)
 
-      [针对 Windows 开发辅助技术](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
+      [针对 Windows 开发辅助技术](/windows/desktop/accessibility-atdev)
 
-      [易访问性测试](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
+      [易访问性测试](/windows/desktop/accessibility-testwithuia)
 
-      [旧版易访问性和自动化技术 - 通过 MSAA 实现 UI 自动化](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
+      [旧版易访问性和自动化技术 - 通过 MSAA 实现 UI 自动化](/windows/desktop/accessibility-legacy)
 
-      [Windows 辅助功能](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
+      [Windows 辅助功能](/windows/desktop/winauto/about-windows-accessibility-features)
 
-      [设计辅助应用指南](https://docs.microsoft.com/windows/desktop/uxguide/inter-accessibility)
+      [设计辅助应用指南](/windows/desktop/uxguide/inter-accessibility)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -77,21 +77,21 @@ ms.locfileid: "88047784"
 
       使用 XAML UI 模型和 .NET Framework 在建立的平台上针对托管 Windows 应用程序开发易访问的应用和工具。
 
-      [辅助功能最佳方案](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
+      [辅助功能最佳方案](/dotnet/framework/ui-automation/accessibility-best-practices)
 
-      [UI 自动化基础知识](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
+      [UI 自动化基础知识](/dotnet/framework/ui-automation/index)
 
-      [托管代码的 UI 自动化提供程序](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
+      [托管代码的 UI 自动化提供程序](/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
 
-      [托管代码的 UI 自动化客户端](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
+      [托管代码的 UI 自动化客户端](/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
 
-      [UI 自动化控件模式](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
+      [UI 自动化控件模式](/dotnet/framework/ui-automation/ui-automation-control-patterns)
 
-      [UI 自动化文本模式](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
+      [UI 自动化文本模式](/dotnet/framework/ui-automation/ui-automation-text-pattern)
 
-      [UI 自动化控件类型](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
+      [UI 自动化控件类型](/dotnet/framework/ui-automation/ui-automation-control-types)
 
-      [UI 自动化规范和社区承诺](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
+      [UI 自动化规范和社区承诺](/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
    :::column-end:::
    :::column:::
       ![Windows 窗体平台应用](images/platform-winforms.png)
@@ -100,13 +100,13 @@ ms.locfileid: "88047784"
 
       使用 XAML UI 模型和 .NET Framework 针对托管 Windows 应用程序开发易访问的应用和工具。
 
-      [Windows 窗体易访问性](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
+      [Windows 窗体易访问性](/dotnet/framework/winforms/advanced/windows-forms-accessibility)
 
-      [创建易访问的 Windows 应用程序](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
+      [创建易访问的 Windows 应用程序](/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
 
-      [支持辅助功能准则的 Windows 窗体控件上的属性](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
+      [支持辅助功能准则的 Windows 窗体控件上的属性](/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
-      [为 Windows 窗体上的控件提供辅助功能信息](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+      [为 Windows 窗体上的控件提供辅助功能信息](/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -118,14 +118,14 @@ ms.locfileid: "88047784"
 :::row-end:::
 :::row:::
    :::column:::
-      [Web 易访问性简介](https://docs.microsoft.com/microsoft-edge/accessibility)
+      [Web 易访问性简介](/microsoft-edge/accessibility)
 
-      [设计辅助网站](https://docs.microsoft.com/microsoft-edge/accessibility/design)
+      [设计辅助网站](/microsoft-edge/accessibility/design)
    :::column-end:::
    :::column:::
-      [生成辅助网站](https://docs.microsoft.com/microsoft-edge/accessibility/build)
+      [生成辅助网站](/microsoft-edge/accessibility/build)
 
-      [测试易访问的网站](https://docs.microsoft.com/microsoft-edge/accessibility/test)
+      [测试易访问的网站](/microsoft-edge/accessibility/test)
    :::column-end:::
 :::row-end:::
 
@@ -135,7 +135,7 @@ ms.locfileid: "88047784"
 
 :::row:::
    :::column:::
-      [代码示例浏览器](https://docs.microsoft.com/samples/browse/)
+      [代码示例浏览器](/samples/browse/)
 
       新示例浏览器替代了 MSDN 代码库。
    :::column-end:::
@@ -253,7 +253,7 @@ ms.locfileid: "88047784"
       [“易访问性”博客](https://blogs.microsoft.com/accessibility/)
    :::column-end:::
    :::column:::
-      [Windows UI 自动化博客](https://blogs.msdn.microsoft.com/winuiautomation/)
+      [Windows UI 自动化博客](/archive/blogs/winuiautomation/)
    :::column-end:::
 :::row-end:::
 :::row:::

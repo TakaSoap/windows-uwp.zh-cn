@@ -5,12 +5,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp, 设备门户, 应用管理器, 部署, sdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bf3dab97be67a3b97aca4b3132bd9fe18691d15
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0fd5bf6be691974d956de0c71f4a1d11aa1a229f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75681928"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166091"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>通过松散文件注册部署应用 
 
@@ -31,10 +31,10 @@ ms.locfileid: "75681928"
 
 ## <a name="how-to-register-a-loose-file-layout"></a>如何注册宽松文件布局
 
-Windows 提供有多种用于在本地和远程设备上注册宽松文件布局的开发人员工具。 可以选择 `WinDeployAppCmd`（Windows SDK 工具）、Windows 设备门户、PowerShell 或 [Visual Studio](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#register-layout-from-network)。 下面我们将介绍如何使用这些工具注册宽松文件。 首先，请确保你具有以下设置：
+Windows 提供有多种用于在本地和远程设备上注册宽松文件布局的开发人员工具。 可以选择 `WinDeployAppCmd`（Windows SDK 工具）、Windows 设备门户、PowerShell 或 [Visual Studio](./deploying-and-debugging-uwp-apps.md#register-layout-from-network)。 下面我们将介绍如何使用这些工具注册宽松文件。 首先，请确保你具有以下设置：
 
 - 你的设备必须运行 Windows 10 创意者更新（内部版本 14965）或更高版本。
-- 你需要在所有设备上启用[开发者模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)和[设备发现](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery)。
+- 你需要在所有设备上启用[开发者模式](../get-started/enable-your-device-for-development.md)和[设备发现](../get-started/enable-your-device-for-development.md#device-discovery)。
 
 > [!IMPORTANT]
 > 只有在支持网络共享 (SMB) 协议的设备上才可以使用宽松文件注册：台式电脑和 Xbox。 
@@ -51,7 +51,7 @@ WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Addres
 
 **IP 地址** – 目标计算机的 IP 地址。
 
-**目标计算机 PIN** - 与目标设备建立连接时所需的 PIN（如果需要）。 如果需要身份验证，系统将提示你使用 `-pin` 选项重试。 如需了解如何获取 PIN，请参阅[设备发现](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery)。
+**目标计算机 PIN** - 与目标设备建立连接时所需的 PIN（如果需要）。 如果需要身份验证，系统将提示你使用 `-pin` 选项重试。 如需了解如何获取 PIN，请参阅[设备发现](../get-started/enable-your-device-for-development.md#device-discovery)。
 
 ### <a name="windows-device-portal"></a>Windows 设备门户
 

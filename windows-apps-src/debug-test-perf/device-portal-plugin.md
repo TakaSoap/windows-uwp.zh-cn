@@ -6,18 +6,18 @@ ms.date: 07/06/2020
 ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: b806344fa7e0517caf4d04efaaa605371a200202
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: f66650291e2966d6a3a6ac2b5d794006382d2fbf
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493202"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170021"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>为设备门户编写自定义插件
 
 了解如何编写使用 Windows 设备门户承载网页并提供诊断信息的 UWP 应用。
 
-从 Windows 10 创意者更新（版本 1703，内部版本 15063）开始，可以使用设备门户承载应用的诊断接口。 本文介绍为应用创建 DevicePortalProvider 的三个步骤 - 更改[应用包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)，设置应用到[设备门户服务](/windows/uwp/debug-test-perf/device-portal)的连接，以及处理传入请求。
+从 Windows 10 创意者更新（版本 1703，内部版本 15063）开始，可以使用设备门户承载应用的诊断接口。 本文介绍为应用创建 DevicePortalProvider 的三个步骤 - 更改[应用包清单](/uwp/schemas/appxpackage/appx-package-manifest)，设置应用到[设备门户服务](./device-portal.md)的连接，以及处理传入请求。
 
 ## <a name="create-a-new-uwp-app-project"></a>创建新的 UWP 应用项目
 
@@ -75,10 +75,10 @@ ms.locfileid: "86493202"
 ```
 
 > [!NOTE]
-> 功能“devicePortalProvider”是受限的（“rescap”），这意味着必须先从 Microsoft Store 获取事先批准，然后才能在其中发布应用。 但是，这不影响你通过旁加载在本地测试应用。 有关受限功能的详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
+> 功能“devicePortalProvider”是受限的（“rescap”），这意味着必须先从 Microsoft Store 获取事先批准，然后才能在其中发布应用。 但是，这不影响你通过旁加载在本地测试应用。 有关受限功能的详细信息，请参阅[应用功能声明](../packaging/app-capability-declarations.md)。
 
 ## <a name="set-up-your-background-task-and-winrt-component"></a>设置后台任务和 WinRT 组件
-若要设置 Device Portal 连接，应用必须将来自 Device Portal 服务的应用服务连接与在应用中运行的 Device Portal 实例关联。 若要执行此操作，请使用实现 [IBackgroundTask](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask) 的类向应用程序添加新的 WinRT 组件。
+若要设置 Device Portal 连接，应用必须将来自 Device Portal 服务的应用服务连接与在应用中运行的 Device Portal 实例关联。 若要执行此操作，请使用实现 [IBackgroundTask](/uwp/api/windows.applicationmodel.background.ibackgroundtask) 的类向应用程序添加新的 WinRT 组件。
 
 ```csharp
 namespace MySampleProvider {
@@ -88,7 +88,7 @@ namespace MySampleProvider {
     }
 ```
 
-确保其名称与 AppService 入口点（“MySampleProvider.SampleProvider”）设置的命名空间和类名匹配。 对 Device Portal 提供程序进行第一个请求时，Device Portal 会存储该请求，启动应用的后台任务，调用其 **Run** 方法，然后传入 [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance)。 应用随后使用它设置 [DevicePortalConnection](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnection) 实例。
+确保其名称与 AppService 入口点（“MySampleProvider.SampleProvider”）设置的命名空间和类名匹配。 对 Device Portal 提供程序进行第一个请求时，Device Portal 会存储该请求，启动应用的后台任务，调用其 **Run** 方法，然后传入 [**IBackgroundTaskInstance**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance)。 应用随后使用它设置 [DevicePortalConnection](/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnection) 实例。
 
 ```csharp
 // Implement background task handler with a DevicePortalConnection
@@ -108,10 +108,10 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-应用必须处理以下两个事件才能完成请求处理循环：Closed，用于设备门户服务关闭时；[RequestReceived](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs)用于显示传入的 HTTP 请求并提供设备门户提供程序的主要功能。 
+应用必须处理以下两个事件才能完成请求处理循环：Closed，用于设备门户服务关闭时；[RequestReceived](/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs)用于显示传入的 HTTP 请求并提供设备门户提供程序的主要功能。 
 
 ## <a name="handle-the-requestreceived-event"></a>处理 RequestReceived 事件
-对于在插件的指定处理程序路线上进行的每个 HTTP 请求，会引发一次 RequestReceived 事件。 Device Portal 提供程序的请求处理循环与 NodeJS Express 的类似：请求和响应对象会随事件一起提供，处理程序会通过填充响应对象进行响应。 在设备门户提供程序中，RequestReceived 事件及其处理程序使用 [Windows.Web.Http.HttpRequestMessage](https://docs.microsoft.com/uwp/api/windows.web.http.httprequestmessage) 和 [HttpResponseMessage](https://docs.microsoft.com/uwp/api/windows.web.http.httpresponsemessage) 对象。   
+对于在插件的指定处理程序路线上进行的每个 HTTP 请求，会引发一次 RequestReceived 事件。 Device Portal 提供程序的请求处理循环与 NodeJS Express 的类似：请求和响应对象会随事件一起提供，处理程序会通过填充响应对象进行响应。 在设备门户提供程序中，RequestReceived 事件及其处理程序使用 [Windows.Web.Http.HttpRequestMessage](/uwp/api/windows.web.http.httprequestmessage) 和 [HttpResponseMessage](/uwp/api/windows.web.http.httpresponsemessage) 对象。   
 
 ```csharp
 // Sample RequestReceived echo handler: respond with an HTML page including the query and some additional process information. 
@@ -136,7 +136,7 @@ private void DevicePortalConnection_RequestReceived(DevicePortalConnection sende
 }
 ```
 
-在此示例请求处理程序中，我们首先从 *args* 参数中拉取出请求和响应对象，然后创建包含请求 URL 和一些其他 HTML 格式设置的字符串。 这会作为 [HttpStringContent](https://docs.microsoft.com/uwp/api/windows.web.http.httpstringcontent) 实例添加到响应对象。 还允许使用其他 [IHttpContent](https://docs.microsoft.com/uwp/api/windows.web.http.ihttpcontent) 类（如用于“字符串”和“缓冲区”的类）。
+在此示例请求处理程序中，我们首先从 *args* 参数中拉取出请求和响应对象，然后创建包含请求 URL 和一些其他 HTML 格式设置的字符串。 这会作为 [HttpStringContent](/uwp/api/windows.web.http.httpstringcontent) 实例添加到响应对象。 还允许使用其他 [IHttpContent](/uwp/api/windows.web.http.ihttpcontent) 类（如用于“字符串”和“缓冲区”的类）。
 
 随后将响应设置为 HTTP 响应，并向它提供 200（正常）状态代码。 它应按预期方式在进行原始调用的浏览器中呈现。 请注意，当 **RequestReceived** 事件处理程序返回时，响应消息会自动返回到用户代理：无需其他“发送”方法。
 
@@ -176,7 +176,7 @@ if (req.RequestUri.LocalPath.ToLower().Contains("/www/")) {
 
 ![设备门户插件输出](images/device-portal/plugin-output.png)
  
-重要的是，对 webbRest 使用 HttpPost/DeleteExpect200 方法会自动执行 [CSRF 处理](https://docs.microsoft.com/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks)，可使网页可以调用状态不断变化的 REST API。  
+重要的是，对 webbRest 使用 HttpPost/DeleteExpect200 方法会自动执行 [CSRF 处理](/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks)，可使网页可以调用状态不断变化的 REST API。  
 
 > [!NOTE] 
 > 设备门户附带的静态内容不带有针对重大更改的保证。 虽然 API 预计不会经常更改，不过它们可能会更改，特别是在 *common.js* 和 *controls.js* 文件（提供程序不应使用它们）。 
@@ -197,6 +197,4 @@ if (req.RequestUri.LocalPath.ToLower().Contains("/www/")) {
 
 ## <a name="related-topics"></a>相关主题
 * [Windows 设备门户概述](device-portal.md)
-* [创建和使用应用服务](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-
-
+* [创建和使用应用服务](../launch-resume/how-to-create-and-consume-an-app-service.md)

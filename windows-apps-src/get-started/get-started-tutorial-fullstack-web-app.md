@@ -5,12 +5,12 @@ keywords: 托管 Web 应用, HWA, REST API, 单页应用, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b9a6b80034dc8272226c9563960079434dff8e41
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3b2c8da824896b838776174cb22423181aae0e06
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684786"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168231"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>创建具有 REST 后端的单页 Web 应用
 
@@ -274,9 +274,9 @@ for (var i=0; i < board.length; i++){
 
 Azure 文档将引导你完成：
 
- - [通过 Azure 门户注册新 API 应用](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp) 
- - [为 API 应用设置 Git 部署](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)，以及
- - [将 API 应用代码部署到 Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
+ - [通过 Azure 门户注册新 API 应用](/azure/app-service/app-service-web-tutorial-rest-api#createapiapp) 
+ - [为 API 应用设置 Git 部署](/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)，以及
+ - [将 API 应用代码部署到 Azure](/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
 
 注册应用时，应尝试区分你的应用名称（以避免命名与 http://memorygameapi.azurewebsites.net URL 上的其他请求差异有冲突）   。
 
@@ -290,7 +290,7 @@ Azure 文档将引导你完成：
 
  - [使用 Visual Studio Code 的高级 Node.js 调试](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Azure Web + 移动文档](https://docs.microsoft.com/azure/#pivot=services&panel=web)
+ - [Azure Web + 移动文档](/azure/#pivot=services&panel=web)
 
  - [Azure DocumentDB 文档](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
@@ -635,13 +635,13 @@ Bootstrap 的网格系统允许网格系统折叠为一个垂直列，就像你�
 发布到 Microsoft Store 的基本步骤是：
 
  1. 创建 [Windows 开发人员](https://developer.microsoft.com/store/register)帐户
- 2. 使用应用提交[清单](https://docs.microsoft.com/windows/uwp/publish/app-submissions)
- 3. 提交你的应用进行[认证](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
+ 2. 使用应用提交[清单](../publish/app-submissions.md)
+ 3. 提交你的应用进行[认证](../publish/the-app-certification-process.md)
 
 下面是一些帮助你深入探索的有用资源：
 
- - [将应用程序开发项目部署到 Azure 网站](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
+ - [将应用程序开发项目部署到 Azure 网站](/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [将 Web 应用程序转换为通用 Windows 平台 (UWP) 应用](https://docs.microsoft.com/microsoft-edge/progressive-web-apps)
+ - [将 Web 应用程序转换为通用 Windows 平台 (UWP) 应用](/microsoft-edge/progressive-web-apps)
 
- - [发布 Windows 应用](https://docs.microsoft.com/windows/uwp/publish/)
+ - [发布 Windows 应用](../publish/index.md)

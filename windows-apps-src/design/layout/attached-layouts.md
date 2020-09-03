@@ -7,12 +7,12 @@ ms.date: 03/13/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ee88e32ed0ce0fd193fe79e48814a11f494d062
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 9f36035bea91f39d60f44ca9e16c768eb5d75e78
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970212"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165631"
 ---
 # <a name="attached-layouts"></a>附加的布局
 
@@ -22,12 +22,12 @@ ms.locfileid: "82970212"
 
 | **获取 Windows UI 库** |
 | - |
-| 此控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| 此控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](/uwp/toolkits/winui/)。 |
 
 > **重要的 API**：
 
 > * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
-> * [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)
+> * [ItemsRepeater](../controls-and-patterns/items-repeater.md)
 > * [布局](/uwp/api/microsoft.ui.xaml.controls.layout)
 >     * [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
 >     * [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
@@ -44,7 +44,7 @@ ms.locfileid: "82970212"
 
 2. 此元素将置于何处？
 
-我们在[自定义面板](/windows/uwp/design/layout/custom-panels-overview)的讨论部分中简要介绍了 XAML 的布局系统（会对上述问题进行解答）。
+我们在[自定义面板](./custom-panels-overview.md)的讨论部分中简要介绍了 XAML 的布局系统（会对上述问题进行解答）。
 
 ### <a name="containers-and-context"></a>容器和上下文
 
@@ -55,7 +55,7 @@ ms.locfileid: "82970212"
 
 因此，XAML 中的“面板”通常与布局的意思相同，但从技术方面讲，该“面板”不仅仅只是布局。
 
-[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater) 的行为也与“面板”相似，但与“面板”不同的是，它不会公开将以编程方式添加或删除 UIElement 子元素的子属性。  相反，其子元素的生存期是自动由框架管理的，以便与数据项集合相对应。  尽管它不是派生自“面板”，但它的行为与“面板”相似，并且像“面板”那样由框架进行处理。
+[ItemsRepeater](../controls-and-patterns/items-repeater.md) 的行为也与“面板”相似，但与“面板”不同的是，它不会公开将以编程方式添加或删除 UIElement 子元素的子属性。  相反，其子元素的生存期是自动由框架管理的，以便与数据项集合相对应。  尽管它不是派生自“面板”，但它的行为与“面板”相似，并且像“面板”那样由框架进行处理。
 
 > [!NOTE]
 > [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) 是一个派生自“面板”的容器，它将其逻辑委托给附加的[布局](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout)对象。  LayoutPanel 处于“预览版”状态，目前仅可用于 WinUI 包的“预发行版”中   。
@@ -128,7 +128,7 @@ UI 虚拟化意味着延迟创建 UI 对象，直到_需要时才创建_。  这
 **请注意以下几点………**
 
 1. 非虚拟化布局更易于创作。 如果项数始终都较少，则建议创作非虚拟化布局。
-2. 此平台提供一组附加的布局，这些布局适用于 [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items) 和 [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) 以满足常见需求。  先熟悉这些需求，再确定是否需要定义自定义布局。
+2. 此平台提供一组附加的布局，这些布局适用于 [ItemsRepeater](../controls-and-patterns/items-repeater.md#change-the-layout-of-items) 和 [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) 以满足常见需求。  先熟悉这些需求，再确定是否需要定义自定义布局。
 3. 与非虚拟化布局相比，虚拟化布局始终具有额外的 CPU 和内存成本/复杂性/开销。  根据一般的经验法则，如果布局需要管理的子元素可能适合一个面积为视区 3 倍大小的区域，虚拟化布局带来的益处则不太多。 此文档稍后将更详细地讨论这一 3 倍大小，但这是出于在 Windows 上滚动的异步性质及其对虚拟化的影响所进行的。
 
 > [!TIP]
@@ -145,7 +145,7 @@ UI 虚拟化意味着延迟创建 UI 对象，直到_需要时才创建_。  这
 
 ## <a name="non-virtualizing-layout"></a>非虚拟化布局
 
-创建非虚拟化布局的方法对于任何创建过[自定义面板](/windows/uwp/design/layout/custom-panels-overview)的人而言应该非常熟悉了。  它们在概念上是相同的。  主要区别在于 [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) 用于访问[子元素](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children)集合，并且布局可能会选择存储状态。
+创建非虚拟化布局的方法对于任何创建过[自定义面板](./custom-panels-overview.md)的人而言应该非常熟悉了。  它们在概念上是相同的。  主要区别在于 [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) 用于访问[子元素](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children)集合，并且布局可能会选择存储状态。
 
 1. 从基类型 [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) 派生（而不是从面板派生）。
 2. （可选）定义更改后会使布局失效的依赖项属性  。
@@ -246,7 +246,7 @@ public class MyStackLayout : NonVirtualizingLayout
 
 ![实现矩形](images/xaml-attached-layout-realizationrect.png)
 
-由于元素创建成本较高，虚拟化容器（例如 [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)）最初会使用与视区匹配的 [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) 来提供附加的布局。 空闲时，容器可以通过使用越来越大的实现矩形重复调用布局，从而增加已准备内容的缓冲区。 此行为是一种性能优化措施，试图在快速启动时间与良好的平移体验之间取得平衡。 ItemsRepeater 将生成的最大缓冲区大小由其 [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) 和 [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) 属性控制。
+由于元素创建成本较高，虚拟化容器（例如 [ItemsRepeater](../controls-and-patterns/items-repeater.md)）最初会使用与视区匹配的 [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) 来提供附加的布局。 空闲时，容器可以通过使用越来越大的实现矩形重复调用布局，从而增加已准备内容的缓冲区。 此行为是一种性能优化措施，试图在快速启动时间与良好的平移体验之间取得平衡。 ItemsRepeater 将生成的最大缓冲区大小由其 [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) 和 [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) 属性控制。
 
 **重新使用元素（回收）**
 

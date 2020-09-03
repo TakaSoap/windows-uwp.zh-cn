@@ -7,22 +7,22 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: 9848fc9e330a725f52ce2a7fae8b13f300476cf7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b4cd240882b920f06d06bf1143924a075e7cde53
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970192"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165541"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>教程：使用 Grid 和 StackPanel 创建简单的天气应用
 
 使用 XAML  并使用**网格**和 **StackPanel** 元素创建简单的天气应用的布局。 使用这些工具，你可以使出色的应用在运行 Windows 10 的任何设备上出色运行。 本教程需要 10-20 分钟。
 
-> **重要的 API**：[Grid 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)、[StackPanel 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **重要的 API**：[Grid 类](/uwp/api/windows.ui.xaml.controls.grid)、[StackPanel 类](/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>必备条件
 - Windows 10 和 Microsoft Visual Studio 2015 或更高版本。 （建议对当前开发和安全更新使用最新版 Visual Studio）[单击此处了解如何设置 Visual Studio](../../get-started/get-set-up.md)。
-- 了解如何通过使用 XAML 和 C# 创建一个基本的“Hello World”应用。 如果还不了解，请[单击此处了解如何创建一个“Hello World”应用](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
+- 了解如何通过使用 XAML 和 C# 创建一个基本的“Hello World”应用。 如果还不了解，请[单击此处了解如何创建一个“Hello World”应用](../../get-started/create-a-hello-world-app-xaml-universal.md)。
 
 ## <a name="step-1-create-a-blank-app"></a>步骤 1：创建空白应用
 1. 在 Visual Studio 菜单中，选择“文件”   > “新建项目”  。
@@ -51,7 +51,7 @@ ms.locfileid: "82970192"
 
 新**网格**将创建一个两行和两列的集合，它可定义应用界面的布局。 第一列的“宽度”为“3\*”，第二列为“5\*”，以 3:5 的比率划分两列之间的水平空间  。 同样，两行的高度  分别为“2\*”和“\*”，因此相对于第二行，网格为第一行分配二倍空间（“\*”等同于“1\*”）  。 即使在调整窗口大小或更改设备时，都会保留这些比率。
 
-若要了解有关调整行和列大小的其他方法，请参阅[使用 XAML 定义布局](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)。
+若要了解有关调整行和列大小的其他方法，请参阅[使用 XAML 定义布局](./layouts-with-xaml.md)。
 
 如果现在运行该应用程序，只会看到一个空白页面，因为任何**网格**区域都没有内容。 若要显示**网格**，让我们添加一些颜色。
 
@@ -120,6 +120,6 @@ ms.locfileid: "82970192"
 如果愿意，请尝试使用上面的布局，并探索可能代表天气数据的不同方式。
 
 ## <a name="related-articles"></a>相关文章
-有关设计 Windows 应用布局的简介，请参阅 [Windows 应用设计简介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)
+有关设计 Windows 应用布局的简介，请参阅 [Windows 应用设计简介](../basics/design-and-ui-intro.md)
 
-若要了解如何创建适应不同屏幕大小的响应性布局，请参阅[使用 XAML 定义页面布局](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)
+若要了解如何创建适应不同屏幕大小的响应性布局，请参阅[使用 XAML 定义页面布局](./layouts-with-xaml.md)

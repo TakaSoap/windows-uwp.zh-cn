@@ -8,18 +8,18 @@ ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 7e2d69390ac9a0f564c99a94151dd967759477a3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: e4cec3a0493bdea1c4e232e57cdd669ba19bc5ae
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493897"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168751"
 ---
 # <a name="templated-xaml-controls-for-uwp-and-winui-3-apps-with-cwinrt"></a>使用 C++/WinRT 的 UWP 和 WinUI 3 应用模板化 XAML 控件
 
 本文介绍如何使用 C++/WinRT 创建适用于 WinUI 3 的模板化 XAML 控件。 模板化控件继承自 Microsoft.UI.Xaml.Controls.Control，并且具有可使用 XAML 控件模板自定义的可视结构和可视行为。 本文介绍的场景与[使用 C++/WinRT 的 XAML 自定义（模板）控件](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl)一文中所介绍的相同，只是已改编为使用 WinUI 3。
 
-在执行本文的操作步骤之前，你应确保已配置开发环境以创建 WinUI 3 应用。 有关设置信息，请参阅[适用于桌面应用的 WinUI 3 入门](/windows/apps/winui/winui3/get-started-winui3-for-desktop)。
+在执行本文的操作步骤之前，你应确保已配置开发环境以创建 WinUI 3 应用。 有关设置信息，请参阅[适用于桌面应用的 WinUI 3 入门](./get-started-winui3-for-desktop.md)。
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>创建空白应用 (BgLabelControlApp)
 
