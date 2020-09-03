@@ -11,18 +11,18 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: addb4e7d929fb0222deda63494546d731f01cecd
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: ae53810dee72638eb89467098000988c3baaf047
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775792"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160531"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控件和模式简介
 
 在 Windows 应用开发中，控件  是用于显示内容或支持交互的 UI 元素。 通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。
 
-> **重要的 API**：[Windows.UI.Xaml.Controls 命名空间](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
+> **重要的 API**：[Windows.UI.Xaml.Controls 命名空间](/uwp/api/windows.ui.xaml.controls)
 
 *模式*是修改控件或组合多个控件来创造新内容的一种诀窍。 例如，[大纲/细节](master-details.md)模式是一种可将 [SplitView](split-view.md) 控件用于应用导航的方式。 同样，可以自定义 [NavigationView](navigationview.md) 控件的模板来实现选项卡模式。
 
@@ -169,7 +169,7 @@ Button1().Click({ this, &MainPage::Button1_Click });
 ## <a name="related-topics"></a>相关主题
 
 -   [按功能列出控件索引](controls-by-function.md)
--   [Windows.UI.Xaml.Controls 命名空间](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
+-   [Windows.UI.Xaml.Controls 命名空间](/uwp/api/windows.ui.xaml.controls)
 -   [布局](../layout/index.md)
 -   [样式](../style/index.md)
 -   [可用性](../usability/index.md)

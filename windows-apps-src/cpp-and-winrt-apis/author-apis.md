@@ -5,19 +5,19 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 64f605fc716970d2fd4ca534a0c31fb62baa34d4
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 0b5c515760d0a03e163fa663da1f97a728a6da2c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493662"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154591"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 创作 API
 
-本主题展示了如何直接或间接使用 [winrt::implements](/uwp/cpp-ref-for-winrt/implements) 基结构来创作 [C++/WinRT API](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)  。 在此上下文中，“创作”的同义词有“生成”或“实现”    。 本主题介绍以下在 C++/WinRT 类型上实现 API 的情形（按此顺序）。
+本主题展示了如何直接或间接使用 [winrt::implements](/uwp/cpp-ref-for-winrt/implements) 基结构来创作 [C++/WinRT API](./intro-to-using-cpp-with-winrt.md)  。 在此上下文中，“创作”的同义词有“生成”或“实现”    。 本主题介绍以下在 C++/WinRT 类型上实现 API 的情形（按此顺序）。
 
 > [!NOTE]
-> 本主题涉及 Windows 运行时组件，但其中的相关内容仅在 C++/WinRT 上下文中适用。 如果正在寻找有关涵盖所有 Windows 运行时语言的 Windows 运行时组件的内容，请参阅 [Windows 运行时组件](/windows/uwp/winrt-components/)。
+> 本主题涉及 Windows 运行时组件，但其中的相关内容仅在 C++/WinRT 上下文中适用。 如果正在寻找有关涵盖所有 Windows 运行时语言的 Windows 运行时组件的内容，请参阅 [Windows 运行时组件](../winrt-components/index.md)。
 
 - 你不是在创作一个 Windows 运行时类（运行时类）；你只是想要实现一个或多个 Windows 运行时接口以便在应用内进行本地使用  。 在此案例中，你直接从 winrt::implements 派生并实现相关函数  。
 - 你正在创作一个运行时类  。 你可能正在创作一个要从某个应用中使用的组件。 或者，你可能正在创作一个要从 XAML 用户接口 (UI) 使用的类型，在此情况下，你在同一个编译单元内实现和使用一个运行时类。 在这些情况下，你使用工具为你生成派生自 winrt::implements 的类  。
@@ -178,7 +178,7 @@ struct MyRuntimeClass_base : implements<D, MyProject::IMyRuntimeClass, I...>
 
 因此，在此情况中，继承层次结构的根同样是 [winrt::implements](/uwp/cpp-ref-for-winrt/implements) 基结构模板  。
 
-有关更多详细信息、代码以及在 Windows 运行时组件中创作 API 的演练，请参阅[使用 C++/WinRT 创建 Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)和[使用 C++/WinRT 创作事件](/windows/uwp/cpp-and-winrt-apis/author-events)。
+有关更多详细信息、代码以及在 Windows 运行时组件中创作 API 的演练，请参阅[使用 C++/WinRT 创建 Windows 运行时组件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)和[使用 C++/WinRT 创作事件](./author-events.md)。
 
 ## <a name="if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui"></a>如果你正在创作要在 XAML UI 中引用的运行时类
 
@@ -239,7 +239,7 @@ Visual Studio 项目和项模板为每个运行时类生成一个单独的 IDL �
 下面是一些示例。
 
 - 可以放宽对参数类型的要求。 例如，如果在 IDL 中，你的方法接受 **SomeClass**，那么可以选择在实现中将其更改为 **IInspectable**。 这会起作用，因为任何 **SomeClass** 均可转发到 **IInspectable**（当然，反之则不然）。
-- 可以按值（而不是按引用）接受可复制的参数。 例如，将 `SomeClass const&` 更改为 `SomeClass`。 这在你需要避免将引用捕获到协同例程时是必要的（请参阅[参数传递](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)）。
+- 可以按值（而不是按引用）接受可复制的参数。 例如，将 `SomeClass const&` 更改为 `SomeClass`。 这在你需要避免将引用捕获到协同例程时是必要的（请参阅[参数传递](./concurrency.md#parameter-passing)）。
 - 可以放宽对返回值的要求。 例如，可以将 **void** 更改为 [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget)。
 
 编写异步事件处理程序时，最后两个都非常有用。
@@ -468,7 +468,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 如该主题中前面的内容所示，C++/WinRT 运行时类在多个命名空间中以多个 C++ 类的形式存在。 因此，名称 **MyRuntimeClass** 在 **winrt::MyProject** 命名空间中有一种含义，在 **winrt::MyProject::implementation** 命名空间中有另一种含义。 如果需要一个来自其他命名空间的名称，请注意你目前的上下文中有哪一个命名空间，然后使用命名空间前缀。 让我们进一步了解所讨论的命名空间。
 
 - **winrt::MyProject**。 此命名空间包含投影类型。 投影类型的对象是一个代理，它实质上是一个指向后备对象的智能指针，该后备对象可能会在你的项目中的此处实现，也可能在另一个编译单元中实现。
-- **winrt::MyProject::implementation**。 此命名空间包含实现类型。 实现类型的对象不是指针；它是一个值 &mdash; 一个完整的 C++ 堆栈对象。 不要直接构造实现类型；而应调用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make)，将实现类型作为模板参数传递。 在本主题前面的部分中，我们已演示了实际发挥作用的 **winrt::make** 示例，并且 [XAML 控制；绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)中还有另一个示例。 另请参阅 [Diagnosing direct allocations](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc)（诊断直接分配）。
+- **winrt::MyProject::implementation**。 此命名空间包含实现类型。 实现类型的对象不是指针；它是一个值 &mdash; 一个完整的 C++ 堆栈对象。 不要直接构造实现类型；而应调用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make)，将实现类型作为模板参数传递。 在本主题前面的部分中，我们已演示了实际发挥作用的 **winrt::make** 示例，并且 [XAML 控制；绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)中还有另一个示例。 另请参阅 [Diagnosing direct allocations](./diag-direct-alloc.md)（诊断直接分配）。
 - **winrt::MyProject::factory_implementation**。 此命名空间包含工厂。 此命名空间中的对象支持 [**IActivationFactory**](/windows/win32/api/activation/nn-activation-iactivationfactory)。
 
 下表显示了需要在不同的上下文中使用的最小命名空间限定。
@@ -483,7 +483,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 >
 > 在这种情况下，`MyRuntimeClass myRuntimeClass;` 存在的问题是，它在堆栈上创建 **winrt::MyProject::implementation::MyRuntimeClass** 对象。 （实现类型的）该对象的行为在某些方面类似于投影类型 &mdash; 你可以采用相同的方式调用它的方法；并且它甚至会转换为投影类型。 但作用域退出时，该对象将按照正常 C++ 规则析构。 因此，如果向该对象返回了投影类型（智能指针），那么该指针现在无关联。
 >
-> 此内存损坏类型的 bug 很难诊断。 因此，对于调试版本，C++/WinRT 断言可帮助你使用堆栈检测器捕获此错误。 但是，协同例程是在堆上分配的，因此如果让此错误出现在协同例程内，那么你不会得到有关此错误的帮助。 有关详细信息，请参阅 [Diagnosing direct allocations](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc)（诊断直接分配）。
+> 此内存损坏类型的 bug 很难诊断。 因此，对于调试版本，C++/WinRT 断言可帮助你使用堆栈检测器捕获此错误。 但是，协同例程是在堆上分配的，因此如果让此错误出现在协同例程内，那么你不会得到有关此错误的帮助。 有关详细信息，请参阅 [Diagnosing direct allocations](./diag-direct-alloc.md)（诊断直接分配）。
 
 ## <a name="using-projected-types-and-implementation-types-with-various-cwinrt-features"></a>将投影类型和实现类型与各种 C++/WinRT 功能配合使用
 
@@ -699,7 +699,7 @@ namespace winrt::MyProject
 
 ## <a name="overriding-base-class-virtual-methods"></a>重写基类虚拟方法
 
-如果基类和派生类都是应用定义类，则派生类可能出现虚拟方法问题，但虚拟方法是在祖父 Windows 运行时类中定义的。 实际上，如果从 XAML 类派生，则会出现这种情况。 本部分的其余内容是[派生类](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#derived-classes)中的示例的继续。
+如果基类和派生类都是应用定义类，则派生类可能出现虚拟方法问题，但虚拟方法是在祖父 Windows 运行时类中定义的。 实际上，如果从 XAML 类派生，则会出现这种情况。 本部分的其余内容是[派生类](./move-to-winrt-from-cx.md#derived-classes)中的示例的继续。
 
 ```cppwinrt
 namespace winrt::MyNamespace::implementation
@@ -751,7 +751,7 @@ namespace winrt::MyNamespace::implementation
 * [winrt::Windows::Foundation::IUnknown::as 函数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>相关主题
-* [在 C++/WinRT 中创作事件](/windows/uwp/cpp-and-winrt-apis/author-events)
-* [通过 C++/WinRT 使用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)
-* [使用 C++/WinRT 创建 Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
-* [XAML 控件; 绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)
+* [在 C++/WinRT 中创作事件](./author-events.md)
+* [通过 C++/WinRT 使用 API](./consume-apis.md)
+* [使用 C++/WinRT 创建 Windows 运行时组件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)
+* [XAML 控件; 绑定到 C++/WinRT 属性](./binding-property.md)

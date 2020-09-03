@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 21049c995d467209b22fe8ea5c40d303911f2c2c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: aa8991e7fd0bbb825ff5280f01693f092125f573
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77521272"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161371"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>教程：实现 WPF 应用现代化 
 
@@ -111,13 +111,13 @@ Contoso 希望使用新的 Windows 功能实现此应用现代化，使员工能
 
 有关详细信息，请参阅[桌面应用程序中的 UWP 控件（XAML 岛）](/windows/uwp/xaml-platform/xaml-host-controls)。 本教程将指导你完成使用两种不同类型的 XAML 岛控件的过程：
 
-* Windows 社区工具包中的 [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 和 [MapControl](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol)。 这些 WPF 控件包装相应 UWP 控件的界面和功能，并可像 Visual Studio 设计器中的任何其他 WPF 控件一样使用。
+* Windows 社区工具包中的 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 和 [MapControl](/windows/communitytoolkit/controls/wpf-winforms/mapcontrol)。 这些 WPF 控件包装相应 UWP 控件的界面和功能，并可像 Visual Studio 设计器中的任何其他 WPF 控件一样使用。
 
-* UWP [日历视图](/windows/uwp/design/controls-and-patterns/calendar-view)控件。 这是使用 Windows 社区工具包中的 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件托管的标准 UWP 控件。
+* UWP [日历视图](/windows/uwp/design/controls-and-patterns/calendar-view)控件。 这是使用 Windows 社区工具包中的 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件托管的标准 UWP 控件。
 
 ### <a name="net-core-3"></a>.NET Core 3
 
-[.NET Core](https://docs.microsoft.com/dotnet/core/) 是一种开放源代码框架，可实现完整 .NET Framework 的跨平台、轻量级且可轻松扩展的版本。 与完整 .NET Framework 相比，.NET Core 启动时间要快得多，并且许多 API 已经过优化。
+[.NET Core](/dotnet/core/) 是一种开放源代码框架，可实现完整 .NET Framework 的跨平台、轻量级且可轻松扩展的版本。 与完整 .NET Framework 相比，.NET Core 启动时间要快得多，并且许多 API 已经过优化。
 
 在前几个版本中，.NET Core 关注的是支持 Web 或后端应用。 借助 .NET Core，你可以轻松地生成可在 Windows、Linux 上或在微服务体系结构（如 Docker 容器）中托管的可缩放 Web 应用或 API。
 
@@ -126,4 +126,4 @@ Contoso 希望使用新的 Windows 功能实现此应用现代化，使员工能
 > [!NOTE]
 > WPF 和 Windows 窗体不是跨平台的，因此不能在 Linux 和 MacOS 上运行 WPF 或 Windows 窗体。 WPF 和 Windows 窗体的 UI 组件仍依赖于 Windows 呈现系统。
 
-有关详细信息，请参阅 [.NET Core 3.0 中的新增功能](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0)。
+有关详细信息，请参阅 [.NET Core 3.0 中的新增功能](/dotnet/core/whats-new/dotnet-core-3-0)。

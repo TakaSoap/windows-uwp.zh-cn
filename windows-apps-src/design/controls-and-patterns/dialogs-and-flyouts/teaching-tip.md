@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 479a289ff15ab6a3db7a51d52f4bf3b075e8a64b
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 31ced6c31b126986171c81e03b68a0a1cccc44f2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968772"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160351"
 ---
 # <a name="teaching-tip"></a>教学提示
 
@@ -27,12 +27,12 @@ ms.locfileid: "82968772"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](../images/winui-logo-64x64.png) | TeachingTip  控件需要 Windows UI 库，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](../images/winui-logo-64x64.png) | TeachingTip  控件需要 Windows UI 库，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
 
 > **Windows UI 库 API：** [TeachingTip 类](/uwp/api/microsoft.ui.xaml.controls.teachingtip)
 
 > [!TIP]
-> 在本文档中，我们使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此项添加到我们的[页](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> 在本文档中，我们使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此项添加到我们的[页](/uwp/api/windows.ui.xaml.controls.page)元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >在后面的代码中，我们还使用 C# 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们在文件顶部添加了此 **using** 语句：`using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -125,9 +125,9 @@ public MainPage()
 
 ### <a name="preferred-placement"></a>首选位置
 
-教学提示通过 TeachingTipPlacementMode 属性复制浮出控件的 [FlyoutPlacementMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) 放置行为。 默认放置模式尝试将定向教学提示放置在其目标上方，将非定向教学提示置于 xaml 根底部的中心位置。 与浮出控件相同，如果首选放置模式无法留出显示教学提示的空间，将自动选择另一种放置模式。
+教学提示通过 TeachingTipPlacementMode 属性复制浮出控件的 [FlyoutPlacementMode](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) 放置行为。 默认放置模式尝试将定向教学提示放置在其目标上方，将非定向教学提示置于 xaml 根底部的中心位置。 与浮出控件相同，如果首选放置模式无法留出显示教学提示的空间，将自动选择另一种放置模式。
 
-对于预测游戏板输入的应用程序，请参阅[游戏板和远程控制交互]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction)。 建议使用一个应用 UI 所有可能的配置对每个教学提示的游戏板辅助功能进行测试。
+对于预测游戏板输入的应用程序，请参阅[游戏板和远程控制交互]( ../../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)。 建议使用一个应用 UI 所有可能的配置对每个教学提示的游戏板辅助功能进行测试。
 
 对于 PreferredPlacement 设置“BottomLeft”的定向教学提示，其尾部位于目标底部的中心位置，其正文位于左侧。
 
@@ -168,7 +168,7 @@ public MainPage()
 
 ### <a name="add-a-placement-margin"></a>添加位置边距
 
-通过使用 PlacementMargin 属性，可以控制定向教学提示与其目标的距离以及非定向教学提示与 xaml 根边缘的距离。 与[边距](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin)一样，PlacementMargin 具有四个值（左、右、上和下），因此仅使用相关值。 例如，当提示位于目标左侧或 xaml 根的左边缘时，PlacementMargin.Left 适用。
+通过使用 PlacementMargin 属性，可以控制定向教学提示与其目标的距离以及非定向教学提示与 xaml 根边缘的距离。 与[边距](/uwp/api/windows.ui.xaml.frameworkelement.margin)一样，PlacementMargin 具有四个值（左、右、上和下），因此仅使用相关值。 例如，当提示位于目标左侧或 xaml 根的左边缘时，PlacementMargin.Left 适用。
 
 以下示例显示 PlacementMargin 的 Left/Top/Right/Bottom 均设置为 80 的非定向提示。
 
@@ -357,7 +357,7 @@ private void OnTipClosing(muxc.TeachingTip sender, muxc.TeachingTipClosingEventA
 * 提示应是临时性的，且不应包含对应用程序体验至关重要的信息或选项。
 * 尽量避免过于频繁地显示教学提示。 教学提示在长会话或多个会话中交错出现时，每次都可能受到单独关注。
 * 保持提示简洁、主题清晰。 研究表明，用户在确定是否与提示进行交互之前平均仅阅读 3-5 个单词且仅理解 2-3 个单词。
-* 无法保证教学提示的游戏板辅助功能。 对于预测游戏板输入的应用程序，请参阅[游戏板和远程控制交互]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction)。 建议使用一个应用 UI 所有可能的配置对每个教学提示的游戏板辅助功能进行测试。
+* 无法保证教学提示的游戏板辅助功能。 对于预测游戏板输入的应用程序，请参阅[游戏板和远程控制交互]( ../../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)。 建议使用一个应用 UI 所有可能的配置对每个教学提示的游戏板辅助功能进行测试。
 * 在使用教学提示转义 xaml 根时，建议同时启用 IsLightDismissEnabled 属性并设置与 xaml 根中心位置最接近的 PreferredPlacement 模式。
 
 ## <a name="reconfiguring-an-open-teaching-tip"></a>重新配置一个打开的教学提示
@@ -366,4 +366,4 @@ private void OnTipClosing(muxc.TeachingTip sender, muxc.TeachingTipClosingEventA
 
 ## <a name="related-articles"></a>相关文章
 
-* [对话框和浮出控件](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
+* [对话框和浮出控件](./index.md)

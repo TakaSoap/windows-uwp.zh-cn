@@ -8,25 +8,25 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 830c1cdf2e24e716d51642bc65b5b6783d0d784a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: e7e09069e11fc14d0a47086bc2594edc975c11d9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "69643374"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161451"
 ---
 # <a name="part-3-add-a-uwp-calendarview-control-using-xaml-islands"></a>第 3 部分：使用 XAML Islands 添加 UWP CalendarView 控件
 
 这是教程的第 3 部分，此教程演示如何使名为 Contoso Expenses 的示例 WPF 桌面应用实现现代化。 有关下载示例应用的教程、先决条件和说明的概述，请参阅[教程：实现 WPF 应用现代化](modernize-wpf-tutorial.md)。 本文假设你已完成[第 2 部分](modernize-wpf-tutorial-2.md)。
 
-在本教程的虚构应用场景中，Contoso 开发团队想要更轻松地在支持触摸的设备上选择支出报表的日期。 在此教程的本部分，你将向应用添加 UWP [CalendarView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/calendar-view) 控件。 此控件与任务栏上 Windows 10 日期和时间功能中使用的控件相同。
+在本教程的虚构应用场景中，Contoso 开发团队想要更轻松地在支持触摸的设备上选择支出报表的日期。 在此教程的本部分，你将向应用添加 UWP [CalendarView](/windows/uwp/design/controls-and-patterns/calendar-view) 控件。 此控件与任务栏上 Windows 10 日期和时间功能中使用的控件相同。
 
 ![CalendarViewControl 图像](images/wpf-modernize-tutorial/CalendarViewControl.png)
 
-与在[第 2 部分](modernize-wpf-tutorial-2.md)中添加的 InkCanvas 控件不同，Windows 社区工具包不提供可在 WPF 应用中使用的 UWP CalendarView 的包装版本   。 作为替代方法，你将在通用 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件中托管 InkCanvas  。 你可以使用此控件来托管由 Windows SDK 或 WinUI 库提供的任何第一方 UWP 控件，或由第三方创建的任何自定义 UWP 控件。 WindowsXamlHost 控件由 `Microsoft.Toolkit.Wpf.UI.XamlHost` 包（包含于 NuGet 包中）提供  。 此包包含于在[第 2 部分](modernize-wpf-tutorial-2.md)安装的 `Microsoft.Toolkit.Wpf.UI.Controls` NuGet 包中。
+与在[第 2 部分](modernize-wpf-tutorial-2.md)中添加的 InkCanvas 控件不同，Windows 社区工具包不提供可在 WPF 应用中使用的 UWP CalendarView 的包装版本   。 作为替代方法，你将在通用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件中托管 InkCanvas  。 你可以使用此控件来托管由 Windows SDK 或 WinUI 库提供的任何第一方 UWP 控件，或由第三方创建的任何自定义 UWP 控件。 WindowsXamlHost 控件由 `Microsoft.Toolkit.Wpf.UI.XamlHost` 包（包含于 NuGet 包中）提供  。 此包包含于在[第 2 部分](modernize-wpf-tutorial-2.md)安装的 `Microsoft.Toolkit.Wpf.UI.Controls` NuGet 包中。
 
 > [!NOTE]
-> 本教程仅演示如何使用 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 来托管由 Windows SDK 提供的第一方 CalendarView 控件  。 若要详细演示如何托管自定义控件，请参阅[使用 XAML 岛在 WPF 应用中托管自定义 UWP 控件](host-custom-control-with-xaml-islands.md)。
+> 本教程仅演示如何使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 来托管由 Windows SDK 提供的第一方 CalendarView 控件  。 若要详细演示如何托管自定义控件，请参阅[使用 XAML 岛在 WPF 应用中托管自定义 UWP 控件](host-custom-control-with-xaml-islands.md)。
 
 为使用 WindowsXamlHost 控件，需要从 WPF 应用中的代码直接调用 WinRT API  。 `Microsoft.Windows.SDK.Contracts` NuGet 包包含了必需的引用，该引用使你能够从应用调用 WinRT API。 此包也包含于在[第 2 部分](modernize-wpf-tutorial-2.md)安装的 `Microsoft.Toolkit.Wpf.UI.Controls` NuGet 包中。
 
@@ -94,7 +94,7 @@ ms.locfileid: "69643374"
 
 接下来，你将更新应用以处理选定日期，将其显示在屏幕上，然后填充要保存到数据库中的 Expense 对象  。
 
-UWP [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 包含与此应用场景相关的两个成员：
+UWP [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 包含与此应用场景相关的两个成员：
 
 - SelectedDates 属性包含用户选定的日期  。
 - 用户选择日期时，将引发 SelectedDatesChanged 事件  。
@@ -230,6 +230,6 @@ UWP [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.C
 
 ## <a name="next-steps"></a>后续步骤
 
-本教程进行到这里，你已成功将 WPF 日期时间控件替换为 UWP CalendarView 控件，该控件除了支持鼠标和键盘输入以外，还支持触摸和数字笔  。 尽管 Windows 社区工具包不提供可直接在 WPF 应用中使用的 UWP CalendarView 控件的包装版本，但你可以使用通用 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件来托管该控件  。
+本教程进行到这里，你已成功将 WPF 日期时间控件替换为 UWP CalendarView 控件，该控件除了支持鼠标和键盘输入以外，还支持触摸和数字笔  。 尽管 Windows 社区工具包不提供可直接在 WPF 应用中使用的 UWP CalendarView 控件的包装版本，但你可以使用通用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件来托管该控件  。
 
 现在你已准备好学习[第 4 部分：添加 Windows 10 用户活动和通知](modernize-wpf-tutorial-4.md)。

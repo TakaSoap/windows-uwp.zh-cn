@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, COM, 组件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5ff3677c3624974759d1f6ff21d6e53cf9d33144
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 83ea8b5cea95f034b5cdfe4f1750a0ffd0166f49
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71344518"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154571"
 ---
 # <a name="author-com-components-with-cwinrt"></a>通过 C++/WinRT 创作 COM 组件
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 可以帮助你创作经典组件对象模型 (COM) 组件（或组件类），就像它可以帮助你创作 Windows 运行时类一样。 本主题演示如何执行该操作。
+[C++/WinRT](./intro-to-using-cpp-with-winrt.md) 可以帮助你创作经典组件对象模型 (COM) 组件（或组件类），就像它可以帮助你创作 Windows 运行时类一样。 本主题演示如何执行该操作。
 
 ## <a name="how-cwinrt-behaves-by-default-with-respect-to-com-interfaces"></a>默认情况下，C++/WinRT 在 COM 接口方面的表现如何
 
@@ -118,7 +118,7 @@ int main()
 
 此主题的其余部分演练如何创建使用 C++/WinRT 实现基本组件类（COM 组件或 COM 类）和类工厂的最小控制台应用程序项目。 示例应用程序演示如何提供具有一个回调按钮的 toast 通知，组件类（实现 INotificationActivationCallback  COM 接口）使应用程序可以启动并在用户单击 toast 上的该按钮时进行回调。
 
-有关 toast 通知功能区域的更多背景信息可以在[发送本地 toast 通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)中找到。 不过文档该部分中没有代码示例使用 C++/WinRT，因此建议首选本主题中演示的代码。
+有关 toast 通知功能区域的更多背景信息可以在[发送本地 toast 通知](../design/shell/tiles-and-notifications/send-local-toast.md)中找到。 不过文档该部分中没有代码示例使用 C++/WinRT，因此建议首选本主题中演示的代码。
 
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>创建 Windows 控制台应用程序项目 (ToastAndCallback)
 
@@ -220,7 +220,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-上面的组件类实现遵循在[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class) 中演示的相同模式。 因此，可以使用相同技术实现 COM 接口以及 Windows 运行时接口。 COM 组件和 Windows 运行时类会通过接口公开其功能。 每个 COM 接口最终派生自 [IUnknown 接口  ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)接口。 Windows 运行时基于 COM &mdash; 一个区别是 Windows 运行时接口最终派生自 [IInspectable 接口  ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)（并且 IInspectable  派生自 IUnknown  ）。
+上面的组件类实现遵循在[使用 C++/WinRT 创作 API](./author-apis.md#if-youre-not-authoring-a-runtime-class) 中演示的相同模式。 因此，可以使用相同技术实现 COM 接口以及 Windows 运行时接口。 COM 组件和 Windows 运行时类会通过接口公开其功能。 每个 COM 接口最终派生自 [IUnknown 接口  ](/windows/desktop/api/unknwn/nn-unknwn-iunknown)接口。 Windows 运行时基于 COM &mdash; 一个区别是 Windows 运行时接口最终派生自 [IInspectable 接口  ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)（并且 IInspectable  派生自 IUnknown  ）。
 
 在上面代码中的组件类中，我们实现 INotificationActivationCallback::Activate  方法，这是在用户单击 toast 通知上的回调按钮时调用的函数。 但是在可以调用该函数之前，需要创建组件类的实例，这是 IClassFactory::CreateInstance  函数的工作。
 
@@ -481,7 +481,7 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 可以通过在 Microsoft Visual Studio 中创建新项目，来开始创建进程内 COM 服务器的任务。 创建“Visual C++”   > “Windows 桌面”   > “动态链接库(DLL)”  项目。
 
-若要向新项目添加 C++/WinRT 支持，请执行[修改 Windows 桌面应用程序项目以添加 C++/WinRT 支持](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)中所述的步骤。
+若要向新项目添加 C++/WinRT 支持，请执行[修改 Windows 桌面应用程序项目以添加 C++/WinRT 支持](./get-started.md#modify-a-windows-desktop-application-project-to-add-cwinrt-support)中所述的步骤。
 
 ### <a name="implement-the-coclass-class-factory-and-in-proc-server-exports"></a>实现组件类、类工厂和进程内服务器导出
 
@@ -586,10 +586,10 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 
 ## <a name="important-apis"></a>重要的 API
 * [IInspectable 接口](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
-* [IUnknown 接口](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
+* [IUnknown 接口](/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 * [winrt::implements 结构模板](/uwp/cpp-ref-for-winrt/implements)
 
 ## <a name="related-topics"></a>相关主题
-* [使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [使用 C++/WinRT 创作 API](./author-apis.md)
 * [通过 C++/WinRT 使用 COM 组件](consume-com.md)
-* [发送本地 toast 通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)
+* [发送本地 toast 通知](../design/shell/tiles-and-notifications/send-local-toast.md)

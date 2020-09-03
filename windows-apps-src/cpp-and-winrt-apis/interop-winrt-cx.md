@@ -1,20 +1,20 @@
 ---
-description: 本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 和 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 对象之间进行转换的两个帮助程序函数。
+description: 本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 和 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 对象之间进行转换的两个帮助程序函数。
 title: 实现 C++/WinRT 与 C++/CX 之间的互操作
 ms.date: 10/09/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: d3fa04f0aabe001dc87ce4292dff7557432583a6
-ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
+ms.openlocfilehash: 8ef3b45222b5e9324dc76d7a81a8d096a569595d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88502282"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157371"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>实现 C++/WinRT 与 C++/CX 之间的互操作
 
-在阅读本主题之前，你需要先了解[从 C++/CX 移动到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx) 主题中的信息。 该主题介绍了将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 项目移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的两个主要策略选项。
+在阅读本主题之前，你需要先了解[从 C++/CX 移动到 C++/WinRT](./move-to-winrt-from-cx.md) 主题中的信息。 该主题介绍了将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 项目移植到 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 的两个主要策略选项。
 
 - 一次性移植整个项目。 对于不太大的项目，这是最简单的选项。 如果你有 Windows 运行时组件项目，则此策略是你唯一的选项。
 - 逐步移植项目（代码库的大小或复杂性可能会使其成为一种必需策略）。 但是，此策略要求你遵循移植过程，在此过程中的某段时间，C++/CX 和 C++/WinRT 代码将在同一项目中并存。 对于 XAML 项目，无论何时，均要求 XAML 页面类型要么完全是 C++/WinRT，要么完全是 C++/CX。
@@ -23,7 +23,7 @@ ms.locfileid: "88502282"
 
 将代码从 C++/CX 逐步移植到 C++/WinRT 时，这些帮助程序函数将非常有用。 或者，你可以选择在同一项目中同时使用 C++/WinRT 和 C++/CX 语言投影（无论是否进行移植），并使用这些帮助程序函数在两者之间进行互操作。
 
-阅读完本主题之后，若要了解演示如何在同一项目中并行支持 PPL 任务和协同程序（例如，从任务链调用协同程序）的信息和代码示例，请参阅更高级的主题[实现 C++/WinRT 与 C++/CX 之间的异步和互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async)。
+阅读完本主题之后，若要了解演示如何在同一项目中并行支持 PPL 任务和协同程序（例如，从任务链调用协同程序）的信息和代码示例，请参阅更高级的主题[实现 C++/WinRT 与 C++/CX 之间的异步和互操作](./interop-winrt-cx-async.md)。
 
 ## <a name="the-from_cx-and-to_cx-functions"></a>from_cx 和 to_cx 函数
 
@@ -80,7 +80,7 @@ to_cx 帮助程序函数可将 C++/WinRT 对象转换为等效的 C++/CX 对象�
 
 ## <a name="taking-a-ccx-project-and-adding-cwinrt-support"></a>采用 C++/CX 项目并添加 C++/WinRT 支持
 
-本部分介绍在你决定采用现有 C++/CX 项目、向其添加 C++/WinRT 支持并在该项目中进行移植工作时要执行的操作。 另请参阅 [Visual Studio 对 C++/WinRT 的支持](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+本部分介绍在你决定采用现有 C++/CX 项目、向其添加 C++/WinRT 支持并在该项目中进行移植工作时要执行的操作。 另请参阅 [Visual Studio 对 C++/WinRT 的支持](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 若要在 C++/CX 项目中混合使用 C++/CX 和 C++/WinRT，包括在项目中使用 from_cx 和 to_cx 帮助程序函数，需要手动向项目添加 C++/WinRT 支持&mdash;&mdash;。
 
@@ -143,7 +143,7 @@ to_cx 帮助程序函数可将 C++/WinRT 对象转换为等效的 C++/CX 对象�
 
 若要在 C++/WinRT 项目中混合使用 C++/WinRT 和 C++/CX，包括在项目中使用 from_cx 和 to_cx 帮助程序函数，需要手动向项目添加 C++/CX 支持&mdash;&mdash;。
 
-- 使用 C++/WinRT 项目模板之一在 Visual Studio 中创建一个新的 C++/WinRT 项目（请参阅 [Visual Studio 对 C++/WinRT 的支持](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。
+- 使用 C++/WinRT 项目模板之一在 Visual Studio 中创建一个新的 C++/WinRT 项目（请参阅 [Visual Studio 对 C++/WinRT 的支持](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。
 - 启用对 C++/CX 的项目支持。 在项目属性中，“C/C++”**“常规”**\>**“使用 Windows 运行时扩展”**\>**“是(/ZW)”**\>****。
 
 ### <a name="an-example-cwinrt-project-showing-the-two-helper-functions-in-use"></a>演示正在使用的两个帮助程序函数的示例 C++/WinRT 项目
@@ -344,5 +344,5 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="related-topics"></a>相关主题
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [从 C++/CX 移动到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx)
-* [实现 C++/WinRT 与 C++/CX 之间的异步和互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async)
+* [从 C++/CX 移动到 C++/WinRT](./move-to-winrt-from-cx.md)
+* [实现 C++/WinRT 与 C++/CX 之间的异步和互操作](./interop-winrt-cx-async.md)

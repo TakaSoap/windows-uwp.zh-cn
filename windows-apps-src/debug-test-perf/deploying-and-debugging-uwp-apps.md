@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 调试, 测试, 性能
 ms.localizationpriority: medium
-ms.openlocfilehash: d948af1ce10b3752ba9f20454d8dea72916de692
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0f1ff6a98182f4832a2a1b82bf8ceca4aa176c36
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75683850"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157252"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和调试 UWP 应用
 
@@ -92,13 +92,13 @@ ms.locfileid: "75683850"
 
 若要执行此操作，请在“开始”  菜单中搜索“远程调试器”  、打开它，然后在系统提示时允许该调试器配置你的防火墙设置。 默认情况下，调试器启动时会执行 Windows 身份验证。 如果两台电脑上的登录用户不是同一人，这将要求用户提供凭据。
 
-若要将它更改为“无身份验证”  ，请在“远程调试器”  中依次转到“工具”   -&gt;“选项”，然后将它设置为“无身份验证”   。 在设置远程调试器后，你还必须确保已将主机设备设置为[开发人员模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。 在这之后，你可以从部署计算机进行部署。
+若要将它更改为“无身份验证”  ，请在“远程调试器”  中依次转到“工具”   -&gt;“选项”，然后将它设置为“无身份验证”   。 在设置远程调试器后，你还必须确保已将主机设备设置为[开发人员模式](../get-started/enable-your-device-for-development.md)。 在这之后，你可以从部署计算机进行部署。
 
 有关详细信息，请参阅 [Visual Studio 下载中心](https://visualstudio.microsoft.com/downloads/)页面。
 
 ## <a name="passing-command-line-debug-arguments"></a>传递命令行调试参数
 
-在 Visual Studio 2019 中，可以在开始调试 UWP 应用程序时传递命令行调试参数。 可以通过 [  Application](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application) 类的 **OnLaunched** 方法中的 *args* 参数访问命令行调试参数。 若要指定命令行调试参数，请打开项目的属性并导航到“调试”  选项卡。
+在 Visual Studio 2019 中，可以在开始调试 UWP 应用程序时传递命令行调试参数。 可以通过 [  Application](/uwp/api/windows.ui.xaml.application) 类的 **OnLaunched** 方法中的 *args* 参数访问命令行调试参数。 若要指定命令行调试参数，请打开项目的属性并导航到“调试”  选项卡。
 
 > [!NOTE]
 > 这在适用于 C#、VB 和 C++ 的 Visual Studio 2017（版本 15.1）中可用。 JavaScript 在更高版本中可用。 命令行调试参数可用于所有部署类型（模拟器除外）。
@@ -111,7 +111,7 @@ ms.locfileid: "75683850"
 
 ![命令行参数 C++ 和 JS](images/command-line-arguments-cpp.png)
 
-指定命令行参数之后，可以在应用的 OnLaunched  方法中访问参数值。 [LaunchActivatedEventArgs  ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 对象 args  将具有 **Arguments** 属性，其值设置为“命令行参数”  字段中的文本。
+指定命令行参数之后，可以在应用的 OnLaunched  方法中访问参数值。 [LaunchActivatedEventArgs  ](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 对象 args  将具有 **Arguments** 属性，其值设置为“命令行参数”  字段中的文本。
 
 ![命令行参数 C++ 和 JS](images/command-line-arguments-debugging.png)
 
@@ -189,7 +189,7 @@ ms.locfileid: "75683850"
 
 ## <a name="debugging-options"></a>调试选项
 
-在 Windows 10 中，使用称为[预启动](https://docs.microsoft.com/windows/uwp/launch-resume/handle-app-prelaunch)的技术主动启动然后暂停应用，改进 UWP 应用的启动性能。 许多应用不需要执行任何特殊操作就即在此模式下工作，但某些应用可能需要调整它们的行为。 若要帮助调试这些代码路径中的任何问题，你可以在 Visual Studio 中使用预启动模式开始调试该应用。
+在 Windows 10 中，使用称为[预启动](../launch-resume/handle-app-prelaunch.md)的技术主动启动然后暂停应用，改进 UWP 应用的启动性能。 许多应用不需要执行任何特殊操作就即在此模式下工作，但某些应用可能需要调整它们的行为。 若要帮助调试这些代码路径中的任何问题，你可以在 Visual Studio 中使用预启动模式开始调试该应用。
 
 既可调试 Visual Studio 项目（“调试”   -&gt;“其他调试目标”   -&gt;“调试通用 Windows 应用预启动”  ），也可调试计算机上已安装的应用（选择“调试”   -&gt;“其他调试目标”   -&gt;调试已安装的应用包”  ，并选中“通过预启动激活应用”  复选框）。 有关详细信息，请参阅[调试 UWP 预启动](https://blogs.msdn.com/b/visualstudioalm/archive/2015/11/30/debug-uwp-prelaunch-with-vs2015.aspx)。
 
@@ -213,7 +213,7 @@ ms.locfileid: "75683850"
 
 ## <a name="symbols"></a>符号
 
-符号文件包含各种在调试代码时非常有用的数据，如变量、函数名称和入口点地址，从而使你可以更好地了解异常和调用堆栈执行顺序。 适用于 Windows 的大多数变体的符号通过 [Microsoft 符号服务器](https://msdl.microsoft.com/download/symbols)提供，或者可以下载，以供在[下载 Windows 符号包](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols)中更快速地离线查找。
+符号文件包含各种在调试代码时非常有用的数据，如变量、函数名称和入口点地址，从而使你可以更好地了解异常和调用堆栈执行顺序。 适用于 Windows 的大多数变体的符号通过 [Microsoft 符号服务器](https://msdl.microsoft.com/download/symbols)提供，或者可以下载，以供在[下载 Windows 符号包](/windows-hardware/drivers/debugger/debugger-download-symbols)中更快速地离线查找。
 
 若要为 Visual Studio 设置符号选项，请依次选择“工具”&gt;“选项”  ，然后在对话窗口中依次转到“调试”&gt;“符号”  。
 
@@ -226,7 +226,7 @@ ms.locfileid: "75683850"
 .reload
 ```
 
-你可以使用 `‘;’` 分隔符添加多个路径，或使用 `.sympath+` 命令。 有关使用 WinDbg 的更高级符号运算，请参阅[公共和私有符号](https://docs.microsoft.com/windows-hardware/drivers/debugger/public-and-private-symbols)。
+你可以使用 `‘;’` 分隔符添加多个路径，或使用 `.sympath+` 命令。 有关使用 WinDbg 的更高级符号运算，请参阅[公共和私有符号](/windows-hardware/drivers/debugger/public-and-private-symbols)。
 
 ## <a name="windbg"></a>WinDbg
 
@@ -246,7 +246,7 @@ WinDbg 中最常用的命令之一是 `!analyze -v`，该命令用于检索大�
 - EXCEPTION_RECORD：当前异常的地址、代码和标志
 - STACK_TEXT：异常之前的堆栈跟踪
 
-有关所有 WinDbg 命令的完整列表，请参阅[调试器命令](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-commands)。
+有关所有 WinDbg 命令的完整列表，请参阅[调试器命令](/windows-hardware/drivers/debugger/debugger-commands)。
 
 ## <a name="related-topics"></a>相关主题
 

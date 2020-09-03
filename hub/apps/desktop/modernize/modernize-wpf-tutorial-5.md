@@ -8,18 +8,18 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 27906d9d389c065ab1fdf7124151cd1915f850eb
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 18b89caa0de947d2b95b46c3deb11378912b6012
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76726010"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161421"
 ---
 # <a name="part-5-package-and-deploy-with-msix"></a>第 5 部分：使用 MSIX 打包和部署
 
 本文是演示如何现代化名为 Contoso Expenses 的示例 WPF 桌面应用的教程的最后一个部分。 有关本教程的概述、先决条件以及有关下载示例应用的说明，请参阅[教程：实现 WPF 应用现代化](modernize-wpf-tutorial.md)。 本文假设你已学习完[第 4 部分](modernize-wpf-tutorial-4.md)。
 
-在[第 4 部分](modernize-wpf-tutorial-4.md)中，你已了解某些 WinRT API（包括通知 API）需要程序包标识符才能在应用中使用。 可以通过使用 [MSIX](https://docs.microsoft.com/windows/msix)（在 Windows 10 中引入的打包格式）打包和部署 Windows 应用程序来获取程序包标识符。 MSIX 为开发人员和 IT 专业人员提供了以下优势：
+在[第 4 部分](modernize-wpf-tutorial-4.md)中，你已了解某些 WinRT API（包括通知 API）需要程序包标识符才能在应用中使用。 可以通过使用 [MSIX](/windows/msix)（在 Windows 10 中引入的打包格式）打包和部署 Windows 应用程序来获取程序包标识符。 MSIX 为开发人员和 IT 专业人员提供了以下优势：
 
 - 优化的网络使用情况和存储空间。
 - 完全干净的卸载，这得益于在其中执行了应用的轻型容器。 系统上没有残余的注册表项和临时文件。
@@ -44,7 +44,7 @@ Visual Studio 2019 提供了一种使用 Windows 应用程序打包项目打包�
 
 5. 针对“目标版本”  和“最低版本”  选择“Windows 10 版本 1903(10.0; 版本 18362)”，然后单击“确定”   。
 
-    ContosoExpenses.Package  项目随即被添加到 ContosoExpenses  解决方案中。 此项目包含一个[程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，它描述了应用程序，以及一些用于项目的默认资产，例如“程序”菜单中的图标和“开始”屏幕中的磁贴。 但是，与 UWP 项目不同的是，打包项目不包含代码。 其目的是打包现有的桌面应用。
+    ContosoExpenses.Package  项目随即被添加到 ContosoExpenses  解决方案中。 此项目包含一个[程序包清单](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，它描述了应用程序，以及一些用于项目的默认资产，例如“程序”菜单中的图标和“开始”屏幕中的磁贴。 但是，与 UWP 项目不同的是，打包项目不包含代码。 其目的是打包现有的桌面应用。
 
 6. 在“ContosoExpenses.Package”项目中，右键单击“应用程序”节点，然后选择“添加引用”    。 此节点指定解决方案中的哪些应用程序将包含在包中。
 

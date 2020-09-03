@@ -8,18 +8,18 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 6bb90fb9cbe7c9f54f60fd1920f0e73e174a3772
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0b5250f1e01aece4f73d83dc7327f193a58f53cf
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80482581"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161491"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>第 2 部分：使用 XAML Islands 添加 UWP InkCanvas 控件
 
 本文是演示如何现代化名为 Contoso Expenses 的示例 WPF 桌面应用的教程的第 2 部分。 有关本教程的概述、先决条件以及有关下载示例应用的说明，请参阅[教程：实现 WPF 应用现代化](modernize-wpf-tutorial.md)。 本文假设你已学习完[第 1 部分](modernize-wpf-tutorial-1.md)。
 
-在本教程的虚构方案中，Contoso 开发团队需要支持对 Contoso Expenses 应用进行数字签名。 对于这种情况，UWP InkCanvas  控件是一个不错的选择，因为它支持数字墨迹和 AI 功能，如识别文本和形状的功能。 为此，你将使用 Windows 社区工具包中提供的 [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 包装的 UWP 控件。 此控件包装 UWP InkCanvas  控件的接口和功能，以便在 WPF 应用中使用。 有关包装的 UWP 控件的详细信息，请参阅[在桌面应用中托管 UWP XAML 控件（XAML 岛）](xaml-islands.md)。
+在本教程的虚构方案中，Contoso 开发团队需要支持对 Contoso Expenses 应用进行数字签名。 对于这种情况，UWP InkCanvas  控件是一个不错的选择，因为它支持数字墨迹和 AI 功能，如识别文本和形状的功能。 为此，你将使用 Windows 社区工具包中提供的 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 包装的 UWP 控件。 此控件包装 UWP InkCanvas  控件的接口和功能，以便在 WPF 应用中使用。 有关包装的 UWP 控件的详细信息，请参阅[在桌面应用中托管 UWP XAML 控件（XAML 岛）](xaml-islands.md)。
 
 ## <a name="configure-the-project-to-use-xaml-islands"></a>将项目配置为使用 XAML 岛
 
@@ -36,7 +36,7 @@ ms.locfileid: "80482581"
 
 3. 在“解决方案资源管理器”中，右键单击“ContosoExpenses.Core”项目并选择“添加”->“新项”    。
 
-4. 选择“应用程序清单文件”  ，将其命名为“app.manifest”  ，然后单击“添加”  。 有关应用程序清单的详细信息，请参阅[本文](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)。
+4. 选择“应用程序清单文件”  ，将其命名为“app.manifest”  ，然后单击“添加”  。 有关应用程序清单的详细信息，请参阅[本文](/windows/desktop/SbsCs/application-manifests)。
 
 5. 在清单文件中，取消注释适用于 Windows 10 的以下 `<supportedOS>` 元素。
 
@@ -80,11 +80,11 @@ ms.locfileid: "80482581"
 
 ## <a name="add-an-inkcanvas-control-to-the-app"></a>向应用添加 InkCanvas 控件
 
-现已将项目配置为使用 UWP XAML 岛，接下来可以将 [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 包装的 UWP 控件添加到应用了。
+现已将项目配置为使用 UWP XAML 岛，接下来可以将 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 包装的 UWP 控件添加到应用了。
 
 1. 在解决方案资源管理器中，展开 ContosoExpenses.Core 项目的“Views”文件夹，然后双击“ExpenseDetail.xaml”文件     。
 
-2. 在 XAML 文件顶部附近的 **Window** 元素中，添加以下属性。 这会引用 [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 包装的 UWP 控件的 XAML 命名空间。
+2. 在 XAML 文件顶部附近的 **Window** 元素中，添加以下属性。 这会引用 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 包装的 UWP 控件的 XAML 命名空间。
 
     ```xml
     xmlns:toolkit="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls"

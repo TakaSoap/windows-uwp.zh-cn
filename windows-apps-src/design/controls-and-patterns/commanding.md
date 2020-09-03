@@ -4,16 +4,16 @@ description: 如何使用 XamlUICommand 和 StandardUICommand 类（以及 IComm
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 5ab46a479e882b9975f24731dfcbb6e433126f80
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 767172fe3384fc74687b239768b277b6147c0fd4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233767"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160631"
 ---
 # <a name="commanding-in-windows-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 在 Windows 应用中进行命令控制
 
-本主题介绍 Windows 应用程序中的命令控制。 具体说来，我们讨论如何使用 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 和 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 类（以及 ICommand 接口）在不同的控件类型之间共享和管理命令，不管所用的设备和输入类型是什么。
+本主题介绍 Windows 应用程序中的命令控制。 具体说来，我们讨论如何使用 [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) 和 [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) 类（以及 ICommand 接口）在不同的控件类型之间共享和管理命令，不管所用的设备和输入类型是什么。
 
 ![表示共享命令常见使用情况的图：多个包含“收藏夹”命令的 UI 设计面](images/commanding/generic-commanding.png)
 
@@ -21,9 +21,9 @@ ms.locfileid: "83233767"
 
 ## <a name="important-apis"></a>重要的 API
 
-- [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 和 [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)
-- [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)
-- [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)
+- [Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) 和 [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)
+- [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand)
+- [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand)
 
 ## <a name="overview"></a>概述
 
@@ -73,20 +73,20 @@ ms.locfileid: "83233767"
 
 为了跨命令图面高效地提供丰富且广泛的用户体验并尽量减少重复代码，建议使用本主题中介绍的命令绑定功能（若要进行标准事件处理，请参阅各个事件主题）。
 
-若要将控件绑定到共享命令资源，可以自行实现 ICommand 接口，也可以通过 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 基类或者通过 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 派生类定义的某个平台命令来构建命令。
+若要将控件绑定到共享命令资源，可以自行实现 ICommand 接口，也可以通过 [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) 基类或者通过 [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) 派生类定义的某个平台命令来构建命令。
 
-- 可以使用 ICommand 接口（[Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 或 [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)）在应用中创建完全自定义的可重用命令。
-- [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 也提供此功能，但可以简化开发过程，因为它会公开一组内置的命令属性，例如命令行为、键盘快捷方式（访问键和快捷键）、图标、标签和说明。
-- [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 允许你从一组具有预定义属性的标准平台命令中进行选择，进一步进行了简化。
+- 可以使用 ICommand 接口（[Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) 或 [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)）在应用中创建完全自定义的可重用命令。
+- [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) 也提供此功能，但可以简化开发过程，因为它会公开一组内置的命令属性，例如命令行为、键盘快捷方式（访问键和快捷键）、图标、标签和说明。
+- [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) 允许你从一组具有预定义属性的标准平台命令中进行选择，进一步进行了简化。
 
 > [!Important]
-> 在 UWP 应用程序中，命令是 [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) (C++) 或 [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) (C#) 接口的实现，具体取决于所选语言框架。
+> 在 UWP 应用程序中，命令是 [Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) (C++) 或 [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) (C#) 接口的实现，具体取决于所选语言框架。
 
 ## <a name="command-experiences-using-the-standarduicommand-class"></a>使用 StandardUICommand 类的命令体验
 
-派生自 [XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)（派生自适用于 C++ 的 [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 或适用于 C# 的 [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)）的 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 类会公开一组带预定义属性（例如图标、键盘快捷方式、说明）的标准平台命令。
+派生自 [XamlUiCommand](/uwp/api/windows.ui.xaml.input.xamluicommand)（派生自适用于 C++ 的 [Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) 或适用于 C# 的 [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)）的 [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) 类会公开一组带预定义属性（例如图标、键盘快捷方式、说明）的标准平台命令。
 
-可以使用 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 通过快速且一致的方式定义常见命令，例如 `Save` 或 `Delete`。 只需提供 execute 和 canExecute 函数即可。
+可以使用 [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) 通过快速且一致的方式定义常见命令，例如 `Save` 或 `Delete`。 只需提供 execute 和 canExecute 函数即可。
 
 ### <a name="example"></a>示例
 
@@ -98,14 +98,14 @@ ms.locfileid: "83233767"
 | -------------------- |
 | [UWP 命令控制示例 (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip) |
 
-在此示例中，我们演示如何使用通过 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 类实现的“删除项”命令来增强基本的 [ListView](listview-and-gridview.md)，同时使用 [MenuBar](menus.md)、[轻扫](swipe.md)控件、悬停按钮和[上下文菜单](menus.md)优化各种输入类型的用户体验。
+在此示例中，我们演示如何使用通过 [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) 类实现的“删除项”命令来增强基本的 [ListView](listview-and-gridview.md)，同时使用 [MenuBar](menus.md)、[轻扫](swipe.md)控件、悬停按钮和[上下文菜单](menus.md)优化各种输入类型的用户体验。
 
 > [!NOTE]
-> 此示例需要 Microsoft.UI.Xaml.Controls NuGet 包，该包是 [Microsoft Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)的一部分。
+> 此示例需要 Microsoft.UI.Xaml.Controls NuGet 包，该包是 [Microsoft Windows UI 库](/uwp/toolkits/winui/)的一部分。
 
 **Xaml：**
 
-此示例 UI 包含一个有五个项的 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)。 Delete [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 绑定到 [MenuBarItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubaritem)、[SwipeItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.swipeitem)、[AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) 和 [ContextFlyout 菜单](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout)。
+此示例 UI 包含一个有五个项的 [ListView](/uwp/api/windows.ui.xaml.controls.listview)。 Delete [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) 绑定到 [MenuBarItem](/uwp/api/microsoft.ui.xaml.controls.menubaritem)、[SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)、[AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton) 和 [ContextFlyout 菜单](/uwp/api/windows.ui.xaml.uielement.contextflyout)。
 
 ``` xaml
 <Page
@@ -241,7 +241,7 @@ public class ListItemData
 }
 ```
 
-2. 在 MainPage 类中，我们为 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 的 [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) 定义一组 `ListItemData` 对象。 然后，我们为其填充包含五个项（带有文本和关联的 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) Delete）的初始集合。
+2. 在 MainPage 类中，我们为 [ListView](/uwp/api/windows.ui.xaml.controls.listview) [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 的 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) 定义一组 `ListItemData` 对象。 然后，我们为其填充包含五个项（带有文本和关联的 [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) Delete）的初始集合。
 
 ```csharp
 /// <summary>
@@ -315,7 +315,7 @@ private void DeleteCommand_ExecuteRequested(
 }
 ```
 
-4. 最后，我们定义各种 ListView 事件（包括 [PointerEntered](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)、[PointerExited](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) 和 [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) 事件）的处理程序。 指针事件处理程序用于显示或隐藏每个项的“删除”按钮。
+4. 最后，我们定义各种 ListView 事件（包括 [PointerEntered](/uwp/api/windows.ui.xaml.uielement.pointerentered)、[PointerExited](/uwp/api/windows.ui.xaml.uielement.pointerexited) 和 [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) 事件）的处理程序。 指针事件处理程序用于显示或隐藏每个项的“删除”按钮。
 
 ```csharp
 /// <summary>
@@ -367,9 +367,9 @@ private void ListViewSwipeContainer_PointerExited(
 
 ## <a name="command-experiences-using-the-xamluicommand-class"></a>使用 XamlUICommand 类的命令体验
 
-如果需要创建不是由 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 类定义的命令，或者需要对命令外观进行更多的控制，则可使用派生自 [ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 接口的 [XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 类来添加各种 UI 属性（例如图标、标签、说明和键盘快捷方式）、方法和事件，以便快速定义自定义命令的 UI 和行为。
+如果需要创建不是由 [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) 类定义的命令，或者需要对命令外观进行更多的控制，则可使用派生自 [ICommand](/uwp/api/windows.ui.xaml.input.icommand) 接口的 [XamlUiCommand](/uwp/api/windows.ui.xaml.input.xamluicommand) 类来添加各种 UI 属性（例如图标、标签、说明和键盘快捷方式）、方法和事件，以便快速定义自定义命令的 UI 和行为。
 
-[XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 可以让你通过图标、标签、说明、键盘快捷方式（访问键和键盘快捷键）之类的控件绑定来指定 UI，不需设置单独的属性。
+[XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) 可以让你通过图标、标签、说明、键盘快捷方式（访问键和键盘快捷键）之类的控件绑定来指定 UI，不需设置单独的属性。
 
 ### <a name="example"></a>示例
 
@@ -381,16 +381,16 @@ private void ListViewSwipeContainer_PointerExited(
 | -------------------- |
 | [UWP 命令控制示例 (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip) |
 
-此示例共享前面的 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 示例的删除功能，但同时演示了如何使用 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 类通过你自己的字体图标、标签、键盘快捷方式和说明来定义自定义删除命令。 与 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 示例一样，我们使用通过 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 类实现的“删除项”命令来增强基本的 [ListView](listview-and-gridview.md)，同时使用 [MenuBar](menus.md)、[轻扫](swipe.md)控件、悬停按钮和[上下文菜单](menus.md)优化各种输入类型的用户体验。
+此示例共享前面的 [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) 示例的删除功能，但同时演示了如何使用 [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) 类通过你自己的字体图标、标签、键盘快捷方式和说明来定义自定义删除命令。 与 [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) 示例一样，我们使用通过 [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) 类实现的“删除项”命令来增强基本的 [ListView](listview-and-gridview.md)，同时使用 [MenuBar](menus.md)、[轻扫](swipe.md)控件、悬停按钮和[上下文菜单](menus.md)优化各种输入类型的用户体验。
 
 许多平台控件实际上使用 XamlUICommand 属性，就像上一部分的 StandardUICommand 示例一样。 
 
 > [!NOTE]
-> 此示例需要 Microsoft.UI.Xaml.Controls NuGet 包，该包是 [Microsoft Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)的一部分。
+> 此示例需要 Microsoft.UI.Xaml.Controls NuGet 包，该包是 [Microsoft Windows UI 库](/uwp/toolkits/winui/)的一部分。
 
 **Xaml：**
 
-此示例 UI 包含一个有五个项的 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)。 自定义 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) Delete 绑定到 [MenuBarItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubaritem)、[SwipeItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.swipeitem)、[AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) 和 [ContextFlyout 菜单](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout)。
+此示例 UI 包含一个有五个项的 [ListView](/uwp/api/windows.ui.xaml.controls.listview)。 自定义 [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) Delete 绑定到 [MenuBarItem](/uwp/api/microsoft.ui.xaml.controls.menubaritem)、[SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)、[AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton) 和 [ContextFlyout 菜单](/uwp/api/windows.ui.xaml.uielement.contextflyout)。
 
 ``` xaml
 <Page
@@ -540,7 +540,7 @@ public class ListItemData
 }
 ```
 
-2. 在 MainPage 类中，我们为 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 的 [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) 定义一组 `ListItemData` 对象。 然后，我们为其填充包含五个项（带有文本和关联的 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)）的初始集合。
+2. 在 MainPage 类中，我们为 [ListView](/uwp/api/windows.ui.xaml.controls.listview) [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 的 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) 定义一组 `ListItemData` 对象。 然后，我们为其填充包含五个项（带有文本和关联的 [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand)）的初始集合。
 
 ```csharp
 ObservableCollection<ListItemData> collection = new ObservableCollection<ListItemData>();
@@ -585,7 +585,7 @@ private void DeleteCommand_ExecuteRequested(
 }
 ```
 
-4. 最后，我们定义各种 ListView 事件（包括 [PointerEntered](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)、[PointerExited](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) 和 [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) 事件）的处理程序。 指针事件处理程序用于显示或隐藏每个项的“删除”按钮。
+4. 最后，我们定义各种 ListView 事件（包括 [PointerEntered](/uwp/api/windows.ui.xaml.uielement.pointerentered)、[PointerExited](/uwp/api/windows.ui.xaml.uielement.pointerexited) 和 [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) 事件）的处理程序。 指针事件处理程序用于显示或隐藏每个项的“删除”按钮。
 
 ```csharp
 private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -616,7 +616,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 标准 UWP 控件（按钮、列表、选择、日历、预测性文本）是许多常见命令体验的基础。 如需控件类型的完整列表，请参阅 [Windows 应用的控件和模式](index.md)。
 
-若要为结构化命令控制体验提供支持，最基本的方法是定义 ICommand 接口（适用于 C++ 的 [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 或适用于 C# 的 [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)）的实现。  此 ICommand 实例随后可以绑定到控件（例如按钮）。
+若要为结构化命令控制体验提供支持，最基本的方法是定义 ICommand 接口（适用于 C++ 的 [Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) 或适用于 C# 的 [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)）的实现。  此 ICommand 实例随后可以绑定到控件（例如按钮）。
 
 > [!NOTE]
 > 在某些情况下，将方法绑定到 Click 事件并将属性绑定到 IsEnabled 属性也同样很高效。
@@ -633,7 +633,7 @@ ICommand 示例
 
 在这个基本示例中，我们演示如何通过单击按钮、键盘快捷方式以及旋转鼠标滚轮来调用单个命令。
 
-我们使用两个 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)，一个填充了五个项，另一个为空；另外还使用两个按钮，一个用于将项从左侧的 ListView 移到右侧的 ListView，另一个用于将项从右侧移到左侧。 每个按钮绑定到相应的命令（分别为 ViewModel.MoveRightCommand 和 ViewModel.MoveLeftCommand），根据其关联的 ListView 中的项数自动启用或禁用。
+我们使用两个 [ListView](/uwp/api/windows.ui.xaml.controls.listview)，一个填充了五个项，另一个为空；另外还使用两个按钮，一个用于将项从左侧的 ListView 移到右侧的 ListView，另一个用于将项从右侧移到左侧。 每个按钮绑定到相应的命令（分别为 ViewModel.MoveRightCommand 和 ViewModel.MoveLeftCommand），根据其关联的 ListView 中的项数自动启用或禁用。
 
 **以下 XAML 代码定义示例的 UI。**
 
@@ -994,7 +994,7 @@ namespace UICommand1.ViewModel
 
 **最后是 ICommand 接口的实现**
 
-在这里，我们定义一个命令来实现 [ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 接口并直接将其功能中继到其他对象。
+在这里，我们定义一个命令来实现 [ICommand](/uwp/api/windows.ui.xaml.input.icommand) 接口并直接将其功能中继到其他对象。
 
 ```csharp
 using System;
@@ -1097,7 +1097,7 @@ namespace UICommand1
 
 ## <a name="next-steps"></a>后续步骤
 
-如果需要一个演示 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 和 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 实现的完整示例，请参阅 [XAML 控件库](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)示例。
+如果需要一个演示 [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) 和 [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) 实现的完整示例，请参阅 [XAML 控件库](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)示例。
 
 ## <a name="see-also"></a>另请参阅
 

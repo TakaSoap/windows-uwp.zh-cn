@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 776ad2c3e5236f9ecee73ce35c818112862d4faf
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: f5dd1a27cb02a33a8d760f4d902a42c6619ad796
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233709"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160411"
 ---
 # <a name="create-custom-transport-controls"></a>创建自定义传输控件
 
@@ -21,7 +21,7 @@ ms.locfileid: "83233709"
 
 MediaPlayerElement 具有可自定义的 XAML 传输控件，用于管理 Windows 应用中的音频和视频内容控件。 下面，我们演示如何自定义 MediaTransportControls 模板。 我们将向你演示如何使用溢出菜单、添加自定义按钮和修改滑块。
 
-> **重要的 API**：[MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)、[MediaPlayerElement.AreTransportControlsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled)、[MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)
+> **重要的 API**：[MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement)、[MediaPlayerElement.AreTransportControlsEnabled](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled)、[MediaTransportControls](/uwp/api/Windows.Media.SystemMediaTransportControls)
 
 在开始操作之前，你应当先熟悉 MediaPlayerElement 和 MediaTransportControls 类。 有关详细信息，请参阅 MediaPlayerElement 控件指南。
 
@@ -29,11 +29,11 @@ MediaPlayerElement 具有可自定义的 XAML 传输控件，用于管理 Window
 > 本主题中的示例基于[媒体传输控件示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls)。 你可以下载该示例来查看和运行完整代码。
 
 > [!NOTE]
-> **MediaPlayerElement** 仅在 Windows 10 1607 版本及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 本页面中的所有示例均同样适用于 **MediaElement**。
+> **MediaPlayerElement** 仅在 Windows 10 1607 版本及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 本页面中的所有示例均同样适用于 **MediaElement**。
 
 ## <a name="when-should-you-customize-the-template"></a>你应在何时自定义模板？
 
-**MediaPlayerElement** 具有旨在大多数视频和音频播放应用中良好工作的内置传输控件，而无需任何修改。 它们由 [**MediaTransportControls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 类提供，其中包括用于播放、停止和导航媒体、调整音量、切换全屏、强制转换到第二台设备、启用字幕、切换音频轨以及调整播放速率的按钮。 MediaTransportControls 中包含的属性使你可以控制每个按钮的显示和启用状态。 还可以设置 [**IsCompact**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediatransportcontrols.iscompact) 属性，以指定控件显示为一行还是两行。
+**MediaPlayerElement** 具有旨在大多数视频和音频播放应用中良好工作的内置传输控件，而无需任何修改。 它们由 [**MediaTransportControls**](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 类提供，其中包括用于播放、停止和导航媒体、调整音量、切换全屏、强制转换到第二台设备、启用字幕、切换音频轨以及调整播放速率的按钮。 MediaTransportControls 中包含的属性使你可以控制每个按钮的显示和启用状态。 还可以设置 [**IsCompact**](/uwp/api/windows.ui.xaml.controls.mediatransportcontrols.iscompact) 属性，以指定控件显示为一行还是两行。
 
 但是，在某些情况下，可能需要进一步自定义控件的外观或更改其行为。 下面提供了一些示例：
 - 更改图标、滑块行为和颜色。
@@ -51,17 +51,17 @@ MediaPlayerElement 具有可自定义的 XAML 传输控件，用于管理 Window
 
 ## <a name="template-structure"></a>模板结构
 
-[  **ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 是默认样式的一部分。 可以将此默认样式复制到你的项目，以对其进行修改。 该 ControlTemplate 被划分为类似于其他 XAML 控件模板的若干部分。
-- 该模板的第一部分包含 MediaTransportControls 的各个组件的 [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 定义。
+[  **ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 是默认样式的一部分。 可以将此默认样式复制到你的项目，以对其进行修改。 该 ControlTemplate 被划分为类似于其他 XAML 控件模板的若干部分。
+- 该模板的第一部分包含 MediaTransportControls 的各个组件的 [**Style**](/uwp/api/Windows.UI.Xaml.Style) 定义。
 - 第二部分定义 MediaTransportControls 所使用的各个视觉状态。
-- 第三部分包含将各种 MediaTransportControls 元素保留在一起并定义组件布局方式的 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)。
+- 第三部分包含将各种 MediaTransportControls 元素保留在一起并定义组件布局方式的 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid)。
 
 > [!NOTE]
-> 有关修改模板的详细信息，请参阅 [控制模板](/windows/uwp/design/controls-and-patterns/control-templates)。 可以在 IDE 中使用文本编辑器或类似编辑器打开 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 文件。 每个控件的默认样式和模板都在 **generic.xaml** 文件中定义。 你可以通过搜索“MediaTransportControls”找到 generic.xaml 中的 MediaTransportControls 模板。
+> 有关修改模板的详细信息，请参阅 [控制模板](./control-templates.md)。 可以在 IDE 中使用文本编辑器或类似编辑器打开 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 文件。 每个控件的默认样式和模板都在 **generic.xaml** 文件中定义。 你可以通过搜索“MediaTransportControls”找到 generic.xaml 中的 MediaTransportControls 模板。
 
 在以下部分中，你将了解如何自定义传输控件的几个主要元素：
-- [**Slider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)：允许用户在其媒体上进行推移，同时显示相关进度
-- [**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)：包含所有按钮。
+- [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider)：允许用户在其媒体上进行推移，同时显示相关进度
+- [**CommandBar**](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)：包含所有按钮。
 有关详细信息，请参阅 MediaTransportControls 参考主题的详细分析部分。
 
 ## <a name="customize-the-transport-controls"></a>自定义传输控件
@@ -91,7 +91,7 @@ MediaPlayerElement 具有可自定义的 XAML 传输控件，用于管理 Window
 </MediaPlayerElement>
 ```
 
-有关修改样式和模板的详细信息，请参阅[样式控件](/windows/uwp/design/controls-and-patterns/xaml-styles)和[控件模板](/windows/uwp/design/controls-and-patterns/control-templates)。
+有关修改样式和模板的详细信息，请参阅[样式控件](./xaml-styles.md)和[控件模板](./control-templates.md)。
 
 ### <a name="create-a-derived-control"></a>创建派生控件
 
@@ -109,9 +109,9 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-3. 在项目中将 [**MediaTransportControls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 的默认样式复制到 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary)。 这是你修改后的样式和模板。
+3. 在项目中将 [**MediaTransportControls**](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 的默认样式复制到 [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary)。 这是你修改后的样式和模板。
 （在媒体传输控件示例中，创建了名为“Themes”的新文件夹，并且向其中添加了名为 generic.xaml 的 ResourceDictionary 文件。）
-4. 将样式的 [**TargetType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) 更改为新的自定义控件类型。 （在该示例中，TargetType 更改为 `local:CustomMediaTransportControls`。）
+4. 将样式的 [**TargetType**](/uwp/api/windows.ui.xaml.style.targettype) 更改为新的自定义控件类型。 （在该示例中，TargetType 更改为 `local:CustomMediaTransportControls`。）
 
 ```xaml
 xmlns:local="using:CustomMediaTransportControls">
@@ -119,7 +119,7 @@ xmlns:local="using:CustomMediaTransportControls">
 <Style TargetType="local:CustomMediaTransportControls">
 ```
 
-5. 设置自定义类的 [**DefaultStyleKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.defaultstylekey)。 这将告知自定义类将 Style 与 `local:CustomMediaTransportControls` 的 TargetType 结合使用。
+5. 设置自定义类的 [**DefaultStyleKey**](/uwp/api/windows.ui.xaml.controls.control.defaultstylekey)。 这将告知自定义类将 Style 与 `local:CustomMediaTransportControls` 的 TargetType 结合使用。
 
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
@@ -131,7 +131,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-6. 将 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 添加到你的 XAML 标记并向其添加自定义传输控件。 需要注意的一点是，用于隐藏、显示、禁用和启用默认按钮的 API 仍然适用于自定义模板。
+6. 将 [**MediaPlayerElement**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 添加到你的 XAML 标记并向其添加自定义传输控件。 需要注意的一点是，用于隐藏、显示、禁用和启用默认按钮的 API 仍然适用于自定义模板。
 
 ```xaml
 <MediaPlayerElement Name="MediaPlayerElement1" AreTransportControlsEnabled="True" Source="video.mp4">
@@ -155,13 +155,13 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 可以将 MediaTransportControls 命令按钮移动到“溢出”菜单，以便隐藏不常使用的命令，直至用户需要使用这些命令。
 
-在 MediaTransportControls 模板中，命令按钮均包含在 [**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 元素中。 命令栏具有主要命令和辅助命令的概念。 主要命令是默认情况下在控件中显示的按钮，并且始终可见（除非禁用、隐藏该按钮或没有足够空间）。 辅助命令显示在用户单击省略号 (…) 按钮时出现的溢出菜单中。 有关详细信息，请参阅[应用栏和命令栏](app-bars.md)文章。
+在 MediaTransportControls 模板中，命令按钮均包含在 [**CommandBar**](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 元素中。 命令栏具有主要命令和辅助命令的概念。 主要命令是默认情况下在控件中显示的按钮，并且始终可见（除非禁用、隐藏该按钮或没有足够空间）。 辅助命令显示在用户单击省略号 (…) 按钮时出现的溢出菜单中。 有关详细信息，请参阅[应用栏和命令栏](app-bars.md)文章。
 
 若要将元素从命令栏主要命令移动到溢出菜单，你需要编辑 XAML 控件模板。
 
 **将命令移动到“溢出”菜单：**
 1. 在控件模板中，查找名为 `MediaControlsCommandBar` 的 CommandBar 元素。
-2. 将 [**SecondaryCommands**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands) 部分添加到 CommandBar 的 XAML。 将其放置在 [**PrimaryCommands**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands) 的结束标记之后。
+2. 将 [**SecondaryCommands**](/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands) 部分添加到 CommandBar 的 XAML。 将其放置在 [**PrimaryCommands**](/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands) 的结束标记之后。
 
 ```xaml
 <CommandBar x:Name="MediaControlsCommandBar" ... >  
@@ -184,7 +184,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 </CommandBar>
 ```
 
-3. 若要使用命令填充此菜单，请剪切所需的 [**AppBarButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton) 对象的 XAML 并将其从 PrimaryCommands 粘贴到 SecondaryCommands。 在此示例中，我们将 `PlaybackRateButton` 移动到溢出菜单。
+3. 若要使用命令填充此菜单，请剪切所需的 [**AppBarButton**](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton) 对象的 XAML 并将其从 PrimaryCommands 粘贴到 SecondaryCommands。 在此示例中，我们将 `PlaybackRateButton` 移动到溢出菜单。
 
 4. 为按钮添加标签并删除样式设置信息，如下所示。
 由于“溢出”菜单由文本按钮组成，因此必须为按钮添加文本标签，另外还要删除设置按钮高度和宽度的样式。 否则，它不会在溢出菜单中正确显示。
@@ -220,7 +220,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 还可以自定义按钮的图标。 有关详细信息，请查看 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"><b>AppBarButton</b></a> 参考。
     
 
-2. 在 [**OnApplyTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate) 替代中，从模板中获取该按钮并为其 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件注册处理程序。 此代码会写入 `CustomMediaTransportControls` 类。
+2. 在 [**OnApplyTemplate**](/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate) 替代中，从模板中获取该按钮并为其 [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件注册处理程序。 此代码会写入 `CustomMediaTransportControls` 类。
 
 ```csharp
 public sealed class CustomMediaTransportControls :  MediaTransportControls
@@ -277,9 +277,9 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 ### <a name="modifying-the-slider"></a>修改滑块
 
-MediaTransportControls 的“seek”控件由 [**Slider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 元素提供。 你可以自定义它的方法之一是更改查找行为的粒度。
+MediaTransportControls 的“seek”控件由 [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider) 元素提供。 你可以自定义它的方法之一是更改查找行为的粒度。
 
-由于默认查找滑块分为 100 个部分，因此查找行为仅限于这些若干区域。 可以通过从 [**MediaPlayerElement.MediaPlayer**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.mediaopened) 上的 [**MediaOpened**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 事件处理程序的 XAML 可视化树中获取 Slider 来更改查找滑块的粒度。 此示例介绍如何使用 [**VisualTreeHelper**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.VisualTreeHelper) 获取对 Slider 的引用，然后在媒体大于 120 分钟时，将滑块的默认步进频率从 1% 更改为 0.1%（1000 步）。 MediaPlayerElement 名为 `MediaPlayerElement1`。
+由于默认查找滑块分为 100 个部分，因此查找行为仅限于这些若干区域。 可以通过从 [**MediaPlayerElement.MediaPlayer**](/uwp/api/windows.media.playback.mediaplayer.mediaopened) 上的 [**MediaOpened**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 事件处理程序的 XAML 可视化树中获取 Slider 来更改查找滑块的粒度。 此示例介绍如何使用 [**VisualTreeHelper**](/uwp/api/Windows.UI.Xaml.Media.VisualTreeHelper) 获取对 Slider 的引用，然后在媒体大于 120 分钟时，将滑块的默认步进频率从 1% 更改为 0.1%（1000 步）。 MediaPlayerElement 名为 `MediaPlayerElement1`。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)

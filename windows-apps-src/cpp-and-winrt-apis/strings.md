@@ -5,16 +5,16 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 字符串
 ms.localizationpriority: medium
-ms.openlocfilehash: 1771c3754e8e9580514f646ae8589b1982911fc7
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 56b75710c2d259e59dac476bcb860a5e4c6938d6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79448560"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154391"
 ---
 # <a name="string-handling-in-cwinrt"></a>C++/WinRT 中的字符串处理
 
-利用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，你可以使用 C++ 标准库宽字符串类型（如 std::wstring  ）调用 Windows 运行时 API（注：不要使用窄字符串类型，例如 std::string  ）。 C++/WinRT 确实有名为 [winrt::hstring  ](/uwp/cpp-ref-for-winrt/hstring) 的自定义字符串类型（在 C++/WinRT 基础库 `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` 中定义）。 这是 Windows 运行时构造函数、函数和属性实际上采用并返回的字符串类型。 但在很多情况下（由于 hstring  的转换构造函数和转换运算符），你可以选择是否要注意客户端代码中的 hstring  。 如果你要创作  API，则很可能需要了解 hstring  。
+利用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md)，你可以使用 C++ 标准库宽字符串类型（如 std::wstring  ）调用 Windows 运行时 API（注：不要使用窄字符串类型，例如 std::string  ）。 C++/WinRT 确实有名为 [winrt::hstring  ](/uwp/cpp-ref-for-winrt/hstring) 的自定义字符串类型（在 C++/WinRT 基础库 `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` 中定义）。 这是 Windows 运行时构造函数、函数和属性实际上采用并返回的字符串类型。 但在很多情况下（由于 hstring  的转换构造函数和转换运算符），你可以选择是否要注意客户端代码中的 hstring  。 如果你要创作  API，则很可能需要了解 hstring  。
 
 C++ 中有很多字符串类型。 除了 C++ 标准库中的 std::basic_string  之外，变体还存在于很多库中。 C++17 具有字符串转换实用程序和 std::basic_string_view  ，用来消除所有字符串类型之间的差别。  [winrt::hstring  ](/uwp/cpp-ref-for-winrt/hstring) 利用 std::wstring_view  提供了可转换性，以实现 std::basic_string_view  应有的互操作性。
 
@@ -53,7 +53,7 @@ int main()
 }
 ```
 
-属性访问器 [Uri::Domain  ](https://docs.microsoft.com/uwp/api/windows.foundation.uri.Domain) 属于类型 hstring  。
+属性访问器 [Uri::Domain  ](/uwp/api/windows.foundation.uri.Domain) 属于类型 hstring  。
 
 ```cppwinrt
 public:
@@ -72,14 +72,14 @@ hstring domainHstring{ contosoUri.Domain() }; // L"contoso.com"
 domainHstring = awUri.Domain(); // L"adventure-works.com"
 ```
 
-同样，[IStringable::ToString  ](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nf-windows-foundation-istringable-tostring) 将返回 hstring。
+同样，[IStringable::ToString  ](/windows/desktop/api/windows.foundation/nf-windows-foundation-istringable-tostring) 将返回 hstring。
 
 ```cppwinrt
 public:
     hstring ToString() const;
 ```
 
-Uri  将实现 [IStringable  ](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-istringable) 接口。
+Uri  将实现 [IStringable  ](/windows/desktop/api/windows.foundation/nn-windows-foundation-istringable) 接口。
 
 ```cppwinrt
 // Access hstring's IStringable::ToString, via a conversion operator to a standard type.
@@ -152,9 +152,9 @@ WINRT_ASSERT(w == L"Hello, World!");
 有关 hstring  函数和运算符的更多示例和信息，请参阅 [winrt::hstring  ](/uwp/cpp-ref-for-winrt/hstring) API 参考主题。
 
 ## <a name="the-rationale-for-winrthstring-and-winrtparamhstring"></a>winrt::hstring  和 winrt::param::hstring  的原理
-Windows 运行时根据 wchar_t  字符实现，但 Windows 运行时的应用程序二进制接口 (ABI) 不是 std::wstring  或 std::wstring_view  提供的内容的一部分。 使用这些将导致效率显著降低。 相反，C++/WinRT 提供了 winrt::hstring  ，它表示与基础 [HSTRING](https://docs.microsoft.com/windows/desktop/WinRT/hstring) 一致的不可变字符串，在与 std::wstring  的接口相似的接口后面实现。 
+Windows 运行时根据 wchar_t  字符实现，但 Windows 运行时的应用程序二进制接口 (ABI) 不是 std::wstring  或 std::wstring_view  提供的内容的一部分。 使用这些将导致效率显著降低。 相反，C++/WinRT 提供了 winrt::hstring  ，它表示与基础 [HSTRING](/windows/desktop/WinRT/hstring) 一致的不可变字符串，在与 std::wstring  的接口相似的接口后面实现。 
 
-你可能会注意到在逻辑上应该接受 winrt::hstring  的 C++/WinRT 输入参数实际上需要 winrt::param::hstring  。 param  命名空间包含一组类型，专用于优化输入参数以自然地绑定到 C++ 标准库类型，以及避免副本和其他低效率现象。 你不应直接使用这些类型。 如果你要对自己的函数使用优化，则应使用 std::wstring_view  。 另请参阅[将参数传递到 ABI 边界](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi)。
+你可能会注意到在逻辑上应该接受 winrt::hstring  的 C++/WinRT 输入参数实际上需要 winrt::param::hstring  。 param  命名空间包含一组类型，专用于优化输入参数以自然地绑定到 C++ 标准库类型，以及避免副本和其他低效率现象。 你不应直接使用这些类型。 如果你要对自己的函数使用优化，则应使用 std::wstring_view  。 另请参阅[将参数传递到 ABI 边界](./pass-parms-to-abi.md)。
 
 这样，你便可以在很大程度上忽略 Windows 运行时字符串管理的细节，并使用你了解的资源高效地工作。 考虑到在 Windows 运行时中使用字符串的频率，这一点很重要。
 

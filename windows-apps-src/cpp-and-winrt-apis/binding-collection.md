@@ -5,16 +5,16 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 集合
 ms.localizationpriority: medium
-ms.openlocfilehash: 388e8ebb062dbbb33ffb269f2adcced34a7e577c
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: c87fcec62c9177ddfccaa14e97294ebcd78ded5f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493642"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154511"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 项目控件；绑定到 C++/WinRT 集合
 
-可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 这一想法基于称为“观察者模式”的软件设计模式  。 本主题介绍如何在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中实现可观测集合，以及如何将 XAML 项控件绑定到这些集合（如需背景信息，请参阅[数据绑定](/windows/uwp/data-binding)）。
+可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 这一想法基于称为“观察者模式”的软件设计模式  。 本主题介绍如何在 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 中实现可观测集合，以及如何将 XAML 项控件绑定到这些集合（如需背景信息，请参阅[数据绑定](../data-binding/index.md)）。
 
 如果想要跟随此主题进行操作，建议先创建 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)中所介绍的项目。 本主题向该项目添加更多代码，更详细地阐释该主题所介绍的概念。
 

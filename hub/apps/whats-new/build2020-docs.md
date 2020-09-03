@@ -6,12 +6,12 @@ ms.date: 05/11/2020
 ms.localizationpriority: medium
 ms.author: jken
 author: grantmestrength
-ms.openlocfilehash: 0880d7e7299db2a1a0f7de69400b7bb9c5d0efd9
-ms.sourcegitcommit: 10ec5a20dd1152a1037ebc4fba1a28cc96593586
+ms.openlocfilehash: 22dddfaea4297ef12fe449f08cda7723c2b52642
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83665864"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157631"
 ---
 # <a name="microsoft-build---the-windows-documentation"></a>Microsoft Build 大会 - Windows 文档
 
@@ -25,36 +25,36 @@ ms.locfileid: "83665864"
 
 ## <a name="windows-terminal"></a>Windows 终端
 
-* [安装和设置 Windows 终端](https://docs.microsoft.com/windows/terminal/get-started)
-* [设置自定义键绑定](https://docs.microsoft.com/windows/terminal/customize-settings/key-bindings)
-* [自定义终端的库](https://docs.microsoft.com/windows/terminal/custom-terminal-gallery/retro-command-prompt)
+* [安装和设置 Windows 终端](/windows/terminal/get-started)
+* [设置自定义键绑定](/windows/terminal/customize-settings/key-bindings)
+* [自定义终端的库](/windows/terminal/custom-terminal-gallery/retro-command-prompt)
 
 ## <a name="windows-subsystem-for-linux-wsl"></a>适用于 Linux 的 Windows 子系统 (WSL)
 
-* [什么是 WSL？（什么是 WSL 2？）](https://docs.microsoft.com/windows/wsl/about)
-* [安装 WSL 2](https://docs.microsoft.com/windows/wsl/install-win10)
-* [比较 WSL 2 和 WSL 1](https://docs.microsoft.com/windows/wsl/compare-versions)
+* [什么是 WSL？（什么是 WSL 2？）](/windows/wsl/about)
+* [安装 WSL 2](/windows/wsl/install-win10)
+* [比较 WSL 2 和 WSL 1](/windows/wsl/compare-versions)
 
 ## <a name="windows-package-manager"></a>Windows 程序包管理器
 
-* [Windows 程序包管理器](https://docs.microsoft.com/windows/package-manager) 
-* [提交程序包](https://docs.microsoft.com/windows/package-manager/package)
-* [使用 winget 工具](https://docs.microsoft.com/windows/package-manager/winget)
+* [Windows 程序包管理器](../../package-manager/index.md) 
+* [提交程序包](../../package-manager/package/index.md)
+* [使用 winget 工具](../../package-manager/winget/index.md)
 
 ## <a name="winui"></a>WinUI
 
-* [WinUI 概述](https://docs.microsoft.com/windows/apps/winui/)
-* [WinUI 3.0 预览版 1](https://docs.microsoft.com/windows/apps/winui/winui3) 
-* [适用于桌面应用的 WinUI 3.0](https://docs.microsoft.com/windows/apps/winui/winui3/get-started-winui3-for-desktop)
+* [WinUI 概述](../winui/index.md)
+* [WinUI 3.0 预览版 1](../winui/winui3/index.md) 
+* [适用于桌面应用的 WinUI 3.0](../winui/winui3/get-started-winui3-for-desktop.md)
 
 ## <a name="developing-for-android-on-windows"></a>在 Windows 上针对 Android 进行开发
 
-* [Android 开发概述](https://docs.microsoft.com/windows/android/overview)
-* [入门](https://docs.microsoft.com/windows/android/native-android)
-* [在 Android 设备上测试](https://docs.microsoft.com/windows/android/emulator)
+* [Android 开发概述](../../android/overview.md)
+* [入门](../../android/native-android.md)
+* [在 Android 设备上测试](../../android/emulator.md)
 
 ## <a name="dual-screen-device-development"></a>双屏设备开发
 
 * [Surface Duo 简介](https://www.microsoft.com/surface/devices/surface-duo)
-* [获取 Surface Duo 工具](https://docs.microsoft.com/dual-screen/android/get-duo-sdk?tabs=windows)
-* [使用 Surface Duo 仿真器](https://docs.microsoft.com/dual-screen/android/use-emulator?tabs=java%2Cwindows)
+* [获取 Surface Duo 工具](/dual-screen/android/get-duo-sdk?tabs=windows)
+* [使用 Surface Duo 仿真器](/dual-screen/android/use-emulator?tabs=java%252cwindows)

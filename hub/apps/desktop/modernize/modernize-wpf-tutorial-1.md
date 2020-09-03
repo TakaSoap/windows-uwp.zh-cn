@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 9d08dd0f43f1c505124203028c69326e10eea26c
-ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
+ms.openlocfilehash: c11f1cab37e79fc320f1fb38f5b909d2cecd1ad4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85882882"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161581"
 ---
 # <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>第 1 部分：将 Contoso Expenses 应用迁移到 .NET Core 3
 
@@ -134,7 +134,7 @@ ContosoExpenses 解决方案包含一个 ContosoExpenses.Data 类库，该库包
     ```
 
     > [!NOTE]
-    > 你还可能会注意到，要为此 .NET Core 3 项目安装的包与 .NET Framework 4.7.2 项目使用的包相同。 NuGet 包支持多目标。 库作者可以在同一个包中包含某个库的不同版本，这些版本是针对不同体系结构和平台编译的。 这些包支持完整 .NET Framework，以及与 .NET Core 3 项目兼容的 .NET Standard 2.0。 有关 .NET Framework、.NET Core 与 .NET Standard 之间的差异的详细信息，请参阅 [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard)。
+    > 你还可能会注意到，要为此 .NET Core 3 项目安装的包与 .NET Framework 4.7.2 项目使用的包相同。 NuGet 包支持多目标。 库作者可以在同一个包中包含某个库的不同版本，这些版本是针对不同体系结构和平台编译的。 这些包支持完整 .NET Framework，以及与 .NET Core 3 项目兼容的 .NET Standard 2.0。 有关 .NET Framework、.NET Core 与 .NET Standard 之间的差异的详细信息，请参阅 [.NET Standard](/dotnet/standard/net-standard)。
 
 若要为 ContosoExpenses.Core 项目配置 NuGet 包：
 

@@ -3,22 +3,22 @@ title: WinUI 2.1 发行说明
 description: WinUI 2.1 的发行说明，包括新功能和 Bug 修复。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: f362c4ae7654d6ef3b888b908c4779fce62af5fe
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 02e870209486a271e0455d61070cf5403333e1df
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493082"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154881"
 ---
 # <a name="windows-ui-library-21"></a>Windows UI 库 2.1
 
 最新官方版 Windows UI 库 – WinUI 2.1 – 刚于 2019 年 4 月 8 日发布。 
 
-WinUI 提供许多最新的 Windows UX 平台功能，其中包括最新的 Fluent 控件和样式，以可供用户立即使用的方式发布，并且后向兼容 Windows 10 周年更新 (14393)。 [XAML 控件库](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/#xaml-controls-gallery)提供了一些示例，供你探索添加到库中的所有酷新功能。
+WinUI 提供许多最新的 Windows UX 平台功能，其中包括最新的 Fluent 控件和样式，以可供用户立即使用的方式发布，并且后向兼容 Windows 10 周年更新 (14393)。 [XAML 控件库](/windows/uwp/design/controls-and-patterns/#xaml-controls-gallery)提供了一些示例，供你探索添加到库中的所有酷新功能。
 
 下载 [WinUI 2.1 NuGet 包](https://www.nuget.org/packages/Microsoft.UI.Xaml/2.1.190405004)
 
-可以通过 NuGet 包管理器选择使用应用中的 WinUI 包：有关详细信息，请参阅 [Windows UI 库入门](https://docs.microsoft.com/uwp/toolkits/winui/getting-started)。
+可以通过 NuGet 包管理器选择使用应用中的 WinUI 包：有关详细信息，请参阅 [Windows UI 库入门](/uwp/toolkits/winui/getting-started)。
 
 WinUI 是托管在 GitHub 上的开源项目。 我们欢迎你在 [Windows UI 库存储库](https://aka.ms/winui)中提供 Bug 报告、提交功能请求和贡献社区代码。
 
@@ -31,7 +31,7 @@ WinUI 是托管在 GitHub 上的开源项目。 我们欢迎你在 [Windows UI �
 
 ![示例](../images/ItemsRepeater%20-%20MSN%20News.gif)
 
-[文档](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/items-repeater)
+[文档](/windows/uwp/design/controls-and-patterns/items-repeater)
 
 ### <a name="animatedvisualplayer"></a>AnimatedVisualPlayer
 
@@ -39,7 +39,7 @@ AnimatedVisualPlayer 用于承载和控制动画视觉对象的播放，使你�
 
 ![示例](../images/AnimatedVisualPlayerUpdated.gif)
 
-[文档](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie)
+[文档](/windows/communitytoolkit/animations/lottie)
 
 ### <a name="teachingtip"></a>TeachingTip
 
@@ -47,7 +47,7 @@ TeachingTip 为应用程序提供了一种吸引人的 Fluent 方法，通过非
 
 ![示例](../images/TeachingTipUpdated.gif)
 
-[文档](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/teaching-tip)
+[文档](/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/teaching-tip)
 
 ### <a name="radiomenuflyoutitem"></a>RadioMenuFlyoutItem
 
@@ -55,7 +55,7 @@ TeachingTip 为应用程序提供了一种吸引人的 Fluent 方法，通过非
 
 ![示例](../images/RadioMenuFlyoutItem1.png)
 
-[文档](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#create-a-menu-flyout-or-a-context-menu)
+[文档](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-flyout-or-a-context-menu)
 
 ### <a name="compactdensity"></a>CompactDensity
 
@@ -63,7 +63,7 @@ TeachingTip 为应用程序提供了一种吸引人的 Fluent 方法，通过非
 
 ![压实密度示例](../images/CompactDensityUpdated.png)
 
-[文档](https://docs.microsoft.com/windows/uwp/design/style/spacing )
+[文档](/windows/uwp/design/style/spacing)
 
 ### <a name="shadows"></a>阴影
 
@@ -101,7 +101,7 @@ API 参考文档位于此处：[Windows UI 库 API](/uwp/api/overview/winui/)。
 
 #### <a name="new-feature-not-included-in-earlier-pre-releases"></a>新功能（不包含在早期的预发行版本中）
 
-* [CompactDensity](https://docs.microsoft.com/windows/uwp/design/style/spacing)：紧密模式使开发人员能够为任意数量的方案创建舒适的体验。 只需添加一个资源字典，应用程序就可以适应 UI 平均增加 ~ 33% 的情况。
+* [CompactDensity](/windows/uwp/design/style/spacing)：紧密模式使开发人员能够为任意数量的方案创建舒适的体验。 只需添加一个资源字典，应用程序就可以适应 UI 平均增加 ~ 33% 的情况。
 
 * 阴影：在 UI 中创建元素的视觉层次结构可以使 UI 易于扫描并传达需要重点关注的信息。 提升（将 UI 的所选元素推向用户的操作）通常用于在软件中实现此类层次结构。 许多常见控件都在默认情况下通过景深和阴影来增加提升效果。  
 
@@ -128,8 +128,8 @@ API 参考文档位于此处：[Windows UI 库 API](/uwp/api/overview/winui/)。
 
 新的实验性功能：
 
-* [AnimatedVisualPlayer](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.animatedvisualplayer)  
-  此新控件可用于播放复杂的高性能矢量动画，包括使用 [Lottie-Windows](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie) 创建的 [Lottie](https://github.com/airbnb/lottie) 动画。
+* [AnimatedVisualPlayer](/uwp/api/microsoft.ui.xaml.controls.animatedvisualplayer)  
+  此新控件可用于播放复杂的高性能矢量动画，包括使用 [Lottie-Windows](/windows/communitytoolkit/animations/lottie) 创建的 [Lottie](https://github.com/airbnb/lottie) 动画。
 
 ### <a name="microsoftuixaml-21181217001-prerelease"></a>Microsoft.UI.Xaml 2.1.181217001-prerelease
 
@@ -141,8 +141,8 @@ API 参考文档位于此处：[Windows UI 库 API](/uwp/api/overview/winui/)。
 
 新的实验性功能：
 
-* [ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
+* [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 
-* [RadioButtons](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
+* [RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
 
-* [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)
+* [RadioMenuFlyoutItem](/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)

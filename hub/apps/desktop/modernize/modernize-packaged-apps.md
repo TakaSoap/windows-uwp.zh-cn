@@ -8,18 +8,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1930d879177bc9282a3b55d019aa2bef7eb8f120
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: d1ce2e7dc434558ac1efd52f6def99d63b38c57e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730081"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161511"
 ---
 # <a name="features-that-require-package-identity"></a>需要包标识的功能
 
-如果要将桌面应用更新为[新式 Windows 10 体验](index.md)，请注意，许多功能仅在具有[程序包标识符](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)的桌面应用中可用。 可通过多种方式向桌面应用授予程序包标识符：
+如果要将桌面应用更新为[新式 Windows 10 体验](index.md)，请注意，许多功能仅在具有[程序包标识符](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)的桌面应用中可用。 可通过多种方式向桌面应用授予程序包标识符：
 
-* 将其打包到 [MSIX 包](/windows/msix/desktop/desktop-to-uwp-root)中。 MSIX 是一种新式应用包格式，提供适合所有 Windows 应用、WPF、Windows 窗体和 Win32 应用的通用打包体验。 它提供了可靠的安装和更新体验、功能系统灵活的托管安全模型、对 Microsoft Store 的支持、企业管理以及许多自定义分发模型。 有关详细信息，请参阅 MSIX 文档中的[打包桌面应用程序](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。
+* 将其打包到 [MSIX 包](/windows/msix/desktop/desktop-to-uwp-root)中。 MSIX 是一种新式应用包格式，提供适合所有 Windows 应用、WPF、Windows 窗体和 Win32 应用的通用打包体验。 它提供了可靠的安装和更新体验、功能系统灵活的托管安全模型、对 Microsoft Store 的支持、企业管理以及许多自定义分发模型。 有关详细信息，请参阅 MSIX 文档中的[打包桌面应用程序](/windows/msix/desktop/desktop-to-uwp-root)。
 * 如果无法采用 MSIX 打包来部署桌面应用，那么，自 Windows 10 版本 2004 起，你可通过创建一个仅包含程序包清单的稀疏 MSIX 包来授予包标识  。 有关详细信息，请参阅[向未打包的桌面应用授予标识](grant-identity-to-nonpackaged-apps.md)。
 
 如果你的桌面应用具有程序包标识符，可以在其中使用以下功能。

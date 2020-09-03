@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 7393d4d1bae227bf3b586a54fba5d43ca2dcb53e
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 2b946047602013704b27fb5c5565155d38dbb7f8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493402"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154821"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>适用于桌面应用的 WinUI 3 入门
 
@@ -45,7 +45,7 @@ WinUI 3 预览版 2 引入了新的项目模板，使你能够采用完全基于
 
         ![应用项目](images/WinUI-csharp-appproject.png)
 
-    * **项目名称(程序包)** ：这是一个 [Windows 应用程序打包项目](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，已配置该项目以将应用生成到 [MSIX 包](https://docs.microsoft.com/windows/msix/overview)中。 这提供了一种新式部署体验、通过包扩展与 Windows 10 功能集成的功能以及更多其他功能。 此项目包含应用的[程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，默认情况下它是你的解决方案的启动项目。
+    * **项目名称(程序包)** ：这是一个 [Windows 应用程序打包项目](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，已配置该项目以将应用生成到 [MSIX 包](/windows/msix/overview)中。 这提供了一种新式部署体验、通过包扩展与 Windows 10 功能集成的功能以及更多其他功能。 此项目包含应用的[程序包清单](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，默认情况下它是你的解决方案的启动项目。
 
         ![应用项目](images/WinUI-csharp-packageproject.png)
 
@@ -77,7 +77,7 @@ WinUI 3 预览版 2 引入了新的项目模板，使你能够采用完全基于
 
         ![应用项目](images/WinUI-cpp-appproject.png)
 
-    * **项目名称(程序包)** ：这是一个 [Windows 应用程序打包项目](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，已配置该项目以将应用生成到 [MSIX 包](https://docs.microsoft.com/windows/msix/overview)中。 这提供了一种新式部署体验、通过包扩展与 Windows 10 功能集成的功能以及更多其他功能。 此项目包含应用的[程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，默认情况下它是你的解决方案的启动项目。
+    * **项目名称(程序包)** ：这是一个 [Windows 应用程序打包项目](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，已配置该项目以将应用生成到 [MSIX 包](/windows/msix/overview)中。 这提供了一种新式部署体验、通过包扩展与 Windows 10 功能集成的功能以及更多其他功能。 此项目包含应用的[程序包清单](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，默认情况下它是你的解决方案的启动项目。
 
         ![程序包项目](images/WinUI-cpp-packageproject.png)
 

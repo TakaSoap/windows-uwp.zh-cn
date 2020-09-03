@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 8443ac25ba678986046b967a90a8899eaffb76aa
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 30b41cf0d22d8f8c2c4ce7f774eab9d2aa479d78
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67420117"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161461"
 ---
 # <a name="part-4-add-windows-10-user-activities-and-notifications"></a>第 4 部分：添加 Windows 10 用户活动和通知
 
@@ -33,11 +33,11 @@ ms.locfileid: "67420117"
 
 ### <a name="introduction-to-adaptive-cards"></a>自适应卡片简介
 
-本部分提供[自适应卡片](https://docs.microsoft.com/adaptive-cards/)的简要概述。 如果你不需要此类信息，可以直接跳到[添加自适应卡片](#add-an-adaptive-card)说明。
+本部分提供[自适应卡片](/adaptive-cards/)的简要概述。 如果你不需要此类信息，可以直接跳到[添加自适应卡片](#add-an-adaptive-card)说明。
 
 自适应卡片使开发人员能够以一致的常用方式交换卡片内容。 自适应卡片由定义其内容（可以包括文本、图像、操作等）的 JSON 有效负载描述。
 
-自适应卡片仅定义内容，而不定义内容的视觉外观。 接收自适应卡片的平台可以使用最合适的样式呈现内容。 自适应卡片是通过[呈现器](https://docs.microsoft.com/adaptive-cards/rendering-cards/getting-started)设计的。呈现器可以提取 JSON 有效负载并将其转换为本机 UI。 例如，UI 可以是 WPF 或 UWP 应用的 XAML、Android 应用的 AXML，或者网站或机器人聊天应用的 HTML。
+自适应卡片仅定义内容，而不定义内容的视觉外观。 接收自适应卡片的平台可以使用最合适的样式呈现内容。 自适应卡片是通过[呈现器](/adaptive-cards/rendering-cards/getting-started)设计的。呈现器可以提取 JSON 有效负载并将其转换为本机 UI。 例如，UI 可以是 WPF 或 UWP 应用的 XAML、Android 应用的 AXML，或者网站或机器人聊天应用的 HTML。
 
 下面是一个简单自适应卡片有效负载的示例。
 
@@ -391,7 +391,7 @@ Contoso 开发团队想要添加的第二项功能是，每当在数据库中保
     }
     ```
 
-    Toast 通知由 XML 有效负载（可以包括文本、图像、操作等）表示。 可在[此处](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema)找到所有支持的元素。 此代码使用一个非常简单的架构，其中包含两行文本：标题和正文。 代码在定义 XML 有效负载并将其载入 XmlDocument 对象后，会将 XML 包装在 ToastNotification 对象中，然后使用 ToastNotificationManager 类显示该对象。   
+    Toast 通知由 XML 有效负载（可以包括文本、图像、操作等）表示。 可在[此处](/windows/uwp/design/shell/tiles-and-notifications/toast-schema)找到所有支持的元素。 此代码使用一个非常简单的架构，其中包含两行文本：标题和正文。 代码在定义 XML 有效负载并将其载入 XmlDocument 对象后，会将 XML 包装在 ToastNotification 对象中，然后使用 ToastNotificationManager 类显示该对象。   
 
 5. 在“ContosoExpenses.Core”项目中展开“ViewModels”文件夹，然后打开“AddNewExpenseViewModel.cs”文件。    
 

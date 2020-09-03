@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e008f08d9bf98e309d895f2916ea8aaf84e8464
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 089518a340ba5c33eef5bc9bd883cbd04dcabeb9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969902"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160271"
 ---
 # <a name="flyouts"></a>浮出控件
 
@@ -28,7 +28,7 @@ ms.locfileid: "82969902"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](../images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](../images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](../../style/rounded-corner.md)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
 
 > **平台 API：** [Flyout 类](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
@@ -70,7 +70,7 @@ ms.locfileid: "82969902"
 </Button>
 ````
 
-如果控件没有浮出控件属性，可以改用 [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.AttachedFlyoutProperty) 附加属性。 当你这样做时，还需要调用 [FlyoutBase.ShowAttachedFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase#Windows_UI_Xaml_Controls_Primitives_FlyoutBase_ShowAttachedFlyout_Windows_UI_Xaml_FrameworkElement_) 方法来显示浮出控件。
+如果控件没有浮出控件属性，可以改用 [FlyoutBase.AttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.AttachedFlyoutProperty) 附加属性。 当你这样做时，还需要调用 [FlyoutBase.ShowAttachedFlyout](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase#Windows_UI_Xaml_Controls_Primitives_FlyoutBase_ShowAttachedFlyout_Windows_UI_Xaml_FrameworkElement_) 方法来显示浮出控件。
 
 此示例将一个简单的浮出控件添加到图像。 当用户点击该图像时，应用将显示该浮出控件。
 
@@ -132,7 +132,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 ````
 
 ## <a name="style-a-flyout"></a>设置浮出控件的样式
-若要设置浮出控件的样式，请修改其 [FlyoutPresenterStyle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout.FlyoutPresenterStyle)。 此示例显示一个环绕文本段落，并使屏幕阅读器可以访问该文本块。
+若要设置浮出控件的样式，请修改其 [FlyoutPresenterStyle](/uwp/api/Windows.UI.Xaml.Controls.Flyout.FlyoutPresenterStyle)。 此示例显示一个环绕文本段落，并使屏幕阅读器可以访问该文本块。
 
 ![带有环绕文本的可访问浮出控件](../images/flyout-wrapping-text.png)
 

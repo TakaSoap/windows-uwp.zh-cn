@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 931f2fcbcdbf58b9dc2ca40403d7466b620a8991
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ad0595fa070a1970e4890ce7e95627c06385ba6a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63798103"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154211"
 ---
 # <a name="data-binding-and-mvvm"></a>数据绑定和 MVVM
 
@@ -35,7 +35,7 @@ ms.locfileid: "63798103"
 使用 MVVM 模式时，应用划分为以下层：
 
 * 模型层定义了代表业务数据的类型。  这包括对核心应用域建模所需的全部内容，通常包括核心应用逻辑。 此层完全独立于视图层和视图模型层，并且往往是部分性地驻留在云中。 获得完全实现的模型层后，如果需要，可以创建多个不同的客户端应用（例如 UWP 和 Web 应用）来处理相同的底层数据。
-* 视图层使用 XAML 标记来定义 UI。  标记包含用于定义特定 UI 组件与各个视图模型和模型成员之间的连接的数据绑定表达式（例如 [x:Bind](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)）。 代码隐藏文件有时用作视图层的一部分，以包含自定义或操作 UI，或者在调用执行工作的视图模型方法之前从事件处理程序参数中提取数据所需的附加代码。 
+* 视图层使用 XAML 标记来定义 UI。  标记包含用于定义特定 UI 组件与各个视图模型和模型成员之间的连接的数据绑定表达式（例如 [x:Bind](../xaml-platform/x-bind-markup-extension.md)）。 代码隐藏文件有时用作视图层的一部分，以包含自定义或操作 UI，或者在调用执行工作的视图模型方法之前从事件处理程序参数中提取数据所需的附加代码。 
 * 视图模型层提供视图的数据绑定目标。  在许多情况下，视图模型直接公开模型，或者提供用于包装特定模型成员的成员。 视图模型还可以定义成员用于跟踪与 UI 相关但与模型不相关的数据，例如项列表的显示顺序。 视图模型还充当与其他服务（例如数据库访问代码）之间的集成点。 对于简单的项目，可能不需要单独的模型层，只需通过一个视图模型来封装所需的全部数据即可。 
 
 ## <a name="basic-and-advanced-mvvm"></a>基本和高级 MVVM
@@ -44,7 +44,7 @@ ms.locfileid: "63798103"
 
 尽管复杂的 MVVM 框架可能非常有用，尤其是对于企业规模的项目，但采用任何特定模式或技术通常会产生相关的成本，并且根据项目的规模和大小，其带来的优势不总是明朗的。 幸运的是，我们可以仅采用那些能够提供明确且实在优势的技术，对于其他技术，可以先置之不理，有需要时再使用它们。 
 
-具体而言，只需了解并运用数据绑定的完整强大威力，并将应用逻辑划分为前面所述的层，即可获得大量的优势。 仅使用 Windows SDK 提供的功能，而无需使用任何外部框架，就能实现此目的。 具体而言，与在以前的 XAML 平台中相比，[{x:Bind} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)能使数据绑定变得更简单且更高效，消除了以前所需的大量样板代码。
+具体而言，只需了解并运用数据绑定的完整强大威力，并将应用逻辑划分为前面所述的层，即可获得大量的优势。 仅使用 Windows SDK 提供的功能，而无需使用任何外部框架，就能实现此目的。 具体而言，与在以前的 XAML 平台中相比，[{x:Bind} 标记扩展](../xaml-platform/x-bind-markup-extension.md)能使数据绑定变得更简单且更高效，消除了以前所需的大量样板代码。
 
 有关使用现成的基本 MVVM 的更多指导，请查看 GitHub 上的[客户订单数据库示例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)。 许多其他 [UWP 应用示例](https://github.com/Microsoft?q=windows-appsample
 )也使用基本的 MVVM 体系结构；[交通应用示例](https://github.com/Microsoft/Windows-appsample-trafficapp)包含代码隐藏和 MVVM 版本，其注释中描述了 [MVVM 转换](https://github.com/Microsoft/Windows-appsample-trafficapp/blob/MVVM/MVVM.md)。 
@@ -53,11 +53,11 @@ ms.locfileid: "63798103"
 
 ### <a name="topics"></a>主题
 
-[深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)  
-[{x:Bind} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)  
+[深入了解数据绑定](./data-binding-in-depth.md)  
+[{x:Bind} 标记扩展](../xaml-platform/x-bind-markup-extension.md)  
 
 ### <a name="samples"></a>示例
 
 [客户订单数据库示例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)  
 [VanArsdel 库存示例](https://github.com/Microsoft/InventorySample)  
-[交通应用示例](https://github.com/Microsoft/Windows-appsample-trafficapp)  
+[交通应用示例](https://github.com/Microsoft/Windows-appsample-trafficapp)

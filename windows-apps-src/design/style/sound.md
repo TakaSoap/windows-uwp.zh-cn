@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ed1344b5ee49244a6c1afcbb873b54fcc28624f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6c479a47a53c5f52bab1febf490957355264bfc4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684886"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159871"
 ---
 # <a name="sound"></a>声音
 
@@ -45,7 +45,7 @@ ms.locfileid: "75684886"
 
 UWP 提供了一个可轻松访问的声音系统，使你只需“翻转开关”即可在你的整个应用中获取沉浸式的音频体验。
 
-[**ElementSoundPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundplayer) 是 XAML 中的集成声音系统，并且在所有默认控件都打开时自动播放声音。
+[**ElementSoundPlayer**](/uwp/api/windows.ui.xaml.elementsoundplayer) 是 XAML 中的集成声音系统，并且在所有默认控件都打开时自动播放声音。
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
@@ -64,12 +64,12 @@ ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 - **Off**：空间音频始终关闭，即使声音处于开启状态。
 - **On**：始终播放空间音频。
 
-若要详细了解空间音频以及 XAML 如何处理它，请参阅 [AudioGraph - 空间音频](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio)。
+若要详细了解空间音频以及 XAML 如何处理它，请参阅 [AudioGraph - 空间音频](../../audio-video-camera/audio-graphs.md#spatial-audio)。
 
 ### <a name="sound-for-tv-and-xbox"></a>电视和 Xbox 的声音
 
 声音是 10 英尺体验的关键部分，并且默认情况下，ElementSoundPlayer 的状态为“自动”，这意味着只有当应用在 Xbox 上运行时才可获取声音   。
-若要了解有关针对 Xbox 和电视进行设计的详细信息，请参阅[针对 Xbox 和电视进行设计](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN)。
+若要了解有关针对 Xbox 和电视进行设计的详细信息，请参阅[针对 Xbox 和电视进行设计](../devices/designing-for-tv.md)。
 
 ## <a name="sound-volume-override"></a>音量覆盖
 
@@ -173,5 +173,5 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 
 ## <a name="related-articles"></a>相关文章
 
-* [针对 Xbox 和电视进行设计](/windows/uwp/design/devices/designing-for-tv)
+* [针对 Xbox 和电视进行设计](../devices/designing-for-tv.md)
 * [ElementSoundPlayer 类文档](/uwp/api/windows.ui.xaml.elementsoundplayer)

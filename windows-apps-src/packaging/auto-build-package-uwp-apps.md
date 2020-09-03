@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 70415c9f3d58625cfdc651ec67c8a9f37c23cffa
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 32054a30e56102b9c0642392d78ac75b78fb99e9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089493"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158221"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -19,9 +19,9 @@ ms.locfileid: "77089493"
 
 ## <a name="create-a-new-azure-pipeline"></a>创建新的 Azure 管道
 
-首先[注册 Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up)（如果尚未这样做）。
+首先[注册 Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-sign-up)（如果尚未这样做）。
 
-接下来，创建一个可用于生成源代码的管道。 有关生成一个用于生成 GitHub 存储库的管道的教程，请参阅[创建第一个管道](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml)。 Azure Pipelines 支持[此文](https://docs.microsoft.com/azure/devops/pipelines/repos)中列出的存储库类型。
+接下来，创建一个可用于生成源代码的管道。 有关生成一个用于生成 GitHub 存储库的管道的教程，请参阅[创建第一个管道](/azure/devops/pipelines/get-started-yaml)。 Azure Pipelines 支持[此文](/azure/devops/pipelines/repos)中列出的存储库类型。
 
 ## <a name="set-up-an-automated-build"></a>设置自动生成
 
@@ -66,7 +66,7 @@ steps:
 
 ## <a name="add-your-project-certificate-to-the-secure-files-library"></a>将项目证书添加到安全文件库
 
-应尽量避免将证书提交到存储库，Git 默认会忽略这些证书。 为了管理敏感文件（例如证书）的安全处理，Azure DevOps 支持[安全文件](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops)功能。
+应尽量避免将证书提交到存储库，Git 默认会忽略这些证书。 为了管理敏感文件（例如证书）的安全处理，Azure DevOps 支持[安全文件](/azure/devops/pipelines/library/secure-files?view=azure-devops)功能。
 
 若要为自动生成上传证书：
 
@@ -80,7 +80,7 @@ steps:
 
     ![如何上传安全文件](images/secure-file2.png)
 
-5. 如果证书中的私钥包含密码，则我们建议将密码存储在 [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) 中，然后将密码链接到某个[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 可以使用该变量来从管道访问密码。 请注意，只有私钥支持密码；当前不支持使用本身受密码保护的证书文件。
+5. 如果证书中的私钥包含密码，则我们建议将密码存储在 [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) 中，然后将密码链接到某个[变量组](/azure/devops/pipelines/library/variable-groups)。 可以使用该变量来从管道访问密码。 请注意，只有私钥支持密码；当前不支持使用本身受密码保护的证书文件。
 
 > [!NOTE]
 > 从 Visual Studio 2019 开始，不再在 UWP 项目中生成临时证书。 若要创建或导出证书，请使用[此文](/windows/msix/package/create-certificate-package-signing)中所述的 PowerShell cmdlet。
@@ -100,7 +100,7 @@ steps:
 | AppxPackageSigningEnabled | true | 启用包签名。 |
 | PackageCertificateThumbprint | 证书指纹 | 此值**必须**与签名证书中的指纹匹配，或者为空字符串。 |
 | PackageCertificateKeyFile | 路径 | 要使用的证书的路径。 此值是从安全文件元数据中检索的。 |
-| PackageCertificatePassword | 密码 | 证书中私钥的密码。 建议将密码存储在 [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) 中，并将密码链接到[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 可将变量传递到此参数。 |
+| PackageCertificatePassword | 密码 | 证书中私钥的密码。 建议将密码存储在 [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) 中，并将密码链接到[变量组](/azure/devops/pipelines/library/variable-groups)。 可将变量传递到此参数。 |
 
 ### <a name="configure-the-build"></a>配置生成
 
@@ -152,7 +152,7 @@ steps:
 
 ![默认变量](images/building-screen5.png)
 
-若要查看所有预定义的变量，请参阅[预定义的生成变量](https://docs.microsoft.com/azure/devops/pipelines/build/variables)。
+若要查看所有预定义的变量，请参阅[预定义的生成变量](/azure/devops/pipelines/build/variables)。
 
 ## <a name="configure-the-publish-build-artifacts-task"></a>配置“发布生成项目”任务
 
@@ -195,7 +195,7 @@ steps:
 
 ## <a name="related-topics"></a>相关主题
 
-- [生成适用于 Windows 的 .NET 应用](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
+- [生成适用于 Windows 的 .NET 应用](/vsts/build-release/get-started/dot-net)
 - [打包 UWP 应用](/windows/msix/package/packaging-uwp-apps)
-- [在 Windows 10 中旁加载 LOB 应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
+- [在 Windows 10 中旁加载 LOB 应用](/windows/deploy/sideload-apps-in-windows-10)
 - [为包签名创建证书](/windows/msix/package/create-certificate-package-signing)

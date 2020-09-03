@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7c44baee7d3201e2e554604405afe337007dd510
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e35041cce7e43f6eebed06b39f3ae2dbda55a4ae
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970952"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156791"
 ---
 # <a name="icons-for-windows-apps"></a>适用于 Windows 应用的图标
 
@@ -39,7 +39,7 @@ ms.locfileid: "82970952"
     :::column-end:::
 :::row-end:::
 
-本文介绍应用内的图标。 若要了解应用外的图标（应用图标），请参阅[应用和磁贴图标文章](/windows/uwp/design/shell/tiles-and-notifications/app-assets)。
+本文介绍应用内的图标。 若要了解应用外的图标（应用图标），请参阅[应用和磁贴图标文章](./app-icons-and-logos.md)。
 
 ## <a name="when-to-use-icons"></a>何时使用图标
 
@@ -100,7 +100,7 @@ Microsoft 提供 1000 多个 Segoe MDL2 Assets 字体格式的图标。 从字�
 ### <a name="use-a-scalable-vector-graphics-svg-file"></a>使用可缩放矢量图形 (SVG) 文件。
 :::row:::
     :::column:::
-SVG 资源非常适合作为图标，因为它们在任何尺寸或分辨率下看起来都很清晰。 大多数绘图应用程序都可以导出为 SVG。 有关说明，请参阅 [SVGImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource)。
+SVG 资源非常适合作为图标，因为它们在任何尺寸或分辨率下看起来都很清晰。 大多数绘图应用程序都可以导出为 SVG。 有关说明，请参阅 [SVGImageSource](/uwp/api/windows.ui.xaml.media.imaging.svgimagesource)。
     :::column-end:::
     :::column:::
         ![SVG 图像](images/icons/icon-scale.gif)
@@ -156,7 +156,7 @@ SVG 资源非常适合作为图标，因为它们在任何尺寸或分辨率下�
 :::row:::
     :::column span="2":::
         <b>步骤 2</b><br>
-可使用以下图标元素对象之一：[BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon)、[FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)、[PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) 或 [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon)。 这提供了更多图标类型供你选择，并让你能够根据需要将图标和其他内容类型（如文本）组合起来：
+可使用以下图标元素对象之一：[BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon)、[FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon)、[PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon) 或 [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon)。 这提供了更多图标类型供你选择，并让你能够根据需要将图标和其他内容类型（如文本）组合起来：
     :::column-end:::
     :::column:::
         ![创建图标按钮步骤 2](images/icons/icon-text-step-2.svg)
@@ -176,7 +176,7 @@ SVG 资源非常适合作为图标，因为它们在任何尺寸或分辨率下�
 
 :::row:::
     :::column span:::
-当你有一系列要组合使用的命令（如剪切/复制/粘贴）或一组照片编辑程序的绘图命令时，可以在[命令栏](../controls-and-patterns/app-bars.md)上将它们放在一起。 命令栏采用一个或多个应用栏按钮或应用栏切换按钮，每个按钮表示一项操作。 每个按钮都有一个 [Icon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) 属性，可用于控制要显示的图标。 可以通过多种方式指定图标。 
+当你有一系列要组合使用的命令（如剪切/复制/粘贴）或一组照片编辑程序的绘图命令时，可以在[命令栏](../controls-and-patterns/app-bars.md)上将它们放在一起。 命令栏采用一个或多个应用栏按钮或应用栏切换按钮，每个按钮表示一项操作。 每个按钮都有一个 [Icon](/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) 属性，可用于控制要显示的图标。 可以通过多种方式指定图标。 
     :::column-end:::
     :::column:::
         ![带有图标的命令栏示例](images/icons/create-icon-command-bar.svg)
@@ -197,13 +197,13 @@ SVG 资源非常适合作为图标，因为它们在任何尺寸或分辨率下�
 </CommandBar>
 
 ```
-要获得图标名称的完整列表，请参阅 [Symbol 枚举](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)。 
+要获得图标名称的完整列表，请参阅 [Symbol 枚举](/uwp/api/windows.ui.xaml.controls.symbol)。 
 
 还可通过其他方式为命令栏中的按钮提供图标：
 
-+ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon) - 图标基于指定的字体系列的字形。
-+ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon) - 图标基于具有指定 URI 的位图文件  。
-+ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) - 图标基于[路径](/uwp/api/windows.ui.xaml.shapes.path)数据。
++ [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon) - 图标基于指定的字体系列的字形。
++ [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon) - 图标基于具有指定 URI 的位图文件  。
++ [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon) - 图标基于[路径](/uwp/api/windows.ui.xaml.shapes.path)数据。
 
 若要了解有关命令栏的详细信息，请参阅[命令栏文章](../controls-and-patterns/app-bars.md)。 
 

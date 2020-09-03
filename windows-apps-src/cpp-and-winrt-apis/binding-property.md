@@ -5,16 +5,16 @@ ms.date: 06/21/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ba06ece905e6a91a2279f0fe78e867a8f943bb3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: b6e663ec77c66d4a018d388da350794771312b77
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492932"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154381"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控件；绑定到 C++/WinRT 属性
 
-可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为“观察者模式”的软件设计模式。 本主题介绍如何在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中实现可观测属性，以及如何将 XAML 控件绑定到这些属性（如需背景信息，请参阅[数据绑定](/windows/uwp/data-binding)）。
+可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为“观察者模式”的软件设计模式。 本主题介绍如何在 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 中实现可观测属性，以及如何将 XAML 控件绑定到这些属性（如需背景信息，请参阅[数据绑定](../data-binding/index.md)）。
 
 > [!IMPORTANT]
 > 有关支持你了解如何利用 C++/WinRT 来使用和创作运行时类的基本概述和术语，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[通过 C++/WinRT 创作 API](author-apis.md)。
@@ -136,7 +136,7 @@ namespace winrt::Bookstore::implementation
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>声明并实现 BookstoreViewModel
 主 XAML 页面将绑定到主视图模型。 而且该视图模型将有多个属性，包括其中一个类型 BookSku。 在此步骤中，我们将声明并实现主视图模型运行时类。
 
-添加名为 `BookstoreViewModel.idl` 的新的 Midl 文件 (.idl) 项。 另请参阅[将运行时类重构到 Midl 文件 (.idl) 中](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)。
+添加名为 `BookstoreViewModel.idl` 的新的 Midl 文件 (.idl) 项。 另请参阅[将运行时类重构到 Midl 文件 (.idl) 中](./author-apis.md#factoring-runtime-classes-into-midl-files-idl)。
 
 ```idl
 // BookstoreViewModel.idl
@@ -306,11 +306,11 @@ runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
 }
 ```
 
-必须这样做的原因是： XAML 编译器进行验证所需的所有类型（包括在 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 中使用的类型）都是从 Windows 元数据 (WinMD) 读取的。 你只需将只读属性添加到 Midl 文件即可。 请勿实现它，因为自动生成的 XAML 代码隐藏会为你提供实现。
+必须这样做的原因是： XAML 编译器进行验证所需的所有类型（包括在 [{x:Bind}](../xaml-platform/x-bind-markup-extension.md) 中使用的类型）都是从 Windows 元数据 (WinMD) 读取的。 你只需将只读属性添加到 Midl 文件即可。 请勿实现它，因为自动生成的 XAML 代码隐藏会为你提供实现。
 
 ## <a name="consuming-objects-from-xaml-markup"></a>使用 XAML 标记中的对象
 
-以 XAML [ **{x:Bind} 标记扩展**](/windows/uwp/xaml-platform/x-bind-markup-extension)形式使用的所有实体必须在 IDL 中以公开方式公开。 另外，如果 XAML 标记包含对另一元素的引用，且该引用也存在于标记中，则该标记的 getter 必须存在于 IDL 中。
+以 XAML [ **{x:Bind} 标记扩展**](../xaml-platform/x-bind-markup-extension.md)形式使用的所有实体必须在 IDL 中以公开方式公开。 另外，如果 XAML 标记包含对另一元素的引用，且该引用也存在于标记中，则该标记的 getter 必须存在于 IDL 中。
 
 ```xaml
 <Page x:Name="MyPage">

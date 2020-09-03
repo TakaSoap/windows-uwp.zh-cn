@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 26e756b52d4faf18eff2fc684c7db94bca058642
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 24ac07b8caacd4369bcbadf2a4019bbcbde59c6b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971072"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159971"
 ---
 # <a name="reveal-highlight"></a>突出显示
 
@@ -23,7 +23,7 @@ ms.locfileid: "82971072"
 
 突出显示是当用户在交互式元素（如命令栏）附近移动指针时突出显示这些元素的灯光效果。 
 
-> **重要的 API**：[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) 和 [VisualState 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)
+> **重要的 API**：[RevealBrush 类](/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 类](/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 类](/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 类](/uwp/api/windows.ui.xaml.media.revealbrushhelper) 和 [VisualState 类](/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>工作原理
 当指针靠近时，突出显示通过显示元素的容器来引起对交互式元素的注意，如此图所示：
@@ -142,7 +142,7 @@ ms.locfileid: "82971072"
 ### <a name="when-to-add-reveal"></a>何时添加“展示”
 可以将“展示”添加到你的自定义控件 - 但在此之前，请考虑控件的类型及其行为方式。 
 * 如果你的自定义控件是单个交互式元素，并且没有类似控件与它共用空间（如菜单中的菜单项），那么你的自定义控件可能不需要“展示”。  
-* 如果你有一组相关的交互式内容或元素，则有可能应用的这一区域不需要“展示”- 这通常称为[命令处理](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/collection-commanding)表面。
+* 如果你有一组相关的交互式内容或元素，则有可能应用的这一区域不需要“展示”- 这通常称为[命令处理](../controls-and-patterns/collection-commanding.md)表面。
 
 例如，按钮本身不应使用“展示”，但命令栏中的一组按钮则应使用“展示”。
 
@@ -286,9 +286,9 @@ ms.locfileid: "82971072"
 
 ## <a name="related-articles"></a>相关文章
 
-- [RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
+- [RevealBrush 类](/uwp/api/windows.ui.xaml.media.revealbrush)
 - [Acrylic](acrylic.md)
-- [合成效果](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
+- [合成效果](../../composition/composition-effects.md)
 - [UWP 的 Fluent Design](/windows/apps/fluent-design-system)
 - [系统中的科学：Fluent Design 和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [系统中的科学：Fluent Design 和光线](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

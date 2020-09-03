@@ -7,12 +7,12 @@ ms.date: 10/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: d388e1f4b3f1b1be4e265185934a02b6ccd20064
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 382e28b38347a4901e781a12637423260c4bd3e3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76123849"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160381"
 ---
 # <a name="data-template-selection-styling-items-based-on-their-properties"></a>数据模板选择：根据项属性设置项样式
 
@@ -128,7 +128,7 @@ public class MyDataTemplateSelector : DataTemplateSelector
 
 ## <a name="datatemplateselector-performance-considerations"></a>DataTemplateSelector 性能注意事项
 
-将 ListView 或 GridView 与大型数据集合结合使用时，滚动和平移性能可能是一个问题。 为保持大型集合的良好运行，可采取一些步骤来提高数据模板的性能。 [ListView 和 GridView UI 优化](/windows/uwp/debug-test-perf/optimize-gridview-and-listview)中更详细地介绍了这些内容。
+将 ListView 或 GridView 与大型数据集合结合使用时，滚动和平移性能可能是一个问题。 为保持大型集合的良好运行，可采取一些步骤来提高数据模板的性能。 [ListView 和 GridView UI 优化](../../debug-test-perf/optimize-gridview-and-listview.md)中更详细地介绍了这些内容。
 
 -  按项目减少元素 - 将数据模板中的 UI 元素数保持在合理的最小值。
 - 将容器回收用于异类集合

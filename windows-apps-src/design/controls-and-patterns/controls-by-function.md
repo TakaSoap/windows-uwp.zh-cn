@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fc695b483eefef4210432d5ce55a23ae201740bc
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: f3bda79b998038dd26f62eec983384f491793502
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493142"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160761"
 ---
 # <a name="controls-by-function"></a>按功能列出控件
 
@@ -43,14 +43,14 @@ ms.locfileid: "86493142"
 ### <a name="app-bar"></a>应用栏
 用于显示特定于应用程序的命令的工具栏。 请参阅“命令栏”。
 
-参考：[AppBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar) 
+参考：[AppBar](/uwp/api/Windows.UI.Xaml.Controls.AppBar) 
 
 ### <a name="app-bar-button"></a>应用栏按钮
 使用应用栏样式显示命令的按钮。
 
 ![应用栏按钮图标](images/controls/app-bar-buttons.png) 
 
-参考：[AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)、[SymbolIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SymbolIcon)、[BitmapIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.BitmapIcon)、[FontIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FontIcon)、[PathIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PathIcon) 
+参考：[AppBarButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)、[SymbolIcon](/uwp/api/Windows.UI.Xaml.Controls.SymbolIcon)、[BitmapIcon](/uwp/api/Windows.UI.Xaml.Controls.BitmapIcon)、[FontIcon](/uwp/api/Windows.UI.Xaml.Controls.FontIcon)、[PathIcon](/uwp/api/Windows.UI.Xaml.Controls.PathIcon) 
 
 设计和操作方法：[应用栏和命令栏控件指南](app-bars.md) 
 
@@ -59,14 +59,14 @@ ms.locfileid: "86493142"
 ### <a name="app-bar-separator"></a>应用栏分隔符
 在视觉上分隔命令栏中的命令组。
 
-参考：[AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) 
+参考：[AppBarSeparator](/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) 
 
 示例代码：[XAML 命令示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
 ### <a name="app-bar-toggle-button"></a>应用栏切换按钮
 用于在命令栏中切换命令的按钮。
 
-参考：[AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton) 
+参考：[AppBarToggleButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton) 
 
 示例代码：[XAML 命令示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
@@ -82,7 +82,7 @@ ms.locfileid: "86493142"
     <AppBarButton Icon="Play" Label="Play" Click="AppBarButton_Click"/>
 </CommandBar>
 ```
-参考：[CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 
+参考：[CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 
 
 设计和操作方法：[应用栏和命令栏控件指南](app-bars.md)
 
@@ -100,7 +100,7 @@ ms.locfileid: "86493142"
         Click="Button_Click" />
 ```
 
-参考：[Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 
+参考：[Button](/uwp/api/Windows.UI.Xaml.Controls.Button) 
 
 设计和操作方法：[按钮控件指南](buttons.md) 
 
@@ -117,7 +117,7 @@ ms.locfileid: "86493142"
                  NavigateUri="https://www.microsoft.com"/>
 ```
 
-参考：[HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 
+参考：[HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 
 
 设计和操作方法：[超链接控件指南](hyperlinks.md)
 
@@ -131,7 +131,7 @@ ms.locfileid: "86493142"
               Click="RepeatButton_Click" />
 ```
 
-参考：[RepeatButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.RepeatButton) 
+参考：[RepeatButton](/uwp/api/Windows.UI.Xaml.Controls.Primitives.RepeatButton) 
 
 设计和操作方法：[按钮控件指南](buttons.md) 
 
@@ -148,7 +148,7 @@ ms.locfileid: "86493142"
 </FlipView>
 ```
 
-参考：[FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) 
+参考：[FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) 
 
 设计和操作方法：[翻转视图控件指南](flipview.md) 
 
@@ -162,7 +162,7 @@ ms.locfileid: "86493142"
 </GridView>
 ```
 
-参考：[GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 
+参考：[GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView) 
 
 设计和操作方法：[列表](lists.md) 
 
@@ -175,7 +175,7 @@ ms.locfileid: "86493142"
 <ItemsControl/>
 ```
 
-参考：[ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 
+参考：[ItemsControl](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 
 
 ### <a name="list-view"></a>列表视图
 显示可在列表中垂直滚动的项目集合的控件。
@@ -187,7 +187,7 @@ ms.locfileid: "86493142"
 </ListView>
 ```
 
-参考：[ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 
+参考：[ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) 
 
 设计和操作方法：[列表](lists.md) 
 
@@ -204,7 +204,7 @@ ms.locfileid: "86493142"
 <CalendarDatePicker/>
 ```
 
-参考：[CalendarDatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker) 
+参考：[CalendarDatePicker](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker) 
 
 设计和操作方法：[日历、日期和时间控件](date-and-time.md)
  
@@ -215,7 +215,7 @@ ms.locfileid: "86493142"
 <CalendarView/>
 ```
 
-参考：[CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 
+参考：[CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 
 
 设计和操作方法：[日历、日期和时间控件](date-and-time.md) 
 
@@ -228,7 +228,7 @@ ms.locfileid: "86493142"
 <DatePicker Header="Arrival Date"/>
 ```
 
-参考：[DatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker) 
+参考：[DatePicker](/uwp/api/Windows.UI.Xaml.Controls.DatePicker) 
 
 设计和操作方法：[日历、日期和时间控件](date-and-time.md)
  
@@ -241,7 +241,7 @@ ms.locfileid: "86493142"
 <TimePicker Header="Arrival Time"/>
 ```
 
-参考：[TimePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker) 
+参考：[TimePicker](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) 
 
 设计和操作方法：[日历、日期和时间控件](date-and-time.md)
 
@@ -264,7 +264,7 @@ ms.locfileid: "86493142"
 </Flyout>
 ```
 
-参考：[浮出控件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout) 
+参考：[浮出控件](/uwp/api/Windows.UI.Xaml.Controls.Flyout) 
 
 设计和操作方法：[浮出控件](dialogs-and-flyouts/flyouts.md) 
 
@@ -284,7 +284,7 @@ ms.locfileid: "86493142"
 </MenuFlyout>
 ```
 
-参考：[MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)、[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)、[MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutSeparator)、[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToggleMenuFlyoutItem) 
+参考：[MenuFlyout](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)、[MenuFlyoutItem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)、[MenuFlyoutSeparator](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutSeparator)、[ToggleMenuFlyoutItem](/uwp/api/Windows.UI.Xaml.Controls.ToggleMenuFlyoutItem) 
 
 设计和操作方法：[菜单和上下文菜单](menus.md) 
 
@@ -293,7 +293,7 @@ ms.locfileid: "86493142"
 ### <a name="popup-menu"></a>弹出菜单
 一个自定义菜单，用于显示你所指定的命令。
 
-参考：[PopupMenu](https://docs.microsoft.com/uwp/api/Windows.UI.Popups.PopupMenu) 
+参考：[PopupMenu](/uwp/api/Windows.UI.Popups.PopupMenu) 
 
 设计和操作方法：[对话框](dialogs-and-flyouts/dialogs.md) 
 
@@ -307,7 +307,7 @@ ms.locfileid: "86493142"
         ToolTipService.ToolTip="Click to perform action" />
 ```
 
-参考：[ToolTip](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、[ToolTipService](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTipService) 
+参考：[ToolTip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、[ToolTipService](/uwp/api/Windows.UI.Xaml.Controls.ToolTipService) 
 
 设计和操作方法：工具提示指南 
 
@@ -320,11 +320,11 @@ ms.locfileid: "86493142"
 <Image Source="Assets/Logo.png" />
 ```
 
-参考：[映像](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 
+参考：[映像](/uwp/api/Windows.UI.Xaml.Controls.Image) 
 
 设计和操作方法：[Image 和 ImageBrush](images-imagebrushes.md) 
 
-示例代码：[XAML 控件库](https://docs.microsoft.com/samples/microsoft/xaml-controls-gallery/xaml-controls-gallery/)
+示例代码：[XAML 控件库](/samples/microsoft/xaml-controls-gallery/xaml-controls-gallery/)
 
 ## <a name="graphics-and-ink"></a>图形和墨迹
 
@@ -335,7 +335,7 @@ ms.locfileid: "86493142"
 <InkCanvas/>
 ```
 
-参考：[InkCanvas](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 
+参考：[InkCanvas](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 
 
 ### <a name="shapes"></a>形状
 可以显示的各种保留模式图形对象，例如椭圆、矩形、直线、贝塞尔曲线等。
@@ -349,9 +349,9 @@ ms.locfileid: "86493142"
 <Rectangle/>
 ```
 
-参考：[形状](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes.Shape) 
+参考：[形状](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 
 
-如何执行此操作：[绘制形状](../../graphics/drawing-shapes.md) 
+如何执行此操作：[绘制形状](./shapes.md) 
 
 示例代码：[基于 XAML 矢量的绘图示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20vector-based%20drawing%20sample%20(Windows%208))
 
@@ -373,7 +373,7 @@ ms.locfileid: "86493142"
 </Border>
 ```
 
-参考：[Border](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)
+参考：[Border](/uwp/api/Windows.UI.Xaml.Controls.Border)
 
 ### <a name="canvas"></a>画布
 一个布局面板，支持相对于画布左上角的子元素的绝对位置。
@@ -389,7 +389,7 @@ ms.locfileid: "86493142"
 </Canvas>
 ```
 
-参考：[画布](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)
+参考：[画布](/uwp/api/Windows.UI.Xaml.Controls.Canvas)
  
 ### <a name="grid"></a>网格
 一个布局面板，支持以行和列方式排列子元素。
@@ -413,7 +413,7 @@ ms.locfileid: "86493142"
 </Grid>
 ```
 
-参考：[网格](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
+参考：[网格](/uwp/api/Windows.UI.Xaml.Controls.Grid)
  
 ### <a name="panning-scroll-viewer"></a>平移滚动查看器
 请参阅滚动查看器。
@@ -430,12 +430,12 @@ ms.locfileid: "86493142"
 </RelativePanel>
 ```
 
-参考：[RelativePanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)
+参考：[RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)
 
 ### <a name="scroll-bar"></a>滚动条
 请参阅“滚动查看器”。 （ScrollBar 是 ScrollViewer 的元素。 你通常不会将其用作独立控件。）
 
-参考：[ScrollBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ScrollBar)
+参考：[ScrollBar](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ScrollBar)
  
 ### <a name="scroll-viewer"></a>滚动查看器
 可让用户平移和缩放其内容的容器控件。
@@ -449,7 +449,7 @@ ms.locfileid: "86493142"
 </ScrollViewer>
 ```
 
-参考：[ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)
+参考：[ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)
 
 设计和操作方法：[滚动和平移控件指南](scroll-controls.md) 
 
@@ -469,7 +469,7 @@ ms.locfileid: "86493142"
 </StackPanel>
 ```
 
-参考：[StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)
+参考：[StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel)
  
 ### <a name="variablesizedwrapgrid"></a>VariableSizedWrapGrid
 一个布局面板，支持以行和列方式排列子元素。 每个子元素都可以跨越多行和多列。
@@ -489,7 +489,7 @@ ms.locfileid: "86493142"
 </VariableSizedWrapGrid>
 ```
 
-参考：[VariableSizedWrapGrid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid)
+参考：[VariableSizedWrapGrid](/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid)
 
 ### <a name="viewbox"></a>Viewbox
 可以将其内容缩放至指定大小的容器控件。
@@ -508,7 +508,7 @@ ms.locfileid: "86493142"
 </Viewbox>
 ```
 
-参考：[Viewbox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Viewbox)
+参考：[Viewbox](/uwp/api/Windows.UI.Xaml.Controls.Viewbox)
  
 ### <a name="zooming-scroll-viewer"></a>缩放滚动查看器
 请参阅滚动查看器。
@@ -525,7 +525,7 @@ ms.locfileid: "86493142"
 <MediaElement x:Name="myMediaElement"/>
 ```
 
-参考：[MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 
+参考：[MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 
 
 设计和操作方法：[媒体元素控件指南](media-playback.md)
 
@@ -538,7 +538,7 @@ ms.locfileid: "86493142"
 <MediaTransportControls MediaElement="myMediaElement"/>
 ```
 
-参考：[MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 
+参考：[MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 
 
 设计和操作方法：[媒体元素控件指南](media-playback.md) 
 
@@ -553,7 +553,7 @@ ms.locfileid: "86493142"
 
 一个自适应的容器和灵活的导航模型，可以实现左侧导航窗格、顶部导航和选项卡模式。
 
-参考：[NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
+参考：[NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview)
 
 设计和操作方法：[NavigationView 控件指南](navigationview.md)
 
@@ -574,7 +574,7 @@ ms.locfileid: "86493142"
 </SplitView>
 ```
 
-参考：[SplitView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView) 
+参考：[SplitView](/uwp/api/Windows.UI.Xaml.Controls.SplitView) 
 
 设计和操作方法：[拆分视图控件指南](split-view.md)
 
@@ -587,7 +587,7 @@ ms.locfileid: "86493142"
          Height="400" Width="800"/>
 ```
 
-参考：[WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 
+参考：[WebView](/uwp/api/Windows.UI.Xaml.Controls.WebView) 
 
 设计和操作方法：Web 视图指南 
 
@@ -608,7 +608,7 @@ ms.locfileid: "86493142"
 </SemanticZoom>
 ```
 
-参考：[SemanticZoom](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 
+参考：[SemanticZoom](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 
 
 设计和操作方法：[语义式缩放控件指南](semantic-zoom.md)
 
@@ -635,7 +635,7 @@ ms.locfileid: "86493142"
 <ProgressBar x:Name="indeterminateProgressBar1" IsIndeterminate="True" Width="100"/>
 ```
 
-参考：[ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar) 
+参考：[ProgressBar](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar) 
 
 设计和操作方法：[进度控件指南](progress-controls.md) 
 
@@ -648,7 +648,7 @@ ms.locfileid: "86493142"
 <ProgressRing x:Name="progressRing1" IsActive="True"/>
 ```
 
-参考：[ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) 
+参考：[ProgressRing](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) 
 
 设计和操作方法：[进度控件指南](progress-controls.md) 
 
@@ -659,7 +659,7 @@ ms.locfileid: "86493142"
 
 ![用于搜索的自动建议框](images/controls/auto-suggest-box.png) 
 
-参考：[AutoSuggestBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
+参考：[AutoSuggestBox](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
 
 设计和操作方法：[文本控件](text-controls.md)、[自动建议框控件指南](auto-suggest-box.md)
 
@@ -678,7 +678,7 @@ ms.locfileid: "86493142"
              PasswordChanged="PasswordBox_PasswordChanged" />
 ```
 
-参考：[PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) 
+参考：[PasswordBox](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) 
 
 设计和操作方法：[文本控件](text-controls.md)、[密码框控件指南](password-box.md) 
 
@@ -691,7 +691,7 @@ ms.locfileid: "86493142"
 <RichEditBox />
 ```
 
-参考：[RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) 
+参考：[RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) 
 
 设计和操作方法：[文本控件](text-controls.md)、[可编辑对话框控件指南](rich-edit-box.md)
 
@@ -715,7 +715,7 @@ ms.locfileid: "86493142"
 <TextBlock x:Name="textBlock1" Text="I am a TextBlock"/>
 ```
 
-参考：[TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 
+参考：[TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 
 
 设计和操作方法：[文本控件](text-controls.md)、[文本块控件指南](text-block.md)、[RTF 块控件指南](rich-text-block.md)
 
@@ -731,7 +731,7 @@ ms.locfileid: "86493142"
          TextChanged="TextBox_TextChanged"/>
 ```
 
-参考：[TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 
+参考：[TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 
 
 设计和操作方法：[文本控件](text-controls.md)、[文本框控件指南](text-box.md) 
 
@@ -749,7 +749,7 @@ ms.locfileid: "86493142"
           Checked="CheckBox_Checked"/>
 ```
 
-参考：[CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
+参考：[CheckBox](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
 
 设计和操作方法：[复选框控件指南](checkbox.md) 
 
@@ -767,7 +767,7 @@ ms.locfileid: "86493142"
 </ComboBox>
 ```
 
-参考：[ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) 
+参考：[ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) 
 
 设计和操作方法：[列表](lists.md) 
 
@@ -785,7 +785,7 @@ ms.locfileid: "86493142"
 </ListBox>
 ```
 
-参考：[ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox) 
+参考：[ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox) 
 
 设计和操作方法：[列表](lists.md) 
 
@@ -803,7 +803,7 @@ ms.locfileid: "86493142"
              Checked="RadioButton_Checked"/>
 ```
 
-参考：[RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton) 
+参考：[RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton) 
 
 设计和操作方法：[单选按钮控件指南](radio-button.md)
  
@@ -816,7 +816,7 @@ ms.locfileid: "86493142"
 <Slider x:Name="slider1" Width="100" ValueChanged="Slider_ValueChanged" />
 ```
 
-参考：[滑块](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 
+参考：[滑块](/uwp/api/Windows.UI.Xaml.Controls.Slider) 
 
 设计和操作方法：[滑块控件指南](slider.md) 
 
@@ -828,7 +828,7 @@ ms.locfileid: "86493142"
               Checked="ToggleButton_Checked"/>
 ```
 
-参考：[ToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton)
+参考：[ToggleButton](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton)
 
 设计和操作方法：[切换控制指南](toggles.md) 
 
@@ -843,6 +843,6 @@ ms.locfileid: "86493142"
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-参考：[ToggleSwitch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToggleSwitch) 
+参考：[ToggleSwitch](/uwp/api/Windows.UI.Xaml.Controls.ToggleSwitch) 
 
-设计和操作方法：[切换控制指南](toggles.md) 
+设计和操作方法：[切换控制指南](toggles.md)

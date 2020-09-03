@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 38e9d49d9ec717bc1d28305d83d12e2696a32b3b
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 8f8a7d49e8a0b9d0a2d182d2e3031ae485cf7c9e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492852"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157201"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>应用启动性能的最佳实践
 
@@ -60,7 +60,7 @@ Ngen.exe 编译计算机上所有已被使用和不拥有本机映像的应用�
 
 即使应用的部分功能不全，应用也可交互。 例如，如果你的应用显示需要些时间检索的数据，你可通过异步检索数据来确保独立于应用的启动代码的代码执行。 数据可用时，用数据填充应用的用户界面。
 
-多数用于检索数据的通用 Windows 平台 (UWP) API 都是异步的，因此无论如何你都可以异步检索数据。 有关异步 API 的详细信息，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 如果处理不使用异步 API 的工作，可以使用 Task 类来处理长时间运行的工作，以便不会阻止用户与应用交互。 这将使你的应用能够在加载数据时对用户作出响应。
+多数用于检索数据的通用 Windows 平台 (UWP) API 都是异步的，因此无论如何你都可以异步检索数据。 有关异步 API 的详细信息，请参阅[使用 C# 或 Visual Basic 调用异步 API](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md)。 如果处理不使用异步 API 的工作，可以使用 Task 类来处理长时间运行的工作，以便不会阻止用户与应用交互。 这将使你的应用能够在加载数据时对用户作出响应。
 
 如果你的应用花费很长时间来加载其部分 UI，则可以考虑在该区域添加一个字符串（如“获取最新数据”之类的提示信息），以便你的用户知道应用仍在运行。
 
@@ -107,7 +107,7 @@ XAML 应用中的启动性能与启动期间创建的元素数直接关联。 �
 
 ![实时可视化树。](images/live-visual-tree.png)
 
-**使用延迟**。 无法通过折叠某个元素或将其不透明度设置为 0 来阻止该元素创建。 可使用 x:Load 或 x:DeferLoadStrategy 来延迟部分 UI 的加载，并在需要时加载它。 最好延迟处理在启动屏幕期间不可见的 UI，这样你便可以在需要时加载它，或作为一组延迟逻辑的一部分加载它。 若要触发加载，只需针对元素调用 FindName 即可。 有关示例和详细信息，请参阅 [x:Load 属性](../xaml-platform/x-load-attribute.md)和 [x:DeferLoadStrategy 属性](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute)。
+**使用延迟**。 无法通过折叠某个元素或将其不透明度设置为 0 来阻止该元素创建。 可使用 x:Load 或 x:DeferLoadStrategy 来延迟部分 UI 的加载，并在需要时加载它。 最好延迟处理在启动屏幕期间不可见的 UI，这样你便可以在需要时加载它，或作为一组延迟逻辑的一部分加载它。 若要触发加载，只需针对元素调用 FindName 即可。 有关示例和详细信息，请参阅 [x:Load 属性](../xaml-platform/x-load-attribute.md)和 [x:DeferLoadStrategy 属性](../xaml-platform/x-deferloadstrategy-attribute.md)。
 
 **虚拟化**。 如果你的 UI 中有列表或 repeater 内容，强烈建议你使用 UI 虚拟化。 如果未虚拟化列表 UI，则在创建所有元素前需要花费一些开销，而这样可能会减慢启动速度。 请参阅 [ListView 和 GridView UI 优化](optimize-gridview-and-listview.md)。
 
@@ -146,13 +146,13 @@ XAML 应用中的启动性能与启动期间创建的元素数直接关联。 �
 </Package>
 ```
 
-有关详细信息，请参阅[添加初始屏幕](https://docs.microsoft.com/windows/uwp/launch-resume/add-a-splash-screen)。
+有关详细信息，请参阅[添加初始屏幕](../launch-resume/add-a-splash-screen.md)。
 
 使用应用的构造函数仅初始化对于应用至关重要的数据结构。 仅第一次运行应用时会调用该构造函数，而不必在每次激活应用时调用它。 例如，对于已经运行过并置于后台中、然后通过搜索合约激活的应用，不会调用构造函数。
 
 ### <a name="phase-2"></a>第 2 阶段
 
-激活应用存在许多原因，你可能希望以不同的方式处理每个原因。 你可以替代 [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated)、[**OnCachedFileUpdaterActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.oncachedfileupdateractivated)、[**OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)、[**OnFileOpenPickerActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileopenpickeractivated)、[**OnFileSavePickerActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfilesavepickeractivated)、[**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched)、[**OnSearchActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onsearchactivated) 和 [**OnShareTargetActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onsharetargetactivated) 方法来处理每个激活原因。 在这些方法中，应用必须完成的一个事项是创建 UI，将其分配给 [**Window.Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content)，然后调用 [**Window.Activate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate)。 此时会将初始屏幕替换为应用创建的 UI。 如果在激活时有足够的信息可供创建此视觉对象，那么此视觉对象可以是加载屏幕或应用的实际 UI。
+激活应用存在许多原因，你可能希望以不同的方式处理每个原因。 你可以替代 [**OnActivated**](/uwp/api/windows.ui.xaml.application.onactivated)、[**OnCachedFileUpdaterActivated**](/uwp/api/windows.ui.xaml.application.oncachedfileupdateractivated)、[**OnFileActivated**](/uwp/api/windows.ui.xaml.application.onfileactivated)、[**OnFileOpenPickerActivated**](/uwp/api/windows.ui.xaml.application.onfileopenpickeractivated)、[**OnFileSavePickerActivated**](/uwp/api/windows.ui.xaml.application.onfilesavepickeractivated)、[**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)、[**OnSearchActivated**](/uwp/api/windows.ui.xaml.application.onsearchactivated) 和 [**OnShareTargetActivated**](/uwp/api/windows.ui.xaml.application.onsharetargetactivated) 方法来处理每个激活原因。 在这些方法中，应用必须完成的一个事项是创建 UI，将其分配给 [**Window.Content**](/uwp/api/windows.ui.xaml.window.content)，然后调用 [**Window.Activate**](/uwp/api/windows.ui.xaml.window.activate)。 此时会将初始屏幕替换为应用创建的 UI。 如果在激活时有足够的信息可供创建此视觉对象，那么此视觉对象可以是加载屏幕或应用的实际 UI。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -267,9 +267,9 @@ XAML 应用中的启动性能与启动期间创建的元素数直接关联。 �
 > End Class 
 > ```
 
-在激活处理程序中显示加载页面的应用开始工作，以在后台中创建 UI。 在已创建该元素之后，其 [**FrameworkElement.Loaded**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.loaded) 事件发生。 在事件处理程序中，你将窗口的内容（当前为加载屏幕）替换为新创建的主页。
+在激活处理程序中显示加载页面的应用开始工作，以在后台中创建 UI。 在已创建该元素之后，其 [**FrameworkElement.Loaded**](/uwp/api/windows.ui.xaml.frameworkelement.loaded) 事件发生。 在事件处理程序中，你将窗口的内容（当前为加载屏幕）替换为新创建的主页。
 
-对于初始化时段比较长的应用，显示加载页面至关重要。 除了提供关于激活过程的用户反馈之外，如果在激活过程开始之后 15 秒内未调用 [**Window.Activate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate)，将终止激活过程。
+对于初始化时段比较长的应用，显示加载页面至关重要。 除了提供关于激活过程的用户反馈之外，如果在激活过程开始之后 15 秒内未调用 [**Window.Activate**](/uwp/api/windows.ui.xaml.window.activate)，将终止激活过程。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -339,7 +339,7 @@ XAML 应用中的启动性能与启动期间创建的元素数直接关联。 �
 
 可重用的代码经常以在一个项目中包含的多个模块 (DLL) 的形式出现。 加载这些模块要求访问磁盘，你可以想象得出来，这样做会增加开销。 虽然这对冷启动的影响最大，但对热启动同样有影响。 对于 C# 和 Visual Basic，CLR 将通过按需加载程序集尽可能力求延迟该开销。 即，在已执行的方法引用某个模块之前，CLR 不会加载该模块。 因此，请在启动代码中仅引用启动你的应用所必需的程序集，这样 CLR 就不会加载不必要的模块。 如果包含不必要的引用的启动路径中有未使用的代码路径，那么你可以将这些代码路径移动到其他方法，以避免不必要的负载。
 
-减少模块负载的另一个方法是组合你的应用模块。 加载一个大型程序集花费的时间通常比加载两个小型程序集的时间要少。 该方法并非始终可用。并且，仅当组合模块不会对开发人员生产效率或代码可重用性造成实质性影响时，你才应组合模块。 你可以使用 [PerfView](https://www.microsoft.com/download/details.aspx?id=28567) 或 [Windows 性能分析器 (WPA)](https://docs.microsoft.com/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-) 等工具来查明在启动时加载了哪些模块。
+减少模块负载的另一个方法是组合你的应用模块。 加载一个大型程序集花费的时间通常比加载两个小型程序集的时间要少。 该方法并非始终可用。并且，仅当组合模块不会对开发人员生产效率或代码可重用性造成实质性影响时，你才应组合模块。 你可以使用 [PerfView](https://www.microsoft.com/download/details.aspx?id=28567) 或 [Windows 性能分析器 (WPA)](/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-) 等工具来查明在启动时加载了哪些模块。
 
 ### <a name="make-smart-web-requests"></a>发出智能 Web 请求
 

@@ -3,12 +3,12 @@ title: WinUI 2.3 发行说明
 description: WinUI 2.3 的发行说明，包括新功能和 Bug 修复。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 9540f5314e6df02e95943279647d643bdbbef3c5
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 63091f927f63a708c5a5e4d41e9d81fd9f528cb1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493482"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154781"
 ---
 # <a name="windows-ui-library-23"></a>Windows UI 库 2.3
 
@@ -40,9 +40,9 @@ NuGet 包下载：[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.U
 
 ![确定的进度栏](../images/DeterminateProgressBar.gif)
 
-[文档链接](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/progress-controls)
+[文档链接](/windows/uwp/design/controls-and-patterns/progress-controls)
 
-[示例链接](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/progress-controls#examples)
+[示例链接](/windows/uwp/design/controls-and-patterns/progress-controls#examples)
 
 ### <a name="numberbox"></a>NumberBox
 
@@ -50,7 +50,7 @@ NuGet 包下载：[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.U
 
 ![NumberBox](../images/NumberBoxGif.gif)
 
-[文档和示例链接](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/number-box)
+[文档和示例链接](/windows/uwp/design/controls-and-patterns/number-box)
 
 ### <a name="radiobuttons"></a>RadioButtons
 

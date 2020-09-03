@@ -1,30 +1,30 @@
 ---
-description: 本主题是与从 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 逐步移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 相关的高级主题。 它说明并行模式库 (PPL) 任务和协同程序如何在同一项目中并存。
+description: 本主题是与从 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 逐步移植到 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 相关的高级主题。 它说明并行模式库 (PPL) 任务和协同程序如何在同一项目中并存。
 title: 实现 C++/WinRT 与 C++/CX 之间的异步和互操作
 ms.date: 08/06/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 移植, 迁移, 互操作, C++/CX, PPL, 任务, 协同程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d80fedcadaee96dcd4fae4081dcc117b55a1e498
-ms.sourcegitcommit: 2a90b41e455ba0a2b7aff6f771638fb3a2228db4
+ms.openlocfilehash: 1beff7fe5595a2601d56d65b52ca51eacedee47f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88513424"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157391"
 ---
 # <a name="asynchrony-and-interop-between-cwinrt-and-ccx"></a>实现 C++/WinRT 与 C++/CX 之间的异步和互操作
 
 > [!TIP]
 > 尽管我们建议从头开始阅读本主题，但你可以直接跳到[将 C++/CX 异步移植到 C++/WinRT 概述](#overview-of-porting-ccx-async-to-cwinrt)部分中的互操作方法摘要。
 
-本主题是与从 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 逐步移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 相关的高级主题。 本主题紧接[实现 C++/WinRT 与 C++/CX 之间的互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)讨论的内容。
+本主题是与从 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 逐步移植到 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 相关的高级主题。 本主题紧接[实现 C++/WinRT 与 C++/CX 之间的互操作](./interop-winrt-cx.md)讨论的内容。
 
 如果代码库的大小或复杂性使得有必要逐步移植项目，则需要一个移植过程，在此过程中的某段时间，C++/CX 和 C++/WinRT 代码将在同一项目中并存。 如果你拥有异步代码，则可能需要在逐步移植源代码的过程中，让并行模式库 (PPL) 任务链和协同程序在项目中并存。 本主题重点介绍在 C++/CX 异步代码和 C++/WinRT 异步代码之间互操作的方法。 你可以单独使用这些方法，也可以组合使用这些方法。 利用这些方法，你可以在移植整个项目的过程中逐步进行受控的本地更改，而不会使每项更改在整个项目中不受控制地级联。
 
-在阅读本主题前，最好先阅读[实现 C++/WinRT 与 C++/CX 之间的互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)。 该主题演示如何为逐步移植准备项目。 它还引入了两个帮助程序函数，可用于将 C++/CX 对象转换为 C++/WinRT 对象（反之亦然）。 本主题的异步内容基于这些信息，并使用这些帮助程序函数。
+在阅读本主题前，最好先阅读[实现 C++/WinRT 与 C++/CX 之间的互操作](./interop-winrt-cx.md)。 该主题演示如何为逐步移植准备项目。 它还引入了两个帮助程序函数，可用于将 C++/CX 对象转换为 C++/WinRT 对象（反之亦然）。 本主题的异步内容基于这些信息，并使用这些帮助程序函数。
 
 > [!NOTE]
-> 从 C++/CX 逐步移植到 C++/WinRT 存在一些限制。 如果拥有 [Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)项目，则无法逐步移植，需要一次性移植项目。 对于 XAML 项目，无论何时，均要求 XAML 页面类型要么完全是 C++/WinRT，要么完全是 C++/CX。 有关详细信息，请参阅[从 C++/CX 移动到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx)这一主题。
+> 从 C++/CX 逐步移植到 C++/WinRT 存在一些限制。 如果拥有 [Windows 运行时组件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)项目，则无法逐步移植，需要一次性移植项目。 对于 XAML 项目，无论何时，均要求 XAML 页面类型要么完全是 C++/WinRT，要么完全是 C++/CX。 有关详细信息，请参阅[从 C++/CX 移动到 C++/WinRT](./move-to-winrt-from-cx.md)这一主题。
 
 ## <a name="the-reason-an-entire-topic-is-dedicated-to-asynchronous-code-interop"></a>整个主题专门介绍异步代码互操作的原因
 
@@ -83,7 +83,7 @@ C++/WinRT 协同程序的返回类型为 winrt::IAsyncXxx 或 [winrt::fire_and_f
 
 如果某个方法包含至少一个 `co_await` 语句（或至少一个 `co_return` 或 `co_yield`），则该方法因此属于协同程序。
 
-详细信息和代码示例，请参阅[利用 C++/WinRT 实现的并发和异步运算](/windows/uwp/cpp-and-winrt-apis/concurrency)。
+详细信息和代码示例，请参阅[利用 C++/WinRT 实现的并发和异步运算](./concurrency.md)。
 
 ## <a name="the-direct3d-game-sample-simple3dgamedx"></a>Direct3D 游戏示例 (Simple3DGameDX)
 
@@ -91,7 +91,7 @@ C++/WinRT 协同程序的返回类型为 winrt::IAsyncXxx 或 [winrt::fire_and_f
 
 - 从上述链接下载 ZIP 文件，然后解压缩。
 - 在 Visual Studio 中打开 C++/CX 项目（位于名为 `cpp` 的文件夹中）。
-- 然后，你需要向项目添加 C++/WinRT 支持。 [采用 C++/CX 项目并添加 C++/WinRT 支持](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-ccx-project-and-adding-cwinrt-support)中介绍了执行此操作的步骤。 在该部分中，将 `interop_helpers.h` 头文件添加到项目中的步骤尤其重要，因为在本主题中我们将依赖于这些帮助程序函数。
+- 然后，你需要向项目添加 C++/WinRT 支持。 [采用 C++/CX 项目并添加 C++/WinRT 支持](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support)中介绍了执行此操作的步骤。 在该部分中，将 `interop_helpers.h` 头文件添加到项目中的步骤尤其重要，因为在本主题中我们将依赖于这些帮助程序函数。
 - 最后，将 `#include <pplawait.h>` 添加到 `pch.h` 中。 此操作提供对 PPL 的协同程序支持（下一部分中将详细介绍该支持）。
 
 暂时不要生成，否则你将收到关于 byte 不明确的错误。 解决方法如下。
@@ -390,7 +390,7 @@ winrt::fire_and_forget GameMain::ConstructInBackground()
 
 这适用于我们到目前为止更改的所有方法；它适用于所有协同程序，而不仅仅是发后不理协同程序。 将 `co_await` 引入方法会引入暂停点。 因此，我们必须小心使用 this 指针，当然，每次访问类成员时，我们都会在暂停点之后使用它。
 
-简而言之，解决方案是调用 [implements::get_strong](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)。 但是，有关该问题和解决方案的完整讨论，请参阅[在类成员协同程序中安全访问 this 指针](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)。
+简而言之，解决方案是调用 [implements::get_strong](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)。 但是，有关该问题和解决方案的完整讨论，请参阅[在类成员协同程序中安全访问 this 指针](./weak-references.md#safely-accessing-the-this-pointer-in-a-class-member-coroutine)。
 
 你只能在派生自 [winrt::implements](/uwp/cpp-ref-for-winrt/implements) 的类中调用 implements::get_strong。
 
@@ -423,7 +423,7 @@ void App::Load(Platform::String^)
 }
 ```
 
-但是，既然 GameMain 派生自 winrt::implements，我们就需要以不同的方式构造它。 在这种情况下，我们将使用 [winrt::make_self](/uwp/cpp-ref-for-winrt/make-self) 函数模板。 有关详细信息，请参阅[实例化和返回实现类型和接口](/windows/uwp/cpp-and-winrt-apis/author-apis#instantiating-and-returning-implementation-types-and-interfaces)。
+但是，既然 GameMain 派生自 winrt::implements，我们就需要以不同的方式构造它。 在这种情况下，我们将使用 [winrt::make_self](/uwp/cpp-ref-for-winrt/make-self) 函数模板。 有关详细信息，请参阅[实例化和返回实现类型和接口](./author-apis.md#instantiating-and-returning-implementation-types-and-interfaces)。
 
 将上述代码行替换为以下代码行。
 
@@ -938,8 +938,8 @@ winrt::Windows::Foundation::IAsyncAction BasicLoader::LoadTextureAsync(...)
 
 ## <a name="related-topics"></a>相关主题
 
-* [从 C++/CX 移动到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx)
-* [实现 C++/WinRT 与 C++/CX 之间的互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)
-* [利用 C++/WinRT 实现的并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [C++/WinRT 中的弱引用](/windows/uwp/cpp-and-winrt-apis/weak-references)
-* [使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [从 C++/CX 移动到 C++/WinRT](./move-to-winrt-from-cx.md)
+* [实现 C++/WinRT 与 C++/CX 之间的互操作](./interop-winrt-cx.md)
+* [利用 C++/WinRT 实现的并发和异步操作](./concurrency.md)
+* [C++/WinRT 中的弱引用](./weak-references.md)
+* [使用 C++/WinRT 创作 API](./author-apis.md)

@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 07d94f5b11acfe14bf55392c5cbf2c1b7bcfbeef
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ab20d350372ec9dd0a755e76393a97a680949979
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66369388"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156562"
 ---
 # <a name="accessing-homegroup-content"></a>访问家庭组内容
 
@@ -19,7 +19,7 @@ ms.locfileid: "66369388"
 
 **重要的 API**
 
--   [**Windows.Storage.KnownFolders 类**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)
+-   [**Windows.Storage.KnownFolders 类**](/uwp/api/Windows.Storage.KnownFolders)
 
 访问存储在用户的“家庭组”文件夹中的内容，包括图片、音乐和视频。
 
@@ -27,7 +27,7 @@ ms.locfileid: "66369388"
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
-    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
 -   **应用功能声明**
 
@@ -50,7 +50,7 @@ ms.locfileid: "66369388"
 
 1.  **创建并自定义文件选取器**
 
-    使用 [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 创建文件选取器，然后将选取器的 [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) 设置为 [**PickerLocationId.HomeGroup**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerLocationId)。 或者，设置与你的用户和你的应用相关的其他属性。 有关帮助你确定如何自定义文件选取器的指南，请参阅[文件选取器指南和清单](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers)。
+    使用 [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 创建文件选取器，然后将选取器的 [**SuggestedStartLocation**](/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) 设置为 [**PickerLocationId.HomeGroup**](/uwp/api/Windows.Storage.Pickers.PickerLocationId)。 或者，设置与你的用户和你的应用相关的其他属性。 有关帮助你确定如何自定义文件选取器的指南，请参阅[文件选取器指南和清单](./quickstart-using-file-and-folder-pickers.md)。
 
     此示例创建了一个在家庭组打开的文件选取器，包含任何类型的文件，并将文件显示为缩略图图像：
     ```cs
@@ -63,7 +63,7 @@ ms.locfileid: "66369388"
 
 2.  **显示文件选取器并处理已选取的文件。**
 
-    在你创建并自定义文件选取器之后，让用户通过调用 [**FileOpenPicker.PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) 来选取一个文件，或通过调用 [**FileOpenPicker.PickMultipleFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) 来选取多个文件。
+    在你创建并自定义文件选取器之后，让用户通过调用 [**FileOpenPicker.PickSingleFileAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) 来选取一个文件，或通过调用 [**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) 来选取多个文件。
 
     此示例显示文件选取器以让用户选取一个文件：
     ```cs
@@ -85,7 +85,7 @@ ms.locfileid: "66369388"
 
 1.  **从用户获取查询词。**
 
-    下面我们将获取一个用户已输入到某个称为 `searchQueryTextBox` 的 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 控件中的查询词：
+    下面我们将获取一个用户已输入到某个称为 `searchQueryTextBox` 的 [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 控件中的查询词：
     ```cs
     string queryTerm = this.searchQueryTextBox.Text;    
     ```
@@ -128,7 +128,7 @@ ms.locfileid: "66369388"
 
 1.  **获取家庭组用户的集合。**
 
-    家庭组中每个第一级文件夹表示单个家庭组用户。 因此，若要获取家庭组用户的集合，请调用 [**GetFoldersAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfoldersasync) 检索顶级家庭组文件夹。
+    家庭组中每个第一级文件夹表示单个家庭组用户。 因此，若要获取家庭组用户的集合，请调用 [**GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) 检索顶级家庭组文件夹。
     ```cs
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders =
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
@@ -173,7 +173,7 @@ ms.locfileid: "66369388"
 
 1.  **在应用中包含一个 MediaElement。**
 
-    [  **MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 允许你在你的应用中播放音频和视频内容。 有关音频和视频播放的详细信息，请参阅[创建自定义传输控件](https://docs.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls)和[音频、视频和相机](https://docs.microsoft.com/windows/uwp/audio-video-camera/index)。
+    [  **MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 允许你在你的应用中播放音频和视频内容。 有关音频和视频播放的详细信息，请参阅[创建自定义传输控件](../design/controls-and-patterns/custom-transport-controls.md)和[音频、视频和相机](../audio-video-camera/index.md)。
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>
@@ -193,7 +193,7 @@ ms.locfileid: "66369388"
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **打开用户选择的文件以进行读取访问，并将文件流设置为** [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 的源，然后播放该文件。
+3.  **打开用户选择的文件以进行读取访问，并将文件流设置为** [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 的源，然后播放该文件。
     ```cs
     if (file != null)
     {

@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 自定义, 模板化, 控件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2bd71e5ec78f3e0d1317c4e69ecd234985b2d8ab
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 805e9db834e4428f8db5815b54b8d1d669310611
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492842"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154221"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>XAML 自定义（模板化）控件与 C++/WinRT
 
 > [!IMPORTANT]
-> 有关支持你了解如何利用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 来使用和创作运行时类的基本概述和术语，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[通过 C++/WinRT 创作 API](author-apis.md)。
+> 有关支持你了解如何利用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 来使用和创作运行时类的基本概述和术语，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[通过 C++/WinRT 创作 API](author-apis.md)。
 
-通用 Windows 平台 (UWP) 最强大的功能之一是，用户界面 (UI) 堆栈所提供基于 XAML [控件](/uwp/api/windows.ui.xaml.controls.control)类型创建自定义控件的灵活性  。 XAML UI 框架提供[自定义依赖项属性](/windows/uwp/xaml-platform/custom-dependency-properties)[附加属性](/windows/uwp/xaml-platform/custom-attached-properties)以及[控件模板](/windows/uwp/design/controls-and-patterns/control-templates)等功能，使用这些功能可以更轻松地创建功能丰富且可自定义的控件。 本主题引导你完成使用 C++/WinRT 创建自定义（模板化）控件的步骤。
+通用 Windows 平台 (UWP) 最强大的功能之一是，用户界面 (UI) 堆栈所提供基于 XAML [控件](/uwp/api/windows.ui.xaml.controls.control)类型创建自定义控件的灵活性  。 XAML UI 框架提供[自定义依赖项属性](../xaml-platform/custom-dependency-properties.md)[附加属性](../xaml-platform/custom-attached-properties.md)以及[控件模板](../design/controls-and-patterns/control-templates.md)等功能，使用这些功能可以更轻松地创建功能丰富且可自定义的控件。 本主题引导你完成使用 C++/WinRT 创建自定义（模板化）控件的步骤。
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>创建空白应用 (BgLabelControlApp)
 
@@ -46,7 +46,7 @@ namespace BgLabelControlApp
 }
 ```
 
-上表展示在声明依赖项属性 (DP) 时采用的模式。 每个 DP 有两个部分。 首先，声明类型 [DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty) 的只读静态属性。 它具有 DP 的名称和属性。 你将在实现中使用此静态属性。 其次，使用 DP 的类型和名称声明读写实例属性。 如果想要创作附加属性（而不是 DP），请参阅[自定义附加属性](/windows/uwp/xaml-platform/custom-attached-properties)中的代码示例。
+上表展示在声明依赖项属性 (DP) 时采用的模式。 每个 DP 有两个部分。 首先，声明类型 [DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty) 的只读静态属性。 它具有 DP 的名称和属性。 你将在实现中使用此静态属性。 其次，使用 DP 的类型和名称声明读写实例属性。 如果想要创作附加属性（而不是 DP），请参阅[自定义附加属性](../xaml-platform/custom-attached-properties.md)中的代码示例。
 
 > [!NOTE]
 > 如果想要创作具有浮点类型的 DP，则将其设置为 `double`（[MIDL 3.0](/uwp/midl-3/) 中的 `Double`）。 声明并实现类型 `float`（MIDL 中的 `Single`）的 DP，则在 XAML 标记中为该 DP 设置值将导致发生错误，即无法从文本“<NUMBER>”创建“Windows.Foundation.Single”。
@@ -217,5 +217,5 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 * [UIElement 类](/uwp/api/windows.ui.xaml.uielement)
 
 ## <a name="related-topics"></a>相关主题
-* [控件模板](/windows/uwp/design/controls-and-patterns/control-templates)
-* [自定义依赖属性](/windows/uwp/xaml-platform/custom-dependency-properties)
+* [控件模板](../design/controls-and-patterns/control-templates.md)
+* [自定义依赖属性](../xaml-platform/custom-dependency-properties.md)

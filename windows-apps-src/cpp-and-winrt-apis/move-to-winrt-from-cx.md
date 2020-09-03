@@ -1,45 +1,45 @@
 ---
-description: 本主题介绍将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 项目中的源代码移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 项目中的等效项时所涉及的技术细节。
+description: 本主题介绍将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 项目中的源代码移植到 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 项目中的等效项时所涉及的技术细节。
 title: 从 C++/CX 移动到 C++/WinRT
 ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: fd0fb73000472390111632d0800a5ad4653f2258
-ms.sourcegitcommit: a9f44bbb23f0bc3ceade3af7781d012b9d6e5c9a
+ms.openlocfilehash: 94ffa80700cea640d63f63344991144a2ac00ab6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88180802"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157311"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>从 C++/CX 移动到 C++/WinRT
 
-本主题是系列文章中的第一篇，介绍如何将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 项目中的源代码移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的等效项。
+本主题是系列文章中的第一篇，介绍如何将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 项目中的源代码移植到 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 中的等效项。
 
 如果你的项目还使用 [Windows 运行时 C++ 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 类型，请参阅[从 WRL 迁移到 C++/WinRT](move-to-winrt-from-wrl.md)。
 
 ## <a name="strategies-for-porting"></a>移植策略
 
-值得注意的是，从 C++/CX 到 C++/WinRT 的移植通常很简单，但从[并行模式库 (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) 任务迁移到协同程序的情况例外。 其模型不同。 从 PPL 任务到协同程序没有自然的一对一映射，也没有适用于所有情况的机械移植代码的简单方法。 有关移植的这一特定方面的帮助信息，以及在这两个模型之间进行互操作的选项，请参阅[实现 C++/WinRT 与 C++/CX 之间的异步和互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async)。
+值得注意的是，从 C++/CX 到 C++/WinRT 的移植通常很简单，但从[并行模式库 (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) 任务迁移到协同程序的情况例外。 其模型不同。 从 PPL 任务到协同程序没有自然的一对一映射，也没有适用于所有情况的机械移植代码的简单方法。 有关移植的这一特定方面的帮助信息，以及在这两个模型之间进行互操作的选项，请参阅[实现 C++/WinRT 与 C++/CX 之间的异步和互操作](./interop-winrt-cx-async.md)。
 
 开发团队通常会报告说，一旦克服了移植异步代码的障碍，其余的移植工作大部分是机械式的。
 
 ### <a name="porting-in-one-pass"></a>一次性移植
 
-如果你能够一次性移植整个项目，那么只需要阅读本主题即可获取所需的信息（无需阅读本主题后面的互操作主题）。 建议首先使用 C++/WinRT 项目模板之一在 Visual Studio 中创建一个新项目（请参阅 [Visual Studio 对 C++/WinRT 的支持](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 然后将源代码文件移入该新项目，与此同时，将所有 C++/CX 源代码移植到 C++/WinRT 中。
+如果你能够一次性移植整个项目，那么只需要阅读本主题即可获取所需的信息（无需阅读本主题后面的互操作主题）。 建议首先使用 C++/WinRT 项目模板之一在 Visual Studio 中创建一个新项目（请参阅 [Visual Studio 对 C++/WinRT 的支持](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 然后将源代码文件移入该新项目，与此同时，将所有 C++/CX 源代码移植到 C++/WinRT 中。
 
-或者，如果你希望在现有的 C++/CX 项目中进行移植工作，则需要向其添加 C++/WinRT 支持。 [采用 C++/CX 项目并添加 C++/WinRT 支持](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-ccx-project-and-adding-cwinrt-support)中介绍了执行此操作的步骤。 完成移植之时，便已将原来的纯 C++/CX 项目变成了纯 C++/WinRT 项目。
+或者，如果你希望在现有的 C++/CX 项目中进行移植工作，则需要向其添加 C++/WinRT 支持。 [采用 C++/CX 项目并添加 C++/WinRT 支持](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support)中介绍了执行此操作的步骤。 完成移植之时，便已将原来的纯 C++/CX 项目变成了纯 C++/WinRT 项目。
 
 > [!NOTE]
 > 如果你有 Windows 运行时组件项目，则一次性移植是你唯一的选项。 用 C++ 编写的 Windows 运行时组件项目包含的要么全部是 C++/CX 源代码，要么全部是 C++/WinRT 源代码。 它们不能在此项目类型中共存。
 
 ### <a name="porting-a-project-gradually"></a>逐步移植项目
 
-除了前面部分中提到的 Windows 运行时组件项目以外，如果代码库的大小或复杂性使得有必要逐步移植项目，则需要一个移植过程，在此过程中的某段时间，C++/CX 和 C++/WinRT 代码将在同一项目中并存。 除了阅读本主题，还应参阅[实现 C++/WinRT 与 C++/CX 之间的互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)和[实现 C++/WinRT 与 C++/CX 之间的异步和互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async)。 这些主题提供了一些信息和代码示例，演示如何在这两种语言投影之间进行互操作。
+除了前面部分中提到的 Windows 运行时组件项目以外，如果代码库的大小或复杂性使得有必要逐步移植项目，则需要一个移植过程，在此过程中的某段时间，C++/CX 和 C++/WinRT 代码将在同一项目中并存。 除了阅读本主题，还应参阅[实现 C++/WinRT 与 C++/CX 之间的互操作](./interop-winrt-cx.md)和[实现 C++/WinRT 与 C++/CX 之间的异步和互操作](./interop-winrt-cx-async.md)。 这些主题提供了一些信息和代码示例，演示如何在这两种语言投影之间进行互操作。
 
-若要使项目为逐步移植过程做好准备，一种选择是向 C++/CX 项目添加 C++/WinRT 支持。 [采用 C++/CX 项目并添加 C++/WinRT 支持](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-ccx-project-and-adding-cwinrt-support)中介绍了执行此操作的步骤。 然后，你就可以从这里逐步进行移植。
+若要使项目为逐步移植过程做好准备，一种选择是向 C++/CX 项目添加 C++/WinRT 支持。 [采用 C++/CX 项目并添加 C++/WinRT 支持](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support)中介绍了执行此操作的步骤。 然后，你就可以从这里逐步进行移植。
 
-另一种选择是使用 C++/WinRT 项目模板之一在 Visual Studio 中创建一个新项目（请参阅 [Visual Studio 对 C++/WinRT 的支持](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 然后向该项目添加 C++/CX 支持。 [采用 C++/WinRT 项目并添加 C++/CX 支持](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-cwinrt-project-and-adding-cx-support)中介绍了执行此操作的步骤。 然后，你可以开始将源代码移入其中，与此同时，将一些 C++/CX 源代码移植到 C++/WinRT 中。
+另一种选择是使用 C++/WinRT 项目模板之一在 Visual Studio 中创建一个新项目（请参阅 [Visual Studio 对 C++/WinRT 的支持](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 然后向该项目添加 C++/CX 支持。 [采用 C++/WinRT 项目并添加 C++/CX 支持](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-cx-support)中介绍了执行此操作的步骤。 然后，你可以开始将源代码移入其中，与此同时，将一些 C++/CX 源代码移植到 C++/WinRT 中。
 
 无论是哪种情况，都需要在 C++/WinRT 代码与尚未移植的任何 C++/CX 代码之间进行互操作（双向）。
 
@@ -57,17 +57,17 @@ ms.locfileid: "88180802"
 
 - 可以创建一个新的 C++/CX WRC 项目，将尽可能多的 C++/CX 代码移入该项目，然后将 XAML 项目更改为 C++/WinRT。
 - 或者，可以创建一个新的 C++/WinRT WRC 项目，将 XAML 项目保留为 C++/CX，然后开始将 C++/CX 移植到 C++/WinRT，将所得到的代码移出 XAML 项目并移入组件项目。
-- 还可以让 C++/CX 组件项目以及 C++/WinRT 组件项目处于同一个解决方案中，从应用程序项目引用两者，然后逐渐从一个项目移植到另一个项目。 同样，请参阅[实现 C++/WinRT 与 C++/CX 之间的互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)，了解有关在同一个项目中使用这两种语言投影的更多详细信息。
+- 还可以让 C++/CX 组件项目以及 C++/WinRT 组件项目处于同一个解决方案中，从应用程序项目引用两者，然后逐渐从一个项目移植到另一个项目。 同样，请参阅[实现 C++/WinRT 与 C++/CX 之间的互操作](./interop-winrt-cx.md)，了解有关在同一个项目中使用这两种语言投影的更多详细信息。
 
 ## <a name="first-steps-in-porting-a-ccx-project-to-cwinrt"></a>将 C++/CX 项目移植到 C++/WinRT 的第一步
 
 无论使用哪种移植策略（一次性移植或逐步移植），第一步都是准备要移植的项目。 下面回顾了[移植策略](#strategies-for-porting)中所述的内容，其中涉及你将要开始使用的项目类型以及如何对其进行设置。
 
 - **一次性移植**。 使用 C++/WinRT 项目模板之一在 Visual Studio 中创建一个新项目。 将文件从 C++/CX 项目移入该新项目，然后移植 C++/CX 源代码。
-- **逐步移植非 XAML 项目**。 可以选择向 C++/CX 项目添加 C++/WinRT 支持（请参阅[采用 C++/CX 项目并添加 C++/WinRT 支持](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-ccx-project-and-adding-cwinrt-support)），然后逐步进行移植。 也可以选择创建一个新的 C++/WinRT 项目并向其添加 C++/CX 支持（请参阅[采用 C++/WinRT 项目并添加 C++/CX 支持](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-cwinrt-project-and-adding-cx-support)），移入文件并逐步进行移植。
+- **逐步移植非 XAML 项目**。 可以选择向 C++/CX 项目添加 C++/WinRT 支持（请参阅[采用 C++/CX 项目并添加 C++/WinRT 支持](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support)），然后逐步进行移植。 也可以选择创建一个新的 C++/WinRT 项目并向其添加 C++/CX 支持（请参阅[采用 C++/WinRT 项目并添加 C++/CX 支持](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-cx-support)），移入文件并逐步进行移植。
 - **逐步移植 XAML 项目**。 创建一个新的 C++/WinRT 项目，移入文件并逐步进行移植。 无论何时，均要求 XAML 页面类型要么完全是 C++/WinRT，要么完全是 C++/CX。
 
-无论选择哪种移植策略，本主题的其余部分均适用。 它包含将源代码从 C++/CX 移植到 C++/WinRT 所涉及的技术细节的目录。 如果要进行逐步移植，则可能还需要查看[实现 C++/WinRT 与 C++/CX 之间的互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)和[实现 C++/WinRT 与 C++/CX 之间的异步和互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async)。
+无论选择哪种移植策略，本主题的其余部分均适用。 它包含将源代码从 C++/CX 移植到 C++/WinRT 所涉及的技术细节的目录。 如果要进行逐步移植，则可能还需要查看[实现 C++/WinRT 与 C++/CX 之间的互操作](./interop-winrt-cx.md)和[实现 C++/WinRT 与 C++/CX 之间的异步和互操作](./interop-winrt-cx-async.md)。
 
 ## <a name="file-naming-conventions"></a>文件命名约定
 
@@ -80,9 +80,9 @@ ms.locfileid: "88180802"
 
 请注意，C++/WinRT 会从 `*.h` 和 `*.cpp` 文件名中删除 `.xaml`。
 
-C++/WinRT 添加了一个额外的开发人员文件，即 **Midl 文件 (.idl)** 。 C++/CX 在内部自动生成此文件，并将其添加到每个公开的和受保护的成员。 在 C++/WinRT 中，你自行创作并添加此文件。 如需更多详细信息、代码示例以及 IDL 创作演练，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
+C++/WinRT 添加了一个额外的开发人员文件，即 **Midl 文件 (.idl)** 。 C++/CX 在内部自动生成此文件，并将其添加到每个公开的和受保护的成员。 在 C++/WinRT 中，你自行创作并添加此文件。 如需更多详细信息、代码示例以及 IDL 创作演练，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](./binding-property.md)。
 
-另请参阅[将运行时类重构到 Midl 文件 (.idl) 中](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)
+另请参阅[将运行时类重构到 Midl 文件 (.idl) 中](./author-apis.md#factoring-runtime-classes-into-midl-files-idl)
 
 ### <a name="runtime-classes"></a>运行时类
 
@@ -251,7 +251,7 @@ record.UserState(newValue);
 
 ## <a name="creating-an-instance-of-a-class"></a>创建类的实例
 
-你通过 C++/CX 对象的句柄来处理它，通常称为顶帽 (\^) 引用。 通过 `ref new` 关键字创建新对象，这反过来会调用 [RoActivateInstance](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) 来激活运行时类的新实例。
+你通过 C++/CX 对象的句柄来处理它，通常称为顶帽 (\^) 引用。 通过 `ref new` 关键字创建新对象，这反过来会调用 [RoActivateInstance](/windows/desktop/api/roapi/nf-roapi-roactivateinstance) 来激活运行时类的新实例。
 
 ```cppcx
 using namespace Windows::Storage::Streams;
@@ -350,7 +350,7 @@ boxes.resize(10, nullptr); // 10 empty references.
 
 ## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>从运行时基类转换为派生类
 
-通常有一个已知引用派生类型对象的基类引用。 在 C++/CX 中，使用 `dynamic_cast` 将基类引用强制转换为派生类引用。 `dynamic_cast` 实际上只是对 [QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 的隐藏调用。 下面是一个典型示例 &mdash; 你要处理依赖属性更改事件，并且要从 DependencyObject 强制转换回拥有依赖属性的实际类型。
+通常有一个已知引用派生类型对象的基类引用。 在 C++/CX 中，使用 `dynamic_cast` 将基类引用强制转换为派生类引用。 `dynamic_cast` 实际上只是对 [QueryInterface](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 的隐藏调用。 下面是一个典型示例 &mdash; 你要处理依赖属性更改事件，并且要从 DependencyObject 强制转换回拥有依赖属性的实际类型。
 
 ```cppcx
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
@@ -461,7 +461,7 @@ myButton().Click(token);
 
 ## <a name="boxing-and-unboxing"></a>装箱和取消装箱
 
-C++/CX 自动将标量装箱到对象中。 C++/WinRT 要求你显式调用 [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 函数。 两种语言都要求你以显式方式取消装箱。 请参阅[使用 C++/WinRT 装箱和取消装箱](/windows/uwp/cpp-and-winrt-apis/boxing)。
+C++/CX 自动将标量装箱到对象中。 C++/WinRT 要求你显式调用 [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 函数。 两种语言都要求你以显式方式取消装箱。 请参阅[使用 C++/WinRT 装箱和取消装箱](./boxing.md)。
 
 在下面的表中，我们将使用这些定义。
 
@@ -518,15 +518,15 @@ C++/CX 将 Windows 运行时字符串表示为引用类型，而 C++/WinRT 则�
 
 并行模式库 (PPL)（例如 [**concurrency::task**](/cpp/parallel/concrt/reference/task-class)）已更新，现在支持 C++/CX 顶帽引用。
 
-对于 C++/WinRT，应改用协同程序和 `co_await`。 详细信息和代码示例，请参阅[利用 C++/WinRT 实现的并发和异步运算](/windows/uwp/cpp-and-winrt-apis/concurrency)。
+对于 C++/WinRT，应改用协同程序和 `co_await`。 详细信息和代码示例，请参阅[利用 C++/WinRT 实现的并发和异步运算](./concurrency.md)。
 
 ## <a name="consuming-objects-from-xaml-markup"></a>使用 XAML 标记中的对象
 
-在 C++/CX 项目中，可以使用 XAML 标记中的专用成员和命名元素。 但在 C++/WinRT 中，以 XAML [**{x:Bind} 标记扩展**](/windows/uwp/xaml-platform/x-bind-markup-extension)形式使用的所有实体必须在 IDL 中以公开方式公开。
+在 C++/CX 项目中，可以使用 XAML 标记中的专用成员和命名元素。 但在 C++/WinRT 中，以 XAML [**{x:Bind} 标记扩展**](../xaml-platform/x-bind-markup-extension.md)形式使用的所有实体必须在 IDL 中以公开方式公开。
 
 另外，绑定到布尔值时，在 C++/CX 中会显示 `true` 或 `false`，但在 C++/WinRT 中会显示 Windows.Foundation.IReference`1\<Boolean\>。
 
-有关详细信息和代码示例，请参阅[使用标记中的对象](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup)。
+有关详细信息和代码示例，请参阅[使用标记中的对象](./binding-property.md#consuming-objects-from-xaml-markup)。
 
 ## <a name="mapping-ccx-platform-types-to-cwinrt-types"></a>将 C++/CX 平台类型映射到 C++/WinRT 类型
 
@@ -561,7 +561,7 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 在 C++/CX 要求使用数组的情况下，C++/WinRT 允许使用任何相邻的容器。 请参阅[默认构造函数如何影响集合](#how-the-default-constructor-affects-collections)，了解为何可以使用 **std::vector**。
 
-因此，只要在 C++/CX 中有 **Platform::Array\^** ，移植选项中就会包括使用初始值设定项列表、**std::array** 或 **std::vector** 的选项。 有关详细信息和代码示例，请参阅[标准初始值设定项列表](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists)和[标准数组和矢量](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors)。
+因此，只要在 C++/CX 中有 **Platform::Array\^** ，移植选项中就会包括使用初始值设定项列表、**std::array** 或 **std::vector** 的选项。 有关详细信息和代码示例，请参阅[标准初始值设定项列表](./std-cpp-data-types.md#standard-initializer-lists)和[标准数组和矢量](./std-cpp-data-types.md#standard-arrays-and-vectors)。
 
 ### <a name="port-platformexception-to-winrthresult_error"></a>将 Platform::Exception\^ 移植到 winrt::hresult_error
 
@@ -625,7 +625,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 
 Platform::String\^ 等同于 Windows 运行时 HSTRING ABI 类型。 对于 C++/WinRT，等效项是 [winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)。 但使用 C++/WinRT，你可以使用 C++ 标准库宽字符串类型（如 std::wstring）和/或宽字符串文字调用 Windows 运行时 API。 有关更多详细信息和代码示例，请参阅 [C++/WinRT 中的字符串处理](strings.md)。
 
-通过 C++/CX，你可以访问 [Platform::String::Data](https://docs.microsoft.com/cpp/cppcx/platform-string-class?view=vs-2019#data) 属性来作为 C 样式 const wchar_t\* 数组检索字符串（例如，将其传递到 std::wcout）。
+通过 C++/CX，你可以访问 [Platform::String::Data](/cpp/cppcx/platform-string-class?view=vs-2019#data) 属性来作为 C 样式 const wchar_t\* 数组检索字符串（例如，将其传递到 std::wcout）。
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };
@@ -746,12 +746,12 @@ C++/CX 和 C++/WinRT 按照标准的 **std::wstringstream** 来生成字符串�
 ## <a name="related-topics"></a>相关主题
 
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [在 C++/WinRT 中创作事件](/windows/uwp/cpp-and-winrt-apis/author-events)
-* [利用 C++/WinRT 实现的并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [通过 C++/WinRT 使用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)
-* [在 C++/WinRT 中使用委托处理事件](/windows/uwp/cpp-and-winrt-apis/handle-events)
-* [实现 C++/WinRT 与 C++/CX 之间的互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)
-* [实现 C++/WinRT 与 C++/CX 之间的异步和互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async)
+* [在 C++/WinRT 中创作事件](./author-events.md)
+* [利用 C++/WinRT 实现的并发和异步操作](./concurrency.md)
+* [通过 C++/WinRT 使用 API](./consume-apis.md)
+* [在 C++/WinRT 中使用委托处理事件](./handle-events.md)
+* [实现 C++/WinRT 与 C++/CX 之间的互操作](./interop-winrt-cx.md)
+* [实现 C++/WinRT 与 C++/CX 之间的异步和互操作](./interop-winrt-cx-async.md)
 * [Microsoft 接口定义语言 3.0 参考](/uwp/midl-3)
-* [从 WRL 移动到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-wrl)
-* [C++/WinRT 中的字符串处理](/windows/uwp/cpp-and-winrt-apis/strings)
+* [从 WRL 移动到 C++/WinRT](./move-to-winrt-from-wrl.md)
+* [C++/WinRT 中的字符串处理](./strings.md)

@@ -5,18 +5,18 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 数据, 类型
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cb62f8386798fcb78a11be35ba951616c47039c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d61de7acdfa2fc3b563aa77630a9eb8043bce3d7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68270075"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154331"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>标准 C++ 数据类型和 C++/WinRT
 
-借助 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，可以使用标准 C++ 数据类型（包括某些 C++ 标准库数据类型）调用 Windows 运行时 API。 可以将标准字符串传递到 API（请参阅 [C++/WinRT 中的字符串处理](strings.md)），还可以将初始值列表和标准容器传递到 API，这些 API 需要语义上等价的集合。
+借助 [C++/WinRT](./intro-to-using-cpp-with-winrt.md)，可以使用标准 C++ 数据类型（包括某些 C++ 标准库数据类型）调用 Windows 运行时 API。 可以将标准字符串传递到 API（请参阅 [C++/WinRT 中的字符串处理](strings.md)），还可以将初始值列表和标准容器传递到 API，这些 API 需要语义上等价的集合。
 
-另请参阅[将参数传递到 ABI 边界](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi)。
+另请参阅[将参数传递到 ABI 边界](./pass-parms-to-abi.md)。
 
 ## <a name="standard-initializer-lists"></a>标准初始值列表
 初始值列表 (std::initializer_list) 是 C++ 标准库构造  。 调用特定的 Windows 运行时构造函数和方法时，可以使用初始值列表。 例如，可以使用初始值列表来调用 [DataWriter::WriteBytes  ](/uwp/api/windows.storage.streams.datawriter.writebytes)。

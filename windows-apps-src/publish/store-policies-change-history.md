@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
-ms.openlocfilehash: bfdcaca05d704b0f6b62aa5c1023ea09ed2392c0
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 7460658e2622fe1a08983a9519e9eda9f5b4b1ac
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942857"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161841"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Microsoft Store 策略更改历史记录
 
@@ -198,4 +198,4 @@ ms.locfileid: "88942857"
 ### <a name="see-also"></a>另请参阅
 
 - [Microsoft Store 策略和行为准则](store-policies-and-code-of-conduct.md)
-- [应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [应用开发人员协议](/legal/windows/agreements/app-developer-agreement)

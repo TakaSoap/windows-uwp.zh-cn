@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 九月
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 85e41a26343c9e4c6eb239cbfdd74dc946d5b657
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d15cd0289b3de0c086a3ddc974e1b121447188c5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258807"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155221"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>2018 年 9 月 Windows 开发人员文档中的新增功能
 
@@ -22,9 +22,9 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="windows-machine-learning"></a>Windows 机器学习
 
-[Windows 机器学习文档](https://docs.microsoft.com/windows/ai/)现位于它们自己的站点，并针对最新的 Windows 预览体验成员 SDK 进行了更新。 C++ 和 C# 中的桌面和 UWP 教程可帮助你开始将 WinML 添加到应用程序。
+[Windows 机器学习文档](/windows/ai/)现位于它们自己的站点，并针对最新的 Windows 预览体验成员 SDK 进行了更新。 C++ 和 C# 中的桌面和 UWP 教程可帮助你开始将 WinML 添加到应用程序。
 
-[Windows.AI.MachineLearning API 参考](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)已针对最新的 Windows 预览体验成员 SDK 进行了更新。
+[Windows.AI.MachineLearning API 参考](/uwp/api/windows.ai.machinelearning)已针对最新的 Windows 预览体验成员 SDK 进行了更新。
 
 [Windows 机器学习 GitHub 存储库](https://github.com/Microsoft/Windows-Machine-Learning)已更新了使用最新 SDK 的新示例。
 
@@ -32,9 +32,9 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="windows-ui-library"></a>Windows UI 库
 
-[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)是一组 NuGet 程序包，提供用于 UWP 应用的控件和其他用户界面元素。 这些程序包还与 Windows 10 的早期版本兼容，因此即使用户没有最新的操作系统版本，应用也可以正常工作。
+[Windows UI 库](/uwp/toolkits/winui/)是一组 NuGet 程序包，提供用于 UWP 应用的控件和其他用户界面元素。 这些程序包还与 Windows 10 的早期版本兼容，因此即使用户没有最新的操作系统版本，应用也可以正常工作。
 
-有关 Windows UI 库的详细信息，请参阅 [NuGet 包中包含的 API 命名空间列表。](https://docs.microsoft.com/uwp/api/overview/winui/)
+有关 Windows UI 库的详细信息，请参阅 [NuGet 包中包含的 API 命名空间列表。](/uwp/api/overview/winui/)
 
 ## <a name="developer-guidance"></a>开发人员指南
 

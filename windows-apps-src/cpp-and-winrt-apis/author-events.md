@@ -5,30 +5,30 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: 980f39f20de369bce226c4d8c1070bda851480c2
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: f1500ab9999d4689385a9f7edce33253c385c0d0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493652"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154561"
 ---
 # <a name="author-events-in-cwinrt"></a>在 C++/WinRT 中创作事件
 
-本主题基于 Windows 运行时组件和使用方应用程序（[使用 C++/WinRT 创建 Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)主题演示如何生成）。
+本主题基于 Windows 运行时组件和使用方应用程序（[使用 C++/WinRT 创建 Windows 运行时组件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)主题演示如何生成）。
 
 以下是此主题添加的新功能。
 - 更新银行帐户运行时类以在其余额进入借方时引发事件。
 - 更新使用银行帐户运行时类的核心应用，使其处理该事件。
 
 > [!NOTE]
-> 有关安装和使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息，请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 有关安装和使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息，请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 > [!IMPORTANT]
 > 有关支持你了解如何利用 C++/WinRT 来使用和创作运行时类的基本概述和术语，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[通过 C++/WinRT 创作 API](author-apis.md)。
 
 ## <a name="create-bankaccountwrc-and-bankaccountcoreapp"></a>创建 BankAccountWRC 和 BankAccountCoreApp
 
-如果要按照本主题所示的更新执行操作，以便可以生成和运行代码，则第一步是遵循[使用 C++/WinRT 创建 Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)主题中演练的指示。 这样一来，你将拥有 BankAccountWRC Windows 运行时组件和使用它的 BankAccountCoreApp 核心应用。
+如果要按照本主题所示的更新执行操作，以便可以生成和运行代码，则第一步是遵循[使用 C++/WinRT 创建 Windows 运行时组件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)主题中演练的指示。 这样一来，你将拥有 BankAccountWRC Windows 运行时组件和使用它的 BankAccountCoreApp 核心应用。
 
 ## <a name="update-bankaccountwrc-to-raise-an-event"></a>更新 BankAccountWRC 以引发事件
 
@@ -390,4 +390,4 @@ logCallback(L"Hello, World!");
 * [使用 C++/WinRT 创作 API](author-apis.md)
 * [通过 C++/WinRT 使用 API](consume-apis.md)
 * [在 C++/WinRT 中使用委托处理事件](handle-events.md)
-* [使用 C++/WinRT 创建 Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
+* [使用 C++/WinRT 创建 Windows 运行时组件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)

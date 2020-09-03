@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b5fd5061f3b466743cad2e9e412d79caebaf2f0
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 721615ae9acf359bed78cfb3211aaba4c143dfcb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730280"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154111"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWP 组件和优化互操作
 
@@ -46,7 +46,7 @@ UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问�
 
 ### <a name="consider-using-net-for-uwp-apps"></a>考虑将 .NET 用于 UWP 应用
 
-在某些情况下，你既可以使用 UWP，也可以使用适用于 UWP 应用的 .NET 来完成任务。 最好不要尝试混合使用 .NET 类型和 UWP 类型。 尽量坚持使用其中一种类型或另一种类型。 例如，你既可使用 [**Windows.Data.Xml.Dom.XmlDocument**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDocument) 类型（UWP 类型），也可使用 [**System.Xml.XmlReader**](https://docs.microsoft.com/dotnet/api/system.xml.xmlreader) 类型（.NET 类型）来分析 xml 流。 使用来自与流相同的技术的 API。 例如，如果你读取来自 [**MemoryStream**](https://docs.microsoft.com/dotnet/api/system.io.memorystream) 的 xml，请使用 **System.Xml.XmlReader** 类型，因为两种类型均为 .NET 类型。 如果你从文件读取，请使用 **Windows.Data.Xml.Dom.XmlDocument** 类型，因为文件 API 和 **XmlDocument** 均为 UWP 组件。
+在某些情况下，你既可以使用 UWP，也可以使用适用于 UWP 应用的 .NET 来完成任务。 最好不要尝试混合使用 .NET 类型和 UWP 类型。 尽量坚持使用其中一种类型或另一种类型。 例如，你既可使用 [**Windows.Data.Xml.Dom.XmlDocument**](/uwp/api/Windows.Data.Xml.Dom.XmlDocument) 类型（UWP 类型），也可使用 [**System.Xml.XmlReader**](/dotnet/api/system.xml.xmlreader) 类型（.NET 类型）来分析 xml 流。 使用来自与流相同的技术的 API。 例如，如果你读取来自 [**MemoryStream**](/dotnet/api/system.io.memorystream) 的 xml，请使用 **System.Xml.XmlReader** 类型，因为两种类型均为 .NET 类型。 如果你从文件读取，请使用 **Windows.Data.Xml.Dom.XmlDocument** 类型，因为文件 API 和 **XmlDocument** 均为 UWP 组件。
 
 ### <a name="copy-window-runtime-objects-to-net-types"></a>将 Window 运行时对象复制至 .NET 类型
 
@@ -80,7 +80,7 @@ UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问�
 
 你应衡量你的应用并在优化你的互操作成本前确定互操作是否占据你的应用执行时间的一大部分时间。 当使用 Visual Studio 分析你的应用的性能时，可以通过使用“函数”  视图并查看调用 UWP 的方法所花费的包含时间，来轻松获取你的互操作成本上限。
 
-如果互操作开销拖慢了应用的运行速度，可以通过减少对热门代码路径上的 Windows 运行时 API 的调用来提高应用的性能。 例如，通过定期查询 [**UIElements**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的位置和维数来执行大量物理计算的某个游戏引擎可以通过以下操作节省大量时间：存储从 **UIElements** 到本地变量的必要信息、对这些已缓存值执行计算，以及在完成计算后将最终结果分配回 **UIElements**。 另一个示例：如果 C# 或 Visual Basic 代码频繁访问某个集合，则从 [**System.Collections**](https://docs.microsoft.com/dotnet/api/system.collections) 命名空间使用该集合比从 [**Windows.Foundation.Collections**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections) 命名空间使用该集合更加有效。 你还应考虑组合调用 UWP 组件；一个可行的示例是使用 [**Windows.Storage.BulkAccess**](https://docs.microsoft.com/uwp/api/Windows.Storage.BulkAccess) API。
+如果互操作开销拖慢了应用的运行速度，可以通过减少对热门代码路径上的 Windows 运行时 API 的调用来提高应用的性能。 例如，通过定期查询 [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement) 的位置和维数来执行大量物理计算的某个游戏引擎可以通过以下操作节省大量时间：存储从 **UIElements** 到本地变量的必要信息、对这些已缓存值执行计算，以及在完成计算后将最终结果分配回 **UIElements**。 另一个示例：如果 C# 或 Visual Basic 代码频繁访问某个集合，则从 [**System.Collections**](/dotnet/api/system.collections) 命名空间使用该集合比从 [**Windows.Foundation.Collections**](/uwp/api/Windows.Foundation.Collections) 命名空间使用该集合更加有效。 你还应考虑组合调用 UWP 组件；一个可行的示例是使用 [**Windows.Storage.BulkAccess**](/uwp/api/Windows.Storage.BulkAccess) API。
 
 ### <a name="building-a-uwp-component"></a>生成 UWP 组件
 
@@ -89,4 +89,3 @@ UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问�
 所有在应用中获取良好性能的建议都适用于在组件中获取良好性能。 衡量你的组件，查明哪些 API 具有较高通信模式，并从这些方面考虑提供可让用户使用较少调用来处理工作的 API。 在设计 UWP 时投入极大的努力，以便使应用使用这些设计成果，同时无需频繁地超越互操作边界。
 
  
-

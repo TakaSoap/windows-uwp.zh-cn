@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 示例, 应用程序, 照片, 编辑器
 ms.localizationpriority: medium
-ms.openlocfilehash: dcefe2ad8321ae85fcb814bbaead0bb0e5373300
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fb89deaef8c221df9a28f0350f0c860e8da3802d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81266905"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154408"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>照片编辑器 C++/WinRT 示例应用程序
 
@@ -26,5 +26,5 @@ ms.locfileid: "81266905"
 - 创建和使用自定义 Windows 运行时类（运行时类）投影类型和实现类型。 有关这些术语的详细信息，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[使用 C++/WinRT 创作 API](author-apis.md)。
 - [事件处理](handle-events.md)，包括使用自动撤销事件令牌。
 - 使用外部 Win2D NuGet 程序包和 [Windows::UI::Composition](/uwp/api/windows.ui.composition) 呈现图像效果。
-- XAML 数据绑定，包括 [{x:Bind} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)。
+- XAML 数据绑定，包括 [{x:Bind} 标记扩展](../xaml-platform/x-bind-markup-extension.md)。
 - XAML 样式和 UI 自定义，包括[连贯动画](../design/motion/connected-animation.md)。
