@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ed38be070263bbd619e44daf5c747a97299b3cf7
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 01ccd7a7ead6bd79b79e8beb3de7f3208b616b7c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233850"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174531"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Windows 应用的导航设计基础知识
 
@@ -168,7 +168,7 @@ ms.locfileid: "83233850"
         ![框架图像](images/nav/thumbnail-frame.svg)
     :::column-end:::
     :::column span="2":::
-        [**框架**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+        [**框架**](/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
 除少数例外情况，具有多个页面的应用都会使用框架。 通常，应用有一个包含框架和主导航元素（如导航显示控件）的主页面。 当用户选择页面时，框架将加载并显示此页面。
 :::row-end:::

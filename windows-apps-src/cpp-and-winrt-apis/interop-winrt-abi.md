@@ -5,16 +5,16 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: db66e276ffa0337da943917543a0065ac160e468
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: 71ae6245fe217277c7408a7eb6b5150900cc45d9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296173"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170171"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>实现 C++/WinRT 与 ABI 之间的互操作
 
-本主题介绍了如何在 SDK 应用程序二进制接口 (ABI) 和 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 对象之间转换。 你可以借助这些技术，为使用 Windows 运行时的这两种编程方式的代码实现互操作，也可以在将代码从 ABI 逐步迁移到 C++/WinRT 时使用这些技术。
+本主题介绍了如何在 SDK 应用程序二进制接口 (ABI) 和 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 对象之间转换。 你可以借助这些技术，为使用 Windows 运行时的这两种编程方式的代码实现互操作，也可以在将代码从 ABI 逐步迁移到 C++/WinRT 时使用这些技术。
 
 一般情况下，C++/WinRT 将 ABI 类型公开为 **void\*** ，以便不需要包括平台头文件。
 
@@ -106,7 +106,7 @@ int main()
 }
 ```
 
-as 函数的实现调用了 [QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。 如果你需要仅调用 [AddRef](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) 的较低级别的转换，则可以使用 [winrt::copy_to_abi](/uwp/cpp-ref-for-winrt/copy-to-abi) 和 [winrt::copy_from_abi](/uwp/cpp-ref-for-winrt/copy-from-abi) 帮助程序函数。 后面这个代码示例向上面的代码示例添加了这些较低级别的转换。
+as 函数的实现调用了 [QueryInterface](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。 如果你需要仅调用 [AddRef](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) 的较低级别的转换，则可以使用 [winrt::copy_to_abi](/uwp/cpp-ref-for-winrt/copy-to-abi) 和 [winrt::copy_from_abi](/uwp/cpp-ref-for-winrt/copy-from-abi) 帮助程序函数。 后面这个代码示例向上面的代码示例添加了这些较低级别的转换。
 
 > [!IMPORTANT]
 > 当与 ABI 类型进行互操作时，所使用的 ABI 类型必须与 C++/WinRT 对象的默认接口对应。 否则，调用 ABI 类型上的方法实际上最终将调用默认接口上同一 vtable 槽中的方法，并且会出现意外结果。 请注意，[winrt::copy_to_abi](/uwp/cpp-ref-for-winrt/copy-from-abi) 不会在编译时对其加以保护，因为它对所有 ABI 类型使用 void\*，并假设调用方注意避免与类型不匹配 。 这是为了避免在可能永远不会使用 ABI 类型时要求 C++/WinRT 标头引用 ABI 标头。
@@ -180,7 +180,7 @@ T convert_from_abi(::IUnknown* from)
 }
 ```
 
-该函数只需调用 [QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 来查询请求的 C++/WinRT 类型的默认接口。
+该函数只需调用 [QueryInterface](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 来查询请求的 C++/WinRT 类型的默认接口。
 
 正如我们所见，从 C++/WinRT 对象转换成等效的 ABI 接口指针不需要帮助程序函数。 只需使用 [winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)（或 [try_as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)）成员函数来查询请求的接口。 as 和 try_as 函数将返回环绕请求的 ABI 类型的 [winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr) 对象。
 
@@ -286,7 +286,7 @@ To to_winrt(wil::com_ptr_t<From, ErrorPolicy> const& ptr)
 }
 ```
 
-另请参阅[通过 C++/WinRT 使用 COM 组件](/windows/uwp/cpp-and-winrt-apis/consume-com)。
+另请参阅[通过 C++/WinRT 使用 COM 组件](./consume-com.md)。
 
 ### <a name="unsafe-interop-with-abi-com-interface-pointers"></a>与 ABI COM 接口指针进行的不安全互操作
 
@@ -364,8 +364,8 @@ void GetString(_Out_ HSTRING* value);
 | 将 **hstring** 复制到 **HSTRING** | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | *h* 接收该字符串的副本。 *h* 以前拥有的任何字符串被泄露。 |
 
 ## <a name="important-apis"></a>重要的 API
-* [AddRef 函数](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
-* [QueryInterface 函数](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [AddRef 函数](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
+* [QueryInterface 函数](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
 * [winrt::attach_abi 函数](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr 结构模板](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::copy_from_abi 函数](/uwp/cpp-ref-for-winrt/copy-from-abi)

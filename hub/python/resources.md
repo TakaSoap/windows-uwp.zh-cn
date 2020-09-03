@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, microsoft, windows 10, tutorials, online courses, blogs, events
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 136da1d69a61cb90c9c80cab5d7ecd822d64820d
-ms.sourcegitcommit: b6138f9565252460ace6fa0acdc2a902e591681a
+ms.openlocfilehash: e5ae3eb09a015a5ae1385612d5410c41a43b005b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88243239"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175771"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>用于在 Windows 上使用 Python 进行开发的资源
 
@@ -27,7 +27,7 @@ ms.locfileid: "88243239"
 
 - [在 Windows 上使用 Python](https://docs.python.org/3/using/windows.html)：此 Python.org 文档概述了在 Microsoft Windows 上使用 Python 时应了解的特定于 Windows 的行为。
 
-- [面向 Python 云开发人员的 Azure](https://docs.microsoft.com/azure/python/)：文档涵盖了从在 Azure 上构建和部署 Python Web 应用到将 Python 代码作为无服务器函数运行的所有内容。
+- [面向 Python 云开发人员的 Azure](/azure/python/)：文档涵盖了从在 Azure 上构建和部署 Python Web 应用到将 Python 代码作为无服务器函数运行的所有内容。
 
 - [包含“Python”和“Windows”的 StackOverflow 文章](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379)：StackOverflow 社区在解决问题方面非常有帮助。 我们的目标是主动监视和支持此社区。
 
@@ -39,7 +39,7 @@ ms.locfileid: "88243239"
 
 - [Python 文档语言](https://wiki.python.org/moin/Languages)：采用除英语以外的其他语言编写的 Python 文档的链接。
 
-- [Python API 浏览器](https://docs.microsoft.com/python/api/?view=azure-python)：可以一站式购买 Microsoft 中所有基于 Python 的 API。
+- [Python API 浏览器](/python/api/?view=azure-python)：可以一站式购买 Microsoft 中所有基于 Python 的 API。
 
 - [使用 Python 的 Azure 代码示例](https://azure.microsoft.com/resources/samples/?platform=python&sort=0)：了解如何使用 Python 代码与 Azure 服务进行交互。
 
@@ -47,7 +47,7 @@ ms.locfileid: "88243239"
 
 ## <a name="online-courses"></a>在线课程
 
-- [Microsoft Learn 上的 Python 简介](https://docs.microsoft.com/learn/modules/intro-to-python/)：尝试使用交互式 Microsoft Learn 平台，并获得完成该模块的经验积分，该模块涵盖了有关如何编写基本 Python 代码、声明变量以及使用控制台输入和输出的基础知识。 对于尚未设置 Python 开发环境的人员来说，交互式沙箱环境是一个不错的起点。
+- [Microsoft Learn 上的 Python 简介](/learn/modules/intro-to-python/)：尝试使用交互式 Microsoft Learn 平台，并获得完成该模块的经验积分，该模块涵盖了有关如何编写基本 Python 代码、声明变量以及使用控制台输入和输出的基础知识。 对于尚未设置 Python 开发环境的人员来说，交互式沙箱环境是一个不错的起点。
 
 - [Pluralsight 上的 Python：8 个课程，29 小时](https://app.pluralsight.com/paths/skills/python)：Pluralsight 上的 Python 学习路径提供了涵盖与 Python 相关的各种主题的在线课程，包括用于衡量技能和查找知识缺口的工具。
 
@@ -67,14 +67,14 @@ ms.locfileid: "88243239"
 
 - [其他 Python Web 框架](https://wiki.python.org/moin/WebFrameworks)：Python Web 框架列表以及 Python.org 提供的简要说明。
 
-- [教程：使用 Azure 认知服务构建 Flask 应用](https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis)：生成使用 Azure 认知服务来翻译文本、分析情感并将翻译后的文本合成为语音的 Flask Web 应用。
+- [教程：使用 Azure 认知服务构建 Flask 应用](/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis)：生成使用 Azure 认知服务来翻译文本、分析情感并将翻译后的文本合成为语音的 Flask Web 应用。
 
-- [将 Python Web 应用部署到 Azure Stack 中的 VM](https://docs.microsoft.com/azure-stack/user/azure-stack-dev-start-howto-vm-python)：在 Azure Stack 中创建 VM 来托管 Python Web 应用。
+- [将 Python Web 应用部署到 Azure Stack 中的 VM](/azure-stack/user/azure-stack-dev-start-howto-vm-python)：在 Azure Stack 中创建 VM 来托管 Python Web 应用。
 
-- [使用 Azure Cosmos DB 的 API for MongoDB 生成 Python 应用](https://docs.microsoft.com/azure/cosmos-db/create-mongodb-flask)：使用 Azure Cosmos DB 模拟器和 Azure Cosmos DB 的 API for MongoDB 生成简单的待办事项 Flask 应用。
+- [使用 Azure Cosmos DB 的 API for MongoDB 生成 Python 应用](/azure/cosmos-db/create-mongodb-flask)：使用 Azure Cosmos DB 模拟器和 Azure Cosmos DB 的 API for MongoDB 生成简单的待办事项 Flask 应用。
 
-- [在 Azure 应用服务中生成 Python 和 PostgreSQL 应用](https://docs.microsoft.com/azure/app-service/containers/tutorial-python-postgresql-app)：使用 PostgreSQL 作为数据库后端，创建在 Linux 上的应用服务中运行的数据驱动的 Django 应用程序。
+- [在 Azure 应用服务中生成 Python 和 PostgreSQL 应用](/azure/app-service/containers/tutorial-python-postgresql-app)：使用 PostgreSQL 作为数据库后端，创建在 Linux 上的应用服务中运行的数据驱动的 Django 应用程序。
 
-- [使用 Microsoft Graph 生成 Python Django 应用](https://docs.microsoft.com/graph/tutorials/python)：生成使用 Microsoft Graph API 来检索用户的日历信息的 Python Django Web 应用。
+- [使用 Microsoft Graph 生成 Python Django 应用](/graph/tutorials/python)：生成使用 Microsoft Graph API 来检索用户的日历信息的 Python Django Web 应用。
 
-- [演练：Python 中的必应广告 API Web 应用程序](https://docs.microsoft.com/advertising/guides/walkthrough-web-application-python?view=bingads-13)：开始使用必应广告 Python SDK、Visual Studio Code IDE 和 Django Web 框架运行 Microsoft Advertising Web 应用程序。
+- [演练：Python 中的必应广告 API Web 应用程序](/advertising/guides/walkthrough-web-application-python?view=bingads-13)：开始使用必应广告 Python SDK、Visual Studio Code IDE 和 Django Web 框架运行 Microsoft Advertising Web 应用程序。

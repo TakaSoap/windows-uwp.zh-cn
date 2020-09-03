@@ -5,16 +5,16 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: de461f94897110aaf1ff06b3863a7112c61fda1f
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 81c8edc65f78de14c1c42611ea1e8d97046128ae
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492942"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170361"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
 
-本主题介绍如何使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API，无论它们是 Windows 的一部分、由第三方组件供应商或自行实现。
+本主题介绍如何使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) API，无论它们是 Windows 的一部分、由第三方组件供应商或自行实现。
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>如果 API 位于 Windows 命名空间中
 这是你使用 Windows 运行时 API 最常见的情况。 对于元数据中定义的 Windows 命名空间中的每个类型，C++/WinRT 都定义了 C++ 友好等效项（称为投影类型  ）。 投影类型具有与 Windows 类型相同的完全限定名称，但使用 C++ 语法放置于 C++ winrt  命名空间中。 例如，[Windows::Foundation::Uri  ](/uwp/api/windows.foundation.uri) 作为 winrt::Windows::Foundation::Uri  投影到 C++/WinRT。
@@ -43,7 +43,7 @@ int main()
 
 在上述代码示例中，在初始化 C++/WinRT 后，我们将通过其公开记录的构造函数之一（本示例中为 [Uri(字符串)  ](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)）堆叠分配 winrt::Windows::Foundation::Uri  投影类型的值。 这是最常见的用例，也是一般情况下你所要做的全部工作。 在有了 C++/WinRT 投影类型值后，你可以将其视为实际 Windows 运行时类型的实例，因为它具有所有相同的成员。
 
-事实上，该投影值是一个代理；它本质上只是支持对象的智能指针。 投影值的构造函数调用 [RoActivateInstance  ](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) 来创建 Windows 运行时支持类（本例中为 Windows.Foundation.Uri  ）的实例，并将该对象的默认接口存储在新投影值内。 如下所示，你对投影值的成员的调用实际上通过智能指针代理给支持对象；这是发生状态变化的地方。
+事实上，该投影值是一个代理；它本质上只是支持对象的智能指针。 投影值的构造函数调用 [RoActivateInstance  ](/windows/desktop/api/roapi/nf-roapi-roactivateinstance) 来创建 Windows 运行时支持类（本例中为 Windows.Foundation.Uri  ）的实例，并将该对象的默认接口存储在新投影值内。 如下所示，你对投影值的成员的调用实际上通过智能指针代理给支持对象；这是发生状态变化的地方。
 
 ![投影 Windows::Foundation::Uri 类型](images/uri.png)
 
@@ -166,7 +166,7 @@ std::map<int, TextBlock> lookup;
 lookup.insert_or_assign(2, value);
 ```
 
-另请参阅[默认构造函数如何影响集合](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#how-the-default-constructor-affects-collections)。
+另请参阅[默认构造函数如何影响集合](./move-to-winrt-from-cx.md#how-the-default-constructor-affects-collections)。
 
 ### <a name="dont-delay-initialize-by-mistake"></a>不要错误地延迟初始化
 
@@ -268,7 +268,7 @@ auto smallBox{
 
 在应用程序项目中，引用 Windows 运行时组件的 Windows 运行时元数据 (`.winmd`) 文件，然后生成。 在生成过程中，`cppwinrt.exe` 工具生成标准 C++ 库，该库全面描述（或投影  ）该组件的 API 接口。 换言之，生成的库包含该组件的投影类型。
 
-然后，与 Windows 命名空间类型一样，你只需包含标头并通过其构造函数之一构造投影类型。 应用程序项目的启动代码注册运行时类，然后投影类型的构造函数调用 [RoActivateInstance  ](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) 来激活引用组件中的运行时类。
+然后，与 Windows 命名空间类型一样，你只需包含标头并通过其构造函数之一构造投影类型。 应用程序项目的启动代码注册运行时类，然后投影类型的构造函数调用 [RoActivateInstance  ](/windows/desktop/api/roapi/nf-roapi-roactivateinstance) 来激活引用组件中的运行时类。
 
 ```cppwinrt
 #include <winrt/BankAccountWRC.h>
@@ -280,7 +280,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-有关更多详细信息、代码以及使用在 Windows 运行时组件实现的 API 的演练，请参阅[使用 C++/WinRT 创建 Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)和[使用 C++/WinRT 创作事件](/windows/uwp/cpp-and-winrt-apis/author-events)。
+有关更多详细信息、代码以及使用在 Windows 运行时组件实现的 API 的演练，请参阅[使用 C++/WinRT 创建 Windows 运行时组件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)和[使用 C++/WinRT 创作事件](./author-events.md)。
 
 ## <a name="if-the-api-is-implemented-in-the-consuming-project"></a>如果在使用的项目中实现 API
 通过 XAML UI 使用的类型必须为运行时类，即使其位于与 XAML 相同的项目中。
@@ -336,7 +336,7 @@ myrc2 = winrt::make<MyProject::implementation::MyRuntimeClass>();
 
 - 你可以访问一个投影类型的所有接口的成员。
 - 可以将投影类型返回到调用方。
-- 投影类型和接口派生自 [winrt::Windows::Foundation::IUnknown  ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)。 因此，你可以对投影类型或接口调用 [IUnknown::as  ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) 以查询其他也可使用或返回到调用方的投影接口。 as  成员函数的工作方式类似于 [QueryInterface  ](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。
+- 投影类型和接口派生自 [winrt::Windows::Foundation::IUnknown  ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)。 因此，你可以对投影类型或接口调用 [IUnknown::as  ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) 以查询其他也可使用或返回到调用方的投影接口。 as  成员函数的工作方式类似于 [QueryInterface  ](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。
 
 ```cppwinrt
 void f(MyProject::MyRuntimeClass const& myrc)
@@ -441,16 +441,16 @@ struct MyPage : Page
 对 `Visibility()` 的调用会解析为 [**UIElement.Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) 成员函数名称。 但是参数 `Visibility::Collapsed` 在 `Visibility` 一词后面跟有 `::`，因此系统会忽略方法名称，编译器会查找枚举类。
 
 ## <a name="important-apis"></a>重要的 API
-* [QueryInterface 接口](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
-* [RoActivateInstance 函数](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance)
+* [QueryInterface 接口](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [RoActivateInstance 函数](/windows/desktop/api/roapi/nf-roapi-roactivateinstance)
 * [Windows::Foundation::Uri 类](/uwp/api/windows.foundation.uri)
 * [winrt::get_activation_factory 函数模板](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [winrt::make 函数模板](/uwp/cpp-ref-for-winrt/make)
 * [winrt::Windows::Foundation::IUnknown 结构](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相关主题
-* [在 C++/WinRT 中创作事件](/windows/uwp/cpp-and-winrt-apis/author-events)
-* [实现 C++/WinRT 与 ABI 之间的互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-abi)
-* [C++/WinRT 简介](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-* [使用 C++/WinRT 创建 Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
-* [XAML 控件; 绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)
+* [在 C++/WinRT 中创作事件](./author-events.md)
+* [实现 C++/WinRT 与 ABI 之间的互操作](./interop-winrt-abi.md)
+* [C++/WinRT 简介](./intro-to-using-cpp-with-winrt.md)
+* [使用 C++/WinRT 创建 Windows 运行时组件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)
+* [XAML 控件; 绑定到 C++/WinRT 属性](./binding-property.md)

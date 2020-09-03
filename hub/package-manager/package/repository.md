@@ -4,12 +4,12 @@ description: 创建描述应用程序的程序包清单后，即可将清单提�
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 19a66b2d0724eb0f4f8c3f171033e4e616751717
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: ef94a77d5012adcedf31ae1ecfddc036bcc3a059
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334599"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166501"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>将清单提交到存储库
 
@@ -122,7 +122,7 @@ winget validate \<manifest-file>
 
 * **Needs: author feedback**：提交发生故障。 我们会将拉取请求重新分配给你。 如果你在 10 天内未解决此问题，我们会关闭拉取请求。
 * **Manifest-Validation-Error**：提交的清单包含语法错误。
-* **URL-Validation-Error**：提交中的一个或多个 URL 未能通过 [SmartScreen](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview) 验证。
+* **URL-Validation-Error**：提交中的一个或多个 URL 未能通过 [SmartScreen](/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview) 验证。
 * **Binary-Validation-Error**：提交的应用程序安装程序未能通过病毒扫描测试，或存在哈希不匹配情况。
 * **Pull-Request-Error**：拉取请求存在问题。 例如，文件夹结构未采用[必需格式](#step-3-add-your-manifest-to-the-local-repository)。
 * **Validation-Error**：提交的应用程序未能通过常规验证测试。

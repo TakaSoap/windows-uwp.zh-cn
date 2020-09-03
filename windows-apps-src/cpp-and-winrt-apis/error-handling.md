@@ -5,16 +5,16 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 错误, 处理, 异常
 ms.localizationpriority: medium
-ms.openlocfilehash: 1092427659cfbf2fb7d1b5dbfc9cb8802dcfeccd
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: c721c70f19533053821139429b9bbd8bcd17f68a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296162"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170221"
 ---
 # <a name="error-handling-with-cwinrt"></a>使用 C++/WinRT 的错误处理
 
-本主题讨论了处理使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 编程时出现的错误的策略。 更多常规信息和背景，请参阅[错误和异常处理 (Modern C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)。
+本主题讨论了处理使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 编程时出现的错误的策略。 更多常规信息和背景，请参阅[错误和异常处理 (Modern C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)。
 
 ## <a name="avoid-catching-and-throwing-exceptions"></a>避免捕获和抛出异常
 建议继续编写[异常安全代码](/cpp/cpp/how-to-design-for-exception-safety)，但最好尽量避免捕获和抛出异常。 如果没有异常处理程序，Windows 将自动生成错误报告（包括故障的小型转储），以便跟踪问题所在位置。
@@ -70,7 +70,7 @@ IAsyncAction MakeThumbnailsAsync()
 如果只是要浏览 HRESULT 代码，则首选 [winrt::hresult_error::code](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function)。 另一方面，[winrt::hresult_error::to_abi](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorto_abi-function) 函数转换为 COM 错误对象，并将状态推送到 COM 线程本地存储。
 
 ## <a name="throwing-exceptions"></a>引发异常
-将存在你作此决定的情况，如果你对给定函数的调用失败，你的应用程序将无法恢复（无法再期待它能够如期工作）。 下方代码示例使用 [winrt::handle](/uwp/cpp-ref-for-winrt/handle) 值作为从 [CreateEvent](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-createeventa) 返回的 HANDLE 的包装 。 然后将该句柄（从其创建 `bool` 值）传递到 [winrt::check_bool](/uwp/cpp-ref-for-winrt/error-handling/check-bool) 函数模板。 “winrt::check_bool”使用 `bool` 或任何可转换为 `false`（错误条件）或 `true`（成功条件）的值。
+将存在你作此决定的情况，如果你对给定函数的调用失败，你的应用程序将无法恢复（无法再期待它能够如期工作）。 下方代码示例使用 [winrt::handle](/uwp/cpp-ref-for-winrt/handle) 值作为从 [CreateEvent](/windows/desktop/api/synchapi/nf-synchapi-createeventa) 返回的 HANDLE 的包装 。 然后将该句柄（从其创建 `bool` 值）传递到 [winrt::check_bool](/uwp/cpp-ref-for-winrt/error-handling/check-bool) 函数模板。 “winrt::check_bool”使用 `bool` 或任何可转换为 `false`（错误条件）或 `true`（成功条件）的值。
 
 ```cppwinrt
 winrt::handle h{ ::CreateEvent(nullptr, false, false, nullptr) };
@@ -81,7 +81,7 @@ winrt::check_bool(::SetEvent(h.get()));
 如果你传递到 [winrt::check_bool](/uwp/cpp-ref-for-winrt/error-handling/check-bool) 的值为 false，那么以下操作序列将生效。
 
 - “winrt::check_bool”调用 [winrt::throw_last_error](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) 函数 。
-- “winrt::throw_last_error”调用 [GetLastError](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror) 来检索调用线程的最后一个错误代码值，然后调用 [winrt::throw_hresult](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) 函数  。
+- “winrt::throw_last_error”调用 [GetLastError](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror) 来检索调用线程的最后一个错误代码值，然后调用 [winrt::throw_hresult](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) 函数  。
 - “winrt::throw_hresult”使用表示该错误代码的 [winrt::hresult_error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 对象（或标准对象）抛出异常 。
 
 由于 Windows API 使用各个返回值类型报告运行时错误，因此除“winrt::check_bool”外，还有其他一些用于检查值和抛出异常的有用的帮助程序函数。

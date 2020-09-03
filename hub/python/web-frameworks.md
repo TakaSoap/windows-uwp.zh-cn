@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, windows 上的 python, 使用 wsl 的 python web, 使用适用于 linux 的 windows 子系统的 python web 应用, windows 上的 python web 开发, windows 上的 flask 应用, windows 上的 django 应用, python web, windows 上的 flask web 开发, windows 上的 django web 开发, 使用 python 的 windows web 开发, vs code python web 开发, 远程 wsl 扩展, ubuntu, wsl, venv, pip, microsoft python 扩展, 在 windows 上运行 python, 在 windows 上使用 python, 在 windows 上使用 python 构建
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 3ae3b04738152ff1a142e1599cc05357006456b9
-ms.sourcegitcommit: 2af814b7f94ee882f42fae8f61130b9cc9833256
+ms.openlocfilehash: fedfb42e4c1604b3570c2b4db21b12926bea3762
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83717136"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174561"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>开始在 Windows 上将 Python 用于 Web 开发
 
@@ -29,14 +29,14 @@ ms.locfileid: "83717136"
 
 通过 WSL，可运行与 Windows 和你喜欢的工具（如 Visual Studio Code 和 Outlook 等）直接集成的 GNU/Linux 命令行环境。
 
-要启用和安装 WSL（或 WSL 2，由你的需求而定），请按照 [WSL 安装文档](https://docs.microsoft.com/windows/wsl/install-win10)中的步骤操作。 这些步骤将包含选择 Linux 发行版（例如 Ubuntu）。
+要启用和安装 WSL（或 WSL 2，由你的需求而定），请按照 [WSL 安装文档](/windows/wsl/install-win10)中的步骤操作。 这些步骤将包含选择 Linux 发行版（例如 Ubuntu）。
 
 安装 WSL 和 Linux 发行版后，打开 Linux 发行版（可在 Windows 的开始菜单中找到），并使用命令 `lsb_release -dc` 查看版本和代码名称。
 
 建议定期更新 Linux 发行版，包括在安装之后立即更新，以确保具有最新的包。 Windows 不会自动处理此更新。 要更新发行版，请使用命令：`sudo apt update && sudo apt upgrade`。  
 
 > [!TIP]
-> 请考虑[从 Microsoft Store 安装新的 Windows 终端](https://www.microsoft.com/store/apps/9n0dx20hk701)，从而启用多个选项卡（在多个 Linux 命令行、Windows 命令提示符、PowerShell 和 Azure CLI 等之间快速切换）、创建键绑定（用于打开或关闭选项卡、复制粘贴等的快捷方式键）、使用搜索功能，以及设置自定义主题（配色方案、字体样式和大小、背景图像/模糊/透明度）。 [了解详细信息](https://docs.microsoft.com/windows/terminal)。
+> 请考虑[从 Microsoft Store 安装新的 Windows 终端](https://www.microsoft.com/store/apps/9n0dx20hk701)，从而启用多个选项卡（在多个 Linux 命令行、Windows 命令提示符、PowerShell 和 Azure CLI 等之间快速切换）、创建键绑定（用于打开或关闭选项卡、复制粘贴等的快捷方式键）、使用搜索功能，以及设置自定义主题（配色方案、字体样式和大小、背景图像/模糊/透明度）。 [了解详细信息](/windows/terminal)。
 
 ## <a name="set-up-visual-studio-code"></a>设置 Visual Studio Code
 
@@ -321,5 +321,5 @@ Python 是一种解释型语言，支持不同类型的解释器（Python2、Ana
 
 - [VS Code 中的 Python 教程](https://code.visualstudio.com/docs/python/python-tutorial)：有关将 VS Code 作为 Python 环境的介绍性教程，主要介绍如何编辑、运行和调试代码。
 - [VS Code 中的 Git 支持](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)：了解如何在 VS Code 中使用 Git 版本控制基础知识。  
-- [推出的 WSL 2 更新！](https://docs.microsoft.com/windows/wsl/wsl2-index)：此新版本更改了 Linux 发行版本与 Windows 的交互方式，从而提高了文件系统性能并增加了完整系统调用兼容性。
-- [ Windows 上使用多个 Linux 发行版本](https://docs.microsoft.com/windows/wsl/wsl-config)：了解如何在 Windows 计算机上管理多个不同的 Linux 发行版本。
+- [推出的 WSL 2 更新！](/windows/wsl/wsl2-index)：此新版本更改了 Linux 发行版本与 Windows 的交互方式，从而提高了文件系统性能并增加了完整系统调用兼容性。
+- [ Windows 上使用多个 Linux 发行版本](/windows/wsl/wsl-config)：了解如何在 Windows 计算机上管理多个不同的 Linux 发行版本。

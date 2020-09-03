@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0ad8b78538a2b047501361072a017658ba152e73
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5c39ded4157181581412f01e54772db2bf9a1732
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971002"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174621"
 ---
 # <a name="app-icons-and-logos"></a>应用图标和徽标 
 
@@ -52,7 +52,7 @@ ms.locfileid: "82971002"
 | 锁屏提醒徽标 | 应用磁贴 | BadgeLogo.png  |
 | 包徽标/Store 徽标 | 应用安装程序、合作伙伴中心、Store 中的“报告应用”选项和 Store 中的“写评论”选项 | StoreLogo.png  |
 
-\*已使用，除非你选择[仅显示 Store 中已上传的图像](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)。 
+\*已使用，除非你选择[仅显示 Store 中已上传的图像](../../publish/app-screenshots-and-images.md#display-only-uploaded-logo-images-in-the-store)。 
 
 若要确保这些图标在每个屏幕上看起来清晰，可以为不同显示比例系数创建同一图标的多个版本。 
 
@@ -75,13 +75,13 @@ ms.locfileid: "82971002"
 
 “如何在 Microsoft Store 中为我的应用列表指定图像？”
 
-默认情况下，我们使用 Store 的包中的一些图像，正如此页顶部表中所述（以及其他[提交过程中提供的图像](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。 但是，当在 Windows 10（包括 Xbox）上向客户显示你的列表时，可以选择阻止应用商店使用应用包中的徽标图像，让其仅使用你上传的图像。 这可以使你能在整个应用商店的各种显示中更好地控制应用外观。 （请注意你的产品是否支持早期的 OS 版本，即使使用此选项，客户仍可能会看到来自你的包的图像。）可以在提交过程的“Store 列表”步骤的“Store 徽标”部分执行此操作   。
+默认情况下，我们使用 Store 的包中的一些图像，正如此页顶部表中所述（以及其他[提交过程中提供的图像](../../publish/app-screenshots-and-images.md)。 但是，当在 Windows 10（包括 Xbox）上向客户显示你的列表时，可以选择阻止应用商店使用应用包中的徽标图像，让其仅使用你上传的图像。 这可以使你能在整个应用商店的各种显示中更好地控制应用外观。 （请注意你的产品是否支持早期的 OS 版本，即使使用此选项，客户仍可能会看到来自你的包的图像。）可以在提交过程的“Store 列表”步骤的“Store 徽标”部分执行此操作   。
 
 ![在应用提交过程中指定 Store 徽标](images/app-icons/storelogodisplay.png)
 
 选中此框后，一个名为“Store 显示图像”的新部分会出现  。 在这里，可以上传 3 个图像大小，Store 将用它们来替换你的应用包中的徽标图像：300 x 300、150 x 150 和 71 x 71 像素。 尽管我们建议提供所有 3 种大小，但仅 300 x 300 是必需的。
 
-有关详细信息，请参阅[仅显示 Store 中上传的徽标图像](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)。
+有关详细信息，请参阅[仅显示 Store 中上传的徽标图像](../../publish/app-screenshots-and-images.md#display-only-uploaded-logo-images-in-the-store)。
 
 <!-- ### Fallback images for the Store
 
@@ -96,7 +96,7 @@ If these images aren't provided, the Store will search all matching images of th
 
 The Store may also use your app's tile and other images that you include in your app's package. 
 
-For more information, see [App screenshots, images, and trailers in the Microsoft Store](/windows/uwp/publish/app-screenshots-and-images). -->
+For more information, see [App screenshots, images, and trailers in the Microsoft Store](../../publish/app-screenshots-and-images.md). -->
 
 
 ## <a name="managing-app-icons-with-the-visual-studio-manifest-designer"></a>使用 Visual Studio 清单设计器管理应用图标
@@ -185,7 +185,7 @@ filename-scale-scale factor.png
 
 Square150x150Logo-scale-100.png、Square150x150Logo scale 200.png、Square150x150Logo scale 400.png
 
-请注意，在默认情况下，Visual Studio 不会生成锁屏提醒徽标。 因为锁屏提醒徽标是唯一的且可能不应该与其他应用图标匹配。 有关详细信息，请参阅[适用于 Windows 应用的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)一文。 
+请注意，在默认情况下，Visual Studio 不会生成锁屏提醒徽标。 因为锁屏提醒徽标是唯一的且可能不应该与其他应用图标匹配。 有关详细信息，请参阅[适用于 Windows 应用的锁屏提醒通知](../shell/tiles-and-notifications/badges.md)一文。 
 
 
 ## <a name="more-about-app-icon-assets"></a>有关应用图标资源的详细信息
@@ -253,13 +253,13 @@ Windows 默认在彩色背板顶部上使用基于目标的资源。 如果需�
 
 
 ## <a name="more-about-splash-screen-assets"></a>初始屏幕资源的详细信息
-有关初始屏幕的详细信息，请参阅 [Windows 应用初始屏幕](/windows/uwp/launch-resume/splash-screens)。
+有关初始屏幕的详细信息，请参阅 [Windows 应用初始屏幕](../../launch-resume/splash-screens.md)。
 
 ## <a name="more-about-badge-logo-assets"></a>锁屏提醒徽标资源的详细信息
 
 使用资源生成器以生成所需的所有资源时，默认情况下不会生成锁屏提醒徽标的原因是：它们与其他应用资源有很大的差别。 锁屏提醒徽标是出现在通知和应用磁贴上的状态图像。 
 
-有关详细信息，请参阅[适用于 Windows 应用的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)。
+有关详细信息，请参阅[适用于 Windows 应用的锁屏提醒通知](../shell/tiles-and-notifications/badges.md)。
 
 
 ## <a name="customizing-asset-padding"></a>自定义资源填充
@@ -313,16 +313,3 @@ Windows 默认在彩色背板顶部上使用基于目标的资源。 如果需�
 本文介绍了如何创建资源以实现特定的缩放比例，但你也可以针对多种条件和条件组合创建资源。 例如，可以为高对比度显示或浅色主题和深色主题创建图标。 甚至可以创建针对特定语言的资源。
 
 有关说明，请参阅[针对语言、缩放、高对比度和其他限定符定制资源](../../app-resources/tailor-resources-lang-scale-contrast.md)。
-
-
-
-
-
-
-
-
-
-
-
-
-

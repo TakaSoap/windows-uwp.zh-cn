@@ -10,16 +10,16 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bb3d8fc251a357f4251552ba80e4c922878fe805
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a927e7fa81499ef9eb5a8b798679f13b6d838d17
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970812"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174451"
 ---
 # <a name="pivot"></a>Pivot
 
-[Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) 控件可在一小组内容部分之间进行触控滑动。
+[Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) 控件可在一小组内容部分之间进行触控滑动。
 
 ![默认焦点为选择的标题添加下划线](images/pivot_focus_selectedHeader.png)
 
@@ -27,9 +27,9 @@ ms.locfileid: "82970812"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](../style/rounded-corner.md)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
 
-> **平台 API**：[Pivot 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[NavigationView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
+> **平台 API**：[Pivot 类](/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[NavigationView 类](/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
 ## <a name="examples"></a>示例
 
@@ -145,15 +145,15 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 
 ### <a name="pivot-items"></a>透视表项目
 
-透视表是一个 [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl)，因此可以包含任何类型的项目集合。 你添加到透视表的任何非显式 [PivotItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PivotItem) 的项目都隐式包装在 PivotItem 中。 由于透视表经常用于在内容页面之间导航，因此通常使用 XAML UI 元素直接填充 [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合。 或者，你可以将 [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 属性设置为数据源。 ItemsSource 中绑定的项目可以属于任何类型，但如果它们不是显式 PivotItems，则必须定义 [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 和 [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.headertemplate) 来指定这些项目的显示方式。
+透视表是一个 [ItemsControl](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl)，因此可以包含任何类型的项目集合。 你添加到透视表的任何非显式 [PivotItem](/uwp/api/Windows.UI.Xaml.Controls.PivotItem) 的项目都隐式包装在 PivotItem 中。 由于透视表经常用于在内容页面之间导航，因此通常使用 XAML UI 元素直接填充 [Items](/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合。 或者，你可以将 [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 属性设置为数据源。 ItemsSource 中绑定的项目可以属于任何类型，但如果它们不是显式 PivotItems，则必须定义 [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 和 [HeaderTemplate](/uwp/api/windows.ui.xaml.controls.pivot.headertemplate) 来指定这些项目的显示方式。
 
-你可以使用 [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.selecteditem) 属性获取或设置透视表的活动项目。 使用 [SelectedIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.selectedindex) 属性获取或设置活动项目的索引。
+你可以使用 [SelectedItem](/uwp/api/windows.ui.xaml.controls.pivot.selecteditem) 属性获取或设置透视表的活动项目。 使用 [SelectedIndex](/uwp/api/windows.ui.xaml.controls.pivot.selectedindex) 属性获取或设置活动项目的索引。
 
 ### <a name="pivot-headers"></a>透视表标题
 
-你可以使用 [LeftHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.leftheader) 和 [RightHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.rightheader) 属性将其他控件添加到透视表标题。
+你可以使用 [LeftHeader](/uwp/api/windows.ui.xaml.controls.pivot.leftheader) 和 [RightHeader](/uwp/api/windows.ui.xaml.controls.pivot.rightheader) 属性将其他控件添加到透视表标题。
 
-例如，可在透视表的 RightHeader 中添加 [CommandBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/app-bars)。
+例如，可在透视表的 RightHeader 中添加 [CommandBar](./app-bars.md)。
 
 ```xaml
 <Pivot>
@@ -191,7 +191,7 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 - 点击某个透视表标签即可导航到相应的页面，并且活动透视表标签将旋转至第一个位置。
 - 从最后一个到第一个透视表部分的旋转循环中的透视表项目。
 
-> **注意** 透视表标题不应在 [10 英尺环境](../devices/designing-for-tv.md)中旋转。 如果你的应用将在 Xbox 上运行，请将 [IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) 属性设置为“false”  。
+> **注意** 透视表标题不应在 [10 英尺环境](../devices/designing-for-tv.md)中旋转。 如果你的应用将在 Xbox 上运行，请将 [IsHeaderItemsCarouselEnabled](/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) 属性设置为“false”  。
 
 ## <a name="recommendations"></a>建议
 
@@ -203,5 +203,5 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 
 ## <a name="related-topics"></a>相关主题
 
-- [Pivot 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)
+- [Pivot 类](/uwp/api/Windows.UI.Xaml.Controls.Pivot)
 - [导航设计基础知识](../basics/navigation-basics.md)

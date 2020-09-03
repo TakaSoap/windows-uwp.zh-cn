@@ -5,26 +5,26 @@ ms.date: 07/11/2020
 ms.topic: article
 keywords: windows 10, uwp, cppwinrt, C++/WinRT
 ms.localizationpriority: medium
-ms.openlocfilehash: e2f4e6b808d0169f4c9f8f7142f218c00f124ae3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: bb6a76f2e8096d63907daf5ededdb6a22eb72a6c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493696"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175201"
 ---
 # <a name="create-a-hello-world-app-using-cwinrt"></a>使用 C++/WinRT 创建“Hello, World!” 应用
 
 本主题将指导你使用 C++/WinRT 创建 Windows 10 通用 Windows 平台 (UWP)“Hello, World!” 应用。 该应用的用户界面 (UI) 是使用 Extensible Application Markup Language (XAML) 定义的。
 
-C++/WinRT 是适用于 Windows 运行时 (WinRT) API 的完全标准的新式 C++17 语言投影。 有关详细信息、更多演练和代码示例，请参阅 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) 文档。 最好先学习 [C++/WinRT 入门](/windows/uwp/cpp-and-winrt-apis/get-started) 这一主题。
+C++/WinRT 是适用于 Windows 运行时 (WinRT) API 的完全标准的新式 C++17 语言投影。 有关详细信息、更多演练和代码示例，请参阅 [C++/WinRT](../cpp-and-winrt-apis/index.md) 文档。 最好先学习 [C++/WinRT 入门](../cpp-and-winrt-apis/get-started.md) 这一主题。
 
 ## <a name="set-up-visual-studio-for-cwinrt"></a>针对 C++/WinRT 设置 Visual Studio
 
-有关设置 Visual Studio 以进行 C++/WinRT 部署的信息 &mdash; 包括安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息 &mdash; 请参阅[适用于 C++/WinRT 的 Visual Studio 支持](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+有关设置 Visual Studio 以进行 C++/WinRT 部署的信息 &mdash; 包括安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息 &mdash; 请参阅[适用于 C++/WinRT 的 Visual Studio 支持](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 若要下载 Visual Studio，请参阅[下载](https://visualstudio.microsoft.com/downloads/)。
 
-有关 XAML 的简介，请参阅 [XAML 概述](/windows/uwp/xaml-platform/xaml-overview)
+有关 XAML 的简介，请参阅 [XAML 概述](../xaml-platform/xaml-overview.md)
 
 ## <a name="create-a-blank-app-helloworldcppwinrt"></a>创建空白应用 (HelloWorldCppWinRT)
 
@@ -38,7 +38,7 @@ C++/WinRT 是适用于 Windows 运行时 (WinRT) API 的完全标准的新式 C+
 
 通常在项目文件夹中，每个 `.xaml`（XAML 标记）文件都有相应的 `.idl`、`.h` 和 `.cpp` 文件。 这些文件一起编译为 XAML 页面类型。
 
-你可以修改 XAML 标记文件以创建 UI 元素，并且可以将这些元素绑定到数据源（此任务称为[数据绑定](/windows/uwp/data-binding/)）。 你可以修改 `.h` 和 `.cpp` 文件（有时为 `.idl` 文件），为 XAML 页面添加自定义逻辑 &mdash; 例如事件处理程序。
+你可以修改 XAML 标记文件以创建 UI 元素，并且可以将这些元素绑定到数据源（此任务称为[数据绑定](../data-binding/index.md)）。 你可以修改 `.h` 和 `.cpp` 文件（有时为 `.idl` 文件），为 XAML 页面添加自定义逻辑 &mdash; 例如事件处理程序。
 
 下面是一些项目文件。
 
@@ -52,7 +52,7 @@ C++/WinRT 是适用于 Windows 运行时 (WinRT) API 的完全标准的新式 C+
 
 你可能知道，使用 C# 编写的通用 Windows 平台 (UWP) 应用中的所有类都是 Windows 运行时类型。 但在 C++/WinRT 应用程序中创作类型时，可以选择将该类型设为 Windows 运行时类型还是常规 C++ 类/结构/枚举。
 
-项目中的任何 XAML 页面类型都需要是 Windows 运行时类型。 因此 MainPage 是一种 Windows 运行时类型。 具体而言，它是运行时类。 XAML 页面使用的任何类型也需要是 Windows 运行时类型。 当你编写 [Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)时，如果想要创作可从其他应用中使用的类型，可创作一个 Windows 运行时类型。 在其他情况下，你的类型可以是常规 C++ 类型。 一般而言，可通过任何 Windows 运行时语言使用 Windows 运行时类型。
+项目中的任何 XAML 页面类型都需要是 Windows 运行时类型。 因此 MainPage 是一种 Windows 运行时类型。 具体而言，它是运行时类。 XAML 页面使用的任何类型也需要是 Windows 运行时类型。 当你编写 [Windows 运行时组件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)时，如果想要创作可从其他应用中使用的类型，可创作一个 Windows 运行时类型。 在其他情况下，你的类型可以是常规 C++ 类型。 一般而言，可通过任何 Windows 运行时语言使用 Windows 运行时类型。
 
 要了解类型是否是 Windows 运行时类型，可查看它是否是在接口定义语言 (`.idl`) 文件中使用 [Microsoft 接口定义语言 (MIDL)](/uwp/midl-3/) 定义的，这是一种良好的指示。 我们以 MainPage 为例。
 
@@ -94,7 +94,7 @@ namespace winrt::HelloWorldCppWinRT::factory_implementation
 }
 ```    
 
-若要更详细地了解是否应针对给定类型创作运行时类，请参阅主题：[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。 而有关运行时类和 IDL（`.idl` 文件）之间的连接的详细信息，可以参阅主题 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)。 本主题分步介绍创作新运行时类的过程，第一步是将新的 Midl 文件 (.idl) 项添加到项目。
+若要更详细地了解是否应针对给定类型创作运行时类，请参阅主题：[使用 C++/WinRT 创作 API](../cpp-and-winrt-apis/author-apis.md)。 而有关运行时类和 IDL（`.idl` 文件）之间的连接的详细信息，可以参阅主题 [XAML 控件；绑定到 C++/WinRT 属性](../cpp-and-winrt-apis/binding-property.md)。 本主题分步介绍创作新运行时类的过程，第一步是将新的 Midl 文件 (.idl) 项添加到项目。
 
 接下来向 HelloWorldCppWinRT 项目添加一些功能。
 
@@ -159,7 +159,7 @@ namespace winrt::HelloWorldCppWinRT::implementation
 }
 ```
 
-有关详细信息，请参阅[使用代理来处理事件](/windows/uwp/cpp-and-winrt-apis/handle-events)。
+有关详细信息，请参阅[使用代理来处理事件](../cpp-and-winrt-apis/handle-events.md)。
 
 该实现从文本框中检索用户名称，使用该名称创建问候语，并在 greetingOutput 文本块中显示该问候语。
 

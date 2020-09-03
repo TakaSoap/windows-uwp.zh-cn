@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 33b03ae1538001a2a9e77d3d72afd7bb67e9f3dc
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 34498bbcfbb2f79090dbd23231b26692b94065d7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258573"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175401"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>枚举和查询文件和文件夹
 
@@ -31,7 +31,7 @@ ms.locfileid: "74258573"
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
-    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何在 C++/WinRT 中编写异步应用，请参阅[借助 C++/WinRT 的并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何使用 C++/CX 编写异步应用，请参阅[使用 C++/CX 进行异步编程](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md)。 若要了解如何在 C++/WinRT 中编写异步应用，请参阅[借助 C++/WinRT 的并发和异步操作](../cpp-and-winrt-apis/concurrency.md)。 若要了解如何使用 C++/CX 编写异步应用，请参阅[使用 C++/CX 进行异步编程](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
 -   **对位置的访问权限**
 

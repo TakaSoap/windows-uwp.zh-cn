@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 node, wsl 上的 node, windows 中 linux 上的 node, 在 windows 上安装 node, 具有 vs code 的 nodejs, 通过 windows 上的 node 进行开发, 通过 windows 上的 nodejs 进行开发, 在 WSL 上安装 node, 适用于 Linux 的 Windows 子系统上的 NodeJS
 ms.localizationpriority: medium
 ms.date: 07/28/2020
-ms.openlocfilehash: ce4e736751d5586c6ab4489e976fc397b1be0301
-ms.sourcegitcommit: 6b83f1854a113490dcd4f52425ecade9e66e0b44
+ms.openlocfilehash: 1b44cc51ecbb83e52a16ab7e5c577578c8765cb9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87333791"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166551"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>使用 WSL 2 设置 Node.js 开发环境
 
@@ -26,7 +26,7 @@ ms.locfileid: "87333791"
 
 ## <a name="install-wsl-2"></a>安装 WSL 2
 
-要启用和安装 WSL 2，请按照 [WSL 安装文档](https://docs.microsoft.com/windows/wsl/install-win10)中的步骤操作。 这些步骤将包含选择 Linux 发行版（例如 Ubuntu）。
+要启用和安装 WSL 2，请按照 [WSL 安装文档](/windows/wsl/install-win10)中的步骤操作。 这些步骤将包含选择 Linux 发行版（例如 Ubuntu）。
 
 安装 WSL 2 和 Linux 发行版后，打开 Linux 发行版（可在 Windows 的开始菜单中找到），并使用命令 `lsb_release -dc` 查看版本和代码名称。
 
@@ -34,7 +34,7 @@ ms.locfileid: "87333791"
 
 ## <a name="install-windows-terminal-optional"></a>安装 Windows 终端（可选）
 
-新的 Windows 终端可启用多个选项卡（在多个 Linux 命令行、Windows 命令提示符、PowerShell 和 Azure CLI 等之间快速切换）、创建键绑定（用于打开或关闭选项卡、复制粘贴等的快捷方式键）、使用搜索功能，以及使用自定义主题（配色方案、字体样式和大小、背景图像/模糊/透明度）。 [了解详细信息](https://docs.microsoft.com/windows/terminal)。
+新的 Windows 终端可启用多个选项卡（在多个 Linux 命令行、Windows 命令提示符、PowerShell 和 Azure CLI 等之间快速切换）、创建键绑定（用于打开或关闭选项卡、复制粘贴等的快捷方式键）、使用搜索功能，以及使用自定义主题（配色方案、字体样式和大小、背景图像/模糊/透明度）。 [了解详细信息](/windows/terminal)。
 
 1. [在 Microsoft Store 中获取 Windows 终端](https://www.microsoft.com/store/apps/9n0dx20hk701)：通过 Microsoft Store 进行安装时，将自动处理更新。
 
@@ -78,7 +78,7 @@ ms.locfileid: "87333791"
 虽然 nvm 目前是最常用的节点版本管理器，但需要考虑一些替代版本管理器：
 
 - [n](https://www.npmjs.com/package/n#installation) 是长期存在的 `nvm` 替代方法，该方法使用略微不同的命令来完成相同的操作，并通过 `npm` 而不是 bash 脚本来安装。
-- [fnm](https://github.com/Schniz/fnm#using-a-script) 是较新的版本管理器，它声称比 `nvm` 快得多。 （它还使用 [Azure 管道](https://docs.microsoft.com/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops)。）
+- [fnm](https://github.com/Schniz/fnm#using-a-script) 是较新的版本管理器，它声称比 `nvm` 快得多。 （它还使用 [Azure 管道](/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops)。）
 - [Volta](https://github.com/volta-cli/volta#installing-volta) 是来自 LinkedIn 团队的新版本管理器，它声称改进了速度和跨平台支持。
 - [asdf-vm](https://asdf-vm.com/#/core-manage-asdf-vm) 是适用于多种语言的单个 CLI，例如将 ike gvm、nvm、rbenv 和 pyenv（等）整合在一起。
 - [nvs](https://github.com/jasongin/nvs)（Node 版本切换器）是跨平台的 `nvm` 替代方法，可[与 VS Code 集成](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md)。
@@ -135,7 +135,7 @@ ms.locfileid: "87333791"
 
 ## <a name="set-up-git-optional"></a>设置 Git（可选）
 
-要为 WSL 上的 NodeJS 项目设置 Git，请参阅 WSL 文档中的文章[开始在适用于 Linux 的 Windows 子系统上使用 Git](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git)。
+要为 WSL 上的 NodeJS 项目设置 Git，请参阅 WSL 文档中的文章[开始在适用于 Linux 的 Windows 子系统上使用 Git](/windows/wsl/tutorials/wsl-git)。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -143,5 +143,5 @@ ms.locfileid: "87333791"
 
 - [适用于初学者的 Node.js 入门](./beginners.md)
 - [开始在 Windows 上使用 Node.js Web 框架](./web-frameworks.md)
-- [开始将 Node.js 应用连接到数据库](https://docs.microsoft.com/windows/wsl/tutorials/wsl-database)
+- [开始将 Node.js 应用连接到数据库](/windows/wsl/tutorials/wsl-database)
 - [开始将 Docker 容器与 Node.js 结合使用](./containers.md)

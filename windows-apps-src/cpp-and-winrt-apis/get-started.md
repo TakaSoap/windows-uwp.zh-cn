@@ -5,16 +5,16 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 入门, 开始使用
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e17e3f8107e82547ec0d367099f621e5b2e590a
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 412f34d21ddb24f637450fdfc71214c360445841
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997844"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170191"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT 入门
 
-为帮助你快速掌握 [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的用法，本主题将会根据新的 **Windows 控制台应用程序 (C++/WinRT)** 项目演练一个简单的代码示例。 此外，本主题将会介绍如何[将 C++/WinRT 支持添加到 Windows 桌面应用程序项目](#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
+为帮助你快速掌握 [ C++/WinRT](./intro-to-using-cpp-with-winrt.md) 的用法，本主题将会根据新的 **Windows 控制台应用程序 (C++/WinRT)** 项目演练一个简单的代码示例。 此外，本主题将会介绍如何[将 C++/WinRT 支持添加到 Windows 桌面应用程序项目](#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
 
 > [!NOTE]
 > 我们建议使用最新版本的 Visual Studio 和 Windows SDK 进行开发。如果你使用的是 Visual Studio 2017（15.8.0 或更高版本）并且面向 Windows SDK 版本 10.0.17134.0（Windows 10 版本 1803），则新建的 C++/WinRT 项目可能无法编译并出现错误“错误 C3861: 'from_abi': 找不到标识符”，以及源自 *base.h* 的其他错误。 解决方法是要么面向 Windows SDK 的更高（更相符）版本，要么设置项目属性“C/C++” > “语言” > “一致性模式:  否”（此外，如果 **/permissive-** 显示在“其他选项”下的项目属性“C/C++” > “语言” > “命令行”中，请将其删除）。
@@ -22,7 +22,7 @@ ms.locfileid: "86997844"
 ## <a name="a-cwinrt-quick-start"></a>C++/WinRT 快速入门
 
 > [!NOTE]
-> 有关设置 Visual Studio 以进行 C++/WinRT 部署的信息 &mdash; 包括安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息 &mdash; 请参阅[适用于 C++/WinRT 的 Visual Studio 支持](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 有关设置 Visual Studio 以进行 C++/WinRT 部署的信息 &mdash; 包括安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息 &mdash; 请参阅[适用于 C++/WinRT 的 Visual Studio 支持](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 创建一个新的 **Windows 控制台应用程序(C++/WinRT)** 项目。
 
@@ -129,7 +129,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 转到项目属性“常规”\>“Windows SDK 版本”，然后选择“所有配置”和“所有平台”。 确保“Windows SDK 版本”设置为 10.0.17134.0（Windows 10 版本 1803）或更高。
 
-确认你没有遇到[为何我的新项目不能编译？](/windows/uwp/cpp-and-winrt-apis/faq)的问题。
+确认你没有遇到[为何我的新项目不能编译？](./faq.md)的问题。
 
 由于 C++/WinRT 使用 C++17 标准版中的功能，请将项目属性“C/C++” > “语言” > “C++ 语言标准版”设置为“ISO C++17 标准版(/std:c++17)”。
 
@@ -167,19 +167,19 @@ C++/WinRT 语言投影依赖于某些 Windows 运行时自由（非成员）函�
 
 ### <a name="consuming-windows-runtime-apis-and-types"></a>使用 Windows 运行时 API 和类型
 
-也就是说，使用或调用 API。 例如，通过 API 调用使用蓝牙进行通信、流式传输和提供视频、与 Windows shell 集成，等等。 C++/WinRT 完全支持此类方案。 有关详细信息，请参阅[通过 C++/WinRT 使用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)。
+也就是说，使用或调用 API。 例如，通过 API 调用使用蓝牙进行通信、流式传输和提供视频、与 Windows shell 集成，等等。 C++/WinRT 完全支持此类方案。 有关详细信息，请参阅[通过 C++/WinRT 使用 API](./consume-apis.md)。
 
 ### <a name="authoring-windows-runtime-apis-and-types"></a>创作 Windows 运行时 API 和类型
 
-也就是说，生成 API 和类型。 例如，生成上一部分介绍的 API 类型、图形 API、存储和文件系统 API、网络 API 等。 有关详细信息，请参阅[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
+也就是说，生成 API 和类型。 例如，生成上一部分介绍的 API 类型、图形 API、存储和文件系统 API、网络 API 等。 有关详细信息，请参阅[使用 C++/WinRT 创作 API](./author-apis.md)。
 
-使用 C++/WinRT 创作 API 涉及的事项要稍多于使用 API 的情况，因为你必须使用 IDL 来定义 API 的形状，然后才能实现它。 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)中详述了此方面的操作。
+使用 C++/WinRT 创作 API 涉及的事项要稍多于使用 API 的情况，因为你必须使用 IDL 来定义 API 的形状，然后才能实现它。 [XAML 控件；绑定到 C++/WinRT 属性](./binding-property.md)中详述了此方面的操作。
 
 ### <a name="xaml-applications"></a>XAML 应用程序
 
 此方案涉及在 XAML UI 框架上构建应用程序和控件。 在 XAML 应用程序中工作相当于既要使用，又要创作。 但是，由于 XAML 是当今的 Windows 主流 UI 框架，其对 Windows 运行时的影响也同样很大，因此有必要专门设置一个它的应用方案类别。
 
-请注意，XAML 最适用于提供反射的编程语言。 在 C++/WinRT 中，有时需要做一些额外的工作才能与 XAML 框架互操作。 所有这些情况均在相应文档中进行了介绍。 可以从 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)和 [XAML 自定义（模板化）控件与 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl) 着手。
+请注意，XAML 最适用于提供反射的编程语言。 在 C++/WinRT 中，有时需要做一些额外的工作才能与 XAML 框架互操作。 所有这些情况均在相应文档中进行了介绍。 可以从 [XAML 控件；绑定到 C++/WinRT 属性](./binding-property.md)和 [XAML 自定义（模板化）控件与 C++/WinRT](./xaml-cust-ctrl.md) 着手。
 
 ## <a name="important-apis"></a>重要的 API
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

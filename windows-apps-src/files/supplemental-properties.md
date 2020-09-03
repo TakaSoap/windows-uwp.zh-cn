@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: windows 10, uwp, WinRT API, 索引器, 搜索
 localizationpriority: medium
-ms.openlocfilehash: 2a77bfc37d853efd28bde9bc3043d072888822f2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3103074e7d691897e9a8982a254ba36ee331a2b6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66369262"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175391"
 ---
 # <a name="using-supplemental-properties"></a>使用补充属性  
 
@@ -27,7 +27,7 @@ ms.locfileid: "66369262"
 数十年来，Windows 中的快速搜索解决方案一直都是索引器，在创意者更新版中，索引器经过更新，可以支持上述方案。 现在，应用可以使用除系统提取的属性以外的其他属性来标记文件。 这些属性被视为一等公民  
 
 ## <a name="windows-properties"></a>Windows 属性 
-多年以来，[Windows 属性系统](https://docs.microsoft.com/windows/desktop/properties/windows-properties-system)在与文件交互方面一直发挥着关键的作用。 应用可以使用该系统从文件中读取属性，而无需了解文件可能采用的所有不同格式或语言的内部结构。 系统将为开发人员抽象掉所有这些内部结构，他们只需请求列表，然后指定升序或降序即可。  
+多年以来，[Windows 属性系统](/windows/desktop/properties/windows-properties-system)在与文件交互方面一直发挥着关键的作用。 应用可以使用该系统从文件中读取属性，而无需了解文件可能采用的所有不同格式或语言的内部结构。 系统将为开发人员抽象掉所有这些内部结构，他们只需请求列表，然后指定升序或降序即可。  
 
 属性系统与 Windows 索引器相辅相成 – 它会从其所在范围内的文件中读取所有属性，并存储这些属性。 稍后当应用请求提供某个文件夹中要按修改日期排序的所有 .docx 文件列表，（排除 John Smith 创建的文件）时，索引器可以即时返回该列表。  
 
@@ -158,4 +158,4 @@ if (returnedProps.TryGetValue("System.Supplemental.ResourceId", out uncheckedRes
 ## <a name="conclusions"></a>结论 
 如前所述，使用补充属性可以十分方便地在系统中存储更多的文件属性。 当然，补充属性是选用性的，但是，相比于其他无法快速排序和搜索数据的应用，使用补充属性的应用更有优势。 
 
-我们期待更多的应用开始使用这些属性。 如果你在补充属性的用法方面有任何疑问，请通过下面的“评论”告诉我们 
+我们期待更多的应用开始使用这些属性。 如果你在补充属性的用法方面有任何疑问，请通过下面的“评论”告诉我们

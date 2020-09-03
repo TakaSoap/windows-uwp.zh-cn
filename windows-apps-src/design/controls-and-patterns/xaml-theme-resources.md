@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b16ad72541f34e40d1b0cf534082eb68b0843141
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: dff964fe33f0a4b1e68e12d0c300871274c28f93
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234724"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174661"
 ---
 # <a name="xaml-theme-resources"></a>XAML 主题资源
 
@@ -42,13 +42,13 @@ Windows 运行时不使用这些物理文件进行运行时查找。 这就是�
 
 当定义和使用你自己的自定义主题资源时，请遵循这些指南：
 
-- 除“高对比度”字典以外，还需指定“浅色”和“深色”的主题字典。 尽管你可以在将“默认”作为键的情况下创建 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary)，但建议以明确的方式改用“浅色”、“深色”和“高对比度”。
+- 除“高对比度”字典以外，还需指定“浅色”和“深色”的主题字典。 尽管你可以在将“默认”作为键的情况下创建 [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary)，但建议以明确的方式改用“浅色”、“深色”和“高对比度”。
 
 - 在以下位置使用 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)：Styles、Setters、Control 模板、Property 资源库和 Animations。
 
-- 请勿在你的 [ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) 内的资源定义中使用 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)。 改用 [{StaticResource} 标记扩展](../../xaml-platform/staticresource-markup-extension.md)。
+- 请勿在你的 [ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) 内的资源定义中使用 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)。 改用 [{StaticResource} 标记扩展](../../xaml-platform/staticresource-markup-extension.md)。
 
-    例外：可以使用 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)，以引用对于 [ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) 中的应用主题不可知的资源。 这些资源的示例是主题色资源（例如 `SystemAccentColor`）或通常带有“SystemColor”前缀的系统颜色资源（例如 `SystemColorButtonFaceColor`）。
+    例外：可以使用 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)，以引用对于 [ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) 中的应用主题不可知的资源。 这些资源的示例是主题色资源（例如 `SystemAccentColor`）或通常带有“SystemColor”前缀的系统颜色资源（例如 `SystemColorButtonFaceColor`）。
 
 > [!CAUTION]
 > 如果不遵循这些指南，可能会出现与应用中的主题相关的意外行为。 有关详细信息，请参阅[主题资源疑难解答](#troubleshooting-theme-resources)部分。
@@ -166,7 +166,7 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 
 ![Windows 高对比度设置 UI](images/high-contrast-settings.png)
 
-有关支持高对比度主题的详细信息，请参阅[高对比度主题](https://docs.microsoft.com/windows/uwp/accessibility/high-contrast-themes)。
+有关支持高对比度主题的详细信息，请参阅[高对比度主题](../accessibility/high-contrast-themes.md)。
 
 ### <a name="system-accent-color"></a>系统主题色
 
@@ -206,11 +206,11 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ## <a name="the-xaml-type-ramp"></a>XAML 类型渐变
 
-themeresources.xaml 文件将定义若干个资源，这些资源定义可应用到 UI 中的文本容器（特别是 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 或 [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)）的 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style)。 它们不是默认的隐式样式。 通过它们，你可以更轻松地创建匹配[字体指南](../style/typography.md)中记录的 *Windows 类型渐变*的 XAML UI 定义。
+themeresources.xaml 文件将定义若干个资源，这些资源定义可应用到 UI 中的文本容器（特别是 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 或 [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)）的 [Style](/uwp/api/Windows.UI.Xaml.Style)。 它们不是默认的隐式样式。 通过它们，你可以更轻松地创建匹配[字体指南](../style/typography.md)中记录的 *Windows 类型渐变*的 XAML UI 定义。
 
-这些样式用于你要应用到整个文本容器的文本属性。 如果你仅想要将样式应用到该文本部分，请在容器中的文本元素上（例如 [TextBlock.Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines) 中的 [Run](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Run) 上或 [RichTextBlock.Blocks](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.blocks) 中的 [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph) 上）设置属性。
+这些样式用于你要应用到整个文本容器的文本属性。 如果你仅想要将样式应用到该文本部分，请在容器中的文本元素上（例如 [TextBlock.Inlines](/uwp/api/windows.ui.xaml.controls.textblock.inlines) 中的 [Run](/uwp/api/Windows.UI.Xaml.Documents.Run) 上或 [RichTextBlock.Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks) 中的 [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) 上）设置属性。
 
-当应用于 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 时，这些样式如下所示：
+当应用于 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 时，这些样式如下所示：
 
 ![文本块样式](../style/images/type/text-block-type-ramp.svg)
 
@@ -228,9 +228,9 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="basetextblockstyle"></a>BaseTextBlockStyle
 
-**TargetType**：[TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+**TargetType**：[TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
-为所有其他 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 容器样式提供常用属性。
+为所有其他 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 容器样式提供常用属性。
 
 ```XAML
 <!-- Usage -->
@@ -338,9 +338,9 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="baserichtextblockstyle"></a>BaseRichTextBlockStyle
 
-**TargetType**：[RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
+**TargetType**：[RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
 
-为所有其他 [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 容器样式提供常用属性。
+为所有其他 [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 容器样式提供常用属性。
 
 ```XAML
 <!-- Usage -->
@@ -375,21 +375,21 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-**注意**：  [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 样式不具有 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 包含的所有文本渐变样式，主要原因是适用于“RichTextBlock”的基于块的文档对象模型使对个别文本元素设置属性更为简单。 同样，使用 XAML 内容属性设置 [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 将出现以下情况：没有要设置样式的文本元素，因此你必须设置容器样式。 对于"RichTextBlock"，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)）中，你可能会在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式。
+**注意**：  [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 样式不具有 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 包含的所有文本渐变样式，主要原因是适用于“RichTextBlock”的基于块的文档对象模型使对个别文本元素设置属性更为简单。 同样，使用 XAML 内容属性设置 [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.text) 将出现以下情况：没有要设置样式的文本元素，因此你必须设置容器样式。 对于"RichTextBlock"，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph)）中，你可能会在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式。
 
 ## <a name="miscellaneous-named-styles"></a>其他命名样式
 
-还存在一组额外的键控 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 定义，可供你向 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 应用不同于其默认隐式样式的样式。
+还存在一组额外的键控 [Style](/uwp/api/Windows.UI.Xaml.Style) 定义，可供你向 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) 应用不同于其默认隐式样式的样式。
 
 ### <a name="textblockbuttonstyle"></a>TextBlockButtonStyle
 
-**TargetType**：[ButtonBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
+**TargetType**：[ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
 
-当你需要显示用户可以点击以进行操作的文本时，请将此样式应用到 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。 使用当前主题色设置该文本的样式以在交互时进行区分，并且该文本具有非常适用于文本的焦点矩形。 与 [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的隐式样式不同，“TextBlockButtonStyle”不会为文本添加下划线。
+当你需要显示用户可以点击以进行操作的文本时，请将此样式应用到 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)。 使用当前主题色设置该文本的样式以在交互时进行区分，并且该文本具有非常适用于文本的焦点矩形。 与 [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的隐式样式不同，“TextBlockButtonStyle”不会为文本添加下划线。
 
 该模板还设置显示文本的样式以使用 **SystemControlHyperlinkBaseMediumBrush**（适用于“PointerOver”状态）、**SystemControlHighlightBaseMediumLowBrush**（适用于“Pressed”状态）和 **SystemControlDisabledBaseLowBrush**（适用于“Disabled”状态）。
 
-下面介绍向其应用了“TextBlockButtonStyle”资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。
+下面介绍向其应用了“TextBlockButtonStyle”资源的 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)。
 
 ```XAML
 <Button Content="Clickable text" Style="{StaticResource TextBlockButtonStyle}"
@@ -402,11 +402,11 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType**：[Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType**：[Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
 
-此 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 默认尺寸是 40 x 40 像素。 要定制样式，可明确设置 [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)、[Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize) 和“Button”上的其他属性，也可以使用 [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon) 创建一个派生的样式。
+此 [Style](/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 默认尺寸是 40 x 40 像素。 要定制样式，可明确设置 [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)、[Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[FontSize](/uwp/api/windows.ui.xaml.controls.control.fontsize) 和“Button”上的其他属性，也可以使用 [BasedOn](/uwp/api/windows.ui.xaml.style.basedon) 创建一个派生的样式。
 
-下面介绍向其应用了“NavigationBackButtonNormalStyle”资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。
+下面介绍向其应用了“NavigationBackButtonNormalStyle”资源的 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)。
 
 ```XAML
 <Button Style="{StaticResource NavigationBackButtonNormalStyle}" />
@@ -418,11 +418,11 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType**：[Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType**：[Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
 
-此 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 它与“NavigationBackButtonNormalStyle”类似，但尺寸为 30 x 30 像素。
+此 [Style](/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 它与“NavigationBackButtonNormalStyle”类似，但尺寸为 30 x 30 像素。
 
-下面是一个应用了“NavigationBackButtonSmallStyle”资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。
+下面是一个应用了“NavigationBackButtonSmallStyle”资源的 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)。
 
 ```XAML
 <Button Style="{StaticResource NavigationBackButtonSmallStyle}" />
@@ -452,7 +452,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </ResourceDictionary>
 ```
 
-从直观上来说这看起来准确无误。 你想要在处于高对比度下时更改 `myBrush` 所指向的颜色，但在不处于高对比度下时，你依赖于 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)，以确保 `myBrush` 针对你的主题指向正确的颜色。 如果你的应用从未在可视化树内的元素上设置 [FrameworkElement.RequestedTheme](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.requestedtheme)，这通常会按预期工作。 但是，在开始设置可视化树的不同部分的主题时，你的应用会立即出现问题。
+从直观上来说这看起来准确无误。 你想要在处于高对比度下时更改 `myBrush` 所指向的颜色，但在不处于高对比度下时，你依赖于 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)，以确保 `myBrush` 针对你的主题指向正确的颜色。 如果你的应用从未在可视化树内的元素上设置 [FrameworkElement.RequestedTheme](/uwp/api/windows.ui.xaml.frameworkelement.requestedtheme)，这通常会按预期工作。 但是，在开始设置可视化树的不同部分的主题时，你的应用会立即出现问题。
 
 与大多数其他 XAML 类型不同，产生该问题的原因是画笔是共享的资源。 如果你在 XAML 子树（具有可引用相同画笔资源的不同主题）中具有 2 个元素，则当框架遍历每个子树以更新其 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)表达式时，将在其他子树中反映对已共享画笔资源的更改，这不是你预期的结果。
 
@@ -475,7 +475,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </ResourceDictionary>
 ```
 
-但是，如果其中任何资源在继承属性（如 [Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground)）中引用，则仍会发生这些问题。 你的自定义控件模板可能使用 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)指定元素的前景色，但当框架将继承的值传播到子元素时，它可以直接引用由 {ThemeResource} 标记扩展表达式解决的资源。 这将在框架处理主题更改时导致问题，因为它遍历控件的可视化树。 它将重新计算 {ThemeResource} 标记扩展表达式以获取新的画笔资源，但尚未将该引用传播到你的控件的子元素；这种情况将在以后发生（例如在下一个测量阶段期间）。
+但是，如果其中任何资源在继承属性（如 [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground)）中引用，则仍会发生这些问题。 你的自定义控件模板可能使用 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)指定元素的前景色，但当框架将继承的值传播到子元素时，它可以直接引用由 {ThemeResource} 标记扩展表达式解决的资源。 这将在框架处理主题更改时导致问题，因为它遍历控件的可视化树。 它将重新计算 {ThemeResource} 标记扩展表达式以获取新的画笔资源，但尚未将该引用传播到你的控件的子元素；这种情况将在以后发生（例如在下一个测量阶段期间）。
 
 因此，在遍历控件可视化树以响应主题更改后，该框架将遍历子项并更新对其设置的任何 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)表达式，或在其属性上设置的对象。 在此情况下会发生问题；框架将遍历画笔资源，并且因为它使用 {ThemeResource} 标记扩展指定其颜色，因此它将重新计算。
 

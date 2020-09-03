@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3398be1569143e253b2b9cb9ee25133ee7fe5fd9
-ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
+ms.openlocfilehash: f2fea27bf44e2e7f199c6c04f045f2cda6663315
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88502333"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174441"
 ---
 # <a name="semantic-zoom"></a>语义式缩放
 
@@ -29,7 +29,7 @@ ms.locfileid: "88502333"
 
 例如，当查看地址簿时，用户可以通过缩小快速跳转到字母“W”，然后在该字母上放大并查看与之相关联的名称。 
 
-> **重要的 API**：[SemanticZoom 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)、[ListView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
+> **重要的 API**：[SemanticZoom 类](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)、[ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 类](/uwp/api/Windows.UI.Xaml.Controls.GridView)
 
 **功能**：
 
@@ -41,7 +41,7 @@ ms.locfileid: "88502333"
 
 在需要显示大到无法在一个或两个页面上全部显示的分组数据集时，请使用 **SemanticZoom** 控件。
 
-不要将语义上的缩放与光学缩放混淆。 尽管它们的交互和基本行为（基于缩放比例显示更多或更少细节）一致，但是光学缩放是指调整内容区域或对象（如照片）的放大倍数。 有关执行光学缩放的控件的信息，请参阅 [ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) 控件。
+不要将语义上的缩放与光学缩放混淆。 尽管它们的交互和基本行为（基于缩放比例显示更多或更少细节）一致，但是光学缩放是指调整内容区域或对象（如照片）的放大倍数。 有关执行光学缩放的控件的信息，请参阅 [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer) 控件。
 
 ## <a name="examples"></a>示例
 
@@ -73,7 +73,7 @@ ms.locfileid: "88502333"
 
 ## <a name="create-a-semantic-zoom"></a>创建语义式缩放
 
-**SemanticZoom** 控件没有其自己的任何可视表示形式。 它是一个主机控件，用于管理提供内容视图的另外 2 个控件，通常为 **ListView** 或 **GridView** 控件。  将视图控件设置为 SemanticZoom 的 [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) 和 [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) 属性。
+**SemanticZoom** 控件没有其自己的任何可视表示形式。 它是一个主机控件，用于管理提供内容视图的另外 2 个控件，通常为 **ListView** 或 **GridView** 控件。  将视图控件设置为 SemanticZoom 的 [ZoomedInView](/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) 和 [ZoomedOutView](/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) 属性。
 
 语义式缩放所需的 3 个要素为：
 - 分组数据源。 （组在放大视图中通过 GroupStyle 定义来定义。）
@@ -82,7 +82,7 @@ ms.locfileid: "88502333"
 
 在使用语义式缩放前，应了解如何将列表视图用于分组数据。 有关详细信息，请参阅[列表视图和网格视图](listview-and-gridview.md)。 
 
-> **注意**&nbsp;&nbsp;若要定义 SemanticZoom 控件的放大视图和缩小视图，可以使用任意两个可实现 [ISemanticZoomInformation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation) 接口的控件。 XAML 框架提供 3 个可实现此接口的控件：ListView、GridView 和 Hub。
+> **注意**&nbsp;&nbsp;若要定义 SemanticZoom 控件的放大视图和缩小视图，可以使用任意两个可实现 [ISemanticZoomInformation](/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation) 接口的控件。 XAML 框架提供 3 个可实现此接口的控件：ListView、GridView 和 Hub。
  
  此 XAML 显示 SemanticZoom 控件的结构。 将其他控件分配到 ZoomedInView 和 ZoomedOutView 属性。
  
@@ -163,11 +163,11 @@ ms.locfileid: "88502333"
 
 **同步视图**
 
-放大视图和缩小视图应该同步，因此如果用户在缩小视图中选择某个组，则此相同组的详细信息应该显示在放大视图中。 你可以使用 [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 或添加代码以同步视图。
+放大视图和缩小视图应该同步，因此如果用户在缩小视图中选择某个组，则此相同组的详细信息应该显示在放大视图中。 你可以使用 [CollectionViewSource](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 或添加代码以同步视图。
 
-绑定到同一 CollectionViewSource 的所有控件始终具有相同的当前项。 如果这两个视图使用同一 CollectionViewSource 作为它们的数据源，CollectionViewSource 将自动同步视图。 有关详细信息，请参阅 [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)。
+绑定到同一 CollectionViewSource 的所有控件始终具有相同的当前项。 如果这两个视图使用同一 CollectionViewSource 作为它们的数据源，CollectionViewSource 将自动同步视图。 有关详细信息，请参阅 [CollectionViewSource](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)。
 
-如果你不使用 CollectionViewSource 同步视图，则应该处理 [ViewChangeStarted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.viewchangestarted) 事件并在事件处理程序中同步项目，如下所示。
+如果你不使用 CollectionViewSource 同步视图，则应该处理 [ViewChangeStarted](/uwp/api/windows.ui.xaml.controls.semanticzoom.viewchangestarted) 事件并在事件处理程序中同步项目，如下所示。
 
 ```xaml
 <SemanticZoom x:Name="semanticZoom" ViewChangeStarted="SemanticZoom_ViewChangeStarted">
@@ -203,8 +203,3 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 - [导航设计基础知识](../basics/navigation-basics.md)
 - [列表视图和网格视图](listview-and-gridview.md)
 - [项目容器和模板](item-containers-templates.md)
-
-
-
-
-

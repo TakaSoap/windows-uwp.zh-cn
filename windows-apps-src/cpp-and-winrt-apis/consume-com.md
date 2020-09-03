@@ -5,16 +5,16 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, COM, 组件, 类, 接口
 ms.localizationpriority: medium
-ms.openlocfilehash: d5fae09192262b63b11175bf08e7a2c522b31abd
-ms.sourcegitcommit: 82d441e3b9da920cf860fad6b59d6b848466c90f
+ms.openlocfilehash: 6ccd196b2cd571cc66523b34427ca17acd73388a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84271876"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170341"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>通过 C++/WinRT 使用 COM 组件
 
-可以通过 [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 库的工具来使用 COM 组件，例如 DirectX API 的高性能 2D 和 3D 图形。 C++/ WinRT 是在不影响性能的情况下使用 DirectX 的最简单方法。 本主题借助一个 Direct2D 代码示例演示如何通过 C++/WinRT 使用 COM 类和接口。 当然，你也可以在同一个 C++/WinRT 项目中混合使用 COM 和 Windows 运行时编程方法。
+可以通过 [ C++/WinRT](./intro-to-using-cpp-with-winrt.md) 库的工具来使用 COM 组件，例如 DirectX API 的高性能 2D 和 3D 图形。 C++/ WinRT 是在不影响性能的情况下使用 DirectX 的最简单方法。 本主题借助一个 Direct2D 代码示例演示如何通过 C++/WinRT 使用 COM 类和接口。 当然，你也可以在同一个 C++/WinRT 项目中混合使用 COM 和 Windows 运行时编程方法。
 
 本主题的末尾提供了一个精简 Direct2D 应用程序的完整源代码列表。 我们将提取该代码的摘录内容，演示如何使用 C++/WinRT 库的各种工具通过 C++/WinRT 来使用 COM 组件。
 
@@ -131,9 +131,9 @@ winrt::check_hresult(D2D1CreateFactory(
 
 可以使用 [winrt::get_unknown](/uwp/cpp-ref-for-winrt/get-unknown) 自由函数返回投影类型的对象的基础原始 [IUnknown 接口](/windows/win32/api/unknwn/nn-unknwn-iunknown)的地址（也就是说，指向该接口的指针）。 然后，可以将该地址传递给采用 IUnknown 接口指针的函数。
 
-有关投影类型的信息，请参阅[通过 C++/WinRT 使用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)。
+有关投影类型的信息，请参阅[通过 C++/WinRT 使用 API](./consume-apis.md)。
 
-有关 get_unknown 的代码示例，请参阅 [winrt::get_unknown](/uwp/cpp-ref-for-winrt/get-unknown)，或本主题中的[一个精简 Direct2D 应用程序的完整源代码列表](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application) 。
+有关 get_unknown 的代码示例，请参阅 [winrt::get_unknown](/uwp/cpp-ref-for-winrt/get-unknown)，或本主题中的[一个精简 Direct2D 应用程序的完整源代码列表](#full-source-code-listing-of-a-minimal-direct2d-application) 。
 
 ## <a name="passing-and-returning-com-smart-pointers"></a>传递和返回 COM 智能指针
 

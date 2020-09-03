@@ -5,16 +5,16 @@ ms.date: 09/26/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 延迟析构, 安全查询
 ms.localizationpriority: medium
-ms.openlocfilehash: 76068ffc655c20aa13b50cce9ac49af9afd50805
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6b15c32bb35bec1f6a8e8d59e6aefe17ebf74b5d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71329561"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170324"
 ---
 # <a name="extension-points-for-your-implementation-types"></a>用于你的实现类型的扩展点
 
-[winrt::implements 结构模板](/uwp/cpp-ref-for-winrt/implements)是直接或间接派生你自己的（运行时类和激活工厂的）[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 实现的基础。
+[winrt::implements 结构模板](/uwp/cpp-ref-for-winrt/implements)是直接或间接派生你自己的（运行时类和激活工厂的）[C++/WinRT](./intro-to-using-cpp-with-winrt.md) 实现的基础。
 
 本主题讨论以 C++/WinRT 2.0 编写的 **winrt::implements** 的扩展点。 可以选择在你的实现类型上实现这些扩展点，以便自定义可检查对象的默认行为（从 [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable) 接口的意义上说的“可检查”  ）。
 
@@ -22,7 +22,7 @@ ms.locfileid: "71329561"
 
 ## <a name="deferred-destruction"></a>延迟析构
 
-在 [Diagnosing direct allocations](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc)（诊断直接分配）主题中，我们提到实现类型不能有专用析构函数。
+在 [Diagnosing direct allocations](./diag-direct-alloc.md)（诊断直接分配）主题中，我们提到实现类型不能有专用析构函数。
 
 使用公共析构函数的好处是，它支持延迟析构。此功能可以检测在对象上进行的最终 [**IUnknown::Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) 调用，然后通过获取该对象的所有权来无限期延迟其析构。
 

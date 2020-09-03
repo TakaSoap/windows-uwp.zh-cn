@@ -6,12 +6,12 @@ ms.date: 04/28/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 350b07e96d95b043116f2eb8029a2352360c50d6
-ms.sourcegitcommit: 490b563462853f10f14825f2358e4852ee1011fb
+ms.openlocfilehash: 9e70c76f3ed659a46dd9834442049849dd3b7761
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82633003"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175521"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>使用画笔绘制背景、前景和轮廓
 
@@ -50,7 +50,7 @@ ms.locfileid: "82633003"
 
  应用于矩形的 SolidColorBrush
 
-如果 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 是使用 XAML 以外的代码定义的，则每个已命名的颜色都作为 [Colors](https://docs.microsoft.com/uwp/api/windows.ui.colors) 类的静态属性值提供   。 例如，若要声明 SolidColorBrush 的 [Color](/uwp/api/windows.ui.xaml.media.solidcolorbrush.color) 值以表示命名颜色“兰花紫”，请将 Color 值设置为静态值 [Colors.Orchid](/uwp/api/windows.ui.colors.orchid)     。
+如果 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 是使用 XAML 以外的代码定义的，则每个已命名的颜色都作为 [Colors](/uwp/api/windows.ui.colors) 类的静态属性值提供   。 例如，若要声明 SolidColorBrush 的 [Color](/uwp/api/windows.ui.xaml.media.solidcolorbrush.color) 值以表示命名颜色“兰花紫”，请将 Color 值设置为静态值 [Colors.Orchid](/uwp/api/windows.ui.colors.orchid)     。
 
 ### <a name="hexadecimal-color-values"></a>十六进制颜色值
 
@@ -66,7 +66,7 @@ ms.locfileid: "82633003"
 
 ### <a name="property-element-syntax"></a>属性元素语法
 
-你可以使用属性元素语法来定义 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)  。 此语法比前面的方法更详细，但是，你可以针对元素指定其他属性值（如 [Opacity](/uwp/api/windows.ui.xaml.media.brush.opacity)）  。 有关 XAML 语法（包括属性元素语法）的详细信息，请参阅 [XAML 概述](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)和 [XAML 语法指南](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-syntax-guide)。
+你可以使用属性元素语法来定义 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)  。 此语法比前面的方法更详细，但是，你可以针对元素指定其他属性值（如 [Opacity](/uwp/api/windows.ui.xaml.media.brush.opacity)）  。 有关 XAML 语法（包括属性元素语法）的详细信息，请参阅 [XAML 概述](../../xaml-platform/xaml-overview.md)和 [XAML 语法指南](../../xaml-platform/xaml-syntax-guide.md)。
 
 在前面的示例中，要创建的画笔以隐含方式作为专门编写的 XAML 语言速记的一部分自动创建，该速记有助于使 UI 定义对最常见的用例保持简单。 下一个示例将创建一个 [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 并明确创建 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 以作为 [Rectangle.Fill](/uwp/api/windows.ui.xaml.shapes.shape.fill) 属性的元素值    。 SolidColorBrush 的 [Color](/uwp/api/windows.ui.xaml.media.solidcolorbrush.color) 设置为 [Blue](/uwp/api/windows.ui.colors.blue)，[Opacity](/uwp/api/windows.ui.xaml.media.brush.opacity) 设置为 0.5     。
 
@@ -184,7 +184,7 @@ ms.locfileid: "82633003"
 
 呈现的 ImageBrush 
 
-[ImageBrush](/uwp/api/Windows.UI.Xaml.Media.ImageBrush) 和 [Image](/uwp/api/Windows.UI.Xaml.Controls.Image) 均按统一资源标识符 (URI) 引用图像源文件，该图像源文件使用多种可能的图像格式   。 这些图像源文件指定为 URI。 有关指定图像源、可用的图像格式并将它们打包到一个应用中的详细信息，请参阅 [Image 和 ImageBrush](https://docs.microsoft.com/windows/uwp/controls-and-patterns/images-imagebrushes)。
+[ImageBrush](/uwp/api/Windows.UI.Xaml.Media.ImageBrush) 和 [Image](/uwp/api/Windows.UI.Xaml.Controls.Image) 均按统一资源标识符 (URI) 引用图像源文件，该图像源文件使用多种可能的图像格式   。 这些图像源文件指定为 URI。 有关指定图像源、可用的图像格式并将它们打包到一个应用中的详细信息，请参阅 [Image 和 ImageBrush](../controls-and-patterns/images-imagebrushes.md)。
 
 ## <a name="brushes-and-text"></a>画笔和文本
 
@@ -198,9 +198,9 @@ ms.locfileid: "82633003"
 
 ## <a name="xamlcompositionbrushbase"></a>XamlCompositionBrushBase
 
-[XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) 是一个基类，用于创建使用 [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) 绘制 XAML UI 元素的自定义画笔   。
+[XamlCompositionBrushBase](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) 是一个基类，用于创建使用 [CompositionBrush](/uwp/api/Windows.UI.Composition.CompositionBrush) 绘制 XAML UI 元素的自定义画笔   。
 
-这支持 Windows.UI.Xaml 和 Windows.UI.Composition 层之间的“下拉”互操作，如[可视化层概述](/windows/uwp/composition/visual-layer)中所述  。 
+这支持 Windows.UI.Xaml 和 Windows.UI.Composition 层之间的“下拉”互操作，如[可视化层概述](../../composition/visual-layer.md)中所述  。 
 
 要创建自定义画笔，请创建一个继承自 XamlCompositionBrushBase 的新类，并实现所需方法。
 
@@ -243,7 +243,3 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
  
 
  
-
-
-
-

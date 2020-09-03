@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c717a74824db43984794b67638dd19b51b5dacd
-ms.sourcegitcommit: 83225cd9f3ef184277fc293d09982ecd511cc088
+ms.openlocfilehash: 84e11bc2a17039b65ae1282531af4b92240f4069
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87160874"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170071"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>设计面图上以及用于原型制作的示例数据
 =============================================================================================
 
 
 
-**注意**   你需要示例数据的程度（以及它可以给你带来多少帮助）取决于你的绑定是使用 [{Binding} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension)还是使用 [{x: Bind} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)。 本主题中所述的技术基于对 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 的使用，因此它们仅适用于 **{Binding}** 。 但是，如果你使用的是 **{x:Bind}** ，而你的绑定至少显示了设计面图上的占位符值（甚至是项目控件的占位符值），这样你便无需完全相同的示例数据。
+**注意**   你需要示例数据的程度（以及它可以给你带来多少帮助）取决于你的绑定是使用 [{Binding} 标记扩展](../xaml-platform/binding-markup-extension.md)还是使用 [{x: Bind} 标记扩展](../xaml-platform/x-bind-markup-extension.md)。 本主题中所述的技术基于对 [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 的使用，因此它们仅适用于 **{Binding}** 。 但是，如果你使用的是 **{x:Bind}** ，而你的绑定至少显示了设计面图上的占位符值（甚至是项目控件的占位符值），这样你便无需完全相同的示例数据。
 
 也许是不可能或不需要（可能是出于隐私或性能的原因）为你的应用在 Microsoft Visual Studio 或 Blend for Visual Studio 中的设计图面上显示实时数据。 为了使你的控件填充数据（以便你可以处理应用的布局、模板和其他视觉属性），你可以通过各种方式使用设计时示例数据。 如果你正要生成一个草图（或原型）应用，则示例数据可能真的非常有用而且节省时间。 你可以在运行时在草图或原型中使用示例数据来阐明你的想法，而无需连接到真实且实时的数据。
 
@@ -34,7 +34,7 @@ ms.locfileid: "87160874"
 <a name="setting-datacontext-in-markup"></a>在标记中设置 DataContext
 -----------------------------
 
-使用命令性代码（在代码隐藏中）设置页面或用户控件的 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 来查看模型实例是相当常见的开发人员的做法。
+使用命令性代码（在代码隐藏中）设置页面或用户控件的 [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 来查看模型实例是相当常见的开发人员的做法。
 
 ``` csharp
 public MainPage()
@@ -99,11 +99,11 @@ else
 </Page>
 ```
 
-各种 xmlns 声明意味着具有 **d:** 前缀的属性只有在设计时才会解释，而且只有在运行时才会忽略。 因此 **d:DataContext** 属性只会在设计时影响 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 属性的值，而在运行时不起任何作用。 如果你愿意，甚至可以在标记中同时设置 **d:DataContext** 和 **DataContext**。 **d:DataContext** 将在设计时进行替代，而 **DataContext** 将在运行时进行替代。 这些相同的替代规则适用于所有设计时和运行时属性。
+各种 xmlns 声明意味着具有 **d:** 前缀的属性只有在设计时才会解释，而且只有在运行时才会忽略。 因此 **d:DataContext** 属性只会在设计时影响 [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 属性的值，而在运行时不起任何作用。 如果你愿意，甚至可以在标记中同时设置 **d:DataContext** 和 **DataContext**。 **d:DataContext** 将在设计时进行替代，而 **DataContext** 将在运行时进行替代。 这些相同的替代规则适用于所有设计时和运行时属性。
 
-**d:DataContext** 属性及所有其他设计时属性都已记录在[设计时属性](https://msdn.microsoft.com/library/ff602277(v=VS.95).aspx)主题中，这对通用 Windows 平台 (UWP) 应用仍然有效。
+**d:DataContext** 属性及所有其他设计时属性都已记录在[设计时属性](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff602277(v=vs.95))主题中，这对通用 Windows 平台 (UWP) 应用仍然有效。
 
-[CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 没有 DataContext 属性，不过它有 Source 属性  。 因此，你可以使用 **d:Source** 属性在 **CollectionViewSource** 上设置仅设计时示例数据。
+[CollectionViewSource](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 没有 DataContext 属性，不过它有 Source 属性  。 因此，你可以使用 **d:Source** 属性在 **CollectionViewSource** 上设置仅设计时示例数据。
 
 ``` xaml
     <Page.Resources>
@@ -152,6 +152,6 @@ else
 
 实际上你可以直接在“数据”面板中设计示例数据源的架构，而不是指定一个类。 你还可以在“数据”面板中编辑示例数据值：无需打开和编辑文件（但如果你愿意，仍可以打开文件进行编辑）。
 
-由于“新示例数据”功能使用 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 而不使用 **d:DataContext**，所以当你运行草图或原型并同时对其进行设计时，示例数据仍可用。 而且“数据”面板真的会加快你的设计和绑定任务。 例如，只需将集合属性从“数据”面板中拖动到设计图面上就会生成数据绑定的项目控件和必要的模板，而且全部都已为生成和运行准备就绪。
+由于“新示例数据”功能使用 [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 而不使用 **d:DataContext**，所以当你运行草图或原型并同时对其进行设计时，示例数据仍可用。 而且“数据”面板真的会加快你的设计和绑定任务。 例如，只需将集合属性从“数据”面板中拖动到设计图面上就会生成数据绑定的项目控件和必要的模板，而且全部都已为生成和运行准备就绪。
 
 ![用于原型制作的示例数据。](images/displaying-data-in-the-designer-04.png)

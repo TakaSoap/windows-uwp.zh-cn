@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3a5b6df7a5d8333e0f4834c256a38fc912f8f51e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 555459d427eae045d3cf7eda45a97ec806717380
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970622"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175511"
 ---
 # <a name="typography-in-windows-apps"></a>Windows 应用中的版式
 
@@ -106,7 +106,7 @@ Windows 字体渐变可在页面上的字型之间建立关键关系，帮助用
 
 ## <a name="alignment"></a>符合方式
 
-默认 [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) 是左对齐，在大多数情况下，左边对齐但右边不对齐可提供一致的内容编排效果和统一的布局。 有关 RTL 语言，请参阅[调整布局和字体以支持全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
+默认 [TextAlignment](/uwp/api/windows.ui.xaml.textalignment) 是左对齐，在大多数情况下，左边对齐但右边不对齐可提供一致的内容编排效果和统一的布局。 有关 RTL 语言，请参阅[调整布局和字体以支持全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
 
 ![显示左对齐的文本。](images/type/alignment.svg)
 
@@ -152,7 +152,7 @@ Segoe UI 适用于英语、欧洲语言、希腊语、希伯来语、亚美尼�
 
 ### <a name="globalizinglocalizing-fonts"></a>全球化/本地化字体
 
-使用 [LanguageFont 字体映射 API](https://docs.microsoft.com/uwp/api/Windows.Globalization.Fonts.LanguageFont) 以编程方式访问为特定语言建议的字体系列、大小、粗细和样式。 LanguageFont 对象提供了对各种类别内容的正确字体信息的访问，这些信息包括 UI 标头、通知、正文文本和用户可编辑的文档正文字体。 有关详细信息，请参阅[调整布局和字体以支持全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
+使用 [LanguageFont 字体映射 API](/uwp/api/Windows.Globalization.Fonts.LanguageFont) 以编程方式访问为特定语言建议的字体系列、大小、粗细和样式。 LanguageFont 对象提供了对各种类别内容的正确字体信息的访问，这些信息包括 UI 标头、通知、正文文本和用户可编辑的文档正文字体。 有关详细信息，请参阅[调整布局和字体以支持全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
 
 ### <a name="fonts-for-non-latin-languages"></a>非拉丁语言字体
 
@@ -340,4 +340,4 @@ Serif 字体适合用于显示大量文本。
 * [文本控件](../controls-and-patterns/text-controls.md)
 * [XAML 主题资源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [XAML 样式](../controls-and-patterns/xaml-styles.md)
-* [Microsoft 板式](https://docs.microsoft.com/typography/)
+* [Microsoft 板式](/typography/)

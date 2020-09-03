@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, Hello World
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c4d4ba374c68509c0378e769262afda0dae7422
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 9b39efb7aa90499f6d238306ad079f1969907f46
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492832"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175251"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, World!” 应用 (XAML)
 
@@ -74,7 +74,7 @@ ms.locfileid: "86492832"
 
 若要查看和编辑项目中的文件，请双击“解决方案资源管理器”中的文件。 像展开文件夹一样展开 XAML 文件即可查看其关联的代码文件。 XAML 文件在拆分视图中打开，可同时显示设计界面和 XAML 编辑器。
 > [!NOTE]
-> 什么是 XAML？ Extensible Application Markup Language (XAML) 是用于定义应用的用户界面的语言。 可以手动输入，也可以使用 Visual Studio 设计工具创建。 一个 .xaml 文件具有一个包含逻辑的 .xaml.cs 代码隐藏文件。 XAML 与代码隐藏一同组成完整的类。 有关详细信息，请参阅 [XAML 概述](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)。
+> 什么是 XAML？ Extensible Application Markup Language (XAML) 是用于定义应用的用户界面的语言。 可以手动输入，也可以使用 Visual Studio 设计工具创建。 一个 .xaml 文件具有一个包含逻辑的 .xaml.cs 代码隐藏文件。 XAML 与代码隐藏一同组成完整的类。 有关详细信息，请参阅 [XAML 概述](../xaml-platform/xaml-overview.md)。
 
 App.xaml 和 App.xaml.cs
 
@@ -87,7 +87,7 @@ App.xaml 和 App.xaml.cs
 
 -   在 MainPage.xaml 中，为应用定义 UI。 你可以直接使用 XAML 标记添加元素，也可以使用 Visual Studio 提供的设计工具。
 -   MainPage.xaml.cs 是 MainPage.xaml 的代码隐藏页面。 你可以在其中添加应用逻辑和事件处理程序。
--   这两个文件一起定义称为 `MainPage` 的新类，该类继承自 `HelloWorld` 命名空间中的 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)。
+-   这两个文件一起定义称为 `MainPage` 的新类，该类继承自 `HelloWorld` 命名空间中的 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page)。
 
 *Package.appxmanifest*
 -   描述应用的清单文件：应用的名称、描述、磁贴、起始页等等。
@@ -224,7 +224,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ### <a name="what-did-we-just-do"></a>我们刚才做了什么？
 
-此代码使用一些 Windows API 创建一个语音合成对象，然后提供给该对象一些要说的文本。 （有关使用 SpeechSynthesis 的详细信息，请参阅 [SpeechSynthesis 命名空间](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis)文档。）
+此代码使用一些 Windows API 创建一个语音合成对象，然后提供给该对象一些要说的文本。 （有关使用 SpeechSynthesis 的详细信息，请参阅 [SpeechSynthesis 命名空间](/uwp/api/windows.media.speechsynthesis)文档。）
 
 运行该应用并单击按钮时，计算机（或手机）会逐字地说出“Hello, World!”。
 
@@ -233,13 +233,13 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 祝贺你，你已创建了自己的第一个适用于 Windows 10 和 UWP 的应用！
 
-若要了解如何使用 XAML 来布置你的应用将使用的控件，请尝试[网格教程](../design/layout/grid-tutorial.md)，或直接跳至[下一步](learn-more.md)。
+若要了解如何使用 XAML 来布置你的应用将使用的控件，请尝试[网格教程](../design/layout/grid-tutorial.md)，或直接跳至[下一步](./create-uwp-apps.md)。
 
 ## <a name="see-also"></a>另请参阅
 
 * [你的第一个应用](your-first-app.md)
-* [发布 UWP 应用](https://docs.microsoft.com/windows/uwp/publish/)。
-* [有关开发 UWP 应用的操作方法文章](https://docs.microsoft.com/windows/uwp/develop/)
+* [发布 UWP 应用](../publish/index.md)。
+* [有关开发 UWP 应用的操作方法文章](../develop/index.md)
 * [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
 * [什么是通用 Windows 应用？](universal-application-platform-guide.md)
 * [注册 Windows 帐户](sign-up.md)

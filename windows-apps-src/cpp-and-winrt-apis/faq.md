@@ -5,15 +5,15 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 提问, 问题, 常见问题解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f1733f5710d86c8481899f5865d0c190e21885
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: e37f5b585554f4ec214f7f72a896545d66dde3d5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296187"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170201"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有关 C++/WinRT 的常见问题解答
-对你可能存疑的关于通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创作和使用 Windows 运行时 API 的问题的解答。
+对你可能存疑的关于通过 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 创作和使用 Windows 运行时 API 的问题的解答。
 
 > [!IMPORTANT]
 > 有关 C++/WinRT 的发行说明，请参阅 [C++/WinRT 2.0 中的新增功能和更改](news.md#news-and-changes-in-cwinrt-20)。
@@ -54,7 +54,7 @@ C++/WinRT 生成支持（属性/目标）记录在 Microsoft.Windows.CppWinRT Nu
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>链接器为何显示“LNK2019:未解析的外部符号”错误？
 如果无法解析的符号是 C++/WinRT 投影的 Windows 命名空间标头文件中的 API（位于 **winrt** 命名空间），则是因为该 API 在已包含的标头文件中做了前置声明，但其定义位于尚未包含的标头文件中。 请包括以 API 的命名空间命名的标头文件，并重新生成。 有关详细信息，请参阅 [C++/WinRT 投影标头文件](consume-apis.md#cwinrt-projection-headers)。
 
-如果无法解析的符号是 Windows 运行时自由函数，例如 [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize)，则需要在项目中显式链接 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella 库。 C++/WinRT 投影依赖于这些自由（非成员）函数和入口点。 如果为应用程序使用了某个 [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) 项目模板，则会自动链接 `WindowsApp.lib`。 否则，你可以使用项目链接设置包含它，或在源代码中包含它。
+如果无法解析的符号是 Windows 运行时自由函数，例如 [RoInitialize](/windows/desktop/api/roapi/nf-roapi-roinitialize)，则需要在项目中显式链接 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella 库。 C++/WinRT 投影依赖于这些自由（非成员）函数和入口点。 如果为应用程序使用了某个 [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) 项目模板，则会自动链接 `WindowsApp.lib`。 否则，你可以使用项目链接设置包含它，或在源代码中包含它。
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
@@ -70,7 +70,7 @@ C++/WinRT 生成支持（属性/目标）记录在 Microsoft.Windows.CppWinRT Nu
 
 ### <a name="uniform-construction"></a>统一构造
 
-如果尝试通过任何投影类型的构造函数（不是其 **std:: nullptr_t** 构造函数）实例化本地实现的运行时类，也可能会发生此错误。 为了解决此问题，你将需要通常称为“统一构造”的 C++/WinRT 2.0 功能。 若要选择加入该功能，并且需要详细信息和代码示例，请参阅[选择加入统一构造和直接实现访问](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)。
+如果尝试通过任何投影类型的构造函数（不是其 **std:: nullptr_t** 构造函数）实例化本地实现的运行时类，也可能会发生此错误。 为了解决此问题，你将需要通常称为“统一构造”的 C++/WinRT 2.0 功能。 若要选择加入该功能，并且需要详细信息和代码示例，请参阅[选择加入统一构造和直接实现访问](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access)。
 
 有关实例化不需要统一构造的本地实现运行时类的方法，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)。
 
@@ -177,7 +177,7 @@ a.f();
 上面所示的建议模式不仅适用于 C++/WinRT，而且也适用于所有 Windows 运行时语言投射。
 
 ## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>如何将字符串转换为其他类型 &mdash; 例如，以方便导航？
-在[导航视图代码示例](/windows/uwp/design/controls-and-patterns/navigationview#code-example)（主要是 C# 代码）的末尾，有一个 C++/WinRT 代码片段演示了如何进行这种转换。
+在[导航视图代码示例](../design/controls-and-patterns/navigationview.md#code-example)（主要是 C# 代码）的末尾，有一个 C++/WinRT 代码片段演示了如何进行这种转换。
 
 ## <a name="how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try"></a>如何使用 GetCurrentTime 和/或 TRY 解析多义性？
 

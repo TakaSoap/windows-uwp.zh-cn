@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc080a58bc3e381fc26ddcc6a42af28e2dacaa65
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 9c2fd792b9652e38637810b4ccd0aee94075895b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970442"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174691"
 ---
 # <a name="two-pane-view"></a>双窗格视图
 
@@ -23,18 +23,18 @@ ms.locfileid: "82970442"
 TwoPaneView 控件旨在帮助你自动充分利用双屏设备（尽管它适用于所有 Windows 设备），无需特殊编码。 在双屏设备上，双窗格视图可确保用户界面 (UI) 在跨越屏幕之间的间隙时可以完全拆分，使内容出现在间隙的任意一侧。
 
 > [!NOTE]
-> 双屏设备  是一种特殊的设备，具有独特的功能。 它不等效于具有多个监视器的桌面设备。 有关双屏设备的详细信息，请参阅 [Introduction to dual-screen devices](/dual-screen/introduction)（双屏设备简介）。 （请参阅[显示多个视图](/windows/uwp/design/layout/show-multiple-views)，详细了解如何为多个监视器优化应用。）
+> 双屏设备  是一种特殊的设备，具有独特的功能。 它不等效于具有多个监视器的桌面设备。 有关双屏设备的详细信息，请参阅 [Introduction to dual-screen devices](/dual-screen/introduction)（双屏设备简介）。 （请参阅[显示多个视图](../layout/show-multiple-views.md)，详细了解如何为多个监视器优化应用。）
 
 **获取 Windows UI 库**
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | TwoPaneView  控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | TwoPaneView  控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
 
 > **Windows UI 库 API：** [TwoPaneView 类](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
 
 > [!TIP]
-> 在本文档中，我们使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此项添加到我们的[页](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> 在本文档中，我们使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此项添加到我们的[页](/uwp/api/windows.ui.xaml.controls.page)元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >在后面的代码中，我们还使用 C# 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们在文件顶部添加了此 **using** 语句：`using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -74,7 +74,7 @@ TwoPaneView 控件旨在帮助你自动充分利用双屏设备（尽管它适�
 
 可以通过设置 [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) 来配置双窗格视图，指定在空间只允许显示一个窗格的情况下显示哪个窗格。 然后，指定将 `Pane1` 显示在纵向窗口的顶部还是底部，或者显示在横向窗口的左侧还是右侧。
 
-双窗格视图处理窗格的大小和排列，但你仍需使窗格内的内容适应大小和方向上的变化。 请参阅[采用 XAML 的响应式布局](/windows/uwp/design/layout/layouts-with-xaml)和[布局面板](/windows/uwp/design/layout/layout-panels)，详细了解如何创建自适应 UI。
+双窗格视图处理窗格的大小和排列，但你仍需使窗格内的内容适应大小和方向上的变化。 请参阅[采用 XAML 的响应式布局](../layout/layouts-with-xaml.md)和[布局面板](../layout/layout-panels.md)，详细了解如何创建自适应 UI。
 
 [TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) 基于应用的跨越状态管理窗格的显示。
 
@@ -92,7 +92,7 @@ TwoPaneView 控件旨在帮助你自动充分利用双屏设备（尽管它适�
 
 ### <a name="add-content-to-the-panes"></a>将内容添加到窗格
 
-双窗格视图的每个窗格都可以保存单个 XAML `UIElement`。 若要添加内容，通常将 XAML 布局面板置于每个窗格中，然后将其他控件和内容添加到面板。 窗格可以更改大小并在横向模式和纵向模式间切换，因此需确保每个窗格中的内容能够适应这些更改。 请参阅[采用 XAML 的响应式布局](/windows/uwp/design/layout/layouts-with-xaml)和[布局面板](/windows/uwp/design/layout/layout-panels)，详细了解如何创建自适应 UI。
+双窗格视图的每个窗格都可以保存单个 XAML `UIElement`。 若要添加内容，通常将 XAML 布局面板置于每个窗格中，然后将其他控件和内容添加到面板。 窗格可以更改大小并在横向模式和纵向模式间切换，因此需确保每个窗格中的内容能够适应这些更改。 请参阅[采用 XAML 的响应式布局](../layout/layouts-with-xaml.md)和[布局面板](../layout/layout-panels.md)，详细了解如何创建自适应 UI。
 
 此示例创建如以前在“示例”  部分所示的简单图片/信息应用 UI。 当应用跨双屏时，图片和信息显示在不同的屏幕上。 在单屏上，内容可以在两个窗格中显示，也可以合并到单个窗格中，具体取决于可用空间大小。 （如果只有一个窗格的空间，则将 Pane2 的内容移到 Pane1 中，让用户滚动查看任何隐藏的内容。 稍后会在“响应模式更改”  部分看到此内容的代码。）
 
@@ -190,7 +190,7 @@ MyTwoPaneView.PanePriority = Microsoft.UI.Xaml.Controls.TwoPaneViewPriority.Pane
 
 ### <a name="pane-sizing"></a>窗格大小设置
 
-在单屏上，窗格大小取决于 [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) 和 [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) 属性。 它们使用支持 _auto_ 和 _star_(\*) 大小设置的 [GridLength](/uwp/api/windows.ui.xaml.gridlength) 值。 有关 auto 和 star 大小设置的说明，请参阅[采用 XAML 的响应式布局](/windows/uwp/design/layout/layouts-with-xaml#layout-properties)中的“布局属性”部分。 
+在单屏上，窗格大小取决于 [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) 和 [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) 属性。 它们使用支持 _auto_ 和 _star_(\*) 大小设置的 [GridLength](/uwp/api/windows.ui.xaml.gridlength) 值。 有关 auto 和 star 大小设置的说明，请参阅[采用 XAML 的响应式布局](../layout/layouts-with-xaml.md#layout-properties)中的“布局属性”部分。 
 
 默认情况下，`Pane1Length` 设置为 `Auto`，可根据内容自行调整大小。 `Pane2Length` 设置为 `*`，使用所有剩余空间。
 

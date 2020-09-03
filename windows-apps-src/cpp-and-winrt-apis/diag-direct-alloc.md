@@ -5,16 +5,16 @@ ms.date: 07/19/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 直接, 堆栈, 分配, 实现
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fe8ff6653b8655ee25cd9adc0c11acb22d42a11
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 199b62d96685e207e55e6dff7cd310752617d1d2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68372788"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170251"
 ---
 # <a name="diagnosing-direct-allocations"></a>诊断直接分配
 
-如[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis) 中所述，在创建实现类型对象时，应该使用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 系列的帮助程序。 本主题深入探讨了一种 C++/WinRT 2.0 功能，该功能可帮助你诊断在堆栈上直接分配实现类型对象的错误。
+如[使用 C++/WinRT 创作 API](./author-apis.md) 中所述，在创建实现类型对象时，应该使用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 系列的帮助程序。 本主题深入探讨了一种 C++/WinRT 2.0 功能，该功能可帮助你诊断在堆栈上直接分配实现类型对象的错误。
 
 此类错误可能会导致莫名其妙的崩溃或损坏，调试起来难度大且费时间。 因此，这是一项重要的功能，有必要了解相关背景。
 
@@ -138,4 +138,4 @@ auto stringable{ std::make_unique<MyStringable>() }; // Highly dubious.
 
 ## <a name="related-topics"></a>相关主题
 * [通过 C++/WinRT 使用 API](consume-apis.md)
-* [使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [使用 C++/WinRT 创作 API](./author-apis.md)

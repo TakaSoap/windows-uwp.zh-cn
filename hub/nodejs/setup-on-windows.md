@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Node.js, windows 10, 本机 windows, 直接在 windows 上
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: fe1943da8c1de4f4fced5dec67079522d83f9a19
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8c865610ba2678c1c5ab1b25ff7a2c7410d11f15
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82173463"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166581"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>直接在 Windows 上设置 Node.js 开发环境
 
@@ -64,7 +64,7 @@ ms.locfileid: "82173463"
 若要将 Volta 安装为版本管理器（而不是 windows-nvm），请参阅其[入门指南](https://docs.volta.sh/guide/getting-started)的“Windows 安装”  部分，然后按照安装说明下载并运行其 Windows 安装程序。
 
 > [!IMPORTANT]
-> 安装 Volta 之前，必须确保在 Windows 计算机上启用[开发人员模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers)。
+> 安装 Volta 之前，必须确保在 Windows 计算机上启用[开发人员模式](/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers)。
 
 若要了解有关使用 Volta 在 Windows 上安装多个版本的 Node.js 的详细信息，请参阅 [Volta 文档](https://docs.volta.sh/guide/understanding#managing-your-toolchain)。
 
@@ -101,4 +101,4 @@ ms.locfileid: "82173463"
 直接在 Windows 上使用 Node.js 非常适合学习和试验可执行的操作。 准备好生成可投入生产的 Web 应用后（通常部署到基于 Linux 的服务器），建议使用适用于 Linux 的 Windows 子系统版本 2 (WSL 2) 来开发 Node.js Web 应用。 许多 Node.js 包和框架是在 *nix 环境下创建的，并且大多数 Node.js 应用都部署在 Linux 上，因此在 WSL 上开发可确保开发环境和生产环境之间的一致性。 若要设置 WSL 开发环境，请参阅[使用 WSL 2 设置 Node.js 开发环境](./setup-on-wsl2.md)。
 
 > [!NOTE]
-> 如果需要在 Windows 服务器上托管 Node.js 应用程序，最常见的场景似乎是[使用反向代理](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca)。 可通过两种方式实现此目的：1) [使用 iisnode](https://harveywilliams.net/blog/installing-iisnode) 或[直接实现](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b)。 我们不会保留这些资源，建议[使用 Linux 服务器来托管 Node.js 应用](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)。
+> 如果需要在 Windows 服务器上托管 Node.js 应用程序，最常见的场景似乎是[使用反向代理](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca)。 可通过两种方式实现此目的：1) [使用 iisnode](https://harveywilliams.net/blog/installing-iisnode) 或[直接实现](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b)。 我们不会保留这些资源，建议[使用 Linux 服务器来托管 Node.js 应用](/azure/app-service/app-service-web-get-started-nodejs)。

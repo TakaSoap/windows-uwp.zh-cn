@@ -7,16 +7,16 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 705b0ecb474c0bb821c3a21f4b8b66073984827f
-ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
+ms.openlocfilehash: fe9cbb9fdc9d73a38642a4f5894b1ef0f8182e69
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469572"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174511"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Windows 应用的导航历史记录和向后导航
 
-> **重要的 API**：[BackRequested 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、[SystemNavigationManager 类](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager)、[OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
+> **重要的 API**：[BackRequested 事件](/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、[SystemNavigationManager 类](/uwp/api/Windows.UI.Core.SystemNavigationManager)、[OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 Windows 应用提供了一个一致的后退导航系统，用于遍历用户在应用内和应用之间（具体取决于设备）的导航历史记录。
 
@@ -74,7 +74,7 @@ Windows 应用提供了一个一致的后退导航系统，用于遍历用户在
 
 ## <a name="code-example"></a>代码示例
 
-以下代码示例演示如何使用后退按钮实现向后导航行为。 该代码将响应 Button [Click  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) 事件并在 [OnNavigatedTo  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)（在导航到新页面时调用）中禁用/启用按钮可见性。 该代码示例还通过为 [BackRequested  ](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) 事件注册侦听器来处理来自从硬件和软件系统后退键的输入。
+以下代码示例演示如何使用后退按钮实现向后导航行为。 该代码将响应 Button [Click  ](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) 事件并在 [OnNavigatedTo  ](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)（在导航到新页面时调用）中禁用/启用按钮可见性。 该代码示例还通过为 [BackRequested  ](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) 事件注册侦听器来处理来自从硬件和软件系统后退键的输入。
 
 ```xaml
 <!-- MainPage.xaml -->
@@ -194,7 +194,7 @@ namespace winrt::PageNavTest::implementation
 
 我们在上面为单个页面处理向后导航。 如果你想要从后退导航排除特定页面，或想要在显示页面前执行页面级别代码，可以在每个页面中处理导航。
 
-若要为整个应用处理向后导航，请在 `App.xaml` 代码隐藏文件中为 [BackRequested  ](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) 事件注册全局侦听器。
+若要为整个应用处理向后导航，请在 `App.xaml` 代码隐藏文件中为 [BackRequested  ](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) 事件注册全局侦听器。
 
 App.xaml 代码隐藏：
 
@@ -307,9 +307,9 @@ bool App::On_BackRequested()
 
 ## <a name="system-back-behavior-for-backward-compatibilities"></a>针对后向兼容性的系统后退行为
 
-以前，UWP 应用使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) 来实现向后导航。 API 将继续获得支持以确保向后兼容性，但我们不会再建议依靠 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)。 相反，你的应用应该绘制自己的应用内后退按钮。
+以前，UWP 应用使用 [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility) 来实现向后导航。 API 将继续获得支持以确保向后兼容性，但我们不会再建议依靠 [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility)。 相反，你的应用应该绘制自己的应用内后退按钮。
 
-如果应用继续使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，则系统 UI 会在标题栏中呈现系统后退按钮。 （后退按钮的外观和用户交互与以前版本相比并无变化。）
+如果应用继续使用 [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，则系统 UI 会在标题栏中呈现系统后退按钮。 （后退按钮的外观和用户交互与以前版本相比并无变化。）
 
 ![标题栏后退按钮](images/nav-back-pc.png)
 
