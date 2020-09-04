@@ -151,6 +151,8 @@
       href: ../audio-video-camera/codec-query.md
     - name: 屏幕捕获
       href: ../audio-video-camera/screen-capture.md
+    - name: 屏幕捕获到视频
+      href: ../audio-video-camera/screen-capture-video.md
 - name: 通信
   items:
     - name: 应用到应用的通信

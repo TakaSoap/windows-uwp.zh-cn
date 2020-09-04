@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fe3e4e23bc2be46d3ddb09d9ebf83b5fda5ce9d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e6c13fea8cbc9f4e8bc515219d26da98b58f32da
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173711"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411941"
 ---
 # <a name="uwp-on-xbox-one"></a>Xbox One 上的 UWP
 
@@ -32,15 +32,15 @@ Xbox One 上的 UWP 支持应用和游戏的开发。 你不必参与开发人�
 |[已知问题](known-issues.md)| Xbox One 上的 UWP 的已知问题。 |
 |[常见问题解答](frequently-asked-questions.md)| 与 Xbox One 上的 UWP 相关的常见问题。 |
 |[工具](introduction-to-xbox-tools.md)| 介绍特定于 Xbox One 的工具 _Dev Home_、如何使用 Windows 设备门户，以及如何设置用于开发的 Visual Studio。 本部分还指导新开发人员完成他们的第一个 Xbox UWP 应用程序，并说明如何使用 Fiddler 工具来查看网络流量。 |
-| [Xbox 应用开发活动](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event) | 对于刚开始在 Xbox 上生成应用的开发人员来说，Xbox 应用开发活动是一个很好的起点。 观看会议录像和浏览活动期间发布的博客文章。 |
+|[Xbox 应用开发活动](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event) | 对于刚开始在 Xbox 上生成应用的开发人员来说，Xbox 应用开发活动是一个很好的起点。 观看会议录像和浏览活动期间发布的博客文章。 |
 |[针对 Xbox 和电视进行设计](../design/devices/designing-for-tv.md)| 介绍设计可在电视上看到并可将控制器用于输入的应用时的最佳做法。 |
 |[Xbox 最佳做法](tailoring-for-xbox.md)| 如何关闭鼠标模式、绘制到屏幕的边缘和禁用缩放。 |
 |[使用语音调用 UI 元素](ves-on-xbox.md)| 介绍了在 Xbox 上的 UWP 应用中支持 Voice Enabled Shell 的最佳做法。 |
 |[用于 Xbox One 上 UWP 应用和游戏的系统资源](system-resource-allocation.md)| 介绍应用程序在 Xbox One 上运行时可供其使用的资源。 |
 |[多用户应用程序简介](multi-user-applications.md)| 介绍 Xbox One 上的多用户应用程序 (MUA)。 |
-| [自动化 Xbox One 开发任务](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | GitHub 上的 WindowsDevicePortalWrapper 项目提供了一个库，允许自动执行常见的开发任务，例如部署或启动应用。 该项目包括一个示例 XboxWdpDriver.exe，演示如何使用这些 API 执行常见任务。 |
+|[自动化 Xbox One 开发任务](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | GitHub 上的 WindowsDevicePortalWrapper 项目提供了一个库，允许自动执行常见的开发任务，例如部署或启动应用。 该项目包括一个示例 XboxWdpDriver.exe，演示如何使用这些 API 执行常见任务。 |
 |[将现有游戏移植到 Xbox](development-lanes-landing.md)|基于生成你的游戏所采用的技术，我们可以直接向你提供分步说明，这可以加快使用 UWP 将游戏移植到 Xbox 的进度。|
-|[Xbox One 上尚不支持的 UWP 功能](/uwp/extension-sdks/uwp-limitations-on-xbox)|  介绍在 Xbox One 上尚不能完全正常运行的 UWP 功能区域。|
+|[Xbox 上不支持的 UWP 功能](/uwp/extension-sdks/uwp-limitations-on-xbox)|  介绍在 Xbox One 上尚不能完全正常运行的 UWP 功能区域。|
 
 ## <a name="videos"></a>视频
 
