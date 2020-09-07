@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c66fc2b07b5ee5ce87b6c1f37657b3eec49f3105
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 20aeda53af3b4b11c1562d2ed22b099a3377d3c7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970402"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172631"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -26,7 +26,7 @@ ms.locfileid: "82970402"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | ItemsRepeater 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | ItemsRepeater 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
 
 > **Windows UI 库 API：** [ItemsRepeater 类](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 >
@@ -95,7 +95,7 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-还可以将 **ItemsSource** 属性绑定到 XAML 中的集合。 有关数据绑定的详细信息，请参阅[数据绑定概述](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart)。
+还可以将 **ItemsSource** 属性绑定到 XAML 中的集合。 有关数据绑定的详细信息，请参阅[数据绑定概述](../../data-binding/data-binding-quickstart.md)。
 
 
 ```xaml
@@ -111,7 +111,7 @@ itemsRepeater1.ItemsSource = Items;
 在此示例中，数据对象是简单的字符串。 **DataTemplate** 包含一个位于文本左侧的图像，并通过设置 **TextBlock** 的样式以青色显示字符串。
 
 > [!NOTE]
-> 在 **DataTemplate** 中使用 [x:Bind 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)时，必须指定 DataTemplate 中的 DataType (`x:DataType`)。
+> 在 **DataTemplate** 中使用 [x:Bind 标记扩展](../../xaml-platform/x-bind-markup-extension.md)时，必须指定 DataTemplate 中的 DataType (`x:DataType`)。
 
 ```xaml
 <DataTemplate x:DataType="x:String">
@@ -209,7 +209,7 @@ itemsRepeater1.ItemsSource = Items;
 
     **警告**：Windows.Foundation.IObservableVector\<T> 不支持“移动”操作。 这可能会导致项的 UI 失去其视觉状态。  例如，某个项当前处于选中状态并且/或者有焦点，当通过“删除”和“添加”操作对其进行移动时，该项会失去焦点，不再处于选中状态。
 
-    Platform.Collections.Vector\<T> 使用 IObservableVector\<T> 并具有这种相同的限制。 如果需要支持“移动”操作，则请使用 **INotifyCollectionChanged** 接口。  .NET ObservableCollection\<T> 类使用 **INotifyCollectionChanged**。
+    Platform.Collections.Vector\<T> 使用 IObservableVector\<T> 并具有这种相同的限制。 如果需要支持“移动”操作，则请使用 **INotifyCollectionChanged** 接口。  .NET ObservableCollection\<T> 类使用 INotifyCollectionChanged。
 
 - [IKeyIndexMapping](/uwp/api/microsoft.ui.xaml.controls.ikeyindexmapping)
 
@@ -774,14 +774,14 @@ public class MyPage : Page
 
 ## <a name="enable-accessibility"></a>启用辅助功能
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 不提供默认的辅助功能体验。 有关 [Windows 应用的可用性](/windows/uwp/design/usability)的文档提供了详细信息，可帮助你确保应用提供包容性用户体验。 如果使用 ItemsRepeater 来创建自定义控件，则务必查看有关[自定义的自动化对等](/windows/uwp/design/accessibility/custom-automation-peers)的文档。
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 不提供默认的辅助功能体验。 有关 [Windows 应用的可用性](../usability/index.md)的文档提供了详细信息，可帮助你确保应用提供包容性用户体验。 如果使用 ItemsRepeater 来创建自定义控件，则务必查看有关[自定义的自动化对等](../accessibility/custom-automation-peers.md)的文档。
 
 ### <a name="keyboarding"></a>键盘操作
-根据 XAML 的[适用于键盘操作的 2D 定向导航](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard)中的说明，将会尽量减少针对焦点移动（由 ItemsRepeater 提供）的键盘操作支持。
+根据 XAML 的[适用于键盘操作的 2D 定向导航](../input/focus-navigation.md#2d-directional-navigation-for-keyboard)中的说明，将会尽量减少针对焦点移动（由 ItemsRepeater 提供）的键盘操作支持。
 
 ![方向导航](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
 
-ItemsRepeater 的 [XYFocusKeyboardNavigation 模式](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)默认为 _Enabled_。 考虑添加对常见[键盘交互](/windows/uwp/design/input/keyboard-interactions)（例如 Home、End、PageUp、PageDown）的支持，具体取决于所要的体验。
+ItemsRepeater 的 [XYFocusKeyboardNavigation 模式](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)默认为 _Enabled_。 考虑添加对常见[键盘交互](../input/keyboard-interactions.md)（例如 Home、End、PageUp、PageDown）的支持，具体取决于所要的体验。
 
 ItemsRepeater 自动确保其项（不管是否已虚拟化）的默认 Tab 键顺序遵循数据中提供的项的顺序。 默认情况下，ItemsRepeater 的 [TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation) 属性设置为 [Once](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode)，而不是设置为通常的默认值 _Local_。
 

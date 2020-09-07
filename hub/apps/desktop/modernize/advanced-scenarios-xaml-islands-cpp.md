@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 50ee005fc0de52a3e0217a71fb3d391445c486db
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6270f6f486c8d0a2764ea20d29dd966f142f3630
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80226231"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170681"
 ---
 # <a name="advanced-scenarios-for-xaml-islands-in-c-win32-apps"></a>C++ Win32 应用中 XAML 岛的高级方案
 
@@ -25,19 +25,19 @@ ms.locfileid: "80226231"
 
   * **C++ Win32：** 应用可直接在其主消息循环中调用 PreTranslateMessage  。 有关示例，请参阅 [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp#L16) 文件。
 
-  * **WPF：** 应用可以从 [ComponentDispatcher.ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) 事件的事件处理程序调用 PreTranslateMessage  。 有关示例，请参阅 Windows 社区工具包中的 [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) 文件。
+  * **WPF：** 应用可以从 [ComponentDispatcher.ThreadFilterMessage](/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) 事件的事件处理程序调用 PreTranslateMessage  。 有关示例，请参阅 Windows 社区工具包中的 [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) 文件。
 
-  * **Windows 窗体：** 应用可以从 [Control.PreprocessMessage](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.preprocessmessage) 的替代方法调用 PreTranslateMessage  。 有关示例，请参阅 Windows 社区工具包中的 [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) 文件。
+  * **Windows 窗体：** 应用可以从 [Control.PreprocessMessage](/dotnet/api/system.windows.forms.control.preprocessmessage) 的替代方法调用 PreTranslateMessage  。 有关示例，请参阅 Windows 社区工具包中的 [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) 文件。
 
 ## <a name="keyboard-focus-navigation"></a>键盘焦点导航
 
-当用户使用键盘在应用程序中导航 UI 元素时（例如，通过按 Tab  或方向/箭头键），需要以编程方式将焦点移入和移出 DesktopWindowXamlSource  对象。 当用户的键盘导航到达 DesktopWindowXamlSource  时，将焦点移到 UI 导航顺序中的第一个 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 对象中，在用户循环访问元素时继续将焦点移到下面的 Windows.UI.Xaml.UIElement  对象，然后将焦点移出 DesktopWindowXamlSource  并移入父 UI 元素。  
+当用户使用键盘在应用程序中导航 UI 元素时（例如，通过按 Tab  或方向/箭头键），需要以编程方式将焦点移入和移出 DesktopWindowXamlSource  对象。 当用户的键盘导航到达 DesktopWindowXamlSource  时，将焦点移到 UI 导航顺序中的第一个 [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) 对象中，在用户循环访问元素时继续将焦点移到下面的 Windows.UI.Xaml.UIElement  对象，然后将焦点移出 DesktopWindowXamlSource  并移入父 UI 元素。  
 
 UWP XAML 托管 API 提供若干类型和成员，可帮助你完成这些任务。
 
-* 当键盘导航进入 DesktopWindowXamlSource  时，将引发 [GotFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.gotfocus) 事件。 处理此事件，并使用 [NavigateFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.navigatefocus) 方法以编程方式将焦点移到第一个托管的 Windows.UI.Xaml.UIElement  。
+* 当键盘导航进入 DesktopWindowXamlSource  时，将引发 [GotFocus](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.gotfocus) 事件。 处理此事件，并使用 [NavigateFocus](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.navigatefocus) 方法以编程方式将焦点移到第一个托管的 Windows.UI.Xaml.UIElement  。
 
-* 当用户位于 DesktopWindowXamlSource  中的最后一个可聚焦的元素上，按 Tab  键或箭头键将引发 [TakeFocusRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested) 事件。 处理此事件，并以编程方式将焦点移到主机应用程序的下一个可聚焦的元素。 例如，在 WPF 应用程序中，DesktopWindowXamlSource  托管在 [System.Windows.Interop.HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) 中，可以使用 [MoveFocus](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.movefocus) 方法将焦点转移到主机应用程序中的下一个可聚焦元素。
+* 当用户位于 DesktopWindowXamlSource  中的最后一个可聚焦的元素上，按 Tab  键或箭头键将引发 [TakeFocusRequested](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested) 事件。 处理此事件，并以编程方式将焦点移到主机应用程序的下一个可聚焦的元素。 例如，在 WPF 应用程序中，DesktopWindowXamlSource  托管在 [System.Windows.Interop.HwndHost](/dotnet/api/system.windows.interop.hwndhost) 中，可以使用 [MoveFocus](/dotnet/api/system.windows.frameworkelement.movefocus) 方法将焦点转移到主机应用程序中的下一个可聚焦元素。
 
 有关演示如何在运行的示例应用程序的上下文中执行此操作的示例，请参阅以下代码文件：
 
@@ -51,25 +51,25 @@ UWP XAML 托管 API 提供若干类型和成员，可帮助你完成这些任务
 
 当用户更改父 UI 元素的大小时，需要处理任何必要的布局更改，以确保 UWP 控件按预期显示。 下面是一些需要考虑的重要场景。
 
-* 在 C++ Win32 应用程序中，当应用程序处理 WM_SIZE 消息时，它可以通过使用 [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) 函数重定位托管的 XAML 岛。 有关示例，请参阅 [SampleApp.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/SampleApp.cpp#L170) 代码文件。
+* 在 C++ Win32 应用程序中，当应用程序处理 WM_SIZE 消息时，它可以通过使用 [SetWindowPos](/windows/desktop/api/winuser/nf-winuser-setwindowpos) 函数重定位托管的 XAML 岛。 有关示例，请参阅 [SampleApp.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/SampleApp.cpp#L170) 代码文件。
 
-* 当父 UI 元素需要获取所需的矩形区域的大小以适应托管在 DesktopWindowXamlSource  上的 Windows.UI.Xaml.UIElement  时，请调用 Windows.UI.Xaml.UIElement  的 [Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) 方法。 例如：
+* 当父 UI 元素需要获取所需的矩形区域的大小以适应托管在 DesktopWindowXamlSource  上的 Windows.UI.Xaml.UIElement  时，请调用 Windows.UI.Xaml.UIElement  的 [Measure](/uwp/api/windows.ui.xaml.uielement.measure) 方法。 例如：
 
-    * 在 WPF 应用程序中，你可以通过托管 DesktopWindowXamlSource  的 [HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) 的 [MeasureOverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride) 方法执行此操作。 有关示例，请参阅 Windows 社区工具包中的 [WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 文件。
+    * 在 WPF 应用程序中，你可以通过托管 DesktopWindowXamlSource  的 [HwndHost](/dotnet/api/system.windows.interop.hwndhost) 的 [MeasureOverride](/dotnet/api/system.windows.frameworkelement.measureoverride) 方法执行此操作。 有关示例，请参阅 Windows 社区工具包中的 [WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 文件。
 
-    * 在 Windows 窗体应用程序中，你可以通过托管 DesktopWindowXamlSource  的 [Control](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) 的 [GetPreferredSize](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize) 方法执行此操作。 有关示例，请参阅 Windows 社区工具包中的 [WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 文件。
+    * 在 Windows 窗体应用程序中，你可以通过托管 DesktopWindowXamlSource  的 [Control](/dotnet/api/system.windows.forms.control) 的 [GetPreferredSize](/dotnet/api/system.windows.forms.control.getpreferredsize) 方法执行此操作。 有关示例，请参阅 Windows 社区工具包中的 [WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 文件。
 
-* 当父 UI 元素的大小发生更改时，请调用托管在 DesktopWindowXamlSource  上的根 Windows.UI.Xaml.UIElement  的 [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 方法。 例如：
+* 当父 UI 元素的大小发生更改时，请调用托管在 DesktopWindowXamlSource  上的根 Windows.UI.Xaml.UIElement  的 [Arrange](/uwp/api/windows.ui.xaml.uielement.arrange) 方法。 例如：
 
-    * 在 WPF 应用程序中，你可以通过托管 DesktopWindowXamlSource  的 [HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) 对象的 [ArrangeOverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride) 方法执行此操作。 有关示例，请参阅 Windows 社区工具包中的 [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 文件。
+    * 在 WPF 应用程序中，你可以通过托管 DesktopWindowXamlSource  的 [HwndHost](/dotnet/api/system.windows.interop.hwndhost) 对象的 [ArrangeOverride](/dotnet/api/system.windows.frameworkelement.arrangeoverride) 方法执行此操作。 有关示例，请参阅 Windows 社区工具包中的 [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 文件。
 
-    * 在 Windows 窗体应用程序中，你可以通过托管 DesktopWindowXamlSource  的 [Control](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) 的 [SizeChanged](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.sizechanged) 事件的处理程序执行此操作。 有关示例，请参阅 Windows 社区工具包中的 [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 文件。
+    * 在 Windows 窗体应用程序中，你可以通过托管 DesktopWindowXamlSource  的 [Control](/dotnet/api/system.windows.forms.control) 的 [SizeChanged](/dotnet/api/system.windows.forms.control.sizechanged) 事件的处理程序执行此操作。 有关示例，请参阅 Windows 社区工具包中的 [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 文件。
 
 ## <a name="handle-dpi-changes"></a>处理 DPI 变更
 
 UWP XAML 框架自动处理托管 UWP 控件的 DPI 变更（例如，当用户在具有不同屏幕 DPI 的监视器之间拖动窗口时）。 为了获得最佳体验，建议将 Windows 窗体、WPF 或C++ Win32 应用程序配置为感知每个监视器 DPI。
 
-若要将应用程序配置为感知每个监视器 DPI，请将[并行程序集清单](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)添加到项目，并将 \<dpiAwareness **\>** 元素设置为“PerMonitorV2”  。 有关此值的详细信息，请参阅 [DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context) 说明。
+若要将应用程序配置为感知每个监视器 DPI，请将[并行程序集清单](/windows/desktop/SbsCs/application-manifests)添加到项目，并将 \<dpiAwareness\> 元素设置为“PerMonitorV2” 。 有关此值的详细信息，请参阅 [DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](/windows/desktop/hidpi/dpi-awareness-context) 说明。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>

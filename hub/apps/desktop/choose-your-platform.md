@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 桌面开发
-ms.openlocfilehash: 778c15bc511404fad9cf5713876f89c7fef56165
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: d4415bc703acf0b94f6f8a6fe8aab053620336c6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493002"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168901"
 ---
 # <a name="choose-your-app-platform"></a>选择应用平台
 
@@ -51,12 +51,12 @@ WPF 是为托管型 Windows 应用程序而建立的平台，通过它可访问 
 
 有关 WPF 的详细信息，请参阅以下文章：
 
-* [入门 (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)
+* [入门 (WPF)](/dotnet/framework/wpf/getting-started/)
 * [项目模板](visual-studio-templates.md#net-templates)
 * [创建首个应用 (.NET Core)](/visualstudio/get-started/csharp/tutorial-wpf/)
 * [创建首个应用 (.NET Framework)](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
 * [将 WPF 应用迁移到 .NET Core](/dotnet/desktop-wpf/migration/convert-project-from-net-framework/)
-* [API 参考 (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [API 参考 (.NET)](/dotnet/api/index)
 * [示例](https://github.com/Microsoft/WPF-Samples)
 
 ## <a name="windows-forms"></a>Windows 窗体
@@ -65,11 +65,11 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
 
 有关 Windows 窗体的详细信息，请参阅以下文章：
 
-* [Windows 窗体入门](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
+* [Windows 窗体入门](/dotnet/framework/winforms/getting-started-with-windows-forms)
 * [项目模板](visual-studio-templates.md#net-templates)
 * [创建第一个 Windows 窗体应用](/dotnet/framework/winforms/creating-a-new-windows-form)
 * [教程：创建图片查看器](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
-* [API 参考 (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [API 参考 (.NET)](/dotnet/api/index)
 * [增强 Windows 窗体应用](/dotnet/framework/winforms/advanced/)
 
 ## <a name="win32"></a>Win32
@@ -125,8 +125,12 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
 
 ### <a name="progressive-web-apps-pwas"></a>渐进式 Web 应用 (PWA)
 
-PWA 使开发人员能够将网站代码进行打包，以便其能像应用程序一样在 Windows 10 电脑上安装和运行。 有关详细信息，请参阅[渐进式 Web 应用](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started)。
+PWA 使开发人员能够将网站代码进行打包，以便其能像应用程序一样在 Windows 10 电脑上安装和运行。 有关详细信息，请参阅[渐进式 Web 应用](/microsoft-edge/progressive-web-apps/get-started)。
 
 ### <a name="xamarin"></a>Xamarin
 
 使用 Xamarin 为 Windows 10 生成可在 iOS 和 Android 上运行的跨平台应用程序。 有关详细信息，请参阅 [Xamarin](https://docs.microsoft.com/xamarin/xamarin-forms/get-started/index)。
+
+### <a name="uno-platform"></a>Uno 平台
+
+Uno 平台使 Windows 基于 UWP 的代码（C# 和 XAML）可在 iOS、Android 和 WebAssembly 上运行。 该平台可提供 [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041)中 UWP 的完整 API 定义，并实现 UWP API 的某些部分（如 [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041)），使 UWP 应用程序能够在这些平台上运行。 有关详细信息，请参阅 [Uno 平台文档](https://platform.uno/docs/articles/intro.html)。

@@ -1,5 +1,5 @@
 ---
-Description: 按钮为用户提供了触发即时操作的方法。
+description: 了解如何使用联系人卡片让用户能够显示和编辑姓名、电话号码和地址等联系人信息。
 title: 联系人卡片
 ms.date: 03/07/2018
 ms.topic: article
@@ -9,12 +9,12 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 274481b2a282b025a637f7f6cc54dc0161c3e61d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2817977533b63df8498faa1ecbc5cc57a4987c30
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968752"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160591"
 ---
 # <a name="contact-card"></a>联系人卡片
 
@@ -174,12 +174,12 @@ private void onUserClickShowContactCard()
 
 ## <a name="retrieving-real-contacts"></a>检索“实际”联系人
 
-本文中的示例创建一个简单联系人。 在实际应用中，你可能希望检索现有联系人。 有关说明，请参阅[联系人和日历文章](/windows/uwp/contacts-and-calendar/)。
+本文中的示例创建一个简单联系人。 在实际应用中，你可能希望检索现有联系人。 有关说明，请参阅[联系人和日历文章](../../contacts-and-calendar/index.md)。
 
 
 
 
 ## <a name="related-articles"></a>相关文章
-- [联系人和日历](/windows/uwp/contacts-and-calendar/)
+- [联系人和日历](../../contacts-and-calendar/index.md)
 - [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)（联系人卡片示例）
 - [个人图片控件](/windows/uwp/controls-and-patterns/person-picture/)

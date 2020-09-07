@@ -1,17 +1,17 @@
 ---
 title: 面向 Windows 即服务的应用开发
-description: 将应用版本和支持与特定的 Windows 版本分离。
+description: 了解创新、开发和交付的 Windows 即服务 (WaaS) 方法，以及以社区为中心的 Windows 预览体验成员测试计划。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 47be38c6d7a5374b06789beede02647ef9b264d8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c035a97b1750c8f285689f2b2f82f3766a6c06ad
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75737630"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173791"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>面向 Windows 即服务的应用程序开发
 
@@ -20,7 +20,7 @@ ms.locfileid: "75737630"
 -   Windows 10 移动版
 -   Windows 10 IoT 核心版 
 
-在当今的环境中，用户期望经常受到以设备为中心的体验影响，需要以月而非年为单位来衡量完整的产品周期。 此外，新版本必须持续提供，并且必须在对用户影响最小的情况下部署。 Microsoft 通过实现名为 [Windows 即服务 (WaaS)](https://docs.microsoft.com/windows/deployment/update/waas-overview) 的创新、开发和交付的新方法设计 Windows 10 以满足这些要求。 在保持高质量级别的同时极大地缩短产品周期的关键是以社区为中心的创新测试方法，Microsoft 已针对 Windows 10 实现此方法。 名为“Windows 预览体验成员”的社区由世界各地数百万的用户组成。 当 Windows 预览体验成员选择加入社区时，他们将在产品周期的过程中测试许多版本，并通过名为“外部测试版”的迭代方法向 Microsoft 提供反馈。
+在当今的环境中，用户期望经常受到以设备为中心的体验影响，需要以月而非年为单位来衡量完整的产品周期。 此外，新版本必须持续提供，并且必须在对用户影响最小的情况下部署。 Microsoft 通过实现名为 [Windows 即服务 (WaaS)](/windows/deployment/update/waas-overview) 的创新、开发和交付的新方法设计 Windows 10 以满足这些要求。 在保持高质量级别的同时极大地缩短产品周期的关键是以社区为中心的创新测试方法，Microsoft 已针对 Windows 10 实现此方法。 名为“Windows 预览体验成员”的社区由世界各地数百万的用户组成。 当 Windows 预览体验成员选择加入社区时，他们将在产品周期的过程中测试许多版本，并通过名为“外部测试版”的迭代方法向 Microsoft 提供反馈。
 
 作为外部测试版分发的版本向 Windows 工程团队提供大量关于版本在实际使用中执行情况的数据。 与 Windows 预览体验成员一起执行外部测试版还使 Microsoft 能够在比以往更多的各种硬件、应用程序和网络环境中测试版本，并且更快地发现问题。 因此，Microsoft 认为侧重于社区的外部测试将实现比以往更快速的创新交付和更好的公开发布质量。
 
@@ -42,7 +42,7 @@ ms.locfileid: "75737630"
 | 半年频道 | 大约在 Microsoft 第一次发布之后的 4 个月 | 第一次发布之后的 18 个月 | 在部署之前提供更多时间测试新功能升级 | 专业版、教育版、企业版、移动企业版、IoT 核心专业版 |
 | 长期服务频道 (LTSC) | 紧接 Microsoft 发布之后 | 10 年 | 支持采用较少更改的配置长期部署选定的 Windows 10 版本 | 企业 LTSB |
 
-有关详细信息，请参阅[更新和升级的 Windows 10 服务选项](https://docs.microsoft.com/windows/deployment/update/waas-overview#servicing-channels)。
+有关详细信息，请参阅[更新和升级的 Windows 10 服务选项](/windows/deployment/update/waas-overview#servicing-channels)。
 
 ## <a name="supporting-apps-in-windows-as-a-service"></a>Windows 即服务中的支持应用
 
@@ -90,7 +90,7 @@ OS 版本已根据 Windows 10 递增。 这意味着内部版本号已更改为 
 -   如果应用依赖于特定的 API 功能，请确保找准正确的 API 版本。
 -   确保通过 APISet 或其他公共 API 检测更改，不要将版本用作某些功能或修复的代理。 如果存在重大更改，而正常检查未检测到，则表明存在 Bug。
 -   确保应用不会使用奇怪的方式检查版本，如通过注册表、文件版本、偏移、内核模式、驱动程序或其他方式。 如果应用确实需要检查版本，则使用 GetVersion API，它应该会返回主要版本号、次要版本号和内部版本号。
--   如果你使用的是 [GetVersion](https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion?redirectedfrom=MSDN) API，请记住，此 API 的行为在 Windows 8.1 以后已发生变化。
+-   如果你使用的是 [GetVersion](/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion) API，请记住，此 API 的行为在 Windows 8.1 以后已发生变化。
 
 如果你拥有反恶意软件或防火墙应用之类的应用，应通过常规反馈渠道和通过 Windows 预览体验计划进行工作。
 
@@ -158,4 +158,4 @@ Windows 操作系统外部测试版是指在向一般大众发布最终版本之
 
 
 ## <a name="related-topics"></a>相关主题
-[用于更新和升级的 Windows 10 服务选项](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)
+[用于更新和升级的 Windows 10 服务选项](/windows/manage/introduction-to-windows-10-servicing)

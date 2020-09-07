@@ -1,16 +1,16 @@
 ---
 title: “创建自适应布局”教程
-description: 本文介绍有关 XAML 中的自适应布局的基础知识
+description: 了解如何在 XAML 中使用自适应布局功能创建在任何窗口大小都美观的应用。
 keywords: XAML, UWP, 入门
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b172f2da7fa8953045db4eab3818df02ce43e00c
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 8e1498836772c3c279a1b9d85d76070b29593f5e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942887"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174471"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教程：创建自适应布局
 
@@ -60,11 +60,11 @@ ms.locfileid: "88942887"
 
 ![小窗口：之前](../basics/images/xaml-basics/adaptive-layout-small-before.png)
 
-有关应用布局的更多信息，请参阅文档的[布局](/windows/uwp/design/layout/)部分。
+有关应用布局的更多信息，请参阅文档的[布局](../layout/index.md)部分。
 
 ### <a name="add-window-breakpoints"></a>添加窗口断点
 
-第一步是定义应用不同视觉状态的“断点”。 请参阅[屏幕大小和断点](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)，了解有关小、中和大屏幕断点的详细信息。
+第一步是定义应用不同视觉状态的“断点”。 请参阅[屏幕大小和断点](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)，了解有关小、中和大屏幕断点的详细信息。
 
 从解决方案资源管理器中打开 App.xaml，并在结束 `</ResourceDictionary>` 标记之前的 `MergedDictionaries` 后面添加以下代码。
 
@@ -264,12 +264,12 @@ ms.locfileid: "88942887"
 
 ## <a name="going-further"></a>深入探索
 
-现在，你已完成本实验，并且拥有足够的自适应布局知识，可以自行进行进一步的实验。 作为一项更大的挑战，请尝试针对较大的屏幕大小优化布局（例如 Surface Hub）。 若要测试 Surface Hub 布局，请参阅[使用 Visual Studio 测试 Surface Hub 应用](/windows/uwp/debug-test-perf/test-surface-hub-apps-using-visual-studio)。
+现在，你已完成本实验，并且拥有足够的自适应布局知识，可以自行进行进一步的实验。 作为一项更大的挑战，请尝试针对较大的屏幕大小优化布局（例如 Surface Hub）。 若要测试 Surface Hub 布局，请参阅[使用 Visual Studio 测试 Surface Hub 应用](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md)。
 
 如果遇到问题，可以在[使用 XAML 定义页面布局](../layout/layouts-with-xaml.md)的以下部分中找到更多指南。
 
-+ [视觉状态和状态触发器](/windows/uwp/design/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [定制布局](/windows/uwp/design/layout/layouts-with-xaml#tailored-layouts)
++ [视觉状态和状态触发器](../layout/layouts-with-xaml.md#visual-states-and-state-triggers)
++ [定制布局](../layout/layouts-with-xaml.md#tailored-layouts)
 
 或者，如果你想要了解有关如何构建初始照片编辑应用的详细信息，请查看这些有关 XAML [用户界面](../basics/xaml-basics-ui.md)和[数据绑定](../../data-binding/xaml-basics-data-binding.md)的教程。
 

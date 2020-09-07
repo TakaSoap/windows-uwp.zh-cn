@@ -1,25 +1,25 @@
 ---
-Description: 网格视图项模板
+description: 获取可与 GridView 控件配合使用以显示带有文本覆盖的图像库、图像和文本以及图像的项模板。
 title: 网格视图项模板
 template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 17c14d7147cafa17e78bd13bf6684a99d87cbdfd
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 08849436f88dd9698f349f7fde64b51324212244
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684411"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172681"
 ---
 # <a name="item-templates-for-grid-view"></a>网格视图项模板
 
-本节包含可以对 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 控件使用的项模板。 使用这些模板可获得常见应用类型的外观。
+本节包含可以对 [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView) 控件使用的项模板。 使用这些模板可获得常见应用类型的外观。
 
 为了演示数据绑定，这些模板将 **GridViewItems** 绑定到[数据绑定概述](../../data-binding/data-binding-quickstart.md)中的示例 Recording 类。
 
 > [!NOTE] 
-> 目前，如果一个 **DataTemplate** 包含多个控件（例如多个 **TextBlock**），则屏幕阅读器的默认可访问名称来自于项上的 .ToString()。 为方便起见，可以在 [DataTemplate**的根元素上设置**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties)AutomationProperties.Name  。 有关辅助功能的详细信息，请参阅[辅助功能概述](../accessibility/accessibility-overview.md)。
+> 目前，如果一个 **DataTemplate** 包含多个控件（例如多个 **TextBlock**），则屏幕阅读器的默认可访问名称来自于项上的 .ToString()。 为方便起见，可以在 [DataTemplate**的根元素上设置**](/uwp/api/windows.ui.xaml.automation.automationproperties)AutomationProperties.Name  。 有关辅助功能的详细信息，请参阅[辅助功能概述](../accessibility/accessibility-overview.md)。
 
 ## <a name="icon-and-text"></a>图标和文本
 使用这些模板在一个网格中显示带图标和文本的应用的集合。
@@ -156,7 +156,7 @@ ms.locfileid: "75684411"
 ```
 
 ## <a name="related-articles"></a>相关文章
-- [GridView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [GridView 类](/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [数据绑定概述](../../data-binding/data-binding-quickstart.md)
 - [辅助功能概述](../accessibility/accessibility-overview.md)
 - [ListView 和 GridView 示例 (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)

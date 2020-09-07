@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b38cf60f1f890649af33ad34f244bc348af2832
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a837dc025023d529d9090fade401726a670c7561
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82148694"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166191"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
@@ -41,7 +41,7 @@ RAM
 -   64 位
 -   专业版或更高版本
 
-若要查看 BIOS 要求，请参阅[如何为 Windows Phone 8 仿真器启用 Hyper-V](https://docs.microsoft.com/previous-versions/windows/apps/jj863509(v=vs.105))。
+若要查看 BIOS 要求，请参阅[如何为 Windows Phone 8 仿真器启用 Hyper-V](/previous-versions/windows/apps/jj863509(v=vs.105))。
 
 若要查看 RAM 和操作系统的要求，请在“控制面板”中选择“系统和安全”  ，然后选择“系统”  。
 
@@ -215,7 +215,7 @@ ESC | WIN + ESC | BACK | 长按可实现预期效果。
 -   NDEF:URI
 -   NDEF:wkt.U
 
-你可以通过编辑“负载”  窗口或在文件中提供它们来创建这些消息。 有关这些类型以及如何使用它们的详细信息，请参考 [**ProximityDevice.PublishBinaryMessage**](https://docs.microsoft.com/uwp/api/windows.networking.proximity.proximitydevice.publishbinarymessage) 参考页面的“备注”部分。
+你可以通过编辑“负载”  窗口或在文件中提供它们来创建这些消息。 有关这些类型以及如何使用它们的详细信息，请参考 [**ProximityDevice.PublishBinaryMessage**](/uwp/api/windows.networking.proximity.proximitydevice.publishbinarymessage) 参考页面的“备注”部分。
 
 Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例将公开与 Windows Phone 8 模拟器相同的协议。 你需要下载 DDK、构建该示例驱动程序、在 Windows 8 设备上安装它，然后将 Windows 8 设备的 IP 地址或主机名添加到设备列表，并将其与另一台 Windows 8 设备或一个 Windows Phone 8 模拟器触碰。
 
@@ -268,7 +268,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 ### <a name="smart-card-reader-mode"></a>智能卡读卡器模式
 
-该仿真器可连接到主计算机上的智能卡读卡器设备，以便使所插入或触碰的智能卡显示到手机应用程序中，并且可使用 [**Windows.Devices.SmartCards.SmartCardConnection**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardConnection) 类与 APDU 进行通信。 若要实现此功能，你将需要一个连接到计算机的兼容智能卡读卡器设备，USB 智能卡读卡器（NFC/非接触式和插入/接触式均可）广泛可用。 若要使仿真器可以使用连接的智能卡读卡器，首先选择“读卡器”  模式，该模式应该显示一个列出连接到主系统的所有兼容智能卡读卡器的下拉框，然后从该下拉框中选择你希望连接的智能卡读卡器设备。
+该仿真器可连接到主计算机上的智能卡读卡器设备，以便使所插入或触碰的智能卡显示到手机应用程序中，并且可使用 [**Windows.Devices.SmartCards.SmartCardConnection**](/uwp/api/Windows.Devices.SmartCards.SmartCardConnection) 类与 APDU 进行通信。 若要实现此功能，你将需要一个连接到计算机的兼容智能卡读卡器设备，USB 智能卡读卡器（NFC/非接触式和插入/接触式均可）广泛可用。 若要使仿真器可以使用连接的智能卡读卡器，首先选择“读卡器”  模式，该模式应该显示一个列出连接到主系统的所有兼容智能卡读卡器的下拉框，然后从该下拉框中选择你希望连接的智能卡读卡器设备。
 
 请注意，并非所有支持 NFC 的智能卡读卡器都支持某些类型的 NFC 卡，其中有一些不支持标准 PC/SC 存储卡 APDU 命令。
 
@@ -319,7 +319,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 当你以不同的速度并使用不同的精度配置文件从一个位置移动到另一个位置时，可以测试你的应用。 位置模拟器可以帮助你识别你的用法在位置 API 用法中的更改，可用于改进用户体验。 例如，该工具可帮助你识别必须优化地理围栏参数（例如大小或停留时间），才能检测地理围栏在不同的应用场景中是否成功。
 
-“位置”  选项卡支持三种模式。 在所有模式中，当仿真器收到新位置时，该位置可用于触发 [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件或在你的位置感知应用中响应 [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 调用。
+“位置”  选项卡支持三种模式。 在所有模式中，当仿真器收到新位置时，该位置可用于触发 [**PositionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件或在你的位置感知应用中响应 [**GetGeopositionAsync**](/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 调用。
 
 -   在“固定”  模式中，你可以将图钉放置在地图上。 当你单击“播放所有点”  时，位置模拟器会以在“秒每钉”  文本框中指定的间隔将每个图钉的位置逐个发送给仿真器。
 
@@ -635,7 +635,7 @@ Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机�
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>卸载 Windows 10 移动版映像
 
-当你安装仿真器时，Windows 10 移动版 VHD 映像已安装，它在控制面板的“程序和功能”  列表中获取自己的条目。 如果你想要卸载该映像，请在已安装的程序列表中找到“Windows 10 移动版映像 - **版本\<”，右键单击它，然后选择“卸载”\>**  。
+当你安装仿真器时，Windows 10 移动版 VHD 映像已安装，它在控制面板的“程序和功能”  列表中获取自己的条目。 如果想要卸载该映像，请在已安装的程序列表中找到“Windows 10 移动版映像 - \<version\>”，右键单击它，然后选择“卸载” 。
 
 在当前版本中，必须随后手动删除模拟器的 VHD 文件。 如果已将模拟器安装到默认路径，则 VHD 文件位于 C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\\<version\>\\flash.vhd。
 
@@ -660,7 +660,6 @@ Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机�
 
 ## <a name="related-topics"></a>相关主题
 
-* [在模拟器中运行 Windows Phone 应用](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
+* [在模拟器中运行 Windows Phone 应用](/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
 * [Windows 和 Windows Phone SDK 存档](https://developer.microsoft.com/windows/downloads/sdk-archive)
  
-

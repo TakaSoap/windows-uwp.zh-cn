@@ -1,6 +1,6 @@
 ---
-Description: 使用反转列表在底部添加新项。
 title: 反转列表
+description: 了解如何创建反转列表，并使用它在通用 Windows 平台 (UWP) 应用的 ListView 控件底部添加新项。
 label: Inverted lists
 template: detail.hbs
 ms.date: 05/19/2017
@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c552109b243688c2618425adce797c4d208eac31
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 40e99ecb4719569e95b55a8cafb411df26ed265e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66364779"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169881"
 ---
 # <a name="inverted-lists"></a>反转列表
 
@@ -24,7 +24,7 @@ ms.locfileid: "66364779"
 
 在采用外观不同的项表示发送方/接收方的聊天体验中，你可以使用列表视图表示对话。  使用不同的颜色和水平对齐方式将来自发送方/接收方的消息分隔开来有助于用户在对话中快速适应。
 
-> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)、[ItemsStackPanel 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel)、[ItemsUpdatingScrollMode 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode)
+> **重要的 API**：[ListView 类](/uwp/api/windows.ui.xaml.controls.listview)、[ItemsStackPanel 类](/uwp/api/windows.ui.xaml.controls.itemsstackpanel)、[ItemsUpdatingScrollMode 属性](/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode)
  
 你通常需要将列表呈现为看起来从底部向上增长，而不是从顶部向下增长。  当新消息到达并添加到末尾时，之前的消息会向上滑动，以留出空间，从而将用户的注意力吸引到最新到达的内容上。  但是，如果用户向上滚动以查看之前的回复，则新消息的到达不得引起会干扰用户注意力的视觉转移。
 
@@ -32,7 +32,7 @@ ms.locfileid: "66364779"
 
 ## <a name="create-an-inverted-list"></a>创建反转列表
 
-若要创建反转列表，请使用将 [ItemsStackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel) 作为其项目面板的列表视图。 在 ItemsStackPanel 上，将 [ItemsUpdatingScrollMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode) 设置为 [KeepLastItemInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsupdatingscrollmode)。
+若要创建反转列表，请使用将 [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel) 作为其项目面板的列表视图。 在 ItemsStackPanel 上，将 [ItemsUpdatingScrollMode](/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode) 设置为 [KeepLastItemInView](/uwp/api/windows.ui.xaml.controls.itemsupdatingscrollmode)。
 
 > [!IMPORTANT]
 > 从 Windows 10（版本 1607）开始可使用 **KeepLastItemInView** 枚举值。 当你的应用在较早版本的 Windows 10 上运行时，你无法使用此值。

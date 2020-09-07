@@ -1,5 +1,5 @@
 ---
-Description: 所述的墨迹工具
+description: 了解有助于 Windows 应用中的墨迹书写功能和墨迹相关功能的 InkCanvas 和 InkToolbar 控件。
 title: 墨迹书写控件
 label: Inking Controls
 template: detail.hbs
@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 56104dd5608356b47a405c37eba71e544c5ba23c
-ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
+ms.openlocfilehash: a856d0ef6864b70a2927c35205fb0addca3e4056
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84257416"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173960"
 ---
 # <a name="inking-controls"></a>墨迹书写控件
 
 
 
-有两种不同的控件可促进 Windows 应用中的墨迹书写：[InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 和 [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)。
+有两种不同的控件可促进 Windows 应用中的墨迹书写：[InkCanvas](/uwp/api/windows.ui.xaml.controls.inkcanvas) 和 [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)。
 
 InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默认设置）或擦除笔划。 此控件是一个透明的覆盖层，该覆盖层不包含任何用于更改默认笔划墨迹属性的内置 UI。
 
@@ -35,7 +35,7 @@ InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默�
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-> **重要的 API**：[InkCanvas 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)、[InkToolbar 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)、[InkPresenter 类](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter)、[Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **重要的 API**：[InkCanvas 类](/uwp/api/windows.ui.xaml.controls.inkcanvas)、[InkToolbar 类](/uwp/api/windows.ui.xaml.controls.inktoolbar)、[InkPresenter 类](/uwp/api/windows.ui.input.inking.inkpresenter)、[Windows.UI.Input.Inking](/uwp/api/Windows.UI.Input.Inking)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -47,7 +47,7 @@ InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默�
 将 InkCanvas 与 InkToolbar 配对以提供用于激活墨迹功能和设置基本墨迹属性（如笔划大小、颜色和笔尖形状）的 UI。
 
 > [!NOTE] 
-> 若要在 InkCanvas 上对笔划墨迹呈现进行更广泛的自定义，请使用基础的 [InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter) 对象。
+> 若要在 InkCanvas 上对笔划墨迹呈现进行更广泛的自定义，请使用基础的 [InkPresenter](/uwp/api/windows.ui.input.inking.inkpresenter) 对象。
 
 ## <a name="examples"></a>示例
 
@@ -84,7 +84,7 @@ InkCanvas 和 InkToolbar 还用于 Windows Ink 工作区中的“截图和草图
 ```
 
 > [!NOTE]
-> 有关使用 InkPresenter 进行的详细的 InkCanvas 自定义，请参阅[“Windows 应用中的笔交互和 Windows Ink”](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)一文。
+> 有关使用 InkPresenter 进行的详细的 InkCanvas 自定义，请参阅[“Windows 应用中的笔交互和 Windows Ink”](../input/pen-and-stylus-interactions.md)一文。
 
 InkToolbar 控件必须与 InkCanvas 结合使用。 将 InkToolbar（以及所有内置工具）合并到应用需要一行额外的标记：
 
@@ -170,6 +170,6 @@ InkToolbar 由两组不同的按钮类型组成：
 
 ## <a name="related-articles"></a>相关文章
 
-- [Windows 应用中的笔交互和 Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
-- [将 Windows Ink 笔划识别为文本和形状](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
-- [存储和检索 Windows Ink 墨迹数据](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)
+- [Windows 应用中的笔交互和 Windows Ink](../input/pen-and-stylus-interactions.md)
+- [将 Windows Ink 笔划识别为文本和形状](../input/convert-ink-to-text.md)
+- [存储和检索 Windows Ink 墨迹数据](../input/save-and-load-ink.md)

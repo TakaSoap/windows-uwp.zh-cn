@@ -1,17 +1,17 @@
 ---
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: 启用设备进行开发
-description: 配置 Windows 10 设备进行开发和调试。
+description: 了解如何通过在 Visual Studio 中启用开发人员模式来支持将 Windows 10 设备用于开发和调试。
 keywords: 入门 开发人员许可证 Visual Studio，开发人员许可证 启用设备
 ms.date: 05/22/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4402200726da93bb820946c9849d8c15bd1c5d8d
-ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
+ms.openlocfilehash: 702e3aa166501c3e9974398ae5b89e832cfa7391
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448387"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159051"
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
@@ -62,9 +62,9 @@ ms.locfileid: "85448387"
 若要了解有关设备门户的详细信息，请参阅 [Windows 设备门户概述](../debug-test-perf/device-portal.md)。
 
 有关特定于设备的设置说明，请参阅：
-- [适用于台式机的设备门户](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [适用于 HoloLens 的设备门户](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-device-portal)
-- [适用于 IoT 的设备门户](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
+- [适用于台式机的设备门户](../debug-test-perf/device-portal-desktop.md)
+- [适用于 HoloLens 的设备门户](/windows/mixed-reality/using-the-windows-device-portal)
+- [适用于 IoT 的设备门户](/windows/iot-core/manage-your-device/DevicePortal)
 - [适用于移动设备的设备门户](../debug-test-perf/device-portal-mobile.md)
 - [适用于 Xbox 的设备门户](../xbox-apps/device-portal-xbox.md)
 
@@ -75,7 +75,7 @@ ms.locfileid: "85448387"
 > [!NOTE]
 > 从最新版 Windows 10 更新开始，默认启用旁加载。 现在可以在不进行特殊配置的情况下将签名的 MSIX 包部署到设备上。 如果你使用的是以前版本的 Windows 10，则默认设置将仅允许你从 Microsoft Store 运行应用，并且必须启用旁加载才能安装非 Microsoft 源中的应用。
 
-旁加载应用设置通常由需要在未通过 Microsoft Store 认证的托管设备上安装自定义应用的公司或学校使用。 在此情况下，组织通常会强制执行禁用“UWP 应用”设置的策略，如之前的设置页图像中所示。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章：[Windows 10 中的旁加载](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)和 [Microsoft Intune 基础知识](https://docs.microsoft.com/mem/intune/fundamentals/)。
+旁加载应用设置通常由需要在未通过 Microsoft Store 认证的托管设备上安装自定义应用的公司或学校使用。 在此情况下，组织通常会强制执行禁用“UWP 应用”设置的策略，如之前的设置页图像中所示。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章：[Windows 10 中的旁加载](/windows/deploy/sideload-apps-in-windows-10)和 [Microsoft Intune 基础知识](/mem/intune/fundamentals/)。
 
 设备系列特定信息
 
@@ -122,7 +122,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 
 有多个工具可用来将应用从 Windows 10 电脑部署到 Windows 10 设备。 两台设备均必须通过有线或无线的连接方式连接到网络的同一子网，或者它们必须通过 USB 进行连接。 所列的两种方法仅会安装应用包 (.appx/.appxbundle)，不安装证书。
 
--   使用 Windows 10 应用程序部署 (WinAppDeployCmd) 工具。 了解有关 [WinAppDeployCmd 工具](https://docs.microsoft.com/previous-versions/windows/apps/mt203806(v=vs.140))的详细信息。
+-   使用 Windows 10 应用程序部署 (WinAppDeployCmd) 工具。 了解有关 [WinAppDeployCmd 工具](/previous-versions/windows/apps/mt203806(v=vs.140))的详细信息。
 -   可以使用[设备门户](../debug-test-perf/device-portal.md)从浏览器部署到运行 Windows 10 版本 1511 或更高版本的移动设备。 在 Device Portal 中使用 **[应用](../debug-test-perf/device-portal.md#apps-manager)** 页上传应用包 (.appx) 并在设备上安装它。
 
 ## <a name="failure-to-install-developer-mode-package"></a>无法安装开发人员模式程序包。
@@ -231,8 +231,8 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 ## <a name="see-also"></a>另请参阅
 
 * [你的第一个应用](your-first-app.md)
-* [发布 UWP 应用](https://docs.microsoft.com/windows/uwp/publish/)。
-* [有关开发 UWP 应用的操作方法文章](https://docs.microsoft.com/windows/uwp/develop/)
+* [发布 UWP 应用](../publish/index.md)。
+* [有关开发 UWP 应用的操作方法文章](../develop/index.md)
 * [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
 * [UWP 应用是什么？](universal-application-platform-guide.md)
 * [注册 Windows 帐户](sign-up.md)

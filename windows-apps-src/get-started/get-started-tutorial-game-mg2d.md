@@ -1,17 +1,17 @@
 ---
 title: 用 MonoGame 2D 创建 UWP 游戏
-description: 适用于 Microsoft Store、用 C# 和 MonoGame 编写的简单 UWP 游戏
+description: 按照本教程操作，创建适用于 Microsoft Store、用 C# 和 MonoGame 编写的简单 UWP 游戏。
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: 4300bdc0224a18874a7ff9153195f81f8bb8d101
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b6e4b5bd75e0aff96cfc61f9b1bac380c61ae46f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685050"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162871"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>用 MonoGame 2D 创建 UWP 游戏
 
@@ -25,9 +25,9 @@ ms.locfileid: "75685050"
 MonoGame 是一款轻型游戏开发框架。 本教程介绍了用 MonoGame 进行游戏开发的基础知识，包括如何加载内容、绘制子画面、添加动画效果和处理用户输入。 此外，还介绍了一些更高级的概念，如碰撞检测和对高分辨率屏幕按比例缩放等。 本教程需要 30-60 分钟。
 
 ## <a name="prerequisites"></a>必备条件
-+   Windows 10 和 Microsoft Visual Studio 2019。  [单击此处了解如何设置 Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)。
++   Windows 10 和 Microsoft Visual Studio 2019。  [单击此处了解如何设置 Visual Studio](./get-set-up.md)。
 + .NET 桌面开发框架。 如果你尚未安装，可以通过重新运行 Visual Studio 安装程序和修改 Visual Studio 2019 安装来获得。
-+   C# 或类似面向对象的编程语言的基础知识。 [单击此处以了解如何开始使用 C#](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
++   C# 或类似面向对象的编程语言的基础知识。 [单击此处以了解如何开始使用 C#](./create-a-hello-world-app-xaml-universal.md)。
 +   熟悉基本的计算机科学概念如类、方法以及变量，将有所帮助。
 
 ## <a name="why-monogame"></a>为什么选择 MonoGame？
@@ -694,8 +694,8 @@ if (gameOver)
 
 必须以 Windows 开发人员的身份[注册](https://developer.microsoft.com/store/register)。
 
-必须使用应用提交[清单](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
+必须使用应用提交[清单](../publish/app-submissions.md)。
 
-必须将此应用提交以进行[认证](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
+必须将此应用提交以进行[认证](../publish/the-app-certification-process.md)。
 
-有关更多详细信息，请参阅[发布 UWP 应用](https://docs.microsoft.com/windows/uwp/publish/)。
+有关更多详细信息，请参阅[发布 UWP 应用](../publish/index.md)。

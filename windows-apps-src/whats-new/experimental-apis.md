@@ -1,16 +1,16 @@
 ---
 title: 实验性 API
-description: 了解实验性 API
+description: 了解如何使用 Windows 预览体验成员 SDK 在外部测试实验性 API，以便开发人员可以试用这些 API。
 ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 实验性, api
 ms.localizationpriority: medium
-ms.openlocfilehash: 542e007d07d490c2f18077e646f7598bfd2587c3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5a4813e7b4ae1e3dd16017066758aa8a35d0570a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684912"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170801"
 ---
 # <a name="experimental-apis"></a>实验性 API
 
@@ -25,7 +25,7 @@ IntelliSense 会告知你 API 是否为实验性 API。 在使用实验性 API �
 
 默认情况下，这些 API 在运行时被禁用，调用它们会导致运行时异常。 这是另一个安全措施，有助于防止使用实验性 API 的应用产生无意依赖项以及分布过于广泛。
 
-若要启用这些 API 进行实验，可使用目标设备上的 [Windows 设备门户 (WDP)](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal) 功能插件，以启用对应于想要调用的 API 的功能。
+若要启用这些 API 进行实验，可使用目标设备上的 [Windows 设备门户 (WDP)](../debug-test-perf/device-portal.md) 功能插件，以启用对应于想要调用的 API 的功能。
 
 特定实验性 API 的文档由拥有它的团队自主决定。
 

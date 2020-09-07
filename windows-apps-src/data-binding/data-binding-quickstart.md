@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cppcx
-ms.openlocfilehash: 0a967c923d9f8616a3a05af5bb0ebb612251d3b8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3f1aeb24a50d0e1f4d1e7c1ee702ea078582b4e5
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71674546"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412001"
 ---
 # <a name="data-binding-overview"></a>数据绑定概述
 
@@ -23,7 +23,7 @@ ms.locfileid: "71674546"
 
 ## <a name="prerequisites"></a>必备条件
 
-此主题假设你知道如何创建基本的 UWP 应用。 有关创建你的第一个 UWP 应用的说明，请参阅 [Windows 应用入门](https://docs.microsoft.com/windows/uwp/get-started/)。
+此主题假设你知道如何创建基本的 UWP 应用。 有关创建你的第一个 UWP 应用的说明，请参阅 [Windows 应用入门](../get-started/index.md)。
 
 ## <a name="create-the-project"></a>创建项目
 
@@ -35,7 +35,7 @@ ms.locfileid: "71674546"
 
 如果使用的是 C# 或 C++/CX，请将一个新类添加到项目中，并将该类命名 Recording  。
 
-如果使用的是 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，请将新的 Midl 文件 (.idl) 项添加到项目中，如下面 C++/WinRT 代码示例清单中所示对其进行命名  。 将这些新文件的内容替换为列表中显示的 [MIDL 3.0](/uwp/midl-3/intro) 代码，生成项目以生成 `Recording.h``.cpp``RecordingViewModel.h` 和 `.cpp`，然后将代码添加到生成的文件以匹配列表。 有关这些生成的文件以及如何将它们复制到项目中的详细信息，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
+如果使用的是 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)，请将新的 Midl 文件 (.idl) 项添加到项目中，如下面 C++/WinRT 代码示例清单中所示对其进行命名  。 将这些新文件的内容替换为列表中显示的 [MIDL 3.0](/uwp/midl-3/intro) 代码，生成项目以生成 `Recording.h``.cpp``RecordingViewModel.h` 和 `.cpp`，然后将代码添加到生成的文件以匹配列表。 有关这些生成的文件以及如何将它们复制到项目中的详细信息，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](../cpp-and-winrt-apis/binding-property.md)。
 
 ```csharp
 namespace Quickstart
@@ -223,7 +223,7 @@ namespace Quickstart
 
 接下来，从表示标记页的类公开绑定源类。 我们通过将类型 **RecordingViewModel** 的属性添加到 **MainPage** 来执行此操作。
 
-如果使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，则首先更新 `MainPage.idl`。 生成项目以重新生成 `MainPage.h` 和 `.cpp`，并将这些生成的文件中的更改合并到项目中的文件中。
+如果使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)，则首先更新 `MainPage.idl`。 生成项目以重新生成 `MainPage.h` 和 `.cpp`，并将这些生成的文件中的更改合并到项目中的文件中。
 
 ```csharp
 namespace Quickstart
@@ -316,7 +316,7 @@ MainPage::MainPage()
 </Page>
 ```
 
-如果使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，则需要删除 MainPage::ClickHandler 函数以便生成项目  。
+如果使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)，则需要删除 MainPage::ClickHandler 函数以便生成项目  。
 
 下面是结果。
 
@@ -324,11 +324,11 @@ MainPage::MainPage()
 
 ## <a name="binding-to-a-collection-of-items"></a>绑定到项目集合
 
-一个常见情形是绑定到业务对象的集合。 在 C# 和 Visual Basic 中，通用 [**ObservableCollection&lt;T&gt;** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1) 类是数据绑定的一个很好的集合选择，因为它实现了 [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) 和 [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) 接口。 当添加或删除项目或者列表本身的属性更改时，这些接口将向绑定提供更改通知。 如果你希望你的绑定控件使用集合中的对象属性更改进行更新，则业务对象也应该实现 **INotifyPropertyChanged**。 有关详细信息，请参阅[深入了解数据绑定](data-binding-in-depth.md)。
+一个常见情形是绑定到业务对象的集合。 在 C# 和 Visual Basic 中，通用 [**ObservableCollection&lt;T&gt;** ](/dotnet/api/system.collections.objectmodel.observablecollection-1) 类是数据绑定的一个很好的集合选择，因为它实现了 [**INotifyPropertyChanged**](/dotnet/api/system.componentmodel.inotifypropertychanged) 和 [**INotifyCollectionChanged**](/dotnet/api/system.collections.specialized.inotifycollectionchanged) 接口。 当添加或删除项目或者列表本身的属性更改时，这些接口将向绑定提供更改通知。 如果你希望你的绑定控件使用集合中的对象属性更改进行更新，则业务对象也应该实现 **INotifyPropertyChanged**。 有关详细信息，请参阅[深入了解数据绑定](data-binding-in-depth.md)。
 
-如果使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，则可以在 [XAML 项目控件；绑定到 C++/WinRT 集合](/windows/uwp/cpp-and-winrt-apis/binding-collection)中了解有关绑定到可观察集合的更多信息。 如果你先阅读该主题，则会更清楚下面显示的 C++/WinRT 代码清单的意图。
+如果使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)，则可以在 [XAML 项目控件；绑定到 C++/WinRT 集合](../cpp-and-winrt-apis/binding-collection.md)中了解有关绑定到可观察集合的更多信息。 如果你先阅读该主题，则会更清楚下面显示的 C++/WinRT 代码清单的意图。
 
-下面这个示例演示了将 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 绑定到 `Recording` 对象的集合。 让我们先将该集合添加到视图模型。 只需将这些新成员添加到 **RecordingViewModel** 类。
+下面这个示例演示了将 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 绑定到 `Recording` 对象的集合。 让我们先将该集合添加到视图模型。 只需将这些新成员添加到 **RecordingViewModel** 类。
 
 ```csharp
 public class RecordingViewModel
@@ -439,7 +439,7 @@ public:
 };
 ```
 
-然后，将 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 绑定到 **ViewModel.Recordings** 属性。
+然后，将 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 绑定到 **ViewModel.Recordings** 属性。
 
 ```xml
 <Page x:Class="Quickstart.MainPage" ... >
@@ -450,11 +450,11 @@ public:
 </Page>
 ```
 
-我们尚未提供适用于 **Recording** 类的数据模板，因此 UI 框架的最佳做法是针对 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 中的每个项来调用 [**ToString**](https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString)。 **ToString** 的默认实现是返回类型名称。
+我们尚未提供适用于 **Recording** 类的数据模板，因此 UI 框架的最佳做法是针对 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 中的每个项来调用 [**ToString**](/dotnet/api/system.object.tostring#System_Object_ToString)。 **ToString** 的默认实现是返回类型名称。
 
-![绑定列表视图](images/xaml-databinding1.png)
+![绑定列表视图 1](images/xaml-databinding1.png)
 
-为了解决此问题，我们可以重写 [ToString](https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString) 以返回 OneLineSummary 的值，或者提供一个数据模板   。 数据模板选项是更为常见的解决方案，并且是一个更灵活的解决方案。 使用内容控件的 [**ContentTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) 属性或项目控件的 [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 属性来指定数据模板。 下面是可用于设计适用于 **Recording** 的数据模板以及结果图示的两种方式。
+为了解决此问题，我们可以重写 [ToString](/dotnet/api/system.object.tostring#System_Object_ToString) 以返回 OneLineSummary 的值，或者提供一个数据模板   。 数据模板选项是更为常见的解决方案，并且是一个更灵活的解决方案。 使用内容控件的 [**ContentTemplate**](/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) 属性或项目控件的 [**ItemTemplate**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 属性来指定数据模板。 下面是可用于设计适用于 **Recording** 的数据模板以及结果图示的两种方式。
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -467,7 +467,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 </ListView>
 ```
 
-![绑定列表视图](images/xaml-databinding2.png)
+![绑定列表视图 2](images/xaml-databinding2.png)
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -486,25 +486,25 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 </ListView>
 ```
 
-![绑定列表视图](images/xaml-databinding3.png)
+![绑定列表视图 3](images/xaml-databinding3.png)
 
-有关 XAML 语法的详细信息，请参阅[使用 XAML 创建 UI](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui)。 有关控件布局的详细信息，请参阅[使用 XAML 定义布局](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)。
+有关 XAML 语法的详细信息，请参阅[使用 XAML 创建 UI](../design/basics/xaml-basics-ui.md)。 有关控件布局的详细信息，请参阅[使用 XAML 定义布局](../design/layout/layouts-with-xaml.md)。
 
 ## <a name="adding-a-details-view"></a>添加详细信息视图
 
-你可以选择在 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 项目中显示 **Recording** 对象的所有详细信息。 但这样做会占用大量空间。 不过，你可以在该项目中仅显示足够多的数据来标识它，然后在用户做出选择时，你可以在 UI 的单个部分（即，详细信息视图）中显示选定项的所有详细信息。 这种排列也称为主视图/详细信息视图或列表/详细信息视图。
+你可以选择在 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 项目中显示 **Recording** 对象的所有详细信息。 但这样做会占用大量空间。 不过，你可以在该项目中仅显示足够多的数据来标识它，然后在用户做出选择时，你可以在 UI 的单个部分（即，详细信息视图）中显示选定项的所有详细信息。 这种排列也称为主视图/详细信息视图或列表/详细信息视图。
 
-有两种方法可用来执行此操作。 你可以将详细信息视图绑定到 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 的 [**SelectedItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) 属性。 或者，可以使用 [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)，在此种情况下将 ListView 和详细信息视图同时绑定到 CollectionViewSource（这将为你处理当前选定的项目）    。 下面介绍这两种技术，它们都提供相同结果（图中所示）。
+有两种方法可用来执行此操作。 你可以将详细信息视图绑定到 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 的 [**SelectedItem**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) 属性。 或者，可以使用 [CollectionViewSource](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)，在此种情况下将 ListView 和详细信息视图同时绑定到 CollectionViewSource（这将为你处理当前选定的项目）    。 下面介绍这两种技术，它们都提供相同结果（图中所示）。
 
 > [!NOTE]
-> 到目前为止，本主题中我们仅使用了 [{x:Bind} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)，而将在下面介绍的这两种技术要求更为灵活（但性能较低）的 [{Binding} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension)。
+> 到目前为止，本主题中我们仅使用了 [{x:Bind} 标记扩展](../xaml-platform/x-bind-markup-extension.md)，而将在下面介绍的这两种技术要求更为灵活（但性能较低）的 [{Binding} 标记扩展](../xaml-platform/binding-markup-extension.md)。
 
-如果使用的是 C++/WinRT 或 Visual C++ 组件扩展 (C++/CX)，要使用 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 标记扩展，则需要将 [BindableAttribute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) 属性添加到要绑定到的运行时类  。 若要使用 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)，则不需要该属性。
+如果使用的是 C++/WinRT 或 Visual C++ 组件扩展 (C++/CX)，要使用 [{Binding}](../xaml-platform/binding-markup-extension.md) 标记扩展，则需要将 [BindableAttribute](/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) 属性添加到要绑定到的运行时类  。 若要使用 [{x:Bind}](../xaml-platform/x-bind-markup-extension.md)，则不需要该属性。
 
 > [!IMPORTANT]
-> 如果使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，则在安装了 Windows SDK 版本 10.0.17763.0（Windows 10 版本 1809）或更高版本的情况下，可使用 [BindableAttribute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) 属性  。 如果没有该属性，为了能够使用 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 标记扩展，需要实现 [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) 和 [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) 接口。
+> 如果使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)，则在安装了 Windows SDK 版本 10.0.17763.0（Windows 10 版本 1809）或更高版本的情况下，可使用 [BindableAttribute](/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) 属性  。 如果没有该属性，为了能够使用 [{Binding}](../xaml-platform/binding-markup-extension.md) 标记扩展，需要实现 [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) 和 [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) 接口。
 
-首先介绍的是 [**SelectedItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) 技术。
+首先介绍的是 [**SelectedItem**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) 技术。
 
 ```csharp
 // No code changes necessary for C#.
@@ -556,7 +556,7 @@ public ref class Recording sealed
 </Page>
 ```
 
-对于 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 技术，先添加 **CollectionViewSource** 作为页面资源。
+对于 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 技术，先添加 **CollectionViewSource** 作为页面资源。
 
 ```xml
 <Page.Resources>
@@ -564,7 +564,7 @@ public ref class Recording sealed
 </Page.Resources>
 ```
 
-然后，在 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)（无需再对其进行命名）和详细信息视图上调节绑定，以使用 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)。 请注意，如果将详细信息视图直接绑定到 **CollectionViewSource**，即表示你希望绑定到绑定中的当前项目，其中在集合本身上无法找到路径。 无需将 **CurrentItem** 属性指定为绑定路径，尽管由于不确定性你可以这样做）。
+然后，在 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)（无需再对其进行命名）和详细信息视图上调节绑定，以使用 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)。 请注意，如果将详细信息视图直接绑定到 **CollectionViewSource**，即表示你希望绑定到绑定中的当前项目，其中在集合本身上无法找到路径。 无需将 **CurrentItem** 属性指定为绑定路径，尽管由于不确定性你可以这样做）。
 
 ```xml
 ...
@@ -579,7 +579,7 @@ public ref class Recording sealed
 > [!NOTE]
 > 如果使用的是 C++，那么 UI 不会如下图所示：ReleaseDateTime 属性的呈现方式不同  。 有关此内容的详细讨论，请参阅以下部分。
 
-![绑定列表视图](images/xaml-databinding4.png)
+![绑定列表视图 4](images/xaml-databinding4.png)
 
 ## <a name="formatting-or-converting-data-values-for-display"></a>设置数据值的格式或对其进行转换，以供显示
 
@@ -705,7 +705,7 @@ public:
 ```
 
 > [!NOTE]
-> 对于上面的 C++/WinRT 代码清单，在 `StringFormatter.idl` 中，我们会使用[默认属性](https://docs.microsoft.com/windows/desktop/midl/default)将 IValueConverter 声明为默认接口  。 在列表中，StringFormatter 只有一个构造函数，并且没有方法，因此不会为其生成默认接口  。 如果不会将实例成员添加到 StringFormatter，则 `default` 属性是理想选择，因为不需要 QueryInterface 调用 IValueConverter 方法   。 或者，你可以提示要生成的默认 IStringFormatter 接口，并通过使用 [default_interface 属性](https://docs.microsoft.com/uwp/midl-3/predefined-attributes#the-default_interface-attribute)批注运行时类本身来实现此操作  。 如果将实例成员添加到 StringFormatter（调用频率比 IValueConverter 的方法更高），则该选项是最佳的，因为这样就不需要 QueryInterface 调用实例成员   。
+> 对于上面的 C++/WinRT 代码清单，在 `StringFormatter.idl` 中，我们会使用[默认属性](/windows/desktop/midl/default)将 IValueConverter 声明为默认接口  。 在列表中，StringFormatter 只有一个构造函数，并且没有方法，因此不会为其生成默认接口  。 如果不会将实例成员添加到 StringFormatter，则 `default` 属性是理想选择，因为不需要 QueryInterface 调用 IValueConverter 方法   。 或者，你可以提示要生成的默认 IStringFormatter 接口，并通过使用 [default_interface 属性](/uwp/midl-3/predefined-attributes#the-default_interface-attribute)批注运行时类本身来实现此操作  。 如果将实例成员添加到 StringFormatter（调用频率比 IValueConverter 的方法更高），则该选项是最佳的，因为这样就不需要 QueryInterface 调用实例成员   。
 
 现在，我们可以将 StringFormatter 的实例添加为页面资源，并可在显示 ReleaseDateTime 属性的 TextBlock 的绑定中使用    。
 
@@ -727,7 +727,7 @@ public:
 ![显示具有自定义格式的日期](images/xaml-databinding5.png)
 
 > [!NOTE]
-> 从 Windows 10 版本 1607 开始，XAML 框架提供内置 Boolean-to-Visibility 转换器。 转换器将 true 映射到 Visibility.Visible 枚举值并将 false 映射到 Visibility.Collapsed，以便你可以将 Visibility 属性绑定到布尔值，无需创建转换器     。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 从 Windows 10 版本 1607 开始，XAML 框架提供内置 Boolean-to-Visibility 转换器。 转换器将 true 映射到 Visibility.Visible 枚举值并将 false 映射到 Visibility.Collapsed，以便你可以将 Visibility 属性绑定到布尔值，无需创建转换器     。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](../debug-test-perf/version-adaptive-code.md)。
 
 ## <a name="see-also"></a>另请参阅
 * [数据绑定](index.md)

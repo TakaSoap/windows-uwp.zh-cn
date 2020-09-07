@@ -1,6 +1,6 @@
 ---
-Description: 使用内容链接将丰富的数据嵌入文本控件。
 title: 文本控件中的内容链接
+description: 了解如何使用内容链接将丰富的数据嵌入到 TextBlock、RichTextBlock 和 RichEditBox 控件中。
 label: Content links
 template: detail.hbs
 ms.date: 03/07/2018
@@ -10,12 +10,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: b72d7fced63a4c3ef4b1b233afcbb9f9874d9a3f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8a35e065a44eb55b84f6b70f5833c8652188a8c9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68796715"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174641"
 ---
 # <a name="content-links-in-text-controls"></a>文本控件中的内容链接
 
@@ -162,7 +162,7 @@ People 选取器创建 Uri 使用 **ms-people** 协议的 ContentLinkInfo。
 - 如果 LinkContentKind 不是 "People"，则将打开**人脉**应用。 例如，如果在 ContentLinkChanged 事件处理程序中修改了 LinkContentKind，就会发生这种情况。
 
 > [!TIP]
-> 有关从你的应用打开其他应用和网站的更多信息，请参阅[使用 URI 启动应用](/windows/uwp/launch-resume/launch-app-with-uri)下的主题。
+> 有关从你的应用打开其他应用和网站的更多信息，请参阅[使用 URI 启动应用](../../launch-resume/launch-app-with-uri.md)下的主题。
 
 #### <a name="invoked"></a>Invoked
 
@@ -303,7 +303,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!TIP]
-> 在文本控件中使用 ContentLink 而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span) 容器中，并对 Span 应用 `xml:space="preserve"` 属性以在 ContentLink 和其他元素之间保留空白区域。
+> 在文本控件中使用 ContentLink 而其他文本元素采用 XAML 时，请将内容放置在 [Span](/uwp/api/windows.ui.xaml.documents.span) 容器中，并对 Span 应用 `xml:space="preserve"` 属性以在 ContentLink 和其他元素之间保留空白区域。
 
 ## <a name="examples"></a>示例
 

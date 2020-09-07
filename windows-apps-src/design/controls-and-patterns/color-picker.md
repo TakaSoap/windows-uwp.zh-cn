@@ -1,5 +1,5 @@
 ---
-Description: 颜色选取器使用户可以浏览和选择颜色。
+description: 了解如何使用颜色选取器让用户能够浏览并选择颜色，或以 RGB、HSV 或十六进制格式指定颜色。
 title: 颜色选取器
 label: Color Picker
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e7661beb52438640c570e1a5ec4d7f60502e119
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: c6739263917ab48040a2780a750948215d8d6361
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968892"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173511"
 ---
 # <a name="color-picker"></a>颜色选取器
 
@@ -28,7 +28,7 @@ ms.locfileid: "82968892"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | ColorPicker  控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | ColorPicker  控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
 
 > **Windows UI 库 API：** [ColorPicker 类](/uwp/api/microsoft.ui.xaml.controls.colorpicker)、[Color 属性](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color)、[ColorChanged 事件](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
 >
@@ -64,7 +64,7 @@ ms.locfileid: "82968892"
 <ColorPicker x:Name="myColorPicker"/>
 ```
 
-默认情况下，颜色选取器在色谱旁的矩形栏中显示所选颜色的预览。 可以使用 [ColorChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged) 事件或 [Color](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color) 属性访问所选颜色并在应用中使用它。 有关详细代码，请参阅下面的示例。
+默认情况下，颜色选取器在色谱旁的矩形栏中显示所选颜色的预览。 可以使用 [ColorChanged](/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged) 事件或 [Color](/uwp/api/windows.ui.xaml.controls.colorpicker.Color) 属性访问所选颜色并在应用中使用它。 有关详细代码，请参阅下面的示例。
 
 ### <a name="bind-to-the-chosen-color"></a>绑定到所选颜色
 
@@ -155,7 +155,7 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 
 #### <a name="show-the-circle-spectrum"></a>显示圆形色谱
 
-此示例演示如何使用 [ColorSpectrumShape](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorSpectrumShape) 属性将颜色选取器配置为使用圆形色谱而不是默认的正方形。
+此示例演示如何使用 [ColorSpectrumShape](/uwp/api/windows.ui.xaml.controls.colorpicker.ColorSpectrumShape) 属性将颜色选取器配置为使用圆形色谱而不是默认的正方形。
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"

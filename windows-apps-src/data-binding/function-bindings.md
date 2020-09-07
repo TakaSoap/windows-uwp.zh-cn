@@ -1,16 +1,16 @@
 ---
-description: XBind 标记扩展允许在标记中使用函数。
+description: 了解如何使用函数作为 xBind 标记扩展中数据绑定路径的叶步。
 title: x:Bind 中的函数
 ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d74e99526ed5531db92ba88a1053e07a3fc993b
-ms.sourcegitcommit: c7f33dbe9516d28664df1b91e03edca3cb9fb0c8
+ms.openlocfilehash: 4d677767f7eb73bf46784b3f256b511e54013548
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87871683"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170041"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函数
 
@@ -23,7 +23,7 @@ ms.locfileid: "87871683"
 - 依赖多个参数适用于绑定的方法
 
 > [!NOTE]
-> 若要使用 **{x:Bind}** 的函数，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，无法使用这些函数。 有关目标版本的详细信息，请参阅[版本自适应代码](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 若要使用 **{x:Bind}** 的函数，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，无法使用这些函数。 有关目标版本的详细信息，请参阅[版本自适应代码](../debug-test-perf/version-adaptive-code.md)。
 
 在以下示例中，项目的背景和前景会绑定到这些函数，根据颜色参数执行转换。
 

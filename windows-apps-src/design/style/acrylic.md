@@ -1,5 +1,5 @@
 ---
-description: 用于创建半透明纹理的一种画笔。
+description: 了解如何使用 Acrylic（一种用于创建半透明纹理以添加深度效果和帮助构建视觉层次的画笔）。
 title: 亚克力材料
 template: detail.hbs
 ms.date: 08/09/2017
@@ -10,20 +10,20 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d969c5282fa03fb11d108d2b2c8e0fe44dfde49
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 6f7d431950e17b9908d079db9247d997ef8adadb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968452"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174581"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
 ![主图](images/header-acrylic.svg)
 
-Acrylic 是一种[画笔](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush)，用于创建半透明纹理。 你可以将 Acrylic 应用到应用图面中，并帮助构建视觉层次结构。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Acrylic 是一种[画笔](/uwp/api/Windows.UI.Xaml.Media.Brush)，用于创建半透明纹理。 你可以将 Acrylic 应用到应用图面中，并帮助构建视觉层次结构。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **重要的 API**：[AcrylicBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.acrylicbrush)、[背景属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.Background)
+> **重要的 API**：[AcrylicBrush 类](/uwp/api/windows.ui.xaml.media.acrylicbrush)、[背景属性](/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::
@@ -87,7 +87,7 @@ Acrylic 最明显的特征是其透明度。 有两种 Acrylic 混合类型可�
 
 ![使用信息浮出控件的邮件应用模式](images/Mail_TransientContextMenu.png)
 
-多数控件将默认使用 Acrylic。 调用 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、[AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) 和具有轻型消除弹出窗口的类似控件时，它们都将使用瞬态亚克力。
+多数控件将默认使用 Acrylic。 调用 [MenuFlyouts](../controls-and-patterns/menus.md)、[AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md)、[ComboBox](/uwp/api/windows.ui.xaml.controls.combobox) 和具有轻型消除弹出窗口的类似控件时，它们都将使用瞬态亚克力。
 
 > [!Note]
 > 呈现 Acrylic 图面会大量占用 GPU，从而导致设备的功耗增加并缩短电池使用时间。 设备进入节电模式时会自动禁用 Acrylic 效果，并且用户可以选择禁用所有应用的 Acrylic 效果。
@@ -246,7 +246,7 @@ else
 
 ## <a name="extend-acrylic-into-the-title-bar"></a>将 Acrylic 扩展到标题栏
 
-若要创建无缝的应用窗口外观，可以将 Acrylic 应用到标题栏区域。 此示例中将 Acrylic 扩展到标题栏的方式是将 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) 对象的 [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) 和 [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) 属性设置为 [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent)。
+若要创建无缝的应用窗口外观，可以将 Acrylic 应用到标题栏区域。 此示例中将 Acrylic 扩展到标题栏的方式是将 [ApplicationViewTitleBar](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) 对象的 [ButtonBackgroundColor](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) 和 [ButtonInactiveBackgroundColor](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) 属性设置为 [Colors.Transparent](/uwp/api/Windows.UI.Colors.Transparent)。
 
 ```csharp
 private void ExtendAcrylicIntoTitleBar()
@@ -258,7 +258,7 @@ private void ExtendAcrylicIntoTitleBar()
 }
 ```
 
-此代码可放在应用的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法 (App.xaml.cs) 中、对 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) 的调用后（如此处所示），或应用的第一页中  。
+此代码可放在应用的 [OnLaunched](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法 (App.xaml.cs) 中、对 [Window.Activate](/uwp/api/windows.ui.xaml.window.Activate) 的调用后（如此处所示），或应用的第一页中  。
 
 ```csharp
 // Call your extend acrylic code in the OnLaunched event, after

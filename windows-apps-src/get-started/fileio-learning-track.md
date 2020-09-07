@@ -1,23 +1,23 @@
 ---
 title: 处理文件
-description: 了解如何在通用 Windows 平台中处理文件。
+description: 了解开始在通用 Windows 平台 (UWP) 应用中读取或写入文件所需的主要 API 和类型。
 ms.date: 05/01/2018
 ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 文件, 文件 io, 读取文件, 写入文件, 创建文件, 写入文本, 读取文本
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c36f4885dffa86452543f05f5b7a59a882d25710
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: fea8437a533d3559c912e48241720bddd01ed96d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730057"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158961"
 ---
 # <a name="work-with-files"></a>处理文件
 
 本主题介绍开始在通用 Windows 平台 (UWP) 应用中读取或写入文件需要了解的内容。 介绍了主要 API 和类型，并提供了可帮助你了解详细信息的链接。
 
-本文并非教程。 如果需要教程，请参阅[创建、写入和读取文件](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files)，其中除了演示如何创建、读取和写入文件，还展示了如何使用缓冲区和流。 你还可能对[文件访问示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)感兴趣，其中展示了如何创建、读取、写入、复制和删除文件，以及如何检索文件属性、记住文件或文件夹，以便你的应用可以轻松地再次访问。
+本文并非教程。 如果需要教程，请参阅[创建、写入和读取文件](../files/quickstart-reading-and-writing-files.md)，其中除了演示如何创建、读取和写入文件，还展示了如何使用缓冲区和流。 你还可能对[文件访问示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)感兴趣，其中展示了如何创建、读取、写入、复制和删除文件，以及如何检索文件属性、记住文件或文件夹，以便你的应用可以轻松地再次访问。
 
 我们会了解一下用于在文件中写入和读取文本的代码，并了解如何访问应用的本地、漫游和临时文件夹。
 
@@ -25,17 +25,17 @@ ms.locfileid: "82730057"
 
 下面是需要了解的在文件读取或写入文本的主要类型：
 
-- [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) 表示文件。 此类具有提供文件相关信息的属性，以及创建、打开、复制、删除和重命名文件的方法。
-可以用来处理字符串路径。 某些 Windows 运行时 API 会获取字符串路径，但更多情况下，你将使用 StorageFile  表示文件，因为在 UWP 中处理的某些文件可能没有路径，或者路径繁复。 使用 [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) 将字符串路径转换为 **StorageFile**。 
+- [Windows.Storage.StorageFile](/uwp/api/windows.storage.storagefile) 表示文件。 此类具有提供文件相关信息的属性，以及创建、打开、复制、删除和重命名文件的方法。
+可以用来处理字符串路径。 某些 Windows 运行时 API 会获取字符串路径，但更多情况下，你将使用 StorageFile  表示文件，因为在 UWP 中处理的某些文件可能没有路径，或者路径繁复。 使用 [StorageFile.GetFileFromPathAsync()](/uwp/api/windows.storage.storagefile.getfilefrompathasync) 将字符串路径转换为 **StorageFile**。 
 
-- [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) 类提供读取和写入文本的简单方式。 此类还可以读取/写入字节数组或缓冲区内容。 此类与 [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio) 类非常相似。 主要区别在于它不像 **PathIO** 那样获取字符串路径，而是获取 **StorageFile**。
-- [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) 表示文件夹（目录）。 此类具有创建文件、查询文件夹内容以及创建、重命名和删除文件夹的方法，并具有提供文件夹相关信息的属性。 
+- [FileIO](/uwp/api/windows.storage.fileio) 类提供读取和写入文本的简单方式。 此类还可以读取/写入字节数组或缓冲区内容。 此类与 [PathIO](/uwp/api/windows.storage.pathio) 类非常相似。 主要区别在于它不像 **PathIO** 那样获取字符串路径，而是获取 **StorageFile**。
+- [Windows.Storage.StorageFolder](/uwp/api/windows.storage.storagefolder) 表示文件夹（目录）。 此类具有创建文件、查询文件夹内容以及创建、重命名和删除文件夹的方法，并具有提供文件夹相关信息的属性。 
 
 获取 **StorageFolder** 的常见方法包括：
 
-- [Windows.Storage.Pickers.FolderPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.folderpicker) 允许用户导航到想要使用的文件夹。
-- [Windows.Storage.ApplicationData.Current](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current) 提供特定于应用本地文件夹之一的 **StorageFolder**，如本地、漫游和临时文件夹。
-- [Windows.Storage.KnownFolders](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders) 提供已知库（如音乐或图片库）的 **StorageFolder**。
+- [Windows.Storage.Pickers.FolderPicker](/uwp/api/windows.storage.pickers.folderpicker) 允许用户导航到想要使用的文件夹。
+- [Windows.Storage.ApplicationData.Current](/uwp/api/windows.storage.applicationdata.current) 提供特定于应用本地文件夹之一的 **StorageFolder**，如本地、漫游和临时文件夹。
+- [Windows.Storage.KnownFolders](/uwp/api/windows.storage.knownfolders) 提供已知库（如音乐或图片库）的 **StorageFolder**。
 
 ## <a name="write-text-to-a-file"></a>将文本写入文件
 
@@ -78,7 +78,7 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 
 ### <a name="app-folders"></a>应用文件夹
 
-安装 UWP 应用后，将在 c:\users\\<用户名>\AppData\Local\Packages\\<应用包标识符>\ 下创建若干文件夹，用来存储除其他内容以外的应用的本地、漫游和临时文件。 应用不需要声明任何访问这些文件夹的功能，其他应用无法访问这些文件夹。 当卸载应用时，这些文件夹也会被删除。
+安装 UWP 应用后，在 c:\users\<user name>\AppData\Local\Packages\<app package identifier>\ 下创建若干文件夹，用来存储应用的本地、漫游和临时文件，等等。 应用不需要声明任何访问这些文件夹的功能，其他应用无法访问这些文件夹。 当卸载应用时，这些文件夹也会被删除。
 
 以下是经常使用的一些应用文件夹：
 
@@ -90,17 +90,17 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 
 ### <a name="access-the-rest-of-the-file-system"></a>访问文件系统的其余部分
 
-UWP 应用必须通过在其清单中添加相应的功能来声明访问特定用户库的意图。 当安装应用时，用户随后会收到提示，以确认他们授权对指定库的访问。 否则，将不安装应用。 提供访问图片、视频和音乐库的功能。 请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)获取完整列表。 若要获取这些库的 **StorageFolder**，请使用 [Windows.Storage.KnownFolders](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders) 类。
+UWP 应用必须通过在其清单中添加相应的功能来声明访问特定用户库的意图。 当安装应用时，用户随后会收到提示，以确认他们授权对指定库的访问。 否则，将不安装应用。 提供访问图片、视频和音乐库的功能。 请参阅[应用功能声明](../packaging/app-capability-declarations.md)获取完整列表。 若要获取这些库的 **StorageFolder**，请使用 [Windows.Storage.KnownFolders](/uwp/api/windows.storage.knownfolders) 类。
 
 #### <a name="documents-library"></a>文档库
 
-虽然存在访问用户文档库的功能，但该功能是受限功能，这意味着声明该功能的应用将被 Microsoft Store 拒绝，除非你按照流程获得特殊批准。 它不供常规使用。 请改为使用文件或文件夹选取器（请参阅[使用选取器打开文件和文件夹](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers)和[使用选取器保存文件](https://docs.microsoft.com/windows/uwp/files/quickstart-save-a-file-with-a-picker)），这允许用户导航到文件夹或文件。 当用户导航到文件夹或文件时，他们已隐式授予应用访问权限，系统将允许访问。
+虽然存在访问用户文档库的功能，但该功能是受限功能，这意味着声明该功能的应用将被 Microsoft Store 拒绝，除非你按照流程获得特殊批准。 它不供常规使用。 请改为使用文件或文件夹选取器（请参阅[使用选取器打开文件和文件夹](../files/quickstart-using-file-and-folder-pickers.md)和[使用选取器保存文件](../files/quickstart-save-a-file-with-a-picker.md)），这允许用户导航到文件夹或文件。 当用户导航到文件夹或文件时，他们已隐式授予应用访问权限，系统将允许访问。
 
 #### <a name="general-access"></a>常规访问
 
-或者，应用可以在其清单中声明受限的 [broadFileSystem](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) 功能，这也需要 Microsoft Store 批准。 随后应用可以访问用户有限访问的任何文件，而无需使用文件或文件夹选取器。
+或者，应用可以在其清单中声明受限的 [broadFileSystem](../packaging/app-capability-declarations.md) 功能，这也需要 Microsoft Store 批准。 随后应用可以访问用户有限访问的任何文件，而无需使用文件或文件夹选取器。
 
-要获取应用可以访问的位置的完整列表，请参阅[文件访问权限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)。
+要获取应用可以访问的位置的完整列表，请参阅[文件访问权限](../files/file-access-permissions.md)。
 
 ## <a name="useful-apis-and-docs"></a>有用的 API 和文档
 
@@ -110,39 +110,39 @@ UWP 应用必须通过在其清单中添加相应的功能来声明访问特定�
 
 | API | 说明 |
 |------|---------------|
-|  [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) | 提供文件相关信息，以及创建、打开、复制、删除和重命名文件的方法。 |
-| [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) | 提供文件夹相关信息、创建文件的方法以及创建、重命名、删除文件夹的方法。 |
-| [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) |  提供读取和写入文本的简单方式。 此类还可以读取/写入字节数组或缓冲区内容。 |
-| [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio) | 提供在给定了字符串路径的文件中读取/写入文本的简单方式。 此类还可以读取/写入字节数组或缓冲区内容。 |
-| [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) & [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) |  在流中读取和写入缓冲区、字节、整数、GUID、TimeSpan 等内容。 |
-| [Windows.Storage.ApplicationData.Current](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current) | 提供对为应用创建的文件夹的访问，如本地文件夹、漫游文件夹和临时文件文件夹。 |
-| [Windows.Storage.Pickers.FolderPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.folderpicker) |  让用户可以选择文件夹，并为其返回 **StorageFolder**。 这是获取对应用默认无法访问的位置的访问权限的方式。 |
-| [Windows.Storage.Pickers.FileOpenPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker) | 让用户选择要打开的文件，并为其返回 **StorageFile**。 这是获取对应用默认无法访问的文件的访问权限的方式。 |
-| [Windows.Storage.Pickers.FileSavePicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker) | 让用户选择文件的文件名、扩展名和存储位置。 返回 **StorageFile**。 这是将文件保存到应用默认无法访问的位置的方式。 |
-|  [Windows.Storage.Streams 命名空间](https://docs.microsoft.com/uwp/api/windows.storage.streams) | 涵盖读取和写入流。 请特别了解一下 [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) 和 [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) 类，它们读取和写入缓冲区、字节、整数、GUID、TimeSpan 等。 |
+|  [Windows.Storage.StorageFile](/uwp/api/windows.storage.storagefile) | 提供文件相关信息，以及创建、打开、复制、删除和重命名文件的方法。 |
+| [Windows.Storage.StorageFolder](/uwp/api/windows.storage.storagefolder) | 提供文件夹相关信息、创建文件的方法以及创建、重命名、删除文件夹的方法。 |
+| [FileIO](/uwp/api/windows.storage.fileio) |  提供读取和写入文本的简单方式。 此类还可以读取/写入字节数组或缓冲区内容。 |
+| [PathIO](/uwp/api/windows.storage.pathio) | 提供在给定了字符串路径的文件中读取/写入文本的简单方式。 此类还可以读取/写入字节数组或缓冲区内容。 |
+| [DataReader](/uwp/api/windows.storage.streams.datareader) & [DataWriter](/uwp/api/windows.storage.streams.datawriter) |  在流中读取和写入缓冲区、字节、整数、GUID、TimeSpan 等内容。 |
+| [Windows.Storage.ApplicationData.Current](/uwp/api/windows.storage.applicationdata.current) | 提供对为应用创建的文件夹的访问，如本地文件夹、漫游文件夹和临时文件文件夹。 |
+| [Windows.Storage.Pickers.FolderPicker](/uwp/api/windows.storage.pickers.folderpicker) |  让用户可以选择文件夹，并为其返回 **StorageFolder**。 这是获取对应用默认无法访问的位置的访问权限的方式。 |
+| [Windows.Storage.Pickers.FileOpenPicker](/uwp/api/windows.storage.pickers.fileopenpicker) | 让用户选择要打开的文件，并为其返回 **StorageFile**。 这是获取对应用默认无法访问的文件的访问权限的方式。 |
+| [Windows.Storage.Pickers.FileSavePicker](/uwp/api/windows.storage.pickers.filesavepicker) | 让用户选择文件的文件名、扩展名和存储位置。 返回 **StorageFile**。 这是将文件保存到应用默认无法访问的位置的方式。 |
+|  [Windows.Storage.Streams 命名空间](/uwp/api/windows.storage.streams) | 涵盖读取和写入流。 请特别了解一下 [DataReader](/uwp/api/windows.storage.streams.datareader) 和 [DataWriter](/uwp/api/windows.storage.streams.datawriter) 类，它们读取和写入缓冲区、字节、整数、GUID、TimeSpan 等。 |
 
 ### <a name="useful-docs"></a>有用的文档
 
 | 主题 | 说明 |
 |-------|----------------|
-| [Windows.Storage 命名空间](https://docs.microsoft.com/uwp/api/windows.storage) | API 参考文档。 |
-| [文件、文件夹和库](https://docs.microsoft.com/windows/uwp/files/) | 概念文档。 |
-| [创建、写入和读取文件](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | 涵盖创建、读取和写入文本、二进制数据和流。 |
+| [Windows.Storage 命名空间](/uwp/api/windows.storage) | API 参考文档。 |
+| [文件、文件夹和库](../files/index.md) | 概念文档。 |
+| [创建、写入和读取文件](../files/quickstart-reading-and-writing-files.md) | 涵盖创建、读取和写入文本、二进制数据和流。 |
 | [本地存储应用数据入门](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | 除了涵盖保存本地数据的最佳实践外，还涵盖了 LocalSettings 和 LocalCache 文件夹的用途。 |
 | [开始使用漫游应用数据](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | 有关如何使用漫游应用数据的两部分系列文章。 |
-| [漫游应用程序数据指南](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | 请在设计应用时按照这些数据漫游指南操作。 |
-| [存储和检索设置以及其他应用数据](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | 提供各种应用数据存储（如本地、漫游和临时文件夹）的概述。 请参阅[漫游数据](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data)部分，了解有关写入在设备之间漫游的数据的指南和其他信息。 |
-| [文件访问权限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | 有关应用可以访问哪些文件系统位置的信息。 |
-| [使用选取器打开文件和文件夹](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | 展示如何通过让用户通过选取器 UI 决定来访问文件和文件夹。 |
-| [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams) | 用于读取和写入流的类型。 |
-| [音乐、图片和视频库中的文件和文件夹](https://docs.microsoft.com/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries) | 涵盖如何从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。 |
+| [漫游应用程序数据指南](../design/app-settings/store-and-retrieve-app-data.md) | 请在设计应用时按照这些数据漫游指南操作。 |
+| [存储和检索设置以及其他应用数据](../design/app-settings/store-and-retrieve-app-data.md) | 提供各种应用数据存储（如本地、漫游和临时文件夹）的概述。 请参阅[漫游数据](../design/app-settings/store-and-retrieve-app-data.md#roaming-data)部分，了解有关写入在设备之间漫游的数据的指南和其他信息。 |
+| [文件访问权限](../files/file-access-permissions.md) | 有关应用可以访问哪些文件系统位置的信息。 |
+| [使用选取器打开文件和文件夹](../files/quickstart-using-file-and-folder-pickers.md) | 展示如何通过让用户通过选取器 UI 决定来访问文件和文件夹。 |
+| [Windows.Storage.Streams](/uwp/api/windows.storage.streams) | 用于读取和写入流的类型。 |
+| [音乐、图片和视频库中的文件和文件夹](../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | 涵盖如何从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。 |
 
 ## <a name="useful-code-samples"></a>有用的代码示例
 
 | 代码示例 | 说明 |
 |-----------------|---------------|
-| [应用程序数据示例](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/applicationdata/) | 展示如何通过使用应用程序数据 API 来存储和检索特定于每个用户的数据。 |
+| [应用程序数据示例](/samples/microsoft/windows-universal-samples/applicationdata/) | 展示如何通过使用应用程序数据 API 来存储和检索特定于每个用户的数据。 |
 | [文件访问示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | 展示如何创建、读取、写入、复制和删除文件。 |
-| [文件选取器示例](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/filepicker/) | 展示如何通过让用户使用 UI 选择文件和文件夹来访问它们，以及如何保存文件，以便用户可以指定要保存文件的名称、文件类型和位置。 |
-| [JSON 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | 展示如何使用 [Windows.Data.Json 命名空间](https://docs.microsoft.com/uwp/api/Windows.Data.Json)编码和解码 JavaScript 对象表示法 (JSON) 的对象、数组、字符串、数字和布尔值。 |
+| [文件选取器示例](/samples/microsoft/windows-universal-samples/filepicker/) | 展示如何通过让用户使用 UI 选择文件和文件夹来访问它们，以及如何保存文件，以便用户可以指定要保存文件的名称、文件类型和位置。 |
+| [JSON 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | 展示如何使用 [Windows.Data.Json 命名空间](/uwp/api/Windows.Data.Json)编码和解码 JavaScript 对象表示法 (JSON) 的对象、数组、字符串、数字和布尔值。 |
 | [其他代码示例](https://developer.microsoft.com/windows/samples) | 在类别下拉列表中选择**文件、文件夹和库**。 |

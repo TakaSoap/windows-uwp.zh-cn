@@ -5,16 +5,16 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ef518c9974fb4c8bc0f09f442f4b78be1c9c85d2
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: f4d2e4c2c1cfde922e46ddea189ab93447f2b323
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775837"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411950"
 ---
 # <a name="conditional-xaml"></a>条件 XAML
 
-条件 XAML 提供在 XAML 标记中使用 [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) 方法的一种途径。 可以在 API 存在的情况下在标记中设置属性和实例化对象，无需使用代码隐藏。 它选择性地分析元素或属性来确定它们在运行时是否可用。 条件语句在运行时进行评估。如果评估为 **true**，则会对使用条件 XAML 标记进行限定的元素进行分析；否则会忽略它们。
+条件 XAML 提供在 XAML 标记中使用 [ApiInformation.IsApiContractPresent](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) 方法的一种途径。 可以在 API 存在的情况下在标记中设置属性和实例化对象，无需使用代码隐藏。 它选择性地分析元素或属性来确定它们在运行时是否可用。 条件语句在运行时进行评估。如果评估为 **true**，则会对使用条件 XAML 标记进行限定的元素进行分析；否则会忽略它们。
 
 条件 XAML 从 Creators Update（版本 1703，内部版本 15063）开始提供。 若要使用条件 XAML，Visual Studio 项目的最低版本必须设置为内部版本 15063 (Creators Update) 或更高版本，且目标版本必须设置为比最低版本更高的版本。 请参阅[版本自适应应用](version-adaptive-apps.md)，详细了解如何配置 Visual Studio 项目。
 
@@ -59,7 +59,7 @@ IsPropertyPresent(ControlType, PropertyName) | IsPropertyNotPresent(ControlType,
 
 在此示例中，如果在 Fall Creators Update 或更高版本上运行应用，将显示“Hello, Conditional XAML”作为文本块的内容；如果在以前的版本上运行，则默认显示无内容。
 
-首先，使用前缀“contract5Present”定义自定义命名空间并使用默认 XAML 命名空间 (https://schemas.microsoft.com/winfx/2006/xaml/presentation) 作为含有 [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text) 属性的架构。 若要使其成为一个条件命名空间，请在架构后添加“?” 分隔符。
+首先，使用前缀“contract5Present”定义自定义命名空间并使用默认 XAML 命名空间 (https://schemas.microsoft.com/winfx/2006/xaml/presentation) 作为含有 [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.Text) 属性的架构。 若要使其成为一个条件命名空间，请在架构后添加“?” 分隔符。
 
 然后定义在运行 Fall Creators Update 或更高版本的设备上返回 **true** 的条件。 使用 ApiInformation 方法 **IsApiContractPresent** 来检查 UniversalApiContract 的第 5 个版本。 UniversalApiContract 版本 5 和 Fall Creators Update (SDK 16299) 一起发布。
 
@@ -159,7 +159,7 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 
 到目前为止，你已了解如何使用条件 XAML 设置属性，但你也可基于在运行时可用的 API 协定条件性地实例化控件。
 
-在这里，当在控件可用的 Fall Creators Update 上运行应用时，对 [ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker) 进行实例化。 ColorPicker 在 Fall Creators Update 之前不可用，因此在较早的版本上运行应用时，使用 [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) 为用户提供简化的颜色选项。
+在这里，当在控件可用的 Fall Creators Update 上运行应用时，对 [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker) 进行实例化。 ColorPicker 在 Fall Creators Update 之前不可用，因此在较早的版本上运行应用时，使用 [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox) 为用户提供简化的颜色选项。
 
 ```xaml
 <contract5Present:ColorPicker x:Name="colorPicker"
@@ -244,7 +244,7 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 
 ## <a name="related-articles"></a>相关文章
 
-- [UWP 应用指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [UWP 应用指南](../get-started/universal-application-platform-guide.md)
 - [使用 API 合约动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API 协定](https://channel9.msdn.com/Events/Build/2015/3-733)（Build 2015 视频）
-- [Universal device family API contracts](/uwp/extension-sdks/windows-universal-sdk)（通用设备系列 API 协定）
+- [使用扩展 SDK 编程](/uwp/extension-sdks/device-families-overview)

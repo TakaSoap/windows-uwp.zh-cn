@@ -3,7 +3,7 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
 doc-status: Published
-Description: 轻扫命令是上下文菜单的触摸式加速键。
+description: 了解如何使用轻扫命令作为上下文菜单的触控加速器，使用户能够在多个项目上快速连续地执行相同的操作。
 title: 轻扫
 label: Swipe
 template: detail.hbs
@@ -11,12 +11,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 315edbddccc51b7e742bf9beffad8497a104ce03
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f81e440670ccee34269ddbe5d55d93637b8d89df
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614094"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043549"
 ---
 # <a name="swipe"></a>轻扫
 
@@ -34,7 +34,7 @@ ms.locfileid: "80614094"
 
 如果你有一组项目可能很大，且每个项目都有用户可能想要定期执行的 1 到 3 个操作，则应使用轻扫命令。 这些操作可能包括但不限于：
 
-- 删除
+- 正在删除
 - 标记或归档
 - 保存或下载
 - 答复
@@ -184,9 +184,9 @@ UWP 轻扫命令有两种模式：[显示](/uwp/api/windows.ui.xaml.controls.swi
 
 ## <a name="handle-an-invoked-swipe-command"></a>处理调用的轻扫命令
 
-要对轻扫命令执行操作，可以处理其 [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) 事件。 （要详细了解用户可如何调用命令，请查看本文前面的[“轻扫”的工作原理]部分。  ）通常，轻扫命令位于 ListView 和类似列表的方案中。 在这种情况下，调用命令时，表示你要对所轻扫的项目执行操作。
+要对轻扫命令执行操作，可以处理其 [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) 事件。 （有关用户如何调用命令的更多信息，请参阅本文前面的_轻扫如何运作？_ 部分。）通常，轻扫命令用在 ListView 或类似列表的场景中。 在这种情况下，调用命令时，表示你要对所轻扫的项目执行操作。
 
-下面介绍如何处理你之前创建的 delete 轻扫项目的 Invoked 事件  。
+下面介绍如何处理你之前创建的 delete 轻扫项目的 Invoked 事件__。
 
 ```xaml
 <SwipeItems x:Key="ExecuteDelete" Mode="Execute">
@@ -209,7 +209,7 @@ UWP 轻扫命令有两种模式：[显示](/uwp/api/windows.ui.xaml.controls.swi
 
 在此特定实例中，你从列表中删除了项目，因此所轻扫项目的最终可视状态并不重要。 但是，在只希望执行一项操作后就再次折叠轻扫的情况下，可以将 [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem.BehaviorOnInvoked) 属性设置为 [SwipeBehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipebehavioroninvoked) 枚举值之一。
 
-- **自动**
+- **Auto**
   - 在执行模式下，打开的轻扫项目在调用时将保持打开状态。
   - 在显示模式下，打开的轻扫项目在调用时将折叠。
 - **关闭**
@@ -217,7 +217,7 @@ UWP 轻扫命令有两种模式：[显示](/uwp/api/windows.ui.xaml.controls.swi
 - **RemainOpen**
   - 项目被调用时，无论处于何种模式，轻扫控件将始终处于打开状态。
 
-在这里，一个 reply 轻扫项目设置为在调用后关闭  。
+在这里，一个 reply 轻扫项目设置为在调用后关闭__。
 
 ```xaml
 <SwipeItem Text="Reply" IconSource="{StaticResource ReplyIcon}"
@@ -225,7 +225,7 @@ UWP 轻扫命令有两种模式：[显示](/uwp/api/windows.ui.xaml.controls.swi
            BehaviorOnInvoked = "Close"/>
 ```
 
-## <a name="dos-and-donts"></a>应做事项和禁止事项
+## <a name="dos-and-donts"></a>准则
 
 - 请勿在 FlipView、Hub 或 Pivot 中使用轻扫。 用户可能会因轻扫指令冲突而混淆组合。
 - 请勿将水平轻扫和水平导航组合在一起，也不要将垂直轻扫和垂直导航混在一起。

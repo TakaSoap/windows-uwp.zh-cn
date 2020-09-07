@@ -1,18 +1,18 @@
 ---
-Description: 使用 Windows UI 和组件扩展桌面应用程序
 title: 使用 Windows UI 和组件扩展应用
+description: 使用 UWP 项目和 Windows 运行时组件扩展桌面应用程序以添加新式 Windows 10 体验。
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 73e867071058dfde71979318d6d711d79460f30b
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 29064390e4e198d1220d40ff5ce58a63ea41e29a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334556"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172781"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>使用新式 UWP 组件扩展桌面应用
 
@@ -21,7 +21,7 @@ ms.locfileid: "85334556"
 在许多情况下，你可以直接从桌面应用程序中调用 Windows 运行时 API，因此在查看本指南前，请参阅[面向 Windows 10 的增强](desktop-to-uwp-enhance.md)。
 
 > [!NOTE]
-> 本文中所述的功能要求桌面应用具有[程序包标识符](modernize-packaged-apps.md)（通过[在 MSIX 包中打包桌面应用](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)或[使用稀疏包授予应用标识](grant-identity-to-nonpackaged-apps.md)）。
+> 本文中所述的功能要求桌面应用具有[程序包标识符](modernize-packaged-apps.md)（通过[在 MSIX 包中打包桌面应用](/windows/msix/desktop/desktop-to-uwp-root)或[使用稀疏包授予应用标识](grant-identity-to-nonpackaged-apps.md)）。
 
 如果你准备好了，那我们就开始吧。
 
@@ -37,7 +37,7 @@ ms.locfileid: "85334556"
 
 ![扩展启动项目](images/desktop-to-uwp/extend-start-project.png)
 
-如果你的解决方案不包含打包项目，请参阅[使用 Visual Studio 打包桌面应用程序](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)。
+如果你的解决方案不包含打包项目，请参阅[使用 Visual Studio 打包桌面应用程序](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)。
 
 ### <a name="configure-the-desktop-application"></a>配置桌面应用程序
 
@@ -175,7 +175,7 @@ ms.locfileid: "85334556"
 
 ### <a name="start-the-uwp-app"></a>启动 UWP 应用
 
-首先，在桌面应用程序中，创建一个 [URI](https://docs.microsoft.com/dotnet/api/system.uri)，其中包含协议名称和要传入 UWP 应用的任何参数。 然后，调用 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。
+首先，在桌面应用程序中，创建一个 [URI](/dotnet/api/system.uri)，其中包含协议名称和要传入 UWP 应用的任何参数。 然后，调用 [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) 方法。
 
 ```csharp
 
@@ -366,7 +366,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-对于用户已打开的桌面应用程序的实例，我们还可以处理 [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher) 事件，并传入文件位置的路径。 这样，任何打开的桌面应用程序实例都会显示共享照片。
+对于用户已打开的桌面应用程序的实例，我们还可以处理 [FileSystemWatcher](/dotnet/api/system.io.filesystemwatcher) 事件，并传入文件位置的路径。 这样，任何打开的桌面应用程序实例都会显示共享照片。
 
 ```csharp
 ...

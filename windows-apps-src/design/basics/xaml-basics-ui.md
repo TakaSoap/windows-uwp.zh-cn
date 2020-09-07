@@ -1,16 +1,16 @@
 ---
 title: “创建用户界面”教程
-description: 本文介绍关于在 XAML 中构建用户界面的基础知识
+description: 按照本教程进行操作，了解如何使用 Visual Studio 中的 XAML 工具创建图像编辑程序的基本 UI。
 keywords: XAML, UWP, 入门
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22cf8dc09022f841ff1f4e149232a949e7b82d20
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: e4c2c8d52069bf074897ec09fa44f550066b28b5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942877"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160751"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教程：创建用户界面
 
@@ -185,7 +185,7 @@ ms.locfileid: "88942877"
     </RelativePanel>
     ```
 
-    有关使用 `RelativePanel` 的布局的详细信息，请参阅[布局面板](/windows/uwp/layout/layout-panels#relativepanel)。
+    有关使用 `RelativePanel` 的布局的详细信息，请参阅[布局面板](../layout/layout-panels.md#relativepanel)。
 
 2. 在 TextBlock`TextBlock` 元素下面，添加名为“ImageGridView”的 GridView`GridView` 控件。 设置 `RelativePanel` 附加的属性可将此控件放在标题文本下面，并使其横跨整个屏幕宽度。
 
@@ -213,7 +213,7 @@ ms.locfileid: "88942877"
     </RelativePanel>
     ```
 
-    有关面板附加属性的详细信息，请参阅[布局面板](/windows/uwp/layout/layout-panels)。
+    有关面板附加属性的详细信息，请参阅[布局面板](../layout/layout-panels.md)。
 
 3. 为了让 `GridView` 控件显示内容，你需要为其提供要显示的数据集。 打开“MainPage.xaml.cs”并找到 `GetItemsAsync` 方法。 此方法会填充一个称为 **Images**（这是我们已添加到 **MainPage** 的属性）的集合。
 
@@ -232,7 +232,7 @@ ms.locfileid: "88942877"
 你将注意到应用尚未显示图像。 默认情况下，它显示集合中的数据类型的 `ToString` 值。 接下来，你将创建数据模板以定义数据的显示方式。
 
 > [!NOTE]
-> 可以在[布局面板](/windows/uwp/layout/layout-panels#relativepanel)一文中详细了解使用 `RelativePanel` 的布局。 看一看，然后在 `TextBlock` 和 `GridView` 上设置 `RelativePanel` 附加属性，以便试验一些其他布局。
+> 可以在[布局面板](../layout/layout-panels.md#relativepanel)一文中详细了解使用 `RelativePanel` 的布局。 看一看，然后在 `TextBlock` 和 `GridView` 上设置 `RelativePanel` 附加属性，以便试验一些其他布局。
 
 ## <a name="part-3-add-a-datatemplate-object-to-display-your-data"></a>第 3 部分：添加用于显示数据的 DataTemplate 对象
 
@@ -267,7 +267,7 @@ ms.locfileid: "88942877"
       NavigationCacheMode="Enabled">
     ```
 
-    有关 XAML 命名空间的详细信息，请参阅 [XAML 命名空间和命名空间映射](/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping)。
+    有关 XAML 命名空间的详细信息，请参阅 [XAML 命名空间和命名空间映射](../../xaml-platform/xaml-namespaces-and-namespace-mapping.md)。
 
 3. 在“文档大纲”中，右键单击“ImageGridView”  。 在快捷菜单上，选择“编辑其他模板” > “编辑生成的项(ItemTemplate)” > “创建空项”    。 此时会打开“创建资源”对话框。
 
@@ -317,7 +317,7 @@ ms.locfileid: "88942877"
     </Grid>
     ```
 
-    有关 `Grid` 布局的详细信息，请参阅[布局面板](https://docs.microsoft.com/windows/uwp/layout/layout-panels#grid)。
+    有关 `Grid` 布局的详细信息，请参阅[布局面板](../layout/layout-panels.md#grid)。
 
 6. 将控件添加到 `Grid` 布局。
 
@@ -325,7 +325,7 @@ ms.locfileid: "88942877"
 
     b. 添加 `TextBlock` 控件以显示图像的名称、文件类型和尺寸。 为此，可以使用 `StackPanel` 控件排列文本块。 使用 `Grid.Row` 附加属性将最外层的 `StackPanel` 放入第二行（第 1 行）。
 
-    有关 `StackPanel` 布局的详细信息，请参阅[布局面板](https://docs.microsoft.com/windows/uwp/layout/layout-panels#stackpanel)。
+    有关 `StackPanel` 布局的详细信息，请参阅[布局面板](../layout/layout-panels.md#stackpanel)。
 
     c. 将 `RatingControl` 添加到外部（垂直）`StackPanel` 控件。 将其放在内部（水平）`StackPanel` 控件的后面。
 

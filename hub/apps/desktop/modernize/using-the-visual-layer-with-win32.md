@@ -1,6 +1,6 @@
 ---
 title: 将视觉层与 Win32 结合使用
-description: 使用视觉层增强 Win32 桌面应用的 UI。
+description: 了解如何使用通用 Windows 平台 (UWP) Windows Runtime Composition API（也称为视觉层）来增强 Win32 C++ 应用的 UI。
 template: detail.hbs
 ms.date: 03/18/2019
 ms.topic: article
@@ -8,12 +8,12 @@ keywords: UWP, 呈现, 合成, win32
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b4ec38b0dd1f6eca3f43cfded74c6292c08100
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 98811d890aa496e05c38009dedea6978386d5e4a
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66215191"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043469"
 ---
 # <a name="using-the-visual-layer-with-win32"></a>将视觉层与 Win32 结合使用
 

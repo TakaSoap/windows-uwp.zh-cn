@@ -1,17 +1,17 @@
 ---
-description: C++/WinRT 的新增功能和更改。
+description: 查看 C++/WinRT 2.0 和 Windows SDK 版本 10.0.17763.0 最新的新增功能和改进。
 title: C++/WinRT 中的新增功能
 ms.date: 03/16/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 新增功能, 功能, 新增
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3057a3d13ba1e7d368dd6bf8820710030687a04d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0d7c42b1346805c9c03714eb9bbb3944fe940ccf
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80662400"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154461"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 中的新增功能
 
@@ -44,7 +44,7 @@ C++/WinRT 和 C++ 编译器团队共同合作，尽可能缩短生成时间。 �
 
 ### <a name="more-efficient-boxing"></a>更高效的装箱
 
-在 XAML 应用程序中使用时，[**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 现在会更高效（请参阅[装箱和取消装箱](/windows/uwp/cpp-and-winrt-apis/boxing)）。 执行大量装箱操作的应用程序的代码大小也会降低。
+在 XAML 应用程序中使用时，[**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 现在会更高效（请参阅[装箱和取消装箱](./boxing.md)）。 执行大量装箱操作的应用程序的代码大小也会降低。
 
 ### <a name="support-for-implementing-com-interfaces-that-implement-iinspectable"></a>支持实现用于实现 IInspectable 的 COM 接口
 
@@ -190,7 +190,7 @@ C++/WinRT 本身会为实现的每个 API 都生成此模式。 借助数千个 
 
 #### <a name="generic-interfaces-are-now-all-generated"></a>泛型接口现在全部是生成的
 
-由于存在 xlang 元数据读取器，C++/WinRT 现在从元数据生成所有参数化（或泛型）接口。 诸如 [Windows::Foundation::Collections::IVector\<T\>](/uwp/api/windows.foundation.collections.ivector_t_) 这类接口现在是从元数据生成，而不是在 `winrt/base.h` 中手动编写。 其结果是 `winrt/base.h` 的大小缩减了一半，并且直接在代码中生成优化（这对于使用手动编写方法比较棘手）。
+由于存在 xlang 元数据读取器，C++/WinRT 现在从元数据生成所有参数化（或泛型）接口。 像 [Windows::Foundation::Collections::IVector\<T\>](/uwp/api/windows.foundation.collections.ivector_t_) 这类接口现在是从元数据生成，而不是在 `winrt/base.h` 中手动编写。 其结果是 `winrt/base.h` 的大小缩减了一半，并且直接在代码中生成优化（这对于使用手动编写方法比较棘手）。
 
 > [!IMPORTANT]
 > 诸如提供的示例这类接口现在会出现在其各自的命名空间标头中，而不是在 `winrt/base.h` 中。 因此，如果尚未这样做，则必须包含相应的命名空间标头以便使用接口。
@@ -205,7 +205,7 @@ C++/WinRT 本身会为实现的每个 API 都生成此模式。 借助数千个 
 
 这两个优化使组件可以直接访问自己的实现类型，即使在它只使用投影类型时。 如果只是要使用公共 API 外围应用，则无需使用 [make  ](/uwp/cpp-ref-for-winrt/make)、[make_self  ](/uwp/cpp-ref-for-winrt/make-self) 和 [get_self  ](/uwp/cpp-ref-for-winrt/get-self)。 调用会向下编译为直接调用实现，甚至可能完全内联。
 
-如需详细信息和代码示例，请参阅[选择加入统一构造和直接实现访问](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)。
+如需详细信息和代码示例，请参阅[选择加入统一构造和直接实现访问](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access)。
 
 ##### <a name="type-erased-factories"></a>类型擦除工厂
 
@@ -245,7 +245,7 @@ fire_and_forget Async(DispatcherQueueController controller)
 
 由于投影和实现类名称（默认情况下）是相同的，只在命名空间方面有所差异，因此可能会将其中一个错认为另一个，以及并在堆栈中意外地创建实现，而不是使用 [make  ](/uwp/cpp-ref-for-winrt/make) 系列的帮助程序。 这在某些情况下可能难以诊断，因为对象可能已销毁，而未完成的引用仍在工作。 对于调试生成，断言现在可解决此问题。 虽然断言不会检测协程中的堆栈分配，不过它仍然有助于捕获大多数这类错误。
 
-有关详细信息，请参阅 [Diagnosing direct allocations](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc)（诊断直接分配）。
+有关详细信息，请参阅 [Diagnosing direct allocations](./diag-direct-alloc.md)（诊断直接分配）。
 
 #### <a name="improved-capture-helpers-and-variadic-delegates"></a>改进的捕获帮助程序和可变参数委托
 
@@ -314,7 +314,7 @@ struct MainPage : PageT<MainPage>
 };
 ```
 
-有关详细信息，请参阅[延迟析构](/windows/uwp/cpp-and-winrt-apis/details-about-destructors#deferred-destruction)。
+有关详细信息，请参阅[延迟析构](./details-about-destructors.md#deferred-destruction)。
 
 #### <a name="improved-support-for-com-style-single-interface-inheritance"></a>改进了对 COM 样式单接口继承的支持
 
@@ -341,7 +341,7 @@ struct MainPage : PageT<MainPage>
 | 重大更改  。 为了使它可以编译，C++/WinRT 不依赖于 Windows SDK 中的标头。 | 请参阅下面的[与 Windows SDK 头文件隔离](#isolation-from-windows-sdk-header-files)。 |
 | Visual Studio 项目系统格式已更改。 | 请参阅下面的[如何将 C++/WinRT 项目重新定位到更高版本的 Windows SDK](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
 | 有新的函数和基类可帮助将集合对象传递到 Windows 运行时函数，或是实现自己的集合属性和集合类型。 | 请参阅[使用 C++/WinRT 的集合](collections.md)。 |
-| 可以将 [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) 标记扩展与 C++/WinRT 运行时类一起使用。 | 有关详细信息和代码示例，请参阅[数据绑定概述](/windows/uwp/data-binding/data-binding-quickstart)。 |
+| 可以将 [{Binding}](../xaml-platform/binding-markup-extension.md) 标记扩展与 C++/WinRT 运行时类一起使用。 | 有关详细信息和代码示例，请参阅[数据绑定概述](../data-binding/data-binding-quickstart.md)。 |
 | 对取消协同例程的支持使你可注册取消回调。 | 有关更多信息和代码示例，请参阅[取消异步操作和取消回调](concurrency-2.md#canceling-an-asynchronous-operation-and-cancellation-callbacks)。 |
 | 创建指向成员函数的委托时，可以在注册处理程序的位置处建立对当前对象的强引用或弱引用（而不是原始 this  指针）。 | 有关详细信息和代码示例，请参阅[使用事件处理委托安全访问 this  指针](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)一节中的“如果将成员函数用作委托”  子节。 |
 | 修复了 Visual Studio 为更加符合 C++ 标准而发现的 bug。 更好地利用 LLVM 和 Clang 工具链来验证 C++/WinRT 的标准符合性。 | 不会再遇到[为何我的新项目不能编译？我使用的是 Visual Studio 2017（15.8.0 或更高版本）和 SDK 版本 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) 中所述的问题 |
@@ -375,7 +375,7 @@ struct MainPage : PageT<MainPage>
 
 当前，Windows SDK 头文件隔离的唯一例外情况是对于内部函数和数字。 在这些最后剩余的依赖项方面没有已知问题。
 
-在项目中，可以在需要时重新启用与 Windows SDK 标头的互操作。 例如，可能要实现 COM 接口（来源于 [IUnknown  ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)）。 对于该示例，在包含任何 C++/WinRT 标头之前包含 `unknwn.h`。 这样做会导致 C++/WinRT 基库启用各种挂钩，以支持经典 COM 接口。 有关代码示例，请参阅[通过 C++/WinRT 创作 COM 组件](author-coclasses.md)。 同样，显式包含任何其他用于声明要调用的类型和/或函数的 Windows SDK 标头。
+在项目中，可以在需要时重新启用与 Windows SDK 标头的互操作。 例如，可能要实现 COM 接口（来源于 [IUnknown  ](/windows/desktop/api/unknwn/nn-unknwn-iunknown)）。 对于该示例，在包含任何 C++/WinRT 标头之前包含 `unknwn.h`。 这样做会导致 C++/WinRT 基库启用各种挂钩，以支持经典 COM 接口。 有关代码示例，请参阅[通过 C++/WinRT 创作 COM 组件](author-coclasses.md)。 同样，显式包含任何其他用于声明要调用的类型和/或函数的 Windows SDK 标头。
 
 ### <a name="how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>如何将 C++/WinRT 项目重新定位到更高版本的 Windows SDK
 

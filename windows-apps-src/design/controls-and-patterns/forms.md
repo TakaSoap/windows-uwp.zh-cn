@@ -1,16 +1,16 @@
 ---
-Description: Windows 应用中表单的布局指南。
 title: 窗体
+description: 了解为通用 Windows 平台 (UWP) 应用中的窗体设计和创建 XAML 布局的指南。
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 69ffaf4ff67d4ee78e78c195d759ae242a069e8e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 0113cbf50601a3db717753ab2e12524fa281daba
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968508"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304689"
 ---
 # <a name="forms"></a>窗体
 表单是一组控件，用于收集和提交来自用户的数据。 表单通常用于设置页面、调查、创建帐户，等等。 
@@ -45,8 +45,8 @@ ms.locfileid: "82968508"
 此类表单允许用户灵活进行响应。 通常情况下，此类表单包含更多自由的表单输入字段，因此会收到更多种类的响应。 若要确保提交后的用户输入有效且数据格式正常，请考虑以下建议：
 
 - 使用正确的控件，确保无法提交无效的信息（也就是说，对日历日期要使用 CalendarDatePicker 而不是 TextBox）。 若要详细了解如何在表单中选择适当的输入控件，请参阅后面的“输入控件”部分。
-- 使用 TextBox 控件时，请使用 [PlaceholderText](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText) 属性向用户提示所需的输入格式。
-- 使用 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscope) 属性指出预期的控件输入，为用户提供适当的屏幕键盘。
+- 使用 TextBox 控件时，请使用 [PlaceholderText](/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText) 属性向用户提示所需的输入格式。
+- 使用 [InputScope](/uwp/api/windows.ui.xaml.input.inputscope) 属性指出预期的控件输入，为用户提供适当的屏幕键盘。
 - 在标签上将必需的输入标记为星号 *。
 - 在用户填完所有必需信息之前，禁用提交按钮。
 - 如果提交后存在无效数据，请对包含无效输入的控件使用突出显示的字段或边框进行标记，并要求用户重新提交表单。
@@ -58,7 +58,7 @@ ms.locfileid: "82968508"
 若要简化用户体验，确保用户能够进行正确的输入，请在设计表单的布局时考虑以下建议： 
 
 ### <a name="labels"></a>标签
-[标签](labels.md)应该左对齐并放置在输入控件上方。 许多控件都有用于显示标签的内置 Header 属性。 对于没有 Header 属性的控件，或要为多组控件添加标签，你可以改用 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
+[标签](labels.md)应该左对齐并放置在输入控件上方。 许多控件都有用于显示标签的内置 Header 属性。 对于没有 Header 属性的控件，或要为多组控件添加标签，你可以改用 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
 在[针对辅助功能进行设计](../accessibility/accessibility.md)时，请将所有的单个控件和控件组进行标记，使用户和屏幕阅读器都能清楚地看到。 
 
@@ -128,8 +128,8 @@ ms.locfileid: "82968508"
 控件 | 用途 | 示例
 - | - | -
 [ComboBox](combo-box.md) | 最初处于紧凑状态，可展开以显示可选择项的列表 | 从项（例如州或国家/地区）的长列表中进行选择
-[ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | 对项进行分类并为之分配组标头、拖放项、规划内容以及重新对项进行排序 | 分级选项
-[GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | 排列和浏览基于图像的集合 | 选取照片、颜色、显示主题
+[ListView](./lists.md#list-views) | 对项进行分类并为之分配组标头、拖放项、规划内容以及重新对项进行排序 | 分级选项
+[GridView](./lists.md#grid-views) | 排列和浏览基于图像的集合 | 选取照片、颜色、显示主题
 
 ### <a name="numeric-input"></a>数字输入
 控件 | 用途 | 示例

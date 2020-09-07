@@ -1,5 +1,5 @@
 ---
-Description: 在用户键入时提供建议的文本输入框。
+description: 了解如何使用列表框和组合框（也称为下拉列表）显示供用户选择的项列表。
 title: 组合框和列表框
 label: Combo box and list box
 template: detail.hbs
@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 65f65fc62f839e379535f4e1a3df8a188620fed9
-ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
+ms.openlocfilehash: 911585d4e00c5e6c6aea66a72488c48f4d6ffb6d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88502353"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173491"
 ---
 # <a name="combo-box-and-list-box"></a>组合框和列表框
 
@@ -31,7 +31,7 @@ ms.locfileid: "88502353"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](../style/rounded-corner.md)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
 
 > **平台 API：** [ComboBox 类](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[IsEditable 属性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、[Text 属性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
@@ -337,6 +337,6 @@ bool IsValid(string Text)
 - [文本控件](text-controls.md)
 - [拼写检查](text-controls.md)
 - [搜索](search.md)
-- [TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)（TextBox 类）
-- [Windows.UI.Xaml.Controls PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 属性](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox)（TextBox 类）
+- [Windows.UI.Xaml.Controls PasswordBox 类](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length 属性](/dotnet/api/system.string.length)

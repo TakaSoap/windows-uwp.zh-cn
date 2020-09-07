@@ -1,6 +1,6 @@
 ---
-Description: 分发使用桌面桥打包的应用
 title: 将打包的桌面应用程序发布到 Microsoft Store，或将其旁加载到一台或多台设备上。
+description: 了解如何使用桌面桥将打包的桌面应用程序发布到 Microsoft Store，或将其旁加载到一台或多台设备上。
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,12 +8,12 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eb57e8cea83a4d45087be4c4685ada8d108fa7a
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 469ed71fcb42894b2dfd179ce21f44da3702705e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334493"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170641"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>分发打包的桌面应用
 
@@ -166,4 +166,4 @@ private void RemoveDesktopApp()
 
 有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
 
-如果在将应用程序发布到 Microsoft Store 时遇到问题，此[博客文章](https://blogs.msdn.microsoft.com/appconsult/2017/09/25/preparing-a-desktop-bridge-application-for-the-store-submission/)包含一些有用的提示。
+如果在将应用程序发布到 Microsoft Store 时遇到问题，此[博客文章](/archive/blogs/appconsult/preparing-a-desktop-bridge-application-for-the-store-submission)包含一些有用的提示。

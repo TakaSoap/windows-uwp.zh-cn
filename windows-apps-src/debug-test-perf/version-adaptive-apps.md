@@ -5,12 +5,12 @@ ms.date: 05/17/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b947d0b6cc83dc6bca45efb7103a933e79972e3b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: bb676ba5dbb92b1aa6dfb8888da90a8528e2dfa1
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67317453"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412031"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本自适应应用：在保持与以前版本的兼容性的同时使用新 API
 
@@ -65,7 +65,7 @@ ms.locfileid: "67317453"
 
 ## <a name="perform-api-checks"></a>执行 API 检查
 
-版本自适应应用的关键是 API 协定与 [ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) 类结合。 此类可用于检测指定的 API 协定、类型或成员是否存在，以便你可以跨不同的设备和 OS 版本安全地进行 API 调用。
+版本自适应应用的关键是 API 协定与 [ApiInformation](/uwp/api/windows.foundation.metadata.apiinformation) 类结合。 此类可用于检测指定的 API 协定、类型或成员是否存在，以便你可以跨不同的设备和 OS 版本安全地进行 API 调用。
 
 ### <a name="api-contracts"></a>API 协定
 
@@ -81,7 +81,7 @@ ms.locfileid: "67317453"
 
 逻辑相关的类型可组合成 API 协定，并且从 Windows 10 起，每个 Windows 运行时 API 都是某个 API 协定的成员。 可以通过 API 协定检查特定功能或 API 在设备上的可用性，有效地检查设备的功能，而不是检查特定的设备或 OS。 实现 API 协定中的任何 API 的平台必须实现该 API 协定中的每一个 API。 这意味着你可以测试正在运行的 OS 是否支持特定的 API 协定。如果支持，则调用该 API 协定中的任何一个 API，无需单独对每一个进行检查。
 
-最大和最常用的 API 协定是 **Windows.Foundation.UniversalApiContract**。 它包含通用 Windows 平台中的大部分 API。 [设备系列扩展 SDK 和 API 协定](https://docs.microsoft.com/uwp/extension-sdks/)文档介绍了各种可用的 API 协定。 你会看到其中大部分表示一组功能相关的 API。
+最大和最常用的 API 协定是 **Windows.Foundation.UniversalApiContract**。 它包含通用 Windows 平台中的大部分 API。 [设备系列扩展 SDK 和 API 协定](/uwp/extension-sdks/)文档介绍了各种可用的 API 协定。 你会看到其中大部分表示一组功能相关的 API。
 
 > [!NOTE]
 > 如果安装了尚未在文档中介绍的预览 Windows 软件开发工具包 (SDK)，也可在“Platform.xml”文件中找到关于 API 协定的信息，该文件位于 SDK 安装文件夹“\(Program Files (x86))\Windows Kits\10\Platforms\<platform>\<SDK version>\Platform.xml”。
@@ -105,6 +105,6 @@ ms.locfileid: "67317453"
 
 ## <a name="related-articles"></a>相关文章
 
-- [UWP 应用是什么](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [UWP 应用是什么](../get-started/universal-application-platform-guide.md)
 - [使用 API 合约动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API 协定](https://channel9.msdn.com/Events/Build/2015/3-733)（Build 2015 视频）

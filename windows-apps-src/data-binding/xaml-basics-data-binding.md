@@ -1,16 +1,16 @@
 ---
 title: 创建数据绑定
-description: 本文介绍 XAML 中数据绑定的基础知识
+description: 通过按照本教程操作，了解如何使用 XAML 和 C# 创建数据绑定，以在 UI 与数据之间建立直接链接。
 keywords: XAML, UWP, 入门
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ac0603aab5abdc9aef54264c7e8d5bf9ae848889
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 5d3363dcc47ef43fe65b3c954b213a81cc5165e1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943117"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166281"
 ---
 # <a name="tutorial-create-data-bindings"></a>教程：创建数据绑定
 
@@ -627,5 +627,5 @@ public string ImageTitle
 
 你应该具有本教程中需要的所有信息，但是如果需要更多指导，则只需单击一下，即可获得数据绑定文档。 从这里开始：
 
-+ [{x:Bind} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
-+ [深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
++ [{x:Bind} 标记扩展](../xaml-platform/x-bind-markup-extension.md)
++ [深入了解数据绑定](./data-binding-in-depth.md)

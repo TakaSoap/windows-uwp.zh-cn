@@ -1,16 +1,16 @@
 ---
 title: 创建自定义样式
-description: 本文介绍有关在 XAML 中设置 UI 元素样式的基础知识
+description: 按照本教程进行操作，了解如何创建自定义样式和滑块控件，以自定义 XAML 应用的 UI。
 keywords: XAML, UWP, 入门
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 60a62a80017b2c77acfc2604daf909ae1ec9fd36
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 6d3423e9d78e2519f2d3c9ad1fc2c0b099de0349
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942957"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160768"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 
@@ -76,11 +76,11 @@ Windows 应用提供了多种自定义应用外观的方法。 从字体和版�
 
 1. 使用 `Polygon` 元素为曝光滑块创建背景形状。
 
-    [Windows.UI.Xaml.Shapes 命名空间](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes)可提供七种形状以供选择。 有椭圆、矩形和一个叫“路径”的东西，这个东西可以制作任何类型的形状 - 是的，甚至是独角兽！
+    [Windows.UI.Xaml.Shapes 命名空间](/uwp/api/Windows.UI.Xaml.Shapes)可提供七种形状以供选择。 有椭圆、矩形和一个叫“路径”的东西，这个东西可以制作任何类型的形状 - 是的，甚至是独角兽！
 
     ![独角兽](../basics/images/xaml-basics/unicorn.png)
 
-    > **阅读相关信息：** [绘制形状](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/shapes)一文会介绍有关 XAML 形状的所有需知内容。
+    > **阅读相关信息：** [绘制形状](../controls-and-patterns/shapes.md)一文会介绍有关 XAML 形状的所有需知内容。
 
     我们想要创建一个类似三角形的小工具 - 有点像立体声音响的音量控制器上的形状。
 
@@ -200,7 +200,7 @@ Windows 应用提供了多种自定义应用外观的方法。 从字体和版�
 
 XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量，并且可以更加非常轻松地更新应用的外观。
 
-若要定义样式，可以将 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 元素添加到包含要设置样式的控件的元素的 [Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Resources) 属性。  如果你将样式添加到 `Page.Resources` 属性中，则整个页面将可以使用你的样式。 如果你在 App.xaml 文件内将你的样式添加到 `Application.Resources` 属性中，则整个应用将可以使用该样式。
+若要定义样式，可以将 [Style](/uwp/api/Windows.UI.Xaml.Style) 元素添加到包含要设置样式的控件的元素的 [Resources](/uwp/api/windows.ui.xaml.frameworkelement.Resources) 属性。  如果你将样式添加到 `Page.Resources` 属性中，则整个页面将可以使用你的样式。 如果你在 App.xaml 文件内将你的样式添加到 `Application.Resources` 属性中，则整个应用将可以使用该样式。
 
 可以创建命名样式和常规样式。 命名样式必须显式应用于特定控件；常规样式会应用于任何与指定的 `TargetType` 匹配的控件。
 

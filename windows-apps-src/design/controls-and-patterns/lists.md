@@ -1,5 +1,5 @@
 ---
-Description: 列表显示并启用与基于集合的内容交互。
+description: 了解作为一起显示的多个相关数据项的表示形式的集合和列表。 
 title: 集合和列表
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Collections and Lists
@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9896003fb1d55a2dbb57468848edd66a3d8d8d88
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ede68414d86f333b516be81cbae83ea58dc83ba0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970392"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169911"
 ---
 # <a name="collections-and-lists"></a>集合和列表
 
 集合和列表都指的是一起显示的多个相关数据项的表示形式。 集合可以由不同的集合控件（也可称为集合视图）通过多种方式来表示。 集合控件显示并启用与基于集合的内容（例如联系人列表、日期列表、图像集合等）的交互。
 
-> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)、[FlipView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview)、[TreeView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)、[ItemsRepeater 类](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
+> **重要的 API**：[ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 类](/uwp/api/Windows.UI.Xaml.Controls.GridView)、[FlipView 类](/uwp/api/windows.ui.xaml.controls.flipview)、[TreeView 类](/uwp/api/windows.ui.xaml.controls.treeview)、[ItemsRepeater 类](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
 
 本文介绍的控件包括：
 
@@ -35,14 +35,14 @@ ms.locfileid: "82970392"
 
 下面为每种控件提供了设计指南、功能和示例。
 
-这些控件（ItemsRepeater 除外）都提供内置的样式设置和交互。 但是，若要进一步自定义集合视图以及其中的项的视觉外观，需使用 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)。 若要详细了解数据模板以及如何自定义集合视图的外观，可参阅[项目容器和模板](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates)页。
+这些控件（ItemsRepeater 除外）都提供内置的样式设置和交互。 但是，若要进一步自定义集合视图以及其中的项的视觉外观，需使用 [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate)。 若要详细了解数据模板以及如何自定义集合视图的外观，可参阅[项目容器和模板](./item-containers-templates.md)页。
 
 这些控件（ItemsRepeater 除外）都还有内置的行为，允许选择单个或多个项。 请参阅 [Selection modes overview](selection-modes.md)（选择模式概述）以了解详细信息。
 
-本文未介绍的方案之一是在表中显示集合，或跨多个列显示集合。 如果希望以这种格式显示集合，请考虑使用 [Windows 社区工具包](https://docs.microsoft.com/windows/communitytoolkit/)中的 [DataGrid 控件](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid)。 
+本文未介绍的方案之一是在表中显示集合，或跨多个列显示集合。 如果希望以这种格式显示集合，请考虑使用 [Windows 社区工具包](/windows/communitytoolkit/)中的 [DataGrid 控件](/windows/communitytoolkit/controls/datagrid)。 
 
 > **Windows 10 Fall Creators Update - 行为更改** 默认情况下，主动笔现在可在 Windows 应用中滚动/平移列表，而不是进行选择（与触摸、触摸板和被动笔一样）。
-> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 [ScrollViewer 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer)的 API 参考主题。
+> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 [ScrollViewer 类](/uwp/api/windows.ui.xaml.controls.scrollviewer)的 API 参考主题。
 
 ## <a name="examples"></a>示例
 
@@ -277,7 +277,7 @@ ItemsRepeater 不同于此页上显示的其他集合控件，因为它不提供
 
 ### <a name="examples"></a>示例
 
-下面的三个示例都是 ItemsRepeater 控件，这些控件绑定到同一数据源（数字集合）。 该数字集合以三种方式表示，下面的每个 ItemsRepeater 使用不同的自定义 [Layout](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.layout) 和不同的自定义 [ItemTemplate](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate?view=winui-2.2)。
+下面的三个示例都是 ItemsRepeater 控件，这些控件绑定到同一数据源（数字集合）。 该数字集合以三种方式表示，下面的每个 ItemsRepeater 使用不同的自定义 [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) 和不同的自定义 [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate?view=winui-2.2)。
 
 ![使用水平条形表示法的 ItemsRepeater](images/itemsrepeater-1.png)
 ![使用垂直条形表示法的 ItemsRepeater](images/itemsrepeater-2.png)
@@ -332,7 +332,7 @@ ItemsRepeater 不同于此页上显示的其他集合控件，因为它不提供
 - [缩略图图像](../../files/thumbnails.md)
 
 **API 参考**
-- [ListView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [GridView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
-- [ComboBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
-- [ListBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
+- [ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [GridView 类](/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [ComboBox 类](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+- [ListBox 类](/uwp/api/Windows.UI.Xaml.Controls.ListBox)
