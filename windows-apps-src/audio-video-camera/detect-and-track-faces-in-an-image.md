@@ -6,18 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6232a8003140284956319728e16b3b953aff3177
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 753ac6894a8ab863255b6023636fad54b7568f4a
+ms.sourcegitcommit: bea08ea0eea53cd3f002b04a081a96400f6759ae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362730"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89558470"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>检测图像或视频中的人脸
 
 
-
-\[某些信息与预发布的产品相关，这些信息可能会在正式发布之前进行重大修改。 对于此处提供的信息，Microsoft 不作任何明示或暗示的担保。\]
 
 本主题介绍如何使用 [**FaceDetector**](/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) 检测图像中的人脸。 在视频帧的序列中，将随着时间的推移针对人脸跟踪优化 [**FaceTracker**](/uwp/api/Windows.Media.FaceAnalysis.FaceTracker)。
 
