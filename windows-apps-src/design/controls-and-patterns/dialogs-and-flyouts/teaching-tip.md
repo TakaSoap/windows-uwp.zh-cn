@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 31ced6c31b126986171c81e03b68a0a1cccc44f2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 997a0c32de9d6ee803095f5c708f6ed8cedaf141
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160351"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643838"
 ---
 # <a name="teaching-tip"></a>教学提示
 
@@ -58,7 +58,7 @@ ms.locfileid: "89160351"
 </tr>
 </table>
 
-教学提示可采用多种配置，包括显眼的配置。
+教学提示可采用多种配置，包括显眼的配置：
 
 教学提示可通过其尾部指明作为其目标的特定 UI 元素，以更清楚地表明其所呈现信息是属于哪个元素的上下文。
 
@@ -106,9 +106,11 @@ public MainPage()
 
 ![目标为“保存”按钮的教学提示的示例应用。 该提示的标题为“自动保存”，副标题为“我们将即时保存你的所有更改 - 你无需亲自动手。” 教学提示的右上角有一个关闭按钮。](../images/teaching-tip-targeted.png)
 
+在上面的例子中，[Title](/uwp/api/microsoft.ui.xaml.controls.teachingtip.title) 和 [Subtitle](/uwp/api/microsoft.ui.xaml.controls.teachingtip.subtitle) 属性用于设置教学提示的标题和副标题。 [Target](/uwp/api/microsoft.ui.xaml.controls.teachingtip.target) 属性设置为“SaveButton”，以建立其自身与按钮之间的视觉连接。 为了显示教学提示，其 [IsOpen](/uwp/api/microsoft.ui.xaml.controls.teachingtip.isopen) 属性设置为 `true`。
+
 ### <a name="non-targeted-tips"></a>非定向提示
 
-并非所有提示都与屏幕上的某个元素关联。 在这些情况下，请不要设置 Target 属性，教学提示将显示在 xaml 根的边缘附近。 但是，通过将 TailVisibility 属性设置为“折叠”，可让删除了尾部的教学提示仍置于某个 UI 元素附近。 以下是非定向教学提示的示例。
+并非所有提示都与屏幕上的某个元素关联。 在这些情况下，请不要设置目标，教学提示将显示在 xaml 根的边缘附近。 但是，通过将 [TailVisibility](/uwp/api/microsoft.ui.xaml.controls.teachingtip.tailvisibility) 属性设置为“折叠”，可让删除了尾部的教学提示仍置于某个 UI 元素附近。 以下是非定向教学提示的示例。
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save" />
@@ -125,7 +127,7 @@ public MainPage()
 
 ### <a name="preferred-placement"></a>首选位置
 
-教学提示通过 TeachingTipPlacementMode 属性复制浮出控件的 [FlyoutPlacementMode](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) 放置行为。 默认放置模式尝试将定向教学提示放置在其目标上方，将非定向教学提示置于 xaml 根底部的中心位置。 与浮出控件相同，如果首选放置模式无法留出显示教学提示的空间，将自动选择另一种放置模式。
+教学提示通过 [PreferredPlacement](/uwp/api/microsoft.ui.xaml.controls.teachingtip.preferredplacement) 属性复制浮出控件的 [FlyoutPlacementMode](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) 放置行为。 默认放置模式尝试将定向教学提示放置在其目标上方，将非定向教学提示置于 xaml 根底部的中心位置。 与浮出控件相同，如果首选放置模式无法留出显示教学提示的空间，将自动选择另一种放置模式。
 
 对于预测游戏板输入的应用程序，请参阅[游戏板和远程控制交互]( ../../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)。 建议使用一个应用 UI 所有可能的配置对每个教学提示的游戏板辅助功能进行测试。
 
@@ -168,7 +170,7 @@ public MainPage()
 
 ### <a name="add-a-placement-margin"></a>添加位置边距
 
-通过使用 PlacementMargin 属性，可以控制定向教学提示与其目标的距离以及非定向教学提示与 xaml 根边缘的距离。 与[边距](/uwp/api/windows.ui.xaml.frameworkelement.margin)一样，PlacementMargin 具有四个值（左、右、上和下），因此仅使用相关值。 例如，当提示位于目标左侧或 xaml 根的左边缘时，PlacementMargin.Left 适用。
+通过使用 [PlacementMargin](/uwp/api/microsoft.ui.xaml.controls.teachingtip.placementmargin) 属性，可以控制定向教学提示与其目标的距离以及非定向教学提示与 xaml 根边缘的距离。 与[边距](/uwp/api/windows.ui.xaml.frameworkelement.margin)一样，PlacementMargin 具有四个值（左、右、上和下），因此仅使用相关值。 例如，当提示位于目标左侧或 xaml 根的左边缘时，PlacementMargin.Left 适用。
 
 以下示例显示 PlacementMargin 的 Left/Top/Right/Bottom 均设置为 80 的非定向提示。
 
@@ -188,7 +190,7 @@ public MainPage()
 
 ### <a name="add-content"></a>添加内容
 
-可以使用 Content 属性向教学提示添加内容。 如果要显示的内容超出了教学提示允许的大小，则将自动启用滚动条，以便用户滚动内容区域。
+可以使用 [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 属性向教学提示添加内容。 如果要显示的内容超出了教学提示允许的大小，则将自动启用滚动条，以便用户滚动内容区域。
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -210,11 +212,11 @@ public MainPage()
 
 ### <a name="add-buttons"></a>添加按钮
 
-默认情况下，标准的“X”关闭按钮显示在教学提示的标题旁边。 可使用 CloseButtonContent 属性自定义关闭按钮，此时，按钮移到教学提示的底部。
+默认情况下，标准的“X”关闭按钮显示在教学提示的标题旁边。 可使用 [CloseButtonContent](/uwp/api/microsoft.ui.xaml.controls.teachingtip.closebuttoncontent) 属性自定义关闭按钮，此时，按钮移到教学提示的底部。
 
 **注意：已启用轻型消除的提示上不会出现关闭按钮**
 
-可通过设置 ActionButtonContent 属性（以及可选的 ActionButtonCommand 和 ActionButtonCommandParameter 属性）来添加自定义操作按钮。
+可通过设置 [ActionButtonContent](/uwp/api/microsoft.ui.xaml.controls.teachingtip.actionbuttoncontent) 属性（以及可选的 [ActionButtonCommand](/uwp/api/microsoft.ui.xaml.controls.teachingtip.actionbuttoncommand) 和 [ActionButtonCommandParameter](/uwp/api/microsoft.ui.xaml.controls.teachingtip.actionbuttoncommandparameter) 属性）来添加自定义操作按钮。
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -239,7 +241,7 @@ public MainPage()
 
 ### <a name="hero-content"></a>主图内容
 
-可通过设置 HeroContent 属性将无边框内容添加到教学提示。 可通过设置 HeroContentPlacement 属性将主图内容的位置设置为教学提示的顶部或底部。
+可通过设置 [HeroContent](/uwp/api/microsoft.ui.xaml.controls.teachingtip.herocontent) 属性将无边框内容添加到教学提示。 可通过设置 [HeroContentPlacement](/uwp/api/microsoft.ui.xaml.controls.teachingtip.herocontentplacement) 属性将主图内容的位置设置为教学提示的顶部或底部。
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -260,7 +262,7 @@ public MainPage()
 
 ### <a name="add-an-icon"></a>添加图标
 
-可使用 IconSource 属性在标题和副标题的旁边添加一个图标。 建议图标大小为 16px、24px 和 32px。
+可使用 [IconSource](/uwp/api/microsoft.ui.xaml.controls.teachingtip.iconsource) 属性在标题和副标题的旁边添加一个图标。 建议图标大小为 16px、24px 和 32px。
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -281,7 +283,7 @@ public MainPage()
 
 ### <a name="enable-light-dismiss"></a>启用轻型消除
 
-默认情况下，轻型消除功能处于禁用状态，但可以启用该功能来关闭教学提示，例如，在用户滚动到其他位置或与应用程序的其他元素进行交互时关闭。 由于这种行为，当需要将提示放在可滚动区域中时，轻型消除提示是最佳解决方案。
+默认情况下，轻型消除功能处于禁用状态，但可以通过设置 [IsLightDismissEnabled](/uwp/api/microsoft.ui.xaml.controls.teachingtip.islightdismissenabled) 属性来启用该功能，以便在用户滚动到其他位置或与应用程序的其他元素进行交互等情况下关闭教学提示。 由于这种行为，当需要将提示放在可滚动区域中时，轻型消除提示是最佳解决方案。
 
 关闭按钮将从已启用轻型消除的教学提示上自动删除，以便向用户展现其轻型消除行为。
 
@@ -299,7 +301,7 @@ public MainPage()
 
 ### <a name="escaping-the-xaml-root-bounds"></a>转义 XAML 根边界
 
-从 Windows 10 版本 1903（内部版本 18362）开始，教学提示可通过设置 `ShouldConstrainToRootBounds` 属性转义 XAML 根和屏幕的边界。 启用此属性后，教学提示不会尝试停留在 XAML 根或屏幕的边界内，而会始终位于 `PreferredPlacement` 模式设置的位置。 建议启用 `IsLightDismissEnabled` 属性并设置与 XAML 根中心位置最接近的 `PreferredPlacement` 模式，确保用户获得最佳体验。
+从 Windows 10 版本 1903（内部版本 18362）开始，教学提示可以通过设置 [ShouldConstrainToRootBounds](/uwp/api/microsoft.ui.xaml.controls.teachingtip.shouldconstraintorootbounds) 属性来转义 XAML 根和屏幕的边界。 启用此属性后，教学提示不会尝试停留在 XAML 根或屏幕的边界内，而会始终位于 `PreferredPlacement` 模式设置的位置。 建议启用 `IsLightDismissEnabled` 属性并设置与 XAML 根中心位置最接近的 `PreferredPlacement` 模式，确保用户获得最佳体验。
 
 Windows 的早期版本中忽略了此属性，教学提示始终位于 XAML 根的边界内。
 
@@ -319,7 +321,7 @@ Windows 的早期版本中忽略了此属性，教学提示始终位于 XAML 根
 
 ### <a name="canceling-and-deferring-close"></a>取消和延迟关闭
 
-可使用 Closing 事件来取消和/或延迟关闭教学提示。 可使用该事件使教学提示保持打开状态，或为操作或自定义动画留出时间。 取消关闭教学提示后，IsOpen 返回到 true 状态，但在延迟期间它将保持 false 状态。 此外，还可取消编程关闭。
+可使用 [Closing](/uwp/api/microsoft.ui.xaml.controls.teachingtip.closing) 事件来取消和/或延迟关闭教学提示。 可使用该事件使教学提示保持打开状态，或为操作或自定义动画留出时间。 取消关闭教学提示后，IsOpen 返回到 true 状态，但在延迟期间它将保持 false 状态。 此外，还可取消编程关闭。
 
 > [!NOTE]
 > 如果无法通过任何位置选项来完整显示教学提示，教学提示将通过遍历其事件生命周期来强制关闭而不显示，无需可访问的关闭按钮。 如果应用取消 Closing 事件，则教学提示可能因没有可访问的关闭按钮而保持打开状态。

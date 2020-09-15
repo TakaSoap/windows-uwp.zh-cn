@@ -1,18 +1,18 @@
 ---
-Description: 了解如何着手为 Windows 电脑构建桌面应用，包括如何选择适合新应用的应用平台，以及如何实现 Windows 10 现有应用的现代化。
+description: 了解如何着手为 Windows 电脑构建桌面应用，包括如何选择适合新应用的应用平台，以及如何实现 Windows 10 现有应用的现代化。
 title: 构建 Windows 电脑的桌面应用
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 9/10/2020
 keywords: windows win32, 桌面开发
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f4b790978449bd6d5c279a5405c22db51cd0724
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6539f436e46f351efc355d361c0677b9fedee546
+ms.sourcegitcommit: 2bb975d5df38d294277f57bf8b6a06d9bf87ca9b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170721"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90046813"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>构建 Windows 电脑的桌面应用
 
@@ -100,8 +100,9 @@ ms.locfileid: "89170721"
 
 | 资源 | 说明 |
 |---------|-------------|
-| [.NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0) | 了解 .NET Core 3.0 的最新功能，包括对 WPF 和 Windows 窗体应用的增强功能。 |
-| [关于 WPF 和 .NET Core 3.0 的桌面指南](/dotnet/desktop-wpf/overview/index) | 开发面向 .NET Core 3.0 而不是整个 .NET Framework 的 WPF 应用。  |
+| [.NET Core 3.1](/dotnet/core/whats-new/dotnet-core-3-1) | 了解 .NET Core 3.1 的最新功能，包括对 WPF 和 Windows 窗体应用的增强功能。 |
+| [.NET 5](/dotnet/core/dotnet-five) | 本文详细介绍了 .NET 5 中包含的功能；.NET 5 是 .NET Core 在 3.1 版之后的下一个版本。 |
+| [关于 WPF 和 .NET Core 的桌面指南](/dotnet/desktop-wpf/overview/index) | 开发面向 .NET Core 而不是整个 .NET Framework 的 WPF 应用。  |
 | [Azure](/azure/) | 使用 Azure 云服务扩大应用的覆盖范围。 |
 | [Visual Studio](/visualstudio/) | 了解如何使用 Visual Studio 开发应用和服务。 |
 | [MSIX](/windows/msix/) | 采用新式通用打包格式打包和部署任何 Windows 应用。 |

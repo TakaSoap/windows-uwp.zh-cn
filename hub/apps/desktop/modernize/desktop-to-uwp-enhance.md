@@ -1,5 +1,5 @@
 ---
-Description: 使用 Windows 运行时 API 为 Windows 10 用户增强桌面应用程序。
+description: 使用 Windows 运行时 API 为 Windows 10 用户增强桌面应用程序。
 title: 在桌面应用中调用 Windows 运行时 API
 ms.date: 08/20/2019
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5a7c77f6c553408d2631fb3e324e67d79318f9b4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e58315ed70b889e1369e8c13a563f320c0ca1948
+ms.sourcegitcommit: a222ad0e2d97e35a60000c473808c678395376ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170691"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89479077"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>在桌面应用中调用 Windows 运行时 API
 
@@ -72,7 +72,7 @@ ms.locfileid: "89170691"
 
 3. 在“属性”窗口中，将每个 .winmd 文件的 Copy Local 字段设为 False 。
 
-    ![copy-local-field](images/desktop-to-uwp/copy-local-field.png)
+    ![复制本地字段](images/desktop-to-uwp/copy-local-field.png)
 
 ### <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>修改 C++ Win32 项目以使用 Windows 运行时 API
 
@@ -93,7 +93,7 @@ ms.locfileid: "89170691"
 
 有很多选择。 例如，可通过使用[盈利 API](/windows/uwp/monetize) 来简化你的采购订单流，或在要分享有趣的内容时（例如其他用户发布了新图片）[吸引用户对应用程序的注意](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)。
 
-![toast](images/desktop-to-uwp/toast.png)
+![Toast 通知](images/desktop-to-uwp/toast.png)
 
 即使用户忽略或关闭你的消息，他们仍可在操作中心中再次看到该消息，然后单击该消息打开你的应用。 这可以加强用户与应用程序的互动，并使你的应用程序看似已与操作系统深度集成。 稍后，我们将在本文中向你演示用于实现该体验的代码。
 
@@ -156,7 +156,41 @@ private void ShowToast()
 }
 ```
 
-```C++
+```cppwinrt
+#include <sstream>
+#include <winrt/Windows.Data.Xml.Dom.h>
+#include <winrt/Windows.UI.Notifications.h>
+
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::System;
+using namespace winrt::Windows::UI::Notifications;
+using namespace winrt::Windows::Data::Xml::Dom;
+
+void UWP::ShowToast()
+{
+    std::wstring const title = L"featured picture of the day";
+    std::wstring const content = L"beautiful scenery";
+    std::wstring const image = L"https://picsum.photos/360/180?image=104";
+    std::wstring const logo = L"https://picsum.photos/64?image=883";
+
+    std::wostringstream xmlString;
+    xmlString << L"<toast><visual><binding template='ToastGeneric'>" <<
+        L"<text>" << title << L"</text>" <<
+        L"<text>" << content << L"</text>" <<
+        L"<image src='" << image << L"'/>" <<
+        L"<image src='" << logo << L"'" <<
+        L" placement='appLogoOverride' hint-crop='circle'/>" <<
+        L"</binding></visual></toast>";
+
+    XmlDocument toastXml;
+
+    toastXml.LoadXml(xmlString.str().c_str());
+
+    ToastNotificationManager::CreateToastNotifier().Show(ToastNotification(toastXml));
+}
+```
+
+```cppcx
 using namespace Windows::Foundation;
 using namespace Windows::System;
 using namespace Windows::UI::Notifications;
@@ -208,33 +242,29 @@ void UWP::ShowToast()
 
 对于基于 .NET 的项目，该常量称为“条件编译常量”。
 
-![预处理器](images/desktop-to-uwp/compilation-constants.png)
+![条件编译常量](images/desktop-to-uwp/compilation-constants.png)
 
 对于基于 C++ 的项目，该常量称为“预处理器定义”。
 
-![预处理器](images/desktop-to-uwp/pre-processor.png)
+![预处理器定义常量](images/desktop-to-uwp/pre-processor.png)
 
 在任意 UWP 代码块前添加该常量。
 
 ```csharp
-
 [System.Diagnostics.Conditional("_UWP")]
 private void ShowToast()
 {
  ...
 }
-
 ```
 
 ```C++
-
 #if _UWP
 void UWP::ShowToast()
 {
  ...
 }
 #endif
-
 ```
 
 仅当在活动生成配置中定义了该常量时，编译器才会生成该代码。

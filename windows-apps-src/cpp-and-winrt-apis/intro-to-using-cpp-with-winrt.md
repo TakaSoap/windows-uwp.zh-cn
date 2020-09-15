@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 简介
 ms.localizationpriority: medium
-ms.openlocfilehash: 980194d396bb6fa20b1d11456edee221d224b011
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 39606a1797f56e8bb63f0afb99d7c86d78934662
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157351"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643786"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 简介
 &nbsp;
@@ -25,6 +25,8 @@ C++/WinRT 是 Microsoft 推荐的用于替代 [C++/CX](/cpp/cppcx/visual-c-langu
 
 > [!IMPORTANT]
 > C++/WinRT 最需要注意的某些重要内容在[针对 C++/WinRT 的 SDK 支持](#sdk-support-for-cwinrt)和[针对 C++/WinRT、XAML、VSIX 扩展和 NuGet 包的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)部分进行了说明。
+
+另请参阅[可在哪里找到 C++/WinRT 示例应用？](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps)。
 
 ## <a name="language-projections"></a>语言投影
 Windows 运行时基于组件对象模型 (COM) API，根据设计，可通过语言投影  访问它。 投影将隐藏 COM 详细信息，并为给定语言提供更自然的编程体验。

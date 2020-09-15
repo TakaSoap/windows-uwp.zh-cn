@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 示例, 应用程序, 照片, 编辑器
 ms.localizationpriority: medium
-ms.openlocfilehash: fb89deaef8c221df9a28f0350f0c860e8da3802d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9f72fc1737e697427b22f65147260bdadebc9605
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154408"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643794"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>照片编辑器 C++/WinRT 示例应用程序
 
@@ -28,3 +28,5 @@ ms.locfileid: "89154408"
 - 使用外部 Win2D NuGet 程序包和 [Windows::UI::Composition](/uwp/api/windows.ui.composition) 呈现图像效果。
 - XAML 数据绑定，包括 [{x:Bind} 标记扩展](../xaml-platform/x-bind-markup-extension.md)。
 - XAML 样式和 UI 自定义，包括[连贯动画](../design/motion/connected-animation.md)。
+
+另请参阅[可在哪里找到 C++/WinRT 示例应用？](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps)。
