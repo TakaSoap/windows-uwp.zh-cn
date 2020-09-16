@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 70f71265ff763ff8a160705694476e03bf8b6667
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d85df48b4f43759013f80623595d919ac6c77337
+ms.sourcegitcommit: ef3cdca5e9b8f032f46174da4574cb5593d32d56
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166351"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90593431"
 ---
 # <a name="composition-visual"></a>合成视觉对象
 
@@ -19,17 +19,21 @@ ms.locfileid: "89166351"
 
 ## <a name="visuals"></a>视觉对象
 
-可视树结构的组成部分包括以下三种视觉类型，以及影响视觉对象内容的多个子类的基本画笔类：
+有几种视觉对象类型构成了可视化树结构，还提供了一个具有多个子类的基本画笔类，这些子类会影响视觉对象的内容：
 
 - [**Visual**](/uwp/api/Windows.UI.Composition.Visual) – 基对象，大部分属性均位于此处且继承自其他视觉对象。
 - [**System.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual) –派生自 [**视觉对象**](/uwp/api/Windows.UI.Composition.Visual)，并添加了创建子项的功能。
-- [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual) ，并添加了关联画笔的功能，以使视觉对象能够呈现包括图像、效果或纯色的像素。
+  - [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 能够将画笔关联起来，以便视觉对象能够呈现像素，包括图像、效果或纯色。
+  - [**LayerVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 视觉对象的子项平展为一个层。<br/>_Windows 10 版本1607、SDK 14393) 中引入的 (。_
+  - [**ShapeVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 一个可视化树节点，它是 CompositionShape 的根。<br/>_Windows 10 版本1803、SDK 17134) 中引入的 (。_
+  - [**RedirectVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 视觉对象从另一个视觉对象获取其内容。<br/>_Windows 10 版本1809、SDK 17763) 中引入的 (。_
+  - [**SceneVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 三维场景节点的容器视觉对象。<br/>_Windows 10 版本1903、SDK 18362) 中引入的 (。_
 
 可以使用 [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) 及其子类（包括 [**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush)、[**CompositionSurfaceBrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 和 [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush)）将内容和效果应用于 SpriteVisual。 若要了解有关画笔的详细信息，请参阅 [**CompositionBrush 概述**](./composition-brushes.md)。
 
 ## <a name="the-compositionvisual-sample"></a>CompositionVisual 示例
 
-在此，我们将看一些演示前面列出的三种不同视觉类型的示例代码。 尽管此示例不介绍诸如动画或更复杂的效果等概念，但它包含所有这些系统需要使用的构成要素。 （本文的结尾列出了完整的示例代码）。
+在此，我们将看一些演示前面列出的三种不同视觉类型的示例代码。 虽然此示例不涵盖动画或更复杂效果等概念，但它包含所有这些系统使用的构建基块。 （本文的结尾列出了完整的示例代码）。
 
 在该示例中，提供大量可以在屏幕上单击和拖动的纯色正方形。 在单击某一正方形后它将凸显， 将其旋转 45 度，然后在拖动该正方形时它将变为不透明。
 
@@ -40,7 +44,7 @@ ms.locfileid: "89166351"
 - 剪裁可视对象
 - 旋转可视对象
 - 设置不透明度
-- 更改集合中视觉对象的位置。
+- 更改视觉对象在集合中的位置。
 
 ## <a name="creating-a-compositor"></a>创建合成器
 
@@ -78,7 +82,7 @@ _currentVisual.Clip = clip;
 
 ## <a name="span-idrotating_a_clipspanspan-idrotating_a_clipspanspan-idrotating_a_clipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>旋转剪裁
 
-[**Visual**](/uwp/api/Windows.UI.Composition.Visual) 可以通过旋转进行转换。 请注意，[**RotationAngle**](/uwp/api/windows.ui.composition.visual.rotationangle) 同时支持弧度和度数。 其默认采用弧度为单位，不过也可以轻松指定以度数为单位，如以下代码段中所示：
+[**Visual**](/uwp/api/Windows.UI.Composition.Visual) 可以通过旋转进行转换。 请注意，[**RotationAngle**](/uwp/api/windows.ui.composition.visual.rotationangle) 同时支持弧度和度数。 它的默认值为弧度，但可以很容易地指定度数，如以下代码片段所示：
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;
