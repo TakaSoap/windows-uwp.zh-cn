@@ -6,12 +6,12 @@ ms.date: 11/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a80c130de1966973fe928480009eaa3bd0a8887
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e359fd18da67da15bb33e8980f0e0e7419001460
+ms.sourcegitcommit: b99e2f4dffa603b68c2a8273fe6313432f91b353
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171243"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90569359"
 ---
 # <a name="networking-and-web-services"></a>网络和 Web 服务
 
@@ -20,7 +20,7 @@ ms.locfileid: "89171243"
 | 主题 | 说明 |
 | - | - |
 | [网络基础知识](networking-basics.md) | 针对任何支持网络的应用的必做事项。 |
-| [选择哪一种网络技术？](which-networking-technology.md) | 适用于 UWP 开发人员的网络技术概述，以及关于如何选择适合自己应用的技术的建议。 |
+| [选择哪一种网络技术？](which-networking-technology.md) | 面向 UWP 开发人员的网络技术概述，以及关于如何选择适合自己应用的技术的建议。 |
 | [后台中的网络通信](network-communications-in-the-background.md) | 要在网络通信不在后台运行的情况下继续网络通信，应用可以使用后台任务以及套接字代理或控制通道触发器。 |
 | [套接字](sockets.md) | 套接字是实现许多网络协议所基于的低级数据传输技术。 UWP 为客户端-服务器或对等应用程序提供 TCP 和 UDP 套接字类，无论连接长期存在还是不需要建立连接。 |
 | [WebSockets](websockets.md) | WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与服务器之间进行既快捷又安全的双向通信，同时支持 UTF-8 和二进制消息。 |
