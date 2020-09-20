@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 7a1235159b0f9d69e7fcedd334aeb9e9246d3d2b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 57d46ea1f88395624943135247a8f610112aaf90
+ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174291"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90804727"
 ---
 # <a name="windows-runtime-components-with-c-and-visual-basic"></a>使用 C# 和 Visual Basic 创建 Windows 运行时组件
 
@@ -280,6 +280,13 @@ End Function
 在创建了 Windows 运行时组件以供自己使用后，你可能会发现它封装的功能对其他开发人员也很有用。 若要打包组件以分配给其他开发人员，你有两个选择。 请参阅[分配托管的 Windows 运行时组件](/previous-versions/windows/apps/jj614475(v=vs.140))。
 
 有关 Visual Basic 和 c # 语言功能以及对 Windows 运行时的 .NET 支持的详细信息，请参阅 [Visual Basic 和 c # 语言参考](/visualstudio/welcome-to-visual-studio-2015?view=vs-2015)。
+
+
+## <a name="troubleshooting"></a>故障排除
+
+| 症状 | 纠正方法 |
+|---------|--------|
+|在 c + +/WinRT 应用中，当使用使用 XAML 的 [c # Windows 运行时组件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) 时，编译器将生成 "MyNamespace_XamlTypeInfo" 形式的错误 *：不是 "WinRT：： MyNamespace" 的成员*， &mdash; 其中 *MyNamespace* 是 Windows 运行时组件命名空间的名称。 | 在 `pch.h` 使用 c + +/WinRT 应用程序中，添加 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; 相应的替换*MyNamespace* 。 |
 
 ## <a name="related-topics"></a>相关主题
 * [适用于 UWP 应用的 .NET](/dotnet/api/index?view=dotnet-uwp-10.0)

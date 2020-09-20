@@ -1,19 +1,19 @@
 ---
 description: 可以使用扩展以预定义方式将打包的桌面应用与 Windows 10 集成。
 title: 使用桌面桥新式化现有桌面应用
-ms.date: 08/25/2020
+ms.date: 09/11/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b18afdeecb3e70f958b3d8908027e59f8c4c1f9e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e0a8a7bf38fbf44fd3544d7912729bbd42672f34
+ms.sourcegitcommit: 7c49f789f5b382b5b12efed6a81cbb4a25d44bd9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172721"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90026322"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>将桌面应用与 Windows 10 和 UWP 集成
 
@@ -1164,8 +1164,8 @@ Windows 应用的 [DLL 搜索顺序](/windows/win32/dlls/dynamic-link-library-se
 |ProviderDisplayName | 表示你的应用程序或服务的字符串（例如：“Contoso 视频播放器”）。 |
 |ContentEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的内容事件的名称。 当卷设备（如相机内存卡、U 盘或 DVD）插入到电脑时，会引发内容事件。 你可以在[此处](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到此类事件的完整列表。  |
 |谓词 |“谓词”设置标识针对所选选项传递给你的应用程序的值。 你可以为自动播放事件指定多个启动操作并且可以使用谓词设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 verb 属性来标识用户选择的选项。 你可以为谓词设置使用任何值（但保留的 open 除外）。 |
-|DropTargetHandler |实现 [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口的应用程序的类 ID。 系统会将可移动媒体中的文件传递给你的 [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 实现的 [Drop](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) 方法。  |
-|参数 |你不必为所有内容事件实现 [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于任意内容事件，你可以提供命令行参数，而不是实现 [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于此类事件，自动播放将使用这些命令行参数启动你的应用程序。 你可以在应用的初始化代码中解析这些参数，确定应用是否由自动播放启动，然后提供自定义实现。 |
+|DropTargetHandler |实现 [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) 接口的应用程序的类 ID。 系统会将可移动媒体中的文件传递给你的 [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) 实现的 [Drop](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) 方法。  |
+|参数 |你不必为所有内容事件实现 [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) 接口。 对于任意内容事件，你可以提供命令行参数，而不是实现 [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) 接口。 对于此类事件，自动播放将使用这些命令行参数启动你的应用程序。 你可以在应用的初始化代码中解析这些参数，确定应用是否由自动播放启动，然后提供自定义实现。 |
 |DeviceEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的设备事件的名称。 当有设备连接到电脑时，将引发设备事件。 设备事件以字符串 ``WPD`` 开头，你可以在[此处](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到设备事件列表。 |
 |HWEventHandler |实现 [IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) 接口的应用程序的类 ID。 |
 |InitCmdLine |你要传递给 [IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) 接口的 [Initialize](/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) 方法的字符串参数。 |
@@ -1277,6 +1277,9 @@ Windows 应用的 [DLL 搜索顺序](/windows/win32/dlls/dynamic-link-library-se
 ### <a name="share-fonts-with-other-windows-applications"></a>与其他 Windows 应用程序共享字体
 
 与其他 Windows 应用程序共享自定义字体。
+
+> [!NOTE]
+> 在将使用此扩展的应用提交到 Microsoft Store 之前，必须先获得 Microsoft Store 团队的批准。 要获得批准，请转到 [https://aka.ms/storesupport](https://aka.ms/storesupport)，单击“联系我们”，然后选择与将应用提交到仪表板相关的选项。 此批准过程有助于我们确保应用安装的字体与操作系统安装的字体之间不会发生冲突。 如果没有获得批准，提交应用时，你会收到类似于以下的错误：“包接受验证错误:你无法将扩展 windows.sharedFonts 用于此帐户。 如果你想要请求使用此扩展的权限，请联系我们的支持团队。”
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 

@@ -1,5 +1,5 @@
 ---
-Description: 进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。
+description: 进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。
 title: 进度控件指南
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d5756c4cfff05b666eae245de76c1813f9a834df
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fbd9ed95137263f4ddad44e2272d4d77aced241f
+ms.sourcegitcommit: 234bb7c896b990f624b2b8789820b92426e52291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169671"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90013366"
 ---
 # <a name="progress-controls"></a>进度控件
 
@@ -61,13 +61,12 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 另外，进度控件为只读，不具有交互性。 这意味着用户无法直接调用或使用这些控件。
 
-![ProgressBar 状态](images/progress-bar-two-states.png)
+|控制|显示|
+|---|---|
+| 不确定的进度栏 | ![不确定的进度栏](images/progressbar-indeterminate.gif) |
+| 确定的进度栏 | ![确定的进度栏](images/progressbar-determinate.png)|
+| 不确定的进度环 | ![ProgressRing 状态](images/progressring-indeterminate.gif)|
 
-*自顶到底 - 不确定 ProgressBar 和确定 ProgressBar*
-
-![ProgressRing 状态](images/ProgressRing_SingleState.png)
-
-*不确定 ProgressRing*
 
 ## <a name="examples"></a>示例
 

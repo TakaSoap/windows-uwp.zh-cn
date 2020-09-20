@@ -1,35 +1,28 @@
 ---
-title: 计算着色器 (CS) 阶段
-description: 计算着色器 (CS) 阶段提供常规目的的高速计算并利用图形处理单元 (GPU) 上的大量并行处理器。
+title: " (CS) 阶段的计算着色器"
+description: 计算着色器 (CS) 阶段提供高速通用计算，并利用了图形处理单元 (GPU) 中的大量并行处理器。
 ms.assetid: 300D4C0C-5450-45F8-9F29-E1A101D38F73
 keywords:
-- 计算着色器 (CS) 阶段
+- " (CS) 阶段的计算着色器"
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 62951db34cfd63c8d47f95a887b79aedea77a1c5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2dfdebc0a5219d48853cab08845fe4cfb45ee94f
+ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165031"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90804737"
 ---
-# <a name="compute-shader-cs-stage"></a>计算着色器 (CS) 阶段
+# <a name="compute-shader-cs-stage"></a> (CS) 阶段的计算着色器
 
-
-计算着色器 (CS) 阶段提供常规目的的高速计算并利用图形处理单元 (GPU) 上的大量并行处理器。 计算着色器阶段提供内存共享和线程同步功能，允许采用更有效的并行编程方法。
+计算着色器 (CS) 阶段提供高速通用计算，并利用了图形处理单元 (GPU) 中的大量并行处理器。 计算着色器阶段提供内存共享和线程同步功能，以允许更有效的并行编程方法。
 
 计算着色器可以在多个线程上并行运行。
 
-计算着色器是一个 [HLSL](/windows/desktop/direct3dhlsl/dx-graphics-hlsl) 可编程着色器阶段，其使用 [DirectCompute](https://blogs.msdn.com/b/chuckw/archive/2010/07/14/directcompute.aspx) 技术扩展了 Direct3D，使其拥有了除图形编程外的其他功能。
+计算着色器是一种 [HLSL](/windows/desktop/direct3dhlsl/dx-graphics-hlsl)的可编程着色器阶段，它扩展了 Direct3D 以外的图形编程。 计算着色器技术也称为 *DirectCompute* 技术。 有关详细信息，另请参阅 [计算着色器概述](/windows/win32/direct3d11/direct3d-11-advanced-stages-compute-shader)。
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
+## <a name="related-topics"></a>相关主题
 
-
-[计算管道](compute-pipeline.md)
-
+[计算管道](compute-pipeline.md) 
 [图形管道](graphics-pipeline.md)
-
- 
-
- 

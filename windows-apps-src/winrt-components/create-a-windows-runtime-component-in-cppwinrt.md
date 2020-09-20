@@ -5,12 +5,12 @@ ms.date: 07/06/2020
 ms.topic: article
 keywords: windows 10、uwp、windows、运行时、组件、组件 Windows 运行时组件、WRC、c + +/WinRT
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f84158311ef789851c268e9e21dbf5317063370
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 25286260c4abd6686939393b3bf81df818879bf9
+ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174311"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90804747"
 ---
 # <a name="windows-runtime-components-with-cwinrt"></a>使用 C++/WinRT 的 Windows 运行时组件
 
@@ -140,3 +140,9 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 若要将更多功能或新 Windows 运行时类型添加到 c + +/WinRT Windows 运行时组件，可以遵循上面所示的相同模式。 首先，使用 IDL 定义要公开的功能。 然后在 Visual Studio 中生成项目以生成存根实现。 然后，根据需要完成实现。 IDL 中定义的任何方法、属性和事件都对使用 Windows 运行时组件的应用程序可见。 有关 IDL 的详细信息，请参阅 [Microsoft 接口定义语言3.0 的简介](/uwp/midl-3/intro)。
 
 有关如何向 Windows 运行时组件添加事件的示例，请参阅 [在 c + + 中创作事件/WinRT](../cpp-and-winrt-apis/author-events.md)。
+
+## <a name="troubleshooting"></a>故障排除
+
+| 症状 | 纠正方法 |
+|---------|--------|
+|在 c + +/WinRT 应用中，当使用使用 XAML 的 [c # Windows 运行时组件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) 时，编译器将生成 "MyNamespace_XamlTypeInfo" 形式的错误 *：不是 "WinRT：： MyNamespace" 的成员*， &mdash; 其中 *MyNamespace* 是 Windows 运行时组件命名空间的名称。 | 在 `pch.h` 使用 c + +/WinRT 应用程序中，添加 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; 相应的替换*MyNamespace* 。 |

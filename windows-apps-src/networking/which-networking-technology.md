@@ -1,22 +1,21 @@
 ---
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
-description: 适用于 UWP 开发人员的网络技术概述，附带关于如何选择适合应用的技术的建议。
+description: 面向 UWP 开发人员的网络技术概述，以及关于如何选择适合自己应用的技术的建议。
 title: 选择哪一种网络技术？
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 05aec42d4a8eef1d78ddd425f1e90e06cb610c0a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b3f14e06f5e6f7508c90df9f04265740daaccb49
+ms.sourcegitcommit: b99e2f4dffa603b68c2a8273fe6313432f91b353
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158161"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90569380"
 ---
 # <a name="which-networking-technology"></a>选择哪一种网络技术？
 
-
-适用于 UWP 开发人员的网络技术概述，附带关于如何选择适合应用的技术的建议。
+面向 UWP 开发人员的网络技术概述，以及关于如何选择适合自己应用的技术的建议。
 
 ## <a name="sockets"></a>套接字
 
@@ -87,7 +86,7 @@ Windows 10 中新后台传输功能可在文件传输完成后触发后处理，
 
 ### <a name="connection-quality"></a>连接质量
 
-[  **Windows.Networking.Connectivity**](/uwp/api/Windows.Networking.Connectivity) API 使你能够访问网络连接、成本以及使用情况信息。 有关使用此 API 的详细信息，请参阅[访问网络连接状态和管理网络成本](/previous-versions/windows/apps/hh452983(v=win.10))
+[Windows.Networking.Connectivity](/uwp/api/Windows.Networking.Connectivity) 命名空间中的 API 让你能够访问网络连接、成本以及使用情况信息。 有关使用此 API 的详细信息，请参阅[访问网络连接状态和管理网络成本](/previous-versions/windows/apps/hh452985(v=win.10))。
 
 ### <a name="dns-service-discovery"></a>DNS 服务发现
 
@@ -103,7 +102,7 @@ Windows 10 中新后台传输功能可在文件传输完成后触发后处理，
 
 ### <a name="near-field-communications"></a>近场通信
 
-[  **Windows.Networking.Proximity**](/uwp/api/Windows.Networking.Proximity) API 允许你针对使用邻近感应或点击设备的应用使用近场通信，从而可轻松传输数据。 有关使用此 API 的详细信息，请参阅[支持邻近感应和点击](/previous-versions/windows/apps/hh465229(v=win.10))。
+[  **Windows.Networking.Proximity**](/uwp/api/Windows.Networking.Proximity) API 允许你针对使用邻近感应或点击设备的应用使用近场通信，从而可轻松传输数据。 有关使用此 API 的详细信息，请参阅[邻近感应和点击](/previous-versions/windows/apps/hh465221(v=win.10))。
 
 ### <a name="rssatom-feeds"></a>RSS/Atom 源
 

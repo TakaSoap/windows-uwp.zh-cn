@@ -2,7 +2,7 @@
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: 文件访问权限
 description: 默认情况下，应用可以访问特定文件系统位置。 应用也可以通过文件选取器或通过声明功能访问其他位置。
-ms.date: 12/19/2018
+ms.date: 09/10/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -11,18 +11,19 @@ dev_langs:
 - cppwinrt
 - cpp
 - javascript
-ms.openlocfilehash: d12ff61858d6d1434d07e00c70868697fefa1832
-ms.sourcegitcommit: b66796c73f14da63794efa66c8ded2caa25da0f7
+ms.custom: contperfq1
+ms.openlocfilehash: 6bb0e44fa5ea31d73feebdfb9ced9951cc2bc937
+ms.sourcegitcommit: 2050175043c8c175be3312f17769b4af241b3275
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89285438"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027646"
 ---
 # <a name="file-access-permissions"></a>文件访问权限
 
 默认情况下，通用 Windows 平台 (UWP) 应用可以访问特定文件系统位置。 应用也可以通过文件选取器或通过声明功能访问其他位置。
 
-## <a name="the-locations-that-all-apps-can-access"></a>所有应用均可访问的位置
+## <a name="locations-that-all-apps-can-access"></a>所有应用均可访问的位置
 
 在创建新的应用时，默认情况下你可以访问以下文件系统位置：
 
