@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: windows 10，uwp，WNS，windows 通知服务，通知，windows，防火墙，疑难解答，IP，流量，企业，网络，IPv4，VIP，FQDN，公共 IP 地址
 ms.localizationpriority: medium
-ms.openlocfilehash: a2eb09a0b1cc6f135a23b038207bb442eb741bf8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4277b46728464630bf478b1f78008e92b4e3fe99
+ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169201"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90845526"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支持 WNS 流量的企业防火墙和代理配置
 
@@ -22,9 +22,9 @@ ms.locfileid: "89169201"
 ## <a name="proxy-support"></a>代理支持
 
 > [!Note]
-> Windows 客户端 **不** 支持所有代理，与 WNS 的连接必须是直接连接。
+> Windows 上的 WNS 推送通知当前不支持所有代理。 为了获得最佳结果，与 WNS 的连接必须是直接连接。
 
-**即将推出！** 我们正在积极调查不同的网络配置、代理和防火墙。 我们将更新此页，其中包含有关常见企业方案和 WNS 支持的更多详细信息。
+我们正在积极调查不同的网络配置、代理和防火墙。 我们将更新此页，其中包含有关常见企业方案和 WNS 支持的更多详细信息。
 
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>应将哪些信息添加到允许列表
