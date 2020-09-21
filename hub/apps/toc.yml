@@ -55,6 +55,8 @@
                   href: desktop/modernize/modernize-packaged-apps.md
                 - name: 集成包扩展
                   href: desktop/modernize/desktop-to-uwp-extensions.md
+                - name: 获取打包应用的激活信息
+                  href: desktop/modernize/get-activation-info-for-packaged-apps.md
                 - name: 使用 UWP 组件进行扩展
                   href: desktop/modernize/desktop-to-uwp-extend.md
                 - name: 分发打包的应用
