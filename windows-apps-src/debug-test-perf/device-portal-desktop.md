@@ -4,14 +4,15 @@ title: 适用于 Windows 桌面的设备门户
 description: 了解 Windows Device Portal 如何在 Windows 桌面上打开诊断和自动化。
 ms.date: 08/20/2020
 ms.topic: article
+ms.custom: contperfq1
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: e485fcb5d6ca6ecf8c19124c482492ddfb2c5233
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f06a3c933060a7309604ae8dec49455ac3bd02ab
+ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173601"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90845566"
 ---
 # <a name="device-portal-for-windows-desktop"></a>适用于 Windows 桌面的设备门户
 
