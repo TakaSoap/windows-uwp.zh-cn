@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, 税收, irs, 国内税收署, 税款, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a385c9c351dc0bb5db857fe7d1f5f267347f1f1
-ms.sourcegitcommit: 31c925736391ab166c06f34258564b00aeebd83a
+ms.openlocfilehash: 6493e20dbc0e38405a7cd30fc22acb9973098431
+ms.sourcegitcommit: 97002cc3e5942f43ab0f14f4ad70543a63db0c03
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428915"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91128971"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 发出的 IRS 税单
 
@@ -23,11 +23,11 @@ ms.locfileid: "84428915"
 
 | IRS 税单 | 说明 | 可用性 |
 |--------------|-------------|--------------|
-|1099-MISC、1099-K | 与你参与 Microsoft 市场的销售活动和/或收到的付款金额相关 | 打印窗体在**1 月 31**日或之前将有邮戳，.pdf 副本将在[合作伙伴中心](https://partner.microsoft.com/dashboard)提供（在 "支出" 和 "**税务 > 支出和税务配置文件**" 下的 "**合作伙伴中心" 开发人员设置**中） |
-|1042-S | 与你收到的应缴纳美国预扣税的付款金额相关 | 打印窗体将在**3 月 15**日或之前提供邮戳，.pdf 副本将在合作伙伴中心提供（在按**比率和税务 > 支出和税务配置文件**的**合作伙伴中心开发人员设置**中）  |
+|1099-MISC、1099-K | 与你参与 Microsoft 市场的销售活动和/或收到的付款金额相关 | 打印窗体在 **1 月 31**日或之前将有邮戳，.pdf 副本将 [在合作伙伴中心 (的](https://partner.microsoft.com/dashboard) 伙伴中心 **开发人员设置** 中提供，同时按 **比率和税务 > 支出和税务配置文件**)  |
+|1042-S | 与你收到的应缴纳美国预扣税的付款金额相关 | 打印窗体将在 **3 月 15**日或之前显示为邮戳，.pdf 副本将在合作伙伴中心 (的伙伴中心 **开发人员设置** 中提供，同时按 **比率和税务 > 支出和税务配置文件**)   |
 
 > [!NOTE]
-> 用于 IRS 纳税窗体的地址来自你的[税务模板](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 如果你的地址已变更，请务必更新**税务资料**中的地址。
+> 用于 IRS 纳税窗体的地址来自你的 [税务模板](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 如果你的地址已变更，请务必更新**税务资料**中的地址。
 
 税务窗体将从以下地址发送给你：
 
@@ -36,17 +36,18 @@ ms.locfileid: "84428915"
 | 业务组         | 法律实体          | 地址                                          |
 |------------------------|-----------------------|--------------------------------------------------|
 | Windows、Office、Azure | Microsoft Corporation | One Microsoft Way<br>华盛顿98052州华盛顿特区       |
-| 广告            | Microsoft Online Inc。 | 6880塞拉利昂中心 Parkway<br>Reno、NV 98511 USA |
+| 广告            | Microsoft Online Inc。 | 6880 Sierra Center Parkway<br>Reno、NV 98511 USA |
 
 **非美国公民：**
+
 | 业务组         | 法律实体          | 地址                                          |
 |------------------------|-----------------------|--------------------------------------------------|
-| Windows、Office、Azure | Microsoft 爱尔兰运营限制（由 microsoft Corporation 通过 microsoft 爱尔兰，由 microsoft corporation 作为合格中介） | 一个 Microsoft 地方<br>南部 &nbsp; 县 &nbsp; 企业 &nbsp; 公园<br>Leopardstown，都柏林18爱尔兰|
-| 广告\*          | Microsoft 爱尔兰运营限制（由 microsoft Online Inc. 支付，由 microsoft 爱尔兰担任，作为 Microsoft Online Inc. 的支出代理。） | 一个 Microsoft 地方<br>南部 &nbsp; 县 &nbsp; 企业 &nbsp; 公园<br>Leopardstown，都柏林18爱尔兰 |
-| 广告            | Microsoft Online Inc。 | 6880塞拉利昂中心 Parkway<br>Reno、NV 98511 USA |
+| Windows、Office、Azure | Microsoft 爱尔兰的 microsoft 爱尔兰运营限制 (，由 microsoft corporation 通过 microsoft 爱尔兰担任 Microsoft Corporation 的合格中介)  | 一个 Microsoft 地方<br>南部 &nbsp; 县 &nbsp; 企业 &nbsp; 公园<br>Leopardstown，都柏林18，D18 P521，爱尔兰|
+| 广告\*          | Microsoft 爱尔兰运营限制 (付款由 microsoft Online Inc. 进行，作为 Microsoft Online Inc. 的支出代理。 )  | 一个 Microsoft 地方<br>南部 &nbsp; 县 &nbsp; 企业 &nbsp; 公园<br>Leopardstown，都柏林18，D18 P521，爱尔兰 |
+| 广告            | Microsoft Online Inc。 | 6880 Sierra Center Parkway<br>Reno、NV 98511 USA |
 
 >[!NOTE]
-> \*以下国家/地区的公民将通过 Microsoft 爱尔兰运营限制来支付广告收入：奥地利、比利时、保加利亚、克罗地亚、塞浦路斯、Czechia、丹麦、爱沙尼亚、芬兰、法国、德国、希腊、匈牙利、爱尔兰、Isle 的男士、意大利、拉脱维亚、列支敦士登、立陶宛、卢森堡、马耳他、摩纳哥、荷兰、挪威、波兰、葡萄牙、葡萄牙、斯洛伐克、斯洛文尼亚、葡萄牙、西班牙、瑞典、瑞士、英国
+> \* 以下国家/地区的公民将通过 Microsoft 爱尔兰运营限制来支付广告收入：奥地利、比利时、保加利亚、克罗地亚、塞浦路斯、Czechia、丹麦、爱沙尼亚、芬兰、法国、德国、希腊、匈牙利、爱尔兰、Isle 的男士、意大利、拉脱维亚、列支敦士登、立陶宛、卢森堡、马耳他、摩纳哥、荷兰、挪威、波兰、葡萄牙、葡萄牙、斯洛伐克、斯洛文尼亚、葡萄牙、西班牙、瑞典、瑞士、英国
 
 ## <a name="for-developers-located-in-the-united-states"></a>针对位于美国的开发人员
 
@@ -57,14 +58,14 @@ ms.locfileid: "84428915"
   </tr>
   <tr> 
      <td valign="top">在适用的纳税年度中，我<b>销售了 200 多个应用</b>，总购买金额<b>超过 20,000 美元</b>（<b>未</b>计算通过 Windows 10 上的 Microsoft Store 在巴西和中国完成的销售额）。</td>
-    <td valign="top"><b>1099-K</b>：<br>归档方：Microsoft Corporation<br>EIN： * * * * * * 4442<br><br><b>重要提示</b>：窗体 1099-K 包含<b>总购买</b>量，而不是支付给你的款项。</td>
+    <td valign="top"><b>1099-K</b>：<br>归档方：Microsoft Corporation<br>EIN： * * * * * * 4442<br><br><b>重要提示</b>：窗体 1099-K 包含 <b>总购买</b> 量，而不是支付给你的款项。</td>
   </tr>
   <tr> 
      <td valign="top">(i) 通过 Windows 10 上的 Microsoft Store 完成的巴西和中国应用销售或 (ii) 在 Minecraft（我的世界）卖场中的销售，我收到的<b>付款金额至少为 10 美元</b>。<br>
 <br>
-<b>OR</b><br>
+<b>或者</b><br>
 <br>
-在适用的税收年份内，我收到了至少 $600 与 Microsoft 的应用销售相关的付款（例如，来自比赛或促销的激励付款或付款）</td>
+在适用的税收年，我收到了至少 $600 与 Microsoft 的应用销售相关的付款 (例如，从比赛或促销中获得激励或付款) </td>
     <td valign="top"><b>1099-MISC</b> :<br>付款方：Microsoft Corporation<br>EIN： * * * * * * 4442<br><br><b>重要说明</b>：无论从 Microsoft 收到的付款金额如何，某些业务实体都不会收到 1099-MISC 窗体。  有关详细信息，请咨询税务专业人士。</td>
   </tr>
   <tr>
@@ -104,8 +105,8 @@ ms.locfileid: "84428915"
   <tr>
     <td valign="top"><b>我已经填写了 W8 表单，为什么我收到的付款中仍然预扣了税款？</b></td>
     <td valign="top">如果以下情况之一，将会预扣税款：<br>
-     1.未正确完成 W8 的税务条约部分，或<br>
-     2.你所在国家/地区的国家/地区不具有美国的退税。<br><br>你可以随时访问合作伙伴中心以提交更新的 W8 表单。<br><br><b>注意</b>：并非所有收入都受预缴税金的限制。</td>
+     1. 未正确完成 W8 的税务条约部分，或<br>
+     2. 你所在国家/地区的国家/地区不具有美国的退税。<br><br>你可以随时访问合作伙伴中心以提交更新的 W8 表单。<br><br><b>注意</b>：并非所有收入都受预缴税金的限制。</td>
   </tr>
   <tr>
     <td valign="top"><b>我提交了包含有效条约信息的更新的 W8 表单。Microsoft 是否可以向我退款已预扣的税费？</b></td>
