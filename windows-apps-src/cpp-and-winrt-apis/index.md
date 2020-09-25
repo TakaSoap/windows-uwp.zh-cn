@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f05bbd1ad5ea770e96ebbbd74c3a980ae0585b7
-ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
+ms.openlocfilehash: b3ad3a204b2eb4b288e3d3c313a0832bea124de0
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89643774"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219890"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -40,7 +40,7 @@ C++ 编程语言适用于企业*和*独立软件供应商 (ISV) 行业中重视�
 - [从 WRL 移动到 C++/WinRT](./move-to-winrt-from-wrl.md)
 - [从 C# 移动到 C++/WinRT](./move-to-winrt-from-csharp.md)
 
-另请参阅[可在哪里找到 C++/WinRT 示例应用？](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps)。
+另请参阅[可在哪里找到 C++/WinRT 示例应用？](./faq.md#where-can-i-find-cwinrt-sample-apps)。
 
 ### <a name="topics-about-cwinrt"></a>有关 C++/WinRT 的主题
 

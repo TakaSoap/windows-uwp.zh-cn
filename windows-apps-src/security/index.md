@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 3169ee9b2674112964ced83bc3a34637846eb225
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9a565c9bdec6932d0e8ca376f677c309991773d6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167191"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219720"
 ---
 # <a name="security"></a>安全性
 
@@ -31,7 +31,7 @@ ms.locfileid: "89167191"
 <tr><th>主题</th><th>说明</th></tr>
 <tr><td><a href="credential-locker.md">凭据保险箱</a></td><td>本文介绍了应用可如何使用凭据保险箱安全存储和检索用户凭据，并使用用户的 Microsoft 帐户在设备间漫游用户凭据</td></tr>
 
-<tr><td><a href="fingerprint-biometrics.md">指纹生物识别</a> </td><td>本文介绍了如何将指纹生物识别添加到应用。 在用户必须同意特定操作时将指纹身份验证请求囊括在内，将提升应用的安全性。 例如，可在授权应用内购买或对受限资源的访问权限之前要求指纹身份验证。 指纹身份验证使用 <a href="https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI">Windows.Security.Credentials.UI</a> 命名空间中的 <a href="/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier">UserConsentVerifier</a> 类进行管理。</td></tr>
+<tr><td><a href="fingerprint-biometrics.md">指纹生物识别</a> </td><td>本文介绍了如何将指纹生物识别添加到应用。 在用户必须同意特定操作时将指纹身份验证请求囊括在内，将提升应用的安全性。 例如，可在授权应用内购买或对受限资源的访问权限之前要求指纹身份验证。 指纹身份验证使用 <a href="/uwp/api/Windows.Security.Credentials.UI">Windows.Security.Credentials.UI</a> 命名空间中的 <a href="/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier">UserConsentVerifier</a> 类进行管理。</td></tr>
 <tr><td><a href="microsoft-passport.md">Microsoft Passport 和 Windows Hello</a></td><td>本文介绍了新的 Windows 10 Microsoft Passport 技术，并讨论了开发人员可如何实现此技术来保护其应用和后端服务。 它重点介绍了这些技术的特定功能，这些功能有助于缓解来自传统凭据的威胁，并提供有关设计和部署这些技术作为 Windows 10 部署的一部分的指南。 </td></tr>
 <tr><td><a href="microsoft-passport-login.md">创建 Microsoft Passport 登录应用</a></td><td>有关如何创建 Windows 10 UWP（通用 Windows 平台）应用的完整演练中的第 1 部分，将使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项。</td></tr>
 <tr><td><a href="microsoft-passport-login-auth-service.md">创建 Microsoft Passport 登录服务</a></td><td>有关如何在 Windows 10 UWP（通用 Windows 平台）应用中使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项的完整演练中的第 2 部分。</td></tr>

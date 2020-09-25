@@ -2,17 +2,17 @@
 description: 在 Windows 10 上创建应用体验的 Fluent Design 准则和 UI 代码示例
 keywords: uwp 样式指南, 设计指导, 版式, 动作, 声音, 动画, 应用开发
 title: 适用于 Windows 应用的设计和代码
-ms.date: 05/06/2019
+ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 01e613088bba3c1e552180f398907145c6254705
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: aa5d81a96f3f7991597e7a7c49013de475e95e23
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970342"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218400"
 ---
 # <a name="design-and-code-windows-apps"></a>设计 Windows 应用并为其编写代码
 

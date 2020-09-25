@@ -2,17 +2,17 @@
 description: 获取适用于 Windows 应用用户界面布局和控件设计的最新下载和工具。
 keywords: UWP 应用布局, UI, 用户界面设计, 下载, UWP 工具, windows 应用布局, windows ui 工具
 title: 适用于 Windows 应用的设计工具包和示例
-ms.date: 03/23/2020
+ms.date: 09/24/2020
 ms.topic: conceptual
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8336da43767931c439ea79fd9e3824f1a4cc3893
-ms.sourcegitcommit: 47899c30a39087bca1f058a4395cf58daacf5ae9
+ms.openlocfilehash: 36b264b203627761d2872b0f9b8dade81099b149
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345481"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216710"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>适用于 Windows 应用的设计工具包和示例
 

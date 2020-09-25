@@ -7,12 +7,12 @@ keywords: windows win32, 桌面开发
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 6539f436e46f351efc355d361c0677b9fedee546
-ms.sourcegitcommit: 2bb975d5df38d294277f57bf8b6a06d9bf87ca9b
+ms.openlocfilehash: 34b860916b90d1adc8ae9e7ae8c8ac7950125ce7
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90046813"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216740"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>构建 Windows 电脑的桌面应用
 
@@ -39,24 +39,24 @@ ms.locfileid: "90046813"
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows/uwp/">通用 Windows 平台 (UWP)</a></td>
+<td><a href="/windows/uwp/">通用 Windows 平台 (UWP)</a></td>
 <td><p>适合 Windows 10 应用和游戏的领先平台。 可构建仅使用 UWP 控件和 API 的 UWP 应用，也可在桌面应用中使用 UWP 控件和 API，这些应用根据设计可使用其他平台之一。</p></td>
 <td><a href="/windows/uwp/get-started/">入门</a><br/><a href="/uwp/">API 参考</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">示例</a></td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows/win32/">C++/Win32</a></td>
+<td><a href="/windows/win32/">C++/Win32</a></td>
 <td><p>适合需要直接访问 Windows 和硬件的本机 Windows 应用的首选平台。</p></td>
 <td><a href="/windows/win32/desktop-programming/">入门</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API 参考</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">示例</a></td>
 </tr>
 <tr class="odd">
 <td><a href="/dotnet/framework/wpf/">WPF</a></td>
-<td><p>已建立的基于 .NET 的平台，它适合带有 XAML UI 模型的图形丰富的托管 Windows 应用。 这些应用可面向 <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> 或完整的 .NET Framework。</p></td>
-<td><a href="/dotnet/framework/wpf/getting-started/">入门</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 参考 (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">示例</a></td>
+<td><p>已建立的基于 .NET 的平台，它适合带有 XAML UI 模型的图形丰富的托管 Windows 应用。 这些应用可面向 <a href="/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> 或完整的 .NET Framework。</p></td>
+<td><a href="/dotnet/framework/wpf/getting-started/">入门</a><br/><a href="/dotnet/api/index">API 参考 (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">示例</a></td>
 </tr>
 <tr class="even">
 <td><a href="/dotnet/framework/winforms/">Windows 窗体</a></td>
-<td><p>基于 .NET 的平台，它专用于具有轻量级 UI 模型的托管业务线应用。 这些应用可面向 <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> 或完整的 .NET Framework。</p></td>
-<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">入门</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 参考 (.NET)</a></td>
+<td><p>基于 .NET 的平台，它专用于具有轻量级 UI 模型的托管业务线应用。 这些应用可面向 <a href="/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> 或完整的 .NET Framework。</p></td>
+<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">入门</a><br/><a href="/dotnet/api/index">API 参考 (.NET)</a></td>
 </tr>
 </tbody>
 </table>

@@ -3,16 +3,16 @@ description: 了解如何使你的应用针对全世界用户都具有包容性�
 keywords: uwp 应用辅助功能, 全球化, 设计包容应用, 辅助功能应用要求
 title: Windows 应用中的可用性 - Windows 应用开发
 template: detail.hbs
-ms.date: 10/18/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
-ms.openlocfilehash: 614e6d81a4f30c0b9a277c94964c16189f2247f8
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 42d68a38b387630fd839e27f6ecaeef8ba00db5a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234286"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218040"
 ---
 # <a name="usability-for-windows-apps"></a>Windows 应用的可用性
 
