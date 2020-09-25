@@ -2,22 +2,22 @@
 Description: 本主题列出了已本地化为美国英语以外的其他语言的 Windows 应用的可用字体。
 title: 国际字体
 template: detail.hbs
-ms.date: 11/02/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: aa0b560ad684ba230e0a498b9069d24d510f49c0
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 1200b80347a67bb1c9a6414a18697ca9d30bc29f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970902"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220600"
 ---
 # <a name="international-fonts"></a>国际字体
 
 本主题列出了已本地化为美国英语以外的其他语言的 Windows 应用的可用字体。
 
-在下表中，"Language tag" 列列出了语言的[BCP-47 语言标记](https://tools.ietf.org/html/bcp47)。 若要查看 Microsoft Store 专门支持的语言标记列表，请参阅[支持的语言](../../publish/supported-languages.md)。
+在下表中，"Language tag" 列列出了语言的 [BCP-47 语言标记](https://tools.ietf.org/html/bcp47) 。 若要查看 Microsoft Store 专门支持的语言标记列表，请参阅[支持的语言](../../publish/supported-languages.md)。
 
 | 语言 | 语言标签 | Windows 中使用的字体 |
 | --------- | ----------- | -------------------- |
@@ -29,10 +29,10 @@ ms.locfileid: "82970902"
 | 阿萨姆语 | as-IN | Nirmala UI |
 | 阿塞拜疆语(拉丁语) | az-Latn-AZ | Segoe UI |
 | 孟加拉语（孟加拉国） | bn-BD | Nirmala UI |
-| 孟加拉语(印度) | bn-IN | Nirmala UI |
-| 巴斯克语（巴斯克） | eu-ES | Segoe UI |
+| 孟加拉语（印度） | bn-IN | Nirmala UI |
+| 巴斯克语(巴斯克语) | eu-ES | Segoe UI |
 | 白俄罗斯语 | be-BY | Segoe UI |
-| 波斯尼亚语(拉丁语系) | bs-Latn-BA | Segoe UI |
+| 波斯尼亚语(拉丁语) | bs-Latn-BA | Segoe UI |
 | 保加利亚语 | bg-BG | Segoe UI |
 | 加泰罗尼亚语 | ca-ES | Segoe UI |
 | 中央库尔德语(阿拉伯) | ku-ARAB-IQ | Segoe UI |
@@ -57,7 +57,7 @@ ms.locfileid: "82970902"
 | 古吉拉特语 | gu-IN | Nirmala UI |
 | 豪撒语(拉丁语) | ha-Latn-NG | Segoe UI |
 | 希伯来语 | he-IL | Segoe UI |
-| Hindi | hi-IN | Nirmala UI |
+| 印地语 | hi-IN | Nirmala UI |
 | 匈牙利语 | hu-HU | Segoe UI |
 | 冰岛语 | is-IS | Segoe UI |
 | 伊博语 | ig-NG | Segoe UI |
@@ -92,7 +92,7 @@ ms.locfileid: "82970902"
 | 奥里亚语 | or-IN | Nirmala UI |
 | 波斯语 | fa-IR | Segoe UI |
 | 波兰语 | pl-PL | Segoe UI |
-| 葡萄牙语（巴西） | pt-BR | Segoe UI |
+| 葡萄牙语(巴西) | pt-BR | Segoe UI |
 | 葡萄牙语(葡萄牙) | pt-PT | Segoe UI |
 | 旁遮普语 | pa-IN | Nirmala UI |
 | 旁遮普语(阿拉伯语) | pa-Arab-PK | Segoe UI |
@@ -116,13 +116,13 @@ ms.locfileid: "82970902"
 | 鞑靼语 | tt-RU | Segoe UI |
 | 泰卢固语 | te-IN | Nirmala UI |
 | 泰语 | th-TH | Leelawadee UI |
-| 提格利尼亚语 | ti-ET | Ebrima |
+| 提格里尼亚语 | ti-ET | Ebrima |
 | 土耳其语 | tr-TR | Segoe UI |
 | 土库曼语 | tk-TM | Segoe UI |
 | 乌克兰语 | uk-UA | Segoe UI |
 | 乌尔都语 | ur-PK | Segoe UI |
 | 维吾尔语 | ug-CN | Segoe UI |
-| 乌兹别克语(拉丁语) | uz-Latn-UZ | Segoe UI |
+| 乌兹别克语(拉丁文) | uz-Latn-UZ | Segoe UI |
 | 巴伦西亚语 | ca-ES-valencia | Segoe UI |
 | 越南语 | vi-VN | Segoe UI |
 | 威尔士语 | cy-GB | Segoe UI |

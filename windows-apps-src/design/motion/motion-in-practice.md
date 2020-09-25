@@ -3,7 +3,7 @@ description: 了解如何在你的应用程序中组合计时、缓动、方向�
 title: 练习中的动作-Windows 应用中的动画
 label: Motion in practice
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8604d925ffefc96cd74726909afab6e2016cce76
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: cebc072a7b358aedfdd2320fa47f238712d7ee92
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054527"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220400"
 ---
 # <a name="bringing-it-together"></a>综合运用
 
@@ -94,7 +94,7 @@ Slide 150： 300ms;缓动：默认减速
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
   - **不透明度**
   - **旋转**
-  - **缩放**
+  - **规模**
   - **翻译**
 
 - [Border](/uwp/api/windows.ui.xaml.controls.border)、 [system.windows.controls.contentpresenter>](/uwp/api/windows.ui.xaml.controls.contentpresenter)或 [Panel](/uwp/api/windows.ui.xaml.controls.panel)

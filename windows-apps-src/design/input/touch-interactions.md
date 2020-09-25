@@ -5,15 +5,15 @@ ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
 keywords: 键盘, 指针, 输入, 用户交互
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 537d5aa08f61471c43ca8a965369bdd9dcdee7d3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 14be47fa701742c73048e70c0842cb421c52a7e5
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165744"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220510"
 ---
 # <a name="touch-interactions"></a>触控交互
 
@@ -56,8 +56,8 @@ Windows 应用包含多个用于处理触摸输入的不同机制，使您能够
 下表显示了在设计触摸优化 Windows 应用时应考虑的输入设备之间的一些差异。
 
 <table>
-<tbody><tr><th>因素</th><th>触控交互</th><th>鼠标、键盘、笔/触笔交互</th><th>触摸板</th></tr>
-<tr><td rowspan="3">精度</td><td>指尖的接触区域大于单个 x-y 坐标，这样便增加了无意中激活命令的几率。</td><td>鼠标和笔/触笔提供了精确的 x-y 坐标。</td><td>与鼠标相同。</td></tr>
+<tbody><tr><th>因子</th><th>触控交互</th><th>鼠标、键盘、笔/触笔交互</th><th>触摸板</th></tr>
+<tr><td rowspan="3">Precision</td><td>指尖的接触区域大于单个 x-y 坐标，这样便增加了无意中激活命令的几率。</td><td>鼠标和笔/触笔提供了精确的 x-y 坐标。</td><td>与鼠标相同。</td></tr>
 <tr><td>接触区域的形状在整个移动过程中不断变化。  </td><td>鼠标移动和笔/触笔笔划都提供精确的 x-y 坐标。 键盘焦点非常清晰。</td><td>与鼠标相同。</td></tr>
 <tr><td>没有鼠标光标来帮助确定目标。</td><td>鼠标光标、笔/触笔光标以及键盘焦点都可以帮助确定目标。</td><td>与鼠标相同。</td></tr>
 <tr><td rowspan="3">人体解剖学</td><td>指尖移动并不精确，因为使用一个或多个手指沿直线移动非常困难。 这是由于手关节的曲率和运动涉及的关节数量导致的。</td><td>使用鼠标或笔/触笔进行直线移动就很容易，因为控制它们的手所移动的物理距离要比光标在屏幕上移动的物理距离短。</td><td>与鼠标相同。</td></tr>

@@ -5,15 +5,15 @@ ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
 keywords: 触摸板, PTP, 触摸, 指针, 输入, 用户交互
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e83cb1ceca96e5c7b51e71cb419b86b0395ea99
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 86c47a3a510f6ed0d865064e8d140c47c8dd9f78
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165861"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220430"
 ---
 # <a name="touchpad-design-guidelines"></a>触摸板设计指南
 
@@ -71,7 +71,7 @@ ms.locfileid: "89165861"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

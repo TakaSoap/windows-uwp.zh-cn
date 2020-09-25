@@ -3,19 +3,19 @@ Description: 了解如何使用 Windows 应用程序中的键盘、游戏板和�
 title: 使用键盘、手柄和辅助功能工具的编程焦点导航
 label: Programmatic focus navigation
 keywords: 键盘, 游戏控制器, 遥控器, 导航, 导航策略, 输入, 用户交互, 辅助功能, 可用性
-ms.date: 03/19/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 887d8329cc95d735ba33ff8dafc5105874206eaf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ef2e62404766d822343537cea2aca8e512482093
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172541"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220530"
 ---
 # <a name="programmatic-focus-navigation"></a>编程焦点导航
 
