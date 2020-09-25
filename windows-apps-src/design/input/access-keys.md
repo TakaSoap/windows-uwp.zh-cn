@@ -4,21 +4,21 @@ title: 访问键设计指南
 label: Access keys design guidelines
 keywords: 键盘, 访问键, 键提示, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互
 template: detail.hbs
-ms.date: 06/08/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ca8c21729f27e30e7703291c04a940301a3feb26
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 77986569ec224ba36471f60c0200dfb1825472a0
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173891"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218410"
 ---
-# <a name="access-keys"></a>访问键
+# <a name="access-keys"></a>访问密钥
 
 访问键为键盘快捷方式，可以为用户提供一种直观的方式，使其能够通过键盘而非指针设备（如触控或鼠标）进行快速导航并与应用的可视 UI 进行交互，以此提高 Windows 应用程序的实用功能和辅助功能。
 

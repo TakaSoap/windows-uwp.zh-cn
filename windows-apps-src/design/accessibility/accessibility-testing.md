@@ -4,16 +4,16 @@ ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: 辅助功能测试
 label: Accessibility testing
 template: detail.hbs
-ms.date: 05/18/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1144f6edfab73069a8645e464a2aa8de3e5e2ed6
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 1da900732257babc0d53453fa4b9b2c9196e7e6d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854753"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216410"
 ---
 # <a name="accessibility-testing"></a>辅助功能测试  
 
@@ -33,7 +33,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 
 ### <a name="inspect"></a>**检查**  
 
-你可以使用 [**Inspect**](/windows/desktop/WinAuto/inspect-objects) 选择任何 UI 元素并查看其辅助功能数据。 可以查看 Microsoft UI 自动化属性和控件模式并测试 UI 自动化树中自动化元素的导航结构。 使用 "**检查**" 作为开发 ui，验证如何在 UI 自动化中公开辅助功能特性。 在某些情况下，属性来自已经为默认 XAML 控件实现的 UI 自动化支持。 在其他情况下，属性来自你在 XAML 标记中设置的特定值，如[**automationproperties.livesetting**](/uwp/api/windows.ui.xaml.automation.automationproperties)附加属性。
+你可以使用 [**Inspect**](/windows/desktop/WinAuto/inspect-objects) 选择任何 UI 元素并查看其辅助功能数据。 可以查看 Microsoft UI 自动化属性和控件模式并测试 UI 自动化树中自动化元素的导航结构。 使用 " **检查** " 作为开发 ui，验证如何在 UI 自动化中公开辅助功能特性。 在某些情况下，属性来自已经为默认 XAML 控件实现的 UI 自动化支持。 在其他情况下，属性来自你在 XAML 标记中设置的特定值，如 [**automationproperties.livesetting**](/uwp/api/windows.ui.xaml.automation.automationproperties) 附加属性。
 
 下图展示了 [**Inspect**](/windows/desktop/WinAuto/inspect-objects) 工具，用于查询记事本中 **“编辑”** 菜单元素的 UI 自动化属性。
 
@@ -90,7 +90,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 4. 按 _Caps Lock + Shift + Enter_ 搜索你的应用，验证所有控件都显示在搜索列表中，并验证控件名称已本地化并且可读。
 5. 关闭监视器，尝试只使用键盘和“讲述人”完成主屏方案。 若要获取“讲述人”命令和快捷方式的完整列表，请按 _Caps Lock + F1_。
 
-从 Windows 10 版本 1607 开始，我们在“讲述人”中引入了新的开发人员模式。 通过按_ctrl + Caps lock + F12_，打开讲述人正在运行的开发人员模式。 当开发人员模式已启用时，屏幕将屏蔽，并且将仅突出显示可访问的对象和以编程方式向“讲述人”公开的关联文本。 针对向“讲述人”公开的信息，这为你提供了良好的视觉表示形式。
+从 Windows 10 版本 1607 开始，我们在“讲述人”中引入了新的开发人员模式。 通过按 _ctrl + Caps lock + F12_，打开讲述人正在运行的开发人员模式。 当开发人员模式已启用时，屏幕将屏蔽，并且将仅突出显示可访问的对象和以编程方式向“讲述人”公开的关联文本。 针对向“讲述人”公开的信息，这为你提供了良好的视觉表示形式。
 
 **按照以下步骤，使用“讲述人”的触摸模式测试你的应用：**
 

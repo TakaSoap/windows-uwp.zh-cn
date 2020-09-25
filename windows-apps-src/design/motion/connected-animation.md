@@ -2,19 +2,19 @@
 description: 连贯的动画让你可以通过为一个元素在两种不同视图之间的转换创建动画来创建动态且引人入胜的导航体验。
 title: 连贯的动画
 template: detail.hbs
-ms.date: 10/04/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ff252faf4dd49929ec46c2ceaa02f94011e6b225
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 770f859cfb90dde4f3960492479beb6192c12c8f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169321"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217780"
 ---
 # <a name="connected-animation-for-windows-apps"></a>适用于 Windows 应用的连接动画
 
@@ -98,7 +98,7 @@ ms.locfileid: "89169321"
 
 为了实现各种效果，某些配置将忽略 ConnectedAnimationService 上的这些属性，并改为使用自己的值，如此表中所述。
 
-| 配置 | 是否尊重 DefaultDuration？ | 是否尊重 DefaultEasingFunction？ |
+| Configuration | 是否尊重 DefaultDuration？ | 是否尊重 DefaultEasingFunction？ |
 | - | - | - |
 | 引力 | 是 | 是* <br/> **从 A 到 B 的基本转换使用此缓动函数，但 "重力 dip" 具有其自己的缓动函数。*  |
 | 直接 | 否 <br/> *在150ms 上进行动画处理。*| 否 <br/> *使用减速缓动函数。* |

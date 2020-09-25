@@ -4,16 +4,16 @@ title: 平移
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e77485bd2febe2ee032f9a0c3ceada31c2807ee0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3a5e26d48ef74631e732fb043e909869945a6366
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172491"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217047"
 ---
 # <a name="guidelines-for-panning"></a>平移指南
 
@@ -80,7 +80,7 @@ ms.locfileid: "89172491"
 
 > <div id="main">
 > <strong>Windows 10 秋季创建者更新-行为更改</strong> 默认情况下，活动笔在 Windows 应用中的滚动/平移 (如触摸、触摸板和被动笔) ，而不是文本选择。  
-> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 类</a>的 API 参考主题。
+> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 <a href="/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 类</a>的 API 参考主题。
 > </div>
 
 根据输入设备的不同，用户使用以下方式之一在可平移区域内进行平移：

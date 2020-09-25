@@ -1,31 +1,31 @@
 ---
-Description: 你可以在 "包" 页上传你要提交的应用程序的所有包文件（. .appxupload、.appx、.appxbundle 和/或 .xap）。
+Description: 您可以在 "包" 页上传要提交的应用程序 ( .appxupload、.appx、.appxbundle 和/或 .xap) 的所有包文件。
 title: 上传应用包
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
-ms.date: 10/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10，uwp，包，上传，包上传
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c3c55d351ebd3b956d57c6c7e623e88e7fa88c1
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: 0b4fc0c9dfeed1183a1653b525d0f8cc8a62a4c1
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945935"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220210"
 ---
 # <a name="upload-app-packages"></a>上传应用包
 
-你可以在 "**包**" 页上传你要提交的应用程序的所有包文件（. .msix、. msixupload、. .msixbundle、.appxupload 和/或 .appxbundle）。 你可以在此页上上传同一应用的所有包，当客户下载你的应用时，商店会自动为每个客户提供最适合其设备的包。 上传程序包后，将看到一个表格，指示将以排名顺序[向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包](#device-family-availability)。
+你可以在 " **包** " 页上传你要提交的应用程序的所有包文件 ( .msix、msixupload、.msixbundle、.appx、.appxupload 和/或 .appxbundle) 。 你可以在此页上上传同一应用的所有包，当客户下载你的应用时，商店会自动为每个客户提供最适合其设备的包。 上传程序包后，将看到一个表格，指示将以排名顺序[向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包](#device-family-availability)。
 
 > [!IMPORTANT]
-> 你不能再上传使用 Windows Phone 3.x SDK 生成的新 XAP 包。 已存储在 XAP 包中的应用将在 Windows 10 移动版设备上继续运行。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
+> 你无法再上传使用 Windows Phone 3.x SDK (s) 生成的新 XAP 包。 已存储在 XAP 包中的应用将在 Windows 10 移动版设备上继续运行。 有关详细信息，请参阅此 [博客文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
-有关程序包所包含的内容以及应如何构建程序包的详细信息，请参阅[应用包要求](app-package-requirements.md)。 你还需要了解[版本号如何影响哪些包将传递给特定客户](package-version-numbering.md)，以及[如何为各种方案管理包](guidance-for-app-package-management.md)。
+有关程序包所包含的内容以及应如何构建程序包的详细信息，请参阅[应用包要求](app-package-requirements.md)。 你还需要了解 [版本号如何影响哪些包将传递给特定客户](package-version-numbering.md) ，以及 [如何为各种方案管理包](guidance-for-app-package-management.md)。
 
 
 ## <a name="uploading-packages-to-your-submission"></a>将程序包上载到你的提交
 
-若要上载程序包，请将其拖动到上载字段中或单击以浏览文件。 "**包**" 页可让你上传. .msix、. msixupload、. .msixbundle、.appx、.appxupload 和/或 .appxbundle 文件。
+若要上载程序包，请将其拖动到上载字段中或单击以浏览文件。 " **包** " 页可让你上传. .msix、. msixupload、. .msixbundle、.appx、.appxupload 和/或 .appxbundle 文件。
 
 > [!IMPORTANT]
 > 对于 Windows 10，建议在此处上传 msixupload 或 .appxupload 文件，而不是 .msix、.appx、.msixbundle 或 .appxbundle。  有关如何包装 UWP 应用以上架应用商店的详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](/windows/msix/package/packaging-uwp-apps)。
@@ -56,7 +56,7 @@ ms.locfileid: "84945935"
 当我们检测到你有冗余程序包时，我们将提供用于自动从此提交中删除所有冗余程序包的选项。 如果你愿意，还可以从此提交中单独删除程序包。
 
 
-## <a name="gradual-package-rollout"></a>逐步软件包推出
+## <a name="gradual-package-rollout"></a>逐步部署程序包
 
 如果提交是以前发布的应用的更新，你将看到一个复选框，指示“在此提交发布后，逐渐（仅向 Windows 10 客户）推出更新”****。 这样一来，你就可以选择将从提交获取程序包的客户比例，以便你可以监视反馈和分析数据，从而确保在更广泛地推出更新前对此更新无虑。 你可以随时增加比例（或停止更新），而无需创建新的提交。 
 

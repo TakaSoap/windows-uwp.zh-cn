@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: windows 10, uwp, 屏幕捕获
 ms.localizationpriority: medium
-ms.openlocfilehash: 96b8c52d8c1c6b6947b7b151df0b1b8bbfe42869
-ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
+ms.openlocfilehash: 26de7699f9f261bba6e02bc3664e335c46e4ac3d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89411921"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218660"
 ---
 # <a name="screen-capture"></a>屏幕捕获
 
@@ -690,7 +690,7 @@ End Class
 
 如果要录制应用程序的视频，可以按照 [屏幕截图到视频](screen-capture-video.md)一文中介绍的演练进行操作。 或者，可以使用 [AppRecording 命名空间](/uwp/api/windows.media.apprecording)。 这是桌面扩展 SDK 的一部分，因此它仅适用于桌面，并要求你从项目中添加对它的引用。 有关详细信息，请参阅 [通过扩展 sdk 进行编程](/uwp/extension-sdks/device-families-overview) 。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-* [Windows.Graphics.Capture 命名空间](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Windows.Graphics.Capture 命名空间](/uwp/api/windows.graphics.capture)
 * [屏幕捕获到视频](screen-capture-video.md)

@@ -3,15 +3,15 @@ ms.assetid: ''
 title: 在 Windows 应用中支持 Surface Dial（和其他滚轮设备）
 description: 逐步教程，介绍如何将 (和其他滑轮设备的支持添加) 到 Windows 应用。
 keywords: 转盘, 径向, 教程
-ms.date: 03/11/2019
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8edd7a9345f93d3cf0abe76f68c321a977ee2e50
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cc1618432d35687fe1bfa619396bc2b798dd40bf
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173371"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216920"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-windows-app"></a>教程：支持在 Windows 应用中)  (和其他轮设备
 
@@ -38,7 +38,7 @@ Dial 支持三种基本手势：
 - 旋转以突出显示菜单项（如果菜单处于活动状态）或在应用中修改当前操作（如果菜单处于非活动状态）。
 - 单击以选择突出显示的菜单项（如果菜单处于活动状态）或在应用中调用命令（如果菜单处于非活动状态）。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 * 运行 Windows 10 创意者更新或更高版本的计算机（或虚拟机）
 * [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
@@ -85,7 +85,7 @@ Dial 支持三种基本手势：
 
 这些对象为 Windows 应用程序提供了滚轮设备体验。
 
-| 组件 | 描述 |
+| 组件 | 说明 |
 | --- | --- |
 | [**RadialController** 类](/uwp/api/Windows.UI.Input.RadialController)和相关项 | 表示滚轮输入设备或附件，例如 Surface Dial。 |
 | [**IRadialControllerConfigurationInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop)  / [ **IRadialControllerInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>我们不在这里介绍此功能，有关详细信息，请参阅 [Windows 经典桌面示例](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)。 | 启用与 Windows 应用的互操作性。 |
@@ -609,7 +609,7 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
 
     <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe>  
 
-## <a name="summary"></a>“摘要”
+## <a name="summary"></a>总结
 
 恭喜，你已完成 *入门教程：支持你的 Windows 应用中) 的 Surface 拨号盘 (和其他轮设备*！ 我们向您展示了在 Windows 应用程序中支持滑轮设备所需的基本代码，以及如何提供 **RadialController** api 支持的一些更丰富的用户体验。
 

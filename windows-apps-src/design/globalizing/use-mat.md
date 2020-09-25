@@ -1,21 +1,21 @@
 ---
-Description: 多语言应用工具包（材料）4.0 与 Microsoft Visual Studio 2019 集成，为 Windows 应用提供翻译支持、翻译文件管理和编辑器工具。
+Description: 多语言应用工具包 () 4.0 与 Microsoft Visual Studio 2019 集成，以便为 Windows 应用提供翻译支持、翻译文件管理和编辑器工具。
 title: 使用多语言应用工具包
 template: detail.hbs
-ms.date: 01/23/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: f11ee858be112db899e0fd25dd2fe274d5a092fd
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 4759be8b4e386620243cd587df1ac0bd3e6b0033
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970962"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217100"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多语言应用工具包 4.0
 
-多语言应用工具包（材料）4.0 与 Microsoft Visual Studio 2019 集成，为 Windows 应用提供翻译支持、翻译文件管理和编辑器工具。 下面是一些此工具包的值建议。
+多语言应用工具包 () 4.0 与 Microsoft Visual Studio 2019 集成，以便为 Windows 应用提供翻译支持、翻译文件管理和编辑器工具。 下面是一些此工具包的值建议。
 
 - 帮助你在开发期间管理资源更改和翻译状态。
 - 提供 UI，可基于配置的翻译提供程序来选择语言。
@@ -30,11 +30,11 @@ ms.locfileid: "82970962"
 
 你的应用需要可本地化，然后才能有效使用 MAT。 具体来说，你的项目应包含一个或多个资源文件 (.resw)，其中包含有以默认语言显示的应用的字符串。 有关详细信息，请参阅[本地化 UI 和应用程序包清单中的字符串](../../app-resources/localize-strings-ui-manifest.md)。 完成此操作后，此工具包即可快速、轻松添加其他语言。
 
-对于全球&mdash;化和本地化的价值主张以及术语**全球化**、**本地化**和本地化的定义， **localization**&mdash;请参阅[全球化和本地化](globalizing-portal.md)。
+对于全球化和本地化的价值主张以及 &mdash; 术语**全球化**、**本地化****和本地化的**定义， &mdash; 请参阅[全球化和本地化](globalizing-portal.md)。
 
 另请参阅[全球化指南](guidelines-and-checklist-for-globalizing-your-app.md)和[使你的应用可本地化](prepare-your-app-for-localization.md)。
 
-### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>步骤 2. 下载并安装多语言应用工具包 4.0
+### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>步骤 2。 下载并安装多语言应用工具包 4.0
 
 多语言应用工具包 4.0 (MAT 4.0) 具有两个部分，每个部分都有其自己的安装程序。
 
@@ -43,7 +43,7 @@ ms.locfileid: "82970962"
 
 如果使用 Visual Studio 2017 或 Visual Studio 2019，请逐个下载并运行安装程序。 如果使用 Visual Studio 2015 或 Visual Studio 2013，请下载并运行 .msi 安装程序。
 
-### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>步骤 3. 针对项目启用多语言应用工具包
+### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>步骤 3。 针对项目启用多语言应用工具包
 
 必须先针对项目启用 MAT，然后才能开始本地化应用。 以下是启用工具包的方法。
 
@@ -53,12 +53,12 @@ ms.locfileid: "82970962"
 
 在输出窗口（从多语言应用工具包中显示输出）中，注意消息 `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>`。 如果显示此消息，即可使用 MAT。
 
-### <a name="step-4-add-languages-to-your-project"></a>步骤 4. 向项目添加语言
+### <a name="step-4-add-languages-to-your-project"></a>步骤 4。 向项目添加语言
 
 按照以下步骤向你的项目添加语言。
 
 1. 在解决方案资源管理器中，右键单击项目节点。
-2. 单击 "**多语言应用工具包** > " "**添加翻译语言 ...**"。
+2. 单击 "**多语言应用工具包**" "  >  **添加翻译语言 ...**"。
 3. 在“翻译语言”对话框中，选择想要支持的语言，然后单击“确定”。
 
 工具包将作出响应，执行这些操作。
@@ -69,7 +69,7 @@ ms.locfileid: "82970962"
 
 每当添加/删除默认语言资源文件 (.resw) 或添加/删除默认语言资源文件 (.resw) 中的字符串时，重新生成项目以重新同步 .xlf 文件。 这将确保 .xlf 文件包含以默认语言显示的字符串并集。
 
-安装的翻译&mdash;提供程序（如[microsoft 语言门户](https://www.microsoft.com/Language/)和[microsoft Translator](https://www.microsofttranslator.com/)&mdash;）可用于转换应用的资源。 当提供程序支持某一特定语言时，该提供程序的图标将显示在“翻译语言”对话框中语言名称的旁边。
+安装的翻译提供程序 &mdash; （如[Microsoft 语言门户](https://www.microsoft.com/Language/)和[microsoft Translator](https://www.microsofttranslator.com/)） &mdash; 可用于转换应用的资源。 当提供程序支持某一特定语言时，该提供程序的图标将显示在“翻译语言”对话框中语言名称的旁边。
 
 在“翻译语言”对话框中，工具包所发现的任何基于 .xlf 的现有语言的选项框均已预勾选，指示项目中已包含该语言。
 
@@ -82,8 +82,8 @@ ms.locfileid: "82970962"
 请按照以下步骤对项目进行伪本地化并测试。
 
 1. 使用“翻译语言”对话框向项目添加伪语言 [qps-ploc]。
-2. 在解决方案资源管理器中右键`<project-name>.qps-ploc.xlf`单击该文件，然后单击 "**多语言应用工具包** > **生成计算机翻译**"。
-3. 在 "**设置** > **时间 & 语言** > **区域 & 语言** > **语言**" 中，单击 "**添加语言**"。
+2. `<project-name>.qps-ploc.xlf`在解决方案资源管理器中右键单击该文件，然后单击 "**多语言应用工具包**  >  **生成计算机翻译**"。
+3. 在 "**设置**  >  **时间 & 语言**  >  **区域 & 语言**  >  **语言**" 中，单击 "**添加语言**"。
 5. 在搜索框中，键入“`qps-ploc`”。
 6. 单击 `English (qps-ploc)` 进行添加。
 7. 在语言列表中，选择 `English (qps-ploc)` 并单击**设为默认值**。
@@ -115,11 +115,11 @@ ms.locfileid: "82970962"
 
 #### <a name="option-2-send-the-xlf-files-to-a-third-party-for-translation"></a>选项 2. 将 .xlf 文件发送给第三方进行翻译
 
-若要将翻译和编辑工作外包给本地化人员，请在解决方案资源管理器中选择所需的 xlf 文件，右键单击它们，然后单击 "**多语言应用工具包** > " "**导出翻译 ...**"。
+若要将翻译和编辑工作外包给本地化人员，请在解决方案资源管理器中选择所需的 xlf 文件，右键单击它们，然后单击 "**多语言应用工具包**" "  >  **导出翻译 ...**"。
 
 选择“导出字符串资源”对话框中的**输出: 邮件收件人**，然后单击“确定”，你的文件将被压缩并附加到新电子邮件。 选择**输出: 文件文件夹位置**，浏览文件夹，然后单击“确定”，还可根据需要选择压缩此文件，并再次单击“确定”，你的文件将被（压缩并）保存在所选位置处得名于项目的新文件夹内。
 
-在本地化人员完成翻译工作并向你发送已翻译的 .xlf 文件后，便可以将这些文件导入项目。 在解决方案资源管理器中选择所需的 xlf 文件，右键单击它们，然后单击 "**多语言应用工具包** > " "**导入/回收翻译 ...**"。单击 "**添加**"，导航到 xlf 或 .zip 文件，然后单击 "**导入**"。
+在本地化人员完成翻译工作并向你发送已翻译的 .xlf 文件后，便可以将这些文件导入项目。 在解决方案资源管理器中选择所需的 xlf 文件，右键单击它们，然后单击 "**多语言应用工具包**" "  >  **导入/回收翻译 ...**"。单击 "**添加**"，导航到 xlf 或 .zip 文件，然后单击 "**导入**"。
 
 **注意**导入过程在导入之前会执行基本的验证。 这将确保正在导入的文件中的目标文化信息与现有 .xlf 文件中的目标文化信息相匹配。
 

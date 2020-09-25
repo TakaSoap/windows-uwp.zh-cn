@@ -2,16 +2,16 @@
 Description: 使用 "合作伙伴中心" 中的 "使用情况" 报告，可以查看客户使用应用的方式。
 title: 使用情况报告
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 使用情况, 自定义事件, 报告, 遥测, 用户会话
 ms.localizationpriority: medium
-ms.openlocfilehash: d2839112d36822be5eb8297b838cdc38bab5c71b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a794018b2fcdd07017ee3441e65c6200e7436304
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167271"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220200"
 ---
 # <a name="usage-report"></a>使用情况报告
 

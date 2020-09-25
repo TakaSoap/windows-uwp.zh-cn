@@ -4,16 +4,16 @@ title: 选择通知传递方法
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 166ff20e792c5cf4a5969e954ed1b7d04e5c5c9f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a7a929cb88e20cc47562ab4920fd0fc94304fae2
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173291"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219150"
 ---
 # <a name="choose-a-notification-delivery-method"></a>选择通知传递方法
 
@@ -30,7 +30,7 @@ ms.locfileid: "89173291"
 -   本地
 -   **计划**
 -   **定期**
--   **Push**
+-   **推送**
 
 下表总结了通知传递类型。
 
@@ -45,7 +45,7 @@ ms.locfileid: "89173291"
 <tr class="header">
 <th align="left">传递方法</th>
 <th align="left">使用场景</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 <th align="left">示例</th>
 </tr>
 </thead>
@@ -151,7 +151,7 @@ ms.locfileid: "89173291"
 
 默认情况下，定期磁贴通知在从设备收到通知算起的三天后过期。 如果需要，你可以使用明确的过期时间（toast 的最长有效期为三天）替代此默认设置。
 
-有关详情，请参阅：
+有关详细信息，请参阅：
 
 -   [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
 -   [推送通知指南](./windows-push-notification-services--wns--overview.md)

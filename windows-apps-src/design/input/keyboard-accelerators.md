@@ -4,18 +4,18 @@ title: 键盘快捷键
 label: Keyboard accelerators
 template: detail.hbs
 keywords: 键盘, 加速键, 键盘快捷方式, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互, 手柄, 远程
-ms.date: 10/10/2017
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a3231f608984c9d1f67df71de9cab4cfecd9a13
-ms.sourcegitcommit: deb2867924ce16efcabfa011892157b7aa4fa2d2
+ms.openlocfilehash: 02fba8027c5bddec5e5c501783b32dbab5642db9
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187892"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219950"
 ---
 # <a name="keyboard-accelerators"></a>键盘快捷键
 
@@ -331,7 +331,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 这或许并不总能实现，因为各个应用的功能不同。
 
-| **正在编辑** | **常用键盘加速键** |
+| **编辑** | **常用键盘加速键** |
 | ------------- | ----------------------------------- |
 | 启动编辑模式 | Ctrl+E |
 | 选择聚焦的控件或窗口中的所有项 | Ctrl+A |

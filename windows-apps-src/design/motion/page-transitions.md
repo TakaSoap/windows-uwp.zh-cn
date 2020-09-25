@@ -2,18 +2,18 @@
 title: 页面过渡
 description: 了解如何使用通用 Windows 平台 (UWP) 页面过渡向用户提供应用中各页面间关系的反馈。
 template: detail.hbs
-ms.date: 04/08/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b1fc38f5224ae9627f4c793a800ab747cfa1c2b6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d3e2385b1e15334b26663f6f17b3ef47ab015eec
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173851"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216632"
 ---
 # <a name="page-transitions"></a>页面过渡
 

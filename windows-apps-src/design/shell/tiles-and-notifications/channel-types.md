@@ -1,16 +1,16 @@
 ---
 Description: Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 有许多种发送通知的方法，具体取决于应用程序的需要
 title: 选择正确的推送通知通道类型
-ms.date: 07/07/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 166abeb792e86fc44568a5ee29263262214657cf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 326012a38f2d4a8cd7d5c406c160db5168c9877d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173821"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219220"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>选择正确的推送通知通道类型
 
@@ -114,7 +114,7 @@ PushNotificationChannel webChannel =
 <th align="left"><b>身份验证</b></th>
 <th align="left"><b>API</b></th>
 <th align="left"><b>需要在应用商店中注册？</b></th>
-<th align="left">通道</th>
+<th align="left">通道 </th>
 <th align="left"><b>加密</b></th>
 </tr>
 

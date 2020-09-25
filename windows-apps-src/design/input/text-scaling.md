@@ -4,16 +4,16 @@ title: 文本缩放
 label: Text scaling
 template: detail.hbs
 keywords: UWP，文本，缩放，辅助功能，"轻松访问"，显示，"放大文本"，用户交互，输入
-ms.date: 08/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 386920532f4598ee2d1519d292454b47c285555b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d8f7536da045514471c1af1c2f0cfac74af91a7a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165831"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219940"
 ---
 # <a name="text-scaling"></a>文本缩放
 
@@ -169,7 +169,7 @@ DirectWrite、GDI 和 XAML SwapChainPanels 不能以本机方式支持文本缩�
 
 处理自定义框架和控件中的 [TextScaleFactorChanged](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings 系统事件。 每次用户在其系统上设置文本缩放因子时，都会引发此事件。
 
-## <a name="summary"></a>“摘要”
+## <a name="summary"></a>总结
 
 本主题概述了 Windows 中的文本缩放支持，并包括有关如何自定义用户体验的 UX 和开发人员指南。
 

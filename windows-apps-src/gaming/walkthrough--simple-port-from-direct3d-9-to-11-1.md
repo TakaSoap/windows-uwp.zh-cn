@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 端口, direct3d 9, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e194ab79b8ba0a5dc79d4ad24f808d3613a0c98
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f93b1d733efec2d52ca364f2f97a6d0f424019ad
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158991"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216560"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>演练：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
 
@@ -41,7 +41,7 @@ ms.locfileid: "89158991"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">移植游戏循环</a></p></td>
-<td align="left"><p>介绍如何实现 UWP 游戏的窗口，以及如何显示游戏循环，包括如何构建 <a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>IFrameworkView</strong></a> 来控制全屏 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a>。</p></td>
+<td align="left"><p>介绍如何实现 UWP 游戏的窗口，以及如何显示游戏循环，包括如何构建 <a href="/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>IFrameworkView</strong></a> 来控制全屏 <a href="/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -65,7 +65,7 @@ ms.locfileid: "89158991"
 
 请注意，此演练使用 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 进行简化，并不涉及 XAML 互操作。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 
 应该[为 UWP DirectX 游戏开发准备开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 尚不需要模板，但需要 Microsoft Visual Studio 2015 来加载此操作实例的代码示例。

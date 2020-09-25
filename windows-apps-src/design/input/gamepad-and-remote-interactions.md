@@ -5,16 +5,16 @@ ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
 isNew: true
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f5efe2fe1e8a4e24df175a0d019834cd0ba90388
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7f11cde619b783292e4880927c68b6ae8ff38323
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172551"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217181"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>游戏板和遥控器交互
 
@@ -45,7 +45,7 @@ ms.locfileid: "89172551"
 > [!NOTE]
 > 由于 Xbox gamepads 和远程控制支持许多 Windows 键盘行为和体验，因此，这些建议适用于这两种输入类型。 有关更详细的键盘信息，请参阅 [键盘交互](keyboard-interactions.md) 。
 
-| 功能        | 描述           |
+| Feature        | 说明           |
 | -------------------------------------------------------------- |--------------------------------|
 | [XY 焦点导航和交互](#xy-focus-navigation-and-interaction) | 通过**XY 焦点导航**，用户可以在应用的 UI 周围导航。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
 | [鼠标模式](#mouse-mode)|对于某些类型的应用程序（例如地图、绘图和绘图应用程序），XY 焦点导航并不可行，甚至可能不可行。 在这些情况下， **鼠标模式** 使用户能够在游戏板或遥控器上自由导航，就像 PC 上的鼠标一样。|
@@ -514,7 +514,7 @@ public App()
 
 除了 [Slider](/uwp/api/Windows.UI.Xaml.Controls.Slider) 控件，还有其他可能要求占用的控件，例如：
 
-- [改](/uwp/api/Windows.UI.Xaml.Controls.ListBox)
+- [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox)
 - [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView)
@@ -548,18 +548,18 @@ public App()
 
 | 控制               | 焦点占用默认值  |
 |-----------------------|---------------------------|
-| CalendarDatePicker    | 开                        |
-| FlipView              | 关                       |
-| GridView              | 关                       |
-| ListBox               | 关                       |
-| ListView              | 关                       |
-| ScrollViewer          | 关                       |
-| SemanticZoom          | 关                       |
-| 滑块                | 开                        |
+| CalendarDatePicker    | 启用                        |
+| FlipView              | 关闭                       |
+| GridView              | 关闭                       |
+| ListBox               | 关闭                       |
+| ListView              | 关闭                       |
+| ScrollViewer          | 关闭                       |
+| SemanticZoom          | 关闭                       |
+| 滑块                | 启用                        |
 
 所有其他 Windows 控件在时不会导致行为或视觉对象更改 `IsFocusEngagementEnabled="True"` 。
 
-## <a name="summary"></a>“摘要”
+## <a name="summary"></a>总结
 
 你可以构建针对特定设备或体验进行了优化的 Windows 应用程序，但通用 Windows 平台还允许你构建可跨设备成功使用的应用（在2英尺和10英尺体验中，无论输入设备或用户的功能如何）。 使用本文中的建议可以确保你的应用程序可以在电视和 PC 上正常工作。
 

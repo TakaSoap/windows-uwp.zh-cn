@@ -5,12 +5,12 @@ ms.date: 07/06/2020
 ms.topic: article
 keywords: windows 10、uwp、windows、运行时、组件、组件 Windows 运行时组件、WRC、c + +/WinRT
 ms.localizationpriority: medium
-ms.openlocfilehash: 25286260c4abd6686939393b3bf81df818879bf9
-ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
+ms.openlocfilehash: adf13308b1a2c360d7db53ded4edfe866de6c260
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90804747"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220310"
 ---
 # <a name="windows-runtime-components-with-cwinrt"></a>使用 C++/WinRT 的 Windows 运行时组件
 
@@ -141,8 +141,8 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 有关如何向 Windows 运行时组件添加事件的示例，请参阅 [在 c + + 中创作事件/WinRT](../cpp-and-winrt-apis/author-events.md)。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 | 症状 | 纠正方法 |
 |---------|--------|
-|在 c + +/WinRT 应用中，当使用使用 XAML 的 [c # Windows 运行时组件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) 时，编译器将生成 "MyNamespace_XamlTypeInfo" 形式的错误 *：不是 "WinRT：： MyNamespace" 的成员*， &mdash; 其中 *MyNamespace* 是 Windows 运行时组件命名空间的名称。 | 在 `pch.h` 使用 c + +/WinRT 应用程序中，添加 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; 相应的替换*MyNamespace* 。 |
+|在 c + +/WinRT 应用中，当使用使用 XAML 的 [c # Windows 运行时组件](./creating-windows-runtime-components-in-csharp-and-visual-basic.md) 时，编译器将生成 "MyNamespace_XamlTypeInfo" 形式的错误 *：不是 "WinRT：： MyNamespace" 的成员*， &mdash; 其中 *MyNamespace* 是 Windows 运行时组件命名空间的名称。 | 在 `pch.h` 使用 c + +/WinRT 应用程序中，添加 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; 相应的替换*MyNamespace* 。 |

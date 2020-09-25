@@ -7,16 +7,16 @@ dev_langs:
 - csharp
 keywords: windows 10、uwp、屏幕捕获、视频
 ms.localizationpriority: medium
-ms.openlocfilehash: ae1eb68e480b4c9b4b4fc88452a68f39f8461a79
-ms.sourcegitcommit: 14c0b1ea2447a81ddf31982b40e19a74ecc6d59e
+ms.openlocfilehash: d8f70748d025d50d19dbf2cb184ae841cced7f8a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89310079"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218630"
 ---
 # <a name="screen-capture-to-video"></a>屏幕捕获到视频
 
-本文介绍如何使用 Windows 将从屏幕捕获的帧编码为视频文件。 有关屏幕捕获静态图像的信息，请参阅 [Screeen 捕获](screen-capture-video)。 
+本文介绍如何使用 Windows 将从屏幕捕获的帧编码为视频文件。 有关屏幕捕获静态图像的信息，请参阅 [Screeen 捕获](./screen-capture.md)。
 
 ## <a name="overview-of-the-video-capture-process"></a>视频捕获过程概述
 本文提供了一个示例应用的演练，该应用将窗口内容记录到视频文件中。 虽然实现此方案可能需要大量代码，但屏幕录制器应用程序的高级结构非常简单。 屏幕捕获进程使用三个主要 UWP 功能：
@@ -55,21 +55,21 @@ ms.locfileid: "89310079"
 
 - **创建 MediaEncodingProfile 和 VideoStreamDescriptor。** [MediaStreamSource](/uwp/api/windows.media.core.mediastreamsource)类的实例将获取从屏幕捕获的图像，并将其编码到视频流中。 然后， [MediaTranscoder](/uwp/api/windows.media.transcoding.mediatranscoder) 类将视频流转码到视频文件中。 [VideoStreamDecriptor](/uwp/api/windows.media.core.videostreamdescriptor)为**MediaStreamSource**提供编码参数，如分辨率和帧速率。 使用[MediaEncodingProfile](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile)指定**MediaTranscoder**的视频文件编码参数。 请注意，用于视频编码的大小不必与正在捕获的窗口大小相同，但是为了使此示例简单，编码设置是硬编码的，以使用捕获项的实际维度。
 
-- **创建 MediaStreamSource 和 MediaTranscoder 对象。** 如上所述， **MediaStreamSource** 对象将单个帧编码到视频流中。 调用此类的构造函数，并传入在上一步中创建的 **MediaEncodingProfile** 。 将缓冲时间设置为零，并注册[SampleRequested](/uwp/api/windows.media.core.mediastreamsource.samplerequested)事件[的处理](uwp/api/windows.media.core.mediastreamsource.starting)程序，这将在本文的后面部分进行说明。 接下来，构造 **MediaTranscoder** 类的新实例，并启用硬件加速。
+- **创建 MediaStreamSource 和 MediaTranscoder 对象。** 如上所述， **MediaStreamSource** 对象将单个帧编码到视频流中。 调用此类的构造函数，并传入在上一步中创建的 **MediaEncodingProfile** 。 将缓冲时间设置为零，并注册[SampleRequested](/uwp/api/windows.media.core.mediastreamsource.samplerequested)事件[的处理](/uwp/api/windows.media.core.mediastreamsource.starting)程序，这将在本文的后面部分进行说明。 接下来，构造 **MediaTranscoder** 类的新实例，并启用硬件加速。
 
 - **创建输出文件** 此方法中的最后一步是创建一个文件，该文件将转码视频。 在此示例中，我们将只在设备上的视频库文件夹中创建一个唯一命名的文件。 请注意，若要访问此文件夹，你的应用程序必须在应用程序清单中指定 "视频库" 功能。 创建文件后，将其打开以进行读取和写入，并将生成的流传递到 **EncodeAsync** 方法中，接下来将显示该方法。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_SetupEncoding":::
 
 ## <a name="start-encoding"></a>开始编码
-既然已经初始化了主对象，就会实现 **EncodeAsync** 方法以启动捕获操作。 此方法首先检查以确保未记录，如果不是，则会调用 helper 方法 **StartCapture** 从屏幕开始捕获帧。 此方法将在本文的后面部分显示。 接下来，调用[PrepareMediaStreamSourceTranscodeAsync](/uwp/api/windows.media.transcoding.mediatranscoder.preparemediastreamsourcetranscodeasync) ，以使用**MediaTranscoder**我们在上一节中创建的编码配置文件将**MediaStreamSource**对象生成的视频流转码到输出文件流。 准备好转码器后，调用 [TranscodeAsync](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) 开始转码。 有关使用 **MediaTranscoder**的详细信息，请参阅 [转码 media files](/windows/uwp/audio-video-camera/transcode-media-files)。
+既然已经初始化了主对象，就会实现 **EncodeAsync** 方法以启动捕获操作。 此方法首先检查以确保未记录，如果不是，则会调用 helper 方法 **StartCapture** 从屏幕开始捕获帧。 此方法将在本文的后面部分显示。 接下来，调用[PrepareMediaStreamSourceTranscodeAsync](/uwp/api/windows.media.transcoding.mediatranscoder.preparemediastreamsourcetranscodeasync) ，以使用**MediaTranscoder**我们在上一节中创建的编码配置文件将**MediaStreamSource**对象生成的视频流转码到输出文件流。 准备好转码器后，调用 [TranscodeAsync](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) 开始转码。 有关使用 **MediaTranscoder**的详细信息，请参阅 [转码 media files](./transcode-media-files.md)。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_EncodeAsync":::
 
 ## <a name="handle-mediastreamsource-events"></a>处理 MediaStreamSource 事件
 **MediaStreamSource**对象采用从屏幕捕获的帧，并将其转换为可使用**MediaTranscoder**保存到文件的视频流。 我们通过对象的事件的处理程序将帧传递到 **MediaStreamSource** 。
 
-为新的视频帧准备好**MediaStreamSource**时，将引发[SampleRequested](/uwp/api/windows.media.core.mediastreamsource.samplerequested)事件。 确保当前正在记录，将调用帮助程序方法 **WaitForNewFrame** ，以获取从屏幕捕获的新帧。 本文后面所示，此方法将返回包含捕获帧的 [ID3D11Surface](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 对象。 在此示例中，我们将 **IDirect3DSurface** 接口包装在帮助程序类中，此类还存储捕获帧的系统时间。 帧和系统时间都传递到 CreateFromDirect3D11Surface 工厂方法中，生成的[MediaStreamSample](/uwp/api/windows.media.core.mediastreamsample)设置为[MediaStreamSourceSampleRequestedEventArgs](/uwp/api/windows.media.core.mediastreamsourcesamplerequestedeventargs)的[MediaStreamSample](/uwp/api/windows.media.core.mediastreamsample.createfromdirect3d11surface) [属性。](MediaStreamSourceSampleRequest.Sample) 这就是将捕获的帧提供给 **MediaStreamSource**的方式。
+为新的视频帧准备好**MediaStreamSource**时，将引发[SampleRequested](/uwp/api/windows.media.core.mediastreamsource.samplerequested)事件。 确保当前正在记录，将调用帮助程序方法 **WaitForNewFrame** ，以获取从屏幕捕获的新帧。 本文后面所示，此方法将返回包含捕获帧的 [ID3D11Surface](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 对象。 在此示例中，我们将 **IDirect3DSurface** 接口包装在帮助程序类中，此类还存储捕获帧的系统时间。 帧和系统时间都传递到 CreateFromDirect3D11Surface 工厂方法中，生成的[MediaStreamSample](/uwp/api/windows.media.core.mediastreamsample)设置为[MediaStreamSourceSampleRequestedEventArgs](/uwp/api/windows.media.core.mediastreamsourcesamplerequestedeventargs)的[MediaStreamSample](/uwp/api/windows.media.core.mediastreamsample.createfromdirect3d11surface) [属性。](/uwp/api/windows.media.core.mediastreamsourcesamplerequest.sample) 这就是将捕获的帧提供给 **MediaStreamSource**的方式。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_OnMediaStreamSourceSampleRequested":::
 
@@ -150,7 +150,7 @@ ms.locfileid: "89310079"
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/Direct3D11Helpers.cs" id="snippet_Direct3D11Helpers":::
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-* [Windows.Graphics.Capture 命名空间](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Windows.Graphics.Capture 命名空间](/uwp/api/windows.graphics.capture)
 * [屏幕捕获](screen-capture.md)

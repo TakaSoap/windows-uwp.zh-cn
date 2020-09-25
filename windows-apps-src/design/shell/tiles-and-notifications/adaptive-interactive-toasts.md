@@ -4,16 +4,16 @@ title: Toast 内容
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Toast content
 template: detail.hbs
-ms.date: 11/20/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, toast 通知, 交互式 toast, 自适应 toast, toast 内容, toast 有效负载
 ms.localizationpriority: medium
-ms.openlocfilehash: 97dd16d712dca3de69a98c608b7c8947ebbddfea
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b08b34a88533d06ac7fc2f967bfc4e50e9fd8f0f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173361"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219440"
 ---
 # <a name="toast-content"></a>Toast 内容
 
@@ -303,7 +303,7 @@ ToastContent toastContent = new ToastContent()
 若要详细了解如何使用进度栏，请参阅 [Toast 进度栏](toast-progress-bar.md)。
 
 
-## <a name="headers"></a>头文件
+## <a name="headers"></a>标头
 
 **创意者更新的新增功能**：可在操作中心将通知分到不同的标题下。 例如，你可以将群聊中的组消息分到一个标题下，或将常见主题的通知分到一个标题下等等。
 

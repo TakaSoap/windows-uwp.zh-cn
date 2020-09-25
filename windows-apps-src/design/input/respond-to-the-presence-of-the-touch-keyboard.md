@@ -5,14 +5,14 @@ ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: 键盘, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互
-ms.date: 07/13/2018
+ms.date: 09/24/2020
 ms.topic: article
-ms.openlocfilehash: cc3577a116e47ca054e7dea5dbbb657fa37cb8b6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4af7e7533ebd985a22eedd2e11f35d8bf5f5dc8a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173351"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216900"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>响应触摸键盘的存在
 

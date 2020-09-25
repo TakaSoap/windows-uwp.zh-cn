@@ -3,15 +3,15 @@ ms.assetid: ''
 title: 在 Windows 应用中支持墨迹
 description: 按照此分步教程操作教程，了解如何支持在基本通用 Windows 平台 (UWP) 应用中使用 Windows Ink 编写和绘制 Windows Ink。
 keywords: 墨迹，墨迹书写，教程
-ms.date: 01/25/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ed230fc9beb158df050f314a0142f250c2a8691
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: a0660312746a88a61ccb7b2ca9c01d720ebb2be3
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304599"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219690"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>教程：在 Windows 应用程序中支持墨迹
 
@@ -33,7 +33,7 @@ ms.locfileid: "89304599"
 
 使用 Windows Ink，你可以为客户提供能够想象的几乎任何一种笔纸体验的同等数字方式，从快速的手写便笺和注释到白板演示，从体系结构和工程绘图到个人作品。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 * 一台运行当前版本 Windows 10 的计算机（或虚拟机）
 * [Visual Studio 2019 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)

@@ -1,21 +1,21 @@
 ---
 Description: 介绍与 Windows 应用相关的辅助功能概念。
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
-title: 可访问性
+title: 辅助功能
 label: Accessibility
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af42f2d2ddeecffef914339e748acf05558b8ae
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 67f98db338d201dd4ef80c7b5f265aba3f6fbfd4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163371"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216370"
 ---
-# <a name="accessibility"></a>可访问性  
+# <a name="accessibility"></a>辅助功能  
 
 辅助功能与构建体验相关，使你的 Windows 应用程序可供使用各种环境中技术的人员使用，并为你的 UI 提供各种需求和体验。 对于某些情况，辅助功能要求由法律强制实施。 但是，无论法律是否有规定，最好都解决辅助功能问题，以尽可能扩大应用的受众范围。
 

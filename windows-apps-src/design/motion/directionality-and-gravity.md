@@ -3,7 +3,7 @@ title: 方向性和重力-Windows 应用中的动画
 description: 查看示例，了解如何在动画场景中使用移动方向、导航方向和重心。
 label: Directionality and gravity
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a9b6fbc639ac225e68a6ae1b008537cba6f72ead
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 649fb9e2833a425ccad78f5f0bcb69ccb4091bca
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943107"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217800"
 ---
 # <a name="directionality-and-gravity"></a>方向性和引力
 

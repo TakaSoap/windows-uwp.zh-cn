@@ -4,7 +4,7 @@ description: 了解如何在 UWP 应用中使用 ParallaxView 控件来创建视
 ms.assetid: ''
 label: Parallax View
 template: detail.hbs
-ms.date: 08/09/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow
@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eac1b5d95dff4887258278f9ff700adaf663194
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 702d856ec15391875f369b6145a715ade3092afb
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175541"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220250"
 ---
 # <a name="parallax"></a>视差
 

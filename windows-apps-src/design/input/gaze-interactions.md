@@ -4,19 +4,19 @@ Description: 了解如何设计和优化 Windows 应用，以便为依赖于目�
 label: Gaze interactions
 template: detail.hbs
 keywords: 凝视, 目视跟踪, 头部跟踪, 凝视点, 输入, 用户交互, 辅助功能, 可用性
-ms.date: 05/01/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: Jake Cohen
 dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c91de7eb0200780b04bad1853cb49caf41a22bc0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fa08cb65afc46069e48263344270e1e3b1a3d5f5
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172501"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217020"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>Windows 应用中的目视交互和目视跟踪
 
@@ -44,7 +44,7 @@ ms.locfileid: "89172501"
 
 此外，如果你的应用收集、存储或传输目视跟踪数据，你还必须在应用的隐私声明中加以说明，并遵循[应用开发人员协议](/legal/windows/agreements/app-developer-agreement)和 [Microsoft Store 策略](/legal/windows/agreements/store-policies)中的所有其他**个人信息**相关要求。
 
-## <a name="setup"></a>设置
+## <a name="setup"></a>安装
 
 若要在 Windows 应用中使用注视输入 Api，需要： 
 
@@ -596,7 +596,7 @@ ms.locfileid: "89172501"
     }
     ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 ### <a name="resources"></a>资源
 

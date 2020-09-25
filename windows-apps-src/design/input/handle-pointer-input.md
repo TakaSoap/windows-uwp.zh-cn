@@ -5,15 +5,15 @@ ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
 keywords: 笔、鼠标、触摸板、触摸、指针、输入、用户交互
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f544b73e069827f3c680db45797081605ce41b63
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 11402ae9f2ea99c583d82d1998ad238eac44576c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173451"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219850"
 ---
 # <a name="handle-pointer-input"></a>处理指针输入
 
@@ -58,7 +58,7 @@ Windows 应用可以侦听以下指针事件：
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
 <td align="left"><p>在指针由平台取消时发生。 在以下条件下，可能会发生这种情况：</p>
 <ul>
 <li>当在输入图面的范围内检测到笔时，将取消触控指针。</li>
@@ -69,7 +69,7 @@ Windows 应用可以侦听以下指针事件：
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>当另一个 UI 元素捕获该指针、释放该指针、或以编程方式捕获另一个指针时发生。</p>
 <div class="alert">
 <strong>注意</strong>   没有相应的指针捕获事件。
@@ -79,43 +79,43 @@ Windows 应用可以侦听以下指针事件：
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
 <td align="left"><p>在指针进入元素的边界区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触才能引发此事件，无论是从对元素直接触摸按下还是移动到该元素的绑定区域。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
-<li>和触摸一样，笔通过对元素直接按下笔或移动到该元素的绑定区域来引发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当为 true 时，将会触发此事件。</li>
+<li>和触摸一样，笔通过对元素直接按下笔或移动到该元素的绑定区域来引发此事件。 但是，笔也有悬停状态 (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当为 true 时，将会触发此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
 <td align="left"><p>在指针离开元素的边界区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触，并在指针移出该元素的绑定区域时引发此事件。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
-<li>和触控一样，笔在移出该元素的边界区域时触发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当状态从 true 更改为 false 时触发此事件。</li>
+<li>和触控一样，笔在移出该元素的边界区域时触发此事件。 但是，笔也有悬停状态 (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当状态从 true 更改为 false 时触发此事件。</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a></p></td>
 <td align="left"><p>在指针更改元素的绑定区域内的坐标、按钮状态、压力、倾斜或接触几何图形（例如宽度和高度）时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触，并且仅在与该元素的绑定区域接触时引发此事件。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
-<li>和触控一样，笔在与该元素的边界区域接触时触发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当为 true 且位于元素的边界区域内时，将触发此事件。</li>
+<li>和触控一样，笔在与该元素的边界区域接触时触发此事件。 但是，笔也有悬停状态 (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当为 true 且位于元素的边界区域内时，将触发此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
 <td align="left"><p>在指针指示元素的绑定区域内发生按下操作（例如触摸按下、鼠标按钮按下、笔按下或触摸板按钮按下）时发生。</p>
 <p>必须从处理程序中对此事件调用 <a href="/uwp/api/windows.ui.xaml.uielement.capturepointer">CapturePointer</a>。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
 <td align="left"><p>在指针指示元素的绑定区域内发生释放事件（例如触摸抬起、鼠标按钮抬起、笔抬起或触摸板按钮抬起）时或在绑定区域外捕获到该指针时发生。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
 <td align="left"><p>在鼠标滚轮转动时发生。</p>
 <p>鼠标输入与第一次检测到鼠标输入时分配的单个指针相关联。 单击鼠标按钮（左键、滚轮或右键）会通过 <a href="/uwp/api/windows.ui.xaml.uielement.pointermoved">PointerMoved</a> 事件在指针和该按钮之间创建一个辅助关联。</p></td>
 </tr>

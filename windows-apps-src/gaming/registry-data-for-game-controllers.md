@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入, 注册表, 自定义
 ms.localizationpriority: medium
-ms.openlocfilehash: ac2ca98a067fb88dfcdc86c4e4ee4047b82206bc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1f3a49ae2c6fc283d479086759744eb51d8b33ce
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159271"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220060"
 ---
 # <a name="registry-data-for-game-controllers"></a>游戏控制器注册表数据
 
@@ -36,7 +36,7 @@ ms.locfileid: "89159271"
         <th>信息</th>
     </tr>
     <tr>
-        <td>Disabled</td>
+        <td>已禁用</td>
         <td>DWORD</td>
         <td>否</td>
         <td>
@@ -54,7 +54,7 @@ ms.locfileid: "89159271"
     </tr>
 </table>
 
-设备安装程序应该会（通过设置或 [INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)）将此数据添加至注册表。
+设备安装程序应该会（通过设置或 [INF 文件](/windows-hardware/drivers/install/inf-files)）将此数据添加至注册表。
 
 以下部分中详细说明了设备根位置下面的子项。
 
@@ -65,7 +65,7 @@ ms.locfileid: "89159271"
 <table>
     <tr>
         <th>子项</th>
-        <th>必需？</th>
+        <th>是否必需？</th>
         <th>信息</th>
     </tr>
     <tr>
@@ -178,7 +178,7 @@ ms.locfileid: "89159271"
 <table>
     <tr>
         <th>子项</th>
-        <th>必需？</th>
+        <th>是否必需？</th>
         <th>信息</th>
     </tr>
     <tr>
@@ -337,7 +337,7 @@ ms.locfileid: "89159271"
 <table>
     <tr>
         <th>子项</th>
-        <th>必需？</th>
+        <th>是否必需？</th>
         <th>信息</th>
     </tr>
     <tr>
@@ -398,7 +398,7 @@ ms.locfileid: "89159271"
 <table>
     <tr>
         <th>子项</th>
-        <th>必需？</th>
+        <th>是否必需？</th>
         <th>信息</th>
     </tr>
     <tr>
@@ -441,7 +441,7 @@ ms.locfileid: "89159271"
 <table>
     <tr>
         <th>子项</th>
-        <th>必需？</th>
+        <th>是否必需？</th>
         <th>信息</th>
     </tr>
     <tr>
@@ -543,7 +543,7 @@ ms.locfileid: "89159271"
     </tr>
 </table>
 
-有关 UI 导航控制器和上述命令的详细信息，请参阅 [UI 导航控制器](https://docs.microsoft.com/windows/uwp/gaming/ui-navigation-controller)。
+有关 UI 导航控制器和上述命令的详细信息，请参阅 [UI 导航控制器](./ui-navigation-controller.md)。
 
 ## <a name="keys"></a>键
 
@@ -558,7 +558,7 @@ ms.locfileid: "89159271"
         <th>源</th>
         <th>值名称</th>
         <th>值类型</th>
-        <th>必需？</th>
+        <th>是否必需？</th>
         <th>值信息</th>
     </tr>
     <tr>
@@ -638,7 +638,7 @@ ms.locfileid: "89159271"
         <th>源</th>
         <th>值名称</th>
         <th>值类型</th>
-        <th>必需？</th>
+        <th>是否必需？</th>
         <th>值信息</th>
     </tr>
     <tr>
@@ -654,7 +654,7 @@ ms.locfileid: "89159271"
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>FALSE</td>
+                    <td>false</td>
                     <td>0.0</td>
                 </tr>
                 <tr>
@@ -677,18 +677,18 @@ ms.locfileid: "89159271"
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>FALSE</td>
-                    <td>FALSE</td>
+                    <td>false</td>
+                    <td>false</td>
                     <td>0.5</td>
                 </tr>
                 <tr>
-                    <td>FALSE</td>
+                    <td>false</td>
                     <td>TRUE</td>
                     <td>1.0</td>
                 </tr>
                 <tr>
                     <td>true</td>
-                    <td>FALSE</td>
+                    <td>false</td>
                     <td>0.0</td>
                 </tr>
                 <tr>
@@ -1051,7 +1051,7 @@ ms.locfileid: "89159271"
 
 ### <a name="button-labels"></a>按钮标签
 
-**Buttons** 项将 **RawGameController** 按钮阵列中的每个按钮位置都映射到字符串。 每个字符串都在内部映射到相应的 [GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) 枚举值。 例如，如果游戏板有 10 个按钮，并且 **RawGameController** 分析出按钮并在按钮报告中呈现按钮的顺序如下所示：
+**Buttons** 项将 **RawGameController** 按钮阵列中的每个按钮位置都映射到字符串。 每个字符串都在内部映射到相应的 [GameControllerButtonLabel](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) 枚举值。 例如，如果游戏板有 10 个按钮，并且 **RawGameController** 分析出按钮并在按钮报告中呈现按钮的顺序如下所示：
 
 ```cpp
 Menu,               // Index 0
@@ -1070,7 +1070,7 @@ RightBumper         // Index 9
 
 <table>
     <tr>
-        <th>名称</th>
+        <th>“属性”</th>
         <th>值（类型：REG_SZ）</th>
     </tr>
     <tr>
@@ -1117,7 +1117,7 @@ RightBumper         // Index 9
 
 ### <a name="axis-labels"></a>轴标签
 
-就像按钮标签中的情况一样，**Axes** 项会将 **RawGameController** 轴阵列中的每个轴位置映射到 [GameControllerButtonLabel 枚举](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel)中列出的其中一个标签。 请参阅[按钮标签](#button-labels)中的示例。
+就像按钮标签中的情况一样，**Axes** 项会将 **RawGameController** 轴阵列中的每个轴位置映射到 [GameControllerButtonLabel 枚举](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel)中列出的其中一个标签。 请参阅[按钮标签](#button-labels)中的示例。
 
 ### <a name="switch-labels"></a>开关标签
 
@@ -1136,7 +1136,7 @@ RightBumper         // Index 9
 
 <table>
     <tr>
-        <th>名称</th>
+        <th>“属性”</th>
         <th>值（类型：REG_SZ）</th>
     </tr>
     <tr>
@@ -1345,7 +1345,7 @@ Windows Registry Editor Version 5.00
 "Invert" = dword:00000000
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [Windows. 输入命名空间](/uwp/api/windows.gaming.input)
 * [Windows.Gaming.Input.Custom 命名空间](/uwp/api/windows.gaming.input.custom)

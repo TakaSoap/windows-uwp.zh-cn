@@ -3,16 +3,16 @@ Description: 了解你应在 Windows 应用程序中使用辅助磁贴的时间�
 title: 辅助磁贴设计指南
 label: Secondary tiles
 template: detail.hbs
-ms.date: 05/25/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10，uwp, 辅助磁贴, 指南, 指导, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 83f8a095a4e15c3ec0ebb02eebc183cf4beb01ea
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5414c9d8437ee77e2a4a584dea26f7bf1fadef4a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172331"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220230"
 ---
 # <a name="secondary-tile-guidance"></a>辅助磁贴指南
 

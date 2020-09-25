@@ -4,16 +4,16 @@ ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: 公开基本的辅助功能信息
 label: Expose basic accessibility information
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 723108b1a4e90de4cf378d8cdafcaae92bec2682
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: da0ad6c0121f81a4854728f4441e0407a6302f54
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157091"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217460"
 ---
 # <a name="expose-basic-accessibility-information"></a>公开基本的辅助功能信息  
 
@@ -32,7 +32,7 @@ ms.locfileid: "89157091"
 | 元素类型 | 描述 |
 |--------------|-------------|
 | 静态文本 | 对于 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 元素，辅助名称是从可见（内部）文本自动确定的。 该元素中所有文本都用作其名称。 请参阅[根据内部文本命名](#name_from_inner_text)。 |
-| 映像 | XAML [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) 元素没有对 **img** 和类似元素的 HTML **alt** 属性的直接模拟。 使用 [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) 提供名称，或者使用描述技术。 请参阅[图像的辅助名称](#images)。 |
+| 图像 | XAML [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) 元素没有对 **img** 和类似元素的 HTML **alt** 属性的直接模拟。 使用 [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) 提供名称，或者使用描述技术。 请参阅[图像的辅助名称](#images)。 |
 | 窗体元素 | 窗体元素的辅助名称应当与针对该元素显示的标签同名。 请参阅[标签和 LabeledBy](#labels)。 |
 | 按钮和链接 | 默认情况下，按钮或链接的辅助名称基于可见文本，并使用相同的规则，如[根据内部文本命名](#name_from_inner_text)所述。 如果按钮中仅包含一个图像，请使用 [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) 提供与按钮的预期操作等效的仅文本操作。 |
 

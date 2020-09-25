@@ -3,16 +3,16 @@ Description: 本主题定义了术语 "用户配置文件语言列表"、"应用
 title: 了解用户配置文件语言和应用清单语言
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 template: detail.hbs
-ms.date: 11/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: c4f1857ba4afe5eba271f7022c64aca26eb6b6b8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ee2ba09c9b8b307a56bd71e720a9f6db8f45a813
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156931"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220240"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>了解用户配置文件语言和应用清单语言
 Windows 用户可以使用**设置**  >  **时间 & 语言**  >  **区域 & 语言**来配置首选显示语言的排序列表，或只使用单个首选显示语言。 某种语言可能会具有区域变体。 例如，可以选择西班牙使用的西班牙语、墨西哥使用的西班牙语、美国使用的西班牙语等。
@@ -170,9 +170,9 @@ Windows 用户可以使用**设置**  >  **时间 & 语言**  >  **区域 & 语�
 </tr>
 <tr>
 <td align="left">西班牙语(西班牙)（默认）；西班牙语(墨西哥)；西班牙语(拉丁美洲)；葡萄牙语(巴西)</td>
-<td align="left">英语（美国）</td>
+<td align="left">英语(美国)</td>
 <td align="left">无</td>
-<td align="left">西班牙语（西班牙）</td>
+<td align="left">西班牙语(西班牙)</td>
 <td align="left">UI：西班牙语(西班牙)（由于没有可用于英语的回退，因此使用默认值）<br>日期/时间/数字西班牙语(西班牙)</td>
 </tr>
 <tr>

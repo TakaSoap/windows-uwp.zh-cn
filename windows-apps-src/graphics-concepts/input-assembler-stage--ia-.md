@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b1ba0205a837383e1c646664c0550e055227412
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 12a7c7ebd250fec8d944c4cba467a92ff67bd33d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173061"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219790"
 ---
 # <a name="input-assembler-ia-stage"></a>输入装配器 (IA) 阶段
 
@@ -61,7 +61,7 @@ IA 阶段将数据装配成基元并附加系统生成的值，然后将其输�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="using-system-generated-values.md">使用系统生成的值</a></p></td>
-<td align="left"><p>系统生成的值由输入汇编 (IA) 阶段 (基于用户提供的输入 <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">语义</a>) ，以允许在着色器操作中实现某些效率。 通过附加数据，如实例 ID（对<a href="vertex-shader-stage--vs-.md">顶点着色器 (VS) 阶段</a>可见）、顶点 ID（对 VS 可见）或基元 ID（对<a href="geometry-shader-stage--gs-.md">几何着色器 (GS) 阶段</a>/<a href="pixel-shader-stage--ps-.md">像素着色器 (PS) 阶段</a>可见），后续的着色器阶段可以查找这些系统值，从而对当前阶段的处理进行优化。</p></td>
+<td align="left"><p>系统生成的值由输入汇编 (IA) 阶段 (基于用户提供的输入 <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">语义</a>) ，以允许在着色器操作中实现某些效率。 通过附加数据，如实例 ID（对<a href="vertex-shader-stage--vs-.md">顶点着色器 (VS) 阶段</a>可见）、顶点 ID（对 VS 可见）或基元 ID（对<a href="geometry-shader-stage--gs-.md">几何着色器 (GS) 阶段</a>/<a href="pixel-shader-stage--ps-.md">像素着色器 (PS) 阶段</a>可见），后续的着色器阶段可以查找这些系统值，从而对当前阶段的处理进行优化。</p></td>
 </tr>
 </tbody>
 </table>

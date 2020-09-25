@@ -4,16 +4,16 @@ title: 创建自适应磁贴
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cee236b385b6129e7ab1a9cacd549f217f6e734
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c60794a52c3d8a5f597d4ab2d09490405c98f85a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175601"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218370"
 ---
 # <a name="create-adaptive-tiles"></a>创建自适应磁贴
 
@@ -787,7 +787,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 
 ![天气磁贴的示例](images/adaptive-tiles-weathertile.png)
 
-## <a name="images"></a>映像
+## <a name="images"></a>图像
 
 
 &lt;image&gt; 元素用于在磁贴通知上显示图像。 图像可以嵌入到磁贴内容中（默认）、作为内容背后的背景图像，或作为从通知顶部以动画形式进入的速览图像。

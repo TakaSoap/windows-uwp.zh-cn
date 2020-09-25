@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: b3e04399bb7fb0d40cf42789587aa132ee20e789
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a5841a8a53c18969e8ca9171bb7b3e1af0273170
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165501"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216791"
 ---
 # <a name="enable-user-mode-access-to-gpio-i2c-and-spi"></a>启用 GPIO、I2C 和 SPI 的用户模式访问
 
@@ -347,7 +347,7 @@ Windows 在 [GpioClx](/windows-hardware/drivers/ddi/content/index)、[SpbCx](/wi
 - 引脚复用客户端 – 这些是使用引脚复用的驱动程序。 引脚复用客户端从 ACPI 固件接收引脚复用资源。 引脚复用资源是一种连接资源，受资源中心管理。 引脚复用客户端通过打开资源的句柄来保留引脚复用资源。 若要使硬件更改生效，客户端必须通过发送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求来提交配置。 客户端通过关闭句柄释放引脚复用资源，其中点复用配置会还原为其默认状态。
 - ACPI 固件 – 指定具有 `MsftFunctionConfig()` 资源的复用配置。 MsftFunctionConfig 资源表示的管脚中具有客户端所需的复用配置。 MsftFunctionConfig 资源包含功能编号、拉配置和管脚编号列表。 MsftFunctionConfig 资源提供给管脚复用客户端作为硬件资源，驱动程序在其 PrepareHardware 回调中接收这些资源（类似于 GPIO 和 SPB 连接资源）。 客户端接收可用于打开资源句柄的资源中心 ID。
 
-> 必须将 `/MsftInternal` 命令行开关传递到 `asl.exe`，才能编译包含 `MsftFunctionConfig()` 描述符的 ASL 文件，因为 ACPI 工作委员会当前正在审查这些描述符。 例如：`asl.exe /MsftInternal dsdt.asl`
+> 必须将 `/MsftInternal` 命令行开关传递到 `asl.exe`，才能编译包含 `MsftFunctionConfig()` 描述符的 ASL 文件，因为 ACPI 工作委员会当前正在审查这些描述符。 例如： `asl.exe /MsftInternal dsdt.asl`
 
 引脚复用中涉及的操作顺序如下所示。
 
@@ -614,7 +614,7 @@ Device(I2C1)
 - CLIENT_ConnectFunctionConfigPins – 由 `GpioClx` 调用以命令微型端口驱动程序应用指定的复用配置。
 - CLIENT_DisconnectFunctionConfigPins – 由 `GpioClx` 调用以命令微型端口驱动程序恢复复用配置。
 
-有关这些例程的描述，请参阅 [GpioClx 事件回调函数](https://docs.microsoft.com/previous-versions/hh439464(v=vs.85))。
+有关这些例程的描述，请参阅 [GpioClx 事件回调函数](/previous-versions/hh439464(v=vs.85))。
 
 除了这两个新的 DDI，应针对引脚复用兼容性审核现有 DDI：
 
@@ -633,11 +633,11 @@ Device(I2C1)
 
 在设备初始化期间，`SpbCx` 和 `SerCx` 框架会解析作为硬件资源提供给设备的所有 `MsftFunctionConfig()` 资源。 然后 SpbCx/SerCx 按需获取和释放引脚复用资源。
 
-`SpbCx`在调用客户端驱动程序的[EvtSpbTargetConnect ( # B1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect)回调之前，在其*IRP_MJ_CREATE*处理程序中应用 pin muxing 配置。 如果无法应用复用配置，将不会调用控制器驱动程序的 `EvtSpbTargetConnect()` 回调。 因此，SPB 控制器驱动程序可能会假设在调用 `EvtSpbTargetConnect()` 时，引脚会复用为 SPB 功能。
+`SpbCx`在调用客户端驱动程序的[EvtSpbTargetConnect ( # B1](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect)回调之前，在其*IRP_MJ_CREATE*处理程序中应用 pin muxing 配置。 如果无法应用复用配置，将不会调用控制器驱动程序的 `EvtSpbTargetConnect()` 回调。 因此，SPB 控制器驱动程序可能会假设在调用 `EvtSpbTargetConnect()` 时，引脚会复用为 SPB 功能。
 
 `SpbCx`在调用控制器驱动程序的[EvtSpbTargetDisconnect ( # B1](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect)回调之后，在其*IRP_MJ_CLOSE*处理程序中还原 pin muxing 配置。 结果是，每当外设驱动程序打开 SPB 控制器驱动程序的句柄时，引脚就会复用为 SPB 功能；当外设驱动程序关闭其句柄时，会复用回引脚。
 
-`SerCx` 的行为类似。 `SerCx` 仅在调用 `MsftFunctionConfig()` 控制器驱动程序的 EvtSerCx2FileOpen 之前获取其 *IRP_MJ_CREATE* 处理程序中的所有资源 [ ( # B1 ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) 回调，并在调用控制器驱动程序的 [EvtSerCx2FileClose](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) 回调之后释放其 IRP_MJ_CLOSE 处理程序中的所有资源。
+`SerCx` 的行为类似。 `SerCx` 仅在调用 `MsftFunctionConfig()` 控制器驱动程序的 EvtSerCx2FileOpen 之前获取其 *IRP_MJ_CREATE* 处理程序中的所有资源 [ ( # B1 ](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) 回调，并在调用控制器驱动程序的 [EvtSerCx2FileClose](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) 回调之后释放其 IRP_MJ_CLOSE 处理程序中的所有资源。
 
 适用于 `SerCx` 和 `SpbCx` 控制器驱动程序的动态引脚复用的含义就是：它们必须能够容忍在某些时候从 SPB/UART 功能复用回引脚。 控制器驱动程序需要假设：在调用 `EvtSpbTargetConnect()` 或 `EvtSerCx2FileOpen()` 之前，不会复用引脚。 在以下回调期间，引脚不必复用为 SPB/UART 功能。 以下列表虽然不完整，但呈现了控制器驱动程序所实现的最常用 PNP 例程。
 
@@ -646,7 +646,7 @@ Device(I2C1)
 - EvtDevicePrepareHardware/EvtDeviceReleaseHardware
 - EvtDeviceD0Entry/EvtDeviceD0Exit
 
-## <a name="verification"></a>确认
+## <a name="verification"></a>验证
 
 当你准备好测试 rhproxy 时，使用下面的分步过程将很有帮助。
 
@@ -839,7 +839,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 - [Windows。 I2c](/uwp/api/Windows.Devices.I2c)
 - [Windows.Devices.Spi](/uwp/api/Windows.Devices.Spi)
 - [Windows.Devices.SerialCommunication](/uwp/api/Windows.Devices.SerialCommunication)
-- [测试授权和执行框架 (TAEF)](/windows-hardware/drivers/taef/)
+- [测试创作和执行框架 (TAEF)](/windows-hardware/drivers/taef/)
 - [SpbCx](https://msdn.microsoft.com/library/windows/hardware/hh450906.aspx)
 - [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx)
 - [SerCx](/previous-versions//ff546939(v=vs.85))

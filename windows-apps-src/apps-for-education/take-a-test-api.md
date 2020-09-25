@@ -2,16 +2,16 @@
 Description: 适用于 Microsoft 参加测验应用的 JavaScript API 使你可以进行安全的评估。 参加测验提供了安全的浏览器，可防止学生在测试时使用其他计算机或 Internet 资源。
 title: 参加测验 JavaScript API。
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-ms.date: 08/08/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 教育版
 ms.localizationpriority: medium
-ms.openlocfilehash: f5894e80c11d69c91be8492b80c3200e15a3dc31
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2eeb190fc95e46a95813affd432948d38c0328a4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161261"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218390"
 ---
 # <a name="take-a-test-javascript-api"></a>参加测验 JavaScript API
 
@@ -36,7 +36,7 @@ ms.locfileid: "89161261"
 |[isEnvironmentSecure](#isEnvironmentSecure) | 确定锁定上下文是否仍然应用于设备。 |
 |[getDeviceInfo](#getDeviceInfo) | 获取有关运行测试应用程序的平台的详细信息。 |
 |[examineProcessList](#examineProcessList)|获取正在运行的用户和系统进程的列表。|
-|[封闭](#close) | 关闭浏览器并解锁设备。 |
+|[close](#close) | 关闭浏览器并解锁设备。 |
 |[getPermissiveMode](#getPermissiveMode)|检查许可模式是处于打开状态还是关闭状态。|
 |[setPermissiveMode](#setPermissiveMode)|打开或关闭许可模式。|
 |[emptyClipBoard](#emptyClipBoard)|清除系统剪贴板。|
@@ -58,7 +58,7 @@ ms.locfileid: "89161261"
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
 **参数**  
-* `enable` - **如果为 true** ，则在锁屏界面上运行 Take a Test 应用，并应用本 [文档](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中讨论的策略。 若为 **false**，将停止在锁屏界面上运行“参加测验”并关闭它，除非该应用不处于锁定状态；在此情况下没有影响。  
+* `enable` - **如果为 true** ，则在锁屏界面上运行 Take a Test 应用，并应用本 [文档](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中讨论的策略。 若为 **false**，将停止在锁屏界面上运行“参加测验”并关闭它，除非该应用不处于锁定状态；在此情况下没有影响。  
 * `onSuccess` -[可选] 已成功启用或禁用锁定后要调用的函数。 其形式必须是 `Function(Boolean currentlockdownstate)`。  
 * `onError` -[可选] 锁定操作失败时要调用的函数。 其形式必须是 `Function(Boolean currentlockdownstate)`。  
 

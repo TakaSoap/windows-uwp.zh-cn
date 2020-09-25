@@ -5,15 +5,15 @@ ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
 keywords: 视觉反馈, 焦点反馈, 触摸反馈, 接触可视化, 输入, 交互
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ced83ca771f4954f8e42dc42e0882d1a5b7c6b1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1afc1c884a7a01ef1021f37476d1e29430c62e3c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172451"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219830"
 ---
 # <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
@@ -58,7 +58,7 @@ ms.locfileid: "89172451"
 
 所有 Windows 应用都在应用程序内的可互动控件的周围明显定义了许多焦点视觉。 这些新的焦点视觉完全可以根据需要进行自定义以及禁用。
 
-对于 Xbox 和电视通常使用的 **10 英尺体验**，Windows 支持**显示焦点** - 一种灯光效果，当可聚焦元素（例如按钮）通过游戏板或键盘输入获得焦点时，其边框将显示动画效果。 有关详细信息，请参阅[针对 Xbox 和电视进行设计](../devices/designing-for-tv.md#reveal-focus)。
+对于 Xbox 和电视通常使用的 **10 英尺体验**，Windows 支持**显示焦点** - 一种灯光效果，当可聚焦元素（例如按钮）通过游戏板或键盘输入获得焦点时，其边框将显示动画效果。
 
 ## <a name="color-branding--customizing"></a>颜色外观方案和自定义
 

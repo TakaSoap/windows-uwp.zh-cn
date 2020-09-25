@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, glsl, hlsl, opengl, directx, 着色器
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b49edac6a6a9c2824cfa556a2ff02eb9f36f9c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b6be3cf92162b0e871a04712754a882506767cd6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175301"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218170"
 ---
 # <a name="glsl-to-hlsl-reference"></a>GLSL 到 HLSL 参考
 
@@ -94,7 +94,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <td align="left">行主序矩阵（默认设置）</td>
 <td align="left">列主序矩阵（默认设置）
 <div class="alert">
-<strong>注意</strong>   使用<strong>row_major</strong>类型修饰符来更改一个变量的布局。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax">变量语法</a>。 还可以指定编译器标志或 pragma 来更改全局默认设置。
+<strong>注意</strong>   使用<strong>row_major</strong>类型修饰符来更改一个变量的布局。 有关详细信息，请参阅<a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax">变量语法</a>。 还可以指定编译器标志或 pragma 来更改全局默认设置。
 </div>
 <div>
  
@@ -137,7 +137,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <p>将 uniform 变量从应用代码传递到顶点着色器和分段着色器或传递到两者。 必须在使用这些着色器绘制任何三角形之前，设置所有 uniform 的值，以便它们的值在绘制三角形网格的整个过程中保持不变。 这些值都是 uniform。 一些 uniform 是针对整个帧设置的，另一些 uniform 唯一对应于一个特定的顶点像素着色器对。</p>
 <p>uniform 变量是每个多边形的变量。</p></td>
 <td align="left"><p>使用常量缓冲区。</p>
-<p>请参阅<a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to">如何：创建常量缓冲区</a>和<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants">着色器常量</a>。</p></td>
+<p>请参阅<a href="/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to">如何：创建常量缓冲区</a>和<a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants">着色器常量</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>调整</strong></p>
@@ -147,8 +147,8 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <tr class="odd">
 <td align="left"><p><strong>attribute</strong></p>
 <p>attribute 只是你从应用代码传递到顶点着色器的顶点描述的一部分。 与 uniform 不同，你为每个顶点设置每个 attribute 的值，但却允许每个顶点拥有不同的值。 attribute 变量是每个顶点的变量。</p></td>
-<td align="left"><p>在 Direct3D 应用代码中定义顶点缓冲区并将其与顶点着色器中定义的顶点输入相匹配。 也可以定义索引缓冲区。 请参阅<a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-vertex-how-to">如何：创建顶点缓冲区</a>和<a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-index-how-to">如何：创建索引缓冲区</a>。</p>
-<p>在 Direct3D 应用代码中创建输入布局并将语义值与顶点输入中的值相匹配。 请参阅<a href="https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage-getting-started">创建输入布局</a>。</p></td>
+<td align="left"><p>在 Direct3D 应用代码中定义顶点缓冲区并将其与顶点着色器中定义的顶点输入相匹配。 也可以定义索引缓冲区。 请参阅<a href="/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-vertex-how-to">如何：创建顶点缓冲区</a>和<a href="/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-index-how-to">如何：创建索引缓冲区</a>。</p>
+<p>在 Direct3D 应用代码中创建输入布局并将语义值与顶点输入中的值相匹配。 请参阅<a href="/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage-getting-started">创建输入布局</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>const</strong></p>
@@ -185,7 +185,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <td align="left">标量类型：float、int、bool</td>
 <td align="left"><p>标量类型：float、int、bool</p>
 <p>also、uint、double</p>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">标量类型</a>。</p></td>
+<p>有关详细信息，请参阅<a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">标量类型</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>矢量类型</p>
@@ -207,8 +207,8 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-vector">矢量类型</a>和<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-appendix-keywords">关键字</a>。</p>
-<p>vector 是定义为 float4 的 also 类型 (typedef vector &lt;float, 4&gt; vector;)。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">用户定义的类型</a>。</p></td>
+<p>有关详细信息，请参阅<a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-vector">矢量类型</a>和<a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-appendix-keywords">关键字</a>。</p>
+<p>vector 是定义为 float4 的 also 类型 (typedef vector &lt;float, 4&gt; vector;)。 有关详细信息，请参阅<a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">用户定义的类型</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>矩阵类型</p>
@@ -233,7 +233,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </ul>
 <p>也可以使用<a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-matrix">矩阵类型</a>来定义矩阵。</p>
 <p>例如：matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
-<p>matrix 是定义为 float4x4 的 also 类型 (typedef matrix &lt;float, 4, 4&gt; matrix;)。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">用户定义的类型</a>。</p></td>
+<p>matrix 是定义为 float4x4 的 also 类型 (typedef matrix &lt;float, 4, 4&gt; matrix;)。 有关详细信息，请参阅<a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">用户定义的类型</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>float、int、sampler 的精度限定符</p>
@@ -254,18 +254,18 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <p>最低固定点有符号 2.8 位值（2 位整数和 8 位小数部分）。 8 位小数部分可以包括 1，而非排除 1，目的是为它提供完整的包含范围 -2 到 2。</p></li>
 <li>min16int：最低 16 位有符号整数</li>
 <li><p>min12int：最低 12 位有符号整数</p>
-<p>该类型用于 10Level9（<a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">9_x 功能级别</a>），其中整数由浮点数来表示。 这是在使用 16 位浮点数模拟整数时可以获得的精度。</p></li>
+<p>该类型用于 10Level9（<a href="/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">9_x 功能级别</a>），其中整数由浮点数来表示。 这是在使用 16 位浮点数模拟整数时可以获得的精度。</p></li>
 <li>min16uint：最低 16 位无符号整数</li>
 </ul>
-<p>有关详细信息，请参阅<a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">标量类型</a>和<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/using-hlsl-minimum-precision">使用 HLSL 最低精度</a>。</p></td>
+<p>有关详细信息，请参阅<a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">标量类型</a>和<a href="/windows/desktop/direct3dhlsl/using-hlsl-minimum-precision">使用 HLSL 最低精度</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>
-<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a></td>
+<td align="left"><a href="/windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a></td>
 </tr>
 <tr class="even">
 <td align="left">samplerCube</td>
-<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-type">TextureCube</a></td>
+<td align="left"><a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-type">TextureCube</a></td>
 </tr>
 </tbody>
 </table>

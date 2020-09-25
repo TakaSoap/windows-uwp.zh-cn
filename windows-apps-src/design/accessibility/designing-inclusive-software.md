@@ -4,16 +4,16 @@ ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: 在 Windows 10 中设计非独占软件
 label: Designing inclusive software
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f7286394f68d6cda82581a825117f12ce98493ba
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 795344a7a03344c5f8aeea26252e1e0610d9d8c3
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234079"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219860"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>针对 Windows 10 设计非独占软件  
 
@@ -23,7 +23,7 @@ ms.locfileid: "83234079"
 
 这一新设计理念称为非独占设计。 该想法是在设计软件的最开始就考虑到所有人。 这与将辅助功能视为在开发过程末尾为满足一小群用户而补上的技术相反。
 
-“我们将残障定义为个体的需求与所提供的服务、产品或环境之间的不匹配。 任何人都可能遇到残障的情况。 这是一个需要排除的常见人体特征。”  \-从[非独占](https://www.microsoft.com/design/inclusive/)视频  
+“我们将残障定义为个体的需求与所提供的服务、产品或环境之间的不匹配。 任何人都可能遇到残障的情况。 这是一个需要排除的常见人体特征。”  \- 从 [非独占](https://www.microsoft.com/design/inclusive/) 视频  
 
 非独占设计为所有人创造更好的产品。 它与考虑整个人类多样性有关。 考虑你现在在大部分街角人行道上发现路边切口。 它们之前明显是供坐轮椅的人使用的。 但是，现在几乎每个人都使用它们，包括推着婴儿车、骑着脚踏车和玩滑板的人。 甚至行人通常也会使用路边切口，因为它们随时提供更好的体验。 可以将电视遥控器视为面向身体不便人士的辅助技术 (AT)。 而如今几乎不可能买到没有遥控器的电视。 在孩子们学会绑鞋带之前，他们可穿易脱穿的或易固定的鞋子。 在日常生活中通常首选易穿脱的鞋子，因为在进入家门前需脱掉鞋子。 它们也适合于行动不便的人士，如关节炎患者或者甚至是手腕骨折的人士。
 
@@ -90,7 +90,7 @@ Windows 中的内置辅助功能之一是高对比度模式，该模式可增强
 #### <a name="color-contrast-ratio"></a>颜色对比率  
 更新后的美国残疾人法案 (ADA) 第 508 节以及其他法规要求文本与其背景之间的默认颜色对比度必须为 5:1。 对于较大的文本（18 点字体大小或 14 点加粗），所需的默认对比度为 3:1。  
 
-#### <a name="color-combinations"></a>颜色组合  
+#### <a name="color-combinations"></a>配色  
 大约 7% 的男性（和小于 1 % 的女性）具有某种形式的色觉障碍。 色盲用户难以区分某些颜色，因此在应用程序中永远不单独使用颜色来传达状态或意义，这一点很重要。 对于装饰性图像（如图标或背景），应尽量选择能够使色盲用户识别图像的颜色组合。 如果你从一开始就使用这些颜色建议，则你的应用已经向成为非独占应用迈出了一大步。  
 
 ## <a name="summary-mdash-seven-steps-for-inclusive-design"></a>总结 &mdash; 非独占设计的七个步骤  

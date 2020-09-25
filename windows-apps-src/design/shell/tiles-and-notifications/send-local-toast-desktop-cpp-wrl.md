@@ -3,16 +3,16 @@ Description: 了解 Win32 c + + WRL 应用如何可以发送本地 toast 通知�
 title: 从桌面 C++ WRL 应用发送本地 toast 通知
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
-ms.date: 03/07/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10，uwp，win32，桌面，toast 通知，发送 toast，发送本地 toast，desktop bridge，.msix，稀疏包，c + +，cpp，cplusplus，WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: e1aae390cf9047c8c93b4d24084c87bc90af8d80
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f90733cb4b549b7b8f088d6ecfa652941b0769b1
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172301"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220140"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>从桌面 C++ WRL 应用发送本地 toast 通知
 
@@ -421,8 +421,8 @@ Windows 8 引入了 toast 通知，但使用的是[旧版 toast 模板](/previou
 | OS | ToastGeneric | COM 激活器 | 旧版 toast 模板 |
 | -- | ------------ | ------------- | ---------------------- |
 | Windows 10 | 支持 | 支持 | 支持（但不会激活 COM 服务器） |
-| Windows 8.1/8 | 不适用 | 空值 | 支持 |
-| Windows 7 及更低版本 | 不适用 | 不适用 | 不适用 |
+| Windows 8.1/8 | 不可用 | 空值 | 支持 |
+| Windows 7 及更低版本 | 不可用 | 不可用 | 不可用 |
 
 若要检查是否是在 Windows 10 上运行，请包含 `<VersionHelpers.h>` 标头并检查 **IsWindows10OrGreater** 方法。 如果返回 true，则继续调用本文档中所述的所有方法！ 
 

@@ -6,12 +6,12 @@ keywords: 后台任务，扩展执行，资源，限制，后台任务
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 33b41c432edde42bc31daa1d5631f60fb38d8397
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: f843c23a4a1e0738cfc05e96009b2597f4919809
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304499"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217650"
 ---
 # <a name="run-in-the-background-indefinitely"></a>在后台无限期运行
 
@@ -30,7 +30,7 @@ UWP 应用未在前台运行时将变为暂停状态。 在桌面上，用户最
 > [!NOTE]
 > 添加 *xmlns： rescap* XML 命名空间声明，并使用 *rescap* 前缀来声明该功能。
 >
-> 有关详细信息，请参阅 [应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)的 "限制功能" 部分。
+> 有关详细信息，请参阅 [应用功能声明](../packaging/app-capability-declarations.md)的 "限制功能" 部分。
 >
 
 _Package.appxmanifest_
@@ -79,7 +79,7 @@ switch (result)
 > [!NOTE]
 > 添加 *xmlns： rescap* XML 命名空间声明，并使用 *rescap* 前缀来声明该功能。
 >
-> 有关详细信息，请参阅 [应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)的 "限制功能" 部分。
+> 有关详细信息，请参阅 [应用功能声明](../packaging/app-capability-declarations.md)的 "限制功能" 部分。
 >
 
 _Package.appxmanifest_
@@ -102,6 +102,6 @@ _Package.appxmanifest_
 
 请注意，**extendedExecutionUnconstrained** 和 **extendedBackgroundTaskTime** 功能可能会替代 UWP 应用的默认策略，并且可能会导致电池严重消耗。 在使用这些功能之前，请先确认默认的扩展执行和后台任务时间策略是否未满足你的需求，并在电池受限条件下执行测试，以了解你的应用将对设备具有的影响。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [删除后台任务资源限制](/windows/application-management/enterprise-background-activity-controls)

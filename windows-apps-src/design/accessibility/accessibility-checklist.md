@@ -4,16 +4,16 @@ ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: 辅助功能清单
 label: Accessibility checklist
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 44864a0743443d976456f73a3bae5041fd63770e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d6b9340f55064ff89c0b047cbb6d7407574da3d6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163461"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216390"
 ---
 # <a name="accessibility-checklist"></a>辅助功能清单
 
@@ -41,7 +41,7 @@ ms.locfileid: "89163461"
 
 3. 确保文本为可读的大小
 
-    * Windows 包括各种辅助功能和设置，用户可利用这些工具和设置，并调整其自身需求和阅读文本的首选项。 这些方法包括：
+    * Windows 包括各种辅助功能和设置，用户可利用这些工具和设置，并调整其自身需求和阅读文本的首选项。 其中包括：
         * "放大镜" 工具，用于放大 UI 的选定区域。 你应确保应用中的文本布局不会使使用放大镜进行读取变得困难。
         * 设置中的全局缩放和分辨率设置 **->系统 >显示->比例和布局**。 确切的可用大小调整选项会有所不同，具体取决于显示设备的功能。
         * 设置中的文本大小设置 **->轻松访问->显示**。 调整 "放大 **文本** " 设置，以便仅在所有应用程序和屏幕上指定支持控件中的文本大小 (所有 UWP 文本控件在没有任何自定义项或模板化) 的情况下支持文本缩放体验。

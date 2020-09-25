@@ -4,15 +4,15 @@ title: 通过输入式注入模拟用户输入
 label: Input injection
 template: detail.hbs
 keywords: 设备, 数字化器, 输入, 交互, 注入
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f06414362b6a821233eabfb396ae59001f35c30d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e4e1497ea30400c550cb0cbb2309801ff8145fd6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156891"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219680"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>通过输入式注入模拟用户输入
 
@@ -26,7 +26,7 @@ ms.locfileid: "89156891"
 
 输入注入适用于需要提供功能的 Windows 应用程序和工具，这些功能包括辅助功能、测试 (即席、自动) 以及远程访问和支持功能。
 
-## <a name="setup"></a>设置
+## <a name="setup"></a>安装
 
 若要在 Windows 应用中使用输入注入 Api，需要将以下内容添加到应用程序清单中：
 
@@ -361,7 +361,7 @@ ms.locfileid: "89156891"
 
 4. 最后，我们处理输入式注入区域中的所有按钮[点击](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase)路由事件，并使用所点击按钮的名称更新 UI。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 ### <a name="topic-samples"></a>主题示例
 

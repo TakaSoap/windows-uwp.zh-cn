@@ -5,18 +5,18 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 keywords: 键盘, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互, 游戏板, 远程
-ms.date: 03/29/2017
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: f4f2e9e13f492dd9a38d737c0c86dd3b1e632279
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ae3d4826c4468cabea318ed230da0cfbb4d5f24b
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173481"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219110"
 ---
 # <a name="keyboard-interactions"></a>键盘交互
 
@@ -260,7 +260,7 @@ Esc 键让用户可以取消瞬态 UI（以及该 UI 中的任何正在进行的
 -   当支持时，它们将在整个应用程序中生效。
 -   应一致地分配它们，因为它们是缘故的，而不是直接记录的。
 
-#### <a name="access-keys"></a>访问键
+#### <a name="access-keys"></a>访问密钥
 
 有关 UWP 中的支持访问键的更多深入信息，请参阅[访问键](access-keys.md)页面。
 
@@ -405,8 +405,8 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 | Space         | A 按钮                            | 选择按钮       |
 | Enter         | A 按钮                            | 选择按钮       |
 | Escape        | B 按钮                            | “后退”按钮         |
-| Home/End      | 不适用                                 | 不适用                 |
-| 向上/向下翻页  | 扳机键按钮用于垂直滚动，缓冲键按钮用于水平滚动   | 不适用                 |
+| Home/End      | 不可用                                 | 不可用                 |
+| 向上/向下翻页  | 扳机键按钮用于垂直滚动，缓冲键按钮用于水平滚动   | 不可用                 |
 
 设计 UWP 应用以供与游戏板和遥控器搭配使用时应注意的一些主要差异包括：
 -   文本输入需要用户按 A 激活文本控件。
@@ -502,7 +502,7 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 建议在自定义控件中模拟这些相同的行为。 有关如何实现此行为的代码示例可在 [编程集中导航](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element) 文档中找到。
 
 
-## <a name="test-your-app"></a>测试应用
+## <a name="test-your-app"></a>测试应用程序
 
 使用所有受支持的输入设备测试你的应用，确保可以一致、直观的方式导航至 UI 元素并且没有意外的元素会干扰所需的 Tab 键顺序。
 
@@ -547,7 +547,7 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 -   菜单栏
 -   Menu item
 -   工具栏
--   列表
+-   列出
 -   列表项
 
 下面是适用于触摸键盘的其他模式的示例。 第一个图像是默认布局，第二个图像是缩略图布局（可能不适用于所有语言）。

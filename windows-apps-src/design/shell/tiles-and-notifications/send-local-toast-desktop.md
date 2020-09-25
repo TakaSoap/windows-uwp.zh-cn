@@ -4,16 +4,16 @@ title: 从桌面 C# 应用发送本地 toast 通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from desktop C# apps
 template: detail.hbs
-ms.date: 01/23/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: 'windows 10，uwp，win32，桌面，toast 通知，发送 toast，发送本地 toast，桌面桥，.msix，稀疏包，c #，c 清晰，toast 通知，wpf，发送 toast 通知 wpf，发送 toast 通知 winforms，发送 toast 通知 c #，发送通知 wpf，发送 toast 通知 c #，toast 通知 wpf，toast 通知 c#'
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e78e68cdd44890b50209f3f900c538278bd523c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9f4f78d689352f0278f814a2e89db6f92df52b99
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172291"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220120"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>从桌面 C# 应用发送本地 toast 通知
 

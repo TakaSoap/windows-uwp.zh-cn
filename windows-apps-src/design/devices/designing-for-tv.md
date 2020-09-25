@@ -6,19 +6,19 @@ label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
 keywords: Xbox, TV, 10 英尺体验, 游戏板, 遥控器, 输入, 交互
-ms.date: 11/13/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 491b67322c8b328c21446d50951daad61f15ad3d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b0c278599c878e807ef8b2e2564ca9add31ea4ad
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175571"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220280"
 ---
 # <a name="designing-for-xbox-and-tv"></a>针对 Xbox 和电视进行设计
 
@@ -66,7 +66,7 @@ _**屏幕截图中显示的所有电影都可从 Microsoft 电影 & TV 获得。
 
 现在你已了解了适用于 10 英尺体验的良好 UWP 应用设计的原则，请阅读以下关于优化应用和实现出色用户体验的特定方法的概述。
 
-| 功能        | 描述           |
+| Feature        | 说明           |
 | -------------------------------------------------------------- |--------------------------------|
 | [UI 元素大小调整](#ui-element-sizing)  | 通用 Windows 平台使用[缩放和有效像素](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)来根据观看距离缩放 UI。 了解大小调整并在 UI 上应用它有助于针对 10 英尺环境优化你的应用。  |
 |  [电视安全区域](#tv-safe-area) | 默认情况下，UWP 将自动避免在电视不安全区域（接近屏幕边缘的区域）显示任何 UI。 但是，这将导致“箱中”效果，即 UI 看起来以宽屏显示。 为了使你的应用在电视上提供真正的沉浸式体验，你将要对其进行修改，以使其延伸到电视上的屏幕边缘（如果电视支持此功能）。 |
@@ -77,7 +77,7 @@ _**屏幕截图中显示的所有电影都可从 Microsoft 电影 & TV 获得。
 
 除了前面的设计和布局注意事项外，在构建应用程序时，还应考虑许多 [游戏板和远程控制交互](../input/gamepad-and-remote-interactions.md) 优化。
 
-| 功能        | 描述           |
+| Feature        | 说明           |
 | -------------------------------------------------------------- |--------------------------------|
 | [XY 焦点导航和交互](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | 通过**XY 焦点导航**，用户可以在应用的 UI 周围导航。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
 | [鼠标模式](../input/gamepad-and-remote-interactions.md#mouse-mode)|对于某些类型的应用程序（例如地图、绘图和绘图应用程序），XY 焦点导航并不可行，甚至可能不可行。 在这些情况下， **鼠标模式** 使用户能够在游戏板或遥控器上自由导航，就像 PC 上的鼠标一样。|
@@ -560,7 +560,7 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
 
 然后，你可以遵循此检查对代码块中的 UI 进行相应调整。 
 
-## <a name="summary"></a>“摘要”
+## <a name="summary"></a>总结
 
 针对 10 英尺体验进行设计需要考虑特殊的注意事项，这些注意事项有别于针对任何其他平台进行设计。 当然直接将 UWP 应用移植到 Xbox One 也能使其工作，但它不一定已针对 10 英尺体验进行优化，并且可能导致用户沮丧。 按照本文中的指南进行操作可确保你的应用在电视上达到最佳状态。
 
