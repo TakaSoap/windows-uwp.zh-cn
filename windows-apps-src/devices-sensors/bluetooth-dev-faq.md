@@ -1,17 +1,17 @@
 ---
 title: 蓝牙开发人员常见问题
 description: 本文包含与 UWP 蓝牙 API 相关的常见问题解答。
-ms.date: 02/08/2017
+ms.date: 09/25/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d41e49f599e1fe5e835443f7c8cb732e625491e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1a5ff129afcee21b0b1b41212fb900235d5b21b4
+ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168591"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353717"
 ---
 # <a name="bluetooth-developer-faq"></a>蓝牙开发人员常见问题
 
@@ -72,14 +72,16 @@ RFCOMM Api 为开发人员提供了用于执行双向串行端口样式通信的
 
 ## <a name="do-all-windows-devices-support-peripheral-role"></a>所有 Windows 设备是否都支持外设角色？
 
-不能。 这是一个与硬件相关的功能，但提供了一个方法 BluetoothAdapter. IsPeripheralRoleSupported，用于查询是否支持此功能。  当前支持的设备包括 8992+ 上的 Windows Phone 和 RPi3 (Windows IoT)。 
+否。 这是一个与硬件相关的功能，但提供了一个方法 BluetoothAdapter. IsPeripheralRoleSupported，用于查询是否支持此功能。  当前支持的设备包括 8992+ 上的 Windows Phone 和 RPi3 (Windows IoT)。 
 
 ## <a name="can-i-access-these-apis-from-win32"></a>是否可以从 Win32 访问这些 API？
 
-可以，所有这些 API 都应正常工作。 本博客详细介绍了[从桌面应用程序调用 Windows API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/) 的方式。 
-## <a name="is-this-functionality-supposed-to-exist-on--insert-sku-here-"></a>此功能是否在 *-在此处插入 SKU-* 上存在？
+可以，所有这些 API 都应正常工作。 本博客详细介绍了[从桌面应用程序调用 Windows API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/) 的方式。
 
-**蓝牙 LE**：是的，所有功能都处于 OneCore 中，应在带有正常运行的蓝牙 LE 堆栈的最新设备上可用。 
-> 警告：外围角色依赖于硬件，某些 Windows Server 版本不支持蓝牙。 
+## <a name="is-this-functionality-supposed-to-exist-on-a-specific-sku"></a>此功能是否应存在于特定的 SKU 上？
+
+**蓝牙 LE**：是的，所有功能都处于 OneCore 中，应在带有正常运行的蓝牙 LE 堆栈的最新设备上可用。
+
+> 警告：外围角色依赖于硬件，某些 Windows Server 版本不支持蓝牙。
 
 **蓝牙) 的蓝牙 BR/EDR (**：存在一些差异，但通常情况下，它们具有非常相似的配置文件级别支持。 请参阅[RFCOMM](send-or-receive-files-with-rfcomm.md)上的文档和适用于[电脑](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles)和[手机](https://support.microsoft.com/help/10569/windows-10-mobile-supported-bluetooth-profiles)的这些受支持的配置文件文档

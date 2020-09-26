@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fd5f2b76af856dd66e2dfd0ee2b3e429199e6a19
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2d4ec2c3d849833b4a1673c4a4f425f32c42d00f
+ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172281"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353757"
 ---
 # <a name="bluetooth-gatt-client"></a>蓝牙 GATT 客户端
 
@@ -109,6 +109,14 @@ bluetoothLeDevice.Dispose();
 ```
 
 如果应用需要再次访问设备，则仅仅重新创建设备对象并访问特征（在下一部分中讨论）会触发操作系统在需要时重新连接。 如果设备处于附近，则可以访问设备，否则它会返回并具有 DeviceUnreachable 错误。  
+
+> [!NOTE]
+> 通过单独调用此方法创建 [BluetoothLEDevice](/uwp/api/windows.devices.bluetooth.bluetoothledevice) 对象不 (一定) 发起连接。 若要启动连接，请将 [GattSession](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.maintainconnection) 设置为 `true` ，或调用 **BluetoothLEDevice**上的未缓存服务发现方法，或对设备执行读/写操作。
+>
+> - 如果将 **GattSession** 设置为 true，则系统会无限期地等待连接，并在设备可用时连接。 应用程序无需等待，因为 **MaintainConnection** 是一个属性。
+> - 对于 GATT 中的服务发现和读/写操作，系统会等待有限但可变的时间。 从瞬间到几分钟的任何内容。 因素包括堆栈上的流量，以及排队的请求数。 如果没有其他挂起的请求，并且无法访问远程设备，则系统会在超时前等待 7 (7) 秒。如果存在其他挂起的请求，则队列中的每个请求可能需要 7 (7) 秒才能完成，因此，您的用户可能会在队列中等待，等待时间越长。
+>
+> 当前无法取消连接过程。
 
 ## <a name="enumerating-supported-services-and-characteristics"></a>枚举受支持的服务和特征
 
