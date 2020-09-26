@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 152254e5b4c0bfb8aec1e88a8d370863df88fe85
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ecb35a262f02576f0425460c8e27ce0016a08d1a
+ms.sourcegitcommit: 651a6b9769fad1736ab16e2a4e423258889b248e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170881"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91366893"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -83,8 +83,6 @@ Windows Hello 为设备识别个人用户提供了可靠的方法；这解决了
 现在我们已基本了解了 Windows Hello 的工作原理，让我们查看一下如何在自己的应用程序中实现它们。
 
 我们可以使用 Windows Hello 实现各种不同的方案。 例如，仅仅在设备上登录应用。 其他常见方案是针对服务进行身份验证。 你将使用 Windows Hello，而不是使用登录名和密码。 在以下章节中，我们将讨论几个不同的方案，包括如何使用 Windows Hello 针对你的服务进行身份验证，以及如何从现有用户名/密码系统转换为 Windows Hello 系统。
-
-最后，请注意 Windows Hello API 需要使用与将使用该应用的操作系统匹配的 Windows 10 SDK。 换句话说，10.0.10240 Windows SDK 必须用于将部署到 Windows 10 的应用，并且 10.0.10586 必须用于将部署到 Windows 10 版本 1511 的应用。
 
 ## <a name="3-implementing-windows-hello"></a>3 实现 Windows Hello
 

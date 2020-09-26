@@ -5,14 +5,15 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 03/06/2020
 ms.topic: article
+ms.custom: contperfq1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd910c42743577a83491386f5c667dd09722ba9b
-ms.sourcegitcommit: 8171695ade04a762f19723f0b88e46e407375800
+ms.openlocfilehash: 22d891253074387223dba1ad9084a2105cf530dd
+ms.sourcegitcommit: 651a6b9769fad1736ab16e2a4e423258889b248e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89494373"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91366883"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推送通知服务 (WNS) 概述 
 
@@ -33,50 +34,7 @@ Windows 推送 Notification Services (WNS) 使第三方开发人员能够从他�
 
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>注册你的应用，并为你的云服务接收凭据
 
-在使用 WNS 发送通知之前，应用必须先向应用商店仪表板进行注册。 
-
-每个应用都有其各自的一组云服务凭据。 这些凭据无法用于向其他任何应用发送通知。
-
-### <a name="step-1-register-your-app-with-the-dashboard"></a>步骤1：将应用注册到仪表板
-
-必须先将应用注册到合作伙伴中心仪表板，然后才能通过 WNS 发送通知。 这将为应用提供凭据，云服务在向 WNS 进行验证的过程中将使用该凭据。 这些凭据由程序包安全标识符 (SID) 和密钥组成。 若要执行此注册，请登录到 [合作伙伴中心](https://partner.microsoft.com/dashboard)。 创建应用后，请参阅 [产品管理-WNS/MPNS](https://apps.dev.microsoft.com/) for instrunctions 了解如何检索凭据 (如果你想要使用 live services 解决方案，请按照本页) 上的 " **live 服务站点** " 链接进行操作。
-
-若要注册，请执行以下操作：
-1.    请参阅合作伙伴中心的 Windows 应用商店应用页，并以个人 Microsoft 帐户登录 (例如： johndoe@outlook.com ， janedoe@xboxlive.com) 。
-2.    登录后，单击 "仪表板" 链接。
-3.    在仪表板上，选择 "创建新应用"。
-
-![wns 应用注册](../images/wns-create-new-app.png)
-
-4.    通过保留应用名称创建应用。 为应用提供唯一的名称。 输入名称，并单击 "保留产品名称" 按钮。 如果名称可用，则将其保留给你的应用程序。 成功保留应用的名称后，应在此时选择要修改的其他详细信息。
-
-![wns 保留产品名称](../images/wns-reserve-poduct-name.png)
- 
-### <a name="step-2-obtain-the-identity-values-and-credentials-for-your-app"></a>步骤2：获取应用的标识值和凭据
-
-为应用保留名称后，Windows 应用商店创建了关联的凭据。 它还分配了关联的标识值，这些值必须存在于应用的清单文件中 (appxmanifest.xml) 。 如果已将应用上传到 Windows 应用商店，则这些值将自动添加到清单中。 如果尚未上传应用，需要手动将标识值添加到清单中。
-
-1.    选择 "产品管理" 下拉箭头
-
-![wns 产品管理](../images/wns-product-management.png)
-
-2.    在 "产品管理" 下拉列表中，选择 "WNS/MPNS" 链接。
-
-![wns 产品管理 continuted](../images/wns-product-management2.png)
- 
-3.    在 "WNS/MPNS" 页上，单击 "Windows 推送 Notification Services (WNS) 和 Microsoft Azure 移动服务" 部分下的 "Live 服务站点" 链接。
-
-![wns live 服务](../images/wns-live-services-page.png)
- 
-4.     (之前，应用程序注册门户) 页面提供了一个要包含在应用程序清单中的 identity 元素。 这包括应用程序机密 (s) 、包安全标识符和应用程序标识。 在文本编辑器中打开清单，并在页面指示时添加该元素。    
-
-> [!NOTE]
-> 如果你使用 AAD 帐户登录，则需要联系注册应用的 Microsoft 帐户所有者以获取关联的应用机密。 如果需要查找此联系人的帮助，请单击屏幕右上角的齿轮，然后单击 "开发人员设置"，将在其中显示 Microsoft 帐户应用程序的创建者的电子邮件地址。
- 
-5.    将 SID 和客户端机密上传到你的云服务器。
-
-> [!Important]
-> 你的云服务应安全地存储和访问 SID 和客户端机密。 泄露或盗窃此信息后，攻击者便可以向用户发送通知，而无需你的许可或知识。
+必须先向应用商店仪表板注册应用，然后才能使用 WNS 发送通知，如 [此处](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification)所述。
 
 ## <a name="requesting-a-notification-channel"></a>请求通知通道
 

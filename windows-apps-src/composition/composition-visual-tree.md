@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d85df48b4f43759013f80623595d919ac6c77337
-ms.sourcegitcommit: ef3cdca5e9b8f032f46174da4574cb5593d32d56
+ms.openlocfilehash: a488126de73fccfd8a783ddde98b4245b46ced39
+ms.sourcegitcommit: 651a6b9769fad1736ab16e2a4e423258889b248e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90593431"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91366863"
 ---
 # <a name="composition-visual"></a>合成视觉对象
 
@@ -24,10 +24,10 @@ ms.locfileid: "90593431"
 - [**Visual**](/uwp/api/Windows.UI.Composition.Visual) – 基对象，大部分属性均位于此处且继承自其他视觉对象。
 - [**System.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual) –派生自 [**视觉对象**](/uwp/api/Windows.UI.Composition.Visual)，并添加了创建子项的功能。
   - [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 能够将画笔关联起来，以便视觉对象能够呈现像素，包括图像、效果或纯色。
-  - [**LayerVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 视觉对象的子项平展为一个层。<br/>_Windows 10 版本1607、SDK 14393) 中引入的 (。_
-  - [**ShapeVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 一个可视化树节点，它是 CompositionShape 的根。<br/>_Windows 10 版本1803、SDK 17134) 中引入的 (。_
-  - [**RedirectVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 视觉对象从另一个视觉对象获取其内容。<br/>_Windows 10 版本1809、SDK 17763) 中引入的 (。_
-  - [**SceneVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 三维场景节点的容器视觉对象。<br/>_Windows 10 版本1903、SDK 18362) 中引入的 (。_
+  - [**LayerVisual**](/uwp/api/Windows.UI.Composition.LayerVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 视觉对象的子项平展为一个层。<br/>_Windows 10 版本1607、SDK 14393) 中引入的 (。_
+  - [**ShapeVisual**](/uwp/api/Windows.UI.Composition.ShapeVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 一个可视化树节点，它是 CompositionShape 的根。<br/>_Windows 10 版本1803、SDK 17134) 中引入的 (。_
+  - [**RedirectVisual**](/uwp/api/Windows.UI.Composition.RedirectVisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 视觉对象从另一个视觉对象获取其内容。<br/>_Windows 10 版本1809、SDK 17763) 中引入的 (。_
+  - [**SceneVisual**](/uwp/api/windows.ui.composition.scenes.scenevisual) –派生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 三维场景节点的容器视觉对象。<br/>_Windows 10 版本1903、SDK 18362) 中引入的 (。_
 
 可以使用 [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) 及其子类（包括 [**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush)、[**CompositionSurfaceBrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 和 [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush)）将内容和效果应用于 SpriteVisual。 若要了解有关画笔的详细信息，请参阅 [**CompositionBrush 概述**](./composition-brushes.md)。
 
