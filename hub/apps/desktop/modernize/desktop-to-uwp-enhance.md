@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e58315ed70b889e1369e8c13a563f320c0ca1948
-ms.sourcegitcommit: a222ad0e2d97e35a60000c473808c678395376ee
+ms.openlocfilehash: 2b0d6bb305490e05c2670f0e0a326601c51a8373
+ms.sourcegitcommit: 609441402c17d92e7bfac83a6056909bb235223c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89479077"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90837812"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>在桌面应用中调用 Windows 运行时 API
 
@@ -23,18 +23,47 @@ ms.locfileid: "89479077"
 
 某些 Windows 运行时 API 仅在具有[程序包标识符](modernize-packaged-apps.md)的桌面应用中受支持。 有关详细信息，请参阅[可用的 Windows 运行时 API](desktop-to-uwp-supported-api.md)。
 
-## <a name="set-up-your-project"></a>设置项目
+## <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>修改 .NET 项目以使用 Windows 运行时 API
 
-需要对项目进行一些更改才能使用 Windows 运行时 API。
+有几个用于 .NET 项目的选项：
 
-### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>修改 .NET 项目以使用 Windows 运行时 API
+* 从 .NET 5 预览 8 开始，可以在项目文件中添加目标框架名字对象 (TFM)，用于访问 WinRT API。 此选项支持面向 Windows 10 1809 版或更高版本的项目。
+* 对于早期版本的 .NET，可以安装 `Microsoft.Windows.SDK.Contracts` NuGet 包，以便将所有必要的引用添加到项目中。 此选项支持面向 Windows 10 1803 版或更高版本的项目。
+* 如果你的项目同时面向 .NET 5 预览版 8（或更高版本）和早期版本的 .NET 等多个目标，可将项目文件配置为同时使用这两个选项。
 
-有两个用于 .NET 项目的选项：
+### <a name="net-5-preview-8-and-later-use-the-target-framework-moniker-option"></a>.NET 5 预览版 8 及更高版本：使用“目标框架名字对象”选项 
 
-* 如果你的应用面向 Windows 10 版本 1803 或更高版本，则可以安装提供了所有必需引用的 NuGet 包。
-* 或者，你可以手动添加引用。
+此选项仅支持使用 .NET 5 预览版 8（或更早版本）以及面向 Windows 10 1809 版或更高版本的操作系统的项目。 有关此方案的更多背景信息，请参阅[此博客文章](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/)。
 
-#### <a name="to-use-the-nuget-option"></a>若要使用 NuGet 选项，请执行以下操作：
+1. 在 Visual Studio 中打开项目后，在“解决方案资源管理器”中右键单击该项目，然后选择“编辑项目文件” 。 项目文件的呈现效果与此类似。
+
+    ```csharp
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+      </PropertyGroup>
+    </Project>
+    ```
+
+2. 将 TargetFramework 元素的值替换为以下字符串之一：
+
+    * **net5.0-windows10.0.17763.0**：如果应用面向 Windows 10 1809 版，请使用此值。
+    * **net5.0-windows10.0.18362.0**：如果应用面向 Windows 10 1903 版，请使用此值。
+    * **net5.0-windows10.0.19041.0**：如果应用面向 Windows 10 2004 版，请使用此值。
+
+    例如，以下元素适用于面向 Windows 10 2004 版的项目。
+
+    ```csharp
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    ```
+
+3. 保存更改并关闭项目文件。
+
+### <a name="earlier-versions-of-net-install-the-microsoftwindowssdkcontracts-nuget-package"></a>早期版本的 .NET：安装 Microsoft.Windows.SDK.Contracts NuGet 包
+
+如果应用使用 .NET Core 3.x、.NET 5 预览版 7（或更低版本）或 .NET Framework，请使用此选项。 此选项支持面向 Windows 10 1803 版或更高版本操作系统的项目。
 
 1. 确保已启用[包引用](/nuget/consume-packages/package-references-in-project-files)：
 
@@ -47,34 +76,74 @@ ms.locfileid: "89479077"
 
 4. 找到 `Microsoft.Windows.SDK.Contracts` 包后，在“NuGet 包管理器”窗口的右窗格中，根据要面向的 Windows 10 版本，选择要安装的包的“版本” ：
 
+    * **10.0.19041.xxxx**：对于 Windows 10 版本 2004，请选择此版本。
     * **10.0.18362.xxxx**：对于 Windows 10 版本 1903，请选择此版本。
     * **10.0.17763.xxxx**：对于 Windows 10 版本 1809，请选择此版本。
     * **10.0.17134.xxxx**：对于 Windows 10 版本 1803，请选择此版本。
 
 5. 单击“安装” 。
 
-#### <a name="to-add-the-required-references-manually"></a>若要手动添加所需引用，请执行以下操作：
+### <a name="configure-projects-that-multi-target-different-versions-of-net"></a>配置面向多个不同 .NET 版本的项目
 
-1. 打开“引用管理器”对话框，选择“浏览”按钮，然后选择“所有文件”  。
+如果你的项目同时面向 .NET 5 预览版 8（或更高版本）和早期版本（包括 .NET Core 3.x 和 .NET Framework），可以将项目文件配置为使用目标框架名字对象自动拉取用于 .NET 5 预览版 8（或更高版本）的 WinRT API 参考，并为早期版本使用 `Microsoft.Windows.SDK.Contracts` NuGet 包。
 
-    ![“添加引用”对话框](images/desktop-to-uwp/browse-references.png)
+1. 在 Visual Studio 中打开项目后，在“解决方案资源管理器”中右键单击该项目，然后选择“编辑项目文件” 。 下面的示例展示使用 .NET Core 3.1 的应用的项目文件。
 
-2. 添加对以下所有文件的引用。
+    ```csharp
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+      </PropertyGroup>
+    </Project>
+    ```
 
-    |文件|位置|
-    |--|--|
-    |System.Runtime.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.WindowsRuntime.UI.Xaml.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.InteropServices.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<sdk version>\Facade|
-    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<sdk version>\Windows.Foundation.UniversalApiContract\\<version> |
-    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<sdk version>\Windows.Foundation.FoundationContract\\<version> |
+2. 将文件中的 TargetFramework 元素替换为 TargetFrameworks 元素（请注意复数形式）。 在此元素中，为要面向的所有 .NET 版本（以分号分隔）指定目标框架名字对象。 
 
-3. 在“属性”窗口中，将每个 .winmd 文件的 Copy Local 字段设为 False 。
+    * 对于 .NET 5 预览版 8 或更高版本，请使用以下目标框架名字对象之一：
+        * **net5.0-windows10.0.17763.0**：如果应用面向 Windows 10 1809 版，请使用此值。
+        * **net5.0-windows10.0.18362.0**：如果应用面向 Windows 10 1903 版，请使用此值。
+        * **net5.0-windows10.0.19041.0**：如果应用面向 Windows 10 2004 版，请使用此值。
+    * 对于 .NET Core 3.x，请使用 netcoreapp 3.0 或 netcoreapp 3.1。
+    * 对于 .NET Framework，请使用 net46。
 
-    ![复制本地字段](images/desktop-to-uwp/copy-local-field.png)
+    下面的示例演示如何同时面向 .NET Core 3.1 和 .NET 5 预览版 8（适用于 Windows 10 2004 版）。
 
-### <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>修改 C++ Win32 项目以使用 Windows 运行时 API
+    ```csharp
+    <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
+    ```
+
+3. 在 PropertyGroup 元素之后，添加一个 PackageReference 元素，该元素包含一个条件语句，该语句将为应用面向的任何 .NET Core 3.x 版本或 .NET Framework 安装 `Microsoft.Windows.SDK.Contracts` NuGet 包。 PackageReference 元素必须是 ItemGroup 元素的子元素。 下面的示例演示如何面向 .NET Core 3.1 执行此操作。
+
+    ```csharp
+    <ItemGroup>
+      <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
+                        Include="Microsoft.Windows.SDK.Contracts"
+                        Version="10.0.19041.0" />
+    </ItemGroup>
+    ```
+
+    完成后，项目文件的呈现效果与此类似。
+
+    ```csharp
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
+        <UseWPF>true</UseWPF>
+      </PropertyGroup>
+      <ItemGroup>
+        <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
+                         Include="Microsoft.Windows.SDK.Contracts"
+                         Version="10.0.19041.0" />
+      </ItemGroup>
+    </Project>
+    ```
+
+4. 保存更改并关闭项目文件。
+
+## <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>修改 C++ Win32 项目以使用 Windows 运行时 API
 
 通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) 来使用 Windows 运行时 API。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。
 

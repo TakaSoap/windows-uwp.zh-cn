@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d61abe8b59f916ed56c1fefe0bda4b9f25b673a4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 82eaee6b29336559455a86dfdba3debc288babbb
+ms.sourcegitcommit: fd6ca4e9426a5fe46138012d1fecf56f9f621a3f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173721"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90825281"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 应用中托管自定义 UWP 控件
 
@@ -284,12 +284,12 @@ ms.locfileid: "89173721"
             }
         private:
             bool _contentLoaded{ false };
-            std::shared_ptr<XamlMetaDataProvider> _appProvider;
-            std::shared_ptr<XamlMetaDataProvider> AppProvider()
+            winrt::com_ptr<XamlMetaDataProvider> _appProvider;
+            winrt::com_ptr<XamlMetaDataProvider> AppProvider()
             {
                 if (!_appProvider)
                 {
-                    _appProvider = std::make_shared<XamlMetaDataProvider>();
+                    _appProvider = winrt::make_self<XamlMetaDataProvider>();
                 }
                 return _appProvider;
             }
@@ -561,7 +561,7 @@ MyDesktopWin32App 应用必须先配置为使用 MyUWPApp 项目中的自定义�
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. 在同一个文件中，添加 `<winui:RatingControl />` 元素作为 `<StackPanel>` 的子级并保存所做的更改。 此元素会添加 WinUI 库中 [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol 类的实例。 添加此元素后，现在 `<StackPanel>` 应如下所示。
+5. 在同一个文件中，添加 `<winui:RatingControl />` 元素作为 `<StackPanel>` 的子级并保存所做的更改。 此元素会添加 WinUI 库中 [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) 类的实例。 添加此元素后，现在 `<StackPanel>` 应如下所示。
 
     ```xml
     <StackPanel HorizontalAlignment="Center" Spacing="10" 

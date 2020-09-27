@@ -1,5 +1,5 @@
 ---
-Description: 了解如何在打包到 Windows 应用包的桌面应用程序中向 Windows 10 用户提供新式体验。
+description: 了解如何在打包到 Windows 应用包的桌面应用程序中向 Windows 10 用户提供新式体验。
 title: 为打包的桌面应用提供新式体验
 ms.date: 04/22/2019
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d1ce2e7dc434558ac1efd52f6def99d63b38c57e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: adcf1e26ba5ebd2d4fb3b901e27e49da4b6d89dd
+ms.sourcegitcommit: 5d7168ebc9f43aa13051446aff45a46600e6aafe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161511"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90783039"
 ---
 # <a name="features-that-require-package-identity"></a>需要包标识的功能
 
@@ -33,6 +33,12 @@ ms.locfileid: "89161511"
 如果应用程序需要与系统集成（例如，建立防火墙规则），请在应用程序的包清单中描述集成任务，系统将完成其余操作。 对于其中的大多数任务，根本不必编写任何代码。 在清单中添加少量的 XML 后，可以执行一些操作，例如，在用户登录时启动进程、将应用程序集成到文件资源管理器中，以及为应用程序添加显示在其他应用中的打印目标列表。
 
 有关详细信息，请参阅[将桌面应用与包扩展集成](desktop-to-uwp-extensions.md)。
+
+## <a name="get-activation-info-for-packaged-apps"></a>获取打包应用的激活信息
+
+从 Windows 10 1809 版开始，经过打包的桌面应用可以在启动过程中检索某些类型的激活信息。 例如，可以获取通过打开文件、单击交互式 toast 或使用协议激活应用的相关信息。
+
+有关详细信息，请参阅[获取打包应用的激活信息](get-activation-info-for-packaged-apps.md)。
 
 ## <a name="extend-with-uwp-components"></a>使用 UWP 组件进行扩展
 

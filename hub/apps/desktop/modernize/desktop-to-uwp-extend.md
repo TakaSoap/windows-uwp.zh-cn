@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 29064390e4e198d1220d40ff5ce58a63ea41e29a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d0a1d1b7685ae76c26c94fa104b6c0ff6334364d
+ms.sourcegitcommit: 609441402c17d92e7bfac83a6056909bb235223c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172781"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90837822"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>使用新式 UWP 组件扩展桌面应用
 
@@ -43,7 +43,7 @@ ms.locfileid: "89172781"
 
 确保桌面应用程序引用了你调用 Windows 运行时 API 所需的文件。
 
-为此，请参阅[设置项目](desktop-to-uwp-enhance.md#set-up-your-project)部分。
+要执行此操作，请参阅[在桌面应用中调用 Windows 运行时 API](desktop-to-uwp-enhance.md)。
 
 ### <a name="add-a-uwp-project"></a>添加 UWP 项目
 
@@ -51,15 +51,15 @@ ms.locfileid: "89172781"
 
 这是你将构建新式 XAML UI 或使用只在 UWP 进程中运行的 API 的位置。
 
-![UWP 项目](images/desktop-to-uwp/add-uwp-project-to-solution.png)
+![添加新项目](images/desktop-to-uwp/add-uwp-project-to-solution.png)
 
 在打包项目中，右键单击“应用程序”节点，然后单击“添加引用”   。
 
-![引用 UWP 项目](images/desktop-to-uwp/add-uwp-project-reference.png)
+![添加引用](images/desktop-to-uwp/add-uwp-project-reference.png)
 
 然后，添加对该 UWP 项目的引用。
 
-![引用 UWP 项目](images/desktop-to-uwp/choose-uwp-project.png)
+![选择 UWP 项目](images/desktop-to-uwp/choose-uwp-project.png)
 
 你的解决方案将如下所示：
 
@@ -471,7 +471,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 在 Windows 运行时组件中提供实现后台任务的类的完全限定名称。
 
-![Timer 属性](images/desktop-to-uwp/background-task-entry-point.png)
+![指定入口点](images/desktop-to-uwp/background-task-entry-point.png)
 
 <a id="register-background-task"></a>
 
