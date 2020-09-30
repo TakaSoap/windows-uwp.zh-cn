@@ -6,12 +6,12 @@ ms.date: 05/29/2020
 ms.topic: article
 keywords: windows 10, uwp, 移动运营商, 移动结算, 移动运营商结算
 ms.localizationpriority: medium
-ms.openlocfilehash: 2be7938faddaf50c96005f32c77f523ebf4061e3
-ms.sourcegitcommit: ae195892efb9d3abd1190776617984d4219c6777
+ms.openlocfilehash: 9dbdd2a86d33cf1392844294952eb9223676e256
+ms.sourcegitcommit: 426ccbdaa26bd16c7f0b270e8a51ac4ba87a5b60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85913235"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590646"
 ---
 # <a name="mobile-operator-billing"></a>移动运营商结算
 
@@ -21,7 +21,7 @@ ms.locfileid: "85913235"
 Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的手机和 Xbox One 主机提供移动运营商结算作为付款方式。 如果客户的移动运营商支持此功能，客户可以将移动运营商结算添加为付款方式，并通过此方式使用其移动帐户进行 Microsoft Store 购买。
 
 > [!TIP]
->  如果客户的移动运营商提供移动运营商计费，但客户在其设备上找不到此选项，请查看以下[步骤](https://support.microsoft.com/instantanswers/b25d6dd6-fb8b-3710-1e13-4d30eb01b51f)。
+>  如果客户的移动运营商提供移动运营商计费，但客户在其设备上找不到此选项，请查看以下 [步骤](https://support.microsoft.com/instantanswers/b25d6dd6-fb8b-3710-1e13-4d30eb01b51f)。
 
 我们定期与移动运营商合作以扩展此付款方式的可用性。 如果希望建议在下表中没有看到的移动运营商，请联系该移动运营商并请求他们添加此付款方式。
 
@@ -52,6 +52,5 @@ Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的�
 | 瑞士          | 日出，Swisscom                                       |
 | 台湾               | FarEasTone                                              |
 | 土耳其               | Turkcell                                                |
-| 阿拉伯联合酋长国 | Etisalat                                                |
 | 美国        | Sprint、Verizon                                         |
 | 英国       | 3 UK，EE，O2，Vodaphone                                 |
