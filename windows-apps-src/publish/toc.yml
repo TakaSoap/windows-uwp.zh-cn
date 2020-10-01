@@ -116,17 +116,6 @@
   items:
     - name: 生成促销代码
       href: ../publish/generate-promotional-codes.md
-    - name: 为你的应用创建广告市场活动
-      href: ../publish/create-an-ad-campaign-for-your-app.md
-      items:
-        - name: 管理广告市场活动
-          href: ../publish/managing-your-ad-campaign.md
-        - name: 关于自家广告
-          href: ../publish/about-house-ads.md
-        - name: 有关社区广告
-          href: ../publish/about-community-ads.md
-        - name: 有关广告市场活动的常见问题
-          href: ../publish/common-questions.md
     - name: 创建自定义应用促销市场活动
       href: ../publish/create-a-custom-app-promotion-campaign.md
     - name: 打折出售应用和加载项
