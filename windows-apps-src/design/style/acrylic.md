@@ -2,7 +2,7 @@
 description: 了解如何使用 Acrylic（一种用于创建半透明纹理以添加深度效果和帮助构建视觉层次的画笔）。
 title: 亚克力材料
 template: detail.hbs
-ms.date: 08/09/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f7d431950e17b9908d079db9247d997ef8adadb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b6fb7d07901a1ad4ab99255357470c8b90fc7681
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174581"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220100"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 

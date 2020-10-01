@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 桌面开发
-ms.openlocfilehash: d4415bc703acf0b94f6f8a6fe8aab053620336c6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0aa439010138af80f91c4e02776163577658d6cc
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168901"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216730"
 ---
 # <a name="choose-your-app-platform"></a>选择应用平台
 
@@ -129,7 +129,7 @@ PWA 使开发人员能够将网站代码进行打包，以便其能像应用程�
 
 ### <a name="xamarin"></a>Xamarin
 
-使用 Xamarin 为 Windows 10 生成可在 iOS 和 Android 上运行的跨平台应用程序。 有关详细信息，请参阅 [Xamarin](https://docs.microsoft.com/xamarin/xamarin-forms/get-started/index)。
+使用 Xamarin 为 Windows 10 生成可在 iOS 和 Android 上运行的跨平台应用程序。 有关详细信息，请参阅 [Xamarin](/xamarin/xamarin-forms/get-started/index)。
 
 ### <a name="uno-platform"></a>Uno 平台
 

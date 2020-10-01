@@ -2,17 +2,17 @@
 Description: Numberbox 是一个控件，可以用来显示和编辑数字。
 title: 数字框
 template: detail.hbs
-ms.date: 11/27/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e3bcbfc338d629bbda1036ef722d75ed6df37cd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9e0cd1979ca1929adc35537dfd3efccc97466391
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169751"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217970"
 ---
 # <a name="number-box"></a>数字框
 
@@ -174,7 +174,7 @@ private void SetNumberBoxNumberFormatter()
 
 ### <a name="input-scope"></a>输入范围
 
-`Number` 将用于[输入范围](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)。 此输入范围适用于数字 0-9。 此项可以覆盖，但系统不会显式支持替代的 InputScope 类型。
+`Number` 将用于[输入范围](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)。 此输入范围适用于数字 0-9。 此项可以覆盖，但系统不会显式支持替代的 InputScope 类型。
 
 ### <a name="not-a-number"></a>不是数字
 

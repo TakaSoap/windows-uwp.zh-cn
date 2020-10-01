@@ -1,16 +1,16 @@
 ---
 title: Windows 应用的页面布局
 description: 设计应用时，首先要考虑的是布局结构。 本文介绍了基本页面布局的常见结构，其中包括你需要的 UI 元素以及它们在页面上的位置。 在 Windows 应用中，每个页面通常都有导航、命令和内容元素。
-ms.date: 03/19/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 551d937836f0dcf0094e54a503d2a8cd80a2f28b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5473542019a4f8afa3e916b914127e41a4fe05d4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169521"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218620"
 ---
 # <a name="page-layout"></a>页面布局
 

@@ -1,17 +1,17 @@
 ---
 title: 响应式设计的屏幕大小和断点
 description: 我们建议针对一些关键宽度类别（称为“断点”）进行设计，而不是为 Windows 10 生态系统中的很多设备优化 UI。
-ms.date: 08/30/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 32a66c92d4c079c99aed213d0e1aeae66b808d56
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c7d1d0069c074b95bfe93ee5894854734e3a3052
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169401"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218510"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>屏幕大小和断点
 

@@ -2,15 +2,15 @@
 title: 创建自定义样式
 description: 按照本教程进行操作，了解如何创建自定义样式和滑块控件，以自定义 XAML 应用的 UI。
 keywords: XAML, UWP, 入门
-ms.date: 08/20/2020
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d3423e9d78e2519f2d3c9ad1fc2c0b099de0349
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1ff5df0d56d5be6b2cbb93814d01fed48a626797
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160768"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219090"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 

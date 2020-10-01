@@ -3,18 +3,18 @@ author: knicholasa
 description: 使用 Z 深度（也称为相对深度）和阴影，是将深度整合到应用中以帮助用户以自然高效的方式聚焦的两种做法。
 title: 适用于 Windows 应用的 Z 深度和阴影
 template: detail.hbs
-ms.date: 04/19/2019
+ms.date: 09/24/2020
 ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: fc2adb295df97cf1af49608d15c135b9f56b4594
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ffabb494d10f802668e57ebb9cfd122ac5304d46
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165561"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219380"
 ---
 # <a name="z-depth-and-shadow"></a>Z 深度和阴影
 

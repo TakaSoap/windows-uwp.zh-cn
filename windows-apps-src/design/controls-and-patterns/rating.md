@@ -2,7 +2,7 @@
 description: 使用户能够轻松查看和设置反映内容和服务满意度的评分。
 title: 评分控件
 template: detail.hbs
-ms.date: 10/25/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b93938b6a967f503c2699347979f300eb34e1635
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 989ecf4aec60b6a9c4324d97b33dd4b55a7251a6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169611"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218860"
 ---
 # <a name="rating-control"></a>评分控件
 

@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 调试, 测试, 性能
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f1ff6a98182f4832a2a1b82bf8ceca4aa176c36
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c18cb3c5b8a979e7c7c6485e6989736d818613ba
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157252"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220350"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和调试 UWP 应用
 
@@ -178,7 +178,7 @@ ms.locfileid: "89157252"
   - 布局文件夹路径   = `\\NETWORK-SHARE\Layouts\App1`
   - 包注册路径   = `\\NETWORK-SHARE\Layouts\App1`
 
-当你首次从网络注册布局时，你的凭据将缓存到目标设备上，以便你无需重复登录。 若要删除缓存的凭据，可以将 Windows 10 SDK 中的 [WinAppDeployCmd.exe 工具](https://docs.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool)与 **deletecreds** 命令结合使用。
+当你首次从网络注册布局时，你的凭据将缓存到目标设备上，以便你无需重复登录。 若要删除缓存的凭据，可以将 Windows 10 SDK 中的 [WinAppDeployCmd.exe 工具](../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md)与 **deletecreds** 命令结合使用。
 
 当你从网络注册布局时，你无法选择“在设备上保留所有文件“  ，因为没有任何文件在物理上复制到远程设备。
 

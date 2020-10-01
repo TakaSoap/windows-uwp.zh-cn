@@ -2,18 +2,18 @@
 description: 了解通用 Windows 平台 (UWP) 中的 Fluent Design System 以及如何将其融入你的应用中。
 title: 适用于 Windows 的 Fluent Design System
 keywords: uwp 应用布局, 通用 windows 平台, 应用设计, 界面, Fluent Design System
-ms.date: 03/07/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: a46aae591767ac6ded935d3b76d60bb8fbfa2746
-ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
+ms.openlocfilehash: 8a05a0a9aeb3a31e76c0510eef70b5ee3036d2f7
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094524"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216829"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>适用于 Windows 应用创建者的 Fluent Design System
 

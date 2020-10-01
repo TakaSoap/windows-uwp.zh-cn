@@ -1,16 +1,16 @@
 ---
 description: 了解如何使用内置 XAML 布局面板（如 RelativePanel、StackPanel、Grid 和 Canvas）对应用中的 UI 元素进行排列和分组。
 title: Windows 应用的布局面板
-ms.date: 04/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 22fa8ef8df6f97ed63465df0cb3e62cbb14e2ced
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4e3915fca3b459d259e83c9c9ce5ef19aa413e2e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172441"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218670"
 ---
 # <a name="layout-panels"></a>布局面板
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: bb647d844c32286a2d612231b3069430f11fcad0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3205ef65922cfe9cf44fbf0a24c90b4e592ca663
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174011"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216420"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
@@ -412,7 +412,7 @@ PAGE\-SIZE 是可执行文件的默认 SectionAlignment 值。
 <tr><td>
 <p>图像必须至少定义一个没有 TargetSize 限定符的变量。 它必须定义一个 Scale 限定符或者保持 Scale 和 TargetSize 为未指定状态，默认值为 Scale-100。</p>
 </td><td>
-<p>有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">UWP 应用的响应式设计基础</a>和<a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">应用资源指南</a>。</p>
+<p>有关详细信息，请参阅 <a href="/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">UWP 应用的响应式设计基础</a>和<a href="/windows/uwp/app-settings/store-and-retrieve-app-data">应用资源指南</a>。</p>
 </td></tr>
 <tr><td>
 <p>该程序包缺少一个“resources.pri”文件。</p>
@@ -434,7 +434,7 @@ PAGE\-SIZE 是可执行文件的默认 SectionAlignment 值。
 <tr><td>
 <p>字符串 {string} 不符合 {number} 个字符的最大长度限制。</p>
 </td><td>
-<p>请参阅<a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">应用包要求</a>。</p>
+<p>请参阅<a href="/windows/uwp/publish/app-package-requirements">应用包要求</a>。</p>
 <p>在实际消息中，{string} 替换为有错误的字符串并且 {number} 包含最大长度。</p>
 </td></tr>
 <tr><td>
@@ -447,12 +447,12 @@ PAGE\-SIZE 是可执行文件的默认 SectionAlignment 值。
 <tr><td>
 <p>字符串必须非空（长度大于零）</p>
 </td><td>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">应用包要求</a>。</p>
+<p>有关详细信息，请参阅<a href="/windows/uwp/publish/app-package-requirements">应用包要求</a>。</p>
 </td></tr>
 <tr><td>
 <p>“resources.pri”文件中没有指定的默认资源。</p>
 </td><td>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">应用资源指南</a>。</p>
+<p>有关详细信息，请参阅<a href="/windows/uwp/app-settings/store-and-retrieve-app-data">应用资源指南</a>。</p>
 <p>在默认版本配置中，Visual Studio 在生成捆绑包时仅在应用包中包含比例为 200 的图像资源，从而将其他资源放入资源包中。 确保你包含比例为 200 的图像资源或将项目配置为包含你拥有的资源。</p>
 </td></tr>
 <tr><td>

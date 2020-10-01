@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 八月
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eb6900b4d5ad529ee2e94f09439dda6abcaebac8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 92ed09940800160af8fcff6aec7dde26144cffe9
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174391"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220330"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>2018 年 8 月 Windows 开发人员文档中的新增功能
 
@@ -58,7 +58,7 @@ Windows 预览体验成员预览版本增加了以下功能，可通过 [Windows
 
 ### <a name="xbox-live-unity-plugin"></a>Xbox Live Unity 插件
 
-适用于 Unity 的 Xbox Live 插件支持将 Xbox Live 签名、统计信息、好友列表、云存储和排行榜添加到标题。 [观看视频](https://youtu.be/fVQZ-YgwNpY)了解详细信息，然后[下载 GitHub 包](https://aka.ms/UnityPlugin)以开始使用。
+适用于 Unity 的 Xbox Live 插件支持将 Xbox Live 签名、统计信息、好友列表、云存储和排行榜添加到标题。 [观看视频](https://youtu.be/fVQZ-YgwNpY)了解详细信息，然后[下载 GitHub 包](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/live-cr-unity-win10-nav?WT.mc_id=windowsdocs-twi)以开始使用。
 
 ### <a name="one-dev-question"></a>一个开发问题
 

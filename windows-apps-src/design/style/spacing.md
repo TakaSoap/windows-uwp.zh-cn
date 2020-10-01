@@ -2,16 +2,16 @@
 title: 间距和大小
 description: 新的 Fluent Standard 和 Compact 控件样式可确保获得舒适的用户体验（无论是何种设备和输入方法）。
 keywords: UWP, Windows 10, 控件, 大小, 密度, standard, compact
-ms.date: 04/19/2019
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 37bc5688321249428405e730d366eb987a81bd66
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: aa4d1fa64f23f417957b4590bb3a846f00653869
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159841"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217750"
 ---
 # <a name="control-size-and-density"></a>控件大小和密度
 

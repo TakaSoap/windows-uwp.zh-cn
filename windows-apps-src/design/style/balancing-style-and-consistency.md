@@ -2,16 +2,16 @@
 description: 有关创建一致、有用并且能展现新颖性和创新性的应用的提示。
 title: 平衡样式和一致性（Windows 应用设计）
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0972fcdaba2ed8c1a9a7b3f297302b0b90184bc2
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ecfa771d8976b3c9e8cce8c8e9c45a5db5fb9b0a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970472"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220270"
 ---
 # <a name="balancing-style-and-consistency"></a>平衡样式和一致性
 

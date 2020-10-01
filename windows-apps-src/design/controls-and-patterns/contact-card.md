@@ -1,7 +1,7 @@
 ---
 description: 了解如何使用联系人卡片让用户能够显示和编辑姓名、电话号码和地址等联系人信息。
 title: 联系人卡片
-ms.date: 03/07/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kele
@@ -9,12 +9,12 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2817977533b63df8498faa1ecbc5cc57a4987c30
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e31b698189e5dc8c59b1c10a6aa6b5bb02190e55
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160591"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217310"
 ---
 # <a name="contact-card"></a>联系人卡片
 

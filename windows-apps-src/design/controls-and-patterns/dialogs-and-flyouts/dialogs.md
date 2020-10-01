@@ -3,7 +3,7 @@ Description: 对话框和浮出控件显示当用户请求这些元素或发生�
 title: 对话框控件
 label: Dialogs
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 31e916f6dda56b43aaf63aabcacecd1177b4166e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1a91b67fee8a6684537411257959c03c454f7514
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160301"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218940"
 ---
 # <a name="dialog-controls"></a>对话框控件
 

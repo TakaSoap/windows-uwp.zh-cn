@@ -2,15 +2,15 @@
 title: 窗体
 description: 了解为通用 Windows 平台 (UWP) 应用中的窗体设计和创建 XAML 布局的指南。
 template: detail.hbs
-ms.date: 11/07/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 0113cbf50601a3db717753ab2e12524fa281daba
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 0c55d98d0680142ad1d4f319b8910fd335fe8d5f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304689"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219460"
 ---
 # <a name="forms"></a>窗体
 表单是一组控件，用于收集和提交来自用户的数据。 表单通常用于设置页面、调查、创建帐户，等等。 

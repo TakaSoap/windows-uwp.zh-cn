@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 疑难解答, HRESULT, 错误
 ms.localizationpriority: medium
-ms.openlocfilehash: e517f796d1352d9373321d456d77875ebd54afbd
-ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
+ms.openlocfilehash: 94cfb51d9fd832a29c71049a2255e35c4bc6f484
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90804717"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219960"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>C++/WinRT 问题疑难解答
 
@@ -59,7 +59,7 @@ XAML 分析异常可能很难进行诊断&mdash;特别是在此类异常中没�
 | 项目生成“'PopulatePropertyInfoOverride' 的访问不明确**”。 | 在 IDL 中声明一个基类，同时在 XAML 标记中声明一个不同的基类时，可能发生此错误。 |
 | 首次加载 C++/WinRT 解决方案时生成“项目 'MyProject.vcxproj' 的配置 'Debug\|x86' 的设计时生成失败。IntelliSense 可能不可用。”。 | 在首次生成后，此 IntelliSense 问题会解决。 |
 | 在注册委托时尝试指定 [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revoke-t) 会生成 [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface) 异常。 | 请参阅[如果“自动撤销”委托无法注册](handle-events.md#if-your-auto-revoke-delegate-fails-to-register)。 |
-|在 C++/WinRT 应用中，当使用利用 XAML 的 [C# Windows 运行时组件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)时，编译器会生成一个错误，格式为："'MyNamespace_XamlTypeInfo': 不是 'winrt::MyNamespace' 的成员"&mdash;其中 MyNamespace 是 Windows 运行时组件命名空间的名称。 | 在 C++/WinRT 应用中的 `pch.h` 中，根据需要添加 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>`&mdash; 来替换 MyNamespace。 |
+|在 C++/WinRT 应用中，当使用利用 XAML 的 [C# Windows 运行时组件](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)时，编译器会生成一个错误，格式为："'MyNamespace_XamlTypeInfo': 不是 'winrt::MyNamespace' 的成员"&mdash;其中 MyNamespace 是 Windows 运行时组件命名空间的名称。 | 在 C++/WinRT 应用中的 `pch.h` 中，根据需要添加 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>`&mdash; 来替换 MyNamespace。 |
 
 > [!NOTE]
 > 如果本主题未解答你的问题，可以访问 [Visual Studio C++ 开发人员社区](https://developercommunity.visualstudio.com/spaces/62/index.html)或使用 [`c++-winrt`Stack Overflow 上的标记](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)来获得帮助。

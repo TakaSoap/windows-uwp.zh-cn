@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: contperfq1
 keywords: windows 10, uwp, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e5171d0c6737bdf3d8064566b8ec2731e68978
-ms.sourcegitcommit: b99e2f4dffa603b68c2a8273fe6313432f91b353
+ms.openlocfilehash: 416df29fcb6ac007375ff9cf2a8f22d80a12b73e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90569396"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219820"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>什么是通用 Windows 平台 (UWP) 应用？
 
@@ -23,9 +23,9 @@ UWP 是创建适用于 Windows 的客户端应用程序的众多方法之一。 
 
 ## <a name="where-does-uwp-fit-in-the-microsoft-development-story"></a>UWP 在 Microsoft 的开发故事中处于什么位置？
 
-UWP 是创建在 Windows 10 设备上运行的应用的一种选择，并且你可以将它与其他平台结合使用。 UWP 应用可以使用 Win32 API 和 .NET 类（请参阅[适用于 UWP 应用的 API 集](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85))、[适用于 UWP 应用的 DLL](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85))以及 [适用于 UWP 应用的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)）。
+UWP 是创建在 Windows 10 设备上运行的应用的一种选择，并且你可以将它与其他平台结合使用。 UWP 应用可以使用 Win32 API 和 .NET 类（请参阅[适用于 UWP 应用的 API 集](/previous-versions/mt186421(v=vs.85))、[适用于 UWP 应用的 DLL](/previous-versions/mt186422(v=vs.85))以及 [适用于 UWP 应用的 .NET](/dotnet/api/index?view=dotnet-uwp-10.0)）。
 
-Microsoft 的开发故事还在继续发展，随着 [WinUI](https://docs.microsoft.com/windows/apps/winui/)、[MSIX](https://docs.microsoft.com/windows/msix/) 以及 [Project Reunion](https://github.com/microsoft/ProjectReunion) 等计划的推出，UWP 成为创建客户端应用的强大工具。
+Microsoft 的开发故事还在继续发展，随着 [WinUI](/windows/apps/winui/)、[MSIX](/windows/msix/) 以及 [Project Reunion](https://github.com/microsoft/ProjectReunion) 等计划的推出，UWP 成为创建客户端应用的强大工具。
 
 
 ## <a name="features-of-a-uwp-app"></a>UWP 应用的功能
@@ -83,7 +83,7 @@ Windows 通过以下功能帮助你的 UI 面向多个设备：
 
 UWP 应用与 [Application Insights](https://azure.microsoft.com/services/application-insights/) 集成以获得详细的遥测和分析 - 用于了解用户、改进应用的重要工具。
 
-UWP 应用可以使用 [MSIX](https://docs.microsoft.com/windows/msix/) 进行打包，并通过 Microsoft Store 或其他方式进行分发。 无论采取哪种方式分发应用，MSIX 都允许对应用进行更新，请参阅[从代码更新非应用商店发布的应用包](https://docs.microsoft.com/windows/msix/non-store-developer-updates)。
+UWP 应用可以使用 [MSIX](/windows/msix/) 进行打包，并通过 Microsoft Store 或其他方式进行分发。 无论采取哪种方式分发应用，MSIX 都允许对应用进行更新，请参阅[从代码更新非应用商店发布的应用包](/windows/msix/non-store-developer-updates)。
 
 ### <a name="monetize-your-app"></a>获取应用收益
 

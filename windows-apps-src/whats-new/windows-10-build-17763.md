@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1f211442476ed271dfe049af65e340d6889870a9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b54e0b4417dd4ba9b835622a4c064b803de7fca9
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167011"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219701"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>面向开发人员的 Windows 10 内部版本 17763 中的新增功能
 
@@ -109,7 +109,7 @@ Windows 现在支持运行多个 UWP 应用实例，每个实例都在其自己�
 
 ### <a name="xbox-live-unity-plugin"></a>Xbox Live Unity 插件
 
-适用于 Unity 的 Xbox Live 插件支持将 Xbox Live 签名、统计信息、好友列表、云存储和排行榜添加到标题。 [观看视频](https://youtu.be/fVQZ-YgwNpY)了解详细信息，然后[下载 GitHub 包](https://aka.ms/UnityPlugin)以开始使用。
+适用于 Unity 的 Xbox Live 插件支持将 Xbox Live 签名、统计信息、好友列表、云存储和排行榜添加到标题。 [观看视频](https://youtu.be/fVQZ-YgwNpY)了解详细信息，然后[下载 GitHub 包](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/live-cr-unity-win10-nav?WT.mc_id=windowsdocs-twi)以开始使用。
 
 ### <a name="one-dev-question"></a>一个开发问题
 

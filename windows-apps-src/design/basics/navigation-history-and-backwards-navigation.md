@@ -3,16 +3,16 @@ Description: 了解如何在 Windows 应用中实现向后导航以遍历用户�
 title: 导航历史记录和向后导航
 template: detail.hbs
 op-migration-status: ready
-ms.date: 04/09/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fe9cbb9fdc9d73a38642a4f5894b1ef0f8182e69
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f3eb7ff033a81e358cb74e670b3235ade17e8a87
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174511"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220040"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Windows 应用的导航历史记录和向后导航
 
@@ -336,14 +336,14 @@ bool App::On_BackRequested()
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>页面到页面，同一对等组，无屏幕导航元素</strong>
-<p>用户从一个页面导航到同一对等组内的另一个页面。 没有可用于直接导航到两个页面的屏幕导航元素（如 <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>）。</p></td>
+<p>用户从一个页面导航到同一对等组内的另一个页面。 没有可用于直接导航到两个页面的屏幕导航元素（如 <a href="/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>）。</p></td>
 <td style="vertical-align:top;"><strong>是</strong>
 <p>在下图中，用户在同一对等组中的两个页面之间导航，并且导航应添加到导航历史记录。</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>页面到页面，同一对等组，带有屏幕导航元素</strong>
-<p>用户从一个页面导航到同一对等组内的另一个页面。 两个页面显示在相同的导航元素中，如 <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>。</p></td>
+<p>用户从一个页面导航到同一对等组内的另一个页面。 两个页面显示在相同的导航元素中，如 <a href="/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>。</p></td>
 <td style="vertical-align:top;"><strong>视情况而定</strong>
 <p>是的，添加到导航历史记录，有两个明显例外。 如果预计应用的用户经常在对等组中的页面之间切换，或者希望保留导航层次结构，则不要添加到导航历史记录。 在这种情况下，当用户按下后退时，将在用户导航到当前对等组之前返回到上一个页面。 </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>

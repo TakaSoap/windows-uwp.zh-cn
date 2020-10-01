@@ -4,16 +4,16 @@ title: 大纲/细节
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b414a1177bbfad670e3b623babce068a299a713e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 60cd7eaa9e5ef317641e105004f2456e82ee48ca
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172591"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219979"
 ---
 # <a name="masterdetails-pattern"></a>大纲/细节模式
 

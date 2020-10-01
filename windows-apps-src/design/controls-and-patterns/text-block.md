@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 83e27ef72aea195268d5163dea3b050f48547d5c
-ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
+ms.openlocfilehash: aa72b01e6c567e55e36e7f182ca962367346980c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412021"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220420"
 ---
 # <a name="text-block"></a>文本块
 
@@ -85,7 +85,7 @@ XAML 应尽可能地使用更有效的布局文本的代码路径。 此快速�
 - [CharacterSpacing](/uwp/api/windows.ui.xaml.controls.textblock.characterspacing)：仅默认值 0 是快速路径。
 - [TextTrimming](/uwp/api/windows.ui.xaml.controls.textblock.texttrimming)：仅“None”、“CharacterEllipsis”和“WordEllipsis”值是快速路径    。 **Clip** 值将禁用快速路径。
 
-> **注意**&nbsp;&nbsp;在 Windows 10 版本 1607 之前，其他属性也会影响快速路径。 如果应用在早期版本的 Windows 上运行，这些条件也会导致文本在慢速路径上呈现。 有关版本的详细信息，请参阅[版本自适应代码](/windows/uwp/debug-test-perf/version-adaptive-code)。
+> **注意**&nbsp;&nbsp;在 Windows 10 版本 1607 之前，其他属性也会影响快速路径。 如果应用在早期版本的 Windows 上运行，这些条件也会导致文本在慢速路径上呈现。 有关版本的详细信息，请参阅[版本自适应代码](../../debug-test-perf/version-adaptive-code.md)。
 - [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography)：仅各个 Typography 属性的默认值是快速路径。
 - [LineStackingStrategy](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy)：如果 [LineHeight](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) 不为 0，“BaselineToBaseline”或“MaxHeight”值将禁用快速路径   。
 - [IsTextSelectionEnabled](/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled)：仅“false”才是快速路径  。 通过将此属性设置为 **true**，禁用快速路径。
