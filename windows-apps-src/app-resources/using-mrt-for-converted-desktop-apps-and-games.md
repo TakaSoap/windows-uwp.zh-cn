@@ -1,20 +1,20 @@
 ---
 title: 为已转换的桌面应用和游戏使用 MRT
-description: 通过将 .NET 或 Win32 应用或游戏打包为 .msix 或 .appx 包，你可以利用资源管理系统加载针对运行时上下文定制的应用资源。 本主题对方法进行了深入描述。
+description: 通过将 .NET 或 Win32 应用或游戏打包为 .msix 或 .appx 包，可以利用资源管理系统加载已为运行时上下文定制的应用资源。 本主题对方法进行了深入描述。
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp, mrt, pri. 资源, 游戏, centennial, desktop app converter, mui, 卫星程序集
 ms.localizationpriority: medium
-ms.openlocfilehash: dafce15fa259fdbc8a0afab90b6617dc6cc37cf4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b86cbcfcc5a6c6284b993dcad1325b108b1ab353
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157611"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636487"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在旧应用或游戏中使用 Windows 10 资源管理系统
 
-.NET 和 Win32 应用和游戏通常本地化为不同语言，从而扩展总目标市场。 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。 通过将 .NET 或 Win32 应用或游戏打包为 .msix 或 .appx 包，你可以利用资源管理系统加载针对运行时上下文定制的应用资源。 本主题对方法进行了深入描述。
+.NET 和 Win32 应用和游戏通常本地化为不同语言，从而扩展总目标市场。 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。 通过将 .NET 或 Win32 应用或游戏打包为 .msix 或 .appx 包，可以利用资源管理系统加载已为运行时上下文定制的应用资源。 本主题对方法进行了深入描述。
 
 有多种方法可本地化传统的 Win32 应用程序，但 Windows 8 引入了[新资源管理系统](/previous-versions/windows/apps/jj552947(v=win.10))，它可以跨各种编程语言和应用程序类型进行工作，并提供超越简单本地化的功能。 本主题中，该系统将被称为“MRT”。 过去，这代表“现代资源技术”，但“现代”一词已停止使用。 资源管理器也可以被称为 MRM（现代资源管理器）或 PRI（包资源索引）。
 
@@ -26,14 +26,14 @@ ms.locfileid: "89157611"
 
 <table>
 <tr>
-<th>工作</th>
+<th>Work</th>
 <th>好处</th>
 <th>估计成本</th>
 </tr>
 <tr>
 <td>本地化包清单</td>
 <td>让本地化内容显示在 Windows Shell 和 Microsoft Store 中需要完成的最基本工作</td>
-<td>小型</td>
+<td>小</td>
 </tr>
 <tr>
 <td>使用 MRT 确定并找到资源</td>
@@ -43,12 +43,12 @@ ms.locfileid: "89157611"
 <tr>
 <td>生成资源包</td>
 <td>最小化下载和安装大小的最后一步</td>
-<td>小型</td>
+<td>小</td>
 </tr>
 <tr>
 <td>迁移到 MRT 资源格式和 API</td>
 <td>显著减小的文件大小（具体取决于现有资源技术）</td>
-<td>大型</td>
+<td>大</td>
 </tr>
 </table>
 
@@ -62,11 +62,11 @@ ms.locfileid: "89157611"
 
 下面是一个在两个按钮（`openButton` 和 `saveButton`）上有文本标签并有用于徽标 (`logoImage`) 的 PNG 文件的应用程序示例。 文本标签被本地化为英语和德语，徽标针对正常桌面显示（100% 比例系数）和高分辨率手机（300% 比例系数）进行了优化。 请注意，此图表呈现的是模型的高级概念视图；它不会准确映射到实现。
 
-<p><img src="images\conceptual-resource-model.png"/></p>
+:::image type="content" source="images\conceptual-resource-model.png" alt-text="源代码标签、查找表标签和磁盘上文件的屏幕截图。&quot;:::
 
 在图中，应用程序代码引用三个逻辑资源名称。 在运行时，`GetResource` 伪函数使用 MRT 在资源表（也称为 PRI 文件）中查找这些资源名称，并根据环境条件（用户的语言和显示的比例系数）查找最适合的候选项。 如果是标签，则直接使用字符串。 如果是徽标图像，字符串解释为文件名，并从磁盘读取文件。 
 
-如果用户使用的语言不是英语或德语，或具有100% 或300% 之外的显示比例因子，则 MRT.LOG 会根据一组回退规则选取 "最近" 匹配的候选项 (参阅 [资源管理系统](/previous-versions/windows/apps/jj552947(v=win.10)) 以获取更多后台) 。
+如果用户使用的语言不是英语或德语，或具有100% 或300% 之外的显示比例因子，则 MRT.LOG 会根据一组回退规则选取 &quot;最近" 匹配的候选项 (参阅 [资源管理系统](/previous-versions/windows/apps/jj552947(v=win.10)) 以获取更多后台) 。
 
 请注意，MRT 支持针对多个限定符定制的资源 - 例如，如果徽标图像包含还需要进行本地化的嵌入文本，徽标将有四个候选项：EN/Scale-100、DE/Scale-100、EN/Scale-300 和 DE/Scale-300。
 
@@ -198,7 +198,11 @@ ms.locfileid: "89157611"
 1. `Strings\en-us`在项目中 (或其他) 语言创建文件夹，并使用默认名称将**新项**添加到项目的根文件夹中 `resources.resw` 。 请确保选择 " **资源文件" ( ".resw") ** 而不是 " **资源字典** "-"资源字典" 是 XAML 应用程序使用的文件。
 2. 使用设计器，输入以下字符串（使用同一个 `Names`，但将 `Values` 替换为你的应用程序的相应文本）：
 
-<img src="images\editing-resources-resw.png"/>
+:::image type="content" source="images\editing-resources-resw.png" alt-text="源代码标签、查找表标签和磁盘上文件的屏幕截图。&quot;:::
+
+在图中，应用程序代码引用三个逻辑资源名称。 在运行时，`GetResource` 伪函数使用 MRT 在资源表（也称为 PRI 文件）中查找这些资源名称，并根据环境条件（用户的语言和显示的比例系数）查找最适合的候选项。 如果是标签，则直接使用字符串。 如果是徽标图像，字符串解释为文件名，并从磁盘读取文件。 
+
+如果用户使用的语言不是英语或德语，或具有100% 或300% 之外的显示比例因子，则 MRT.LOG 会根据一组回退规则选取 &quot;最近" :::
 
 > [!NOTE]
 > 如果从 Visual Studio 设计器开始，你始终可以通过按直接编辑 XML `F7` 。 但是，如果你从最小的 XML 文件，*设计器将不识别该文件*，因为它缺少大量其他元数据；你可以通过将样本 XSD 信息从设计器生成的文件复制到你手动编辑的 XML 来解决此问题。
@@ -236,8 +240,17 @@ ms.locfileid: "89157611"
 
 如果你使用的是 Visual Studio 清单设计器，请打开 appxmanifest.xml 文件，并在 "*应用程序*" 选项卡和 "*打包*" 选项卡中更改<span style="background-color: lightgreen">突出显示的值</span>：
 
-<img src="images\editing-application-info.png"/>
-<img src="images\editing-packaging-info.png"/>
+:::image type="content" source="images\editing-application-info.png" alt-text="源代码标签、查找表标签和磁盘上文件的屏幕截图。&quot;:::
+
+在图中，应用程序代码引用三个逻辑资源名称。 在运行时，`GetResource` 伪函数使用 MRT 在资源表（也称为 PRI 文件）中查找这些资源名称，并根据环境条件（用户的语言和显示的比例系数）查找最适合的候选项。 如果是标签，则直接使用字符串。 如果是徽标图像，字符串解释为文件名，并从磁盘读取文件。 
+
+如果用户使用的语言不是英语或德语，或具有100% 或300% 之外的显示比例因子，则 MRT.LOG 会根据一组回退规则选取 &quot;最近" :::
+
+:::image type="content" source="images\editing-packaging-info.png" alt-text="源代码标签、查找表标签和磁盘上文件的屏幕截图。&quot;:::
+
+在图中，应用程序代码引用三个逻辑资源名称。 在运行时，`GetResource` 伪函数使用 MRT 在资源表（也称为 PRI 文件）中查找这些资源名称，并根据环境条件（用户的语言和显示的比例系数）查找最适合的候选项。 如果是标签，则直接使用字符串。 如果是徽标图像，字符串解释为文件名，并从磁盘读取文件。 
+
+如果用户使用的语言不是英语或德语，或具有100% 或300% 之外的显示比例因子，则 MRT.LOG 会根据一组回退规则选取 &quot;最近" :::
 
 ### <a name="step-12-build-pri-file-make-an-msix-package-and-verify-its-working"></a>步骤1.2：生成 PRI 文件，生成 .MSIX 包，并验证其是否正常运行
 
@@ -462,7 +475,11 @@ makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o
 
 你还可以使用 Visual Studio 清单设计器添加此信息，使用 `Declarations` 选项卡，并记录<span style="background-color: lightgreen">突出显示值</span>：
 
-<p><img src="images\editing-declarations-info.png"/></p>
+:::image type="content" source="images\editing-declarations-info.png" alt-text="源代码标签、查找表标签和磁盘上文件的屏幕截图。&quot;:::
+
+在图中，应用程序代码引用三个逻辑资源名称。 在运行时，`GetResource` 伪函数使用 MRT 在资源表（也称为 PRI 文件）中查找这些资源名称，并根据环境条件（用户的语言和显示的比例系数）查找最适合的候选项。 如果是标签，则直接使用字符串。 如果是徽标图像，字符串解释为文件名，并从磁盘读取文件。 
+
+如果用户使用的语言不是英语或德语，或具有100% 或300% 之外的显示比例因子，则 MRT.LOG 会根据一组回退规则选取 &quot;最近" :::
 
 现在将相应的资源名称添加到你的各个 `.resw` 文件中，并将<span style="background-color: yellow">突出显示文本</span>替换为适合你的应用的文本（请记住为*每个受支持语言*执行此操作！）：
 
@@ -478,7 +495,11 @@ makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o
 
 这随后将显示在 Windows shell 的多个部分中，如文件资源管理器：
 
-<p><img src="images\file-type-tool-tip.png"/></p>
+:::image type="content" source="images\file-type-tool-tip.png" alt-text="源代码标签、查找表标签和磁盘上文件的屏幕截图。&quot;:::
+
+在图中，应用程序代码引用三个逻辑资源名称。 在运行时，`GetResource` 伪函数使用 MRT 在资源表（也称为 PRI 文件）中查找这些资源名称，并根据环境条件（用户的语言和显示的比例系数）查找最适合的候选项。 如果是标签，则直接使用字符串。 如果是徽标图像，字符串解释为文件名，并从磁盘读取文件。 
+
+如果用户使用的语言不是英语或德语，或具有100% 或300% 之外的显示比例因子，则 MRT.LOG 会根据一组回退规则选取 &quot;最近":::
 
 与之前一样生成并测试程序包，使用应显示新 UI 字符串的所有新方案。
 

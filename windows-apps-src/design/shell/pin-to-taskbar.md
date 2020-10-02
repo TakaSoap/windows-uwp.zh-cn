@@ -6,18 +6,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 任务栏, 任务栏管理器, 固定到任务栏, 主要磁贴
 ms.localizationpriority: medium
-ms.openlocfilehash: c2090d038bb3999112e8d2fa3824968916e5d7dc
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e43dd7084c042b7480aa98c638f1fc5d216e64c7
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219330"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636627"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>将应用固定到任务栏
 
 你可以通过编程方式将自己的应用固定到任务栏上，就像[将应用固定到“开始”菜单](tiles-and-notifications/primary-tile-apis.md)一样。 你可以检查应用当前是否已固定，以及任务栏是否允许固定。 
 
-![任务栏](images/taskbar/taskbar.png)
+![显示已固定应用程序的 Windows 10 任务栏屏幕截图。](images/taskbar/taskbar.png)
 
 > [!IMPORTANT]
 > **需要 Fall Creators Update**：目标必须为 SDK 16299，并且必须运行版本 16299 或更高版本才能使用任务栏 API。

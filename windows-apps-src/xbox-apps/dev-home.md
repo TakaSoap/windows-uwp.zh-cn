@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/dev-home.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 40100adb1bd9337d933b8ebd155847bde71e341a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 291b25e962aa8ac37705fd0db544f138036949d2
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172811"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636607"
 ---
 # <a name="developer-home-on-the-console-dev-home"></a>控制台上的开发人员主页（开发人员主页）
    
@@ -30,10 +30,10 @@ ms.locfileid: "89172811"
    1. 选择**所有设置**  
    1. 从默认的**开发人员**页面上，选择**开发人员主页**（主页图标）   
 
- ![](images/dev_home_icons.png)   
+ !["设置" 中 "开发人员" 页的屏幕截图。](images/dev_home_icons.png)   
   
 在较早的恢复版本上，在**特色内容**的主屏幕右侧选择“开发人员主页”磁贴，或者在 Xbox One Manager 中查看应用列表并启动**开发人员主页**。   
- ![](images/dev_home_1.png) 
+ ![显示了 "启动" 选项的 "应用程序" 选项卡的屏幕截图。](images/dev_home_1.png) 
 <a id="ID4EBC"></a>
 
    
@@ -57,8 +57,8 @@ ms.locfileid: "89172811"
    *  [Xbox Live](devhome-live.md)  
    *  [设置](devhome-settings.md)  
    *  [媒体捕获](devhome-capture.md)  
-   *  [网络](devhome-networking.md)  
-   *  [性能](devhome-performance.md)  
+   *  [联网](devhome-networking.md)  
+   *  [“性能”](devhome-performance.md)  
 
   
 <a id="ID4EKE"></a>
@@ -81,10 +81,10 @@ ms.locfileid: "89172811"
    
   
 若要访问贴靠模式，请突出显示相应工具的标题、在控制器上按**视图**按钮，并在上下文菜单中选择**贴靠**：  
- ![](images/dev_home_4.png)   
+ ![开发人员主页的屏幕截图，其中突出显示了对齐选项。](images/dev_home_4.png)   
   
 开发人员主页将贴靠到右侧。 你可以通过像往常那样双击 Nexus 按钮来切换上下文。  
- ![](images/dev_home_5.png)  
+ ![显示开发人员主页的屏幕截图，其中显示了在测试时有权访问工具的开发人员主页。](images/dev_home_5.png)  
 <a id="ID4EKF"></a>
 
    
@@ -102,7 +102,7 @@ ms.locfileid: "89172811"
    
   
 若要更改工具的大小或位置，请在标题有焦点时使用上下文菜单按钮（控制器上的“视图”按钮）。 从上下文菜单中，选择**移动**或**调整大小**。   
- ![](images/dev_home_6.png)  
+ ![开发人员主页的屏幕截图，其中突出显示了 Move 选项。](images/dev_home_6.png)  
 <a id="ID4EEG"></a>
 
    
@@ -111,7 +111,7 @@ ms.locfileid: "89172811"
    
   
 从主菜单中，你可以选择**工作区**，然后**更改主题色**。 选择一种新颜色，然后选择**保存**，以更新用于焦点突出显示的主题色。   
- ![](images/dev_home_7.png)  
+ ![显示 "工作区" 和 "更改主题颜色选项" 的 "开发" 主页的屏幕截图。](images/dev_home_7.png)  
 <a id="ID4EVG"></a>
 
    
@@ -120,7 +120,7 @@ ms.locfileid: "89172811"
    
   
 如果程序包包含多个应用，“开发人员主页”将允许你设置要启动的默认应用。 突出显示启动器中的程序包，然后按** A **按钮以打开可用应用的列表。 突出显示你想要设置为默认应用的应用，按**视图**按钮，然后从上下文菜单中选择**设置为默认**。   
- ![](images/dev_home_setdefault.png)  
+ ![突出显示 "设置为默认值" 选项的开发人员主页的屏幕截图。](images/dev_home_setdefault.png)  
 <a id="ID4EGH"></a>
 
    
@@ -129,13 +129,13 @@ ms.locfileid: "89172811"
    
   
 从启动器中，在已安装的应用和游戏列表底部，你可以选择**从网络共享中注册游戏**选项，以远程运行标题的 Loose 文件版本。   
- ![](images/dev_home_8.png)   
+ ![突出显示了 "通过网络共享注册游戏" 选项的 "开发" 主页屏幕截图。](images/dev_home_8.png)   
   
 然后，你可以输入要注册的标题的 appxmanifest.xml 文件的网络路径。 “开发人员主页”将尝试使用该共享的任何现有凭据来注册标题，并且如果需要，将提示提供新的网络凭据。 如果你需要访问其他共享（例如访问单独服务器上的符号链接资源），则需要通过以下选项添加它们。   
    
   
 你可以在控制台上通过主菜单的**管理网络凭据**选项管理这些存储的凭据（并添加其他凭据）。   
- ![](images/dev_home_9.png)   
+ ![突出显示 "管理网络凭据" 选项的 "开发" 主页的屏幕截图。](images/dev_home_9.png)   
   
 你可以查看控制台上的当前凭据，通过选择凭据路径并单击 **A** 按钮来编辑凭据，以及通过选择删除链接并单击 **A** 按钮来删除该凭据。   
    
@@ -143,7 +143,7 @@ ms.locfileid: "89172811"
 
    
 
-## <a name="in-this-section"></a>本节内容  
+## <a name="in-this-section"></a>在此部分中  
   
 [主页（开发人员主页）](devhome-home.md)  
 

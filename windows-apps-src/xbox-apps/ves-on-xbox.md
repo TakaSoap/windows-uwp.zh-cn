@@ -4,12 +4,12 @@ description: 了解如何使用启用了语音的 Shell (VES) ，将语音控件
 ms.date: 10/19/2017
 ms.topic: article
 keywords: windows 10、uwp、xbox、speech、speech enabled shell
-ms.openlocfilehash: 38afa2473dd74ab580cf38cc21d1f2b192f9b72a
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: b59b578a13145910be30c3f228305b874f9e9734
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304649"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636477"
 ---
 # <a name="using-speech-to-invoke-ui-elements"></a>使用语音调用 UI 元素
 
@@ -83,7 +83,7 @@ VES 采用以下试探法来确定将哪个短语注册到语音识别器作为�
 
 若要解决此问题，请从 Windows 10 创意者更新开始，更新了讲述人以查看 `AutomationProperties.HelpText` 属性。  如果此属性不为空，则除了外，讲述人还会说出其内容 `AutomationProperties.Name` 。  如果 `HelpText` 为空，则讲述人只会读取名称的内容。  这将允许在需要时使用较长的描述性字符串，但会在属性中保留较短的语音识别短语 `Name` 。
 
-![](images/ves_narrator.jpg)
+![显示按钮后面的代码的关系图，其中包括 AutomationProperties.Name 和 Automationproperties.livesetting。 HelpText 表明启用了语音的 Shell 侦听名称配置。](images/ves_narrator.jpg)
 
 有关详细信息，请参阅 [UI 中的辅助功能支持的自动化属性](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff400332(v=vs.95) "UI 中的辅助功能支持的自动化属性")。
 
@@ -101,7 +101,7 @@ VES 采用以下试探法来确定将哪个短语注册到语音识别器作为�
 - Cortana 覆盖将显示在右上角，告诉用户他们可以说出的内容。  用户讲话时，语音识别器识别的短语片段也会显示在此位置中。
 - VES 分析 UIA 树，查找所有可操作的控件，在语音识别语法中注册其文本，并启动持续侦听会话。
 
-    ![](images/ves_overlay.png)
+    ![显示带的屏幕截图，其中突出显示了 "显示标签" 选项。](images/ves_overlay.png)
 
 ### <a name="exiting-alm"></a>正在退出 ALM ###
 当用户使用语音与 UI 交互时，系统将保留在 ALM 中。  可以通过两种方式退出 ALM：
@@ -129,24 +129,24 @@ VES 采用以下试探法来确定将哪个短语注册到语音识别器作为�
 ## <a name="location-of-voice-tip-labels"></a>语音提示标签的位置 ##
 语音提示标签在控件的 BoundingRectangle 中水平和垂直居中。  当控件很小且分组紧密时，某些标签可能会重叠，并会被其他人遮盖，并且 VES 会尝试将这些标签分开以分隔它们，确保它们可见。  但是，这不一定会在100% 的时间运行。  如果 UI 非常拥挤，则很可能会导致某些标签被其他人遮盖。 请查看包含 "显示标签" 的 UI，以确保有足够的空间来显示语音提示可见性。
 
-![](images/ves_labels.png)
+![控件边框内水平和垂直居中的语音提示标签屏幕截图。](images/ves_labels.png)
 
 ## <a name="combo-boxes"></a>组合框 ##
 展开组合框中的每个项时，组合框中的每个项都将获取其自己的语音提示标签，并且通常会位于下拉列表后面的现有控件的顶部。  若要避免显示混乱的、令人困惑的 muddle 标签 (其中组合框项标签与组合框后的控件标签混合) 在展开组合框时，只会显示其子项的标签; 所有其他语音提示标签都将隐藏。  然后，用户可以选择某个下拉项或 "关闭" 组合框。
 
 - 折叠组合框上的标签：
 
-    ![](images/ves_combo_closed.png)
+    ![显示和声音视频输出窗口的屏幕截图，其中的标签位于折叠组合框上。](images/ves_combo_closed.png)
 
 - 展开组合框上的标签：
 
-    ![](images/ves_combo_open.png)
+    ![带有展开组合框中的标签的显示和声音视频输出窗口的屏幕截图。](images/ves_combo_open.png)
 
 
 ## <a name="scrollable-controls"></a>可滚动控件 ##
 对于滚动控件，滚动命令的语音提示将在控件的每个边缘上居中。  将仅为可操作的滚动方向显示语音提示。例如，如果垂直滚动不可用，则不会显示 "向上滚动" 和 "向下滚动"。  当存在多个可滚动区域时，VES 将使用序号来区分它们 (例如。 "向右滚动 1"、"向右滚动 2" 等 ) 。
 
-![](images/ves_scroll.png) 
+![向左滚动并向右滚动 U I 方向的屏幕截图。](images/ves_scroll.png) 
 
 ## <a name="disambiguation"></a>消除歧义 ##
 如果多个 UI 元素具有相同的名称，或语音识别器与多个候选项匹配，则 VES 将进入歧义消除模式。  在此模式下，将为所涉及的元素显示语音提示标签，以便用户可以选择正确的标签。 用户可以通过说 "取消" 取消消除歧义模式。
@@ -155,15 +155,15 @@ VES 采用以下试探法来确定将哪个短语注册到语音识别器作为�
 
 - 处于活动状态的侦听模式下，消除歧义之前;用户说 "我不明确"：
 
-    ![](images/ves_disambig1.png) 
+    ![活动侦听模式的屏幕截图现在可以说出显示的选项，并且按钮上不显示任何标签。](images/ves_disambig1.png) 
 
 - 两个按钮都匹配;消除歧义开始：
 
-    ![](images/ves_disambig2.png) 
+    ![活动侦听模式的屏幕截图，其中显示了所需的选项，以及按钮上的项1和项2标签。](images/ves_disambig2.png) 
 
 - 选择 "选择 2" 时显示单击操作：
 
-    ![](images/ves_disambig3.png) 
+    ![活动侦听模式的屏幕截图现在，您可以说到 "显示的内容" 选项，而在第一个按钮上，"我的标签" 不明确。](images/ves_disambig3.png) 
  
 ## <a name="sample-ui"></a>示例 UI ##
 下面是基于 XAML 的 UI 的示例，以各种方式设置 AutomationProperties.Name：
@@ -203,11 +203,11 @@ VES 采用以下试探法来确定将哪个短语注册到语音识别器作为�
  
 - 处于活动状态的侦听模式下，不显示标签：
 
-    ![](images/ves_alm_nolabels.png) 
+    ![活动侦听模式的屏幕截图，其中包含以查看标签，即显示 "显示标签" 选项且不显示标签。](images/ves_alm_nolabels.png) 
 
 - 在活动监听模式下，在用户显示 "显示标签" 后：
 
-    ![](images/ves_alm_labels.png) 
+    ![活动侦听模式的屏幕截图（如果已完成），假设显示 "停止侦听" 选项和在 U I 控件上显示的标签。](images/ves_alm_labels.png) 
 
 对于 `button1` ，XAML 自动 `AutomationProperties.Name` 使用控件的可视文本内容中的文本填充该属性。  这就是为什么即使没有显式集，也会出现语音提示标签 `AutomationProperties.Name` 。
 
@@ -220,5 +220,5 @@ VES 采用以下试探法来确定将哪个短语注册到语音识别器作为�
 ## <a name="see-also"></a>另请参阅
 - [UI 自动化基础知识](/dotnet/framework/ui-automation/ui-automation-fundamentals "UI 自动化基础知识")
 - [UI 中的辅助功能支持的自动化属性](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff400332(v=vs.95) "UI 中的辅助功能支持的自动化属性")
-- [常见问题解答](frequently-asked-questions.md)
+- [常见问题](frequently-asked-questions.md)
 - [Xbox One 上的 UWP](index.md)
