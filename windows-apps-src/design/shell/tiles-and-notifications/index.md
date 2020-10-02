@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ce19fdca0ff79c430fcae7353cda595702f260c0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 580edca578a0d518d89b5d2fdb30c9304be35cef
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218430"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636617"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>适用于 Windows 应用的磁贴、锁屏提醒和通知
  
@@ -22,7 +22,7 @@ ms.locfileid: "91218430"
 
 > **重要的 API**：[UWP 社区工具包通知 NuGet 程序包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" />
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" alt="Screenshot of a static tile and a live tile displaying a notification and a badge." />
 磁贴是应用在“开始”菜单上的表示形式。 每个 Windows 应用都有一个磁贴。 你可以启用不同的磁贴大小（小、中等、宽形和大）。</p>
 
 <p>你可以使用<em>磁贴通知</em>更新磁贴，以向用户传达新信息，如头条新闻或最近未读邮件的主题。</p>
