@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 81c8edc65f78de14c1c42611ea1e8d97046128ae
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1b3d9e4be7c45d4d2b9b5063087a78556497dc9b
+ms.sourcegitcommit: bcf60b6d460dc4855f207ba21da2e42644651ef6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170361"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91376245"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
 
@@ -186,7 +186,7 @@ runtimeclass Gift
 }
 ```
 
-假设我们想要构造一个不在盒子内的 **Gift**（使用未初始化的 **GiftBox** 构造的 **Gift**）。 首先，让我们看看错误  的做法。 我们知道有一个接受 **GiftBox** 的 **Gift** 构造函数。 但是，如果我们想要传递 null **GiftBox**（通过统一初始化调用 **Gift** 构造函数，如下所示），那么我们不会  获得我们想要的结果。
+假设我们想要构造一个不在盒子内的 **Gift**（使用未初始化的 **GiftBox** 构造的 **Gift**）。 首先，让我们看看错误  的做法。 我们知道有一个接受 **GiftBox** 的 **Gift** 构造函数。 但是，如果想要传递 null GiftBox（通过统一初始化调用 Gift 构造函数，如下所示），则不会获得我们想要的结果 。
 
 ```cppwinrt
 // These are *not* what you intended. Doing it in one of these two ways
@@ -283,13 +283,26 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 有关更多详细信息、代码以及使用在 Windows 运行时组件实现的 API 的演练，请参阅[使用 C++/WinRT 创建 Windows 运行时组件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)和[使用 C++/WinRT 创作事件](./author-events.md)。
 
 ## <a name="if-the-api-is-implemented-in-the-consuming-project"></a>如果在使用的项目中实现 API
-通过 XAML UI 使用的类型必须为运行时类，即使其位于与 XAML 相同的项目中。
+本部分中的代码示例摘自 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)主题。 请查看该主题了解更多详细信息、代码和演练，其中该演练描述了使用在采用它的同一项目中实现的运行时类的情况。
 
-在这种情况下，从运行时类的 Windows 运行时元数据 (`.winmd`) 中生成一个投影类型。 再次包含一个头文件，但这次是通过其 **std::nullptr_t** 构造函数来构造投影类型。 该构造函数不执行任何初始化，所以你接下来必须通过 [winrt::make  ](/uwp/cpp-ref-for-winrt/make) 帮助程序函数向该实例分配一个值，同时传递任何必要的构造函数参数。 在使用代码的同一项目中实现的运行时类无需进行注册，且无需通过 Windows 运行时/COM 激活进行实例化。
+通过 XAML UI 使用的类型必须为运行时类，即使其位于与 XAML 相同的项目中。 在这种情况下，从运行时类的 Windows 运行时元数据 (`.winmd`) 中生成一个投影类型。 同样，你还可包含一个标头，但随后可选择 C++/WinRT 版本 1.0 或版本 2.0 方法来构造该运行时类的实例。 版本 1.0 方法使用 [winrt::make](/uwp/cpp-ref-for-winrt/make)；版本 2.0 方法被称作统一构造。 让我们来逐一查看。
 
-对于此代码示例，需要“空白应用(C++/WinRT)”  项目。
+### <a name="constructing-by-using-winrtmake"></a>使用 winrt::make 进行构造
+让我们从默认方法（C++/WinRT 版本 1.0）开始，因为最好至少要熟悉该模式。 通过其 std::nullptr_t 构造函数构造投影类型。 该构造函数不执行任何初始化，所以你接下来必须通过 [winrt::make  ](/uwp/cpp-ref-for-winrt/make) 帮助程序函数向该实例分配一个值，同时传递任何必要的构造函数参数。 在使用代码的同一项目中实现的运行时类无需进行注册，且无需通过 Windows 运行时/COM 激活进行实例化。
+
+有关完整演练，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。 本部分显示了摘自该演练的内容。
 
 ```cppwinrt
+// MainPage.idl
+import "BookstoreViewModel.idl";
+namespace Bookstore
+{
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        BookstoreViewModel MainViewModel{ get; };
+    }
+}
+
 // MainPage.h
 ...
 struct MainPage : MainPageT<MainPage>
@@ -297,10 +310,9 @@ struct MainPage : MainPageT<MainPage>
     ...
     private:
         Bookstore::BookstoreViewModel m_mainViewModel{ nullptr };
-        ...
-    };
-}
+};
 ...
+
 // MainPage.cpp
 ...
 #include "BookstoreViewModel.h"
@@ -312,7 +324,45 @@ MainPage::MainPage()
 }
 ```
 
-有关更多详细信息、代码以及使用在使用的项目中实现的运行时类的演练，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
+### <a name="uniform-construction"></a>统一构造
+在 C++/WinRT 版本 2.0 及更高版本中，有一种优化的构造形式可供你使用，它被称作“统一构造”（请参见 [C++/WinRT 2.0 中的新增功能和更改](./news.md#news-and-changes-in-cwinrt-20)）。
+
+有关完整演练，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。 本部分显示了摘自该演练的内容。
+
+若要使用统一构造而不是 [winrt::make](/uwp/cpp-ref-for-winrt/make)，你需要一个激活工厂。 要生成激活工厂，一种好的方式是向 IDL 添加构造函数。
+
+```idl
+// MainPage.idl
+import "BookstoreViewModel.idl";
+namespace Bookstore
+{
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        MainPage();
+        BookstoreViewModel MainViewModel{ get; };
+    }
+}
+```
+
+然后，在 `MainPage.h` 中声明和初始化 m_mainViewModel；此操作只需一步，如下所示。
+
+```cppwinrt
+// MainPage.h
+...
+struct MainPage : MainPageT<MainPage>
+{
+    ...
+    private:
+        Bookstore::BookstoreViewModel m_mainViewModel;
+        ...
+    };
+}
+...
+```
+
+接下来，在 `MainPage.cpp` 中的 MainPage 构造函数中，无需使用代码 `m_mainViewModel = winrt::make<Bookstore::implementation::BookstoreViewModel>();`。
+
+有关统一构造的详细信息，请参阅[选择加入统一构造和直接实现访问](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access)。
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>实例化和返回投影类型和接口
 以下投影类型和实例的示例可能类似于使用的项目。 请记住，投影类型（如此示例中的一种投影类型）是工具生成的，而不是你自己创作的内容。

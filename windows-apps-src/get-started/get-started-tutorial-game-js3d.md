@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ee8eb8ea34205f2e597bf41da61f5ab63714566
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e3f46e0d1837f391ffc7cc6ca361a2c92212565b
+ms.sourcegitcommit: 9940ed6431aadbd8d4e54ca23d8ae44d3a2d048d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162831"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403922"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 创建 3D JavaScript 游戏
 
@@ -406,7 +406,7 @@ ___
 
 现在，是时候进入该迷宫并开始四处查看了。 为此，我们将使用 PointerLockControls.js 库和我们的摄像头  。
 
-PoinerLockControls.js 库使用鼠标来按鼠标移动的方向旋转摄像头，使玩家能够四处查看  。 
+PointerLockControls.js 库使用鼠标来按鼠标移动的方向旋转摄像头，使玩家能够四处查看。 
 
 首先，让我们先为 index.html 文件添加一些新的元素  ：
 
@@ -433,7 +433,7 @@ var blocker = document.getElementById('blocker');
 ```
 
 
-现在，在 `init()` 函数中，我们可以创建一个新的 `PoinerLockControls` 对象，将其粘帖到我们的 `camera` 并添加 `camera`（通过 `controls.getObject()` 访问）。
+现在，在 `init()` 函数中，我们可以创建一个新的 `PointerLockControls` 对象，将其粘帖到我们的 `camera` 并添加 `camera`（通过 `controls.getObject()` 访问）。
 
 ```javascript
 controls = new THREE.PointerLockControls(camera);

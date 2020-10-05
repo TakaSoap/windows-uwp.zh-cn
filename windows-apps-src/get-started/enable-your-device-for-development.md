@@ -3,21 +3,24 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: 启用设备进行开发
 description: 了解如何通过在 Visual Studio 中启用开发人员模式来支持将 Windows 10 设备用于开发和调试。
 keywords: 入门 开发人员许可证 Visual Studio，开发人员许可证 启用设备
-ms.date: 05/22/2020
+ms.date: 09/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 702e3aa166501c3e9974398ae5b89e832cfa7391
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2a227494bb597b25c090d4ff57982e5d5c739184
+ms.sourcegitcommit: 9940ed6431aadbd8d4e54ca23d8ae44d3a2d048d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159051"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403912"
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
 ## <a name="activate-developer-mode-sideload-apps-and-access-other-developer-features"></a>启用开发人员模式、旁加载应用和使用其他开发人员功能
 
 ![启用设备进行开发](images/developer-poster.png)
+
+> [!IMPORTANT]
+> 如果不是在自己的电脑上自行创建应用程序，则无需启用开发人员模式。 若要尝试解决计算机上遇到的问题，请查看 [Windows 帮助](https://support.microsoft.com/hub/4338813/windows-help?os=windows-10)。 如果是第一次开发，则还需要下载所需的工具来[进行设置](get-set-up.md)。
 
 如果你正在使用计算机进行一般的日常活动，如玩游戏、进行 Web 浏览、收发电子邮件或使用 Office 应用，则不需要激活开发人员模式，并且实际上不应该激活该模式。 此页面上的其余信息对你来说并不重要，你可以放心地重新执行你正在执行的任何操作。 谢谢拜访！
 

@@ -1,5 +1,5 @@
 ---
-Description: 本文列出并提供了随附 Segoe MDL2 Assets 字体的字形使用指南。
+description: 本文列出并提供了随附 Segoe MDL2 Assets 字体的字形使用指南。
 Search.Refinement.TopicID: 184
 title: Segoe MDL2 图标指南
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
@@ -9,12 +9,13 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0663f9947249f54a888bf2d3f52f522ceb885604
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.custom: contperfq1
+ms.openlocfilehash: 5c2dc3237f2ff68ce2836fc80fa0936e13d84dd7
+ms.sourcegitcommit: f46edb85d523a4a1f5006787d357cdc9d090aefe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175781"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414857"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 图标
 
@@ -67,8 +68,6 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
 
 ## <a name="icon-list"></a>图标列表
 请记住，Segoe MDL2 Assets 字体所包含的图标远多于此处显示的图标  。 许多图标都用于特定用途，通常不用于其他位置。
-
-
 
 <table style="background-color: white; color: black">
 
