@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 08471b8a04d37c34378b549b8534979a4188d7b8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4da50161008645374fbe95de73882da9d9f9f826
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173951"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750653"
 ---
 # <a name="controls-for-windows-apps"></a>适用于 Windows 应用的控件
 
@@ -42,9 +42,17 @@ ms.locfileid: "89173951"
 
 ## <a name="get-the-windows-ui-library"></a>获取 Windows UI 库
 
-|  |  |
-| - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | 某些控件仅在 Windows UI 库 (WinUI) 中提供，该库是一个包含新控件和 UI 功能的 NuGet 包。 若要获取它，请参阅 [Windows UI 库概述和安装说明](/uwp/toolkits/winui/)。<br/>从 WinUI 2.2 始，许多控件的默认样式已更新为使用圆角。 有关详细信息，请参阅[圆角半径](../style/rounded-corner.md)。 |
+:::row:::
+   :::column:::
+      ![WinUI 徽标](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      某些控件仅在 Windows UI 库 (WinUI) 中提供，该库是一个包含新控件和 UI 功能的 NuGet 包。 若要获取它，请参阅 [Windows UI 库概述和安装说明](/uwp/toolkits/winui/)。<br/>从 WinUI 2.2 始，许多控件的默认样式已更新为使用圆角。 有关详细信息，请参阅[圆角半径](../style/rounded-corner.md)。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 ## <a name="alphabetical-index"></a>按字母顺序排序的索引
 
