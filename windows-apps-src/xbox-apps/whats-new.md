@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fe63c527-8f06-43a5-868f-de909f5664b3
 ms.localizationpriority: medium
-ms.openlocfilehash: 937d13c8764cda2f0a4592f6ca3a78d3b35a9529
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 24c7893f18037d5585670f3e4de6a04998654e3a
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168951"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763102"
 ---
 # <a name="whats-new-for-developers-in-the-latest-update-of-uwp-on-xbox-one"></a>Xbox One 上的 UWP 的最新更新中面向开发人员的新增功能
 
@@ -47,7 +47,3 @@ Windows Device Portal (WDP) 现在包含面向控制台设置的其他支持。
  - 现在，你可以捕获主机的屏幕截图。 有关获取屏幕截图的详细信息，请参阅 [/ext/screenshot](wdp-media-capture-api.md) 参考主题。
  - 该工具可以部署 Loose 文件版本的应用。 有关 Loose 文件版本的详细信息，请参阅 [/api/app/packagemanager/register](wdp-loose-folder-register-api.md) 参考主题。
  - 可以从开发电脑上的“文件资源管理器”访问主机上的开发人员文件。 有关通过“文件资源管理器”访问文件的详细信息，请参阅 [/ext/smb/developerfolder](wdp-smb-api.md) 参考主题。
-
-## <a name="see-also"></a>另请参阅
-- [已知问题](known-issues.md)
-- [Xbox One 上的 UWP](index.md)

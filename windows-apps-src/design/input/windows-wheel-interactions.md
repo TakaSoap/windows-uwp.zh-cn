@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a054299b933e523f8594419c4e954c3a0bf1e4
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: fd21ca0a27979a5febbc5a3a76a02a1beb2138fd
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749963"
+ms.locfileid: "91763016"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial 交互
 
@@ -57,12 +57,12 @@ Surface Dial 之类的 Windows Wheel 设备是一类全新的输入设备，使�
    :::column:::
       **Surface Dial 离屏菜单**
 
-      ![Surface Dial 离屏菜单](images/windows-wheel/surface-dial-menu-offscreen.png)
+      ![外围网络离线菜单的屏幕截图。](images/windows-wheel/surface-dial-menu-offscreen.png)
    :::column-end:::
    :::column:::
       **Surface Dial 屏幕菜单**
 
-      ![Surface Dial 屏幕菜单](images/windows-wheel/surface-dial-menu-onscreen.png)
+      ![屏幕截图屏幕菜单的屏幕截图。](images/windows-wheel/surface-dial-menu-onscreen.png)
    :::column-end:::
 :::row-end:::
 
@@ -132,17 +132,17 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
 
 :::row:::
    :::column:::
-      ![具有 Alpha 背景的图标](images/windows-wheel/surface-dial-menu-icon1.png)
+      ![带有 alpha 背景的图标的屏幕截图。](images/windows-wheel/surface-dial-menu-icon1.png)
 
       *具有 Alpha 背景的图标*
    :::column-end:::
    :::column:::
-      ![使用默认主题图标在 Wheel 菜单上显示的图标](images/windows-wheel/surface-dial-menu-icon2.png)
+      ![使用默认主题在滚轮菜单上显示的图标的屏幕截图。](images/windows-wheel/surface-dial-menu-icon2.png)
 
       *使用默认主题在 Wheel 菜单上显示的图标*
    :::column-end:::
    :::column:::
-      ![Surface Dial 屏幕菜单](images/windows-wheel/surface-dial-menu-icon3.png)
+      ![使用高对比度白色主题显示在滚轮菜单上的图标的屏幕截图。](images/windows-wheel/surface-dial-menu-icon3.png)
 
       *使用高对比度白色主题在 Wheel 菜单上显示的图标*
    :::column-end:::
@@ -171,7 +171,7 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
 
 1. 首先，我们在 XAML 中声明我们的 UI（仅一个滑块和一个切换按钮）。
 
-   ![示例应用 UI 的图像](images/windows-wheel/surface-dial-snippet-customtool1.png)  
+   ![径向控制器示例的屏幕截图，其中的水平滑块设置为左侧。](images/windows-wheel/surface-dial-snippet-customtool1.png)  
    *示例应用 UI*
 
     ```Xaml
@@ -272,7 +272,7 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
 
 当我们运行该应用时，我们使用 Surface Dial 与之进行交互。 首先，我们长按以打开菜单，然后选择我们的自定义工具。 自定义工具激活后，通过旋转 Dial 可调整滑块控件，通过单击 Dial 可切换开关。
 
-![使用 Surface Dial 自定义工具激活的示例应用 UI 的图像](images/windows-wheel/surface-dial-snippet-customtool2.png)  
+![径向控制器示例的屏幕截图，其中水平滑块设置为中间。](images/windows-wheel/surface-dial-snippet-customtool2.png)  
 *使用 Surface Dial 自定义工具激活的示例应用 UI*
 
 **指定内置工具**
@@ -362,7 +362,7 @@ Surface Dial 无法检测到正在使用哪只手，但用户可以在 **Windows
 
       向下
 
-      In
+      在
    :::column-end:::
 :::row-end:::
 
@@ -370,7 +370,7 @@ Surface Dial 无法检测到正在使用哪只手，但用户可以在 **Windows
 | --- | --- | --- | --- |
 | 横向 | 基于 Surface Dial 顶部的左右映射 | Right | Left |
 | 垂直 | 基于 Surface Dial 左侧的上下映射 | 向下 | 向上 |
-| Z 轴 | 映射到向上/向右的放大（或靠近）<br/>映射到向下/向左的缩小（或远离） | In | 出 |
+| Z 轴 | 映射到向上/向右的放大（或靠近）<br/>映射到向下/向左的缩小（或远离） | 在 | 出 |
 
 #### <a name="developer-guidance"></a>开发人员指南
 
@@ -480,7 +480,7 @@ private void MyController_ButtonClicked(RadialController sender,
 
 1. 首先，我们在 XAML 中声明我们的 UI（四个部分，每一个都有一个滑块和一个切换按钮）。
 
-   ![示例应用 UI 的图像](images/windows-wheel/surface-dial-snippet-customtool3.png)  
+   ![径向控制器示例的屏幕截图，其中四个水平滑块设置为左侧。](images/windows-wheel/surface-dial-snippet-customtool3.png)  
    *示例应用 UI*
 
    ```xaml 
@@ -680,14 +680,12 @@ private void ActivateGridAtLocation(Point Location)
 
 当我们运行该应用时，我们使用 Surface Dial 与之进行交互。 首先，我们将设备置于 Surface Studio 屏幕上，应用会检查到该设备并将它与右下部分关联（请参阅图像）。 然后，我们长按 Surface Dial 以打开菜单，然后选择我们的自定义工具。 自定义工具激活后，通过旋转 Surface Dial 可调整滑块控件，通过单击 Surface Dial 可切换开关。
 
-![使用 Surface Dial 自定义工具激活的示例应用 UI 的图像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
+![径向控制器示例的屏幕截图，其中四个水平滑块设置为左，第四个控制器突出显示。](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *使用 Surface Dial 自定义工具激活的示例应用 UI*
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本主题概述了有关以下方面的 Surface Dial 输入设备与 UX 和开发人员指南：与 Surface Studio 配合使用时，如何针对离屏情形以及屏幕情形自定义用户体验。
-
-## <a name="feedback"></a>反馈
 
 请将你的问题、建议和反馈发送到 [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com) 。
 
