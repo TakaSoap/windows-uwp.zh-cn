@@ -2,16 +2,16 @@
 Description: 添加新式 XAML 用户界面、创建 MSIX 包，以及将其他新式组件并入桌面应用程序中。
 title: 实现 Windows 桌面应用的现代化
 ms.topic: article
-ms.date: 04/17/2019
+ms.date: 10/02/2020
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d2ae73cc32fd4e3717fe40b8a6ec8c3397b40619
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5df07995c2e4175bc9a67010a78c353cbd9d8cfa
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161531"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671496"
 ---
 # <a name="modernize-your-desktop-apps"></a>实现桌面应用的现代化
 
@@ -24,7 +24,7 @@ Windows 10 和通用 Windows 平台 (UWP) 提供的许多功能可以用来在�
 
 ## <a name="windows-ui-library"></a>Windows UI 库
 
-Windows UI 库是一组 NuGet 程序包，提供用于 Windows 10 应用的控件和其他用户界面元素。 WinUI 开始时是作为工具包提供的，并为面向低端版 Windows 10 的 UWP 应用提供新版和更新版 UWP 控件。 WinUI 的范围已扩大，现在是 Windows 10 应用（包括 UWP、.NET 和 Win32）的新式原生用户界面 (UI) 平台。
+Windows UI 库是一组 NuGet 程序包，提供用于 Windows 10 应用的控件和其他用户界面元素。 WinUI 开始时是作为工具包提供的，为面向低端版 Windows 10 的 UWP 应用提供新版和更新版 WinRT XAML 控件。 WinUI 的范围已扩大，现在是 Windows 10 应用（包括 UWP、.NET 和原生 Win32）的新式原生用户界面 (UI) 平台。
 
 可通过以下方式在桌面应用中使用 WinUI：
 
@@ -43,7 +43,7 @@ MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（
 
 ## <a name="net-core-3"></a>.NET Core 3
 
-.NET Core 3 是 .NET Core 的最新主要版本。 这个版本的主要特点是支持 Windows 桌面应用，包括 Windows Forms 应用和 WPF 应用。 你可以在 .NET Core 3 上运行新的和现有的 Windows 桌面应用并体验 .NET Core 提供的所有优势。 托管在 [XAML 岛](xaml-islands.md)中的 UWP 控件也可在面向 .NET Core 3 的 Windows 窗体和 WPF 应用中使用。
+.NET Core 3 是 .NET Core 的最新主要版本。 这个版本的主要特点是支持 Windows 桌面应用，包括 Windows Forms 应用和 WPF 应用。 你可以在 .NET Core 3 上运行新的和现有的 Windows 桌面应用并体验 .NET Core 提供的所有优势。 托管在 [XAML 岛](xaml-islands.md)中的 WinRT XAML 控件也可在面向 .NET Core 3 的 Windows 窗体和 WPF 应用中使用。
 
 有关详细信息，请参阅 [.NET Core 3.0 中的新增功能](/dotnet/core/whats-new/dotnet-core-3-0)。
 
@@ -53,15 +53,15 @@ MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（
 
 有关详细信息，请参阅[在桌面应用中使用 Windows 运行时 API](desktop-to-uwp-enhance.md)。
 
-## <a name="host-uwp-controls-xaml-islands"></a>托管 UWP 控件（XAML 岛）
+## <a name="host-winrt-xaml-controls-xaml-islands"></a>托管 WinRT XAML 控件（XAML 岛）
 
 从 Windows 10 版本 1903 开始，可以将 [UWP XAML 控件](/windows/uwp/design/controls-and-patterns/controls-by-function)直接添加到与窗口句柄 (HWND) 关联的 WPF、Windows 窗体或 C++ Win32 应用中的任何 UI 元素。 这意味着，你可以将最新的 UWP 功能（例如 [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) 和支持 [Fluent Design System](/windows/uwp/design/fluent-design-system/index) 的控件完全集成到 Windows 以及桌面应用的其他显示表面中去。 此开发人员方案有时称为“XAML 岛”。
 
-有关详细信息，请参阅[桌面应用中的 UWP 控件](xaml-islands.md)
+有关详细信息，请参阅[桌面应用中的 WinRT XAML 控件](xaml-islands.md)
 
 ## <a name="use-the-visual-layer-in-desktop-apps"></a>在桌面应用中使用可视化层
 
-现在可以在非 UWP 桌面应用中使用 Windows 运行时 API 来增强 WPF、Windows 窗体和 C++ Win32 应用的外观和功能，并充分利用只能通过 UWP 使用的最新 Windows 10 UI 功能。 在需要创建自定义体验且这些体验超出可以通过 XAML 岛托管的内置 UWP 控件的范畴时，这很有用。
+现在可以在非 UWP 桌面应用中使用 Windows 运行时 API 来增强 WPF、Windows 窗体和 C++ Win32 应用的外观和功能，并充分利用只能通过 UWP 使用的最新 Windows 10 UI 功能。 在需要创建自定义体验且这些体验超出可以通过 XAML 岛托管的内置 WinRT XAML 控件的范畴时，这很有用。
 
 有关详细信息，请参阅[使用可视化层实现桌面应用的现代化](visual-layer-in-desktop-apps.md)。
 
@@ -72,13 +72,13 @@ MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（
 可通过多种方式向桌面应用授予标识：
 
 * 将其打包到 [MSIX 包](/windows/msix/desktop/desktop-to-uwp-root)中。 MSIX 是一种新式应用包格式，提供适合所有 Windows 应用、WPF、Windows 窗体和 Win32 应用的通用打包体验。 它提供了可靠的安装和更新体验、功能系统灵活的托管安全模型、对 Microsoft Store 的支持、企业管理以及许多自定义分发模型。 有关详细信息，请参阅 MSIX 文档中的[打包桌面应用程序](/windows/msix/desktop/desktop-to-uwp-root)。
-* 如果无法采用 MSIX 打包来部署桌面应用，那么，自 Windows 10 版本 2004 起，你可通过创建一个仅包含程序包清单的稀疏 MSIX 包来授予包标识。 有关详细信息，请参阅[向未打包的桌面应用授予标识](grant-identity-to-nonpackaged-apps.md)。
+* 如果无法采用 MSIX 打包来部署桌面应用，那么，自 Windows 10 版本 2004 起，你可通过创建一个仅包含程序包清单的稀疏 MSIX 包来授予包标识  。 有关详细信息，请参阅[向未打包的桌面应用授予标识](grant-identity-to-nonpackaged-apps.md)。
 
 <a id="desktop-uwp-controls"></a>
 
-## <a name="uwp-controls-optimized-for-desktop-apps"></a>针对桌面应用优化的 UWP 控件
+## <a name="winrt-xaml-controls-optimized-for-desktop-apps"></a>针对桌面应用优化的 WinRT XAML 控件
 
-不管你是要构建专门面向桌面设备系列的 UWP 应用，还是要在 WPF、Windows 窗体或 C++ Win32 桌面应用中使用 UWP 控件，均可利用下面这些全新的和更新的 UWP 控件。这些控件旨在提供可以与 [Fluent Design System](/windows/uwp/design/fluent-design-system/index) 配合使用的桌面优化体验。 这些控件是在 Windows 10 版本 1809（2018 年 10 月更新，或者版本 10.0.17763）中引入的。
+不管你是要构建专门面向桌面设备系列的 UWP 应用，还是要在 WPF、Windows 窗体或 C++ Win32 桌面应用中使用 WinRT XAML 控件，均可利用下面这些全新的和更新的 WinRT XAML 控件。这些控件旨在提供可以与 [Fluent Design System](/windows/uwp/design/fluent-design-system/index) 配合使用的桌面优化体验。 这些控件是在 Windows 10 版本 1809（2018 年 10 月更新，或者版本 10.0.17763）中引入的。
 
 | 控件 |  说明 |
 |------ |--------------|

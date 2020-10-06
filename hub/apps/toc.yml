@@ -19,23 +19,23 @@
                   href: desktop/modernize/desktop-to-uwp-enhance.md
                 - name: 可用的 Windows 运行时 API
                   href: desktop/modernize/desktop-to-uwp-supported-api.md
-            - name: 托管 UWP XAML 控件（XAML 岛）
+            - name: 托管 WinRT XAML 控件（XAML 岛）
               items:
                 - name: 概述
                   href: desktop/modernize/xaml-islands.md
                 - name: WPF 和 Windows 窗体应用中的 XAML Islands
                   items:
-                    - name: 托管标准 UWP 控件
+                    - name: 托管标准 WinRT XAML 控件
                       href: desktop/modernize/host-standard-control-with-xaml-islands.md
-                    - name: 托管自定义 UWP 控件
+                    - name: 托管自定义 WinRT XAML 控件
                       href: desktop/modernize/host-custom-control-with-xaml-islands.md
                 - name: C++ Win32 应用中的 XAML Islands
                   items:
-                    - name: 使用 UWP XAML 托管 API
+                    - name: 使用 WinRT XAML 托管 API
                       href: desktop/modernize/using-the-xaml-hosting-api.md
-                    - name: 托管标准 UWP 控件
+                    - name: 托管标准 WinRT XAML 控件
                       href: desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
-                    - name: 托管自定义 UWP 控件
+                    - name: 托管自定义 WinRT XAML 控件
                       href: desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
                     - name: 高级方案
                       href: desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
