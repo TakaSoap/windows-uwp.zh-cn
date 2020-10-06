@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf6bc95eef416b481642d84eef8315451916604
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 411ecb63189084ba83f9971ded2bbe02d899aabd
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174101"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762871"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>对 UI 和应用包清单中的字符串进行本地化
 
@@ -40,7 +40,7 @@ ms.locfileid: "89174101"
 
     `Strings/en-US/Resources.resw`
 
-    ![添加资源，英语](images/addresource-en-us.png)
+    ![> E N U S > 的字符串的添加资源表的屏幕截图 .resw 文件。](images/addresource-en-us.png)
 
     在此示例中，“Greeting”是你可以从你的标记中引用的字符串资源标识符，我们将向你进行演示。 对于标识符“Greeting”，将为文本属性提供一个字符串，为宽度属性提供一个字符串。 “Greeting.Text”是属性标识符的一个示例，因为它对应 UI 元素的属性。 例如，你还可以在名称列中添加“Greeting.Foreground”，并将它的值设置为“红色”。 “Farewell”标识符是一个简单的字符串资源标识符；它没有子属性，并且可以从强制性代码加载，我们将向你进行演示。 “备注”列是向翻译提供任何特殊说明的一个好地方。
 
@@ -108,13 +108,13 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 
 1. 打开应用程序包清单源文件 (`Package.appxmanifest` 文件) ，默认情况下，你的应用程序 `Display name` 表示为字符串文字。
 
-   ![添加资源，英语](images/display-name-before.png)
+   ![Appxmanifest.xml 文件的屏幕截图，其中显示了 "应用程序" 选项卡，显示名称设置为 "艾德工作周期"。](images/display-name-before.png)
 
 2. 要制作此字符串的本地化版本，请打开 `Resources.resw` 并使用名称“AppDisplayName”和值“Adventure Works Cycles”添加新的字符串资源。
 
 3. 使用你刚创建的字符串资源标识符引用（“AppDisplayName”）替换显示名称字符串参数。 你使用 `ms-resource` URI（统一资源标识符）方案来执行此操作。
 
-   ![添加资源，英语](images/display-name-after.png)
+   ![Appxmanifest.xml 文件的屏幕截图，显示 "应用程序" 选项卡，显示名称设置为 "M S 资源应用程序显示名称"。](images/display-name-after.png)
 
 4. 对清单中的每个需要本地化的字符串重复此过程。 例如，你的应用的短名称（你可以将其配置为显示在“开始”菜单的应用磁贴上）。 有关你可以本地化的应用包清单中的所有项目的列表，请参阅[可本地化清单项目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)。
 
@@ -137,7 +137,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 
 ![添加资源，法语](images/addresource-fr-fr.png)
 
-## <a name="test-your-app"></a>测试应用
+## <a name="test-your-app"></a>测试应用程序
 
 测试应用的默认显示语言。 然后，你可以在 "**设置**时间" 中更改显示语言  >  **& 语言**  >  **区域 & 语言**  >  **语言**并重新测试应用。 在你的 UI 和 shell 中查看字符串（例如，你的标题栏，即你的显示语言，以及磁贴上的短名称）。
 
@@ -147,7 +147,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 
 你可以将所有字符串保留在一个单独的资源文件 (resw) 中，也可以将它们构建到多个资源文件中。 例如，你可能想要将错误消息保留在一个资源文件中，将你的应用包清单保留在另一个资源文件中，将你的 UI 字符串保留在第三个资源文件中。 这是你在此案例中的文件夹结构外观。
 
-![添加资源，英语](images/manifest-resources.png)
+!["解决方案" 面板的屏幕截图，其中显示了艾德公司的工作周期 > 带有德语、U 和法语的字符串文件夹以及法语区域设置文件夹和文件。](images/manifest-resources.png)
 
 要将字符串资源标识符引用的范围设定在一个特定的文件，你只需在标识符前面添加 `/<resources-file-name>/`。 下面的标记示例假定 `ErrorMessages.resw` 包含名称为“PasswordTooWeak.Text”且其值对错误进行描述的资源。
 
@@ -303,7 +303,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 1. 当从代码解析资源时，请使用 [GetForViewIndependentUse](/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) 而不是 [GetForCurrentView](/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) ，因为未打包方案中没有 *当前视图* 。 如果在未打包的情况下调用 [GetForCurrentView](/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) ，则会发生以下异常：无法 *在没有 CoreWindow 的线程上创建资源上下文。*
 1. 使用 [MakePri.exe](./compile-resources-manually-with-makepri.md) 手动生成应用的资源 pri 文件。
-    - `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`运行 {2}
+    - `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`运行
     - &lt;Priconfig.default.xml &gt; 必须省略 " &lt; 打包 &gt; " 部分，以便将所有资源捆绑在单个资源的 pri 文件中。 如果使用[createconfig](./makepri-exe-command-options.md#createconfig-command)创建的默认[MakePri.exe 配置文件](./makepri-exe-configuration.md)，则需要在 &lt; &gt; 创建后手动删除 "打包" 部分。
     - &lt;Priconfig.default.xml &gt; 必须包含将项目中的所有资源合并为单个资源 pri 文件所需的所有相关索引器。 [Createconfig](./makepri-exe-command-options.md#createconfig-command)创建的默认[MakePri.exe 配置文件](./makepri-exe-configuration.md)包含所有索引器。
     - 如果不使用默认配置，请确保已启用 PRI 索引器 (查看默认配置 "如何执行此操作") 合并位于项目根目录中的 UWP 项目引用、NuGet 引用等的 PRIs。

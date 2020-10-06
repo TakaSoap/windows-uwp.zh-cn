@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: ae3d4826c4468cabea318ed230da0cfbb4d5f24b
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 005ec4883eeb52a84e458ba917439d093ab0041f
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219110"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763080"
 ---
 # <a name="keyboard-interactions"></a>键盘交互
 
@@ -55,7 +55,7 @@ ms.locfileid: "91219110"
 
 以下是本主题中将会讨论的设备和工具：
 
-| 设备/工具                       | 描述     |
+| 设备/工具                       | 说明     |
 |-----------------------------------|-----------------|
 |键盘（硬件和软件）   |除了标准硬件键盘，Windows 应用程序还支持两个软件键盘： [触控 (或软件) 键盘](#software-keyboard) 和 [屏幕键盘](#on-screen-keyboard)。|
 |游戏板和遥控器         |Xbox 游戏板和遥控器是 [10 英尺体验](../devices/designing-for-tv.md)中的基础输入设备。 有关对游戏板和远程控制的 Windows 支持的特定详细信息，请参阅 [游戏板和远程控制交互](gamepad-and-remote-interactions.md)。|
@@ -405,8 +405,8 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 | Space         | A 按钮                            | 选择按钮       |
 | Enter         | A 按钮                            | 选择按钮       |
 | Escape        | B 按钮                            | “后退”按钮         |
-| Home/End      | 不可用                                 | 不可用                 |
-| 向上/向下翻页  | 扳机键按钮用于垂直滚动，缓冲键按钮用于水平滚动   | 不可用                 |
+| Home/End      | 空值                                 | 空值                 |
+| 向上/向下翻页  | 扳机键按钮用于垂直滚动，缓冲键按钮用于水平滚动   | 空值                 |
 
 设计 UWP 应用以供与游戏板和遥控器搭配使用时应注意的一些主要差异包括：
 -   文本输入需要用户按 A 激活文本控件。
@@ -507,11 +507,13 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 使用所有受支持的输入设备测试你的应用，确保可以一致、直观的方式导航至 UI 元素并且没有意外的元素会干扰所需的 Tab 键顺序。
 
 ## <a name="related-articles"></a>相关文章
+
 * [键盘事件](keyboard-events.md)
 * [标识输入设备](identify-input-devices.md)
 * [响应触摸键盘的存在](respond-to-the-presence-of-the-touch-keyboard.md)
 * [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-* [NavigationView 控件键盘操作详细信息](../controls-and-patterns/navigationview.md#hierarchical-navigation) 
+* [NavigationView 控件键盘操作详细信息](../controls-and-patterns/navigationview.md#hierarchical-navigation)
+* [键盘辅助功能](../accessibility/keyboard-accessibility.md)
 
 ## <a name="appendix"></a>附录
 
@@ -547,7 +549,7 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 -   菜单栏
 -   Menu item
 -   工具栏
--   列出
+-   列表
 -   列表项
 
 下面是适用于触摸键盘的其他模式的示例。 第一个图像是默认布局，第二个图像是缩略图布局（可能不适用于所有语言）。
@@ -576,7 +578,3 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 ***屏幕键盘***
 
 有关屏幕键盘的更多详细信息，请访问[屏幕键盘页面](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard)。
-
-## <a name="related-articles"></a>相关文章
-
-- [键盘辅助功能](../accessibility/keyboard-accessibility.md)
