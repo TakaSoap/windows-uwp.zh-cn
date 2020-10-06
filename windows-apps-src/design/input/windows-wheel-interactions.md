@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: e9a619fc58b1b84755e33fd36ebacd99f98d6b7f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 29a054299b933e523f8594419c4e954c3a0bf1e4
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220410"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749963"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial 交互
 
@@ -27,10 +27,18 @@ Surface Dial 之类的 Windows Wheel 设备是一类全新的输入设备，使�
 > [!IMPORTANT]
 > 在本主题中，我们重点介绍了 Surface Dial 交互，但该信息也同样适用于所有 Windows Wheel 设备。 
 
-| 视频 |   |
-| --- | --- |
-| <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> |
-| *Surface Dial 应用合作伙伴* | *适用于开发人员的 Surface Dial* |
+:::row:::
+   :::column:::
+      <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+
+      *Surface Dial 应用合作伙伴*
+   :::column-end:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+
+      *适用于开发人员的 Surface Dial*
+   :::column-end:::
+:::row-end:::
 
 借助基于*旋转*操作（或手势）的外形规格，Surface Dial 旨在成为对主设备输入进行补充的多模态辅助输入设备。 在大多数情况下，用户使用其惯用手执行某个任务（如使用笔进行墨迹书写）期间，该设备由其非惯用手操控。 它不是专为精确指针输入（如触摸、笔或鼠标）而设计。 
 
@@ -45,9 +53,18 @@ Surface Dial 之类的 Windows Wheel 设备是一类全新的输入设备，使�
 >
 >系统通过检测 Surface Dial 的接触位置和边界收集的信息，来处理设备的遮挡，并环绕 Surface Dial 的外侧显示更大号的菜单。 应用还可以使用这一相同信息针对设备的存在及其预期用途（例如用户的手和臂的放置）排布 UI。
 
-| Surface Dial 离屏菜单 | | Surface Dial 屏幕菜单 |
-| --- | --- | --- |
-| ![Surface Dial 离屏菜单](images/windows-wheel/surface-dial-menu-offscreen.png) | | ![Surface Dial 屏幕菜单](images/windows-wheel/surface-dial-menu-onscreen.png) |
+:::row:::
+   :::column:::
+      **Surface Dial 离屏菜单**
+
+      ![Surface Dial 离屏菜单](images/windows-wheel/surface-dial-menu-offscreen.png)
+   :::column-end:::
+   :::column:::
+      **Surface Dial 屏幕菜单**
+
+      ![Surface Dial 屏幕菜单](images/windows-wheel/surface-dial-menu-onscreen.png)
+   :::column-end:::
+:::row-end:::
 
 ## <a name="system-integration"></a>系统集成
 
@@ -113,10 +130,23 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
 - 图标应填满图像的大部分
 - 白色图标应具有黑色边框才能在高对比度模式下可见
 
-|   |   |   |
-| --- | --- | --- |
-| ![具有 Alpha 背景的图标](images/windows-wheel/surface-dial-menu-icon1.png) | ![使用默认主题图标在 Wheel 菜单上显示的图标](images/windows-wheel/surface-dial-menu-icon2.png) | ![Surface Dial 屏幕菜单](images/windows-wheel/surface-dial-menu-icon3.png) |
-| *具有 Alpha 背景的图标* | *使用默认主题在 Wheel 菜单上显示的图标* | *使用高对比度白色主题在 Wheel 菜单上显示的图标* |
+:::row:::
+   :::column:::
+      ![具有 Alpha 背景的图标](images/windows-wheel/surface-dial-menu-icon1.png)
+
+      *具有 Alpha 背景的图标*
+   :::column-end:::
+   :::column:::
+      ![使用默认主题图标在 Wheel 菜单上显示的图标](images/windows-wheel/surface-dial-menu-icon2.png)
+
+      *使用默认主题在 Wheel 菜单上显示的图标*
+   :::column-end:::
+   :::column:::
+      ![Surface Dial 屏幕菜单](images/windows-wheel/surface-dial-menu-icon3.png)
+
+      *使用高对比度白色主题在 Wheel 菜单上显示的图标*
+   :::column-end:::
+:::row-end:::
 
 **使用描述性的简洁名称**  
 工具名称以及工具图标一起显示在工具菜单中，屏幕阅读器也会使用该工具名称。 
@@ -316,16 +346,31 @@ Surface Dial 无法检测到正在使用哪只手，但用户可以在 **Windows
 
 内置工具和 Dial 菜单中的命令遵循适用于基于旋转的交互的以下指南：
 
-|   |   |   |
-| --- | --- | --- |
-| Left<br/>向上<br/>出 | ![Surface Dial 的图像](images/windows-wheel/surface-dial-rotate.png) | Right<br/>向下<br/>在 |
-|   |   |   |
+:::row:::
+   :::column:::
+      Left
+
+      向上
+
+      出 
+   :::column-end:::
+   :::column span="2":::
+      ![Surface Dial 的图像](images/windows-wheel/surface-dial-rotate.png)
+   :::column-end:::
+   :::column:::
+      Right
+
+      向下
+
+      In
+   :::column-end:::
+:::row-end:::
 
 | 概念性方向 | 映射到 Surface Dial | 顺时针旋转 | 逆时针旋转 |
 | --- | --- | --- | --- |
 | 横向 | 基于 Surface Dial 顶部的左右映射 | Right | Left |
 | 垂直 | 基于 Surface Dial 左侧的上下映射 | 向下 | 向上 |
-| Z 轴 | 映射到向上/向右的放大（或靠近）<br/>映射到向下/向左的缩小（或远离） | 在 | 出 |
+| Z 轴 | 映射到向上/向右的放大（或靠近）<br/>映射到向下/向左的缩小（或远离） | In | 出 |
 
 #### <a name="developer-guidance"></a>开发人员指南
 
@@ -638,7 +683,7 @@ private void ActivateGridAtLocation(Point Location)
 ![使用 Surface Dial 自定义工具激活的示例应用 UI 的图像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *使用 Surface Dial 自定义工具激活的示例应用 UI*
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本主题概述了有关以下方面的 Surface Dial 输入设备与 UX 和开发人员指南：与 Surface Studio 配合使用时，如何针对离屏情形以及屏幕情形自定义用户体验。
 

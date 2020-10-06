@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 02fba8027c5bddec5e5c501783b32dbab5642db9
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 8ec5791c212e2fdfbafd40131d96ace6c88fb519
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219950"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749953"
 ---
 # <a name="keyboard-accelerators"></a>键盘快捷键
 
@@ -347,17 +347,13 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 | 添加第二个新项 | Ctrl + Shift + N |
 | （利用撤消）删除所选项 | Del、Ctrl+D |
 | （不用撤消）删除所选项 | Shift + Del |
-| Bold | Ctrl + B |
+| 粗体 | Ctrl + B |
 | 下划线 | Ctrl + U |
 | 斜体 | Ctrl + I |
-
 | **导航** | |
-| ------------- | ----------------------------------- |
 | 在聚焦的控件或窗口中查找内容 | Ctrl+F |
 | 转至下一个搜索结果 | F3 |
-
 | **其他操作** | |
-| ------------- | ----------------------------------- |
 | 添加收藏夹 | Ctrl + D | 
 | 刷新 | F5 或 Ctrl + R | 
 | 放大 | Ctrl + + | 

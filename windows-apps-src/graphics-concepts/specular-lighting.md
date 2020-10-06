@@ -7,45 +7,41 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f28f1f46cfd34ee1aab614c57dc99019dbd6111
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f60bd4019f330058d4396a5b0d75d00f90ecff09
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597972"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750183"
 ---
 # <a name="specular-lighting"></a>高光照明
 
 
-*高光照明*可标识光照射至物体表面且反射至相机时产生的明亮反射高光。 高光照明比漫射光更强，且可更快照射至物体表面。 虽然计算高光照明的时间长于漫射照明，但高光照明具有可将重要细节添加至物体表面的优势。
+*反射照明* 标识当光源碰到对象表面并向照相机反射后发生的明亮反射高光。 高光照明比漫射光更强，且可更快照射至物体表面。 虽然计算高光照明的时间长于漫射照明，但高光照明具有可将重要细节添加至物体表面的优势。
 
 建立镜面反射模型要求系统了解光线照射的方向及观看者眼睛所对方向。 系统采用了简化版的 Phong 镜面反射模型，这种模型使用中间矢量，可获得近似于镜面反射的强度。
 
 默认的照明状态不会计算反射高光。
 
-## <a name="span-idspecularlightingequationspanspan-idspecularlightingequationspanspan-idspecularlightingequationspanspecular-lighting-equation"></a><span id="Specular_Lighting_Equation"></span><span id="specular_lighting_equation"></span><span id="SPECULAR_LIGHTING_EQUATION"></span>反射照明等式
+## <a name="span-idspecular_lighting_equationspanspan-idspecular_lighting_equationspanspan-idspecular_lighting_equationspanspecular-lighting-equation"></a><span id="Specular_Lighting_Equation"></span><span id="specular_lighting_equation"></span><span id="SPECULAR_LIGHTING_EQUATION"></span>高光照明公式
 
 
 高光照明可用以下公式说明。
 
-|                                                                             |
-|-----------------------------------------------------------------------------|
-| 反射照明 = Cₛ\*总和\[Lₛ \* （N 推荐配置H)<sup>P</sup> \*输入\*位置\] |
-
- 
+> 镜面光照 = Cs \* sum \[ Ls \* (N ·H) <sup>P</sup> \* Atten \* 点\]
 
 变量及其类型和范围如下所列：
 
-| 参数    | 默认值 | 在任务栏的搜索框中键入                                                             | 描述                                                                                            |
+| 参数    | 默认值 | 类型                                                             | 说明                                                                                            |
 |--------------|---------------|------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
 | Cₛ           | (0,0,0,0)     | 红色、绿色、蓝色和 alpha 透明度（浮点值） | 反射颜色。                                                                                        |
-| 总和          | 不适用           | 不适用                                                              | 每束光线的反射组件的总和。                                                          |
-| N            | 不适用           | 3D 矢量（x、y 和 z 浮点值）                    | 顶点法线。                                                                                         |
-| H            | 不适用           | 3D 矢量（x、y 和 z 浮点值）                    | 中间矢量。 请参阅有关中间矢量的部分。                                                |
+| sum          | 空值           | 空值                                                              | 每束光线的反射组件的总和。                                                          |
+| N            | 空值           | 3D 矢量（x、y 和 z 浮点值）                    | 顶点法线。                                                                                         |
+| H            | 空值           | 3D 矢量（x、y 和 z 浮点值）                    | 中间矢量。 请参阅有关中间矢量的部分。                                                |
 | <sup>P</sup> | 0.0           | 浮点                                                   | 镜面反射能量。 范围为 0 至正无穷                                                     |
 | Lₛ           | (0,0,0,0)     | 红色、绿色、蓝色和 alpha 透明度（浮点值） | 光线反射颜色。                                                                                  |
-| Atten        | 不适用           | 浮点                                                   | 灯光衰减值。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。 |
-| Spot         | 不适用           | 浮点                                                   | 聚焦因素。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。        |
+| Atten        | 空值           | 浮点                                                   | 灯光衰减值。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。 |
+| 现付         | 空值           | 浮点                                                   | 聚焦因素。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。        |
 
  
 
@@ -55,42 +51,36 @@ Cₛ 的值为：
 -   顶点颜色 2，前提为镜面材料来源是反射顶点颜色，且在顶点声明中提供第二个顶点的颜色。
 -   材料反射颜色
 
-**请注意**  如果使用任一反射材料源选项，并且未提供的顶点的颜色，则使用材料反射颜色。
+**注意**   如果使用了 "镜面材料源" 选项，并且未提供顶点颜色，则使用材料反射颜色。
 
  
 
 单独处理和内插所有灯光后，将反射组件的范围限制为 0 至 255。
 
-## <a name="span-idthehalfwayvectorspanspan-idthehalfwayvectorspanspan-idthehalfwayvectorspanthe-halfway-vector"></a><span id="The_Halfway_Vector"></span><span id="the_halfway_vector"></span><span id="THE_HALFWAY_VECTOR"></span>中间的矢量
+## <a name="span-idthe_halfway_vectorspanspan-idthe_halfway_vectorspanspan-idthe_halfway_vectorspanthe-halfway-vector"></a><span id="The_Halfway_Vector"></span><span id="the_halfway_vector"></span><span id="THE_HALFWAY_VECTOR"></span>中间向量
 
 
 中间向量 (H) 存在于以下两个向量中间：从物体顶点到光源的向量，及从物体顶点到相机位置的向量。 Direct3D 提供两种计算中间向量的方式。 如果启用相机相关的反射高光（而不是正交反射高光），则系统通过相机位置和顶点位置，及灯光的方向矢量计算中间矢量。 下面的公式对此进行了说明。
 
-|                                           |
-|-------------------------------------------|
-| H = norm(norm(Cₚ - Vₚ) + L<sub>dir</sub>) |
+> H = norm(norm(Cₚ - Vₚ) + L<sub>dir</sub>)
 
  
 
-| 参数       | 默认值 | 在任务栏的搜索框中键入                                          | 描述                                                  |
+| 参数       | 默认值 | 类型                                          | 说明                                                  |
 |-----------------|---------------|-----------------------------------------------|--------------------------------------------------------------|
-| Cₚ              | 不适用           | 3D 矢量（x、y 和 z 浮点值） | 相机位置。                                             |
-| Vₚ              | 不适用           | 3D 矢量（x、y 和 z 浮点值） | 顶点位置。                                             |
-| L<sub>dir</sub> | 不适用           | 3D 矢量（x、y 和 z 浮点值） | 从顶点位置到光线位置的方向矢量。 |
+| Cₚ              | 空值           | 3D 矢量（x、y 和 z 浮点值） | 相机位置。                                             |
+| Vₚ              | 空值           | 3D 矢量（x、y 和 z 浮点值） | 顶点位置。                                             |
+| L<sub>dir</sub> | 空值           | 3D 矢量（x、y 和 z 浮点值） | 从顶点位置到光线位置的方向矢量。 |
 
  
 
 以这种方式确定中间矢量可能是计算密集型操作。 或者，使用正交反射高光（而不是相机相关的反射高光）指示系统进行操作，就像 Z 轴上的视角距离为无限远。 通过以下公式来反映。
 
-|                                     |
-|-------------------------------------|
-| H = norm((0,0,1) + L<sub>dir</sub>) |
-
- 
+> H = norm((0,0,1) + L<sub>dir</sub>)
 
 这种设置的计算密集程度较低，但精确度大大降低，所以最适合采用正交投影的应用使用。
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>实例
 
 
 在此示例中，物体的颜色由场景反射光颜色和材料反射颜色决定。
@@ -114,7 +104,7 @@ Cₛ 的值为：
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[照明的数学](mathematics-of-lighting.md)
+[照明的数学运算](mathematics-of-lighting.md)
 
  
 

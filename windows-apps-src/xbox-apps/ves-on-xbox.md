@@ -4,12 +4,12 @@ description: 了解如何使用启用了语音的 Shell (VES) ，将语音控件
 ms.date: 10/19/2017
 ms.topic: article
 keywords: windows 10、uwp、xbox、speech、speech enabled shell
-ms.openlocfilehash: b59b578a13145910be30c3f228305b874f9e9734
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: fa0f56a6821fd8858cab317654cd0ead5d731693
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636477"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750263"
 ---
 # <a name="using-speech-to-invoke-ui-elements"></a>使用语音调用 UI 元素
 
@@ -20,31 +20,31 @@ ms.locfileid: "91636477"
 
 - 用户打开了 Xbox 控制台并想要浏览其应用，以查找感兴趣的内容：
 
-        User: "Hey Cortana, open My Games and Apps"
+    > 用户： "你好 Cortana，请打开我的游戏和应用程序"
 
 - 用户处于活动状态的侦听模式 (ALM) ，这意味着，控制台现在正在侦听用户调用屏幕上可见的控件，而无需说 "你好 Cortana"。  用户现在可以切换到查看应用并滚动应用列表：
 
-        User: "applications"
+    > 用户： "应用程序"
 
 - 若要滚动视图，用户可以简单地说：
 
-        User: "scroll down"
+    > 用户： "向下滚动"
 
 - 用户会看到感兴趣的应用程序的 box 画面，但忘记了名称。  用户要求显示语音提示标签：
 
-        User: "show labels"
+    > 用户： "显示标签"
 
 - 现在清楚地说，应用程序可以启动：
 
-        User: "movies and TV"
+    > 用户： "电影和电视"
 
 - 若要退出活动侦听模式，用户会告诉 Xbox 停止侦听：
 
-        User: "stop listening"
+    > 用户： "停止侦听"
 
 - 稍后，可以通过以下方式启动新的活动侦听会话：
 
-        User: "Hey Cortana, make a selection" or "Hey Cortana, select"
+    > 用户： "你好 Cortana，进行选择" 或 "你好 Cortana"，请选择 "
 
 ## <a name="ui-automation-dependency"></a>UI 自动化依赖项 ##
 VES 是 UI 自动化客户端，它依赖于应用程序的 UI 自动化提供程序公开的信息。 这与 Windows 平台上的 "讲述人" 功能已使用的基础结构相同。  UI 自动化启用对用户界面元素的编程访问，包括控件的名称、控件的类型以及它所实现的控件模式。  当应用程序中的 UI 变化时，VES 将响应 UIA 更新事件，并重新分析更新后的 UI 自动化树，以查找所有可操作的项，并使用此信息来生成语音识别语法。 
@@ -168,36 +168,37 @@ VES 采用以下试探法来确定将哪个短语注册到语音识别器作为�
 ## <a name="sample-ui"></a>示例 UI ##
 下面是基于 XAML 的 UI 的示例，以各种方式设置 AutomationProperties.Name：
 
-    <Page
-        x:Class="VESSampleCSharp.MainPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:VESSampleCSharp"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d">
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Button x:Name="button1" Content="Hello World" HorizontalAlignment="Left" Margin="44,56,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="button2" AutomationProperties.Name="Launch Game" Content="Launch" HorizontalAlignment="Left" Margin="44,106,0,0" VerticalAlignment="Top" Width="99"/>
-            <TextBlock AutomationProperties.Name="Day of Week" x:Name="label1" HorizontalAlignment="Left" Height="22" Margin="168,62,0,0" TextWrapping="Wrap" Text="Select Day of Week:" VerticalAlignment="Top" Width="137"/>
-            <ComboBox AutomationProperties.LabeledBy="{Binding ElementName=label1}" x:Name="comboBox" HorizontalAlignment="Left" Margin="310,57,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem Content="Monday" IsSelected="True"/>
-                <ComboBoxItem Content="Tuesday"/>
-                <ComboBoxItem Content="Wednesday"/>
-                <ComboBoxItem Content="Thursday"/>
-                <ComboBoxItem Content="Friday"/>
-                <ComboBoxItem Content="Saturday"/>
-                <ComboBoxItem Content="Sunday"/>
-            </ComboBox>
-            <Button x:Name="button3" HorizontalAlignment="Left" Margin="44,156,0,0" VerticalAlignment="Top" Width="213">
-                <Grid>
-                    <TextBlock AutomationProperties.Name="Accept">Accept Offer</TextBlock>
-                    <TextBlock Margin="0,25,0,0" Foreground="#FF5A5A5A">Exclusive offer just for you</TextBlock>
-                </Grid>
-            </Button>
-        </Grid>
-    </Page>
-
+```xaml
+<Page
+    x:Class="VESSampleCSharp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VESSampleCSharp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="button1" Content="Hello World" HorizontalAlignment="Left" Margin="44,56,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button2" AutomationProperties.Name="Launch Game" Content="Launch" HorizontalAlignment="Left" Margin="44,106,0,0" VerticalAlignment="Top" Width="99"/>
+        <TextBlock AutomationProperties.Name="Day of Week" x:Name="label1" HorizontalAlignment="Left" Height="22" Margin="168,62,0,0" TextWrapping="Wrap" Text="Select Day of Week:" VerticalAlignment="Top" Width="137"/>
+        <ComboBox AutomationProperties.LabeledBy="{Binding ElementName=label1}" x:Name="comboBox" HorizontalAlignment="Left" Margin="310,57,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Monday" IsSelected="True"/>
+            <ComboBoxItem Content="Tuesday"/>
+            <ComboBoxItem Content="Wednesday"/>
+            <ComboBoxItem Content="Thursday"/>
+            <ComboBoxItem Content="Friday"/>
+            <ComboBoxItem Content="Saturday"/>
+            <ComboBoxItem Content="Sunday"/>
+        </ComboBox>
+        <Button x:Name="button3" HorizontalAlignment="Left" Margin="44,156,0,0" VerticalAlignment="Top" Width="213">
+            <Grid>
+                <TextBlock AutomationProperties.Name="Accept">Accept Offer</TextBlock>
+                <TextBlock Margin="0,25,0,0" Foreground="#FF5A5A5A">Exclusive offer just for you</TextBlock>
+            </Grid>
+        </Button>
+    </Grid>
+</Page>
+```
 
 在此示例中，用户界面的外观将类似于，无需使用语音提示标签。
  
@@ -220,5 +221,5 @@ VES 采用以下试探法来确定将哪个短语注册到语音识别器作为�
 ## <a name="see-also"></a>另请参阅
 - [UI 自动化基础知识](/dotnet/framework/ui-automation/ui-automation-fundamentals "UI 自动化基础知识")
 - [UI 中的辅助功能支持的自动化属性](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff400332(v=vs.95) "UI 中的辅助功能支持的自动化属性")
-- [常见问题](frequently-asked-questions.md)
+- [常见问题解答](frequently-asked-questions.md)
 - [Xbox One 上的 UWP](index.md)

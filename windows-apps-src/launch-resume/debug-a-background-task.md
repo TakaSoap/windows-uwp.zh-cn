@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b5daec3f4d0fa823341ff7590094463ef412b88
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e7d008a6956c3acd22dcb99e6bf4e1cda1442545
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156001"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750163"
 ---
 # <a name="debug-a-background-task"></a>调试后台任务
 
@@ -42,16 +42,16 @@ ms.locfileid: "89156001"
 
 2.  在调试器中运行应用程序，然后使用 **生命周期事件** 工具栏触发后台任务。 此下拉菜单显示可以由 Visual Studio 激活的后台任务的名称。
 
-> [!NOTE]
-> 默认情况下，Visual Studio 中不显示生命周期事件工具栏选项。 若要显示这些选项，请右键单击 Visual Studio 中的当前工具栏，并确保已启用 " **调试位置** " 选项。
+    > [!NOTE]
+    > 默认情况下，Visual Studio 中不显示生命周期事件工具栏选项。 若要显示这些选项，请右键单击 Visual Studio 中的当前工具栏，并确保已启用 " **调试位置** " 选项。
 
-    For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
+    若要此功能正常运行，则后台任务必须已注册并且必须仍等待触发。 例如，如果后台任务已使用一次性 TimeTrigger 注册，并且该触发器已引发，则通过 Visual Studio 启动该任务将无效。
 
-> [!Note]
-> 使用以下触发器的后台任务以及使用触发器类型为 [**SmsReceived**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 的 [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) 的后台任务均无法采用此方式激活：[**Application trigger**](/uwp/api/windows.applicationmodel.background.applicationtrigger)、 [**MediaProcessing trigger**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger)、[**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)、[**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)。  
-> **应用程序触发器**和 **MediaProcessingTrigger** 可以在带有 `trigger.RequestAsync()` 的代码中以信号形式手动发出。
+    > [!Note]
+    > 使用以下触发器的后台任务以及使用触发器类型为 [**SmsReceived**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 的 [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) 的后台任务均无法采用此方式激活：[**Application trigger**](/uwp/api/windows.applicationmodel.background.applicationtrigger)、 [**MediaProcessing trigger**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger)、[**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)、[**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)。  
+    > **应用程序触发器**和 **MediaProcessingTrigger** 可以在带有 `trigger.RequestAsync()` 的代码中以信号形式手动发出。
 
-![调试后台任务](images/debugging-activation.png)
+    ![调试后台任务](images/debugging-activation.png)
 
 3.  激活后台任务时，调试程序将附加到该后台任务并在 VS 中显示调试输出。
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a20463414f0b96ea51bdf9796c48759975bfc43e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 62085377da89d64c8ba0799dc6bab13c17675f90
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162211"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750673"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>将 Windows 运行时 8.x XAML 和 UI 移植到 UWP
 
@@ -187,20 +187,20 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 
 下表描述了对 [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) 和 [**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) 控件模板中的视觉状态和视觉状态组的更改。
 
-| 8.1                 |                         | Windows 10        |                     |
+| 8.1                 | 功能状态           | Windows 10        | 功能状态       |
 |---------------------|-------------------------|-------------------|---------------------|
 | CommonStates        |                         | CommonStates      |                     |
 |                     | 一般                  |                   | 一般              |
 |                     | PointerOver             |                   | PointerOver         |
 |                     | 已按下                 |                   | 已按下             |
 |                     | PointerOverPressed      |                   | [不可用]       |
-|                     | Disabled                |                   | [不可用]       |
+|                     | 禁用                |                   | [不可用]       |
 |                     | [不可用]           |                   | PointerOverSelected |
-|                     | [不可用]           |                   | 选定            |
+|                     | [不可用]           |                   | 已选定            |
 |                     | [不可用]           |                   | PressedSelected     |
 | [不可用]       |                         | DisabledStates    |                     |
-|                     | [不可用]           |                   | Disabled            |
-|                     | [不可用]           |                   | 已启用             |
+|                     | [不可用]           |                   | 禁用            |
+|                     | [不可用]           |                   | 启用             |
 | SelectionHintStates |                         | [不可用]     |                     |
 |                     | VerticalSelectionHint   |                   | [不可用]       |
 |                     | HorizontalSelectionHint |                   | [不可用]       |
@@ -214,7 +214,7 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 |                     | UnselectedPointerOver   |                   | [不可用]       |
 |                     | UnselectedSwiping       |                   | [不可用]       |
 |                     | 选择               |                   | [不可用]       |
-|                     | 选定                |                   | [不可用]       |
+|                     | 已选定                |                   | [不可用]       |
 |                     | SelectedSwiping         |                   | [不可用]       |
 |                     | SelectedUnfocused       |                   | [不可用]       |
 

@@ -6,12 +6,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e5f86da29900e0ef83fb0bf41d2c8d9fe59727f2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2b16c957991889cb5f39a775397de72ff56beffc
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172511"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749974"
 ---
 # <a name="guidelines-for-cross-slide"></a>交叉滑动指南
 
@@ -58,14 +58,18 @@ ms.locfileid: "89172511"
 
 **注意**   如果内容区域可以在两个方向（如 web 浏览器或电子读者）中平移，则应使用 "按住" 计时交互来调用对象（如图像和超链接）的上下文菜单。
 
- 
+:::row:::
+   :::column:::
+     ![水平平移，二维列表](images/groupedlistview1.png)
 
-|                                                                                         |                                                                                         |
-|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| ![水平平移，二维列表](images/groupedlistview1.png)                | ![垂直平移，一维列表](images/listviewlistlayout.png)                |
-| 水平平移二维列表。 垂直拖动以选择或移动项。 | 垂直平移一维列表。 水平拖动以选择或移动项。 |
+     水平平移二维列表。 垂直拖动以选择或移动项。 
+   :::column-end:::
+   :::column:::
+      ![垂直平移，一维列表](images/listviewlistlayout.png)
 
- 
+      垂直平移一维列表。 水平拖动以选择或移动项。
+   :::column-end:::
+:::row-end:::
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 

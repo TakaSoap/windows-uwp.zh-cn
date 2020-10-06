@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c60794a52c3d8a5f597d4ab2d09490405c98f85a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5ec8832d4e0e8c72954bf4d0582aac8240da2efe
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218370"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750683"
 ---
 # <a name="create-adaptive-tiles"></a>创建自适应磁贴
 
@@ -412,16 +412,15 @@ new AdaptiveText()
 
 **基本文本样式**
 
-|                                |                           |             |
-|--------------------------------|---------------------------|-------------|
 | &lt;文本提示-style = " \* "/&gt; | 字体高度               | 字体粗细 |
+|--------------------------------|---------------------------|-------------|
 | caption                        | 12 个有效像素 (epx) | 定期     |
 | body                           | 15 epx                    | 定期     |
 | base                           | 15 epx                    | 半粗体    |
 | 副标题                       | 20 epx                    | 定期     |
 | title                          | 24 epx                    | 半细   |
-| 副标题                      | 34 epx                    | 亮       |
-| 标头的值开始缓存响应                         | 46 epx                    | 亮       |
+| 副标题                      | 34 epx                    | 轻型       |
+| 标头的值开始缓存响应                         | 46 epx                    | 轻型       |
 
  
 
@@ -429,11 +428,11 @@ new AdaptiveText()
 
 这些变体减少了行高度，因此上方和下方的内容距离文本更近。
 
-|                  |
-|------------------|
-| titleNumeral     |
-| subheaderNumeral |
-| headerNumeral    |
+- titleNumeral
+
+- subheaderNumeral
+
+- headerNumeral
 
  
 
@@ -441,18 +440,25 @@ new AdaptiveText()
 
 每种样式都有为文本提供 60% 不透明度的标题变体，这通常会使文本颜色带有淡灰色阴影。
 
-|                        |
-|------------------------|
-| captionSubtle          |
-| bodySubtle             |
-| baseSubtle             |
-| subtitleSubtle         |
-| titleSubtle            |
-| titleNumeralSubtle     |
-| subheaderSubtle        |
-| subheaderNumeralSubtle |
-| headerSubtle           |
-| headerNumeralSubtle    |
+- captionSubtle
+
+- bodySubtle
+
+- baseSubtle
+
+- subtitleSubtle
+
+- titleSubtle
+
+- titleNumeralSubtle
+
+- subheaderSubtle
+
+- subheaderNumeralSubtle
+
+- headerSubtle
+
+- headerNumeralSubtle
 
  
 
@@ -787,7 +793,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 
 ![天气磁贴的示例](images/adaptive-tiles-weathertile.png)
 
-## <a name="images"></a>图像
+## <a name="images"></a>映像
 
 
 &lt;image&gt; 元素用于在磁贴通知上显示图像。 图像可以嵌入到磁贴内容中（默认）、作为内容背后的背景图像，或作为从通知顶部以动画形式进入的速览图像。

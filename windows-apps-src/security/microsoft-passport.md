@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb35a262f02576f0425460c8e27ce0016a08d1a
-ms.sourcegitcommit: 651a6b9769fad1736ab16e2a4e423258889b248e
+ms.openlocfilehash: bcb43748baeeb7f68ec246cb0277fbef0944fc47
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91366893"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750352"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -411,8 +411,8 @@ Windows 10 引入了更高级别且易于实施的安全性。 Windows Hello 提
 
 ### <a name="62-terminology"></a>6.2 术语
 
-| | |
-|-|-|
+| 术语 | 定义 |
+| ---- | ---------- |
 | AIK | 证明标识密钥用于提供此类加密证明（TPM 密钥证明），方法是对不可迁移密钥的属性进行签名，并向信赖方提供属性和签名以供验证。 生成的签名称为“证明语句”。 由于该签名使用 AIK 私钥（只能在创建它的 TPM 中使用）创建，信赖方可以信任经证明的密钥确实不可迁移，并且无法在该 TPM 之外使用。 |
 | AIK 证书 | AIK 证书用于证明 TPM 内存在 AIK。 它还用于证明经源自该特定 TPM 的 AIK 认证的其他密钥。 |
 | IDP | IDP 是标识提供程序。 一个示例是由 Microsoft 为 Microsoft 帐户生成的 IDP。 每次应用程序需要使用 MSA 进行身份验证时，它可以调用 MSA IDP。 |

@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5e26d48ef74631e732fb043e909869945a6366
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 596a9f2f3f234ba90b799eae982523c3a9de9732
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217047"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749933"
 ---
 # <a name="guidelines-for-panning"></a>平移指南
 
@@ -139,12 +139,23 @@ Windows 8 支持三种类型的平移：
 
 下图显示了平移到某个点并释放如何使内容自动平移到逻辑位置。
 
-|                                                                |                                                                                         |                                                                                                                 |
-|----------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| ![显示可平移区域的图像。](images/ux-panning-snap1.png) | ![显示要向左平移的可平移区域的图像。](images/ux-panning-snap2.png) | ![显示在逻辑吸附点上停止平移的可平移区域的图像。](images/ux-panning-snap3.png) |
-| 轻扫以平移。                                                  | 抬起触摸接触。                                                                     | 可平移区域在吸附点停止，不是在抬起触摸接触的位置停止。                                |
+:::row:::
+   :::column:::
+      ![显示可平移区域的图像。](images/ux-panning-snap1.png)
 
- 
+      轻扫以平移。
+   :::column-end:::
+   :::column:::
+      ![显示要向左平移的可平移区域的图像。](images/ux-panning-snap2.png)
+
+      抬起触摸接触。
+   :::column-end:::
+   :::column:::
+      ![显示在逻辑吸附点上停止平移的可平移区域的图像。](images/ux-panning-snap3.png)
+
+      可平移区域在吸附点停止，不是在抬起触摸接触的位置停止。
+   :::column-end:::
+:::row-end:::
 
 **围栏** 内容可能宽于和高于屏幕设备的尺寸和分辨率。 因此，经常需要进行二维平移（水平和垂直）。 在此类情况下，围栏可以通过强调沿运动轴（垂直或水平）平移来改善用户体验。
 

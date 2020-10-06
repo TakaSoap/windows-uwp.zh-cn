@@ -8,12 +8,12 @@ keywords: 键盘, 指针, 输入, 用户交互
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 14be47fa701742c73048e70c0842cb421c52a7e5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 302a1f39d85902b229642b60f483b40f51209a72
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220510"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750383"
 ---
 # <a name="touch-interactions"></a>触控交互
 
@@ -150,10 +150,8 @@ Windows 应用包含多个用于处理触摸输入的不同机制，使您能够
 -   交互应该支持复合操作。 例如，在拖动手指进行平移时收缩即可缩放。
 -   不应按时间来区分交互。 相同的交互应该具有相同的结果，而与执行该操作所花费的时间无关。 基于时间的激活功能为用户引入了强制延迟，因此影响了直接操作的沉浸式属性和系统响应的感知。
 
-   > [!NOTE]
-   > 出现这种情况的一个例外是，使用特定的计时交互来帮助学习和探索 (例如，按下并保持) 。
-
-     
+    > [!NOTE]
+    > 出现这种情况的一个例外是，使用特定的计时交互来帮助学习和探索 (例如，按下并保持) 。
 
 -   正确的描述以及视觉提示对高级交互的使用有巨大影响。
 
@@ -192,7 +190,7 @@ Windows 应用包含多个用于处理触摸输入的不同机制，使您能够
 
 下面是一组基本的受 UWP 支持的触摸手势。
 
-| 名称           | 类型                 | 描述                                                                            |
+| 名称           | 类型                 | 说明                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | 点击            | 静态手势       | 用一个手指触摸屏幕，然后抬起手指。                                            |
 | 长按 | 静态手势       | 用一个手指触摸屏幕并保持不动。                                      |
@@ -222,7 +220,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 
 下面提供指针事件列表及其相关的事件参数。
 
-| 事件或类                                                       | 描述                                                   |
+| 事件或类                                                       | 说明                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
 | [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)             | 在单根手指触摸屏幕时发生。               |
 | [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased)           | 在该同一触摸接触抬起时发生。                |
@@ -419,7 +417,7 @@ End Sub
 
 下面提供操作事件列表及其相关的事件参数。
 
-| 事件或类                                                                                               | 描述                                                                                                                               |
+| 事件或类                                                                                               | 说明                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | [**ManipulationStarting 事件**](/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | 在首次创建操作处理器时发生。                                                                                  |
 | [**ManipulationStarted 事件**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | 在输入设备在 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 上开始操作时发生。                                            |

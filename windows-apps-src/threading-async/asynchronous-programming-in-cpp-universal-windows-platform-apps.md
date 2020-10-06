@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, uwp, 线程, 异步, C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e3810b25ac35cbf5e16f49a86affb4792089d1e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e08a73c7617a5b24af49d5b3665303124e28d257
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161791"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750153"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>使用 C++/CX 异步编程
 > [!NOTE]
@@ -119,9 +119,8 @@ void App::DeleteWithTasks(String^ fileName)
 
 请注意，在上一个示例中，即使其 lambda 返回 [**IAsyncInfo**][IAsyncInfo] 对象，该任务仍然会返回 **task<void>**。 下表总结了在 lambda 函数和封闭任务之间发生的类型转换：
 
-| | |
-|--------------------------------------------------------|---------------------|
-| lambda 返回类型                                     | `.then` 返回类型 |
+| lambda 返回类型 | `.then` 返回类型 |
+| ------------------ | ------------------- |
 | TResult                                                | 任务<TResult> |
 | IAsyncOperation<TResult>^                        | 任务<TResult> |
 | IAsyncOperationWithProgress&lt;TResult, TProgress&gt;^ | 任务<TResult> |

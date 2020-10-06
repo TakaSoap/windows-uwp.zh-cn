@@ -5,17 +5,17 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bf5d6a2413ba6aeb2e3fd86122e865e34b8729fa
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9e89011086e6c6d318d589226400789b41f8fe64
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172201"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750343"
 ---
 # <a name="supported-point-of-service-peripherals"></a>支持的服务点外设
 
 ## <a name="barcode-scanner"></a>条形码扫描仪
-| 连接性 | 支持 |
+| 连接 | 支持 |
 | -------------|-------------|
 | USB          | <p>Windows 包含用于 USB 连接的条形码扫描仪的内置类驱动程序，该驱动程序基于 [USB.org](https://www.usb.org/hid) 定义的 HID POS 扫描仪使用表 (8c) 规范。有关已知兼容设备的列表，请参阅下表。  请参阅条形码扫描仪手册或联系制造商，以确定如何在 **USB.HID.POS 扫描仪**模式下配置扫描仪。 </p><p>Windows 还支持供应商特定驱动程序的实现，以便为不支持 USB.HID.POS 扫描仪标准的其他条形码扫描仪提供支持。 请与条形码扫描仪制造商联系以核实供应商特定驱动程序可用性。</p><p>有关创建自定义条形码扫描仪驱动程序的信息，请联系条形码扫描仪制造商，或者参阅[条形码扫描仪驱动程序设计指南](/windows-hardware/drivers/ddi/_pos/index)</p> |
 | Bluetooth    | <p>Windows 支持串行端口协议 - 基于简单串行接口 (SPP SSI) 的蓝牙条形码扫描仪。 有关已知兼容设备的列表，请参阅下表。 请参阅条形码扫描仪手册或联系制造商，以确定如何在 **SPP-SSI** 模式下配置扫描仪。</p> |
@@ -23,7 +23,7 @@ ms.locfileid: "89172201"
 |
 
 
-| 制造商  | 型号                          | 功能 | 连接    | 类型         | “模式”                      |
+| 制造商  | “模型”                          | 功能 | 连接    | 类型         | 模式                      |
 |---------------|--------------------------------|------------|--------------|--------------|---------------------------|
 | 代码          | 读卡器™950                    | 二维         | USB          | 手持式     | HID POS 扫描器           |
 | 代码          | 读卡器™1021                   | 二维         | USB          | 手持式     | HID POS 扫描器           |
@@ -75,12 +75,12 @@ ms.locfileid: "89172201"
 <hr>
 
 ### <a name="windows-devices-with-built-in-barcode-scanner"></a>带有内置条形码扫描器的 Windows 设备
-| 制造商   | 型号 | 操作系统 |
+| 制造商   | “模型” | 操作系统 |
 |----------------|-------|------------------|
 | Innowi         | ChecOut-M | Windows 10   |
 
 ### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>带有内置条形码扫描器的 Windows Mobile 设备
-| 制造商   | 型号 | 操作系统 |
+| 制造商   | “模型” | 操作系统 |
 |----------------|-------|------------------|
 | Bluebird       | EF400 | Windows Mobile   |
 | Bluebird       | EF500 | Windows Mobile   |
@@ -98,7 +98,7 @@ ms.locfileid: "89172201"
 
 
 ## <a name="cash-drawer"></a>收银机
-| 连接性 | 支持 |
+| 连接 | 支持 |
 | -------------|-------------|
 | 网络/蓝牙 | <p> 可以通过网络或蓝牙直接连接到收银机，具体取决于收银机设备的功能。 </p><p>APG 收银机：NetPRO、BluePRO</p> |
 | DK 端口 | <p> 没有网络或蓝牙功能的收银机可以通过支持的收据打印机或 Star Micronics DK-AirCash 附件上的 DK 端口进行连接。 </p>
@@ -121,9 +121,9 @@ Windows 根据供应商 ID 和产品 ID (VID/PID) 为 Magtek 和 IDTech 的以�
  Windows 支持实现其他供应商特定驱动程序以支持其他磁条阅读器。 请与你的磁条阅读器制造商联系以核实可用性。 磁条纹读者制造商有关创建自定义磁条读取器驱动程序的信息，请参阅 [磁条阅读器驱动程序设计指南](/windows-hardware/drivers/ddi/_pos/index) 。
 
 ## <a name="receipt-printer-posprinter"></a>收据打印机 (POSPrinter)
-| 连接性 | 支持 |
+| 连接 | 支持 |
 | -------------|-------------|
-| 网络和蓝牙 | <p>Windows 使用 Epson ESC/POS 打印机控制语言支持连接了网络和蓝牙的收据打印机。  系统将使用 POSPrinter API 自动发现下面列出的打印机。 虽然也可以使用提供 ESC/POS 仿真的其他收据打印机，但是需要执行[带外配对](./point-of-service.md#out-of-band-pairing)过程与其关联。</p><p>注意：此方法不支持单据站和日志站。</p> |
+| 网络和蓝牙 | <p>Windows 使用 Epson ESC/POS 打印机控制语言支持连接了网络和蓝牙的收据打印机。  系统将使用 POSPrinter API 自动发现下面列出的打印机。 虽然也可以使用提供 ESC/POS 仿真的其他收据打印机，但是需要执行[带外配对](./point-of-service.md)过程与其关联。</p><p>注意：此方法不支持单据站和日志站。</p> |
 | OPOS    | <p> 通过 OPOS 服务对象支持任何 OPOS 兼容收据打印机。 按照设备制造商安装说明安装 OPOS 驱动程序。 </p> |
 
 ### <a name="stationary-receipt-printers-networkbluetooth"></a>固定收据打印机（网络/蓝牙）
