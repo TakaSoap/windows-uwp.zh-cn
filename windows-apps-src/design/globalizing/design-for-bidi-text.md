@@ -1,17 +1,17 @@
 ---
-Description: 设计应用程序提供的文本支持双向 (BiDi)，以便可以将脚本从左到右 (LTR) 和右到左 (RTL) 书写系统，通常包含不同类型的字母的组合。
+description: 将你的应用程序设计为 (双向文本支持提供双向文本支持) 这样，你可以将脚本从左到右 (LTR) 和从右到左 (RTL) 写入系统，这通常包含不同类型的字母表。
 title: 针对双向文本设计应用
 template: detail.hbs
 ms.date: 11/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化, rtl, ltr
 ms.localizationpriority: medium
-ms.openlocfilehash: 66a158a96fcab5391030f4517b6420ba4585bf04
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f09aa1ac2b56c83b502e54ce631e46d2f4054943
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641122"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829610"
 ---
 # <a name="design-your-app-for-bidirectional-text"></a>针对双向文本设计应用
 
@@ -42,8 +42,8 @@ Windows 支持 4 种双向设计元素。 我们来看看 Windows 中的一些�
 
 Windows 调整排字网格的方向，使其从右到左排列，这意味着网格上的第一个磁贴会放置在右上角，最后一个磁贴放置在左下角。 这与书籍、杂志等印刷出版物（其阅读模式始终从右上角开始，向左排列）的 RTL 模式匹配。
 
-![BiDi 开始菜单](images/56283_BIDI_01_startscreen_resized.png)
-![BiDi 超级按钮与开始菜单](images/56283_BIDI_02_startscreen_charm_resized.png)
+![双向开始菜单 ](images/56283_BIDI_01_startscreen_resized.png)
+ ![ 与超级按钮的 "开始" 菜单](images/56283_BIDI_02_startscreen_charm_resized.png)
 
 为了保持一致的 UI 排列，磁贴上的内容保留了从右到左的布局，这意味着无论应用 UI 语言如何，应用名称和徽标都位于磁贴的右下角。
 
@@ -65,11 +65,11 @@ Windows 调整排字网格的方向，使其从右到左排列，这意味着网
 
 Windows UI 中的每个元素都适合 RTL 方向。 超级按钮和浮出控件位于屏幕的左边缘，这样它们就不会与搜索结果重叠或削弱触控优化。 可用拇指轻松地点击它们。
 
-![BiDi 屏幕截图](images/56286_BIDI_05_search_flyout_resized.png)
-![BiDi 屏幕快照](images/56286_BIDI_06_print_flyout_resized.png)
+![双向屏幕截图，显示 "搜索" 浮出控件大小 ](images/56286_BIDI_05_search_flyout_resized.png)
+ ![](images/56286_BIDI_06_print_flyout_resized.png)
 
-![BiDi 屏幕截图](images/56286_BIDI_07_settings_flyout_resized.png)
-![BiDi 屏幕快照](images/56286_BIDI_08_app_bars_resized.png)
+![双向屏幕截图，显示 "设置" 浮出大小显示 ](images/56286_BIDI_07_settings_flyout_resized.png)
+ ![ 应用栏的双向屏幕](images/56286_BIDI_08_app_bars_resized.png)
 
 ### <a name="text-input-in-any-direction"></a>任意方向的文本输入
 
@@ -99,10 +99,10 @@ Windows 提供一个干净整洁的屏幕触摸键盘。 对于双向语言，�
 
 Windows 为所有双向语言使用 Segoe UI 字体。 这种字体针对 Windows UI 设计，并且可缩放。
 
-![BiDi 语言的 Segoe UI 字体](images/56290_BIDI_13_start_screen_segoe.png)
-![BiDi 语言的 Segoe UI 字体](images/56290_BIDI_13_start_screen_segoe_arabic.png)
+![显示 "开始" 屏幕屏幕截图上的 Segoe UI 字体的屏幕截图 ](images/56290_BIDI_13_start_screen_segoe.png)
+ ![ ，显示 "开始" 屏幕上的 Microsoft yahei 阿拉伯字体](images/56290_BIDI_13_start_screen_segoe_arabic.png)
 
-## <a name="case-study-1-a-bidi-music-app"></a>案例研究 #1:BiDi 音乐应用程序
+## <a name="case-study-1-a-bidi-music-app"></a>案例研究 #1：双向音乐应用
 
 ### <a name="overview"></a>概述
 
@@ -130,7 +130,7 @@ Windows 为所有双向语言使用 Segoe UI 字体。 这种字体针对 Window
 
 | | 英语字符串 (LTR) | 希伯来语字符串 (RTL) |
 | -------------- | ------------------- | ------------------- |
-| **左对齐方式** | Hello, World! | בוקר טוב! |
+| **左对齐** | Hello, World! | בוקר טוב! |
 | **右对齐** | !Hello, World | !בוקר טוב |
 
 要确保艺术家信息正确地显示在音乐应用中，开发团队将文本布局属性与对齐分开。 换言之，在许多情况下，艺术家信息可能会显示为右对齐，但字符串布局调整是基于自定义后台处理设置的。 后台处理根据字符串的内容确定最佳方向布局设置。
@@ -182,7 +182,7 @@ string NormalizeTextDirection(string data)
 
 添加的 Unicode 字符宽度为零，因此不会影响字符串间距。 此代码可能会对性能产生负面影响，因为检测字符串方向需要对整个字符串进行检测，除非遇到非中性字符。 首先还会对要检查其是否为中性的每个字符与几个 Unicode 范围进行比较，因此这是一项重要检查。
 
-## <a name="case-study-2-a-bidi-mail-app"></a>案例研究 #2:BiDi 邮件应用程序
+## <a name="case-study-2-a-bidi-mail-app"></a>案例研究 #2：双向邮件应用
 
 ### <a name="overview"></a>概述
 

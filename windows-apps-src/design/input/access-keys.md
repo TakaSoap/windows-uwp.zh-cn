@@ -1,5 +1,5 @@
 ---
-Description: 了解如何通过键盘而不是指针设备 (如触摸或鼠标) ，为用户提供一种直观的方式来快速导航并与应用程序的可见 UI 交互，从而提高 Windows 应用程序的可用性和可访问性。
+description: 了解如何通过键盘而不是指针设备 (如触摸或鼠标) ，为用户提供一种直观的方式来快速导航并与应用程序的可见 UI 交互，从而提高 Windows 应用程序的可用性和可访问性。
 title: 访问键设计指南
 label: Access keys design guidelines
 keywords: 键盘, 访问键, 键提示, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 77986569ec224ba36471f60c0200dfb1825472a0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 48f1d3bd69b10a8d500bb2d29b64c0eb91c9900b
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218410"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829537"
 ---
 # <a name="access-keys"></a>访问密钥
 
@@ -276,7 +276,7 @@ _自动键提示放置示例_
 
 放置模式包括：顶部、底部、右侧、左侧、隐藏、居中和自动。
 
-![键提示放置模式](images/accesskeys/keytip-postion-modes.png)
+![显示关键提示放置模式相对位置的屏幕截图](images/accesskeys/keytip-postion-modes.png)
 
 _键提示放置模式_
 
@@ -299,11 +299,11 @@ _键提示放置模式_
 > [!NOTE]
 > 当 KeyTipPlacementMode 设为“自动”时，无法设置偏移量。
 
-KeyTipHorizontalOffset 属性表示键提示向左或向右移动的距离。 示例显示了如何设置按钮的键提示偏移量。
+KeyTipHorizontalOffset 属性表示键提示向左或向右移动的距离。
 
-![键提示放置模式](images/accesskeys/keytip-offsets.png)
+![按钮的垂直和水平键提示偏移的屏幕截图](images/accesskeys/keytip-offsets.png)
 
-_设置键提示的垂直和水平偏移_
+_为按钮设置垂直和水平键提示偏移_
 
 ``` xaml
 <Button
@@ -318,9 +318,9 @@ _设置键提示的垂直和水平偏移_
 
 键提示的位置将会根据屏幕边缘自动调整，以确保键提示完全可见。 发生此情况时，控件与键提示对齐点之间的距离可能与指定的水平和垂直偏移量值不同。
 
-![键提示放置模式](images/accesskeys/keytips-screen-edge.png)
+![键提示屏幕边缘对齐的屏幕截图](images/accesskeys/keytips-screen-edge.png)
 
-_屏幕边缘导致键提示自动重新定位自身_
+_根据屏幕边缘自动定位关键提示_
 
 ## <a name="key-tip-style"></a>键提示样式
 
@@ -328,7 +328,7 @@ _屏幕边缘导致键提示自动重新定位自身_
 
 如果你需要指定自己的键提示样式，请使用应用程序资源，如 KeyTipFontSize（字体大小）、KeyTipFontFamily（字体系列）、KeyTipBackground（背景）、KeyTipForeground（前景）、KeyTipPadding（填充）、KeyTipBorderBrush（边框颜色）和 KeyTipBorderThemeThickness（边框粗细）。
 
-![键提示放置模式](images/accesskeys/keytip-customization.png)
+![关键提示自定义选项的屏幕截图，包括字体、顺序和颜色](images/accesskeys/keytip-customization.png)
 
 _键提示自定义选项_
 
