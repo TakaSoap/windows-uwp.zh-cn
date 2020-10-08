@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: acdc8d5bb9a73bf5851dfd8f75f777c2a13bcdb1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: edaa15aa2e88252c328a368df1b7698a9b74f5e0
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173131"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750443"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>使用 C++/CX 创建“Hello, World!” 应用
 
@@ -279,24 +279,24 @@ void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::X
 1.  打开 App.xaml。
 2.  在开始标记 [**Application**](/uwp/api/Windows.UI.Xaml.Application) 中，编辑 [**RequestedTheme**](/uwp/api/windows.ui.xaml.application.requestedtheme) 属性并将其值设置为 **Dark**：
 
-```xaml
-RequestedTheme="Dark"
-```
+    ```xaml
+    RequestedTheme="Dark"
+    ```
 
-    Here's the full [**Application**](/uwp/api/Windows.UI.Xaml.Application) tag with the dark theme :
+    以下是带有深色主题的完整 [**Application**](/uwp/api/Windows.UI.Xaml.Application) 标记：
 
-```xaml
+    ```xaml
     <Application
     x:Class="HelloWorld.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:HelloWorld"
     RequestedTheme="Dark">
-```
+    ```
 
 3.  按 F5 生成并运行应用。 请注意它使用深色主题。
 
-![带有深色主题的应用屏幕](images/xaml-hw-app3.png)
+    ![带有深色主题的应用屏幕](images/xaml-hw-app3.png)
 
 你应使用哪个主题？ 你需要的任何一个。 以下我们的观点：对于主要显示图像或视频的应用，我们建议深色主题；对于包含大量文本的应用，我们建议浅色主题。 如果你使用的是自定义配色方案，则请使用最适合应用外观和感觉的主题。 在本教程的其余部分中，我们使用屏幕截图中的浅色主题。
 

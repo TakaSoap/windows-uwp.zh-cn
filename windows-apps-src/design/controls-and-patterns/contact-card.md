@@ -9,12 +9,12 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: e31b698189e5dc8c59b1c10a6aa6b5bb02190e55
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d31c1a22260b8d98e767fba6b6d6e0db20fdbbb8
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217310"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829594"
 ---
 # <a name="contact-card"></a>联系人卡片
 
@@ -28,12 +28,12 @@ ms.locfileid: "91217310"
 
 
 <figure>
-    <img src="images/contact-card/contact-card-standard.png" alt="The full contact card">
+    <img src="images/contact-card/contact-card-standard.png" alt="Screenshot showing a standard contact card.">
     <figcaption>标准联系人卡片</figcaption>
 </figure>
 
 <figure>
-    <img src="images/contact-card/contact-card-full.png" alt="The full contact card">
+    <img src="images/contact-card/contact-card-full.png" alt="Screenshot showing a full contact card.">
     <figcaption>完整联系人卡片</figcaption>
 </figure>
 

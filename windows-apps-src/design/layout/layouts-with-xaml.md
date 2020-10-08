@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 9aee0f0e91528258b0591f2e3c7e0ea10353b5b7
-ms.sourcegitcommit: ef3cdca5e9b8f032f46174da4574cb5593d32d56
+ms.openlocfilehash: fd2f755153b29c9be766d39fb685a3f923868946
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90593451"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750414"
 ---
 # <a name="responsive-layouts-with-xaml"></a>采用 XAML 的响应式布局
 
@@ -47,8 +47,8 @@ XAML 布局系统支持静态布局和动态布局。 在静态布局中，你�
 
 此示例在具有 4 列的 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 中，结合使用了固定、自动、成比例调整大小。
 
-&nbsp;|&nbsp;|&nbsp;
-------|------|------
+| 列 | 调整大小 | 描述 |
+| ------ | ------ | ----------- |
 Column_1 | **自动** | 列会调整为适合其内容的大小。
 Column_2 | * | Auto 列经过计算后，列获得剩余宽度的一部分。 Column_2 将是 Column_4 宽度的一半。
 Column_3 | **44** | 该列宽度将是 44 像素。

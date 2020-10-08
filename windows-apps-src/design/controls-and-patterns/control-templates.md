@@ -11,12 +11,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 773079129b5e05e26501f78fe177f4b5367902da
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c1d712e9d4a12800542184cf37fb504d6f7d20d7
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217270"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750503"
 ---
 # <a name="control-templates"></a>控件模板
 
@@ -170,10 +170,9 @@ ms.locfileid: "91217270"
 
 为了更深入地了解 [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 对象的工作原理，请考虑当 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 从 `Unchecked` 状态切换到 `Checked` 状态，然后切换到 `Indeterminate` 状态，然后又恢复为 `Unchecked` 状态时，会发生什么。 下表介绍了这些转换。
 
-|                                      |                                                                                                                                                                                                                                                                                                                                                |                                                   |
-|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
-| 状态转换                     | 引发的结果                                                                                                                                                                                                                                                                                                                                   | 转换完成时的 CheckBox 外观 |
-| 从 `Unchecked` 到 `Checked`。       | `Checked` [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 值已应用，因此 `CheckGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。                                                                                                                                                         | 显示 X。                                |
+| 状态转换 | 引发的结果 | 转换完成时的 CheckBox 外观 |
+| ---------------- | ------------ | ------------------------------------------------- |
+| 从 `Unchecked` 到 `Checked`。       | `Checked` [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 值已应用，因此 `CheckGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。                                                                                                                                                          | 显示 X。                                |
 | 从 `Checked` 到 `Indeterminate`。   | `Indeterminate` [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 值已应用，因此 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。 `Checked` **VisualState** 的 **Setter** 值已删除，因此 `CheckGlyph` 的 [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity) 为 0。 | 显示一个圆形。                            |
 | 从 `Indeterminate` 到 `Unchecked`。 | `Indeterminate` [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 值已删除，因此 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 0。                                                                                                                                           | 不显示任何符号。                             |
 

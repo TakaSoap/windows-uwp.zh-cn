@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d2470b1aa52f8aa4be7e07bf1dfe5213054b005
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fefc7f72fb91a61ae924ac082dcac6d3cf9c044b
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166241"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750123"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>在 C++/WinRT 中使用委托处理事件
 
@@ -112,12 +112,12 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 > ```
 >
 > 该信息告诉我们 UIElement.KeyDown 事件（我们正在讨论的主题）具有 KeyEventHandler 的委托类型，因为那是向此事件类型注册委托时所传递的类型   。 因此，立即单击主题上的链接，转到该 [KeyEventHandler 委托](/uwp/api/windows.ui.xaml.input.keyeventhandler)类型。 这里，语法块包含函数调用运算符。 如上所述，它将告诉你委托的形参需要是怎样的。
-> 
-> ```cppwinrt
-> void operator()(
-    winrt::Windows::Foundation::IInspectable const& sender,
-    winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
-> ```
+>
+>```cppwinrt
+>void operator()(
+>   winrt::Windows::Foundation::IInspectable const& sender,
+>   winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+>```
 >
 >  如你所见，需要声明委托将 IInspectable 作为发送方，并将 [KeyRoutedEventArgs](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) 类的实例作为实参  。
 >
