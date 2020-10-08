@@ -1,5 +1,5 @@
 ---
-Description: Windows 应用程序中的核心文本 Api 允许 Windows 应用接收来自 Windows 设备上支持的任何文本服务的文本输入。
+description: Windows 应用程序中的核心文本 Api 允许 Windows 应用接收来自 Windows 设备上支持的任何文本服务的文本输入。
 title: 自定义文本输入概述
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
@@ -8,12 +8,12 @@ keywords: 键盘, 文本, 核心文本, 自定义文本, 文本服务框架, 输
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6183dcc690a8fe3b9d13cfa0e471f41f04ff30
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 95dbd6de78cb6670ea7e904252bbc1f9f14edb77
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220570"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829640"
 ---
 # <a name="custom-text-input"></a>自定义文本输入
 
@@ -38,7 +38,7 @@ ms.locfileid: "91220570"
 -   "应用程序" 表示托管使用核心文本 Api 构建的自定义编辑控件的 Windows 应用程序。
 -   [**Windows.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core) API 有助于通过 Windows 与文本服务进行通信。 文本编辑控件和文本服务之间的通信主要通过 [**CoreTextEditContext**](/uwp/api/Windows.UI.Text.Core.CoreTextEditContext) 对象进行处理，该对象提供的方法和事件有利于通信。
 
-![核心文本体系结构图示](images/coretext/architecture.png)
+![CoreText 体系结构图](images/coretext/architecture.png)
 
 ## <a name="text-ranges-and-selection"></a>文本范围和选择
 
@@ -49,7 +49,8 @@ ms.locfileid: "91220570"
 
 与核心文本 API 一起使用的文本范围以插入光标位置的形式表示。 “应用程序插入光标位置 (ACP)”是从零开始的数字，表示紧接插入光标前的文本流从头开始算起的字符数，如下面所示。
 
-![示例文本流图示](images/coretext/stream-1.png)
+![显示应用程序插入符号位置 (ACP) 字符计数的屏幕截图](images/coretext/stream-1.png)
+
 ### <a name="text-ranges-and-selection"></a>文本范围和选择
 
 文本范围和选择由包含两个字段的 [**CoreTextRange**](/uwp/api/Windows.UI.Text.Core.CoreTextRange) 结构表示：
@@ -69,11 +70,11 @@ ms.locfileid: "91220570"
 
 ### <a name="noncontiguous-selection"></a>非连续选择
 
-一些编辑控件支持非连续选择。 例如，Microsoft Office 应用支持多个任意选择，并且许多源代码编辑器支持列选择。 但是，核心文本 API 并不支持非连续选择。 编辑控件必须仅报告单个连续选择（通常是非连续选择的活动子范围）。
+一些编辑控件支持非连续选择。 例如，Microsoft Office 应用支持多个任意选择，并且许多源代码编辑器支持列选择。 但核心文本 Api 不支持非连续选择。 编辑控件必须仅报告单个连续选择（通常是非连续选择的活动子范围）。
 
-例如，考虑此文本流：
+例如，下图显示了一个具有两个不连续选择的文本流： \[ 0、1 \] 和 \[ 6，11， \] 其中，编辑控件必须仅向 \[ 0、1 \] 或 \[ 6、11) 报告一个 (\] 。
 
-![示例文本流关系图 ](images/coretext/stream-2.png) 有两个选择： \[ 0、1 \] 和 \[ 6，11 \] 。 编辑控件必须仅报告其中一项; \[0、1 \] 或 \[ 6、11 \] 。
+![显示非连续文本选择的屏幕截图，其中第一个字符和最后五个字符处于选中状态。](images/coretext/stream-2.png)
 
 ## <a name="working-with-text"></a>使用文本
 
@@ -96,7 +97,9 @@ ms.locfileid: "91220570"
 
 例如，这是编辑控件在用户键入“d”之前的状态。 插入点为 \[ 10，10 \] 。
 
-![示例文本流关系图 ](images/coretext/stream-3.png) 当用户键入 "d" 时，将引发 [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) 事件，其中包含以下 [**CoreTextTextUpdatingEventArgs**](/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) 数据：
+![文本流关系图的屏幕截图，显示插入点在 \[ \] 插入之前10，10](images/coretext/stream-3.png)
+
+当用户键入 "d" 时，将引发 [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) 事件，其中包含以下 [**CoreTextTextUpdatingEventArgs**](/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) 数据：
 
 -   [**Range**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.range)  =  范围 \[10，10\]
 -   [**Text**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.text) = "d"
@@ -104,7 +107,8 @@ ms.locfileid: "91220570"
 
 在你的编辑控件中，应用指定的更改并将 [**Result**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.result) 设置为 **Succeeded**。 下面是该控件在应用更改后的状态。
 
-![示例文本流图示](images/coretext/stream-4.png)
+:::image type="content" source="images/coretext/stream-4.png" alt-text="文本流关系图的屏幕截图，显示插入点为 \[ 11，11后的插入点 \]":::
+
 ### <a name="rejecting-text-updates"></a>拒绝文本更新
 
 由于请求的范围是不应进行更改的编辑控件区域，因此有时无法应用文本更新。 在这种情况下，不应该应用任何更改。 相反，应通知系统更新失败，方法为将 [**CoreTextTextUpdatingEventArgs.Result**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.result) 设置为 [**CoreTextTextUpdatingResult.Failed**](/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingResult)。
@@ -117,9 +121,13 @@ ms.locfileid: "91220570"
 
 例如，这是编辑控件在用户粘贴“World”之前的状态。 插入点位于 \[ 6，6 \] 。
 
-![示例文本流图示 ](images/coretext/stream-5.png) 用户执行 "粘贴" 操作，编辑控件以以下文本结尾：
+![文本流关系图的屏幕截图，显示插入点在 \[ \] 插入前6、6](images/coretext/stream-5.png)
 
-![示例文本流关系图 ](images/coretext/stream-4.png) 当发生这种情况时，应调用具有以下参数的 [**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) ：
+应用更改后，用户执行 "粘贴" 操作和编辑控件：
+
+:::image type="content" source="images/coretext/stream-4.png" alt-text="文本流关系图的屏幕截图，显示插入点为 \[ 11，11后的插入点 \]":::
+
+发生这种情况时，应调用具有以下参数的 [**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) ：
 
 -   *modifiedRange*  =  modifiedRange \[6、6\]
 -   *newLength* = 5
@@ -133,11 +141,17 @@ ms.locfileid: "91220570"
 
 例如，请考虑提供支持形式化缩略的更正功能的编辑控件。 这是编辑控件在用户键入空格键以触发更正之前的状态。 插入点为 \[ 3，3 \] 。
 
-![示例文本流关系图 ](images/coretext/stream-6.png) ：用户按下了空格键并引发了相应的 [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) 事件。 编辑控件将接受文本更新。 这是编辑控件在完成更正之前所处的短暂状态。 插入点为 \[ 4，4 \] 。
+![文本流关系图的屏幕截图，显示插入点在 \[ \] 插入前的3，3](images/coretext/stream-6.png)
 
-![示例文本流关系图 ](images/coretext/stream-7.png) 在 [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) 事件处理程序外，编辑控件将进行以下更正。 这是编辑控件在完成更正之后的状态。 插入点为 \[ 5、5 \] 。
+用户按下空格键并引发相应的 [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) 事件。 编辑控件将接受文本更新。 这是编辑控件在完成更正之前所处的短暂状态。 插入点为 \[ 4，4 \] 。
 
-![示例文本流关系图 ](images/coretext/stream-8.png) 当发生这种情况时，应调用具有以下参数的 [**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) ：
+![文本流关系图的屏幕截图，显示插入点在 \[ \] 插入后的4，4](images/coretext/stream-7.png)
+
+在 [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) 事件处理程序外部，编辑控件进行以下更正。 这是编辑控件在完成更正之后的状态。 插入点为 \[ 5、5 \] 。
+
+![显示插入点 \[ ，5，5，文本流关系图的屏幕截图\]](images/coretext/stream-8.png)
+
+发生这种情况时，应调用具有以下参数的 [**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) ：
 
 -   *modifiedRange*  =  modifiedRange \[1，2\]
 -   *newLength* = 2
