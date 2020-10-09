@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: a5841a8a53c18969e8ca9171bb7b3e1af0273170
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 76ef3c6b75a5d1a4bd8daebba3a392062c845215
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216791"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860184"
 ---
 # <a name="enable-user-mode-access-to-gpio-i2c-and-spi"></a>启用 GPIO、I2C 和 SPI 的用户模式访问
 
-Windows 10 包含了新的 Api，用于从通用输入/输出的用户模式进行直接访问 (GPIO) ，集成线路 (I2C) ，串行外围设备接口 (SPI) ，以及通用异步接收器-发送器 (UART) 。 开发板（如 Raspberry Pi 2）公开这些连接的一个子集，这使你能够使用自定义电路扩展基础计算模块来处理特定的应用程序。 通常，只需使用 GPIO 引脚的一个子集和标头上公开的总线，即可与其他关键板载功能共享这些低级别总线。 若要保持系统稳定性，需要指定用户模式应用程序可以安全地进行修改的 pin 和总线。
+Windows 10 包含了新的 Api，用于从通用输入/输出的用户模式进行直接访问 (GPIO) 、Inter-Integrated 线路 (I2C) 、串行外围设备接口 (SPI) 和通用异步接收器-发送器 (UART) 。 开发板（如 Raspberry Pi 2）公开这些连接的一个子集，这使你能够使用自定义电路扩展基础计算模块来处理特定的应用程序。 通常，只需使用 GPIO 引脚的一个子集和标头上公开的总线，即可与其他关键板载功能共享这些低级别总线。 若要保持系统稳定性，需要指定用户模式应用程序可以安全地进行修改的 pin 和总线。
 
 本文档介绍如何在高级配置和电源接口 (ACPI) 中指定此配置，并提供用于验证是否正确指定了配置的工具。
 
@@ -347,7 +347,7 @@ Windows 在 [GpioClx](/windows-hardware/drivers/ddi/content/index)、[SpbCx](/wi
 - 引脚复用客户端 – 这些是使用引脚复用的驱动程序。 引脚复用客户端从 ACPI 固件接收引脚复用资源。 引脚复用资源是一种连接资源，受资源中心管理。 引脚复用客户端通过打开资源的句柄来保留引脚复用资源。 若要使硬件更改生效，客户端必须通过发送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求来提交配置。 客户端通过关闭句柄释放引脚复用资源，其中点复用配置会还原为其默认状态。
 - ACPI 固件 – 指定具有 `MsftFunctionConfig()` 资源的复用配置。 MsftFunctionConfig 资源表示的管脚中具有客户端所需的复用配置。 MsftFunctionConfig 资源包含功能编号、拉配置和管脚编号列表。 MsftFunctionConfig 资源提供给管脚复用客户端作为硬件资源，驱动程序在其 PrepareHardware 回调中接收这些资源（类似于 GPIO 和 SPB 连接资源）。 客户端接收可用于打开资源句柄的资源中心 ID。
 
-> 必须将 `/MsftInternal` 命令行开关传递到 `asl.exe`，才能编译包含 `MsftFunctionConfig()` 描述符的 ASL 文件，因为 ACPI 工作委员会当前正在审查这些描述符。 例如： `asl.exe /MsftInternal dsdt.asl`
+> 必须将 `/MsftInternal` 命令行开关传递到 `asl.exe`，才能编译包含 `MsftFunctionConfig()` 描述符的 ASL 文件，因为 ACPI 工作委员会当前正在审查这些描述符。 例如：`asl.exe /MsftInternal dsdt.asl`
 
 引脚复用中涉及的操作顺序如下所示。
 
@@ -823,11 +823,11 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 在 HLK 管理器中，选择“资源中心代理设备”：
 
-![HLK 管理器屏幕截图](images/usermode-hlk-1.png)
+![Windows 硬件实验室包的屏幕截图，其中显示了 "选择" 选项卡，并选择了 "资源中心代理设备" 选项。](images/usermode-hlk-1.png)
 
 随后单击“测试”选项卡，然后依次选择 I2C WinRT、Gpio WinRT 和 Spi WinRT 测试。
 
-![HLK 管理器屏幕截图](images/usermode-hlk-2.png)
+![Windows 硬件实验室包的屏幕截图，其中显示了 "测试" 选项卡，并选择了 "G P I O Win R T 函数和压力测试" 选项。](images/usermode-hlk-2.png)
 
 单击“运行所选项”。 通过右键单击某个测试，然后单击“测试描述”可以获得有关每个测试的进一步文档。
 

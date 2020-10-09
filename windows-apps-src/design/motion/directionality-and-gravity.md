@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 649fb9e2833a425ccad78f5f0bcb69ccb4091bca
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 87047e20d4513c9120c79bb329c008dad104a352
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217800"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860090"
 ---
 # <a name="directionality-and-gravity"></a>方向性和引力
 
@@ -47,7 +47,7 @@ ms.locfileid: "91217800"
 移动对象时，请避免非自然冲突。 请记住，对象来自和转到，并始终支持可以在场景中使用的更高级别构造，如滚动方向或布局层次结构。
     :::column-end:::
     :::column:::
-        ![方向后退进入](images/Direction.gif)
+        ![显示圆圈，然后添加 X 轴、Y 轴和 Z 轴的短视频。](images/Direction.gif)
     :::column-end:::
 :::row-end:::
 
@@ -94,7 +94,7 @@ ms.locfileid: "91217800"
 **向后** 与 Forward 相同，但反向。
     :::column-end:::
     :::column:::
-        ![方向后退进入](images/backwardIN.gif)
+        ![显示从帧右侧进入并在帧中间停止的圆圈的简短视频。](images/backwardIN.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -114,7 +114,7 @@ ms.locfileid: "91217800"
 
 在下面的示例中，网格顶行中的一个元素受到引力的影响，致使其在离开原来位置时略微下降，然后才移动到前方。
 
-![方向后退进入](images/continuity-photos.gif)
+![显示离开网格顶部行的矩形元素的简短视频，稍微拖放，然后缩放到窗口的前方。](images/continuity-photos.gif)
 
 ## <a name="related-articles"></a>相关文章
 

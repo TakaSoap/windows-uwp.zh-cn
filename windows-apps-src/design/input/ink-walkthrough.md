@@ -6,16 +6,16 @@ keywords: 墨迹，墨迹书写，教程
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a0660312746a88a61ccb7b2ca9c01d720ebb2be3
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f726f4ab4a422cc94f00493261620ddff8b6122b
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219690"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860194"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>教程：在 Windows 应用程序中支持墨迹
 
-![Surface 触控笔](images/ink/ink-hero-small.png)  
+![Surface Pen 图片。](images/ink/ink-hero-small.png)  
 *Surface 触控笔*（可通过 [Microsoft 官方商城](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)购买）。
 
 本教程将逐步介绍如何创建支持使用 Windows Ink 编写和绘制的基本 Windows 应用程序。 我们使用可以从 GitHub 下载的示例应用中的代码段（参阅[示例代码](#sample-code)），来展示各个步骤所讨论的各种功能和关联的 Windows Ink API（参阅 [Windows Ink 平台的组件](#components-of-the-windows-ink-platform)）。
@@ -47,13 +47,13 @@ ms.locfileid: "91219690"
 > [!NOTE] 
 > 虽然 Windows Ink 可以支持使用鼠标和触摸进行绘制（我们将在此教程的步骤 3 中介绍如何执行操作），以提供最佳的 Windows Ink 体验，但是我们仍建议使用数字笔和显示屏支持使用该数字笔输入的计算机。
 
-## <a name="sample-code"></a>代码示例
+## <a name="sample-code"></a>示例代码
 在本指南中，我们全部使用示例墨迹应用来演示所讨论的概念和功能。
 
 在 [windows-appsample-get-started-ink 示例](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)从 [GitHub](https://github.com/) 下载此 Visual Studio 示例和源代码：
 
 1. 选择绿色的**克隆或下载**按钮  
-![克隆存储库](images/ink/ink-clone.png)
+![正在克隆存储库。](images/ink/ink-clone.png)
 2. 如果你有 GitHub 帐户，则可以选择**在 Visual Studio 中打开**，将存储库克隆到本地计算机 
 3. 如果你没有 GitHub 帐户，或者只是想要项目的本地副本，则选择**下载 ZIP**（你需要以后定期查看以下载最新的更新）
 
@@ -80,11 +80,11 @@ ms.locfileid: "91219690"
 
    > [!NOTE]
    > 或者，可以选择 "**调试**"  >  "**开始调试**" 菜单项，或选择此处显示的 "**本地计算机**运行" 按钮。
-   > ![Visual Studio 生成项目按钮](images/ink/ink-vsrun-small.png)
+   > ![Visual Studio "生成项目" 按钮。](images/ink/ink-vsrun-small.png)
 
 应用窗口打开，在初始屏幕出现几秒钟后，你将看到此初始屏幕。
 
-![空应用](images/ink/ink-app-step1-empty-small.png)
+![空应用程序的屏幕截图。](images/ink/ink-app-step1-empty-small.png)
 
 好了，我们现在有了基本的 Windows 应用程序，我们将在本教程的其余部分中使用。 在以下步骤中，我们添加墨迹功能。
 
@@ -123,7 +123,7 @@ ms.locfileid: "91219690"
 
 然后，再次运行应用。 继续乱写一气，写下你的姓名，或（如果你有一面镜子或记忆力很好）为自己画一幅自画像。
 
-![基本墨迹书写](images/ink/ink-app-step1-name-small.png)
+![本主题中突出显示的基本墨迹示例应用程序的屏幕截图。](images/ink/ink-app-step1-name-small.png)
 
 ## <a name="step-3-support-inking-with-touch-and-mouse"></a>步骤 3：使用触摸和鼠标支持墨迹书写
 
@@ -181,21 +181,21 @@ ms.locfileid: "91219690"
 
 现在，再次运行应用，查看 [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar)，并试用一下一些工具。
 
-![来自 Ink 工作区草图板的 InkToolbar](images/ink/ink-inktoolbar-default-small.png)
+![本主题中突出显示了 "基本墨迹示例" 应用和默认 InkToolbar 的屏幕截图。](images/ink/ink-inktoolbar-default-small.png)
 
 ### <a name="challenge-add-a-custom-button"></a>挑战：添加一个自定义按钮
 <table class="wdg-noborder">
 <tr>
 <td>
 
-![来自 Ink 工作区草图板的 InkToolbar](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 <td>
 
 下面是一个自定义 **[InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)** 的示例（来自 Windows Ink 工作区的草图板）。
 
-![来自 Ink 工作区草图板的 InkToolbar](images/ink/ink-inktoolbar-sketchpad-small.png)
+![墨迹工作区中 Sketchpad 的墨迹工具栏屏幕截图。](images/ink/ink-inktoolbar-sketchpad-small.png)
 
 有关自定义 [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)的更多详细信息，请参阅 [向 Windows 应用程序墨迹应用添加 InkToolbar](ink-toolbar.md)。
 
@@ -213,9 +213,9 @@ ms.locfileid: "91219690"
 > 书写识别可以通过**笔和 Windows Ink** 设置改进：
 > 1. 打开“开始”菜单，然后选择**设置**。
 > 2. 从 "设置" 屏幕中，选择 "**设备**" "  >  **笔 & Windows Ink**"。
-> ![来自 Ink 工作区草图板的 InkToolbar](images/ink/ink-settings-small.png)
+> !["Windows 墨迹设置" 页 & 笔的屏幕截图。](images/ink/ink-settings-small.png)
 > 3. 选择**了解我的书写**打开**手写个性化**对话框。
-> ![来自 Ink 工作区草图板的 InkToolbar](images/ink/ink-settings-handwritingpersonalization-small.png)
+> !["手写识别个性化" 对话框的屏幕截图。](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### <a name="in-the-sample"></a>在示例中：
 1. 打开 MainPage.xaml 文件。
@@ -286,7 +286,7 @@ ms.locfileid: "91219690"
 <tr>
 <td>
 
-![来自 Ink 工作区草图板的 InkToolbar](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 <td>
@@ -306,7 +306,7 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
 <tr>
 <td>
 
-![来自 Ink 工作区草图板的 InkToolbar](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 <td>
@@ -335,7 +335,7 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
 - 平行四边形
 - 五角形
 - 四边形
-- Rectangle
+- 矩形
 - 直角三角形
 - Square
 - 梯形
@@ -385,11 +385,11 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
 
 这里是一个数字创意的基本流程图示例。
 
-![原始墨迹流程图](images/ink/ink-app-step6-shapereco1-small.png)
+![数字家伙中的基本流程图的屏幕截图。](images/ink/ink-app-step6-shapereco1-small.png)
 
 这里是形状识别后的同一个流程图。
 
-![原始墨迹流程图](images/ink/ink-app-step6-shapereco2-small.png)
+![用户选择识别形状后的流程图屏幕截图。](images/ink/ink-app-step6-shapereco2-small.png)
 
 
 ## <a name="step-7-save-and-load-ink"></a>步骤 7：保存和加载墨迹
@@ -444,7 +444,7 @@ ISF 文件是一种基本的 GIF 图像，包含描述笔划墨迹属性和行�
 <tr>
 <td>
 
-![来自 Ink 工作区草图板的 InkToolbar](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 

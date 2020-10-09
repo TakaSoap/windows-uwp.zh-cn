@@ -1,5 +1,5 @@
 ---
-Description: 构建支持平台文本缩放的 Windows 应用和自定义/模板化控件。
+description: 构建支持平台文本缩放的 Windows 应用和自定义/模板化控件。
 title: 文本缩放
 label: Text scaling
 template: detail.hbs
@@ -8,16 +8,16 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d8f7536da045514471c1af1c2f0cfac74af91a7a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 0d47523ca69f8088d5e13ab944c5dd2be2d1d8ba
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219940"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860170"
 ---
 # <a name="text-scaling"></a>文本缩放
 
-![文本缩放100% 到225% 的示例](images/coretext/text-scaling-news-hero-small.png)  
+!["英雄" 图像显示从100% 到225% 的文本缩放示例。](images/coretext/text-scaling-news-hero-small.png)  
 *Windows 10 (100% 到 225% ) 中文本的示例 *
 
 ## <a name="overview"></a>概述
@@ -40,7 +40,7 @@ DirectWrite、GDI 和 XAML SwapChainPanels 不能以本机方式支持文本缩�
 
 用户可以通过 "设置-> 轻松访问->" 视觉/显示屏幕上的 "放大文本" 滑块调整文本比例。
 
-![文本缩放100% 到225% 的示例](images/coretext/text-scaling-settings-100-small.png)  
+!["轻松访问视觉/显示设置" 页面的屏幕截图，显示 "放大文本" 滑块。](images/coretext/text-scaling-settings-100-small.png)  
 *设置中的文本缩放设置-> 轻松访问-> 视觉/显示屏幕*
 
 ## <a name="ux-guidance"></a>UX 指南
@@ -93,7 +93,7 @@ DirectWrite、GDI 和 XAML SwapChainPanels 不能以本机方式支持文本缩�
 </Grid>
 ```
 
-![动画文本缩放100% 至225%](images/coretext/text-scaling.gif)  
+![文本缩放100% 到225% 的动画。](images/coretext/text-scaling.gif)  
 *动画文本缩放*
 
 ### <a name="use-auto-sizing"></a>使用自动调整大小
@@ -123,7 +123,7 @@ DirectWrite、GDI 和 XAML SwapChainPanels 不能以本机方式支持文本缩�
           AcceptsReturn="True" TextWrapping="Wrap" />
 ```
 
-![带有文本换行的动画文本缩放100% 至225%](images/coretext/text-scaling-textwrap.gif)  
+![文本换行的文本缩放100% 到225% 的动画。](images/coretext/text-scaling-textwrap.gif)  
 *带有文本换行的动画文本缩放*
 
 ### <a name="specify-text-trimming-behavior"></a>指定文本修整行为
@@ -141,7 +141,7 @@ DirectWrite、GDI 和 XAML SwapChainPanels 不能以本机方式支持文本缩�
 </TextBlock>
 ```
 
-![文本剪辑的文本缩放100% 至225%](images/coretext/text-scaling-clipping-small.png)  
+![文本剪辑的文本缩放100% 到225% 的屏幕截图。](images/coretext/text-scaling-clipping-small.png)  
 *带有文本剪辑的文本缩放*
 
 ### <a name="use-a-tooltip"></a>使用工具提示

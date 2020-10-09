@@ -1,5 +1,5 @@
 ---
-Description: 构建支持来自笔和触笔设备的自定义交互的 Windows 应用程序，包括用于自然书写和绘图体验的数字墨迹。
+description: 构建支持来自笔和触笔设备的自定义交互的 Windows 应用程序，包括用于自然书写和绘图体验的数字墨迹。
 title: Windows 应用中的笔交互和 Windows Ink
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
@@ -8,16 +8,16 @@ keywords: Windows Ink, Windows Ink 书写, DirectInk, InkPresenter, InkCanvas, �
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a877fabfd34bcbe16afb70c012d403d489e3a6e0
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 7a29a7ed497fdcd463df0855b4aad3b65ce6408a
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749913"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860179"
 ---
 # <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Windows 应用中的笔交互和 Windows Ink
 
-![Surface 触控笔](images/ink/hero-small.png)  
+![Surface 钢笔的英雄图像。](images/ink/hero-small.png)  
 *Surface 触控笔*（可通过 [Microsoft 官方商城](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)购买）。
 
 ## <a name="overview"></a>概述
@@ -95,7 +95,7 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 
 该系列图显示此 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件如何呈现笔输入。
 
-| ![带有背景图的空白 InkCanvas](images/ink_basic_1_small.png) | ![带有墨迹笔划的 InkCanvas](images/ink_basic_2_small.png) | ![擦除了一条笔划的 InkCanvas](images/ink_basic_3_small.png) |
+| ![带有背景图像的空白 InkCanvas 的屏幕截图。](images/ink_basic_1_small.png) | ![带有墨迹笔划的 InkCanvas 的屏幕截图。](images/ink_basic_2_small.png) | ![已清除一个笔画的 InkCanvas 的屏幕截图。](images/ink_basic_3_small.png) |
 | --- | --- | ---|
 | 带有背景图像的空白 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 。 | 带有笔划墨迹的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。 | 擦除了一条笔划的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)（注意如何在整条笔划而非某个部分上执行擦除）。 |
 
@@ -206,7 +206,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 这些图像显示了 [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 如何处理和自定义笔输入。
 
-| ![具有默认的黑色笔划墨迹的 inkcanvas](images/ink-basic-custom-1-small.png) | ![具有用户选择的红色笔划墨迹的 inkcanvas](images/ink-basic-custom-2-small.png) |
+| ![用默认黑色墨笔划显示 InkCanvas 的屏幕截图。](images/ink-basic-custom-1-small.png) | ![用户选择了红色墨迹笔划的 InkCanvas 屏幕截图。](images/ink-basic-custom-2-small.png) |
 | --- | --- |
 | 带有默认黑色墨笔划的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 。 | [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) ，用户选择了红色墨迹笔划。 | 
 
@@ -230,7 +230,7 @@ Windows Ink 平台未为需要修改输入的操作（例如笔划选择）提�
 
     我们在此处添加一个用于绘制选择笔划的画布（在 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 下面）。 使用单独的图层绘制选择笔划可使 **InkCanvas** 及其内容不会受到影响。
 
-    ![带有基础选择画布的空白 inkcanvas](images/ink-unprocessed-1-small.png)
+    ![带有基础选择画布的空白 InkCanvas 的屏幕截图。](images/ink-unprocessed-1-small.png)
 
       ```xaml
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -271,7 +271,7 @@ Windows Ink 平台未为需要修改输入的操作（例如笔划选择）提�
 
     最后，我们为 [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted) 的 [**StrokeStarted**](/uwp/api/windows.ui.input.inking.inkpresenter.strokeserased) 和 [**StrokesErased**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 事件分配侦听器。 如果启动了新笔划或擦除了现有笔划，我们将使用这些事件的处理程序清理选择 UI。
 
-    ![具有默认的黑色笔划墨迹的 inkcanvas](images/ink-unprocessed-2-small.png)
+    ![带有默认黑色墨笔划的 "前进墨迹自定义" 示例应用屏幕截图，显示 inkcanvas。](images/ink-unprocessed-2-small.png)
 
       ```csharp
         public MainPage()
@@ -320,7 +320,7 @@ Windows Ink 平台未为需要修改输入的操作（例如笔划选择）提�
 
     所有选择功能（包括套索笔划和边界矩形）均在这些处理程序中实现。
 
-    ![选择套索](images/ink-unprocessed-3-small.png)
+    ![选择套索的屏幕截图。](images/ink-unprocessed-3-small.png)
 
       ```csharp
         // Handle unprocessed pointer events from modified input.
@@ -368,7 +368,7 @@ Windows Ink 平台未为需要修改输入的操作（例如笔划选择）提�
 
 5.  为结束 PointerReleased 事件处理程序，我们将清除所有内容（套索笔划）的选择图层，然后在套索区域包含的墨迹笔划周围绘制一个边界矩形。
 
-    ![选择边界矩形](images/ink-unprocessed-4-small.png)
+    ![选择范围矩形的屏幕截图。](images/ink-unprocessed-4-small.png)
 
       ```csharp
         // Draw a bounding rectangle, on the selection canvas, encompassing

@@ -1,5 +1,5 @@
 ---
-Description: 特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。
+description: 特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。
 title: 特殊磁贴模板
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4368c3d504b01a48b05fcaffdb01a71b916d9d43
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1aac8997492eba2d591d0f80f89dbc9a8f5830ba
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169301"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860209"
 ---
 # <a name="special-tile-templates"></a>特殊磁贴模板
  
@@ -50,9 +50,9 @@ ms.locfileid: "89169301"
 
 对于非方形资源，会自动进行水平/垂直居中放置并贴靠到容器的宽度/高度：
 
-![非方形资源大小调整（带有和不带有锁屏提醒）](images/assetguidance26a.png)
+![显示自动居中非方形资产大小的屏幕截图，带有和不带徽章。](images/assetguidance26a.png)
 
-![非方形资源大小调整（带有和不带有锁屏提醒）](images/assetguidance26b.png)
+![显示自动居中非方形资产大小的屏幕截图，带有和不带徽章。](images/assetguidance26b.png)
 
 **步骤 2：创建基本磁贴**
 
