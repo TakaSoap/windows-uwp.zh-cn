@@ -7,16 +7,16 @@ dev_langs:
 - csharp
 keywords: windows 10、uwp、屏幕捕获、视频
 ms.localizationpriority: medium
-ms.openlocfilehash: d8f70748d025d50d19dbf2cb184ae841cced7f8a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 9f95e310fb93292db7dc348493487fada9c6d66e
+ms.sourcegitcommit: 83eb36047380501fd1e4d023d593904ad783365b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218630"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852374"
 ---
 # <a name="screen-capture-to-video"></a>屏幕捕获到视频
 
-本文介绍如何使用 Windows 将从屏幕捕获的帧编码为视频文件。 有关屏幕捕获静态图像的信息，请参阅 [Screeen 捕获](./screen-capture.md)。
+本文介绍如何使用 Windows 将从屏幕捕获的帧编码为视频文件。 有关屏幕捕获静态图像的信息，请参阅 [Screeen 捕获](./screen-capture.md)。 有关利用本文中所述的概念和技术的简单的端到端示例应用，请参阅 [SimpleRecorder](https://github.com/MicrosoftDocs/SimpleRecorder/)。
 
 ## <a name="overview-of-the-video-capture-process"></a>视频捕获过程概述
 本文提供了一个示例应用的演练，该应用将窗口内容记录到视频文件中。 虽然实现此方案可能需要大量代码，但屏幕录制器应用程序的高级结构非常简单。 屏幕捕获进程使用三个主要 UWP 功能：
