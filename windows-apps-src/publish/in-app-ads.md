@@ -6,12 +6,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c8d01042fec7435652c819f29e3a791a5623a947
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 724a9b6bc34d38a5addfd0e0123f26e1d98c9caf
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220260"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878590"
 ---
 # <a name="in-app-ads"></a>应用内广告
 
@@ -48,7 +48,7 @@ ms.locfileid: "91220260"
 6. 根据需要配置以下其他设置：
 
     * 如果你为广告单元选择 **UWP (Windows 10)** 设备系列，则可以选择为广告单元配置[中介设置](#mediation)。
-    * 如果你为横幅广告单元选择**电脑/平板电脑 (Windows 8.1)** 或**移动设备 (Windows Phone 8.x)** 设备系列，则可以选择 **Show community ads in your app** 以选择加入[社区广告](about-community-ads.md)。
+    * 如果你为横幅广告单元选择**电脑/平板电脑 (Windows 8.1)** 或**移动设备 (Windows Phone 8.x)** 设备系列，则可以选择 **Show community ads in your app** 以选择加入[社区广告](../monetize/index.md)。
 
 7.  如果还没有为所选的应用设置 COPPA 合规性，请在 [COPPA 合规性](#coppa)部分中选择一个选项。
 8.  单击**创建广告单元**。
@@ -111,11 +111,11 @@ ms.locfileid: "91220260"
 
 下表列出了我们当前针对每种广告类型支持的付费网络。 请注意，这之中的某些网络[并非适用于所有市场](#network-markets)。
 
-|  广告网络  |  描述  |  支持的广告类型  |
+|  广告网络  |  说明  |  支持的广告类型  |
 |--------------|---------------|---------------------|
 | Oath 和 AppNexus |  这是一个 Microsoft 托管的 ad 网络，可通过我们的合作伙伴网络、Oath 和 AppNexus 提供广告。<p/>**注意**： Oath 和 AppNexus 在横幅广告单位的 " **付费广告网络** " 列表中始终排在第一位，并且不能更改为这些类型广告的更低排名。 | 横幅、视频间隙 |
 | AppNexus（直接） | 选择此选项以提供来自 [AppNexus](https://www.appnexus.com)的广告。 | 视频间隙、本机  |
-| Microsoft 应用安装广告 | 选择此选项以提供由 Windows 生态系统中[为其应用创建促销广告市场活动](create-an-ad-campaign-for-your-app.md)的其他开发人员创建的应用安装广告或应用重新参与广告。  |  横幅、横幅间隙、本机  |
+| Microsoft 应用安装广告 | 选择此选项以提供由 Windows 生态系统中[为其应用创建促销广告市场活动](../monetize/index.md)的其他开发人员创建的应用安装广告或应用重新参与广告。  |  横幅、横幅间隙、本机  |
 | MSN 内容建议 |  选择此选项以提供 MSN 内容建议的广告。 |  横幅、横幅间隙  |
 | Outbrain |  选择此选项以提供来自 [Outbrain](https://www.outbrain.com/) 的广告。 |  横幅、横幅间隙  |
 | Revcontent |  选择此选项以提供来自 [Revcontent](https://www.revcontent.com/) 的广告。 |  横幅、本机  |
@@ -133,10 +133,10 @@ ms.locfileid: "91220260"
 
 下表列出了我们当前针对每种广告类型支持的其他网络。
 
-|  广告网络  |  描述  |  支持的广告类型  |
+|  广告网络  |  说明  |  支持的广告类型  |
 |--------------|---------------|---------------------|
-| Microsoft 社区广告 |  如果[为应用之一创建促销广告市场活动](create-an-ad-campaign-for-your-app.md)并将此市场活动配置为[社区广告市场活动](about-community-ads.md)，则选择此选项以显示来自此市场活动的广告。 | 横幅、横幅间隙 |
-| Microsoft 自家广告 | 如果[为应用之一创建促销广告市场活动](create-an-ad-campaign-for-your-app.md)并将此市场活动配置为[自家广告市场活动](about-house-ads.md)，则选择此选项以显示来自此市场活动的广告。 | 横幅、横幅间隙  |
+| Microsoft 社区广告 |  如果[为应用之一创建促销广告市场活动](../monetize/index.md)并将此市场活动配置为[社区广告市场活动](../monetize/index.md)，则选择此选项以显示来自此市场活动的广告。 | 横幅、横幅间隙 |
+| Microsoft 自家广告 | 如果[为应用之一创建促销广告市场活动](../monetize/index.md)并将此市场活动配置为[自家广告市场活动](../monetize/index.md)，则选择此选项以显示来自此市场活动的广告。 | 横幅、横幅间隙  |
 
 
 <span id="network-markets" />

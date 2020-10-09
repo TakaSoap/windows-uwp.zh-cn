@@ -8,12 +8,12 @@ ms.topic: article
 ms.custom: contperfq1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e2fc69f49308164307bc3c6c23479aae991d0ff7
-ms.sourcegitcommit: f46edb85d523a4a1f5006787d357cdc9d090aefe
+ms.openlocfilehash: b63e88f6d83e84bbe07fc4c5cbe7befba6dc3c8a
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414847"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878500"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推送通知服务 (WNS) 概述 
 
@@ -34,7 +34,7 @@ Windows 推送 Notification Services (WNS) 使第三方开发人员能够从他�
 
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>注册你的应用，并为你的云服务接收凭据
 
-必须先向应用商店仪表板注册应用，然后才能使用 WNS 发送通知，如 [此处](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification)所述。
+必须先向应用商店仪表板注册应用，然后才能使用 WNS 发送通知，如 [此处](/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification)所述。
 
 ## <a name="requesting-a-notification-channel"></a>请求通知通道
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 盈利
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f2d5ceef5ef15ac81e43447e24e2eaf61e4a22a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c827c257947ea0f365bafe497e627841b501d40d
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159361"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878580"
 ---
 #  <a name="monetization-for-games"></a>通过游戏盈利
 
@@ -213,15 +213,15 @@ AdDuplex 可用于在你的游戏中实现横幅或间隙广告。
 
 ## <a name="maximize-your-games-potential-through-ad-campaigns"></a>通过广告市场活动最大程度地发展游戏的潜在客户
 
-执行下一步，使用广告推广你的应用。 当为你的游戏[创建广告市场活动](../publish/create-an-ad-campaign-for-your-app.md)时，其他应用和游戏将显示可推广你的游戏的广告。
+执行下一步，使用广告推广你的应用。 当为你的游戏[创建广告市场活动](../monetize/index.md)时，其他应用和游戏将显示可推广你的游戏的广告。
 
 从多个市场活动类型中进行选择，这些活动可帮助增加你的玩家群。
 
 |市场活动类型             | 你的游戏的广告显示在...                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |已付                      |与你的游戏的设备或类别匹配的应用。                                                                                                                                                   |
-|免费社区            |由已选择加入社区广告市场活动的其他开发人员发布的应用。 有关详细信息，请参阅[关于社区广告](../publish/about-community-ads.md)。|
-|免费自家                |仅你发布的应用。 有关详细信息，请参阅[关于自家广告](../publish/about-house-ads.md)。                                                            |
+|免费社区            |由已选择加入社区广告市场活动的其他开发人员发布的应用。 有关详细信息，请参阅[关于社区广告](../monetize/index.md)。|
+|免费自家                |仅你发布的应用。 有关详细信息，请参阅[关于自家广告](../monetize/index.md)。                                                            |
 
 ## <a name="related-links"></a>相关链接
 

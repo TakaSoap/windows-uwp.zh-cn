@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 74afbda1cc93aa0602618d6d94efe6baadf59ecb
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 2be721137e6c09913eafd2c58bab07f1ae6f2728
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363700"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878510"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>使用 Microsoft Store 服务开展广告活动
 
@@ -23,7 +23,7 @@ ms.locfileid: "89363700"
 2.  在 Microsoft Store 促销 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Microsoft Store 促销 API。 该令牌到期后，可以重新生成一个。
 3.  [调用 Microsoft Store 促销 API](#call-the-windows-store-promotions-api)。
 
-还可以使用合作伙伴中心创建和管理广告活动，还可以在合作伙伴中心访问通过 Microsoft Store 促销 API 以编程方式创建的任何广告活动。 有关在合作伙伴中心管理 ad 市场活动的详细信息，请参阅为 [应用创建 ad 市场活动](../publish/create-an-ad-campaign-for-your-app.md)。
+还可以使用合作伙伴中心创建和管理广告活动，还可以在合作伙伴中心访问通过 Microsoft Store 促销 API 以编程方式创建的任何广告活动。 有关在合作伙伴中心管理 ad 市场活动的详细信息，请参阅为 [应用创建 ad 市场活动](./index.md)。
 
 > [!NOTE]
 > 具有合作伙伴中心帐户的任何开发人员都可以使用 Microsoft Store 促销 API 来管理其应用的广告活动。 媒体机构还可以请求访问该 API 代表他们的广告商开展广告活动。 如果你是希望了解该 API 详情或请求其访问权限的媒体机构，请将请求发送至 storepromotionsapi@microsoft.com。
@@ -34,9 +34,9 @@ ms.locfileid: "89363700"
 
 在开始编写调用 Microsoft Store 促销 API 的代码之前，确保已完成以下先决条件。
 
-* 必须先 [使用合作伙伴中心的 **ad 市场** 活动页创建一个付费广告活动](../publish/create-an-ad-campaign-for-your-app.md)，并在此页上至少添加一种付款方式，然后才能成功使用此 API 创建和启动广告活动。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用此 API 创建的 ad 市场活动的传递行会自动对在合作伙伴中心的 " **ad 市场活动** " 页上选择的默认付款方式进行计费。
+* 必须先 [使用合作伙伴中心的 **ad 市场** 活动页创建一个付费广告活动](./index.md)，并在此页上至少添加一种付款方式，然后才能成功使用此 API 创建和启动广告活动。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用此 API 创建的 ad 市场活动的传递行会自动对在合作伙伴中心的 " **ad 市场活动** " 页上选择的默认付款方式进行计费。
 
-* 你（或你的组织）必须有一个 Azure AD 目录，并且必须对该目录拥有[全局管理员](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，则你已具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
+* 你（或你的组织）必须有一个 Azure AD 目录，并且必须对该目录拥有[全局管理员](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
 
 * 必须将 Azure AD 应用程序与合作伙伴中心帐户相关联，并检索应用程序的租户 ID 和客户端 ID，并生成一个密钥。 Azure AD 应用程序是指要从中调用 Microsoft Store 促销 API 的应用或服务。 需要使用该租户 ID、客户端 ID 和密钥来获取要传递给 API 的 Azure AD 访问令牌。
     > [!NOTE]

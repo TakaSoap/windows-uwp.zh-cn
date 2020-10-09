@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 广告市场活动
 ms.localizationpriority: medium
-ms.openlocfilehash: fd933f103bf8964997102731b653e125fae89e12
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c40ab5d6aea67477e0900441cfb02b858dbef9b2
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162441"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878450"
 ---
 # <a name="get-ad-campaign-performance-data"></a>获取广告市场活动性能数据
 
 
 在 Microsoft Store 分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内你的应用程序的促销广告市场活动性能数据的聚合摘要。 此方法返回采用 JSON 格式的数据。
 
-此方法返回的数据与合作伙伴中心中的 [Ad 市场活动报表](/windows/uwp/publish/ad-campaign-report) 提供的数据相同。 有关广告市场活动的详细信息，请参阅[为应用创建广告市场活动](../publish/create-an-ad-campaign-for-your-app.md)。
+此方法返回的数据与合作伙伴中心中的 [Ad 市场活动报表](/windows/uwp/publish/ad-campaign-report) 提供的数据相同。 有关广告市场活动的详细信息，请参阅[为应用创建广告市场活动](./index.md)。
 
 若要创建、更新或检索广告市场活动的详细信息，你可以使用 [Microsoft Store 推广 API](run-ad-campaigns-using-windows-store-services.md) 中的[管理广告市场活动](manage-ad-campaigns.md)方法。
 
@@ -41,7 +41,7 @@ ms.locfileid: "89162441"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                |
+| Header        | 类型   | 说明                |
 |---------------|--------|---------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt; 。 |
 
@@ -50,7 +50,7 @@ ms.locfileid: "89162441"
 
 若要检索特定应用的广告市场活动性能数据，请使用 *applicationId* 参数。 若要检索与你的开发者帐户关联的所有应用的广告性能数据，请忽略 *applicationId* 参数。
 
-| 参数     | 类型   | 描述     | 必需 |
+| 参数     | 类型   | 说明     | 必需 |
 |---------------|--------|-----------------|----------|
 | applicationId   | 字符串    | 要检索其 ad 市场活动性能数据的应用的 [存储 ID](in-app-purchases-and-trials.md#store-ids) 。 |    否      |
 |  startDate  |  日期   |  要检索的广告市场活动性能数据日期范围中的开始日期，格式为 YYYY/MM/DD。 默认值为当前日期减去 30 天。   |   否    |
@@ -94,7 +94,7 @@ Authorization: Bearer <your access token>
 
 *Value* 数组中的元素包含以下值。
 
-| 值               | 类型   | 描述            |
+| 值               | 类型   | 说明            |
 |---------------------|--------|------------------------|
 | date                | 字符串 | 广告市场活动性能数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
 | applicationId       | 字符串 | 要检索广告市场活动性能数据的应用的应用商店 ID。                     |
@@ -150,6 +150,6 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相关主题
 
-* [为你的应用创建广告市场活动](../publish/create-an-ad-campaign-for-your-app.md)
+* [为你的应用创建广告市场活动](./index.md)
 * [使用 Microsoft Store services 运行 ad 市场活动](run-ad-campaigns-using-windows-store-services.md)
 * [使用 Microsoft Store 服务访问分析数据](access-analytics-data-using-windows-store-services.md)

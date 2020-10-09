@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb9c6a43b9411b2297cc4cbf35dfdb2177e5dab7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ea0fe6f29059a2b9ef8e5ce728d883d5349d0468
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155371"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878420"
 ---
 # <a name="advertising-performance-report"></a>广告性能报告
 
@@ -49,7 +49,7 @@ ms.locfileid: "89155371"
 
 **广告效果**报告包含以下效果指标数据。 某些指标仅对特定广告提供商可见。
 
-|  指标  |  描述  |
+|  指标  |  说明  |
 |----------|---------------|
 | 预计收入  |  从应用上运行的广告中获得的预计金额。 |
 | eCPM  |  每千次印象有效成本。 |
@@ -59,8 +59,8 @@ ms.locfileid: "89155371"
 | Clicks  |  客户单击应用中的广告的次数。 |
 | CTR  |  点击率，是指单击广告的次数与曝光数之比。 |
 | Viewability | 应用中可查看的广告印象百分比。 有关如何计算此值的详细信息，请参阅 [优化 ad 单元的 viewability](../monetize/optimize-ad-unit-viewability.md)。 |
-| 获取的积分数  | 如果正在开展[社区广告](./about-community-ads.md)活动，那么这表示你通过在应用中展示社区广告提升广告空间而获得的积分数。  |
-| 花费的积分数  | 如果正在开展[社区广告](./about-community-ads.md)活动，那么这表示你已为自己的应用广告花费的积分数。  |
+| 获取的积分数  | 如果正在开展[社区广告](../monetize/index.md)活动，那么这表示你通过在应用中展示社区广告提升广告空间而获得的积分数。  |
+| 花费的积分数  | 如果正在开展[社区广告](../monetize/index.md)活动，那么这表示你已为自己的应用广告花费的积分数。  |
 
 ## <a name="related-topics"></a>相关主题
 

@@ -6,16 +6,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 自定义, 应用, 促销, 市场活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 4015ee5372c2068d7a9ead389fe7eb07aa50a466
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c04a9705797e69543e9aec8f4e6205c815f76800
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171121"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878430"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>创建自定义应用促销市场活动
 
-除了为要在 Windows 应用中运行的 [应用创建 ad 市场活动](create-an-ad-campaign-for-your-app.md) ，还可以使用其他通道升级应用。 例如，你可以使用第三方应用营销提供商推广你的应用，或者可以在社交媒体站点上发布指向你的应用的链接。 这些活动被称为*自定义市场活动*。
+除了为要在 Windows 应用中运行的 [应用创建 ad 市场活动](../monetize/index.md) ，还可以使用其他通道升级应用。 例如，你可以使用第三方应用营销提供商推广你的应用，或者可以在社交媒体站点上发布指向你的应用的链接。 这些活动被称为*自定义市场活动*。
 
 如果你为应用举行自定义市场活动，你可以通过为每个自定义市场活动创建不同的 URL（其中每个 URL 包含不同的*市场活动 ID*）来跟踪每个市场活动的相对表现。 当运行 Windows 10 的客户单击包含市场活动 ID 的 URL 时，Microsoft 会将单击与相应的自定义活动关联起来，并在 [合作伙伴中心](https://partner.microsoft.com/dashboard)提供此数据。
 

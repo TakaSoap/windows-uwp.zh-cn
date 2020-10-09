@@ -6,24 +6,24 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 6529c1a21865b2997d36e9b254b19f971f620490
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bf5945ca68a4ea060943cb2cc89ba907f597e4f5
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633222"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878400"
 ---
 # <a name="manage-ad-campaigns"></a>管理广告活动
 
 在 [Microsoft Store 促销 API](run-ad-campaigns-using-windows-store-services.md) 中使用这些方法来创建、编辑和获取适合你的应用的促销性广告活动。 使用此方法创建的每个活动只能与一个应用关联。
 
->**请注意**&nbsp;&nbsp;还可以创建并管理广告市场活动使用合作伙伴中心和以编程方式创建的营销活动可以访问在合作伙伴中心。 有关管理合作伙伴中心中的广告市场活动的详细信息，请参阅[创建您的应用程序的广告活动](../publish/create-an-ad-campaign-for-your-app.md)。
+>**Note** &nbsp; 注意 &nbsp;你还可以使用合作伙伴中心创建和管理广告活动，并可以在合作伙伴中心访问以编程方式创建的市场活动。 有关在合作伙伴中心管理 ad 市场活动的详细信息，请参阅为 [应用创建 ad 市场活动](./index.md)。
 
 使用这些方法创建或更新活动时，你通常还需要调用以下一种或多种方法来管理与活动关联的*投放渠道*、*目标市场配置文件*和*创意*。 有关活动与投放渠道、目标市场配置文件和创意之间关系的详细信息，请参阅[使用 Microsoft Store 服务开展广告活动](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)。
 
-* [管理 ad 市场活动传递行](manage-delivery-lines-for-ad-campaigns.md)
-* [管理 ad 市场活动的目标配置文件](manage-targeting-profiles-for-ad-campaigns.md)
-* [管理 creatives ad 市场活动](manage-creatives-for-ad-campaigns.md)
+* [管理广告活动的投放渠道](manage-delivery-lines-for-ad-campaigns.md)
+* [管理广告活动的目标市场配置文件](manage-targeting-profiles-for-ad-campaigns.md)
+* [管理广告活动的创意](manage-creatives-for-ad-campaigns.md)
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -31,7 +31,7 @@ ms.locfileid: "57633222"
 
 * 如果尚未开始操作，请先完成 Microsoft Store 促销 API 的所有[先决条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
 
-  >**请注意**&nbsp;&nbsp;作为系统必备组件的一部分，请确保你[在合作伙伴中心中创建至少一个付费的广告活动](../publish/create-an-ad-campaign-for-your-app.md)和伙伴中添加至少一个 ad 市场活动的支付方式中心。 用于创建使用此 API 的广告市场活动传递行会自动按上所选的默认付款方式**广告市场活动**合作伙伴中心中的页。
+  >**Note** &nbsp; 注意 &nbsp;作为先决条件的一部分，请确保在[合作伙伴中心创建至少一个付费广告活动](./index.md)，并为合作伙伴中心中的广告营销活动至少添加一个付款方式。 使用此 API 创建的 ad 市场活动的传递行会自动对在合作伙伴中心的 " **ad 市场活动** " 页上选择的默认付款方式进行计费。
 
 * [获取 Azure AD 访问令牌](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在这些方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
@@ -40,7 +40,7 @@ ms.locfileid: "57633222"
 
 这些方法具有以下 URI。
 
-| 方法类型 | 请求 URI                                                      |  描述  |
+| 方法类型 | 请求 URI                                                      |  说明  |
 |--------|------------------------------------------------------------------|---------------|
 | POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/campaign``` |  创建新广告活动。  |
 | PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/campaign/{campaignId}``` |  编辑通过 *campaignId* 指定的广告活动。  |
@@ -48,11 +48,11 @@ ms.locfileid: "57633222"
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/campaign``` |  查询广告活动。 请参阅[参数](#parameters)部分了解支持的查询参数。  |
 
 
-### <a name="header"></a>标头
+### <a name="header"></a>Header
 
-| 标头        | 在任务栏的搜索框中键入   | 描述         |
+| Header        | 类型   | 说明         |
 |---------------|--------|---------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 的访问令牌，采用的格式为**持有**者 &lt; *令牌* &gt; 。 |
 | 跟踪 ID   | GUID   | 可选。 跟踪调用流的 ID。                                  |
 
 
@@ -62,14 +62,14 @@ ms.locfileid: "57633222"
 
 用于查询广告活动的 GET 方法支持以下可选的查询参数。
 
-| 名称        | 在任务栏的搜索框中键入   |  描述      |    
+| 名称        | 类型   |  说明      |    
 |-------------|--------|---------------|------|
 | skip  |  int   | 要在查询中跳过的行数。 使用此参数分页浏览数据集。 例如，fetch=10 和 skip=0，将检索前 10 行数据；top=10 和 skip=10，将检索之后的 10 行数据，依此类推。    |       
-| fetch  |  int   | 要在请求中返回的数据行数。    |       
+| “etch  |  int   | 要在请求中返回的数据行数。    |       
 | campaignSetSortColumn  |  字符串   | 将响应正文中的[活动](#campaign)对象按指定字段排序。 语法为 <em>CampaignSetSortColumn=field</em>，其中的 <em>field</em> 参数可以是以下字符串之一：</p><ul><li><strong>id</strong></li><li><strong>createdDateTime</strong></li></ul><p>默认为 **createdDateTime**。     |     
-| isDescending  |  布尔   | 将响应正文中的[活动](#campaign)对象按升序或降序排列。   |         
+| isDescending  |  布尔值   | 将响应正文中的[活动](#campaign)对象按升序或降序排列。   |         
 | storeProductId  |  字符串   | 使用此值只返回与具有指定[应用商店 ID](in-app-purchases-and-trials.md#store-ids) 的应用关联的广告活动。 产品应用商店 ID 示例：9nblggh42cfd。   |         
-| label  |  字符串   | 使用此值只返回包含在[活动](#campaign)对象中指定的 *label* 的广告活动。    |       |    
+| label  |  string   | 使用此值只返回包含在[活动](#campaign)对象中指定的 *label* 的广告活动。    |       |    
 
 
 ### <a name="request-body"></a>请求正文
@@ -141,29 +141,29 @@ Authorization: Bearer <your access token>
 
 <span id="campaign"/>
 
-## <a name="campaign-object"></a>市场活动对象
+## <a name="campaign-object"></a>活动对象
 
 这些方法的请求和响应正文包含以下字段。 这张表列出了 POST 方法请求正文中的哪些字段是只读字段（意味着不能在 PUT 方法中更改它们）以及哪些字段是必填字段。
 
-| 字段        | 在任务栏的搜索框中键入   |  描述      |  只读  | 默认  | POST 必填字段 |  
+| 字段        | 类型   |  说明      |  只读  | 默认  | POST 必填字段 |  
 |--------------|--------|---------------|------|-------------|------------|
-|  id   |  整数   |  广告市场活动的 ID。     |   是    |      |  否     |       
-|  name   |  字符串   |   广告市场活动的名称。    |    否   |      |  是     |       
-|  configuredStatus   |  字符串   |  以下值之一，用于指定开发人员指定的广告活动的状态： <ul><li>**Active**</li><li>**非活动状态**</li></ul>     |  否     |  活跃    |   是    |       
-|  effectiveStatus   |  字符串   |   以下值之一，用于根据系统验证情况指定广告活动的有效状态： <ul><li>**Active**</li><li>**非活动状态**</li><li>**处理**</li></ul>    |    是   |      |   否      |       
-|  effectiveStatusReasons   |  数组   |  以下值中的一个或多个，用于指定广告活动处于此有效状态的原因： <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>**失败**</li></ul>      |  是     |     |    否     |       
+|  id   |  整型   |  广告市场活动的 ID。     |   是    |      |  否     |       
+|  name   |  字符串   |   广告活动的名称。    |    否   |      |  是     |       
+|  configuredStatus   |  字符串   |  以下值之一，用于指定开发人员指定的广告活动的状态： <ul><li>**活动**</li><li>**非活动**</li></ul>     |  否     |  可用    |   是    |       
+|  effectiveStatus   |  字符串   |   以下值之一，用于根据系统验证情况指定广告活动的有效状态： <ul><li>**活动**</li><li>**非活动**</li><li>**Processing**</li></ul>    |    是   |      |   否      |       
+|  effectiveStatusReasons   |  array   |  以下值中的一个或多个，用于指定广告活动处于此有效状态的原因： <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>失败</li></ul>      |  是     |     |    否     |       
 |  storeProductId   |  字符串   |  与广告活动关联的应用的[应用商店 ID](in-app-purchases-and-trials.md#store-ids)。 产品应用商店 ID 示例：9nblggh42cfd。     |   是    |      |  是     |       
-|  labels   |  数组   |   一个或多个字符串，代表活动的自定义标签。 这些标签用于搜索和标记活动。    |   否    |  null    |    否     |       
-|  type   | 字符串    |  以下值之一，用于指定活动类型： <ul><li>**付费**</li><li>**房屋**</li><li>**社区**</li></ul>      |   是    |      |   是    |       
-|  objective   |  字符串   |  以下值之一，用于指定活动的目标： <ul><li>**DriveInstall**</li><li>**DriveReengagement**</li><li>**DriveInAppPurchase**</li></ul>     |   否    |  DriveInstall    |   是    |       
-|  lines   |  数组   |   标识与广告活动关联的[投放渠道](manage-delivery-lines-for-ad-campaigns.md#line)的一个或多个对象。 此字段中的每个对象都由 *id* 和 *name*（分别指定投放渠道的 ID 和名称）字段组成。     |   否    |      |    否     |       
+|  标签   |  array   |   一个或多个字符串，代表活动的自定义标签。 这些标签用于搜索和标记活动。    |   否    |  null    |    否     |       
+|  type   | 字符串    |  以下值之一，用于指定活动类型： <ul><li>**已付**</li><li>**楔形**</li><li>**社区**</li></ul>      |   是    |      |   是    |       
+|  目标   |  字符串   |  以下值之一，用于指定活动的目标： <ul><li>**DriveInstall**</li><li>**DriveReengagement**</li><li>**DriveInAppPurchase**</li></ul>     |   否    |  DriveInstall    |   是    |       
+|  lines   |  array   |   标识与广告活动关联的[投放渠道](manage-delivery-lines-for-ad-campaigns.md#line)的一个或多个对象。 此字段中的每个对象都由 *id* 和 *name*（分别指定投放渠道的 ID 和名称）字段组成。     |   否    |      |    否     |       
 |  createdDate   |  字符串   |  广告活动的创建日期和时间（ISO 8601 格式）。     |  是     |      |     否    |       |
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [运行使用 Microsoft 应用商店服务广告市场活动](run-ad-campaigns-using-windows-store-services.md)
-* [管理 ad 市场活动传递行](manage-delivery-lines-for-ad-campaigns.md)
-* [管理 ad 市场活动的目标配置文件](manage-targeting-profiles-for-ad-campaigns.md)
-* [管理 creatives ad 市场活动](manage-creatives-for-ad-campaigns.md)
-* [获取 ad 市场活动的性能数据](get-ad-campaign-performance-data.md)
+* [使用 Microsoft Store 服务开展广告市场活动](run-ad-campaigns-using-windows-store-services.md)
+* [管理广告活动的投放渠道](manage-delivery-lines-for-ad-campaigns.md)
+* [管理广告活动的目标市场配置文件](manage-targeting-profiles-for-ad-campaigns.md)
+* [管理广告活动的创意](manage-creatives-for-ad-campaigns.md)
+* [获取广告市场活动性能数据](get-ad-campaign-performance-data.md)

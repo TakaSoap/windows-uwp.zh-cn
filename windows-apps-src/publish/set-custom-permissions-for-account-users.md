@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 用户角色, 用户权限, 自定义角色, 用户访问权限, 自定义权限, 标准角色
 ms.localizationpriority: medium
-ms.openlocfilehash: f8454587e31751e3653d983dbb1d45e21a2808d9
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 3cdd1904dad82e0145305fe2709360be01518a7f
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750173"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878480"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>为帐户用户设置角色或自定义权限
 
@@ -104,7 +104,7 @@ ms.locfileid: "91750173"
 <tr><td align="left">    <b>帐户设置</b>                    </td><td align="left">  可以查看 " <b>帐户设置</b> " 部分中的所有页面，包括 <a href="/windows/uwp/publish/manage-account-settings-and-profile">联系信息</a>。       </td><td align="left">  可以在 " <b>帐户设置</b> " 部分查看所有页。 可更改<a href="/windows/uwp/publish/manage-account-settings-and-profile">联系人信息</a>和其他页面，但无法更改付款帐户或税务配置文件（除非单独授予该权限）。            </td></tr>
 <tr><td align="left">    <b>帐户用户</b>                       </td><td align="left">  可在<b>用户</b>部分查看已添加到帐户的用户。          </td><td align="left">  可将用户添加到帐户，并在<b>用户</b>部分更改现有的用户。             </td></tr>
 <tr><td align="left">    <b>帐户级别 ad 性能报表</b> </td><td align="left">  可查看帐户级的<a href="advertising-performance-report.md">广告性能报告</a>。      </td><td align="left">  空值   </td></tr>
-<tr><td align="left">    <b>广告活动</b>                        </td><td align="left">  可查看在帐户中创建的<a href="create-an-ad-campaign-for-your-app.md">广告市场活动</a>。      </td><td align="left">  可在帐户中创建、管理和查看<a href="create-an-ad-campaign-for-your-app.md">广告市场活动</a>。          </td></tr>
+<tr><td align="left">    <b>广告活动</b>                        </td><td align="left">  可查看在帐户中创建的<a href="/windows/uwp/monetize/">广告市场活动</a>。      </td><td align="left">  可在帐户中创建、管理和查看<a href="/windows/uwp/monetize/">广告市场活动</a>。          </td></tr>
 <tr><td align="left">    <b>Ad 中介</b>                        </td><td align="left">  可查看帐户中所有产品的广告中介配置。    </td><td align="left">  可查看和更改帐户中所有产品的广告中介配置。        </td></tr>
 <tr><td align="left">    <b>Ad 采集报表</b>                </td><td align="left">  可查看帐户中所有产品的<a href="/windows/uwp/publish/advertising-performance-report">广告中介报告</a>。    </td><td align="left">  空值    </td></tr>
 <tr><td align="left">    <b>Ad 性能报告</b>              </td><td align="left">  可查看帐户中所有产品的<a href="advertising-performance-report.md">广告性能报告</a>。       </td><td align="left">  空值         </td></tr>
@@ -112,7 +112,7 @@ ms.locfileid: "91750173"
 <tr><td align="left">    <b>关联广告</b>                       </td><td align="left">  可查看帐户中所有产品的<a href="/windows/uwp/publish/in-app-ads">联盟广告</a>使用情况。    </td><td align="left">  可管理和查看帐户中所有产品的<a href="/windows/uwp/publish/in-app-ads">联盟广告</a>使用情况。                </td></tr>
 <tr><td align="left">    <b>子公司性能报表</b>      </td><td align="left">  可查看帐户中所有产品的<a href="/windows/uwp/publish/advertising-performance-report">联盟性能报告</a>。   </td><td align="left">  空值   </td></tr>
 <tr><td align="left">    <b>应用安装广告报表</b>             </td><td align="left">  可查看<a href="/windows/uwp/publish/ad-campaign-report">广告活动报告</a>。           </td><td align="left">  空值   </td></tr>
-<tr><td align="left">    <b>社区广告</b>                       </td><td align="left">  可查看帐户中所有产品的免费<a href="about-community-ads.md">社区广告</a>使用情况。          </td><td align="left">  可创建、管理和查看帐户中所有产品的免费<a href="about-community-ads.md">社区广告</a>使用情况。               </td></tr>
+<tr><td align="left">    <b>社区广告</b>                       </td><td align="left">  可查看帐户中所有产品的免费<a href="/windows/uwp/monetize/">社区广告</a>使用情况。          </td><td align="left">  可创建、管理和查看帐户中所有产品的免费<a href="/windows/uwp/monetize/">社区广告</a>使用情况。               </td></tr>
 <tr><td align="left">    <b>联系人信息</b>                        </td><td align="left">  可查看“帐户设置”部分中的<a href="/windows/uwp/publish/manage-account-settings-and-profile">联系人信息</a>。        </td><td align="left">  可编辑和查看“帐户设置”部分中的<a href="/windows/uwp/publish/manage-account-settings-and-profile">联系人信息</a>。            </td></tr>
 <tr><td align="left">    <b>COPPA 合规性</b>                    </td><td align="left">  可查看帐户中所有产品的 <a href="in-app-ads.md#coppa-compliance">COPPA 合规性</a>选择（指示产品是否面向年龄在 13 岁以下的儿童）。                                            </td><td align="left">  可编辑和查看帐户中所有产品的 <a href="in-app-ads.md#coppa-compliance">COPPA 合规性</a> 选择（指示产品是否面向年龄在 13 岁以下的儿童）。         </td></tr>
 <tr><td align="left">    <b>客户组</b>                     </td><td align="left">  可以查看 <a href="create-customer-groups.md">客户组</a> (段和已知用户组) 。      </td><td align="left">  可以创建、编辑和查看)  (段和已知用户组的 <a href="create-customer-groups.md">客户组</a> 。       </td></tr>
@@ -152,7 +152,7 @@ ms.locfileid: "91750173"
 请注意，无法为加载项设置某些权限。 这是因为它们不应用于外接程序 (例如，) **或者在父** 产品级别授予的权限适用于该产品的所有外接程序 (例如， **促销代码**) 。 但请注意，适用于加载项的任何权限必须单独设置；加载项不会继承为父产品选择的内容。 例如，如果你希望允许用户为外接程序提供定价和可用性选择，则需要为外接程序 (或**所有外**接程序) 启用**定价和可用性**权限，无论是否已向父产品授予**定价和可用性**权限。 
 
 
-### <a name="analytics"></a>分析
+### <a name="analytics"></a>Analytics
 
 <table>
     <thead>
