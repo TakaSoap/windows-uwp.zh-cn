@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 36b264b203627761d2872b0f9b8dade81099b149
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b519a2c9ea5f415ec15c368091475434c46092fb
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216710"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829677"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>适用于 Windows 应用的设计工具包和示例
 
@@ -26,19 +26,19 @@ ms.locfileid: "91216710"
 
 :::row:::
     :::column:::
-![主图](images/figma.png)
+:::image type="icon" source="images/figma.png":::
 <b>Figma 工具包</b><br>
 WinUI 2.4，2020 年 5 月<br>
 <a href="https://aka.ms/figmatoolkit">下载</a>
     :::column-end:::
     :::column:::
-![主图](images/sketch.png)
+:::image type="icon" source="images/sketch.png":::
 <b>Sketch 工具包</b><br>
 v1810，2018 年 10 月<br>
 <a href="https://aka.ms/sketchtoolkit">下载</a>
     :::column-end:::    
     :::column:::
-![主图](images/adobe-xd.png)
+:::image type="icon" source="images/adobe-xd.png":::
 <b>Adobe XD 工具包</b><br>
 v1901，2019 年 1 月<br>
 <a href="https://aka.ms/adobexdtoolkit">下载</a>
