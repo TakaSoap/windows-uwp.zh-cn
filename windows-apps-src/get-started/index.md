@@ -5,12 +5,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: 入门, Windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: e832ac783c43058b24cb0d341d17ad52ff7dcc05
-ms.sourcegitcommit: 9940ed6431aadbd8d4e54ca23d8ae44d3a2d048d
+ms.openlocfilehash: 21eda55755682680109f0862775f2c3bf13adf2e
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91403882"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878569"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 应用入门
 
@@ -25,7 +25,7 @@ ms.locfileid: "91403882"
         <p style="margin-top: 0px; margin-bottom: 50px">Windows 10 和通用 Windows 平台让你可以构建能够跨所有 Windows 设备类型使用并呈现出色外观的应用，或利用现代功能更新现有应用。</p>
         <br>
         <a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">什么是 Windows 应用？</a><br/>
-        <a href="https://docs.microsoft.com/windows/uwp/design/">设计和 UI</a><br/>
+        <a href="/windows/uwp/design/">设计和 UI</a><br/>
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/biztalk-host-integration-install-configure.svg" alt="Setup illustration" />

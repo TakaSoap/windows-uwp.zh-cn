@@ -1,17 +1,17 @@
 ---
-Description: 你可以通过从应用启动“反馈中心”来鼓励客户留下反馈。
+description: 你可以通过从应用启动“反馈中心”来鼓励客户留下反馈。
 title: 从应用启动“反馈中心”
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 反馈中心, 启动
 ms.localizationpriority: medium
-ms.openlocfilehash: 71ecb104f1864eefcf1e38f793a4af53a977f693
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 511612911d180459bd7c732803d3a98e3d4580c8
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363100"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933128"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>从应用启动“反馈中心”
 
@@ -60,16 +60,16 @@ ms.locfileid: "89363100"
 
 若要启动“反馈中心”，我们建议在应用中添加 UI 元素（如按钮），用于从 Segoe MDL2 Assets 字体和字符代码 E939 显示以下标准反馈图标。
 
-![反馈图标](images/feedback_icon.PNG)
+:::image type="icon" source="images/feedback_icon.PNG":::
 
 我们还建议你在应用中使用以下一个或多个链接到“反馈中心”的放置选项。
 * **直接在应用栏中**。 根据你的实现，你可能希望仅使用图标或添加文本（如下所示）。
 
-  ![反馈图标](images/feedback_appbar_placement.png)
+  ![应用程序的屏幕截图，其中的 "反馈" 图标位于右上角，旁边有标签反馈。](images/feedback_appbar_placement.png)
 
 * **在应用的“设置”中**。 这是提供对“反馈中心”的访问的更巧妙的方法。 在以下示例中，“反馈”链接显示为“应用”下的链接之一。
 
-  ![反馈图标](images/feedback_settings_placement.png)
+  !["设置" 页的屏幕截图，其中的 "反馈" 链接显示在 "应用" 下。](images/feedback_settings_placement.png)
 
 * **在事件驱动的浮出控件中**。 如果你要在启动到 Windows 反馈中心前向客户询问某个特定问题，这将非常有用。 例如，在你的应用使用某个功能后，你可能会就用户对该功能的满意度向客户提出特定问题。 如果用户选择回应，你的应用将启动“反馈中心”。
 

@@ -6,12 +6,12 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: ed490b0474b919d4439e5b74b676d5974a3c6a30
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a7df29b6c1446d65c8e5224eede3030a25888364
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174781"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933168"
 ---
 # <a name="device-portal-for-xbox"></a>适用于 Xbox 的 Device Portal
 
@@ -89,9 +89,9 @@ Xbox 设备门户中的**网络**页面与 Windows 设备门户中的**网络**�
 
 以下几个部分具有要查看和/或编辑的不同设置，如下所述。
 
-![设置](images/device-portal-xbox-20.png)
+![显示 "设备信息" 和 "显示设置" 部分的 "设置" 页的屏幕截图。](images/device-portal-xbox-20.png)
 
-![设置](images/device-portal-xbox-21.png)
+!["设置" 页的屏幕截图，显示 "本地化设置"、"电源设置" 和 "用户设置" 部分。 ](images/device-portal-xbox-21.png)
 
 #### <a name="device-information"></a>设备信息
 

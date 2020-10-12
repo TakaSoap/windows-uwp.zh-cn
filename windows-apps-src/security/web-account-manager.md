@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e60d8ef919a05493f47f086ee992afe8bfeb4c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0a67c88eb7eb70308e6dcbbd096289c0617793b1
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172831"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933068"
 ---
 # <a name="web-account-manager"></a>Web 帐户管理器
 
@@ -71,7 +71,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 如果你运行应用并单击“登录”按钮，应该会显示一个空窗口。 
 
-![帐户设置窗格](images/tb-1.png)
+![未列出任何帐户的 "选择帐户" 窗口的屏幕截图。](images/tb-1.png)
 
 窗格为空的原因是系统只提供了一个 UI shell，这取决于开发人员是否使用标识提供者以编程方式填充窗格。 
 
@@ -156,7 +156,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 运行上述代码，你的窗格应当如下所示： 
 
-![帐户设置窗格](images/tb-2.png)
+!["选择包含帐户的帐户" 窗口的屏幕截图。](images/tb-2.png)
 
 ### <a name="request-a-token"></a>请求令牌
 
@@ -390,7 +390,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 }
 ```
 
-![帐户设置窗格](images/tb-3.png)
+![如果你登录，请选择 "选择没有帐户的帐户" 窗口的屏幕截图，并显示一条消息，其中显示了 "我的卓越应用程序"。](images/tb-3.png)
 
 标题文本不要过于冗长；保持简洁明了。 如果你的登录过程很复杂并且需要显示详细信息，请使用自定义链接将用户链接到单独的页面。 
 
@@ -416,11 +416,11 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 }
 ```
 
-![帐户设置窗格](images/tb-4.png)
+![未列出帐户的 "选择帐户" 窗口的屏幕截图和指向隐私策略的链接。](images/tb-4.png)
 
 理论上，你可以对任何内容使用设置命令。 但是，我们建议将它们的使用范围限制在直观的与帐户相关的情况，如上文所述。 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [Windows.Security.Authentication.Web.Core 命名空间](/uwp/api/windows.security.authentication.web.core)
 

@@ -6,12 +6,12 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, 盈利, 参与, 促销, Microsoft Store 服务
 ms.localizationpriority: medium
-ms.openlocfilehash: dd6262677cd548fa8e690fde5a90ab1f2662ea2a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f2516a1708948f0322d197bf4fdd524ede6ba0b0
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155641"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878540"
 ---
 # <a name="monetization-engagement-and-store-services"></a>盈利、参与度和 Microsoft Store 服务
 
@@ -71,7 +71,7 @@ Windows SDK、Microsoft 广告 SDK、Microsoft Store Services SDK 和 Microsoft 
 
 我们支持多种广告体验以适应大部分需求，包括横幅广告、间隙广告（横幅和视频）、线性视频广告、可播放广告和本机广告。 我们的平台符合 OpenRTB、VAST 2.x、MRAID 2 和 VPAID 3 标准，并与 MOAT 和 IAS 兼容。
 
-[浏览广告选项](../publish/create-an-ad-campaign-for-your-app.md)
+[浏览广告选项]()
 [安装广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
     :::column-end:::
 :::row-end:::

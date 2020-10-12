@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98c74ac688707c6c80b9f3098760328fea0f852a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ff8e095fc46d2c08771f3e2e002fe2d8b602ab71
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174851"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933058"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows 运行时 8.x 到 UWP 案例研究：Bookstore1
 
@@ -68,11 +68,11 @@ Bookstore1 \_ 81 解决方案是一个8.1 通用应用项目，其中包含这�
 
 现在，你可以执行生成和运行操作。 新的 UWP 应用的外观如下，当前尚未完成任何明确的工作以将其移植到 Windows 10。
 
-![初始源代码发生更改的 Windows 10 应用](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
+![Windows 10 应用程序的屏幕截图，无明确更改。](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
 
 在桌面设备上运行的初始源代码发生更改的 Windows 10 应用
 
-![初始源代码发生更改的 Windows 10 应用](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
+![Windows 10 应用程序的屏幕截图，其中包含最初的源代码更改。](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
 
 在移动设备上运行的初始源代码发生更改的 Windows 10 应用
 
@@ -91,11 +91,11 @@ Bookstore1 \_ 81 应用程序使用了两个不同的资源字典 (BookstoreStyl
 
 在样式设置操作的最后一步中，应用的外观如下所示。
 
-![即将完成移植的 Windows 10 应用](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
+![带有样式操作最后一序列的应用屏幕截图。](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
 
 在桌面设备上运行的即将完成移植的 Windows 10 应用
 
-![即将完成移植的 Windows 10 应用](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
+![几乎端口 windows 10 应用程序的屏幕截图。](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
 
 在移动设备上运行的即将移植完成的 Windows 10 应用
 
@@ -122,7 +122,7 @@ Bookstore1 \_ 81 应用程序使用了两个不同的资源字典 (BookstoreStyl
 
 在移动设备上运行的已移植的 Windows 10 应用
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>结束语
 
 此案例研究介绍了移植非常简单的应用（可以认为是一个过分简单的应用）的过程。 例如，列表框可用于选择或者用于建立导航的上下文；应用导航到具有有关所点击项的更多详细信息的页面。 根据用户的选择，此特定应用不执行任何操作，并且它没有导航。 即便如此，案例研究仍可用于打破僵局、介绍移植过程以及演示可在真实的 UWP 应用中使用的重要技术。
 

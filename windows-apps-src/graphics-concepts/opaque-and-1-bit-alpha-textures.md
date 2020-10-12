@@ -7,14 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 74768202554a3eb49c0df8ee5f17a4fe5f979be8
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: c08489055bfd4e867310c5bdec6fea655ddc6d41
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291805"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933008"
 ---
-# <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明和 1 位 alpha 的纹理
+# <a name="span-iddirect3dconceptsopaque_and_1-bit_alpha_texturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明和 1 位 alpha 纹理
 
 纹理格式 BC1 适用于不透明或具有一种透明色的纹理。
 
@@ -54,67 +54,67 @@ else
 
 建议在混合前将透明度像素的 RGBA 分量设为零。
 
-以下表格显示了 8 字节块的内存布局。 假设第一个索引对应 y 坐标，第二个索引对应 x 坐标。 例如，纹素\[1\]\[2\]指的是纹理映射的像素在 (x，y) = (2，1)。
+以下表格显示了 8 字节块的内存布局。 假设第一个索引对应 y 坐标，第二个索引对应 x 坐标。 例如，纹素 \[ 1 \] \[ 2 \] 指的是 (x、y) = (2，1) 的纹理地图像素。
 
 以下是 8 字节（64 位）块的内存布局：
 
 | 字地址 | 16 位字    |
 |--------------|----------------|
-| 0            | Color\_0       |
-| 1            | 颜色\_1       |
-| 2            | Bitmap Word\_0 |
-| 3            | 位图 Word\_1 |
+| 0            | 颜色 \_ 0       |
+| 1            | 颜色 \_ 1       |
+| 2            | 位图字 \_ 0 |
+| 3            | 位图字 \_ 1 |
 
  
 
-颜色\_0 和颜色\_1，在两个极端的颜色进行布局，如下所示：
+颜色 \_ 0 和颜色 \_ 1，两个极端的颜色布局如下所示：
 
-| 位        | 颜色                 |
+| Bits        | 颜色                 |
 |-------------|-----------------------|
-| 4:0 (LSB\*) | 蓝色分量  |
+| 4:0 (LSB \*)  | 蓝色分量  |
 | 10:5        | 绿色分量 |
 | 15:11       | 红色分量   |
 
  
 
-\*最高有效位
+\*最小有效位
 
-位图 Word\_0 的布局方式，如下所示：
+位图字 \_ 0 的布局如下所示：
 
-| 位          | 纹素           |
+| Bits          | 纹素           |
 |---------------|-----------------|
-| 1:0 (LSB)     | Texel\[0\]\[0\] |
-| 3:2           | 纹素\[0\]\[1\] |
-| 5:4           | 纹素\[0\]\[2\] |
-| 7:6           | 纹素\[0\]\[3\] |
-| 9:8           | 纹素\[1\]\[0\] |
-| 11:10         | 纹素\[1\]\[1\] |
-| 13:12         | 纹素\[1\]\[2\] |
-| 15:14 (MSB\*) | 纹素\[1\]\[3\] |
+| 1:0 (LSB)     | 纹素 \[ 0 \] \[ 0\] |
+| 3:2           | 纹素 \[ 0 \] \[ 1\] |
+| 5:4           | 纹素 \[ 0 \] \[ 2\] |
+| 7:6           | 纹素 \[ 0 \] \[ 3\] |
+| 9:8           | 纹素 \[ 1 \] \[ 0\] |
+| 11:10         | 纹素 \[ 1 \] \[ 1\] |
+| 13:12         | 纹素 \[ 1 \] \[ 2\] |
+| 15:14 (MSB \*)  | 纹素 \[ 1 \] \[ 3\] |
 
  
 
-\*最高有效位 (MSB)
+\*最重要的位 (MSB) 
 
-位图 Word\_1 的布局方式，如下所示：
+位图 Word \_ 1 的布局如下所示：
 
-| 位        | 纹素           |
+| Bits        | 纹素           |
 |-------------|-----------------|
-| 1:0 (LSB)   | 纹素\[2\]\[0\] |
-| 3:2         | 纹素\[2\]\[1\] |
-| 5:4         | 纹素\[2\]\[2\] |
-| 7:6         | 纹素\[2\]\[3\] |
-| 9:8         | 纹素\[3\]\[0\] |
-| 11:10       | 纹素\[3\]\[1\] |
-| 13:12       | 纹素\[3\]\[2\] |
-| 15:14 (MSB) | 纹素\[3\]\[3\] |
+| 1:0 (LSB)   | 纹素 \[ 2 \] \[ 0\] |
+| 3:2         | 纹素 \[ 2 \] \[ 1\] |
+| 5:4         | 纹素 \[ 2 \] \[ 2\] |
+| 7:6         | 纹素 \[ 2 \] \[ 3\] |
+| 9:8         | 纹素 \[ 3 \] \[ 0\] |
+| 11:10       | 纹素 \[ 3 \] \[ 1\] |
+| 13:12       | 纹素 \[ 3 \] \[ 2\] |
+| 15:14 (MSB) | 纹素 \[ 3 \] \[ 3\] |
 
  
 
-## <a name="span-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanexample-of-opaque-color-encoding"></a><span id="Example_of_Opaque_Color_Encoding"></span><span id="example_of_opaque_color_encoding"></span><span id="EXAMPLE_OF_OPAQUE_COLOR_ENCODING"></span>示例中的不透明的颜色编码
+## <a name="span-idexample_of_opaque_color_encodingspanspan-idexample_of_opaque_color_encodingspanspan-idexample_of_opaque_color_encodingspanexample-of-opaque-color-encoding"></a><span id="Example_of_Opaque_Color_Encoding"></span><span id="example_of_opaque_color_encoding"></span><span id="EXAMPLE_OF_OPAQUE_COLOR_ENCODING"></span>不透明颜色编码示例
 
 
-作为不透明编码的示例，假设红色和黑色处于极值。 红色表示颜色\_0 和黑色是颜色\_1。 有四种内插颜色形成在它们之间均匀分布的梯度。 要确定 4x4 位图的值，请使用以下方式计算：
+作为不透明编码的示例，假设红色和黑色处于极值。 红色为颜色 \_ 0，黑色为颜色 \_ 1。 有四种内插颜色形成在它们之间均匀分布的梯度。 要确定 4x4 位图的值，请使用以下方式计算：
 
 ```cpp
 00 ? color_0
@@ -125,20 +125,20 @@ else
 
 位图如下图所示。
 
-![扩展位图布局示意图](images/colors2.png)
+![红色和黑色的展开位图布局的关系图。](images/colors2.png)
 
 这看起来像下面说明的一系列颜色。
 
-**请注意**  显示图像，像素 (0，0) 显示在左上角。
+**注意**   在图像中，像素 (0，0) 出现在左上角。
 
  
 
 ![不透明编码梯度示意图](images/redsquares.png)
 
-## <a name="span-idexampleof1bitalphaencodingspanspan-idexampleof1bitalphaencodingspanspan-idexampleof1bitalphaencodingspanexample-of-1-bit-alpha-encoding"></a><span id="Example_of_1_Bit_Alpha_Encoding"></span><span id="example_of_1_bit_alpha_encoding"></span><span id="EXAMPLE_OF_1_BIT_ALPHA_ENCODING"></span>1 位 alpha 编码的示例
+## <a name="span-idexample_of_1_bit_alpha_encodingspanspan-idexample_of_1_bit_alpha_encodingspanspan-idexample_of_1_bit_alpha_encodingspanexample-of-1-bit-alpha-encoding"></a><span id="Example_of_1_Bit_Alpha_Encoding"></span><span id="example_of_1_bit_alpha_encoding"></span><span id="EXAMPLE_OF_1_BIT_ALPHA_ENCODING"></span>1位 alpha 编码的示例
 
 
-选择此格式时的 16 位无符号的整数、 颜色\_0，小于的无符号的 16 位整数，颜色\_1。 此格式可用于显示位于蓝天背景下的树上的树叶。 部分纹素可以标记为透明，三种绿色色调仍用于树叶。 两种颜色确定极值，第三种为内插颜色。
+如果16位无符号整数，颜色 \_ 0 小于无符号16位整数，颜色1，则选择此格式 \_ 。 此格式可用于显示位于蓝天背景下的树上的树叶。 部分纹素可以标记为透明，三种绿色色调仍用于树叶。 两种颜色确定极值，第三种为内插颜色。
 
 下图是此类图片的示例。
 
@@ -157,7 +157,7 @@ else
 
 位图如下图所示。
 
-![扩展位图布局示意图](images/colors3.png)
+![浅绿色和暗绿色的已展开位图布局的关系图。](images/colors3.png)
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 

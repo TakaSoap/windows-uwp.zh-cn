@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 38522be28280c0a08f6cb065e5dfb5c2f26642a8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 75cb520f97f68c06f8861b90ce1068fb136bd374
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162791"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933148"
 ---
 # <a name="introduction-to-rasterization-rules"></a>光栅化规则简介
 
@@ -42,11 +42,11 @@ Direct3D 使用的三角形光栅化规则的描述不一定适用于所有可�
 
 如果你定义了一个左上角为 (0.5, 0.5)、右下角为 (2.5, 4.5) 的矩形，则此矩形的中心点为 (1.5, 2.5)。 当 Direct3D 光栅器网格化这个矩形时，每个像素的中心明确地位于四个三角形中每一个的内部，不需要使用左上填充约定。 下图显示了这一点。 Direct3D 将矩形中的像素包含到三角形中，并使用这些三角形对像素进行标记。
 
-![一个带有编号的正方形，其中包含划分为四个三角形的矩形](images/noambig.png)
+![带编号的正方形的屏幕截图，其中包含被分为四个三角形的矩形。](images/noambig.png)
 
 如果你移动上图中的矩形，使其左上角为 (1.0, 1.0)、右下角为 (3.0, 5.0)、中心点为 (2.0, 3.0)，则 Direct3D 将应用左上填充约定。 此矩形中的大多数像素跨越两个或多个三角形之间的边界，如下图所示。
 
-![一个带有编号的正方形，其中包含划分为四个三角形的矩形](images/fillrule.png)
+![带有矩形向下和向右移动的已编号正方形的屏幕截图。](images/fillrule.png)
 
 对于两个矩形，相同的像素会受到影响，如下图所示。
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: d9d9041b5e90ce8ffc16fe0158dda597f99b41bc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 96aea61073cf0c62f0c9636519018e1f19d0c8b3
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157941"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933088"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>具有 Windows Hello 配套 (IoT) 设备的 Windows 解锁
 
@@ -92,7 +92,7 @@ Windows Hello 配套设备和 Windows 10 桌面版设备的关系可以是一对
 - 用户在想要通过该 Windows Hello 配套设备解锁的每台目标 Windows 10 桌面版设备上设置 PIN。
 - 用户在 Windows 10 桌面版设备上运行 Windows Hello 配套设备应用，以将 Windows Hello 配套设备注册到 Windows 10 桌面版。
 
-注意：
+说明：
 
 - 建议优化 Windows Hello 设备应用的发现、下载和启动，如有可能，自动 (例如，可以在 Windows 10 桌面设备端) 上的 NFC 读卡器上，通过使用 Windows Hello 设备来下载应用。 但是，这是 Windows Hello 配套设备和 Windows Hello 配套设备应用的责任。
 - 在企业环境中，Windows Hello 配套设备应用可通过 MDM 部署。
@@ -102,7 +102,7 @@ Windows Hello 配套设备和 Windows 10 桌面版设备的关系可以是一对
 
 下图说明了在注册期间 Windows Hello 配套设备如何与配套身份验证服务交互。  
 
-![注册流程](images/companion-device-2.png)
+![注册流的关系图。](images/companion-device-2.png)
 
 在协议中要用到两个密钥：
 
@@ -145,7 +145,7 @@ Windows Hello 配套设备框架会提供大量（本地化的）文本和错误
 
 第二个计算值由服务用于验证设备身份，并且还阻止传输通道中的重播攻击。
 
-![注册流程](images/companion-device-3.png)
+![已更新注册流的关系图。](images/companion-device-3.png)
 
 ## <a name="lifecycle-management"></a>生命周期管理
 
@@ -385,7 +385,7 @@ namespace SecondaryAuthFactorSample
 
 这些状态的详细信息如下所示：
 
-| 状态                         | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 状态                         | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
 | WaitingForUserConfirmation    | 此状态更改通知事件在锁定屏幕关闭时激发 (例如，用户按下 Windows + L) 。 我们不建议请求与在此状态中难以查找设备相关的任何错误消息。 一般情况下，我们建议仅在提供意图信号时显示消息。 如果配套设备收集意向信号 (例如，点击 NFC 读卡器，在配套设备上按下按钮或特定手势（如拍手) ），windows Hello 伴设备应用后台任务会接收来自设备的指示，目的信号已检测到，因此，在此状态下，Windows Hello 辅助设备应用应进行第一次 API 调用以进行身份验证。 否则，如果 Windows Hello 配套设备应用依赖电脑启动身份验证流程（通过让用户轻扫解锁屏幕或点击空格键），则 Windows Hello 配套设备应用需要等待下一个状态 (CollectingCredential)。   |
 | CollectingCredential          | 当用户打开笔记本电脑盖子、点击任意键盘按键或轻扫解锁屏幕时，将触发此状态更改通知事件。 如果 Windows Hello 设备设备依赖上述操作来开始收集意向信号，则 Windows Hello 辅助设备应用应开始收集它 (例如，通过配套设备上的弹出窗口询问用户是否要解锁 PC) 。 如果 Windows Hello 配套设备应用需要用户在配套设备上提供用户存在信号（例如在 Windows Hello 配套设备上键入 PIN），这将是提供错误情况的良好时机。                                                                                                                                                                                                                                                                                                                                             |

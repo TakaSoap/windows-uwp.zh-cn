@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ed23f77936378f2348abf868a67041be84978123
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 62f1c6462e56b14396e3fdaed16221698c0333fd
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304679"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933158"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>从桌面应用程序移至 UWP
 
@@ -56,7 +56,7 @@ ms.locfileid: "89304679"
 
 从你的桌面应用程序项目中，添加对类库项目的引用。
 
-![类库参考](images/desktop-to-uwp/class-library-reference.png)
+![为点网络项目调用类库引用的解决方案资源管理器窗格屏幕截图。](images/desktop-to-uwp/class-library-reference.png)
 
 接下来，使用工具确定符合标准的代码量。 这样，在将代码移到库中之前，可以确定哪些部分可以重复使用、哪些部分需要最少量的修改，以及哪些部分将仍然特定于应用程序。
 
@@ -186,7 +186,7 @@ public partial class Customers : Form
 
 然后，从你的 UWP 项目中，添加对 .NET Standard 2.0 库项目的引用。
 
-![类库参考](images/desktop-to-uwp/class-library-reference2.png)
+![UWP 解决方案资源管理器 "窗格的屏幕截图，用于调用对点网络项目的类库引用的引用。](images/desktop-to-uwp/class-library-reference2.png)
 
 #### <a name="build-your-pages"></a>生成页面
 
@@ -222,7 +222,7 @@ public sealed partial class MainPage : Page
 
 通过添加 Xamarin 项目，你可以覆盖 Android 和 iOS 设备。  
 
-![Xamarin 应用](images/desktop-to-uwp/xamarin-apps.png)
+![显示 Android 设备以及显示 Xamarin 应用的 i O S 设备的图像。](images/desktop-to-uwp/xamarin-apps.png)
 
 利用这些项目，你可以使用 C# 构建 Android 和 iOS 应用，这些应用能够完全访问特定于平台和特定于设备的 API。 这些应用可充分利用特定于平台的硬件加速性能，并且是为本机性能而编译的。
 
@@ -236,14 +236,14 @@ public sealed partial class MainPage : Page
 
 你可以在 **Visual C#** 组下面的**添加新项目**对话框中找到这些模板。
 
-![Xamarin 应用](images/desktop-to-uwp/xamarin-projects.png)
+!["添加新项目" 对话框的屏幕截图，其中显示已安装 > Visual C 清晰选择的、Android、跨平台和 i O S 选项。](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
 >跨平台项目非常适合具有极少特定于平台的功能的应用。 你可以使用它们构建一个在 iOS、Android 和 Windows 上运行的基于 XAML 的本机 UI。 在[此处](/xamarin/xamarin-forms/)了解更多信息。
 
 然后，从你的 Android、iOS 或跨平台项目中，添加对类库项目的引用。
 
-![类库参考](images/desktop-to-uwp/class-library-reference3.png)
+!["解决方案资源管理器" 窗格的屏幕截图，用于调用对 Android、i O S 或跨平台项目的类库引用的引用。](images/desktop-to-uwp/class-library-reference3.png)
 
 #### <a name="build-your-pages"></a>生成页面
 

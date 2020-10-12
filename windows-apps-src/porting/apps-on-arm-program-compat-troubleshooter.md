@@ -5,12 +5,12 @@ ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, 始终连接, 兼容性疑难解答, 基于 ARM 的 windows
 ms.localizationpriority: medium
-ms.openlocfilehash: 6573bedb97a7081681e5ecc600bb473f6d0b83bf
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 24ae6e7c12fde1dfbb9e5395b3fa3aa4901adb3d
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683950"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933018"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>ARM 上的程序兼容性疑难解答
 模拟以支持 x86 应用是为基于 ARM64 的 Windows 10 创建的一项新功能。 有时，模拟可以执行优化，但无法提供最佳体验。 你可以使用程序兼容性疑难解答切换 x86 应用的模拟设置，从而减少默认优化并有可能提高兼容性。
@@ -18,11 +18,11 @@ ms.locfileid: "75683950"
 ## <a name="start-the-program-compatibility-troubleshooter"></a>启动程序兼容性疑难解答
 以在任何 Windows 10 电脑上相同的方式手动启动[程序兼容性疑难解答](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible)：右键单击可执行 (.exe) 文件，然后选择**疑难解答兼容性**。 将出现下面的屏幕。
 
-![兼容性疑难解答选项屏幕截图](images/arm/Capture4.png)
+![兼容性选项的疑难解答屏幕截图。](images/arm/Capture4.png)
 
 如果单击**疑难解答程序**，你将看到以下选项。
 
-![兼容性疑难解答选项屏幕截图](images/arm/Capture5.png)
+![你注意到哪些问题的屏幕截图。](images/arm/Capture5.png)
 
 所有选项都启用适用并可在所有 Windows 10 台式电脑上应用的设置。 此外，第一、第二和第四个选项还应用[禁用应用程序缓存](#disable-app-cache) 和[禁用混合执行模式](#disable-hybrid-exec-mode) 模拟设置。
 
@@ -57,4 +57,4 @@ ms.locfileid: "75683950"
 
 这些设置将更改模拟期间应用中的内存屏障（用于在核心间同步内存访问）数量。 默认模式为 **Fast**，**strict** 和 **very strict** 选项将增加屏障数量。 这会降低应用运行速度，但可减少应用出错风险。 **单一核心**选项将移除内存屏障并强制所有应用线程在单个核心上运行。
 
-如果更改特定设置可解决你的问题，请通过电子邮件向 *woafeedback@microsoft.com* 发送详细说明，以便我们整合你的反馈。
+如果更改特定设置可解决你的问题，请通过电子邮件发送 *woafeedback@microsoft.com* 详细信息，以便我们合并你的反馈。

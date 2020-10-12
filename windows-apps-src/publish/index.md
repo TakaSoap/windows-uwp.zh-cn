@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 发布, publish, 销售, sell, distribute, 分发, store, 仪表板
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: a4fb353ef9c4ff5227cb1cff21b26ce3067f5dcc
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5e7f5b2e34bb9de99adaf5ea79fa015cae76ed0b
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219010"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878550"
 ---
 # <a name="publish-windows-apps-and-games"></a>发布 Windows 应用和游戏  
 
@@ -66,7 +66,7 @@ ms.locfileid: "91219010"
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/ms365enterprise-partner-news-2.svg" alt="Promote icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">推广你的应用</h3>
-        <a href="create-an-ad-campaign-for-your-app.md">创建广告市场活动</a><br/>
+        <a href="/windows/uwp/monetize/">创建广告市场活动</a><br/>
         <a href="generate-promotional-codes.md">生成促销代码</a><br/>
         <a href="put-apps-and-add-ons-on-sale.md">提供销售定价</a><br/>
     :::column-end:::
