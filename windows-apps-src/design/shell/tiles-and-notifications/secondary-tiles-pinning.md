@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fc83fca642ae75404180edf5fad177b92153e35
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: dc65768eb90ca51a86db51dd0add00d9542df24e
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220380"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984673"
 ---
 # <a name="pin-secondary-tiles-to-start"></a>将辅助磁贴固定到“开始”菜单
 
@@ -110,7 +110,7 @@ tile.VisualElements.ShowNameOnSquare310x310Logo = true;
 最后，请求固定磁贴。 请注意，这必须从 UI 线程中调用。 在桌面上，将显示一个对话框，并请求用户确认他们是否想要固定磁贴。
 
 > [!IMPORTANT]
-> 如果你的 Windows 桌面应用程序使用的是桌面桥，则必须先执行一个额外步骤，如[从桌面应用程序固定](secondary-tiles-desktop-pinning.md)中所述
+> 如果你是使用桌上型计算机的 Win32 应用程序，则必须先执行额外的步骤，如 [从 Win32 Apps 固定](secondary-tiles-desktop-pinning.md)
 
 ```csharp
 // Pin the tile

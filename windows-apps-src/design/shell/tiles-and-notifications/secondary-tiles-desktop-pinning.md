@@ -1,30 +1,30 @@
 ---
-Description: 借助于桌面桥，Windows 桌面应用程序可以固定辅助磁贴！
-title: 从桌面应用程序固定辅助磁贴
-label: Pin secondary tiles from desktop application
+Description: 由于桌面桥，Win32 应用程序可以固定辅助磁贴！
+title: 从 Win32 应用固定辅助磁贴
+label: Pin secondary tiles from Win32 apps
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, 桌面桥, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile, 桌面应用程序, win32, winforms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 111d66e69ddb9cff56f36a26bd8094429fe808ef
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e45fedbb981c26945d3127d7f1c01bfc08d221f0
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172371"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984723"
 ---
-# <a name="pin-secondary-tiles-from-desktop-application"></a>从桌面应用程序固定辅助磁贴
+# <a name="pin-secondary-tiles-from-win32-apps"></a>从 Win32 应用固定辅助磁贴
 
 
-借助于[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)，Windows 桌面应用程序（如 Win32、Windows 窗体和 WPF）可以固定辅助磁贴！
+由于 [桌面桥](https://developer.microsoft.com/windows/bridges/desktop)，Win32 应用程序 (如 WINDOWS 窗体，WPF) 可以固定辅助磁贴！
 
 ![辅助磁贴的屏幕截图](images/secondarytiles.png)
 
 > [!IMPORTANT]
 > **需要 Fall Creators Update**：必须面向 SDK 16299 并运行版本 16299 或更高版本，才能从桌面桥应用固定辅助磁贴。
 
-从 WPF 或 WinForms 应用程序中添加辅助磁贴非常类似于纯净版 UWP 应用的情况。 唯一的区别是，你必须指定主窗口句柄 (HWND)。 这是因为在固定磁贴时，Windows 会显示一个模式对话框，并请求用户确认他们是否想要固定磁贴。 如果桌面应用程序没有为 SecondaryTile 对象配置所有者窗口，则 Windows 不知道在哪里绘制对话框，因此操作将失败。
+从 WPF 或 WinForms 应用程序中添加辅助磁贴非常类似于纯净版 UWP 应用的情况。 唯一的区别是，你必须指定主窗口句柄 (HWND)。 这是因为在固定磁贴时，Windows 会显示一个模式对话框，并请求用户确认他们是否想要固定磁贴。 如果 Win32 应用程序没有在所有者窗口中配置 SecondaryTile 对象，则 Windows 不知道在何处绘制对话框，操作将失败。
 
 
 ## <a name="package-your-app-with-desktop-bridge"></a>用桌面桥打包应用
@@ -66,7 +66,7 @@ SecondaryTile tile = new SecondaryTile(
 
 ## <a name="assign-the-window-handle"></a>分配窗口句柄
 
-这是桌面应用程序的关键步骤。 将对象强制转换为 [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) 对象。 然后，调用 [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) 方法，并传递你希望成为模式对话框所有者的窗口的句柄。 以下 C# 示例显示如何将应用主窗口的句柄传递到该方法。
+这是 Win32 应用程序的关键步骤。 将对象强制转换为 [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) 对象。 然后，调用 [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) 方法，并传递你希望成为模式对话框所有者的窗口的句柄。 以下 C# 示例显示如何将应用主窗口的句柄传递到该方法。
 
 ```csharp
 // Assign the window handle

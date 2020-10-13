@@ -7,19 +7,19 @@ ms.date: 12/07/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, 标题, toast 标题, 通知, toast 分组, 操作中心
 ms.localizationpriority: medium
-ms.openlocfilehash: af94b501b0e98515a1d3b3216f3a76a28fedab67
-ms.sourcegitcommit: 6e7665b457ec4585db19b70acfa2554791ad6e10
+ms.openlocfilehash: 95cd6083cf4430f25b1514a7e163d04892097903
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987216"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984473"
 ---
 # <a name="toast-headers"></a>Toast 标题
 
 通过在通知中使用 toast 标题，可在操作中心中直观地将相关通知进行归组。
 
 > [!IMPORTANT]
-> **需要桌面创意者更新和1.4.0 通知库**：必须运行桌面版本15063或更高版本才能查看 toast 标头。 必须使用版本 1.4.0 或更高版本的 [UWP 社区工具包通知 NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)来构造 toast 内容中的标题。 仅桌面设备支持标题。
+> **需要桌面创意者更新和 1.4.0 的通知库**：必须运行桌面内部版本 15063 或更高版本才可查看 toast 标题。 必须使用版本 1.4.0 或更高版本的 [UWP 社区工具包通知 NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)来构造 toast 内容中的标题。 仅桌面设备支持标题。
 
 如下所示，这组对话统一在标题“野营！！”下。 对话中的每条单独消息都是一个独立的 toast 通知，它们具有相同的 toast 标题。
 
@@ -34,19 +34,15 @@ ms.locfileid: "70987216"
 > [!NOTE]
 > 仅桌面设备支持标题。 不支持标题的设备会直接忽略标题。
 
-```csharp
-ToastContent toastContent = new ToastContent()
-{
-    Header = new ToastHeader()
-    {
-        Id = "6289",
-        Title = "Camping!!",
-        Arguments = "action=openConversation&id=6289",
-    },
+#### <a name="builder-syntax"></a>[生成器语法](#tab/builder-syntax)
 
-    Visual = new ToastVisual() { ... }
-};
+```csharp
+new ToastContentBuilder()
+    .AddHeader("6289", "Camping!!", "action=openConversation&id=6289")
+    .AddText("Anyone have a sleeping bag I can borrow?");
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast>
@@ -63,6 +59,8 @@ ToastContent toastContent = new ToastContent()
 </toast>
 ```
 
+---
+
 总结...
 
 1. 向 **ToastContent** 添加 **Header**
@@ -77,7 +75,7 @@ ToastContent toastContent = new ToastContent()
 
 因此，应用可在标题上提供**参数**，类似于 toast 本身的启动参数。
 
-激活的处理方式与[常规 toast 激活](send-local-toast.md#activation-handling)相同，这意味着可以在 `App.xaml.cs` 的 **OnActivated** 方法中检索这些参数，就像用户单击 toast 主体或 toast 上的按钮时一样。
+激活的处理方式与[常规 toast 激活](send-local-toast.md#step-4-handling-activation)相同，这意味着可以在 `App.xaml.cs` 的 **OnActivated** 方法中检索这些参数，就像用户单击 toast 主体或 toast 上的按钮时一样。
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs e)
@@ -96,7 +94,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 标题可直观地分离通知并将其归组。 它不会更改有关应用可以具有的最大通知数 (20) 以及通知列表的先入先出行为的任何其他逻辑。
 
-标头中的通知顺序如下所示 ...对于给定应用，应用中的最新通知（以及标头的一部分的整个标头组）将首先出现。
+标题内的通知顺序如下... 对于给定的应用，会首先显示应用（如果是标题的一部分，则为整个标题组）中最新的通知。
 
 **Id** 可以是所选择的任何字符串。 **ToastHeader** 中的任何属性都没有长度或字符限制。 唯一的限制是整个 XML toast 内容不能大于 5KB。
 
@@ -107,5 +105,5 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 ## <a name="related-topics"></a>相关主题
 
-- [发送本地 toast 并处理激活](send-local-toast.md)
-- [Toast 内容文档](adaptive-interactive-toasts.md)
+- [发送本地 toast 和处理激活](send-local-toast.md)
+- [toast 内容文档](adaptive-interactive-toasts.md)

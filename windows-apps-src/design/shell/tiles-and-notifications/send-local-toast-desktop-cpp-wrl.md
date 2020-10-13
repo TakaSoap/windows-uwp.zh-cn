@@ -1,25 +1,25 @@
 ---
 Description: 了解 Win32 c + + WRL 应用如何可以发送本地 toast 通知并处理用户单击 toast 的操作。
-title: 从桌面 C++ WRL 应用发送本地 toast 通知
-label: Send a local toast notification from desktop C++ WRL apps
+title: 从 Win32 c + + WRL 应用发送本地 toast 通知
+label: Send a local toast notification from Win32 C++ WRL apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10，uwp，win32，桌面，toast 通知，发送 toast，发送本地 toast，desktop bridge，.msix，稀疏包，c + +，cpp，cplusplus，WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: f90733cb4b549b7b8f088d6ecfa652941b0769b1
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a227ccbc52aa3c1dd8c0cd9c61cdecf140375fe2
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220140"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984653"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>从桌面 C++ WRL 应用发送本地 toast 通知
+# <a name="send-a-local-toast-notification-from-win32-c-wrl-apps"></a>从 Win32 c + + WRL 应用发送本地 toast 通知
 
-桌面应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包的 Win32 应用) 可以像 Windows 应用一样发送交互式 toast 通知。 但对于桌面应用程序，有几个特殊步骤，因为不同的激活方案，如果你未使用 .MSIX 或稀疏包，则可能缺少包标识。
+Win32 应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包的 Win32 应用) 可以像 Windows 应用一样发送交互式 toast 通知。 但是，由于不同的激活方案以及不使用 .MSIX 或稀疏包时可能缺少包标识，所以有几个特殊步骤适用于 Win32 应用程序。
 
 > [!IMPORTANT]
-> 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 有关其他桌面语言，请参阅[桌面 C#](send-local-toast-desktop.md)。
+> 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 对于其他 Win32 语言，请参阅 [Win32 c #](send-local-toast-desktop.md)。
 
 
 ## <a name="step-1-enable-the-windows-10-sdk"></a>步骤 1：启用 Windows 10 SDK
@@ -372,7 +372,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR cm
 
 
 ### <a name="foreground-vs-background-activation"></a>前台与后台激活
-对于桌面应用，前台和后台激活的处理方式相同 - 即调用 COM 激活器。 是由应用的代码来决定是显示一个窗口，还是只执行一些操作后退出。 因此，在 toast 内容中指定**后台**的 **activationType** 不会改变相应行为。
+对于 Win32 应用程序，前台和后台激活的处理方式相同-将调用你的 COM 激活器。 是由应用的代码来决定是显示一个窗口，还是只执行一些操作后退出。 因此，在 toast 内容中指定**后台**的 **activationType** 不会改变相应行为。
 
 
 ## <a name="step-9-remove-and-manage-notifications"></a>步骤 9：删除和管理通知
@@ -421,8 +421,8 @@ Windows 8 引入了 toast 通知，但使用的是[旧版 toast 模板](/previou
 | OS | ToastGeneric | COM 激活器 | 旧版 toast 模板 |
 | -- | ------------ | ------------- | ---------------------- |
 | Windows 10 | 支持 | 支持 | 支持（但不会激活 COM 服务器） |
-| Windows 8.1/8 | 不可用 | 空值 | 支持 |
-| Windows 7 及更低版本 | 不可用 | 不可用 | 不可用 |
+| Windows 8.1/8 | 不适用 | 空值 | 支持 |
+| Windows 7 及更低版本 | 不适用 | 不适用 | 不适用 |
 
 若要检查是否是在 Windows 10 上运行，请包含 `<VersionHelpers.h>` 标头并检查 **IsWindows10OrGreater** 方法。 如果返回 true，则继续调用本文档中所述的所有方法！ 
 
@@ -444,5 +444,5 @@ if (IsWindows10OrGreater())
 ## <a name="resources"></a>资源
 
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/desktop-toasts)
-* [来自桌面应用的 Toast 通知](toast-desktop-apps.md)
+* [来自 Win32 应用的 Toast 通知](toast-desktop-apps.md)
 * [toast 内容文档](adaptive-interactive-toasts.md)

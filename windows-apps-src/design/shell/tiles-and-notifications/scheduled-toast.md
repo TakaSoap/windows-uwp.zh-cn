@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: windows 10，uwp，计划 toast 通知，scheduledtoastnotification，如何，快速入门，入门，代码示例，演练
 ms.localizationpriority: medium
-ms.openlocfilehash: bc80cf04c1e1461612401ef4ced898058e2dd4ac
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 04bbf3da388bf065b2b96684cf3f27cd7534ff51
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172351"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984733"
 ---
 # <a name="schedule-a-toast-notification"></a>计划 toast 通知
 
@@ -21,12 +21,12 @@ ms.locfileid: "89172351"
 请注意，计划 toast 通知的传递时段为5分钟。 如果计算机在计划的传递时间内处于关闭状态，并且保持不变超过5分钟，则通知将被 "删除"，因此不再与用户相关。 如果需要有保证的通知送达，而不考虑计算机的持续时间，我们建议使用带有时间触发器的后台任务，如 [此代码示例](https://github.com/WindowsNotifications/quickstart-snoozable-toasts-even-if-computer-is-off)中所示。
 
 > [!IMPORTANT]
-> 桌面应用程序 (.MSIX/稀疏包和经典 Win32) 用于发送通知和处理激活的步骤略有不同。 请按照下面的说明进行操作，但 `ToastNotificationManager` 将替换为 `DesktopNotificationManagerCompat` [桌面应用](toast-desktop-apps.md) 文档中的类。
+> Win32 应用程序 (.MSIX/稀疏包和经典 Win32) 用于发送通知和处理激活的步骤略有不同。 请按照下面的说明进行操作，但 `ToastNotificationManager` 将替换为 `DesktopNotificationManagerCompat` [Win32 应用](toast-desktop-apps.md) 文档中的类。
 
 > **重要 api**： [ScheduledToastNotification 类](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要完全理解此主题，事先掌握以下内容会很有用...
 
@@ -35,77 +35,40 @@ ms.locfileid: "89172351"
 * Windows 10 UWP 应用项目
 
 
-## <a name="install-nuget-packages"></a>安装 NuGet 包
+## <a name="step-1-install-nuget-package"></a>步骤1：安装 NuGet 包
 
-我们建议你对你的项目安装以下两个 NuGet 程序包。 代码示例将使用这些程序包。
-
-* [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)：通过对象而不是原始 XML 生成 toast 有效负载。
-* [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/)：使用 C# 生成和分析查询字符串
+安装 "..." [NuGet 包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)。 我们的代码示例将使用此包。 本文结束时，我们会提供不使用任何 NuGet 包的 "纯" 代码片段。 使用此包可以创建 toast 通知，而无需使用 XML。
 
 
-## <a name="add-namespace-declarations"></a>添加命名空间声明
+## <a name="step-2-add-namespace-declarations"></a>步骤2：添加命名空间声明
 
 `Windows.UI.Notifications` 包括 toast Api。
 
 ```csharp
 using Windows.UI.Notifications;
 using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
-using Microsoft.QueryStringDotNET; // QueryString.NET
 ```
 
 
-## <a name="construct-the-toast-content"></a>构造 toast 内容
+## <a name="step-3-schedule-the-notification"></a>步骤3：计划通知
 
-在 Windows 10 中，你的 toast 通知内容是使用对于你的通知外观给予了最大程度灵活性的自适应语言描述的。 有关详细信息，请参阅 [toast 内容文档](adaptive-interactive-toasts.md)。
-
-感谢通知库，生成 XML 内容非常简单。 如果不从 NuGet 安装通知库，则需要手动构造 XML，这样就可能出错。
-
-应始终设置 **Launch** 属性，以便用户点击 toast 正文且应用启动时，应用能够知道应显示的内容。
+我们将使用一个简单的基于文本的通知来提醒学生当天到期的家庭作业。 构造通知和计划！
 
 ```csharp
-// In a real app, these would be initialized with actual data
-string title = "ASTR 170B1";
-string content = "You have 3 items due today!";
+// Construct the content
+var content = new ToastContentBuilder()
+    .AddToastActivationInfo("itemsDueToday", ToastActivationType.Foreground)
+    .AddText("ASTR 170B1")
+    .AddText("You have 3 items due today!");
+    .GetToastContent();
 
-// Now we can construct the final toast content
-ToastContent toastContent = new ToastContent()
-{
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = title
-                },
-     
-                new AdaptiveText()
-                {
-                    Text = content
-                }
-            }
-        }
-    },
- 
-    // Arguments when the user taps body of toast
-    Launch = new QueryString()
-    {
-        { "action", "viewClass" },
-        { "classId", "3910938180" }
- 
-    }.ToString()
-};
-```
-
-## <a name="create-the-scheduled-toast"></a>创建计划 toast
-
-初始化 toast 内容后，创建新的 [ScheduledToastNotification](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification) 并传入内容的 XML，并传入要传递通知的时间。
-
-```csharp
+    
 // Create the scheduled notification
-var toast = new ScheduledToastNotification(toastContent.GetXml(), DateTime.Now.AddSeconds(5));
+var toast = new ScheduledToastNotification(content.GetXml(), DateTime.Now.AddSeconds(5));
+
+
+// Add your scheduled toast to the schedule
+ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 ```
 
 
@@ -120,16 +83,6 @@ Tag 和 Group 组合充当复合主键。 Group 是两者中较为通用的标�
 ```csharp
 toast.Tag = "18365";
 toast.Group = "ASTR 170B1";
-```
-
-
-## <a name="schedule-the-notification"></a>计划通知
-
-最后，创建 [ToastNotifier](/uwp/api/windows.ui.notifications.toastnotifier) 并调用 AddToSchedule ( # A1，并传入计划的 toast 通知。
-
-```csharp
-// And your scheduled toast to the schedule
-ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 ```
 
 

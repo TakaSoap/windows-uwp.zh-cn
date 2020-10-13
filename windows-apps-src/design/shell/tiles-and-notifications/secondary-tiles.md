@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 辅助磁贴
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f95699fd6eb0803824c9bcdea46d275ab4383ac
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a4cd65093e9969531c3de683064973aab58b1680
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653182"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984663"
 ---
 # <a name="secondary-tiles"></a>辅助磁贴
 
@@ -29,11 +29,11 @@ ms.locfileid: "57653182"
 
 ## <a name="quick-links"></a>快速链接
 
-| 文章 | 描述 |
+| 项目 | 说明 |
 | --- | --- |
-| [辅助磁贴的指南](secondary-tiles-guidance.md) | 了解应该在何时以及何处使用辅助磁贴。 |
+| [有关辅助磁贴的指南](secondary-tiles-guidance.md) | 了解应该在何时以及何处使用辅助磁贴。 |
 | [固定辅助磁贴](secondary-tiles-pinning.md) | 了解固定辅助磁贴的方法。 |
-| [从桌面应用程序固定](secondary-tiles-desktop-pinning.md) | 借助于桌面桥，Windows 桌面应用程序可以固定辅助磁贴！ |
+| [固定 Win32 应用](secondary-tiles-desktop-pinning.md) | 由于桌面桥，Win32 应用可固定辅助磁贴！ |
 
 
 ## <a name="secondary-tiles-in-relation-to-primary-tiles"></a>与主要磁贴相关的辅助磁贴
@@ -66,9 +66,9 @@ ms.locfileid: "57653182"
 * 用户可以在不删除父应用的情况下随时删除他们的辅助磁贴。
 * 辅助磁贴可在运行时创建。 应用磁贴只能在安装过程中创建。
 * 在添加辅助磁贴之前，浮出控件会提示用户进行确认。
-* 不能请求用户以编程方式为锁屏界面选择辅助磁贴。 在电脑设置，用户必须手动添加辅助磁贴通过个性化页面。
+* 不能请求用户以编程方式为锁屏界面选择辅助磁贴。 用户必须通过 "电脑设置" 中的 "个性化" 页手动添加辅助磁贴。
 
-为了发送通知，为与辅助磁贴配合使用的磁贴和锁屏提醒更新程序以及推送通知通道提供了特定方法。 这些特定方法与同主要磁贴配合使用的版本相对应。 例如，CreateBadgeUpdaterForApplication vs。CreateBadgeUpdaterForSecondaryTile。
+为了发送通知，为与辅助磁贴配合使用的磁贴和锁屏提醒更新程序以及推送通知通道提供了特定方法。 这些特定方法与同主要磁贴配合使用的版本相对应。 例如，CreateBadgeUpdaterForApplication 与 CreateBadgeUpdaterForSecondaryTile 相对应。
 
 
 ## <a name="guidance-on-secondary-tiles"></a>有关辅助磁贴的指南
@@ -79,5 +79,5 @@ ms.locfileid: "57653182"
 若要了解如何固定辅助磁贴，请参阅[固定辅助磁贴](secondary-tiles-pinning.md)。
 
 
-## <a name="desktop-applications-and-secondary-tiles"></a>桌面应用程序和辅助磁贴
-若要了解如何通过桌面桥使用桌面应用程序中的辅助磁贴，请参阅[从桌面应用程序固定辅助磁贴](secondary-tiles-desktop-pinning.md)。
+## <a name="win32-applications-and-secondary-tiles"></a>Win32 应用程序和辅助磁贴
+若要了解如何通过桌面桥使用 Win32 应用程序中的辅助磁贴，请参阅 [从 win32 应用固定辅助磁贴](secondary-tiles-desktop-pinning.md)。

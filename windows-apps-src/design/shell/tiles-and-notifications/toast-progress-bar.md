@@ -7,12 +7,12 @@ ms.date: 12/07/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, 进度栏, toast 进度栏, 通知, toast 数据绑定
 ms.localizationpriority: medium
-ms.openlocfilehash: 4219154a3fe3241b9c1871c07a1fbbb2b63f2348
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8df76af7dd26792d8d1af0fa8641d76e007ef8e3
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174601"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984523"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Toast 进度栏和数据绑定
 
@@ -32,42 +32,31 @@ Toast 内的进度栏可以为 "不确定" (没有特定值，动态点指示发
 
 <img alt="Toast with progress bar properties labeled" src="images/toast-progressbar-annotated.png" width="626"/>
 
-| 属性 | 类型 | 必需 | 描述 |
+| properties | 类型 | 必需 | 说明 |
 |---|---|---|---|
 | **标题** | string 或 [BindableString](toast-schema.md#bindablestring) | false | 获取或设置可选标题字符串。 支持数据绑定。 |
-| **值** | Double 或 [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) 或 [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | 获取或设置进度栏的值。 支持数据绑定。 默认值为 0。 可以为 0.0 和 1.0 之间的双精度浮点数、`AdaptiveProgressBarValue.Indeterminate` 或 `new BindableProgressBarValue("myProgressValue")`。 |
+| 值 | Double 或 [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) 或 [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | 获取或设置进度栏的值。 支持数据绑定。 默认值为 0。 可以为 0.0 和 1.0 之间的双精度浮点数、`AdaptiveProgressBarValue.Indeterminate` 或 `new BindableProgressBarValue("myProgressValue")`。 |
 | **ValueStringOverride** | string 或 [BindableString](toast-schema.md#bindablestring) | false | 获取或设置要显示的可选字符串，而不是默认百分比字符串。 如果未提供，会显示诸如“70%”的内容。 |
-| **状态** | string 或 [BindableString](toast-schema.md#bindablestring) | 是 | 获取或设置状态字符串（必需），它显示在左侧进度栏下方。 此字符串应反映操作的状态，如“正在下载...”或“正在安装...” |
+| **Status** | string 或 [BindableString](toast-schema.md#bindablestring) | true | 获取或设置状态字符串（必需），它显示在左侧进度栏下方。 此字符串应反映操作的状态，如“正在下载...”或“正在安装...” |
 
 
 下面介绍如何生成上面看到的通知...
 
+#### <a name="builder-syntax"></a>[生成器语法](#tab/builder-syntax)
+
 ```csharp
-ToastContent content = new ToastContent()
-{
-    Visual = new ToastVisual()
+new ToastContentBuilder()
+    .AddText("Downloading your weekly playlist...")
+    .AddVisualChild(new AdaptiveProgressBar()
     {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Downloading your weekly playlist..."
-                },
- 
-                new AdaptiveProgressBar()
-                {
-                    Title = "Weekly playlist",
-                    Value = 0.6,
-                    ValueStringOverride = "15/26 songs",
-                    Status = "Downloading..."
-                }
-            }
-        }
-    }
-};
+        Title = "Weekly playlist",
+        Value = 0.6,
+        ValueStringOverride = "15/26 songs",
+        Status = "Downloading..."
+    });
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast>
@@ -83,6 +72,8 @@ ToastContent content = new ToastContent()
     </visual>
 </toast>
 ```
+
+---
 
 但是，需要动态更新进度栏的值，才能让进度栏真正处于“实时”状态。 实现此操作的方法是使用数据绑定来更新 Toast。
 
@@ -110,30 +101,16 @@ public void SendUpdatableToastWithProgress()
     string group = "downloads";
  
     // Construct the toast content with data bound fields
-    var content = new ToastContent()
-    {
-        Visual = new ToastVisual()
+    var content = new ToastContentBuilder()
+        .AddText("Downloading your weekly playlist...")
+        .AddVisualChild(new AdaptiveProgressBar()
         {
-            BindingGeneric = new ToastBindingGeneric()
-            {
-                Children =
-                {
-                    new AdaptiveText()
-                    {
-                        Text = "Downloading your weekly playlist..."
-                    },
-    
-                    new AdaptiveProgressBar()
-                    {
-                        Title = "Weekly playlist",
-                        Value = new BindableProgressBarValue("progressValue"),
-                        ValueStringOverride = new BindableString("progressValueString"),
-                        Status = new BindableString("progressStatus")
-                    }
-                }
-            }
-        }
-    };
+            Title = "Weekly playlist",
+            Value = new BindableProgressBarValue("progressValue"),
+            ValueStringOverride = new BindableString("progressValueString"),
+            Status = new BindableString("progressStatus")
+        })
+        .GetToastContent();
  
     // Generate the toast notification
     var toast = new ToastNotification(content.GetXml());

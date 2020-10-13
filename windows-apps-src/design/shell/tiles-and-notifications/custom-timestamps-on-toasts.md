@@ -7,12 +7,12 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, 自定义时间戳, 时间戳, 通知, 操作中心
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d9064d39d4e8ecd74229afc4eee325297f246b
-ms.sourcegitcommit: e273e5901bfa6596dfef4cc741bb1c42614c25ab
+ms.openlocfilehash: 23e5337fe2ce30e1172aedc034a8b4eb3821a615
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89238302"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984423"
 ---
 # <a name="custom-timestamps-on-toasts"></a>Toast 上的自定义时间戳
 
@@ -27,19 +27,23 @@ ms.locfileid: "89238302"
 
 若要使用自定义时间戳，只需分配 **ToastContent** 上的 **DisplayTimestamp** 属性。
 
+#### <a name="builder-syntax"></a>[生成器语法](#tab/builder-syntax)
+
 ```csharp
-ToastContent toastContent = new ToastContent()
-{
-    DisplayTimestamp = new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc),
-    ...
-};
+var content = new ToastContent()
+    .AddCustomTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc))
+    ...
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast displayTimestamp="2017-04-15T19:45:00Z">
   ...
 </toast>
 ```
+
+---
 
 如果使用 XML，则必须将日期格式设置为 [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)。
 

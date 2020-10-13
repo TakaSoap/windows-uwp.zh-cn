@@ -1,33 +1,33 @@
 ---
 Description: '了解 Win32 c # 应用程序如何可以发送本地 toast 通知，并处理用户单击 toast 的操作。'
-title: 从桌面 C# 应用发送本地 toast 通知
+title: '从 Win32 c # 应用发送本地 toast 通知'
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification from desktop C# apps
+label: Send a local toast notification from Win32 C# apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: 'windows 10，uwp，win32，桌面，toast 通知，发送 toast，发送本地 toast，桌面桥，.msix，稀疏包，c #，c 清晰，toast 通知，wpf，发送 toast 通知 wpf，发送 toast 通知 winforms，发送 toast 通知 c #，发送通知 wpf，发送 toast 通知 c #，toast 通知 wpf，toast 通知 c#'
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4f78d689352f0278f814a2e89db6f92df52b99
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b13927bbd12a5cb306018ca02cd8730f580182cd
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220120"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984643"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>从桌面 C# 应用发送本地 toast 通知
+# <a name="send-a-local-toast-notification-from-win32-c-apps"></a>从 Win32 c # 应用发送本地 toast 通知
 
-桌面应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包的 Win32 应用) 可以像 Windows 应用一样发送交互式 toast 通知。 但对于桌面应用程序，有几个特殊步骤，因为不同的激活方案，如果你未使用 .MSIX 或稀疏包，则可能缺少包标识。
+Win32 应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包的 Win32 应用) 可以像 Windows 应用一样发送交互式 toast 通知。 但是，由于不同的激活方案以及不使用 .MSIX 或稀疏包时可能缺少包标识，所以有几个特殊步骤适用于 Win32 应用程序。
 
 > [!IMPORTANT]
-> 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 有关其他桌面语言，请参阅[桌面 C++ WRL](send-local-toast-desktop-cpp-wrl.md)。
+> 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 有关其他桌面语言，请参阅 [Win32 c + + WRL](send-local-toast-desktop-cpp-wrl.md)。
 
 
 ## <a name="step-1-install-the-notifications-library"></a>步骤1：安装通知库
 
 `Microsoft.Toolkit.Uwp.Notifications`在项目中安装[NuGet 包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)。
 
-此 [通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 添加了兼容的库代码，用于从桌面应用程序中使用 toast 通知。 它还引用 UWP Sdk，允许使用 c # 而不是原始 XML 来构造通知。 此快速入门的其余部分取决于通知库。
+此 [通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 添加了兼容的库代码，用于从 Win32 应用程序中使用 toast 通知。 它还引用 UWP Sdk，允许使用 c # 而不是原始 XML 来构造通知。 此快速入门的其余部分取决于通知库。
 
 
 ## <a name="step-2-implement-the-activator"></a>步骤2：实现激活器
@@ -320,7 +320,7 @@ protected override async void OnStartup(StartupEventArgs e)
 
 
 ### <a name="foreground-vs-background-activation"></a>前台与后台激活
-对于桌面应用，前台和后台激活的处理方式相同 - 即调用 COM 激活器。 是由应用的代码来决定是显示一个窗口，还是只执行一些操作后退出。 因此，在 toast 内容中指定**背景** **ActivationType**不会更改行为。
+对于 Win32 应用程序，前台和后台激活的处理方式相同-将调用你的 COM 激活器。 是由应用的代码来决定是显示一个窗口，还是只执行一些操作后退出。 因此，在 toast 内容中指定**背景** **ActivationType**不会更改行为。
 
 
 ## <a name="step-7-remove-and-manage-notifications"></a>步骤7：删除和管理通知
@@ -357,5 +357,5 @@ DesktopNotificationManagerCompat.History.Clear();
 ## <a name="resources"></a>资源
 
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/desktop-toasts)
-* [来自桌面应用的 Toast 通知](toast-desktop-apps.md)
+* [来自 Win32 应用的 Toast 通知](toast-desktop-apps.md)
 * [toast 内容文档](adaptive-interactive-toasts.md)

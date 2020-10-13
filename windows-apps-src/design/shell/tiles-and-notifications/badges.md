@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dea3eebc253f46f5de888a0a37fea9d3ad1ac3df
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: a49d771b7efdbb7e787db0cbadea45c255a1120e
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860117"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984593"
 ---
 # <a name="badge-notifications-for-windows-apps"></a>适用于 Windows 应用的 Badge 通知
 
@@ -32,99 +32,29 @@ ms.locfileid: "91860117"
 
 ## <a name="numeric-badges"></a>数字锁屏提醒
 
-<table>
-    <tr>
-        <th>值</th>
-        <th>徽章</th>
-        <th>XML</th>
-    </tr>
-    <tr>
-        <td>从 1 到 99 的一个数字 如果值为 0，则等同于字形值“无”，将清除锁屏提醒。</td>
-        <td><img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /></td>
-        <td>`<badge value="1"/>`</td>
-    </tr>
-    <tr>
-        <td>大于 99 的任何数字。</td>
-        <td><img src="images/badges/badge-numeric-greater.png" alt="A numeric badge greater than 99." /></td></td>
-        <td>`<badge value="100"/>`</td>
-    </tr>    
-</table>
+“值” | 徽章 | XML
+--|--|--
+从 1 到 99 的一个数字 如果值为 0，则等同于字形值“无”，将清除锁屏提醒。 | <img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /> | `<badge value="1"/>`
+大于 99 的任何数字。 | <img src="images/badges/badge-numeric-greater.png" alt="A numeric badge greater than 99." /></td> | `<badge value="100"/>`
 
 ## <a name="glyph-badges"></a>字形锁屏提醒
 锁屏提醒可以显示一组不可扩展的状态字形之一，但不可显示数字。 
 
-<table>
-<tr>
-    <th>状态</th>
-    <th>标志符号</th>
-    <th>XML</th>
-</tr>
-<tr>
-    <td>无</td>
-    <td>（未显示锁屏提醒。）</td>
-    <td>`<badge value="none"/>`</td>
-</tr>
-<tr>
-    <td>activity</td>
-    <td><img src="images/badges/badge-activity.png" alt="Screenshot of the activity glyph." /></td>
-    <td>`<badge value="activity"/>`</td>
-</tr>
-<tr>
-    <td>闹钟</td>
-    <td><img src="images/badges/badge-alarm.png" alt="Screenshot of the alarm glyph." /></td>
-    <td>`<badge value="alarm"/>`</td>
-</tr>
-<tr>
-    <td>警报</td>
-    <td><img src="images/badges/badge-alert.png" alt="Screenshot of the alert glyph." /></td>
-    <td>`<badge value="alert"/>`</td>
-</tr>
-<tr>
-    <td>注意</td>
-    <td><img src="images/badges/badge-attention.png" alt="Screenshot of the attention glyph." /></td>
-    <td>`<badge value="attention"/>`</td>
-</tr>
-<tr>
-    <td>可用</td>
-    <td><img src="images/badges/badge-available.png" alt="Screenshot of the available glyph." /></td>
-    <td>`<badge value="available"/>`</td>
-</tr>
-<tr>
-    <td>离开</td>
-    <td><img src="images/badges/badge-away.png" alt="Screenshot of the away glyph." /></td>
-    <td>`<badge value="away"/>`</td>
-</tr>
-<tr>
-    <td>忙碌</td>
-    <td><img src="images/badges/badge-busy.png" alt="Screenshot of the busy glyph." /></td>
-    <td>`<badge value="busy"/>`</td>
-</tr>
-<tr>
-    <td>error</td>
-    <td><img src="images/badges/badge-error.png" alt="Screenshot of the error glyph." /></td>
-    <td>`<badge value="error"/>`</td>
-</tr>
-<tr>
-    <td>newMessage</td>
-    <td><img src="images/badges/badge-newMessage.png" alt="Screenshot of the new message glyph." /></td>
-    <td>`<badge value="newMessage"/>`</td>
-</tr>
-<tr>
-    <td>已暂停</td>
-    <td><img src="images/badges/badge-paused.png" alt="Screenshot of the paused glyph." /></td>
-    <td>`<badge value="paused"/>`</td>
-</tr>
-<tr>
-    <td>正在播放</td>
-    <td><img src="images/badges/badge-playing.png" alt="Screenshot of the playing glyph." /></td>
-    <td>`<badge value="playing"/>`</td>
-</tr>
-<tr>
-    <td>没空</td>
-    <td><img src="images/badges/badge-unavailable.png" alt="Screenshot of the unavailable glyph" /></td>
-    <td>`<badge value="unavailable"/>`</td>
-</tr>
-</table>
+状态 | 标志符号 | XML
+--|--|--
+无 | （未显示锁屏提醒。） | `<badge value="none"/>`
+activity | <img src="images/badges/badge-activity.png" alt="Glyph" /> | `<badge value="activity"/>`
+闹钟 | <img src="images/badges/badge-alarm.png" alt="Glyph" /> | `<badge value="alarm"/>`
+警报 | <img src="images/badges/badge-alert.png" alt="Glyph" /> | `<badge value="alert"/>`
+注意 | <img src="images/badges/badge-attention.png" alt="Glyph" /> | `<badge value="attention"/>`
+可用 | <img src="images/badges/badge-available.png" alt="Glyph" /> | `<badge value="available"/>`
+离开 | <img src="images/badges/badge-away.png" alt="Glyph" /> | `<badge value="away"/>`
+忙碌 | <img src="images/badges/badge-busy.png" alt="Glyph" /> | `<badge value="busy"/>`
+error | <img src="images/badges/badge-error.png" alt="Glyph" /> | `<badge value="error"/>`
+newMessage | <img src="images/badges/badge-newMessage.png" alt="Glyph" /> | `<badge value="newMessage"/>`
+已暂停 | <img src="images/badges/badge-paused.png" alt="Glyph" /> | `<badge value="paused"/>`
+正在播放 | <img src="images/badges/badge-playing.png" alt="Glyph" /> | `<badge value="playing"/>`
+没空 | <img src="images/badges/badge-unavailable.png" alt="Glyph" /> | `<badge value="unavailable"/>`</td>
 
 ## <a name="create-a-badge"></a>创建锁屏提醒
 
