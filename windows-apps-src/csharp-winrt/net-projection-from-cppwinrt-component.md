@@ -5,12 +5,12 @@ ms.date: 10/12/2020
 ms.topic: article
 keywords: 'windows 10、c #、winrt、cswinrt、投影'
 ms.localizationpriority: medium
-ms.openlocfilehash: 2558c37660559bb49263a5708d95ddf9086bf833
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: bc5c8e39b808fd1a8bc557fd29ba828d33d8dde4
+ms.sourcegitcommit: df4d99f9950655be725afa83f1ee7c3b73dff923
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989141"
+ms.locfileid: "92001387"
 ---
 # <a name="walkthrough-generate-a-net-5-projection-from-a-cwinrt-component-and-distribute-the-nuget"></a>演练：从 c + +/WinRT 组件生成 .NET 5 投影并分发 NuGet
 
@@ -118,7 +118,6 @@ namespace winrt::SimpleMathComponent::implementation
 
     ```xml
     <PropertyGroup>
-      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
       <CsWinRTIncludes>SimpleMathComponent</CsWinRTIncludes>
       <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
     </PropertyGroup>
@@ -126,7 +125,6 @@ namespace winrt::SimpleMathComponent::implementation
 
     下面是此示例中的设置的一些详细信息：
 
-    - `AllowUnsafeBlocks`元素指定是否使用互操作代码。 
     - `CsWinRTIncludes`属性指定要投影的命名空间。
     - 此 `CsWinRTGeneratedFilesDir` 属性设置生成投影中的文件的输出目录，在下面的部分中，我们将在源中生成。
 
