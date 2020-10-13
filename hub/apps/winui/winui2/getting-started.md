@@ -4,12 +4,12 @@ description: 如何安装并使用 Windows UI 库。
 ms.topic: reference
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具包 sdk
-ms.openlocfilehash: 94c23ab9573df576af89d9211ced70938fd5105f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7b7b248ce166368d315dce42f27075d3933c0781
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174131"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762846"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>Windows UI 2.x 库入门
 
@@ -33,9 +33,9 @@ ms.locfileid: "89174131"
 **Microsoft.UI.Xaml** 包包含适用于所有应用的 Fluent 控件和功能。  
 可以选择勾选“包括预发行版”，了解包含实验性新功能的最新预发行版。
 
-    ![NuGet 程序包](images/ManageNugetPackages.png "管理 NuGet 包映像")
+    ![“解决方案资源管理器”面板的屏幕截图，其中右键单击了项目，并突出显示了“管理 NuGet 包”选项。](images/ManageNugetPackages.png "管理 NuGet 包映像")
 
-    ![NuGet 包](images/NugetPackages.png)
+    ![“NuGet 包管理器”对话框的屏幕截图，其中显示了搜索字段中包含 winui 的“浏览”选项卡。](images/NugetPackages.png)
 
 4. 将 Windows UI (WinUI) 主题资源添加到 App.xaml 资源。 可以通过两种方式来这样做，具体取决于你是否有其他应用程序资源。
 

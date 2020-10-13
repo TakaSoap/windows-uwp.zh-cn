@@ -1,49 +1,49 @@
 ---
-description: 本文演示如何使用 XAML 岛在 WPF 应用中托管标准 UWP 控件。
-title: 使用 XAML 岛在 WPF 应用中托管标准 UWP 控件
-ms.date: 01/24/2020
+description: 本文演示如何使用 XAML 岛在 WPF 应用中托管标准 WinRT XAML 控件。
+title: 使用 XAML 岛在 WPF 应用中托管标准 WinRT XAML 控件
+ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, Windows 窗体, wpf, xaml 岛, 包装控件, 标准控件, InkCanvas, InkToolbar
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0e8972a71feacd593edf98853ae1dcc0f88002fd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a8f5b141e5726d19651aeafeb9b6d432e20c2f47
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168891"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671526"
 ---
-# <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 岛在 WPF 应用中托管标准 UWP 控件
+# <a name="host-a-standard-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 岛在 WPF 应用中托管标准 WinRT XAML 控件
 
-本文演示了两种使用 [XAML 岛](xaml-islands.md)在 WPF 应用中托管标准 UWP 控件（即，Windows SDK 提供的第一方 UWP 控件）的方法：
+本文演示了两种使用 [XAML 岛](xaml-islands.md)在 WPF 应用中托管标准 WinRT XAML 控件（即，Windows SDK 提供的第一方 WinRT XAML 控件）的方法：
 
-* 它演示了如何在 Windows 社区工具包中使用[包装控件](xaml-islands.md#wrapped-controls) 来托管 UWP [InkCanvas](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 和 [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar) 控件。 这些控件包装一小部分有用 UWP 控件的界面和功能。 可以在 WPF 或 Windows 窗体项目的设计图面中直接添加这些控件，然后在设计器中像使用任何其他 WPF 或 Windows 窗体控件那样使用它们。
+* 它演示了如何在 Windows 社区工具包中使用[包装控件](xaml-islands.md#wrapped-controls) 来托管 UWP [InkCanvas](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 和 [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar) 控件。 这些控件包装一小部分有用 WinRT XAML 控件的界面和功能。 可以在 WPF 或 Windows 窗体项目的设计图面中直接添加这些控件，然后在设计器中像使用任何其他 WPF 或 Windows 窗体控件那样使用它们。
 
-* 它还演示了如何使用 Windows 社区工具包中的 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件托管 UWP [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 控件。 由于只有一小部分 UWP 控件作为包装控件提供，可以使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 来托管任何其他标准 UWP 控件。
+* 它还演示了如何使用 Windows 社区工具包中的 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件托管 UWP [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 控件。 由于只有一小部分 WinRT XAML 控件作为包装控件提供，可以使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 来托管任何其他标准 WinRT XAML 控件。
 
-尽管本文介绍了如何在 WPF 应用中托管 UWP 控件，但该过程类似于在 Windows 窗体应用中实现的过程。
+尽管本文介绍了如何在 WPF 应用中托管 WinRT XAML 控件，但该过程与在 Windows 窗体应用中托管控件类似。
 
 ## <a name="required-components"></a>必需的组件
 
-若要在 WPF（或 Windows 窗体）应用中托管 UWP 控件，解决方案中需要有以下组件。 本文提供了创建各个组件的说明。
+若要在 WPF（或 Windows 窗体）应用中托管 WinRT XAML 控件，解决方案中需要有以下组件。 本文提供了创建各个组件的说明。
 
-* **项目和应用源代码**。 在以 .NET Framework 或 .NET Core 3 为目标的应用中，支持使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件托管标准第一方 UWP 控件。
+* **项目和应用源代码**。 只能在面向 .NET Core 3.x 的应用中使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件来托管 WinRT XAML 控件。
 
 * **定义派生自 XamlApplication 的根应用程序类的 UWP 应用项目**。 WPF 或 Windows 窗体项目必须有权访问 Windows 社区工具包提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类的实例，以便它能够发现和加载自定义 UWP XAML 控件。 建议使用 WPF 或 Windows 窗体应用解决方案中单独的 UWP 应用项目定义此对象，来实现访问。 
 
     > [!NOTE]
-    > 尽管托管第一方 UWP 控件不需要 `XamlApplication` 对象，但应用需要此对象来支持各种 XAML 岛方案，其中包括托管自定义 UWP 控件。 因此，建议始终在使用 XAML 岛的任何解决方案中定义一个 `XamlApplication` 对象。
+    > 尽管托管第一方 WinRT XAML 控件不需要 `XamlApplication` 对象，但应用需要此对象来支持各种 XAML 岛方案，其中包括托管自定义 WinRT XAML 控件。 因此，建议始终在使用 XAML 岛的任何解决方案中定义一个 `XamlApplication` 对象。
 
     > [!NOTE]
-    > 解决方案只能包含一个定义 `XamlApplication` 对象的项目。 应用中的所有自定义 UWP 控件共享同一个 `XamlApplication` 对象。 定义 `XamlApplication` 对象的项目必须包含在 XAML 岛上托管 UWP 控件所用的所有其他 UWP 库和项目的引用。
+    > 解决方案只能包含一个定义 `XamlApplication` 对象的项目。 定义 `XamlApplication` 对象的项目必须包含在 XAML 岛上托管 WinRT XAML 控件所用的全部其他库和项目的引用。
 
 ## <a name="create-a-wpf-project"></a>创建 WPF 项目
 
 开始操作前，先按照下面的说明创建 WPF 项目，并对它进行配置，用于托管 XAML 岛。 如果你有现有的 WPF 项目，则可以将这些步骤和代码示例用于你的项目。
 
-1. 在 Visual Studio 2019 中，新建一个“WPF 应用(.NET Framework)”或“WPF 应用(.NET Core)”项目 。 若要创建 WPF 应用 (.NET Core) 项目，必须首先安装最新版本的 [.NET Core 3 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0)。
+1. 在 Visual Studio 2019 中，新建一个“WPF 应用(.NET Core)”项目  。 若尚未创建项目，必须先安装 [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet/current) 的最新版本。
 
 2. 确保已启用[包引用](/nuget/consume-packages/package-references-in-project-files)：
 
@@ -52,13 +52,11 @@ ms.locfileid: "89168891"
 
 3. 在“解决方案资源管理器”中，右键单击相应的 WPF 项目并选择“管理 NuGet 包” 。
 
-4. 在“NuGet 程序包管理器”窗口中，确保已选中“包括预发行版” 。
-
-5. 选择“浏览”选项卡，搜索 [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) 包（版本 v6.0.0 或更高版本），并安装此包。 此包提供使用适用于 WPF 的已包装 UWP 控件所需的所有内容（包括 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)、[InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) 和 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件。
+4. 选择“浏览”选项卡，搜索 [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) 包，并安装最新稳定版。 此包提供了使用适用于 WPF 的 WinRT XAML 包装控件所需的全部内容，包括 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)、[InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) 和 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件。
     > [!NOTE]
-    > Windows 窗体应用必须使用 [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) 包（版本 v6.0.0 或更高版本）。
+    > Windows 窗体应用必须使用 [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) 包。
 
-6. 将解决方案配置为面向特定平台，例如 x86 或 x64。 大多数 XAML 岛方案在面向任何 CPU 的项目中不受支持。
+5. 将解决方案配置为面向特定平台，例如 x86 或 x64。 大多数 XAML 岛方案在面向任何 CPU 的项目中不受支持。
 
     1. 在“解决方案资源管理器”中，右键单击相应的解决方案节点，选择“属性” -> “配置属性” -> “配置管理器”   。 
     2. 在“活动解决方案平台”下，选择“新建”。 
@@ -70,11 +68,11 @@ ms.locfileid: "89168891"
 接下来，将 UWP 应用项目添加到解决方案，并将此项目中的默认 `App` 类修改为派生自 Windows 社区工具包提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类。 此类支持 [IXamlMetadaraProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 接口，该接口使应用能够在运行时发现和加载应用程序的当前目录内程序集中的自定义 UWP XAML 控件的元数据。 此类还为当前线程初始化 UWP XAML 框架。
 
 > [!NOTE]
-> 尽管托管第一方 UWP 控件不需要执行这一步，但应用需要 `XamlApplication` 对象来支持各种 XAML 岛方案，其中包括托管自定义 UWP 控件。 因此，建议始终在使用 XAML 岛的任何解决方案中定义一个 `XamlApplication` 对象。
+> 尽管托管第一方 WinRT XAML 控件不需要此步骤，但应用需要 `XamlApplication` 对象来支持各种 XAML 岛方案，其中包括托管自定义 WinRT XAML 控件。 因此，建议始终在使用 XAML 岛的任何解决方案中定义一个 `XamlApplication` 对象。
 
 1. 在“解决方案资源管理器”中，右键单击解决方案节点，然后选择“添加” -> “新建项目”  。
-2. 向你的解决方案中添加一个空白应用（通用 Windows）项目。 确保目标版本和最低版本均设置为 Windows 10 版本 1903 或更高版本。
-3. 在 UWP 应用项目中，安装 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 程序包（版本 v6.0.0 或更高版本）。
+2. 向你的解决方案中添加一个空白应用（通用 Windows）项目。 确保目标版本和最低版本均设置为 Windows 10 1903（内部版本 18362）或更高版本。
+3. 在 UWP 应用项目中，安装 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 包（最新稳定版）。
 4. 打开 App.xaml 文件，将此文件的内容替换为以下 XAML。 将 `MyUWPApp` 替换为 UWP 应用项目的命名空间。
 
     ```xml
@@ -104,10 +102,31 @@ ms.locfileid: "89168891"
 
 6. 从 UWP 应用项目删除 MainPage.xaml 文件。
 7. 生成 UWP 应用项目。
-8. 在 WPF 项目中，添加对 UWP 应用项目的引用。 
 
-    * 如果 WPF 项目面向 .NET Core，请右键单击“依赖项”节点，添加对 UWP 应用项目的引用。 
-    * 如果 WPF 项目面向 .NET Framework，请右键单击项目节点，选择“生成依赖项” -> “项目依赖项”，然后选择 UWP 应用项目 。
+## <a name="add-a-reference-to-the-uwp-project-in-your-wpf-project"></a>在 WPF 项目中添加对 UWP 项目的引用
+
+1. 在 WPF 项目文件中指定兼容的框架版本。 
+
+    1. 在“解决方案资源管理器”中，双击 WPF 项目节点，在编辑器中打开项目文件。
+    2. 在第一个 PropertyGroup 元素中添加以下子元素。 根据需要更改值的 `19041` 部分，以匹配 UWP 项目的目标版本和最低 OS 版本。
+
+        ```xml
+        <AssetTargetFallback>uap10.0.19041</AssetTargetFallback>
+        ```
+
+        完成后，PropertyGroup 元素应类似于以下内容。
+
+        ```xml
+        <PropertyGroup>
+            <OutputType>WinExe</OutputType>
+            <TargetFramework>netcoreapp3.1</TargetFramework>
+            <UseWPF>true</UseWPF>
+            <Platforms>AnyCPU;x64</Platforms>
+            <AssetTargetFallback>uap10.0.19041</AssetTargetFallback>
+        </PropertyGroup>
+        ```
+
+2. 在“解决方案资源管理器”中，右键单击 WPF 项目下的“依赖项”节点，添加对 UWP 应用项目的引用 。
 
 ## <a name="instantiate-the-xamlapplication-object-in-the-entry-point-of-your-wpf-app"></a>在 WPF 应用入口点中实例化 XamlApplication 对象
 
@@ -143,11 +162,11 @@ ms.locfileid: "89168891"
 
 ## <a name="host-an-inkcanvas-and-inktoolbar-by-using-wrapped-controls"></a>使用包装的控件托管 InkCanvas 和 InkToolbar
 
-现已将项目配置为使用 UWP XAML 岛，接下来可以将 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 和 [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) 包装的 UWP 控件添加到应用了。
+将项目配置为使用 UWP XAML 岛后，便可以将 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 和 [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) 包装的 WinRT XAML 控件添加到应用。
 
-1. 在“解决方案资源管理器”中，打开“MainWindow.xaml”文件 。
+1. 在 WPF 项目中，打开 MainWindow.xaml 文件。
 
-2. 在 XAML 文件顶部附近的 Window 元素中，添加以下属性。 这会引用 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 和 [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) 包装的 UWP 控件的 XAML 命名空间。
+2. 在 XAML 文件顶部附近的 Window 元素中，添加以下属性。 这会引用 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 和 [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) 包装的 WinRT XAML 控件的 XAML 命名空间。
 
     ```xml
     xmlns:Controls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls"
@@ -209,7 +228,7 @@ ms.locfileid: "89168891"
 
 ## <a name="host-a-calendarview-by-using-the-host-control"></a>使用主机控件托管 CalendarView
 
-将 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 和 [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) 包装 UWP 控件添加到应用后，便可以使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件将 [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 添加到应用中。
+将 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 和 [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) 包装的 WinRT XAML 控件添加到应用后，便可以使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件将 [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 添加到应用。
 
 > [!NOTE]
 > [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件由 [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) 包提供。 此包包含在你之前安装的 [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) 包中。
@@ -300,7 +319,7 @@ ms.locfileid: "89168891"
 
 1. 向解决方案中添加一个新的 [Windows 应用程序打包项目](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)。 创建项目时，针对“目标版本”和“最低版本”选择“Windows 10 版本 1903 (10.0；版本 18362)”  。
 
-2. 在打包项目中，右键单击“应用程序”节点，然后选择“添加引用” 。 在项目列表中，选择解决方案中的 WPF 项目，然后单击“确认”。
+2. 在打包项目中，右键单击“应用程序”节点，然后选择“添加引用”   。 在项目列表中，选择解决方案中的 WPF 项目，然后单击“确认”。
 
 3. 将解决方案配置为面向特定平台，例如 x86 或 x64。 在使用 Windows 应用程序打包项目将 WPF 应用生成到 MSIX 包中时，必须执行此操作。
 

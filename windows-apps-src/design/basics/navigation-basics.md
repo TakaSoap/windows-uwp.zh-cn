@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6fa0f8997db9a383097c7e0fece3d8a17d5875ab
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e144d369dccac6a14a32168bd073bb501275097f
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220090"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763065"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Windows 应用的导航设计基础知识
 
@@ -67,7 +67,7 @@ ms.locfileid: "91220090"
 
 :::row:::
     :::column:::
-        ![良好示例](images/nav/do.svg)
+        ![绿色栏的第一个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/nav/do.svg)
 
         ![良好导航视图](images/nav/navview-good.svg)
 
@@ -86,7 +86,7 @@ ms.locfileid: "91220090"
 
 清晰的路径使用户能够进行逻辑导航。 让导航选项显而易见并阐明页面之间的关系可防止用户迷失。
 
-![良好示例](images/nav/clarity-image.svg)
+![应用程序模型的屏幕截图，其中为用户显示了清晰的导航路径。](images/nav/clarity-image.svg)
 
 > 清楚地标记目标位置，使用户知道身在何处。
 

@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 调试, 测试, 性能
 ms.localizationpriority: medium
-ms.openlocfilehash: c18cb3c5b8a979e7c7c6485e6989736d818613ba
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c21586bceef11b1a2c19900160796bf702578ffb
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220350"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763062"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和调试 UWP 应用
 
@@ -109,11 +109,11 @@ ms.locfileid: "91220350"
 
 对于 C++ 和 JS UWP 项目，你会在“调试属性”  中看到“命令行参数”  字段。
 
-![命令行参数 C++ 和 JS](images/command-line-arguments-cpp.png)
+![应用 4 属性页的屏幕截图，其中已选中“配置属性”>“调试”选项，并显示表中列出的“命令行参数”属性。](images/command-line-arguments-cpp.png)
 
 指定命令行参数之后，可以在应用的 OnLaunched  方法中访问参数值。 [LaunchActivatedEventArgs  ](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 对象 args  将具有 **Arguments** 属性，其值设置为“命令行参数”  字段中的文本。
 
-![命令行参数 C++ 和 JS](images/command-line-arguments-debugging.png)
+![C++ 和 JS 命令行参数的屏幕截图。](images/command-line-arguments-debugging.png)
 
 ## <a name="authentication-modes"></a>身份验证模式
 

@@ -10,12 +10,12 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: bb0f38c250d20780b301a925b24e3d1c36bda7e3
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f7035017b1b1bfe878e4bd390fcefbe2bf3a6be5
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216600"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636557"
 ---
 # <a name="color"></a>颜色
 
@@ -216,7 +216,7 @@ Windows Shell 中的主题色算法可生成主题色的浅色和深色底纹。
 
 下图中的示例介绍了主题色的各种浅色/深色底纹，以及彩色类型应用到彩色表面的方式。
 
-![颜色编号](images/color/color-on-color.png)
+![颜色表中的颜色的屏幕截图，其中显示了从顶部浅蓝到底部深蓝的颜色渐变。](images/color/color-on-color.png)
 
 若要详细了解如何设置控件样式，请参阅 [XAML 样式](../controls-and-patterns/xaml-styles.md)。
 

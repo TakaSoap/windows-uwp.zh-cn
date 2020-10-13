@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a6854eb361388fc1597816d31daf08bb5fe782
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: bb903be202724927d60ee5bcd1edb9e16bc4c982
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217450"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829483"
 ---
 # <a name="combo-box-and-list-box"></a>组合框和列表框
 
@@ -23,15 +23,23 @@ ms.locfileid: "91217450"
 
 组合框在关闭后，会显示当前的选择或为空（如果没有选中项）。 当用户展开组合框时，它会显示可选择项的列表。
 
-![处于紧凑状态的下拉列表示例](images/combo-box-expand.gif)
+![短片显示处于紧凑状态和展开状态的下拉列表。](images/combo-box-expand.gif)
 
 > 处于紧凑状态的组合框，显示一个标题。 
 
 **获取 Windows UI 库**
 
-|  |  |
-| - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](../style/rounded-corner.md)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
+:::row:::
+   :::column:::
+      ![WinUI 徽标](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](../style/rounded-corner.md)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **平台 API：** [ComboBox 类](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[IsEditable 属性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、[Text 属性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
@@ -60,7 +68,7 @@ ms.locfileid: "91217450"
 
 处于紧凑状态的组合框可以显示标题。
 
-![处于紧凑状态的下拉列表示例](images/combo_box_collapsed.png)
+![处于紧凑状态的下拉列表的屏幕截图。](images/combo_box_collapsed.png)
 
 尽管组合框可通过展开来支持较长的字符串，但应避免使用难以阅读的过长的字符串。
 

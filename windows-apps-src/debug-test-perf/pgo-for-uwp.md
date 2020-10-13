@@ -4,12 +4,12 @@ description: 本分步指南介绍如何将按配置优化 (PGO) 应用到通用
 ms.date: 02/08/2017
 ms.localizationpriority: medium
 ms.topic: article
-ms.openlocfilehash: c784812d2e070aba0857cb84e5729b1426717b8d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a606d87b309b130cd9bb0cdc90a2a8b3a3bcc717
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73062370"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762857"
 ---
 # <a name="running-profile-guided-optimization-on-universal-windows-platform-apps"></a>在通用 Windows 平台应用上运行按配置优化 
  
@@ -17,7 +17,7 @@ ms.locfileid: "73062370"
 
 以下是使用 Visual Studio 2015 更新 3 将 PGO 应用到默认 DirectX 11 应用 (UWP) 模板的基本演练。
  
-本指南中的屏幕截图基于以下新项目：![“新建项目”对话框](images/pgo-001.png)
+本指南中的屏幕截图基于以下新项目：![显示“新建项目”对话框的屏幕截图，其中显示了已选中“已安装”>“模板”>“Visual C++”，并突出显示了“Direct 11 应用”选项。](images/pgo-001.png)
 
 若要将 PGO 应用到 DirectX 11 应用模板：
 
@@ -35,7 +35,7 @@ ms.locfileid: "73062370"
 
 4. 选择“生成解决方案”  ，然后选择“部署解决方案”  。 
 
- ![“新建项目”对话框](images/pgo-005.png)
+ ![显示“生成”下拉列表的屏幕截图，其中红色箭头指向“生成解决方案”和“部署解决方案”选项。](images/pgo-005.png)
  
  你可以双重确认一切是否正常工作，方法是查看生成输出位置并验证已生成一个 .pgd 文件。 在此示例的情况中，这意味着以下文件与生成输出一起生成。
  
@@ -49,11 +49,11 @@ ms.locfileid: "73062370"
 
  此步骤是必需的，因为 UWP 应用只能加载存在于它们的程序包内的库。
 
- ![“新建项目”对话框](images/pgo-006.png)
+ ![文件资源管理器窗口的屏幕截图，其中显示了 AppX 文件夹的内容。](images/pgo-006.png)
  
 6. 从“开始”菜单或从带有“开始执行(不调试)”  选项的 Visual Studio“调试”  菜单运行应用。 
 
- ![“新建项目”对话框](images/pgo-007.png)
+ ![“调试”下拉列表的屏幕截图，其中突出显示了“启动但不调试”选项。](images/pgo-007.png)
  
 7. 现在正在运行的版本已经过检测，并且正在生成 PGO 数据。 此时，你应该使应用程序运行某些你打算优化的最常见方案。 在程序运行完所需的方案后，查找位于你找到 `pgort140.dll` 相应版本的相同文件夹中的 pgosweep.exe 工具。 此外，Visual Studio (x86/x64) 本地工具命令提示将已经在其路径中具有相应的版本。 若要收集 PGO 数据，请在应用程序仍然在运行时运行以下命令，以生成将包含分析数据的 .pgc 文件：
  
@@ -77,7 +77,7 @@ ms.locfileid: "73062370"
  
 9. 在你生成一个或多个 pgc 文件并将它们放置在 .pgd 旁边或手动合并它们（步骤 8）后，我们现在可以使用链接器创建最终优化版本。 转回到你的链接器属性（“属性”   > “链接器”   > “优化”  ）并将“链接时间代码生成”  设置为“按配置优化 - 优化 (LTCG:PGOptimize)”  ，然后验证“按配置优化数据库”  是否正指向你打算使用的 .pgd（如果你未对此进行更改，一切都应按顺序进行）。
 
- ![“新建项目”对话框](images/pgo-009.png)
+ ![“App1 属性页”对话框的屏幕截图，其中显示了已选中“配置属性”>“链接器”>“优化”，并选中了“链接时间代码生成”选项和“配置文件引导的优化 - 优化 LTCG”：该屏幕截图突出显示了 PG 优化选项。](images/pgo-009.png)
  
 10. 现在，当项目生成时，链接器将调用 pgomgr.exe 以将所有 `<PGDName>!*.pgc` 文件以默认权重 1 合并到 .pgd 中，生成的应用程序将基于分析数据进行优化。
 

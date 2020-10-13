@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 324512b4bd99ee651539c270219a6adc988ae77b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: caeb8fff9eccccc57219b84b0162db68b622bd97
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165761"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763008"
 ---
 # <a name="3-d-perspective-effects-for-xaml-ui"></a>XAML UI 的 3D 透视效果
 
@@ -172,6 +172,6 @@ ms.locfileid: "89165761"
 
 注意，在此示例中，对象在旋转时不会改变转向。 这是因为该对象沿着屏幕的 x 轴移动，与对象的旋转无关。
 
-## <a name="positioning-an-object"></a>定位对象
+## <a name="more-complex-semi-3d-scenarios"></a>更复杂的半 3D 方案
 
 对于比 [**PlaneProjection**](/uwp/api/Windows.UI.Xaml.Media.PlaneProjection) 更复杂的半 3D 方案，你可以使用 [**Matrix3DProjection**](/uwp/api/Windows.UI.Xaml.Media.Matrix3DProjection) 和 [**Matrix3D**](/uwp/api/Windows.UI.Xaml.Media.Media3D.Matrix3D) 类型。 **Matrix3DProjection** 可为你提供应用于任何 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 的完全 3D 转换矩阵，从而使你可以将任何模型转换矩阵和透视矩阵应用到元素。 请记住，这些 API 非常小，因此如果要使用它们，你需要编写正确创建 3D 转换矩阵的代码。 因此，对于简单的 3D 方案，使用 **PlaneProjection** 更容易。

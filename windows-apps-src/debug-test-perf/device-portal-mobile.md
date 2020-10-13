@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: ff94c34c61dee4de8450ed0f4f89a1dfc6537f83
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1f0a91dd0370b8eda8763b63034d7c3ffaa1acd5
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173591"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762996"
 ---
 # <a name="device-portal-for-mobile"></a>适用于移动设备的 Device Portal
 
@@ -19,7 +19,7 @@ ms.locfileid: "89173591"
 
 有关如何启用“开发人员模式”的信息，请参阅[启用设备进行开发](../get-started/enable-your-device-for-development.md)。
 
-![Device Portal 设置](images/device-portal/mob-dev-mode-options.png)
+![“设备发现”和“设备门户”设置的屏幕截图。](images/device-portal/mob-dev-mode-options.png)
 
 ## <a name="set-up-device-portal-on-windows-phone"></a>在 Windows Phone 上设置 Device Portal
 
@@ -59,7 +59,7 @@ ms.locfileid: "89173591"
 
 以下是 Windows Phone 上开发人员设置页面的 Device Portal 部分。
 
-![Device Portal 设置](images/device-portal/mob-dev-mode-portal.png)
+![Windows Phone 中“设备门户”设置页的屏幕截图。](images/device-portal/mob-dev-mode-portal.png)
 
 如果在信任本地网络上的所有用户、设备上没有任何私人信息并且具有独特要求的受保护环境（例如测试实验室）中使用 Device Portal，你可以禁用身份验证。 这支持未加密的通信，并允许任何拥有手机 IP 地址的用户控制通信。
 

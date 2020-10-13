@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 0b5250f1e01aece4f73d83dc7327f193a58f53cf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 24fb2507dd8f5a83b5581ff08d44210b0f5146c3
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161491"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636447"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>第 2 部分：使用 XAML Islands 添加 UWP InkCanvas 控件
 
@@ -147,7 +147,7 @@ ms.locfileid: "89161491"
 
 13. 现在，请尝试用鼠标在签名区域中绘制一些内容。 这一次，屏幕上会显示墨迹。
 
-    ![签名](images/wpf-modernize-tutorial/Signature.png)
+    ![显示签名空间的“支持详细信息”的屏幕截图。](images/wpf-modernize-tutorial/Signature.png)
 
 ## <a name="next-steps"></a>后续步骤
 

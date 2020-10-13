@@ -4,12 +4,12 @@ description: 了解圆角原则、设计方法和自定义选项。
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 角半径, 圆
-ms.openlocfilehash: 134a49ac57678eea0da718e93a14e3d0cf8896d5
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 044ae628ffe397005113f658191398e06fd245f5
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81001474"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636527"
 ---
 # <a name="corner-radius"></a>角半径
 
@@ -115,11 +115,11 @@ ms.locfileid: "81001474"
 
 - 当一个控件位于另一个容器中时，例如 ScrollBar 的条和按钮，它们属于 ScrollBar 容器的一部分，而该容器也是 ScrollViewer 的一部分。
 
-![ScrollBar](images/rounded-corner/scrollbar.png)
+![不带圆角的垂直滚动条的屏幕截图。](images/rounded-corner/scrollbar.png)
 
 - 当某个浮出控件 UI 元素连接到某个 UI，而该 UI 在一侧调用该浮出控件时。
 
-![AutoSuggest](images/rounded-corner/autosuggest.png)
+![AutoSuggest 浮出控件的屏幕截图，其中某些角未圆化。](images/rounded-corner/autosuggest.png)
 
 ### <a name="keyboard-focus-rectangle-and-shadow"></a>键盘焦点矩形和阴影
 

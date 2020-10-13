@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 433f24ea6c4e2fd03faa652a041f3a1c1578652e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 319bf762d54ed341672a99d15d9e760c91d93cff
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217930"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829458"
 ---
 # <a name="nested-ui-in-list-items"></a>列表项中嵌套的 UI
 
@@ -35,7 +35,7 @@ ms.locfileid: "91217930"
 - *列表项目*是指列表中用户可对其采取操作的各个项目。
 - *嵌套的 UI* 是指用户可对其采取操作的列表项目内的 UI 元素，此类操作不同于对列表项目本身采取的操作。
 
-![嵌套的 UI 部分](images/nested-ui-example-1.png)
+![显示嵌套 UI 各个部分的屏幕截图。](images/nested-ui-example-1.png)
 
 > 注意&nbsp;&nbsp; ListView 和 GridView 都派生自 [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) 类，因此它们的功能相同，但数据显示方法不同。 在本文中，当涉及到列表时，信息会同时应用到 ListView 和 GridView 控件。
 
@@ -107,7 +107,7 @@ ms.locfileid: "91217930"
 
 如果带嵌套元素的列表 UI 支持调用、选择（单选或多选）或拖放操作之类的操作，建议使用这些箭头技术在嵌套的 UI 元素中导航。
 
-![嵌套的 UI 部分](images/nested-ui-navigation.png)
+![屏幕截图显示标有字母 A、B、C 和 D 的嵌套 UI 元素。](images/nested-ui-navigation.png)
 
 **手柄**
 
@@ -147,7 +147,7 @@ ms.locfileid: "91217930"
 
 此类型的 UI 往往比前面的示例更加复杂，其中具有大量用户可以对其执行操作的嵌套元素。
 
-![嵌套的 UI 部分](images/nested-ui-grouping.png)
+![复杂嵌套 UI 的屏幕截图，其中显示了用户可以与之交互的许多嵌套元素。](images/nested-ui-grouping.png)
 
 
 若要实现此 UI，请在你的列表上设置以下属性：

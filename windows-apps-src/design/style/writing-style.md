@@ -6,12 +6,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 324aae957d53c7ec63817c8f0e80909d25dc1c0a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6665eaced6092242d1f5000de6e248044fda1ee0
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216620"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636437"
 ---
 # <a name="writing-style"></a>写入样式
 
@@ -41,7 +41,8 @@ ms.locfileid: "91216620"
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg) 选择**筛选器**为图像添加效果。
+![绿色栏的第一个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+选择“筛选器”为图像添加效果。
     :::column-end:::
     :::column:::
 ![禁止事项](images/dont.svg) 如果想要为图像添加视觉效果或者其他效果，请选择**筛选器**。
@@ -54,7 +55,8 @@ ms.locfileid: "91216620"
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg) 重启应用以查看更改。
+![绿色栏的第二个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+重启应用以查看更改。
     :::column-end:::
     :::column:::
 ![禁止事项](images/dont.svg) 应用重启后，会应用所做的更改。
@@ -67,7 +69,8 @@ ms.locfileid: "91216620"
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg) 我们无法上传图片。 如果再次发生此情况，请尝试重启应用。 但是，不用担心，你的图片将会等待你返回。
+![绿色栏的第三个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+我们无法上传图片。 如果再次发生此情况，请尝试重启应用。 但是，不用担心，你的图片将会等待你返回。
     :::column-end:::
     :::column:::
 ![禁止事项](images/dont.svg) 出错，我们无法上传图片。 请重试。如果再次遇到此问题，可能需要重启应用。 但是，不用担心，我们已经将你的操作保存到本地，你返回来以后即可继续操作。
@@ -87,7 +90,8 @@ ms.locfileid: "91216620"
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg) 我们无法将你的文件保存到该位置。
+![绿色栏的第四个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+我们无法将你的文件保存到该位置。
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -103,7 +107,8 @@ ms.locfileid: "91216620"
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg) 使用 Windows 应用设计指南可帮助你设计和构建美观、精良的应用。 通过每个 Windows 应用中包含的设计功能，你可以构建适用于一系列设备的用户界面 (UI)。
+![绿色栏的第五个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+Windows 应用设计指南可以帮助你设计和构建美观、精良的应用。 通过每个 Windows 应用中包含的设计功能，你可以构建适用于一系列设备的用户界面 (UI)。
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -117,7 +122,8 @@ ms.locfileid: "91216620"
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg) 喜欢这个图像的话，选择“保存”  即可将其添加到库中。 这样便可以与好友共享这个图像了。
+![绿色栏的第六个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+喜欢这个图像的话，选择“保存”即可将其添加到库中。 这样便可以与好友共享这个图像了。
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -131,8 +137,8 @@ ms.locfileid: "91216620"
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg)
-<b>没有连接。</b>
+![绿色栏的第七个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+<b>未连接。</b>
 * 请检查网络电缆是否已插入。
 * 请确保没有处于飞行模式下。
 * 请查看无线开关是否已打开。
@@ -150,7 +156,7 @@ ms.locfileid: "91216620"
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg)
+![绿色栏的第八个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
 <b>哪部分遇到了问题？</b>
 * 我忘记了密码。
 * 它不接受密码。
@@ -174,8 +180,8 @@ ms.locfileid: "91216620"
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg)
-<b>没有连接。</b>
+![绿色栏的第九个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+<b>未连接。</b>
 * 请检查网络电缆是否已插入。
 * 请确保没有处于飞行模式下。
 * 请查看无线开关是否已打开。
@@ -194,7 +200,7 @@ ms.locfileid: "91216620"
 但最重要的是对话标题和其按钮之间的“调用和响应”。 请确保按钮是标题所提及问题的明确答案，并且格式在应用中保持一致。
     :::column-end:::
     :::column:::
-![应做事项](images/do.svg)
+![绿色栏的第十个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
 <b>哪部分遇到了问题？</b>
 1. 我忘记了密码
 2. 它不接受我的密码
@@ -210,7 +216,7 @@ ms.locfileid: "91216620"
 在编写按钮的文本时，请记住，每个按钮代表一个操作。 请务必在按钮文本中使用主动语态  ，使用代表操作而非反应的词。
     :::column-end:::
     :::column:::
-![应做事项](images/do.svg)
+![绿色栏的第十一个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
 * 立即安装
 * 共享
     :::column-end:::

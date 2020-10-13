@@ -6,12 +6,12 @@ ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b02677cb6f38bc86d5123e835f658bedd83543de
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a33670f69d86a913288608ff07efb72edab8fd17
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173931"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829665"
 ---
 # <a name="draw-shapes"></a>绘制图形
 
@@ -231,7 +231,7 @@ layoutRoot.Children.Add(polyline1);
 
 此处是显示的 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)。
 
-![显示的路径。](images/shapes-path.jpg)
+![简单呈现路径的屏幕截图。](images/shapes-path.jpg)
 
 下一示例将介绍我们讨论过的其他技术的用法：具有 [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 的 [**GeometryGroup**](/uwp/api/windows.ui.xaml.media.geometrygroup)。 本例对某些可用作 **PathGeometry** 的一部分的参与几何类型进行练习：[**PathFigure**](/uwp/api/Windows.UI.Xaml.Media.PathFigure) 和在 [**PathFigure.Segments**](/uwp/api/windows.ui.xaml.media.pathfigure.segments) 中作为片段的各种元素。
 
@@ -316,6 +316,6 @@ layoutRoot.Children.Add(path1);
 
 此处是显示的 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)。
 
-![显示的路径。](images/shapes-path-2.png)
+![复杂呈现路径的屏幕截图。](images/shapes-path-2.png)
 
 使用 [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 可能比填充 [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data) 字符串更具可读性。 另一方面，[**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data) 使用兼容于可缩放的向量图形 (SVG) 图像路径定义的语法，因此它可用于从 SVG 移植图形，或者用作工具（例如 Blend）的输出。

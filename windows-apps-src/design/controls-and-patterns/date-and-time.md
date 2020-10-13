@@ -1,5 +1,5 @@
 ---
-Description: 日期和时间控件使你可以查看并设置日期和时间。 本文提供设计指南，并帮助你选取正确的控件。
+description: 日期和时间控件使你可以查看并设置日期和时间。 本文提供设计指南，并帮助你选取正确的控件。
 title: 日期和时间控件指南
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 45f69c2216cdfd5809a978e9199d05d0d79740ee
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a7afab6e226a86b7aa8979d5d849376cf83739c4
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160421"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829572"
 ---
 # <a name="calendar-date-and-time-controls"></a>日历、日期和时间控件
 
@@ -45,12 +45,12 @@ ms.locfileid: "89160421"
 
 有四个日期和时间控件可供选择；要使用的控件取决于你的方案。 使用此信息来选取要在你的应用中使用的正确控件。
 
-&nbsp;|&nbsp;|&nbsp;                                                                                                                      
---------------------|-------|-------------------------------------------------------------------------------------------------------------------------------
-日历视图       |![日历视图示例](images/controls_calendar_monthview_small.png)|用于从始终可见的日历中选取一个日期或日期范围。                   
-日历日期选取器|![日历日期选取器示例](images/calendar-date-picker-closed.png)|用于从上下文日历中选取一个日期。 
-日期选取器         |![日期选取器示例](images/date-picker-closed.png)|用于在上下文信息不重要时选取一个已知日期。
-时间选取器         |![时间选取器示例](images/time-picker-closed.png)|用于选取一个时间值。                                        
+| 控制 | 示例 | 描述 |
+| ------- | :-----: | ----------- |
+| 日历视图 | ![日历视图示例](images/controls_calendar_monthview_small.png) | 用于从始终可见的日历中选取一个日期或日期范围。 |
+| 日历日期选取器 | ![日历日期选取器的屏幕截图。](images/calendar-date-picker-closed.png) | 用于从上下文日历中选取一个日期。 |
+| 日期选取器 | ![日期选取器示例](images/date-picker-closed.png) | 用于在上下文信息不重要时选取一个已知日期。 |
+| 时间选取器 | ![时间选取器示例](images/time-picker-closed.png) | 用于选取一个时间值。 |
 
 <!-- This table seems redundant, not sure it's needed.-->
 
@@ -60,7 +60,7 @@ ms.locfileid: "89160421"
 
 日历视图由 3 种单独视图构成：月份视图、年份视图和十年期视图。 默认情况下，它通过打开月视图启动，但你可以将其他视图指定为启动视图。
 
-![日历日期选取器示例](images/calendar-view-3-views.png)
+![三个日历视图的屏幕截图，其中分别显示月视图、年视图和十年视图。](images/calendar-view-3-views.png)
 
 - 如果需要允许用户选择多个日期，则必须使用 **CalendarView**。
 - 如果需要让用户仅选取单个日期并且不需要日历始终可见，请考虑使用 **CalendarDatePicker** 或 **DatePicker** 控件。
@@ -71,7 +71,7 @@ ms.locfileid: "89160421"
 
 如果尚未设置日期，入口点将显示占位符文本；否则，它将显示选择的日期。 当用户选择该入口点时，日历视图将进行扩展以供用户选择日期。 日历视图将会覆盖其他 UI；它不会将其他 UI 推开。
 
-![日历日期选取器示例](images/calendar-date-picker-2-views.png)
+![日历日期选取器的屏幕截图，其中显示了空的“选择日期”文本框，并通过其下方的日历填充了一个日期。](images/calendar-date-picker-2-views.png)
 
 - 日历日期选取器可用于选择约会或出发日期等事项。 
 
@@ -108,7 +108,7 @@ ms.locfileid: "89160421"
 
 XAML 日期控件支持 Windows 支持的各种日历系统。 这些日历均在 [Windows.Globalization.CalendarIdentifiers](/uwp/api/Windows.Globalization.CalendarIdentifiers) 类中指定。 每个控件均使用与应用的默认语言对应的正确日历，还可以设置 **CalendarIdentifier** 属性以使用特定的日历系统。
 
-时间选取器控件支持在 [Windows.Globalization.ClockIdentifiers](/uwp/api/Windows.Globalization.ClockIdentifiers) 类中指定的每个时钟系统。 若要使用 12 小时制时钟或 24 小时制时钟，可以设置 [ClockIdentifier](/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier) 属性。 该属性的类型是字符串，但必须使用对应于 ClockIdentifiers 类的静态字符串属性的值。 它们是：TwelveHour（字符串“12HourClock”）和TwentyFourHour（字符串“24HourClock”）。 “12HourClock”是默认值。
+时间选取器控件支持在 [Windows.Globalization.ClockIdentifiers](/uwp/api/Windows.Globalization.ClockIdentifiers) 类中指定的每个时钟系统。 若要使用 12 小时制时钟或 24 小时制时钟，可以设置 [ClockIdentifier](/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier) 属性。 该属性的类型是字符串，但必须使用对应于 ClockIdentifiers 类的静态字符串属性的值。 如下所示：TwelveHour（字符串“12HourClock”）和TwentyFourHour（字符串“24HourClock”）。 “12HourClock”是默认值。
 
 ### <a name="datetime-and-calendar-values"></a>DateTime 和日历值
 
@@ -128,7 +128,7 @@ XAML 日期和时间控件中所使用的日期对象具有不同的表示形式
 
 - [XAML UI 基本示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
 - [日历示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Calendar)
-- [日期和时间格式设置示例](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/DateTimeFormatting)
+- [设置日期和时间格式示例](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/DateTimeFormatting)
 
 ## <a name="related-topics"></a>相关主题
 

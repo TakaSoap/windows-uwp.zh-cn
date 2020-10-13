@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bb3eb985ab10bd4c28ca38f87aefe3d1fc7fd61e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 66f9d166d0e20f82f495f98b26deceff8e136cc5
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216470"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636637"
 ---
 # <a name="icons-for-windows-apps"></a>适用于 Windows 应用的图标
 
@@ -47,7 +47,8 @@ ms.locfileid: "91216470"
 
 :::row:::
     :::column:::
-        ![应做事项](images/do.svg)![图标标准图像](images/icons/icons-standard.svg)<br>
+        ![显示“剪切”、“复制”、“粘贴”和“保存”图标的屏幕截图。](images/do.svg)
+        ![标准图像图标](images/icons/icons-standard.svg)<br>
 
 将图标用于剪切、复制、粘贴和保存等操作，或用于导航菜单中的导航项。
     :::column-end:::
@@ -60,12 +61,14 @@ ms.locfileid: "91216470"
 
 :::row:::
     :::column:::
-        ![应做事项](images/do.svg)![图标购物车](images/icons/icon-shopping-cart.svg)<br>
+        ![简单且常用的“购物车”图标的屏幕截图。](images/do.svg)
+        ![购物车图标](images/icons/icon-shopping-cart.svg)<br>
 
 如果用户可以轻松地理解图标的含义，且以小尺寸表达含义足够简单，则使用图标。
     :::column-end:::
     :::column:::
-        ![禁做事项](images/dont.svg)![图标概念图像](images/icons/icon-bad-example.png)<br>
+        ![复杂且不常用的“购物车”图标的屏幕截图。](images/dont.svg)
+        ![概念图像图标](images/icons/icon-bad-example.png)<br>
 
 如果图标的含义不清晰，或者需要复杂的外形才能清晰表达，则不要使用图标。
     :::column-end:::

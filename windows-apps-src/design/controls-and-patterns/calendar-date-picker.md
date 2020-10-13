@@ -1,5 +1,5 @@
 ---
-Description: 日历日期选取器是一个下拉式控件，该控件已针对从日历视图中选取某个日期进行了优化，尤其是能够显示诸如星期几或丰富的日历信息等上下文信息。
+description: 日历日期选取器是一个下拉式控件，该控件已针对从日历视图中选取某个日期进行了优化，尤其是能够显示诸如星期几或丰富的日历信息等上下文信息。
 title: 日历日期选取器
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a12ae302f5e904db29655eacb075a9eba5f8f3e5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c7061de6098c77214136f3441b43abbf35a10686
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217540"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829615"
 ---
 # <a name="calendar-date-picker"></a>日历日期选取器
 
@@ -25,9 +25,17 @@ ms.locfileid: "91217540"
 
 **获取 Windows UI 库**
 
-|  |  |
-| - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](../style/rounded-corner.md)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
+:::row:::
+   :::column:::
+      ![WinUI 徽标](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](../style/rounded-corner.md)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **平台 API**：[CalendarDatePicker 类](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)、[Date 属性](/uwp/api/windows.ui.xaml.controls.calendardatepicker.date)、[DateChanged 事件](/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
 
@@ -57,7 +65,7 @@ ms.locfileid: "91217540"
 
 如果尚未设置日期，入口点将显示占位符文本；否则，它将显示选择的日期。 当用户选择该入口点时，日历视图将进行扩展以供用户选择日期。 日历视图将会覆盖其他 UI；它不会将其他 UI 推开。
 
-![日历日期选取器示例](images/calendar-date-picker-2-views.png)
+![日历日期选取器的屏幕截图，其中显示了空的“选择日期”文本框，并通过其下方的日历填充了一个日期。](images/calendar-date-picker-2-views.png)
 
 ## <a name="create-a-date-picker"></a>创建日期选取器
 
@@ -72,7 +80,7 @@ arrivalCalendarDatePicker.Header = "Arrival date";
 
 生成的日历日期选取器如下所示：
 
-![日历日期选取器示例](images/calendar-date-picker-closed.png)
+![具有“到达日期”标签的已填充日历日期选取器的屏幕截图。](images/calendar-date-picker-closed.png)
 
 日历日期选取器具有用于选取日期的内部 [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)。 CalendarView 属性的子集（例如 [IsTodayHighlighted](/uwp/api/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted) 和 [FirstDayOfWeek](/uwp/api/windows.ui.xaml.controls.calendardatepicker.firstdayofweek)）存在于 CalendarDatePicker 上，并且会转发到内部 CalendarView 以供你修改。 
 

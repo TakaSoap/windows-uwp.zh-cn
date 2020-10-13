@@ -4,12 +4,12 @@ description: 查询可用于安装的应用程序的源
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 7038f9b31c4c0446e3af56cac2d118598347d4d3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 30d519b5038dfa3d13e7c6f7ba3fead439ce9e3c
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493252"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636497"
 ---
 # <a name="search-command-winget"></a>search 命令 (winget)
 
@@ -23,7 +23,7 @@ search 命令可以显示所有可用的应用程序，也可以向下筛选到�
 
 `winget search [[-q] \<query>] [\<options>]`
 
-![搜索](images\search.png)
+![Windows Power Shell 窗口的屏幕截图，其中显示了 winget 搜索的结果。](images\search.png)
 
 ## <a name="arguments"></a>参数
 

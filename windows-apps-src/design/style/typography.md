@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3e9e9e501f1c4277121e7694e8213ccea51c5297
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: bb0a6b48e9a9a01881955ae0ccb65e93b9cf2b6e
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218130"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636537"
 ---
 # <a name="typography-in-windows-apps"></a>Windows 应用中的版式
 
@@ -29,7 +29,8 @@ ms.locfileid: "91218130"
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg) 为 UI 选取一种字体。
+![绿色栏的第一个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+为 UI 选择一种字体。
     :::column-end:::
     :::column:::
 ![禁止事项](images/dont.svg) 不要混用多种字体。
@@ -46,7 +47,8 @@ UWP 应用中的字号可在所有设备上自动缩放。 该缩放算法确保
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg) 遵循 Windows [字体渐变](#type-ramp)大小调整方式。
+![绿色栏的第二个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+遵循 Windows [字体渐变](#type-ramp)大小调整方式。
     :::column-end:::
     :::column:::
 ![禁止事项](images/dont.svg) 使用小于 12 像素的字号。
@@ -93,7 +95,8 @@ Windows 字体渐变可在页面上的字型之间建立关键关系，帮助用
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg) 对大多数文本使用“Body”。
+![绿色栏的第三个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+大多数文本使用“正文”。
 
 对空间受限的标题使用“Base”。
     :::column-end:::
@@ -118,7 +121,8 @@ Windows 字体渐变可在页面上的字型之间建立关键关系，帮助用
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg) 每行保持 50-60 个字母以便于阅读。
+![[绿色栏的第四个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+每行保持 50-60 个字母以便于阅读。
     :::column-end:::
     :::column:::
 ![禁止事项](images/dont.svg) 每行少于 20 个字符或多于 60 个字符将不便于阅读。
@@ -137,7 +141,8 @@ Windows 字体渐变可在页面上的字型之间建立关键关系，帮助用
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg) 剪裁文本，如果启用了多行显示则换行。
+![[绿色栏的第五个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+如果启用了多行，则剪裁文本并换行。
     :::column-end:::
     :::column:::
 ![禁止事项](images/dont.svg) 使用省略号以避免视觉上的杂乱感。

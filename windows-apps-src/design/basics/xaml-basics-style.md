@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ff5df0d56d5be6b2cbb93814d01fed48a626797
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 04357cc43ed227b109d4aab20c509077261360ee
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219090"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636597"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 
@@ -18,11 +18,11 @@ ms.locfileid: "91219090"
 
 PhotoLab 示例应用有两个页面。 主页显示照片库视图，以及关于每个图像文件的一些信息。
 
-![MainPage](../basics/images/xaml-basics/mainpage.png)
+![Photo lab 主页的屏幕截图。](../basics/images/xaml-basics/mainpage.png)
 
 详细信息页  显示选定的单张照片。 利用浮出编辑菜单，可以修改、重命名和保存照片。
 
-![DetailPage](../basics/images/xaml-basics/detailpage.png)
+![Photo lab 详细信息页的屏幕截图。](../basics/images/xaml-basics/detailpage.png)
 
 ## <a name="prerequisites"></a>必备条件
 

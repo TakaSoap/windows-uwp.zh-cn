@@ -3,12 +3,12 @@ title: WinUI 2.3 发行说明
 description: WinUI 2.3 的发行说明，包括新功能和 Bug 修复。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 63091f927f63a708c5a5e4d41e9d81fd9f528cb1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1043ae488342fc8396902c73c2f00eb5b19f584d
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154781"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636507"
 ---
 # <a name="windows-ui-library-23"></a>Windows UI 库 2.3
 
@@ -56,7 +56,7 @@ NuGet 包下载：[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.U
 
 **RadioButtons** 是一个新的容器控件，可以让你轻松地创建相关的 RadioButton 元素组，同时还能正确地支持键盘操作和讲述人/屏幕阅读器功能
 
-![RadioButtons](../images/RadioButtons.png)
+![三个单选按钮的屏幕截图，其中选中了第三个按钮。](../images/RadioButtons.png)
 
 [文档和示例链接](https://github.com/microsoft/microsoft-ui-xaml-specs/blob/c8d3d3668af546091656dfc37436b13cd062f52d/active/radiobuttons/RadioButtons_Spec.md)
 
@@ -67,8 +67,7 @@ Xaml 控件库示例应用包括介绍如何使用 WinUI 控件的交互式演�
 * 从 [Microsoft Store](
 https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt) 安装 XAML 控件库应用
 
-* Xaml 控件库也[在 GitHub 上开源](
-https://github.com/Microsoft/Xaml-Controls-Gallery)
+* Xaml 控件库也[在 GitHub 上开源](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 ## <a name="documentation"></a>文档
 

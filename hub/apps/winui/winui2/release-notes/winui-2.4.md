@@ -3,12 +3,12 @@ title: WinUI 2.4 发行说明
 description: WinUI 2.4（包括新功能和 Bug 修复）的发行说明。
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 22fd028ba2059a092ee2f2be47a114fb2d618ce1
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 5e2ff23b3b0ea63002ad54a367e82e81ee1cd542
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492822"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762915"
 ---
 # <a name="windows-ui-library-24"></a>Windows UI 库 2.4
 
@@ -28,7 +28,7 @@ NuGet 包下载：[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.U
 
 RadialGradientBrush 在椭圆内绘制，该椭圆由 Center、RadiusX 和 RadiusY 属性定义。 渐变的颜色开始于椭圆的中心之处，结束于半径之处。
 
-![径向渐变画笔](../images/radialgradientbrush.gif)<br>
+![短片显示径向渐变画笔的行为。](../images/radialgradientbrush.gif)<br>
 *径向渐变画笔*
 
 [使用准则](/windows/uwp/design/style/brushes#radial-gradient-brushes)
@@ -39,7 +39,7 @@ RadialGradientBrush 在椭圆内绘制，该椭圆由 Center、RadiusX 和 Radiu
 
 ProgressRing 控件用于模式交互，其中用户会受到阻止，直到 ProgressRing 消失。 如果操作要求在该操作完成之前挂起与应用的大多数交互，请使用此控件。
 
-![ProgressRing 控件](../images/progressring.gif)<br>
+![短片显示进度环控件的行为。](../images/progressring.gif)<br>
 *ProgressRing 控件*
 
 [使用准则](/windows/uwp/design/controls-and-patterns/progress-controls)
@@ -70,8 +70,8 @@ TabView 控件更新提供了对选项卡呈现方式的更多控制。
 
 | 之前 | 调整后的文本 |
 | - | - |
-| ![TextBox 深色主题更新（之前）](..\images\textbox-darkthemeupdates-before1.gif)<br>*TextBox 深色主题更新（之前）* | ![TextBox 深色主题更新（之后）](..\images\textbox-darkthemeupdates-after1.gif)<br>*TextBox 深色主题更新（之后）* |
-| ![TextBox 深色主题更新（之前）](..\images\textbox-darkthemeupdates-before2.gif)<br>*TextBox 深色主题更新（之前）* | ![TextBox 深色主题更新（之后）](..\images\textbox-darkthemeupdates-after2.gif)<br>*TextBox 深色主题更新（之后）* |
+| ![短片显示更新之前 TextBox 深色主题的行为。](..\images\textbox-darkthemeupdates-before1.gif)<br>*TextBox 深色主题更新（之前）* | ![短片显示更新之后 TextBox 深色主题的行为。](..\images\textbox-darkthemeupdates-after1.gif)<br>*TextBox 深色主题更新（之后）* |
+| ![另一个短片显示更新之前 TextBox 深色主题的行为。](..\images\textbox-darkthemeupdates-before2.gif)<br>*TextBox 深色主题更新（之前）* | ![另一个短片显示更新之后 TextBox 深色主题的行为。](..\images\textbox-darkthemeupdates-after2.gif)<br>*TextBox 深色主题更新（之后）* |
 
 下面是 TextBox 系列控件中包含的一些控件：
 

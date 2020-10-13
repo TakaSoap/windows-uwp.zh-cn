@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e4c2c8d52069bf074897ec09fa44f550066b28b5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 942b2ff4af0fa093a0b343c37074185970f8209d
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160751"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829544"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教程：创建用户界面
 
@@ -367,7 +367,7 @@ ms.locfileid: "89160751"
 
 现在，运行应用以查看 `GridView` 控件以及刚创建的项模板。 接下来，你将更改背景色并在网格项之间添加一些空间。
 
-![应用 UI 检查点 3](images/xaml-basics/layout-1.png)
+![正在运行 Collection 应用的屏幕截图，其中显示了项模板。](images/xaml-basics/layout-1.png)
 
 ## <a name="part-4-modify-the-item-container-style"></a>第 4 部分：修改项容器样式
 
@@ -455,7 +455,7 @@ ms.locfileid: "89160751"
 
 立即运行应用并查看其外观。 调整应用窗口大小 `GridView` 控件负责重新排列图像，但是在宽度为某些值时，应用窗口右侧会有大量空间。 如果图像居中放置，则看起来更美观。 接下来，你将执行这项操作。
 
-![应用 UI 检查点 3](images/xaml-basics/layout-2.png)
+![正在运行 Collection 应用的屏幕截图，其中在应用窗口的右侧显示具有额外空间的项模板。](images/xaml-basics/layout-2.png)
 
 > [!Note]
 > 若要试验一下，请尝试将 `Background` 和 `Margin` 属性设置为不同的值，并查看一下效果如何。

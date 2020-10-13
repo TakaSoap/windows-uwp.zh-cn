@@ -10,12 +10,12 @@ label: XAML styles
 template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dfb9c73eb6db0bb948714e1ce5e99a185b8dd3d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6e4e69b87ba78134982032f9ceca826758c1a5ba
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173861"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829655"
 ---
 # <a name="xaml-styles"></a>XAML 样式
 
@@ -29,7 +29,7 @@ ms.locfileid: "89173861"
 
 使用样式可将属性设置提取到可重复使用的资源中。 下面的示例显示了具有设置 [BorderBrush](/uwp/api/windows.ui.xaml.controls.control.borderbrush)、[BorderThickness](/uwp/api/windows.ui.xaml.controls.control.borderthickness) 和 [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground) 属性样式的 3 个按钮。 通过应用样式可以使控件具有相同外观，而无需单独为每个控件设置这些属性。
 
-![通过样式设计的按钮](images/styles-rainbow-buttons.png)
+![三个并排对齐的样式设置按钮的屏幕截图。](images/styles-rainbow-buttons.png)
 
 你可以定义在 XAML 中为控件嵌入的样式，或者作为可重复使用的资源。 在单个页面的 XAML 文件中、App.xaml 文件中，或者单独的资源词典 XAML 文件中定义资源。 可以在应用之间共享资源词典 XAML 文件，并且可以将多个资源词典合并到单个应用中。 定义资源的位置决定了该资源可以使用的范围。 页面级资源只在定义了它们的页面中可用。 如果在 App.xaml 和页面中同时定义了具有相同关键字的资源，则页面中的资源将覆盖 App.xaml 中的资源。 如果资源在单独的资源词典文件中定义，则它的范围由引用资源词典的位置确定。
 
@@ -149,7 +149,7 @@ ms.locfileid: "89173861"
 
 通常在应用级别或页面级别上替代系统画笔，在任意情况下，颜色替代都将影响引用该画笔的所有控件；在 XAML 中，许多控件可以引用相同的系统画笔。
 
-![通过样式设计的按钮](images/LightweightStyling_ButtonStatesExample.png)
+![两个按钮的屏幕截图：一个处于静止状态，另一个已应用轻型样式设置。](images/LightweightStyling_ButtonStatesExample.png)
 
 ```XAML
 <Page.Resources>
@@ -173,7 +173,7 @@ ms.locfileid: "89173861"
 
 在其他情况下，需要仅以特定方式更改一个页面上的单个控件，而不更改该控件的任何其他版本：
 
-![通过样式设计的按钮](images/LightweightStyling_CheckboxExample.png)
+![三个堆叠排列的样式设置按钮的屏幕截图。](images/LightweightStyling_CheckboxExample.png)
 
 ```XAML
 <CheckBox Content="Normal CheckBox" Margin="5"/>

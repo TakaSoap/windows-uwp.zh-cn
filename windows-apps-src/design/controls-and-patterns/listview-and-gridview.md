@@ -1,5 +1,5 @@
 ---
-Description: 使用 ListView 和 GridView 控件显示和操控数据组，例如图像库或一组电子邮件。
+description: 使用 ListView 和 GridView 控件显示和操控数据组，例如图像库或一组电子邮件。
 title: 列表视图和网格视图
 label: List view and grid view
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 988400ae16d19525acc1dc811c91fc5af9fd97d0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 26f7e36d09857d37da4a0b4533cc8f65d2789e20
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172621"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829650"
 ---
 # <a name="list-view-and-grid-view"></a>列表视图和网格视图
 
@@ -53,7 +53,7 @@ ListView 和 GridView 是显示任何集合的现成控件，具有自己的内�
 -   如果你需要创建一个无法通过 ListView 或 GridView 创建的高度自定义 UI，或者你的数据源的每个项需要非常不同的行为，则应使用 ItemsRepeater。
 
 
-通过阅读[指南](./items-repeater.md)和[ API 文档](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)页面，详细了解 ItemsRepeater。
+通过阅读[指南](./items-repeater.md)和[ API 文档](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)页面，详细了解 ItemsRepeater。
 
 ## <a name="examples"></a>示例
 
@@ -121,7 +121,7 @@ FruitsPanel.Children.Add(Fruits);
 ```
 上述两个选项将生成相同的 ListView，如下所示：
 
-![简单的列表视图](images/listview-basic-code-example2.png)
+![显示水果列表的简单列表视图的屏幕截图。](images/listview-basic-code-example2.png)
 <br/>
 <u>方法 2：通过设置 ItemsSource 添加项</u>
 
@@ -290,7 +290,7 @@ ListView 或 GridView 中的数据模板定义可视化项/数据的方式。 �
 当你将项目添加到 ListView 或 GridView 时，控件会使每个项目在项目容器中自动换行，然后设置所有项目容器的布局。 这些项目容器的布局方式取决于控件的 [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)。  
 - 默认情况下，“ListView”使用 [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel)，这可以生成垂直列表，如下所示  。
 
-![简单的列表视图](images/listview-simple.png)
+![显示项列表的简单列表视图的屏幕截图。](images/listview-simple.png)
 
 - “GridView”使用 [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid)，这会水平添加项目，并且垂直换行和滚动，如下所示  。
 

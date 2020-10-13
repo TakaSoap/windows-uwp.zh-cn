@@ -3,12 +3,12 @@ title: WinUI 2.2 发行说明
 description: WinUI 2.2 的发行说明，包括新功能和 Bug 修复。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 4c200701e0d845d6c9b9f8797899d88cc72d8c1c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 603c2c439e47c82695c8bdf5cd16fceebc9bc068
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154901"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762933"
 ---
 # <a name="windows-ui-library-22"></a>Windows UI 库 2.2
 
@@ -32,7 +32,7 @@ WinUI 是托管在 GitHub 上的开源项目。 我们欢迎你在 [Windows UI �
 
 #### <a name="tabview"></a>TabView
 
-![示例](../images/tabview-gif.gif)
+![短片显示选项卡视图控件的行为。](../images/tabview-gif.gif)
 
 #### <a name="description"></a>说明
 
@@ -46,7 +46,7 @@ https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui
 
 ##### <a name="a-navigationviews-back-button-update"></a>a) NavigationView 的后退按钮更新
 
-![示例](../images/navigationview-back-button.gif)
+![短片显示导航视图控件“后退”按钮的更新行为。](../images/navigationview-back-button.gif)
 
 ##### <a name="description"></a>说明
 
@@ -54,7 +54,7 @@ https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui
 
 ##### <a name="b-navigationview---no-auto-padding"></a>b) NavigationView - 无自动填充
 
-![示例](../images/navigationview-no-auto-padding.png)
+![屏幕截图显示无自动填充的导航视图控件的行为。](../images/navigationview-no-auto-padding.png)
 
 ##### <a name="description"></a>说明
 
@@ -68,7 +68,7 @@ https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationvi
 
 ##### <a name="a-corner-radius-update"></a>a) 角半径更新
 
-![示例](../images/corner-radius.png)
+![屏幕截图显示圆角半径的更新样式。](../images/corner-radius.png)
 
 ##### <a name="description"></a>说明
 
@@ -80,7 +80,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/524
 
 ##### <a name="b-border-thickness-update"></a>b) 边框粗细更新
 
-![示例](../images/border-thickness.png)
+![屏幕截图显示边框粗细的更新样式。](../images/border-thickness.png)
 
 ##### <a name="description"></a>说明
 
@@ -92,7 +92,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/835
 
 ##### <a name="c-button-visual-update"></a>c) 按钮视觉对象更新
 
-![示例](../images/button-hover-visual-update.png)
+![屏幕截图显示按钮控件的更新样式。](../images/button-hover-visual-update.png)
 
 ##### <a name="description"></a>说明： 
 已更新默认按钮的视觉对象，删除悬停期间显示的大纲，使其更清晰。
@@ -102,7 +102,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/953
 
 ##### <a name="d-splitbutton-visual-update"></a>d) SplitButton 视觉对象更新
 
-![示例](../images/splitbutton-visual-update.png)
+![屏幕截图显示拆分按钮控件的更新样式。](../images/splitbutton-visual-update.png)
 
 ##### <a name="description"></a>说明： 
 已更新默认 SplitButton 的视觉对象，使其更加不同于 DropDownButton。
@@ -112,7 +112,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/986
 
 ##### <a name="e-toggleswitch-visual-update"></a>e) ToggleSwitch 视觉对象更新
 
-![示例](../images/toggleswitch-update.png)
+![屏幕截图显示切换开关控件的更新样式。](../images/toggleswitch-update.png)
 
 ##### <a name="description"></a>说明： 
 默认 ToggleSwitch 的宽度从 44px 减少到 40px，使之在视觉上保持平衡，同时保持可用性。
@@ -122,7 +122,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/836
 
 ##### <a name="f-checkbox-and-radiobutton-visual-update"></a>f) CheckBox 和 RadioButton 视觉对象更新
 
-![示例](../images/checkbox-radiobutton.png)
+![屏幕截图显示复选框和单选按钮控件的更新样式](../images/checkbox-radiobutton.png)
 
 ##### <a name="description"></a>说明： 
 CheckBox 和 RadioButton 视觉对象进行了更新，使之与其余的视觉样式更改保持一致。
@@ -146,7 +146,7 @@ Windows UI 库控件的操作方法文章包含在[通用 Windows 平台控件�
 
 API 参考文档位于此处：[Windows UI 库 API](/uwp/api/overview/winui/)。
 
-## <a name="microsoftuixaml-22-version-history"></a>Microsoft.UI.Xaml 2.2 版本历史记录
+## <a name="microsoftuixaml-22-prerelease-version-history"></a>Microsoft.UI.Xaml 2.2 预发行版历史记录
 
 ### <a name="microsoftuixaml-22190702001-prerelease"></a>Microsoft.UI.Xaml 2.2.190702001-prerelease
 

@@ -3,12 +3,12 @@ title: WinUI 2.1 发行说明
 description: WinUI 2.1 的发行说明，包括新功能和 Bug 修复。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 02e870209486a271e0455d61070cf5403333e1df
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f5087e9f5059a568e92f972c04b25d8c618015f2
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154881"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762879"
 ---
 # <a name="windows-ui-library-21"></a>Windows UI 库 2.1
 
@@ -29,7 +29,7 @@ WinUI 是托管在 GitHub 上的开源项目。 我们欢迎你在 [Windows UI �
 通过 ItemsRepeater 创建使用灵活布局系统、自定义视图和虚拟化的自定义集合体验。
 与 ListView 不同，ItemsRepeater 不提供综合性的最终用户体验 - 它没有默认 UI，不提供任何围绕焦点、选择或用户交互的策略， 而是一个构建基块，你可以使用它来创建自己的基于集合的独特体验和自定义控件。 它支持生成更丰富且性能更高的体验。
 
-![示例](../images/ItemsRepeater%20-%20MSN%20News.gif)
+![短片显示 ItemsRepeater 控件的行为。](../images/ItemsRepeater%20-%20MSN%20News.gif)
 
 [文档](/windows/uwp/design/controls-and-patterns/items-repeater)
 
@@ -37,7 +37,7 @@ WinUI 是托管在 GitHub 上的开源项目。 我们欢迎你在 [Windows UI �
 
 AnimatedVisualPlayer 用于承载和控制动画视觉对象的播放，使你可以向应用添加高性能自定义运动图形。 例如，AnimatedVisualPlayer 用于显示和控制 Lottie 动画。
 
-![示例](../images/AnimatedVisualPlayerUpdated.gif)
+![短片显示动画视觉播放器控件的行为。](../images/AnimatedVisualPlayerUpdated.gif)
 
 [文档](/windows/communitytoolkit/animations/lottie)
 
@@ -45,7 +45,7 @@ AnimatedVisualPlayer 用于承载和控制动画视觉对象的播放，使你�
 
 TeachingTip 为应用程序提供了一种吸引人的 Fluent 方法，通过非侵入性的内容丰富的提示为用户提供指导和知识。 TeachingTip 根据上下文提供与你手头的任务相关的信息，可以让你将重点放在新功能或重要功能上，可以告知用户如何执行任务，同时还能增强工作流。
 
-![示例](../images/TeachingTipUpdated.gif)
+![短片显示教学提示控件的行为。](../images/TeachingTipUpdated.gif)
 
 [文档](/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/teaching-tip)
 
@@ -53,7 +53,7 @@ TeachingTip 为应用程序提供了一种吸引人的 Fluent 方法，通过非
 
 包括在 MenuBar 中提供“单选按钮”样式选项的功能。 这样就可以将包含项目符号的选项分组。这些选项绑定到一起，就像一个单选按钮组一样。 将为开发人员处理逻辑。
 
-![示例](../images/RadioMenuFlyoutItem1.png)
+![屏幕截图显示单选菜单浮出项控件的行为。](../images/RadioMenuFlyoutItem1.png)
 
 [文档](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-flyout-or-a-context-menu)
 
@@ -61,7 +61,7 @@ TeachingTip 为应用程序提供了一种吸引人的 Fluent 方法，通过非
 
 紧密模式使开发人员能够为任意数量的方案创建舒适的体验。 只需添加一个资源字典，应用程序就可以适应 UI 平均增加 ~ 33% 的情况。
 
-![压实密度示例](../images/CompactDensityUpdated.png)
+![屏幕截图显示紧凑密度控件的行为。](../images/CompactDensityUpdated.png)
 
 [文档](/windows/uwp/design/style/spacing)
 

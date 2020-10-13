@@ -1,5 +1,5 @@
 ---
-Description: 为 TextBox、RichEditBox 等 Windows 文本控件（以及 AutoSuggestBox 之类的提供类似文本输入体验的控件）支持的墨迹转文本输入功能自定义内置的手写视图。
+description: 为 TextBox、RichEditBox 等 Windows 文本控件（以及 AutoSuggestBox 之类的提供类似文本输入体验的控件）支持的墨迹转文本输入功能自定义内置的手写视图。
 title: 带手写视图的文本输入
 label: Text input with the handwriting view
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 64963128679f3bb50afe1ba4c939ec6367ad9561
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ca87dcebcb792bea7c79d32600111ebc51600cab
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218800"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829510"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>带手写视图的文本输入
 
@@ -194,11 +194,11 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 
 在这里，我们创建一个支持听写的 TextBox（其实现方式是：将 TextBox 和听写按钮置于 StackPanel 中）。
 
-![使用听写的 TextBox](images/handwritingview/textbox-with-dictation.png)
+![支持听写的“文本框”的屏幕截图](images/handwritingview/textbox-with-dictation.png)
 
 由于 StackPanel 现在比 TextBox 大，[HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) 可能不会遮蔽所有复合控件。
 
-![使用听写的 TextBox](images/handwritingview/textbox-with-dictation-handwritingview.png)
+![HandwritingView 控件的屏幕截图，其部分遮盖了 TextBox，可调整位置以完全遮盖该 TextBox](images/handwritingview/textbox-with-dictation-handwritingview.png)
 
 为了解决此问题，请将 [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) 的 PlacementTarget 属性设置为应该与之对齐的 UI 元素。
 
@@ -231,11 +231,11 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 
 与以前的示例一样，我们创建一个支持听写的 TextBox（其实现方式是：将 TextBox 和听写按钮置于 StackPanel 中）。
 
-![使用听写的 TextBox](images/handwritingview/textbox-with-dictation.png)
+![支持听写的 TextBox 的屏幕截图](images/handwritingview/textbox-with-dictation.png)
 
-在这种情况下，需确保听写按钮始终可见。
+在本例中，我们调整 HandwritingView 的大小，确保听写按钮始终可见。
 
-![使用听写的 TextBox](images/handwritingview/textbox-with-dictation-handwritingview-resize.png)
+![HandwritingView 控件的屏幕截图，其遮盖了听写按钮，可调整大小以确保听写按钮可见](images/handwritingview/textbox-with-dictation-handwritingview-resize.png)
 
 为此，我们将 [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) 的 MaxWidth 属性绑定到 UI 元素的遮蔽宽度。
 

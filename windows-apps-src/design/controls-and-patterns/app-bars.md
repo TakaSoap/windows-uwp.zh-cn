@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f507a325a89220e229b277a1ae08727054cc2a75
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 2a84dcc209fa0fcd897668293cb136a5448e7254
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219100"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829515"
 ---
 # <a name="command-bar"></a>命令栏
 
@@ -59,15 +59,15 @@ CommandBar 控件是一款通用、灵活、轻型的控件，可显示复杂内
 
 默认情况下，命令栏显示一行图标按钮和一个可选的“查看更多”按钮，该按钮由省略号 \[•••\] 表示。 下面是由稍后所示的示例代码创建的命令栏。 它在其关闭、精简状态下显示。
 
-![关闭的命令栏](images/command-bar-compact.png)
+![显示已关闭命令栏的屏幕截图。](images/command-bar-compact.png)
 
 命令栏可在如下所示的关闭、最小状态下显示。 有关详细信息，请参阅[打开和关闭状态](#open-and-closed-states)部分。
 
-![关闭的命令栏](images/command-bar-minimal.png)
+![显示处于最小关闭状态的命令栏的屏幕截图。](images/command-bar-minimal.png)
 
 下面是处于打开状态的相同命令栏。 标签标识控件的主要部分。
 
-![关闭的命令栏](images/commandbar_anatomy_open.png)
+![显示处于打开状态的命令栏的屏幕截图。](images/commandbar_anatomy_open.png)
 
 命令栏分为 4 个主要区域：
 - 内容区域与栏的左侧对齐。 如果填充了 [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 属性，将显示该区域。

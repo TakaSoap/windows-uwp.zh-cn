@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 75d8dfe44c9296fbaf1d8caf5127db0244fc1d8d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d3179a553e0d30bd009765ec55640989720628c2
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216510"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763087"
 ---
 # <a name="introduction-to-windows-app-design"></a>Windows 应用设计简介
 
@@ -67,7 +67,7 @@ UWP 可以跨一系列设备进行缩放，缩放比例为 100%、125%、150%、
 在任意 Windows 10 设备上启动 UWP 应用时，它会启动一个包含[框架](/uwp/api/windows.ui.xaml.controls.frame)（可以在[页面](/uwp/api/windows.ui.xaml.controls.page)实例间导航）的[窗口](/uwp/api/windows.ui.xaml.window)。
     :::column-end:::
     :::column:::
-![帧](images/frame.svg)
+![带有框架的窗口的屏幕截图。](images/frame.svg)
     :::column-end:::
 :::row-end:::
 
@@ -78,7 +78,7 @@ UWP 可以跨一系列设备进行缩放，缩放比例为 100%、125%、150%、
 若要了解如何组织页面，请参阅[导航基础知识](navigation-basics.md)。
     :::column-end:::
     :::column:::
-![帧](images/collection-pages.svg)
+![“集合”页的屏幕截图。](images/collection-pages.svg)
     :::column-end:::
 :::row-end:::
 
@@ -94,7 +94,7 @@ UWP 可以跨一系列设备进行缩放，缩放比例为 100%、125%、150%、
 
 要详细了解如何实现常见的 UWP 应用模式，请参阅[页面布局](../layout/page-layout.md)文章。
 
-也可以在 Visual Studio 中使用 [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master) 为应用设计布局。
+也可以在 Visual Studio 中使用 [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio) 为应用设计布局。
 
 ## <a name="controls"></a>控制
 
@@ -134,7 +134,7 @@ UWP 应用具有四种磁贴大小（小、中、宽和大），可使用应用�
 UWP 应用依赖于智能交互。 你可以围绕单击交互进行设计，而无需知道或定义该单击是来自鼠标、触笔还是手指点击。 不过，你也可以针对[特定输入模式](../input/input-primer.md)设计应用。
     :::column-end:::
     :::column:::
-![输入](images/inputs.svg)
+![指定不同输入模式的图标的屏幕截图。](images/inputs.svg)
     :::column-end:::
 :::row-end:::
 
@@ -146,7 +146,7 @@ UWP 应用依赖于智能交互。 你可以围绕单击交互进行设计，而
 
 ## <a name="usability"></a>可用性
 
-<img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb?ver=727c">
+:::image type="content" source="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb" alt-text="一个简笔卡通动画短片，其中显示了形态各异的人。":::
 
 最后一点也很重要：可用即对所有用户开放你的应用体验。 真正具有包容性的用户体验可以让每个人受益 - 请参阅 [UWP 应用中的可用性](../usability/index.md)，了解如何让每个人都能轻松使用你的应用。
 

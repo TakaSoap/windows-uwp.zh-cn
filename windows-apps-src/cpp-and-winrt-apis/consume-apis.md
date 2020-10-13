@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b3d9e4be7c45d4d2b9b5063087a78556497dc9b
-ms.sourcegitcommit: bcf60b6d460dc4855f207ba21da2e42644651ef6
+ms.openlocfilehash: eb667c27b937b252f0fe3c883730646938bf19d9
+ms.sourcegitcommit: a93a309a11cdc0931e2f3bf155c5fa54c23db7c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91376245"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646270"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
 
@@ -271,11 +271,11 @@ auto smallBox{
 然后，与 Windows 命名空间类型一样，你只需包含标头并通过其构造函数之一构造投影类型。 应用程序项目的启动代码注册运行时类，然后投影类型的构造函数调用 [RoActivateInstance  ](/windows/desktop/api/roapi/nf-roapi-roactivateinstance) 来激活引用组件中的运行时类。
 
 ```cppwinrt
-#include <winrt/BankAccountWRC.h>
+#include <winrt/ThermometerWRC.h>
 
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
-    BankAccountWRC::BankAccount bankAccount;
+    ThermometerWRC::Thermometer thermometer;
     ...
 };
 ```
@@ -420,14 +420,14 @@ CurrencyFormatter currency = factory.CreateCurrencyFormatterCode(L"USD");
 using namespace winrt::Windows::Foundation;
 ...
 auto factory = winrt::get_activation_factory<Uri, IUriRuntimeClassFactory>();
-Uri account = factory.CreateUri(L"http://www.contoso.com");
+Uri uri = factory.CreateUri(L"http://www.contoso.com");
 ```
 
-上面两个示例中的类是来自 Windows 命名空间的类型。 在接下来的示例中，BankAccountWRC::BankAccount  是在 Windows 运行时组件中实现的自定义类型。
+上面两个示例中的类是来自 Windows 命名空间的类型。 在接下来的示例中，ThermometerWRC::Thermometer 是在 Windows 运行时组件中实现的自定义类型。
 
 ```cppwinrt
-auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();
-BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::BankAccount>();
+auto factory = winrt::get_activation_factory<ThermometerWRC::Thermometer>();
+ThermometerWRC::Thermometer thermometer = factory.ActivateInstance<ThermometerWRC::Thermometer>();
 ```
 
 ## <a name="membertype-ambiguities"></a>成员/类型多义性

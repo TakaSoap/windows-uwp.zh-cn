@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aabad7a731bd0654468d7b9849d3b9a5bf6bead6
-ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
+ms.openlocfilehash: 1f71eb48264570df384fce672b1ca895d98e1109
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353727"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636587"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教程：创建自适应布局
 
@@ -18,11 +18,11 @@ ms.locfileid: "91353727"
 
 图像编辑程序有两个页面。 主页显示照片库视图，以及关于每个图像文件的一些信息。
 
-![MainPage](../basics/images/xaml-basics/mainpage.png)
+![Photo lab 主页的屏幕截图。](../basics/images/xaml-basics/mainpage.png)
 
 详细信息页  显示选定的单张照片。 利用浮出编辑菜单，可以修改、重命名和保存照片。
 
-![DetailPage](../basics/images/xaml-basics/detailpage.png)
+![Photo lab 详细信息页的屏幕截图。](../basics/images/xaml-basics/detailpage.png)
 
 ## <a name="prerequisites"></a>必备条件
 

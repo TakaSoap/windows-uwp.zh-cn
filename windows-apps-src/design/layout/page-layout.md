@@ -5,12 +5,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 5473542019a4f8afa3e916b914127e41a4fe05d4
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e4875e7d34f36104cb5ed64bb56ea289de2db92e
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218620"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636567"
 ---
 # <a name="page-layout"></a>页面布局
 
@@ -86,7 +86,7 @@ ms.locfileid: "91218620"
 [大纲/细节](../controls-and-patterns/master-details.md)模型包含一个列表视图（大纲）和一个内容视图（细节）。 这两个窗格都是固定的，并且具有垂直滚动。 选择列表视图中的项时，将相应地更新内容视图。 
 
 ## <a name="forms"></a>窗体
-![表单](images/form.svg)
+![显示空文本框和按钮的窗体的屏幕截图。](images/form.svg)
 
 [表单](../controls-and-patterns/forms.md)是一组控件，用于收集和提交来自用户的数据。 大多数（而非全部）应用将某种形式的表单用于设置页面、登录门户、反馈中心、帐户创建或其他目的。 
 

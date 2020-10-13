@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c6f9398a61865b014400bbf4a96c8a7ce8a231
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ce7344b810c3b6683050876dce38264be6f5c8b7
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154351"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762838"
 ---
 # <a name="optimize-your-xaml-markup"></a>优化 XAML 标记
 
@@ -81,11 +81,11 @@ ms.locfileid: "89154351"
 
 加载了 ListView 的实时可视化树。 页面的总元素计数是 89。
 
-![带有列表视图的可视化树](images/visual-tree-1.png)
+![带有列表视图的可视化树的屏幕截图。](images/visual-tree-1.png)
 
 ListView 及其子元素加载到内存中。
 
-![带有列表视图的可视化树](images/memory-use-1.png)
+![托管内存 TestApp1.exe 表的屏幕截图，其中显示了 ListView 以及已加载到内存中的子元素。](images/memory-use-1.png)
 
 #### <a name="option-2---better"></a>选项 2 - 更好
 
@@ -97,11 +97,11 @@ ListView 及其子元素加载到内存中。
 
 折叠了 ListView 的实时可视化树。 页面的总元素计数是 46。
 
-![折叠了列表视图的可视化树](images/visual-tree-2.png)
+![带有折叠的列表视图的可视化树的屏幕截图。](images/visual-tree-2.png)
 
 ListView 及其子元素加载到内存中。
 
-![带有列表视图的可视化树](images/memory-use-1.png)
+![托管内存 TestApp1.exe 表的更新后屏幕截图，其中显示了 ListView 以及已加载到内存中的子元素。](images/memory-use-1.png)
 
 #### <a name="option-3---most-efficient"></a>选项 3 - 最高效
 

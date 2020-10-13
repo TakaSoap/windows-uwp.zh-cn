@@ -11,26 +11,34 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c4967a63a4417f284c0735153a1b7a543e82e54c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ee8d78b38c05483f127571b15e1f4ebfb267c331
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217860"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829439"
 ---
 # <a name="person-picture-control"></a>个人图片控件
 
 如果用户头像可用，个人图片控件将显示用户头像；否则，将显示该用户的姓名缩写或通用字形。 可以使用该控件来显示 [Contact 对象](/uwp/api/Windows.ApplicationModel.Contacts.Contact)（该对象管理用户的联系信息），也可以手动提供联系信息，例如显示名称和个人资料图片。
 
-![个人图片控件](images/person-picture/person-picture_hero.png)
+![个人图片控件的屏幕截图。](images/person-picture/person-picture_hero.png)
 
  > 两个头像图片控件，附带两个显示用户名的[文本块](text-block.md)元素。
 
 **获取 Windows UI 库**
 
-|  |  |
-| - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | PersonPicture 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。 |
+:::row:::
+   :::column:::
+      ![WinUI 徽标](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      PersonPicture 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **平台 API**：[PersonPicture 类](/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 类](/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 类](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
@@ -43,7 +51,7 @@ ms.locfileid: "91217860"
 * 显示消息的发送者
 * 显示社交媒体联系人
 
-该图在联系人列表中显示个人图片控件：![个人图片控件](images/person-picture/person-picture-control.png)
+该图在联系人列表中显示个人图片控件：![在联系人列表中显示“个人图片”控件的屏幕截图。](images/person-picture/person-picture-control.png)
 
 ## <a name="examples"></a>示例
 
