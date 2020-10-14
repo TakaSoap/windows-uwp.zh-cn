@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c095e48e24a06caf9e31066b21f9e2b023ed51cf
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 6399cb3aa6c22e188ed84941c3209632511d90e4
+ms.sourcegitcommit: 8b01b9ab7293dad1259da32d1459fdd454796e12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878470"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92020167"
 ---
 # <a name="toast-content-schema"></a>Toast 内容架构
 
@@ -21,7 +21,7 @@ ms.locfileid: "91878470"
 
 以下内容将介绍了 toast 内容中的所有元素和属性。
 
-如果希望使用原始 XML 而非[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，请参阅 [XML 架构]()。
+如果希望使用原始 XML 而非[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，请参阅 [XML 架构](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/schema-root)。
 
 [ToastContent](#toastcontent)
 * [ToastVisual](#toastvisual)
@@ -38,7 +38,7 @@ ms.locfileid: "91878470"
 ## <a name="toastcontent"></a>ToastContent
 ToastContent 是描述通知内容的顶级对象，包括视觉、操作和音频。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **启动**| 字符串 | false | 当应用程序由 toast 激活时向其传递的字符串。 此字符串的格式和内容由应用根据其自身用途定义。 当用户点击或单击 Toast 来启动其关联应用时，启动字符串会向应用提供上下文，以允许该应用向用户显示与 Toast 内容相关的视图，而不是以其默认方式启动。 |
 | **视觉对象** | [ToastVisual](#toastvisual) | true | 描述 toast 通知的可视部分。 |
@@ -65,7 +65,7 @@ ToastContent 是描述通知内容的顶级对象，包括视觉、操作和音�
 ## <a name="toastvisual"></a>ToastVisual
 Toast 的可视部分包含绑定，其中包含文本、图像和自适应内容等。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **BindingGeneric** | [ToastBindingGeneric](#toastbindinggeneric) | true | 可在所有设备上呈现的通用 toast 绑定。 此绑定是必需的，不能为 null。 |
 | **BaseUri** | Uri | false | 与图像源属性中的相对 URL 结合的默认基本 URL。 |
@@ -76,7 +76,7 @@ Toast 的可视部分包含绑定，其中包含文本、图像和自适应内�
 ## <a name="toastbindinggeneric"></a>ToastBindingGeneric
 通用绑定是 toast 的默认绑定，并且你就在通用绑定中指定文本、图像和自适应内容等。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **Children** | IList<[IToastBindingGenericChild](#itoastbindinggenericchild)> | false | Toast 正文的内容，可能包括文本、图像和组（这是在周年更新中增加的功能）。 文本元素必须位于其他任何元素之前，并且仅支持 3 个文本元素。 如果文本元素位于任何其他元素之后，则它将会被拉到顶部，或被删除。 最后，对于根子级文本元素，某些文本属性（如 HintStyle）不受支持，只能在 AdaptiveSubgroup 内部使用。 如果你在没有周年更新的设备上使用 AdaptiveGroup，则将直接删除组内容。 |
 | **AppLogoOverride** | [ToastGenericAppLogo](#toastgenericapplogo) | false | 用于覆盖应用徽标的可选徽标。 |
@@ -101,7 +101,7 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 ## <a name="adaptivetext"></a>AdaptiveText
 自适应文本元素。 如果放置在顶级 ToastBindingGeneric.Children 中，则将仅应用 HintMaxLines。 但是如果放置为组/子组的子级，则支持全文本样式。
 
-| 属性 | 类型 | 必须 |说明 |
+| properties | 类型 | 必须 |说明 |
 |---|---|---|---|
 | **Text** | string 或 [BindableString](#bindablestring) | false | 要显示的文本。 在创意者更新中添加了数据绑定支持，但只适用于顶级文本元素。 |
 | **HintStyle** | [AdaptiveTextStyle](#adaptivetextstyle) | false | 样式控制文本的字体大小、粗细和不透明度。 仅适用于组/子组内部的文本元素。 |
@@ -115,7 +115,7 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 ### <a name="bindablestring"></a>BindableString
 字符串绑定值。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **BindingName** | 字符串 | true | 获取或设置映射到绑定数据值的名称。 |
 
@@ -132,7 +132,7 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 | **BodySubtle** | 与 Body 相同，但具有精细不透明度。 |
 | **基座** | 段落字体大小、粗体。 本质上是正文的粗体版本。 |
 | **BaseSubtle** | 与 Base 相同，但具有精细不透明度。 |
-| **标题** | H4 字体大小。 |
+| **副标题** | H4 字体大小。 |
 | **SubtitleSubtle** | 与 Subtitle 相同，但具有精细的不透明度。 |
 | **标题** | H3 字体大小。 |
 | **TitleSubtle** | 与 Title 相同，但具有精细不透明度。 |
@@ -160,7 +160,7 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 ## <a name="adaptiveimage"></a>AdaptiveImage
 内联图像。
 
-| 属性 | 类型 | 必须 |说明 |
+| properties | 类型 | 必须 |说明 |
 |---|---|---|---|
 | **Source** | 字符串 | true | 图像的 URL。 支持 ms-appx、ms-appdata 和 http。 自 Fall Creators Update 起，正常连接上的 Web 图像的大小限制提升至 3 MB，按流量计费的连接上的限制提升至 1 MB。 在尚未运行 Fall Creators Update 的设备上，Web 图像的大小不得超过 200 KB。 |
 | **HintCrop** | [AdaptiveImageCrop](#adaptiveimagecrop) | false | 周年更新中的新增功能：控制图像的所需裁剪。 |
@@ -195,7 +195,7 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 ## <a name="adaptivegroup"></a>AdaptiveGroup
 周年更新中的新增功能：组从语义上确定组中内容是必须作为整体显示，还是无法容纳就不显示。 组还允许创建多个列。
 
-| 属性 | 类型 | 必须 |说明 |
+| properties | 类型 | 必须 |说明 |
 |---|---|---|---|
 | **Children** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | 子组显示为垂直列。 你必须使用子组来提供 AdaptiveGroup 内的任何内容。 |
 
@@ -203,7 +203,7 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 ## <a name="adaptivesubgroup"></a>AdaptiveSubgroup
 周年更新中的新增功能：子组是可能包含文本和图像的垂直列。
 
-| 属性 | 类型 | 必须 |说明 |
+| properties | 类型 | 必须 |说明 |
 |---|---|---|---|
 | **Children** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) 和 [AdaptiveImage](#adaptiveimage) 是子组的有效子级。 |
 | **HintWeight** | int? | false | 通过指定粗细控制此子组列相对于其他子组的宽度。 |
@@ -233,7 +233,7 @@ TextStacking 指定内容在垂直方向上的对齐方式。
 ## <a name="adaptiveprogressbar"></a>AdaptiveProgressBar
 创意者更新中的新增功能：进度栏。 仅支持桌面 Toast，版本 15063 或更高版本。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **标题** | string 或 [BindableString](#bindablestring) | false | 获取或设置可选标题字符串。 支持数据绑定。 |
 | **值** | Double 或 [AdaptiveProgressBarValue](#adaptiveprogressbarvalue) 或 [BindableProgressBarValue](#bindableprogressbarvalue) | false | 获取或设置进度栏的值。 支持数据绑定。 默认值为 0。 |
@@ -244,7 +244,7 @@ TextStacking 指定内容在垂直方向上的对齐方式。
 ### <a name="adaptiveprogressbarvalue"></a>AdaptiveProgressBarValue
 代表进度栏值的类。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **值** | double | false | 获取或设置表示完成百分比得值 (0.0 - 1.0)。 |
 | **IsIndeterminate** | bool | false | 获取或设置值，用于指示进度栏是否为不确定。 如果为 true，将忽略 **Value**。 |
@@ -253,7 +253,7 @@ TextStacking 指定内容在垂直方向上的对齐方式。
 ### <a name="bindableprogressbarvalue"></a>BindableProgressBarValue
 可绑定的进度栏值。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **BindingName** | 字符串 | true | 获取或设置映射到绑定数据值的名称。 |
 
@@ -261,7 +261,7 @@ TextStacking 指定内容在垂直方向上的对齐方式。
 ## <a name="toastgenericapplogo"></a>ToastGenericAppLogo
 要显示的徽标（而不是应用徽标）。
 
-| 属性 | 类型 | 必须 |说明 |
+| properties | 类型 | 必须 |说明 |
 |---|---|---|---|
 | **Source** | 字符串 | true | 图像的 URL。 支持 ms-appx、ms-appdata 和 http。 Http 图像大小必须为 200 KB 或更小。 |
 | **HintCrop** | [ToastGenericAppLogoCrop](#toastgenericapplogocrop) | false | 指定你希望如何裁剪图像。 |
@@ -282,7 +282,7 @@ TextStacking 指定内容在垂直方向上的对齐方式。
 ## <a name="toastgenericheroimage"></a>ToastGenericHeroImage
 在 toast 上和在操作中心内显示的主题 Hero 图像
 
-| 属性 | 类型 | 必须 |说明 |
+| properties | 类型 | 必须 |说明 |
 |---|---|---|---|
 | **Source** | 字符串 | true | 图像的 URL。 支持 ms-appx、ms-appdata 和 http。 Http 图像大小必须为 200 KB 或更小。 |
 | **AlternateText** | 字符串 | false | 描述图像的替换文本，用于辅助功能。 |
@@ -292,7 +292,7 @@ TextStacking 指定内容在垂直方向上的对齐方式。
 ## <a name="toastgenericattributiontext"></a>ToastGenericAttributionText
 显示在 toast 通知底部的属性文本。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **Text** | 字符串 | true | 要显示的文本。 |
 | **语言** | 字符串 | false | 使用本地化资源时视觉负载的目标区域设置，用 BCP-47 语言标签指定，如“en-US”或“fr-FR”。 如果未提供，则将使用系统区域设置。 |
@@ -312,7 +312,7 @@ toast 操作/输入的标记界面。
 
 使用按钮、文本框和选择输入等控件创建你自己的自定义操作和输入。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **输入** | IList<[IToastInput](#itoastinput)> | false | 如文本框和选择输入等输入。 最多仅允许 5 个输入。 |
 | **按钮** | IList<[IToastButton](#itoastbutton)> | false | 显示在所有输入之后（或者，如果按钮用作快速回复按钮，则在输入旁边）的按钮。 最多仅允许 5 个按钮（或者，如果你还有上下文菜单项，则更少）。 |
@@ -333,7 +333,7 @@ toast 输入的标记界面。
 
 用户可以在其中键入文本的文本框控件。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **Id** | 字符串 | true | Id 是必需的，并用于将用户输入的文本映射到你的应用以后使用的 id/值的键值对。 |
 | **标题** | 字符串 | false | 显示在文本框上方的标题文本。 |
@@ -346,7 +346,7 @@ toast 输入的标记界面。
 
 选择框控件，让用户能够从选项的下拉列表中进行选择。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **Id** | 字符串 | true | 此 Id 是必需的。 如果用户选择此项，则此 Id 将传递回应用的代码，表示他们所做的选择。 |
 | **内容** | 字符串 | true | Content 是必需的，是显示在选择项上的字符串。 |
@@ -355,7 +355,7 @@ toast 输入的标记界面。
 ### <a name="toastselectionboxitem"></a>ToastSelectionBoxItem
 选择框项（用户可从下拉列表选择的项）。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **Id** | 字符串 | true | Id 是必需的，并用于将用户输入的文本映射到你的应用以后使用的 id/值的键值对。 |
 | **标题** | 字符串 | false | 显示在选择框上方的标题文本。 |
@@ -378,7 +378,7 @@ toast 按钮的标记界面。
 
 用户可单击的按钮。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **内容** | 字符串 | true | 必需。 要显示在按钮上的文本。 |
 | **参数** | 字符串 | true | 必需。 如果用户单击此按钮，应用将在稍后接收到的应用定义的参数字符串。 |
@@ -399,7 +399,7 @@ toast 按钮的标记界面。
 ### <a name="toastactivationoptions"></a>ToastActivationOptions
 创意者更新中的新增功能：与激活相关的其他选项。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **AfterActivationBehavior** | [ToastAfterActivationBehavior](#toastafteractivationbehavior) | false | 秋季创意者更新中的新增功能：获取或设置在用户调用某操作时 Toast 应使用的行为。 仅适用于桌面上的 [ToastButton](#toastbutton) 和 [ToastContextMenuItem](#toastcontextmenuitem)。 |
 | **ProtocolActivationTargetApplicationPfn** | 字符串 | false | 如果你使用*ToastActivationType.Protocol*，则可以选择指定目标 PFN，这样，无论是否有多个应用注册以处理同一协议 uri，始终都会启动你所需的应用。 |
@@ -419,7 +419,7 @@ toast 按钮的标记界面。
 
 自动处理通知推迟的一个系统处理推迟按钮。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **CustomContent** | 字符串 | false | 在按钮上显示的可选自定义文本，会覆盖默认的本地化的“推迟”文本。 |
 
@@ -429,7 +429,7 @@ toast 按钮的标记界面。
 
 一个系统处理的消除按钮，单击时将消除通知。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **CustomContent** | 字符串 | false | 在按钮上显示的可选自定义文本，会覆盖默认的本地化的“消除”文本。 |
 
@@ -439,7 +439,7 @@ toast 按钮的标记界面。
 
 自动为暂停时间间隔构造选择框、推迟/消除按钮，这些都全部自动执行本地化，且推迟逻辑由系统自动处理。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **ContextMenuItems** | IList<[ToastContextMenuItem](#toastcontextmenuitem)> | false | 周年更新中的新增功能：自定义上下文菜单项，如果用户右键单击通知，则会提供更多操作。 你最多只能有 5 个项。 |
 
@@ -447,7 +447,7 @@ toast 按钮的标记界面。
 ## <a name="toastcontextmenuitem"></a>ToastContextMenuItem
 上下文菜单项条目。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **内容** | 字符串 | true | 必需。 要显示的文本。 |
 | **参数** | 字符串 | true | 必需。 用户单击菜单项后，应用一旦激活便可以在稍后检索的应用定义的参数字符串。 |
@@ -458,7 +458,7 @@ toast 按钮的标记界面。
 ## <a name="toastaudio"></a>ToastAudio
 指定收到 Toast 通知时要播放的音频。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **源** | uri | false | 播放来代替默认声音的媒体文件。 仅支持 ms-appx 和 ms-appdata。 |
 | **圈** | boolean | false | 如果声音需在 Toast 显示时不断重复，则设置为 true；如果仅播放一次，则设置为 false（默认设置）。 |
@@ -468,7 +468,7 @@ toast 按钮的标记界面。
 ## <a name="toastheader"></a>ToastHeader
 创意者更新中的新增功能：在操作中心内将多个通知归组在一起的自定义标头。
 
-| 属性 | 类型 | 必须 | 说明 |
+| properties | 类型 | 必须 | 说明 |
 |---|---|---|---|
 | **Id** | 字符串 | true | 开发人员创建的标识符，用以唯一标识此标头。 如果两个通知具有相同的标头 id，它们将显示在操作中心中的同一标头下。 |
 | **标题** | 字符串 | true | 标头的标题。 |
