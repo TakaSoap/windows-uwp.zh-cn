@@ -5,12 +5,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: 入门, Windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 21eda55755682680109f0862775f2c3bf13adf2e
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 30a73ef2744bdd325e6b245d05854be3caae1d37
+ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878569"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92011345"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 应用入门
 
@@ -32,7 +32,7 @@ ms.locfileid: "91878569"
         <h3 style="margin-top: 10px; margin-bottom: 0px">准备工作</h3>
         <p style="margin-top: 0px; margin-bottom: 50px">Visual Studio Community 和 Windows 10 SDK 可为你提供构建出色应用所需的一切 - 而且免费。</p>
         <br>
-        <a href="//docs.microsoft.com/windows/uwp/get-started/get-set-up">下载工具和 SDK</a><br/>
+        <a href="//docs.microsoft.com/windows/apps/get-started/get-set-up">下载工具和 SDK</a><br/>
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" alt="Code illustration" />
