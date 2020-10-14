@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c#, winrt, cswinrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fb098cb247890dc1b3919f6123b76b54366d60f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c3cac3049dbd5d22c23716a2da38a41fb6000a71
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154321"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984493"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -31,11 +31,13 @@ C#/WinRT 还支持 WinUI 3.0。 此版本的 WinUI 从操作系统中移除了�
 
 最后，C#/WinRT 是一个通用工具包，用于支持在 C# 编译器或 .NET 运行时中无法使用内置 WinRT 支持的其他方案。 C#/WinRT 支持向下兼容 .NET Standard 2.0（例如 Mono 5.4）的 .NET 运行时版本。
 
-有关 C#/WinRT 的更多信息，请参阅 [C#/WinRT GitHub 存储库](https://aka.ms/cswinrt/repo)
+有关 C#/WinRT 的更多信息，请参阅 [C#/WinRT GitHub 存储库](https://aka.ms/cswinrt/repo)。
 
 ## <a name="create-an-interop-assembly"></a>创建一个互操作程序集
 
-WinRT API 在 Windows 元数据 (*.winmd) 文件中定义。 C#/WinRT NuGet 程序包中包括 C#/WinRT 编译器 **cswinrt**，可以使用它来处理 Windows 元数据文件并生成 .NET Standard 2.0 C# 代码。 可以将这些源文件编译为互操作程序集，这与 [C++/WinRT](../cpp-and-winrt-apis/index.md) 为 C++ 语言投影生成头文件的方式类似。 然后，可以将 C#/WinRT 互操作程序集与 C#/WinRT 运行时程序集一起分发，供应用程序引用。
+WinRT API 在 Windows 元数据 (*.winmd) 文件中定义。 C#/WinRT NuGet 包 ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) 中包括 C#/WinRT 编译器 cswinrt，可以使用它来处理 Windows 元数据文件并生成 .NET 5.0 C# 代码。 可以将这些源文件编译为互操作程序集，这与 [C++/WinRT](../cpp-and-winrt-apis/index.md) 为 C++ 语言投影生成头文件的方式类似。 然后，可以将 C#/WinRT 互操作程序集与 C#/WinRT 运行时程序集一起分发，供应用程序引用。
+
+有关演示如何创建互操作程序集的演练，请参阅 [演练：从 C++/WinRT 组件生成 .NET 5 投影并更新 NuGet](net-projection-from-cppwinrt-component.md)。
 
 ### <a name="invoke-cswinrtexe"></a>调用 cswinrt.exe
 

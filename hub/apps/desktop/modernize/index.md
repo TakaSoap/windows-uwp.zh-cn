@@ -6,12 +6,12 @@ ms.date: 10/02/2020
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 5df07995c2e4175bc9a67010a78c353cbd9d8cfa
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: b7c640e89f36dfcea6e0080cbbe3887e0231ddfc
+ms.sourcegitcommit: 27552ed7d3d889f50d8e01776a24b8d486a8d97c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671496"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91958720"
 ---
 # <a name="modernize-your-desktop-apps"></a>实现桌面应用的现代化
 
@@ -82,7 +82,7 @@ MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（
 
 | 控件 |  说明 |
 |------ |--------------|
-| [MenuBar](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | 为那些需要的组织或分组功能可能无法通过 **CommandBar** 来满足的应用提供一种公开命令集的方式，这种方式既快速又简单。 |
+| [MenuBar](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | 为那些可能需要更多组织或分组功能（无法通过 CommandBar 来满足这些要求）的应用提供一种简单快速的方式来公开命令集。 |
 | [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | 显示一个 V 形图标作为视觉指示器，表明其附加的浮出控件包含更多选项。  |
 | [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button) | 提供的按钮有两个部分，可以分别调用。 一个部分的行为类似于标准按钮，可以调用即时操作。 另一个部分调用浮出控件，该控件包含可供用户选择的其他选项。|
 | [ToggleSplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-toggle-split-button) | 提供的按钮有两个部分，可以分别调用。 一个部分的行为类似于可以打开或关闭的切换按钮。 另一个部分调用浮出控件，该控件包含可供用户选择的其他选项。 |
