@@ -4,12 +4,12 @@ description: 管理 Windows 程序包管理器访问的存储库。
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d383dfc4e66c75c993210d382b674508ad3cef4
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 08af76389627bb8c21bf7a4ddb856d09119dc917
+ms.sourcegitcommit: 837ef4b2c2375d023ee85204f72a029f9ec8f4ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334489"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079272"
 ---
 # <a name="source-command-winget"></a>source 命令 (winget)
 
@@ -128,7 +128,7 @@ update 子命令与“--name”选项结合使用可定向到单个源并对其�
 
 remove 子命令可删除源。 此子命令需要“--name”选项和“name”参数才能标识源。
 
-用法：`winget source add [-n, --name] \<name>`
+用法：`winget source remove [-n, --name] \<name>`
 
 例如：`winget source remove --name Contoso`
 

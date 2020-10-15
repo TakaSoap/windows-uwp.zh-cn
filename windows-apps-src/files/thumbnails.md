@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: df0d2364762d75793f3f00856b06e8ae506cb327
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3bf624373a4b9a3c99a8c4c0a8a44e2410788487
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165593"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860140"
 ---
 # <a name="thumbnail-images"></a>缩略图图像
 
@@ -151,11 +151,11 @@ ms.locfileid: "89165593"
 <tr>
 <td>文件组</td>
 <td>如果文件夹中包含图片文件，则使用图片缩略图。<br />
-<img src="images/thumbnail-grp-picvid-modes.png" alt="File group thumbnail in picture or video mode"/> <br /> 否则不会检索任何缩略图。 </td>
+<img src="images/thumbnail-grp-picvid-modes.png" alt="File group thumbnail in picture or video mode."/> <br /> 否则不会检索任何缩略图。 </td>
 <td>如果组的文件中存在具有专辑封面的文件，则缩略图为该专辑封面。 <br />
 <img src="images/thumbnail-grp-doclistmusic-modes.png" alt="File group thumbnail in documents, music or list mode"/> <br />否则不会检索任何缩略图。 </td>
 <td>如果组中的一个文件有唱片集画面，则缩略图是唱片集画面，而且将使用文件的原始纵横比。 <br />
-<img src="images/thumbnail-grp1-single-mode.png" alt="File group thumbnail in picture or video mode"/> <br />否则，缩略图为表示一组文件的图标。 <br />
+<img src="images/thumbnail-grp1-single-mode.png" alt="File group thumbnail in documents, music or list mode using the original aspect ratio of the file."/> <br />否则，缩略图为表示一组文件的图标。 <br />
 <img src="images/thumbnail-grp2-single-mode.png" alt="File group icon in single mode"/> 
 </td>
 </tr>

@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 入门
 ms.localizationpriority: medium
-ms.openlocfilehash: 83a6774180e2f2f0a65dc9a71ebfac5c273a4424
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a9230df47c9929ee902fc8e0b93f7de7a5ef70df
+ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168181"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92011360"
 ---
 # <a name="start-coding"></a>开始编码
 
@@ -18,7 +18,7 @@ ms.locfileid: "89168181"
 
 欢迎使用 [UWP 平台](universal-application-platform-guide.md)！ 在本页面上，我们将为你提供开始编写你要创建的 Windows 10 应用的代码所需的适当信息。
 
-开始开发之前，应已完成[准备工作](get-set-up.md)。
+开始开发之前，应已完成[准备工作](/windows/apps/get-started/get-set-up.md)。
 
 ## <a name="learning-tracks"></a>学习轨迹
 
@@ -57,8 +57,8 @@ ms.locfileid: "89168181"
 
 | 领域 | 说明 |
 | --- | --- |
-| **新增功能** | 每次发布 Windows 10 的主要更新，我们的文档库都会增加一些新的指南。 这些文档包含有关我们为每个版本添加的功能和开发人员指南的信息，以及新 API 的列表： </br>   [最新的 Windows 10 版本中面向开发人员的新增功能](../whats-new/windows-10-build-19041.md) </br> 但是，我们不是只在发布主要版本时才更新文档。 我们不断添加新的信息供你浏览，并且帮助你了解最新动向： </br>   [文档中的新增内容](../whats-new/windows-docs-january-2019.md) |
-| **设计和 UI** | 有关应用的视觉元素和 UI 的所有信息都包含在此文档区域中。如果你对 XAML 标记语言的具体信息感兴趣，或者只是想要为文档创建独特的外观，请从此处着手： </br>   [UWP 应用的设计基础知识](../design/basics/index.md) |
+| **新增功能** | 每次发布 Windows 10 的主要更新，我们的文档库都会增加一些新的指南。 这些文档包含有关我们为每个版本添加的功能和开发人员指南的信息，以及新 API 的列表： </br>   [最新的 Windows 10 版本中面向开发人员的新增功能](../whats-new/windows-10-version-latest.md) |
+| **设计和 UI** | 有关应用的可视化表示形式和 UI 的所有信息均包含在文档的此区域中。如果对 XAML 标记语言的细节感兴趣，或只是想为文档创建独特的外观，请从这里开始： </br>   [UWP 应用的设计基础知识](../design/basics/index.md) |
 | **开发应用** | 如果要了解特定的 Windows 10 功能的详细信息，或只是想了解可以通过 UWP 开发做些什么事情，请查看文档的这一区域： </br>   [UWP 应用功能](../develop/index.md)。 </br> Windows 10 应用的 API 参考托管在一组相关的文档中，可以在这里找到它们： </br>   [Windows UWP 命名空间](/uwp/api/) </br>   [文件和 XML 架构](/uwp/schemas/) |
 | **开发游戏** | 这些文档包含有关如何在 Windows 或 Xbox 上开发游戏的信息。 这包括设置说明、开发人员计划以及使用 DirectX 或 Xbox 功能进行编程的说明。 </br>   [游戏开发入门](../gaming/getting-started.md) |
 | **发布** | 这些文档包含有关如何将应用发布到 Windows Store（从应用提交到定价再到推广和客户互动）的信息： </br>   [将应用发布到 Windows Store](../publish/index.md) |
