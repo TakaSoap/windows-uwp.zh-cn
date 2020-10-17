@@ -3,12 +3,12 @@ title: WinUI 3 预览版 2（2020 年 7 月）
 description: WinUI 3 预览版 2 发布概述。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 11c7ff587c7c237c19ad627587f082be84e68bf8
-ms.sourcegitcommit: 337f31b3fe3ff434dbc2c232fb84c3b22ebd4be8
+ms.openlocfilehash: ec4a112eceef7053244d676b6070784174291ed1
+ms.sourcegitcommit: 8b01b9ab7293dad1259da32d1459fdd454796e12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91804571"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92020157"
 ---
 # <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows UI 库 3 预览版 2（2020 年 7 月）
 
@@ -99,7 +99,7 @@ WinUI 3 预览版 2 提供有 Visual Studio 项目模板和 NuGet 包，前者�
 |----------|----------|-------------|
 | 空白页 (WinUI) | C# 和 C++ | 添加 XAML 文件和定义了新页面的代码文件，该页面派生自 WinUI 库中的 Microsoft.UI.Xaml.Controls.Page 类。 |
 | 空白窗口（桌面版 WinUI） | C# 和 C++ | 添加 XAML 文件和定义了新窗口的代码文件，该窗口派生自 WinUI 库中的 Microsoft.UI.Xaml.Window 类。 |
-| 自定义控件 (WinUI) | C# 和 C++ | 添加用于创建具有默认样式的模板化控件的代码文件。 该模板化控件派生自 WinUI 库中的 Microsoft.UI.Xaml.Controls.Control 类。<p></p>有关如何使用该项模板的演练，请参阅[使用 C++/WinRT 模板化 UWP 和 WinUI 3 应用的 XAML 控件](xaml-templated-controls-cppwinrt-winui3.md)。 有关模板化控件的详细信息，请参阅[自定义 XAML 控件](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls)。 |
+| 自定义控件 (WinUI) | C# 和 C++ | 添加用于创建具有默认样式的模板化控件的代码文件。 该模板化控件派生自 WinUI 库中的 Microsoft.UI.Xaml.Controls.Control 类。<p></p>有关如何使用该项目模板的演练，请参阅[使用 C++/WinRT 将 UWP 和 WinUI 3 应用的 XAML 控件模板化](xaml-templated-controls-cppwinrt-winui-3.md)和[使用 C# 将 UWP 和 WinUI 3 应用的 XAML 控件模板化](xaml-templated-controls-csharp-winui-3.md)。 有关模板化控件的详细信息，请参阅[自定义 XAML 控件](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls)。 |
 | 资源字典 (WinUI) | C# 和 C++ | 添加 XAML 资源的空键控集合。 有关详细信息，请参阅 [ResourceDictionary 和 XAML 资源参考](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。 |
 | 资源文件 (WinUI) | C# 和 C++ | 添加用于存储应用的字符串和条件资源的文件。 可以借助此项对应用程序进行本地化。 有关详细信息，请参阅[对 UI 和应用包清单中的字符串进行本地化](/windows/uwp/app-resources/localize-strings-ui-manifest)。 |
 | 用户控件 (WinUI) | C# 和 C++ | 添加 XAML 文件和用于创建用户控件的代码文件，该用户控件派生自 WinUI 库中的 Microsoft.UI.Xaml.Controls.UserControl 类。 通常，用户控件封装相关的现有控件并提供其自己的逻辑。<p></p>有关用户控件的详细信息，请参阅[自定义 XAML 控件](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls)。 |

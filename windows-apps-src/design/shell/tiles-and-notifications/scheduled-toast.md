@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: windows 10，uwp，计划 toast 通知，scheduledtoastnotification，如何，快速入门，入门，代码示例，演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 04bbf3da388bf065b2b96684cf3f27cd7534ff51
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 8ef849490df82d7677e19d1f1619d98111611be3
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984733"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100305"
 ---
 # <a name="schedule-a-toast-notification"></a>计划 toast 通知
 
@@ -21,12 +21,12 @@ ms.locfileid: "91984733"
 请注意，计划 toast 通知的传递时段为5分钟。 如果计算机在计划的传递时间内处于关闭状态，并且保持不变超过5分钟，则通知将被 "删除"，因此不再与用户相关。 如果需要有保证的通知送达，而不考虑计算机的持续时间，我们建议使用带有时间触发器的后台任务，如 [此代码示例](https://github.com/WindowsNotifications/quickstart-snoozable-toasts-even-if-computer-is-off)中所示。
 
 > [!IMPORTANT]
-> Win32 应用程序 (.MSIX/稀疏包和经典 Win32) 用于发送通知和处理激活的步骤略有不同。 请按照下面的说明进行操作，但 `ToastNotificationManager` 将替换为 `DesktopNotificationManagerCompat` [Win32 应用](toast-desktop-apps.md) 文档中的类。
+> 桌面应用程序 (.MSIX/稀疏包和经典桌面) 用于发送通知和处理激活的步骤略有不同。 请按照下面的说明进行操作，但 `ToastNotificationManager` 将替换为 `DesktopNotificationManagerCompat` [桌面应用](toast-desktop-apps.md) 文档中的类。
 
 > **重要 api**： [ScheduledToastNotification 类](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要完全理解此主题，事先掌握以下内容会很有用...
 

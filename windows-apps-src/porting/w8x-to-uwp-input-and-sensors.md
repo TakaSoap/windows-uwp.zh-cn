@@ -1,17 +1,17 @@
 ---
-description: 与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。
+description: 了解如何在 i/o、设备和应用模型中将 Windows 运行时3.x 端口移植到 UWP。
 title: 针对 I/O、设备和应用模型将 Windows 运行时 8.x 移植到 UWP
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b6d319b901791a7c6b4b6b2fd93e8c217a3caef2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fe0d78f40fc7e4ca28e5ef766ff713b3aaf9f189
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167531"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133070"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>针对 I/O、设备和应用模型将 Windows 运行时 8.x 移植到 UWP
 

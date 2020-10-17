@@ -7,19 +7,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10，uwp，win32，桌面，toast 通知，发送 toast，发送本地 toast，desktop bridge，.msix，稀疏包，c + +，cpp，cplusplus，WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: a227ccbc52aa3c1dd8c0cd9c61cdecf140375fe2
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: e1e8aedd867dfdcabd382ebde1dd4c96a94d1001
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984653"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100315"
 ---
 # <a name="send-a-local-toast-notification-from-win32-c-wrl-apps"></a>从 Win32 c + + WRL 应用发送本地 toast 通知
 
 Win32 应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包的 Win32 应用) 可以像 Windows 应用一样发送交互式 toast 通知。 但是，由于不同的激活方案以及不使用 .MSIX 或稀疏包时可能缺少包标识，所以有几个特殊步骤适用于 Win32 应用程序。
 
 > [!IMPORTANT]
-> 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 对于其他 Win32 语言，请参阅 [Win32 c #](send-local-toast-desktop.md)。
+> 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 有关其他桌面语言，请参阅[桌面 C#](send-local-toast-desktop.md)。
 
 
 ## <a name="step-1-enable-the-windows-10-sdk"></a>步骤 1：启用 Windows 10 SDK
@@ -418,11 +418,11 @@ if (SUCCEEDED(hr))
 
 Windows 8 引入了 toast 通知，但使用的是[旧版 toast 模板](/previous-versions/windows/apps/hh761494(v=win.10))，如 ToastText01。 激活由 **ToastNotification** 类上的内存中 **Activated** 事件处理，因为 toast 只会短暂弹出而不会持久存在。 Windows 10 引入了[交互式 ToastGeneric toast](adaptive-interactive-toasts.md)，还引入了操作中心，通知可在操作中心内保留数天。 要引入操作中心，则需要引入 COM 激活器，这样 toast 才能在创建数天后被激活。
 
-| OS | ToastGeneric | COM 激活器 | 旧版 toast 模板 |
+| 操作系统 | ToastGeneric | COM 激活器 | 旧版 toast 模板 |
 | -- | ------------ | ------------- | ---------------------- |
 | Windows 10 | 支持 | 支持 | 支持（但不会激活 COM 服务器） |
-| Windows 8.1/8 | 不适用 | 空值 | 支持 |
-| Windows 7 及更低版本 | 不适用 | 不适用 | 不适用 |
+| Windows 8.1/8 | 空值 | 空值 | 支持 |
+| Windows 7 及更低版本 | 空值 | 空值 | 空值 |
 
 若要检查是否是在 Windows 10 上运行，请包含 `<VersionHelpers.h>` 标头并检查 **IsWindows10OrGreater** 方法。 如果返回 true，则继续调用本文档中所述的所有方法！ 
 

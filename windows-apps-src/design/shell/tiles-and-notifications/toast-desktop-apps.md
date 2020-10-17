@@ -1,22 +1,22 @@
 ---
-Description: 发现桌面 Win32 应用用于发送 toast 通知的不同选项
-title: 来自 Win32 应用的 Toast 通知
-label: Toast notifications from Win32 apps
+Description: 发现桌面应用用于发送 toast 通知的不同选项
+title: 来自桌面应用的 Toast 通知
+label: Toast notifications from desktop apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10，uwp，win32，桌面，toast 通知，desktop bridge，.msix，稀疏包，用于发送 toast，com 服务器，com 激活器，com，虚假 com，无 com，无 com，send toast 的选项
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f02bc7c615643ba0d2ca0ed1b43ecf13641c1c5
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 139ab767e0cc5eb11d0116563e8e1b7e00ae5dc2
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984543"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100325"
 ---
-# <a name="toast-notifications-from-win32-apps"></a>来自 Win32 应用的 Toast 通知
+# <a name="toast-notifications-from-desktop-apps"></a>来自桌面应用的 Toast 通知
 
-Win32 应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包的 Win32 应用) 可以像 Windows 应用一样发送交互式 toast 通知。 但是，由于不同的激活方案，Win32 应用有几个不同的选项。
+桌面应用程序 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用和经典非打包桌面应用) 可以像 Windows 应用一样发送交互式 toast 通知。 但是，由于激活方案不同，存在一些不同的桌面应用选项。
 
 在本文中，我们将介绍你可以用于在 Windows 10 上发送 toast 通知的选项。 每个选项完全支持…
 
@@ -26,7 +26,7 @@ Win32 应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview
 
 ## <a name="all-options"></a>所有选项
 
-下表说明了在 Win32 应用程序中支持 toast 的选项，以及相应的支持功能。 你可以使用此表来选择最适合你的情形的选项。<br/><br/>
+下表说明了用于在桌面应用内支持 toast 的选项，以及对应的受支持的功能。 你可以使用此表来选择最适合你的情形的选项。<br/><br/>
 
 | 选项 | 视觉对象 | 操作 | 输入 | 在进程内激活 |
 | -- | -- | -- | -- | -- |
@@ -36,7 +36,7 @@ Win32 应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview
 
 ## <a name="preferred-option---com-activator"></a>首选选项 - COM 激活器
 
-这是适用于 Win32 应用程序的首选选项，支持所有通知功能。 不必担心使用“COM 激活器”；我们有 [C#](send-local-toast-desktop.md) 和 [C++ 应用](send-local-toast-desktop-cpp-wrl.md)的资源库，让使用此选项变得很简单，即使你之前从未编写过 COM 服务器。<br/><br/>
+这是适用于桌面应用程序的首选选项，并且支持所有通知功能。 不必担心使用“COM 激活器”；我们有 [C#](send-local-toast-desktop.md) 和 [C++ 应用](send-local-toast-desktop-cpp-wrl.md)的资源库，让使用此选项变得很简单，即使你之前从未编写过 COM 服务器。<br/><br/>
 
 | 视觉对象 | 操作 | 输入 | 在进程内激活 |
 | -- | -- | -- | -- |
@@ -44,7 +44,7 @@ Win32 应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview
 
 使用 COM 激活器选项，你可以在应用中使用以下通知模板和激活类型。<br/><br/>
 
-| 模板和激活类型 | .MSIX/稀疏包 | 经典 Win32 |
+| 模板和激活类型 | .MSIX/稀疏包 | 经典桌面 |
 | -- | -- | -- |
 | ToastGeneric 前台 | ✔️ | ✔️ |
 | ToastGeneric 后台 | ✔️ | ✔️ |
@@ -54,7 +54,7 @@ Win32 应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview
 > [!NOTE]
 > 如果将 COM 激活器添加到现有的 .MSIX/稀疏包应用，前台/背景和旧通知激活现在会激活 COM 激活器而不是命令行。
 
-若要了解如何使用此选项，请参阅 [从 Win32 c # 应用发送本地 toast 通知](send-local-toast-desktop.md) 或 [从 Win32 c + + WRL 应用发送本地 toast 通知](send-local-toast-desktop-cpp-wrl.md)。
+若要了解如何使用此选项，请参阅 [从桌面 c # 应用发送本地 toast 通知](send-local-toast-desktop.md) 或 [从 Win32 c + + WRL 应用发送本地 toast 通知](send-local-toast-desktop-cpp-wrl.md)。
 
 
 ## <a name="alternative-option---no-com--stub-clsid"></a>备用选项 - 无 COM / 存根 CLSID
@@ -65,9 +65,9 @@ Win32 应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview
 | -- | -- | -- | -- |
 | ✔️ | ✔️ | ❌ | ❌ |
 
-使用此选项，如果你支持经典 Win32，那么你能够使用的通知模板和激活类型将非常有限，如下所示。<br/><br/>
+使用此选项时，如果支持经典桌面，你可以使用的通知模板和激活类型会受到更多的限制，如下所示。<br/><br/>
 
-| 模板和激活类型 | .MSIX/稀疏包 | 经典 Win32 |
+| 模板和激活类型 | .MSIX/稀疏包 | 经典桌面 |
 | -- | -- | -- |
 | ToastGeneric 前台 | ✔️ | ❌ |
 | ToastGeneric 后台 | ✔️ | ❌ |
@@ -76,11 +76,11 @@ Win32 应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview
 
 对于打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用程序和使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)的应用程序，只需像在 UWP 应用程序中一样发送 toast 通知。 当用户点击你的 toast 时，你的应用将使用你在 toast 中指定的启动参数启动命令行。
 
-对于经典 Win32 应用，应设置 AUMID，以便你可以发送 toast，然后还应在快捷方式上指定 CLSID。 它可以是任何随机的 GUID。 不要添加 COM 服务器/激活器。 你正在添加“存根”COM CLSID，这将导致操作中心保留通知。 请注意，你只能使用协议激活 toast，因为存根 CLSID 将中断任何其他 toast 激活的激活。 因此，你必须更新你的应用以支持协议激活，并让 toast 协议激活你自己的应用。
+对于经典桌面应用，请设置 AUMID，以便可以发送 toast，然后在快捷方式上指定 CLSID。 它可以是任何随机的 GUID。 不要添加 COM 服务器/激活器。 你正在添加“存根”COM CLSID，这将导致操作中心保留通知。 请注意，你只能使用协议激活 toast，因为存根 CLSID 将中断任何其他 toast 激活的激活。 因此，你必须更新你的应用以支持协议激活，并让 toast 协议激活你自己的应用。
 
 
 ## <a name="resources"></a>资源
 
-* [从 Win32 c # 应用发送本地 toast 通知](send-local-toast-desktop.md)
+* [从桌面 C# 应用发送本地 toast 通知](send-local-toast-desktop.md)
 * [从 Win32 c + + WRL 应用发送本地 toast 通知](send-local-toast-desktop-cpp-wrl.md)
 * [toast 内容文档](adaptive-interactive-toasts.md)

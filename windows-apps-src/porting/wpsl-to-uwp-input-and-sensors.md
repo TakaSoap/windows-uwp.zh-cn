@@ -1,17 +1,17 @@
 ---
-description: 与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。
+description: 了解如何为 i/o、设备和应用模型将 Windows Phone Silverlight 移植到 UWP。
 title: 针对 I/O、设备和应用模型将 Windows Phone Silverlight 移植到 UWP
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 09b192f38a5bedaad491ade322df252d4b9e5971
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 85f0bfaa42c6357a468f2c3babbd4a89925d2e4c
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162181"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133010"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>对于 i/o、设备和应用模型，将 Windows Phone Silverlight 移植到 UWP
 

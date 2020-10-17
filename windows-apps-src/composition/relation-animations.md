@@ -1,16 +1,16 @@
 ---
 title: 基于关系的动画
 description: 了解当动作依赖于另一个对象的属性时，如何使用 ExpressionAnimations 创建基于关系的动画。
-ms.date: 10/10/2017
+ms.date: 10/16/2020
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: 57d2f3729430faefc7db31cad6a0ac91ddaa2e02
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 75adcd2f762fd4314d7b852811760d523ef522aa
+ms.sourcegitcommit: fe21402578a1f434769866dd3c78aac63dbea5ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166361"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92152416"
 ---
 # <a name="relation-based-animations"></a>基于关系的动画
 
@@ -52,10 +52,10 @@ Expression 还支持一系列关键字 - 一种特殊的短语，仅在 Expressi
 
 ### <a name="creating-expressions-with-expressionbuilder"></a>使用 ExpressionBuilder 创建 Expression
 
-在 UWP 应用中生成 Expression 有两种选项：
+在 UWP 应用中生成表达式有两个选项：
 
-1. 通过官方的公共 API 以字符串形式构建等式。
-1. 通过开源 ExpressionBuilder 工具在类型安全的对象模型中生成等式。 请参阅 [Github 源代码和文档](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder)。
+1. 通过官方公共 API 将公式构建为字符串。
+1. 通过 [Windows 社区工具包](/windows/communitytoolkit/animations/expressions)附带的 ExpressionBuilder 工具，在类型安全对象模型中生成公式。
 
 为使该文档表述清晰，我们将使用 ExpressionBuilder 定义我们的 Expression。
 
@@ -112,7 +112,9 @@ var orbitRotation = EF.Vector3(
 ```
 
 > [!NOTE]
-> `EF` 是简写的 "using" 表示法，用于定义 ExpressionBuilder。 ExpressionFunctions。
+> `EF` 是简写的 "using" 表示法，用于定义 ExpressionFunctions。
+>
+> `using EF = Microsoft.Toolkit.Uwp.UI.Animations.Expressions.ExpressionFunctions;`
 
 最后，将这些部分组合起来，引用红球的位置，定义数学关系。
 

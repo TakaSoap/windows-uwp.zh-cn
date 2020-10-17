@@ -1,23 +1,23 @@
 ---
-Description: '了解 Win32 c # 应用程序如何可以发送本地 toast 通知，并处理用户单击 toast 的操作。'
-title: '从 Win32 c # 应用发送本地 toast 通知'
+Description: '了解桌面 c # 应用程序如何可以发送本地 toast 通知并处理用户单击 toast 的操作。'
+title: 从桌面 C# 应用发送本地 toast 通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification from Win32 C# apps
+label: Send a local toast notification from desktop C# apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
-keywords: 'windows 10，uwp，win32，桌面，toast 通知，发送 toast，发送本地 toast，桌面桥，.msix，稀疏包，c #，c 清晰，toast 通知，wpf，发送 toast 通知 wpf，发送 toast 通知 winforms，发送 toast 通知 c #，发送通知 wpf，发送 toast 通知 c #，toast 通知 wpf，toast 通知 c#'
+keywords: 'windows 10，win32，桌面，toast 通知，发送 toast，发送本地 toast，桌面桥，.msix，稀疏包，c #，c 清晰，toast 通知，wpf，发送 toast 通知 wpf，发送 toast 通知 winforms，发送 toast 通知 c #，发送通知 wpf，发送通知 c #，toast 通知 wpf，toast 通知 c#'
 ms.localizationpriority: medium
-ms.openlocfilehash: b13927bbd12a5cb306018ca02cd8730f580182cd
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 1fa6b23e775beee993051b23b828c59316ac1382
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984643"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100295"
 ---
-# <a name="send-a-local-toast-notification-from-win32-c-apps"></a>从 Win32 c # 应用发送本地 toast 通知
+# <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>从桌面 C# 应用发送本地 toast 通知
 
-Win32 应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包的 Win32 应用) 可以像 Windows 应用一样发送交互式 toast 通知。 但是，由于不同的激活方案以及不使用 .MSIX 或稀疏包时可能缺少包标识，所以有几个特殊步骤适用于 Win32 应用程序。
+桌面应用程序 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用和经典非打包桌面应用) 可以像 Windows 应用一样发送交互式 toast 通知。 但对于桌面应用程序，有几个特殊步骤，因为不同的激活方案，如果你未使用 .MSIX 或稀疏包，则可能缺少包标识。
 
 > [!IMPORTANT]
 > 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 有关其他桌面语言，请参阅 [Win32 c + + WRL](send-local-toast-desktop-cpp-wrl.md)。
@@ -27,7 +27,7 @@ Win32 应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview
 
 `Microsoft.Toolkit.Uwp.Notifications`在项目中安装[NuGet 包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)。
 
-此 [通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 添加了兼容的库代码，用于从 Win32 应用程序中使用 toast 通知。 它还引用 UWP Sdk，允许使用 c # 而不是原始 XML 来构造通知。 此快速入门的其余部分取决于通知库。
+此 [通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 添加了兼容的库代码，用于从桌面应用程序中使用 toast 通知。 它还引用 UWP Sdk，允许使用 c # 而不是原始 XML 来构造通知。 此快速入门的其余部分取决于通知库。
 
 
 ## <a name="step-2-implement-the-activator"></a>步骤2：实现激活器
@@ -55,7 +55,7 @@ public class MyNotificationActivator : NotificationActivator
 
 ## <a name="step-3-register-with-notification-platform"></a>步骤3：注册到通知平台
 
-然后，必须注册通知平台。 具体步骤取决于你使用的是 .MSIX/稀疏包还是经典 Win32。 如果两者都支持，用于这两者的步骤均需执行（但无需对代码实施分支操作，库会自行执行此操作！）。
+然后，必须注册通知平台。 具体步骤取决于你使用的是 .MSIX/稀疏包还是经典桌面。 如果两者都支持，用于这两者的步骤均需执行（但无需对代码实施分支操作，库会自行执行此操作！）。
 
 
 #### <a name="msixsparse-packages"></a>[.MSIX/稀疏包](#tab/msix-sparse)
@@ -104,11 +104,11 @@ public class MyNotificationActivator : NotificationActivator
 ```
 
 
-#### <a name="classic-win32"></a>[经典 Win32](#tab/classic)
+#### <a name="unpackaged"></a>[未打包](#tab/classic)
 
-如果使用的是经典 Win32 (或同时支持这两种) ，则必须在 "开始" 中将应用程序用户模型 ID (AUMID) 和 toast 激活器 CLSID (#2 上的应用程序快捷方式中的 GUID。
+如果使用的不是 .MSIX/稀疏 (或同时支持这两种) ，则必须在 "开始" 中将应用程序用户模型 ID (AUMID) 和 toast 激活器 CLSID (#2 上的应用程序快捷方式的 GUID。
 
-选取用于识别 Win32 应用的唯一 AUMID。 通常采用 [CompanyName].[AppName] 的形式，但需确保它在所有应用中均为唯一（可根据需要在末尾添加一些数字）。
+选取一个将标识桌面应用的唯一 AUMID。 通常采用 [CompanyName].[AppName] 的形式，但需确保它在所有应用中均为唯一（可根据需要在末尾添加一些数字）。
 
 ### <a name="step-31-wix-installer"></a>步骤3.1： WiX 安装程序
 
@@ -141,7 +141,7 @@ public class MyNotificationActivator : NotificationActivator
 DesktopNotificationManagerCompat.RegisterAumidAndComServer<MyNotificationActivator>("YourCompany.YourApp");
 ```
 
-如果同时支持 .MSIX/稀疏包和经典 Win32，则无需调用此方法。 如果在 .MSIX/稀疏包中运行，则此方法将立即返回。 无需对代码实施分支操作。
+如果同时支持 .MSIX/稀疏包和经典桌面，可以随意调用此方法。 如果在 .MSIX/稀疏包中运行，则此方法将立即返回。 无需对代码实施分支操作。
 
 使用此方法可调用兼容 API 来发送和管理通知，而无需总是提供 AUMID。 并且它会插入 COM 服务器的 LocalServer32 注册表项。
 
@@ -150,7 +150,7 @@ DesktopNotificationManagerCompat.RegisterAumidAndComServer<MyNotificationActivat
 
 ## <a name="step-4-register-com-activator"></a>步骤4：注册 COM 激活器
 
-对于 .MSIX/稀疏包和经典 Win32 应用，必须注册 notification activator 类型，以便可以处理 toast 激活。
+对于 .MSIX/稀疏包和经典桌面应用，必须注册 notification activator 类型，以便可以处理 toast 激活。
 
 在应用程序的启动代码中，调用以下 **RegisterActivator** 方法，并传入在步骤 #2 中创建的 **NotificationActivator** 类的实现。 必须调用此方法才能够接收任何 toast 激活。
 
@@ -162,7 +162,7 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 
 ## <a name="step-5-send-a-notification"></a>步骤5：发送通知
 
-发送通知与在 UWP 应用中的操作几乎相同，不同之处在于需使用 **DesktopNotificationManagerCompat** 类创建 **ToastNotifier**。 兼容库自动处理 .MSIX/稀疏包和经典 Win32 之间的差异，因此你无需分叉你的代码。 对于经典 Win32，兼容库会缓存调用 **RegisterAumidAndComServer** 时提供的 AUMID，因此无需担心何时提供或不提供 AUMID 的问题。
+发送通知与在 UWP 应用中的操作几乎相同，不同之处在于需使用 **DesktopNotificationManagerCompat** 类创建 **ToastNotifier**。 兼容库自动处理 .MSIX/稀疏包和经典桌面之间的差异，因此你无需分叉你的代码。 对于经典桌面，兼容库将缓存在调用 **RegisterAumidAndComServer** 时提供的 AUMID，因此无需担心何时提供或未提供 AUMID。
 
 > [!NOTE]
 > 安装[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便能够按以下方式使用 C# 而非原始 XML 来构造通知。
@@ -170,7 +170,7 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 如果要手工编写 XML) ，请确保使用下面 (或 ToastGeneric 模板中所示的 **ToastContent** ，因为旧的 Windows 8.1 toast 通知模板不会激活在步骤 #2 中创建的 COM 通知激活器。
 
 > [!IMPORTANT]
-> Http 映像仅在其清单中具有 internet 功能的 .MSIX/稀疏包应用中受支持。 经典 Win32 应用不支持 http 图像；必须将图像下载到本地应用数据中并在本地进行引用。
+> Http 映像仅在其清单中具有 internet 功能的 .MSIX/稀疏包应用中受支持。 经典桌面应用不支持 http 映像;必须将映像下载到本地应用数据，并在本地引用它。
 
 ```csharp
 // Construct the visuals of the toast (using Notifications library)
@@ -187,7 +187,7 @@ DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
 ```
 
 > [!IMPORTANT]
-> 经典 Win32 应用无法使用旧版 Toast 模板（例如 ToastText02）。 当指定 COM CLSID 时，激活旧版模板将失败。 必须使用 Windows 10 ToastGeneric 模板，如上所示。
+> 经典桌面应用程序不能 (如 ToastText02) 使用旧 toast 模板。 当指定 COM CLSID 时，激活旧版模板将失败。 必须使用 Windows 10 ToastGeneric 模板，如上所示。
 
 
 ## <a name="step-6-handling-activation"></a>步骤6：处理激活
@@ -320,12 +320,12 @@ protected override async void OnStartup(StartupEventArgs e)
 
 
 ### <a name="foreground-vs-background-activation"></a>前台与后台激活
-对于 Win32 应用程序，前台和后台激活的处理方式相同-将调用你的 COM 激活器。 是由应用的代码来决定是显示一个窗口，还是只执行一些操作后退出。 因此，在 toast 内容中指定**背景** **ActivationType**不会更改行为。
+对于桌面应用，前台和后台激活的处理方式相同 - 即调用 COM 激活器。 是由应用的代码来决定是显示一个窗口，还是只执行一些操作后退出。 因此，在 toast 内容中指定**背景** **ActivationType**不会更改行为。
 
 
 ## <a name="step-7-remove-and-manage-notifications"></a>步骤7：删除和管理通知
 
-删除和管理通知与 UWP 应用中的操作相同。 但是，建议使用兼容库来获取 **DesktopNotificationHistoryCompat**，这样如果使用经典 Win32，便无需担心提供 AUMID 的问题。
+删除和管理通知与 UWP 应用中的操作相同。 但是，我们建议使用我们的兼容库来获取 **DesktopNotificationHistoryCompat** ，因此，如果使用的是经典桌面，就不必担心如何提供 AUMID。
 
 ```csharp
 // Remove the toast with tag "Message2"
@@ -340,13 +340,13 @@ DesktopNotificationManagerCompat.History.Clear();
 
 若要部署和调试 .MSIX 应用，请参阅 [运行、调试和测试打包的桌面应用](/windows/msix/desktop/desktop-to-uwp-debug)。
 
-若要部署和调试经典 Win32 应用，必须在正常调试之前通过安装程序安装应用，以便显示包含有 AUMID 和 CLSID 的“开始”快捷方式。 出现“开始”快捷方式后，可以从 Visual Studio 中使用 F5 进行调试。
+若要部署和调试经典桌面应用程序，必须先通过安装程序安装应用程序一次，然后才能正常调试，使 AUMID 和 CLSID 的启动快捷方式出现。 出现“开始”快捷方式后，可以从 Visual Studio 中使用 F5 进行调试。
 
-如果通知根本无法在经典 Win32 应用中显示（且未引发任何异常），则可能意味着“开始”快捷方式不存在（通过安装程序安装应用），或者代码中使用的 AUMID 与“开始”快捷方式中的 AUMID 不匹配。
+如果你的通知只会在经典桌面应用 (中出现，并且) 不会引发异常，这可能意味着不存在启动快捷方式 (通过安装程序) 安装你的应用程序，或者你在代码中使用的 AUMID 与开始快捷方式中的 AUMID 不匹配。
 
 如果会出现通知但通知未保留在操作中心中（在弹出窗口关闭后消失），这意味着未正确实现 COM 激活器。
 
-如果已安装 .MSIX/稀疏包和经典 Win32 应用，请注意，.MSIX/稀疏包应用在处理 toast 激活时将取代经典 Win32 应用。 这意味着，在单击经典 Win32 应用程序中的 toast 时，它仍将启动 .MSIX/稀疏包应用。 卸载 .MSIX/稀疏包应用会将激活恢复回经典 Win32 应用。
+如果已安装 .MSIX/稀疏包和经典桌面应用，请注意，.MSIX/稀疏包应用在处理 toast 激活时将取代经典桌面应用。 这意味着，在单击经典桌面应用程序时，toast 仍将启动 .MSIX/稀疏包应用。 卸载 .MSIX/稀疏包应用会将激活恢复回经典桌面应用程序。
 
 
 ## <a name="known-issues"></a>已知问题
@@ -357,5 +357,5 @@ DesktopNotificationManagerCompat.History.Clear();
 ## <a name="resources"></a>资源
 
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/desktop-toasts)
-* [来自 Win32 应用的 Toast 通知](toast-desktop-apps.md)
+* [桌面应用中的 Toast 通知](toast-desktop-apps.md)
 * [toast 内容文档](adaptive-interactive-toasts.md)

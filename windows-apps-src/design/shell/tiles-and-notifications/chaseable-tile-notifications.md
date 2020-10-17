@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 可追踪的磁贴, 动态磁贴, 可追踪的磁贴通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 770c3f13d701de622c4f6ea8075dfef5f6b1afc8
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 951dc891fb34ae4be7551c08ff47eabc19ae9eb6
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984453"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100275"
 ---
 # <a name="chaseable-tile-notifications"></a>可追踪的磁贴通知
 
@@ -140,14 +140,14 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ```
 
 
-### <a name="accessing-onlaunched-from-win32-applications"></a>从 Win32 应用程序访问 OnLaunched
+### <a name="accessing-onlaunched-from-desktop-applications"></a>从桌面应用程序访问 OnLaunched
 
-Win32 应用程序 (如 WPF 等) 使用 [桌面桥](https://developer.microsoft.com/windows/bridges/desktop)，还可以使用 chaseable 磁贴！ 唯一的区别是访问 OnLaunched 参数。 请注意，必须首先 [将你的应用与桌面桥打包](/windows/msix/desktop/source-code-overview)。
+桌面应用程序 (如 WPF 等) 使用 [桌面桥](https://developer.microsoft.com/windows/bridges/desktop)，还可以使用 chaseable 磁贴！ 唯一的区别是访问 OnLaunched 参数。 请注意，必须首先 [将你的应用与桌面桥打包](/windows/msix/desktop/source-code-overview)。
 
 > [!IMPORTANT]
 > **需要10月2018更新**：若要使用 `AppInstance.GetActivatedEventArgs()` API，你必须面向 SDK 17763，并运行版本17763或更高版本。
 
-对于 Win32 应用程序，若要访问启动参数，请执行以下操作 .。。
+对于桌面应用程序，若要访问启动参数，请执行以下操作 .。。
 
 ```csharp
 

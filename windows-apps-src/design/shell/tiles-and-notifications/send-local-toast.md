@@ -1,27 +1,27 @@
 ---
-Description: 了解如何发送本地 toast 通知和处理用户单击 toast 的事件。
-title: 发送本地 toast 通知
+Description: 了解如何从 UWP 应用发送本地 toast 通知，并处理用户单击 toast 的操作。
+title: 从 UWP 应用发送本地 toast 通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification
+label: Send a local toast notification from UWP apps
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 发送 toast 通知, 通知, 发送通知, toast 通知, 操作方法, 快速入门, 开始使用, 代码示例, 演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 566a1093fc576751bdd2428c2349428a5d2ef626
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 7b669ad3c846fec0b60ae01134b80a6d87586c62
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984689"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100285"
 ---
-# <a name="send-a-local-toast-notification"></a>发送本地 toast 通知
+# <a name="send-a-local-toast-notification-from-uwp-apps"></a>从 UWP 应用发送本地 toast 通知
 
 
 Toast 通知是用户当前未在应用内部时应用可构造并发送给用户的消息。 此快速入门指南将指导你借助新自适应模板和交互式操作完成创建、交付并显示 Windows 10 toast 通知的步骤。 通过本地通知对这些操作进行说明，本地通知是实现起来最简单的通知。
 
 > [!IMPORTANT]
-> Win32 应用程序 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包的 win32 应用) 执行发送通知和处理激活的步骤不同。 请参阅 [Win32 应用](toast-desktop-apps.md) 文档以了解如何实现 toast。
+> 桌面应用程序 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包桌面应用) 执行发送通知和处理激活的步骤不同。 请参阅[桌面 app](toast-desktop-apps.md) 文档，了解如何实现 toast。
 
 > **重要 API**：[ToastNotification 类](/uwp/api/Windows.UI.Notifications.ToastNotification)、[ToastNotificationActivatedEventArgs 类](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
@@ -192,7 +192,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 > 图像可来自于应用包、应用的本地存储或来自 Web。 自 Fall Creators Update 起，正常连接上的 Web 图像的大小限制提升至 3 MB，按流量计费的连接上的限制提升至 1 MB。 在尚未运行 Fall Creators Update 的设备上，Web 图像的大小不得超过 200 KB。
 
 > [!IMPORTANT]
-> Http 映像仅在其清单中具有 internet 功能的 UWP/.MSIX/稀疏应用中受支持。 Win32 非 .MSIX/稀疏应用不支持 http 映像;必须将映像下载到本地应用数据，并在本地引用它。
+> Http 映像仅在其清单中具有 internet 功能的 UWP/.MSIX/稀疏应用中受支持。 桌面非 .MSIX/稀疏应用不支持 http 映像;必须将映像下载到本地应用数据，并在本地引用它。
 
 <img alt="Toast with images" src="images/send-toast-02.png" width="364"/>
 
