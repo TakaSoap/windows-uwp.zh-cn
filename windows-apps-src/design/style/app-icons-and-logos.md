@@ -1,5 +1,5 @@
 ---
-Description: 如何创建在“开始”菜单、应用磁贴、任务栏、Microsoft Store 以及其他位置表示应用的应用图标/徽标。
+description: 如何创建在“开始”菜单、应用磁贴、任务栏、Microsoft Store 以及其他位置表示应用的应用图标/徽标。
 title: 应用图标和徽标
 template: detail.hbs
 ms.date: 09/24/2020
@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1e313fe0e51ed77d416f782e40aee9dee81796ae
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 4e908cbad1fb0b70fe96af50917e8b895fdda90d
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636647"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860126"
 ---
 # <a name="app-icons-and-logos"></a>应用图标和徽标 
 
@@ -141,7 +141,7 @@ Visual Studio 提供了一个非常有用的工具来管理应用图标，名为
             Visual Studio 将显示清单设计器。
     :::column-end:::
     :::column:::
-            ![“可视化资源”选项卡](images/icons/vs-manfiest-designer.png)
+            ![“清单设计器”的屏幕截图，其中显示“应用程序”选项卡。](images/icons/vs-manfiest-designer.png)
     :::column-end:::
 :::row-end:::    
 :::row:::
@@ -149,7 +149,7 @@ Visual Studio 提供了一个非常有用的工具来管理应用图标，名为
         3. 单击“可视化资源”选项卡  。
     :::column-end:::
     :::column:::
-        ![“可视化资源”选项卡](images/icons/vs-manfiest-designer-visual-assets.png)
+        ![“清单设计器”的屏幕截图，其中显示“可视化资源”选项卡。](images/icons/vs-manfiest-designer-visual-assets.png)
     :::column-end:::
 :::row-end:::        
 

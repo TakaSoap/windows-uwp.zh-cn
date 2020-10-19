@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 2b946047602013704b27fb5c5565155d38dbb7f8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 164ae035d3b9dda24137bcb09dd208e718db0319
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154821"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933098"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>适用于桌面应用的 WinUI 3 入门
 
@@ -31,7 +31,7 @@ WinUI 3 预览版 2 引入了新的项目模板，使你能够采用完全基于
 
 3. 选择“打包的空白应用(桌面版 WinUI)”项目类型，然后单击“下一步”。
 
-    ![空白应用项目模板](images/WinUI-csharp-newproject.png)
+    ![“新建项目”向导的屏幕截图，其中突出显示了“打包的空白应用(桌面版 WinUI)”选项。](images/WinUI-csharp-newproject.png)
 
 4. 输入项目名称，根据需要选择任何其他选项，然后单击“创建”。
 
@@ -43,15 +43,15 @@ WinUI 3 预览版 2 引入了新的项目模板，使你能够采用完全基于
 
     * **项目名称(桌面)** ：此项目包含应用的代码。 **App.xaml.cs** 代码文件定义一个表示你的应用实例的 `Application` 类，**MainWindow.xaml.cs** 代码文件定义一个表示应用所显示的主窗口的 `MainWindow` 类。 这些类派生自 WinUI 提供的 **Microsoft.UI.Xaml** 命名空间中的类型。
 
-        ![应用项目](images/WinUI-csharp-appproject.png)
+        ![Visual Studio 的屏幕截图，其中显示“解决方案资源管理器”窗格以及 MainWindow.xaml.cs 文件的内容。](images/WinUI-csharp-appproject.png)
 
     * **项目名称(程序包)** ：这是一个 [Windows 应用程序打包项目](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，已配置该项目以将应用生成到 [MSIX 包](/windows/msix/overview)中。 这提供了一种新式部署体验、通过包扩展与 Windows 10 功能集成的功能以及更多其他功能。 此项目包含应用的[程序包清单](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，默认情况下它是你的解决方案的启动项目。
 
-        ![应用项目](images/WinUI-csharp-packageproject.png)
+        ![Visual Studio 的屏幕截图，其中显示“解决方案资源管理器”窗格以及 Package.appxmanifest 文件的内容。](images/WinUI-csharp-packageproject.png)
 
 7. 若要向应用项目中添加新项，请在**解决方案资源管理器**中右键单击“项目名称(桌面)”项目节点，然后选择“添加” -> “新项”。  在“添加新项”对话框中，选择“WinUI”选项卡，选择要添加的项，然后单击“添加”。 有关可用项的更多详细信息，请参阅[本节](index.md#item-templates-for-winui-3)。
 
-    ![新项](images/WinUI-csharp-newitem.png)
+    ![“添加新项”对话框的屏幕截图，其中已选中“已安装”>“Visual C# 项”>“WinUI”，并且突出显示了“空白页”选项。](images/WinUI-csharp-newitem.png)
 
 8. 生成并运行解决方案，确认应用运行时不会出错。
 
@@ -63,7 +63,7 @@ WinUI 3 预览版 2 引入了新的项目模板，使你能够采用完全基于
 
 3. 选择“打包的空白应用(桌面版 WinUI)”项目类型，然后单击“下一步”。
 
-    ![空白应用项目模板](images/WinUI-cpp-newproject.png)
+    ![“新建项目”向导的另一个屏幕截图，其中突出显示了“打包的空白应用(桌面版 WinUI)”选项。](images/WinUI-cpp-newproject.png)
 
 4. 输入项目名称，根据需要选择任何其他选项，然后单击“创建”。
 
@@ -75,11 +75,11 @@ WinUI 3 预览版 2 引入了新的项目模板，使你能够采用完全基于
 
     * **项目名称(桌面)** ：此项目包含应用的代码。 **App.xaml** 和各种**应用**代码文件定义一个表示应用实例的 `Application` 类，**MainWindow.xaml** 和各种 **MainWindow** 代码文件定义一个表示应用显示的主窗口的 `MainWindow` 类。 这些类派生自 WinUI 提供的 **Microsoft.UI.Xaml** 命名空间中的类型。
 
-        ![应用项目](images/WinUI-cpp-appproject.png)
+        ![Visual Studio 的屏幕截图，其中显示“解决方案资源管理器”窗格以及 MainWindow.xaml 文件的内容。](images/WinUI-cpp-appproject.png)
 
     * **项目名称(程序包)** ：这是一个 [Windows 应用程序打包项目](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，已配置该项目以将应用生成到 [MSIX 包](/windows/msix/overview)中。 这提供了一种新式部署体验、通过包扩展与 Windows 10 功能集成的功能以及更多其他功能。 此项目包含应用的[程序包清单](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，默认情况下它是你的解决方案的启动项目。
 
-        ![程序包项目](images/WinUI-cpp-packageproject.png)
+        ![Visual Studio 的另一个屏幕截图，其中显示“解决方案资源管理器”窗格以及 Package.appxmanifest 文件的内容。](images/WinUI-cpp-packageproject.png)
 
 7. 若要向应用项目中添加新项，请在**解决方案资源管理器**中右键单击“项目名称(桌面)”项目节点，然后选择“添加” -> “新项”。  在“添加新项”对话框中，选择“WinUI”选项卡，选择要添加的项，然后单击“添加”。 有关可用项的更多详细信息，请参阅[本节](index.md#item-templates-for-winui-3)。
 

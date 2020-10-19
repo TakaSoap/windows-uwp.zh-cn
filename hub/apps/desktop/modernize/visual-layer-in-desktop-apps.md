@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: 33a5f0bc31a8fe1421f7ab0de5f229d2feb77915
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 8fc9b3ea0f085a12be769e9733b3f92b2700dc16
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730130"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932938"
 ---
 # <a name="using-the-visual-layer-in-desktop-apps"></a>在桌面应用中使用视觉层
 
@@ -22,7 +22,7 @@ ms.locfileid: "82730130"
 
 视觉层为图形、效果和动画提供高性能的保留模式 API。 它是各个 Windows 10 设备上的 UI 基础。 UWP XAML 控件是在视觉层上生成的，成就了 [Fluent Design 系统](/windows/uwp/design/fluent-design-system/index)的许多功能特色，例如“光源”、“深度”、“运动”、“材料”和“比例”。
 
-![使用视觉层创建的用户界面](images/visual-layer-interop/pull-to-animate.gif)
+![简短视频，演示使用视觉层创建的用户界面。](images/visual-layer-interop/pull-to-animate.gif)
 
 > 使用视觉层创建的用户界面 
 
@@ -54,7 +54,7 @@ ms.locfileid: "82730130"
 
 [合成动画](/windows/uwp/composition/composition-animation)直接在独立于 UI 线程的合成器进程中运行。 这可以确保平滑度和比例适当，因此可以运行大量并发的显式动画。 除了我们所熟悉的用于驱动属性不断变化的关键帧动画以外，还可以使用表达式来设置不同属性（包括用户输入）之间的数学关系。 使用输入驱动的动画可以创建动态流畅响应用户输入的 UI，从而可以提高用户的吸引力。
 
-![使用视觉层创建的用户界面](images/visual-layer-interop/swipe-scroller.gif)
+![简短视频，演示使用视觉层创建的另一个用户界面。](images/visual-layer-interop/swipe-scroller.gif)
 
 > [Windows UI 合成示例库](https://github.com/Microsoft/WindowsCompositionSamples/tree/master/SampleGallery)中演示的运动。 
 

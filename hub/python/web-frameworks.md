@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, windows 上的 python, 使用 wsl 的 python web, 使用适用于 linux 的 windows 子系统的 python web 应用, windows 上的 python web 开发, windows 上的 flask 应用, windows 上的 django 应用, python web, windows 上的 flask web 开发, windows 上的 django web 开发, 使用 python 的 windows web 开发, vs code python web 开发, 远程 wsl 扩展, ubuntu, wsl, venv, pip, microsoft python 扩展, 在 windows 上运行 python, 在 windows 上使用 python, 在 windows 上使用 python 构建
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: fedfb42e4c1604b3570c2b4db21b12926bea3762
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 187195133dd614818d3c68473cc53b71a0b32333
+ms.sourcegitcommit: 27552ed7d3d889f50d8e01776a24b8d486a8d97c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174561"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91958740"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>开始在 Windows 上将 Python 用于 Web 开发
 

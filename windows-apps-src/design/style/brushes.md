@@ -6,12 +6,12 @@ ms.date: 04/28/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e70c76f3ed659a46dd9834442049849dd3b7761
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1bf42e75ed8bb6d22fe8d4829aa6df32fa130230
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175521"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860049"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>使用画笔绘制背景、前景和轮廓
 
@@ -106,7 +106,7 @@ ms.locfileid: "89175521"
 
 渐变停点之间每个点的颜色均以两个边界渐变停点指定的颜色组合呈线性相互融合。 下图突出显示了上述示例中的渐变停点。 圆圈标出了渐变停点的位置，虚线显示的是渐变轴。
 
-![渐变停点](images/linear-gradients-stops.png)
+![该图描述了从图的左上角开始向下向右倾斜，直至到达图的右下角的 1 至 4 渐变停点。](images/linear-gradients-stops.png)
 
 *由两个边界渐变停点指定的颜色组合*
 
@@ -160,7 +160,7 @@ ms.locfileid: "89175521"
 
 渐变停点之间每个点的颜色均以两个边界渐变停点指定的颜色组合沿径向相互融合。 下图突出显示了上述示例中的渐变停点。 
 
-![渐变停点](images/radial-gradient.png)
+![径向渐变的屏幕截图。](images/radial-gradient.png)
 
 渐变停点 
 

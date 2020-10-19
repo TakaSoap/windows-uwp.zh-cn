@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: 8a05a0a9aeb3a31e76c0510eef70b5ee3036d2f7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f5d1829d9fca4f5805a52ed34a1218723897c13d
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216829"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932988"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>适用于 Windows 应用创建者的 Fluent Design System
 
@@ -69,7 +69,7 @@ Fluent Design 功能内置于 UWP 中。 其中的一些功能（例如，有效
 
 :::row:::
     :::column:::
-        ![fpo 图像](images/fluent/thumbnail-size-classes.jpg)
+        ![描述正确断点的设计的图像。](images/fluent/thumbnail-size-classes.jpg)
     :::column-end:::
     :::column span="2":::
 **针对正确的断点进行设计**
@@ -82,7 +82,7 @@ Fluent Design 功能内置于 UWP 中。 其中的一些功能（例如，有效
 
 :::row:::
     :::column:::
-        ![fpo 图像](images/fluent/rspd-resize.gif)
+        ![描述响应式布局的简短视频。](images/fluent/rspd-resize.gif)
     :::column-end:::
     :::column span="2":::
 **创建响应式布局**
@@ -95,7 +95,7 @@ Fluent Design 功能内置于 UWP 中。 其中的一些功能（例如，有效
 
 :::row:::
     :::column:::
-        ![fpo 图像](images/fluent/devices.jpg)
+        ![描述各种设备的设计的图像。](images/fluent/devices.jpg)
     :::column-end:::
     :::column span="2":::
 **适用于各种设备的设计**
@@ -107,7 +107,7 @@ UWP 应用可在各种支持 Windows 的设备上运行。 了解哪些设备可
 
 :::row:::
     :::column:::
-        ![fpo 图像](images/fluent/keyboard-shortcuts.jpg)
+        ![描述如何针对正确输出进行优化的图像。](images/fluent/keyboard-shortcuts.jpg)
     :::column-end:::
     :::column span="2":::
 **针对正确的输入进行优化**
@@ -127,7 +127,7 @@ Fluent 体验始终使用控件和模式，因此它们的行为方式符合用�
 
 :::row:::
     :::column:::
-        ![fpo 图像](images/fluent/thumbnail-navview.png)
+        ![描述如何提供正确导航的图像。](images/fluent/thumbnail-navview.png)
     :::column-end:::
     :::column span="2":::
 **提供正确的导航**
@@ -139,7 +139,7 @@ Fluent 体验始终使用控件和模式，因此它们的行为方式符合用�
 
 :::row:::
     :::column:::
-        ![fpo 图像](images/fluent/thumbnail-commanding.png)
+        ![描述如何进行交互的图像。](images/fluent/thumbnail-commanding.png)
     :::column-end:::
     :::column span="2":::
 **进行交互**
@@ -151,7 +151,7 @@ Fluent 体验始终使用控件和模式，因此它们的行为方式符合用�
 
 :::row:::
     :::column:::
-        ![fpo 图像](images/fluent/thumbnail-controls-2.jpg)
+        ![描述如何对作业使用正确控件的图像。](images/fluent/thumbnail-controls-2.jpg)
     :::column-end:::
     :::column span="2":::
 **对作业使用正确的控件**
@@ -183,7 +183,7 @@ Fluent Design 重视华丽的效果。 它融入了真正增强用户体验的�
 
 :::row:::
     :::column:::
-        ![fpo 图像](images/fluent/Nav_Reveal_Animation.gif)
+        ![描述突出显示的简短视频。](images/fluent/Nav_Reveal_Animation.gif)
     :::column-end:::
     :::column span="2":::
 **突出显示**
@@ -193,7 +193,7 @@ Fluent Design 重视华丽的效果。 它融入了真正增强用户体验的�
 
 :::row:::
     :::column:::
-        ![fpo 图像](images/fluent/traveling-focus-fullscreen-light-rf.gif)
+        ![描述显示焦点的简短视频。](images/fluent/traveling-focus-fullscreen-light-rf.gif)
     :::column-end:::
     :::column span="2":::
 **显示焦点**
@@ -209,7 +209,7 @@ Fluent Design 重视华丽的效果。 它融入了真正增强用户体验的�
 
 :::row:::
     :::column:::
-        ![fpo 图像](images/fluent/_parallax_v2.gif)
+        ![描述视差滚动的简短视频。](images/fluent/_parallax_v2.gif)
     :::column-end:::
     :::column span="2":::
 **视差**
@@ -241,7 +241,7 @@ Fluent Design 重视华丽的效果。 它融入了真正增强用户体验的�
 
 :::row:::
     :::column:::
-        ![fpo 图像](images/fluent/acrylic_lighttheme_base.png)
+        ![描述 Acrylic 层的图像。](images/fluent/acrylic_lighttheme_base.png)
     :::column-end:::
     :::column span="2":::
 **Acrylic**
@@ -255,7 +255,7 @@ Fluent Design 重视华丽的效果。 它融入了真正增强用户体验的�
 
 :::row:::
     :::column:::
-        ![fpo 图像](images/fluent/thumbnail-toolkits.jpg)
+        ![“设计工具包和示例”页面的屏幕截图。](images/fluent/thumbnail-toolkits.jpg)
     :::column-end:::
     :::column span="2":::
 **“设计工具包和示例”页面**

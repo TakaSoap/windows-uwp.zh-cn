@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6cdeee0730a2fe68f671a41ea77b000ab13bc0cb
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: 3f12c3d16cabcbe834ca9bb55a437e3f932bbf78
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671556"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933048"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-c-win32-app"></a>在 C++ Win32 应用中托管自定义 WinRT XAML 控件
 
@@ -377,7 +377,7 @@ MyDesktopWin32App 应用必须先配置为使用 MyUWPApp 项目中的自定义�
 
 5. 右键单击 MyDesktopWin32App 项目，选择“属性”，然后在左窗格中展开“清单工具” -> “输入和输出”   。 将“DPI 感知”属性设置为“按监视器高 DPI 感知”   。 如果未设置此属性，则在某些高 DPI 场景中可能会遇到清单配置错误。
 
-    ![C/C++ 项目设置](images/xaml-islands/xaml-island-cpp-8.png)
+    ![C/C++ 项目设置的屏幕截图。](images/xaml-islands/xaml-island-cpp-8.png)
 
 6. 单击“确定”关闭“属性页”对话框 。
 

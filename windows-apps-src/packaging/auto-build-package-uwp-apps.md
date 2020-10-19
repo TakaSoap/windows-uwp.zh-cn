@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 32054a30e56102b9c0642392d78ac75b78fb99e9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7f0e1d460ca52c659401bbb291deafa5746b7bb6
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158221"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933108"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -73,12 +73,12 @@ steps:
 1. 在 Azure Pipelines 中，展开导航窗格中的“管道”并单击“库”。  
 2. 依次单击“安全文件”选项卡、“+ 安全文件”。  
 
-    ![如何上传安全文件](images/secure-file1.png)
+    ![Azure 的屏幕截图，其中突出显示“库”选项，显示“安全文件”页面。](images/secure-file1.png)
 
 3. 浏览到证书文件并单击“确定”。 
 4. 上传证书后，选择该证书以查看其属性。 在“管道权限”下，将“授权在所有管道中使用”切换开关置于启用状态。  
 
-    ![如何上传安全文件](images/secure-file2.png)
+    ![“管道权限”部分的屏幕截图，其中选中了“授权在所有管道中使用”选项。](images/secure-file2.png)
 
 5. 如果证书中的私钥包含密码，则我们建议将密码存储在 [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) 中，然后将密码链接到某个[变量组](/azure/devops/pipelines/library/variable-groups)。 可以使用该变量来从管道访问密码。 请注意，只有私钥支持密码；当前不支持使用本身受密码保护的证书文件。
 

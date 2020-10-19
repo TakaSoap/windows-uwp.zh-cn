@@ -8,12 +8,12 @@ ms.topic: article
 keywords: ''
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: a1bd1b0f2916ccf44cc79d83f0335f55cf3863e4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bd9b912dfd4b733f57aaacfe6e8f246985e3b4f5
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166621"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933078"
 ---
 # <a name="get-started-using-docker-containers-with-nodejs"></a>开始将 Docker 容器与 Node.js 结合使用
 
@@ -47,7 +47,7 @@ Docker 容器与虚拟机类似，但不会创建整个虚拟操作系统。 相
 
 2. 打开刚刚下载的 Docker 安装程序。 安装向导将询问你是否要“使用 Windows 容器而不是 Linux 容器”，请保持取消选中，因为我们将使用 Linux 子系统。 Docker 将安装在默认 WSL 2 分发版的托管目录中，并将包括 Docker 守护程序、CLI 和 Compose CLI。
 
-    ![Docker Desktop 启动](../images/install-docker-1.png)
+    ![“安装 Docker Desktop”向导的“配置”页面的屏幕截图，其中显示已选中“向桌面添加快捷方式”选项。](../images/install-docker-1.png)
 
 3. 如果还没有 Docker ID，则需要通过访问以下网站创建一个：[https://hub.docker.com/signup](https://hub.docker.com/signup)。 ID 必须全部为小写字母数字字符。
 
@@ -55,7 +55,7 @@ Docker 容器与虚拟机类似，但不会创建整个虚拟操作系统。 相
 
 5. “技术预览版”窗口打开后，选择“开始”以开始在 WSL 2 中运行 Docker 守护程序（后台进程）。 WSL 2 Docker 守护程序启动后，将自动为其创建 docker CLI 上下文。
 
-    ![Docker Desktop 启动](../images/start-docker.gif)
+    ![演示如何启动 Docker 技术预览的简短视频。](../images/start-docker.gif)
 
 6. 若要确认 Docker 是否已安装以及显示版本号，请打开命令行（WSL 或 PowerShell）并输入：`docker --version`
 

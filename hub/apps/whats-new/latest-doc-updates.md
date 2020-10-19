@@ -2,16 +2,16 @@
 Description: 发现 Windows 开发人员文档的最新新增内容。
 title: Windows 开发人员文档的最新更新
 ms.topic: article
-ms.date: 10/6/2020
+ms.date: 10/8/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: e646b8ddc524a9814defbe51e64e0da3bd3eccfc
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 584709fe3b574d29f45da5bdd230862285e36bb6
+ms.sourcegitcommit: b78edb431541b40b86860c0b707449f44feced24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762963"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91870985"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Windows 开发人员文档的最新更新
 
@@ -27,12 +27,46 @@ Windows 开发人员文档会定期更新有新的、经过改进的信息和内
 
 本月要点包括：
 
-* [Surface Duo 文档](https://docs.microsoft.com/dual-screen/introduction)更新。
+* 更新的文档：
 
-* [Windows 终端](/windows/terminal/)文档更新。
+    * [Surface Duo 文档](https://docs.microsoft.com/dual-screen/introduction)更新
 
+    * [Windows 终端](/windows/terminal/)文档更新，包括有关 [Docker](/windows/dev-environment/docker/overview) 的信息。
 
-下面列出了一些在最近一个月内进行了重大更新的主题。
+    * 使用最新提供的 NuGet 包和不同版本的 WinUI 更新了所有四个 [XAML 岛演练](/windows/apps/desktop/modernize/xaml-islands)。
+
+    * [在桌面应用中调用 Windows 运行时 API](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)：添加了有关对 .NET 5 使用新的“目标框架名字对象”选项的指南，添加了针对不同多目标 .NET 版本的指南，并删除了有关手动引用各种库的旧指南。
+
+    * [单选按钮](/windows/uwp/design/controls-and-patterns/radio-button)
+
+    * [WinUI RadioButtons](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiobuttons?view=winui-2.4)
+
+    * [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar?view=winrt-19041)
+
+    * [合成视觉对象](/windows/uwp/composition/composition-visual-tree)
+
+    * [DirectML 常见问题解答](/windows/win32/direct3d12/gpu-faq)
+
+    * [使用扩展 SDK 编程](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+
+    * [IIterator<T>.GetMany(T[]) 方法](https://docs.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany?view=winrt-19041)
+
+    * [D3D12_HEAP_PROPERTIES 结构 (d3d12.h)](/windows/win32/api/d3d12/ns-d3d12-d3d12_heap_properties)
+
+* 新主题 
+
+    * [获取打包应用的激活信息](/windows/apps/desktop/modernize/get-activation-info-for-packaged-apps)
+    * [ID3D12Device7 接口 (d3d12.h)](/windows/win32/api/d3d12/nn-d3d12-id3d12device7)
+    * [ID3D12Device8 接口 (d3d12.h)](/windows/win32/api/d3d12/nn-d3d12-id3d12device8)
+    
+
+* 新示例
+
+    * C++/WinRT：[WNS 概述](/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview) 
+    * C++/WinRT：[远程相机](/windows/uwp/audio-video-camera/connect-to-remote-cameras) 
+
+以下 API 参考主题在过去一个月中有了重大更新。
+
 
 ## <a name="windows-uwp"></a>Windows UWP
 <ul>

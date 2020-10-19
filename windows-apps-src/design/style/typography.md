@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bb0a6b48e9a9a01881955ae0ccb65e93b9cf2b6e
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 5f06d5e804d41b1751c72af4d07224fa346323b2
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636537"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860111"
 ---
 # <a name="typography-in-windows-apps"></a>Windows 应用中的版式
 
@@ -23,7 +23,7 @@ ms.locfileid: "91636537"
 
 应用的全部 UI 应使用同一种字体，建议始终使用 Windows 应用的默认字体 Segoe UI  。 其设计目的是为保持不同字体大小和像素密度下的最佳可读性，并提供可润色系统内容的清晰、明朗的美学效果。
 
-![Segoe UI 字体的示例文本](images/type/segoe-sample.svg)
+![Segoe UI 字体的示例文本。](images/type/segoe-sample.svg)
 
 若要在应用上显示非英语语言或为应用选择另一种字体，请参阅[语言](#languages)和[字体](#fonts)，了解我们推荐的 Windows 应用字体。
 
@@ -41,7 +41,7 @@ ms.locfileid: "91636537"
 
 UWP 应用中的字号可在所有设备上自动缩放。 该缩放算法确保可从 10 英尺远处识别 Surface Hub 上高 24 像素的字体，正如从几英寸远处识别 5 英寸手机上高 24 像素的字体。
 
-![不同设备的观看距离](images/type/scaling-chart.svg)
+![不同设备的观看距离。](images/type/scaling-chart.svg)
 
 因系统缩放的工作原理，设计时采用的是有效像素而非实际物理像素，所以不必更改字体大小来适应不同尺寸的屏幕的分辨率。
 
@@ -62,7 +62,7 @@ UWP 应用中的字号可在所有设备上自动缩放。 该缩放算法确保
 用户在扫描页面时依赖于视觉层次结构：标题用于总结内容，正文文本用于提供更多详细信息。 若要在应用中创建清晰的视觉层次结构，请遵循 Windows 字体渐变。
     :::column-end:::
     :::column:::
-![文本块样式](images/type/type-hierarchy.svg)
+![三行文本的屏幕截图，其中字体大小一行比一行小。](images/type/type-hierarchy.svg)
     :::column-end:::
 :::row-end:::
 
@@ -70,18 +70,13 @@ UWP 应用中的字号可在所有设备上自动缩放。 该缩放算法确保
 
 Windows 字体渐变可在页面上的字型之间建立关键关系，帮助用户轻松阅读内容。 所有大小均以有效像素为单位，并针对所有设备上运行的 UWP 应用进行了优化。
 
-![字体渐变](images/type/type-ramp.png)
+![Windows 字体渐变。](images/type/type-ramp.png)
 
 ### <a name="using-the-type-ramp"></a>使用字体渐变
 
 :::row:::
     :::column:::
-可以像访问 XAML [静态资源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)那样访问字体渐变的不同层次。 样式遵循 `*TextBlockStyle` 命名约定。
-    :::column-end:::
-    :::column:::
-![文本块样式](images/type/text-block-type-ramp.svg)
-    :::column-end:::
-:::row-end:::
+可以像访问 XAML [静态资源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)那样访问字体渐变的不同层次。 样式遵循此处所示的 `*TextBlockStyle` 命名约定。
 
 ```XAML
 <TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
@@ -92,6 +87,13 @@ Windows 字体渐变可在页面上的字型之间建立关键关系，帮助用
 <TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
+    :::column-end:::
+    :::column:::
+![“Header”、“Subheader”、“Title”、“Subtitle”、“Base”、“Body”和“Caption”文本样式的屏幕截图。](images/type/text-block-type-ramp.svg)
+    :::column-end:::
+:::row-end:::
+
+
 
 :::row:::
     :::column:::
@@ -133,7 +135,7 @@ Windows 字体渐变可在页面上的字型之间建立关键关系，帮助用
 
 当文本数量超出可用空间时，建议剪裁文本，这是大多数 [UWP 文本控件](../controls-and-patterns/text-controls.md)的默认行为。
 
-![显示剪裁一些文字的设备框架](images/type/clipping.svg)
+![显示剪裁一些文本后的设备框架。](images/type/clipping.svg)
 
 ```xaml
 <TextBlock TextWrapping="WrapWholeWords" TextTrimming="Clip"/>

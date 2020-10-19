@@ -10,16 +10,19 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a35e065a44eb55b84f6b70f5833c8652188a8c9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 867ece1f3517b2b34836dc87ab4e6545ba3d3bbc
+ms.sourcegitcommit: 837ef4b2c2375d023ee85204f72a029f9ec8f4ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174641"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079282"
 ---
 # <a name="content-links-in-text-controls"></a>文本控件中的内容链接
 
 内容链接控件提供了访问文本控件中的嵌入式格式数据的方法，让用户无需离开应用上下文即可查找和使用有关人员或位置的更多信息。
+
+> [!IMPORTANT]
+> 高于 Windows 10 版本 1903 的 Windows 版本中不提供启用内容链接的 Windows 功能。 在高于 1903 版本的 Windows 版本中，XAML 文本控件的内容链接将无法正常运行。
 
 当用户在 RichEditBox 中对某个条目使用 at (@) 符号前缀时，会显示一系列与条目匹配的人员和/或位置建议。 例如，当用户选取一个位置时，该位置的 ContentLink 就会插入文本中。 当用户从 RichEditBox 调用内容链接时，就会显示一个浮出控件，该控件具有地图和与位置有关的其他信息。
 

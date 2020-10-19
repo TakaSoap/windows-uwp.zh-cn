@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, Hello World
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b39efb7aa90499f6d238306ad079f1969907f46
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: dda1c0f9a7b61c13965ff2f71c8100a8e771bd7d
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175251"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860073"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, World!” 应用 (XAML)
 
@@ -61,11 +61,11 @@ ms.locfileid: "89175251"
 
 5.  将显示“目标版本/最低版本”对话框。 默认设置均适用于本教程，因此请选择“确定”以创建项目。
 
-    ![“解决方案资源管理器”窗口](images/win10-cs-02.png)
+    ![“新建通用 Windows 项目”对话框的屏幕截图。](images/win10-cs-02.png)
 
 6.  新项目打开时，项目文件将显示在右侧的“解决方案资源管理器”窗格中。 若要查看文件，可能需要选择“解决方案资源管理器”选项卡而不是“属性”选项卡 。
 
-    ![“解决方案资源管理器”窗口](images/win10-cs-03.png)
+    ![“解决方案资源管理器”面板的屏幕截图，其中突出显示了“Hello World(通用 Windows)”。](images/win10-cs-03.png)
 
 尽管“空白应用(通用 Windows)”为最基本的模板，但该模板仍包含很多文件。 这些文件是使用 C# 的所有 UWP 应用必不可少的文件。 在 Visual Studio 中创建的每一个项目都包含这些文件。
 
@@ -110,15 +110,15 @@ App.xaml 和 App.xaml.cs
 
     你将发现图形视图位于屏幕顶部，而 XAML 代码视图位于底部。 可以对任一视图进行更改，但现在我们将使用图形视图。
 
-    ![“解决方案资源管理器”窗口](images/win10-cs-04.png)
+    ![Visual Studio 的屏幕截图，其中显示 MainPage.xaml“设计”视图。](images/win10-cs-04.png)
 
 2.  单击左侧垂直的“工具箱”，打开 UI 控件列表。 （可以单击“工具箱”的标题栏中的固定图标使其始终可见。）
 
-    ![“解决方案资源管理器”窗口](images/win10-cs-05.png)
+    ![“工具箱”窗格的屏幕截图，其中红色箭头指向大头针图标。](images/win10-cs-05.png)
 
 3.  展开“常见 XAML 控件”，然后将 Button 拖动到设计画面的中间 。
 
-    ![“解决方案资源管理器”窗口](images/win10-cs-06.png)
+    ![“工具箱”窗格和 MainPage.xaml“设计”视图的屏幕截图，其中突出显示了“工具箱”窗格中的“按钮”选项以及“设计”视图中的“Button”。](images/win10-cs-06.png)
 
     如果查看 XAML 代码窗口，你会发现 Button 已添加到此窗口中：
 
@@ -136,7 +136,7 @@ App.xaml 和 App.xaml.cs
 
 注意设计画布中显示的按钮如何更新显示新文本。
 
-![“解决方案资源管理器”窗口](images/win10-cs-07.png)
+![“Hello, world”按钮的屏幕截图，其中在该按钮周围有一个红色框，并显示按钮的隐藏代码。](images/win10-cs-07.png)
 
 ## <a name="step-3-start-the-app"></a>步骤 3:启动应用
 
