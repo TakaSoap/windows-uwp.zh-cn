@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2965eb3196f2a19f7d5351ee422013c6c22ba88a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 288795b2dc189dae7b350a30446410b40044d08f
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174301"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192947"
 ---
 # <a name="windows-runtime-components-with-ccx"></a>使用 C++/CX 创建 Windows 运行时组件
 
@@ -24,13 +24,13 @@ ms.locfileid: "89174301"
 - 在复杂或计算密集型操作中获取 C++ 的性能优势。
 - 重复使用已编写和测试的代码。
 
-在生成包含 JavaScript 或 .NET 项目的解决方案时，Windows 运行时组件项目、JavaScript 项目文件和编译的 DLL 会合并到一个程序包中，可以在模拟器中本地调试或在受限设备上远程调试该程序包。 你还可以仅将组件项目作为扩展 SDK 进行分配。 有关详细信息，请参阅[创建软件开发工具包](/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015)。
+在生成包含 JavaScript 或 .NET 项目的解决方案时，Windows 运行时组件项目、JavaScript 项目文件和编译的 DLL 会合并到一个程序包中，可以在模拟器中本地调试或在受限设备上远程调试该程序包。 你还可以仅将组件项目作为扩展 SDK 进行分配。 有关详细信息，请参阅[创建软件开发工具包](/visualstudio/extensibility/creating-a-software-development-kit)。
 
 通常，当你编写 c + +/CX 组件的代码时，请使用常规 c + + 库和内置类型，但在抽象二进制接口 (ABI) 边界，在该边界内，你要将数据传递到另一个 winmd 包中的代码。 在那里，使用 Windows 运行时类型和 c + +/CX 支持的用于创建和操作这些类型的特殊语法。 此外，在 c + +/CX 代码中，可以使用委托和事件等类型来实现可从你的组件引发并在 JavaScript、Visual Basic、c + + 或 c # 中进行处理的事件。 有关 c + +/CX 语法的详细信息，请参阅 [c + +/cx (Visual C++ 语言参考) ](/cpp/cppcx/visual-c-language-reference-c-cx)。
 
 ## <a name="casing-and-naming-rules"></a>大小写和命名规则
 
-### <a name="javascript"></a>JavaScript
+### <a name="javascript"></a>Javascript
 JavaScript 区分大小写。 因此，必须遵循以下大小写约定：
 
 -   引用 C++ 命名空间和类时，采用在 C++ 端上使用的相同大小写。
@@ -185,7 +185,7 @@ public:
 };
 ```
 
-但是它无法区分以下内容之间的区别：
+但它不能判断它们之间的区别：
 
 ```cpp
 int GetNumber(int i);
@@ -545,7 +545,7 @@ C# 和 Visual Basic 均支持枚举语言。 这些语言会看到 c + + 公共�
 
 若要在 c + +/CX 中实现异步方法，请使用 ppltasks.h 中定义的 [create \_ async](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) 函数。 有关详细信息，请参阅 [在适用于 UWP 应用的 c + +/cx 中创建异步操作](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)。 有关示例，请参阅 [创建 c + +/cx Windows 运行时组件并从 JavaScript 或 c # 中调用该组件的演练](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 语言使用 c + +/CX 异步方法，就像它们是在 .NET 中定义的任何异步方法一样。
 
-## <a name="exceptions"></a>例外
+## <a name="exceptions"></a>异常
 你可以引发任何由 Windows 运行时定义的异常类型。 你无法从任何 Windows 运行时异常类型中派生自定义类型。 但是，你可以引发 COMException 并提供可由捕获异常的代码访问的自定义 HRESULT。 无法在 COMException 中指定自定义消息。
 
 ## <a name="debugging-tips"></a>调试提示

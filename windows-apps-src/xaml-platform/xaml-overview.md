@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 792712256e36b40cd376f0e378bb110ab33bc0fb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c4e61cb04aaefdc0aeef05ce0c61ca549019791b
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173731"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192957"
 ---
 # <a name="xaml-overview"></a>XAML 概述
 
@@ -66,7 +66,7 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 
 “x”前缀/XAML 语言 XAML 命名空间包含你在 XAML 中经常使用的多种编程结构。 下面是一些最常见的结构：
 
-| 术语 | 描述 |
+| 术语 | 说明 |
 |------|-------------|
 | [x:Key](x-key-attribute.md) | 为 XAML 中的每个资源设置唯一的用户定义的键 <xref:Windows.UI.Xaml.ResourceDictionary> 。 该密钥的令牌字符串是 **StaticResource** 标记扩展的参数，你可以在以后使用此密钥在应用 XAML 的其他位置检索其他 XAML 用法中的 XAML 资源。 |
 | [x:Class](x-class-attribute.md) | 为 XAML 页面提供代码隐藏的类指定代码命名空间和代码类名称。 这可为构建你的应用时通过构建操作创建或加入的类命名。 这些构建操作支持 XAML 标记编译器，并在编译应用时，将你的标记和代码隐藏文件组合到一起。 必须具有此类才能支持对 XAML 页面实现代码隐藏。 <xref:Windows.UI.Xaml.Window.Content%2A?displayProperty=nameWithType> 在默认 Windows 运行时激活模型中。 |
@@ -256,4 +256,4 @@ XAML 在应用开发过程中发挥着多项重要作用。
 > [!NOTE]
 > 使用 c + +/CX for code 的应用不会获得特定的 [**system.windows.markup.xamlparseexception**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0)。 但是该异常与 **XamlParseException** 一样，包含的消息可阐明错误源与 XAML 相关，并且在 XAML 文件中包括上下文信息（例如行数）。
 
-有关调试 Windows 运行时应用的详细信息，请参阅[启动调试会话](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml?view=vs-2015)。
+有关调试 Windows 运行时应用的详细信息，请参阅 [启动调试会话](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml)。

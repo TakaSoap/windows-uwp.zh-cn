@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 81fc8e9cd762c5fc0bb602e32907c40ca5c60e46
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bc6e1c2053b6ab3afe6eb42ed8b5223feb8ffb65
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163131"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192987"
 ---
 # <a name="directx-11-porting-faq"></a>DirectX 11 移植常见问题
 
@@ -54,7 +54,7 @@ Chuck Walbourn 的文章系列标题 [为适用于游戏的双用途编码技术
 
 有两个可用于加载图像的 API 路径：
 
--   内容管道将图像转换为用作 Direct3D 纹理资源的 DDS 文件。 请参阅[在游戏或应用中使用 3D 资源](/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015)。
+-   内容管道将图像转换为用作 Direct3D 纹理资源的 DDS 文件。 请参阅[在游戏或应用中使用 3D 资源](/visualstudio/designers/using-3-d-assets-in-your-game-or-app)。
 -   [Windows 图像处理组件](/windows/desktop/wic/-wic-lh)可用于加载各种格式的图像，并且可用于 Direct2D 位图以及 Direct3D 纹理资源。
 
 还可以使用 [DirectXTK](https://github.com/Microsoft/DirectXTK) 或 [DirectXTex](https://github.com/Microsoft/DirectXTex) 中的 DDSTextureLoader 和 WICTextureLoader。
@@ -116,12 +116,12 @@ DirectX 10.x 和 DirectX 11 桌面游戏可轻松移植到 UWP。 请参阅 [迁
 ## <a name="what-should-i-use-instead-of-the-x-file-format-for-my-models"></a>我应该对我的模型使用哪种文件格式来替代 .x 文件格式？
 
 
-尽管我们还没有正式替换 .x 文件格式，但是很多示例都采用了 SDKMesh 格式。 Visual Studio 还有一个[内容管道](/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015)，该管道将多种流行的格式编译成可以使用 Visual Studio 3D 初学者工具包中的代码加载或可以使用 [DirectXTK](https://github.com/Microsoft/DirectXTK) 加载的 CMO 文件。
+尽管我们没有用于. x 文件格式的官方替代，但许多示例都利用了 SDKMesh 格式。 Visual Studio 还有一个[内容管道](/visualstudio/designers/using-3-d-assets-in-your-game-or-app)，该管道将多种流行的格式编译成可以使用 Visual Studio 3D 初学者工具包中的代码加载或可以使用 [DirectXTK](https://github.com/Microsoft/DirectXTK) 加载的 CMO 文件。
 
 ## <a name="how-do-i-debug-my-shaders"></a>如何调试着色器？
 
 
-Microsoft Visual Studio 2015 包含针对 DirectX 图形的诊断工具。 请参阅[调试 DirectX 图形](/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015)。
+Microsoft Visual Studio 包括用于 DirectX 图形的诊断工具。 请参阅[调试 DirectX 图形](/visualstudio/debugger/visual-studio-graphics-diagnostics)。
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>*x* 函数的 Direct3D 11 等同项是什么？
 

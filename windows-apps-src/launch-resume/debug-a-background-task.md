@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: e7d008a6956c3acd22dcb99e6bf4e1cda1442545
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 5696d3c5ffb28ee8dc6ebd51e678894ee78ae420
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750163"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192977"
 ---
 # <a name="debug-a-background-task"></a>调试后台任务
 
@@ -91,12 +91,12 @@ ms.locfileid: "91750163"
 
 ## <a name="background-tasks-and-visual-studio-package-deployment"></a>后台任务和 Visual Studio 程序包部署
 
-如果使用后台任务的应用通过 Visual Studio 部署，并且在清单设计器中指定的版本（主要和/或次要）随后更新，则使用 Visual Studio 对该应用进行后续重新部署将导致应用的后台任务停止。 可按以下方式修复此问题：
+如果使用 Visual Studio 部署使用后台任务的应用，然后更新清单设计器中指定的版本 (主要和/或次要) ，则在使用 Visual Studio 重新部署应用时，可能会导致应用的后台任务停止。 可按以下方式修复此问题：
 
 -   通过运行和包一起生成的脚本，使用 Windows PowerShell 部署更新的应用（而不是 Visual Studio）。
--   如果你已经使用 Visual Studio 部署了应用，而且它的后台任务现在已暂停，请重新引导或注销/登录以再次运行应用的后台任务。
+-   如果已使用 Visual Studio 部署了应用，但其后台任务现在已停止，则重新启动或注销/登录以使应用的后台任务再次工作。
 -   你可以选择“始终重新安装我的包”调试选项以在 C# 项目中避免此问题。
--   等待应用为最终部署准备就绪后递增程序包版本（不要在调试时更改）。
+-   等待应用已准备好进行最终部署，以便递增包版本 (在调试) 时不更改包版本。
 
 ## <a name="remarks"></a>备注
 
@@ -104,7 +104,7 @@ ms.locfileid: "91750163"
 -   如果后台任务需要锁屏界面访问权限，请确保在尝试调试后台任务之前将应用放在锁屏界面上。 有关为支持锁屏界面的应用指定清单选项的信息，请参阅[在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)。
 -   后台任务注册参数在注册时验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
 
-有关使用 VS 调试后台任务的详细信息，请参阅 [如何在 UWP 应用中触发挂起、继续和后台事件](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)。
+有关使用 VS 调试后台任务的详细信息，请参阅 [如何在 UWP 应用中触发挂起、继续和后台事件](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -113,7 +113,7 @@ ms.locfileid: "91750163"
 * [注册后台任务](register-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
-* [如何在 UWP 应用中触发挂起、继续和后台事件](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
+* [如何在 UWP 应用中触发挂起、继续和后台事件](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 * [通过 Visual Studio 代码分析来分析 UWP 应用的代码质量](/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
 
  
