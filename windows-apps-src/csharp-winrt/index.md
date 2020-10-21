@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c#, winrt, cswinrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: c3cac3049dbd5d22c23716a2da38a41fb6000a71
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 844d8441777e7c95e2b562cf7dff748600a072e9
+ms.sourcegitcommit: 861c381a31e4a5fd75f94ca19952b2baaa2b72df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984493"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92171133"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -20,6 +20,8 @@ ms.locfileid: "91984493"
 C#/WinRT 是一个进行 NuGet 打包的工具包，为 C# 语言提供 Windows 运行时 (WinRT) 投影支持。 “投影”是一个转换层（例如互操作程序集），它以自然而熟悉的方式为目标语言启用编程 WinRT API。 例如，C#/WinRT 投影隐藏了 C# 与 WinRT 接口之间的互操作的详细信息，并提供了从许多 WinRT 类型到相应的 .NET 等效项（例如字符串、URI、公用值类型和泛型集合）的映射。
 
 C#/WinRT 当前支持使用 WinRT 类型，当前的预览版允许[创建](#create-an-interop-assembly)和[引用](#reference-an-interop-assembly) WinRT 互操作程序集。 将来的 C# /WinRT 版本将支持采用 C# 创作 WinRT 类型。
+
+有关 C#/WinRT 的更多信息，请参阅 [C#/WinRT GitHub 存储库](https://aka.ms/cswinrt/repo)。
 
 ## <a name="motivation-for-cwinrt"></a>采用 C#/WinRT 的动机
 
@@ -31,74 +33,37 @@ C#/WinRT 还支持 WinUI 3.0。 此版本的 WinUI 从操作系统中移除了�
 
 最后，C#/WinRT 是一个通用工具包，用于支持在 C# 编译器或 .NET 运行时中无法使用内置 WinRT 支持的其他方案。 C#/WinRT 支持向下兼容 .NET Standard 2.0（例如 Mono 5.4）的 .NET 运行时版本。
 
-有关 C#/WinRT 的更多信息，请参阅 [C#/WinRT GitHub 存储库](https://aka.ms/cswinrt/repo)。
-
 ## <a name="create-an-interop-assembly"></a>创建一个互操作程序集
 
 WinRT API 在 Windows 元数据 (*.winmd) 文件中定义。 C#/WinRT NuGet 包 ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) 中包括 C#/WinRT 编译器 cswinrt，可以使用它来处理 Windows 元数据文件并生成 .NET 5.0 C# 代码。 可以将这些源文件编译为互操作程序集，这与 [C++/WinRT](../cpp-and-winrt-apis/index.md) 为 C++ 语言投影生成头文件的方式类似。 然后，可以将 C#/WinRT 互操作程序集与 C#/WinRT 运行时程序集一起分发，供应用程序引用。
 
-有关演示如何创建互操作程序集的演练，请参阅 [演练：从 C++/WinRT 组件生成 .NET 5 投影并更新 NuGet](net-projection-from-cppwinrt-component.md)。
+若要在演练中查看如何创建互操作程序集并将其作为 NuGet 包进行分发，请参阅[演练：从 C++/WinRT 组件生成 .NET 5 投影并更新 NuGet](net-projection-from-cppwinrt-component.md)。
 
 ### <a name="invoke-cswinrtexe"></a>调用 cswinrt.exe
 
-若要显示命令行选项，请运行 `cswinrt -?`。 若要从项目中调用 cswinrt.exe，建议使用一个 Directory.Build.Targets 文件。 以下项目片段演示了对 **cswinrt** 的简单调用，该调用为 Contoso 命名空间中的类型生成投影源。 然后，这些源会包含在项目生成中。
+若要从项目中调用 cswinrt.exe，请安装最新的 [C#/WinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)。 然后，可在 C# 库中设置 C#/WinRT 特定的项目属性来生成互操作程序集。 以下项目片段演示了对 **cswinrt** 的简单调用，该调用为 Contoso 命名空间中的类型生成投影源。 然后，这些源会包含在项目生成中。
 
 ```xml
-  <Target Name="GenerateProjection" BeforeTargets="Build">
-    <PropertyGroup>
-      <CsWinRTParams>
-# This sample demonstrates using a response file for cswinrt execution.
-# Run "cswinrt -h" to see all command line options.
--verbose
-# Include Windows SDK metadata to satisfy references to 
-# Windows types from project-specific metadata.
--in 10.0.18362.0
-# Don't project referenced Windows types, as these are 
-# provided by the Windows interop assembly.
--exclude Windows 
-# Reference project-specific winmd files, defined elsewhere,
-# such as from a NuGet package.
--in @(ContosoWinMDs->'"%(FullPath)"', ' ')
-# Include project-specific namespaces/types in the projection
--include Contoso 
-# Write projection sources to the "Generated Files" folder,
-# which should be excluded from checkin (e.g., .gitignored).
--out "$(ProjectDir)Generated Files"
-      </CsWinRTParams>
-    </PropertyGroup>
-    <WriteLinesToFile
-        File="$(CsWinRTResponseFile)" Lines="$(CsWinRTParams)"
-        Overwrite="true" WriteOnlyWhenDifferent="true" />
-    <Message Text="$(CsWinRTCommand)" Importance="$(CsWinRTVerbosity)" />
-    <Exec Command="$(CsWinRTCommand)" />
-  </Target>
-
-  <Target Name="IncludeProjection" BeforeTargets="CoreCompile" AfterTargets="GenerateProjection">
-    <ItemGroup>
-      <Compile Include="$(ProjectDir)Generated Files/*.cs" Exclude="@(Compile)" />
-    </ItemGroup>
-  </Target>
+<PropertyGroup>
+  <CsWinRTIncludes>Contoso</CsWinRTIncludes>
+</PropertyGroup>
 ```
+
+在此项目中，你还需要引用 CsWinRT NuGet 包以及想要投射的项目特定的 .winmd 文件（无论是通过 NuGet 包、项目引用还是直接引用来进行投射）。 默认情况下，不会投射 Windows 和 Microsoft 命名空间 。 有关 CsWinRT 项目属性的完整列表，请参阅 [CsWinRT NuGet 文档](https://github.com/microsoft/CsWinRT/blob/master/nuget/readme.md)。
 
 ### <a name="distribute-the-interop-assembly"></a>分发互操作程序集
 
-互操作程序集通常以 NuGet 程序包的形式分发，并且依赖于必需的 C#/WinRT 运行时程序集 **winrt.runtime.dll** 的 C#/WinRT NuGet 程序包。 C#/WinRT 运行时程序集有两个版本，一个面向 .NET Standard 2.0，一个面向 .NET 5.0。 仅会部署其中的一个，具体取决于应用程序的目标框架。 
+互操作程序集通常以 NuGet 程序包的形式分发，并且依赖于必需的 C#/WinRT 运行时程序集 **winrt.runtime.dll** 的 C#/WinRT NuGet 程序包。
 
-* 面向 .NET Standard 2.0 的版本适用于想要在 Windows 上提供启动功能的下层跨平台应用程序。
-* 面向 .NET 5.0 的版本建议用于需要跨原生对象引用进行正确的垃圾收集的新式 Windows 应用，例如 XAML 应用。
-
-互操作程序集可以在 nuspec 文件中包含 `targetFramework` 条件，确保为应用部署正确版本的 C#/WinRT 运行时。
+若要确保为 .NET 5.0 应用程序部署了正确版本的 C#/WinRT 运行时，请在依赖 C#/WinRT NuGet 包的 .nuspec 文件中包含一个 `targetFramework` 条件。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <dependencies>
-      <group targetFramework=".NETStandard2.0">
-        <dependency id="Microsoft.Windows.CsWinRT" version="0.1.0" />
-      </group>
-      <group targetFramework=".NET5.0">
-        <dependency id="Microsoft.Windows.CsWinRT" version="0.1.0" />
+      <group targetFramework="net5.0">
+        <dependency id="Microsoft.Windows.CsWinRT" version="0.9.0" />
       </group>
     </dependencies>
   </metadata>
@@ -106,7 +71,7 @@ WinRT API 在 Windows 元数据 (*.winmd) 文件中定义。 C#/WinRT NuGet 包 
 ```
 
 > [!NOTE]
-> .NET 5.0 的目标框架名字对象将从“.NETCoreApp5.0”移到“.NET5.0”。 C#/WinRT 预发行版将使用二者之一。
+> .NET 5.0 的目标框架名字对象将从“.NETCoreApp5.0”移到“net5.0”。 
 
 ## <a name="reference-an-interop-assembly"></a>引用互操作程序集
 
@@ -130,7 +95,7 @@ C#/WinRT 使用 [LoadLibrary 备用搜索顺序](/windows/win32/dlls/dynamic-lin
 
 ## <a name="known-issues"></a>已知问题
 
-当前的 C#/WinRT 预览版中存在一些已知的与互操作相关的性能问题。 这些问题会在 2020 年底的最终发布版出来之前解决。
+当前的 C#/WinRT 预览版中存在一些已知的与互操作相关的性能问题。 这些问题会在 2020 年底的最终发布版出来之前解决。 其他已知问题和中断性变更将记录在 [C#/WinRT GitHub 存储库](https://aka.ms/cswinrt/repo)中。
 
 如果在 C#/WinRT NuGet 程序包、cswinrt.exe 编译器或生成的投影源中遇到任何功能问题，请通过 [C#/WinRT 问题页](https://github.com/microsoft/CsWinRT/issues)将问题提交给我们。
 
