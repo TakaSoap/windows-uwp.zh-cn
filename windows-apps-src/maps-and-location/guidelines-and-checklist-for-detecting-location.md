@@ -1,22 +1,19 @@
 ---
-Description: 本主题描述需要访问用户位置信息的应用的性能指南。
+description: 本主题描述需要访问用户位置信息的应用的性能指南。
 title: 位置感知应用指南
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: windows 10, uwp, 位置, 地图, 地理位置
 ms.localizationpriority: medium
-ms.openlocfilehash: 2178a8812a4c900c59c370e52e7e5a5b3e0a9182
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: af9ea1a214bb3cb49dd65a77d1fde30e4bb3a064
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158661"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297744"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>位置感知应用指南
-
-
-
 
 **重要的 API**
 
@@ -54,7 +51,7 @@ ms.locfileid: "89158661"
     -   如果用户在禁用位置访问之后重新启用位置访问，则不会通知应用。 [**status**](/uwp/api/windows.devices.geolocation.statuschangedeventargs.status) 属性不会更改，并且没有 [**statusChanged**](/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件。 你的应用应该创建新的 [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象并调用 [**getGeopositionAsync**](/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync)，以尝试获取更新后的位置数据或重新订阅 [**positionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件。 如果之后状态指示已重新启用位置，请清除之前应用显示的所有用于通知用户定位服务已被禁用的 UI，并对新状态执行相应的响应。
     -   当用户明确地尝试使用需要位置信息的功能时，或者在其他任何适当情况下，你的应用也应该在激活后重新尝试获取位置数据。
 
-**性能**
+**“性能”**
 
 -   如果你的应用不需要接收位置信息，使用一次性位置信息请求。 例如，向照片添加位置标记的应用不需要接收位置更新事件。 相反，它应该使用 [**getGeopositionAsync**](/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 请求位置，如[获取当前位置](./get-location.md)中所述。
 
@@ -163,7 +160,7 @@ ms.locfileid: "89158661"
 
 * [设置地理围栏](./set-up-a-geofence.md)
 * [获取当前位置](./get-location.md)
-* [使用 2D、3D 和街景视图显示地图](./display-maps.md)
+* [显示2D、3D 和 Streetside 视图的地图](./display-maps.md)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
 * [UWP 位置示例（地理位置）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  

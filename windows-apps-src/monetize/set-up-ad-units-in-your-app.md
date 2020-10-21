@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 广告, 投放广告, 广告单元, 测试
 ms.localizationpriority: medium
 ms.openlocfilehash: c7bafdc7d21814a03d6f7da7132d8017d7f238e5
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210263"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92253632"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>在应用中设置广告单元
 
@@ -25,7 +25,7 @@ ms.locfileid: "79210263"
 完成 UWP 应用的测试并准备好将其提交到合作伙伴中心后，你必须从合作伙伴中心内的[应用程序内广告](../publish/in-app-ads.md)页[创建实时 ad 单元](#live-ad-units)，并更新应用代码以使用此 ad 单元的应用程序 ID 和 ad 单元 ID 值。
 
 有关在应用代码中分配应用程序 ID 和广告单元 ID 值的详细信息，请参阅以下文章：
-* [XAML 和 .NET 中的 Adunitid](adcontrol-in-xaml-and--net.md)
+* [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
 * [HTML 5 和 Javascript 中的 Adunitid](adcontrol-in-html-5-and-javascript.md)
 * [间隙广告](../monetize/interstitial-ads.md)
 * [本机广告](../monetize/native-ads.md)
@@ -39,7 +39,7 @@ ms.locfileid: "79210263"
 ### <a name="banner-ads-using-the-adcontrol-class"></a>横幅广告（使用 AdControl 类）
 
 * Ad 单位 ID： ```test```
-* 应用程序 ID： ```3f83fe91-d6be-434d-a0ae-7351c5a997f1```
+* 应用程序 ID：  ```3f83fe91-d6be-434d-a0ae-7351c5a997f1```
 
     > [!IMPORTANT]
     > 对于 **AdControl**，实时广告的大小由 **Width** 和 **Height** 属性定义。 为获得最佳结果，请确保代码中的 **Width** 和 **Height** 属性是[横幅广告的受支持广告大小](supported-ad-sizes-for-banner-ads.md)之一。 **Width** 和 **Height** 属性不会根据实时广告的大小而发生更改。
@@ -47,7 +47,7 @@ ms.locfileid: "79210263"
 ### <a name="interstitial-ads-and-native-ads"></a>间隙广告和本机广告
 
 * Ad 单位 ID： ```test```
-* 应用程序 ID： ```d25517cb-12d4-4699-8bdc-52040c712cab```
+* 应用程序 ID：  ```d25517cb-12d4-4699-8bdc-52040c712cab```
 
 <span id="live-ad-units" />
 
@@ -59,12 +59,12 @@ ms.locfileid: "79210263"
     > [!NOTE]
     > 你可以选择通过配置[中介设置](../publish/in-app-ads.md#mediation)部分的设置为广告单元启用广告中介。 广告中介显示来自多个广告网络（包括其他付费广告网络）的广告以及 Microsoft 应用促销活动的广告，能够最大化广告收益和应用促销能力。 默认情况下，我们会使用机器学习算法为你的应用自动选择广告中介，以帮助最大化你的广告在应用支持的市场中的收益，但是，你也可以选择手动配置中介设置。
 
-2.  创建新的 ad 单位后，请在 "**盈利**&gt;**应用内广告**" 页中的可用 ad 单位表中检索 Ad 单元的**应用程序 id**和**ad 单元 ID** 。
+2.  创建新的广告单元后，在**盈利** &gt; **应用内的广告**页面的可用广告单元表中检索**应用程序 ID** 和**广告单位 ID**。
     > [!NOTE]
-    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 当你在合作伙伴中心创建实时 UWP ad 单元时，ad 单位的应用程序 ID 值始终与你的应用的应用商店 ID 匹配（示例存储 ID 值类似于9NBLGGH4R315）。
+    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 当你在合作伙伴中心创建实时 UWP ad 单元时，ad 单位的应用程序 ID 值始终与你的应用的应用商店 ID 相匹配 (示例存储 ID 值如 9NBLGGH4R315) 。
 
 3.  在应用的代码中指定应用程序 ID 和广告单元 ID 值。 有关详细信息，请参阅以下文章：
-    * [XAML 和 .NET 中的 Adunitid](adcontrol-in-xaml-and--net.md)
+    * [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
     * [HTML 5 和 Javascript 中的 Adunitid](adcontrol-in-html-5-and-javascript.md)
     * [间隙广告](../monetize/interstitial-ads.md)
     * [本机广告](../monetize/native-ads.md)
@@ -80,7 +80,7 @@ ms.locfileid: "79210263"
 
 ## <a name="related-topics"></a>相关主题
 
-* [XAML 和 .NET 中的 Adunitid](adcontrol-in-xaml-and--net.md)
+* [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
 * [HTML 5 和 Javascript 中的 Adunitid](adcontrol-in-html-5-and-javascript.md)
 * [间隙广告](interstitial-ads.md)
 * [本机广告](native-ads.md)

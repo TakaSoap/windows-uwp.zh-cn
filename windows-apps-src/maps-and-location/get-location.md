@@ -2,21 +2,21 @@
 title: 获取用户位置
 description: 查找用户的位置并响应位置更改。 对用户位置的访问由“设置”应用中的隐私设置来管理。 本主题还介绍了如何查看你的应用是否具有访问用户位置的权限。
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
-ms.date: 11/28/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 位置功能
 ms.localizationpriority: medium
-ms.openlocfilehash: 79c34af48cf1b2d860d2a170fd642ef05945c15d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8a60b5003310fdba046b624e61007761ef5e0f20
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158711"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297759"
 ---
 # <a name="get-the-users-location"></a>获取用户位置
 
-
-
+> [!NOTE]
+> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和 map 服务 requite 映射身份验证密钥称为 [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)。 有关获取和设置地图身份验证密钥的详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
 查找用户的位置并响应位置更改。 对用户位置的访问由“设置”应用中的隐私设置来管理。 本主题还介绍了如何查看你的应用是否具有访问用户位置的权限。
 

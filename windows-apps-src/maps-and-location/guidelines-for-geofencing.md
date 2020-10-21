@@ -2,21 +2,21 @@
 description: 请参阅使用地理围栏在应用中提供地理上上下文体验的指导原则和最佳实践。
 title: 地理围栏应用指南
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 地理围栏
 ms.localizationpriority: medium
-ms.openlocfilehash: 76cbedaef76ff1403e1d6718c96303da6ad2ee67
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e4d033673acbb4a8b7fd558d9e6c4f8329d79bf5
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162531"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297698"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>地理围栏应用指南
 
-
-
+> [!NOTE]
+> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和 map 服务 requite 映射身份验证密钥称为 [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)。 有关获取和设置地图身份验证密钥的详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
 **重要的 API**
 

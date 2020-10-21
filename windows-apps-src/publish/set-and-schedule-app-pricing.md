@@ -6,18 +6,18 @@ ms.topic: article
 keywords: Windows 10, uwp, 定价, 定价应用, 应用价格, 销售应用, 价格更改, 自定义价格, 价格, 单价, 成本, 替代基价, 自由格式价格, 自由格式
 ms.localizationpriority: medium
 ms.openlocfilehash: 451a22ffef2d8062de7bf7d29d921db7197987b5
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210493"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92253811"
 ---
 # <a name="set-and-schedule-app-pricing"></a>设置和计划应用定价
 
-可通过**定价和可用性**页面的[定价](set-app-pricing-and-availability.md)部分为应用选择一个基价。 还可[计划价格更改](#schedule-price-changes)，以指示应用价格应更改的日期和时间。 此外，你可以选择[替代特定市场的基价](#override-base-price-for-specific-markets)，方法是选择新的价格层或使用市场的当地货币输入自由格式价格。
+可通过[定价和可用性](set-app-pricing-and-availability.md)页面的**定价**部分为应用选择一个基价。 还可[计划价格更改](#schedule-price-changes)，以指示应用价格应更改的日期和时间。 此外，你可以选择[替代特定市场的基价](#override-base-price-for-specific-markets)，方法是选择新的价格层或使用市场的当地货币输入自由格式价格。
 
 > [!NOTE]
-> 虽然本主题涉及应用，但加载项提交的价格选择也使用同样的过程。 请注意，对于[订阅外接程序](../monetize/enable-subscription-add-ons-for-your-app.md)，你选择的基本价格永远不能增加（无论是通过更改基础价格还是计划价格变化），但它可能会减少。
+> 虽然本主题涉及应用，但加载项提交的价格选择也使用同样的过程。 请注意，对于 [订阅外接程序](../monetize/enable-subscription-add-ons-for-your-app.md)，你选择的基本价格不能增加 (不管是通过更改基础价格，还是通过安排价格变化) 来实现，尽管它可能会降低。
 
 ## <a name="base-price"></a>基价
 
@@ -28,14 +28,14 @@ ms.locfileid: "79210493"
 > [!NOTE]
 > 这些价格段也适用于加载项。 
 
-应用商店为每个价格段都提供了 60 多种不同货币对应值。 我们使用这些值来帮助你在世界范围内以相当的价格销售你的应用。 可选择以任何货币表示的价格，我们会自动在不同的市场使用这些价格的对应值。 请注意，有时我们可能调整某些市场的相应值以说明货币汇率的变化。
+应用商店为每个价格段都提供了 60 多种不同货币对应值。 我们使用这些值来帮助你在世界范围内以适当价格销售应用。 可选择以任何货币表示的价格，我们会自动在不同的市场使用这些价格的对应值。 请注意，有时我们可能调整某些市场的相应值以说明货币汇率的变化。
 
 在**定价**部分中，单击**查看转换表**，可查看以每种货币表示的相应价格。 其中还会显示与每个价格段关联的 ID 号，如果使用 [Microsoft Store 提交 API](../monetize/manage-app-submissions.md#price-tiers)输入价格，则需要使用这个号码。 可单击**下载**，以 .csv 文件格式下载价格段表的一个副本。
 
-请记住，你选择的价格段可能包含你的客户必须支付的营业税或增值税。 若要了解有关选定市场中你的应用的税收含义的详细信息，请参阅[付费应用的税收详细信息](tax-details-for-paid-apps.md)。 还应查看[特定市场的价格考虑因素](define-market-selection.md#price-considerations-for-specific-markets)。
+请记住，你选择的价格段可能包含你的客户必须支付的销售税或增值税。 若要了解有关选定市场中应用的税收含义的详细信息，请参阅[付费应用的税收详细信息](tax-details-for-paid-apps.md)。 还应查看[特定市场的价格考虑因素](define-market-selection.md#price-considerations-for-specific-markets)。
 
 > [!NOTE]
-> 如果在 "[可见性](choose-visibility-options.md#discoverability)" 部分中选择 "**使此产品在存储中可用，但无法在存储中发现**" 下的 "**停止获取**" 选项，则无法为你的提交设置定价（因为任何人都无法获取应用，除非他们使用促销代码免费获取应用）。
+> 如果在) 的 "[可见性](choose-visibility-options.md#discoverability)" 部分中选择 "**使此产品在存储中可用，但无法发现**" 下的 "**停止获取**" 选项，则无法为你的提交 (设置定价，因为没有人能够获取应用，除非他们使用促销代码来免费) 获取应用。
 
 ## <a name="schedule-price-changes"></a>计划价格更改
 
@@ -46,7 +46,7 @@ ms.locfileid: "79210493"
 
 单击**计划价格更改**可查看价格更改选项。 选择你想要使用的价格段（或为单个市场基价替代输入自由格式价格），然后选择日期、时间和时区。
 
-您可以单击 "**计划价格变化**" 来计划所需的后续更改。
+您可以单击 " **计划价格变化** " 来计划所需的后续更改。
 
 > [!NOTE]
 > 计划的价格更改与[销售定价](put-apps-and-add-ons-on-sale.md)的运作方式不同。 将应用进行促销时，价格在 Microsoft Store 中显示时会带有删除线，并且客户将能够在你选择的时间段内以优惠价格购买该应用。 优惠期结束后，优惠价格将不再使用，应用将以基价（或你为该市场指定的其他价格，如果适用）出售。
@@ -59,7 +59,7 @@ ms.locfileid: "79210493"
 默认情况下，上述所选选项将应用于所有提供应用的市场。 你可以有选择地更改一个或多个市场的价格，方法是选择不同的价格段或使用市场的当地货币输入自由格式价格。
 
 > [!IMPORTANT]
-> 如果你以前发布的应用支持 Windows 8，则即使你为其市场选择了不同价格，这些客户也将始终以其**基础价格**看到该应用。
+> 如果你以前发布的应用支持 Windows 8，则即使你为其市场选择了不同价格，这些客户也将始终以其 **基础价格**看到该应用。
 
 若要更改特定市场的价格，单击**选择基价替代的市场**。 随即将出现**市场选择**弹出窗口，其中列出了所有你选择要提供应用的市场。 （如果在**市场**部分中排除了任何市场，则这些市场将不可用。） 
 
