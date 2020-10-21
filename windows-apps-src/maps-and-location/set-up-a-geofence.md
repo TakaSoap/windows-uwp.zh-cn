@@ -2,21 +2,21 @@
 title: 设置地理围栏
 description: 在你的应用中设置地理围栏并了解如何处理前台和后台中的通知。
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, uwp, 地图, 位置, 地理围栏, 通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b991930ba37cfaec333146bf7a95b4c9a9c8b98
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ca6dad1a96f37e3a308ad10c84293a8d49fb0329
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171701"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297591"
 ---
 # <a name="set-up-a-geofence"></a>设置地理围栏
 
-
-
+> [!NOTE]
+> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和 map 服务 requite 映射身份验证密钥称为 [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)。 有关获取和设置地图身份验证密钥的详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
 在应用中设置 [**地域隔离区内**](/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) ，并了解如何在前台和后台处理通知。
 
@@ -313,7 +313,7 @@ public async void OnGeofenceStateChanged(GeofenceMonitor sender, object e)
 
 ### <a name="step-1-register-for-geofence-state-change-events"></a>步骤 1：注册地理围栏状态更改事件
 
-在应用清单的“声明”**** 选项卡下，为位置后台任务添加一个声明。 要执行此操作：
+在应用清单的“声明”**** 选项卡下，为位置后台任务添加一个声明。 为此，请按以下步骤操作：
 
 -   添加“后台任务”类型**** 的声明。
 -   设置“位置”类型**** 的属性任务。

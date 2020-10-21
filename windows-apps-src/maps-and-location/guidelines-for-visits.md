@@ -1,19 +1,22 @@
 ---
-Description: 了解如何使用功能强大的访问跟踪功能进行更实用的位置跟踪。
+description: 了解如何使用功能强大的访问跟踪功能进行更实用的位置跟踪。
 title: 有关使用访问跟踪的指南
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
-ms.date: 05/18/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, geovisit, geovisits
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b1766d0f883fa42b005908dcc63102e97ff0d4f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bdca33832b4dfadb52dca45c7a060de4f05c500c
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162511"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297733"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>有关使用访问跟踪的指南
+
+> [!NOTE]
+> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和 map 服务 requite 映射身份验证密钥称为 [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)。 有关获取和设置地图身份验证密钥的详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
 访问功能简化了位置跟踪过程，使其能够更有效地实现许多应用的实际用途。 访问的定义为用户进出的重要地理区域。 访问类似于[地理围栏](guidelines-for-geofencing.md)，因为只有在用户进入或退出某些感兴趣的区域时，才允许通知应用，并且不需要进行持续位置跟踪，持续跟踪可能会耗用电池使用时间。 但是，与地理围栏不同，访问区域是在平台级别动态标识的，并且不需要由单独的应用显式定义。 此外，选择应用将跟踪哪些访问由单个粒度设置来处理，而不是通过订阅单独的位置来处理。
 

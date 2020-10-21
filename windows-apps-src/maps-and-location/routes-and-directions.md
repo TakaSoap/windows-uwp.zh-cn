@@ -2,20 +2,21 @@
 title: 在地图上显示路线和方向
 description: 了解如何使用 MapRouteFinder 类检索路由和方向，以及如何将它们显示在通用 Windows 平台 (UWP) 应用程序的 MapControl 中。
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
-ms.date: 09/20/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, uwp, 路线, 地图, 位置, 方向
 ms.localizationpriority: medium
-ms.openlocfilehash: b015393d81d736e5886793431966d0d91976e80d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4171598f47d28942adb56860452a8ec49cb5e2c2
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171751"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297602"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>在地图上显示路线和方向
 
-
+> [!NOTE]
+> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和 map 服务 requite 映射身份验证密钥称为 [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)。 有关获取和设置地图身份验证密钥的详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
 请求路线和方向并在应用中显示它们。
 

@@ -2,18 +2,21 @@
 title: 执行地理编码和反向地理编码
 description: 本指南演示如何通过在地理编码命名空间中调用 MapLocationFinder 类的方法，将街道地址转换为地理位置 (地理编码) 并将地理位置转换为街道地址 (反向) 。
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
-ms.date: 07/02/2018
+ms.date: 10/20/2020
 ms.topic: article
 keywords: windows 10, uwp, 地理编码, 地图, 位置
 ms.localizationpriority: medium
-ms.openlocfilehash: 011a901e2baa9ff4b8f4a5bd8018b9b7790b1852
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 992a9902081f0655885383ef90ea02ed1e79f13a
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162561"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297711"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>执行地理编码和反向地理编码
+
+> [!NOTE]
+> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和 map 服务 requite 映射身份验证密钥称为 [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)。 有关获取和设置地图身份验证密钥的详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
 本指南演示如何[**通过在地理编码命名空间**](/uwp/api/Windows.Services.Maps)中调用[**MapLocationFinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder)类的方法，将街道地址转换为地理位置 (地理编码) 并将地理位置转换为街道地址 (反向) 。
 
