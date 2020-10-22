@@ -2,23 +2,22 @@
 title: 地图和位置概述
 description: 本部分介绍如何在应用中显示地图、使用地图服务、查找位置和设置地理围栏。 本部分还介绍如何将 Windows 地图应用启动到特定地图、路线或一组逐向路线。
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 地图服务
 ms.localizationpriority: medium
-ms.openlocfilehash: c67312fe54492e20b6bb9a8b2d1cb07b5fc77c80
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 61b36aa8299d98544c44039abb138f4422e0a164
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171771"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297666"
 ---
 # <a name="maps-and-location-overview"></a>地图和位置概述
 
-
-
-
 本部分介绍如何在应用中显示地图、使用地图服务、查找位置和设置地理围栏。 本部分还介绍如何将 Windows 地图应用启动到特定地图、路线或一组逐向路线。
+
+[MapControl](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和地图服务需要称为 [MapServiceToken](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken) 的地图身份验证密钥。 有关获取和设置地图身份验证密钥的详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
 > [!TIP]
 > 若要了解有关在应用中使用地图和位置的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](https://github.com/Microsoft/Windows-universal-samples)中下载以下示例：

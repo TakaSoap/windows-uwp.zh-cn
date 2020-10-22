@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e516d887f0bfc668551c0a43b135e98765f3300f
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: cdfdf9b7396943e3ee5345249f38a35d48beb128
+ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671536"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92253618"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 岛在 WPF 应用中托管自定义 WinRT XAML 控件
 
@@ -52,13 +52,11 @@ ms.locfileid: "91671536"
 
 4. 在“解决方案资源管理器”中，右键单击相应的 WPF 项目并选择“管理 NuGet 包”   。
 
-5. 在“NuGet 程序包管理器”窗口中，确保已选中“包括预发行版”   。
-
-6. 选择“浏览”选项卡，搜索 [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) 包，并安装最新稳定版。 此包提供了使用 WindowsXamlHost 控件托管 WinRT XAML 控件所需的全部内容，包括其他相关的 NuGet 包。
+5. 选择“浏览”选项卡，搜索 [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) 包，并安装最新稳定版。 此包提供了使用 WindowsXamlHost 控件托管 WinRT XAML 控件所需的全部内容，包括其他相关的 NuGet 包。
     > [!NOTE]
     > Windows 窗体应用必须使用 [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) 包。
 
-7. 将解决方案配置为面向特定平台，例如 x86 或 x64。 面向任意 CPU 的项目不支持自定义 WinRT XAML 控件。
+6. 将解决方案配置为面向特定平台，例如 x86 或 x64。 面向任意 CPU 的项目不支持自定义 WinRT XAML 控件。
 
     1. 在“解决方案资源管理器”中，右键单击相应的解决方案节点，选择“属性” -> “配置属性” -> “配置管理器”     。
     2. 在“活动解决方案平台”  下，选择“新建”  。 
