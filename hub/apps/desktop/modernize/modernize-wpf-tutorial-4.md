@@ -1,5 +1,5 @@
 ---
-description: 本教程演示如何添加 UWP XAML 用户界面、创建 MSIX 包以及将其他现代组件合并到 WPF 应用中。
+description: 本教程演示如何向应用添加活动和通知功能。
 title: 添加 Windows 10 用户活动和通知
 ms.topic: article
 ms.date: 06/27/2019
@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 30b41cf0d22d8f8c2c4ce7f774eab9d2aa479d78
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3acc5638115932f6536eccb3be5e7222ef53fbb7
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161461"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133050"
 ---
 # <a name="part-4-add-windows-10-user-activities-and-notifications"></a>第 4 部分：添加 Windows 10 用户活动和通知
 

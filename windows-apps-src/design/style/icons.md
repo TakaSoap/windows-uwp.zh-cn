@@ -1,5 +1,5 @@
 ---
-Description: 良好的图标会与版式和设计语言的其余部分相协调。 它们不会混合隐喻，并且会尽快且尽量简单地仅传达所需内容。
+description: 良好的图标会与版式和设计语言的其余部分相协调。 它们不会混合隐喻，并且会尽快且尽量简单地仅传达所需内容。
 title: 图标
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 66f9d166d0e20f82f495f98b26deceff8e136cc5
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 75de051bd569981d7dca6b33e8e7389c3186a09d
+ms.sourcegitcommit: cbdfac0e2d8bead6c225e815e7d6dffe1f5ef864
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636637"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92344982"
 ---
 # <a name="icons-for-windows-apps"></a>适用于 Windows 应用的图标
 
@@ -47,13 +47,12 @@ ms.locfileid: "91636637"
 
 :::row:::
     :::column:::
-        ![显示“剪切”、“复制”、“粘贴”和“保存”图标的屏幕截图。](images/do.svg)
-        ![标准图像图标](images/icons/icons-standard.svg)<br>
+        ![包含绿色对勾标记和“执行”一词的绿色条的第一个图像](images/do.svg) ![显示“剪切”、“复制”、“粘贴”和“保存”图标的屏幕截图](images/icons/icons-standard.svg)<br>
 
 将图标用于剪切、复制、粘贴和保存等操作，或用于导航菜单中的导航项。
     :::column-end:::
     :::column:::
-        ![禁止事项](images/dont.svg)![图标概念图像](images/icons/icons-concept.svg)<br>
+        ![包含红色 X 和“不执行”一词的红色条的第一个图像](images/dont.svg) ![显示“教育”、“触控”和“日历”图标的屏幕截图](images/icons/icons-concept.svg)<br>
 
 如果要表示的概念已具有图标，则使用图标。 （若要查看图标是否存在，检查 Segoe 图标列表。）
     :::column-end:::
@@ -61,14 +60,12 @@ ms.locfileid: "91636637"
 
 :::row:::
     :::column:::
-        ![简单且常用的“购物车”图标的屏幕截图。](images/do.svg)
-        ![购物车图标](images/icons/icon-shopping-cart.svg)<br>
+        ![包含绿色对勾标记和“执行”一词的绿色条的第二个图像](images/do.svg) ![包含一个简单且熟悉的购物车图标的屏幕截图](images/icons/icon-shopping-cart.svg)<br>
 
 如果用户可以轻松地理解图标的含义，且以小尺寸表达含义足够简单，则使用图标。
     :::column-end:::
     :::column:::
-        ![复杂且不常用的“购物车”图标的屏幕截图。](images/dont.svg)
-        ![概念图像图标](images/icons/icon-bad-example.png)<br>
+        ![包含红色 X 和“不执行”一词的红色条的第二个图像](images/dont.svg) ![包含一个复杂且不熟悉的购物车图标的屏幕截图](images/icons/icon-bad-example.png)<br>
 
 如果图标的含义不清晰，或者需要复杂的外形才能清晰表达，则不要使用图标。
     :::column-end:::

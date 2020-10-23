@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c4ab2ac5a611d310abc177126cc92b88f9e3b8e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fb7229d977f2d2f32b251a524e101a8acf2b2524
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165151"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92193010"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>生成复杂的通用 Windows 平台 (UWP) 应用
 
@@ -238,4 +238,4 @@ ms.locfileid: "89165151"
 
 在进行更深层次的应用开发之前，应该根据指南、用户印象以及要求验证你的设计或原型，以避免以后返工。 每个功能都有一组可帮助你优化应用的 UX 指南以及一组 Store 要求，在 Microsoft Store 中发布应用时必须满足这些要求。 你可以使用 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)测试对应用商店要求的技术合规性。 还可以使用 Microsoft Visual Studio 中的性能工具以确保你在所有情况下都为用户提供极佳体验。
 
-使用 [UWP 应用的详细 UX 指南](https://developer.microsoft.com/windows/apps/design)确保你专注于重要功能。 使用 [Visual Studio 性能工具](/visualstudio/profiling/profiling-tools?view=vs-2015)分析每个应用方案的性能。
+使用 [UWP 应用的详细 UX 指南](https://developer.microsoft.com/windows/apps/design)确保你专注于重要功能。 使用 [Visual Studio 性能工具](/visualstudio/profiling/profiling-feature-tour)分析每个应用方案的性能。

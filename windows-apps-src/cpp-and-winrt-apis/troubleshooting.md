@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 疑难解答, HRESULT, 错误
 ms.localizationpriority: medium
-ms.openlocfilehash: 94cfb51d9fd832a29c71049a2255e35c4bc6f484
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 268792dfe8053feca8c1e6fcb486bede4b26ee6a
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219960"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297725"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>C++/WinRT 问题疑难解答
 
@@ -39,8 +39,9 @@ XAML 分析异常可能很难进行诊断&mdash;特别是在此类异常中没�
 | C++ 编译器生成以下错误：“无法从‘const std::vector&lt;&lt;_Ty&gt;&gt;’转换为‘const winrt::param::async_iterable&lt;winrt::hstring&gt; &’”。|将 winrt::hstring 的 std::vector 传递给需要一个集合的异步 Windows 运行时 API 时，如果没有将相应的矢量复制或移动到异步被调用方，就会出现此错误。 有关更多信息，请参阅[标准 C++ 数据类型和 C++/WinRT](std-cpp-data-types.md)。|
 | 打开项目时，Visual Studio 生成错误“该项目的应用程序未安装”**。|需要从 Visual Studio 的“新建项目”对话框中安装“用于 C++ 开发的 Windows 通用工具”（如果你尚未这样做的话）********。 如果上述方法未能解决问题，则项目可能依赖于 C++/WinRT Visual Studio Extension (VSIX)（请参阅 [Visual Studio 对于 C++/WinRT 的支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。|
 | Windows 应用认证工具包测试将产生一个错误，表示一个运行时类“*不是派生自 Windows 基类。所有可组合类必须最终派生自 Windows 命名空间中的类型*”。|从基类派生的任何运行时类（在应用程序中声明）都称为可组合类**。 可组合类的最终基类必须是源自 Windows.* 命名空间的类型；例如，[Windows.UI.Xaml.DependencyObject](/uwp/api/windows.ui.xaml.dependencyobject)****。 有关更多详细信息，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)。|
-| 对于 EventHandler 或 TypedEventHandler 委托专用化，C++ 编译器产生“必须是 WinRT 类型”错误**。|请考虑改为使用“winrt::delegate&lt;…T&gt;”****。 请参阅 [在 C++/WinRT 中创作事件](author-events.md)。|
-| 对于 Windows 运行时异步操作专用化，C++ 编译器产生“必须是 WinRT 类型”错误**。|请考虑改为返回并行模式库 (PPL) [任务](/cpp/parallel/concrt/reference/task-class)****。 请参阅[并发操作和异步操作](concurrency.md)。|
+| 对于 EventHandler 或 TypedEventHandler 委托专用化，C++ 编译器产生“T 必须是 WinRT 类型”错误。|请考虑改为使用“winrt::delegate&lt;…T&gt;”****。 请参阅 [在 C++/WinRT 中创作事件](author-events.md)。|
+| 对于 Windows 运行时异步操作专用化，C++ 编译器产生“T 必须是 WinRT 类型”错误。|请考虑改为返回并行模式库 (PPL) [任务](/cpp/parallel/concrt/reference/task-class)****。 请参阅[并发操作和异步操作](concurrency.md)。|
+| 在调用 [winrt::xaml_typename](/uwp/cpp-ref-for-winrt/xaml-typename) 时，C++ 编译器会产生“T 必须是 WinRT 类型”错误。|请将投影类型与 winrt::xaml_typename 配合使用（例如，使用 BgLabelControlApp::BgLabelControl），而不是实现类型（例如，不要使用 BgLabelControlApp::implementation::BgLabelControl）  。 请参阅 [XAML 自定义（模板化）控件](xaml-cust-ctrl.md)。|
 | C++ 编译器生成“错误 C2220: 视为错误的警告 - 未生成 object 文件”**。|更正警告，或者将“C/C++” > “常规” > “将警告视为错误”设置为“否(/WX-)”   。|
 | 应用发生崩溃，因为在 C++/WinRT 对象销毁后调用了其中的一个事件处理程序。|请参阅[使用事件处理委托安全访问该指针](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)**。|
 | C++ 编译器产生“*错误 C2338: 此项仅用于弱引用支持*”。|你请求针对某个类型的弱引用，该类型将“winrt::no_weak_ref”标记结构作为模板参数传递给其基类****。 请参阅[选择退出弱引用支持](weak-references.md#opting-out-of-weak-reference-support)|

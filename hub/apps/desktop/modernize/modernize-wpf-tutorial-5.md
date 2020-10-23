@@ -1,5 +1,5 @@
 ---
-description: 本教程演示如何使名为 Contoso Expenses 的示例 WPF 桌面应用实现现代化。
+description: 本教程演示如何使用 MSIX 打包和部署应用。
 title: 使用 MSIX 打包和部署
 ms.topic: article
 ms.date: 01/23/2020
@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 2ab83b2c9253e8cdd9adc403909a1bd03db1ccda
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: d13971e62a6684bdb440bd0e0f68ddea606336cc
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762975"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133020"
 ---
 # <a name="part-5-package-and-deploy-with-msix"></a>第 5 部分：使用 MSIX 打包和部署
 

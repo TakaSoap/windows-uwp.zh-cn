@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 提问, 问题, 常见问题解答
 ms.localizationpriority: medium
-ms.openlocfilehash: d9b402a1f140126314bc10f69880a9f01af2b2a4
-ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
+ms.openlocfilehash: b1a05dbb666b33739a083c517395359a64fee9df
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89643802"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297649"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有关 C++/WinRT 的常见问题解答
 对你可能存疑的关于通过 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 创作和使用 Windows 运行时 API 的问题的解答。
@@ -186,7 +186,7 @@ a.f();
 
 头文件 `winrt/Windows.UI.Xaml.Media.Animation.h` 声明一个名为 **GetCurrentTime** 的方法，而 `windows.h`（通过 `winbase.h`）定义一个名为 **GetCurrentTime** 的宏。 当二者发生冲突时，C++ 编译器会生成“错误 C4002:类函数宏的调用 GetCurrentTime 参数太多”。
 
-同样，`winrt/Windows.Globalization.h` 声明一个名为 **TRY** 的方法，而 `afx.h` 定义一个名为 **GetCurrentTime** 的宏。 当这些发生冲突时，C++ 编译器会生成“错误 C2334:‘{’的前面有意外标记；跳过明显的函数体”。
+同样，`winrt/Windows.Globalization.h` 声明一个名为 TRY 的方法，而定义一个名为 TRY 的宏`afx.h`。 当这些发生冲突时，C++ 编译器会生成“错误 C2334:‘{’的前面有意外标记；跳过明显的函数体”。
 
 若要解决一个或两个问题，可以执行此操作。
 

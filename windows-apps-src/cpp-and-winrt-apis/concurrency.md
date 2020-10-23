@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: a10962740d3f723a855914595ea02d0688ff9707
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8dc98176e61ea6e03b1d822e05f8e0656a34e4b3
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170371"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297755"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>使用 C++/WinRT 执行并发和异步操作
 
@@ -158,7 +158,7 @@ int main()
 
 在上述示例中，**RetrieveBlogFeedAsync** 返回 **IAsyncOperationWithProgress**，其具有进度值和返回值。 我们可以在 **RetrieveBlogFeedAsync** 执行其操作并检索提要的同时进行其他工作。 然后，在该异步操作对象上调用 **get**，以阻塞、等待其完成，然后获取该操作的结果。
 
-如果要异步返回 Windows 运行时类型，则应返回 [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation-1) 或 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)。 任何第一方或第三方运行时类或可以传入/传出 Windows 运行时函数的任何类型（例如 `int` 或 **winrt::hstring**）都符合条件。 如果尝试对非 Windows 运行时类型使用其中一种异步操作类型，编译器可帮助你处理“必须为 WinRT 类型”错误**。
+如果要异步返回 Windows 运行时类型，则应返回 [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation-1) 或 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)。 任何第一方或第三方运行时类或可以传入/传出 Windows 运行时函数的任何类型（例如 `int` 或 **winrt::hstring**）都符合条件。 如果尝试对非 Windows 运行时类型使用其中一种异步操作类型，编译器可帮助你处理“T 必须为 WinRT 类型”错误。
 
 如果协同例程没有至少一条 `co_await` 语句，则为了符合成为协同例程的资格，它必须至少有一条 `co_return` 或一条 `co_yield` 语句。 在某些情况下，协同例程可以返回值而不引入任何异步，因此不阻塞也不切换上下文。 下面是一个通过缓存值来实现上述功能（第二次及后续调用时）的示例。
 

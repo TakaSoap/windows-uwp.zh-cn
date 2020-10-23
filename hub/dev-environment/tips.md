@@ -9,16 +9,24 @@ ms.technology: windows-nodejs
 keywords: Microsoft, Windows, 开发人员, 使用技巧, 性能, WSL
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 1135be4797893a74e398e69fcbc1c43d60e9fdb9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7d02e3b46d6938532bbc7024e8840b976b2715a6
+ms.sourcegitcommit: 861c381a31e4a5fd75f94ca19952b2baaa2b72df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172661"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92171154"
 ---
 # <a name="tips-for-improving-performance-and-development-workflows"></a>改进性能和开发工作流的技巧
 
 我们收集了一些技巧，希望可以帮助提高工作流的效率以及提供更愉悦的体验。 你还有其他技巧要分享吗？ 使用上方的“编辑”按钮提交拉取请求，或使用下方的“反馈”按钮提交问题，我们可能会将其添加到列表中。
+
+> [!NOTE]
+> 如果遇到与 Windows 10 上的开发相关的任何性能问题，例如：
+> - 在 Windows 上，开发工具（例如编译器、链接器等）运行的速度不及预期。
+> - 在 Windows 上，运行时平台（例如节点、.NET、Python）运行的速度不及其他平台。
+> - 应用遇到文件 IO/网络/进程创建相关的性能问题。 
+> 
+> 请将问题提交到 [Windows 开发人员 (WinDev) 问题存储库](https://github.com/microsoft/WinDev)以告知我们！
 
 ## <a name="use-shortcuts-to-open-a-project-in-vs-code-or-windows-file-explorer"></a>使用快捷方式在 VS Code 或 Windows 文件资源管理器中打开项目
 
