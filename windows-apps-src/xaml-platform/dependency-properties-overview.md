@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7633ff363a00c90a576ad5799ef0d2b048cd5cdd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 769d786078edd68af2e1e57bdb869e7aa4099405
+ms.sourcegitcommit: 88f3992462c88a0c5c6e85b942705bae5e4a1aac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166851"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499602"
 ---
 # <a name="dependency-properties-overview"></a>依赖属性概述
 
@@ -205,9 +205,9 @@ Windows 10 引入了 [**RegisterPropertyChangedCallback**](/uwp/api/windows.ui.x
 - [自定义依赖属性](custom-dependency-properties.md)
 - [附加属性概述](attached-properties-overview.md)
 - [深入了解数据绑定](../data-binding/data-binding-in-depth.md)
-- [情节提要动画](../design/motion/storyboarded-animations.md)
+- [Storyboarded 动画](../design/motion/storyboarded-animations.md)
 - [创建 Windows 运行时组件](/previous-versions/windows/apps/hh441572(v=vs.140))
-- [XAML 用户和自定义控件示例](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
+- [XAML 用户和自定义控件示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20user%20and%20custom%20controls%20sample)
 
 ## <a name="apis-related-to-dependency-properties"></a>与依赖项属性相关的 Api
 
