@@ -1,15 +1,15 @@
 ---
 title: 使用 winget 工具安装和管理应用程序
 description: 开发人员可以在 Windows 10 计算机上使用 winget 命令行工具来发现、安装、升级、删除和配置应用程序。
-ms.date: 04/28/2020
+ms.date: 10/22/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c918dccb2873f47a16669c195c47180e2129476
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0dbd2aa76fa6a9b787e73c0bbd5ce7e56b5e6a4a
+ms.sourcegitcommit: c105eb358bf693d34dfdd7a44255af69c1d5a3cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168741"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434461"
 ---
 # <a name="use-the-winget-tool-to-install-and-manage-applications"></a>使用 winget 工具安装和管理应用程序
 
@@ -23,7 +23,7 @@ ms.locfileid: "89168741"
 
 可使用多种方法安装 **winget** 工具：
 
-* [Windows 应用安装程序](https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=1&activetab=pivot:overviewtab)的外部测试版或预览版中包含 **winget** 工具。 必须安装**应用安装程序**的预览版本才能使用 **winget**。 若要获取提前访问权限，请将你的请求提交到 [Windows 程序包管理器预览体验计划](https://aka.ms/AppInstaller_InsiderProgram)。 参与外部测试版 Ring 将保证你可以看到最新的预览版更新。
+* [Windows 应用安装程序](https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=1&activetab=pivot:overviewtab)的外部测试版或预览版中包含 **winget** 工具。 必须安装 **应用安装程序** 的预览版本才能使用 **winget** 。 若要获取提前访问权限，请将你的请求提交到 [Windows 程序包管理器预览体验计划](https://aka.ms/AppInstaller_InsiderProgram)。 参与外部测试版 Ring 将保证你可以看到最新的预览版更新。
 
 * 参与 [Windows 外部测试版 Ring](https://insider.windows.com)。
 
@@ -34,15 +34,15 @@ ms.locfileid: "89168741"
 
 ## <a name="administrator-considerations"></a>管理员注意事项
 
-安装程序的行为可能会有所不同，具体取决于你是否是以管理员权限运行 **winget**。
+安装程序的行为可能会有所不同，具体取决于你是否是以管理员权限运行 **winget** 。
 
-* 在没有管理员权限的情况下运行 **winget** 时，某些应用程序可能会[要求提升权限](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/)才能进行安装。 当安装程序运行时，Windows 会提示你[提升权限](https://docs.microsoft.com/windows/security/identity-protection/user-account-control)。 如果你选择不提升权限，则应用程序无法进行安装。  
+* 在没有管理员权限的情况下运行 **winget** 时，某些应用程序可能会 [要求提升权限](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/)才能进行安装。 当安装程序运行时，Windows 会提示你[提升权限](https://docs.microsoft.com/windows/security/identity-protection/user-account-control)。 如果你选择不提升权限，则应用程序无法进行安装。  
 
-* 在管理员命令提示符下运行 **winget** 时，如果应用程序要求你提升权限，你不会看到[提升权限提示](/windows/security/identity-protection/user-account-control/how-user-account-control-works)。 以管理员身份运行命令提示符时请务必小心，仅安装你信任的应用程序。
+* 在管理员命令提示符下运行 **winget** 时，如果应用程序要求你提升权限，你不会看到 [提升权限提示](/windows/security/identity-protection/user-account-control/how-user-account-control-works)。 以管理员身份运行命令提示符时请务必小心，仅安装你信任的应用程序。
 
 ## <a name="use-winget"></a>使用 winget
 
-安装**应用安装程序**后，可以通过在命令提示符下键入“winget”来运行 **winget**。
+安装 **应用安装程序** 后，可以通过在命令提示符下键入“winget”来运行 **winget** 。
 
 最常见的使用场景之一是搜索并安装你最喜欢的工具。
 
@@ -50,7 +50,7 @@ ms.locfileid: "89168741"
 2. 确认你需要的工具可用后，可以通过键入 `winget install \<appname>` 来[安装](install.md)该工具。 **winget** 工具会启动安装程序，将应用程序安装在你的电脑上。
     ![winget 命令行](images\install.png)
 
-3. 除了安装和搜索外，**winget** 还提供了许多其他命令，用来[显示应用程序详细信息](show.md)，[更改源](source.md)以及[验证程序包](validate.md)。 若要获取完整的命令列表，请键入 `winget --help`。
+3. 除了安装和搜索外， **winget** 还提供了许多其他命令，用来 [显示应用程序详细信息](show.md)， [更改源](source.md)以及 [验证程序包](validate.md)。 若要获取完整的命令列表，请键入 `winget --help`。
     ![winget help](images\help.png)
 
 ### <a name="commands"></a>命令
@@ -101,11 +101,15 @@ if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.   %ERRORLEVEL%
 ```
 
 > [!NOTE]
-> 使用脚本时，**winget** 会按指定顺序启动应用程序。 当安装程序返回成功或失败时，**winget** 会启动下一个安装程序。 如果某个安装程序启动了另一进程，它可能会提前返回到 **winget**。 这会导致 **winget** 在上一个安装程序完成之前安装下一个安装程序。
+> 使用脚本时， **winget** 会按指定顺序启动应用程序。 当安装程序返回成功或失败时， **winget** 会启动下一个安装程序。 如果某个安装程序启动了另一进程，它可能会提前返回到 **winget** 。 这会导致 **winget** 在上一个安装程序完成之前安装下一个安装程序。
 
 ## <a name="missing-tools"></a>缺少工具
 
 如果[社区存储库](../package/repository.md)未包含你的工具或应用程序， 请将程序包提交到我们的[存储库](https://github.com/microsoft/winget-pkgs)。 添加你最喜爱的工具后，你和其他人都可以使用它。
+
+## <a name="customize-winget-settings"></a>自定义 winget 设置
+
+可以通过修改 settings.json 文件配置 winget 命令行体验 。 有关详细信息，请参阅 [https://aka.ms/winget-settings](https://aka.ms/winget-settings)。 请注意，这些设置仍处于试验状态，并且尚未针对工具的预览版本最后确定。
 
 ## <a name="open-source-details"></a>开源详细信息
 
