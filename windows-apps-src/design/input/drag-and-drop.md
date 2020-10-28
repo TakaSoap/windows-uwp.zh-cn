@@ -6,18 +6,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ab8d696ddb1a4ef9e3dc3549754cbf51fc91374
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 9a0005ecf7d51cc6b08bc5cc61350489839d568f
+ms.sourcegitcommit: 047004e2bf100e319d134c18518062bf7f3efb5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220540"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92763101"
 ---
 # <a name="drag-and-drop"></a>拖放
 
 拖放是在应用程序内部或在 Windows 桌面上的应用程序之间传输数据的一种直观方式。 拖放操作可以让用户使用标准手势（用手指按住并平移或用鼠标或触笔按住并平移）在应用程序之间或在应用程序内部传输数据。
 
-> **重要 API**：[CanDrag 属性](/uwp/api/windows.ui.xaml.uielement.candrag)、[AllowDrop 属性](/uwp/api/windows.ui.xaml.uielement.allowdrop) 
+> **重要 API** ： [CanDrag 属性](/uwp/api/windows.ui.xaml.uielement.candrag)、 [AllowDrop 属性](/uwp/api/windows.ui.xaml.uielement.allowdrop) 
 
 拖动源（即触发拖动手势的应用程序或区域）通过填充数据包对象提供要传输的数据，而该数据包对象可以包含标准数据格式，包括文本、RTF、HTML、位图、存储项目或自定义数据格式。 源还指示其支持的操作种类：复制、移动或链接。 释放指针后，即会进行放置。 拖放目标（即指针下面的应用程序或区域）将会处理数据包并返回所执行操作的类型。
 
@@ -29,7 +29,7 @@ ms.locfileid: "91220540"
 
 1. 通过将某个元素的 **CanDrag** 属性设置为 true，在该元素上启用拖动。  
 2. 构建数据包。 系统会自动处理图像和文本，但对于其他内容，你需要处理 **DragStarted** 和 **DragCompleted** 事件并使用它们构造你自己的数据包。 
-3. 通过在可以接收所放置内容的所有元素上将 **AllowDrop** 属性设置为 **true**，启用放置。 
+3. 通过在可以接收所放置内容的所有元素上将 **AllowDrop** 属性设置为 **true** ，启用放置。 
 4. 处理 **DragOver** 事件，以便让系统知道元素可以接受何种类型的拖动操作。 
 5. 处理 **Drop** 事件以接受放置的内容。 
 
@@ -37,7 +37,7 @@ ms.locfileid: "91220540"
 
 ## <a name="enable-dragging"></a>启用拖动
 
-若要在某个元素上启用拖动，请将其 [**CanDrag**](/uwp/api/windows.ui.xaml.uielement.candrag) 属性设置为 **true**。 这会使该元素（以及在像 ListView 这样的集合的情况下它所包含的元素）可以进行拖动。
+若要在某个元素上启用拖动，请将其 [**CanDrag**](/uwp/api/windows.ui.xaml.uielement.candrag) 属性设置为 **true** 。 这会使元素以及它所包含的元素（如 ListView 这样的集合）可拖动。
 
 明确什么是可以拖动的。 用户并不希望在你的应用中拖动所有内容，只希望拖动某些项目，如图像或文本。 
 
@@ -92,9 +92,15 @@ ms.locfileid: "91220540"
 
 ## <a name="designate-an-item-in-a-listview-or-gridview-as-a-folder"></a>将 ListView 或 GridView 中的某个项目指定为文件夹
 
-可以将 [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) 或 [**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) 指定为文件夹。 这对树视图和文件资源管理器方案尤其有用。 若要执行此操作，请在该项目上将 [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) 属性显式设置为 **True**。 
+可以将 [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) 或 [**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) 指定为文件夹。 这对树视图和文件资源管理器方案尤其有用。 若要执行此操作，请在该项目上将 [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) 属性显式设置为 **True** 。 
 
 系统将自动显示释放到文件夹和非文件夹项目的相应动画。 你的应用代码必须继续处理文件夹项目上（以及非文件夹项目上）的 [**Drop**](/uwp/api/windows.ui.xaml.uielement.drop) 事件，以便更新数据源并将释放的项目添加到目标文件夹。
+
+## <a name="enable-drag-and-drop-reordering-within-listviews"></a>在 Listview 中启用拖放重新排序
+
+[**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)通过使用与本文中所述的 **CanDrop** API 非常相似的 api，支持基于拖动的重新排序。 至少需要添加 **system.windows.uielement.allowdrop** 和 **CanReorderItems** 属性。
+
+有关详细信息，请参阅 [**ListViewBase. CanReorderItems**](/uwp/api/windows.ui.xaml.controls.listviewbase.canreorderitems) 。
 
 ## <a name="implementing-custom-drag-and-drop"></a>实现自定义拖放
 
@@ -109,7 +115,7 @@ ms.locfileid: "91220540"
 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 * [应用到应用的通信](index.md)
 * [AllowDrop](/uwp/api/windows.ui.xaml.uielement.allowdrop)
