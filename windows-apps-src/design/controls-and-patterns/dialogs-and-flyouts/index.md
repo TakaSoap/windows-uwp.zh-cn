@@ -1,5 +1,5 @@
 ---
-Description: 对话框和浮出控件显示当用户请求这些元素或发生需要通知或批准的操作时出现的瞬态 UI 元素。
+description: 对话框和浮出控件显示当用户请求这些元素或发生需要通知或批准的操作时出现的瞬态 UI 元素。
 title: 对话框和浮出控件
 template: detail.hbs
 ms.date: 07/06/2018
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c61d1478c38df315a3fe3c20151de8c2bfbca4e2
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: bf4746a6d3a024fec31045bbf9c63d3b11315b8c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81123565"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033840"
 ---
 # <a name="dialogs-and-flyouts"></a>对话框和浮出控件
 
@@ -58,7 +58,7 @@ ms.locfileid: "81123565"
 
 </li>
 <li>应用于整个应用上下文的错误消息，如连接错误。</li>
-<li>问题，在应用需要询问用户阻止问题时（例如当应用不能代表用户进行选择时）。 阻止问题不能忽略或延迟，并应该向用户提供明确定义的选项。</li>
+<li>问题，在应用需要询问用户阻止问题时（例如当应用不能代表用户进行选择时）。 阻止问题不能忽略或延迟，并且应该向用户提供明确定义的选项。</li>
 </ul>
 </p>
 

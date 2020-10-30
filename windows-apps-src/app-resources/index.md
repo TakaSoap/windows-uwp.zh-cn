@@ -1,5 +1,5 @@
 ---
-Description: 本部分展示了如何创作、打包和使用应用的字符串、图像和文件资源。
+description: 本部分展示了如何创作、打包和使用应用的字符串、图像和文件资源。
 title: 应用资源和资源管理系统
 label: Intro
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 10/20/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: cb64294710ca1d28c11308161665e72e37342193
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3d6b23284c24de4b611301668c52894b57ed2500
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174091"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031800"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a>应用资源和资源管理系统
 

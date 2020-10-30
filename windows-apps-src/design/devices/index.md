@@ -1,5 +1,5 @@
 ---
-Description: 了解支持 Windows 应用的设备，将会帮助你针对每个外形规格提供最佳用户体验。
+description: 了解支持 Windows 应用的设备，将会帮助你针对每个外形规格提供最佳用户体验。
 title: Windows 设备的 UI 注意事项
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
@@ -8,12 +8,12 @@ keywords: 设备, 输入, 交互
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d32fd2ba2ee35c19aeaa66d2c6b2c1f81be2a59
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 2267a0a704d0f637b60e38cdaa50b1afa2ec3f9a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217830"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030540"
 ---
 #  <a name="ui-considerations-for-windows-devices"></a>Windows 设备的 UI 注意事项
 
@@ -94,7 +94,7 @@ UI 注意事项
 
 ## <a name="xbox-and-tv"></a>Xbox 和电视
 
-坐在房间中的沙发上使用游戏板或遥控器与电视交互的体验称为 **10 英尺体验**。 如此命名是因为用户通常坐在离屏幕大约 10 英尺的位置。 这提出了 *2 英尺*体验（假设）中或与电脑交互时所不存在的独特挑战。 如果你要为 Xbox One 或任何连接到电视屏幕并且可能使用游戏板或遥控器进行输入的其他设备开发应用，应始终牢记这一点。
+坐在房间中的沙发上使用游戏板或遥控器与电视交互的体验称为 **10 英尺体验** 。 如此命名是因为用户通常坐在离屏幕大约 10 英尺的位置。 这提出了 *2 英尺* 体验（假设）中或与电脑交互时所不存在的独特挑战。 如果你要为 Xbox One 或任何连接到电视屏幕并且可能使用游戏板或遥控器进行输入的其他设备开发应用，应始终牢记这一点。
 
 针对 10 英尺体验设计 Windows 应用与针对此处所列的任何其他设备类别进行设计大不相同。 有关详细信息，请参阅 [针对 Xbox 和电视进行设计](designing-for-tv.md)。
 
@@ -164,7 +164,7 @@ UI 注意事项
 -   移动传感器
 -   位置传感器
 
- 
+ 
 
 ## <a name="surface-hub-devices"></a>Surface Hub 设备
 
@@ -197,7 +197,7 @@ UI 注意事项
 -   照相机
 -   麦克风
 
- 
+ 
 
 ## <a name="windows-iot-devices"></a>Windows IoT 设备
 

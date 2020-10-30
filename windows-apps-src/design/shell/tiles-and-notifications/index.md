@@ -1,5 +1,5 @@
 ---
-Description: 了解如何使用磁贴、锁屏提醒、Toast 以及通知提供应用入口点并使用户了解最新信息。
+description: 了解如何使用磁贴、锁屏提醒、Toast 以及通知提供应用入口点并使用户了解最新信息。
 title: 磁贴、锁屏提醒和通知
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
@@ -8,19 +8,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 580edca578a0d518d89b5d2fdb30c9304be35cef
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: dbcc4138c0f09d3ad620e4d1c192dd63bb522052
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636617"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033680"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>适用于 Windows 应用的磁贴、锁屏提醒和通知
  
 
 了解如何使用磁贴、锁屏提醒、Toast 以及通知提供应用入口点并使用户了解最新信息。
 
-> **重要的 API**：[UWP 社区工具包通知 NuGet 程序包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要的 API** ： [UWP 社区工具包通知 NuGet 程序包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" alt="Screenshot of a static tile and a live tile displaying a notification and a badge." />
 磁贴是应用在“开始”菜单上的表示形式。 每个 Windows 应用都有一个磁贴。 你可以启用不同的磁贴大小（小、中等、宽形和大）。</p>
@@ -32,7 +32,7 @@ ms.locfileid: "91636617"
 <p><em>Toast 通知</em>是应用通过称为 <em>Toast</em>（或<em>横幅</em>）的弹出 UI 元素发送给用户的通知。 无论用户是否在使用应用，均可看到此通知。</p>
 <p><em>推送通知</em>或<em>原始通知</em>是从 Windows 推送通知服务 (WNS) 或后台任务发送到应用的通知。 应用可以通过通知用户发生了某些趣事（借助锁屏提醒更新、磁贴更新或 Toast）来响应这些通知，也可以以你选择的任意方式响应。</p>
 
- 
+ 
 ## <a name="tiles"></a>磁贴
 | 文章 | 说明 |
 | --- | --- |
