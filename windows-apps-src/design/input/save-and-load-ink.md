@@ -1,5 +1,5 @@
 ---
-Description: 支持 Windows Ink 的 windows 应用可以将墨迹笔划序列化和反序列化为墨迹序列化格式 (ISF) 文件。 ISF 文件是一种 GIF 图像，带有适用于所有笔划墨迹属性和行为的其他元数据。 无法启用墨迹的应用可以查看静态 GIF 图像，包括 alpha 通道背景透明度。
+description: 支持 Windows Ink 的 windows 应用可以将墨迹笔划序列化和反序列化为墨迹序列化格式 (ISF) 文件。 ISF 文件是一种 GIF 图像，带有适用于所有笔划墨迹属性和行为的其他元数据。 无法启用墨迹的应用可以查看静态 GIF 图像，包括 alpha 通道背景透明度。
 title: 存储和检索 Windows Ink 笔划数据
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, 
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 66ac039774abc2322ab8b5e9a6a264af25156406
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 36318ce0049f5ec76df0b11e57d0541df780b7ed
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216760"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031360"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>存储和检索 Windows Ink 笔划数据
 
@@ -23,7 +23,7 @@ ms.locfileid: "91216760"
 > [!NOTE]
 > ISF 为墨迹的最紧凑持久表现形式。 该格式可以嵌入到二进制文档格式（例如 GIF 文件），也可以直接放置在剪贴板上。
 
-> **重要 API**：[**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)、[**Windows.UI.Input.Inking**](/uwp/api/Windows.UI.Input.Inking)
+> **重要 API** ： [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)、 [**Windows.UI.Input.Inking**](/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="save-ink-strokes-to-a-file"></a>将笔划墨迹保存到文件
 
@@ -63,7 +63,7 @@ ms.locfileid: "91216760"
 
 2.  然后，我们设置一些基本墨迹输入行为。
 
-    [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))，并且将声明用于按钮上的单击事件的侦听器。
+    [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ( [**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))，并且将声明用于按钮上的单击事件的侦听器。
 ```csharp
 public MainPage()
     {
@@ -155,7 +155,7 @@ public MainPage()
 ```
 
 > [!NOTE]
-> GIF 是保存墨迹数据的唯一受支持的文件格式。 但是，[**LoadAsync**](/uwp/api/windows.ui.input.inking.inkmanager.loadasync) 方法（在下一部分中演示）不支持向后兼容的其他格式。
+> GIF 是保存墨迹数据的唯一受支持的文件格式。 但是， [**LoadAsync**](/uwp/api/windows.ui.input.inking.inkmanager.loadasync) 方法（在下一部分中演示）不支持向后兼容的其他格式。
 
 ## <a name="load-ink-strokes-from-a-file"></a>从文件加载笔划墨迹
 
@@ -195,7 +195,7 @@ public MainPage()
 
 2.  然后，我们设置一些基本墨迹输入行为。
 
-    [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))，并且将声明用于按钮上的单击事件的侦听器。
+    [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ( [**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))，并且将声明用于按钮上的单击事件的侦听器。
 ```csharp
 public MainPage()
     {
@@ -260,9 +260,9 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!NOTE]
-> GIF 是保存墨迹数据的唯一受支持的文件格式。 但是，[**LoadAsync**](/uwp/api/windows.ui.input.inking.inkmanager.loadasync) 方法不支持向后兼容的以下格式。
+> GIF 是保存墨迹数据的唯一受支持的文件格式。 但是， [**LoadAsync**](/uwp/api/windows.ui.input.inking.inkmanager.loadasync) 方法不支持向后兼容的以下格式。
 
-| 格式                    | 描述 |
+| 格式                    | 说明 |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | InkSerializedFormat       | 指定使用 ISF 持久保存的墨迹。 这是墨迹的最紧凑持久表现形式。 该格式可以嵌入到二进制文档格式，也可以直接放置在剪贴板上。                                                                                                                                                                                                         |
 | Base64InkSerializedFormat | 指定通过将 ISF 编码为 base64 流来持久保存墨迹。 提供该格式是为了在 XML 或 HTML 文件中直接对墨迹进行编码。                                                                                                                                                                                                                                                |
@@ -317,7 +317,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
 2.  然后，我们设置一些基本墨迹输入行为。
 
-    将 [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))。 适用于按钮上的单击事件的侦听器以及适用于选择功能的指针和笔划事件也在此处声明。
+    将 [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ( [**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))。 适用于按钮上的单击事件的侦听器以及适用于选择功能的指针和笔划事件也在此处声明。
 
     有关如何实现笔划选择的完整示例，请参阅[笔和触笔交互](pen-and-stylus-interactions.md)中的传递输入以进行高级处理。
 ```csharp
@@ -365,7 +365,7 @@ public MainPage()
     }
 ```
 
-3.  最后，在添加了笔划选择支持后，我们将在 " **剪切**"、" **复制**" 和 " **粘贴** " 按钮的 click 事件处理程序中实现剪贴板功能。
+3.  最后，在添加了笔划选择支持后，我们将在 " **剪切** "、" **复制** " 和 " **粘贴** " 按钮的 click 事件处理程序中实现剪贴板功能。
 
     对于剪切，我们首先在 [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) 的 [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 上调用 [**CopySelectedToClipboard**](/uwp/api/Windows.UI.Input.Inking.InkPresenter)。
 

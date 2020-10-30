@@ -1,5 +1,5 @@
 ---
-Description: 使用 Cortana 语音命令、语音识别和语音合成，将语音整合到你的应用中。
+description: 使用 Cortana 语音命令、语音识别和语音合成，将语音整合到你的应用中。
 title: 语音交互
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
@@ -8,23 +8,23 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 94a93f9b1506d2b4dfcdad260bf86bf39c15d875
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d42802f4efb131f413b192f4e5f851f630ce4e57
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173341"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029860"
 ---
 # <a name="speech-interactions"></a>语音交互
 
 将语音识别和文本到语音转换（又称 TTS 或语音合成）直接集成到你的应用的用户体验中。
 
-**语音识别**对于文本听写，将用户说出的话语转换为用于表单输入的文本，从而指定操作或命令并完成任务。 既支持用于自由文本听写和 Web 搜索的预定义语法，也支持使用语音识别语法规范 (SRGS) 版本 1.0 创作的自定义语法。
+**语音识别** 对于文本听写，将用户说出的话语转换为用于表单输入的文本，从而指定操作或命令并完成任务。 既支持用于自由文本听写和 Web 搜索的预定义语法，也支持使用语音识别语法规范 (SRGS) 版本 1.0 创作的自定义语法。
 
 **TTS** TTS 使用语音合成引擎（语音）将文本字符串转换为语音字词。 输入字符串既可以是基本的未经处理的文本，也可以是更复杂的语音合成标记语言 (SSML)。 SSML 提供用于控制语音输出特征（例如发音、音量、音调、音速和重读）的标准方式。
 
 **其他语音相关组件：** 
-Windows 应用程序中的**Cortana**使用自定义的语音命令 (口述或类型化的) 在应用程序获得焦点时，将应用程序发布到前台 (，就像它是从 "开始" 菜单启动) 还是作为后台服务激活一样 (**Cortana**会保留焦点，但会提供应用) 的结果。 如果要使用 **Cortana** UI 公开应用功能，请参阅 [Cortana 语音命令 (VCD) 指南](/cortana/voice-commands/vcd)。
+Windows 应用程序中的 **Cortana** 使用自定义的语音命令 (口述或类型化的) 在应用程序获得焦点时，将应用程序发布到前台 (，就像它是从 "开始" 菜单启动) 还是作为后台服务激活一样 ( **Cortana** 会保留焦点，但会提供应用) 的结果。 如果要使用 **Cortana** UI 公开应用功能，请参阅 [Cortana 语音命令 (VCD) 指南](/cortana/voice-commands/vcd)。
 
 ## <a name="speech-interaction-design"></a>语音交互设计
 
@@ -80,14 +80,14 @@ Windows 应用程序中的**Cortana**使用自定义的语音命令 (口述或�
 
 -   预定义语法（听写或 Web 搜索）
 
-    -   **侦听**屏幕。
-    -   **思考**屏幕。
-    -   **听到你说**屏幕或错误屏幕。
+    -   **侦听** 屏幕。
+    -   **思考** 屏幕。
+    -   **听到你说** 屏幕或错误屏幕。
 -   字词或短语列表，或者 SRGS 语法文件
 
-    -   **侦听**屏幕。
-    -   **你说的是**屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
-    -   **听到你说**屏幕或错误屏幕。
+    -   **侦听** 屏幕。
+    -   **你说的是** 屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
+    -   **听到你说** 屏幕或错误屏幕。
 
 在 **侦听** 屏幕上，你可以：
 
@@ -179,7 +179,7 @@ Windows 应用程序中的**Cortana**使用自定义的语音命令 (口述或�
 
 对于包含字词和短语的较大列表，或包含常用字词和短语的列表，可以创建单独的发音词典文档。 有关详细信息，请参阅[关于词典和音标字母](/previous-versions/office/developer/speech-technologies/hh361646(v=office.14))。
 
-## <a name="testing"></a>测试
+## <a name="testing"></a>正在测试
 
 通过应用目标受众测试语音识别准确度以及任何支持的 UI。 这是确定应用的语音交互体验有效性的最佳方式。 例如，用户是否因你的应用无法聆听常见短语而获得了较差的识别结果？
 
@@ -204,13 +204,13 @@ TTS 从纯文本或 SSML 生成语音输出。
 
 ## <a name="other-articles-in-this-section"></a>本部分中的其他文章 
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | --- | --- |
 | [语音识别](speech-recognition.md) | 使用语音识别提供输入内容、指定操作或命令并完成任务。 |
 | [指定语音识别器语言](specify-the-speech-recognizer-language.md) | 了解如何选择要用于语音识别的安装语言。 |
 | [定义自定义识别约束](define-custom-recognition-constraints.md) | 了解如何为语音识别定义和使用自定义约束。 |
 | [启用连续听写](enable-continuous-dictation.md) |了解如何捕获和识别较长的连续听写语音输入。 |
-| [管理音频输入问题](manage-issues-with-audio-input.md) | 了解如何管理由音频输入质量所导致的语音识别准确度问题。 |
+| [管理音频输入的问题](manage-issues-with-audio-input.md) | 了解如何管理由音频输入质量所导致的语音识别准确度问题。 |
 | [设置语音识别超时](set-speech-recognition-timeouts.md) | 设置语音识别器忽略静音或无法识别的声音（干扰）并继续侦听语音输入的时长。 |
 
 ## <a name="related-articles"></a>相关文章
@@ -218,9 +218,9 @@ TTS 从纯文本或 SSML 生成语音输出。
 * [语音交互]()
 * [Cortana 交互](./cortana-interactions.md)
 
- **示例**
+ **示例**
 
 * [语音识别和语音合成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
+ 
 
- 
+ 

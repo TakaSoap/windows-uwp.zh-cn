@@ -1,17 +1,17 @@
 ---
-Description: 适用于 Microsoft 参加测验应用的 JavaScript API 使你可以进行安全的评估。 参加测验提供了安全的浏览器，可防止学生在测试时使用其他计算机或 Internet 资源。
+description: 适用于 Microsoft 参加测验应用的 JavaScript API 使你可以进行安全的评估。 参加测验提供了安全的浏览器，可防止学生在测试时使用其他计算机或 Internet 资源。
 title: 参加测验 JavaScript API。
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 教育版
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eeb190fc95e46a95813affd432948d38c0328a4
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 29a5d2749531e12ef7ce9b44cd6598c38cd089db
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218390"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031520"
 ---
 # <a name="take-a-test-javascript-api"></a>参加测验 JavaScript API
 
@@ -30,7 +30,7 @@ ms.locfileid: "91218390"
 
 利用安全命名空间，可以锁定设备，检查用户和系统进程的列表，获取 MAC 和 IP 地址，并清除缓存的 web 资源。
 
-| 方法 | 描述   |
+| 方法 | 说明   |
 |--------|---------------|
 |[锁定](#lockDown) | 锁定用于测试的设备。 |
 |[isEnvironmentSecure](#isEnvironmentSecure) | 确定锁定上下文是否仍然应用于设备。 |
@@ -57,12 +57,12 @@ ms.locfileid: "91218390"
 **语法**  
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
-**参数**  
-* `enable` - **如果为 true** ，则在锁屏界面上运行 Take a Test 应用，并应用本 [文档](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中讨论的策略。 若为 **false**，将停止在锁屏界面上运行“参加测验”并关闭它，除非该应用不处于锁定状态；在此情况下没有影响。  
+**Parameters**  
+* `enable` - **如果为 true** ，则在锁屏界面上运行 Take a Test 应用，并应用本 [文档](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中讨论的策略。 若为 **false** ，将停止在锁屏界面上运行“参加测验”并关闭它，除非该应用不处于锁定状态；在此情况下没有影响。  
 * `onSuccess` -[可选] 已成功启用或禁用锁定后要调用的函数。 其形式必须是 `Function(Boolean currentlockdownstate)`。  
 * `onError` -[可选] 锁定操作失败时要调用的函数。 其形式必须是 `Function(Boolean currentlockdownstate)`。  
 
-**要求**  
+**惠?**  
 Windows 10 版本 1709
 
 ---
@@ -75,7 +75,7 @@ Windows 10 版本 1709
 **语法**  
 `void SecureBrowser.security.isEnvironmentSecure(Function callback);`
 
-**参数**  
+**Parameters**  
 * `callback` -此函数完成时要调用的函数。 其形式必须是 `Function(String state)`，其中 `state` 是包含两个字段的 JSON 字符串。 第一个是 `secure` 字段，只有在启用了所有必要的锁定(或禁用了功能)以启用安全测试环境时，才会显示 `true`，而且因为应用进入锁定模式，所以这些都没有受到威胁。 另一个字段 `messageKey`，包括其他详细信息或特定于供应商的信息。 此处的目的是，使供应商可添加其他能够增强布尔 `secure` 标志的信息：
 
 ```JSON
@@ -85,7 +85,7 @@ Windows 10 版本 1709
 }
 ```
 
-**要求**  
+**惠?**  
 Windows 10 版本 1709
 
 ---
@@ -98,7 +98,7 @@ Windows 10 版本 1709
 **语法**  
 `void SecureBrowser.security.getDeviceInfo(Function callback);`
 
-**参数**  
+**Parameters**  
 * `callback` -此函数完成时要调用的函数。 其形式必须是 `Function(String infoObj)`，其中 `infoObj` 是包含几个字段的 JSON 字符串。 必须支持以下字段：
     * `os` 表示 OS 类型 (例如： Windows、macOS、Linux、iOS、Android 等 ) 
     * `name` 表示 OS 发布名称（如果有） (例如：塞拉利昂、Ubuntu) 。
@@ -106,7 +106,7 @@ Windows 10 版本 1709
     * `brand` 表示安全浏览器品牌 (例如： OAKS、CA、SmarterApp 等） ) 
     * `model` 仅表示移动设备的设备型号;对于桌面浏览器为空/未使用。
 
-**要求**  
+**惠?**  
 Windows 10 版本 1709
 
 ---
@@ -119,13 +119,13 @@ Windows 10 版本 1709
 **语法**  
 `void SecureBrowser.security.examineProcessList(String[] blacklistedProcessList, Function callback);`
 
-**参数**  
+**Parameters**  
 * `blacklistedProcessList` -测试应用程序已列入黑名单的进程的列表。  
 `callback` -发现活动进程后要调用的函数。 其形式必须为：`Function(String foundBlacklistedProcesses)`，其中 `foundBlacklistedProcesses` 的形式为：`"['process1.exe','process2.exe','processEtc.exe']"`。 如果未找到已列入禁止列表的进程，它将为空。 如果为 null，则指示原始函数调用时发生错误。
 
 **备注** 该列表不包括系统进程。
 
-**要求**  
+**惠?**  
 Windows 10 版本 1709
 
 ---
@@ -138,12 +138,12 @@ Windows 10 版本 1709
 **语法**  
 `void SecureBrowser.security.close(restart);`
 
-**参数**  
+**Parameters**  
 * `restart` -忽略此参数，但必须提供此参数。
 
 **备注** 在 Windows 10 版本 1607 中，必须最初便锁定设备。 在更高版本中，此方法会关闭浏览器，无论设备是否锁定。
 
-**要求**  
+**惠?**  
 Windows 10 版本 1709
 
 ---
@@ -156,10 +156,10 @@ Windows 10 版本 1709
 **语法**  
 `void SecureBrowser.security.getPermissiveMode(Function callback)`
 
-**参数**  
+**Parameters**  
 * `callback` -此调用完成时要调用的函数。 其形式必须为：`Function(Boolean permissiveMode)`，其中 `permissiveMode` 指示浏览器目前是否为许可模式。 如果为 undefined 或 null，则在 get 操作时出现了错误。
 
-**要求**  
+**惠?**  
 Windows 10 版本 1709
 
 ---
@@ -172,11 +172,11 @@ Windows 10 版本 1709
 **语法**  
 `void SecureBrowser.security.setPermissiveMode(Boolean enable, Function callback)`
 
-**参数**  
+**Parameters**  
 * `enable` -指示预期的许可模式状态的布尔值。  
 * `callback` -此调用完成时要调用的函数。 其形式必须为：`Function(Boolean permissiveMode)`，其中 `permissiveMode` 指示浏览器目前是否为许可模式。 如果为 undefined 或 null，则在 set 操作时出现了错误。
 
-**要求**  
+**惠?**  
 Windows 10 版本 1709
 
 ---
@@ -189,7 +189,7 @@ Windows 10 版本 1709
 **语法**  
 `void SecureBrowser.security.emptyClipBoard();`
 
-**要求**  
+**惠?**  
 Windows 10 版本 1709
 
 ---
@@ -202,13 +202,13 @@ Windows 10 版本 1709
 **语法**  
 `void SecureBrowser.security.getMACAddress(Function callback);`
 
-**参数**  
+**Parameters**  
 * `callback` -此调用完成时要调用的函数。 其形式必须为：`Function(String addressArray)`，其中 `addressArray` 的形式为：`"['00:11:22:33:44:55','etc']"`。
 
 **备注**  
 很难依靠源 IP 地址来区分测试服务器中的最终用户计算机，因为学校通常会使用防火墙/NAT/代理。 出于诊断目的，MAC 地址允许应用区分常见防火墙之后的最终客户端计算机处。
 
-**要求**  
+**惠?**  
 Windows 10 版本 1709
 
 ---
@@ -224,7 +224,7 @@ Windows 10 版本 1709
 **返回值**  
 指示测试应用启动时间的 DateTime 对象。
 
-**要求**  
+**惠?**  
 Windows 10 版本 1709
 
 ---
@@ -237,11 +237,11 @@ Windows 10 版本 1709
 **语法**  
 `Object SecureBrowser.security.getCapability(String feature)`
 
-**参数**  
+**Parameters**  
 `feature` -用于确定要查询的功能的字符串。 有效功能字符串有“screenMonitoring”、“printing”和“textSuggestions”（不区分大小写）。
 
 **返回值**  
-此函数返回 JavaScript 对象或形式为 `{<feature>:true|false}` 的文本。 如果查询的功能已启用，则为 **true**，如果功能未启用或功能字符串无效，则为 **false**。
+此函数返回 JavaScript 对象或形式为 `{<feature>:true|false}` 的文本。 如果查询的功能已启用，则为 **true** ，如果功能未启用或功能字符串无效，则为 **false** 。
 
 **要求** Windows 10 版本 1703
 
@@ -255,7 +255,7 @@ Windows 10 版本 1709
 **语法**  
 `void SecureBrowser.security.setCapability(String feature, String value, Function onSuccess, Function onError)`
 
-**参数**  
+**Parameters**  
 * `feature` -用于确定要设置的功能的字符串。 有效功能字符串有 `"screenMonitoring"`、`"printing"` 和 `"textSuggestions"`（不区分大小写）。  
 * `value` -该功能的预期设置。 它必须是 `"true"` 或 `"false"`。  
 * `onSuccess` -[可选] 设置操作成功完成后要调用的函数。 其形式必须为：`Function(String jsonValue)`，其中 *jsonValue* 的形式为：`{<feature>:true|false|undefined}`。  
@@ -277,9 +277,9 @@ Windows 10 版本 1709
 `Boolean SecureBrowser.security.isRemoteSession();`
 
 **返回值**  
-如果当前会话为远程，则为 **true**，否则为 **false**。
+如果当前会话为远程，则为 **true** ，否则为 **false** 。
 
-**要求**  
+**惠?**  
 Windows 10 版本 1709
 
 ---
@@ -293,12 +293,12 @@ Windows 10 版本 1709
 `Boolean SecureBrowser.security.isVMSession();`
 
 **返回值**  
-如果当前会话在虚拟机中运行，则为 **true**，否则为 **false**。
+如果当前会话在虚拟机中运行，则为 **true** ，否则为 **false** 。
 
 **备注**  
 此 API 检查只可以检测在实现适当 API 的特定虚拟机监控程序中运行的 VM 会话
 
-**要求**  
+**惠?**  
 Windows 10 版本 1709
 
 ---

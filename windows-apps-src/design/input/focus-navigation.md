@@ -1,6 +1,6 @@
 ---
 title: 没有鼠标的焦点导航
-Description: 了解如何使用焦点导航在 Windows 应用程序中提供全面且一致的交互体验，并为键盘超级用户提供自定义控件、残障人士和其他可访问性要求以及10英尺的电视屏幕和 Xbox 体验。
+description: 了解如何使用焦点导航在 Windows 应用程序中提供全面且一致的交互体验，并为键盘超级用户提供自定义控件、残障人士和其他可访问性要求以及10英尺的电视屏幕和 Xbox 体验。
 label: ''
 template: detail.hbs
 keywords: 键盘, 游戏控制器, 遥控器, 导航, 定向内部导航, 定向区域, 导航策略, 输入, 用户交互, 辅助功能, 可用性
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6119a6b7d7621857e3317589a3b4a64ba3d5d2ea
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 3d7b77f627cd09c988c90b44167be7b5e452fe67
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217220"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032210"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>适用于键盘、手柄、遥控器和辅助功能工具的焦点导航
 
@@ -52,7 +52,7 @@ ms.locfileid: "91217220"
   - 如果是，这些组是否包含子组？
 - 布局是需要自定义定向导航（箭头键）还是 Tab 键顺序？
 
-[针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)电子书包含有关*设计逻辑层次结构*的出色章节。
+[针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)电子书包含有关 *设计逻辑层次结构* 的出色章节。
 
 ## <a name="2d-directional-navigation-for-keyboard"></a>适用于键盘的 2D 定向导航
 
@@ -64,20 +64,20 @@ ms.locfileid: "91217220"
 你可以使用 [XYFocusKeyboardNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation) 属性（值可能为[自动](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)、[启用](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)或[禁用](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)）通过键盘箭头键来管理 2D 内部导航。
 
 > [!NOTE]
-> 此属性不影响 Tab 键顺序。 为了避免令人混淆的导航体验，我们建议*不要*在应用程序的 Tab 键导航顺序中显式指定定向区域的子元素。 有关元素的 Tab 键导航行为的更多详细信息，请参阅 [UIElement.TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 和 [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 属性。
+> 此属性不影响 Tab 键顺序。 为了避免令人混淆的导航体验，我们建议 *不要* 在应用程序的 Tab 键导航顺序中显式指定定向区域的子元素。 有关元素的 Tab 键导航行为的更多详细信息，请参阅 [UIElement.TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 和 [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 属性。
 
 ### <a name="auto-default-behavior"></a>[自动](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)（默认行为）
 
-设置为“自动”时，定向导航行为由元素的体系或继承层次结构确定。 如果所有上级都处于默认模式（设置为**自动**），则*不*支持使用键盘进行定向导航。
+设置为“自动”时，定向导航行为由元素的体系或继承层次结构确定。 如果所有上级都处于默认模式（设置为 **自动** ），则 *不* 支持使用键盘进行定向导航。
 
 ### <a name="disabled"></a>[已禁用](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
 
-将 **XYFocusKeyboardNavigation** 设置为**禁用**可阻止定向导航到该控件及其子元素。
+将 **XYFocusKeyboardNavigation** 设置为 **禁用** 可阻止定向导航到该控件及其子元素。
 
 ![XYFocusKeyboardNavigation 禁用的行为 ](images/keyboard/xyfocuskeyboardnav-disabled.gif)
  *XYFocusKeyboardNavigation 禁用的行为*
 
-在此示例中，主 [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) 的 **XYFocusKeyboardNavigation** 设置为**启用**。 所有子元素都继承此设置，并可使用箭头键导航到这些子元素。 但 B3 和 B4 元素位于辅助 [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) 中，其 **XYFocusKeyboardNavigation** 设置为**禁用**，这将覆盖主容器并禁用以它为目标以及在其子元素之间进行箭头键导航。
+在此示例中，主 [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) 的 **XYFocusKeyboardNavigation** 设置为 **启用** 。 所有子元素都继承此设置，并可使用箭头键导航到这些子元素。 但 B3 和 B4 元素位于辅助 [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) 中，其 **XYFocusKeyboardNavigation** 设置为 **禁用** ，这将覆盖主容器并禁用以它为目标以及在其子元素之间进行箭头键导航。
 
 ```XAML
 <Grid 
@@ -127,14 +127,14 @@ ms.locfileid: "91217220"
 
 ### <a name="enabled"></a>[Enabled](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
 
-将 **XYFocusKeyboardNavigation** 设置为**启用**将支持以某个控件及其每个 [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) 子对象为目标的 2D 定向导航。
+将 **XYFocusKeyboardNavigation** 设置为 **启用** 将支持以某个控件及其每个 [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) 子对象为目标的 2D 定向导航。
 
 设置后，使用箭头键进行的导航将仅限于定向区域内的元素。 Tab 键导航不受影响，因为所有控件仍然可以通过其 Tab 键顺序层次结构进行访问。
 
 ![启用 XYFocusKeyboardNavigation 的行为 ](images/keyboard/xyfocuskeyboardnav-enabled.gif)
  *XYFocusKeyboardNavigation 启用的行为*
 
-在此示例中，主 [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) 的 **XYFocusKeyboardNavigation** 设置为**启用**。 所有子元素都继承此设置，并可使用箭头键导航到这些子元素。 B3 和 B4 元素位于辅助 [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) 中，其中 **XYFocusKeyboardNavigation** 未设置，该属性随后将继承主容器设置。 B5 元素不在声明的定向区域内，并且不支持箭头键导航，但支持标准 Tab 键导航行为。
+在此示例中，主 [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) 的 **XYFocusKeyboardNavigation** 设置为 **启用** 。 所有子元素都继承此设置，并可使用箭头键导航到这些子元素。 B3 和 B4 元素位于辅助 [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) 中，其中 **XYFocusKeyboardNavigation** 未设置，该属性随后将继承主容器设置。 B5 元素不在声明的定向区域内，并且不支持箭头键导航，但支持标准 Tab 键导航行为。
 
 ```xaml
 <Grid
@@ -211,7 +211,7 @@ ms.locfileid: "91217220"
 
 尽管箭头键可用于 witin 控件或控件组的2D 方向导航，但 Tab 键可用于在 Windows 应用程序中的所有控件之间导航。 
 
-所有交互控件默认情况下都支持 Tab 键导航（[IsEnabled](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) 和 [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) 属性为 **true**），其逻辑 Tab 键顺序派生自应用程序中的控件布局。 但是，默认顺序并非一定与视觉顺序对应。 实际的显示位置可能取决于父布局容器以及可以在子元素上进行设置以影响布局的某些属性。
+所有交互控件默认情况下都支持 Tab 键导航（ [IsEnabled](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) 和 [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) 属性为 **true** ），其逻辑 Tab 键顺序派生自应用程序中的控件布局。 但是，默认顺序并非一定与视觉顺序对应。 实际的显示位置可能取决于父布局容器以及可以在子元素上进行设置以影响布局的某些属性。
 
 避免使用会让焦点在应用程序中跳来跳去的自定义 Tab 键顺序。 例如，表单中的控件列表的 Tab 键顺序应当是从顶部到底部，从左边到右边（取决于区域设置）。
 
@@ -224,7 +224,7 @@ ms.locfileid: "91217220"
 > [!NOTE]
 > 对于不使用 [ControlTemplate](/uwp/api/windows.ui.xaml.controls.controltemplate) 定义其外观的对象，请使用此属性而非 [Control.TabNavigation](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation) 属性。
 
-正如我们在上一部分中所述的那样，为了避免令人混淆的导航体验，我们建议*不要*在应用程序的 Tab 键导航顺序中显式指定定向区域的子元素。 有关元素的 Tab 键导航行为的更多详细信息，请参阅 [UIElement.TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 和 [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 属性。   
+正如我们在上一部分中所述的那样，为了避免令人混淆的导航体验，我们建议 *不要* 在应用程序的 Tab 键导航顺序中显式指定定向区域的子元素。 有关元素的 Tab 键导航行为的更多详细信息，请参阅 [UIElement.TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 和 [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 属性。   
 > 对于 Windows 10 创意者更新（内部版本 10.0.15063）以前的版本，Tab 键设置仅限于 [ControlTemplate](/uwp/api/windows.ui.xaml.controls.controltemplate) 对象。 有关详细信息，请参阅 [Control.TabNavigation](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation)。
 
 [TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 具有一个类型为 [KeyboardNavigationMode](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode) 的值，可能的值如下（请注意，这些示例不是自定义控件组，不需要使用箭头键进行内部导航）：
@@ -326,7 +326,7 @@ ms.locfileid: "91217220"
 
 控件的所有子元素均被视为一个范围，如果其中一个元素也具有子元素，则会将其视为另一个范围。 通过选择范围的可视化树上的第一个元素，解决了所有混乱情况。 
 
-若要按照 Tab 键顺序执行某个控件，请将 [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) 属性设置为 **false**。
+若要按照 Tab 键顺序执行某个控件，请将 [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) 属性设置为 **false** 。
 
 通过设置 [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 属性覆盖默认的 Tab 键顺序。
 
@@ -440,14 +440,14 @@ ms.locfileid: "91217220"
 
 这些属性的可能值包括[自动](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy)（默认值）、[NavigationDirectionDistance](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy)、[Projection](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy) 或 [RectilinearDistance ](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy)。
 
-如果设为**自动**，则元素的行为基于元素的上级。 如果所有元素均设为**自动**，则将使用**投影**。
+如果设为 **自动** ，则元素的行为基于元素的上级。 如果所有元素均设为 **自动** ，则将使用 **投影** 。
 
 > [!NOTE]
 > 诸如先前聚焦的元素或靠近导航方向轴之类的其他因素可能会影响结果。
 
 ### <a name="projection"></a>投影
 
-“投影”策略会将焦点移至在导航方向上*投影*当前聚焦元素的边缘时所遇到的第一个元素。
+“投影”策略会将焦点移至在导航方向上 *投影* 当前聚焦元素的边缘时所遇到的第一个元素。
 
 在此示例中，每个焦点导航方向均设置为“投影”。 请注意焦点如何绕过 B3 从 B1 向下移动到 B4。 这是因为 B3 不在投影区域内。 另请注意，在从 B1 向左移动时，某个候选焦点未被识别。 这是因为 B2 相对于 B1 的位置排除了作为候选项的 B3。 如果 B3 与 B2 位于同一行，则它将会是向左导航时的可行候选项。 B2 是一个可行候选项，因为它靠近导航方向轴，并且不受任何阻挡。
 
@@ -459,7 +459,7 @@ ms.locfileid: "91217220"
 
 NavigationDirectionDistance 策略会将焦点移至最靠近导航方向轴的元素。
 
-*扩展*并*投影*与导航方向相对应的边界矩形的边缘，以标识候选目标。 遇到的第一个元素被标识为目标。 在有多个候选项的情况下，最近的元素被标识为目标。 如果仍有多个候选项，则最顶层/最左端的元素被标识为候选项。
+*扩展* 并 *投影* 与导航方向相对应的边界矩形的边缘，以标识候选目标。 遇到的第一个元素被标识为目标。 在有多个候选项的情况下，最近的元素被标识为目标。 如果仍有多个候选项，则最顶层/最左端的元素被标识为候选项。
 
 ![NavigationDirectionDistance 导航策略](images/keyboard/xyfocusnavigationstrategy-navigationdirectiondistance.gif)
 

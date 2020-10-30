@@ -1,17 +1,17 @@
 ---
-Description: 在生成时，资源管理系统会创建与你的应用打包在一起的资源的所有不同变体的索引。 在运行时，系统会检测有效的用户和计算机设置，并加载最匹配这些设置的资源。
+description: 在生成时，资源管理系统会创建与你的应用打包在一起的资源的所有不同变体的索引。 在运行时，系统会检测有效的用户和计算机设置，并加载最匹配这些设置的资源。
 title: 资源管理系统
 template: detail.hbs
 ms.date: 10/20/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: afe538292fe804dcf042c969005978c3161ec6b6
-ms.sourcegitcommit: 963316e065cf36c17b6360c3f89fba93a1a94827
+ms.openlocfilehash: 083f49dd8a269bd3a0277084cadc175271d5e501
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82868876"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031620"
 ---
 # <a name="resource-management-system"></a>资源管理系统
 资源管理系统具有生成时间和运行时两种功能。 在生成时间，系统创建与你的应用打包在一起的资源的所有不同变体的索引。 此索引为包资源索引 (PRI)，它也包括在你的应用包中。 在运行时，系统检测有效的用户和计算机设置，查询 PRI 中的信息，并自动加载最匹配这些设置的资源。
@@ -37,7 +37,7 @@ ms.locfileid: "82868876"
 
 [**NamedResource**](/uwp/api/windows.applicationmodel.resources.core.namedresource?branch=live) 对象表示具有多种语言或其他限定符变体的单个逻辑资源。 它使用字符串资源标识符（如 `Header1`）或资源文件名（如 `logo.jpg`）描述资产或资源的逻辑视图。
 
-[**ResourceCandidate**](/uwp/api/windows.applicationmodel.resources.core.resourcecandidate?branch=live) 对象表示单个具体的资源值及其限定符，如适用于英语的字符串“Hello World”，或特定于**比例-100** 分辨率的作为限定符图像资源的“logo.scale-100.jpg”。
+[**ResourceCandidate**](/uwp/api/windows.applicationmodel.resources.core.resourcecandidate?branch=live) 对象表示单个具体的资源值及其限定符，如适用于英语的字符串“Hello World”，或特定于 **比例-100** 分辨率的作为限定符图像资源的“logo.scale-100.jpg”。
 
 对应用提供的资源存储在分层集合中，你可以使用 [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) 对象进行访问。 **ResourceManager** 类提供应用使用的各种顶级 **ResourceMap** 实例（对应于应用的各种包）的访问权限。 [**MainResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager.MainResourceMap) 值对应于当前应用包的资源映射，且不包括任何引用的框架包。 每个 **ResourceMap** 都针对在包清单中指定的包名称进行命名。 **ResourceMap** 中为子树（请参阅 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)），其中进一步包含 **NamedResource** 对象。 子树通常对应于包含资源的资源文件。 有关详细信息，请参阅[本地化 UI 和应用包清单中的字符串](localize-strings-ui-manifest.md)和[加载为比例、主题、高对比度和其他定制的图像和资产](images-tailored-for-scale-theme-contrast.md)。
 
@@ -50,9 +50,9 @@ ResourceContext resourceContext = ResourceContext.GetForCurrentView()
 var str = resourceMap.GetValue("String1", resourceContext).ValueAsString;
 ```
 
-**注意**资源标识符被视为统一资源标识符 (URI) 片段，遵循 URI 语义。 例如，`GetValue("Caption%20")` 被视为 `GetValue("Caption ")`。 在资源标识符中不要使用“？”或“#”，因为它们会终止资源路径评估。 例如，“MyResource?3”被视为“MyResource”。
+**注意** 资源标识符被视为统一资源标识符 (URI) 片段，遵循 URI 语义。 例如，`GetValue("Caption%20")` 被视为 `GetValue("Caption ")`。 在资源标识符中不要使用“？”或“#”，因为它们会终止资源路径评估。 例如，“MyResource?3”被视为“MyResource”。
 
-**ResourceManager** 不仅支持访问某个应用的字符串资源，它还维护枚举和检查各种文件资源的能力。 为了避免文件和源自该文件内部的其他资源之间发生冲突，索引的文件路径全部驻留在预留的“文件”**ResourceMap** 子树中。 例如，文件 `\Images\logo.png` 对应于资源名称 `Files/images/logo.png`。
+**ResourceManager** 不仅支持访问某个应用的字符串资源，它还维护枚举和检查各种文件资源的能力。 为了避免文件和源自该文件内部的其他资源之间发生冲突，索引的文件路径全部驻留在预留的“文件” **ResourceMap** 子树中。 例如，文件 `\Images\logo.png` 对应于资源名称 `Files/images/logo.png`。
 
 [**StorageFile**](/uwp/api/Windows.Storage.StorageFile?branch=live) API 透明地处理作为资源的文件引用，适合典型的使用方案。 **ResourceManager** 应仅用于高级方案，例如当你想要覆盖当前上下文时。
 

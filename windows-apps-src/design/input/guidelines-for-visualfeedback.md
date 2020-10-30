@@ -1,5 +1,5 @@
 ---
-Description: 当用户与 Windows 应用交互时，可以使用可视反馈来显示用户。
+description: 当用户与 Windows 应用交互时，可以使用可视反馈来显示用户。
 title: 视觉反馈
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
@@ -8,18 +8,18 @@ keywords: 视觉反馈, 焦点反馈, 触摸反馈, 接触可视化, 输入, 交
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1afc1c884a7a01ef1021f37476d1e29430c62e3c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b82ff29de09766aa348a548c5bd484b7c46db31f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219830"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030510"
 ---
 # <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
 当检测、解释和处理用户的交互时，可使用视觉反馈显示给用户。 视觉反馈可通过鼓励交互来帮助用户。 它将指示交互是否成功，以加强用户的控制感觉。 它还可以传送系统状态并减少错误。
 
-> **重要 API**：[**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input)、[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Windows.UI.Core**](/uwp/api/Windows.UI.Core)
+> **重要 API** ： [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input)、 [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、 [**Windows.UI.Core**](/uwp/api/Windows.UI.Core)
 
 ## <a name="recommendations"></a>建议
 
@@ -58,7 +58,7 @@ ms.locfileid: "91219830"
 
 所有 Windows 应用都在应用程序内的可互动控件的周围明显定义了许多焦点视觉。 这些新的焦点视觉完全可以根据需要进行自定义以及禁用。
 
-对于 Xbox 和电视通常使用的 **10 英尺体验**，Windows 支持**显示焦点** - 一种灯光效果，当可聚焦元素（例如按钮）通过游戏板或键盘输入获得焦点时，其边框将显示动画效果。
+对于 Xbox 和电视通常使用的 **10 英尺体验** ，Windows 支持 **显示焦点** - 一种灯光效果，当可聚焦元素（例如按钮）通过游戏板或键盘输入获得焦点时，其边框将显示动画效果。
 
 ## <a name="color-branding--customizing"></a>颜色外观方案和自定义
 
@@ -67,7 +67,7 @@ ms.locfileid: "91219830"
 高可见性焦点视觉分为两部分：主边框和辅助边框。 主边框为 2px 粗，在辅助边框的“外部”周围运行   。 辅助边框为 1px 粗，在主边框的“内部”周围运行   。
 ![高可见性焦点视觉去除](images/FocusRectRedlines.png)
 
-若要更改任一边框类型（主或辅助）的粗细，请分别使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**。
+若要更改任一边框类型（主或辅助）的粗细，请分别使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness** 。
 ```XAML
 <Slider Width="200" FocusVisualPrimaryThickness="5" FocusVisualSecondaryThickness="2"/>
 ```
@@ -75,7 +75,7 @@ ms.locfileid: "91219830"
 
 边距是类型 [**Thickness**](/dotnet/api/system.windows.thickness) 的属性，因此可以自定义边距以仅显示在控件的特定侧。 请参阅下面的内容： ![ 高可见性焦点视觉对象边距粗细](images/FocusThicknessSide.png)
 
-边距是控件的可视边界与焦点视觉对象 *辅助边框*开头之间的空间。 默认边距 **1px** 远离控件边界。 可以通过更改 **FocusVisualMargin** 属性，按控件编辑此边距：
+边距是控件的可视边界与焦点视觉对象 *辅助边框* 开头之间的空间。 默认边距 **1px** 远离控件边界。 可以通过更改 **FocusVisualMargin** 属性，按控件编辑此边距：
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```
@@ -83,7 +83,7 @@ ms.locfileid: "91219830"
 
 *负边距会将边框推离控件的中心，而正边距会将边框移向控件的中心。*
 
-若要完全关闭基于控件的焦点视觉，只需禁用 **UseSystemFocusVisuals**：
+若要完全关闭基于控件的焦点视觉，只需禁用 **UseSystemFocusVisuals** ：
 ```XAML
 <Slider Width="200" UseSystemFocusVisuals="False"/>
 ```
@@ -133,6 +133,6 @@ ms.locfileid: "91219830"
 - [输入：Windows 8 手势示例](/samples/browse/?redirectedfrom=MSDN-samples)
 - [输入：操作和笔势示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX 触控输入示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
- 
+ 
 
- 
+ 

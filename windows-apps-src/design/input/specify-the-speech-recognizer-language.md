@@ -1,5 +1,5 @@
 ---
-Description: 了解如何选择要用于语音识别的安装语言。
+description: 了解如何选择要用于语音识别的安装语言。
 title: 指定语音识别器语言
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
@@ -8,19 +8,19 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a19e4ec876ca5dfa313c56e5653b3a27a4155765
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: fa8137b5bf05bb8099a803fedd7e056fc14d9d70
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219930"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031320"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>指定语音识别器语言
 
 
 了解如何选择要用于语音识别的安装语言。
 
-> **重要 API**：[**SupportedTopicLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)、[**SupportedGrammarLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)、[**Language**](/uwp/api/Windows.Globalization.Language)
+> **重要 API** ： [**SupportedTopicLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)、 [**SupportedGrammarLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)、 [**Language**](/uwp/api/Windows.Globalization.Language)
 
 
 此处，我们枚举了已安装在系统上的语言、标识了默认语言，并选择了不同的语言以供识别。
@@ -56,9 +56,9 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 已安装的语言在不同的设备之间可能会不同。 如果对于特定的约束你依赖于某种语言，你应验证是否存在该语言。
 
-**注意**   安装新语言包后需要重新启动。 \_ \_ 如果指定的语言不受支持或尚未完成安装，则会引发 (0x8004503a) 中找不到的错误代码为的异常。
+**注意** 在安装新的语言包后，必须重新启动。 \_ \_ 如果指定的语言不受支持或尚未完成安装，则会引发 (0x8004503a) 中找不到的错误代码为的异常。
 
- 
+ 
 
 通过检查 [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) 类的下列两种静态属性之一，来确定设备上受支持的语言：
 
@@ -86,7 +86,7 @@ var recognizer = new SpeechRecognizer(language);
 
 可对列表约束进行配置，方法是将 [**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint) 添加到 [**SpeechRecognizer**](/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) 的 [**Constraints**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) 集合，然后调用 [**CompileConstraintsAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync)。 你无法直接指定自定义列表的语言。 该列表将改为使用识别器的语言进行处理。
 
-SRGS 语法是由 [**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint) 类表示的开放式标准 XML 格式。 与自定义列表不同，你可以在 SRGS 标记中指定语法语言。 如果识别器未使用与 SRGS 标记相同的语言进行初始化，[**CompileConstraintsAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync) 将失败并返回 **TopicLanguageNotSupported** 的 [**SpeechRecognitionResultStatus**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus)。
+SRGS 语法是由 [**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint) 类表示的开放式标准 XML 格式。 与自定义列表不同，你可以在 SRGS 标记中指定语法语言。 如果识别器未使用与 SRGS 标记相同的语言进行初始化， [**CompileConstraintsAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync) 将失败并返回 **TopicLanguageNotSupported** 的 [**SpeechRecognitionResultStatus**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus)。
 
 ## <a name="related-articles"></a>相关文章
 
@@ -95,6 +95,6 @@ SRGS 语法是由 [**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.
 **示例**
 
 * [语音识别和语音合成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
+ 
 
- 
+ 

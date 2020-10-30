@@ -1,17 +1,17 @@
 ---
-Description: Microsoft Store 的客户遍及世界 200 多个国家和地区。
+description: Microsoft Store 的客户遍及世界 200 多个国家和地区。
 title: 定义市场选择
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 市场, 国家, 地区
 ms.localizationpriority: medium
-ms.openlocfilehash: 63650ad15f4a3083b4f500bc16591bb6bd8d8185
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 075a9303d694bfe6bcb4f602bb0bad1e6105dd99
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162021"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029761"
 ---
 # <a name="define-market-selection"></a>定义市场选择
 
@@ -27,9 +27,9 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 
 默认情况下，我们将在所有可能的市场以基本价格推出你的应用，包括任何我们稍后可能会添加的未来市场。
 
-如果需要，可定义要推出你的应用的特定市场。 为此，请选择**定价和可用性**页面中的**市场**部分的**显示选项**。 随即显示**市场选择**弹出窗口，可在此窗口中选择要推出应用的市场。
+如果需要，可定义要推出你的应用的特定市场。 为此，请选择 **定价和可用性** 页面中的 **市场** 部分的 **显示选项** 。 随即显示 **市场选择** 弹出窗口，可在此窗口中选择要推出应用的市场。
 
-默认已选中所有市场。 可以取消选择个别市场进行排除，或单击**取消全选**，然后添加你所选择的个别市场。 可在搜索栏中搜索特定市场，或者如果只希望查看可销售 Xbox 产品的市场，可将下拉列表从**所有市场**更改为 **Xbox 市场**。 完成后，单击**确定**，保存选择。
+默认已选中所有市场。 可以取消选择个别市场进行排除，或单击 **取消全选** ，然后添加你所选择的个别市场。 可在搜索栏中搜索特定市场，或者如果只希望查看可销售 Xbox 产品的市场，可将下拉列表从 **所有市场** 更改为 **Xbox 市场** 。 完成后，单击 **确定** ，保存选择。
 
 请注意，此处的选择仅适用于新获取的应用；如果客户已在某个市场中获取你的应用，而你之后删除了该市场，则已拥有该该市场中应用的用户可继续使用该应用，但不会获得你提交的更新，且该市场中的新客户无法获得该应用。
 
@@ -42,11 +42,11 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 > 对于以前发布的应用（包括面向 Windows 8 或 Windows 8.1 的包），一些单独的市场被视为单个 "世界" 市场。 有关详细信息，请参阅 [Windows 8.x 的“世界其他地区”市场](#rest-of-world-markets-for-windows-8x)。
 
 你还将看到一个复选框，指示是否向应用商店将来可能添加的任何市场推出你的应用。 如果选中此框，我们将来添加新市场时，你的提交的基本价格和公开发布日期将用于你在这些市场的应用。 如果不希望这样做，可取消选中该框，我们将不会在未来添加的市场中发布你的应用（但你可在将来随时添加这些市场）。
- 
+ 
 
 ## <a name="microsoft-store-consumer-markets"></a>Microsoft Store 使用者市场
 
-可以选择在以下一个或多个市场中列出的应用（或加载项）。 带有星号的市场支持 Xbox One 上的 Microsoft Store;你将在**市场选择**弹出窗口中的名称旁看到**Xbox** 。
+可以选择在以下一个或多个市场中列出的应用（或加载项）。 带有星号的市场支持 Xbox One 上的 Microsoft Store;你将在 **市场选择** 弹出窗口中的名称旁看到 **Xbox** 。
 
 
 <table>
@@ -472,7 +472,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 | 英国       | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | 美国        | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 
- 
+ 
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Windows 8.x 的“世界其他地区”市场
 
@@ -738,4 +738,4 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 </table>
 
 > [!NOTE]
-> 有关可注册开发人员帐户的国家和地区的列表，请参阅 [帐户类型、位置和费用](account-types-locations-and-fees.md)。
+> 有关可注册开发者帐户的国家和地区的列表，请参阅[帐户类型、地点和费用](account-types-locations-and-fees.md)。

@@ -1,5 +1,5 @@
 ---
-Description: 模拟和自动执行 Windows 应用中的设备（例如键盘、鼠标、触摸、笔和游戏板）的输入。
+description: 模拟和自动执行 Windows 应用中的设备（例如键盘、鼠标、触摸、笔和游戏板）的输入。
 title: 通过输入式注入模拟用户输入
 label: Input injection
 template: detail.hbs
@@ -7,18 +7,18 @@ keywords: 设备, 数字化器, 输入, 交互, 注入
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e4e1497ea30400c550cb0cbb2309801ff8145fd6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 0cd1a56ca46c3e9ea401794ff5b9964545ce0c5d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219680"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030120"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>通过输入式注入模拟用户输入
 
 通过 Windows 应用程序中的键盘、鼠标、触摸、笔和游戏板等设备模拟并自动执行用户输入。
 
-> **重要 API**：[**Windows.UI.Input.Preview.Injection**](/uwp/api/windows.ui.input.preview.injection)
+> **重要 API** ： [**Windows.UI.Input.Preview.Injection**](/uwp/api/windows.ui.input.preview.injection)
 
 ## <a name="overview"></a>概述
 
@@ -26,11 +26,11 @@ ms.locfileid: "91219680"
 
 输入注入适用于需要提供功能的 Windows 应用程序和工具，这些功能包括辅助功能、测试 (即席、自动) 以及远程访问和支持功能。
 
-## <a name="setup"></a>安装
+## <a name="setup"></a>设置
 
 若要在 Windows 应用中使用输入注入 Api，需要将以下内容添加到应用程序清单中：
 
-1. 右键单击 **Package.appxmanifest** 文件并选择**查看代码**。
+1. 右键单击 **Package.appxmanifest** 文件并选择 **查看代码** 。
 1. 将下列内容插入到 `Package` 代码中：
     - `xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"`
     - `IgnorableNamespaces="rescap"`
@@ -45,7 +45,7 @@ ms.locfileid: "91219680"
 
 在此示例中，我们演示了如何使用输入式注入 API ([Windows.UI.Input.Preview.Injection](/uwp/api/windows.ui.input.preview.injection)) 侦听应用一个区域的鼠标输入事件，并模拟其他区域中对应的触控输入事件。
 
-**从[输入注入示例 (鼠标](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)下载此示例) **
+**从 [输入注入示例 (鼠标](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)下载此示例)**
 
 1. 首先，我们设置 UI (MainPage.xaml)。
 

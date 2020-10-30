@@ -1,27 +1,27 @@
 ---
-Description: 某些类型的应用（多语言字典、翻译工具等）需要覆盖应用程序包的默认行为，并将资源构建到应用包中，而不是构建到单独的资源包中。 本主题介绍了如何执行该操作。
+description: 某些类型的应用（多语言字典、翻译工具等）需要覆盖应用程序包的默认行为，并将资源构建到应用包中，而不是构建到单独的资源包中。 本主题介绍了如何执行该操作。
 title: 在应用包中构建资源
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: b975dcf88ecd26dc5a24d602c117b779fa2aada6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ccc5a5eb9ef6dfd5c0e9eda1cac6b4bf4441cf7d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174521"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031890"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>将资源构建到应用包而非资源包中
 
 某些类型的应用（多语言字典、翻译工具等）需要覆盖应用程序包的默认行为，并将资源构建到应用包，而不是单独的资源程序包（或资源包）。 本主题介绍了如何执行该操作。
 
-默认情况下，构建[应用程序包 (.appxbundle)](/windows/msix/package/packaging-uwp-apps) 时，只会将语言、缩放和 DirectX 功能级别的默认资源构建到应用包。 翻译的资源以及为非默认缩放和/或 DirectX 功能级别定制的资源都构建到资源包中，仅供需要的设备下载。 如果客户使用语言首选项设置为西班牙语的设备从 Microsoft Store 购买应用，则只下载并安装应用和西班牙语资源包。 如果同一用户稍后在**设置**中将他们的语言首选项更改为法语，则将下载并安装应用的法语资源包。 符合缩放和 DirectX 功能级别的资源的情况也类似。 对于大多数应用，此行为会提高效率，而这正是你和客户*想要*实现的。
+默认情况下，构建[应用程序包 (.appxbundle)](/windows/msix/package/packaging-uwp-apps) 时，只会将语言、缩放和 DirectX 功能级别的默认资源构建到应用包。 翻译的资源以及为非默认缩放和/或 DirectX 功能级别定制的资源都构建到资源包中，仅供需要的设备下载。 如果客户使用语言首选项设置为西班牙语的设备从 Microsoft Store 购买应用，则只下载并安装应用和西班牙语资源包。 如果同一用户稍后在 **设置** 中将他们的语言首选项更改为法语，则将下载并安装应用的法语资源包。 符合缩放和 DirectX 功能级别的资源的情况也类似。 对于大多数应用，此行为会提高效率，而这正是你和客户 *想要* 实现的。
 
-但是如果应用支持用户在应用中即时（而不是通过**设置**）更改语言，则该默认行为并不适合使用。 你实际上希望无条件下载所有语言资源并随应用一次性安装，然后将它们保留在设备上。 你希望将所有这些资源构建到应用包而不是单独的资源包。
+但是如果应用支持用户在应用中即时（而不是通过 **设置** ）更改语言，则该默认行为并不适合使用。 你实际上希望无条件下载所有语言资源并随应用一次性安装，然后将它们保留在设备上。 你希望将所有这些资源构建到应用包而不是单独的资源包。
 
-**注意**：将资源包含在应用包中本质上增加了该应用的大小。 正因如此，只有应用的性质要求时才值得执行此操作。 如果没有要求，除了像往常一样构建常规的应用程序包之外，无需执行任何操作。
+**注意** ：将资源包含在应用包中本质上增加了该应用的大小。 正因如此，只有应用的性质要求时才值得执行此操作。 如果没有要求，除了像往常一样构建常规的应用程序包之外，无需执行任何操作。
 
 可以配置 Visual Studio 以通过以下两种方式之一将资源构建到应用包。 可以将配置文件添加到项目，也可以直接编辑项目文件。 使用这些选项中最熟悉或最适用于生成系统的选项。
 
@@ -37,7 +37,7 @@ ms.locfileid: "89174521"
       <autoResourcePackage qualifier="DXFeatureLevel" />
    </packaging>
    ```
-4. 每个 `<autoResourcePackage>` 元素会告知 Visual Studio 将给定限定符名称的资源自动拆分为单独的资源包。 这称为*自动拆分*。 就目前拥有的文件内容来说，实际上尚未更改 Visual Studio 的行为。 换言之，Visual Studio *已采取*文件存在这些内容时的行为，因为这些都是默认行为。 如果不希望 Visual Studio 对限定符名称进行自动拆分，请从文件中删除 `<autoResourcePackage>` 元素。 如果希望将所有语言资源都构建到应用包，而不是自动拆分为单独的资源包，文件的内容应如下所示。
+4. 每个 `<autoResourcePackage>` 元素会告知 Visual Studio 将给定限定符名称的资源自动拆分为单独的资源包。 这称为 *自动拆分* 。 就目前拥有的文件内容来说，实际上尚未更改 Visual Studio 的行为。 换言之，Visual Studio *已采取* 文件存在这些内容时的行为，因为这些都是默认行为。 如果不希望 Visual Studio 对限定符名称进行自动拆分，请从文件中删除 `<autoResourcePackage>` 元素。 如果希望将所有语言资源都构建到应用包，而不是自动拆分为单独的资源包，文件的内容应如下所示。
    ```xml
    <packaging>
       <autoResourcePackage qualifier="Scale" />
@@ -48,7 +48,7 @@ ms.locfileid: "89174521"
 
 若要确认是否将自动拆分选择考虑在内，请查找文件 `<ProjectFolder>\obj\<ReleaseConfiguration folder>\split.priconfig.xml` 并确认其内容与选择相匹配。 如果匹配，则代表已成功通过配置 Visual Studio 将选择的资源构建到应用包。
 
-还有一个需要执行的最终步骤。 **但仅在已删除 `Language` 限定符名称**时需要执行该步骤。 你需要将支持所有应用的语言作为应用的默认语言。 有关详细信息，请参阅[指定应用使用的默认资源](specify-default-resources-installed.md)。 如果要在应用包中包含英语、西班牙语和法语的资源，下面就是 `priconfig.default.xml` 应包含的内容。
+还有一个需要执行的最终步骤。 **但仅在已删除 `Language` 限定符名称** 时需要执行该步骤。 你需要将支持所有应用的语言作为应用的默认语言。 有关详细信息，请参阅[指定应用使用的默认资源](specify-default-resources-installed.md)。 如果要在应用包中包含英语、西班牙语和法语的资源，下面就是 `priconfig.default.xml` 应包含的内容。
 
 ```xml
    <default>
@@ -89,7 +89,7 @@ ms.locfileid: "89174521"
 
 保存并关闭，然后重新生成项目。
 
-还有一个需要执行的最终步骤。 **但仅在已删除 `Language` 限定符名称**时需要执行该步骤。 你需要将支持所有应用的语言作为应用的默认语言。 有关详细信息，请参阅[指定应用使用的默认资源](specify-default-resources-installed.md)。 如果要在应用包中包含英语、西班牙语和法语的资源，下面就是项目文件应包含的内容。
+还有一个需要执行的最终步骤。 **但仅在已删除 `Language` 限定符名称** 时需要执行该步骤。 你需要将支持所有应用的语言作为应用的默认语言。 有关详细信息，请参阅[指定应用使用的默认资源](specify-default-resources-installed.md)。 如果要在应用包中包含英语、西班牙语和法语的资源，下面就是项目文件应包含的内容。
 
 ```xml
 <AppxDefaultResourceQualifiers>Language=en;es;fr</AppxDefaultResourceQualifiers>

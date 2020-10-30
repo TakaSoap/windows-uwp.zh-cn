@@ -1,17 +1,17 @@
 ---
-Description: 查看此列表以帮助避免频繁地阻止应用通过认证的问题，或者在发布应用后，可能在点检查过程中标识的问题。
+description: 查看此列表以帮助避免频繁地阻止应用通过认证的问题，或者在发布应用后，可能在点检查过程中标识的问题。
 title: 避免常见的认证失败
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 07c814fc48e47b2bdc8980ac72732783d7ea9139
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 672da214582fb6b206d7e16e1e776be40caeec90
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158021"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031220"
 ---
 # <a name="avoid-common-certification-failures"></a>避免常见的认证失败
 
@@ -42,6 +42,6 @@ ms.locfileid: "89158021"
 -   如果你的应用使用来自 [**Windows.ApplicationModel.Store**](/uwp/api/Windows.ApplicationModel.Store) 命名空间的商用 API，请确保对应用进行测试并验证它是否可处理常见的异常情况。 此外，请确保你的应用使用 [**CurrentApp**](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 类（而非 [**CurrentAppSimulator**](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 类，该类仅用于测试）。 （请注意，如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空间的成员，而非使用 Windows.ApplicationModel.Store 命名空间。）
 
 
- 
+ 
 
- 
+ 

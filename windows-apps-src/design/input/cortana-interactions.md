@@ -1,5 +1,5 @@
 ---
-Description: 使用语音命令扩展 Cortana 的基本功能，其中激活 Windows 应用并执行单个操作。
+description: 使用语音命令扩展 Cortana 的基本功能，其中激活 Windows 应用并执行单个操作。
 title: Cortana 交互
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
@@ -8,12 +8,12 @@ keywords: Cortana, Cortana 画布, Cortana 设计, 用户界面, 语音命令, V
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d79f62a98e30ef67743abd6a6dd00ce24d3fa13
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 270c3e4838c6edc3ac0aedc7092a545028ceff86
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220590"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032190"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Windows 应用中的 Cortana 交互
 
@@ -37,6 +37,6 @@ ms.locfileid: "91220590"
 
 **示例**
 * [Cortana 语音命令示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CortanaVoiceCommand)
- 
+ 
 
- 
+ 

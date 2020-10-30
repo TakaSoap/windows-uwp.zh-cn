@@ -1,5 +1,5 @@
 ---
-Description: 开发自定义输入法编辑器 (IME) ，以帮助用户输入不能在标准键盘上轻松表示的语言的文本。
+description: 开发自定义输入法编辑器 (IME) ，以帮助用户输入不能在标准键盘上轻松表示的语言的文本。
 title: 输入法编辑器 (IME) 要求
 label: Input Method Editor (IME) requirements
 template: detail.hbs
@@ -7,12 +7,12 @@ keywords: ime、输入法编辑器、输入、交互
 ms.date: 07/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a34c15826bff757b7c4277b87cc5fed53a6f109
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 74c223aefa525bb6109521c8b91a9a849e2f5586
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160001"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030130"
 ---
 # <a name="custom-input-method-editor-ime-requirements"></a>自定义输入法编辑器 (IME) 要求
 
@@ -22,13 +22,15 @@ ms.locfileid: "89160001"
 
 ## <a name="default-ime"></a>默认 IME
 
-用户可以选择其任何活动 Ime (**设置-> 时间 & 语言 > 语言 > 首选语言-> 语言包选项**) 为其首选语言的默认 IME。
+用户可以选择其任何活动 Ime ( **设置-> 时间 & 语言 > 语言 > 首选语言-> 语言包选项** ) 为其首选语言的默认 IME。
 
-:::image type="content" source="images/IMEs/ime-preferred-languages.png" alt-text="首选语言设置":::
+:::image type="content" source="images/IMEs/ime-preferred-languages.png" alt-text="首选语言设置&quot;:::
 
-选择首选语言的 "语言选项" 设置屏幕上的默认键盘。
+选择首选语言的 &quot;语言选项" 设置屏幕上的默认键盘。
 
-:::image type="content" source="images/IMEs/ime-preferred-languages-keyboard.png" alt-text="首选语言键盘":::
+:::image type="content" source="images/IMEs/ime-preferred-languages-keyboard.png" alt-text="首选语言设置&quot;:::
+
+选择首选语言的 &quot;语言选项":::
 
 > [!Important]
 > 我们不建议直接写入注册表来设置自定义 IME 的默认键盘。
@@ -81,7 +83,7 @@ Windows 应用不支持表文本服务 (TTS) Ime。
 - **字典文件** -通常，ime 具有只读字典文件，用于将用户输入映射到特定字符。 若要从应用容器内部访问这些文件，IME 必须将它们放在程序文件或 Windows 目录下。 默认情况下，可以从应用容器读取这些目录，因此 Ime 可以访问存储在这些位置的字典文件。 如果 IME 必须将字典文件存储在其他位置，则必须显式操作 [访问控制列表 (ACL) ](/windows/win32/secauthz/access-control-lists) 字典文件，以允许从应用容器访问。
 - **Internet 更新** -如果你的 IME 需要使用来自 Internet 的数据更新其字典，则无法在应用程序容器中可靠地执行此操作，因为不会始终允许 Internet 访问。 相反，IME 应运行单独的桌面进程，该进程负责使用 Internet 上的数据更新字典文件。
 - **动态学习** -如果在具有 Internet 访问权限的应用容器中运行了 ime，则 ime 可以与之通信的终结点没有限制。 在这种情况下，IME 可以使用云服务器来提供实时学习服务。 某些 Ime 会在用户键入内容时，动态下载和上传用户输入。 由于不能在应用容器中保证 Internet 访问，因此不一定会允许这样做。
-- 在**进程之间共享信息**-ime 可能需要在不同应用容器中的应用之间共享有关用户输入首选项的数据。 使用 web 服务在应用之间共享数据。
+- 在 **进程之间共享信息** -ime 可能需要在不同应用容器中的应用之间共享有关用户输入首选项的数据。 使用 web 服务在应用之间共享数据。
 
 > [!Important]
 > 如果尝试绕过应用容器安全规则，则 IME 可能被视为恶意软件并被阻止。
@@ -118,8 +120,8 @@ IME 可以指定要使用的触摸键盘布局，并且启用了 IME 来处理�
 
 按下这些键时，触摸键盘将调用 [SendInput](/windows/win32/api/winuser/nf-winuser-sendinput) 函数，以将以下 Unicode 专用区域字符发送到突出输入的应用程序，IME 可以截获和操作：
 
-- **下一页 (0xF003) ** -在按下了用于日语和简体中文的触摸优化键盘上时，或在繁体中文的触摸优化键盘上按下页面键时发送。
-- **上一页 (0xF004) ** -在按下候选页键的同时按下了用于日语和简体中文的触摸优化键盘上的 Shift 键时，或在繁体中文上按下了触摸优化键盘时发送。
+- **下一页 (0xF003)** -在按下了用于日语和简体中文的触摸优化键盘上时，或在繁体中文的触摸优化键盘上按下页面键时发送。
+- **上一页 (0xF004)** -在按下候选页键的同时按下了用于日语和简体中文的触摸优化键盘上的 Shift 键时，或在繁体中文上按下了触摸优化键盘时发送。
 
 这些字符将作为 Unicode 输入发送。 下一段详细说明了如何在文本服务框架输入法接收的关键事件接收器通知期间提取字符信息。 不会在任何标头文件中定义这些字符值，因此需要在代码中定义这些字符值。
 
@@ -147,37 +149,9 @@ if (ToUnicode(VK_PACKET, 0, abKbdState, &wch, 1, 0) == 1)
 
 通过搜索约定向用户提供搜索功能，并与搜索窗格集成。
 
-:::image type="content" source="images/IMEs/ime-search-pane.png" alt-text="搜索窗格和 IME 建议":::<br/>
-*搜索窗格和 IME 建议*
+:::image type="content" source="images/IMEs/ime-search-pane.png" alt-text="首选语言设置&quot;:::
 
-搜索窗格是用户在所有应用中执行搜索的中心位置。 对于 IME 用户，Windows 提供了独特的搜索体验，允许兼容 Ime 与 Windows 集成，以实现更高的效率和可用性。
-
-如果用户使用与搜索兼容的 IME 键入内容，则有两个主要优点：
-
-- IME 与搜索体验之间的无缝交互。 IME 在搜索框下内联显示，无需 occluding 搜索建议。 用户可以使用键盘在搜索框、IME 转换候选项和搜索建议之间无缝导航。
-- 更快地访问应用程序提供的相关结果和建议。 应用有权访问所有当前的转换候选项，以提供更多相关建议。 为了更好地确定搜索建议的优先级，按相关性顺序向应用程序提供转换。 用户只需键入拼音即可查找并选择他们想要的结果，而无需转换。
-
-如果符合以下条件，则 IME 与集成的搜索体验兼容：
-
-- 与 Windows 样式 shell 兼容。
-- 实现 TSF UILess 模式 Api。 有关详细信息，请参阅 [UILess 模式概述](/windows/win32/tsf/uiless-mode-overview)。
-- 实现 TSF 搜索集成 Api、 [ITfFnSearchCandidateProvider](/windows/win32/api/ctffunc/nn-ctffunc-itffnsearchcandidateprovider) 和 [ITfIntegratableCandidateListUIElement](/windows/win32/api/ctffunc/nn-ctffunc-itfintegratablecandidatelistuielement)。
-
-当在 "搜索" 窗格中激活时，将在 UIless 模式下放置兼容的 IME 并且无法显示其 UI。 相反，它会将候选转换发送到 Windows，这会在内联候选项列表控件中显示它们，如前面的屏幕截图所示。
-
-此外，IME 发送应用于运行当前搜索的候选项。 这些候选项可以与转换候选项相同，也可以针对搜索进行定制。
-
-优秀搜索候选项满足以下条件：
-
-- 无前缀重叠。 例如，北京大学 and北京是冗余的，因为其中一个是另一个的前缀。
-- 无冗余候选项。 任何多余的候选项不适合搜索，因为它不能帮助筛选结果。 例如，任何与北京大学匹配的结果也会与北京匹配。
-- 无预测候选项，仅转换。 例如，如果用户键入 "北"，则 IME 可以将返回为候选项，但不能返回北京大学。 通常，预测候选人过于严格。
-
-不符合条件的 Ime 与其他控件的搜索显示方式不兼容，并且无法利用 UI 集成和搜索候选项。 应用仅在用户完成撰写后接收查询。
-
-当支持搜索协定的应用收到查询时，该查询事件包含一个 "queryTextAlternatives" 数组，该数组包含所有已知的替代项，该数组由最相关的 (可能) 到最不)  (不太相关。
-
-如果提供了替代方法，则应用程序应将每个替代项视为查询，并返回所有匹配项的结果。 应用程序的行为应如同用户同时发出了多个查询，实际上是向提供结果的服务发出了 "或" 查询。 出于性能方面的考虑，应用通常会限制与最相关备选方案的5到20之间的匹配。
+选择首选语言的 &quot;语言选项" 查询。 出于性能方面的考虑，应用通常会限制与最相关备选方案的5到20之间的匹配。
 
 ## <a name="ui-design-guidelines"></a>UI 设计准则
 
@@ -206,11 +180,17 @@ IME 品牌图标由一个白色框定义，其中，新式字样中呈现的印�
 
 IME 模式图标由新式字样中的白色排字标志符号定义，其中包含以50% 的不透明度表示的黑色1像素的外部笔划。
 
-| 图标 | 描述 |
+| 图标 | 说明 |
 | --- | --- |
-| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese.png" alt-text="繁体中文 ChangeJie 的 IME 图标示例。"::: | 繁体中文 ChangeJie 的 IME 图标示例。 |
-| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese-new.png" alt-text="繁体中文 New ChangeJie 的输入法标记图标示例。"::: | 繁体中文 ChangeJie 的 IME 图标示例。 |
-| :::image type="content" source="images/IMEs/ime-mode-icon-chinese.png" alt-text="中文模式图标"::: | 示例输入法模式图标。 |
+| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese.png" alt-text="首选语言设置&quot;:::
+
+选择首选语言的 &quot;语言选项"::: | 繁体中文 ChangeJie 的 IME 图标示例。 |
+| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese-new.png" alt-text="首选语言设置&quot;:::
+
+选择首选语言的 &quot;语言选项"::: | 繁体中文 ChangeJie 的 IME 图标示例。 |
+| :::image type="content" source="images/IMEs/ime-mode-icon-chinese.png" alt-text="首选语言设置&quot;:::
+
+选择首选语言的 &quot;语言选项"::: | 示例输入法模式图标。 |
 
 ### <a name="owned-window"></a>拥有的窗口
 
@@ -257,22 +237,22 @@ Ime 通过使用 [ITfCategoryMgr：： RegisterCategory](/windows/win32/api/msct
 
 - 安装 Visual Studio。
 - 启动 Visual Studio。
-- 在 " **文件** " 菜单上，指向 " **新建** "，然后选择 " **项目**"。 此时将打开 " **新建项目** " 对话框。
-- 在左窗格中，导航到 " **模板 > 其他项目类型 >" 安装和部署**"，单击" **启用 InstallShield 受限版本**"，然后单击 **" 确定 "**。 按照安装说明进行操作。
+- 在 " **文件** " 菜单上，指向 " **新建** "，然后选择 " **项目** "。 此时会打开“新建项目”对话框。 
+- 在左窗格中，导航到 " **模板 > 其他项目类型 >" 安装和部署** "，单击" **启用 InstallShield 受限版本** "，然后单击 **" 确定 "** 。 按照安装说明进行操作。
 - 重启 Visual Studio。
 -  ( .sln) 文件中打开 IME 解决方案。
-- 在解决方案资源管理器中，右键单击解决方案，指向 " **添加**"，然后选择 " **新建项目**"。 此时将打开 " **添加新项目** " 对话框。
-- 在左侧树视图控件中，导航到 " **模板 > 其他项目类型 >" InstallShield 受限版本**"。
-- 在中心窗口中，单击 " **InstallShield 受限版本项目**"。
-- 在 " **名称** " 文本框中，键入 "SetupIME"，然后单击 **"确定**"。
-- 在 " **项目助手** " 对话框中，单击 " **应用程序信息**"。
+- 在解决方案资源管理器中，右键单击解决方案，指向 " **添加** "，然后选择 " **新建项目** "。 此时将打开 " **添加新项目** " 对话框。
+- 在左侧树视图控件中，导航到 " **模板 > 其他项目类型 >" InstallShield 受限版本** "。
+- 在中心窗口中，单击 " **InstallShield 受限版本项目** "。
+- 在 " **名称** " 文本框中，键入 "SetupIME"，然后单击 **"确定** "。
+- 在 " **项目助手** " 对话框中，单击 " **应用程序信息** "。
 - 填写公司名称和其他字段。
-- 单击 " **应用程序文件**"。
-- 在左窗格中，右键单击 " **[INSTALLDIR]** " 文件夹，然后选择 " **新建文件夹**"。 将文件夹命名为 "插件"。
-- 单击 " **添加文件**"。 导航到 IME DLL，并将其添加到 " **插件** " 文件夹中。 为 IME 词典重复此步骤。
-- 右键单击 IME DLL，然后选择 " **属性**"。 此时将打开 " **属性** " 对话框。
+- 单击 " **应用程序文件** "。
+- 在左窗格中，右键单击 " **[INSTALLDIR]** " 文件夹，然后选择 " **新建文件夹** "。 将文件夹命名为 "插件"。
+- 单击 " **添加文件** "。 导航到 IME DLL，并将其添加到 " **插件** " 文件夹中。 为 IME 词典重复此步骤。
+- 右键单击 IME DLL，然后选择 " **属性** "。 此时将打开 " **属性** " 对话框。
 - 在 " **属性** " 对话框中，单击 " **COM & .net 设置** " 选项卡。
-- 在 " **注册类型**" 下，选择 " **自注册** "，然后单击 **"确定"**。
+- 在 " **注册类型** " 下，选择 " **自注册** "，然后单击 **"确定"** 。
 - 生成解决方案。 IME DLL 生成后，InstallShield 创建一个 setup.exe 文件，使用户能够在 Windows 上安装 IME。
 
 若要创建自己的安装体验，请在安装过程中调用 [ITfInputProcessorProfileMgr：： RegisterProfile](/windows/win32/api/msctf/nf-msctf-itfinputprocessorprofilemgr-registerprofile) 方法来注册 IME。 请勿直接写入注册表项。
@@ -286,9 +266,9 @@ Ime 通过使用 [ITfCategoryMgr：： RegisterCategory](/windows/win32/api/msct
 实现以下约定，使 Ime 符合辅助功能要求，并与讲述人合作。 若要使候选列表可访问，你的 Ime 必须遵循此约定。
 
 - 对于预测候选项列表，候选项列表必须具有等于 "IME_Candidate_Window" 的 **UIA_AutomationIdPropertyId** 或 "IME_Prediction_Window"。
-- 当候选项列表出现并消失时，它会分别引发 **UIA_MenuOpenedEventId** 和 **UIA_MenuClosedEventId**类型的事件
-- 当当前选定的候选项发生更改时，候选项列表将引发 **UIA_SelectionItem_ElementSelectedEventId**。 所选元素的属性应 **UIA_SelectionItemIsSelectedPropertyId** 等于 **TRUE**。
-- 候选列表中每一项的 **UIA_NamePropertyId** 必须是候选项的名称。 还可以通过 **UIA_HelpTextPropertyId**提供其他信息来消除候选项的歧义。
+- 当候选项列表出现并消失时，它会分别引发 **UIA_MenuOpenedEventId** 和 **UIA_MenuClosedEventId** 类型的事件
+- 当当前选定的候选项发生更改时，候选项列表将引发 **UIA_SelectionItem_ElementSelectedEventId** 。 所选元素的属性应 **UIA_SelectionItemIsSelectedPropertyId** 等于 **TRUE** 。
+- 候选列表中每一项的 **UIA_NamePropertyId** 必须是候选项的名称。 还可以通过 **UIA_HelpTextPropertyId** 提供其他信息来消除候选项的歧义。
 
 ## <a name="related-topics"></a>相关主题
 

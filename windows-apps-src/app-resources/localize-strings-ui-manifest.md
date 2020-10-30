@@ -1,5 +1,5 @@
 ---
-Description: 如果你希望应用支持其他显示语言，并且你的代码或 XAML 标记或应用包清单中有字符串文本，则将这些字符串移到资源文件 (.resw) 中。 然后，你可以针对应用支持的每种语言制作该资源文件的翻译副本。
+description: 如果你希望应用支持其他显示语言，并且你的代码或 XAML 标记或应用包清单中有字符串文本，则将这些字符串移到资源文件 (.resw) 中。 然后，你可以针对应用支持的每种语言制作该资源文件的翻译副本。
 title: 对 UI 和应用包清单中的字符串进行本地化
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 411ecb63189084ba83f9971ded2bbe02d899aabd
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 63e88322c7a85bba1ca1a4ff8ff5f2186c4da9f8
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762871"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031830"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>对 UI 和应用包清单中的字符串进行本地化
 
@@ -23,19 +23,19 @@ ms.locfileid: "91762871"
 
 硬编码字符串文本可以出现在强制性代码或 XAML 标记中，例如作为 **TextBlock** 的 **Text** 属性。 它们还可以显示在应用包清单源文件（`Package.appxmanifest` 文件）中，例如，作为 Visual Studio 清单设计器的“应用程序”选项卡上的显示名称的值。 将这些字符串移到资源文件 (.resw) 中，并参考资源标识符替换应用和清单中的硬编码字符串文本。
 
-与图像资源文件中仅包含一个图像资源的图像资源不同，字符串资源文件中包含*多个*字符串资源。 字符串资源是资源文件 (.resw)，并且你通常在项目的 \Strings 文件夹中创建此类资源文件。 有关任何在资源文件 (.resw) 的名称中使用限定符的背景，请参阅[定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)。
+与图像资源文件中仅包含一个图像资源的图像资源不同，字符串资源文件中包含 *多个* 字符串资源。 字符串资源是资源文件 (.resw)，并且你通常在项目的 \Strings 文件夹中创建此类资源文件。 有关任何在资源文件 (.resw) 的名称中使用限定符的背景，请参阅[定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)。
 
 ## <a name="store-strings-in-a-resources-file"></a>将字符串存储在资源文件中
 
 1. 设置应用的默认语言。
     1. 在 Visual Studio 中打开你的解决方案后，打开 `Package.appxmanifest`。
     2. 在应用程序选项卡上，确认已设置相应的默认语言（如“en”或“en-US”）。 其余步骤将假设你已经将默认语言设置为“en-US”。
-    <br>**注意**  至少需要为此默认语言提供本地化的字符串资源。 如果没有找到与用户的首选语言或显示语言设置更好的匹配，将加载这些资源。
+    <br>**注意** 你至少需要提供针对此默认语言本地化的字符串资源。 如果没有找到与用户的首选语言或显示语言设置更好的匹配，将加载这些资源。
 2. 创建默认语言的资源文件 (.resw)。
     1. 在你的项目节点下，创建一个新文件夹，并将其命名为“字符串”。
     2. 在 `Strings` 下，创建一个新的子文件夹，并将其命名为“en-US”。
     3. 在 `en-US` 下，创建一个新的资源文件 (.resw)，并确认其名称为“Resources.resw”。
-    <br>**注意**  如果你想要移植 .NET 资源文件 ( .resx) ，请参阅[移植 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)。
+    <br>**注意** 如果你有想要移植的 .NET 资源文件 (.resx)，请参阅 [移植 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)。
 3. 打开 `Resources.resw` 并添加这些字符串资源。
 
     `Strings/en-US/Resources.resw`
@@ -44,7 +44,7 @@ ms.locfileid: "91762871"
 
     在此示例中，“Greeting”是你可以从你的标记中引用的字符串资源标识符，我们将向你进行演示。 对于标识符“Greeting”，将为文本属性提供一个字符串，为宽度属性提供一个字符串。 “Greeting.Text”是属性标识符的一个示例，因为它对应 UI 元素的属性。 例如，你还可以在名称列中添加“Greeting.Foreground”，并将它的值设置为“红色”。 “Farewell”标识符是一个简单的字符串资源标识符；它没有子属性，并且可以从强制性代码加载，我们将向你进行演示。 “备注”列是向翻译提供任何特殊说明的一个好地方。
 
-    在此示例中，我们有一个名称为“Farewell”的简单字符串资源标识符条目，因此我们不能*同时*具有基于该相同标识符的属性标识符。 因此，添加“Farewell.Text”将导致生成 `Resources.resw` 时出现重复条目错误。
+    在此示例中，我们有一个名称为“Farewell”的简单字符串资源标识符条目，因此我们不能 *同时* 具有基于该相同标识符的属性标识符。 因此，添加“Farewell.Text”将导致生成 `Resources.resw` 时出现重复条目错误。
 
     资源标识符区分大小写，并且对于每个资源文件应是唯一的。 请确保使用有意义的资源标识符，为翻译人员提供额外的上下文。 请勿在字符串资源送去翻译后更改资源标识符。 本地化团队使用资源标识符来跟踪资源内的添加、删除和更新。 资源标识符中的更改（也称为“资源标识符转换”）需要重新翻译字符串，因为尽管字符串可能会删除并且会添加其他字符串，但会显示这些字符串。
 
@@ -56,13 +56,13 @@ ms.locfileid: "91762871"
 <TextBlock x:Uid="Greeting"/>
 ```
 
-在运行时加载 `\Strings\en-US\Resources.resw`（因为现在这是项目中唯一的资源文件）。 **TextBlock** 上的 **x:Uid** 指令会引发查找，在 `Resources.resw` 中查找包含字符串资源标识符“Greeting”的属性标识符。 找到“Greeting.Text”和“Greeting.Width”属性标识符，并将它们的值应用到 **TextBlock**，覆盖在标记中本地设置的任何值。 如果你添加了“Greeting.Foreground”值，也会应用该值。 但只有属性标识符用来设置 XAML 标记元素上的属性，因此在此 TextBlock 上将 **x:Uid** 设置为“Farewell”不会产生影响。 `Resources.resw`*确实*包含字符串资源标识符 "告别"，但它不包含它的属性标识符。
+在运行时加载 `\Strings\en-US\Resources.resw`（因为现在这是项目中唯一的资源文件）。 **TextBlock** 上的 **x:Uid** 指令会引发查找，在 `Resources.resw` 中查找包含字符串资源标识符“Greeting”的属性标识符。 找到“Greeting.Text”和“Greeting.Width”属性标识符，并将它们的值应用到 **TextBlock** ，覆盖在标记中本地设置的任何值。 如果你添加了“Greeting.Foreground”值，也会应用该值。 但只有属性标识符用来设置 XAML 标记元素上的属性，因此在此 TextBlock 上将 **x:Uid** 设置为“Farewell”不会产生影响。 `Resources.resw`*确实* 包含字符串资源标识符 "告别"，但它不包含它的属性标识符。
 
-将字符串资源标识符分配给 XAML 元素时，确保该标识符的*所有*属性标识符适合 XAML 元素。 例如，如果你在 **TextBlock** 上设置了 `x:Uid="Greeting"`，“Greeting.Text”将解析，因此 **TextBlock** 类型具有文本属性。 但如果你在**按钮**上设置了 `x:Uid="Greeting"`，“Greeting.Text”将引发运行时错误，因为**按钮**类型不具有文本属性。 适用于此案例的一个解决方案是创作名称为“ButtonGreeting.Content”的属性标识符，并在**按钮**上设置 `x:Uid="ButtonGreeting"`。
+将字符串资源标识符分配给 XAML 元素时，确保该标识符的 *所有* 属性标识符适合 XAML 元素。 例如，如果你在 **TextBlock** 上设置了 `x:Uid="Greeting"`，“Greeting.Text”将解析，因此 **TextBlock** 类型具有文本属性。 但如果你在 **按钮** 上设置了 `x:Uid="Greeting"`，“Greeting.Text”将引发运行时错误，因为 **按钮** 类型不具有文本属性。 适用于此案例的一个解决方案是创作名称为“ButtonGreeting.Content”的属性标识符，并在 **按钮** 上设置 `x:Uid="ButtonGreeting"`。
 
-你可能不会想要从资源文件设置**宽度**，而是想要允许控件根据内容动态调整大小。
+你可能不会想要从资源文件设置 **宽度** ，而是想要允许控件根据内容动态调整大小。
 
-**注意**  对于[附加属性](../xaml-platform/attached-properties-overview.md)，需要在 .resw 文件的 "名称" 列中使用特殊的语法。 例如，要设置“Greeting”标识符的 [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 附加属性的值，下面是需要在“名称”列中输入的内容。
+**注意** 对于 [附加属性](../xaml-platform/attached-properties-overview.md)，你在 .resw 文件的“名称”列中需要特殊句法。 例如，要设置“Greeting”标识符的 [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 附加属性的值，下面是需要在“名称”列中输入的内容。
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -73,7 +73,7 @@ Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 可以基于简单字符串资源标识符显式地加载字符串资源。
 
 > [!NOTE]
-> 如果调用了任何*可能*在后台/工作线程上执行的 **GetForCurrentView** 方法，则可使用 `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` 测试保护该调用。 从背景/工作线程调用 **GetForCurrentView** 导致“*&lt;typename&gt; 无法在不具有 CoreWindow 的线程上创建*”的异常。
+> 如果调用了任何 *可能* 在后台/工作线程上执行的 **GetForCurrentView** 方法，则可使用 `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` 测试保护该调用。 从背景/工作线程调用 **GetForCurrentView** 导致“ *&lt;typename&gt; 无法在不具有 CoreWindow 的线程上创建* ”的异常。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
@@ -122,7 +122,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 
 1. 复制你的资源文件 (.resw) 用于另一种语言。
     1. 在“字符串”下，创建一个新的子文件夹并将其命名为“de-DE”，表示德语（德国）。
-   <br>**注意**  对于文件夹名称，可以使用任何[BCP-47 语言标记](https://tools.ietf.org/html/bcp47)。 请参阅[定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)获取有关语言限定符和常用语言标记列表的详细信息。
+   <br>**注意** 对于文件夹名称，你可以使用任何 [BCP 47 语言标记](https://tools.ietf.org/html/bcp47)。 请参阅[定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)获取有关语言限定符和常用语言标记列表的详细信息。
    2. 在 `Strings/de-DE` 文件夹中复制 `Strings/en-US/Resources.resw`。
 2. 翻译字符串。
     1. 打开 `Strings/de-DE/Resources.resw` 并翻译“值”列中的值。 你无需翻译评论。
@@ -139,9 +139,9 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 
 ## <a name="test-your-app"></a>测试应用程序
 
-测试应用的默认显示语言。 然后，你可以在 "**设置**时间" 中更改显示语言  >  **& 语言**  >  **区域 & 语言**  >  **语言**并重新测试应用。 在你的 UI 和 shell 中查看字符串（例如，你的标题栏，即你的显示语言，以及磁贴上的短名称）。
+测试应用的默认显示语言。 然后，你可以在 " **设置** 时间" 中更改显示语言  >  **& 语言**  >  **区域 & 语言**  >  **语言** 并重新测试应用。 在你的 UI 和 shell 中查看字符串（例如，你的标题栏，即你的显示语言，以及磁贴上的短名称）。
 
-**注意**如果可以找到匹配显示语言设置的文件夹名称，则加载该文件夹中的资源文件。 否则将发生回退，以应用的默认语言的资源结束。
+**注意** 如果可以找到匹配显示语言设置的文件夹名称，则加载该文件夹中的资源文件。 否则将发生回退，以应用的默认语言的资源结束。
 
 ## <a name="factoring-strings-into-multiple-resources-files"></a>将字符串构建到多个资源文件中
 
@@ -155,12 +155,12 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 <TextBlock x:Uid="/ErrorMessages/PasswordTooWeak"/>
 ```
 
-你只需要在字符串资源标识符前面为资源文件添加*除* `Resources.resw` 以外的 `/<resources-file-name>/`。 这是因为“Resources.resw”是默认文件名称，因此如果你省略文件名称，将假定使用该名称（正如我们在本主题前面的示例中所示）。
+你只需要在字符串资源标识符前面为资源文件添加 *除* `Resources.resw` 以外的 `/<resources-file-name>/`。 这是因为“Resources.resw”是默认文件名称，因此如果你省略文件名称，将假定使用该名称（正如我们在本主题前面的示例中所示）。
 
 下面的代码示例假定 `ErrorMessages.resw` 包含名称为“MismatchedPasswords”且其值对错误进行描述的资源。
 
 > [!NOTE]
-> 如果调用了任何*可能*在后台/工作线程上执行的 **GetForCurrentView** 方法，则可使用 `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` 测试保护该调用。 从背景/工作线程调用 **GetForCurrentView** 导致“*&lt;typename&gt; 无法在不具有 CoreWindow 的线程上创建*”的异常。
+> 如果调用了任何 *可能* 在后台/工作线程上执行的 **GetForCurrentView** 方法，则可使用 `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` 测试保护该调用。 从背景/工作线程调用 **GetForCurrentView** 导致“ *&lt;typename&gt; 无法在不具有 CoreWindow 的线程上创建* ”的异常。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ErrorMessages");
@@ -197,7 +197,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 但在有些时候，你可能想要让你的应用覆盖系统设置，并明确当查找要加载的匹配资源文件时要使用的语言、比例或其他限定符值。 例如，你可能希望用户能够选择一种替代语言用于工具提示或错误消息。
 
-为此，你可以构建一个新的 **ResourceContext**（而不使用默认值），覆盖它的值，然后在你的字符串查找中使用该上下文对象。
+为此，你可以构建一个新的 **ResourceContext** （而不使用默认值），覆盖它的值，然后在你的字符串查找中使用该上下文对象。
 
 ```csharp
 var resourceContext = new Windows.ApplicationModel.Resources.Core.ResourceContext(); // not using ResourceContext.GetForCurrentView
@@ -212,7 +212,7 @@ this.myXAMLTextBlockElement.Text = resourceMap.GetValue("Farewell", resourceCont
 resourceContext.Languages = new string[] { "de-DE" };
 ```
 
-为了在全局级别达到相同的效果，*可以* 覆盖默认 **ResourceContext** 中的限定符值。 但我们建议你调用 [**ResourceContext.SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)。 你通过调用 **SetGlobalQualifierValue** 一次性设置值，则每次当你使用默认 **ResourceContext** 进行查找时，这些值都会对它产生影响。
+为了在全局级别达到相同的效果， *可以* 覆盖默认 **ResourceContext** 中的限定符值。 但我们建议你调用 [**ResourceContext.SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)。 你通过调用 **SetGlobalQualifierValue** 一次性设置值，则每次当你使用默认 **ResourceContext** 进行查找时，这些值都会对它产生影响。
 
 ```csharp
 Windows.ApplicationModel.Resources.Core.ResourceContext.SetGlobalQualifierValue("Language", "de-DE");
@@ -220,7 +220,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
 ```
 
-某些限定符有系统数据提供程序。 因此，你无需调用 **SetGlobalQualifierValue**，可以改为通过提供程序自己的 API 调整提供程序。 例如，此代码显示如何设置 [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride)。
+某些限定符有系统数据提供程序。 因此，你无需调用 **SetGlobalQualifierValue** ，可以改为通过提供程序自己的 API 调整提供程序。 例如，此代码显示如何设置 [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride)。
 
 ```csharp
 Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "de-DE";
@@ -289,7 +289,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 ## <a name="loading-strings-from-other-packages"></a>从其他包加载字符串
 
-应用包的资源通过包自己的顶级 [**windows.applicationmodel.resources.core.resourcemap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) 进行管理和访问，该文件可从当前 [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)访问。 在每一个包中，各种组件可以具有自己的 ResourceMap 子树，你可以通过 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live) 进行访问。
+应用包的资源通过包自己的顶级 [**windows.applicationmodel.resources.core.resourcemap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) 进行管理和访问，该文件可从当前 [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)访问。 在每一个包中，各种组件可以具有自己的 ResourceMap 子树，你可以通过 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live) 进行访问。
 
 框架包可以使用绝对资源标识符 URI 访问自己的资源。 另请参阅 [URI 方案](uri-schemes.md)。
 
@@ -303,12 +303,12 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 1. 当从代码解析资源时，请使用 [GetForViewIndependentUse](/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) 而不是 [GetForCurrentView](/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) ，因为未打包方案中没有 *当前视图* 。 如果在未打包的情况下调用 [GetForCurrentView](/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) ，则会发生以下异常：无法 *在没有 CoreWindow 的线程上创建资源上下文。*
 1. 使用 [MakePri.exe](./compile-resources-manually-with-makepri.md) 手动生成应用的资源 pri 文件。
-    - `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`运行
+    - 运行 `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`
     - &lt;Priconfig.default.xml &gt; 必须省略 " &lt; 打包 &gt; " 部分，以便将所有资源捆绑在单个资源的 pri 文件中。 如果使用[createconfig](./makepri-exe-command-options.md#createconfig-command)创建的默认[MakePri.exe 配置文件](./makepri-exe-configuration.md)，则需要在 &lt; &gt; 创建后手动删除 "打包" 部分。
     - &lt;Priconfig.default.xml &gt; 必须包含将项目中的所有资源合并为单个资源 pri 文件所需的所有相关索引器。 [Createconfig](./makepri-exe-command-options.md#createconfig-command)创建的默认[MakePri.exe 配置文件](./makepri-exe-configuration.md)包含所有索引器。
     - 如果不使用默认配置，请确保已启用 PRI 索引器 (查看默认配置 "如何执行此操作") 合并位于项目根目录中的 UWP 项目引用、NuGet 引用等的 PRIs。
         > [!NOTE]
-        > 通过省略 `/IndexName` 并且项目没有应用程序清单，PRI 文件的 IndexName/root 命名空间会自动设置为 *应用程序*，运行时识别非打包应用程序 (这将删除对包 ID) 之前的硬依赖项。 指定资源 Uri 时，将忽略根命名空间的 ms 资源：//引用会将 *应用程序* 推断为非打包应用程序的根命名空间 (或者，可以将 *应用程序* 明确指定为 ms 资源：//Application/) 。
+        > 通过省略 `/IndexName` 并且项目没有应用程序清单，PRI 文件的 IndexName/root 命名空间会自动设置为 *应用程序* ，运行时识别非打包应用程序 (这将删除对包 ID) 之前的硬依赖项。 指定资源 Uri 时，将忽略根命名空间的 ms 资源：//引用会将 *应用程序* 推断为非打包应用程序的根命名空间 (或者，可以将 *应用程序* 明确指定为 ms 资源：//Application/) 。
 1. 将 PRI 文件复制到 .exe 的生成输出目录
 1. 运行 .exe 
     > [!NOTE]

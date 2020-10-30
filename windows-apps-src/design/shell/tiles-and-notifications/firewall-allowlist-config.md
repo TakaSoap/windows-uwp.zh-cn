@@ -1,5 +1,5 @@
 ---
-Description: 许多企业使用防火墙来阻止不需要的流量。 此文档介绍了如何允许 WNS 流量通过防火墙。
+description: 许多企业使用防火墙来阻止不需要的流量。 此文档介绍了如何允许 WNS 流量通过防火墙。
 title: 将 WNS 流量添加到防火墙允许列表
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: windows 10，uwp，WNS，windows 通知服务，通知，windows，防火墙，疑难解答，IP，流量，企业，网络，IPv4，VIP，FQDN，公共 IP 地址
 ms.localizationpriority: medium
-ms.openlocfilehash: 4277b46728464630bf478b1f78008e92b4e3fe99
-ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
+ms.openlocfilehash: 6212111770ff61179eabf0f77e109d1a6d2235b3
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90845526"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032040"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支持 WNS 流量的企业防火墙和代理配置
 
@@ -38,7 +38,7 @@ ms.locfileid: "90845526"
 
 
 ### <a name="fqdns-vips-ips-and-ports"></a>Fqdn、Vip、Ip 和端口
-无论从下面选择哪种方法，都需要允许通过 **端口 443**向所列目标发送网络流量。 以下 XML 文档中的每个元素都在下表中进行了说明， ([术语和表示法](#terms-and-notations)) 。 此文档中特意遗留了 IP 范围，以鼓励你只使用 Fqdn，因为 Fqdn 将保持不变。 但是，你可以从下载中心下载包含完整列表的 XML 文件： [Windows 通知服务 (WNS) VIP 和 IP 范围](https://www.microsoft.com/download/details.aspx?id=44238)。 新的 Vip 或 IP 范围将在 **其上传一周后生效**。
+无论从下面选择哪种方法，都需要允许通过 **端口 443** 向所列目标发送网络流量。 以下 XML 文档中的每个元素都在下表中进行了说明， ([术语和表示法](#terms-and-notations)) 。 此文档中特意遗留了 IP 范围，以鼓励你只使用 Fqdn，因为 Fqdn 将保持不变。 但是，你可以从下载中心下载包含完整列表的 XML 文件： [Windows 通知服务 (WNS) VIP 和 IP 范围](https://www.microsoft.com/download/details.aspx?id=44238)。 新的 Vip 或 IP 范围将在 **其上传一周后生效** 。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -72,10 +72,10 @@ ms.locfileid: "90845526"
 
 | 术语 | 说明 |
 |---|---|
-| **点-十进制符号 (即 64.4.28.0/26) ** | 点-十进制表示法是一种描述 IP 地址范围的方法。 例如，64.4.28.0/26 表示64.4.28.0 的前26位是常量，而最后6位是可变的。  在这种情况下，IPv4 范围为 64.4.28.0-64.4.28.63。 |
-| **ClientDNS** | 这些是 (FQDN) 的客户端设备的 FQDN 筛选器的完全限定的域名 (Windows 电脑上的计算机) 从 WNS 接收通知。 若要使 WNS 客户端使用 WNS 功能，必须通过防火墙允许使用这些功能。  建议按 Fqdn 而不是 IP/VIP 范围允许-列表，因为这些将永远不会更改。 |
+| **点-十进制符号 (即 64.4.28.0/26)** | 点-十进制表示法是一种描述 IP 地址范围的方法。 例如，64.4.28.0/26 表示64.4.28.0 的前26位是常量，而最后6位是可变的。  在这种情况下，IPv4 范围为 64.4.28.0-64.4.28.63。 |
+| **ClientDNS** | 这些是 Fully-Qualified 域名 (FQDN) 筛选器，用于 (Windows 电脑的客户端设备，桌面) 从 WNS 接收通知。 若要使 WNS 客户端使用 WNS 功能，必须通过防火墙允许使用这些功能。  建议按 Fqdn 而不是 IP/VIP 范围允许-列表，因为这些将永远不会更改。 |
 | **ClientIPsIPv4** | 它们是客户端设备 (Windows 电脑、桌面) 从 WNS 接收通知的服务器的 IPv4 地址。 |
-| **CloudServiceDNS** | 这些是 (FQDN) 筛选器的完全限定的域名，你的云服务将与此服务器进行通信，以便将 notificatios 发送到 WNS。 若要让服务发送 WNS 通知，必须通过防火墙允许使用这些命令。  建议按 Fqdn 而不是 IP/VIP 范围允许-列表，因为这些将永远不会更改。|
+| **CloudServiceDNS** | 这些是你的云服务将与其通信的 WNS 服务器的 Fully-Qualified 域名 (FQDN) 筛选器，以便将 notificatios 发送到 WNS。 若要让服务发送 WNS 通知，必须通过防火墙允许使用这些命令。  建议按 Fqdn 而不是 IP/VIP 范围允许-列表，因为这些将永远不会更改。|
 | **CloudServiceIPs** | CloudServiceIPs 是用于云服务的服务器 IPv4 地址，用于向 WNS 发送通知  |
 
 
@@ -91,4 +91,4 @@ ms.locfileid: "90845526"
 * [如何使用 Windows 推送通知服务 (WNS) 进行验证](/previous-versions/windows/apps/hh465407(v=win.10))
 * [推送通知服务请求和响应头](/previous-versions/windows/apps/hh465435(v=win.10))
 * [推送通知指南和清单](./windows-push-notification-services--wns--overview.md)
- 
+ 

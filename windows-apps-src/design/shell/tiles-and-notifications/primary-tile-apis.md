@@ -1,5 +1,5 @@
 ---
-Description: 你可以通过编程方式将自己的应用的主要磁铁固定到“开始”菜单，就像固定辅助磁贴一样。 而且可以检查它当前是否固定。
+description: 你可以通过编程方式将自己的应用的主要磁铁固定到“开始”菜单，就像固定辅助磁贴一样。 而且可以检查它当前是否固定。
 title: 主要磁贴 API
 label: Primary tile API's
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10，uwp，StartScreenManager，固定主要磁贴，主要磁贴 api, 检查是否固定了磁贴, 动态磁贴
 ms.localizationpriority: medium
-ms.openlocfilehash: 569ef5de9298a0fb9da58e4aaa88689c35b98c72
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 83cf11d80ffcd03148cbe5e784aaad5836357796
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172341"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029690"
 ---
 # <a name="primary-tile-apis"></a>主要磁贴 API
  
@@ -20,20 +20,20 @@ ms.locfileid: "89172341"
 使用主要磁贴 API 可以检查你的应用当前是否已固定到“开始”菜单，并请求固定应用的主要磁贴。
 
 > [!IMPORTANT]
-> **需要创意者更新**：目标必须为 SDK 15063，并且必须运行版本 15063 或更高版本才能使用主要磁贴 API。
+> **需要创意者更新** ：目标必须为 SDK 15063，并且必须运行版本 15063 或更高版本才能使用主要磁贴 API。
 
-> **重要 API**：[**StartScreenManager 类**](/uwp/api/windows.ui.startscreen.startscreenmanager)，[ContainsAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)，[RequestAddAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
+> **重要 API** ： [**StartScreenManager 类**](/uwp/api/windows.ui.startscreen.startscreenmanager)， [ContainsAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)， [RequestAddAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
 
 
 ## <a name="when-to-use-primary-tile-apis"></a>何时使用主要磁贴 API
 
 你尽了很大努力为你的应用的主要磁贴设计出色的体验，现在你有机会要求用户将其固定到“开始”菜单。 但在我们深入探讨代码之前，你在设计体验时需要牢记以下几点：
 
-* **务必**使用明确的“固定动态磁贴”行动号召在应用中制作无干扰并且可轻松消除的 UX。
-* **务必**在要求用户固定磁贴前明确解释你的应用的动态磁贴值。
-* 如果你的应用的磁贴已经固定或设备不支持，**不要**要求用户固定它（后面有更多信息）。
-* **不要**反复要求用户固定你的应用的磁贴（用户可能会生气）。
-* 没有显式用户交互或当你的应用最小化/未打开时**不要**调用固定 API。
+* **务必** 使用明确的“固定动态磁贴”行动号召在应用中制作无干扰并且可轻松消除的 UX。
+* **务必** 在要求用户固定磁贴前明确解释你的应用的动态磁贴值。
+* 如果你的应用的磁贴已经固定或设备不支持， **不要** 要求用户固定它（后面有更多信息）。
+* **不要** 反复要求用户固定你的应用的磁贴（用户可能会生气）。
+* 没有显式用户交互或当你的应用最小化/未打开时 **不要** 调用固定 API。
 
 
 ## <a name="checking-whether-the-apis-exist"></a>检查 API 是否存在

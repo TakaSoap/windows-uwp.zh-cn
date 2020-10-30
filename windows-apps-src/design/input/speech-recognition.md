@@ -1,5 +1,5 @@
 ---
-Description: 使用语音识别提供输入内容、指定操作或命令并完成任务。
+description: 使用语音识别提供输入内容、指定操作或命令并完成任务。
 title: 语音识别
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
@@ -8,19 +8,19 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 249af1260b261733454fa353adc695818d113afc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ad721bc64de87fc8bb1a56f687860738bebed56c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165891"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030050"
 ---
 # <a name="speech-recognition"></a>语音识别
 
 
 使用语音识别提供输入内容、指定操作或命令并完成任务。
 
-> **重要 API**：[**Windows.Media.SpeechRecognition**](/uwp/api/Windows.Media.SpeechRecognition)
+> **重要 API** ： [**Windows.Media.SpeechRecognition**](/uwp/api/Windows.Media.SpeechRecognition)
 
 语音识别由以下部分构成：语音运行时、用于为运行时编程的识别 API、用于听写和 Web 搜索的现成语法，以及帮助用户发现和使用语音识别功能的默认系统 UI。
 
@@ -28,7 +28,7 @@ ms.locfileid: "89165891"
 
 若要支持应用的语音识别，用户必须在其设备上连接并启用麦克风，并接受 Microsoft 隐私策略授予你的应用程序使用的权限。
 
-若要自动提示用户使用系统对话框，该对话框请求访问和使用麦克风的音频源 (示例，请阅读下面) 的[语音识别和语音合成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)，只需在[应用程序包清单](/uwp/schemas/appxpackage/appx-package-manifest)中设置**麦克风**[设备功能](/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)即可。 有关更多详细信息，请参阅 [应用功能声明](../../packaging/app-capability-declarations.md)。
+若要自动提示用户使用系统对话框，该对话框请求访问和使用麦克风的音频源 (示例，请阅读下面) 的 [语音识别和语音合成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)，只需在 [应用程序包清单](/uwp/schemas/appxpackage/appx-package-manifest)中设置 **麦克风**[设备功能](/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)即可。 有关更多详细信息，请参阅 [应用功能声明](../../packaging/app-capability-declarations.md)。
 
 ![麦克风访问隐私策略](images/speech/privacy.png)
 
@@ -208,7 +208,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 ## <a name="recognize-speech-input"></a>识别语音输入
 
-*约束*可定义该应用在语音输入中识别出的字词和短语（词汇）。 约束是语音识别的核心，使应用更好地控制语音识别的准确性。
+*约束* 可定义该应用在语音输入中识别出的字词和短语（词汇）。 约束是语音识别的核心，使应用更好地控制语音识别的准确性。
 
 您可以使用以下类型的约束来识别语音输入。
 
@@ -221,11 +221,11 @@ var AudioCapturePermissions = WinJS.Class.define(
 诸如听写语法等 Web 搜索语法包含了用户可能说出的大量字词和短语。 但是，优化它的目的是识别用户搜索 Web 时通常使用的术语。
 
 > [!NOTE]
-> 由于预定义的听写和 Web 搜索语法可能很大，而且处于联机状态（不在设备上），性能可能不如安装在设备上的自定义语法快。     
+> 由于预定义的听写和 Web 搜索语法可能很大，而且处于联机状态（不在设备上），性能可能不如安装在设备上的自定义语法快。     
 
 可以使用这些预定义语法识别长达 10 秒的语音输入，并且不要求你进行任何创作。 然而，它们确实需要连接到网络。
 
-若要使用 Web 服务约束，必须在**设置**中启用语音输入和听写支持，方法是在**设置 -> 隐私 -> 语音、墨迹书写和键入**中打开“了解我”选项。
+若要使用 Web 服务约束，必须在 **设置** 中启用语音输入和听写支持，方法是在 **设置 -> 隐私 -> 语音、墨迹书写和键入** 中打开“了解我”选项。
 
 下面我们将介绍如何测试是否已启用语音输入，如果未启用，则打开“设置”->“隐私”->“语音、墨迹书写和键入”页面。
 
@@ -278,9 +278,9 @@ catch (Exception exception)
 
 使用语音命令定义 (VCD) XML 文件定义用户可以在激活应用时说出以启动操作的命令。 有关更多详细信息，请参阅 [通过 Cortana 使用语音命令激活前台应用](/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。
 
-请参阅[ **SpeechRecognitionVoiceCommandDefinitionConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
+请参阅 [ **SpeechRecognitionVoiceCommandDefinitionConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
 
-**注意**   使用的约束类型类型取决于要创建的识别体验的复杂性。 对于特定识别任务，任一类型都可能是最佳选择，你也可能在应用中发现所有类型的约束的用途。
+**注意**  使用的约束类型类型取决于要创建的识别体验的复杂性。 对于特定识别任务，任一类型都可能是最佳选择，你也可能在应用中发现所有类型的约束的用途。
 要开始使用约束，请参阅[定义自定义识别约束](define-custom-recognition-constraints.md)。
 
 预定义的通用 Windows 应用听写语法可识别使用某种语言的大部分字词和短语。 如果语音识别器对象在没有自定义约束的情况下实例化，它会自动激活。
@@ -316,15 +316,15 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 如果你使用基于预定义语法的约束（听写或 Web 搜索）：
 
--   **侦听**屏幕。
--   **思考**屏幕。
--   **听到你说**屏幕或错误屏幕。
+-   **侦听** 屏幕。
+-   **思考** 屏幕。
+-   **听到你说** 屏幕或错误屏幕。
 
 如果你使用的约束基于字词或短语列表，或者基于 SRGS 语法文件：
 
--   **侦听**屏幕。
--   **你说的是**屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
--   **听到你说**屏幕或错误屏幕。
+-   **侦听** 屏幕。
+-   **你说的是** 屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
+-   **听到你说** 屏幕或错误屏幕。
 
 下图演示了语音识别器在不同屏幕间的流程的示例，该识别器使用基于 SRGS 语法文件的约束。 在本例中，语音识别是成功的。
 
@@ -334,7 +334,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 ![基于 sgrs 语法文件的约束的最终识别屏幕](images/speech-listening-complete.png)
 
-**侦听**屏幕可提供应用可识别的字词或短语的示例。 下面我们介绍如何使用 [**SpeechRecognizerUIOptions**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions) 类的属性（通过调用 [**SpeechRecognizer.UIOptions**](/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions) 属性获取）自定义**侦听**屏幕上的内容。
+**侦听** 屏幕可提供应用可识别的字词或短语的示例。 下面我们介绍如何使用 [**SpeechRecognizerUIOptions**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions) 类的属性（通过调用 [**SpeechRecognizer.UIOptions**](/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions) 属性获取）自定义 **侦听** 屏幕上的内容。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)

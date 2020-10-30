@@ -1,24 +1,24 @@
 ---
-Description: MakePri.exe 具有命令集 createconfig、dump、new、resourcepack 和 versioned。 本主题详细介绍它们的用途。
+description: MakePri.exe 具有命令集 createconfig、dump、new、resourcepack 和 versioned。 本主题详细介绍它们的用途。
 title: MakePri.exe 命令行选项
 template: detail.hbs
 ms.date: 04/10/2018
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 638de4d2795b3b248edfdcc35dc72fa21d31fc3b
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 7443efbb227bf3f9ea64db58902ebeb67b02f676
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253780"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031730"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令行选项
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) 包含一组命令 `createconfig` ： `dump` 、 `new` 、 `resourcepack` 和 `versioned` 。 本主题对命令行选项的使用进行详细介绍。
 
 > [!NOTE]
-> 当你在安装 Windows 软件开发工具包时检查 **UWP 托管应用的 Windows SDK** 选项时，会安装 MakePri.exe。 它将安装到 (的路径 `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` 和其他体系结构) 的文件夹中。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` 。
+> 当你在安装 Windows 软件开发工具包时检查 **UWP 托管应用的 Windows SDK** 选项时，会安装 MakePri.exe。 它将安装到 (的路径 `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` 和其他体系结构) 的文件夹中。 例如 `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 ## <a name="getting-help-from-the-command-line"></a>从命令行中获取帮助
 
@@ -115,7 +115,7 @@ Help:
 `dump` 命令输入一个转储文件，该文件包含指定 PRI 文件中的所有资源的列表。 运行 `MakePri.exe dump /?` 以查看关于此命令的详细帮助。
 
 > [!NOTE]
-> 无模式资源包是在 PRI 配置文件中使用 *omitSchemaFromResourcePacks* 开关创建的资源包。 若要转储无模式资源包，请使用开关 `/es <main_package_PRI_file>`。 如果不指定主文件，则会看到错误消息“*程序包中的 resources.pri 已损坏，因此加密失败（错误 PRI222：0xdef0000f - 发生未知错误）*”。
+> 无模式资源包是在 PRI 配置文件中使用 *omitSchemaFromResourcePacks* 开关创建的资源包。 若要转储无模式资源包，请使用开关 `/es <main_package_PRI_file>`。 如果不指定主文件，则会看到错误消息“ *程序包中的 resources.pri 已损坏，因此加密失败（错误 PRI222：0xdef0000f - 发生未知错误）* ”。
 
 ```console
 C:\>makepri dump /?

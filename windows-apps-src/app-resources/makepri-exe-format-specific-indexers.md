@@ -1,32 +1,32 @@
 ---
-Description: 本主题介绍 MakePri.exe 工具用于生成其资源索引的特定格式索引器。
+description: 本主题介绍 MakePri.exe 工具用于生成其资源索引的特定格式索引器。
 title: MakePri.exe 格式特定索引器
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d30a0321de872dac11070c52dd0598b2276bcab
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 3794d369ae9d47cfc7aad1b24ca2768b04024581
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79200955"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031690"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>MakePri.exe 格式特定索引器
 
 本主题介绍 [MakePri.exe](compile-resources-manually-with-makepri.md) 工具生成其资源索引时所使用的特定格式索引器。
 
 > [!NOTE]
-> 当你在安装 Windows 软件开发工具包时检查 " **UWP 托管应用的 Windows SDK** " 选项时，将安装 makepri.exe。 它安装在路径 `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` （以及其他体系结构的名为的文件夹中）。 例如， `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 当你在安装 Windows 软件开发工具包时检查 **UWP 托管应用的 Windows SDK** 选项时，会安装 MakePri.exe。 它将安装到 (的路径 `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` 和其他体系结构) 的文件夹中。 例如 `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 MakePri.exe 通常与 `new`、`versioned` 或 `resourcepack` 命令一起使用。 请参阅 [MakePri.exe 命令行选项](makepri-exe-command-options.md)。 在这些情况下，它索引源文件以生成资源索引。 MakePri.exe 使用各种单独的索引器读取不同的源资源文件或资源容器。 最简单的索引器是文件夹索引器，它索引文件夹的内容，如 `.jpg` 或 `.png` 图像。
 
-通过指定 `<indexer-config>`MakePri.exe 配置文件`<index>`的 [ 元素中的 ](makepri-exe-configuration.md) 元素标识特定格式索引器。 `type` 属性标识使用的特定格式索引器。
+通过指定 [MakePri.exe 配置文件](makepri-exe-configuration.md)的 `<index>` 元素中的 `<indexer-config>` 元素标识特定格式索引器。 `type` 属性标识使用的特定格式索引器。
 
-在索引过程中遇到的资源容器通常将它们的内容编入索引，而不是添加到索引自身中。 例如，文件夹索引器找到的 `.resjson` 文件可能会由 `.resjson` 索引器进一步编制索引，在这种情况下 `.resjson` 文件本身不显示在索引中。 **注意**与该容器关联的索引器的 `<indexer-config>` 元素必须包括在配置文件中才会发生这种情况。
+在索引过程中遇到的资源容器通常将它们的内容编入索引，而不是添加到索引自身中。 例如，文件夹索引器找到的 `.resjson` 文件可能会由 `.resjson` 索引器进一步编制索引，在这种情况下 `.resjson` 文件本身不显示在索引中。 **注意** 与该容器关联的索引器的 `<indexer-config>` 元素必须包括在配置文件中才会发生这种情况。
 
-通常情况下，在包含实体（如文件夹或 &mdash; 文件）上找到的限定符应用到其中的所有资源，如文件夹中的文件，或 `.resw` 文件中的字符串。
+通常情况下，在包含实体（如文件夹或 `.resw` 文件）上找到的限定符应用到其中的所有资源，如文件夹中的文件，或 `.resw` 文件中的字符串。
 
 ## <a name="folder"></a>Folder
 
@@ -67,7 +67,7 @@ MakePri.exe 通常与 `new`、`versioned` 或 `resourcepack` 命令一起使用�
 </xs:schema>
 ```
 
-`qualifierDelimiter` 属性指定在哪个字符后指定文件名中的限定符，忽略扩展。 默认值为“.”。
+`qualifierDelimiter` 属性指定在哪个字符后指定文件名中的限定符，忽略扩展。 默认值是“.”。
 
 ## <a name="pri"></a>PRI
 
@@ -92,7 +92,7 @@ PRI 文件中包含的所有资源名称、限定符和值都直接在新的 PRI
 
 ## <a name="priinfo"></a>PriInfo
 
-PriInfo 索引器由 PRIINFO 的 `type` 属性进行标识。 它索引详细转储文件的内容。 你可以通过使用 `makepri dump` 选项运行 `/dt detailed` 的方式产生详细的转储文件。 索引器的配置元素符合以下架构。
+PriInfo 索引器由 PRIINFO 的 `type` 属性进行标识。 它索引详细转储文件的内容。 你可以通过使用 `/dt detailed` 选项运行 `makepri dump` 的方式产生详细的转储文件。 索引器的配置元素符合以下架构。
 
 ```xml
 <xs:schema id="priinfo" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
@@ -282,7 +282,7 @@ ResFiles 索引器由 RESFILES 的 `type` 属性进行标识。 它索引 `.resf
 </xs:schema>
 ```
 
-`.resfiles` 文件是包含一个文件路径简单列表的文本文件。 `.resfiles` 文件可以包含“//”评论。 下面提供了一个示例。
+`.resfiles` 文件是包含一个文件路径简单列表的文本文件。 `.resfiles` 文件可以包含“//”评论。 下面是一个示例。
 
 <blockquote>
 <pre>
@@ -400,6 +400,6 @@ ResW 索引器由 RESW 的 `type` 属性进行标识。 它索引 `.resw` 文件
 ## <a name="related-topics"></a>相关主题
 
 * [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)
-* [Makepri.exe 命令行选项](makepri-exe-command-options.md)
-* [Makepri.exe 配置文件](makepri-exe-configuration.md)
-* [JavaScript 对象表示法的 application/json 媒体类型（JSON）](https://www.ietf.org/rfc/rfc4627.txt)
+* [MakePri.exe 命令行选项](makepri-exe-command-options.md)
+* [MakePri.exe 配置文件](makepri-exe-configuration.md)
+* [JavaScript 对象表示法 (JSON) 的应用程序/json 媒体类型](https://www.ietf.org/rfc/rfc4627.txt)

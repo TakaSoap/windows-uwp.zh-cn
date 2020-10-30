@@ -1,25 +1,25 @@
 ---
-Description: 在此方案中，我们将让新应用来代表我们的自定义生成系统。 我们将创建一个资源索引器，并向其添加字符串和其他类型的资源。 然后我们将生成和转储 PRI 文件。
+description: 在此方案中，我们将让新应用来代表我们的自定义生成系统。 我们将创建一个资源索引器，并向其添加字符串和其他类型的资源。 然后我们将生成和转储 PRI 文件。
 title: 方案 1 从字符串资源和资产文件生成 PRI 文件
 template: detail.hbs
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 81ad50f5a23bbb660ba44709e0ba828cff2ae5ee
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 44f4b8297cc1a34a378af137f75babca64e4edf2
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174061"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031670"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>方案 1：从字符串资源和资产文件生成 PRI 文件
 在此方案中，我们使用[包资源索引 (PRI) API](/windows/desktop/menurc/pri-indexing-reference) 让新应用代表我们的自定义生成系统。 请记住，此自定义生成系统的目的是为目标 UWP 应用创建 PRI 文件。 因此，作为此演练的一部分，我们将创建一些示例资源文件（包含字符串和其他类型的资源）来代表该目标 UWP 应用的资源。
 
 ## <a name="new-project"></a>新建项目
-首先在 Microsoft Visual Studio 中创建新项目。 创建 **Visual C++ Windows 控制台应用程序**项目，然后将其命名为 *CBSConsoleApp*（“自定义生成系统控制台应用”的简称）。
+首先在 Microsoft Visual Studio 中创建新项目。 创建 **Visual C++ Windows 控制台应用程序** 项目，然后将其命名为 *CBSConsoleApp* （“自定义生成系统控制台应用”的简称）。
 
-从**解决方案平台**下拉列表选择 *x64*。
+从 **解决方案平台** 下拉列表选择 *x64* 。
 
 ## <a name="headers-static-library-and-dll"></a>标题、静态库和 dll
 MrmResourceIndexer.h 标头文件（该文件安装到 `%ProgramFiles(x86)%\Windows Kits\10\Include\<WindowsTargetPlatformVersion>\um\`）中已声明 PRI API。 打开文件 `CBSConsoleApp.cpp` 并将标头与需要的其他标头一同包括在内。
@@ -30,7 +30,7 @@ MrmResourceIndexer.h 标头文件（该文件安装到 `%ProgramFiles(x86)%\Wind
 #include <MrmResourceIndexer.h>
 ```
 
-API 是在 MrmSupport.dll 中实现的，可通过链接到静态库 MrmSupport.lib 进行访问。 打开项目的**属性**，单击**链接器** > **输入**，编辑 **AdditionalDependencies** 并添加 `MrmSupport.lib`。
+API 是在 MrmSupport.dll 中实现的，可通过链接到静态库 MrmSupport.lib 进行访问。 打开项目的 **属性** ，单击 **链接器** > **输入** ，编辑 **AdditionalDependencies** 并添加 `MrmSupport.lib`。
 
 生成解决方案，然后再从 `C:\Program Files (x86)\Windows Kits\10\bin\<WindowsTargetPlatformVersion>\x64\` 将 `MrmSupport.dll` 复制到生成输出文件夹（可能为 `C:\Users\%USERNAME%\source\repos\CBSConsoleApp\x64\Debug\`）。
 
@@ -225,9 +225,9 @@ MrmResourceIndexerHandle indexer;
 
 信息以资源映射开始，它是用目标 UWP 应用的包系列名称命名的。 资源映射包含两个资源映射子树：一个用于已编制索引的文件资源，另一个用于字符串资源。 请注意包系列名称是如何插入到所有资源 URI 中的。
 
-第一个字符串资源是来自 `en-US\resources.resw` 的 *EnOnlyString*，它仅有一个候选项（与 *language-en-US* 限定符匹配）。 接下来是来自 `resources.resw` 和 `en-US\resources.resw` 的 *LocalizedString1*。 因此，它有两个候选项：一个与 *language-en-US* 匹配，另一个回退与任何上下文匹配的中性候选项。 同样，*LocalizedString2* 有两个候选项：*language-de-DE* 和中性。 最后，*NeutralOnlyString* 仅以中性形式存在。 将其命名为该名称以明确不应对它进行本地化。
+第一个字符串资源是来自 `en-US\resources.resw` 的 *EnOnlyString* ，它仅有一个候选项（与 *language-en-US* 限定符匹配）。 接下来是来自 `resources.resw` 和 `en-US\resources.resw` 的 *LocalizedString1* 。 因此，它有两个候选项：一个与 *language-en-US* 匹配，另一个回退与任何上下文匹配的中性候选项。 同样， *LocalizedString2* 有两个候选项： *language-de-DE* 和中性。 最后， *NeutralOnlyString* 仅以中性形式存在。 将其命名为该名称以明确不应对它进行本地化。
 
-## <a name="summary"></a>“摘要”
+## <a name="summary"></a>总结
 在此方案中，我们介绍了如何使用[包资源索引 (PRI) API](/windows/desktop/menurc/pri-indexing-reference) 创建资源索引器。 我们将字符串资源和资产文件添加到资源索引器。 然后，我们使用资源索引器生成二进制 PRI 文件。 最后，我们以 XML 形式转储二进制 PRI 文件，以便可以确认其中含有预期的信息。
 
 ## <a name="important-apis"></a>重要的 API

@@ -1,17 +1,17 @@
 ---
-Description: 本主题提供有关多语言应用工具包 (MAT) 4.0 的常见问题解答。
+description: 本主题提供有关多语言应用工具包 (MAT) 4.0 的常见问题解答。
 title: 多语言应用工具包常见问题解答
 template: detail.hbs
 ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 07e087dbb0cb2fcbd4dd1d098f84c49543f3a885
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 86c7805f92adf3551729783e2359c85103a0c13e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258147"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030750"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>多语言应用工具包 4.0 常见问题和疑难解答
 
@@ -19,11 +19,11 @@ ms.locfileid: "74258147"
 
 另请参阅[使用多语言应用工具包 4.0](use-mat.md)。
 
-**请注意**此工具包支持 .resw (XAML) 和 .resjson (JavaScript) 文件。 但本主题将仅涉及 .resw 文件。 .resw 文件叫做资源文件。 它包含默认语言或翻译为其他语言的字符串。 包含 .resw 文件的文件夹通常以语言标记的值命名。
+**请注意** 此工具包支持 .resw (XAML) 和 .resjson (JavaScript) 文件。 但本主题将仅涉及 .resw 文件。 .resw 文件叫做资源文件。 它包含默认语言或翻译为其他语言的字符串。 包含 .resw 文件的文件夹通常以语言标记的值命名。
 
 ## <a name="do-i-need-resw-files-in-multiple-languages"></a>我是否需要多种语言的 .resw 文件？
 
-不相同。 此工具包的关键优势之一是无需多种语言的 .resw 文件。 工具包通过使用 .xlf 文件管理并同步你的应用的资源。 这将消除保持跨多个 .resw 文件同步内容的难题。
+不是。 此工具包的关键优势之一是无需多种语言的 .resw 文件。 工具包通过使用 .xlf 文件管理并同步你的应用的资源。 这将消除保持跨多个 .resw 文件同步内容的难题。
 
 包含匹配的 .resw 和 .xlf 文件的项目将导致忽略 .xlf 文件中的译文。 如果发生此情况，则在构建时将显示一条警告，告诉你在最终应用中未包含 .xlf 译文。 当 .resw 文件和 .xlf 文件具有包含相同语言代码的目标语言时，这两种文件相匹配。 一个匹配的配对示例为 `Strings\de-DE\Resources.resw` 和 `<project-name>.de-DE.xlf` 文件（包含 `target-language="de-DE"`）。
 
@@ -35,13 +35,13 @@ ms.locfileid: "74258147"
 
 请尝试以下步骤。
 
-- 请确保选择项目节点而不是解决方案节点，然后再打开**工具**菜单。
+- 请确保选择项目节点而不是解决方案节点，然后再打开 **工具** 菜单。
 - 确认使用 Visual Studio 扩展管理器安装了工具包扩展。
 - 确认你的项目为 UWP 项目。
 
 ## <a name="when-i-build-my-project-i-dont-see-a-message-saying-that-a-multilingual-app-toolkit-build-has-started"></a>在生成项目时，我未看到已启动多语言应用工具包生成的消息
 
-确认你已针对项目启用了 MAT。 在**工具**菜单上，选择**多语言应用工具包** > **启用选择**。 如果使用之前版本启用项目，请使用**工具**菜单禁用重新启用 MAT。 这将更新项目，以使用新的工具包版本进行处理。
+确认你已针对项目启用了 MAT。 在 **工具** 菜单上，选择 **多语言应用工具包** > **启用选择** 。 如果使用之前版本启用项目，请使用 **工具** 菜单禁用重新启用 MAT。 这将更新项目，以使用新的工具包版本进行处理。
 
 确保已安装“针对所有 Visual Studio 版本生成任务”组件。 此生成组件与扩展一起安装，但可在安装期间手动取消选择扩展。 此组件需要更新 .xlf 文件，并将译文添加到 PRI 文件。 在此组件已安装并正常工作后，你将看到这些生成消息。
 
@@ -87,7 +87,7 @@ Microsoft Translator 是提供基于机器翻译的基于云的服务。 在无�
 
 工具包使用 Microsoft Translator 服务向你提供翻译建议。 当 Microsoft Translator 图标显示在翻译语言对话框中时，可以看到 Microsoft Translator 支持的语言。
 
-通过选择某一字符串，并单击**翻译**，可使用多语言编辑器中的 Microsoft Translator 快速翻译你的应用。
+通过选择某一字符串，并单击 **翻译** ，可使用多语言编辑器中的 Microsoft Translator 快速翻译你的应用。
 
 ## <a name="what-is-pseudo-language-and-what-are-pseudo-resource-trackers"></a>什么是伪语言，什么是伪资源跟踪器？
 
@@ -107,7 +107,7 @@ Microsoft Translator 是提供基于机器翻译的基于云的服务。 在无�
 
 如果已在 .xlf 文件中翻译字符串，但这些字符串未显示在你的应用中，请重新生成项目以更新非默认语言 .resw 文件。 Visual Studio 优化生成命令，以仅生成自最后一次生成开始更改的文件。
 
-检查你的语言首选项顺序。 确保你想要测试的语言列出在**设置**中语言首选项列表的顶部。
+检查你的语言首选项顺序。 确保你想要测试的语言列出在 **设置** 中语言首选项列表的顶部。
 
 ## <a name="the-toolkit-is-reporting-error--0x80004004-in-the-build-output"></a>工具包在生成输出中报告错误 0x80004004
 
@@ -115,7 +115,7 @@ Microsoft Translator 是提供基于机器翻译的基于云的服务。 在无�
 Merge of Loc PRI file failed calling makepri.exe: "0x80004004"
 ```
 
-当区域格式与工具包生成操作冲突时，将显示此消息。 解决方法是在生成时在**设置**中将语言更改为 en-US。
+当区域格式与工具包生成操作冲突时，将显示此消息。 解决方法是在生成时在 **设置** 中将语言更改为 en-US。
 
 
 ## <a name="the-toolkit-is-reporting-error--0x80004005-in-the-build-output"></a>工具包在生成输出中报告错误 0x80004005
@@ -128,7 +128,7 @@ Merge of Loc PRI file failed calling makepri.exe: "0x80004005"
 
 ## <a name="is-there-a-way-to-find-out-more-information-about-the-errors-im-seeing"></a>是否存在某种方法可以找到所看到的错误的详细信息？
 
-是的，可以打开 Visual Studio 中的详细日志。 单击**工具** > **选项** > **项目和解决方案** > **生成并运行**。 将**MSBuild 项目生成输出详细程度**从最小更改为正常或更高。
+是的，可以打开 Visual Studio 中的详细日志。 单击 " **工具** " "选项" "  >  **Options**  >  **项目和解决方案**  >  **生成并运行** "。 将 **MSBuild 项目生成输出详细程度** 从最小更改为正常或更高。
 
 从命令行运行 MSBuild 还可能生成额外的消息。
 
@@ -142,7 +142,7 @@ msbuild /t:rebuild <project-name>
 
 ## <a name="what-if-my-translator-doesnt-have-windows-10-andor-visual-studio-andor-the-multilingual-app-toolkit-installed"></a>如果我的 Translator 未安装 Windows 10 和/或 Visual Studio 和/或多语言应用工具包会怎样？
 
-当选择导出字符串资源对话框中的**输出：邮件收件人**时，电子邮件包含下载和安装多语言应用工具包 (MAT) 4.0 的链接。 即使没有 Windows 10 或 Visual Studio，你的 Translator 仍可安装 MAT 4.0 独立多语言编辑器工具。
+当选择导出字符串资源对话框中的 **输出：邮件收件人** 时，电子邮件包含下载和安装多语言应用工具包 (MAT) 4.0 的链接。 即使没有 Windows 10 或 Visual Studio，你的 Translator 仍可安装 MAT 4.0 独立多语言编辑器工具。
 
 有关详细信息，请参阅[使用多语言应用工具包 4.0](use-mat.md)。
 
@@ -177,6 +177,6 @@ msbuild /t:rebuild <project-name>
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用多语言应用工具包4。0](use-mat.md)
-* [Microsoft 在线翻译](https://www.microsofttranslator.com/)
-* [Makepri.exe 命令行选项](../../app-resources/makepri-exe-command-options.md)
+* [使用多语言应用工具包 4.0](use-mat.md)
+* [Microsoft Translator](https://www.microsofttranslator.com/)
+* [MakePri.exe 命令行选项](../../app-resources/makepri-exe-command-options.md)

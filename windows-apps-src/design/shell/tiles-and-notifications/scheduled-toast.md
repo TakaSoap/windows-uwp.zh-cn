@@ -1,5 +1,5 @@
 ---
-Description: 了解如何计划稍后显示本地 toast 通知。
+description: 了解如何计划稍后显示本地 toast 通知。
 title: 计划 toast 通知
 label: Schedule a toast notification
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: windows 10，uwp，计划 toast 通知，scheduledtoastnotification，如何，快速入门，入门，代码示例，演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ef849490df82d7677e19d1f1619d98111611be3
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 2a138458634f0246d7e6bed9d6d65c2479dac3c9
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100305"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030690"
 ---
 # <a name="schedule-a-toast-notification"></a>计划 toast 通知
 
@@ -23,14 +23,14 @@ ms.locfileid: "92100305"
 > [!IMPORTANT]
 > 桌面应用程序 (.MSIX/稀疏包和经典桌面) 用于发送通知和处理激活的步骤略有不同。 请按照下面的说明进行操作，但 `ToastNotificationManager` 将替换为 `DesktopNotificationManagerCompat` [桌面应用](toast-desktop-apps.md) 文档中的类。
 
-> **重要 api**： [ScheduledToastNotification 类](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+> **重要 api** ： [ScheduledToastNotification 类](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要完全理解此主题，事先掌握以下内容会很有用...
 
-* Toast 通知术语和概念的应用知识。 有关详细信息，请参阅 [Toast 和操作中心概述](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10)。
+* Toast 通知术语和概念的应用知识。 有关详细信息，请参阅 [Toast 和操作中心概述](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10)。
 * 熟悉 Windows 10 toast 通知内容。 有关详细信息，请参阅 [toast 内容文档](adaptive-interactive-toasts.md)。
 * Windows 10 UWP 应用项目
 

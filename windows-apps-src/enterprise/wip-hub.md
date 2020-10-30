@@ -1,5 +1,5 @@
 ---
-Description: 此中心主题涉及关于 Windows 信息保护 (WIP) 与文件、缓冲区、剪贴板、网络、后台任务以及锁定情况下的数据保护有何关联的完整开发人员蓝图。
+description: 此中心主题涉及关于 Windows 信息保护 (WIP) 与文件、缓冲区、剪贴板、网络、后台任务以及锁定情况下的数据保护有何关联的完整开发人员蓝图。
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp, Windows 信息保护, 企业数据, 企业数据保护, edp, 启发式应用
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: 69bab48836d7679d8bcec5f9132bca88d7607cdb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cb3006541a5e14936035bc7b9d3b6493df031823
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173241"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032010"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 信息保护 (WIP)
 
@@ -35,7 +35,7 @@ WIP 和 MDM 一起使组织可以更好地控制如何处理组织所管理的�
 
 如果不需要用户注册其设备，管理员将使用其 MAM 系统定义和部署适用于特定应用的策略。 当用户安装其中的任意应用时，他们将收到关联的策略。
 
-该策略标识可以访问企业数据的应用（称为策略的*允许列表*）。 这些应用可以在剪贴板上或通过“共享”合约访问企业保护的文件、虚拟专用网 (VPN) 和企业数据。 此策略还定义管理数据的规则。 例如，是否可以从企业所有的文件复制数据，然后复制到非企业所有的文件中。
+该策略标识可以访问企业数据的应用（称为策略的 *允许列表* ）。 这些应用可以在剪贴板上或通过“共享”合约访问企业保护的文件、虚拟专用网 (VPN) 和企业数据。 此策略还定义管理数据的规则。 例如，是否可以从企业所有的文件复制数据，然后复制到非企业所有的文件中。
 
 如果用户从组织的 MDM 系统中取消注册其设备，或卸载已被组织的 MAM 系统标识的应用，则管理员可以远程擦除设备中的企业数据。
 
@@ -47,7 +47,7 @@ WIP 和 MDM 一起使组织可以更好地控制如何处理组织所管理的�
 
 如果你的应用在允许列表上，则你的应用生成的所有数据都将受到策略限制。 这意味着，如果管理员吊销用户对企业数据的访问权限，则这些用户将失去对你的应用所生成的所有数据的访问权限。
 
-如果你的应用仅设计用于企业用途，则这没问题。 但是，如果你的应用创建用户认为属于其个人的数据，你将希望*启发*你的应用以便智能地辨别企业和个人数据。 我们调用此类型的应用*应用启发式*，因为它可以在保留用户个人数据的完整性时流畅地强制执行企业策略。
+如果你的应用仅设计用于企业用途，则这没问题。 但是，如果你的应用创建用户认为属于其个人的数据，你将希望 *启发* 你的应用以便智能地辨别企业和个人数据。 我们调用此类型的应用 *应用启发式* ，因为它可以在保留用户个人数据的完整性时流畅地强制执行企业策略。
 
 ## <a name="create-an-enterprise-enlightened-app"></a>创建企业启发式应用
 
@@ -96,4 +96,4 @@ END
 
 
 
- 
+ 

@@ -1,17 +1,17 @@
 ---
-Description: 为了从 Microsoft Store 中的应用销售额中获得资金，你需要设置你的帐户，并填写所需的税务形式。
+description: 为了从 Microsoft Store 中的应用销售额中获得资金，你需要设置你的帐户，并填写所需的税务形式。
 title: 设置付款帐户和纳税表单
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.date: 1/17/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b7f7209d77e05453126f885e37a251e8b6511e95
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 563e8e5df010d869183fb0a3c734eaae521a759e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172871"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030270"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>设置付款帐户和纳税表单
 
@@ -47,7 +47,7 @@ ms.locfileid: "89172871"
 > [!IMPORTANT]
 > 不同的国家和地区具有不同的税务要求。 你必须支付的税款的精确金额取决于你在哪些国家和地区销售你的应用。 请参阅[应用开发人员协议](/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 为哪些国家和地区代缴销售和使用税。 在其他国家或地区中，根据你的注册地点，你可能需要直接向当地的税务机构为你的应用缴纳销售和使用税 此外，你收到的应用销售收款还可以作为收入进行纳税。 我们强烈建议你联系你所在国家或地区的相关机构，最能最好地帮助你确定适用于你的 Microsoft Store 开发人员活动的正确的税务信息。
 
-1. 在 " [合作伙伴中心](https://partner.microsoft.com/dashboard)" 中，选择右上角的 " **帐户设置** " 图标，然后选择 " **开发人员设置**"。
+1. 在 " [合作伙伴中心](https://partner.microsoft.com/dashboard)" 中，选择右上角的 " **帐户设置** " 图标，然后选择 " **开发人员设置** "。
 2. 在左侧导航菜单中，选择“付款和税务”，然后选择“付款和税款分配”。
 
     ![支出和税务配置文件分配](images/payout-tax-profile-assignment.png)
@@ -87,7 +87,7 @@ ms.locfileid: "89172871"
 
 ### <a name="create-a-payment-profile"></a>创建付款配置文件
 
-1. 在 " [合作伙伴中心](https://partner.microsoft.com/dashboard)" 中，选择右上角的 " **设置** " 齿轮图标，然后选择 " **开发人员设置**"。
+1. 在 " [合作伙伴中心](https://partner.microsoft.com/dashboard)" 中，选择右上角的 " **设置** " 齿轮图标，然后选择 " **开发人员设置** "。
 2. 在“付款和税务”标题下，选择“付款和税务配置文件分配”。
 
     > [!NOTE]
@@ -100,7 +100,7 @@ ms.locfileid: "89172871"
 4. 选择现有付款配置文件，或者单击“创建新的付款配置文件”为所选付款方式创建新的配置文件。
 
 > [!NOTE]
-> 如果出于某种原因，你的帐户尚未准备好从 Microsoft 接收资金，你可以选中 " **保留我的付款** " 复选框。 你将继续从你的销售中获得收益，但在你禁用**支付支付**之前，将不会分发支付。
+> 如果出于某种原因，你的帐户尚未准备好从 Microsoft 接收资金，你可以选中 " **保留我的付款** " 复选框。 你将继续从你的销售中获得收益，但在你禁用 **支付支付** 之前，将不会分发支付。
 
 ### <a name="create-a-bank-based-payment-profile"></a>创建基于银行的付款配置文件
 
@@ -139,7 +139,7 @@ ms.locfileid: "89172871"
 
 如果需要更改或更正任何错误信息，可以编辑现有的付款配置文件。
 
-1. 在 " [合作伙伴中心](https://partner.microsoft.com/dashboard)" 中，选择右上角的 " **设置** " 齿轮图标，然后选择 " **开发人员设置**"。
+1. 在 " [合作伙伴中心](https://partner.microsoft.com/dashboard)" 中，选择右上角的 " **设置** " 齿轮图标，然后选择 " **开发人员设置** "。
 2. 在“付款和税务”标题下，选择“付款和税务配置文件”。
 3. 你的付款配置文件将与其状态一起列出。 找到要编辑的配置文件，然后单击最右侧的“编辑”
 

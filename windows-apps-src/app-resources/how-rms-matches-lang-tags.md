@@ -1,21 +1,21 @@
 ---
-Description: 上一个主题（资源管理系统如何匹配和选择资源）对限定符匹配进行总体概括。 本主题主要对语言标记匹配进行详细介绍。
+description: 上一个主题（资源管理系统如何匹配和选择资源）对限定符匹配进行总体概括。 本主题主要对语言标记匹配进行详细介绍。
 title: 资源管理系统匹配语言标记的方式
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 2db4c7d98924ffb25800b1c615e929495b279fdc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 3c5b2d595585cabdfb9f2983f2ad87f05b7fa5a4
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254663"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031880"
 ---
 # <a name="how-the-resource-management-system-matches-language-tags"></a>资源管理系统匹配语言标记的方式
 
-上一个主题（[资源管理系统如何匹配和选择资源](how-rms-matches-and-chooses-resources.md)）对限定符匹配进行总体概括。 本主题主要对语言标记匹配进行详细介绍。
+上一个主题（[资源管理系统如何匹配和选择资源](how-rms-matches-and-chooses-resources.md)）对限定符匹配进行了总体概括。 本主题主要对语言标记匹配进行详细介绍。
 
 ## <a name="introduction"></a>简介
 
@@ -42,9 +42,9 @@ ms.locfileid: "74254663"
 
 比较两种语言标记时，基于匹配的接近程度为比较指定一个分数。
 
-| 匹配 | 分数 | 示例 |
+| 匹配 | Score | 示例 |
 | ----- | ----- | ------- |
-| 精确匹配 | 最高 | en-AU : en-AU |
+| 完全匹配 | 最高 | en-AU : en-AU |
 | 变体匹配（语言、脚本、区域、变体） |  | en-AU-variant1 : en-AU-variant1-t-ja |
 | 区域匹配（语言、脚本、区域） |  | en-AU : en-AU-variant1 |
 | 部分匹配（语言，脚本） |  |  |
@@ -56,7 +56,7 @@ ms.locfileid: "74254663"
 | 不确定的语言（任何语言匹配） |  | en-AU : und |
 | 无匹配（脚本不匹配或主要语言标记不匹配） | 最低 | en-AU : fr-FR |
 
-### <a name="exact-match"></a>精确匹配
+### <a name="exact-match"></a>完全匹配
 
 标记完全相等（所有子标记元素均匹配）。 比较可以从变体或地区匹配提升到此匹配类型。 例如，en-US 与 en-US 匹配。
 
@@ -70,15 +70,15 @@ ms.locfileid: "74254663"
 
 ### <a name="partial-matches"></a>部分匹配
 
-标记在语言和脚本子标记上匹配，但在地区或一些其他子标记上有所不同。 例如，en-us 匹配 en，或 en-us 匹配 en\*。
+标记在语言和脚本子标记上匹配，但在地区或一些其他子标记上有所不同。 例如，en-us 匹配 en，或 en-us 匹配 en \* 。
 
 #### <a name="macro-region-match"></a>宏地区匹配
 
 标记在语言和脚本子标记上匹配；两个标记都有地区子标记，其中一个子标记表示包含其他地区的宏地区。 宏地区子标记始终是数字，并且从联合国统计部门 M.49 国家/地区和区域代码衍生而来。 有关包含关系的详细信息，请参阅[宏地理（大陆）区域、地理子区域和所选经济和其他分组的构成](https://unstats.un.org/unsd/methods/m49/m49regin.htm)。
 
-**注意**“经济分组”和“其他分组”的 UN 代码在 BCP-47 中不受支持。
+**注意** “经济分组”和“其他分组”的 UN 代码在 BCP-47 中不受支持。
  
-**注意**具有宏地区子标记“001”的标记被视为等同于非特定地区标记。 例如，“es 001”和“es”被视为同义词。
+**注意** 具有宏地区子标记“001”的标记被视为等同于非特定地区标记。 例如，“es 001”和“es”被视为同义词。
 
 #### <a name="region-neutral-match"></a>非特定地区匹配
 
@@ -98,13 +98,13 @@ ms.locfileid: "74254663"
 
 ### <a name="undetermined-language"></a>不确定的语言
 
-可以将资源标记为“und”，表示匹配任何语言。 此标记还可与脚本标记一起使用，用来基于脚本筛选匹配。 例如，“und-Latn”将匹配使用拉丁文脚本的任何语言标记。 有关详细信息，请参阅下方。
+可以将资源标记为“und”，表示匹配任何语言。 此标记还可与脚本标记一起使用，用来基于脚本筛选匹配。 例如，“und-Latn”将匹配使用拉丁文脚本的任何语言标记。 有关详细信息，请参阅下文。
 
 ### <a name="script-mismatch"></a>脚本不匹配
 
 当标记仅在主要语言标记上匹配，但脚本不匹配时，该配对被视为不匹配，其评分将低于有效匹配的级别。
 
-### <a name="no-match"></a>不匹配
+### <a name="no-match"></a>无匹配
 
 如果主要语言子标记不匹配，其评分将低于有效匹配的级别。 例如，zh-Hant 与 zh-Hans 不匹配。
 
@@ -133,7 +133,7 @@ ms.locfileid: "74254663"
 - 分数较高的资源：“en-US”。
 - 描述：从 pt-PT”开始比较，但找不到精确匹配。 由于用户的语言列表中存在“pt-BR”，因此部分匹配推迟到比较“pt-BR”。 下一个语言比较是“en-US”，有一个精确匹配。 因此，胜出的资源是“en-US”。
 
-或者
+OR
 
 - 语言列表（按顺序）：“es-MX”（西班牙语（墨西哥）、“es-HO”（西班牙语（洪都拉斯））。
 - 资源：“en-ES”、“es-HO”。
@@ -141,21 +141,21 @@ ms.locfileid: "74254663"
 
 ## <a name="undetermined-language-und"></a>不确定的语言（“und”）
 
-语言标记“und”可用来指定在没有更好的匹配的情况下匹配任何语言的资源。 可以将其视为类似于 BCP-47 语言范围“ *”或“* -&lt;脚本&gt;”。 下面是一个示例。
+语言标记“und”可用来指定在没有更好的匹配的情况下匹配任何语言的资源。 可以将其视为类似于 BCP-47 语言范围 " *" 或 "* - &lt; 脚本 &gt; "。 下面是一个示例。
 
 - 语言列表：“en-US”、“zh-Hans-CN”。
 - 资源：“zh-Hans-CN”、“und”。
 - 分数较高的资源：“und”。
 - 描述：从 en-US”开始比较，但找不到基于“en”的匹配（部分匹配或更好的匹配）。 由于有一个资源标记为“und”，因此匹配算法使用该资源。
 
-标记“und”使多种语言共享一个资源，并允许将个别语言视为例外。 举个例子。
+标记“und”使多种语言共享一个资源，并允许将个别语言视为例外。 例如，
 
 - 语言列表：“zh-Hans-CN”、“en-US”。
 - 资源：“zh-Hans-CN”、“und”。
 - 分数较高的资源：“zh-Hans-CN”。
 - 描述：比较找到第一项的一个精确匹配，因此不检查标记为“und”的资源。
 
-你可以使用“und”和脚本标记一起按脚本筛选资源。 举个例子。
+你可以使用“und”和脚本标记一起按脚本筛选资源。 例如，
 
 - 语言列表：“ru”。
 - 资源：“und-Latn”、“und-Cyrl”、“und-Arab”。
@@ -190,5 +190,5 @@ ms.locfileid: "74254663"
 
 * [资源管理系统如何匹配和选择资源](how-rms-matches-and-chooses-resources.md)
 * [BCP-47](https://tools.ietf.org/html/bcp47)
-* [了解用户配置文件语言和应用程序清单语言](../design/globalizing/manage-language-and-region.md)
-* [组成宏地理（大陆）区域、地理区域和所选经济和其他分组的组合](https://unstats.un.org/unsd/methods/m49/m49regin.htm)
+* [了解用户配置文件语言和应用清单语言](../design/globalizing/manage-language-and-region.md)
+* [宏地理（大陆）区域、地理子区域和所选经济和其他分组的构成](https://unstats.un.org/unsd/methods/m49/m49regin.htm)

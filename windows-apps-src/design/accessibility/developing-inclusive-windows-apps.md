@@ -1,5 +1,5 @@
 ---
-Description: 了解如何开发可访问的 Windows 应用，包括键盘导航、颜色和对比度设置以及辅助技术支持。
+description: 了解如何开发可访问的 Windows 应用，包括键盘导航、颜色和对比度设置以及辅助技术支持。
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: 开发非独占 Windows 10 应用
 label: Developing inclusive Windows 10 apps
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 856ed1222cd393ec2730226f9c4faadf7e9ad0d7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ff42cc2ac8ffb965b5f58db081cd86106f4145ef
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219810"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029870"
 ---
 # <a name="developing-inclusive-windows-apps"></a>开发非独占 Windows 应用  
 
@@ -47,7 +47,7 @@ ms.locfileid: "91219810"
 
 若要了解有关 UI 元素之间的键盘导航的详细信息，请参阅[键盘辅助功能](keyboard-accessibility.md)。  
 
-此外，[针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)电子书包含有关此主题的出色章节，标题为_设计逻辑层次结构_。
+此外， [针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)电子书包含有关此主题的出色章节，标题为 _设计逻辑层次结构_ 。
 
 ## <a name="color-and-contrast"></a>颜色和对比度  
 Windows 中的内置辅助功能之一是高对比度模式，该模式可增强计算机屏幕上的文本和图像的颜色对比度。 对于某些人来说，增加颜色对比度可以降低眼睛疲劳并且更易于阅读。 当你在高对比度下验证 UI 时，你要检查是否已使用系统颜色（而不是硬编码颜色）为控件一致编码，以确保他们能够在屏幕上看到不使用高对比度的用户所看到的所有控件。  

@@ -1,5 +1,5 @@
 ---
-Description: 磁贴是应用在“开始”菜单上的表示形式。 每个应用都有一个磁贴。 在 Microsoft Visual Studio 中创建新的 Windows 应用项目时，该项目包含显示应用名称和徽标的默认磁贴。
+description: 磁贴是应用在“开始”菜单上的表示形式。 每个应用都有一个磁贴。 在 Microsoft Visual Studio 中创建新的 Windows 应用项目时，该项目包含显示应用名称和徽标的默认磁贴。
 title: 适用于 Windows 应用的磁贴
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
@@ -8,18 +8,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 19c8612188000a3d1161fa746d6e7944667a5104
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 79e1ac5188b5c777ba1e99380f0e63beb6e01d37
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218150"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032070"
 ---
 # <a name="tiles-for-windows-apps"></a>适用于 Windows 应用的磁贴
 
  
 
-*磁贴*是应用在 "开始" 菜单上的表示形式。 每个应用都有一个磁贴。 在 Microsoft Visual Studio 中创建新的 Windows 应用项目时，该项目包含显示应用名称和徽标的默认磁贴。应用首次安装时，Windows 将显示此磁贴。 应用安装后，可通过通知更改磁贴内容，例如，可更改磁贴以将新信息传递给用户（如头条新闻或最近未读邮件的主题）。
+*磁贴* 是应用在 "开始" 菜单上的表示形式。 每个应用都有一个磁贴。 在 Microsoft Visual Studio 中创建新的 Windows 应用项目时，该项目包含显示应用名称和徽标的默认磁贴。 应用首次安装时，Windows 将显示此磁贴。 应用安装后，可通过通知更改磁贴内容，例如，可更改磁贴以将新信息传递给用户（如头条新闻或最近未读邮件的主题）。
 
 ## <a name="configure-the-default-tile"></a>配置默认磁贴
 
@@ -55,11 +55,11 @@ ms.locfileid: "91218150"
 
     缩放的图像应遵循此命名约定：
     
-    * &lt; 映像名称 &gt; *。缩放* &lt; 比例系数 &gt; *。* &lt;图像文件扩展名 &gt; * 
+    *&lt; 映像名称 &gt;* 。缩放 *&lt; 比例系数 &gt;* 。 *&lt;图像文件扩展名 &gt;* 
 
     例如：SplashScreen.scale-100.png
 
-    引用该映像时，请将其引用为* &lt; 映像名称 &gt; *。* &lt;&gt;* 在此示例中，图像文件扩展名 ( "SplashScreen.png") 。 系统将自动从你提供的图像中为设备选择相应的缩放图像。
+    引用该映像时，请将其引用为 *&lt; 映像名称 &gt;* 。 *&lt;&gt;* 在此示例中，图像文件扩展名 ( "SplashScreen.png") 。 系统将自动从你提供的图像中为设备选择相应的缩放图像。
 
 -   虽然不是必须的，但我们强烈建议你提供适用于宽磁贴和大磁贴的徽标，以便用户可以将应用磁贴大小调整到这些大小。 若要提供这些附加图像，可创建 **DefaultTile** 元素并使用 **Wide310x150Logo** 和 **Square310x310Logo** 属性指定附加图像：
 ```    XML

@@ -1,5 +1,5 @@
 ---
-Description: 桌面应用程序可以通过桌面桥来固定辅助磁贴！
+description: 桌面应用程序可以通过桌面桥来固定辅助磁贴！
 title: 从桌面应用固定辅助磁贴
 label: Pin secondary tiles from desktop apps
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, 桌面桥, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile, 桌面应用程序, win32, winforms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: f0b1e167b0ce2e91b00b7facbdd53709efdc4887
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 1c6451510816e36bed5574f0ae69254c9f4d34f6
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100265"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030650"
 ---
 # <a name="pin-secondary-tiles-from-desktop-apps"></a>从桌面应用固定辅助磁贴
 
@@ -22,7 +22,7 @@ ms.locfileid: "92100265"
 ![辅助磁贴的屏幕截图](images/secondarytiles.png)
 
 > [!IMPORTANT]
-> **需要 Fall Creators Update**：必须面向 SDK 16299 并运行版本 16299 或更高版本，才能从桌面桥应用固定辅助磁贴。
+> **需要 Fall Creators Update** ：必须面向 SDK 16299 并运行版本 16299 或更高版本，才能从桌面桥应用固定辅助磁贴。
 
 从 WPF 或 WinForms 应用程序中添加辅助磁贴非常类似于纯净版 UWP 应用的情况。 唯一的区别是，你必须指定主窗口句柄 (HWND)。 这是因为在固定磁贴时，Windows 会显示一个模式对话框，并请求用户确认他们是否想要固定磁贴。 如果桌面应用程序没有为 SecondaryTile 对象配置所有者窗口，则 Windows 不知道在哪里绘制对话框，因此操作将失败。
 
@@ -90,7 +90,7 @@ bool isPinned = await tile.RequestCreateAsync();
 ## <a name="send-tile-notifications"></a>发送磁贴通知
 
 > [!IMPORTANT]
-> **需要 2018 年 4 月版本 17134.81 或更高版本**：必须运行版本 17134.81 或更高版本，才能从桌面桥应用向辅助磁贴发送磁贴或锁屏提醒通知。 在 17134.81 服务更新之前，从桌面桥应用向辅助磁贴发送磁贴或锁屏提醒通知时会出现 0x80070490 *未找到元素* 异常。
+> **需要 2018 年 4 月版本 17134.81 或更高版本** ：必须运行版本 17134.81 或更高版本，才能从桌面桥应用向辅助磁贴发送磁贴或锁屏提醒通知。 在 17134.81 服务更新之前，从桌面桥应用向辅助磁贴发送磁贴或锁屏提醒通知时会出现 0x80070490 *未找到元素* 异常。
 
 发送磁贴或锁屏提醒通知的方法与 UWP 应用相同。 要开始使用，请参阅[发送本地磁贴通知](sending-a-local-tile-notification.md)。
 

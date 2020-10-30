@@ -1,5 +1,5 @@
 ---
-Description: 本文介绍如何创建可实现 IBasicVideoEffect 接口的 Windows 运行时组件，以允许你为视频流创建自定义效果。
+description: 本文介绍如何创建可实现 IBasicVideoEffect 接口的 Windows 运行时组件，以允许你为视频流创建自定义效果。
 MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: a80e00a44bbb1c401811f72eb7024aef25013f29
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 119d444f073c4f668dcdc63fc118ed408eca8e32
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363950"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030490"
 ---
 # <a name="custom-video-effects"></a>自定义视频效果
 
@@ -30,13 +30,13 @@ ms.locfileid: "89363950"
 
 **为视频效果添加 Windows 运行时组件**
 
-1.  在 Microsoft Visual Studio 中打开解决方案后，请在 " **文件** " 菜单中选择 " **添加- &gt; 新建项目**"。
-2.  ** (通用 Windows) **项目类型中选择 "Windows 运行时" 组件。
-3.  对于此示例，将项目命名为*VideoEffectComponent*。 此名称稍后将在代码中引用。
-4.  单击 **“确定”** 。
-5.  项目模板将创建一个名为 Class1.cs 的类。 在 **解决方案资源管理器**中，右键单击 Class1.cs 的图标，然后选择 " **重命名**"。
-6.  将文件重命名为*ExampleVideoEffect.cs*。 Visual Studio 将显示一条提示，询问你是否想要更新对新名称的所有引用。 单击 **“是”** 。
-7.  打开**ExampleVideoEffect.cs**，并更新类定义以实现 [**IBasicVideoEffect**](/uwp/api/Windows.Media.Effects.IBasicVideoEffect) 接口。
+1.  在 Microsoft Visual Studio 中打开解决方案后，请在 " **文件** " 菜单中选择 " **添加- &gt; 新建项目** "。
+2.  **(通用 Windows)** 项目类型中选择 "Windows 运行时" 组件。
+3.  对于此示例，将项目命名为 *VideoEffectComponent* 。 此名称稍后将在代码中引用。
+4.  单击“确定”。
+5.  项目模板将创建一个名为 Class1.cs 的类。 在 **解决方案资源管理器** 中，右键单击 Class1.cs 的图标，然后选择 " **重命名** "。
+6.  将文件重命名为 *ExampleVideoEffect.cs* 。 Visual Studio 将显示一条提示，询问你是否想要更新对新名称的所有引用。 单击 **“是”** 。
+7.  打开 **ExampleVideoEffect.cs** ，并更新类定义以实现 [**IBasicVideoEffect**](/uwp/api/Windows.Media.Effects.IBasicVideoEffect) 接口。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetImplementIBasicVideoEffect":::
 
@@ -95,11 +95,11 @@ ms.locfileid: "89363950"
 > [!NOTE] 
 > 如果从 **SupportedEncodingProperties** 返回空的 [**VideoEncodingProperties**](/uwp/api/Windows.Media.MediaProperties.VideoEncodingProperties) 对象的空白默认列表，系统将默认为 ARGB32 编码。
 
- 
+ 
 
 ### <a name="supportedmemorytypes-property"></a>SupportedMemoryTypes 属性
 
-系统将检查 [**SupportedMemoryTypes**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) 属性以确定你的效果是否将访问软件内存或硬件 (GPU) 内存中的视频帧。 如果你返回 [**MediaMemoryTypes.Cpu**](/uwp/api/Windows.Media.Effects.MediaMemoryTypes)，系统会将使图像数据包含在 [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 对象中的输入和输出帧传递给你的效果。 如果返回 **MediaMemoryTypes.Gpu**，系统会将使图像数据包含在 [**IDirect3DSurface**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 对象中的输入和输出帧传递给效果。
+系统将检查 [**SupportedMemoryTypes**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) 属性以确定你的效果是否将访问软件内存或硬件 (GPU) 内存中的视频帧。 如果你返回 [**MediaMemoryTypes.Cpu**](/uwp/api/Windows.Media.Effects.MediaMemoryTypes)，系统会将使图像数据包含在 [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 对象中的输入和输出帧传递给你的效果。 如果返回 **MediaMemoryTypes.Gpu** ，系统会将使图像数据包含在 [**IDirect3DSurface**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 对象中的输入和输出帧传递给效果。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSupportedMemoryTypes":::
 
@@ -107,7 +107,7 @@ ms.locfileid: "89363950"
 > [!NOTE]
 > 如果指定 [**MediaMemoryTypes.GpuAndCpu**](/uwp/api/Windows.Media.Effects.MediaMemoryTypes)，系统将使用 GPU 或系统内存（以对管道更高效者为准）。 在使用此值时，必须检查 [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) 方法，以查看传入到该方法的 [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 或 [**IDirect3DSurface**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 是否包含数据，然后相应地处理帧。
 
- 
+ 
 
 ### <a name="timeindependent-property"></a>TimeIndependent 属性
 
@@ -132,7 +132,7 @@ ms.locfileid: "89363950"
 
 [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) 方法是你的效果修改视频图像数据的位置。 针对每一帧调用一次该方法，并将 [**ProcessVideoFrameContext**](/uwp/api/Windows.Media.Effects.ProcessVideoFrameContext) 对象传递给它。 此对象包含一个输入 [**VideoFrame**](/uwp/api/Windows.Media.VideoFrame) 对象（包含要处理的传入帧）和一个你要向其写入图像数据（将传递到剩余的视频管道）的输出 **VideoFrame** 对象。 其中每个 **VideoFrame** 对象都有一个 [**SoftwareBitmap**](/uwp/api/windows.media.videoframe.softwarebitmap) 属性和一个 [**Direct3DSurface**](/uwp/api/windows.media.videoframe.direct3dsurface) 属性，但是使用其中哪个对象，则由你从 [**SupportedMemoryTypes**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) 属性返回的值确定。
 
-此示例介绍如何使用软件处理简单地实现 **ProcessFrame** 方法。 有关使用 [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 对象的详细信息，请参阅[图像处理](imaging.md)。 使用硬件处理的 **ProcessFrame** 实现示例将在本文后面介绍。
+此示例介绍如何使用软件处理简单地实现 **ProcessFrame** 方法。 有关使用 [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 对象的详细信息，请参阅 [图像处理](imaging.md)。 使用硬件处理的 **ProcessFrame** 实现示例将在本文后面介绍。
 
 访问 **SoftwareBitmap** 的数据缓冲区需要 COM 互操作，所以应当在效果类文件中包含 **System.Runtime.InteropServices** 命名空间。
 
@@ -146,13 +146,13 @@ ms.locfileid: "89363950"
 
 > [!NOTE]
 > 因为这种方法访问本机非托管的图像缓冲区，所以需要将项目配置为允许不安全的代码。
-> 1.  在解决方案资源管理器中，右键单击 VideoEffectComponent 项目，然后选择 " **属性**"。
-> 2.  选择“**生成**”选项卡。
+> 1.  在解决方案资源管理器中，右键单击 VideoEffectComponent 项目，然后选择 " **属性** "。
+> 2.  选择“ **生成** ”选项卡。
 > 3.  选中 " **允许不安全代码** " 复选框。
 
- 
+ 
 
-现在，你可以添加 **ProcessFrame** 方法实现。 首先，此方法将从输入和输出软件位图中获取 [**BitmapBuffer**](/uwp/api/Windows.Graphics.Imaging.BitmapBuffer) 对象。 请注意，输出帧和输入帧均已打开，分别用于写入和读取。 接下来，通过调用 [**CreateReference**](/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference) 为每个缓冲区获取 [**IMemoryBufferReference**](/uwp/api/Windows.Foundation.IMemoryBufferReference)。 然后，通过将 **IMemoryBufferReference** 转换为上述定义的 COM 互操作接口 **IMemoryByteAccess**，接着调用 **GetBuffer**，获取实际数据缓冲区。
+现在，你可以添加 **ProcessFrame** 方法实现。 首先，此方法将从输入和输出软件位图中获取 [**BitmapBuffer**](/uwp/api/Windows.Graphics.Imaging.BitmapBuffer) 对象。 请注意，输出帧和输入帧均已打开，分别用于写入和读取。 接下来，通过调用 [**CreateReference**](/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference) 为每个缓冲区获取 [**IMemoryBufferReference**](/uwp/api/Windows.Foundation.IMemoryBufferReference)。 然后，通过将 **IMemoryBufferReference** 转换为上述定义的 COM 互操作接口 **IMemoryByteAccess** ，接着调用 **GetBuffer** ，获取实际数据缓冲区。
 
 现在已获取数据缓冲区，你可以从输入缓冲区进行读取，并对输出缓冲区进行写入。 通过调用 [**GetPlaneDescription**](/uwp/api/windows.graphics.imaging.bitmapbuffer.getplanedescription) 获取缓冲区的布局，它提供了有关缓冲区的宽度、步幅和初始偏移的信息。 每像素位数由与之前通过 [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) 方法设置的编码属性确定。 缓冲区格式信息用于查找每个像素的缓冲区中的索引。 源缓冲区的像素值已复制到目标缓冲区中，并且颜色值乘以为此效果定义的 FadeValue 属性，以使其按指定的量变暗。
 
@@ -164,15 +164,15 @@ ms.locfileid: "89363950"
 
 使用硬件 (GPU) 处理创建自定义视频效果与使用上述软件处理几乎完全相同。 本部分介绍使用硬件处理的效果中的几点不同之处。 此示例使用 Win2D Windows 运行时 API。 有关使用 Win2D 的详细信息，请参阅 [Win2D 文档](https://microsoft.github.io/Win2D/html/Introduction.htm)。
 
-使用以下步骤将 Win2D NuGet 程序包添加到你创建的项目，如本文开头的**向应用添加自定义效果**部分中所述。
+使用以下步骤将 Win2D NuGet 程序包添加到你创建的项目，如本文开头的 **向应用添加自定义效果** 部分中所述。
 
 **将 Win2D NuGet 程序包添加到你的效果项目**
 
-1.  在 **解决方案资源管理器**中，右键单击 **VideoEffectComponent** 项目，然后选择 " **管理 NuGet 包**"。
+1.  在 **解决方案资源管理器** 中，右键单击 **VideoEffectComponent** 项目，然后选择 " **管理 NuGet 包** "。
 2.  在窗口顶部，选择 " **浏览** " 选项卡。
-3.  在搜索框中，输入 **Win2D**。
-4.  选择 " **Win2D**"，然后在右窗格中选择 " **安装** "。
-5.  " **查看更改** " 对话框显示要安装的程序包。 单击 **“确定”** 。
+3.  在搜索框中，输入 **Win2D** 。
+4.  选择 " **Win2D** "，然后在右窗格中选择 " **安装** "。
+5.  " **查看更改** " 对话框显示要安装的程序包。 单击“确定”。
 6.  接受程序包许可证。
 
 除了基本项目设置中包含的命名空间外，还需要包含 Win2D 提供的以下命名空间。
@@ -204,7 +204,7 @@ ms.locfileid: "89363950"
 
 最后一步是实现实际处理图像数据的 [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) 方法。
 
-使用 Win2D API，从输入帧的 [**Direct3DSurface**](/uwp/api/windows.media.videoframe.direct3dsurface) 属性创建 **CanvasBitmap**。 从输出帧的 **Direct3DSurface** 创建一个 **CanvasRenderTarget**，从此呈现目标创建一个 **CanvasDrawingSession**。 新的 Win2D **GaussianBlurEffect** 已使用我们的效果通过 [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties) 公开的 **BlurAmount** 属性进行了初始化。 最后，调用 **CanvasDrawingSession.DrawImage** 方法，使用模糊效果将输入位图绘制到呈现目标。
+使用 Win2D API，从输入帧的 [**Direct3DSurface**](/uwp/api/windows.media.videoframe.direct3dsurface) 属性创建 **CanvasBitmap** 。 从输出帧的 **Direct3DSurface** 创建一个 **CanvasRenderTarget** ，从此呈现目标创建一个 **CanvasDrawingSession** 。 新的 Win2D **GaussianBlurEffect** 已使用我们的效果通过 [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties) 公开的 **BlurAmount** 属性进行了初始化。 最后，调用 **CanvasDrawingSession.DrawImage** 方法，使用模糊效果将输入位图绘制到呈现目标。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetProcessFrameWin2D":::
 
@@ -214,9 +214,9 @@ ms.locfileid: "89363950"
 
 若要从应用中使用你的视频效果，必须向应用添加对效果项目的引用。
 
-1.  在解决方案资源管理器中，右键单击 " **引用** "，然后选择 " **添加引用**"。
-2.  展开 " **项目** " 选项卡，选择 " **解决方案**"，然后选中效果项目名称对应的复选框。 对于此示例，名称为 *VideoEffectComponent*。
-3.  单击 **“确定”** 。
+1.  在解决方案资源管理器中，右键单击 " **引用** "，然后选择 " **添加引用** "。
+2.  展开 " **项目** " 选项卡，选择 " **解决方案** "，然后选中效果项目名称对应的复选框。 对于此示例，名称为 *VideoEffectComponent* 。
+3.  单击“确定”。
 
 ### <a name="add-your-custom-effect-to-a-camera-video-stream"></a>向相机视频流添加自定义效果
 

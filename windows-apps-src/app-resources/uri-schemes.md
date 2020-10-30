@@ -1,17 +1,17 @@
 ---
-Description: 你可以使用几种 URI（统一资源标识符）方案引用来自应用包、应用的数据文件夹或云的文件。 还可以使用 URI 方案引用从应用的资源文件 (.resw) 加载的字符串。
+description: 你可以使用几种 URI（统一资源标识符）方案引用来自应用包、应用的数据文件夹或云的文件。 还可以使用 URI 方案引用从应用的资源文件 (.resw) 加载的字符串。
 title: URI 方案
 template: detail.hbs
 ms.date: 10/16/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f5bf063c12362fe26e3810e6153b857b7c1a2e4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8806992ebb7f4335ca0a748c1b2bce4a6de39fae
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170521"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031541"
 ---
 # <a name="uri-schemes"></a>URI 方案
 
@@ -31,7 +31,7 @@ hier-part   = "//" authority path-abempty
             / path-empty
 ```
 
-这意味着 URI 基本上有三个组件。 URI *方案*的两个正斜杠后紧跟着名称为*颁发机构*的组件（可以为空）。 之后紧跟*路径*。 以 URI `http://www.contoso.com/welcome.png` 为例，方案为“`http://`”，颁发机构为“`www.contoso.com`”，路径为“`/welcome.png`”。 另一个示例是 URI `ms-appx:///logo.png`，其中颁发机构组件为空并采用默认值。
+这意味着 URI 基本上有三个组件。 URI *方案* 的两个正斜杠后紧跟着名称为 *颁发机构* 的组件（可以为空）。 之后紧跟 *路径* 。 以 URI `http://www.contoso.com/welcome.png` 为例，方案为“`http://`”，颁发机构为“`www.contoso.com`”，路径为“`/welcome.png`”。 另一个示例是 URI `ms-appx:///logo.png`，其中颁发机构组件为空并采用默认值。
 
 本主题中所述的具体方案的 URI 处理忽略了片段组件。 在资源检索和比较过程中，片段组件没有任何影响。 但是，特定实现上方的层可以解释片段以检索辅助资源。
 
@@ -41,7 +41,7 @@ hier-part   = "//" authority path-abempty
 
 本主题中所述的所有 URI 方案均遵循适用于方案标准化和资源检索的典型的 URI 规则 (RFC 3986)。 这些 URI 的标准化形式保持大小写，并对 RFC 3986 未保留的字符进行百分比解码。
 
-对于本主题所述的所有 URI 方案，*方案*、*颁发机构*和*路径*按照标准不区分大小写，或者由系统以不区分大小写的方式进行处理。 **注意**该规则的唯一例外是 `ms-resource` 的*颁发机构*区分大小写。
+对于本主题所述的所有 URI 方案， *方案* 、 *颁发机构* 和 *路径* 按照标准不区分大小写，或者由系统以不区分大小写的方式进行处理。 **注意** 该规则的唯一例外是 `ms-resource` 的 *颁发机构* 区分大小写。
 
 ## <a name="ms-appx-and-ms-appx-web"></a>ms-appx 和 ms-appx-web
 

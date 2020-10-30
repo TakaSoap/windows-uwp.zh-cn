@@ -1,5 +1,5 @@
 ---
-Description: 了解如何为语音识别定义和使用自定义约束。
+description: 了解如何为语音识别定义和使用自定义约束。
 title: 定义自定义识别约束
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
@@ -8,18 +8,18 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b48564469fd77f3c670739a7095124ed7399a1fe
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5cef63bab911f46e34d337957011556a0c420763
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160071"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032160"
 ---
 # <a name="define-custom-recognition-constraints"></a>定义自定义识别约束
 
 了解如何为语音识别定义和使用自定义约束。
 
-> **重要 API**：[**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)、[**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)、[**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
+> **重要 API** ： [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)、 [**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)、 [**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
 
 语音识别至少需要一个约束，才能定义可识别的词汇。 如果未指定任何约束，将使用通用 Windows 应用的预定义听写语法。 请参阅[语音识别](speech-recognition.md)。
 
@@ -144,7 +144,7 @@ SRGS 提供一组完整的功能，可帮助你为应用构建复杂的语音交
 - 你可以将多个语法文件约束添加到约束集合。
 - 为符合 SRGS 规则的基于 XML 的语法文件使用 .grxml 文件扩展名。
 
-该示例使用在名为 srgs.grxml 的文件（稍后说明）中定义的 SRGS 语法。 在文件属性中，**数据包操作**设置为**内容**，**复制到输出目录**则设置为**始终复制**。
+该示例使用在名为 srgs.grxml 的文件（稍后说明）中定义的 SRGS 语法。 在文件属性中， **数据包操作** 设置为 **内容** ， **复制到输出目录** 则设置为 **始终复制** 。
 
 ```CSharp
 private async void Colors_Click(object sender, RoutedEventArgs e)
@@ -171,7 +171,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-该 SRGS 文件 (srgs.grxml) 包含语义翻译标记。 这些标记提供了用于将语法匹配数据返回应用的机制。 语法必须符合  [语音识别 () SISR 1.0](https://www.w3.org/TR/semantic-interpretation/) 规范万维网联合会 (W3C) 语义解释。
+该 SRGS 文件 (srgs.grxml) 包含语义翻译标记。 这些标记提供了用于将语法匹配数据返回应用的机制。 语法必须符合万维网联合会 (W3C) [用于语音识别的语义翻译 (SISR) 1.0](https://www.w3.org/TR/semantic-interpretation/) 规范。
 
 我们在此处侦听“是”和“否”的变体。
 
@@ -212,7 +212,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 ## <a name="manage-constraints"></a>管理约束
 
-在加载约束集合以供识别后，你的应用可以通过将约束的 [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) 属性设置为 **true** 或 **false** 来管理启用哪些约束以供识别操作。 默认设置为 **true**。
+在加载约束集合以供识别后，你的应用可以通过将约束的 [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) 属性设置为 **true** 或 **false** 来管理启用哪些约束以供识别操作。 默认设置为 **true** 。
 
 通常，相比为每次识别操作加载、卸载和编译约束，加载一次约束并按需启用或禁用它们更有效率。 按照需要使用 [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) 属性。
 

@@ -1,5 +1,5 @@
 ---
-Description: 了解适用于 Windows 10 的 Windows 应用的不断发展的包含设计。  以辅助功能为中心来设计和生成非独占软件。
+description: 了解适用于 Windows 10 的 Windows 应用的不断发展的包含设计。  以辅助功能为中心来设计和生成非独占软件。
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: 在 Windows 10 中设计非独占软件
 label: Designing inclusive software
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 795344a7a03344c5f8aeea26252e1e0610d9d8c3
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 20a168fa9073aaf09055481be836799b4a3f00e7
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219860"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029880"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>针对 Windows 10 设计非独占软件  
 
@@ -30,13 +30,13 @@ ms.locfileid: "91219860"
 ## <a name="inclusive-design-principles"></a>非独占设计原则  
 以下 4 个原则将指导 Microsoft 转移到非独占设计：
 
-**普遍思考**：我们侧重于使人统一的因素 — 人类动机、关系和能力。 这促使我们思考我们的工作所产生的更广泛的社会影响。 从而创造出包含可让所有人参与的多样方法的体验。
+**普遍思考** ：我们侧重于使人统一的因素 — 人类动机、关系和能力。 这促使我们思考我们的工作所产生的更广泛的社会影响。 从而创造出包含可让所有人参与的多样方法的体验。
 
-**彰显个性**：接下来，我们挑战自己来创造情感连接。 人与人的交互可以激发出更好的人与技术的交互。 某个人的独特情况可以为所有人改进一项设计。 从而创造出感觉像是为某一个人创造的体验。
+**彰显个性** ：接下来，我们挑战自己来创造情感连接。 人与人的交互可以激发出更好的人与技术的交互。 某个人的独特情况可以为所有人改进一项设计。 从而创造出感觉像是为某一个人创造的体验。
 
-**保持简单**：我们首先从作为基本统一因素的简单性开始。 只需减少繁杂，就能让人们知道下一步的行动。 启发他们前进到干净、明亮、开放的空间中。 从而创造出真实而永恒的体验。
+**保持简单** ：我们首先从作为基本统一因素的简单性开始。 只需减少繁杂，就能让人们知道下一步的行动。 启发他们前进到干净、明亮、开放的空间中。 从而创造出真实而永恒的体验。
 
-**创造愉悦**：令人愉悦的体验将唤起惊奇和发现。 有时它很神奇。 有时它的细节又恰到好处。 我们将这些时刻设计得感觉像是令人愉悦的节奏变化。 从而创造出具有动力和流动感觉的体验。
+**创造愉悦** ：令人愉悦的体验将唤起惊奇和发现。 有时它很神奇。 有时它的细节又恰到好处。 我们将这些时刻设计得感觉像是令人愉悦的节奏变化。 从而创造出具有动力和流动感觉的体验。
 
 ## <a name="inclusive-design-users"></a>非独占设计用户  
 本质上有两种类型的辅助技术 (AT) 用户：

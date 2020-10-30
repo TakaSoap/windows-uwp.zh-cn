@@ -1,24 +1,24 @@
 ---
-Description: 本主题介绍 MakePri.exe XML 配置文件的架构。
+description: 本主题介绍 MakePri.exe XML 配置文件的架构。
 title: MakePri.exe 配置文件
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: ef0e8834310e77084c0bb4a8aad22786a89fb312
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5427927322f61f44cf3a8b53112f5f7811520290
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607792"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031720"
 ---
 # <a name="makepriexe-configuration-file"></a>MakePri.exe 配置文件
 
 本主题介绍 [MakePri.exe](compile-resources-manually-with-makepri.md) XML 配置文件的架构；也称为 PRI 配置文件。 MakePri.exe 工具具有 [createconfig 命令](makepri-exe-command-options.md#createconfig-command)，可用于创建一个新的初始化 PRI 配置文件。
 
 > [!NOTE]
-> 选中时安装 MakePri.exe**适用于 UWP 的托管应用的 Windows SDK**选项的同时，安装 Windows 软件开发工具包。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他体系结构对于命名的文件夹）。 例如， `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 当你在安装 Windows 软件开发工具包时检查 **UWP 托管应用的 Windows SDK** 选项时，会安装 MakePri.exe。 它将安装到 (的路径 `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` 和其他体系结构) 的文件夹中。 例如 `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 PRI 配置文件控制索引哪些资源以及如何索引。 配置 XML 必须符合以下架构。
 
@@ -197,14 +197,14 @@ list<string> RPQualifierList; // To store AutoResourcePackage Qualifiers
 map<string, list<string>> RPNameToQSIMap; // To store ResourcePackage name to QualifierSet list mapping.
 ```
 
-## <a name="resourcesisdeploymentmergeable-attribute"></a>resources@isDeploymentMergeable 属性
+## <a name="resourcesisdeploymentmergeable-attribute"></a>resources@isDeploymentMergeable 特性
 
 此属性在 PRI 文件中设置标记，导致
 
 - 部署合并以标识此 PRI 文件可以合并。
 - GetFullyQualifiedReference 在设置了该标志但未使用文件来初始化资源管理器的情况下返回错误。
 
-此属性的的默认值为 `true`。 MakePri.exe 仅在你的目标为 Windows 10 时设置 PRI 中的标记。
+此特性的默认值为 `true`。 MakePri.exe 仅在你的目标为 Windows 10 时设置 PRI 中的标记。
 
 如果你的目标为 Windows 10，我们建议你在创建资源包时省略 `isDeploymentMergeable`（或将其显式设置为 `true`）。
 
@@ -222,11 +222,11 @@ map<string, list<string>> RPNameToQSIMap; // To store ResourcePackage name to Qu
 </PriInfo>
 ```
 
-## <a name="resourcesmajorversion-attribute"></a>resources@majorVersion 属性
+## <a name="resourcesmajorversion-attribute"></a>resources@majorVersion 特性
 
 此属性的默认值为 1。 如果你提供一个显式值，并且还对 MakePri.exe 工具使用弃用的 `/VersionMajor(vma)` 命令行选项，则以配置文件中的值优先。
 
-下面提供了一个示例。
+下面是一个示例。
 
 ```xml
 <resources majorVersion="2">
@@ -237,7 +237,7 @@ map<string, list<string>> RPNameToQSIMap; // To store ResourcePackage name to Qu
 </resources>
 ```
 
-## <a name="resourcestargetosversion-attribute"></a>resources@targetOsVersion 属性
+## <a name="resourcestargetosversion-attribute"></a>resources@targetOsVersion 特性
 
 指示目标操作系统版本。 下表显示了受支持的值；默认值为 6.3.0。
 
@@ -247,7 +247,7 @@ map<string, list<string>> RPNameToQSIMap; // To store ResourcePackage name to Qu
 | 6.3.0（默认值） | Windows 8.1 |
 | 6.2.1 | Windows 8 |
 
-下面提供了一个示例。
+下面是一个示例。
 
 ```xml
 <resources targetOsVersion="10.0.0">
@@ -280,21 +280,21 @@ map<string, list<string>> RPNameToQSIMap; // To store ResourcePackage name to Qu
 
 | 条件 | 严重性 | 消息 |
 | --------- | -------- | ------- |
-| 指定除其中一个受支持的值以外的 targetOsVersion。 | 错误 | 无效的配置：指定的无效 targetOsVersion。 |
-| 指定的 targetOsVersion 为“6.2.1”，且存在 `packaging` 元素。 | 错误 | 无效的配置：不支持此 targetOsVersion 打包节点。 |
+| 指定除其中一个受支持的值以外的 targetOsVersion。 | 错误 | 无效的配置：指定的 targetOsVersion 无效。 |
+| 指定的 targetOsVersion 为“6.2.1”，且存在 `packaging` 元素。 | 错误 | 无效的配置：此 targetOsVersion 不支持“打包”节点。 |
 | 在配置中找到多个模式。 例如，指定了 Manual 和 AutoResourcePackage。 | 错误 | 无效的配置：“打包”节点不能具有多个操作模式。 |
 | 默认限定符在资源包下列出。 | 错误 | 无效的配置：<Qualifiername>=<QualifierValue> 是默认限定符，不能将其候选项添加到资源包。 |
-| AutoResourcePackage 限定符包含多个限定符。 例如 language_scale。 | 错误 | 无效的配置：不支持使用多个限定符 AutoResourcePackage。 |
-| ResourcePackage QualifierSet 包含多个限定符。 例如 language-en-us_scale-100 | 错误 | 无效的配置：不支持使用多个限定符 QualifierSet。 |
-| 发现了重复的资源包名称。 | 错误 | 无效的配置：重复的资源包名称<rpname>。 |
-| 在两个资源包中定义了相同的限定符集。 | 错误 | 无效的配置：QualifierSet 的多个实例"<qualifier tags>"找到。 |
-| 找不到为“ResourcePackage”节点列出的 QualifierSet 的候选项。 | 警告 | 无效的配置：找到没有候选项<Resource Package Name>。 |
-| 找不到在“AutoResourcePackage”节点下列出的限定符的候选项。 | 警告 | 无效的配置：没有候选项找到限定符<qualifier name>。 未生成资源包。 |
-| 找不到模式。 也就是说，发现了空的 'packaging' 节点。 | 警告 | 无效的配置：指定未打包模式。 |
+| AutoResourcePackage 限定符包含多个限定符。 例如 language_scale。 | 错误 | 无效配置: 不支持具有多个限定符的 AutoResourcePackage。 |
+| ResourcePackage QualifierSet 包含多个限定符。 例如 language-en-us_scale-100 | 错误 | 无效配置: 不支持具有多个限定符的 QualifierSet。 |
+| 发现了重复的资源包名称。 | 错误 | 无效的配置：重复的资源包名称 <rpname>。 |
+| 在两个资源包中定义了相同的限定符集。 | 错误 | 无效的配置：找到 QualifierSet“<qualifier tags>”的多个实例。 |
+| 找不到为“ResourcePackage”节点列出的 QualifierSet 的候选项。 | 警告 | 无效的配置：找不到 <Resource Package Name> 的候选项。 |
+| 找不到在“AutoResourcePackage”节点下列出的限定符的候选项。 | 警告 | 无效的配置：找不到限定符 <qualifier name> 的候选项。 未生成资源包。 |
+| 找不到模式。 也就是说，发现了空的 'packaging' 节点。 | 警告 | 无效的配置：未指定打包模式。 |
 
 ## <a name="related-topics"></a>相关主题
 
 * [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)
-* [MakePri.exe 命令行选项&mdash;createconfig 命令](makepri-exe-command-options.md#createconfig-command)
+* [MakePri.exe 命令行选项 &mdash; createconfig 命令](makepri-exe-command-options.md#createconfig-command)
 * [定制语言、比例、高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
-* [资源管理系统&mdash;ResourceContext](resource-management-system.md#resourcecontext)
+* [资源管理系统 &mdash; ResourceContext](resource-management-system.md#resourcecontext)

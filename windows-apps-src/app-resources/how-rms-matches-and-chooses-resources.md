@@ -1,17 +1,17 @@
 ---
-Description: 请求资源时，可能有多个候选项在一定程度上匹配当前的资源上下文。 资源管理系统将分析所有这些候选项，并确定要返回的最佳候选项。 本主题详细介绍该过程，并提供了示例。
+description: 请求资源时，可能有多个候选项在一定程度上匹配当前的资源上下文。 资源管理系统将分析所有这些候选项，并确定要返回的最佳候选项。 本主题详细介绍了该过程，并提供了示例。
 title: 资源管理系统如何匹配和选择资源
 template: detail.hbs
 ms.date: 10/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: de34411d9c7d226857214472e691dd6b41f10a18
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d430aae696b0f021e2412a73f137ea6db826937b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593882"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031850"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>资源管理系统如何匹配和选择资源
 请求资源时，可能有多个候选项在一定程度上匹配当前的资源上下文。 资源管理系统将分析所有这些候选项，并确定要返回的最佳候选项。 为此，需考虑所有限定符，以便对所有候选资源评级。
@@ -20,7 +20,7 @@ ms.locfileid: "57593882"
 
 有关如何完成语言标记匹配的详细信息，请参阅[资源管理系统如何匹配语言标记](how-rms-matches-lang-tags.md)。
 
-对于某些限定符，例如缩放比例和对比度，始终有一些最低的匹配度。 例如，尽管不限定为"缩放 100"一些小的程度上，匹配的"缩放 400"上下文的候选项，以及对于"小数位数 200"或 （对于完美匹配项）"规模-400"合格的候选项。
+对于某些限定符，例如缩放比例和对比度，始终有一些最低的匹配度。 例如，限定为“缩放比例-100”的候选项在一定程度上匹配“缩放比例-400”的上下文，但匹配度不如限定为“缩放比例-200”或“缩放比例-400”（完全匹配）的候选项。
 
 但是，对于其他限定符（例如语言或住宅区域），可能有非匹配比较（以及匹配度）。 例如，语言限定为“en-US”的候选项与“en-GB”的上下文部分匹配，但限定为“fr”的候选项完全不匹配。 同样，主区域限定为“155”（西欧）的候选项在一定程度上匹配主区域设置为“FR”的用户的上下文，但限定为“US”的候选项完全不匹配。
 
@@ -80,7 +80,7 @@ en/images/logo.scale-100.jpg
 en/images/logo.scale-400.jpg
 ```
 
-你可以使用高级 [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) 方法，按照候选项与上下文设置的匹配度顺序检索所有候选项。 在我们刚刚演示的示例中，**ResolveAll** 按照该顺序返回候选项。
+你可以使用高级 [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) 方法，按照候选项与上下文设置的匹配度顺序检索所有候选项。 在我们刚刚演示的示例中， **ResolveAll** 按照该顺序返回候选项。
 
 ```console
 en/images/logo.scale-400.jpg

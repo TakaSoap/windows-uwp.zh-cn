@@ -1,5 +1,5 @@
 ---
-Description: 列出要在创建可访问的 Windows 应用时要避免的做法。
+description: 列出要在创建可访问的 Windows 应用时要避免的做法。
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 title: 要避免的辅助功能做法
 label: Accessibility practices to avoid
@@ -8,22 +8,22 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b69cea6badf835fac72ebd3c2dd8977c39d2cfce
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: eeca337cb68205cafa936f45bb4d546fd901571a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220030"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032370"
 ---
 # <a name="accessibility-practices-to-avoid"></a>要避免的辅助功能做法
 
 如果要创建可访问的 Windows 应用，请参阅下面的要避免的做法列表： 
 
-* 如果你可以使用默认 Windows 控件或已实现 Microsoft UI 自动化支持的控件，**请避免生成自定义 UI 元素**。 标准 Windows 控件默认具有辅助性，并且通常只需添加几个特定于应用的辅助功能属性即可。 相反，为真正的自定义控件实现 [**AutomationPeer**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 支持会更为复杂（请参阅[自定义自动化对等](custom-automation-peers.md)）。
-* **不要在 Tab 键顺序中放置静态文本或其他非交互元素**（例如，通过为非交互元素设置 [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) 属性）。 如果非交互元素在 Tab 键顺序中，这将违背键盘辅助功能指南，因为它会降低用户进行键盘导航的效率。 许多辅助技术使用 Tab 键顺序和元素聚焦功能，以此作为它们向辅助技术用户呈现应用界面的一部分逻辑。 Tab 键顺序中的纯文本元素会对预期 Tab 键顺序中只有交互元素（例如按钮、复选框、文本输入字段、组合框、列表等）的用户造成困惑。
-* **避免使用 UI 元素的绝对定位**（例如在 [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas) 元素中），因为表示顺序通常与子元素的声明顺序（即实际逻辑顺序）不同。 尽可能以文档或逻辑顺序排列 UI 元素，以确保屏幕阅读器能够以正确顺序阅读这些元素。 如果 UI 元素的可见顺序可以不同于文档顺序或逻辑顺序，请使用明确的 Tab 键索引值（设置 [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex)）来定义正确的阅读顺序。
+* 如果你可以使用默认 Windows 控件或已实现 Microsoft UI 自动化支持的控件， **请避免生成自定义 UI 元素** 。 标准 Windows 控件默认具有辅助性，并且通常只需添加几个特定于应用的辅助功能属性即可。 相反，为真正的自定义控件实现 [**AutomationPeer**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 支持会更为复杂（请参阅 [自定义自动化对等](custom-automation-peers.md)）。
+* **不要在 Tab 键顺序中放置静态文本或其他非交互元素** （例如，通过为非交互元素设置 [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) 属性）。 如果非交互元素在 Tab 键顺序中，这将违背键盘辅助功能指南，因为它会降低用户进行键盘导航的效率。 许多辅助技术使用 Tab 键顺序和元素聚焦功能，以此作为它们向辅助技术用户呈现应用界面的一部分逻辑。 Tab 键顺序中的纯文本元素会对预期 Tab 键顺序中只有交互元素（例如按钮、复选框、文本输入字段、组合框、列表等）的用户造成困惑。
+* **避免使用 UI 元素的绝对定位** （例如在 [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas) 元素中），因为表示顺序通常与子元素的声明顺序（即实际逻辑顺序）不同。 尽可能以文档或逻辑顺序排列 UI 元素，以确保屏幕阅读器能够以正确顺序阅读这些元素。 如果 UI 元素的可见顺序可以不同于文档顺序或逻辑顺序，请使用明确的 Tab 键索引值（设置 [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex)）来定义正确的阅读顺序。
 * **不要将颜色用作传递信息的唯一方式。** 色盲用户无法接收仅通过颜色传递的信息，例如颜色状态指示器。 包括其他视觉提示（最好是文本），以确保信息是辅助信息。
-* 除非应用功能的确需要，否则**不要自动刷新整个应用画布**。 如果需要自动刷新页面内容，请仅更新页面的某些区域。 辅助技术通常必须假设已刷新的应用画布是全新的结构，即使有效的更改非常小也是如此。 对于辅助技术用户来说，这样做的代价是已刷新的应用的任何文档视图或说明现在必须重新创建并再次呈现给用户。
+* 除非应用功能的确需要，否则 **不要自动刷新整个应用画布** 。 如果需要自动刷新页面内容，请仅更新页面的某些区域。 辅助技术通常必须假设已刷新的应用画布是全新的结构，即使有效的更改非常小也是如此。 对于辅助技术用户来说，这样做的代价是已刷新的应用的任何文档视图或说明现在必须重新创建并再次呈现给用户。
   
   用户有意启动页面导航是刷新应用结构的合法情况。 但是，请确保启动导航的 UI 项已正确标识或命名，从而指示调用它将导致上下文更改和页面重新加载。
 

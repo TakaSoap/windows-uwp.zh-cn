@@ -1,5 +1,5 @@
 ---
-Description: 本指南帮助你启发你的应用，以处理由 Windows 信息保护 (WIP) 策略管理的企业数据以及个人数据。
+description: 本指南帮助你启发你的应用，以处理由 Windows 信息保护 (WIP) 策略管理的企业数据以及个人数据。
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Windows 信息保护 (WIP) 开发人员指南
@@ -8,16 +8,16 @@ ms.topic: article
 keywords: windows 10, uwp, wip, Windows 信息保护, 企业数据, 企业数据保护, edp, 启发式应用
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
-ms.openlocfilehash: d6454fdf63fb757c703ec31dba46a86e2a46aec6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a1afea58fd7fc7c7868103fc9c7a8510f9f81908
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163251"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032060"
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a>Windows 信息保护 (WIP) 开发人员指南
 
-*启发式*应用可区分公司和个人数据，并且知道应基于管理员定义的 Windows 信息保护 (WIP) 策略保护哪些数据。
+*启发式* 应用可区分公司和个人数据，并且知道应基于管理员定义的 Windows 信息保护 (WIP) 策略保护哪些数据。
 
 在本指南中，我们将向你介绍如何生成一个启发式应用。 完成此操作后，策略管理员将能够信任你的应用，允许它们使用组织数据。 员工也愿意他们的个人数据在设备上保持不变，即使取消注册组织的移动设备管理 (MDM) 或完全退出组织也是如此。
 
@@ -82,7 +82,7 @@ __注意__ 本指南有助于启发你创建 UWP 应用。 如果你想要启发
     ```xml
        <rescap:Capability Name="enterpriseDataPolicy"/>
     ```
-   >*可选阅读*：“rescap”前缀表示*受限功能*。 请参阅[特殊和受限功能](../packaging/app-capability-declarations.md)。
+   >*可选阅读* ：“rescap”前缀表示 *受限功能* 。 请参阅[特殊和受限功能](../packaging/app-capability-declarations.md)。
 
 4. 将此命名空间添加到程序包清单文件：
 
@@ -268,7 +268,7 @@ else
 
 不要在受保护的线程上创建任何个人文件，因为这些文件将自动加密。
 
-无论终结点是否由策略管理，[**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext) 方法都会返回一个 [**ThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.threadnetworkcontext) 对象。 如果应用处理个人和企业资源，请为所有标识调用 [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext)。  获取资源后，处置 ThreadNetworkContext 以从当前线程中清除所有标识标记。
+无论终结点是否由策略管理， [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext) 方法都会返回一个 [**ThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.threadnetworkcontext) 对象。 如果应用处理个人和企业资源，请为所有标识调用 [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext)。  获取资源后，处置 ThreadNetworkContext 以从当前线程中清除所有标识标记。
 
 > **API** <br>
 [ProtectionPolicyManager.GetForCurrentView](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
@@ -334,7 +334,7 @@ private static async Task<IBuffer> GetDataFromNetworkbyUsingHeaderHelperMethod(H
 
 有时，Web 服务器将通信重定向到资源的更新版本。
 
-若要处理此情况，请发出请求，直到请求的响应状态的值为 **OK**。
+若要处理此情况，请发出请求，直到请求的响应状态的值为 **OK** 。
 
 然后使用该响应的 URI 获取终结点的标识。 以下是执行此操作的一种方法：
 
@@ -445,7 +445,7 @@ private bool IsClipboardAllowedAsync()
 
 **防止用户收到同意对话框提示**
 
-新文档不属于*个人*，也不属于*企业*。 它只是新文档。 如果用户将企业数据复制到该文档中，Windows 会强制执行策略，并且用户会收到同意对话框提示。 此代码可防止此情况发生。 此任务不是为了帮助保护数据。 它更多是为了在你的应用创建全新的项目时防止用户收到同意对话框。
+新文档不属于 *个人* ，也不属于 *企业* 。 它只是新文档。 如果用户将企业数据复制到该文档中，Windows 会强制执行策略，并且用户会收到同意对话框提示。 此代码可防止此情况发生。 此任务不是为了帮助保护数据。 它更多是为了在你的应用创建全新的项目时防止用户收到同意对话框。
 
 ```csharp
 private async void PasteText(bool isNewEmptyDocument)
@@ -489,7 +489,7 @@ private async void PasteText(bool isNewEmptyDocument)
 
 当员工选择你的应用来共享他们的信息时，你的应用将打开包含该内容的新项目。
 
-正如我们之前提到的，新项目不属于*个人*，也不属于*企业*。 它只是新文档。 如果你的代码将企业内容添加到该项目，Windows 会强制执行策略，并且用户会收到同意对话框提示。 此代码可防止此情况发生。
+正如我们之前提到的，新项目不属于 *个人* ，也不属于 *企业* 。 它只是新文档。 如果你的代码将企业内容添加到该项目，Windows 会强制执行策略，并且用户会收到同意对话框提示。 此代码可防止此情况发生。
 
 ```csharp
 protected override async void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -559,7 +559,7 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 
 ### <a name="protect-data-that-appears-in-pages"></a>保护显示在页面中的数据
 
-当你在页面中显示数据时，请通知 Windows 它所属的数据类型（个人还是企业）。 若要执行此操作，请*标记*当前的应用视图或标记整个应用进程。
+当你在页面中显示数据时，请通知 Windows 它所属的数据类型（个人还是企业）。 若要执行此操作，请 *标记* 当前的应用视图或标记整个应用进程。
 
 当你标记视图或进程时，Windows 将对它强制执行策略。 这有助于防止不受应用控制的操作所导致的数据泄露。 例如，在计算机上，用户可能使用 CTRL-V 从视图复制企业信息，然后将该信息粘贴到另一个应用中。 Windows 可以防范此风险。 Windows 还有助于强制执行“共享”合约。
 
