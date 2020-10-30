@@ -1,24 +1,24 @@
 ---
-Description: 查看与 Microsoft Store 分配给应用程序的唯一标识相关的详细信息，并获取应用商店列表的链接。
+description: 查看与 Microsoft Store 分配给应用程序的唯一标识相关的详细信息，并获取应用商店列表的链接。
 title: 查看应用标识的详细信息
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9232acbf83659c661e1b1f3c35a7fb7ad546e819
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 11984d1aa5f8da20b529ab485615bd1f760cc2cd
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157921"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034900"
 ---
 # <a name="view-app-identity-details"></a>查看应用标识的详细信息
 
 
 可以通过 **应用标识** 页面上的 Microsoft Store 查看与分配给应用的唯一标识相关的详细信息。 你还可以在此页上获取应用商店列表的链接。
 
-若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的**应用管理**。 选中**应用标识**查看这些详细信息。
+若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的 **应用管理** 。 选中 **应用标识** 查看这些详细信息。
 
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>要包含在应用程序包清单中的值
@@ -29,7 +29,7 @@ ms.locfileid: "89157921"
 -   **程序包/标识/发布者**
 -   **程序包/属性/发行商显示名称**
 
-有关详细信息，请参阅[程序包清单架构参考](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的[**标识**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
+有关详细信息，请参阅 [程序包清单架构参考](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的 [**标识**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 
 同时，这些元素声明应用的标识、建立了所有程序包所属于的“程序包系列”。 单个程序包将具有其他详细信息，如体系结构和版本。
 
@@ -38,20 +38,20 @@ ms.locfileid: "89157921"
 
 以下值是指应用的程序包系列的其他值，但不包含在清单内。
 
--   **程序包系列名称 (PFN)**：此值与某些 Windows API 结合使用。
--   **程序包 SID**：需要该值才能向应用发送 WNS 通知。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
+-   **程序包系列名称 (PFN)** ：此值与某些 Windows API 结合使用。
+-   **程序包 SID** ：需要该值才能向应用发送 WNS 通知。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
 
 
 ## <a name="link-to-your-apps-listing"></a>链接到应用一览
 
 可以共享应用的页面直接链接来帮助客户在应用商店中查找该应用。 此链接采用格式 **`https://www.microsoft.com/store/apps/<your app's Store ID>`** 。 当客户单击此链接时，它将打开基于 Web 的应用一览页。 在 Windows 设备上，应用商店应用还将启动并显示应用一览。
 
-你的应用的**应用商店 ID** 也会在本部分中显示。 此应用商店 ID 可以用来[生成应用商店锁屏提醒](https://developer.microsoft.com/store/badges)或标识你的应用。
+你的应用的 **应用商店 ID** 也会在本部分中显示。 此应用商店 ID 可以用来[生成应用商店锁屏提醒](https://developer.microsoft.com/store/badges)或标识你的应用。
 
-**应用商店协议链接**可直接链接到应用商店中你的应用，无需打开浏览器，例如可从应用内部链接至你的应用。 有关详细信息，请参阅[链接到你的应用](link-to-your-app.md)。
+**应用商店协议链接** 可直接链接到应用商店中你的应用，无需打开浏览器，例如可从应用内部链接至你的应用。 有关详细信息，请参阅[链接到你的应用](link-to-your-app.md)。
 
 
 
- 
+ 
 
- 
+ 

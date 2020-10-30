@@ -1,17 +1,17 @@
 ---
-Description: 您可以在 "包" 页上传要提交的应用程序 ( .appxupload、.appx、.appxbundle 和/或 .xap) 的所有包文件。
+description: 您可以在 "包" 页上传要提交的应用程序 ( .appxupload、.appx、.appxbundle 和/或 .xap) 的所有包文件。
 title: 上传应用包
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10，uwp，包，上传，包上传
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b4fc0c9dfeed1183a1653b525d0f8cc8a62a4c1
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c2e72a767b9d50f81fba548531965d75d4ce0b56
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220210"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034950"
 ---
 # <a name="upload-app-packages"></a>上传应用包
 
@@ -37,16 +37,16 @@ ms.locfileid: "91220210"
 
 ## <a name="device-family-availability"></a>设备系列可用性
 
-在已成功上传程序包后，“设备系列可用性”**** 部分将显示一个表格，指示将以排名顺序向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包。 本部分还允许选择是否向特定 Windows 10 设备系列上的客户提供提交。
+在已成功上传程序包后，“设备系列可用性”  部分将显示一个表格，指示将以排名顺序向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包。 本部分还允许选择是否向特定 Windows 10 设备系列上的客户提供提交。
 
 有关详细信息，请参阅[设备系列可用性](device-family-availability.md)。
 
 
 ## <a name="package-details"></a>包详细信息
 
-此处列出了已上传的包，按目标操作系统分组。 将显示程序包的名称、版本和体系结构。 若想了解详细信息（例如每个程序包的支持语言、应用功能和文件大小），请单击**显示详细信息**。
+此处列出了已上传的包，按目标操作系统分组。 将显示程序包的名称、版本和体系结构。 若想了解详细信息（例如每个程序包的支持语言、应用功能和文件大小），请单击 **显示详细信息** 。
 
-如果需要将某个程序包从提交中删除，请单击每个程序包的**详细信息**部分底部的**删除**链接。
+如果需要将某个程序包从提交中删除，请单击每个程序包的 **详细信息** 部分底部的 **删除** 链接。
 
 
 ## <a name="removing-redundant-packages"></a>删除冗余程序包
@@ -58,18 +58,18 @@ ms.locfileid: "91220210"
 
 ## <a name="gradual-package-rollout"></a>逐步部署程序包
 
-如果提交是以前发布的应用的更新，你将看到一个复选框，指示“在此提交发布后，逐渐（仅向 Windows 10 客户）推出更新”****。 这样一来，你就可以选择将从提交获取程序包的客户比例，以便你可以监视反馈和分析数据，从而确保在更广泛地推出更新前对此更新无虑。 你可以随时增加比例（或停止更新），而无需创建新的提交。 
+如果提交是以前发布的应用的更新，你将看到一个复选框，指示“在此提交发布后，逐渐（仅向 Windows 10 客户）推出更新”  。 这样一来，你就可以选择将从提交获取程序包的客户比例，以便你可以监视反馈和分析数据，从而确保在更广泛地推出更新前对此更新无虑。 你可以随时增加比例（或停止更新），而无需创建新的提交。 
 
 有关详细信息，请参阅[逐步推出程序包](gradual-package-rollout.md)。
 
 
 ## <a name="mandatory-update"></a>强制更新
 
-如果提交是以前发布的应用的更新，你将看到一个复选框，指示“强制此更新”****。 这允许你为强制更新设置日期和时间，假定你已使用 Windows.Services.Store API，以允许应用采用编程方式检查程序包更新并下载和安装更新的程序包。 要使用此选项，应用必须面向 Windows 10 版本 1607 或更高版本。
+如果提交是以前发布的应用的更新，你将看到一个复选框，指示“强制此更新”  。 这允许你为强制更新设置日期和时间，假定你已使用 Windows.Services.Store API，以允许应用采用编程方式检查程序包更新并下载和安装更新的程序包。 要使用此选项，应用必须面向 Windows 10 版本 1607 或更高版本。
 
 有关详细信息，请参阅[为你的应用下载并安装程序包更新](../packaging/self-install-package-updates.md)。
 
- 
+ 
 
 
 

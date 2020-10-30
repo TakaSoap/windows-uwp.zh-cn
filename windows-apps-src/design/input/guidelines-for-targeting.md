@@ -1,5 +1,5 @@
 ---
-Description: 本主题介绍使用接触几何图形来确定触摸目标并提供在 Windows 运行时应用中确定目标的最佳实践。
+description: 本主题介绍使用接触几何图形来确定触摸目标并提供在 Windows 运行时应用中确定目标的最佳实践。
 title: 目标设定
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 64142b1ec35040ded890d837245ecae36e03fdc1
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a8b6113294d3f3c0c98946f0fed407e36de8a563
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216980"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035060"
 ---
 # <a name="guidelines-for-touch-targets"></a>触摸目标准则
 
@@ -25,7 +25,7 @@ ms.locfileid: "91216980"
 
 在本主题中，我们将介绍这些默认行为，以便可以使用平台控件和自定义控件（ (应用程序是否需要它们) ）设计应用程序以实现最高可用性。
 
-> **重要 API**：[**Windows.UI.Core**](/uwp/api/Windows.UI.Core)、[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API** ： [**Windows.UI.Core**](/uwp/api/Windows.UI.Core)、 [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、 [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="fluent-standard-sizing"></a>Fluent Standard 大小
 
@@ -38,7 +38,7 @@ ms.locfileid: "91216980"
 
 ## <a name="fluent-compact-sizing"></a>Fluent Compact 大小
 
-应用程序可以通过 *简洁的精简大小*显示更高级别的信息密度。 精简调整大小将 UI 元素对齐到 32x32 window.epx.codesnippet 目标，这允许 UI 元素与更紧密的网格对齐，并根据系统级缩放适当地缩放。
+应用程序可以通过 *简洁的精简大小* 显示更高级别的信息密度。 精简调整大小将 UI 元素对齐到 32x32 window.epx.codesnippet 目标，这允许 UI 元素与更紧密的网格对齐，并根据系统级缩放适当地缩放。
 
 ### <a name="examples"></a>示例
 

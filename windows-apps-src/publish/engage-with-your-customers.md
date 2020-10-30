@@ -1,31 +1,31 @@
 ---
-Description: 利用通知、定向优惠、回复评论和反馈等功能，提升客户的参与度和满意度。
+description: 利用通知、定向优惠、回复评论和反馈等功能，提升客户的参与度和满意度。
 title: 与客户互动
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e03e698a7c74dc6c3a9abec30d471a0a16427650
-ms.sourcegitcommit: 2dba9b4e81151d14ca90d36341274a3b59926197
+ms.openlocfilehash: 827001cda13b6335f9aaae06d8138c5223dbbb84
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057615"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034840"
 ---
 # <a name="engage-with-your-customers"></a>与客户互动
 
-利用推送通知、定向优惠以及反馈和评论回复等功能，提升客户的参与度和满意度。 [合作伙伴中心](https://partner.microsoft.com/dashboard)包含这些功能和其他功能，可帮助你推动客户的参与和满意度。
+使用推送通知、目标产品/服务的功能，以及反馈和评论的响应，推动客户的参与和满意度。 [合作伙伴中心](https://partner.microsoft.com/dashboard) 包含这些功能和其他功能，可帮助你推动客户的参与和满意度。
 
 ## <a name="understand-your-audience"></a>了解你的受众
 
 :::row:::
     :::column:::
-        ![定义客户类别](images/engage-pie-chart.png)
+        ![定义客户细分](images/engage-pie-chart.png)
     :::column-end:::
     :::column span="2":::
 **定义客户细分**
 
-根据所选的人口统计或收益条件，使用仪表板定义应用客户的类别。 
+根据所选的人口统计或收入条件，使用 "仪表板" 定义应用的客户的段。 
 
 [定义段](create-customer-segments.md)
     :::column-end:::
@@ -38,7 +38,7 @@ ms.locfileid: "74057615"
     :::column span="2":::
 **目标产品**
 
-向特定客户类别展示有吸引力的个性化内容，从而提高客户参与度、留住更多客户并增加盈利。
+向你的客户的特定部分显示有吸引力的个性化内容，以提高订婚、留存和盈利。
 
 [促销优惠](use-targeted-offers-to-maximize-engagement-and-conversions.md)
     :::column-end:::
@@ -46,18 +46,18 @@ ms.locfileid: "74057615"
 
 :::row:::
     :::column:::
-        ![定向推送通知](images/engage-push-notifications.png)
+        ![目标推送通知](images/engage-push-notifications.png)
     :::column-end:::
     :::column span="2":::
-**定向推送通知**
+**目标推送通知**
 
-使用仪表板根据应用客户类别创建推送通知，并定向发送，从而为每位受众量身定制通知。
+使用 "仪表板" 创建推送通知并将其发送到应用的客户的各个部分，为每个受众定制每个通知。
 
 [发送通知](send-push-notifications-to-your-apps-customers.md)
     :::column-end:::
 :::row-end:::
 
-## <a name="run-experiments-and-connect-with-customers"></a>运行实验并与客户联系
+## <a name="run-experiments-and-connect-with-customers"></a>运行试验并连接到客户
 
 :::row:::
     :::column:::
@@ -66,7 +66,7 @@ ms.locfileid: "74057615"
     :::column span="2":::
 **A/B 测试**
 
-在应用中运行实验，衡量功能更改的成效，然后再针对所有客户执行更改。
+在应用中运行试验，以便在为所有客户启用功能更改之前测量功能更改的有效性。
 
 [运行 A/B 测试](../monetize/run-app-experiments-with-a-b-testing.md)
     :::column-end:::
@@ -79,7 +79,7 @@ ms.locfileid: "74057615"
     :::column span="2":::
 **应用反馈**
 
-引导 Windows 10 客户前往反馈中心，邀请他们在其中提交问题、建议和好评，与你分享他们的意见。 然后在仪表板中查看并回复他们提供的反馈。
+邀请你的 Windows 10 客户通过将其定向到反馈中心来告诉你他们的想法，他们可以在其中提交问题、建议和 upvotes。 然后在仪表板中查看和响应其反馈。
 
 [获取反馈](respond-to-customer-feedback.md)
     :::column-end:::
@@ -92,19 +92,19 @@ ms.locfileid: "74057615"
     :::column span="2":::
 **回复评论**
 
-公开或私下回复客户评论，跟进并联系客户。 你可以在仪表板中或使用我们的 REST API 提交回复。
+跟进并通过公开或私下向他们的评论联系你的客户。 您可以在仪表板中或使用我们的 REST API 提交您的响应。
 
 [回复评论](respond-to-customer-reviews.md)
     :::column-end:::
 :::row-end:::
 
-## <a name="engagement-analytics"></a>参与度分析
+## <a name="engagement-analytics"></a>Engagement 分析
 
-![参与度分析](images/engage-analytics.png)
+![Engagement 分析](images/engage-analytics.png)
 
 通过使用这些功能和报表，保留客户参与活动的选项卡。
 
 - [创建客户组](create-customer-groups.md)
-- [评论报告](reviews-report.md)
+- [评价报告](reviews-report.md)
 - [反馈报告](feedback-report.md)
 - [使用我们的 REST API 获取分析数据](../monetize/access-analytics-data-using-windows-store-services.md)

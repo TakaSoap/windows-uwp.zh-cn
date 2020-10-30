@@ -1,6 +1,6 @@
 ---
 title: 凝视交互
-Description: 了解如何设计和优化 Windows 应用，以便为依赖于目视和头跟踪器的眼睛输入的用户提供最佳体验。
+description: 了解如何设计和优化 Windows 应用，以便为依赖于目视和头跟踪器的眼睛输入的用户提供最佳体验。
 label: Gaze interactions
 template: detail.hbs
 keywords: 凝视, 目视跟踪, 头部跟踪, 凝视点, 输入, 用户交互, 辅助功能, 可用性
@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fa08cb65afc46069e48263344270e1e3b1a3d5f5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7799c95642b412d67b69c87dba54bf5c68ab9761
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217020"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035130"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>Windows 应用中的目视交互和目视跟踪
 
@@ -27,7 +27,7 @@ ms.locfileid: "91217020"
 > [!NOTE]
 > 对于 [Windows Mixed Reality](/windows/mixed-reality/) 中的凝视，请参阅[凝视](/windows/mixed-reality/gaze)。
 
-**重要 API**：[Windows.Devices.Input.Preview](/uwp/api/windows.devices.input.preview)、[GazeDevicePreview](/uwp/api/windows.devices.input.preview.gazedevicepreview)、[GazePointPreview](/uwp/api/windows.devices.input.preview.gazepointpreview)、[GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**重要 API** ： [Windows.Devices.Input.Preview](/uwp/api/windows.devices.input.preview)、 [GazeDevicePreview](/uwp/api/windows.devices.input.preview.gazedevicepreview)、 [GazePointPreview](/uwp/api/windows.devices.input.preview.gazepointpreview)、 [GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>概述
 
@@ -36,21 +36,21 @@ ms.locfileid: "91217020"
 此外，凝视输入还为游戏（包括目标获取和跟踪）和传统的生产力应用程序、展台及其他交互式场景提供同样具有吸引力的机会，如传统输入设备（键盘、鼠标和触控）不可用或可能对释放用户双手以执行其他任务（如提购物袋）非常有用/有帮助的情况。
 
 > [!NOTE]
-> **Windows 10 Fall Creators Update** 以及[目视控制](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control)中引入了对目视跟踪硬件的支持，这是一项内置功能，让你可以使用眼睛控制屏幕指针，使用屏幕键盘键入，并使用文本到语音转换与其他人交流。 用于生成可与目视跟踪硬件交互的应用程序的一组 Windows 运行时 Api [)  (windows](/uwp/api/windows.devices.input.preview) **10 2018 年4月更新 (1803 版、版本 17134) ** 和更高版本。
+> **Windows 10 Fall Creators Update** 以及 [目视控制](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control)中引入了对目视跟踪硬件的支持，这是一项内置功能，让你可以使用眼睛控制屏幕指针，使用屏幕键盘键入，并使用文本到语音转换与其他人交流。 用于生成可与目视跟踪硬件交互的应用程序的一组 Windows 运行时 Api [)  (windows](/uwp/api/windows.devices.input.preview) **10 2018 年4月更新 (1803 版、版本 17134)** 和更高版本。
 
 ## <a name="privacy"></a>隐私
 
 由于目视跟踪设备收集的可能敏感的个人数据，因此需要 `gazeInput` 在应用程序的应用程序清单中声明功能 (参阅以下 **设置** 部分) 。 声明后，Windows 将自动向用户提示同意对话框（首次运行应用时），用户必须在对话框内为应用授予与目视跟踪设备交互以及访问此数据的权限。
 
-此外，如果你的应用收集、存储或传输目视跟踪数据，你还必须在应用的隐私声明中加以说明，并遵循[应用开发人员协议](/legal/windows/agreements/app-developer-agreement)和 [Microsoft Store 策略](/legal/windows/agreements/store-policies)中的所有其他**个人信息**相关要求。
+此外，如果你的应用收集、存储或传输目视跟踪数据，你还必须在应用的隐私声明中加以说明，并遵循 [应用开发人员协议](/legal/windows/agreements/app-developer-agreement)和 [Microsoft Store 策略](/legal/windows/agreements/store-policies)中的所有其他 **个人信息** 相关要求。
 
-## <a name="setup"></a>安装
+## <a name="setup"></a>设置
 
 若要在 Windows 应用中使用注视输入 Api，需要： 
 
 - 在应用清单中指定 `gazeInput` 功能。
 
-    通过 Visual Studio 清单设计器打开 **Package.appxmanifest** 文件，或通过选择**查看代码**并将以下 `DeviceCapability` 插入 `Capabilities` 节点手动添加功能：
+    通过 Visual Studio 清单设计器打开 **Package.appxmanifest** 文件，或通过选择 **查看代码** 并将以下 `DeviceCapability` 插入 `Capabilities` 节点手动添加功能：
 
     ```xaml
     <Capabilities>
@@ -72,7 +72,7 @@ ms.locfileid: "91217020"
 
 *带计时器的凝视跟踪示例*
 
-**从[注视输入示例 (基本) ](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)下载此示例**
+**从 [注视输入示例 (基本)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)下载此示例**
 
 1. 首先，我们设置 UI (MainPage.xaml)。
 

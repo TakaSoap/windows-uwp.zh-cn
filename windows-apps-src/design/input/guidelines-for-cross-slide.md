@@ -1,17 +1,17 @@
 ---
-Description: 使用交叉滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。
+description: 使用交叉滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。
 title: 交叉滑动指南
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b16c957991889cb5f39a775397de72ff56beffc
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: ad51e23e29b4fcdb3b1906054762a0e432b6612a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749974"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035160"
 ---
 # <a name="guidelines-for-cross-slide"></a>交叉滑动指南
 
@@ -56,7 +56,7 @@ ms.locfileid: "91749974"
 
 对在单个方向上滚动的列表或集合使用横向滑动。 有关详细信息，请参阅[添加 ListView 控件](/previous-versions/windows/apps/hh465382(v=win.10))。
 
-**注意**   如果内容区域可以在两个方向（如 web 浏览器或电子读者）中平移，则应使用 "按住" 计时交互来调用对象（如图像和超链接）的上下文菜单。
+**注意**  如果内容区域可以在两个方向上平移（如 Web 浏览器或电子阅读器），则长按计时交互应该用于调用诸如图像和超链接之类的对象的上下文菜单。
 
 :::row:::
    :::column:::
@@ -152,6 +152,6 @@ ms.locfileid: "91749974"
 - [输入：Windows 8 手势示例](/samples/browse/?redirectedfrom=MSDN-samples)
 - [输入：操作和笔势示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX 触控输入示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
- 
+ 
 
- 
+ 

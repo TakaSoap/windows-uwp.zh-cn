@@ -1,5 +1,5 @@
 ---
-Description: 利用为触摸板优化但在输入设备上保持一致的直观且独特的用户交互体验创建 Windows 应用。
+description: 利用为触摸板优化但在输入设备上保持一致的直观且独特的用户交互体验创建 Windows 应用。
 title: 触摸板交互
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -8,19 +8,19 @@ keywords: 触摸板, PTP, 触摸, 指针, 输入, 用户交互
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c47a3a510f6ed0d865064e8d140c47c8dd9f78
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6b0e0a7e45ee63d845a1d5b0057d00da11e01c18
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220430"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035090"
 ---
 # <a name="touchpad-design-guidelines"></a>触摸板设计指南
 
 
 设计你的应用，以便用户可以通过触摸板与其交互。 触摸板将间接的多点触摸输入和定位设备（如鼠标）的精确输入结合起来。 这种结合使触摸板既适用于触摸优化的 UI，也适用于效率应用的较小目标。
 
- 
+ 
 
 ![触摸板](images/input-patterns/input-touchpad.jpg)
 
@@ -114,12 +114,12 @@ ms.locfileid: "91220430"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="hardware"></a>硬件
 
 
-查询鼠标设备功能 ([**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities)) 以确定触摸板硬件可以直接访问你的应用 UI 的哪些方面。 我们建议提供适用于触摸和鼠标输入的 UI。
+查询鼠标设备功能 ( [**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities)) 以确定触摸板硬件可以直接访问你的应用 UI 的哪些方面。 我们建议提供适用于触摸和鼠标输入的 UI。
 
 有关查询设备功能的详细信息，请参阅[标识输入设备](identify-input-devices.md)。
 

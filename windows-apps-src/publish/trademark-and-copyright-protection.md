@@ -1,17 +1,17 @@
 ---
-Description: 了解当您认为其他应用正在侵犯您的知识产权时可以采取的措施。
+description: 了解当您认为其他应用正在侵犯您的知识产权时可以采取的措施。
 title: 商标和版权保护
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 ms.date: 06/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 14dae80876e1e7a77151f4e814a8dcd06e039645
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d3ae8467143dd1c254db20c237316e3984573242
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259899"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034970"
 ---
 # <a name="trademark-and-copyright-protection"></a>商标和版权保护
 
@@ -21,7 +21,7 @@ ms.locfileid: "74259899"
 ### <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. 如何在 Windows 应用中报告侵犯我的知识产权的行为？
 
 
-请使用以下[表单](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&ln=EN-US&oaspworkflow=start_1.0.0.0&wfname=RAVCI&wf=0)在 Windows 应用中提交版权、商标或形象宣传权侵犯投诉。 对于跨多个应用的版权、商标或形象宣传权侵犯投诉，请将你的请求提交到 mktlegal@microsoft.com。 如果需要有关 Microsoft 的 DMCA 策略的其他信息，请访问： [https://www.microsoft.com/info/cpyrtInfrg.aspx](https://www.microsoft.com/info/cpyrtInfrg.aspx)。
+请使用以下[表单](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&ln=EN-US&oaspworkflow=start_1.0.0.0&wfname=RAVCI&wf=0)在 Windows 应用中提交版权、商标或形象宣传权侵犯投诉。 对于跨多个应用的版权、商标或形象宣传权侵犯投诉，请将你的请求提交到 mktlegal@microsoft.com。 如果需要有关 Microsoft 的 DMCA 策略的其他信息，请访问： [https://www.microsoft.com/info/cpyrtInfrg.aspx](https://www.microsoft.com/info/cpyrtInfrg.aspx) 。
 
 ### <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. 我创建了要使用 Microsoft 产品/服务的应用。 我可以在我的应用名称中使用 Microsoft 产品/服务名称吗？
 
@@ -44,7 +44,7 @@ Microsoft 强烈建议您不要这样做。 但是如果商业上确实有必要
 ### <a name="4-may-i-use-microsofts-graphical-trademarks-logos-such-as-the-windows-flag-logo-in-my-app"></a>4. 我是否可以在我的应用中使用 Microsoft 的图形商标（徽标）（如 WINDOWS 标志徽标）？
 
 
-不相同。 Microsoft 只允许第三方通过正式授权使用其商标徽标。 通常在此上下文中不提供此类许可。
+不是。 Microsoft 只允许第三方通过正式授权使用其商标徽标。 通常在此上下文中不提供此类许可。
 
 有关详细信息，请参阅[美国专利商标局：商标基础知识](http://www.uspto.gov/trademarks-getting-started/trademark-basics)或下载[美国版权局：版权基础知识](https://www.copyright.gov/circs/circ01.pdf)。
 
@@ -63,9 +63,9 @@ Microsoft 强烈建议您不要这样做。 但是如果商业上确实有必要
 
 仔细阅读 Microsoft 的通知，并按照说明执行操作。 Microsoft 的通知可能包含您可能需要遵循的具体步骤，以告知我们您为纠正该问题所做的事项、您与要求者的意见不一致以及/或者您希望将您的应用重新提交到应用商店。
 
- 
+ 
 
- 
+ 
 
 
 

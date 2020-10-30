@@ -1,17 +1,17 @@
 ---
-Description: 如果在合作伙伴中心注册过程中要求你提供 VAT ID 号，以下是一些入门信息。
+description: 如果在合作伙伴中心注册过程中要求你提供 VAT ID 号，以下是一些入门信息。
 title: VAT 信息
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c8521ef2988e2108dbbd619812bfde26cecc81b
-ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
+ms.openlocfilehash: bd863210fad66d9494d9d71115966656ccbb8893
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81545077"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034920"
 ---
 # <a name="vat-info"></a>VAT 信息
 
@@ -70,7 +70,7 @@ ms.locfileid: "81545077"
 <li>示例：12345678、123456789 或 0123456789</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Czechia</td><td data-th="VAT info">
+<tr><td data-th="Country/region">捷克</td><td data-th="VAT info">
 <ul>
 <li>VAT 号码格式：8 个、9 个或 10 个数字</li>
 <li>国家/地区代码：CZ</li>
@@ -98,7 +98,7 @@ ms.locfileid: "81545077"
 <li>示例：12345678</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">France</td><td data-th="VAT info">
+<tr><td data-th="Country/region">法国</td><td data-th="VAT info">
 <ul>
 <li>VAT 号码格式：11 个数字</li>
 <li>国家/地区代码：FR</li>
@@ -106,7 +106,7 @@ ms.locfileid: "81545077"
 <li>注意：除了 I 或 Q 作为第一个字符或第二个字符，或者作为第一个字符和第二个字符之外，可以包含任何字母字符，之后跟随 9 个数字。</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Germany</td><td data-th="VAT info">
+<tr><td data-th="Country/region">德国</td><td data-th="VAT info">
 <ul>
 <li>VAT 号码格式：9 个数字</li>
 <li>国家/地区代码：DE</li>
@@ -245,9 +245,9 @@ ms.locfileid: "81545077"
 </table>
                                                                                                                                                                   
 
- 
+ 
 
- 
+ 
 
 
 

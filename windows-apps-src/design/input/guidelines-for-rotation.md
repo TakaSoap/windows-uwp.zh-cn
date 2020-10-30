@@ -1,5 +1,5 @@
 ---
-Description: 本主题介绍了新的 Windows 用户界面以进行旋转，并提供了在 Windows 应用程序中使用此新交互机制时应考虑的用户体验指南。
+description: 本主题介绍了新的 Windows 用户界面以进行旋转，并提供了在 Windows 应用程序中使用此新交互机制时应考虑的用户体验指南。
 title: 旋转
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
@@ -8,19 +8,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 135f7773a94491e1e6470c84ad428265273bc79d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 755386b8cffa5c546d20cd561693da5d21b30799
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217000"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035100"
 ---
 # <a name="rotation"></a>旋转
 
 
 本文介绍了新的 Windows 用户界面以进行旋转，并提供了在 Windows 应用程序中使用此新交互机制时应考虑的用户体验指南。
 
-> **重要 API**：[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API** ： [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、 [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="dos-and-donts"></a>准则
 
@@ -44,7 +44,8 @@ ms.locfileid: "91217000"
 
 ![演示旋转支持的各种手指姿势的图表。](images/ux-rotate-positions.png)
 
-**注意**   直观地说，在大多数情况下，旋转点是两个触摸点之一，除非用户可以指定与联系人点无关的旋转点 (例如，在绘图或布局应用程序) 中。 以下图像演示了不采用这种方式限制旋转点时如何降级用户体验。
+**注意**  
+从直观上来说，多数情况下，旋转点是两个触摸点之一，除非用户指定与接触点无关的旋转点（例如在绘图或布局应用程序中）。 以下图像演示了不采用这种方式限制旋转点时如何降级用户体验。
 
 首张图片显示第一个（拇指）和第二个（食指）接触点：食指接触树，拇指接触树枝。
 
@@ -59,7 +60,7 @@ ms.locfileid: "91217000"
 
 ![显示已旋转图片的图像，其中旋转点被限制为图片最左侧的中心，而不是两个初始接触点中的任何一个。](images/ux-rotate-points4.png)
 
- 
+ 
 
 Windows 10 支持三种类型的旋转：自由、约束和组合。
 
@@ -71,7 +72,7 @@ Windows 10 支持三种类型的旋转：自由、约束和组合。
 <thead>
 <tr class="header">
 <th align="left">类型</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -88,10 +89,10 @@ Windows 10 支持三种类型的旋转：自由、约束和组合。
 <td align="left">组合旋转</td>
 <td align="left"><p>组合旋转支持包含区域（类似于<a href="guidelines-for-panning.md">平移指南</a>中的围栏）的自由旋转，这些区域位于受限旋转强制的每个 90 度对齐点上。 如果用户在其中一个 90 度区域之外释放对象，则对象仍然在该位置；否则，对象会自动旋转到一个对齐点。</p>
 <div class="alert">
-<strong>注意</strong>   用户界面滑轨是一项功能，在该功能中，目标周围的某个区域会约束到某个特定值或位置，以影响其选择。
+<strong>注意</strong>  用户界面滑轨是一项功能，在该功能中，目标周围的某个区域会约束到某个特定值或位置，以影响其选择。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 </tbody>

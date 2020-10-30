@@ -1,5 +1,5 @@
 ---
-Description: 本主题介绍 Windows 缩放和调整大小元素，并提供在你的应用中使用这些交互机制时的用户体验指南。
+description: 本主题介绍 Windows 缩放和调整大小元素，并提供在你的应用中使用这些交互机制时的用户体验指南。
 title: 视觉缩放和调整大小指南
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f5864be7a4a7f80e376439e8db387e2b2853dfd7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1cf62546efd95c3a4d26ad3ca6f16990b832611c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172481"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035110"
 ---
 # <a name="optical-zoom-and-resizing"></a>视觉缩放和调整大小
 
@@ -21,7 +21,7 @@ ms.locfileid: "89172481"
 
 本文介绍 Windows 缩放和调整大小元素，并提供在你的应用中使用这些交互机制时的用户体验指南。
 
-> **重要 API**：[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Input (XAML)**](/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API** ： [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、 [**Input (XAML)**](/uwp/api/Windows.UI.Xaml.Input)
 
 使用视觉缩放，用户可以放大内容区域中内容的视图（在内容区域自身上执行），而使用调整大小，用户则可以更改一个或多个对象的相对大小，而不更改内容区域的视图（在内容区域中的对象上执行）。
 
@@ -29,17 +29,18 @@ ms.locfileid: "89172481"
 
 下图演示了调整大小和视觉缩放之间的区别。
 
-**视觉缩放**：用户选择一个区域，然后缩放整个区域。
+**视觉缩放** ：用户选择一个区域，然后缩放整个区域。
 
 ![将手指并拢可放大内容区域，将手指分开可缩小](images/areazoom.png)
 
-**调整大小**：用户选择区域中的一个对象，然后调整该对象的大小。
+**调整大小** ：用户选择区域中的一个对象，然后调整该对象的大小。
 
 ![将手指并拢可缩小对象，将手指分开可放大](images/objectresize.png)
 
-**注意**   光学缩放不应与[语义缩放](../controls-and-patterns/semantic-zoom.md)混淆。 尽管两种交互使用相同的手势，但语义式缩放是指在单个视图中组织的内容的表示和导航（如计算机的文件夹结构、文档库或相册）。
+**注意**  
+不应将视觉缩放与[语义式缩放](../controls-and-patterns/semantic-zoom.md)混淆。 尽管两种交互使用相同的手势，但语义式缩放是指在单个视图中组织的内容的表示和导航（如计算机的文件夹结构、文档库或相册）。
 
- 
+ 
 
 ## <a name="dos-and-donts"></a>准则
 
@@ -55,7 +56,7 @@ ms.locfileid: "89172481"
 
     -   邻近 - 抬起接触之后，如果延时停止在吸附点的距离阈值之内，则选择该吸附点。 邻近吸附点仍允许缩放或重新调整终止于吸附点之间。
     -   强制 - 所选择的吸附点紧跟抬起接触之前划过的最后一个吸附点之前或之后（取决于手势的方向和速度）。 操作必须终止于强制吸附点上。
--   使用惯性物理原则。 其中包括：
+-   使用惯性物理原则。 这些功能包括以下这些：
     -   减速：用户停止收缩或延伸时发生。 这类似于滑动到一个斜面上的挡块。
     -   回弹：当超过大小限制或边界时发生轻微的回弹效果。
 -   根据[目标指南](guidelines-for-targeting.md)隔开控件。
@@ -65,7 +66,8 @@ ms.locfileid: "89172481"
     -   可调整大小的项可以显示在可调整大小的画布或画板上的绘图应用程序中。
     -   具有嵌入对象（如地图）的网页。
 
-    **注意**   在所有情况下，都会调整内容区域的大小，除非所有触控点都在可调整大小的对象内。
+    **注意**  
+    在所有情况下，除非所有触摸点都位于可调整大小对象之内，否则调整内容区域大小。
 
 ## <a name="related-articles"></a>相关文章
 

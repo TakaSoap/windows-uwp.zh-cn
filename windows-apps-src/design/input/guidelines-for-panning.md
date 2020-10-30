@@ -1,5 +1,5 @@
 ---
-Description: 平移或滚动允许用户在单个视图中导航，以显示在视口内不适合的视图内容。 示例视图包括计算机的文件夹结构、文档库或相册。
+description: 平移或滚动允许用户在单个视图中导航，以显示在视口内不适合的视图内容。 示例视图包括计算机的文件夹结构、文档库或相册。
 title: 平移
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
@@ -8,19 +8,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 596a9f2f3f234ba90b799eae982523c3a9de9732
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 0a989a6a96ac42b1eb790b6ac0dd223bd55b1bb8
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749933"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035120"
 ---
 # <a name="guidelines-for-panning"></a>平移指南
 
 
 平移或滚动允许用户在单个视图中导航，以显示在视口内不适合的视图内容。 示例视图包括计算机的文件夹结构、文档库或相册。
 
-> **重要 API**：[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API** ： [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、 [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 
 ## <a name="dos-and-donts"></a>准则
@@ -32,9 +32,9 @@ ms.locfileid: "91749933"
 
 -   显示平移指示器和滚动条以提供位置和大小提示。如果你提供自定义导航功能，则隐藏它们。
 
-    **注意**   与标准滚动条不同，平移指示器纯粹是信息性的。 它们并不会向输入设备显示，因此无法采用任何方式对它们进行操作。
+    **注意**  与标准滚动条不同，平移指示器只是为了提供信息而已。 它们并不会向输入设备显示，因此无法采用任何方式对它们进行操作。
 
-     
+     
 
 **单轴平移（一维溢出）**
 
@@ -115,9 +115,9 @@ Windows 8 支持三种类型的平移：
 -   触摸平移指示器。
 -   用于其他输入设备（包括鼠标、触摸板、键盘和触笔）的滚动条。
 
-**注意**   仅当 touch 触点在可平移区域内时才会显示平移指示器。 同样，只有当鼠标光标、笔/触笔光标或键盘焦点位于可滚动的区域内时才能看到滚动条。
+**注意**  仅当在可平移区域内进行触摸接触时，平移指标器才可见。 同样，只有当鼠标光标、笔/触笔光标或键盘焦点位于可滚动的区域内时才能看到滚动条。
 
- 
+ 
 
 **平移指示器** 平移指示器类似于滚动条中的滚动框。 它们指示所显示内容与全部可平移区域的比例以及所显示内容在可平移区域中的相对位置。
 
@@ -126,7 +126,7 @@ Windows 8 支持三种类型的平移：
 ![显示两个长度不同的可平移区域及其平移指示器的图像。](images/scrolling-indicators.png)
 
 **平移行为** 
-**对齐点**通过轻扫手势平移，在提起触摸触点时，将惯性行为引入交互。 无需用户直接输入，内容将借助惯性继续平移，直到达到某些距离阈值为止。 使用吸附点修改此类惯性行为。
+**对齐点** 通过轻扫手势平移，在提起触摸触点时，将惯性行为引入交互。 无需用户直接输入，内容将借助惯性继续平移，直到达到某些距离阈值为止。 使用吸附点修改此类惯性行为。
 
 吸附点可以在你的应用内容中指定逻辑停止。 从认知的角度看，在较大的可平移区域中，吸附点为用户充当分页机制，并尽量减少因过度滑动或轻扫而带来的疲劳。 借助它们，你可以处理不精确的用户输入，并确保在视口中显示内容或关键信息的特定子集。
 

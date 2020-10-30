@@ -1,17 +1,17 @@
 ---
-Description: 了解 Microsoft 发出的税单，包括谁将收到它们，以及何时提供。
+description: 了解 Microsoft 发出的税单，包括谁将收到它们，以及何时提供。
 title: 了解 Microsoft 发出的 IRS 税单
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 税收, irs, 国内税收署, 税款, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 6493e20dbc0e38405a7cd30fc22acb9973098431
-ms.sourcegitcommit: 97002cc3e5942f43ab0f14f4ad70543a63db0c03
+ms.openlocfilehash: 05d038aca0670c31f1d8ed10250e3a905e6bfe3b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91128971"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034960"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 发出的 IRS 税单
 
@@ -23,11 +23,11 @@ ms.locfileid: "91128971"
 
 | IRS 税单 | 说明 | 可用性 |
 |--------------|-------------|--------------|
-|1099-MISC、1099-K | 与你参与 Microsoft 市场的销售活动和/或收到的付款金额相关 | 打印窗体在 **1 月 31**日或之前将有邮戳，.pdf 副本将 [在合作伙伴中心 (的](https://partner.microsoft.com/dashboard) 伙伴中心 **开发人员设置** 中提供，同时按 **比率和税务 > 支出和税务配置文件**)  |
-|1042-S | 与你收到的应缴纳美国预扣税的付款金额相关 | 打印窗体将在 **3 月 15**日或之前显示为邮戳，.pdf 副本将在合作伙伴中心 (的伙伴中心 **开发人员设置** 中提供，同时按 **比率和税务 > 支出和税务配置文件**)   |
+|1099-MISC、1099-K | 与你参与 Microsoft 市场的销售活动和/或收到的付款金额相关 | 打印窗体在 **1 月 31** 日或之前将有邮戳，.pdf 副本将 [在合作伙伴中心 (的](https://partner.microsoft.com/dashboard) 伙伴中心 **开发人员设置** 中提供，同时按 **比率和税务 > 支出和税务配置文件** )  |
+|1042-S | 与你收到的应缴纳美国预扣税的付款金额相关 | 打印窗体将在 **3 月 15** 日或之前显示为邮戳，.pdf 副本将在合作伙伴中心 (的伙伴中心 **开发人员设置** 中提供，同时按 **比率和税务 > 支出和税务配置文件** )   |
 
 > [!NOTE]
-> 用于 IRS 纳税窗体的地址来自你的 [税务模板](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 如果你的地址已变更，请务必更新**税务资料**中的地址。
+> 用于 IRS 纳税窗体的地址来自你的 [税务模板](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 如果你的地址已变更，请务必更新 **税务资料** 中的地址。
 
 税务窗体将从以下地址发送给你：
 
@@ -70,7 +70,7 @@ ms.locfileid: "91128971"
   </tr>
   <tr>
     <td valign="top">以上内容都不适用。</td>
-    <td valign="top">无</td>
+    <td valign="top">None</td>
   </tr>
   <tr>
     <td valign="top">&nbsp;</td>
@@ -86,7 +86,7 @@ ms.locfileid: "91128971"
   </tr>
   <tr> 
      <td valign="top">在适用的纳税年度中，我从应用内广告收到的付款金额<b>不足 600 美元</b></td>
-     <td valign="top">无</td>
+     <td valign="top">None</td>
   </tr>
 </table>
 
@@ -129,4 +129,4 @@ ms.locfileid: "91128971"
 
 
 > [!NOTE]
-> 如果你有与**IRS 税单**相关的其他问题或疑虑，请创建一个[支持票证](https://developer.microsoft.com/windows/support)。 Microsoft 无法回答与你的具体税务情况相关的问题；对于这些问题，请向税务专业人士寻求建议。
+> 如果你有与 **IRS 税单** 相关的其他问题或疑虑，请创建一个 [支持票证](https://developer.microsoft.com/windows/support)。 Microsoft 无法回答与你的具体税务情况相关的问题；对于这些问题，请向税务专业人士寻求建议。

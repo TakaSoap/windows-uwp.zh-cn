@@ -1,5 +1,5 @@
 ---
-Description: 若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。
+description: 若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。
 MS-HAID: dev\_ctrl\_layout\_txt.use\_input\_scope\_to\_change\_the\_touch\_keyboard
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,12 +9,12 @@ template: detail.hbs
 keywords: 键盘、辅助功能、导航、焦点、文本、输入、用户交互
 ms.date: 02/08/2017
 ms.topic: article
-ms.openlocfilehash: e6e140a1967ca3ffe7775f427ccae7a7e07c5ca6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9b274d7cafd179157571a51db1122153a33d846e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165811"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035070"
 ---
 # <a name="use-input-scope-to-change-the-touch-keyboard"></a>使用输入范围更改触摸键盘
 
@@ -25,9 +25,9 @@ ms.locfileid: "89165811"
 - [InputScopeNameValue](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)
 
 
-当应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 **[TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)** 或 **[RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)**）时，将调用触摸键盘。 通过设置文本控件的 *输入范围* ，使用户能够更快、更轻松地在应用程序中输入数据，以匹配用户输入的数据类型。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
+当应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 **[TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)** 或 **[RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)** ）时，将调用触摸键盘。 通过设置文本控件的 *输入范围* ，使用户能够更快、更轻松地在应用程序中输入数据，以匹配用户输入的数据类型。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
 
-例如，如果文本框仅用于输入4位数的 PIN，则将 [**InputScope**](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性设置为 **Number**。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
+例如，如果文本框仅用于输入4位数的 PIN，则将 [**InputScope**](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性设置为 **Number** 。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
 
 > [!IMPORTANT]
 > - 此信息仅适用于 SIP。 它不适用于硬件键盘或 Windows“轻松使用”选项中提供的屏幕键盘。
@@ -38,7 +38,7 @@ ms.locfileid: "89165811"
 可用于你的应用的输入范围是 **[InputScopeNameValue](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)** 枚举的成员。 你可以将 ****TextBox**** 或 **[RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)** 的 [InputScope](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) 属性设置为以下值之一。
 
 > [!IMPORTANT]
-> **[PasswordBox](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)** 上的**[InputScope](/uwp/api/windows.ui.xaml.controls.passwordbox.inputscope)** 属性仅支持**Password**和**NumericPin**值。 将忽略任何其他值。
+> **[PasswordBox](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)** 上的 **[InputScope](/uwp/api/windows.ui.xaml.controls.passwordbox.inputscope)** 属性仅支持 **Password** 和 **NumericPin** 值。 将忽略任何其他值。
 
 在这里，你可以更改多个文本框的输入范围以匹配每个文本框的预期数据范围。
 
@@ -125,9 +125,9 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 -   [**IsTextPredictionEnabled**](/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled)：为文本控件启用文本预测后，系统将显示你可能会键入的单词的列表。 你可以从该列表中进行选择，因此你无需键入整个单词。 默认情况下，文本预测处于启用状态。
 
-    如果输入范围的属性不为 **Default**，将禁用文本预测，即使 [**IsTextPredictionEnabled**](/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) 属性为 **true** 也是如此。 有关详细信息，请参阅本主题后面的表格。
+    如果输入范围的属性不为 **Default** ，将禁用文本预测，即使 [**IsTextPredictionEnabled**](/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) 属性为 **true** 也是如此。 有关详细信息，请参阅本主题后面的表格。
 
--   [**PreventKeyboardDisplayOnProgrammaticFocus**](/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus)：若此属性为 **true**，则系统在采用编程方式在文本控件上设置焦点时，不显示 SIP。 而仅在用户与控件交互时才显示该键盘。
+-   [**PreventKeyboardDisplayOnProgrammaticFocus**](/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus)：若此属性为 **true** ，则系统在采用编程方式在文本控件上设置焦点时，不显示 SIP。 而仅在用户与控件交互时才显示该键盘。
 
 ## <a name="touch-keyboard-index-for-windows"></a>适用于 Windows 的触摸键盘索引
 
@@ -143,10 +143,10 @@ phoneNumberTextBox.InputScope = new InputScope()
 默认的 Windows touch 键盘。
 
 ![默认 Windows 触摸键盘](images/input-scopes/default.png)
-- 拼写检查：如果**IsSpellCheckEnabled**  =  **为 true**，则启用，如果**IsSpellCheckEnabled**  =  **为 false** ，则禁用
-- 自动更正：如果**IsSpellCheckEnabled**  =  **为 true**，则启用，如果**IsSpellCheckEnabled**  =  **为 false** ，则禁用
-- 自动大写：如果**IsSpellCheckEnabled**  =  **为 true**，则启用，如果**IsSpellCheckEnabled**  =  **为 false** ，则禁用
-- 文本预测：如果**IsTextPredictionEnabled**  =  **为 true**，则启用，如果**IsTextPredictionEnabled**  =  **为 false** ，则禁用
+- 拼写检查：如果 **IsSpellCheckEnabled**  =  **为 true** ，则启用，如果 **IsSpellCheckEnabled**  =  **为 false** ，则禁用
+- 自动更正：如果 **IsSpellCheckEnabled**  =  **为 true** ，则启用，如果 **IsSpellCheckEnabled**  =  **为 false** ，则禁用
+- 自动大写：如果 **IsSpellCheckEnabled**  =  **为 true** ，则启用，如果 **IsSpellCheckEnabled**  =  **为 false** ，则禁用
+- 文本预测：如果 **IsTextPredictionEnabled**  =  **为 true** ，则启用，如果 **IsTextPredictionEnabled**  =  **为 false** ，则禁用
 
 ### <a name="currencyamountandsymbol"></a>CurrencyAmountAndSymbol
 
@@ -168,8 +168,8 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 ![可输入 URL 的 Windows 触摸键盘](images/input-scopes/url.png)
 
-- 包括 **“.com”** 键和![“转到”](images/input-scopes/kbdgokey.png)键。 按住 **.com** 键以显示 (的其他选项，如 **org**、 **.net**和特定于区域的后缀) 
-- 包括 **：**、 **-** 和 **/** 键
+- 包括 **“.com”** 键和![“转到”](images/input-scopes/kbdgokey.png)键。 按住 **.com** 键以显示 (的其他选项，如 **org** 、 **.net** 和特定于区域的后缀) 
+- 包括 **：** 、 **-** 和 **/** 键
 - 拼写检查：默认情况下处于禁用状态，可以启用
 - 自动更正：默认情况下处于禁用状态，可以启用
 - 首字母自动大写：默认情况下处于禁用状态，可以启用
@@ -181,7 +181,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 `<TextBox InputScope="EmailSmtpAddress"/>`
 
 ![可输入电子邮件地址的 Windows 触摸键盘](images/input-scopes/emailsmtpaddress.png)
-- 包括 **@** 和 **.com** 项。 按住 **.com** 键以显示 (的其他选项，如 **org**、 **.net**和特定于区域的后缀) 
+- 包括 **@** 和 **.com** 项。 按住 **.com** 键以显示 (的其他选项，如 **org** 、 **.net** 和特定于区域的后缀) 
 - 包括 **_** 和 **-** 键
 - 拼写检查：默认情况下处于禁用状态，可以启用
 - 自动更正：默认情况下处于禁用状态，可以启用
@@ -189,7 +189,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 - 文本预测：默认情况下处于禁用状态，可以启用
 
 
-### <a name="number"></a>Number
+### <a name="number"></a>数字
 
 `<TextBox InputScope="Number"/>`
 
@@ -225,7 +225,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 `<TextBox InputScope="SearchIncremental"/>`
 
 ![用于渐进式搜索的 Windows 触摸键盘](images/input-scopes/searchincremental.png)
-- 与**默认**布局相同
+- 与 **默认** 布局相同
 - 拼写检查：默认情况下处于禁用状态，可以启用
 - 自动更正：始终处于禁用状态
 - 首字母自动大写：始终处于禁用状态
@@ -248,7 +248,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 `<TextBox InputScope="Chat"/>`
 
 ![默认 Windows 触摸键盘](images/input-scopes/default.png)
-- 与**默认**布局相同
+- 与 **默认** 布局相同
 - 拼写检查：默认情况下处于启用状态，可以禁用
 - 自动更正：默认情况下处于启用状态，可以禁用
 - 首字母自动大写：默认情况下处于启用状态，可以禁用
@@ -259,7 +259,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 `<TextBox InputScope="NameOrPhoneNumber"/>`
 
 ![默认 Windows 触摸键盘](images/input-scopes/default.png)
-- 与**默认**布局相同
+- 与 **默认** 布局相同
 - 拼写检查：默认情况下处于禁用状态，可以启用
 - 自动更正：默认情况下处于禁用状态，可以启用
 - 自动大写：默认情况下，可以启用 (每个单词的首字母大写) 

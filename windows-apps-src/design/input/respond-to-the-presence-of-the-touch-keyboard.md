@@ -1,5 +1,5 @@
 ---
-Description: 了解如何在显示或隐藏触摸键盘时定制你的应用 UI。
+description: 了解如何在显示或隐藏触摸键盘时定制你的应用 UI。
 title: 响应触摸键盘的存在
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: 键盘, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互
 ms.date: 09/24/2020
 ms.topic: article
-ms.openlocfilehash: 4af7e7533ebd985a22eedd2e11f35d8bf5f5dc8a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c3431fcafb86428ce5eddb8ea7a6b0187b64a5e5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216900"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035080"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>响应触摸键盘的存在
 
@@ -54,7 +54,7 @@ ms.locfileid: "91216900"
 
 - 在与表单的整个交互中显示触摸键盘。
 
-- 确保当焦点从文本输入字段移到文本输入字段时，您的自定义控件具有适当的 UI 自动化 [AutomationControlType](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) 。 例如，如果在文本输入时打开了一个菜单，但你希望该键盘一直显示，则该菜单必须具有 **AutomationControlType** 菜单。
+- 确保你的自定义控件具有正确的 UI 自动化[AutomationControlType](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)，以确保在焦点从文本输入字段移出时（但仍然位于文本输入的上下文中）保持键盘始终显示。 例如，如果在文本输入时打开了一个菜单，但你希望该键盘一直显示，则该菜单必须具有 **AutomationControlType** 菜单。
 
 - 不要操作 UI 自动化属性来控制触摸键盘。 其他辅助工具依赖于 UI 自动化属性的精度。
 

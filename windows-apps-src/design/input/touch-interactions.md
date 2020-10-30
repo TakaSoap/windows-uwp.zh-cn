@@ -1,5 +1,5 @@
 ---
-Description: 创建具有直观且独特的用户交互体验的 Windows 应用，这些体验经过优化，可用于触摸，但在输入设备中的功能保持一致。
+description: 创建具有直观且独特的用户交互体验的 Windows 应用，这些体验经过优化，可用于触摸，但在输入设备中的功能保持一致。
 title: 触控交互
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
@@ -8,12 +8,12 @@ keywords: 键盘, 指针, 输入, 用户交互
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 302a1f39d85902b229642b60f483b40f51209a72
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 614d8c5340100ca5ba666493ccb23ec4d8ca8498
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750383"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035050"
 ---
 # <a name="touch-interactions"></a>触控交互
 
@@ -22,7 +22,7 @@ ms.locfileid: "91750383"
 
 但是请记住，为触摸优化的 UI 并非总是优于传统 UI。 两者都具有特定于技术和应用的优缺点。 在移动到触摸优先的 UI 时，了解触摸、触摸板、笔/触笔、鼠标和键盘输入之间的核心差异非常重要。
 
-> **重要 API**：[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Core**](/uwp/api/Windows.UI.Core)、[**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input)
+> **重要 API** ： [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)、 [**Windows.UI.Core**](/uwp/api/Windows.UI.Core)、 [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input)
 
 
 许多设备具有多点触控屏幕，它们支持使用一根或多根手指（或触摸接触）作为输入。 触摸接触以及其移动会被解释为触摸手势和操作，以支持各种用户交互。
@@ -75,7 +75,7 @@ Windows 应用包含多个用于处理触摸输入的不同机制，使您能够
 > [!NOTE]
 > 非直接输入的优点是已经过 25 年的优化。 设计诸如悬停触发的工具提示之类的功能，是为了解决触摸板、鼠标、笔/触笔以及键盘输入特有的 UI 浏览。 此类 UI 功能已针对触摸输入提供的丰富体验进行了重新设计，不会对这些其他设备的用户体验产生负面影响。
 
- 
+ 
 
 ## <a name="use-touch-feedback"></a>用户触摸反馈
 
@@ -176,9 +176,9 @@ Windows 应用包含多个用于处理触摸输入的不同机制，使您能够
 
 若要提供自定义触摸支持，应处理各种 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 事件。 这些事件分组为三个抽象级别。
 
--   静态手势事件是在交互完成之后触发的。 手势事件包括 [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped)、[**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped)、[**RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped) 和 [**Holding**](/uwp/api/windows.ui.xaml.uielement.holding)。
+-   静态手势事件是在交互完成之后触发的。 手势事件包括 [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped)、 [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped)、 [**RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped) 和 [**Holding**](/uwp/api/windows.ui.xaml.uielement.holding)。
 
-    可以通过将 [**IsTapEnabled**](/uwp/api/windows.ui.xaml.uielement.istapenabled)、[**IsDoubleTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isdoubletapenabled)、[**IsRightTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isrighttapenabled) 和 [**IsHoldingEnabled**](/uwp/api/windows.ui.xaml.uielement.isholdingenabled) 设置为 **false** 来禁用针对特定元素的手势事件。
+    可以通过将 [**IsTapEnabled**](/uwp/api/windows.ui.xaml.uielement.istapenabled)、 [**IsDoubleTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isdoubletapenabled)、 [**IsRightTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isrighttapenabled) 和 [**IsHoldingEnabled**](/uwp/api/windows.ui.xaml.uielement.isholdingenabled) 设置为 **false** 来禁用针对特定元素的手势事件。
 
 -   诸如 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) 的指针事件会提供每个触摸接触的低级别详细信息，包括指针动作以及区分按下和释放事件的能力。
 
@@ -200,7 +200,7 @@ Windows 应用包含多个用于处理触摸输入的不同机制，使您能够
 | 捏放          | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指并拢在一起。                         |
 | 拉伸        | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指分开。                           |
 
- 
+ 
 
 <!-- mijacobs: Removing for now. We don't have a real page to link to yet. 
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
@@ -232,9 +232,9 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 | [**PointerWheelChanged**](/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)   | 当鼠标滚轮的增量值改变以及触摸板 pinched 时出现。         |
 | [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) | 为所有指针事件提供数据。                         |
 
- 
+ 
 
-以下示例显示如何使用 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)、[**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 和 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件来处理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 对象上的点击交互。
+以下示例显示如何使用 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)、 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 和 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件来处理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 对象上的点击交互。
 
 首先，在 Extensible Application Markup Language (XAML) 中创建名为 `touchRectangle` 的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)。
 
@@ -244,7 +244,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
            Height="100" Width="200" Fill="Blue" />
 </Grid>
 ```
-接下来，指定用于 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)、[**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 和 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件的侦听器。
+接下来，指定用于 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)、 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 和 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件的侦听器。
 
 ```cpp
 MainPage::MainPage()
@@ -284,7 +284,7 @@ Public Sub New()
 End Sub
 ```
 
-最后，[**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件处理程序增加 [**Rectangle**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 和 [**Width**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)，同时 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 和 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件处理程序将 **Height** 和 **Width** 设置回其初始值。
+最后， [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件处理程序增加 [**Rectangle**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 和 [**Width**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)，同时 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 和 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件处理程序将 **Height** 和 **Width** 设置回其初始值。
 
 ```cpp
 // Handler for pointer exited event.
@@ -431,7 +431,7 @@ End Sub
 | [**ManipulationVelocities**](/uwp/api/Windows.UI.Input.ManipulationVelocities)                                              | 描述操作发生的速度。                                                                                         |
 | [**ManipulationCompletedRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs)             | 提供 [**ManipulationCompleted**](/uwp/api/windows.ui.xaml.uielement.manipulationcompleted) 事件的数据。                                       |
 
- 
+ 
 
 手势由一系列操作事件组成。 每个手势都从 [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted) 事件开始，如用户触摸屏幕时。
 
@@ -440,7 +440,7 @@ End Sub
 > [!NOTE]
 > 如果没有触摸屏监视器，可以使用鼠标和鼠标滚轮界面在模拟器中测试操作事件代码。
 
- 
+ 
 
 以下示例演示如何使用 [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件来处理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 上的滑动交互以及在屏幕上移动它。
 
@@ -572,7 +572,7 @@ End Sub
 ## <a name="routed-events"></a>路由事件
 
 
-此处提及的所有指针事件、手势事件和操作事件都将作为*路由事件*实现。 这意味着该事件可能由对象（而不是最初引起该事件的对象）处理。 对象树中的连续父对象（例如 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 元素的父容器或你的应用的根 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page)）可以选择处理这些对象，即使原始元素未执行此操作也是如此。 相反，处理该事件的任何对象都可以标记处理的事件，以使其不再达到任何父元素。 有关路由事件概念以及它如何影响你为路由事件编写处理程序的方式的详细信息，请参阅[事件和路由事件概述](/previous-versions/windows/apps/hh758286(v=win.10))。
+此处提及的所有指针事件、手势事件和操作事件都将作为 *路由事件* 实现。 这意味着该事件可能由对象（而不是最初引起该事件的对象）处理。 对象树中的连续父对象（例如 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 元素的父容器或你的应用的根 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page)）可以选择处理这些对象，即使原始元素未执行此操作也是如此。 相反，处理该事件的任何对象都可以标记处理的事件，以使其不再达到任何父元素。 有关路由事件概念以及它如何影响你为路由事件编写处理程序的方式的详细信息，请参阅[事件和路由事件概述](/previous-versions/windows/apps/hh758286(v=win.10))。
 
 ## <a name="dos-and-donts"></a>准则
 

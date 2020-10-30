@@ -1,5 +1,5 @@
 ---
-Description: 设计一个说明用户界面 (UI) ，教用户如何使用 Windows 应用程序。
+description: 设计一个说明用户界面 (UI) ，教用户如何使用 Windows 应用程序。
 title: 设计说明性 UI 指南
 label: Instructional UI
 template: detail.hbs
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: c87e2f06-339d-4413-b585-172752964f56
 ms.localizationpriority: medium
-ms.openlocfilehash: 47779a6d31d60fe87f639dfadd48275bfb15359e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5d9c59c300f5e8fd1ee5cc4233bedcceb1e3089c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217120"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035150"
 ---
 # <a name="instructional-ui-guidelines"></a>说明性 UI 指南
 
@@ -61,11 +61,11 @@ ms.locfileid: "91217120"
 
     ![影音时光应用的启动屏幕](images/instructional-ui-movie.png)
 
--   **指导用户在复杂的任务中采取下一步骤。** 在“Windows 邮件”应用中，收件箱底部的提示将用户指向“设置”**** 以访问较早的消息。
+-   **指导用户在复杂的任务中采取下一步骤。** 在“Windows 邮件”应用中，收件箱底部的提示将用户指向“设置”  以访问较早的消息。
 
     ![显示说明性 UI 消息的“Windows 邮件”应用的裁剪屏幕截图](images/instructional-ui-mail-inbox.png)
 
-    在用户单击该消息时，应用的“设置”**** 浮出控件会立即显示在屏幕的右侧，以便用户完成该任务。 下面的屏幕截图显示了当用户单击说明性 UI 消息之前和之后的“邮件”应用。
+    在用户单击该消息时，应用的“设置”  浮出控件会立即显示在屏幕的右侧，以便用户完成该任务。 下面的屏幕截图显示了当用户单击说明性 UI 消息之前和之后的“邮件”应用。
 
     | 以前                                                               | 完成                                                                                                        |
     |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|

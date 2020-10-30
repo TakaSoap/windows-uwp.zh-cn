@@ -1,23 +1,23 @@
 ---
-Description: 支出报表显示你在应用和外接程序中获得的资金的详细信息。 它还使你可以知道你将何时收到付款和收到多少付款。
+description: 支出报表显示你在应用和外接程序中获得的资金的详细信息。 它还使你可以知道你将何时收到付款和收到多少付款。
 title: 付款报表
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.date: 08/02/2019
 ms.topic: article
 keywords: windows 10, uwp, 付款摘要, 声明, 付款, 收益, 支出, 付款, 收入
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eab86cc1856f5ad206aa8bbceb2f2e04f5410d2
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 11d83031702a642fa21a711edfdbaff69661c853
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763103"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035020"
 ---
 # <a name="payout-reports"></a>付款报表
 
 费用 **摘要** 显示了你在 Microsoft 获得的资金的详细信息。 它还使你可以知道你将何时收到付款和收到多少付款。
 
-如果在 Azure Marketplace 中销售产品，还会在 " **支出摘要**" 中看到有关成功付款的信息。 有关 Azure Marketplace 付款的更多详细信息，请参阅 [Microsoft Azure 应用商店参与策略](/legal/marketplace/participation-policy)和 [Microsoft Azure 应用商店发布者协议](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt)。
+如果在 Azure Marketplace 中销售产品，还会在 " **支出摘要** " 中看到有关成功付款的信息。 有关 Azure Marketplace 付款的更多详细信息，请参阅 [Microsoft Azure 应用商店参与策略](/legal/marketplace/participation-policy)和 [Microsoft Azure 应用商店发布者协议](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt)。
 
 > [!NOTE]
 > 你的收款必须达到 50 美元的[付款阈值](payment-thresholds-methods-and-timeframes.md)，才符合成为付款的条件。 若要详细了解付款阈值，请参阅此页，并查阅应用开发人员协议。
@@ -219,11 +219,11 @@ ms.locfileid: "91763103"
 | 净收入            | 交易金额减去免除的税收。                                                                                                                                   |
 | 应用商店费用               | 由 Microsoft 扣除的净收入百分比将用作支付在应用商店中提供应用或加载项的费用。                                                      |
 | 应用收款            | 净收入减去应用商店费用。                                                                                                                                       |
-| 预扣税款          | 所得税扣缴金额。 **保留**的 .csv 文件中未包含 (。 )                                                                                                 |
-| 付款                 | 应用收款减去任何相应所得税预扣金额（金额以交易币种显示）。 **保留**的 .csv 文件中未包含 (。 )                                |
+| 预扣税款          | 所得税扣缴金额。 **保留** 的 .csv 文件中未包含 (。 )                                                                                                 |
+| 付款                 | 应用收款减去任何相应所得税预扣金额（金额以交易币种显示）。 **保留** 的 .csv 文件中未包含 (。 )                                |
 | 外汇汇率                 | 用于将交易币种兑换为付款货币的外汇汇率。                                                                                         |
 | 付款币种        | 付款时所使用的货币。                                                                                                                                       |
 | 转换后的付款       | 使用外汇汇率，将付款金额兑换为付款货币。                                                                                                         |
 | 税款汇出模型         | 免税方（销售税、使用税或增值税/消费税）。                                                                                                   |
-| 资格日期/时间   | 交易收款符合成为付款的条件的日期和时间 (UTC)。 在创建付款时，这包括资格日期时间早于付款创建日期的交易收益。 （仅包括在“已保留”**** 的 .csv 文件中。） |
-| Charges                 | 显示“交易金额”列汇总的所有费用明细的细目。 （仅包括在 Azure Marketplace 中；不包括在“已保留”**** 的 .csv 文件中。） |
+| 资格日期/时间   | 交易收款符合成为付款的条件的日期和时间 (UTC)。 在创建付款时，这包括资格日期时间早于付款创建日期的交易收益。 （仅包括在“已保留”  的 .csv 文件中。） |
+| Charges                 | 显示“交易金额”列汇总的所有费用明细的细目。 （仅包括在 Azure Marketplace 中；不包括在“已保留”  的 .csv 文件中。） |
