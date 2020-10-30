@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 09db3caefccfce3ff110cb034efa27ff53c4154a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 3d4bb343f2a8535fae60e19cd417099a99ae852d
+ms.sourcegitcommit: 6c1d2dd99221242d5d09f17e99f87302143c6180
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218220"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644317"
 ---
 # <a name="guidelines-for-app-settings"></a>应用设置指南
 
@@ -82,7 +82,7 @@ ms.locfileid: "91218220"
 - 深色
 - Windows 默认值
 
-我们还建议添加一个指向 Windows 设置应用的“颜色”页面的超链接，用户可以访问和修改当前的默认应用模式。 对于超链接文本，请使用字符串“Windows 颜色设置”。
+我们还建议添加一个指向 Windows 设置应用的“颜色”页面的超链接，用户可以访问和修改当前的默认应用模式。 对于超链接文本，请使用字符串“Windows 颜色设置”，对 URI 则使用 `ms-settings:colors`。
 
 ![“选择模式”部分](images/appsettings_mode.png)
 
