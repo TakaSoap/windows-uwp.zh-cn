@@ -8,12 +8,12 @@ keywords: 键盘, 指针, 输入, 用户交互
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 614d8c5340100ca5ba666493ccb23ec4d8ca8498
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: f173c90d43b7be795b8a87fe14dd3de9d6284da1
+ms.sourcegitcommit: da44cb95946440cd06ff36254d42ecefcdd87ce2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035050"
+ms.locfileid: "93063009"
 ---
 # <a name="touch-interactions"></a>触控交互
 
@@ -31,15 +31,15 @@ Windows 应用包含多个用于处理触摸输入的不同机制，使您能够
 
 触摸交互需要满足以下三项：
 
--   触摸式屏幕。
--   单指或多指直接接触该屏幕（或近距离接触，如果显示器具有邻近感应传感器并支持悬停检测）。
--   触摸接触时移动（或不移动，具体取决于时间阈值）。
+- 触摸式屏幕。
+- 单指或多指直接接触该屏幕（或近距离接触，如果显示器具有邻近感应传感器并支持悬停检测）。
+- 触摸接触时移动（或不移动，具体取决于时间阈值）。
 
 触摸传感器提供的输入数据可以：
 
--   解释为直接操作一个或多个 UI 元素的物理手势（例如平移、旋转、调整大小或移动）。 相比之下，通过某个元素属性窗口、对话框或其他 UI 提示与该元素交互被认为是间接操作。
--   作为另一种输入方法识别，例如鼠标或笔。
--   用于补充或修改其他输入方法的方面，例如涂抹用笔绘制的笔划墨迹。
+- 解释为直接操作一个或多个 UI 元素的物理手势（例如平移、旋转、调整大小或移动）。 相比之下，通过某个元素属性窗口、对话框或其他 UI 提示与该元素交互被认为是间接操作。
+- 作为另一种输入方法识别，例如鼠标或笔。
+- 用于补充或修改其他输入方法的方面，例如涂抹用笔绘制的笔划墨迹。
 
 触摸输入通常涉及屏幕上元素的直接操作。 该元素会立即响应其点击测试区内的任何触摸接触，并相应地响应该触摸接触的任何后续移动，包括删除。
 
@@ -88,19 +88,19 @@ Windows 应用包含多个用于处理触摸输入的不同机制，使您能够
 
 通过以下方式优化目标：
 
--   触摸目标大小
+- 触摸目标大小
 
     清晰的大小指南确保应用程序提供舒适的 UI，即 UI 中包含的对象和控件都很容易确定目标并且非常安全。
 
--   接触几何图形
+- 接触几何图形
 
     手指的整个接触区域可以确定最可能的目标对象。
 
--   清理
+- 清理
 
     通过将手指在组中的项之间拖动可以很容易改变目标（例如，单选按钮）。 释放触摸时激活当前项。
 
--   摇摆
+- 摇摆
 
     密集项目（如超链接）可以通过下压手指（无滑动），然后来回摇摆并停在项目上方来轻松改变目标。 由于存在封闭，当前项通过工具提示或状态栏来标识，并且释放触摸时会被激活。
 
@@ -108,26 +108,26 @@ Windows 应用包含多个用于处理触摸输入的不同机制，使您能够
 
 使用以下方式设计草率交互：
 
--   用户与内容交互时使用吸附点可以轻松在所需位置停止。
--   使用方向“围栏”可帮助进行垂直或水平平移，甚至手出现轻微弧度的移动时都可以。有关详细信息，请参阅[平移指南](guidelines-for-panning.md)。
+- 用户与内容交互时使用吸附点可以轻松在所需位置停止。
+- 使用方向“围栏”可帮助进行垂直或水平平移，甚至手出现轻微弧度的移动时都可以。有关详细信息，请参阅[平移指南](guidelines-for-panning.md)。
 
 ## <a name="occlusion"></a>封闭
 
 通过以下方式避免出现手指和手封闭：
 
--   UI 的大小和位置
+- UI 的大小和位置
 
     使 UI 元素足够大，以便指尖接触区域无法完全覆盖。
 
     将菜单和弹出窗口尽可能放在接触区域上方。
 
--   工具提示
+- 工具提示
 
     当用户在对象上保持手指接触时，显示工具提示。 这对于描述对象功能非常有用。 用户可将指尖拖动到对象外，以避免调用工具提示。
 
     对于小型对象，偏移工具提示以便指尖接触区域不会将对象覆盖。 这对于确定目标非常有用。
 
--   精确句柄
+- 精确句柄
 
     如果对精度有要求（例如文本选择），请提供偏移选择句柄以提高准确性。 有关详细信息，请参阅[选择文本和图像的指南（Windows 运行时应用）](guidelines-for-textselection.md)。
 
@@ -139,21 +139,21 @@ Windows 应用包含多个用于处理触摸输入的不同机制，使您能够
 
 与定时交互相比，直接操作提供了很多优势：
 
--   交互期间即时视觉反馈使用户感觉更吸引人、更自信并且控制力更好。
--   直接操作比浏览系统更安全，因为这些操作是可逆的—用户可以采用逻辑和直观的方式轻松倒退其操作。
--   直接影响对象的交互以及模拟现实的交互更直观、更容易发现并且更不容易忘记。 它们不依赖于模糊或抽象的交互。
--   定时交互可能难以执行，因为用户数量必须达到任意且不可见的阈值。
+- 交互期间即时视觉反馈使用户感觉更吸引人、更自信并且控制力更好。
+- 直接操作比浏览系统更安全，因为这些操作是可逆的—用户可以采用逻辑和直观的方式轻松倒退其操作。
+- 直接影响对象的交互以及模拟现实的交互更直观、更容易发现并且更不容易忘记。 它们不依赖于模糊或抽象的交互。
+- 定时交互可能难以执行，因为用户数量必须达到任意且不可见的阈值。
 
 此外，还强烈建议遵循以下规则：
 
--   不应该按使用的手指数量来区分操作。
--   交互应该支持复合操作。 例如，在拖动手指进行平移时收缩即可缩放。
--   不应按时间来区分交互。 相同的交互应该具有相同的结果，而与执行该操作所花费的时间无关。 基于时间的激活功能为用户引入了强制延迟，因此影响了直接操作的沉浸式属性和系统响应的感知。
+- 不应该按使用的手指数量来区分操作。
+- 交互应该支持复合操作。 例如，在拖动手指进行平移时收缩即可缩放。
+- 不应按时间来区分交互。 相同的交互应该具有相同的结果，而与执行该操作所花费的时间无关。 基于时间的激活功能为用户引入了强制延迟，因此影响了直接操作的沉浸式属性和系统响应的感知。
 
     > [!NOTE]
     > 出现这种情况的一个例外是，使用特定的计时交互来帮助学习和探索 (例如，按下并保持) 。
 
--   正确的描述以及视觉提示对高级交互的使用有巨大影响。
+- 正确的描述以及视觉提示对高级交互的使用有巨大影响。
 
 
 ## <a name="app-views"></a>应用视图
@@ -176,15 +176,15 @@ Windows 应用包含多个用于处理触摸输入的不同机制，使您能够
 
 若要提供自定义触摸支持，应处理各种 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 事件。 这些事件分组为三个抽象级别。
 
--   静态手势事件是在交互完成之后触发的。 手势事件包括 [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped)、 [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped)、 [**RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped) 和 [**Holding**](/uwp/api/windows.ui.xaml.uielement.holding)。
+- 静态手势事件是在交互完成之后触发的。 手势事件包括 [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped)、 [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped)、 [**RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped) 和 [**Holding**](/uwp/api/windows.ui.xaml.uielement.holding)。
 
     可以通过将 [**IsTapEnabled**](/uwp/api/windows.ui.xaml.uielement.istapenabled)、 [**IsDoubleTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isdoubletapenabled)、 [**IsRightTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isrighttapenabled) 和 [**IsHoldingEnabled**](/uwp/api/windows.ui.xaml.uielement.isholdingenabled) 设置为 **false** 来禁用针对特定元素的手势事件。
 
--   诸如 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) 的指针事件会提供每个触摸接触的低级别详细信息，包括指针动作以及区分按下和释放事件的能力。
+- 诸如 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) 的指针事件会提供每个触摸接触的低级别详细信息，包括指针动作以及区分按下和释放事件的能力。
 
     指针是具有统一事件机制的通用输入类型。 它将显示活动输入源（触摸屏、触摸板、鼠标或笔）的基本信息，例如屏幕位置。
 
--   [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted) 等操作手势事件表明一个持续的交互。 它们在用户触摸元素时开始引发，一直持续到用户抬起手指或者操作取消时。
+- [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted) 等操作手势事件表明一个持续的交互。 它们在用户触摸元素时开始引发，一直持续到用户抬起手指或者操作取消时。
 
     操作事件包括多点触控交互（例如，缩放、平移或旋转）和使用惯性和速度数据的交互（例如拖动）。 操作事件提供的信息并不标识所执行的交互的形式，而是包括诸如位置、转换增量和速度等数据。 你可以使用此触摸数据来确定应执行的交互类型。
 
@@ -571,19 +571,20 @@ End Sub
 
 ## <a name="routed-events"></a>路由事件
 
-
 此处提及的所有指针事件、手势事件和操作事件都将作为 *路由事件* 实现。 这意味着该事件可能由对象（而不是最初引起该事件的对象）处理。 对象树中的连续父对象（例如 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 元素的父容器或你的应用的根 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page)）可以选择处理这些对象，即使原始元素未执行此操作也是如此。 相反，处理该事件的任何对象都可以标记处理的事件，以使其不再达到任何父元素。 有关路由事件概念以及它如何影响你为路由事件编写处理程序的方式的详细信息，请参阅[事件和路由事件概述](/previous-versions/windows/apps/hh758286(v=win.10))。
 
-## <a name="dos-and-donts"></a>准则
+> [!Important]
+> 如果需要在可滚动视图中处理 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 的指针事件 (如 ScrollViewer 或 ListView) ，则必须通过调用 [CancelDirectmanipulation ( # B3](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations)，显式禁用视图中元素上的操作事件支持。 若要重新启用视图中的操作事件，请调用 [TryStartDirectManipulation ( # B1 ](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation)。
 
+## <a name="dos-and-donts"></a>Dos 和 don't's
 
--   设计将触摸交互作为预期的主要输入方法的应用程序。
--   为所有类型的交互（触摸、笔、触笔和鼠标等）提供视觉反馈
--   通过调整触摸目标大小、接触几何体、清理和摇动来优化定位。
--   使用吸附点和带方向性的“围栏”优化精确度。
--   对于紧凑的 UI 项目，提供工具提示和句柄以帮助提高触摸精确度。
--   尽量不要使用计时的交互（适当使用的示例：长按）。
--   尽量不要使用用于区别操作的手指数量。
+- 设计将触摸交互作为预期的主要输入方法的应用程序。
+- 为所有类型的交互（触摸、笔、触笔和鼠标等）提供视觉反馈
+- 通过调整触摸目标大小、接触几何体、清理和摇动来优化定位。
+- 使用吸附点和带方向性的“围栏”优化精确度。
+- 对于紧凑的 UI 项目，提供工具提示和句柄以帮助提高触摸精确度。
+- 尽量不要使用计时的交互（适当使用的示例：长按）。
+- 尽量不要使用用于区别操作的手指数量。
 
 ## <a name="related-articles"></a>相关文章
 
