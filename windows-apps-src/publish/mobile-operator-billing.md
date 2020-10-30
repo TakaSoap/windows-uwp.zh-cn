@@ -1,17 +1,17 @@
 ---
-Description: Microsoft Store 提供移动运营商计费作为支持此功能的移动运营商支付方法。
+description: Microsoft Store 提供移动运营商计费作为支持此功能的移动运营商支付方法。
 title: 移动运营商结算
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.date: 05/29/2020
 ms.topic: article
 keywords: windows 10, uwp, 移动运营商, 移动结算, 移动运营商结算
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dbdd2a86d33cf1392844294952eb9223676e256
-ms.sourcegitcommit: 426ccbdaa26bd16c7f0b270e8a51ac4ba87a5b60
+ms.openlocfilehash: df31cfbf113d91680f1570d37ae091e12e5a11de
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590646"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034730"
 ---
 # <a name="mobile-operator-billing"></a>移动运营商结算
 
@@ -21,7 +21,7 @@ ms.locfileid: "91590646"
 Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的手机和 Xbox One 主机提供移动运营商结算作为付款方式。 如果客户的移动运营商支持此功能，客户可以将移动运营商结算添加为付款方式，并通过此方式使用其移动帐户进行 Microsoft Store 购买。
 
 > [!TIP]
->  如果客户的移动运营商提供移动运营商计费，但客户在其设备上找不到此选项，请查看以下 [步骤](https://support.microsoft.com/instantanswers/b25d6dd6-fb8b-3710-1e13-4d30eb01b51f)。
+>  如果客户的移动运营商提供移动运营商结算，但客户在其设备上找不到此选项，请参阅相关[步骤](https://support.microsoft.com/instantanswers/b25d6dd6-fb8b-3710-1e13-4d30eb01b51f)。
 
 我们定期与移动运营商合作以扩展此付款方式的可用性。 如果希望建议在下表中没有看到的移动运营商，请联系该移动运营商并请求他们添加此付款方式。
 

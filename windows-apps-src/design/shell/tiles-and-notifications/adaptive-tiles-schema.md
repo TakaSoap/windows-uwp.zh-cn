@@ -1,5 +1,5 @@
 ---
-Description: 以下是用于创建自适应磁贴的元素和属性。
+description: 以下是用于创建自适应磁贴的元素和属性。
 title: 自适应磁贴架构和模板
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ed9124b0b66239c10b277f070ac2c9594c336fdd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c0bf281006d63f65ad6af557700eb2e4186bcf51
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611012"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034090"
 ---
 # <a name="adaptive-tile-templates-schema-and-guidance"></a>自适应磁贴模板：架构和指南
 
@@ -52,7 +52,7 @@ ms.locfileid: "57611012"
 </visual>
 ```
 
-## <a name="binding-element"></a>绑定元素
+## <a name="binding-element"></a>binding element（绑定元素）
 
 
 ``` xml
@@ -142,9 +142,9 @@ textStyle 值： caption captionSubtle body bodySubtle base baseSubtle subtitle 
 
 
 * [创建自适应磁贴](create-adaptive-tiles.md)
- 
+ 
 
- 
+ 
 
 
 

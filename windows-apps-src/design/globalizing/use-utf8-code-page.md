@@ -1,17 +1,17 @@
 ---
-Description: 使用 UTF-8 字符编码，以便在 web 应用和其他基于 nix 的平台之间实现最佳兼容性 \* (Unix、Linux 和变型) ，最小化本地化 bug 并降低测试开销。
+description: 使用 UTF-8 字符编码，以便在 web 应用和其他基于 nix 的平台之间实现最佳兼容性 \* (Unix、Linux 和变型) ，最小化本地化 bug 并降低测试开销。
 title: 使用 Windows UTF-8 代码页
 template: detail.hbs
 ms.date: 06/12/2019
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 72e422ee3e1a911658b2fe4957967aeba116c353
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8aefe7bc45bc7c41347fe8fc4b8192347c3e4354
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173461"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034300"
 ---
 # <a name="use-the-utf-8-code-page"></a>使用 UTF-8 代码页
 

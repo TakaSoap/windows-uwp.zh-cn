@@ -1,5 +1,5 @@
 ---
-Description: 利用辅助磁贴，用户可将应用中的特定内容和深层链接固定到“开始”菜单上，方便将来访问应用中的内容。
+description: 利用辅助磁贴，用户可将应用中的特定内容和深层链接固定到“开始”菜单上，方便将来访问应用中的内容。
 title: 辅助磁贴
 label: Secondary tiles
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 辅助磁贴
 ms.localizationpriority: medium
-ms.openlocfilehash: ecafd52be36b34c83d9b11757ccd733e796fd727
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 066a6dcb3683e2e55f7452b1f09bb834157aee62
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100335"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034500"
 ---
 # <a name="secondary-tiles"></a>辅助磁贴
 
@@ -25,11 +25,11 @@ ms.locfileid: "92100335"
 
 通过将辅助磁贴添加到你的应用中，你可以帮助用户有效地快速重新使用你的应用，并鼓励他们更频繁地返回到应用中，这要归功于辅助磁贴提供的轻松访问功能。
 
-**只有用户才能固定辅助磁贴；未经用户批准，应用无法以编程方式固定辅助磁贴**。 用户必须显式单击应用中的“固定”按钮，此时会使用 API 请求创建辅助磁贴，然后系统会显示一个对话框，请求用户确认是否要固定磁贴。
+**只有用户才能固定辅助磁贴；未经用户批准，应用无法以编程方式固定辅助磁贴** 。 用户必须显式单击应用中的“固定”按钮，此时会使用 API 请求创建辅助磁贴，然后系统会显示一个对话框，请求用户确认是否要固定磁贴。
 
 ## <a name="quick-links"></a>快速链接
 
-| 项目 | 说明 |
+| 文章 | 说明 |
 | --- | --- |
 | [有关辅助磁贴的指南](secondary-tiles-guidance.md) | 了解应该在何时以及何处使用辅助磁贴。 |
 | [固定辅助磁贴](secondary-tiles-pinning.md) | 了解固定辅助磁贴的方法。 |

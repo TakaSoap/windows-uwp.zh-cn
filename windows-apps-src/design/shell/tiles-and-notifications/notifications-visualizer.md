@@ -1,5 +1,5 @@
 ---
-Description: 通知可视化工具是 Store 中的一款新 Windows 应用，可帮助开发人员设计适用于 Windows 10 的自适应动态磁贴。
+description: 通知可视化工具是 Store 中的一款新 Windows 应用，可帮助开发人员设计适用于 Windows 10 的自适应动态磁贴。
 title: 通知可视化工具
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b50dc41a52d478afc9ed2fc9cf94d94dedb18ef4
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 55ab7e22dc011555a8d98fd863b7dd9ff67de5fa
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219920"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033670"
 ---
 # <a name="notifications-visualizer"></a>通知可视化工具
 
@@ -30,13 +30,13 @@ ms.locfileid: "91219920"
 
 ![通知可视化工具应用编辑器（带有代码和磁贴）的屏幕截图](images/notif-visualizer-001.png)
 
- 
+ 
 
 借助通知可视化工具，可以创建和测试自适应磁贴和 Toast 有效负载，而无需编辑和部署自己的应用。 创建了视觉效果很理想的负载后，可以将其集成到应用中。 若要了解更多详细信息，请参阅[发送本地磁贴通知](sending-a-local-tile-notification.md)和[发送本地 Toast](send-local-toast.md)。
 
-**注意**   通知可视化工具的 Windows "开始" 菜单和 toast 通知的模拟并不总是完全准确，并且不支持某些高级有效负载属性。 当拥有所需的磁贴和 Toast 时，可通过固定磁贴或弹出 Toast 对其进行测试来验证它是否会按预期显示。
+**注意**   通知可视化工具对 Windows“开始”菜单和 Toast 通知的模拟并不总是完全准确，并且它不支持某些高级有效负载属性。 当拥有所需的磁贴和 Toast 时，可通过固定磁贴或弹出 Toast 对其进行测试来验证它是否会按预期显示。
 
- 
+ 
 
 ## <a name="features"></a>功能
 
@@ -50,7 +50,7 @@ ms.locfileid: "91219920"
 
 ![通知可视化工具编辑器（带有磁贴）的屏幕截图](images/notif-visualizer-004.png)
 
- 
+ 
 
 ## <a name="related-topics"></a>相关主题
 

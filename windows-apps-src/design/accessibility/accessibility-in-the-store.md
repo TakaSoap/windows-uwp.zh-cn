@@ -1,5 +1,5 @@
 ---
-Description: 描述在 Microsoft Store 中声明 Windows 应用程序可访问的要求。
+description: 描述在 Microsoft Store 中声明 Windows 应用程序可访问的要求。
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: 应用商店中的辅助功能
 label: Accessibility in the Store
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b554adbcc074112604b8713409ee4d05e21dcc0f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 4a46f757629489250ed417a9a67488cba7ec7240
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216450"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032700"
 ---
 # <a name="accessibility-in-the-store"></a>应用商店中的辅助功能  
 
@@ -21,7 +21,7 @@ ms.locfileid: "91216450"
 
 描述在 Microsoft Store 中声明 Windows 应用程序可访问的要求。
 
-将你的应用提交至 Microsoft Store 进行认证时，可以将你的应用声明为辅助应用。 将你的应用声明为辅助应用，这样可使关注辅助应用的用户（如视力受损的用户）更轻松地发现该应用。 用户在搜索 Microsoft Store 时使用**辅助**筛选器发现辅助应用。 将你的应用声明为辅助应用还可以将**辅助**标记添加到应用的说明中。
+将你的应用提交至 Microsoft Store 进行认证时，可以将你的应用声明为辅助应用。 将你的应用声明为辅助应用，这样可使关注辅助应用的用户（如视力受损的用户）更轻松地发现该应用。 用户在搜索 Microsoft Store 时使用 **辅助** 筛选器发现辅助应用。 将你的应用声明为辅助应用还可以将 **辅助** 标记添加到应用的说明中。
 
 通过将你的应用声明为辅助应用，即表明该应用具有用户对使用下列一个或多个项目的主要方案所需的[基本辅助功能信息](basic-accessibility-information.md)：
 

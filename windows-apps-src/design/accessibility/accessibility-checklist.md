@@ -1,5 +1,5 @@
 ---
-Description: 提供了一个核对清单，可帮助你确保 Windows 应用程序可访问。
+description: 提供了一个核对清单，可帮助你确保 Windows 应用程序可访问。
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: 辅助功能清单
 label: Accessibility checklist
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6b9340f55064ff89c0b047cbb6d7407574da3d6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: fd16c93b3914987741a486e4f40d4b60e0b274ee
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216390"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032710"
 ---
 # <a name="accessibility-checklist"></a>辅助功能清单
 
@@ -23,7 +23,7 @@ ms.locfileid: "91216390"
 
 1. 为应用中的内容和交互式 UI 元素设置辅助名称（必选）和描述（可选）。
 
-    辅助名称是屏幕阅读器用于述说 UI 元素的简短且具有描述性的文本字符串。 一些 UI 元素（如 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox)）将其文本内容提升为默认辅助名称；请参阅[基本辅助功能信息](basic-accessibility-information.md#name_from_inner_text)。
+    辅助名称是屏幕阅读器用于述说 UI 元素的简短且具有描述性的文本字符串。 一些 UI 元素（如 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox)）将其文本内容提升为默认辅助名称；请参阅 [基本辅助功能信息](basic-accessibility-information.md#name_from_inner_text)。
 
     你应当为图像或没有将内部文本内容提升为隐式辅助名称的其他控件明确设置辅助名称。 你应当针对窗体元素使用标签，以便标签文本可以用作 Microsoft UI 自动化模型中的 [**LabeledBy**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) 目标来将标签与输入相关联。 如果你想要为用户提供的 UI 指南比辅助名称中通常包括的指南多，则可以使用辅助说明和工具提示来帮助用户了解 UI。
 
@@ -41,10 +41,10 @@ ms.locfileid: "91216390"
 
 3. 确保文本为可读的大小
 
-    * Windows 包括各种辅助功能和设置，用户可利用这些工具和设置，并调整其自身需求和阅读文本的首选项。 其中包括：
+    * Windows 包括各种辅助功能和设置，用户可利用这些工具和设置，并调整其自身需求和阅读文本的首选项。 这些方法包括：
         * "放大镜" 工具，用于放大 UI 的选定区域。 你应确保应用中的文本布局不会使使用放大镜进行读取变得困难。
-        * 设置中的全局缩放和分辨率设置 **->系统 >显示->比例和布局**。 确切的可用大小调整选项会有所不同，具体取决于显示设备的功能。
-        * 设置中的文本大小设置 **->轻松访问->显示**。 调整 "放大 **文本** " 设置，以便仅在所有应用程序和屏幕上指定支持控件中的文本大小 (所有 UWP 文本控件在没有任何自定义项或模板化) 的情况下支持文本缩放体验。
+        * 设置中的全局缩放和分辨率设置 **->系统 >显示->比例和布局** 。 确切的可用大小调整选项会有所不同，具体取决于显示设备的功能。
+        * 设置中的文本大小设置 **->轻松访问->显示** 。 调整 "放大 **文本** " 设置，以便仅在所有应用程序和屏幕上指定支持控件中的文本大小 (所有 UWP 文本控件在没有任何自定义项或模板化) 的情况下支持文本缩放体验。
         > [!NOTE]
         > " **使所有内容变得更大** " 设置允许用户仅在主屏幕上指定其首选的文本和应用大小。
 

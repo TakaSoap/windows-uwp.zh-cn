@@ -1,17 +1,17 @@
 ---
-Description: 提交加载项时，在“应用商店一览”步骤中提供的信息将显示给你的客户。
+description: 提交加载项时，在“应用商店一览”步骤中提供的信息将显示给你的客户。
 title: 创建加载项应用商店一览
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 43782a1a5d26ba84fe53f6c164a944fa357edfb1
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 266386da04b9a16fc5e5016774ab333dc60409e3
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253616"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033390"
 ---
 # <a name="create-add-on-store-listings"></a>创建加载项应用商店一览
 
@@ -23,13 +23,13 @@ ms.locfileid: "92253616"
 
 ## <a name="store-listing-languages"></a>Store 一览语言
 
-需要指定一种或多种[语言](supported-languages.md)，才可以输入 Store 一览信息。 必须使用至少一种语言完成** Store 一览**页面。 建议为应用支持的每种语言创建存储列表。
+需要指定一种或多种[语言](supported-languages.md)，才可以输入 Store 一览信息。 必须使用至少一种语言完成 **Store 一览** 页面。 建议为应用支持的每种语言创建存储列表。
 
-在加载项提交的** Store 一览**部分下，单击**添加/删除语言**，然后单击下一页上的**管理语言**。 选中要添加的语言的框，然后单击**更新**。 你已选择的语言将显示在页面的** Store 一览语言**部分。
+在加载项提交的 **Store 一览** 部分下，单击 **添加/删除语言** ，然后单击下一页上的 **管理语言** 。 选中要添加的语言的框，然后单击 **更新** 。 你已选择的语言将显示在页面的 **Store 一览语言** 部分。
 
-若要删除语言，请单击**删除**（或单击**管理语言**并取消选中你要删除的语言的框）。 
+若要删除语言，请单击 **删除** （或单击 **管理语言** 并取消选中你要删除的语言的框）。 
 
-在完成选择后，单击**保存**以返回到提交概述页。
+在完成选择后，单击 **保存** 以返回到提交概述页。
 
 若要编辑 Store 一览，请在加载项提交概述页中单击语言名称。 下面介绍了你可以为每种语言输入的信息。
 
@@ -45,9 +45,9 @@ ms.locfileid: "92253616"
 
 你也可以选择提供一张可以显示给客户的图像。 此图标必须是大小正好为 300 x 300 像素的 .png 文件。
 
- 
+ 
 
- 
+ 
 
 
 

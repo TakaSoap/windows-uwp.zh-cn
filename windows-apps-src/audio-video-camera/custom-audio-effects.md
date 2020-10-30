@@ -1,17 +1,17 @@
 ---
-Description: 本文介绍如何创建可实现 IBasicAudioEffect 接口的 Windows 运行时组件，以允许你为音频流创建自定义效果。
+description: 本文介绍如何创建可实现 IBasicAudioEffect 接口的 Windows 运行时组件，以允许你为音频流创建自定义效果。
 title: 自定义音频效果
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: e52aa4ebde6f988daad9c1712845e07ee553d7a2
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: b5b9613dc9d480a4193dbff0dbb236929d9ed54a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363960"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033170"
 ---
 # <a name="custom-audio-effects"></a>自定义音频效果
 
@@ -24,12 +24,12 @@ ms.locfileid: "89363960"
 
 **为音频效果添加 Windows 运行时组件**
 
-1.  在 Microsoft Visual Studio 中打开解决方案后，请在 " **文件** " 菜单中选择 " **添加- &gt; 新建项目**"。
-2.  ** (通用 Windows) **项目类型中选择 "Windows 运行时" 组件。
-3.  对于此示例，将项目命名为 *AudioEffectComponent*。 此名称稍后将在代码中引用。
-4.  单击 **“确定”** 。
-5.  项目模板将创建一个名为 Class1.cs 的类。 在 **解决方案资源管理器**中，右键单击 Class1.cs 的图标，然后选择 " **重命名**"。
-6.  将文件重命名为 *ExampleAudioEffect.cs*。 Visual Studio 将显示一条提示，询问你是否想要更新对新名称的所有引用。 单击 **“是”** 。
+1.  在 Microsoft Visual Studio 中打开解决方案后，请在 " **文件** " 菜单中选择 " **添加- &gt; 新建项目** "。
+2.  **(通用 Windows)** 项目类型中选择 "Windows 运行时" 组件。
+3.  对于此示例，将项目命名为 *AudioEffectComponent* 。 此名称稍后将在代码中引用。
+4.  单击“确定”。
+5.  项目模板将创建一个名为 Class1.cs 的类。 在 **解决方案资源管理器** 中，右键单击 Class1.cs 的图标，然后选择 " **重命名** "。
+6.  将文件重命名为 *ExampleAudioEffect.cs* 。 Visual Studio 将显示一条提示，询问你是否想要更新对新名称的所有引用。 单击 **“是”** 。
 7.  打开 **ExampleAudioEffect.cs** 并更新类定义以实现 [**IBasicAudioEffect**](/uwp/api/Windows.Media.Effects.IBasicAudioEffect) 接口。
 
 
@@ -45,13 +45,13 @@ ms.locfileid: "89363960"
 
 ### <a name="supportedencodingproperties-property"></a>SupportedEncodingProperties 属性
 
-系统将检查 [**SupportedEncodingProperties**](/uwp/api/windows.media.effects.ibasicaudioeffect.supportedencodingproperties) 属性以确定你的效果支持哪些编码属性。 请注意，如果你的效果的使用者无法使用你指定的属性对音频进行编码，系统将对你的效果调用 [**Close**](/uwp/api/windows.media.effects.ibasicaudioeffect.close) 并且会从音频管道中删除你的效果。 在此示例中，[**AudioEncodingProperties**](/uwp/api/Windows.Media.MediaProperties.AudioEncodingProperties) 对象将创建并添加到返回的列表，以支持 44.1 kHz 和 48 kHz、32 位浮点的单声道编码。
+系统将检查 [**SupportedEncodingProperties**](/uwp/api/windows.media.effects.ibasicaudioeffect.supportedencodingproperties) 属性以确定你的效果支持哪些编码属性。 请注意，如果你的效果的使用者无法使用你指定的属性对音频进行编码，系统将对你的效果调用 [**Close**](/uwp/api/windows.media.effects.ibasicaudioeffect.close) 并且会从音频管道中删除你的效果。 在此示例中， [**AudioEncodingProperties**](/uwp/api/Windows.Media.MediaProperties.AudioEncodingProperties) 对象将创建并添加到返回的列表，以支持 44.1 kHz 和 48 kHz、32 位浮点的单声道编码。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetSupportedEncodingProperties":::
 
 ### <a name="setencodingproperties-method"></a>SetEncodingProperties 方法
 
-系统会对你的效果调用 [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties)，以便让你知道要应用该效果的音频流的编码属性。 为了实现回声效果，此示例使用缓冲区存储 1 秒的音频数据。 使用此方法，有机会根据编码音频的采样率，将缓冲区大小初始化为一秒音频中的采样数。 延迟效果还使用整数计数器跟踪在延迟缓冲区中的当前位置。 因为在将效果添加到音频管道时会调用 **SetEncodingProperties**，因此此时是将该值初始化为 0 的好时机。 你可能还需要捕获传递到此方法中的 **AudioEncodingProperties** 对象，以在效果中的其他位置使用。
+系统会对你的效果调用 [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties)，以便让你知道要应用该效果的音频流的编码属性。 为了实现回声效果，此示例使用缓冲区存储 1 秒的音频数据。 使用此方法，有机会根据编码音频的采样率，将缓冲区大小初始化为一秒音频中的采样数。 延迟效果还使用整数计数器跟踪在延迟缓冲区中的当前位置。 因为在将效果添加到音频管道时会调用 **SetEncodingProperties** ，因此此时是将该值初始化为 0 的好时机。 你可能还需要捕获传递到此方法中的 **AudioEncodingProperties** 对象，以在效果中的其他位置使用。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetDeclareEchoBuffer":::
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetSetEncodingProperties":::
@@ -77,15 +77,15 @@ ms.locfileid: "89363960"
 
 > [!NOTE]
 > 因为这种方法访问本机非托管的图像缓冲区，所以需要将项目配置为允许不安全的代码。
-> 1.  在解决方案资源管理器中，右键单击 AudioEffectComponent 项目，然后选择 " **属性**"。
-> 2.  选择“**生成**”选项卡。
+> 1.  在解决方案资源管理器中，右键单击 AudioEffectComponent 项目，然后选择 " **属性** "。
+> 2.  选择“ **生成** ”选项卡。
 > 3.  选中 " **允许不安全代码** " 复选框。
 
- 
+ 
 
-现在，你可以将 **ProcessFrame** 方法实现添加到你的效果。 首先，此方法将从输入和输出音频帧中获取 [**AudioBuffer**](/uwp/api/Windows.Media.AudioBuffer) 对象。 请注意，输出帧和输入帧均已打开，分别用于写入和读取。 接下来，通过调用 [**CreateReference**](/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference) 为每个缓冲区获取 [**IMemoryBufferReference**](/uwp/api/Windows.Foundation.IMemoryBufferReference)。 然后，通过将 **IMemoryBufferReference** 转换为上述定义的 COM 互操作接口 **IMemoryByteAccess**，接着调用 **GetBuffer**，获取实际数据缓冲区。
+现在，你可以将 **ProcessFrame** 方法实现添加到你的效果。 首先，此方法将从输入和输出音频帧中获取 [**AudioBuffer**](/uwp/api/Windows.Media.AudioBuffer) 对象。 请注意，输出帧和输入帧均已打开，分别用于写入和读取。 接下来，通过调用 [**CreateReference**](/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference) 为每个缓冲区获取 [**IMemoryBufferReference**](/uwp/api/Windows.Foundation.IMemoryBufferReference)。 然后，通过将 **IMemoryBufferReference** 转换为上述定义的 COM 互操作接口 **IMemoryByteAccess** ，接着调用 **GetBuffer** ，获取实际数据缓冲区。
 
-现在已获取数据缓冲区，你可以从输入缓冲区进行读取，并对输出缓冲区进行写入。 针对 inputbuffer 中的每个采样，获取值并将其乘以 1 - **Mix**，以设置效果的原始信号值。 接下来，从回声缓冲区中的当前位置检索采样并将其乘以 **Mix**，以设置效果的已处理值。 输出采样设置为原始值和已处理值的总和。 最后，每个输入采样存储在回声缓冲区中并递增当前采样索引。
+现在已获取数据缓冲区，你可以从输入缓冲区进行读取，并对输出缓冲区进行写入。 针对 inputbuffer 中的每个采样，获取值并将其乘以 1 - **Mix** ，以设置效果的原始信号值。 接下来，从回声缓冲区中的当前位置检索采样并将其乘以 **Mix** ，以设置效果的已处理值。 输出采样设置为原始值和已处理值的总和。 最后，每个输入采样存储在回声缓冲区中并递增当前采样索引。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetProcessFrame":::
 
@@ -111,7 +111,7 @@ TimeIndependent [**TimeIndependent**](/uwp/api/windows.media.effects.ibasicvideo
 
 ### <a name="useinputframeforoutput-property"></a>UseInputFrameForOutput 属性
 
-将 [**UseInputFrameForOutput**](/uwp/api/windows.media.effects.ibasicaudioeffect.useinputframeforoutput) 属性设置为 **true**，告知你的系统会将其输出写入 [**ProcessAudioFrameContext**](/uwp/api/Windows.Media.Effects.ProcessAudioFrameContext)（传递到 [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicaudioeffect.processframe)）的 [**InputFrame**](/uwp/api/windows.media.effects.processaudioframecontext.inputframe) 的音频缓冲区，而不会写入 [**OutputFrame**](/uwp/api/windows.media.effects.processaudioframecontext.outputframe)。 
+将 [**UseInputFrameForOutput**](/uwp/api/windows.media.effects.ibasicaudioeffect.useinputframeforoutput) 属性设置为 **true** ，告知你的系统会将其输出写入 [**ProcessAudioFrameContext**](/uwp/api/Windows.Media.Effects.ProcessAudioFrameContext)（传递到 [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicaudioeffect.processframe)）的 [**InputFrame**](/uwp/api/windows.media.effects.processaudioframecontext.inputframe) 的音频缓冲区，而不会写入 [**OutputFrame**](/uwp/api/windows.media.effects.processaudioframecontext.outputframe)。 
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetUseInputFrameForOutput":::
 
@@ -121,8 +121,8 @@ TimeIndependent [**TimeIndependent**](/uwp/api/windows.media.effects.ibasicvideo
 
 若要从应用中使用你的音频效果，必须向应用添加对效果项目的引用。
 
-1.  在解决方案资源管理器中，右键单击 " **引用** "，然后选择 " **添加引用**"。
-2.  展开 " **项目** " 选项卡，选择 " **解决方案**"，然后选中效果项目名称对应的复选框。 对于此示例，名称为 *AudioEffectComponent*。
+1.  在解决方案资源管理器中，右键单击 " **引用** "，然后选择 " **添加引用** "。
+2.  展开 " **项目** " 选项卡，选择 " **解决方案** "，然后选中效果项目名称对应的复选框。 对于此示例，名称为 *AudioEffectComponent* 。
 3.  单击 **“确定”**
 
 如果音频效果类声明为不同的命名空间，请确保将该命名空间包含在代码文件中。
@@ -150,4 +150,4 @@ TimeIndependent [**TimeIndependent**](/uwp/api/windows.media.effects.ibasicvideo
 * [Win2D 文档](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [媒体播放](media-playback.md)
 
- 
+ 

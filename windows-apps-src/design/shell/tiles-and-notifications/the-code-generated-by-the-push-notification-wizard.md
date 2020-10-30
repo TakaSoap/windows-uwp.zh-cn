@@ -1,5 +1,5 @@
 ---
-Description: 通过在 Visual Studio 中使用向导，你可以从使用 Azure 移动服务创建的移动服务生成推送通知。
+description: 通过在 Visual Studio 中使用向导，你可以从使用 Azure 移动服务创建的移动服务生成推送通知。
 title: 由推送通知向导生成的代码
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc6c52859b74d7cd40dd39c0ae588ad690c0138b
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f9af0301dcf8944127ab814155466335940642f0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220110"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034440"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推送通知向导生成的代码
  
@@ -29,7 +29,7 @@ ms.locfileid: "91220110"
 -   在移动服务的数据库服务器上创建一个通道表。 该表中包含向应用实例发送推送通知所需的信息。
 -   创建四个功能的脚本：删除、插入、读取和更新。
 -   创建带有自定义 API 的脚本 notifyallusers.js，它将向所有客户端发送推送通知。
--   向你的 App.xaml.cs、App.xaml.vb 或 App.xaml.cpp 文件添加声明，或向 JavaScript 项目的新文件 service.js 添加声明。 该声明可声明一个 MobileServiceClient 对象，此对象中包含连接到移动服务所需的信息。 你可以通过使用名称 App.*MyServiceName*Client 从应用中的任何页面访问此 MobileServiceClient 对象，它的名称为 *MyServiceName*Client。
+-   向你的 App.xaml.cs、App.xaml.vb 或 App.xaml.cpp 文件添加声明，或向 JavaScript 项目的新文件 service.js 添加声明。 该声明可声明一个 MobileServiceClient 对象，此对象中包含连接到移动服务所需的信息。 你可以通过使用名称 App. *MyServiceName* Client 从应用中的任何页面访问此 MobileServiceClient 对象，它的名称为 *MyServiceName* Client。
 
 services.js 文件包含以下代码：
 
@@ -207,9 +207,9 @@ function sendNotifications(request) {
 
 sendNotifications 函数发送 toast 通知形式的单一通知。 你还可以使用其他类型的推送通知。
 
-**提示**   有关如何在编辑脚本时获取帮助的信息，请参阅[为服务器端 JavaScript 启用 IntelliSense](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx)。
+**提示**  有关在编辑脚本时如何获取帮助的信息，请参阅 [为服务器端 JavaScript 启用 IntelliSense](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx)。
 
- 
+ 
 
 ## <a name="push-notification-types"></a>推送通知类型
 
@@ -233,9 +233,9 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 
 你还可以通过在移动服务中运行计划的任务来发送推送通知。 请参阅[在移动服务中计划定期作业](/azure/)。
 
-**警告**   一旦你运行了推送通知向导一次，就不要再次运行向导以添加其他移动服务的注册代码。 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 例如，你可以通过将向导生成的代码移到 register \* 来实现此目的。 (在 OnLaunched 事件之外包括对) **CreatePushNotificationChannelForApplicationAsync** 的调用，但这具体取决于你的应用程序的体系结构。
+**警告**  运行推送通知向导一次后，请不要再次运行该向导来为其他移动服务添加注册代码。 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 例如，你可以通过将向导生成的代码移到 register \* 来实现此目的。 (在 OnLaunched 事件之外包括对) **CreatePushNotificationChannelForApplicationAsync** 的调用，但这具体取决于你的应用程序的体系结构。
 
- 
+ 
 
 ## <a name="related-topics"></a>相关主题
 
@@ -245,6 +245,6 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 * [连接到 Windows Azure 移动服务 (JavaScript)](/previous-versions/windows/apps/dn263160(v=win.10))
 * [连接到 Windows Azure 移动服务 (C#/C++/VB)](/previous-versions/windows/apps/dn263175(v=win.10))
 * [快速入门：为移动服务添加推送通知 (JavaScript)](/previous-versions/windows/apps/dn263163(v=win.10))
- 
+ 
 
- 
+ 

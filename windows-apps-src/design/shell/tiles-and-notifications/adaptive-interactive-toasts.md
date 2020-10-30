@@ -1,5 +1,5 @@
 ---
-Description: 自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。
+description: 自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。
 title: Toast 内容
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Toast content
@@ -8,18 +8,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, toast 通知, 交互式 toast, 自适应 toast, toast 内容, toast 有效负载
 ms.localizationpriority: medium
-ms.openlocfilehash: ed801d07991c4faa186bc0164dbf0d1323537a20
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: f148938f8c8e3bb5ac305a82d1863545005fd802
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984603"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034290"
 ---
 # <a name="toast-content"></a>Toast 内容
 
 借助自适应和交互式 toast 通知，可使用文本、图像和按钮/输入创建灵活的通知。
 
-> **重要的 API**：[UWP 社区工具包通知 NuGet 程序包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要的 API** ： [UWP 社区工具包通知 NuGet 程序包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
 > 要查看 Windows 8.1 和 Windows Phone 8.1 中的传统模板，请参阅[传统 Toast 模板目录](/previous-versions/windows/apps/hh761494(v=win.10))。
@@ -39,13 +39,13 @@ ms.locfileid: "91984603"
 
 ## <a name="toast-notification-structure"></a>Toast 通知结构
 
-Toast 通知是某些数据属性（如标记/组，用于标识通知）与 *Toast 内容*的组合。
+Toast 通知是某些数据属性（如标记/组，用于标识通知）与 *Toast 内容* 的组合。
 
 Toast 内容的核心组件有
-* **launch**：定义当用户单击你的 Toast 时将传回应用的参数，允许你深层链接到 Toast 所显示的正确内容。 有关详细信息，请参阅[发送本地 Toast](send-local-toast.md)。
-* **visual**：toast 的可视部分，包括带有文本和图像的通用绑定。
-* **actions**：toast 的交互部分，包括输入和操作。
-* **audio**：控制向用户显示 Toast 时播放的音频。
+* **launch** ：定义当用户单击你的 Toast 时将传回应用的参数，允许你深层链接到 Toast 所显示的正确内容。 有关详细信息，请参阅[发送本地 Toast](send-local-toast.md)。
+* **visual** ：toast 的可视部分，包括带有文本和图像的通用绑定。
+* **actions** ：toast 的交互部分，包括输入和操作。
+* **audio** ：控制向用户显示 Toast 时播放的音频。
 
 Toast 内容在原始 XML 中定义，但你可以使用我们的 [NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)获取 C#（或 C++）对象模型来构造 Toast 内容。 本文介绍了 Toast 内容中的所有内容。
 
@@ -64,17 +64,17 @@ new ToastContentBuilder()
 ```xml
 <toast launch="app-defined-string">
 
-  <visual>
-    <binding template="ToastGeneric">
-      ...
-    </binding>
-  </visual>
+  <visual>
+    <binding template="ToastGeneric">
+      ...
+    </binding>
+  </visual>
 
-  <actions>
-    ...
-  </actions>
+  <actions>
+    ...
+  </actions>
 
-  <audio src="ms-winsoundevent:Notification.Reminder"/>
+  <audio src="ms-winsoundevent:Notification.Reminder"/>
 
 </toast>
 ```
@@ -86,7 +86,7 @@ new ToastContentBuilder()
 ![Toast 通知结构](images/adaptivetoasts-structure.jpg)
 
 
-## <a name="visual"></a>视觉对象
+## <a name="visual"></a>可视
 
 每个 toast 均必须指定一个 visual，此处必须包含带文本、图像等的通用 toast 绑定。 这些元素将在各种 Windows 设备上呈现，包括桌面设备、手机、平板电脑和 Xbox。
 
@@ -105,7 +105,7 @@ new ToastContentBuilder()
 
 <img alt="Toast with title and description" src="images/toast-title-and-description.jpg" width="364"/>
 
-自 Windows 10 周年更新起，可使用文本的 **HintMaxLines** 属性控制显示的文本行数。 标题文本的默认（及最大）行数最多为 2 行，两个额外的说明元素（第二个和第三个 **AdaptiveText**）的行数最多为 4 行（合并后）。
+自 Windows 10 周年更新起，可使用文本的 **HintMaxLines** 属性控制显示的文本行数。 标题文本的默认（及最大）行数最多为 2 行，两个额外的说明元素（第二个和第三个 **AdaptiveText** ）的行数最多为 4 行（合并后）。
 
 #### <a name="builder-syntax"></a>[生成器语法](#tab/builder-syntax)
 
@@ -135,7 +135,7 @@ new ToastContentBuilder()
 
 <img alt="Toast with app logo override" src="images/toast-applogooverride.jpg" width="364"/>
 
-可使用 **HintCrop** 属性更改图像的裁剪效果。 例如，**Circle** 会将图像裁剪为圆形。 否则，图像为方形。 图像尺寸在 100% 缩放时为 48x48 像素。
+可使用 **HintCrop** 属性更改图像的裁剪效果。 例如， **Circle** 会将图像裁剪为圆形。 否则，图像为方形。 图像尺寸在 100% 缩放时为 48x48 像素。
 
 #### <a name="builder-syntax"></a>[生成器语法](#tab/builder-syntax)
 
@@ -161,7 +161,7 @@ new ToastContentBuilder()
 
 ## <a name="hero-image"></a>主图
 
-**周年更新的新增功能**：toast 可显示主图，这是在 toast 横幅中以及在操作中心时突出显示的特别  [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage)。 图像尺寸在 100% 缩放时为 364x180 像素。
+**周年更新的新增功能** ：toast 可显示主图，这是在 toast 横幅中以及在操作中心时突出显示的特别  [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage)。 图像尺寸在 100% 缩放时为 364x180 像素。
 
 <img alt="Toast with hero image" src="images/toast-heroimage.jpg" width="364"/>
 
@@ -232,7 +232,7 @@ Toast 通知中使用的图像可源自以下位置...
 
 ## <a name="attribution-text"></a>署名文本
 
-**周年更新中的新增功能**：如果你需要引用你的内容源，可以使用署名文本。 此文本始终显示在通知底部，与应用标识或通知时间戳一起显示。
+**周年更新中的新增功能** ：如果你需要引用你的内容源，可以使用署名文本。 此文本始终显示在通知底部，与应用标识或通知时间戳一起显示。
 
 在不支持署名文本的旧 Windows 版本中，该文本仅显示为另一文本元素（假设你还没有达到最多的三个文本元素）。
 
@@ -261,7 +261,7 @@ new ToastContentBuilder()
 
 ## <a name="custom-timestamp"></a>自定义时间戳
 
-**创建者更新中的新增功能**：现在，你可以用自己的准确表示消息/信息/内容生成时间的时间戳替代系统提供的时间戳。 可在操作中心查看此时间戳。
+**创建者更新中的新增功能** ：现在，你可以用自己的准确表示消息/信息/内容生成时间的时间戳替代系统提供的时间戳。 可在操作中心查看此时间戳。
 
 <img alt="Toast with custom timestamp" src="images/toast-customtimestamp.jpg" width="396"/>
 
@@ -280,7 +280,7 @@ new ToastContentBuilder()
 
 ```xml
 <toast displayTimestamp="2017-04-15T19:45:00Z">
-  ...
+  ...
 </toast>
 ```
 
@@ -289,7 +289,7 @@ new ToastContentBuilder()
 
 ## <a name="progress-bar"></a>进度条
 
-**创意者更新中的新增**内容：你可以在 toast 通知上提供一个进度条，以使用户能够了解操作（如下载）的进度。
+**创意者更新中的新增** 内容：你可以在 toast 通知上提供一个进度条，以使用户能够了解操作（如下载）的进度。
 
 <img alt="Toast with progress bar" src="images/toast-progressbar.png" width="364"/>
 
@@ -298,7 +298,7 @@ new ToastContentBuilder()
 
 ## <a name="headers"></a>标头
 
-**创意者更新的新增功能**：可在操作中心将通知分到不同的标题下。 例如，你可以将群聊中的组消息分到一个标题下，或将常见主题的通知分到一个标题下等等。
+**创意者更新的新增功能** ：可在操作中心将通知分到不同的标题下。 例如，你可以将群聊中的组消息分到一个标题下，或将常见主题的通知分到一个标题下等等。
 
 <img alt="Toasts with header" src="images/toast-headers-action-center.png" width="396"/>
 
@@ -307,7 +307,7 @@ new ToastContentBuilder()
 
 ## <a name="adaptive-content"></a>自适应内容
 
-**周年更新中的新增功能**：除了上面指定的内容外，你还可以显示在展开 Toast 时可见的附加自适应内容。
+**周年更新中的新增功能** ：除了上面指定的内容外，你还可以显示在展开 Toast 时可见的附加自适应内容。
 
 这些附加内容是用 Adaptive 指定的，阅读[自适应磁贴文档](create-adaptive-tiles.md)可了解更多内容。
 
@@ -480,7 +480,7 @@ new ToastContentBuilder()
 
 ### <a name="buttons-with-pending-update-activation"></a>具有待更新激活的按钮
 
-**Fall Creators Update 的新增功能**：在后台激活按钮上，可使用 **PendingUpdate** 的激活后行为在 Toast 通知中创建多步骤的交互。 用户单击按钮后，将激活后台任务，此时 Toast 处于“等待更新”状态。该状态下，屏幕上始终显示 Toast，直到后台任务将其替换为新的 Toast。
+**Fall Creators Update 的新增功能** ：在后台激活按钮上，可使用 **PendingUpdate** 的激活后行为在 Toast 通知中创建多步骤的交互。 用户单击按钮后，将激活后台任务，此时 Toast 处于“等待更新”状态。该状态下，屏幕上始终显示 Toast，直到后台任务将其替换为新的 Toast。
 
 若要了解如何实现此操作，请参阅 [Toast 等待更新](toast-pending-update.md)。
 
@@ -489,7 +489,7 @@ new ToastContentBuilder()
 
 ### <a name="context-menu-actions"></a>关联菜单操作
 
-**周年更新的新增功能**：可向现有关联菜单（用户从操作中心右键单击 Toast 时会出现）添加其他关联菜单。 请注意：此菜单仅在用户从操作中心右键单击时显示。 右键单击 Toast 弹出式横幅时，该菜单不会出现。
+**周年更新的新增功能** ：可向现有关联菜单（用户从操作中心右键单击 Toast 时会出现）添加其他关联菜单。 请注意：此菜单仅在用户从操作中心右键单击时显示。 右键单击 Toast 弹出式横幅时，该菜单不会出现。
 
 > [!NOTE]
 > 在较旧的设备上，上述其他关联菜单操作仅显示为 Toast 上的正常按钮。
@@ -735,25 +735,25 @@ new ToastContentBuilder()
 
 ```xml
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
-   
-  ...
- 
-  <actions>
-     
-    <input id="snoozeTime" type="selection" defaultInput="15">
-      <selection id="1" content="1 minute"/>
-      <selection id="15" content="15 minutes"/>
-      <selection id="60" content="1 hour"/>
-      <selection id="240" content="4 hours"/>
-      <selection id="1440" content="1 day"/>
-    </input>
- 
-    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
- 
-    <action activationType="system" arguments="dismiss" content=""/>
-     
-  </actions>
-   
+   
+  ...
+ 
+  <actions>
+     
+    <input id="snoozeTime" type="selection" defaultInput="15">
+      <selection id="1" content="1 minute"/>
+      <selection id="15" content="15 minutes"/>
+      <selection id="60" content="1 hour"/>
+      <selection id="240" content="4 hours"/>
+      <selection id="1440" content="1 day"/>
+    </input>
+ 
+    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
+ 
+    <action activationType="system" arguments="dismiss" content=""/>
+     
+  </actions>
+   
 </toast>
 ```
 
@@ -764,7 +764,7 @@ new ToastContentBuilder()
 -   指定 **ToastButtonSnooze** 或 **ToastButtonDismiss**
 -   （可选）指定一个自定义内容字符串：
     -   如果你不提供字符串，我们将自动使用“推迟”和“消除”的本地化字符串。
--   选择指定 **SelectionBoxId**：
+-   选择指定 **SelectionBoxId** ：
     -   如果你不希望用户选择推迟间隔，而只是希望你的通知仅在系统定义的时间间隔内推迟一次（这在整个操作系统上都一致），则不要构建任何 &lt;input&gt;。
     -   如果你希望提供推迟间隔选择：
         -   在推迟操作中指定 **SelectionBoxId**
@@ -816,9 +816,9 @@ new ToastContentBuilder()
 > [!IMPORTANT]
 > 使用提醒或闹钟时，必须在 Toast 通知上提供至少一个按钮。 否则，该 Toast 将被视为正常 Toast。
 
-* **提醒**：通知将保留在屏幕上，直到用户消除它或采取操作。 在 Windows 移动版上，该 Toast 还会以预先展开的形式显示。 将播放提醒声音。
-* **闹钟**：除提醒行为外，闹钟将用默认的闹钟声音自动循环音频。
-* **来电**：来电通知在 Windows 移动设备上全屏显示。 否则，除使用铃声音频且设置了不同的按钮样式外，它们的行为与闹钟相同。
+* **提醒** ：通知将保留在屏幕上，直到用户消除它或采取操作。 在 Windows 移动版上，该 Toast 还会以预先展开的形式显示。 将播放提醒声音。
+* **闹钟** ：除提醒行为外，闹钟将用默认的闹钟声音自动循环音频。
+* **来电** ：来电通知在 Windows 移动设备上全屏显示。 否则，除使用铃声音频且设置了不同的按钮样式外，它们的行为与闹钟相同。
 
 #### <a name="builder-syntax"></a>[生成器语法](#tab/builder-syntax)
 
@@ -848,7 +848,7 @@ new ToastContentBuilder()
 
 ## <a name="handling-activation"></a>处理激活
 要了解如何处理 Toast 激活（用户单击你的 Toast 或 Toast 上的按钮），请参阅[发送本地 Toast](send-local-toast.md)。
- 
+ 
 ## <a name="related-topics"></a>相关主题
 
 * [发送本地 toast 和处理激活](send-local-toast.md)

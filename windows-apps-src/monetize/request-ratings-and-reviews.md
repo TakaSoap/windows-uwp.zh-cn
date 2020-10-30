@@ -1,16 +1,16 @@
 ---
-Description: 了解可通过编程方式让客户对应用进行评级和查看的多种方式。
+description: 了解可通过编程方式让客户对应用进行评级和查看的多种方式。
 title: 请求应用的评分和评价
 ms.date: 01/22/2019
 ms.topic: article
 keywords: windows 10, uwp, 评分, 评价
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a668ac66f48e386a6299a64e5bcc18cec4fccc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9dbc33eaaf3adcb05a6ad37e2f54ceec4769f530
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158371"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034400"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>请求应用的评分和评价
 
@@ -101,7 +101,7 @@ private async Task PromptUserToRateApp()
 }
 ```
 
-Windows 10 1809 版中引入了 **RequestRateAndReviewAppAsync** 方法，并且它只能用于面向 **Windows 10 十月2018更新 (10.0; ** 在 Visual Studio 中生成 17763) 或更高版本。
+Windows 10 1809 版中引入了 **RequestRateAndReviewAppAsync** 方法，并且它只能用于面向 **Windows 10 十月2018更新 (10.0;** 在 Visual Studio 中生成 17763) 或更高版本。
 
 ### <a name="response-data-for-the-rating-and-review-request"></a>评分和评价请求的响应数据
 
@@ -110,8 +110,8 @@ Windows 10 1809 版中引入了 **RequestRateAndReviewAppAsync** 方法，并且
 下面的示例演示在客户成功提交评分或评价之后此请求的返回值。
 
 ```json
-{ 
-  "status": "success", 
+{ 
+  "status": "success", 
   "data": {
     "updated": false
   },
@@ -122,8 +122,8 @@ Windows 10 1809 版中引入了 **RequestRateAndReviewAppAsync** 方法，并且
 下面的示例演示在客户选择不提交评分或评价之后此请求的返回值。
 
 ```json
-{ 
-  "status": "aborted", 
+{ 
+  "status": "aborted", 
   "errorDetails": "Navigation was unsuccessful"
 }
 ```
@@ -132,8 +132,8 @@ Windows 10 1809 版中引入了 **RequestRateAndReviewAppAsync** 方法，并且
 
 | 字段          | 说明                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| *status*       | 一个字符串，指示客户是否成功提交评分或评价。 受支持的值为 **success** 和 **aborted**。 |
-| *data*         | 一个包含一个名为*已更新*的布尔值的对象。 此值指示客户是否已更新现有评分或评价。 *数据*对象仅包含在成功的响应。 |
+| *status*       | 一个字符串，指示客户是否成功提交评分或评价。 受支持的值为 **success** 和 **aborted** 。 |
+| *data*         | 一个包含一个名为 *已更新* 的布尔值的对象。 此值指示客户是否已更新现有评分或评价。 *数据* 对象仅包含在成功的响应。 |
 | *errorDetails* | 一个包含请求的错误详细信息的字符串。                                                                                     |
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>在 Microsoft Store 中对你的应用启动评分和评价页面。

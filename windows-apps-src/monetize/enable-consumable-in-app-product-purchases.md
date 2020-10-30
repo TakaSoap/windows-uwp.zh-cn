@@ -1,24 +1,24 @@
 ---
-Description: 提供可使用的应用内产品&\# 8212; 可通过商店商业平台购买、使用并再次购买的商品&\# 8212; 通过商店商业平台，为客户提供可靠且可靠的购买体验。
+description: 提供可使用的应用内产品&\# 8212; 可通过商店商业平台购买、使用并再次购买的商品&\# 8212; 通过商店商业平台，为客户提供可靠且可靠的购买体验。
 title: 启用可消费应用内产品购买
 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
 keywords: uwp, 易耗品, 加载项, 应用内购买, IAP, Windows.ApplicationModel.Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fb4119296b11e805fa72ff027383d13e6fb43818
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: fdd09fdb0d80f7811014dc910772175e152505d0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363690"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033539"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>启用可消费应用内产品购买
 
 通过应用商店商业平台提供可消费应用内产品（这些项目可以进行购买、使用和再次购买），以便为客户提供强大可靠的购买体验。 这对游戏内货币（金子、硬币等）等来说尤为有用，可以购买此类货币，然后将其用于购买特定道具。
 
 > [!IMPORTANT]
-> 本文介绍如何使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空间的成员来支持易耗型应用内产品购买。 此命名空间不再更新新功能，我们建议你使用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空间。 **Windows 服务**命名空间支持最新的加载项类型，如存储管理的可使用的加载项和订阅，旨在与合作伙伴中心和应用商店支持的未来类型的产品和功能兼容。 **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 有关使用 **Windows.Services.Store** 命名空间支持易耗型应用内产品购买的更多信息，请参阅[本文](enable-consumable-add-on-purchases.md)。
+> 本文介绍如何使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空间的成员来支持易耗型应用内产品购买。 此命名空间不再更新新功能，我们建议你使用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空间。 **Windows 服务** 命名空间支持最新的加载项类型，如存储管理的可使用的加载项和订阅，旨在与合作伙伴中心和应用商店支持的未来类型的产品和功能兼容。 **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 有关使用 **Windows.Services.Store** 命名空间支持易耗型应用内产品购买的更多信息，请参阅 [本文](enable-consumable-add-on-purchases.md)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -37,7 +37,7 @@ ms.locfileid: "89363690"
 
 ## <a name="step-2-tracking-local-fulfillment-of-the-consumable"></a>步骤 2：跟踪易耗型应用内产品的本地实施
 
-当授权客户访问易耗型应用内产品时，持续跟踪实施的产品 (*productId*) 以及跟踪与实施相关联的交易 (*transactionId*) 非常重要。
+当授权客户访问易耗型应用内产品时，持续跟踪实施的产品 ( *productId* ) 以及跟踪与实施相关联的交易 ( *transactionId* ) 非常重要。
 
 > [!IMPORTANT]
 > 应用负责向应用商店准确报告实施情况。 对于维护客户公平、可靠的购买体验来说，此步骤非常重要。
@@ -79,6 +79,6 @@ ms.locfileid: "89363690"
 * [启用应用内产品购买](enable-in-app-product-purchases.md)
 * [应用商店示例（演示试用版和应用内购买）](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [Windows.ApplicationModel.Store](/uwp/api/Windows.ApplicationModel.Store)
- 
+ 
 
- 
+ 

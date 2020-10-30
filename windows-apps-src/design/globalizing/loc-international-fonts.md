@@ -1,17 +1,17 @@
 ---
-Description: 本主题列出了已本地化为美国英语以外的其他语言的 Windows 应用的可用字体。
+description: 本主题列出了已本地化为美国英语以外的其他语言的 Windows 应用的可用字体。
 title: 国际字体
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 1200b80347a67bb1c9a6414a18697ca9d30bc29f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 4af2cb68f92f21750bafa8a86e5dd036d5247c4b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220600"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034350"
 ---
 # <a name="international-fonts"></a>国际字体
 
@@ -57,7 +57,7 @@ ms.locfileid: "91220600"
 | 古吉拉特语 | gu-IN | Nirmala UI |
 | 豪撒语(拉丁语) | ha-Latn-NG | Segoe UI |
 | 希伯来语 | he-IL | Segoe UI |
-| 印地语 | hi-IN | Nirmala UI |
+| Hindi | hi-IN | Nirmala UI |
 | 匈牙利语 | hu-HU | Segoe UI |
 | 冰岛语 | is-IS | Segoe UI |
 | 伊博语 | ig-NG | Segoe UI |
@@ -74,7 +74,7 @@ ms.locfileid: "91220600"
 | 卢旺达语 | rw-RW | Segoe UI |
 | 斯瓦希里语 | sw-KE | Segoe UI |
 | 孔卡尼语 | kok-IN | Nirmala UI |
-| 朝鲜语 | ko-KR | Malgun Gothic |
+| 韩语 | ko-KR | Malgun Gothic |
 | 柯尔克孜语 | ky-KG | Segoe UI |
 | 拉脱维亚语 | lv-LV | Segoe UI |
 | 立陶宛语 | lt-LT | Segoe UI |

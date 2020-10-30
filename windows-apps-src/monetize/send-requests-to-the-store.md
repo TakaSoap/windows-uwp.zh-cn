@@ -1,17 +1,17 @@
 ---
-Description: 你可以使用 SendRequestAsync 方法将请求发送到 Microsoft Store，以执行尚未在 Windows SDK 中提供 API 的操作。
+description: 你可以使用 SendRequestAsync 方法将请求发送到 Microsoft Store，以执行尚未在 Windows SDK 中提供 API 的操作。
 title: 向 Microsoft Store 发送请求
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: a02be93a56d6066ebd4d9547c8cc9ea1a96c9e09
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 53b525617ac72aec67349645430bc5995253460f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164491"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034660"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>向 Microsoft Store 发送请求
 
@@ -34,7 +34,7 @@ public async Task<bool> AddUserToFlightGroup()
 {
     StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
         StoreContext.GetDefault(), 8,
-        "{ \"type\": \"AddToFlightGroup\", \"parameters\": { \"flightGroupId\": \"your group ID\" } }");
+        "{ \"type\": \"AddToFlightGroup\", \"parameters\": { \"flightGroupId\": \"your group ID\" } }");
 
     if (result.ExtendedError == null)
     {
@@ -58,7 +58,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 **SendRequestAsync** 方法支持一组外部测试版组方案的请求，例如为外部测试版组添加用户或设备。 若要提交这些请求，请将 *requestKind* 参数值 7 或 8 以及 JSON 格式的字符串一起传递给用于指示你想要与任何相关参数一起提交的请求的 *parametersAsJson* 参数。 这些 *requestKind* 值在以下方面不同。
 
-|  请求类型值  |  描述  |
+|  请求类型值  |  说明  |
 |----------------------|---------------|
 |  7                   |  此请求将在当前设备的上下文中执行。 此值仅可用于 Windows 10 版本 1703 或更高版本。  |
 |  8                   |  此请求将在当前已登录到应用商店的用户的上下文中执行。 此值可用于 Windows 10 版本 1607 或更高版本。  |
@@ -72,33 +72,33 @@ public async Task<bool> AddUserToFlightGroup()
 
 此请求将为当前用户或设备检索排名最高的外部测试版组的远程变量。 若要发送此请求，请将以下信息传递至 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 参数。
 
-|  参数  |  描述  |
+|  参数  |  说明  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7 以返回设备的最高排名外部测试版组，或者指定 8 以返回当前用户和设备的最高排名外部测试版组。 我们建议为 *requestKind* 参数使用值 8，因为此值将在成员中返回当前用户和设备的最高排名外部测试版组。  |
 |  *parametersAsJson*                   |  传递 JSON 格式的字符串，它包含以下示例显示的数据。  |
 
-以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为*类型*字段分配字符串 *GetRemoteVariables*。 将 *projectId* 字段分配到在其中定义了合作伙伴中心中的远程变量的项目的 ID。
+以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为 *类型* 字段分配字符串 *GetRemoteVariables* 。 将 *projectId* 字段分配到在其中定义了合作伙伴中心中的远程变量的项目的 ID。
 
 ```json
-{ 
-    "type": "GetRemoteVariables", 
-    "parameters": "{ \"projectId\": \"your project ID\" }" 
+{ 
+    "type": "GetRemoteVariables", 
+    "parameters": "{ \"projectId\": \"your project ID\" }" 
 }
 ```
 
 提交此请求之后，[StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) 返回值的 [Response](/uwp/api/windows.services.store.storesendrequestresult.Response) 属性将包含 JSON 格式的字符串及以下字段。
 
-|  字段  |  描述  |
+|  字段  |  说明  |
 |----------------------|---------------|
-|  *匿名*                   |  布尔值，其中 **true** 指示用户或设备身份不存在于请求中，**false** 指示用户或设备身份已存在于请求中。  |
-|  name                    |  包含设备或用户所在的最高排名外部测试版组名称的字符串。  |
+|  *匿名*                   |  布尔值，其中 **true** 指示用户或设备身份不存在于请求中， **false** 指示用户或设备身份已存在于请求中。  |
+|  *name*                   |  包含设备或用户所在的最高排名外部测试版组名称的字符串。  |
 |  *设置*                   |  键/值对的字典，包含开发人员为外部测试版组配置的远程变量的名称和值。  |
 
 以下示例展示了此请求的返回值。
 
 ```json
-{ 
-  "anonymous": false, 
+{ 
+  "anonymous": false, 
   "name": "Insider Slow",
   "settings":
   {
@@ -115,17 +115,17 @@ public async Task<bool> AddUserToFlightGroup()
 
 若要发送此请求，请将以下信息传递至 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 参数。
 
-|  参数  |  描述  |
+|  参数  |  说明  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7 以将设备添加到外部测试版组，或者指定 8 以将当前已登录到应用商店的用户添加到外部测试版组。  |
 |  *parametersAsJson*                   |  传递 JSON 格式的字符串，它包含以下示例显示的数据。  |
 
-以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为*类型*字段分配字符串 *AddToFlightGroup*。 为你想要向其中添加设备或用户的外部测试版组 ID 分配 *flightGroupId* 字段。
+以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为 *类型* 字段分配字符串 *AddToFlightGroup* 。 为你想要向其中添加设备或用户的外部测试版组 ID 分配 *flightGroupId* 字段。
 
 ```json
-{ 
-    "type": "AddToFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "AddToFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 
@@ -138,17 +138,17 @@ public async Task<bool> AddUserToFlightGroup()
 
 若要发送此请求，请将以下信息传递至 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 参数。
 
-|  参数  |  描述  |
+|  参数  |  说明  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7 以从外部测试版组中删除设备，或者指定 8 以从外部测试版组中删除当前已登录到应用商店的用户。  |
 |  *parametersAsJson*                   |  传递 JSON 格式的字符串，它包含以下示例显示的数据。  |
 
-以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为*类型*字段分配字符串 *RemoveFromFlightGroup*。 为你想要从其中删除设备或用户的外部测试版组 ID 分配 *flightGroupId* 字段。
+以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为 *类型* 字段分配字符串 *RemoveFromFlightGroup* 。 为你想要从其中删除设备或用户的外部测试版组 ID 分配 *flightGroupId* 字段。
 
 ```json
-{ 
-    "type": "RemoveFromFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "RemoveFromFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 

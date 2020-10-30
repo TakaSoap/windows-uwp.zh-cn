@@ -1,5 +1,5 @@
 ---
-Description: 了解如何创建有效且用户为重点的通知，使用户能够高效工作。
+description: 了解如何创建有效且用户为重点的通知，使用户能够高效工作。
 title: Toast UX 指南
 label: Toast UX Guidance
 template: detail.hbs
@@ -7,17 +7,17 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10，uwp，通知，收集，组，ux，ux 指导，指导，操作，toast，操作中心，noninterruptive，有效通知，产生干扰通知，可操作，管理，组织
 ms.localizationpriority: medium
-ms.openlocfilehash: 9879d052882532e4d47c27c0b636f728293311cf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d6ad253ccfa744864caa8d0229d09ba40d066771
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169171"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033040"
 ---
 # <a name="toast-notification-ux-guidance"></a>Toast 通知 UX 指南
 通知是当今生活的必需部分;它们可帮助用户提高工作效率，并与应用和网站保持同步，并保持最新的更新。 不过，如果在以用户为中心的方式设计时，通知可以快速地从有用到解救和侵入。 你的通知只是在关闭时单击一次，但一旦关闭，它们就不会被打开。  因此，请确保你的通知过于用户的屏幕空间和时间，从而使此订婚通道保持打开状态。
 
-> **重要 api**： [Windows 社区工具包通知 nuget 包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要 api** ： [Windows 社区工具包通知 nuget 包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 我们已经分析了我们的 Windows 遥测以及其他第一方和第三方案例研究，为您提供了四条围绕着精彩通知案例的规则。  我们确信这些规则是通用的，不管平台如何，都将帮助你的通知对用户产生积极的影响。
 

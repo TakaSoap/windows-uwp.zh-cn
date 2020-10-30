@@ -1,5 +1,5 @@
 ---
-Description: 了解如何管理由音频输入质量所导致的语音识别准确度问题。
+description: 了解如何管理由音频输入质量所导致的语音识别准确度问题。
 title: 管理音频输入问题
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
@@ -8,25 +8,25 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bbbe9a887afa4637aaf8e6576e14979a92aa6b8f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a5d74346aec4784cea9be2dfcef3ec2efccd8b56
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173391"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034690"
 ---
 # <a name="manage-issues-with-audio-input"></a>管理音频输入问题
 
 
 了解如何管理由音频输入质量所导致的语音识别准确度问题。
 
-> **重要 API**：[**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer)、[**RecognitionQualityDegrading**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading)、[**SpeechRecognitionAudioProblem**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem)
+> **重要 API** ： [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer)、 [**RecognitionQualityDegrading**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading)、 [**SpeechRecognitionAudioProblem**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem)
 
 
 ## <a name="assess-audio-input-quality"></a>评估音频输入质量
 
 
-当语音识别处于活动状态时，使用语音识别器的 [**RecognitionQualityDegrading**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading) 事件，确定一个或多个音频问题是否会干扰语音输入。 事件参数 ([**SpeechRecognitionQualityDegradingEventArgs**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs)) 可提供 [**Problem**](/uwp/api/windows.media.speechrecognition.speechrecognitionqualitydegradingeventargs.problem) 属性，该属性描述了检测到的音频输入问题。
+当语音识别处于活动状态时，使用语音识别器的 [**RecognitionQualityDegrading**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading) 事件，确定一个或多个音频问题是否会干扰语音输入。 事件参数 ( [**SpeechRecognitionQualityDegradingEventArgs**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs)) 可提供 [**Problem**](/uwp/api/windows.media.speechrecognition.speechrecognitionqualitydegradingeventargs.problem) 属性，该属性描述了检测到的音频输入问题。
 
 背景噪音太大、麦克风设为静音以及扬声器的音量或语速都可能会影响语音识别。
 
@@ -109,6 +109,6 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 **示例**
 * [语音识别和语音合成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
+ 
 
- 
+ 

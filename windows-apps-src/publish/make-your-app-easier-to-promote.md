@@ -1,17 +1,17 @@
 ---
-Description: 让你的应用得到关注！ 除了尽量改进你的应用，你还可以采取一些措施来让 Microsoft Store 和其他站点轻松展示你的应用，并帮助该应用获得更多关注。
+description: 让你的应用得到关注！ 除了尽量改进你的应用，你还可以采取一些措施来让 Microsoft Store 和其他站点轻松展示你的应用，并帮助该应用获得更多关注。
 title: 更方便地推广你的应用
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 促销, 推广, 特色, 展示, 应用商店
 ms.localizationpriority: medium
-ms.openlocfilehash: c2503dbd6d585452c8bfec0ac217e2144a4da384
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ea42ff2d4aa7f953ed98813de3d4b2ead1547b16
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161901"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033890"
 ---
 # <a name="make-your-app-easier-to-promote"></a>更方便地推广你的应用
 
@@ -27,7 +27,7 @@ Microsoft Store 中展示了各种应用，按类别或主题分组。 好的应
 
     在使应用具有特色时，Microsoft Store 可能会在各种布局中使用你的[应用屏幕截图和图像](app-screenshots-and-images.md)。 请确保设计代表你的应用的出色屏幕截图，并确保第一张屏幕截图特别具有代表性和吸引力。 可以提供不同的屏幕截图，以展示应用在其支持的每种设备类型上的外观。
 
-    若要最大化应用在 Microsoft Store 中获得特别推荐的机会，请在 Microsoft Store 一览的**应用商店徽标**和**其他插图资源**部分提供所有适用图像。 **9:16 海报艺术 (720 x 1080 或 1440 x 2160 像素) **和**16:9 超级英雄 (1920 x 1080 或 3840 x 2160 像素) **图像非常重要。 如果你的应用支持 Xbox 和/或全息设备系列，我们建议另外为这些设备系列提供所有适用图像。 更多详细信息和指南，请参阅[应用屏幕截图、图像和预告片](app-screenshots-and-images.md)。
+    若要最大化应用在 Microsoft Store 中获得特别推荐的机会，请在 Microsoft Store 一览的 **应用商店徽标** 和 **其他插图资源** 部分提供所有适用图像。 **9:16 海报艺术 (720 x 1080 或 1440 x 2160 像素)** 和 **16:9 超级英雄 (1920 x 1080 或 3840 x 2160 像素)** 图像非常重要。 如果你的应用支持 Xbox 和/或全息设备系列，我们建议另外为这些设备系列提供所有适用图像。 更多详细信息和指南，请参阅[应用屏幕截图、图像和预告片](app-screenshots-and-images.md)。
 
 -   **只为应用生成一个版本，而不生成一个免费版本和另外一个付费版本**
 
@@ -43,4 +43,4 @@ Microsoft Store 中展示了各种应用，按类别或主题分组。 好的应
 
 
 
- 
+ 

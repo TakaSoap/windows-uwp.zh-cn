@@ -1,24 +1,24 @@
 ---
-Description: 可以直接回复应用的相关评价，让客户知道你正在听取他们的反馈。
+description: 可以直接回复应用的相关评价，让客户知道你正在听取他们的反馈。
 title: 回复客户评论
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，响应，响应，查看
 ms.localizationpriority: medium
-ms.openlocfilehash: 792d78b93a66b9dd7da2b2c69480bfbd324dd045
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c47e7771f6a76cde451c88ab8e2d9ed26e003f9c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161871"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034600"
 ---
 # <a name="respond-to-customer-reviews"></a>回复客户评论
 
 
 你可以对你的应用程序的评论做出响应，让客户知道你正在倾听他们的反馈。 使用评论回复，可以告诉客户你根据他们的评论已添加的功能或已修复的错误，或获取有关如何改进应用的更具体的反馈。 你的响应将显示在所有 Windows 10 客户的 Microsoft Store 中查看。 你还可以选择通过电子邮件将你的响应发送给客户 (如果他们尚未选择使用 Windows 10 1803 版或更) 高版本的设备。
 
-若要查看应用的评论并提供响应，请在 " [合作伙伴中心](https://partner.microsoft.com/dashboard)" 中找到该应用。 在左侧导航菜单中，展开**分析**，然后单击**评价**以显示[评价报告](reviews-report.md)。 选择 " **响应评审** " 以提供您的响应。
+若要查看应用的评论并提供响应，请在 " [合作伙伴中心](https://partner.microsoft.com/dashboard)" 中找到该应用。 在左侧导航菜单中，展开 **分析** ，然后单击 **评价** 以显示 [评价报告](reviews-report.md)。 选择 " **响应评审** " 以提供您的响应。
 
 > [!TIP]
 > 除了使用合作伙伴中心来响应评审以外，还可以 [以编程方式](../monetize/submit-responses-to-app-reviews.md)响应评审。
@@ -32,7 +32,7 @@ ms.locfileid: "89161871"
 在回复客户的评论时，必须遵循以下准则： 它们适用于所有响应（无论是否公开）。
 
 > [!IMPORTANT]
-> 你无法更改发布到应用商店的响应 (除非客户修改了其原始评审) ，因此请仔细查看你的响应。 如果客户修改了原始评审，你的响应将从应用商店列表页中删除。 然后，你可以选择 " **更新响应**"，将新的响应提交到修改后的评审。
+> 你无法更改发布到应用商店的响应 (除非客户修改了其原始评审) ，因此请仔细查看你的响应。 如果客户修改了原始评审，你的响应将从应用商店列表页中删除。 然后，你可以选择 " **更新响应** "，将新的响应提交到修改后的评审。
 
 -   回复不得超过 1000 个字符。
 -   不得向用户提供任何类型的补偿（包括数字应用项目）来更改应用评分。 请记住，根据[应用开发人员协议](/legal/windows/agreements/app-developer-agreement)，不允许尝试操控评分。

@@ -1,5 +1,5 @@
 ---
-Description: 了解如何使用通知侦听器访问用户的所有通知。
+description: 了解如何使用通知侦听器访问用户的所有通知。
 title: 通知侦听器
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tiles
@@ -8,22 +8,22 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 通知侦听器, usernotificationlistener, 文档, 访问通知
 ms.localizationpriority: medium
-ms.openlocfilehash: dc2afb36337439cd115273cd9df8ee1cb2eb3741
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 90d1d0757bad5a62a987144e6a81d0a6550db384
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169181"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033660"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知侦听器：访问所有通知
 
 通知侦听器提供对用户通知的访问。 Smartwatch 和其他可穿戴设备可以使用通知侦听器将手机通知发送到可穿戴设备。 在收到通知时，Home 自动化应用程序可以使用通知侦听器来执行特定操作，例如，当你收到呼叫时使灯闪烁。 
 
 > [!IMPORTANT]
-> **需要周年更新**：目标必须为 SDK 14393，并且必须运行版本 14393 或更高版本才能使用通知侦听器。
+> **需要周年更新** ：目标必须为 SDK 14393，并且必须运行版本 14393 或更高版本才能使用通知侦听器。
 
 
-> **重要 API**：[UserNotificationListener 类](/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener)、[UserNotificationChangedTrigger 类](/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
+> **重要 API** ： [UserNotificationListener 类](/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener)、 [UserNotificationChangedTrigger 类](/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
 ## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>通过添加用户通知功能支持侦听器 
@@ -32,7 +32,7 @@ ms.locfileid: "89169181"
 
 1. 在 Visual Studio 中的解决方案资源管理器中，双击 `Package.appxmanifest` 文件，以打开清单设计器。
 2. 打开“功能”选项卡。
-3. 检查**用户通知侦听器**功能。
+3. 检查 **用户通知侦听器** 功能。
 
 
 ## <a name="check-whether-the-listener-is-supported"></a>检查侦听器是否受支持
@@ -42,12 +42,12 @@ ms.locfileid: "89169181"
 ```csharp
 if (ApiInformation.IsTypePresent("Windows.UI.Notifications.Management.UserNotificationListener"))
 {
-    // Listener supported!
+    // Listener supported!
 }
- 
+ 
 else
 {
-    // Older version of Windows, no Listener
+    // Older version of Windows, no Listener
 }
 ```
 
@@ -59,35 +59,35 @@ else
 ```csharp
 // Get the listener
 UserNotificationListener listener = UserNotificationListener.Current;
- 
+ 
 // And request access to the user's notifications (must be called from UI thread)
 UserNotificationListenerAccessStatus accessStatus = await listener.RequestAccessAsync();
- 
+ 
 switch (accessStatus)
 {
-    // This means the user has granted access.
-    case UserNotificationListenerAccessStatus.Allowed:
- 
-        // Yay! Proceed as normal
-        break;
- 
-    // This means the user has denied access.
-    // Any further calls to RequestAccessAsync will instantly
-    // return Denied. The user must go to the Windows settings
-    // and manually allow access.
-    case UserNotificationListenerAccessStatus.Denied:
- 
-        // Show UI explaining that listener features will not
-        // work until user allows access.
-        break;
- 
-    // This means the user closed the prompt without
-    // selecting either allow or deny. Further calls to
-    // RequestAccessAsync will show the dialog again.
-    case UserNotificationListenerAccessStatus.Unspecified:
- 
-        // Show UI that allows the user to bring up the prompt again
-        break;
+    // This means the user has granted access.
+    case UserNotificationListenerAccessStatus.Allowed:
+ 
+        // Yay! Proceed as normal
+        break;
+ 
+    // This means the user has denied access.
+    // Any further calls to RequestAccessAsync will instantly
+    // return Denied. The user must go to the Windows settings
+    // and manually allow access.
+    case UserNotificationListenerAccessStatus.Denied:
+ 
+        // Show UI explaining that listener features will not
+        // work until user allows access.
+        break;
+ 
+    // This means the user closed the prompt without
+    // selecting either allow or deny. Further calls to
+    // RequestAccessAsync will show the dialog again.
+    case UserNotificationListenerAccessStatus.Unspecified:
+ 
+        // Show UI that allows the user to bring up the prompt again
+        break;
 }
 ```
 
@@ -111,10 +111,10 @@ IReadOnlyList<UserNotification> notifs = await listener.GetNotificationsAsync(No
 ```csharp
 public sealed class UserNotification
 {
-    public AppInfo AppInfo { get; }
-    public DateTimeOffset CreationTime { get; }
-    public uint Id { get; }
-    public Notification Notification { get; }
+    public AppInfo AppInfo { get; }
+    public DateTimeOffset CreationTime { get; }
+    public uint Id { get; }
+    public Notification Notification { get; }
 }
 ```
 
@@ -126,10 +126,10 @@ public sealed class UserNotification
 ```csharp
 // Select the first notification
 UserNotification notif = notifs[0];
- 
+ 
 // Get the app's display name
 string appDisplayName = notif.AppInfo.DisplayInfo.DisplayName;
- 
+ 
 // Get the app's logo
 BitmapImage appLogo = new BitmapImage();
 RandomAccessStreamReference appLogoStream = notif.AppInfo.DisplayInfo.GetLogo(new Size(16, 16));
@@ -143,18 +143,18 @@ await appLogo.SetSourceAsync(await appLogoStream.OpenReadAsync());
 ```csharp
 // Get the toast binding, if present
 NotificationBinding toastBinding = notif.Notification.Visual.GetBinding(KnownNotificationBindings.ToastGeneric);
- 
+ 
 if (toastBinding != null)
 {
-    // And then get the text elements from the toast binding
-    IReadOnlyList<AdaptiveNotificationText> textElements = toastBinding.GetTextElements();
- 
-    // Treat the first text element as the title text
-    string titleText = textElements.FirstOrDefault()?.Text;
- 
-    // We'll treat all subsequent text elements as body text,
-    // joining them together via newlines.
-    string bodyText = string.Join("\n", textElements.Skip(1).Select(t => t.Text));
+    // And then get the text elements from the toast binding
+    IReadOnlyList<AdaptiveNotificationText> textElements = toastBinding.GetTextElements();
+ 
+    // Treat the first text element as the title text
+    string titleText = textElements.FirstOrDefault()?.Text;
+ 
+    // We'll treat all subsequent text elements as body text,
+    // joining them together via newlines.
+    string bodyText = string.Join("\n", textElements.Skip(1).Select(t => t.Text));
 }
 ```
 
@@ -187,23 +187,23 @@ listener.ClearNotifications();
 
 ```csharp
 // TODO: Request/check Listener access via UserNotificationListener.Current.RequestAccessAsync
- 
+ 
 // TODO: Request/check background task access via BackgroundExecutionManager.RequestAccessAsync
- 
+ 
 // If background task isn't registered yet
 if (!BackgroundTaskRegistration.AllTasks.Any(i => i.Value.Name.Equals("UserNotificationChanged")))
 {
-    // Specify the background task
-    var builder = new BackgroundTaskBuilder()
-    {
-        Name = "UserNotificationChanged"
-    };
- 
-    // Set the trigger for Listener, listening to Toast Notifications
-    builder.SetTrigger(new UserNotificationChangedTrigger(NotificationKinds.Toast));
- 
-    // Register the task
-    builder.Register();
+    // Specify the background task
+    var builder = new BackgroundTaskBuilder()
+    {
+        Name = "UserNotificationChanged"
+    };
+ 
+    // Set the trigger for Listener, listening to Toast Notifications
+    builder.SetTrigger(new UserNotificationChangedTrigger(NotificationKinds.Toast));
+ 
+    // Register the task
+    builder.Register();
 }
 ```
 
@@ -212,18 +212,18 @@ if (!BackgroundTaskRegistration.AllTasks.Any(i => i.Value.Name.Equals("UserNotif
 ```csharp
 protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
 {
-    var deferral = args.TaskInstance.GetDeferral();
- 
-    switch (args.TaskInstance.Task.Name)
-    {
-        case "UserNotificationChanged":
-            // Call your own method to process the new/removed notifications
-            // The next section of documentation discusses this code
-            await MyWearableHelpers.SyncNotifications();
-            break;
-    }
- 
-    deferral.Complete();
+    var deferral = args.TaskInstance.GetDeferral();
+ 
+    switch (args.TaskInstance.Task.Name)
+    {
+        case "UserNotificationChanged":
+            // Call your own method to process the new/removed notifications
+            // The next section of documentation discusses this code
+            await MyWearableHelpers.SyncNotifications();
+            break;
+    }
+ 
+    deferral.Complete();
 }
 ```
 
@@ -239,37 +239,37 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 ```csharp
 // Get all the current notifications from the platform
 IReadOnlyList<UserNotification> userNotifications = await listener.GetNotificationsAsync(NotificationKinds.Toast);
- 
+ 
 // Obtain the notifications that our wearable currently has displayed
 IList<uint> wearableNotificationIds = GetNotificationsOnWearable();
- 
+ 
 // Copy the currently displayed into a list of notification ID's to be removed
 var toBeRemoved = new List<uint>(wearableNotificationIds);
- 
+ 
 // For each notification in the platform
 foreach (UserNotification userNotification in userNotifications)
 {
-    // If we've already displayed this notification
-    if (wearableNotificationIds.Contains(userNotification.Id))
-    {
-        // We want to KEEP it displayed, so take it out of the list
-        // of notifications to remove.
-        toBeRemoved.Remove(userNotification.Id);
-    }
- 
-    // Otherwise it's a new notification
-    else
-    {
-        // Display it on the Wearable
-        SendNotificationToWearable(userNotification);
-    }
+    // If we've already displayed this notification
+    if (wearableNotificationIds.Contains(userNotification.Id))
+    {
+        // We want to KEEP it displayed, so take it out of the list
+        // of notifications to remove.
+        toBeRemoved.Remove(userNotification.Id);
+    }
+ 
+    // Otherwise it's a new notification
+    else
+    {
+        // Display it on the Wearable
+        SendNotificationToWearable(userNotification);
+    }
 }
- 
+ 
 // Now our toBeRemoved list only contains notification ID's that no longer exist in the platform.
 // So we will remove all those notifications from the wearable.
 foreach (uint id in toBeRemoved)
 {
-    RemoveNotificationFromWearable(id);
+    RemoveNotificationFromWearable(id);
 }
 ```
 
@@ -284,14 +284,14 @@ foreach (uint id in toBeRemoved)
 ```csharp
 // Subscribe to foreground event
 listener.NotificationChanged += Listener_NotificationChanged;
- 
+ 
 private void Listener_NotificationChanged(UserNotificationListener sender, UserNotificationChangedEventArgs args)
 {
-    // Your code for handling the notification
+    // Your code for handling the notification
 }
 ```
 
 
-## <a name="howto-fixdelays-in-the-background-task"></a>如何修复后台任务的延迟问题
+## <a name="how-to-fix-delays-in-the-background-task"></a>如何修复后台任务的延迟问题
 
-测试应用时，你可能会注意到后台任务有时会延迟，并且不会触发几分钟时间。 若要解决此延迟，请提示用户中转到 "系统设置-> 系统"-> > 电池-按应用程序使用电池 "，在列表中找到你的应用程序，选择它，然后将其设置为" 在后台始终允许 "。此后，后台任务应该始终在收到通知后一秒内触发。
+测试应用时，你可能会注意到后台任务有时会延迟，并且不会触发几分钟时间。 若要解决此延迟，请提示用户中转到 "系统设置-> 系统"-> > 电池-按应用程序使用电池 "，在列表中找到你的应用程序，选择它，然后将其设置为" 在后台始终允许 "。 此后，后台任务应该始终在收到通知后一秒内触发。

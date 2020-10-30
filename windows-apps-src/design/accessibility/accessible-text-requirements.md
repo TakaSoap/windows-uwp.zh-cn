@@ -1,5 +1,5 @@
 ---
-Description: 本主题介绍了应用中的文本的最佳辅助功能做法：确保颜色和背景满足必需的对比率。
+description: 本主题介绍了应用中的文本的最佳辅助功能做法：确保颜色和背景满足必需的对比率。
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: 辅助文本要求
 label: Accessible text requirements
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3294daa57cc7d1eb585e41910f72f574d9ffb600
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: aefc53f6d28d2c30566680ac985a4712040ea8e0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163381"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032608"
 ---
 # <a name="accessible-text-requirements"></a>辅助文本要求  
 
@@ -28,7 +28,7 @@ ms.locfileid: "89163381"
 ## <a name="contrast-ratios"></a>对比率  
 尽管用户始终可以选择切换到高对比度模式，但是你的应用的文本设计应当将该选项视为最后的方法。 更好的做法是确保应用文本满足某些为文本及其背景之间对比度级别制定的指导准则。 对比度级别基于不考虑色调的确定性技术进行评估。 例如，如果文本为红色，而背景为绿色，则具有色盲障碍的用户可能无法读取该文本。 检查和更正对比率可以防止出现这些类型的辅助功能问题。
 
-此处记录的文本对比度建议基于 Web 辅助功能标准 [G18：确保文本（和文本的图像）和文本后面的背景之间的对比率至少为 4.5:1](https://www.w3.org/TR/WCAG20-TECHS/G18.html)。 该指南在 *WCAG 2.0 的 W3C 技术*规范中有说明。
+此处记录的文本对比度建议基于 Web 辅助功能标准 [G18：确保文本（和文本的图像）和文本后面的背景之间的对比率至少为 4.5:1](https://www.w3.org/TR/WCAG20-TECHS/G18.html)。 该指南在 *WCAG 2.0 的 W3C 技术* 规范中有说明。
 
 为了考虑辅助功能，可见文本与背景的发光度对比率必须最低为 4.5:1。 例外情况包括徽标和附带文本，例如作为非活动 UI 组件一部分的文本。
 
@@ -60,7 +60,7 @@ UWP 应用可以使用以下默认元素（通常称为 *text* 元素或 *texted
 <span id="AUTO-SUGGEST_ACCESSIBILITY"/>
 
 ## <a name="auto-suggest-accessibility"></a>自动建议辅助功能  
-当用户在输入字段中进行键入后显示可能的建议列表时，此种情形称为“自动建议”。 这在邮件字段中的“收件人:”**** 行、Windows 中的 Cortana 搜索框、Microsoft Edge 中的 URL 输入字段、“天气”应用中的位置输入字段等方面很常见。 如果你使用的是 XAML [**AutosuggestBox**](/uwp/api/windows.ui.xaml.controls.autosuggestbox) 或 HTML 内部控件，则已默认为你关联了此体验。 若要使此体验可访问输入字段，必须关联列表。 这将在[实现自动建议](#implementing_auto-suggest)一节中介绍。
+当用户在输入字段中进行键入后显示可能的建议列表时，此种情形称为“自动建议”。 这在邮件字段中的“收件人:”  行、Windows 中的 Cortana 搜索框、Microsoft Edge 中的 URL 输入字段、“天气”应用中的位置输入字段等方面很常见。 如果你使用的是 XAML [**AutosuggestBox**](/uwp/api/windows.ui.xaml.controls.autosuggestbox) 或 HTML 内部控件，则已默认为你关联了此体验。 若要使此体验可访问输入字段，必须关联列表。 这将在[实现自动建议](#implementing_auto-suggest)一节中介绍。
 
 已更新了讲述人，使此类型的体验可访问特殊建议模式。 在高级别上，当正确连接编辑字段和列表时，最终用户将：
 
@@ -129,16 +129,16 @@ _没有默认选择的示例_
 完成这一显而易见后，Windows 会提供各种辅助功能和设置，用户可利用这些工具和设置，并调整其自身需求和读取文本的首选项。 这些方法包括：
 
 * "放大镜" 工具，用于放大 UI 的选定区域。 你应确保应用中的文本布局不会使使用放大镜进行读取变得困难。
-* 设置中的全局缩放和分辨率设置 **->系统 >显示->比例和布局**。 确切的可用大小调整选项会有所不同，具体取决于显示设备的功能。
-* 设置中的文本大小设置 **->轻松访问->显示**。 调整 "放大 **文本** " 设置，以便仅在所有应用程序和屏幕上指定支持控件中的文本大小 (所有 UWP 文本控件在没有任何自定义项或模板化) 的情况下支持文本缩放体验。 
+* 设置中的全局缩放和分辨率设置 **->系统 >显示->比例和布局** 。 确切的可用大小调整选项会有所不同，具体取决于显示设备的功能。
+* 设置中的文本大小设置 **->轻松访问->显示** 。 调整 "放大 **文本** " 设置，以便仅在所有应用程序和屏幕上指定支持控件中的文本大小 (所有 UWP 文本控件在没有任何自定义项或模板化) 的情况下支持文本缩放体验。 
 > [!NOTE]
 > " **使所有内容变得更大** " 设置允许用户仅在主屏幕上指定其首选的文本和应用大小。
 
-各种文本元素和控件都具有 [**IsTextScaleFactorEnabled**](/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) 属性。 默认情况下，此属性的值为 **true**。 如果 **为 true**，则可以缩放该元素中文本的大小。 缩放会影响具有较小 **FontSize** 的文本，而不会影响具有大型 **FontSize**的文本。 可以通过将元素的 **IsTextScaleFactorEnabled** 属性设置为 **false**来禁用自动调整大小。 
+各种文本元素和控件都具有 [**IsTextScaleFactorEnabled**](/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) 属性。 默认情况下，此属性的值为 **true** 。 如果 **为 true** ，则可以缩放该元素中文本的大小。 缩放会影响具有较小 **FontSize** 的文本，而不会影响具有大型 **FontSize** 的文本。 可以通过将元素的 **IsTextScaleFactorEnabled** 属性设置为 **false** 来禁用自动调整大小。 
 
 有关更多详细信息，请参阅 [文本缩放](../input/text-scaling.md) 。
 
-将以下标记添加到应用并运行它。 调整 " **文本大小** " 设置，并查看每个 **TextBlock**会发生什么情况。
+将以下标记添加到应用并运行它。 调整 " **文本大小** " 设置，并查看每个 **TextBlock** 会发生什么情况。
 
 XAML
 ```xml
@@ -169,7 +169,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 }
 ```
 
-**TextScaleFactor**的值是1，2.25 范围内的双精度值 \[ \] 。 最小的文本通过此数量放大。 例如，你可以使用此值缩放图像以匹配文本。 但是请记住，并非所有文本都通过相同的系数来缩放。 一般来说，开始时的文本越大，它受缩放的影响越小。
+**TextScaleFactor** 的值是1，2.25 范围内的双精度值 \[ \] 。 最小的文本通过此数量放大。 例如，你可以使用此值缩放图像以匹配文本。 但是请记住，并非所有文本都通过相同的系数来缩放。 一般来说，开始时的文本越大，它受缩放的影响越小。
 
 这些类型具有 **IsTextScaleFactorEnabled** 属性：  
 * [**ContentPresenter**](/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter)

@@ -1,17 +1,17 @@
 ---
-Description: 按照以下指南准备要提交到 Microsoft Store 的应用包。
+description: 按照以下指南准备要提交到 Microsoft Store 的应用包。
 title: 应用包要求
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, uwp, 程序包要求, 程序包, 程序包格式, 受支持的版本, 提交, windows 10, uwp, package requirements, packages, package format, supported version, submit
 ms.localizationpriority: medium
-ms.openlocfilehash: 848adbab20765a65ef4673219c55dfbf076e47e0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 464714388f9e998bace3af45c580f2a4a7638b27
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219770"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034390"
 ---
 # <a name="app-package-requirements"></a>应用包要求
 
@@ -26,7 +26,7 @@ ms.locfileid: "91219770"
 如果你使用 Microsoft Visual Studio 作为开发环境，则你已经拥有可使创建应用包的过程变得快速而轻松的内置工具。 有关详细信息，请参阅[打包应用](../packaging/index.md)。
 
 > [!NOTE]
-> 请确保所有文件名都使用 ANSI。 
+> 请确保所有文件名都使用 ANSI。 
 
 在 Visual Studio 中创建程序包时，请确保使用与你的开发者帐户关联的相同帐户登录。 程序包清单的某些部分具有与你的帐户相关的特定详细信息。 将自动检测和添加此信息。 如果没有将其他信息添加到清单，你可能会遇到软件包上传失败。 
 
@@ -40,7 +40,7 @@ ms.locfileid: "91219770"
 对于 UWP 应用，Visual Studio 可以生成应用捆绑包， ( .msixbundle 或 .appxbundle) 来减小用户下载的应用的大小。 仅当已定义特定于语言的资源、大量图像缩放资源或适用于特定版本的 Microsoft DirectX 的资源时，该操作才有用。
 
 > [!NOTE]
-> 一个应用程序包可以包含所有体系结构的程序包。
+> 一个应用程序包可以包含所有体系结构的程序包。
 
 使用应用程序包，用户将仅下载相关文件，而不是所有可能的资源。 有关应用程序包的详细信息，请参阅[打包应用](../packaging/index.md)和[使用 Visual Studio 打包 UWP 应用](/windows/msix/package/packaging-uwp-apps)。
 
@@ -51,16 +51,16 @@ ms.locfileid: "91219770"
 
 确保查看[应用包清单](/uwp/schemas/appxpackage/appx-package-manifest)文档，以获取完整清单的详细信息和要求。 你的清单必须遵循程序包清单架构，才能通过认证。
 
-你的清单必须包含有关你的帐户和应用的某些特定信息。 通过查看仪表板中应用概述页面的 **“应用管理”** 部分中的[查看应用标识详细信息](view-app-identity-details.md)，可找到此信息。
+你的清单必须包含有关你的帐户和应用的某些特定信息。 通过查看仪表板中应用概述页面的 **“应用管理”** 部分中的 [查看应用标识详细信息](view-app-identity-details.md)，可找到此信息。
 
 > [!NOTE]
-> 清单中的值区分大小写。 空格和其他标点符号也必须匹配。 请小心输入值并进行检查，以确保这些值准确无误。
+> 清单中的值区分大小写。 空格和其他标点符号也必须匹配。 请小心输入值并进行检查，以确保这些值准确无误。
 
 
-应用捆绑包 ( 或 .appxbundle) 使用不同的清单。 查看[捆绑包清单](/uwp/schemas/bundlemanifestschema/bundle-manifest)文档，以获取应用程序包清单的详细信息和要求。 请注意，在 .msixbundle 或 .appxbundle 中，每个包含包的清单必须使用相同的元素和属性（ [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的**ProcessorArchitecture**特性除外）。
+应用捆绑包 ( 或 .appxbundle) 使用不同的清单。 查看[捆绑包清单](/uwp/schemas/bundlemanifestschema/bundle-manifest)文档，以获取应用程序包清单的详细信息和要求。 请注意，在 .msixbundle 或 .appxbundle 中，每个包含包的清单必须使用相同的元素和属性（ [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的 **ProcessorArchitecture** 特性除外）。
 
 > [!TIP]
-> 提交包之前，请务必运行 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md) 。 此操作可帮助你确定你的清单是否存在任何可能导致认证或提交失败的问题。
+> 在提交软件包之前，请确保运行 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)。 此操作可帮助你确定你的清单是否存在任何可能导致认证或提交失败的问题。
 
 
 ## <a name="package-format-requirements"></a>程序包格式要求
@@ -88,6 +88,6 @@ ms.locfileid: "91219770"
 
 StoreManifest.xml 是一种可选的配置文件，可包含在应用包中。 该文件旨在支持程序包清单未涵盖的功能，例如将应用声明为 Microsoft Store 设备应用或声明程序包适用于某个设备所依据的要求。 如果使用此项，则会使用应用包提交 StoreManifest.xml，且必须位于应用主项目的根文件夹中。 有关详细信息，请参阅 [StoreManifest 架构](/uwp/schemas/storemanifest/store-manifest-schema-portal)。
 
- 
+ 
 
- 
+ 

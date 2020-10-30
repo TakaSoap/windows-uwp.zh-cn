@@ -1,17 +1,17 @@
 ---
-Description: 在合作伙伴中心或通过其他方法获取 Windows 应用的详细分析。
+description: 在合作伙伴中心或通过其他方法获取 Windows 应用的详细分析。
 title: 分析应用性能
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，分析，报表，仪表板，应用，数据，指标
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b14ee776b31e21fbb8a0ee1d66b933648549b69
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 08ee9c5ddf729ac7a9026c36bc9fbddad0af5dc5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162081"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032980"
 ---
 # <a name="analyze-app-performance"></a>分析应用性能
 
@@ -21,7 +21,7 @@ ms.locfileid: "89162081"
 
 ## <a name="view-key-analytics-for-all-your-apps"></a>查看所有应用的关键分析
 
-若要查看下载量最多的应用的关键分析，请展开**分析**并选择**概述**。 默认情况下，概述页显示有关五个在生命周期内购置量最多的应用的信息。 若要选择用于显示的不同的已发布应用，请选择**筛选器**。
+若要查看下载量最多的应用的关键分析，请展开 **分析** 并选择 **概述** 。 默认情况下，概述页显示有关五个在生命周期内购置量最多的应用的信息。 若要选择用于显示的不同的已发布应用，请选择 **筛选器** 。
 
 ## <a name="view-individual-reports-for-each-app"></a>查看每个应用的单独报告
 

@@ -1,5 +1,5 @@
 ---
-Description: '了解桌面 c # 应用程序如何可以发送本地 toast 通知并处理用户单击 toast 的操作。'
+description: '了解桌面 c # 应用程序如何可以发送本地 toast 通知并处理用户单击 toast 的操作。'
 title: 从桌面 C# 应用发送本地 toast 通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from desktop C# apps
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: 'windows 10，win32，桌面，toast 通知，发送 toast，发送本地 toast，桌面桥，.msix，稀疏包，c #，c 清晰，toast 通知，wpf，发送 toast 通知 wpf，发送 toast 通知 winforms，发送 toast 通知 c #，发送通知 wpf，发送通知 c #，toast 通知 wpf，toast 通知 c#'
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fa6b23e775beee993051b23b828c59316ac1382
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: cb91a76db38623b533a925ea1df4728bc0fead78
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100295"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034470"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>从桌面 C# 应用发送本地 toast 通知
 
@@ -60,7 +60,7 @@ public class MyNotificationActivator : NotificationActivator
 
 #### <a name="msixsparse-packages"></a>[.MSIX/稀疏包](#tab/msix-sparse)
 
-如果你使用的是 [.msix](/windows/msix/desktop/source-code-overview) 或 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (或者如果你同时支持) ，请在 **appxmanifest.xml**中添加：
+如果你使用的是 [.msix](/windows/msix/desktop/source-code-overview) 或 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (或者如果你同时支持) ，请在 **appxmanifest.xml** 中添加：
 
 1. **xmlns:com** 声明
 2. **xmlns:desktop** 声明
@@ -162,7 +162,7 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 
 ## <a name="step-5-send-a-notification"></a>步骤5：发送通知
 
-发送通知与在 UWP 应用中的操作几乎相同，不同之处在于需使用 **DesktopNotificationManagerCompat** 类创建 **ToastNotifier**。 兼容库自动处理 .MSIX/稀疏包和经典桌面之间的差异，因此你无需分叉你的代码。 对于经典桌面，兼容库将缓存在调用 **RegisterAumidAndComServer** 时提供的 AUMID，因此无需担心何时提供或未提供 AUMID。
+发送通知与在 UWP 应用中的操作几乎相同，不同之处在于需使用 **DesktopNotificationManagerCompat** 类创建 **ToastNotifier** 。 兼容库自动处理 .MSIX/稀疏包和经典桌面之间的差异，因此你无需分叉你的代码。 对于经典桌面，兼容库将缓存在调用 **RegisterAumidAndComServer** 时提供的 AUMID，因此无需担心何时提供或未提供 AUMID。
 
 > [!NOTE]
 > 安装[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便能够按以下方式使用 C# 而非原始 XML 来构造通知。
@@ -315,12 +315,12 @@ protected override async void OnStartup(StartupEventArgs e)
 
 如果应用未运行：
 
-1. 使用“-ToastActivated”的**参数**调用 `App.xaml.cs` 中的 **OnStartup**
+1. 使用“-ToastActivated”的 **参数** 调用 `App.xaml.cs` 中的 **OnStartup**
 2. 调用 **NotificationActivator** 中的 **OnActivated**
 
 
 ### <a name="foreground-vs-background-activation"></a>前台与后台激活
-对于桌面应用，前台和后台激活的处理方式相同 - 即调用 COM 激活器。 是由应用的代码来决定是显示一个窗口，还是只执行一些操作后退出。 因此，在 toast 内容中指定**背景** **ActivationType**不会更改行为。
+对于桌面应用，前台和后台激活的处理方式相同 - 即调用 COM 激活器。 是由应用的代码来决定是显示一个窗口，还是只执行一些操作后退出。 因此，在 toast 内容中指定 **背景** **ActivationType** 不会更改行为。
 
 
 ## <a name="step-7-remove-and-manage-notifications"></a>步骤7：删除和管理通知
@@ -351,7 +351,7 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="known-issues"></a>已知问题
 
-**已修复：单击 toast 后焦点未移动至应用**：在内部版本 15063 和更早版本中，激活 COM 服务器时，前台权限未转移给应用程序。 因此，在尝试将应用移动到前台时，它只会闪现。 此前此问题没有任何解决方法。 我们在内部版本 16299 和更高版本中修复了此问题。
+**已修复：单击 toast 后焦点未移动至应用** ：在内部版本 15063 和更早版本中，激活 COM 服务器时，前台权限未转移给应用程序。 因此，在尝试将应用移动到前台时，它只会闪现。 此前此问题没有任何解决方法。 我们在内部版本 16299 和更高版本中修复了此问题。
 
 
 ## <a name="resources"></a>资源

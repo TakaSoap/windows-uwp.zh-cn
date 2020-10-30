@@ -1,5 +1,5 @@
 ---
-Description: 本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。
+description: 本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。
 title: 发送本地磁贴通知
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a8e3bee4a32c4a66ece5f486386340e9f9122f87
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6b93f9731fb9bf843ce9bb03bd8c6526546c4249
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156801"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034460"
 ---
 # <a name="send-a-local-tile-notification"></a>发送本地磁贴通知
  
@@ -24,7 +24,7 @@ ms.locfileid: "89156801"
 > [!NOTE] 
 >了解[创建自适应磁贴](create-adaptive-tiles.md)和[磁贴内容架构](../tiles-and-notifications/tile-schema.md)。
 
- 
+ 
 
 ## <a name="install-the-nuget-package"></a>安装 NuGet 包
 
@@ -36,7 +36,7 @@ ms.locfileid: "89156801"
 ## <a name="add-namespace-declarations"></a>添加命名空间声明
 
 
-若要访问磁贴 API，请包含 [**Windows.UI.Notifications**](/uwp/api/Windows.UI.Notifications) 命名空间。 我们还建议包含 **Microsoft.Toolkit.Uwp.Notifications** 命名空间，以便可以利用磁贴帮助程序 API（必须安装[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet 程序包才能访问这些 API）。
+若要访问磁贴 API，请包含 [**Windows.UI.Notifications**](/uwp/api/Windows.UI.Notifications) 命名空间。 我们还建议包含 **Microsoft.Toolkit.Uwp.Notifications** 命名空间，以便可以利用磁贴帮助程序 API（必须安装 [通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet 程序包才能访问这些 API）。
 
 ```csharp
 using Windows.UI.Notifications;
@@ -125,7 +125,7 @@ TileContent content = new TileContent()
 ## <a name="create-the-notification"></a>创建通知
 
 
-在拥有通知内容之后，你将需要创建一个新的 [**TileNotification**](/uwp/api/Windows.UI.Notifications.TileNotification)。 **TileNotification** 构造函数会采用一个 Windows 运行时 [**XmlDocument**](/uwp/api/windows.data.xml.dom.xmldocument) 对象，如果你使用的是[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，则可以通过 **TileContent.GetXml** 方法获取该对象。
+在拥有通知内容之后，你将需要创建一个新的 [**TileNotification**](/uwp/api/Windows.UI.Notifications.TileNotification)。 **TileNotification** 构造函数会采用一个 Windows 运行时 [**XmlDocument**](/uwp/api/windows.data.xml.dom.xmldocument) 对象，如果你使用的是 [通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，则可以通过 **TileContent.GetXml** 方法获取该对象。
 
 此代码示例会为新磁贴创建一个通知。
 
@@ -293,6 +293,6 @@ var notification = new TileNotification(doc);
 * [**Windows.UI.Notifications 命名空间**](/uwp/api/Windows.UI.Notifications)
 * [如何使用通知队列 (XAML)](/previous-versions/windows/apps/hh868234(v=win.10))
 * [传送通知](choosing-a-notification-delivery-method.md)
- 
+ 
 
- 
+ 

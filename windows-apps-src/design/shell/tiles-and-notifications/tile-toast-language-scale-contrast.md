@@ -1,17 +1,17 @@
 ---
-Description: 磁贴和 toast 可加载为显示语言、显示比例系数、高对比度和其他运行时上下文定制的字符串和图像。
+description: 磁贴和 toast 可加载为显示语言、显示比例系数、高对比度和其他运行时上下文定制的字符串和图像。
 title: 磁贴和 toast 通知的语言、比例和高对比度支持
 template: detail.hbs
 ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 88bcd5d6ce59d0561e76f46f6291f58ad03ddf3c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0048da25cd1e775391c2523e37cb936243b7308c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156731"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033110"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>磁贴和 toast 通知的语言、比例和高对比度支持
 
@@ -29,7 +29,7 @@ ms.locfileid: "89156731"
 <text id="1">ms-resource:Farewell</text>
 ```
 
-如果你省略 `ms-resource` URI 方案，则文本正文只是一个字符串参数，*不是*标识符引用。
+如果你省略 `ms-resource` URI 方案，则文本正文只是一个字符串参数， *不是* 标识符引用。
 
 ```xml
 <text id="1">Farewell</text>
@@ -66,7 +66,7 @@ ms.locfileid: "89156731"
 
 然后，在提供图像的应用服务中，实施检查和使用查询字符串确定要返回的图像的 HTTP 处理程序。
 
-你还需在[磁贴](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)或 [toast](/uwp/schemas/tiles/toastschema/schema-root?branch=live) 通知 XML 负载中将 [**addImageQuery**](/uwp/schemas/tiles/tilesschema/element-visual?branch=live) 属性设置为 `true`。 **AddImageQuery**属性显示在 `visual` `binding` `image` 磁贴和 toast 架构的、和元素中。 在元素上显式设置 **addImageQuery** 将覆盖在上级元素上设置的任何值。 例如，在 `image` 元素中为 `true` 的 **addImageQuery** 值覆盖在其父级 `binding` 元素中为 `false` 的 **addImageQuery**。
+你还需在 [磁贴](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)或 [toast](/uwp/schemas/tiles/toastschema/schema-root?branch=live) 通知 XML 负载中将 [**addImageQuery**](/uwp/schemas/tiles/tilesschema/element-visual?branch=live) 属性设置为 `true`。 **AddImageQuery** 属性显示在 `visual` `binding` `image` 磁贴和 toast 架构的、和元素中。 在元素上显式设置 **addImageQuery** 将覆盖在上级元素上设置的任何值。 例如，在 `image` 元素中为 `true` 的 **addImageQuery** 值覆盖在其父级 `binding` 元素中为 `false` 的 **addImageQuery** 。
 
 以下是你可以使用的查询字符串。
 

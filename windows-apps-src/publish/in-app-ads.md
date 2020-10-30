@@ -1,24 +1,24 @@
 ---
-Description: 如果你的应用程序使用 Microsoft Advertising SDK 显示广告，请使用合作伙伴中心的应用内广告页来管理广告的使用。
+description: 如果你的应用程序使用 Microsoft Advertising SDK 显示广告，请使用合作伙伴中心的应用内广告页来管理广告的使用。
 title: 应用内广告
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 724a9b6bc34d38a5addfd0e0123f26e1d98c9caf
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: c0951a26f0475d9565e783720263a6c6be9f2f08
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878590"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033930"
 ---
 # <a name="in-app-ads"></a>应用内广告
 
 >[!WARNING]
 > 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-使用合作伙伴中心的 "**盈利** &gt; **应用内广告**" 页来创建和管理的 ad 单位： [Partner Center](https://partner.microsoft.com/dashboard)
+使用合作伙伴中心的 " **盈利** &gt; **应用内广告** " 页来创建和管理的 ad 单位： [Partner Center](https://partner.microsoft.com/dashboard)
 
 * 使用 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 的通用 Windows 平台 (UWP) 应用。
 * 以前发布的 Windows 8.x 和 Windows Phone 使用 [适用于 windows 的 MICROSOFT ADVERTISING SDK 和 Windows Phone](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x)3.x 的应用。
@@ -34,32 +34,32 @@ ms.locfileid: "91878590"
 
 若要在你的应用中为[横幅广告](../monetize/banner-ads.md)、[间隙广告](../monetize/interstitial-ads.md)或[本机广告](../monetize/native-ads.md)创建广告单元，请执行以下操作：
 
-1.  在合作伙伴中心中转到 **盈利** &gt; **应用内广告** 页，并单击 " **创建 ad 单位**"。
-2.  在**应用名称**下拉列表中，选择将在其中使用广告单元的应用。
-3.  在**广告单元名称**字段中，输入广告单元的名称。 这可以是希望因报告目的而用来标识广告单元的任意描述性字符串。
-4.  在**广告单元类型**下拉列表中，选择广告类型。
+1.  在合作伙伴中心中转到 **盈利** &gt; **应用内广告** 页，并单击 " **创建 ad 单位** "。
+2.  在 **应用名称** 下拉列表中，选择将在其中使用广告单元的应用。
+3.  在 **广告单元名称** 字段中，输入广告单元的名称。 这可以是希望因报告目的而用来标识广告单元的任意描述性字符串。
+4.  在 **广告单元类型** 下拉列表中，选择广告类型。
 
-    * 如果在应用中显示横幅广告，请选择 " **横幅**"。
+    * 如果在应用中显示横幅广告，请选择 " **横幅** "。
     * 如果你在应用程序中显示插播式 video ad 或插播式横幅广告，请选择 " **视频插播式** " 或 " **横幅插播式** " (确保为要显示的插播式类型选择合适的选项) 。
-    * 如果在应用中显示本机广告，请选择 " **本机**"。
+    * 如果在应用中显示本机广告，请选择 " **本机** "。
 
-5. 在**设备系列**下拉框中，选择将在其中使用广告单元的应用所适用的设备系列。 可用选项包括：**UWP (Windows 10)**、**电脑/平板电脑 (Windows 8.1)** 或**移动设备 (Windows Phone 8.x)**。
+5. 在 **设备系列** 下拉框中，选择将在其中使用广告单元的应用所适用的设备系列。 可用选项包括： **UWP (Windows 10)** 、 **电脑/平板电脑 (Windows 8.1)** 或 **移动设备 (Windows Phone 8.x)** 。
 
 6. 根据需要配置以下其他设置：
 
-    * 如果你为广告单元选择 **UWP (Windows 10)** 设备系列，则可以选择为广告单元配置[中介设置](#mediation)。
-    * 如果你为横幅广告单元选择**电脑/平板电脑 (Windows 8.1)** 或**移动设备 (Windows Phone 8.x)** 设备系列，则可以选择 **Show community ads in your app** 以选择加入[社区广告](../monetize/index.md)。
+    * 如果你为广告单元选择 **UWP (Windows 10)** 设备系列，则可以选择为广告单元配置 [中介设置](#mediation)。
+    * 如果你为横幅广告单元选择 **电脑/平板电脑 (Windows 8.1)** 或 **移动设备 (Windows Phone 8.x)** 设备系列，则可以选择 **Show community ads in your app** 以选择加入 [社区广告](../monetize/index.md)。
 
 7.  如果还没有为所选的应用设置 COPPA 合规性，请在 [COPPA 合规性](#coppa)部分中选择一个选项。
-8.  单击**创建广告单元**。
+8.  单击 **创建广告单元** 。
 
-创建新的广告单元后，它将显示在**盈利** &gt; **应用内广告**页面内的可用广告单元表中。
+创建新的广告单元后，它将显示在 **盈利** &gt; **应用内广告** 页面内的可用广告单元表中。
 
 <span id="available-ad-units" />
 
 ## <a name="review-and-edit-ad-units"></a>查看和编辑广告单元
 
-在你的帐户中为一个或多个应用创建广告单元后，这些广告单元会显示在**盈利** &gt; **应用内广告**页面底部的表中。 此表显示每个广告单元的**应用程序 ID** 和**广告单元 ID** 以及其他信息。 若要在应用中显示广告，需要在你的代码中使用这些值。 有关详细信息，请参阅[在应用中设置广告单元](../monetize/set-up-ad-units-in-your-app.md)。
+在你的帐户中为一个或多个应用创建广告单元后，这些广告单元会显示在 **盈利** &gt; **应用内广告** 页面底部的表中。 此表显示每个广告单元的 **应用程序 ID** 和 **广告单元 ID** 以及其他信息。 若要在应用中显示广告，需要在你的代码中使用这些值。 有关详细信息，请参阅[在应用中设置广告单元](../monetize/set-up-ad-units-in-your-app.md)。
 
 * 如果你的应用显示[横幅广告](../monetize/banner-ads.md)，请将这些值分配给 [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 对象的 [ApplicationId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 和 [AdUnitId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 属性。
 * 如果你的应用显示[间隙广告](../monetize/interstitial-ads.md)，请将这些值传递给 [InterstitialAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 对象的 [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法。
@@ -73,7 +73,7 @@ ms.locfileid: "91878590"
 若要编辑 UWP 广告单元的[中介设置](#mediation)或此广告单元所用于的应用的 [COPPA 合规性](#coppa)，请单击广告单元的名称。
 
 > [!NOTE]
-> 如果 ad 单位在过去六个月没有活动，则会将其标记为 **非活动**，并最终从合作伙伴中心将其删除。 你可以使用筛选器来仅显示**活动**或**停用**广告单位。 如果看到你认为被不准确地标记为**停用**的任何广告单元，请[联系支持人员](https://developer.microsoft.com/windows/support)。
+> 如果 ad 单位在过去六个月没有活动，则会将其标记为 **非活动** ，并最终从合作伙伴中心将其删除。 你可以使用筛选器来仅显示 **活动** 或 **停用** 广告单位。 如果看到你认为被不准确地标记为 **停用** 的任何广告单元，请 [联系支持人员](https://developer.microsoft.com/windows/support)。
 
 <span id="mediation" />
 
@@ -90,20 +90,20 @@ ms.locfileid: "91878590"
 2. 在 " **应用程序内广告** " 页上，中转到 "采集到" " **设置** " 部分并配置设置。
 
     * 默认情况下，" **允许 Microsoft 优化我的设置** " 复选框处于选中状态。 我们建议你使用此选项。 此选项会使用机器学习算法自动为你的应用选择广告中介设置，以帮助最大化你在你的应用所支持的各市场中的广告收益。 使用此选项时，还可以选择要在配置中使用的 ad 网络。 取消选中不希望作为配置一部分的 ad 网络，我们的算法将确保你的应用仅从所选的 ad 网络接收广告。
-    * 如果要选择自己的 ad 中介设置，请选择 " **修改默认设置**"。
+    * 如果要选择自己的 ad 中介设置，请选择 " **修改默认设置** "。
 
     > [!NOTE]
-    > 本部分中的其余步骤仅适用于选择 **修改默认设置**的情况。
+    > 本部分中的其余步骤仅适用于选择 **修改默认设置** 的情况。
 
-3. 在**目标**下拉框中，选择**基线**为你的广告中介设置配置默认配置。 此默认配置将应用于除你在其中定义了市场特定配置之外的所有市场。
-4. 接下来，指定你希望在控件中显示的来自付费网络（针对广告印象向你支付收益）和其他广告网络（不针对广告印象向你支付收益）的广告的比例。 要执行此操作，请在**付费广告网络**和**其他广告网络**的**权重**字段中输入介于 0 至 100 之间的值。  
-5. 在**付费广告网络**部分中，针对要使用的每种[付费网络](#paid-networks)，选中**活动**列中的复选框，然后使用**排名**列中的箭头按名次为网络排序（这指定控件应使用每种网络的频率）。
-6. 如果选择了**横幅**或**横幅间隙**广告单元，也将看到一个**其他广告网络**部分。 此部分中的网络不会因广告曝光而为你挣取收益。 相反，这些网络显示来自应用促销市场活动等来源的广告。
+3. 在 **目标** 下拉框中，选择 **基线** 为你的广告中介设置配置默认配置。 此默认配置将应用于除你在其中定义了市场特定配置之外的所有市场。
+4. 接下来，指定你希望在控件中显示的来自付费网络（针对广告印象向你支付收益）和其他广告网络（不针对广告印象向你支付收益）的广告的比例。 要执行此操作，请在 **付费广告网络** 和 **其他广告网络** 的 **权重** 字段中输入介于 0 至 100 之间的值。  
+5. 在 **付费广告网络** 部分中，针对要使用的每种 [付费网络](#paid-networks)，选中 **活动** 列中的复选框，然后使用 **排名** 列中的箭头按名次为网络排序（这指定控件应使用每种网络的频率）。
+6. 如果选择了 **横幅** 或 **横幅间隙** 广告单元，也将看到一个 **其他广告网络** 部分。 此部分中的网络不会因广告曝光而为你挣取收益。 相反，这些网络显示来自应用促销市场活动等来源的广告。
 
-    在**其他广告网络**部分中，针对希望使用的每种[其他网络](#other-networks)，选中**活动**列中的复选框，然后使用**排名**列中的箭头按名次为网络排序（这指定控件应使用每种网络的频率）。 当前支持以下其他网络：
+    在 **其他广告网络** 部分中，针对希望使用的每种 [其他网络](#other-networks)，选中 **活动** 列中的复选框，然后使用 **排名** 列中的箭头按名次为网络排序（这指定控件应使用每种网络的频率）。 当前支持以下其他网络：
 
-7. 对于你想要为其替代默认中介配置的每个市场，请在**目标**下拉框中选择市场，然后更新广告网络选择和排名。
-8. 单击**创建广告单元**（如果你要创建新的广告单元）或**保存**（如果正在编辑现有广告单元）。
+7. 对于你想要为其替代默认中介配置的每个市场，请在 **目标** 下拉框中选择市场，然后更新广告网络选择和排名。
+8. 单击 **创建广告单元** （如果你要创建新的广告单元）或 **保存** （如果正在编辑现有广告单元）。
 
 <span id="paid-networks" />
 
@@ -113,7 +113,7 @@ ms.locfileid: "91878590"
 
 |  广告网络  |  说明  |  支持的广告类型  |
 |--------------|---------------|---------------------|
-| Oath 和 AppNexus |  这是一个 Microsoft 托管的 ad 网络，可通过我们的合作伙伴网络、Oath 和 AppNexus 提供广告。<p/>**注意**： Oath 和 AppNexus 在横幅广告单位的 " **付费广告网络** " 列表中始终排在第一位，并且不能更改为这些类型广告的更低排名。 | 横幅、视频间隙 |
+| Oath 和 AppNexus |  这是一个 Microsoft 托管的 ad 网络，可通过我们的合作伙伴网络、Oath 和 AppNexus 提供广告。<p/>**注意** ： Oath 和 AppNexus 在横幅广告单位的 " **付费广告网络** " 列表中始终排在第一位，并且不能更改为这些类型广告的更低排名。 | 横幅、视频间隙 |
 | AppNexus（直接） | 选择此选项以提供来自 [AppNexus](https://www.appnexus.com)的广告。 | 视频间隙、本机  |
 | Microsoft 应用安装广告 | 选择此选项以提供由 Windows 生态系统中[为其应用创建促销广告市场活动](../monetize/index.md)的其他开发人员创建的应用安装广告或应用重新参与广告。  |  横幅、横幅间隙、本机  |
 | MSN 内容建议 |  选择此选项以提供 MSN 内容建议的广告。 |  横幅、横幅间隙  |
@@ -156,11 +156,11 @@ ms.locfileid: "91878590"
 
 ## <a name="coppa-compliance"></a>COPPA 合规性
 
-当你[创建 ad 单元](#create-ad-unit)或[选择现有 ad 单元](#available-ad-units)时，如果为 ad 单元选择的应用至少具有一个在应用程序认证过程中在[存储步骤中](../publish/the-app-certification-process.md#in-the-store)达到的提交，则在页面底部会出现 " **COPPA 合规性**" 部分。
+当你 [创建 ad 单元](#create-ad-unit)或 [选择现有 ad 单元](#available-ad-units)时，如果为 ad 单元选择的应用至少具有一个在应用程序认证过程中在 [存储步骤中](../publish/the-app-certification-process.md#in-the-store)达到的提交，则在页面底部会出现 " **COPPA 合规性** " 部分。
 
-根据《儿童在线隐私保护法》（“COPPA”），如果你的应用面向 13 岁以下的儿童，则你必须在这个部分选择**此应用程序面向 13 岁以下的儿童**。 如果选择此选项，则 Microsoft 将采取措施以在向你的应用发送广告时禁用其行为广告服务。
+根据《儿童在线隐私保护法》（“COPPA”），如果你的应用面向 13 岁以下的儿童，则你必须在这个部分选择 **此应用程序面向 13 岁以下的儿童** 。 如果选择此选项，则 Microsoft 将采取措施以在向你的应用发送广告时禁用其行为广告服务。
 
-你选择的 **COPPA 合规性**设置将自动应用于所选应用的所有广告单元。
+你选择的 **COPPA 合规性** 设置将自动应用于所选应用的所有广告单元。
 
 > [!IMPORTANT]
 > 如果你的应用面向 13 岁以下的儿童，则你承担 COPPA 规定的某些义务。 有关你的义务的详细信息，请参阅[此页面](https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/childrens-online-privacy-protection-rule)。

@@ -1,21 +1,21 @@
 ---
-Description: 产品声明可帮助确保你的应用在 Microsoft Store 中正确显示，并向正确的客户提供。
+description: 产品声明可帮助确保你的应用在 Microsoft Store 中正确显示，并向正确的客户提供。
 title: 产品声明
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c4e8677a27128e6a33a844f5a887e921ca9ced3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3469992a73a4e90e25ce34883319343ad6986d75
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167361"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034610"
 ---
 # <a name="product-declarations"></a>产品声明
 
-[提交过程](app-submissions.md)的 "[属性](enter-app-properties.md)" 页的 "**产品声明**" 部分可帮助确保你的应用程序正确显示并向正确的客户提供，帮助他们了解他们如何使用你的应用程序。
+[提交过程](app-submissions.md)的 " [属性](enter-app-properties.md)" 页的 " **产品声明** " 部分可帮助确保你的应用程序正确显示并向正确的客户提供，帮助他们了解他们如何使用你的应用程序。
 
 以下各节介绍了一些声明以及在确定每个声明是否适用于你的应用程序时需要考虑的事项。 请注意，默认情况下会选中其中的两个声明 (如下所述。 ) 根据你的产品类别，你还可以看到其他声明。 确保查看所有声明，并确保它们准确反映您的提交。
 
@@ -40,7 +40,7 @@ ms.locfileid: "89167361"
 有关详细信息，请参阅[辅助功能](../design/accessibility/accessibility.md)、[辅助功能测试](../design/accessibility/accessibility-testing.md)和[应用商店中的辅助功能](../design/accessibility/accessibility-in-the-store.md)。
 
 > [!IMPORTANT]
-> 不要将您的应用程序列出为可访问，除非您出于此目的专门设计和测试。 如果将你的应用声明为辅助应用，但它实际上并不支持辅助功能，你可能会收到来自社区的负面反馈。
+> 不要将您的应用程序列出为可访问，除非您出于此目的专门设计和测试。 如果将你的应用声明为辅助应用，但它实际上并不支持辅助功能，你可能会收到来自社区的负面反馈。
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客户可以将此应用安装到备用驱动器或可移动存储。
 
@@ -62,8 +62,8 @@ ms.locfileid: "89167361"
 
 
 
- 
+ 
 
- 
+ 
 
- 
+ 

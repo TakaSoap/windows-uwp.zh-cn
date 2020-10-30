@@ -1,5 +1,5 @@
 ---
-Description: 通过适当设置日期、时间、数字、电话号码和货币的格式，设计全球通用的应用。 稍后即可调整应用，以适应全球市场中更多的文化、区域和语言。
+description: 通过适当设置日期、时间、数字、电话号码和货币的格式，设计全球通用的应用。 稍后即可调整应用，以适应全球市场中更多的文化、区域和语言。
 title: 全球化日期/时间/数字格式
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 798199269a4fd02eebef7dcd46cd5781ba561250
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 8c3bacbfbbe944cddfe014fcd34038ca9a56c36e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493422"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034340"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>全球化日期/时间/数字格式
 
@@ -24,7 +24,7 @@ ms.locfileid: "86493422"
 
 不同地区和文化使用不同的日期和时间格式。 它们包含在以下方面的使用惯例：日期中的日和月顺序、时间中的小时和分钟的分隔，甚至用作分隔符的标点符号。 此外，可以采用各种长格式（“星期三，2012 年 3 月 28 日”）或短格式（“12/3/28”）显示日期，这些格式因文化而异。 当然，星期中某天和年份中的某月的名称和缩写也因语言而异。
 
-可以预览用于不同语言的格式。 转到**Settings**  >  "设置" "**时间" & 语言**  >  **区域 & 语言**"，然后单击"**其他日期、时间、& 区域设置**  >  **更改日期、时间或数字格式**"。 在**格式**选项卡上，从**格式**下拉菜单中选择一种语言，并在**示例**中预览此格式。
+可以预览用于不同语言的格式。 转到 **Settings**  >  "设置" " **时间" & 语言**  >  **区域 & 语言** "，然后单击" **其他日期、时间、& 区域设置**  >  **更改日期、时间或数字格式** "。 在 **格式** 选项卡上，从 **格式** 下拉菜单中选择一种语言，并在 **示例** 中预览此格式。
 
 本主题使用术语“用户配置文件语言列表”、“应用清单语言列表”和“应用运行时语言列表”。 有关这些术语到底款意味着什么，以及如何访问其值的详细信息，请参阅[了解用户配置文件语言和应用清单语言](manage-language-and-region.md)。
 
@@ -32,7 +32,7 @@ ms.locfileid: "86493422"
 
 如果你需要允许用户选择日期或选择时间，请使用标准的[日历、日期和时间控件](../controls-and-patterns/date-and-time.md)。 它们将自动为应用运行时语言列表使用最佳日期和时间格式。
 
-如果你需要自行显示日期或时间，则可以使用 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 类。 默认情况下，**DateTimeFormatter** 将自动为应用运行时语言列表使用最佳日期和时间格式。 因此，以下代码针对该列表以最佳方式设置给定**日期时间**的格式。 例如，假设你的应用清单语言列表包括英语(美国)（默认语言）和德语(德国)。 如果当前日期为 2017 年 11 月 6 日，并且用户配置文件语言列表首先包含德语(德国)，则格式化程序将呈现“06.11.2017”。 如果用户配置文件语言列表首先包含英语(美国)（或既不包含英语，也不包含德语），则格式化程序将呈现“11/6/2017”（因为“en-US”匹配，或用作默认语言）。
+如果你需要自行显示日期或时间，则可以使用 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 类。 默认情况下， **DateTimeFormatter** 将自动为应用运行时语言列表使用最佳日期和时间格式。 因此，以下代码针对该列表以最佳方式设置给定 **日期时间** 的格式。 例如，假设你的应用清单语言列表包括英语(美国)（默认语言）和德语(德国)。 如果当前日期为 2017 年 11 月 6 日，并且用户配置文件语言列表首先包含德语(德国)，则格式化程序将呈现“06.11.2017”。 如果用户配置文件语言列表首先包含英语(美国)（或既不包含英语，也不包含德语），则格式化程序将呈现“11/6/2017”（因为“en-US”匹配，或用作默认语言）。
 
 ```csharp
     // Use the DateTimeFormatter class to display dates and times using basic formatters.
@@ -52,11 +52,11 @@ ms.locfileid: "86493422"
 可在你自己的电脑上按此操作测试以上代码。
 
 - 请确保同时针对“en-US”和“de-DE”限定了项目中的资源文件（请参阅[针对语言、缩放、高对比度和其他限定符定制资源](../../app-resources/tailor-resources-lang-scale-contrast.md)）。
-- 在 "**设置**时间" 中更改用户配置文件语言列表，  >  **& 语言**  >  **区域 & 语言**  >  **Languages**。 添加德语(德国)，使其成为默认语言，并再次运行代码。
+- 在 " **设置** 时间" 中更改用户配置文件语言列表，  >  **& 语言**  >  **区域 & 语言**  >  **Languages** 。 添加德语(德国)，使其成为默认语言，并再次运行代码。
 
 ## <a name="format-dates-and-times-for-the-user-profile-language-list"></a>设置用户配置文件语言列表的日期和时间格式
 
-请记住，默认情况下，**DateTimeFormatter** 匹配应用运行时语言列表。 这样，如果显示“日期为 &lt;date&gt;”等字符串，语言将匹配日期格式。
+请记住，默认情况下， **DateTimeFormatter** 匹配应用运行时语言列表。 这样，如果显示“日期为 &lt;date&gt;”等字符串，语言将匹配日期格式。
 
 如果无论出于何种原因想要仅根据用户配置文件语言列表设置日期和/或时间的格式，则可以使用类似于以下示例的代码执行此操作。 但如果执行了此操作，则将了解到，用户可以选择你的应用没有将字符串翻译为某种语言的语言。 例如，如果你的应用未本地化为德语(德国)，但用户将该语言作为其首选语言，则可能导致显示有争议的奇怪字符串，例如“日期为 06.11.2017”。
 
@@ -104,13 +104,13 @@ ms.locfileid: "86493422"
                     "Formatted Euro (fr-FR defaults): " + currencyValueEuroFR;
 ```
 
-可以通过在 "设置时间" 中更改国家或地区来测试上面的代码**Settings**  >  **& 语言**  >  **区域 & 语言**"  >  **国家或地区**"。 选择一个国家或地区（如冰岛），并再次运行代码。
+可以通过在 "设置时间" 中更改国家或地区来测试上面的代码 **Settings**  >  **& 语言**  >  **区域 & 语言** "  >  **国家或地区** "。 选择一个国家或地区（如冰岛），并再次运行代码。
 
 ## <a name="use-a-culturally-appropriate-calendar"></a>使用与文化相对应的日历
 
 日历因区域和语言而异。 并非每一个区域都使用公历作为默认日历。 某些区域的用户可能选择其他日历，例如日本历或伊斯兰历。 日历上的日期和时间还对不同的时区和夏令时敏感。
 
-为确保使用首选的日历格式，可使用标准的[日历、日期和时间控件](../controls-and-patterns/date-and-time.md)。 对于可能需要对日历日期直接操作的更加复杂的方案，**Windows.Globalization** 提供了一个 [**Calendar**](/uwp/api/windows.globalization.calendar?branch=live) 类，该类为给定的文化、区域和日历类型提供适当的日历表示。
+为确保使用首选的日历格式，可使用标准的[日历、日期和时间控件](../controls-and-patterns/date-and-time.md)。 对于可能需要对日历日期直接操作的更加复杂的方案， **Windows.Globalization** 提供了一个 [**Calendar**](/uwp/api/windows.globalization.calendar?branch=live) 类，该类为给定的文化、区域和日历类型提供适当的日历表示。
 
 ## <a name="format-phone-numbers-appropriately"></a>设置相应的电话号码
 
@@ -118,7 +118,7 @@ ms.locfileid: "86493422"
 
 [**PhoneNumberInfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) 可解析一串数字，并允许你：确定这些数字在当前区域中是否是有效的电话号码；比较两组数字是否相等；提取电话号码的不同功能部分，例如国家/地区代码或地理区域代码。
 
-[**PhoneNumberFormatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live)将数字字符串或**PhoneNumberInfo**的格式设置为显示，即使数字字符串表示部分电话号码也是如此。 你可以使用此部分号码格式设置，将号码设置为用户输入该号码时所示的格式。
+[**PhoneNumberFormatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) 将数字字符串或 **PhoneNumberInfo** 的格式设置为显示，即使数字字符串表示部分电话号码也是如此。 你可以使用此部分号码格式设置，将号码设置为用户输入该号码时所示的格式。
 
 下面的示例显示了如何使用 **PhoneNumberFormatter** 将电话号码设置为输入时所示的格式。 每当名为 phoneNumberInputTextBox 的 **TextBox** 中的文本发生更改时，文本框内容都会使用当前默认区域进行格式设置并显示在名为 phoneNumberOutputTextBlock 的 **TextBlock** 中。 出于演示目的，该字符串也使用新西兰区域进行格式设置，并显示在名为 phoneNumberOutputTextBlockNZ 的 TextBlock 中。
   
@@ -151,7 +151,7 @@ ms.locfileid: "86493422"
     }
 ```    
 
-可以通过在 "设置时间" 中更改国家或地区来测试上面的代码**Settings**  >  **& 语言**  >  **区域 & 语言**"  >  **国家或地区**"。 选择一个国家或地区（可能是新西兰，以便确认格式匹配），并再次运行代码。 对于测试数据，可以针对新西兰的商业电话号码进行 Web 搜索。
+可以通过在 "设置时间" 中更改国家或地区来测试上面的代码 **Settings**  >  **& 语言**  >  **区域 & 语言** "  >  **国家或地区** "。 选择一个国家或地区（可能是新西兰，以便确认格式匹配），并再次运行代码。 对于测试数据，可以针对新西兰的商业电话号码进行 Web 搜索。
 
 ## <a name="the-users-language-and-cultural-preferences"></a>用户的语言和文化首选项
 
@@ -161,7 +161,7 @@ ms.locfileid: "86493422"
 
 * [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [NumberFormatting](/uwp/api/windows.globalization.numberformatting?branch=live)
-* [日程表](/uwp/api/windows.globalization.calendar?branch=live)
+* [日历](/uwp/api/windows.globalization.calendar?branch=live)
 * [PhoneNumberFormatting](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
 * [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
 

@@ -1,5 +1,5 @@
 ---
-Description: 定期通知（也称为轮询通知）通过从云服务下载内容，以固定间隔更新磁贴和锁屏提醒。
+description: 定期通知（也称为轮询通知）通过从云服务下载内容，以固定间隔更新磁贴和锁屏提醒。
 title: 定期通知概述
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9936fd6b7210298bdce042b7848a75be8e044040
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5860c4e45a25b0d141e1b2c57421dd2640d5fbb4
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175501"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033780"
 ---
 # <a name="periodic-notification-overview"></a>定期通知概述
  
@@ -25,9 +25,9 @@ ms.locfileid: "89175501"
 
 定期通知让你的应用只需极少的云服务和客户端投资即可提供动态磁贴更新。 定期通知是向广泛受众分配相同内容的出色传递方法。
 
-**注意**   要了解详细信息，可以下载 Windows 8.1 的[推送和定期通知示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208))，然后在 Windows 10 应用中重复使用其源代码。
+**注意** 可以通过下载适用于 Windows 8.1 的 [推送和定期通知示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208))并在 Windows 10 应用中重复使用其源代码来了解详细信息。
 
- 
+ 
 
 ## <a name="how-it-works"></a>工作原理
 
@@ -106,4 +106,4 @@ ms.locfileid: "89175501"
 * [定期通知指南]()
 * [如何为锁屏提醒设置定期通知](/previous-versions/windows/apps/hh761476(v=win.10))
 * [如何为磁贴设置定期通知](/previous-versions/windows/apps/hh761476(v=win.10))
- 
+ 

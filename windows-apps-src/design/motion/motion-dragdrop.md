@@ -1,5 +1,5 @@
 ---
-Description: 当用户移动对象时，使用拖放动画，例如在列表中移动项目，或将项目放在其他列表顶部。
+description: 当用户移动对象时，使用拖放动画，例如在列表中移动项目，或将项目放在其他列表顶部。
 title: 拖动动画
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a51f60fdbc8d616bd4db360190c8e329e10709e8
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: acc193f0851e2f04113e33aa470e9aa784337921
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220160"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034280"
 ---
 # <a name="drag-animations"></a>拖动动画
 
@@ -22,7 +22,7 @@ ms.locfileid: "91220160"
 
 当用户移动对象时，使用拖放动画，例如在列表中移动项目，或将项目放在其他列表顶部。
 
-> **重要 API**：[**DragItemThemeAnimation 类**](/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
+> **重要 API** ： [**DragItemThemeAnimation 类**](/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -65,4 +65,4 @@ ms.locfileid: "91220160"
 * [**DragOverThemeAnimation 类**](/uwp/api/windows.ui.xaml.media.animation.dragoverthemeanimation)
 
 
- 
+ 

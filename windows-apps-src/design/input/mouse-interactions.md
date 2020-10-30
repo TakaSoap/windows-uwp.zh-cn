@@ -1,5 +1,5 @@
 ---
-Description: 通过处理用于触摸和笔输入的相同基本指针事件在应用中响应鼠标输入。
+description: 通过处理用于触摸和笔输入的相同基本指针事件在应用中响应鼠标输入。
 title: 鼠标交互
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
@@ -8,16 +8,16 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 84390e7b929412e4058c1a7e6507ff171344bd53
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: dfefda0e09159c398334ae77bc29dcd8fc3f628a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218930"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034720"
 ---
 # <a name="mouse-interactions"></a>鼠标交互
 
-为触摸输入优化 Windows 应用设计，并默认获取基本的鼠标支持。 
+为触摸输入优化 Windows 应用设计，并默认获取基本的鼠标支持。 
 
 ![鼠标](images/input-patterns/input-mouse.jpg)
 
@@ -59,10 +59,10 @@ ms.locfileid: "91218930"
 <td align="left"><p>右键单击以选定和进行命令操作</p></td>
 <td align="left"><p>右键单击以使用全局命令显示导航栏（如果有的话）与应用栏。 右键单击某个元素可将其选定并显示带有所选元素的上下文命令的应用栏。</p>
 <div class="alert">
-<strong>注意</strong>   右键单击以显示 "选择" 或 "应用栏" 命令不适合的 UI 行为，以显示上下文菜单。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
+<strong>注意</strong>  如果选择或应用栏命令不是适合的 UI 行为，右键单击可显示上下文菜单。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -86,7 +86,7 @@ ms.locfileid: "91218930"
 
 ## <a name="mouse-input-events"></a>鼠标输入事件
 
-大多数鼠标输入都可以通过所有 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 对象支持的常见路由输入事件进行处理。 其中包括：
+大多数鼠标输入都可以通过所有 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 对象支持的常见路由输入事件进行处理。 这些方法包括：
 
 - [**BringIntoViewRequested**](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](/uwp/api/windows.ui.xaml.uielement.characterreceived)

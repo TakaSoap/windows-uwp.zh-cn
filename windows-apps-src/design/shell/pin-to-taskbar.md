@@ -1,17 +1,17 @@
 ---
-Description: 你可以通过编程方式将应用固定到任务栏，并且可以检查它当前是否已固定。
+description: 你可以通过编程方式将应用固定到任务栏，并且可以检查它当前是否已固定。
 title: 将应用固定到任务栏
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 任务栏, 任务栏管理器, 固定到任务栏, 主要磁贴
 ms.localizationpriority: medium
-ms.openlocfilehash: e43dd7084c042b7480aa98c638f1fc5d216e64c7
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: fa33725447da80b5c3295455f12a3851228a2756
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636627"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034160"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>将应用固定到任务栏
 
@@ -20,20 +20,20 @@ ms.locfileid: "91636627"
 ![显示已固定应用程序的 Windows 10 任务栏屏幕截图。](images/taskbar/taskbar.png)
 
 > [!IMPORTANT]
-> **需要 Fall Creators Update**：目标必须为 SDK 16299，并且必须运行版本 16299 或更高版本才能使用任务栏 API。
+> **需要 Fall Creators Update** ：目标必须为 SDK 16299，并且必须运行版本 16299 或更高版本才能使用任务栏 API。
 
-> **重要的 API**：[TaskbarManager 类](/uwp/api/windows.ui.shell.taskbarmanager) 
+> **重要的 API** ： [TaskbarManager 类](/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
 ## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>应该何时请求用户将你的应用固定到任务栏？ 
 
 利用 [TaskbarManager 类](/uwp/api/windows.ui.shell.taskbarmanager)，你可以请求用户将你的应用固定到任务栏；用户必须批准该请求。 你尽了很大努力来构建一流的应用，现在你有机会请求用户将其固定到任务栏。 但在我们深入探讨代码之前，你在设计体验时需要牢记以下几点：
 
-* **务必**使用明确的“固定到任务栏”行动号召在应用中制作无干扰并且可轻松消除的 UX。 为此，请避免使用对话框和浮出控件。 
-* **务必**在要求用户固定应用前明确解释你的应用值。
-* 如果磁贴已经固定或设备不支持磁贴，**不要**请求用户固定应用。 （本文说明如何确定是否支持固定。）
-* **不要**反复要求用户固定你的应用（用户可能会生气）。
-* 没有显式用户交互或当你的应用最小化/未打开时**不要**调用固定 API。
+* **务必** 使用明确的“固定到任务栏”行动号召在应用中制作无干扰并且可轻松消除的 UX。 为此，请避免使用对话框和浮出控件。 
+* **务必** 在要求用户固定应用前明确解释你的应用值。
+* 如果磁贴已经固定或设备不支持磁贴， **不要** 请求用户固定应用。 （本文说明如何确定是否支持固定。）
+* **不要** 反复要求用户固定你的应用（用户可能会生气）。
+* 没有显式用户交互或当你的应用最小化/未打开时 **不要** 调用固定 API。
 
 
 ## <a name="1-check-whether-the-required-apis-exist"></a>1. 检查是否存在所需的 API

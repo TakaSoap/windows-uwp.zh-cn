@@ -1,5 +1,5 @@
 ---
-Description: 本文介绍了 \# \# 可提供磁贴和徽章更新和 toast 通知内容&"8212"、"本地"、"计划"、"定期" 和 "推送&8212" 的四个通知选项。
+description: 本文介绍了 \# \# 可提供磁贴和徽章更新和 toast 通知内容&"8212"、"本地"、"计划"、"定期" 和 "推送&8212" 的四个通知选项。
 title: 选择通知传递方法
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a7a929cb88e20cc47562ab4920fd0fc94304fae2
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f85918eb0c8f936cc5be393217cd47d66a8b7ff5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219150"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034000"
 ---
 # <a name="choose-a-notification-delivery-method"></a>选择通知传递方法
 
@@ -29,7 +29,7 @@ ms.locfileid: "91219150"
 
 -   本地
 -   **计划**
--   **定期**
+-   **中间**
 -   **推送**
 
 下表总结了通知传递类型。
@@ -92,7 +92,7 @@ ms.locfileid: "91219150"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="local-notifications"></a>本地通知
 
@@ -168,6 +168,6 @@ ms.locfileid: "91219150"
 * [定期通知概述](periodic-notification-overview.md)
 * [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
 * [GitHub 上的 Windows 应用通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
- 
+ 
 
- 
+ 

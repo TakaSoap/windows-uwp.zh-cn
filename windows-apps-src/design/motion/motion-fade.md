@@ -1,5 +1,5 @@
 ---
-Description: 使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。
+description: 使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。
 title: 淡化动画
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ae8afb291a2ba6012c55c2f22290f51b7eb76f0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 81e632a25398003daa1e73d82c23343f57fd3cd0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220150"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034220"
 ---
 # <a name="fade-animations"></a>淡化动画
 
@@ -21,7 +21,7 @@ ms.locfileid: "91220150"
 
 使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。
 
-> **重要 API**：[**FadeInThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)、[**FadeOutThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
+> **重要 API** ： [**FadeInThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)、 [**FadeOutThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -40,6 +40,6 @@ ms.locfileid: "91220150"
 * [**FadeInThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)
 * [**FadeOutThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 
- 
+ 
 
- 
+ 

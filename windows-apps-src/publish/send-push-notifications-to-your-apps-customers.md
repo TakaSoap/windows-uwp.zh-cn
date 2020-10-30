@@ -1,17 +1,17 @@
 ---
-Description: 了解如何向应用程序发送通知，以鼓励客户组采取措施，例如对应用进行评级或购买外接程序。
+description: 了解如何向应用程序发送通知，以鼓励客户组采取措施，例如对应用进行评级或购买外接程序。
 title: 将目标推送通知发送到应用客户
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 目标通知, 推送通知, toast, 磁贴
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
-ms.openlocfilehash: 1347b2e282aba4ace514054eea843ca379d21d2a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3233dcee13b103978e2aa85181c8aa8a54e0b55c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161911"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034590"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>向应用客户发送通知
 
@@ -36,7 +36,7 @@ ms.locfileid: "89161911"
 在高级别上，需要完成三件事才能使用通知与客户接洽。
 
 1. **注册应用以接收推送通知。** 为此，可以在应用中添加对 Microsoft Store Services SDK 的引用，然后添加几行代码，以在合作伙伴中心和应用之间注册通知通道。 我们将使用该通道向你的客户传递通知。 有关详细信息，请参阅[针对定向推送通知配置应用](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
-2. **确定目标客户。** 你可以向所有应用客户，或（对于为单个应用创建的通知）称为*段*的客户组发送通知，具体可以根据人口统计或收入条件来定义。 有关详细信息，请参阅[创建客户类别](create-customer-segments.md)。
+2. **确定目标客户。** 你可以向所有应用客户，或（对于为单个应用创建的通知）称为 *段* 的客户组发送通知，具体可以根据人口统计或收入条件来定义。 有关详细信息，请参阅[创建客户类别](create-customer-segments.md)。
 3. **创建通知内容并发送。** 例如，你可以创建鼓励新客户为应用评分的通知，或者发送促进购买加载项的特别优惠的通知。
 
 
@@ -47,30 +47,30 @@ ms.locfileid: "89161911"
 > [!NOTE]
 > 在应用可以接收来自合作伙伴中心的通知之前，必须先在应用程序中调用 [RegisterNotificationChannelAsync](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) 方法，以便注册应用程序以接收通知。 此方法在 [Microsoft Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK) 中可用。 有关如何调用此方法的详细信息以及代码示例，请参阅[针对定向推送通知配置应用](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 
-1. 在 " [合作伙伴中心](https://partner.microsoft.com/dashboard)" 中，展开 " **参与** " 部分，然后选择 " **通知**"。
-2. 在**通知**页上，选择**新通知**。
-3. 在 " **选择模板** " 部分，选择要发送 [的通知类型](#notification-template-types) ，然后单击 **"确定"**。
-4. 在下一页中，使用下拉菜单选择要为其生成通知的**单个应用**或**多个应用**。 您只能选择已 [配置为使用 Microsoft Store SERVICES SDK 接收通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)的应用程序。
-5. 在**通知设置**部分，选择通知**名称**，并选择通知发送目标的**客户组**（如果适用）。 （发送至多个应用的通知只能发送至这些应用的所有客户。）如果要使用你尚未创建的段，请选择**创建新客户组**。 请注意，新段 24 小时之后才可用作通知。 有关详细信息，请参阅[创建客户类别](create-customer-segments.md)。
-6. 如果你想要指定何时发送通知，清除**立即发送通知**复选框并选择特定的日期和时间（除非指定为使用每个客户的当地时区，否则所有客户均使用 UTC 时间）。
-7. 如果希望通知在某个时间点过期，请清除**通知永远不会过期**复选框，然后选择特定过期日期和时间（UTC 时间）。
-8. **面向单个应用的通知：** 如果要筛选收件人，以便通知仅发送给使用特定语言或位于特定时区的人员，请勾选**使用筛选器**复选框。 然后你可以指定想要使用的语言和/或时区选项。
+1. 在 " [合作伙伴中心](https://partner.microsoft.com/dashboard)" 中，展开 " **参与** " 部分，然后选择 " **通知** "。
+2. 在 **通知** 页上，选择 **新通知** 。
+3. 在 " **选择模板** " 部分，选择要发送 [的通知类型](#notification-template-types) ，然后单击 **"确定"** 。
+4. 在下一页中，使用下拉菜单选择要为其生成通知的 **单个应用** 或 **多个应用** 。 您只能选择已 [配置为使用 Microsoft Store SERVICES SDK 接收通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)的应用程序。
+5. 在 **通知设置** 部分，选择通知 **名称** ，并选择通知发送目标的 **客户组** （如果适用）。 （发送至多个应用的通知只能发送至这些应用的所有客户。）如果要使用你尚未创建的段，请选择 **创建新客户组** 。 请注意，新段 24 小时之后才可用作通知。 有关详细信息，请参阅[创建客户类别](create-customer-segments.md)。
+6. 如果你想要指定何时发送通知，清除 **立即发送通知** 复选框并选择特定的日期和时间（除非指定为使用每个客户的当地时区，否则所有客户均使用 UTC 时间）。
+7. 如果希望通知在某个时间点过期，请清除 **通知永远不会过期** 复选框，然后选择特定过期日期和时间（UTC 时间）。
+8. **面向单个应用的通知：** 如果要筛选收件人，以便通知仅发送给使用特定语言或位于特定时区的人员，请勾选 **使用筛选器** 复选框。 然后你可以指定想要使用的语言和/或时区选项。
 8. **面向多个应用的通知：** 指定仅将通知发送给每台设备上的最后一个活动应用（每个客户）还是发送给每台设备上的所有应用。
 10. 在 " **通知内容** " 部分的 " **语言** " 菜单中，选择要在其中显示通知的语言。 有关详细信息，请参阅[翻译通知](#translate-your-notifications)。
 11. 在 " **选项** " 部分中，输入文本并配置所需的任何其他选项。 如果首先使用的是模板，有些模板已默认提供，但可进行任何所需更改。
 
     可用选项各不相同，具体取决于所使用的通知类型。 一些选项为：
 
-    * **激活类型**（交互式 Toast 类型）。 您可以选择 **前景**、 **背景**或 **协议**。
-    * **启动**（交互式 Toast 类型）。 可选择使通知打开某个应用或网站。
-    * **跟踪应用启动率**（交互式 Toast 类型）。 如果想要测量通过每条通知与客户的交流程度，请选择此复选框。 有关详细信息，请参阅[测量通知性能](#measure-notification-performance)。
-    * **持续时间**（交互式 Toast 类型）。 您可以选择 " **短** " 或 " **长**"。
-    * **方案**（交互式 Toast 类型）。 你可以选择 " **默认**"、" **警报**"、" **提醒**" 或 " **传入呼叫**"。
-    * **基本 URI**（交互式 Toast 类型）。 有关详细信息，请参阅 [BaseUri](/uwp/api/windows.ui.xaml.frameworkelement.baseuri#Windows_UI_Xaml_FrameworkElement_BaseUri)。
-    * **添加图像查询**（交互式 Toast 类型）。 有关详细想信息，请参阅 [addImageQuery](/uwp/schemas/tiles/toastschema/element-visual#attributes-and-elements)。
-    * **视觉对象**。 图像、视频或声音。 有关详细信息，请参阅[视觉](/uwp/schemas/tiles/toastschema/element-visual)。
-    * **输入** /**操作** / (交互式 toast 类型) **选择**。 允许你让用户通过通知交互。 有关详细信息，请参阅 [自适应和交互式 toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)。
-    * **绑定**（交互式磁贴类型）。 Toast 模板。 有关详细信息，请参阅[绑定](/uwp/schemas/tiles/toastschema/element-binding)。
+    * **激活类型** （交互式 Toast 类型）。 您可以选择 **前景** 、 **背景** 或 **协议** 。
+    * **启动** （交互式 Toast 类型）。 可选择使通知打开某个应用或网站。
+    * **跟踪应用启动率** （交互式 Toast 类型）。 如果想要测量通过每条通知与客户的交流程度，请选择此复选框。 有关详细信息，请参阅[测量通知性能](#measure-notification-performance)。
+    * **持续时间** （交互式 Toast 类型）。 您可以选择 " **短** " 或 " **长** "。
+    * **方案** （交互式 Toast 类型）。 你可以选择 " **默认** "、" **警报** "、" **提醒** " 或 " **传入呼叫** "。
+    * **基本 URI** （交互式 Toast 类型）。 有关详细信息，请参阅 [BaseUri](/uwp/api/windows.ui.xaml.frameworkelement.baseuri#Windows_UI_Xaml_FrameworkElement_BaseUri)。
+    * **添加图像查询** （交互式 Toast 类型）。 有关详细想信息，请参阅 [addImageQuery](/uwp/schemas/tiles/toastschema/element-visual#attributes-and-elements)。
+    * **视觉对象** 。 图像、视频或声音。 有关详细信息，请参阅[视觉](/uwp/schemas/tiles/toastschema/element-visual)。
+    * **输入** /**操作** / (交互式 toast 类型) **选择** 。 允许你让用户通过通知交互。 有关详细信息，请参阅 [自适应和交互式 toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)。
+    * **绑定** （交互式磁贴类型）。 Toast 模板。 有关详细信息，请参阅[绑定](/uwp/schemas/tiles/toastschema/element-binding)。
 
     > [!TIP]
     > 请尝试使用[通知可视化工具](https://www.microsoft.com/store/apps/9nblggh5xsl1)应用设计并测试自适应磁贴和交互式 Toast 通知。
@@ -87,18 +87,18 @@ ms.locfileid: "89161911"
 -   **请求评分 (Toast)。** 请求客户为应用评分的 Toast 通知。 当客户选择此通知时，将显示应用的应用商店评分页面。
 -   **请求反馈 (Toast)。** 请求客户为应用提供反馈的 Toast 通知。 当客户选择此通知时，将显示应用的反馈中心页面。
     > [!NOTE]
-    > 如果选择此模板类型，则在**启动**框中，请记住使用应用实际的包系列名称 (PFN) 替换 {PACKAGE_FAMILY_NAME} 占位符值。 可以在应用[标识](view-app-identity-details.md)页面上找到应用的 PFN (**应用管理**  >  **应用标识**) 。
+    > 如果选择此模板类型，则在 **启动** 框中，请记住使用应用实际的包系列名称 (PFN) 替换 {PACKAGE_FAMILY_NAME} 占位符值。 可以在应用 [标识](view-app-identity-details.md)页面上找到应用的 PFN ( **应用管理**  >  **应用标识** ) 。
 
     ![反馈 Toast 启动框](images/push-notifications-feedback-toast-launch-box.png)
 
 -   **交叉推广 (Toast)。** 推广所选其他应用的 Toast 通知。 当客户选择此通知时，将显示其他应用的应用商店一览。
     > [!NOTE]
-    > 如果选择此模板类型，则在**启动**框中，请记住使用要交叉推广的商品的实际应用商店 ID 替换 **{要在此处推广的 ProductId}** 占位符值。 可以在 "应用[标识](view-app-identity-details.md)" 页上找到应用程序**管理**  >  **应用标识**) 的存储 ID (。
+    > 如果选择此模板类型，则在 **启动** 框中，请记住使用要交叉推广的商品的实际应用商店 ID 替换 **{要在此处推广的 ProductId}** 占位符值。 可以在 "应用 [标识](view-app-identity-details.md)" 页上找到应用程序 **管理**  >  **应用标识** ) 的存储 ID (。
 
     ![交叉推广 Toast 启动框](images/push-notifications-promote-toast-launch-box.png)
 
 -   **推广促销 (Toast)。** 用于宣布达成应用交易的 Toast 通知。 当客户选择此通知时，将显示应用的应用商店一览。
--   **更新提示 (Toast)。** 鼓励运行旧版应用的客户安装最新版本的 Toast 通知。 当客户选择此通知时，Microsoft Store 应用将启动，并显示**下载和更新**列表。 请注意，此模板仅用于单个应用，你无法针对特定的客户段或定义发送时间；我们始终会安排在 24 小时内发送此通知，并会尽最大努力覆盖尚未运行应用最新版本的所有用户。
+-   **更新提示 (Toast)。** 鼓励运行旧版应用的客户安装最新版本的 Toast 通知。 当客户选择此通知时，Microsoft Store 应用将启动，并显示 **下载和更新** 列表。 请注意，此模板仅用于单个应用，你无法针对特定的客户段或定义发送时间；我们始终会安排在 24 小时内发送此通知，并会尽最大努力覆盖尚未运行应用最新版本的所有用户。
 
 
 ## <a name="measure-notification-performance"></a>测量通知性能
@@ -108,7 +108,7 @@ ms.locfileid: "89161911"
 
 ### <a name="to-measure-notification-performance"></a>测量通知性能
 
-1.  创建通知时，请在**通知内容**部分中选中**跟踪应用启动率**复选框。
+1.  创建通知时，请在 **通知内容** 部分中选中 **跟踪应用启动率** 复选框。
 2.  在应用程序中，调用 [ParseArgumentsAndTrackAppLaunch](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) 方法，通知合作伙伴中心你的应用程序已启动，以响应目标通知。 此方法由 Microsoft Store Services SDK 提供。 有关如何调用此方法的详细信息，请参阅 [配置应用以接收合作伙伴中心通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 
 
@@ -118,19 +118,19 @@ ms.locfileid: "89161911"
 
 查看每个通知的详细数据：
 
-1.  在 "合作伙伴中心" 中，展开 " **参与** " 部分并选择 " **通知**"。
-2.  在现有通知的表中，选择 " **正在进行** " 或 " **已完成**"，然后查看 " **传递速率** " 和 " **应用启动率** " 列以查看每个通知的高级性能。
-3.  若要查看更详细的性能细节，请选择通知名称。 在**交货统计**部分，可以查看以下通知**状态**类型的**计数**和**百分比**信息：
-    * **失败**：由于某些原因，通知未发送。 这可能会在 Windows 通知服务发生问题时出现。
-    * **通道过期失败**：无法传递通知，因为应用与合作伙伴中心之间的通道已过期。 这可能会在客户长时间没有打开应用的情况下发生。
-    * **正在发送**：通知排在待发送队列中。
-    * **已发送**：通知已发送。
-    * **启动数**：通知已发送、客户已点击该通知，最后应用也打开。 请注意，这仅跟踪应用启动数。 此状态不包含邀请客户执行其他操作的通知，例如启动应用商店以留下评分。
-    * **未知**：我们无法确定此通知的状态。
+1.  在 "合作伙伴中心" 中，展开 " **参与** " 部分并选择 " **通知** "。
+2.  在现有通知的表中，选择 " **正在进行** " 或 " **已完成** "，然后查看 " **传递速率** " 和 " **应用启动率** " 列以查看每个通知的高级性能。
+3.  若要查看更详细的性能细节，请选择通知名称。 在 **交货统计** 部分，可以查看以下通知 **状态** 类型的 **计数** 和 **百分比** 信息：
+    * **失败** ：由于某些原因，通知未发送。 这可能会在 Windows 通知服务发生问题时出现。
+    * **通道过期失败** ：无法传递通知，因为应用与合作伙伴中心之间的通道已过期。 这可能会在客户长时间没有打开应用的情况下发生。
+    * **正在发送** ：通知排在待发送队列中。
+    * **已发送** ：通知已发送。
+    * **启动数** ：通知已发送、客户已点击该通知，最后应用也打开。 请注意，这仅跟踪应用启动数。 此状态不包含邀请客户执行其他操作的通知，例如启动应用商店以留下评分。
+    * **未知** ：我们无法确定此通知的状态。
 
 分析所有通知的用户活动数据：
 
-1.  在 "合作伙伴中心" 中，展开 " **参与** " 部分并选择 " **通知**"。
+1.  在 "合作伙伴中心" 中，展开 " **参与** " 部分并选择 " **通知** "。
 2.  在 " **通知** " 页上，单击 " **分析** " 选项卡。此选项卡显示以下数据：
     * Toast 和操作中心通知的各种用户操作状态的图形视图。
     * 用于 toast 和操作中心通知的点击率的世界地图视图。
@@ -140,8 +140,8 @@ ms.locfileid: "89161911"
 
 若要最大化发挥通知的影响力，请考虑将它们翻译为客户首选的语言。 合作伙伴中心通过利用 [Microsoft Translator](https://www.microsoft.com/translator/home.aspx) 服务的强大功能，让你可以轻松地自动翻译你的通知。
 
-1.  以默认语言编写通知后，请在 **) 的 "** **语言**" 菜单下选择 "**添加语言**" (。
-2.  在 " **添加语言** " 窗口中，选择希望通知出现在其中的其他语言，然后选择 " **更新**"。
+1.  以默认语言编写通知后，请在 **) 的 "** **语言** " 菜单下选择 " **添加语言** " (。
+2.  在 " **添加语言** " 窗口中，选择希望通知出现在其中的其他语言，然后选择 " **更新** "。
 你的通知将自动翻译为你在 " **添加语言** " 窗口中选择的语言，并将这些语言添加到 " **语言** " 菜单。
 3.  若要查看通知的翻译，请在 " **语言** " 菜单中选择刚添加的语言。
 

@@ -1,5 +1,5 @@
 ---
-Description: 了解如何在操作中心使用标题直观地对 toast 通知进行分组。
+description: 了解如何在操作中心使用标题直观地对 toast 通知进行分组。
 title: Toast 标题
 label: Toast headers
 template: detail.hbs
@@ -7,19 +7,19 @@ ms.date: 12/07/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, 标题, toast 标题, 通知, toast 分组, 操作中心
 ms.localizationpriority: medium
-ms.openlocfilehash: 95cd6083cf4430f25b1514a7e163d04892097903
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 1afc354b15b7c916426ca3c0a7130b777c21e0cf
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984473"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033070"
 ---
 # <a name="toast-headers"></a>Toast 标题
 
 通过在通知中使用 toast 标题，可在操作中心中直观地将相关通知进行归组。
 
 > [!IMPORTANT]
-> **需要桌面创意者更新和 1.4.0 的通知库**：必须运行桌面内部版本 15063 或更高版本才可查看 toast 标题。 必须使用版本 1.4.0 或更高版本的 [UWP 社区工具包通知 NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)来构造 toast 内容中的标题。 仅桌面设备支持标题。
+> **需要桌面创意者更新和 1.4.0 的通知库** ：必须运行桌面内部版本 15063 或更高版本才可查看 toast 标题。 必须使用版本 1.4.0 或更高版本的 [UWP 社区工具包通知 NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)来构造 toast 内容中的标题。 仅桌面设备支持标题。
 
 如下所示，这组对话统一在标题“野营！！”下。 对话中的每条单独消息都是一个独立的 toast 通知，它们具有相同的 toast 标题。
 
@@ -64,27 +64,27 @@ new ToastContentBuilder()
 总结...
 
 1. 向 **ToastContent** 添加 **Header**
-2. 指定所需的 **Id**、**Title** 和 **Arguments** 属性
+2. 指定所需的 **Id** 、 **Title** 和 **Arguments** 属性
 3. 发送通知（[了解详细信息](send-local-toast.md)）
-4. 在另一个通知上，使用相同的标题 **Id**，以将其统一到该标题下。 **Id** 是用于确定是否应对通知进行分组的唯一属性，也就是说 **Title** 和 **Arguments**可以不同。 会使用组内最新通知中的**Title** 和 **Arguments**。 如果该通知已删除，则使用其次最新通知中的 **Title** 和 **Arguments**。
+4. 在另一个通知上，使用相同的标题 **Id** ，以将其统一到该标题下。 **Id** 是用于确定是否应对通知进行分组的唯一属性，也就是说 **Title** 和 **Arguments** 可以不同。 会使用组内最新通知中的 **Title** 和 **Arguments** 。 如果该通知已删除，则使用其次最新通知中的 **Title** 和 **Arguments** 。
 
 
 ## <a name="handle-activation-from-a-header"></a>从标题中处理激活
 
 用户可以点击标题，以便用户可通过此操作获取应用中的更多信息。
 
-因此，应用可在标题上提供**参数**，类似于 toast 本身的启动参数。
+因此，应用可在标题上提供 **参数** ，类似于 toast 本身的启动参数。
 
-激活的处理方式与[常规 toast 激活](send-local-toast.md#step-4-handling-activation)相同，这意味着可以在 `App.xaml.cs` 的 **OnActivated** 方法中检索这些参数，就像用户单击 toast 主体或 toast 上的按钮时一样。
+激活的处理方式与 [常规 toast 激活](send-local-toast.md#step-4-handling-activation)相同，这意味着可以在 `App.xaml.cs` 的 **OnActivated** 方法中检索这些参数，就像用户单击 toast 主体或 toast 上的按钮时一样。
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs e)
 {
-    // Handle toast activation
-    if (e is ToastNotificationActivatedEventArgs)
-    {
+    // Handle toast activation
+    if (e is ToastNotificationActivatedEventArgs)
+    {
         // Arguments specified from the header
-        string arguments = (e as ToastNotificationActivatedEventArgs).Argument;
+        string arguments = (e as ToastNotificationActivatedEventArgs).Argument;
     }
 }
 ```

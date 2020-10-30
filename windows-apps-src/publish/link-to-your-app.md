@@ -1,17 +1,17 @@
 ---
-Description: 你可以通过链接到 Microsoft Store 中的应用列表来帮助客户发现你的应用。
+description: 你可以通过链接到 Microsoft Store 中的应用列表来帮助客户发现你的应用。
 title: 链接到你的应用
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 链接, windows 应用商店协议, 链接到应用
 ms.localizationpriority: medium
-ms.openlocfilehash: de22505cf42193932a5bbd951c983e02eea37bd7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 916f82714feb65e3d9d4db48703c831b8128021c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259989"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033910"
 ---
 # <a name="link-to-your-app"></a>链接到你的应用
 
@@ -20,7 +20,7 @@ ms.locfileid: "74259989"
 
 ## <a name="getting-the-link-to-your-apps-store-listing"></a>获取指向你的应用的应用商店一览的链接
 
-若要获取有关应用的应用商店一览的 URL，请导航至应用的[应用管理](view-app-identity-details.md)部分的**应用标识**页。 URL 的格式为 **`https://www.microsoft.com/store/apps/<your app's Store ID>`** 。
+若要获取有关应用的应用商店一览的 URL，请导航至应用的 **应用管理** 部分的 [应用标识](view-app-identity-details.md)页。 URL 的格式为 **`https://www.microsoft.com/store/apps/<your app's Store ID>`** 。
 
 当客户单击此链接时，它将打开基于 Web 的应用一览页。 在 Windows 设备上，应用商店应用还将启动并显示应用一览。
 
@@ -29,10 +29,10 @@ ms.locfileid: "74259989"
 
 你可以使用自定义徽章直接链接到应用的列表，让客户知道你的应用处于 Microsoft Store。
 
-若要创建徽章，请访问[Microsoft Store 徽章](https://developer.microsoft.com/store/badges)页面。 需要具有 12 个字符的应用的**应用商店 ID**才能生成锁屏提醒和链接。 可以在**应用管理**部分的[应用标识](view-app-identity-details.md)页查找应用的**应用商店 ID**。
+若要创建徽章，请访问 [Microsoft Store 徽章](https://developer.microsoft.com/store/badges) 页面。 需要具有 12 个字符的应用的 **应用商店 ID** 才能生成锁屏提醒和链接。 可以在 **应用管理** 部分的 [应用标识](view-app-identity-details.md)页查找应用的 **应用商店 ID** 。
 
 > [!NOTE]
-> 有关使用 Microsoft Store 徽章的信息和要求，请参阅[应用市场营销指导原则](app-marketing-guidelines.md)。
+> 有关使用 Microsoft Store 徽章的信息和要求，请参阅 [应用市场营销指导原则](app-marketing-guidelines.md) 。
 
 
 ## <a name="linking-directly-to-your-app-in-the-microsoft-store"></a>直接链接到 Microsoft Store 中的应用
@@ -45,11 +45,11 @@ ms.locfileid: "74259989"
 
 `ms-windows-store://pdp/?ProductId=`
 
-有关使用 Microsoft Store 协议的详细信息，请参阅[启动 Microsoft 应用](../launch-resume/launch-store-app.md)。
+有关使用 Microsoft Store 协议的详细信息，请参阅 [启动 Microsoft 应用](../launch-resume/launch-store-app.md)。
 
- 
+ 
 
- 
+ 
 
 
 

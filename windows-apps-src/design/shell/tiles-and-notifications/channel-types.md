@@ -1,16 +1,16 @@
 ---
-Description: Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 有许多种发送通知的方法，具体取决于应用程序的需要
+description: Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 有许多种发送通知的方法，具体取决于应用程序的需要
 title: 选择正确的推送通知通道类型
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 326012a38f2d4a8cd7d5c406c160db5168c9877d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 31cf9246276920638db113f27d83ab9969cdecc6
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219220"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034080"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>选择正确的推送通知通道类型
 
@@ -20,9 +20,9 @@ ms.locfileid: "91219220"
 
 ## <a name="types-of-push-channels"></a>推送通道的类型 
 
-有三种类型的推送通道可用于将通知发送到 Windows 应用。 它们分别是： 
+有三种类型的推送通道可用于将通知发送到 Windows 应用。 它们具有以下特点： 
 
-[主要通道](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) -“传统”推送通道。 应用商店中的任何应用均可使用来发送 toast、磁贴、原始或徽章通知。 [在此处了解详细信息](windows-push-notification-services--wns--overview.md)。
+[主要通道](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) -“传统”推送通道。 应用商店中的任何应用均可使用来发送 toast、磁贴、原始或徽章通知。 [在此处了解更多信息](windows-push-notification-services--wns--overview.md)。
 
 [辅助磁贴通道](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) -用于将磁贴更新推送到辅助磁贴。 仅用于将磁贴或锁屏提醒通知发送到固定在用户“开始”屏幕上的辅助磁贴
 

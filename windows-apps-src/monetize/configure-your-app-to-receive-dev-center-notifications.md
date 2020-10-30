@@ -1,17 +1,17 @@
 ---
-Description: 了解如何注册 UWP 应用以接收从合作伙伴中心发送的推送通知。
+description: 了解如何注册 UWP 应用以接收从合作伙伴中心发送的推送通知。
 title: 针对定向推送通知配置应用
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10、uwp、Microsoft Store Services SDK、目标推送通知、合作伙伴中心
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
-ms.openlocfilehash: abb901c1b067dcf3609cbfb5c4cf3f81c9dc465c
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 2296ae29ddcfd868e31c294f8859d4f4b925fca8
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364130"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033530"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>针对定向推送通知配置应用
 
@@ -25,9 +25,9 @@ ms.locfileid: "89364130"
 
 1. 如果先前尚未这样做，请在开发计算机上[安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。 
 2. 在 Visual Studio 中打开项目。
-3. 在解决方案资源管理器中，右键单击项目的 " **引用** " 节点，然后单击 " **添加引用**"。
-4. 在 **引用管理器**中，展开 " **通用 Windows** "，然后单击 " **扩展**"。
-5. 在 Sdk 列表中，单击 " **Microsoft Engagement 框架** " 旁边的复选框，然后单击 **"确定"**。
+3. 在解决方案资源管理器中，右键单击项目的 " **引用** " 节点，然后单击 " **添加引用** "。
+4. 在 **引用管理器** 中，展开 " **通用 Windows** "，然后单击 " **扩展** "。
+5. 在 Sdk 列表中，单击 " **Microsoft Engagement 框架** " 旁边的复选框，然后单击 **"确定"** 。
 
 ## <a name="register-for-push-notifications"></a>注册推送通知
 
@@ -83,7 +83,7 @@ ms.locfileid: "89364130"
 
   :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/App.xaml.cs" id="OnActivated":::
 
-* 如果推送通知中含有后台激活类型，请从[后台任务](../launch-resume/support-your-app-with-background-tasks.md)的 [Run](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法中调用此方法，然后传递在向此方法传递的 [ToastNotificationActionTriggerDetail](/uwp/api/Windows.UI.Notifications.ToastNotificationActionTriggerDetail) 对象中可用的参数。 以下代码示例假设你的代码文件中已有 **Microsoft.Services.Store.Engagement**、**Windows.ApplicationModel.Background** 和 **Windows.UI.Notifications** 命名空间的 **using** 语句。
+* 如果推送通知中含有后台激活类型，请从[后台任务](../launch-resume/support-your-app-with-background-tasks.md)的 [Run](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法中调用此方法，然后传递在向此方法传递的 [ToastNotificationActionTriggerDetail](/uwp/api/Windows.UI.Notifications.ToastNotificationActionTriggerDetail) 对象中可用的参数。 以下代码示例假设你的代码文件中已有 **Microsoft.Services.Store.Engagement** 、 **Windows.ApplicationModel.Background** 和 **Windows.UI.Notifications** 命名空间的 **using** 语句。
 
   :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="Run":::
 
@@ -95,7 +95,7 @@ ms.locfileid: "89364130"
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="UnregisterNotificationChannelAsync":::
 
-请注意，此方法会使用于通知的通道失效，因此该应用不再从*任何*服务接收推送通知。 关闭后，不能再对任何服务使用该通道，包括合作伙伴中心提供的目标推送通知以及使用 WNS 的其他通知。 若要恢复向此应用发送推送通知，该应用必须请求新的通道。
+请注意，此方法会使用于通知的通道失效，因此该应用不再从 *任何* 服务接收推送通知。 关闭后，不能再对任何服务使用该通道，包括合作伙伴中心提供的目标推送通知以及使用 WNS 的其他通知。 若要恢复向此应用发送推送通知，该应用必须请求新的通道。
 
 ## <a name="related-topics"></a>相关主题
 

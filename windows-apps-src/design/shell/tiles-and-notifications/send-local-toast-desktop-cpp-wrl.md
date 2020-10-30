@@ -1,5 +1,5 @@
 ---
-Description: 了解 Win32 c + + WRL 应用如何可以发送本地 toast 通知并处理用户单击 toast 的操作。
+description: 了解 Win32 c + + WRL 应用如何可以发送本地 toast 通知并处理用户单击 toast 的操作。
 title: 从 Win32 c + + WRL 应用发送本地 toast 通知
 label: Send a local toast notification from Win32 C++ WRL apps
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10，uwp，win32，桌面，toast 通知，发送 toast，发送本地 toast，desktop bridge，.msix，稀疏包，c + +，cpp，cplusplus，WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: e1e8aedd867dfdcabd382ebde1dd4c96a94d1001
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 1913eef17ac768b8d7e1f047ac318da9aa1b2925
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100315"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034490"
 ---
 # <a name="send-a-local-toast-notification-from-win32-c-wrl-apps"></a>从 Win32 c + + WRL 应用发送本地 toast 通知
 
@@ -26,16 +26,16 @@ Win32 应用 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview
 
 如果尚未对 Win32 应用启用 Windows 10 SDK，必须先执行该操作。 下面是几个关键步骤...
 
-1. 将 `runtimeobject.lib` 添加到**其他依赖项**
+1. 将 `runtimeobject.lib` 添加到 **其他依赖项**
 2. 以 Windows 10 SDK 为目标
 
-右键单击项目，选择**属性**。
+右键单击项目，选择 **属性** 。
 
-在顶部**配置**菜单中，选择**全部配置**，以便将以下更改同时应用到“调试”和“发布”。
+在顶部 **配置** 菜单中，选择 **全部配置** ，以便将以下更改同时应用到“调试”和“发布”。
 
-在**链接器 -> 输入**下，将 `runtimeobject.lib` 添加到**其他依赖项**。
+在 **链接器 -> 输入** 下，将 `runtimeobject.lib` 添加到 **其他依赖项** 。
 
-然后在**常规**下，确保将 **Windows SDK 版本**设置为 10.0 或更高版本（而非 Windows 8.1）。
+然后在 **常规** 下，确保将 **Windows SDK 版本** 设置为 10.0 或更高版本（而非 Windows 8.1）。
 
 
 ## <a name="step-2-copy-compat-library-code"></a>步骤 2：复制兼容库代码
@@ -94,13 +94,13 @@ CoCreatableClass(NotificationActivator);
 
 ### <a name="msixsparse-package"></a>.MSIX/稀疏包
 
-如果你使用的是 [.msix](/windows/msix/desktop/source-code-overview) 或 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (或者如果你同时支持) ，请在 **appxmanifest.xml**中添加：
+如果你使用的是 [.msix](/windows/msix/desktop/source-code-overview) 或 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (或者如果你同时支持) ，请在 **appxmanifest.xml** 中添加：
 
 1. **xmlns:com** 声明
 2. **xmlns:desktop** 声明
 3. 在 **IgnorableNamespaces** 属性中，添加 **com** 和 **desktop**
-4. 使用步骤 4 中 GUID 的 COM 激活器的 **com:Extension**。 务必包括 `Arguments="-ToastActivated"`，以便了解是从 toast 启动
-5. **windows.toastNotificationActivation** 的 **desktop:Extension**，用于声明 toast 激活器 CLSID（步骤 #4 中的 GUID）。
+4. 使用步骤 4 中 GUID 的 COM 激活器的 **com:Extension** 。 务必包括 `Arguments="-ToastActivated"`，以便了解是从 toast 启动
+5. **windows.toastNotificationActivation** 的 **desktop:Extension** ，用于声明 toast 激活器 CLSID（步骤 #4 中的 GUID）。
 
 **Package.appxmanifest**
 
@@ -193,7 +193,7 @@ hr = DesktopNotificationManagerCompat::RegisterActivator();
 
 ## <a name="step-7-send-a-notification"></a>步骤 7：发送通知
 
-发送通知与在 UWP 应用中的操作几乎相同，不同之处在于需使用 **DesktopNotificationManagerCompat** 创建 **ToastNotifier**。 兼容库自动处理 .MSIX/稀疏包和经典 Win32 之间的差异，因此你无需分叉你的代码。 对于经典 Win32，兼容库会缓存调用 **RegisterAumidAndComServer** 时提供的 AUMID，因此无需担心何时提供或不提供 AUMID 的问题。
+发送通知与在 UWP 应用中的操作几乎相同，不同之处在于需使用 **DesktopNotificationManagerCompat** 创建 **ToastNotifier** 。 兼容库自动处理 .MSIX/稀疏包和经典 Win32 之间的差异，因此你无需分叉你的代码。 对于经典 Win32，兼容库会缓存调用 **RegisterAumidAndComServer** 时提供的 AUMID，因此无需担心何时提供或不提供 AUMID 的问题。
 
 确保按以下所示使用 **ToastGeneric** 绑定，因为旧版 Windows 8.1 toast 通知模板不会激活在步骤 4 中创建的 COM 通知激活器。
 
@@ -372,12 +372,12 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR cm
 
 
 ### <a name="foreground-vs-background-activation"></a>前台与后台激活
-对于 Win32 应用程序，前台和后台激活的处理方式相同-将调用你的 COM 激活器。 是由应用的代码来决定是显示一个窗口，还是只执行一些操作后退出。 因此，在 toast 内容中指定**后台**的 **activationType** 不会改变相应行为。
+对于 Win32 应用程序，前台和后台激活的处理方式相同-将调用你的 COM 激活器。 是由应用的代码来决定是显示一个窗口，还是只执行一些操作后退出。 因此，在 toast 内容中指定 **后台** 的 **activationType** 不会改变相应行为。
 
 
 ## <a name="step-9-remove-and-manage-notifications"></a>步骤 9：删除和管理通知
 
-删除和管理通知与 UWP 应用中的操作相同。 但是，建议使用兼容库来获取 **DesktopNotificationHistoryCompat**，这样如果使用经典 Win32，便无需担心提供 AUMID 的问题。
+删除和管理通知与 UWP 应用中的操作相同。 但是，建议使用兼容库来获取 **DesktopNotificationHistoryCompat** ，这样如果使用经典 Win32，便无需担心提供 AUMID 的问题。
 
 ```cpp
 std::unique_ptr<DesktopNotificationHistoryCompat> history;
@@ -409,7 +409,7 @@ if (SUCCEEDED(hr))
 
 如果在 `HRESULT 0x8000000e A method was called at an unexpected time.` 调用兼容 api 时收到，这可能意味着你无法调用所需的寄存器方法 (或者如果是 .msix/稀疏包应用，则当前未在 .msix/稀疏上下文) 下运行你的应用。
 
-如果收到大量 `unresolved external symbol` 编译错误，则很可能是因为忘记在步骤 1 中将 `runtimeobject.lib` 添加到**其他依赖项**中（或者只将其添加到“调试”配置而未添加到“发布”配置）。
+如果收到大量 `unresolved external symbol` 编译错误，则很可能是因为忘记在步骤 1 中将 `runtimeobject.lib` 添加到 **其他依赖项** 中（或者只将其添加到“调试”配置而未添加到“发布”配置）。
 
 
 ## <a name="handling-older-versions-of-windows"></a>处理旧版 Windows
@@ -418,7 +418,7 @@ if (SUCCEEDED(hr))
 
 Windows 8 引入了 toast 通知，但使用的是[旧版 toast 模板](/previous-versions/windows/apps/hh761494(v=win.10))，如 ToastText01。 激活由 **ToastNotification** 类上的内存中 **Activated** 事件处理，因为 toast 只会短暂弹出而不会持久存在。 Windows 10 引入了[交互式 ToastGeneric toast](adaptive-interactive-toasts.md)，还引入了操作中心，通知可在操作中心内保留数天。 要引入操作中心，则需要引入 COM 激活器，这样 toast 才能在创建数天后被激活。
 
-| 操作系统 | ToastGeneric | COM 激活器 | 旧版 toast 模板 |
+| OS | ToastGeneric | COM 激活器 | 旧版 toast 模板 |
 | -- | ------------ | ------------- | ---------------------- |
 | Windows 10 | 支持 | 支持 | 支持（但不会激活 COM 服务器） |
 | Windows 8.1/8 | 空值 | 空值 | 支持 |
@@ -438,7 +438,7 @@ if (IsWindows10OrGreater())
 
 ## <a name="known-issues"></a>已知问题
 
-**已修复：单击 toast 后焦点未移动至应用**：在内部版本 15063 和更早版本中，激活 COM 服务器时，前台权限未转移给应用程序。 因此，在尝试将应用移动到前台时，它只会闪现。 此前此问题没有任何解决方法。 我们在内部版本 16299 和更高版本中修复了此问题。
+**已修复：单击 toast 后焦点未移动至应用** ：在内部版本 15063 和更早版本中，激活 COM 服务器时，前台权限未转移给应用程序。 因此，在尝试将应用移动到前台时，它只会闪现。 此前此问题没有任何解决方法。 我们在内部版本 16299 和更高版本中修复了此问题。
 
 
 ## <a name="resources"></a>资源

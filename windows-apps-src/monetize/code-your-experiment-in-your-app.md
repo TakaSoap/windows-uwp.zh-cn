@@ -1,24 +1,24 @@
 ---
-Description: 若要在具有 A/B 测试的通用 Windows 平台 (UWP) 应用中运行实验，必须在你的应用中为实验编码。
+description: 若要在具有 A/B 测试的通用 Windows 平台 (UWP) 应用中运行实验，必须在你的应用中为实验编码。
 title: 针对实验为你的应用编码
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
-ms.openlocfilehash: dbdd95ab0d4ecde5fbe5cfb8d84d2d328b4c5a24
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: a5229be4d0ea2ce98ec10530458fe29af10fa7f0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363660"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033600"
 ---
 # <a name="code-your-app-for-experimentation"></a>针对实验为你的应用编码
 
 在 [合作伙伴中心创建项目和定义远程变量](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)后，便可以将通用 WINDOWS 平台 (UWP) 应用中的代码更新为：
 * 从合作伙伴中心接收远程变量值。
 * 使用远程变量为你的用户配置应用体验。
-* 将事件记录到合作伙伴中心，用于指示用户查看实验并执行了所需操作 (也称为 *转换*) 。
+* 将事件记录到合作伙伴中心，用于指示用户查看实验并执行了所需操作 (也称为 *转换* ) 。
 
 若要向你的应用添加此行为，请使用 Microsoft Store Services SDK 所提供的 API。
 
@@ -33,9 +33,9 @@ ms.locfileid: "89363660"
 
 1. [安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。
 2. 在 Visual Studio 中打开项目。
-3. 在“解决方案资源管理器”中，展开项目节点、右键单击 **“引用”**，然后选择 **“添加引用”**。
-3. 在 **引用管理器**中，展开 " **通用 Windows** "，然后单击 " **扩展**"。
-4. 在 Sdk 列表中，选中 " **Microsoft Engagement 框架** " 旁边的复选框，然后单击 **"确定"**。
+3. 在“解决方案资源管理器”中，展开项目节点、右键单击 **“引用”** ，然后选择 **“添加引用”** 。
+3. 在 **引用管理器** 中，展开 " **通用 Windows** "，然后单击 " **扩展** "。
+4. 在 Sdk 列表中，选中 " **Microsoft Engagement 框架** " 旁边的复选框，然后单击 **"确定"** 。
 
 > [!NOTE]
 > 本文中的代码示例假设代码文件中已有 **System.Threading.Tasks** 和 **Microsoft.Services.Store.Engagement** 命名空间的 **using** 语句。

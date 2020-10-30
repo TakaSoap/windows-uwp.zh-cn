@@ -1,5 +1,5 @@
 ---
-Description: 基于边缘的动画显示或隐藏源自屏幕边缘的 UI。
+description: 基于边缘的动画显示或隐藏源自屏幕边缘的 UI。
 title: 基于边缘的 UI 动画
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b36f609308d559f5f0cbb56c90420f2381fb8e53
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a49277a82a3bfffffb478496ab01d353c169463f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220170"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034230"
 ---
 # <a name="edge-based-ui-animations"></a>基于边缘的 UI 动画
 
@@ -23,7 +23,7 @@ ms.locfileid: "91220170"
 
 基于边缘的动画显示或隐藏源自屏幕边缘的 UI。 显示和隐藏动画可以由用户或应用启动。 此 UI 可以覆盖应用，也可以作为主屏表面的一部分。 如果此 UI 是应用图面的一部分，那么应用的其余部分可能需要相应调整大小。
 
-> **重要 API**：[**EdgeUIThemeTransition 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+> **重要 API** ： [**EdgeUIThemeTransition 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -53,6 +53,6 @@ ms.locfileid: "91220170"
 * [创建淡化动画](/previous-versions/windows/apps/jj649429(v=win.10))
 * [创建重新定位动画](/previous-versions/windows/apps/jj649434(v=win.10))
 
- 
+ 
 
- 
+ 

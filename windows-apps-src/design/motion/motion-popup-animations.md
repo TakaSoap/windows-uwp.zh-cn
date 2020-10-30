@@ -1,5 +1,5 @@
 ---
-Description: 使用弹出动画显示和隐藏浮出控件或自定义弹出 UI 元素的弹出 UI。 弹出元素是显示在应用内容上方的容器，并且将在用户点击或单击弹出元素外部时取消。
+description: 使用弹出动画显示和隐藏浮出控件或自定义弹出 UI 元素的弹出 UI。 弹出元素是显示在应用内容上方的容器，并且将在用户点击或单击弹出元素外部时取消。
 title: 弹出 UI 动画
 ms.assetid: 4E9025CE-FC90-4d4c-9DE6-EC6B6F2AD9DF
 label: Motion--Pop-up animations
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d605378e802f28015734da4c35a22f41adfc185
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5d09363d6ecd2eb5909c98da316c7c1395ebec03
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217731"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034120"
 ---
 # <a name="pop-up-ui-animations"></a>弹出 UI 动画
 
@@ -21,7 +21,7 @@ ms.locfileid: "91217731"
 
 使用弹出动画显示和隐藏浮出控件或自定义弹出 UI 元素的弹出 UI。 弹出元素是显示在应用内容上方的容器，并且将在用户点击或单击弹出元素外部时取消。
 
-> **重要 API**：[**PopInThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation)、[**PopupThemeTransition 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
+> **重要 API** ： [**PopInThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation)、 [**PopupThemeTransition 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -40,6 +40,6 @@ ms.locfileid: "91217731"
 * [**PopOutThemeAnimation 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation)
 * [**PopupThemeTransition 类**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
 
- 
+ 
 
- 
+ 

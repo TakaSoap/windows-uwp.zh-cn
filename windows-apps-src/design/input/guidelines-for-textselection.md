@@ -1,5 +1,5 @@
 ---
-Description: 本主题介绍了用于选择和操作文本、图像和控件的新 Windows UI，并提供了在 Windows 应用中使用这些新的选择和操作机制时应考虑的用户体验指导原则。
+description: 本主题介绍了用于选择和操作文本、图像和控件的新 Windows UI，并提供了在 Windows 应用中使用这些新的选择和操作机制时应考虑的用户体验指导原则。
 title: 选择文本和图像
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -8,19 +8,19 @@ keywords: 键盘, 文本, 输入, 用户交互
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 179eeffd014cb614fb5314826068d9690fc29807
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 0b7954ec21b2282700352b94e7a84bf6914d7f9c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216970"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032850"
 ---
 # <a name="selecting-text-and-images"></a>选择文本和图像
 
 
 本文介绍了选择和操作文本、图像和控件，并提供了将这些机制用于应用中时应考虑的用户体验指南。
 
-> **重要 API**：[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)
+> **重要 API** ： [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)、 [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)
  
 
 
@@ -78,9 +78,9 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 
 ![在所选内容内或在控制手柄上点击（或长按）可调用上下文菜单。](images/textselection-show-context.png)
 
-**注意**   这些交互在拼写错误的单词的情况下会有所不同。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
+**注意**  如果词汇拼写错误，这些交互会稍有变化。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
 
- 
+ 
 
 **不可编辑的内容**
 

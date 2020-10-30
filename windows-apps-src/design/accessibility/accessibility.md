@@ -1,27 +1,27 @@
 ---
-Description: 介绍与 Windows 应用相关的辅助功能概念。
+description: 介绍与 Windows 应用相关的辅助功能概念。
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
-title: 辅助功能
+title: 可访问性
 label: Accessibility
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 67f98db338d201dd4ef80c7b5f265aba3f6fbfd4
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f49c784dcd6ed8872753bf4aedd9e79718ccfd99
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216370"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032600"
 ---
-# <a name="accessibility"></a>辅助功能  
+# <a name="accessibility"></a>可访问性  
 
 辅助功能与构建体验相关，使你的 Windows 应用程序可供使用各种环境中技术的人员使用，并为你的 UI 提供各种需求和体验。 对于某些情况，辅助功能要求由法律强制实施。 但是，无论法律是否有规定，最好都解决辅助功能问题，以尽可能扩大应用的受众范围。
 
 > 还有一个与应用的辅助功能有关的 Microsoft Store 声明！
 
-| 项目 | 说明 |
+| 文章 | 说明 |
 |---------|-------------|
 | [辅助功能概述](accessibility-overview.md) | 本文概述了与 Windows 应用的辅助功能方案相关的概念和技术。 |
 | [设计非独占软件](designing-inclusive-software.md) | 了解适用于 Windows 10 的 Windows 应用的不断发展的包含设计。  以辅助功能为中心来设计和生成非独占软件。 |

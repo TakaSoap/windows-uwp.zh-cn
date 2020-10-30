@@ -1,17 +1,17 @@
 ---
-Description: 了解如何在 Microsoft Store 中升级应用和内容。 这些指南涉及如何使用可用资源以及有关在打印、电视、社交媒体和数字广告中推广应用的建议。
+description: 了解如何在 Microsoft Store 中升级应用和内容。 这些指南涉及如何使用可用资源以及有关在打印、电视、社交媒体和数字广告中推广应用的建议。
 title: Microsoft Store 应用的营销指导原则
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 64da05c3c3caed204e33890e88222e9a75be3ae0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 753b60cf3da6400d3df695c2f390c0b47c7a9e68
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162051"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033960"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store 应用的营销指导原则
 
@@ -21,7 +21,7 @@ ms.locfileid: "89162051"
 
 我们创建了特殊的促销徽章，帮助你将更多客户加入到 Microsoft Store 中的应用列表。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
 
-[ ![ 下载按钮](images/downloadbutton.png)](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf) **MICROSOFT STORE 徽章准则 (PDF、英语) **
+[ ![ 下载按钮](images/downloadbutton.png)](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf) **MICROSOFT STORE 徽章准则 (PDF、英语)**
 
 
 ## <a name="badge-generator-and-images"></a>锁屏提醒生成器和图像
@@ -37,11 +37,11 @@ ms.locfileid: "89162051"
 
 若要推广应用，你可能会想展示其在 Windows 设备上运行时的外观。 我们提供了各种设备底盘图像供你选择，包括手机、平板电脑、笔记本电脑和 PC。 有关如何使用这些映像的最佳实践和技术规范，请参阅 [Microsoft Store 营销指导原则](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf)。
 
-[ ![ 下载按钮](images/downloadbutton.png)](https://download.microsoft.com/download/1/A/5/1A58A23A-1388-4097-B441-A3E8DBC14849/Windows_Store_Device_Art.zip) **Windows 设备艺术**
+[ ![ 下载按钮](images/downloadbutton.png)](https://download.microsoft.com/download/1/A/5/1A58A23A-1388-4097-B441-A3E8DBC14849/Windows_Store_Device_Art.zip) **Windows 设备艺术**
 
 ## <a name="license-to-microsoft-marks"></a>Microsoft 商标授权
 
-*Microsoft 标记*是指[标记生成器](https://developer.microsoft.com/store/badges)页面上所述的*microsoft 徽章*。 若要使用这些锁屏提醒，必须满足以下条件：
+*Microsoft 标记* 是指 [标记生成器](https://developer.microsoft.com/store/badges)页面上所述的 *microsoft 徽章* 。 若要使用这些锁屏提醒，必须满足以下条件：
 
 -   让你的应用或其他内容可在 Microsoft Store 中使用，或者是 [Microsoft 关联计划](https://www.microsoftaffiliates.com/)的一部分。
 
@@ -53,6 +53,6 @@ ms.locfileid: "89162051"
 
 Microsoft 是 Microsoft 标志及相关商誉的唯一所有者，也是使用 Microsoft 标志获得的有关商誉的唯一受益公司。 Microsoft 可能会随时自行撤销此许可证。
 
- 
+ 
 
- 
+ 

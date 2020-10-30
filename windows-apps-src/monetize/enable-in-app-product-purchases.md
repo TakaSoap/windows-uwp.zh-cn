@@ -1,24 +1,24 @@
 ---
-Description: 无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 下面我们显示了如何在应用中启用这些产品。
+description: 无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 下面我们显示了如何在应用中启用这些产品。
 title: 启用应用内产品购买
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 keywords: uwp, 加载项, 应用内购买, IAP, Windows.ApplicationModel.Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ac6fc8a6ac39c106e3d5d593a36595097c4bde45
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: b24a48034585411af5edfb0950fc4f96b189519f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364110"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033470"
 ---
 # <a name="enable-in-app-product-purchases"></a>启用应用内产品购买
 
 无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 下面我们显示了如何在应用中启用这些产品。
 
 > [!IMPORTANT]
-> 本文介绍如何使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空间的成员来支持应用内产品购买。 此命名空间不再更新新功能，我们建议你使用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空间。 **Windows 服务**命名空间支持最新的加载项类型，如存储管理的可使用的加载项和订阅，旨在与合作伙伴中心和应用商店支持的未来类型的产品和功能兼容。 **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 有关使用 **Windows.Services.Store** 命名空间启用应用内产品购买的更多信息，请参阅[此文章](enable-in-app-purchases-of-apps-and-add-ons.md)。
+> 本文介绍如何使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空间的成员来支持应用内产品购买。 此命名空间不再更新新功能，我们建议你使用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空间。 **Windows 服务** 命名空间支持最新的加载项类型，如存储管理的可使用的加载项和订阅，旨在与合作伙伴中心和应用商店支持的未来类型的产品和功能兼容。 **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 有关使用 **Windows.Services.Store** 命名空间启用应用内产品购买的更多信息，请参阅 [此文章](enable-in-app-purchases-of-apps-and-add-ons.md)。
 
 > [!NOTE]
 > 试用版应用不能提供应用内产品。 仅当使用试用版应用的客户购买了完整版应用后，他们才可以购买应用内产品。
@@ -92,7 +92,7 @@ ms.locfileid: "89364110"
 ## <a name="related-topics"></a>相关主题
 
 
-* [启用可消费应用内产品购买](enable-consumable-in-app-product-purchases.md)
+* [启用可使用的应用内产品购买](enable-consumable-in-app-product-purchases.md)
 * [管理应用内产品的大目录](manage-a-large-catalog-of-in-app-products.md)
 * [使用收据验证产品购买](use-receipts-to-verify-product-purchases.md)
 * [应用商店示例（演示试用版和应用内购买）](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
