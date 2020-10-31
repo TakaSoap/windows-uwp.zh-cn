@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d4ec2c3d849833b4a1673c4a4f425f32c42d00f
-ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
+ms.openlocfilehash: 339a154c3acf39c4f574d22907cf697db658552b
+ms.sourcegitcommit: 74c2c878b9dbb92785b89f126359c3f069175af2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353757"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93122398"
 ---
 # <a name="bluetooth-gatt-client"></a>蓝牙 GATT 客户端
 
@@ -23,7 +23,7 @@ ms.locfileid: "91353757"
 - 订阅特征值更改时的通知
 
 > [!Important]
-> 必须在 *appxmanifest.xml*中声明 "蓝牙" 功能。
+> 必须在 *appxmanifest.xml* 中声明 "蓝牙" 功能。
 >
 > `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
@@ -52,7 +52,11 @@ ms.locfileid: "91353757"
 
 为方便起见，蓝牙 SIG 将持续提供[公共配置文件的列表](https://www.bluetooth.com/specifications/adopted-specifications#gattspec)。
 
-## <a name="query-for-nearby-devices"></a>查询附近设备
+## <a name="examples"></a>示例
+
+有关完整示例，请参阅 [蓝牙低能耗示例](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BluetoothLE)。
+
+### <a name="query-for-nearby-devices"></a>查询附近设备
 
 可通过两个主要方法查询附近设备：
 
@@ -89,7 +93,7 @@ deviceWatcher.Start();
 
 启动了 DeviceWatcher 之后，对于满足相关设备的 [Added](/uwp/api/windows.devices.enumeration.devicewatcher.added) 事件处理程序中的查询的每个设备，你都会收到 [DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation)。 有关 DeviceWatcher 的更详细介绍，请参阅 [Github 上](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing)的完整示例。
 
-## <a name="connecting-to-the-device"></a>连接到设备
+### <a name="connecting-to-the-device"></a>连接到设备
 
 发现所需设备之后，使用 [DeviceInformation.Id](/uwp/api/windows.devices.enumeration.deviceinformation.id) 获取相关设备的蓝牙 LE 设备对象：
 
@@ -111,14 +115,14 @@ bluetoothLeDevice.Dispose();
 如果应用需要再次访问设备，则仅仅重新创建设备对象并访问特征（在下一部分中讨论）会触发操作系统在需要时重新连接。 如果设备处于附近，则可以访问设备，否则它会返回并具有 DeviceUnreachable 错误。  
 
 > [!NOTE]
-> 通过单独调用此方法创建 [BluetoothLEDevice](/uwp/api/windows.devices.bluetooth.bluetoothledevice) 对象不 (一定) 发起连接。 若要启动连接，请将 [GattSession](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.maintainconnection) 设置为 `true` ，或调用 **BluetoothLEDevice**上的未缓存服务发现方法，或对设备执行读/写操作。
+> 通过单独调用此方法创建 [BluetoothLEDevice](/uwp/api/windows.devices.bluetooth.bluetoothledevice) 对象不 (一定) 发起连接。 若要启动连接，请将 [GattSession](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.maintainconnection) 设置为 `true` ，或调用 **BluetoothLEDevice** 上的未缓存服务发现方法，或对设备执行读/写操作。
 >
 > - 如果将 **GattSession** 设置为 true，则系统会无限期地等待连接，并在设备可用时连接。 应用程序无需等待，因为 **MaintainConnection** 是一个属性。
 > - 对于 GATT 中的服务发现和读/写操作，系统会等待有限但可变的时间。 从瞬间到几分钟的任何内容。 因素包括堆栈上的流量，以及排队的请求数。 如果没有其他挂起的请求，并且无法访问远程设备，则系统会在超时前等待 7 (7) 秒。如果存在其他挂起的请求，则队列中的每个请求可能需要 7 (7) 秒才能完成，因此，您的用户可能会在队列中等待，等待时间越长。
 >
 > 当前无法取消连接过程。
 
-## <a name="enumerating-supported-services-and-characteristics"></a>枚举受支持的服务和特征
+### <a name="enumerating-supported-services-and-characteristics"></a>枚举受支持的服务和特征
 
 现在你拥有 BluetoothLEDevice 对象，下一步是发现设备公开的数据。 执行此操作的第一步是查询服务：
 
@@ -146,7 +150,7 @@ if (result.Status == GattCommunicationStatus.Success)
 
 操作系统返回你随后可以对其执行操作的 GattCharacteristic 对象的 ReadOnly 列表。
 
-## <a name="perform-readwrite-operations-on-a-characteristic"></a>对特征执行读取/写入操作
+### <a name="perform-readwrite-operations-on-a-characteristic"></a>对特征执行读取/写入操作
 
 特征是基于 GATT 的通信的基本单元。 它包含表示设备上一段不同数据的值。 例如，电池电量特征具有表示设备电池电量的值。
 
@@ -196,20 +200,20 @@ if (result == GattCommunicationStatus.Success)
 }
 ```
 
-> **提示**：当使用从许多蓝牙 api 获取的原始缓冲区时， [DataReader](/uwp/api/windows.storage.streams.datareader) 和 [DataWriter](/uwp/api/windows.storage.streams.datawriter) 是或缺的。
+> **提示** ：当使用从许多蓝牙 api 获取的原始缓冲区时， [DataReader](/uwp/api/windows.storage.streams.datareader) 和 [DataWriter](/uwp/api/windows.storage.streams.datawriter) 是或缺的。
 
-## <a name="subscribing-for-notifications"></a>订阅通知
+### <a name="subscribing-for-notifications"></a>订阅通知
 
 确保特征支持“指示”或“通知”（检查特征属性以进行确保）。
 
-> **旁白**：“指示”被视为更可靠，因为每个值更改事件都与来自客户端设备的确认相结合。 “通知”更为普遍，因为大多数 GATT 事务宁愿节省电量，而不是非常可靠。 在任何情况下，它们全部在控制器层进行处理，因此不会涉及到应用。 但现在你知道，我们将它们简单地统称为“通知”。
+> **旁白** ：“指示”被视为更可靠，因为每个值更改事件都与来自客户端设备的确认相结合。 “通知”更为普遍，因为大多数 GATT 事务宁愿节省电量，而不是非常可靠。 在任何情况下，它们全部在控制器层进行处理，因此不会涉及到应用。 但现在你知道，我们将它们简单地统称为“通知”。
 
 获取通知之前要考虑两个事项：
 
 - 写入客户端特征配置描述符 (CCCD)
 - 处理 Characteristic.ValueChanged 事件
 
-写入 CCCD 可向服务器设备告知此客户端要在该特定特征值每次更改时收到通知。 要执行此操作：
+写入 CCCD 可向服务器设备告知此客户端要在该特定特征值每次更改时收到通知。 具体方法为：
 
 ```csharp
 GattCommunicationStatus status = await selectedCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(
@@ -235,3 +239,4 @@ void Characteristic_ValueChanged(GattCharacteristic sender,
     // Parse the data however required.
 }
 ```
+
