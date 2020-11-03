@@ -1,5 +1,5 @@
 ---
-Description: 列出 Microsoft UI 自动化控件模式、客户端用于访问这些模式的类以及提供程序用于实现这些模式的接口。
+description: 列出 Microsoft UI 自动化控件模式、客户端用于访问这些模式的类以及提供程序用于实现这些模式的接口。
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
 title: 控件模式和接口
 label: Control patterns and interfaces
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: adbe1556f48e2f9b362faa303be52586714c73d5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 92f2337848f3689aa8f2f6f73dd92dbbe1313257
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157021"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032530"
 ---
 # <a name="control-patterns-and-interfaces"></a>控件模式和接口  
 
@@ -21,13 +21,13 @@ ms.locfileid: "89157021"
 
 列出 Microsoft UI 自动化控件模式、客户端用于访问这些模式的类以及提供程序用于实现这些模式的接口。
 
-本主题中的表描述了 Microsoft UI 自动化控件模式。 此表还列出了 UI 自动化客户端用于访问控件模式的类和 UI 自动化提供程序用来实现这些模式的接口。 从 UI 自动化客户端的角度来看，“控件模式”**** 列显示模式名称，[**Control Pattern Availability Property Identifiers**](/windows/desktop/WinAuto/uiauto-control-pattern-availability-propids) 中将该名称列为常数值。 从 UI 自动化提供程序的角度来看，其中每个模式都是一个 [**PatternInterface**](/uwp/api/Windows.UI.Xaml.Automation.Peers.PatternInterface) 常量名称。 “类提供程序接口”**** 列显示提供程序为向自定义 XAML 控件提供此模式而实现的接口名称。
+本主题中的表描述了 Microsoft UI 自动化控件模式。 此表还列出了 UI 自动化客户端用于访问控件模式的类和 UI 自动化提供程序用来实现这些模式的接口。 从 UI 自动化客户端的角度来看，“控件模式”列显示模式名称， [**Control Pattern Availability Property Identifiers**](/windows/desktop/WinAuto/uiauto-control-pattern-availability-propids) 中将该名称列为常数值。 从 UI 自动化提供程序的角度来看，其中每个模式都是一个 [**PatternInterface**](/uwp/api/Windows.UI.Xaml.Automation.Peers.PatternInterface) 常量名称。 “类提供程序接口”列显示提供程序为向自定义 XAML 控件提供此模式而实现的接口名称。
 
 有关如何实现用于公开控件模式和实现接口的自定义自动化对等的详细信息，请参阅[自定义自动化对等](custom-automation-peers.md)。
 
 在实现控件模式时，还应查阅 UI 自动化提供程序文档，该文档说明了客户端在控件模式下将达到的部分预期，无论使用哪个 UI 框架实现控件模式，均不会影响这些预期。 常规 UI 自动化提供程序文档中列出的部分信息将影响对等实现的方式及正确为该模式提供支持的方式。 请参阅[实现 UI 自动化控件模式](/windows/desktop/WinAuto/uiauto-implementinguiautocontrolpatterns)，并查看记录了你计划实现的模式的页面。
 
-| 控件模式 | 类提供程序接口 | 描述 |
+| 控件模式 | 类提供程序接口 | 说明 |
 |-----------------|--------------------------|-------------|
 | **批注** | [**IAnnotationProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IAnnotationProvider) | 用于公开文档注释的属性。 |
 | **程序坞** | [**IDockProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IDockProvider) | 用于可在停靠容器中停靠的控件。 例如，工具栏或工具调色板。 |
@@ -43,7 +43,7 @@ ms.locfileid: "89157021"
 | **RangeValue** | [**IRangeValueProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IRangeValueProvider) | 用于具有一系列可应用于该控件的值的控件。 例如，包含年份的微调框控件的数据范围可能介于 1900 至当前年份之间，而另一个呈现月份的微调框控件的数据范围介于 1 至 12 之间。 |
 | **滚动** | [**IScrollProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IScrollProvider) | 用于可滚动的控件。 例如，一个控件其所具有的滚动条在控件的可视区域中存在的信息超过了可被显示的信息时，便处于活动状态。 |
 | **ScrollItem** | [**IScrollItemProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IScrollItemProvider) | 用于一种控件，该控件具有可滚动列表中的各个项。 例如，一个列表控件，该控件具有滚动列表中的各个项，如组合框控件。 |
-| **选择** | [**ISelectionProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ISelectionProvider) | 用于选择容器控件。 例如，[**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) 和 [**ComboBox**](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)。 |
+| **选择** | [**ISelectionProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ISelectionProvider) | 用于选择容器控件。 例如， [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) 和 [**ComboBox**](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)。 |
 | **SelectionItem** | [**ISelectionItemProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider) | 用于选择容器控件中的各个项，如列表框和组合框。 |
 | **电子表格** | [**ISpreadsheetProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ISpreadsheetProvider) | 用于公开电子表格或其他基于网格的文档的内容。 |
 | **SpreadsheetItem** | [**ISpreadsheetItemProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ISpreadsheetItemProvider) | 用于公开电子表格或其他基于网格的文档的单元格属性。 |
@@ -65,7 +65,7 @@ ms.locfileid: "89157021"
 > 现有的 XAML 控件中可能并不会包含所有这些模式的实现。 其中部分模式具有接口，目的仅在于通过模式的常规 UI 自动化框架定义来支持奇偶校验，以及支持需要使用纯粹自定义实现来支持该模式的自动化对等方案。
 
 > [!NOTE]
-> Windows Phone 应用商店应用不支持此处列出的所有 UI 自动化控件模式。 **Annotation**、**Dock**、**Drag**、**DropTarget**、**ObjectModel** 是一些不受支持的模式。
+> Windows Phone 应用商店应用不支持此处列出的所有 UI 自动化控件模式。 **Annotation** 、 **Dock** 、 **Drag** 、 **DropTarget** 、 **ObjectModel** 是一些不受支持的模式。
 
 <span id="related_topics"/>
 
