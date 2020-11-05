@@ -1,5 +1,5 @@
 ---
-Description: Pivot 控件可在一小组内容部分之间进行触控滑动。
+description: Pivot 控件可在一小组内容部分之间进行触控滑动。
 title: Pivot
 template: detail.hbs
 ms.date: 09/24/2020
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 12b6662eb7bbfc08563dd9f7313aa0ea7d0a0e18
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: eaef3bb57eb8719ac4183f21b764ece98cae22fe
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749703"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030850"
 ---
 # <a name="pivot"></a>Pivot
 
@@ -37,7 +37,7 @@ ms.locfileid: "91749703"
    :::column-end:::
 :::row-end:::
 
-> **平台 API**：[Pivot 类](/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[NavigationView 类](/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
+> **平台 API** ： [Pivot 类](/uwp/api/Windows.UI.Xaml.Controls.Pivot)、 [NavigationView 类](/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
 ## <a name="examples"></a>示例
 

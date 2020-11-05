@@ -1,5 +1,5 @@
 ---
-Description: 菜单和上下文菜单会在用户发出请求时显示命令或选项列表。
+description: 菜单和上下文菜单会在用户发出请求时显示命令或选项列表。
 title: 菜单和上下文菜单
 label: Menus and context menus
 template: detail.hbs
@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 29f7f1420e8f4284f1a4ed0c835a70e15958f95f
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 1b93197288b165dbb7e8c79e90ca7a7abcf96ef2
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749923"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034510"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -42,7 +42,7 @@ ms.locfileid: "91749923"
 
 > **Windows UI 库 API：** [MenuBar 类](/uwp/api/microsoft.ui.xaml.controls.menubar)
 >
-> **平台 API：** [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 类](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 属性](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties)
+> **平台 API：** [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)、 [MenuBar 类](/uwp/api/windows.ui.xaml.controls.menubar)、 [ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、 [FlyoutBase.AttachedFlyout 属性](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 

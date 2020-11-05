@@ -1,5 +1,5 @@
 ---
-Description: 命令栏浮出控件使用户能够以内联方式访问应用的最常见任务。
+description: 命令栏浮出控件使用户能够以内联方式访问应用的最常见任务。
 title: 命令栏浮出控件
 label: Command bar flyout
 template: detail.hbs
@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a2f6e61373ae343d8d683d6e5f9169cc399f1594
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 3ca79795264fd0629c19877f22bdc3eb332fa69f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750543"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031490"
 ---
 # <a name="command-bar-flyout"></a>命令栏浮出控件
 
@@ -46,9 +46,9 @@ ms.locfileid: "91750543"
    :::column-end:::
 :::row-end:::
 
->**Windows UI 库 API**：[CommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+>**Windows UI 库 API** ： [CommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、 [TextCommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >
->**平台 API**：[CommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、[AppBarButton 类](/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 类](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 类](/uwp/api/windows.ui.xaml.controls.appbarseparator)
+>**平台 API** ： [CommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、 [TextCommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、 [AppBarButton 类](/uwp/api/windows.ui.xaml.controls.appbarbutton)、 [AppBarToggleButton 类](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、 [AppBarSeparator 类](/uwp/api/windows.ui.xaml.controls.appbarseparator)
 >
 > CommandBarFlyout 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](/uwp/toolkits/winui/)。
 
@@ -153,7 +153,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 若要在上下文菜单中显示命令，通常需将浮出控件分配给 UI 元素的 [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) 属性。 这样就可以由该元素负责打开浮出控件，你不需执行任何其他操作。
 
-如果你自己负责显示浮出控件（例如，在出现 [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped) 事件时这样做），请将浮出控件的 [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) 设置为 **Standard**，以便在展开模式下打开浮出控件并为其提供焦点。
+如果你自己负责显示浮出控件（例如，在出现 [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped) 事件时这样做），请将浮出控件的 [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) 设置为 **Standard** ，以便在展开模式下打开浮出控件并为其提供焦点。
 
 > [!TIP]
 > 若要详细了解显示浮出控件时的选项以及如何控制浮出控件的放置，请参阅[浮出控件](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)。
@@ -415,8 +415,8 @@ CommandBarFlyout 控件有 2 个可用于添加命令和内容的属性：[Prima
 
 TextCommandBarFlyout 不能自定义，由每个文本控件自动管理。 不过，可以将默认的 TextCommandBarFlyout 替换为自定义命令。
 
-- 若要替换在选中文本时会显示的默认 TextCommandBarFlyout，可以创建一个自定义 CommandBarFlyout（或其他浮出控件类型）并将其分配给 **SelectionFlyout** 属性。 如果将 SelectionFlyout 设置为 **null**，则在选中文本时不显示任何命令。
-- 若要替换默认的作为上下文菜单显示的 TextCommandBarFlyout，请将自定义 CommandBarFlyout（或其他浮出控件类型）分配给文本控件上的 **ContextFlyout** 属性。 如果将 ContextFlyout 设置为 **null**，则会显示在旧版文本控件中显示的菜单浮出控件，代替 TextCommandBarFlyout。
+- 若要替换在选中文本时会显示的默认 TextCommandBarFlyout，可以创建一个自定义 CommandBarFlyout（或其他浮出控件类型）并将其分配给 **SelectionFlyout** 属性。 如果将 SelectionFlyout 设置为 **null** ，则在选中文本时不显示任何命令。
+- 若要替换默认的作为上下文菜单显示的 TextCommandBarFlyout，请将自定义 CommandBarFlyout（或其他浮出控件类型）分配给文本控件上的 **ContextFlyout** 属性。 如果将 ContextFlyout 设置为 **null** ，则会显示在旧版文本控件中显示的菜单浮出控件，代替 TextCommandBarFlyout。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 

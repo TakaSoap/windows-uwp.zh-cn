@@ -1,5 +1,5 @@
 ---
-Description: 了解如何将图像集成到应用中，包括如何使用以下两个主要 XAML 类的 API：Image 和 ImageBrush。
+description: 了解如何将图像集成到应用中，包括如何使用以下两个主要 XAML 类的 API：Image 和 ImageBrush。
 title: 图像和图像画笔
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 753f17d73d82707d2283b4ae2ca64eeed7a04e45
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7cbe6de9f6c01ee2adca8e9aa716c92491c04e8a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160161"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033440"
 ---
 # <a name="images-and-image-brushes"></a>图像和图像画笔
 
 要显示图像，可使用 **Image** 对象或 **ImageBrush** 对象。 Image 对象呈现图像，而 ImageBrush 对象使用图像绘制其他对象。 
 
-> **重要的 API**：[Image 类](/uwp/api/Windows.UI.Xaml.Controls.Image)，[Source 属性](/uwp/api/windows.ui.xaml.controls.image.source)，[ImageBrush 类](/uwp/api/Windows.UI.Xaml.Media.ImageBrush)，[ImageSource 属性](/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)
+> **重要的 API** ： [Image 类](/uwp/api/Windows.UI.Xaml.Controls.Image)， [Source 属性](/uwp/api/windows.ui.xaml.controls.image.source)， [ImageBrush 类](/uwp/api/Windows.UI.Xaml.Media.ImageBrush)， [ImageSource 属性](/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)
 
 ## <a name="are-these-the-right-elements"></a>这些是正确的元素吗？
 使用 **Image** 元素在应用中显示独立的图像。
@@ -80,10 +80,10 @@ ms.locfileid: "89160161"
 
 如果你没有设置 Image 的 [Width](/uwp/api/windows.ui.xaml.frameworkelement.width) 或 [Height](/uwp/api/windows.ui.xaml.frameworkelement.height) 值，将以 Source 指定的图像的尺寸显示   。 设置 **Width** 和 **Height** 可创建显示图像所在的封闭矩形区域。 你可通过使用 [Stretch](/uwp/api/windows.ui.xaml.controls.image.stretch) 属性指定图像填充此封闭区域的方式。 Stretch 属性接受 [Stretch](/uwp/api/Windows.UI.Xaml.Media.Stretch) 枚举定义的以下值：
 
--   **None**：该图像未拉伸以适合输出尺寸。 注意此 Stretch 设置：如果源图像大于封闭区域，你的图像将被剪切，但通常不符合预期的，因为你对视口没有任何控制权，就像你处理精修的 [Clip](/uwp/api/windows.ui.xaml.uielement.clip) 一样。
--   **Uniform**：缩放图像以适应输出尺寸。 但是会保留内容的纵横比。 这是默认值。
--   **UniformToFill**：缩放图像以完全填满输出区域，但保留其原始的纵横比。
--   **填充**：缩放图像以适应输出尺寸。 因为内容的高度和宽度是独立缩放的，所以可能不能保留图像的原始纵横比。 即，图像可能为了完全填满输出区域而失真。
+-   **None** ：该图像未拉伸以适合输出尺寸。 注意此 Stretch 设置：如果源图像大于封闭区域，你的图像将被剪切，但通常不符合预期的，因为你对视口没有任何控制权，就像你处理精修的 [Clip](/uwp/api/windows.ui.xaml.uielement.clip) 一样。
+-   **Uniform** ：缩放图像以适应输出尺寸。 但是会保留内容的纵横比。 这是默认值。
+-   **UniformToFill** ：缩放图像以完全填满输出区域，但保留其原始的纵横比。
+-   **填充** ：缩放图像以适应输出尺寸。 因为内容的高度和宽度是独立缩放的，所以可能不能保留图像的原始纵横比。 即，图像可能为了完全填满输出区域而失真。
 
 ![拉伸设置示例。](images/Image_Stretch.jpg)
 
@@ -131,7 +131,7 @@ ms.locfileid: "89160161"
 
 [Image](/uwp/api/Windows.UI.Xaml.Controls.Image)、[BitmapImage](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 和 [BitmapSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapSource) 的 API 不包含任何用于编码和解码媒体格式的专用方法。 所有的编码和解码操作都是内置的，并且至多将编码和解码方面展现为加载事件的事件数据的一部分。 如果你需要对图像编码或解码执行任何特殊工作（你可能会在你的应用执行图像转换或操作时使用该工作），那么你应该使用在 [Windows.Graphics.Imaging](/uwp/api/Windows.Graphics.Imaging) 命名空间中提供的 API。 这些 API 也受 Windows 中的 Windows 图像处理组件 (WIC) 支持。
 
-从 Windows 10 版本 1607 开始，**Image** 元素支持动态 GIF 图像。 当你使用 **BitmapImage** 作为图像 **Source** 时，可以访问 BitmapImage API 来控制动态 GIF 图像的播放。 有关详细信息，请参阅 [BitmapImage](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 类页面上的“备注”。
+从 Windows 10 版本 1607 开始， **Image** 元素支持动态 GIF 图像。 当你使用 **BitmapImage** 作为图像 **Source** 时，可以访问 BitmapImage API 来控制动态 GIF 图像的播放。 有关详细信息，请参阅 [BitmapImage](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 类页面上的“备注”。
 
 > 注意：当你的应用针对&nbsp;Windows&nbsp;10 版本 1607 编译并且正在版本 1607（或更高版本）上运行时，动态 GIF 支持可用  。 当应用针对以前版本编译或在以前版本上运行时，将显示 GIF 的第一帧，但不对其进行动画处理。
 

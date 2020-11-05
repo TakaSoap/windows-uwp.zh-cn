@@ -1,5 +1,5 @@
 ---
-Description: 了解如何在 Windows 应用中实现向后导航以遍历用户的导航历史记录。
+description: 了解如何在 Windows 应用中实现向后导航以遍历用户的导航历史记录。
 title: 导航历史记录和向后导航
 template: detail.hbs
 op-migration-status: ready
@@ -7,16 +7,16 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 50f87c02f726512f54830f8678fa8bbec5ecee4f
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 17303da53e7822be2e4984e6b852664c63c0919c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763051"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030990"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Windows 应用的导航历史记录和向后导航
 
-> **重要的 API**：[BackRequested 事件](/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、[SystemNavigationManager 类](/uwp/api/Windows.UI.Core.SystemNavigationManager)、[OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
+> **重要的 API** ： [BackRequested 事件](/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、 [SystemNavigationManager 类](/uwp/api/Windows.UI.Core.SystemNavigationManager)、 [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 Windows 应用提供了一个一致的后退导航系统，用于遍历用户在应用内和应用之间（具体取决于设备）的导航历史记录。
 

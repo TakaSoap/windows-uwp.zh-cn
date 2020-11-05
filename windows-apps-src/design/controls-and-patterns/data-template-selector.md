@@ -1,5 +1,5 @@
 ---
-Description: 使用数据模板选择器根据项属性自定义项的样式。
+description: 使用数据模板选择器根据项属性自定义项的样式。
 title: 数据模板选择
 label: Data template selection
 template: detail.hbs
@@ -7,18 +7,18 @@ ms.date: 10/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: 382e28b38347a4901e781a12637423260c4bd3e3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5b10afc03a1936c033977a53bd12effdae1c2ead
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160381"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032330"
 ---
 # <a name="data-template-selection-styling-items-based-on-their-properties"></a>数据模板选择：根据项属性设置项样式
 
 集合控件的自定义设计由 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) 管理。 数据模板定义每个项的布局和样式，并将标记应用于集合中的每个项。 本文介绍如何使用 [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector) 在集合上应用不同的数据模板，并根据所选的特定项属性或值选择要使用的数据模板。
 
-> **重要的 API**：[DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector)、[DataTemplate](/uwp/api/windows.ui.xaml.datatemplate)
+> **重要的 API** ： [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector)、 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate)
 
 [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector) 是启用自定义模板选择逻辑的类。 它可让你定义规则，以指定要用于集合中特定项的数据模板。 若要实现此逻辑，请在代码隐藏中创建 DataTemplateSelector 的子类，并定义逻辑，以确定要用于特定项类别的数据模板（例如，特定类型的项或具有特定属性值的项等）。 在 XAML 文件的 Resources 节中声明此类的实例，以及要使用的数据模板的定义。 使用 `x:Key` 值标识这些资源，从而使你可以在 XAML 中引用它们。
 

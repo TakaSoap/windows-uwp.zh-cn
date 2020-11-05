@@ -1,5 +1,5 @@
 ---
-Description: 使用标签向用户指示他们应向邻近控件输入的内容。 还可以为一组相关控件添加标签，或在一组相关控件旁显示说明文本。
+description: 使用标签向用户指示他们应向邻近控件输入的内容。 还可以为一组相关控件添加标签，或在一组相关控件旁显示说明文本。
 title: 标签
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 68b062dc4bd70c81b1b8b57808fad8e9c7498d75
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9c1dc878280b24424aa4bb20d5a1d6324838b127
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172611"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034540"
 ---
 # <a name="labels"></a>标签
 
@@ -24,7 +24,7 @@ ms.locfileid: "89172611"
 
 标签是一个控件或一组相关控件的名称或标题。
 
-> **重要的 API**：Header 属性，[TextBlock 类](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+> **重要的 API** ：Header 属性， [TextBlock 类](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
 在 XAML 中，许多控件都具有用于显示标签的内置 Header 属性。 对于没有 Header 属性的控件，或要为多组控件添加标签，你可以改用 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
@@ -53,6 +53,6 @@ ms.locfileid: "89172611"
 * [RichEditBox.Header 属性](/uwp/api/windows.ui.xaml.controls.richeditbox.header)
 * [TextBlock 类](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
- 
+ 
 
- 
+ 

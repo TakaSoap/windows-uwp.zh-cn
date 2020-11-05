@@ -1,5 +1,5 @@
 ---
-Description: 教学提示是一个提供上下文信息的半持久型浮出控件，其中可显示丰富的内容。
+description: 教学提示是一个提供上下文信息的半持久型浮出控件，其中可显示丰富的内容。
 title: 教学提示
 template: detail.hbs
 ms.date: 09/24/2020
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: fbe23101861429f3aef9298f854a600521d20613
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 8d4322e5d5dcdfad768b9c87b555093e42becd7e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750523"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033310"
 ---
 # <a name="teaching-tip"></a>教学提示
 
@@ -171,10 +171,10 @@ public MainPage()
 ![教学提示位于左下角的示例应用。 该提示的标题为“自动保存”，副标题为“我们将即时保存你的所有更改 - 你无需亲自动手。” 教学提示的右上角有一个关闭按钮。](../images/teaching-tip-non-targeted-preferred-placement.png)
 
 下图描绘了所有 13 个可为定向教学提示设置的 PreferredPlacement 模式的结果。
-![包含 13 个教学提示的插图，每个教学提示都演示了不同的定向放置模式。 每个教学提示都通过标签表明了其所代表的模式。 放置模式的第一个单词指示教学提示将居中显示在其目标哪一侧。 教学提示的尾部始终位于其目标一侧的中心位置并指向该目标。 如果放置模式中有第二个单词，则教学提示的正文不会居中，而是移向指定方向。 例如，放置模式为“TopRight”时，教学提示显示在其目标上方并移向右侧，其尾部向下指向该目标上边缘的中心位置。 由于正文移向右侧，其尾部几乎位于教学提示正文最左侧的边缘上，且该教学提示超出了其目标的右边缘。 放置模式为“Center”可确定一个独特的位置，使教学提示的尾部指向目标的中心，正文位于其目标上半部分的居中位置。](../images/teaching-tip-targeted-preferred-placement-modes.png)
+![包含 13 个教学提示的插图，每个教学提示都演示了不同的定向放置模式。 每个教学提示都通过标签表明了其所代表的模式。  放置模式的第一个单词指示教学提示将居中显示在其目标哪一侧。 教学提示的尾部始终位于其目标一侧的中心位置并指向该目标。 如果放置模式中有第二个单词，则教学提示的正文不会居中，而是移向指定方向。 例如，放置模式为“TopRight”时，教学提示显示在其目标上方并移向右侧，其尾部向下指向该目标上边缘的中心位置。 由于正文移向右侧，其尾部几乎位于教学提示正文最左侧的边缘上，且该教学提示超出了其目标的右边缘。 放置模式为“Center”可确定一个独特的位置，使教学提示的尾部指向目标的中心，正文位于其目标上半部分的居中位置。](../images/teaching-tip-targeted-preferred-placement-modes.png)
 
 下图描绘了所有 13 个可为非定向教学提示设置的 PreferredPlacement 模式的结果。
-![包含 9 个教学提示的插图，每个教学提示都演示了不同的非定向放置模式。 每个教学提示都通过标签表明了其所代表的模式。 放置模式的第一个单词指示教学提示将居中显示在 xaml 根的哪一侧。 如果放置模式中有第二个单词，则教学提示将位于 xaml 根的指定角落。 例如，放置模式为“TopRight”时，教学提示显示在 xaml 根的右上角。 对于非定向放置模式，两个单词的顺序不会影响其位置。 TopRight 等效于 RightTop。 放置模式为“Center”可确定一个独特的位置，使该教学提示显示在 xaml 根的垂直和水平中心位置。](../images/teaching-tip-non-targeted-preferred-placement-modes.png)
+![包含 9 个教学提示的插图，每个教学提示都演示了不同的非定向放置模式。 每个教学提示都通过标签表明了其所代表的模式。  放置模式的第一个单词指示教学提示将居中显示在 xaml 根的哪一侧。  如果放置模式中有第二个单词，则教学提示将位于 xaml 根的指定角落。 例如，放置模式为“TopRight”时，教学提示显示在 xaml 根的右上角。 对于非定向放置模式，两个单词的顺序不会影响其位置。 TopRight 等效于 RightTop。  放置模式为“Center”可确定一个独特的位置，使该教学提示显示在 xaml 根的垂直和水平中心位置。](../images/teaching-tip-non-targeted-preferred-placement-modes.png)
 
 ### <a name="add-a-placement-margin"></a>添加位置边距
 

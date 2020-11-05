@@ -1,5 +1,5 @@
 ---
-Description: 本教程演示如何创建基本应用程序用户界面。 文章将说明并演示网格和 StackPanel 的使用，这是两个最常见的 XAML 元素。
+description: 本教程演示如何创建基本应用程序用户界面。 文章将说明并演示网格和 StackPanel 的使用，这是两个最常见的 XAML 元素。
 title: 使用 Grid 和 StackPanel 创建简单应用。
 template: detail.hbs
 ms.date: 09/24/2020
@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fa22f303f308b38a59a804604752712895b0ea0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 03b3a4342e4f464cb61cddc495ee5693570cd28b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219370"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034820"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>教程：使用 Grid 和 StackPanel 创建简单的天气应用
 
-使用 XAML  并使用**网格**和 **StackPanel** 元素创建简单的天气应用的布局。 使用这些工具，你可以使出色的应用在运行 Windows 10 的任何设备上出色运行。 本教程需要 10-20 分钟。
+使用 XAML  并使用 **网格** 和 **StackPanel** 元素创建简单的天气应用的布局。 使用这些工具，你可以使出色的应用在运行 Windows 10 的任何设备上出色运行。 本教程需要 10-20 分钟。
 
-> **重要的 API**：[Grid 类](/uwp/api/windows.ui.xaml.controls.grid)、[StackPanel 类](/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **重要的 API** ： [Grid 类](/uwp/api/windows.ui.xaml.controls.grid)、 [StackPanel 类](/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>必备条件
 - Windows 10 和 Microsoft Visual Studio 2015 或更高版本。 （建议对当前开发和安全更新使用最新版 Visual Studio）[单击此处了解如何设置 Visual Studio](../../get-started/get-set-up.md)。
@@ -32,9 +32,9 @@ ms.locfileid: "91219370"
 5. 若要运行程序，请从菜单中依次选择“调试”   > “开始调试”  ，或按 F5。
 
 ## <a name="step-2-define-a-grid"></a>步骤 2：定义网格
-在 XAML 中，**网格**由一系列行和列组成。 通过指定**网格**内某个元素的行和列，你可以在用户界面内放置和间隔其他元素。 使用 **RowDefinition** 和 **ColumnDefinition** 元素定义行和列。
+在 XAML 中， **网格** 由一系列行和列组成。 通过指定 **网格** 内某个元素的行和列，你可以在用户界面内放置和间隔其他元素。 使用 **RowDefinition** 和 **ColumnDefinition** 元素定义行和列。
 
-若要开始创建布局，通过使用**解决方案资源管理器**打开 **MainPage.xaml**，并将自动生成的**网格**元素替换为此代码。
+若要开始创建布局，通过使用 **解决方案资源管理器** 打开 **MainPage.xaml** ，并将自动生成的 **网格** 元素替换为此代码。
 
 ```xml
 <Grid>
@@ -49,14 +49,14 @@ ms.locfileid: "91219370"
 </Grid>
 ```
 
-新**网格**将创建一个两行和两列的集合，它可定义应用界面的布局。 第一列的“宽度”为“3\*”，第二列为“5\*”，以 3:5 的比率划分两列之间的水平空间  。 同样，两行的高度  分别为“2\*”和“\*”，因此相对于第二行，网格为第一行分配二倍空间（“\*”等同于“1\*”）  。 即使在调整窗口大小或更改设备时，都会保留这些比率。
+新 **网格** 将创建一个两行和两列的集合，它可定义应用界面的布局。 第一列的“宽度”为“3\*”，第二列为“5\*”，以 3:5 的比率划分两列之间的水平空间  。 同样，两行的高度  分别为“2\*”和“\*”，因此相对于第二行，网格为第一行分配二倍空间（“\*”等同于“1\*”）  。 即使在调整窗口大小或更改设备时，都会保留这些比率。
 
 若要了解有关调整行和列大小的其他方法，请参阅[使用 XAML 定义布局](./layouts-with-xaml.md)。
 
-如果现在运行该应用程序，只会看到一个空白页面，因为任何**网格**区域都没有内容。 若要显示**网格**，让我们添加一些颜色。
+如果现在运行该应用程序，只会看到一个空白页面，因为任何 **网格** 区域都没有内容。 若要显示 **网格** ，让我们添加一些颜色。
 
 ## <a name="step-3-color-the-grid"></a>步骤 3:为网格着色
-为了为**网格**着色，我们添加了三个**边框**元素，每个都带有不同的背景色。 通过使用 **Grid.Row** 和 **Grid.Column** 属性，也将每个元素分配到父**网格**中的行和列。 这些属性的值默认为 0 时，因此无需将其分配给第一个**边框**。 定义行和列后，将以下代码添加到**网格**元素。
+为了为 **网格** 着色，我们添加了三个 **边框** 元素，每个都带有不同的背景色。 通过使用 **Grid.Row** 和 **Grid.Column** 属性，也将每个元素分配到父 **网格** 中的行和列。 这些属性的值默认为 0 时，因此无需将其分配给第一个 **边框** 。 定义行和列后，将以下代码添加到 **网格** 元素。
 
 ```xml
 <Border Background="#2f5cb6"/>
@@ -64,7 +64,7 @@ ms.locfileid: "91219370"
 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
 ```
 
-请注意，对于第三个**边框**，我们使用一个额外属性 **Grid.ColumnSpan**，这将导致此**边框**在较低的行中跨越全部两列。 可以相同方式使用 **Grid.RowSpan**，并且这些属性一起允许你在任意数量的行和列上跨越元素。 此类跨越的左上角始终是在元素属性中指定的 **Grid.Column** 和 **Grid.Row**。
+请注意，对于第三个 **边框** ，我们使用一个额外属性 **Grid.ColumnSpan** ，这将导致此 **边框** 在较低的行中跨越全部两列。 可以相同方式使用 **Grid.RowSpan** ，并且这些属性一起允许你在任意数量的行和列上跨越元素。 此类跨越的左上角始终是在元素属性中指定的 **Grid.Column** 和 **Grid.Row** 。
 
 如果运行应用，结果将如下所示。
 
@@ -73,7 +73,7 @@ ms.locfileid: "91219370"
 ## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>步骤 4：使用 StackPanel 元素组织内容
 **StackPanel** 是我们将用于创建天气应用的第二个 UI 元素。 **StackPanel** 是许多基本应用布局的基础部分，允许垂直或水平堆叠元素。
 
-在以下代码中，我们创建了两个 **StackPanel** 元素并使用三个 **Textblock** 填充每个元素。 将这些 **StackPanel** 元素添加到第 3 步中**边框**元素下面的**网格**中。 这会导致 **TextBlock** 元素呈现在我们之前创建的彩色**网格**顶部。
+在以下代码中，我们创建了两个 **StackPanel** 元素并使用三个 **Textblock** 填充每个元素。 将这些 **StackPanel** 元素添加到第 3 步中 **边框** 元素下面的 **网格** 中。 这会导致 **TextBlock** 元素呈现在我们之前创建的彩色 **网格** 顶部。
 
 ```xml
 <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
@@ -89,7 +89,7 @@ ms.locfileid: "91219370"
 </StackPanel>
 ```
 
-在第一个 **Stackpanel** 中，每个 **TextBlock** 垂直堆叠在另一个下面。 这是 StackPanel 的默认行为，因此我们无需设置**方向**属性。 在第二个 StackPanel 中，我们希望子元素从左到右水平堆叠，因此我们将**方向**属性设置为“水平”。 我们还必须将 **Grid.ColumnSpan** 属性设置为“2”，以便文本在较低的**边框**上居中。
+在第一个 **Stackpanel** 中，每个 **TextBlock** 垂直堆叠在另一个下面。 这是 StackPanel 的默认行为，因此我们无需设置 **方向** 属性。 在第二个 StackPanel 中，我们希望子元素从左到右水平堆叠，因此我们将 **方向** 属性设置为“水平”。 我们还必须将 **Grid.ColumnSpan** 属性设置为“2”，以便文本在较低的 **边框** 上居中。
 
 如果现在运行应用，结果将如下所示。
 
@@ -97,7 +97,7 @@ ms.locfileid: "91219370"
 
 ## <a name="step-5-add-an-image-icon"></a>步骤 5：添加图像图标
 
-最后，让我们使用表示今天天气（局部多云）的图像填写**网格**中空的部分。
+最后，让我们使用表示今天天气（局部多云）的图像填写 **网格** 中空的部分。
 
 下载下面的图像，并将其保存为 PNG，名称为“partially-cloudy”。
 
@@ -105,7 +105,7 @@ ms.locfileid: "91219370"
 
 在“解决方案资源管理器”中右键单击“资产”文件夹，然后选择“添加” -> “现有的项...”     在弹出的浏览器中找到 partially-cloudy.png，选择它，然后单击“添加”  。
 
-接下来，在 **MainPage.xaml** 中，添加第 4 步中 StackPanels 下的以下**映像**元素。
+接下来，在 **MainPage.xaml** 中，添加第 4 步中 StackPanels 下的以下 **映像** 元素。
 
 ```xml
 <Image Margin="20" Source="Assets/partially-cloudy.png"/>

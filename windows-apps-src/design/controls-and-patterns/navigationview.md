@@ -1,5 +1,5 @@
 ---
-Description: NavigationView 是为应用实现顶级导航模式的自适应控件。
+description: NavigationView 是为应用实现顶级导航模式的自适应控件。
 title: 导航视图
 template: detail.hbs
 ms.date: 09/24/2020
@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5c5a880cc7291e15e71315d4977b6a28f22b2f00
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 689f55393df5fc7af59af6ce1e51fb002f49b713
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749843"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031130"
 ---
 # <a name="navigation-view"></a>导航视图
 
@@ -39,7 +39,7 @@ NavigationView 控件可为应用提供顶级导航。 它适应各种屏幕大�
    :::column-end:::
 :::row-end:::
 
-> **平台 API**：[Windows.UI.Xaml.Controls.NavigationView 类](/uwp/api/windows.ui.xaml.controls.navigationview)
+> **平台 API** ： [Windows.UI.Xaml.Controls.NavigationView 类](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
 > Windows UI 库 API：[Microsoft.UI.Xaml.Controls.NavigationView 类](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
@@ -1667,7 +1667,7 @@ MainPage::MainPage()
 
 > `IsTitleBarAutoPaddingEnabled` 属性需要 [Windows UI 库](/uwp/toolkits/winui/) 2.2 或更高版本。
 
-某些应用选择[自定义其窗口的标题栏](../shell/title-bar.md)，可能会将其应用内容扩展到标题栏区域中。 当 NavigationView 是**使用 [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API** 扩展到标题栏的应用中的根元素时，该控件会自动调整其交互式元素的位置，以防止与[可拖动区域](../shell/title-bar.md#draggable-regions)重叠。
+某些应用选择[自定义其窗口的标题栏](../shell/title-bar.md)，可能会将其应用内容扩展到标题栏区域中。 当 NavigationView 是 **使用 [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API** 扩展到标题栏的应用中的根元素时，该控件会自动调整其交互式元素的位置，以防止与 [可拖动区域](../shell/title-bar.md#draggable-regions)重叠。
 
 ![扩展到标题栏中的应用](images/navigation-view-with-titlebar-padding.png)
 

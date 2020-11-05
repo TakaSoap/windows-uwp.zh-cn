@@ -1,5 +1,5 @@
 ---
-Description: 了解为特定设备定制应用的响应式设计技术
+description: 了解为特定设备定制应用的响应式设计技术
 title: 响应式设计技术
 template: detail.hbs
 op-migration-status: ready
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 58b1ce3b9342f7ca66052cf51b8abfb67d00ca44
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 249b738e3db4b266ad5bd589bfb9aff875e0b0d3
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218570"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034580"
 ---
 # <a name="responsive-design-techniques"></a>响应式设计技术
 

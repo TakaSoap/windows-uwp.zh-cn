@@ -1,5 +1,5 @@
 ---
-Description: 超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。
+description: 超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。
 title: 超链接
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 471e17199d6a1858625ce418ea756d79cf8600f9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 90dfaa44205ac8eebfcb21227368e2daa492d3c4
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160131"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030560"
 ---
 # <a name="hyperlinks"></a>超链接
 
-超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。 可使用两种方法向 XAML 应用添加超链接：**Hyperlink** 文本元素和 **HyperlinkButton** 控件。
+超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。 可使用两种方法向 XAML 应用添加超链接： **Hyperlink** 文本元素和 **HyperlinkButton** 控件。
 
-> **平台 API**：[Hyperlink 文本元素](/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)，[HyperlinkButton 控件](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
+> **平台 API** ： [Hyperlink 文本元素](/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)， [HyperlinkButton 控件](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
 
 ![“超链接”按钮](images/controls/hyperlink-button.png)
 
@@ -36,7 +36,7 @@ ms.locfileid: "89160131"
 
 -   在文本控件内使用内联 **Hyperlink** 文本元素。 Hyperlink 元素随其他文本元素流动，你可以在任何 InlineCollection 中使用它。 如果你希望自动文本换行但不一定需要较大的命中目标，请使用文本超链接。 超链接文本可能较小且难以命中，对于触摸尤其如此。
 -   将 **HyperlinkButton** 用于独立超链接。 HyperlinkButton 是一种专用按钮控件，可在需要使用按钮的任何位置使用。
--   使用带有[图像](/uwp/api/windows.ui.xaml.controls.image)的 **HyperlinkButton** 作为其内容，以创建可单击的图像。
+-   使用带有 [图像](/uwp/api/windows.ui.xaml.controls.image)的 **HyperlinkButton** 作为其内容，以创建可单击的图像。
 
 ## <a name="examples"></a>示例
 

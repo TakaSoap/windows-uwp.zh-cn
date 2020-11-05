@@ -1,5 +1,5 @@
 ---
-Description: 通过在 XAML 框架中创建控件模板，你可以自定义控件的可视结构和可视行为。
+description: 通过在 XAML 框架中创建控件模板，你可以自定义控件的可视结构和可视行为。
 MS-HAID: dev\_ctrl\_layout\_txt.control\_templates
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -11,22 +11,22 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c1d712e9d4a12800542184cf37fb504d6f7d20d7
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 720104c9dc27e258307b307a466477a5ca14f3e3
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750503"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033421"
 ---
 # <a name="control-templates"></a>控件模板
 
-通过在 XAML 框架中创建控件模板，你可以自定义控件的可视结构和可视行为。 控件有多个属性，如 [**Background**](/uwp/api/windows.ui.xaml.controls.control.background)、[**Foreground**](/uwp/api/windows.ui.xaml.controls.control.foreground) 以及 [**FontFamily**](/uwp/api/windows.ui.xaml.controls.control.fontfamily)，可以设置这些属性以指定控件外观的多个方面。 但是可以通过设置这些属性所做的更改有限。 你可以通过使用 [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 类创建模板来指定其他自定义。 我们在此处介绍如何创建 **ControlTemplate** 以自定义 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 控件的外观。
+通过在 XAML 框架中创建控件模板，你可以自定义控件的可视结构和可视行为。 控件有多个属性，如 [**Background**](/uwp/api/windows.ui.xaml.controls.control.background)、 [**Foreground**](/uwp/api/windows.ui.xaml.controls.control.foreground) 以及 [**FontFamily**](/uwp/api/windows.ui.xaml.controls.control.fontfamily)，可以设置这些属性以指定控件外观的多个方面。 但是可以通过设置这些属性所做的更改有限。 你可以通过使用 [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 类创建模板来指定其他自定义。 我们在此处介绍如何创建 **ControlTemplate** 以自定义 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 控件的外观。
 
-> **重要的 API**：[**ControlTemplate 类**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)、[**Control.Template 属性**](/uwp/api/windows.ui.xaml.controls.control.template)
+> **重要的 API** ： [**ControlTemplate 类**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)、 [**Control.Template 属性**](/uwp/api/windows.ui.xaml.controls.control.template)
 
 ## <a name="custom-control-template-example"></a>自定义控件模板示例
 
-在默认情况下，[**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 控件将其内容（字符串或 **CheckBox** 旁的对象）放在选择框的右侧，并使用复选标记来表示用户已选中 **CheckBox**。 这些特性表示 **CheckBox** 的可视结构和可视行为。
+在默认情况下， [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 控件将其内容（字符串或 **CheckBox** 旁的对象）放在选择框的右侧，并使用复选标记来表示用户已选中 **CheckBox** 。 这些特性表示 **CheckBox** 的可视结构和可视行为。
 
 下面是分别在 `Unchecked`、`Checked` 和 `Indeterminate` 状态下使用默认 [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 的 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)。
 
@@ -40,7 +40,7 @@ ms.locfileid: "91750503"
 <CheckBox Content="CheckBox" Template="{StaticResource CheckBoxTemplate1}" IsThreeState="True" Margin="20"/>
 ```
 
-下面是在应用模板后，[**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 在 `Unchecked`、`Checked` 和 `Indeterminate` 状态下的外观。
+下面是在应用模板后， [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 在 `Unchecked`、`Checked` 和 `Indeterminate` 状态下的外观。
 
 ![自定义 CheckBox 模板](images/templates-checkbox-states.png)
 
@@ -48,12 +48,12 @@ ms.locfileid: "91750503"
 
 当你创建 [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 时，结合 [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement) 对象来生成一个单一的控件。 **ControlTemplate** 只能有一个 **FrameworkElement** 作为其根元素。 该根元素通常包含其他 **FrameworkElement** 对象。 这些对象的组合组成控件的可视结构。
 
-此 XAML 为 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 创建了 [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)，可指定控件的内容显示在选择框的下方。 根元素为 [**Border**](/uwp/api/Windows.UI.Xaml.Controls.Border)。 该示例指定 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 来创建 **X**，表示用户已选定 **CheckBox**，并用 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 表示不确定状态。 请注意，[**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 在 **Path** 和 **Ellipse** 上均设置为 0，因此在默认情况下，两者都不会显示。
+此 XAML 为 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 创建了 [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)，可指定控件的内容显示在选择框的下方。 根元素为 [**Border**](/uwp/api/Windows.UI.Xaml.Controls.Border)。 该示例指定 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 来创建 **X** ，表示用户已选定 **CheckBox** ，并用 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 表示不确定状态。 请注意， [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 在 **Path** 和 **Ellipse** 上均设置为 0，因此在默认情况下，两者都不会显示。
 
 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) 是一种特殊的绑定，将一个控件模板中的属性值链接到模板控件上的某个其他公开的属性的值。 TemplateBinding 只能在 XAML 中的 ControlTemplate 定义中使用。 有关详细信息，请参阅 [TemplateBinding 标记扩展](../../xaml-platform/templatebinding-markup-extension.md)。
 
 > [!NOTE]
-> 从 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 开始，可以在使用 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) 的位置使用 [**x:Bind**](../../xaml-platform/x-bind-markup-extension.md) 标记扩展。 有关详细信息，请参阅 [TemplateBinding 标记扩展](../../xaml-platform/templatebinding-markup-extension.md)。
+> 从 Windows 10 版本 1809 ( [SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 开始，可以在使用 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) 的位置使用 [**x:Bind**](../../xaml-platform/x-bind-markup-extension.md) 标记扩展。 有关详细信息，请参阅 [TemplateBinding 标记扩展](../../xaml-platform/templatebinding-markup-extension.md)。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -93,7 +93,7 @@ ms.locfileid: "91750503"
 
 可视行为指定控件在确定状态下的外观。 [  **CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 控件具有 3 种复选状态：`Checked`、`Unchecked` 和 `Indeterminate`。 [  **IsChecked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 属性的值确定 **CheckBox** 的状态，其状态确定框中显示的内容。
 
-下表列出了 [**IsChecked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 的可能值、[**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 的相应状态，以及 **CheckBox** 的外观。
+下表列出了 [**IsChecked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 的可能值、 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 的相应状态，以及 **CheckBox** 的外观。
 
 |                     |                    |                         |
 |---------------------|--------------------|-------------------------|
@@ -176,8 +176,8 @@ ms.locfileid: "91750503"
 | 从 `Checked` 到 `Indeterminate`。   | `Indeterminate` [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 值已应用，因此 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。 `Checked` **VisualState** 的 **Setter** 值已删除，因此 `CheckGlyph` 的 [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity) 为 0。 | 显示一个圆形。                            |
 | 从 `Indeterminate` 到 `Unchecked`。 | `Indeterminate` [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 值已删除，因此 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 0。                                                                                                                                           | 不显示任何符号。                             |
 
- 
-有关如何创建控件的视觉状态（尤其是如何使用 [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 类和动画类型）的详细信息，请参阅[视觉状态的情节提要动画](/previous-versions/windows/apps/jj819808(v=win.10))。
+ 
+有关如何创建控件的视觉状态（尤其是如何使用 [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 类和动画类型）的详细信息，请参阅 [视觉状态的情节提要动画](/previous-versions/windows/apps/jj819808(v=win.10))。
 
 ## <a name="use-tools-to-work-with-themes-easily"></a>使用工具轻松处理主题
 

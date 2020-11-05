@@ -1,5 +1,5 @@
 ---
-Description: 时间选取器提供了一种标准化途径，可使用户使用触摸、鼠标或键盘输入选取时间值。
+description: 时间选取器提供了一种标准化途径，可使用户使用触摸、鼠标或键盘输入选取时间值。
 title: 时间选取器
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ec500eaeb634e82342dcc6ac5a393c1d06969797
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 507ce20c97767af435634b3c4db8e9c7e97db729
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750633"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034700"
 ---
 # <a name="time-picker"></a>时间选取器
  
@@ -40,7 +40,7 @@ ms.locfileid: "91750633"
    :::column-end:::
 :::row-end:::
 
-> **平台 API**：[TimePicker 类](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)、[Time 属性](/uwp/api/windows.ui.xaml.controls.timepicker.time)
+> **平台 API** ： [TimePicker 类](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)、 [Time 属性](/uwp/api/windows.ui.xaml.controls.timepicker.time)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -86,7 +86,7 @@ arrivalTimePicker.Header = "Arrival time";
 ![时间选取器示例](images/time-picker-closed.png)
 
 > [!NOTE]
-> 有关日期和时间值的重要信息，请参阅*日期和时间控件*一文中的[DateTime 和日历值](date-and-time.md#datetime-and-calendar-values)。
+> 有关日期和时间值的重要信息，请参阅 *日期和时间控件* 一文中的 [DateTime 和日历值](date-and-time.md#datetime-and-calendar-values)。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 

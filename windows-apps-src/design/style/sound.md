@@ -1,5 +1,5 @@
 ---
-Description: 声音有助于完成应用程序的用户体验，并为他们提供匹配 Windows 在所有平台上的外观的额外音频边缘。
+description: 声音有助于完成应用程序的用户体验，并为他们提供匹配 Windows 在所有平台上的外观的额外音频边缘。
 label: Sound
 title: 声音
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c479a47a53c5f52bab1febf490957355264bfc4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cd7c394f66eb1da585a605d96ed50804b8aab375
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159871"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033180"
 ---
 # <a name="sound"></a>声音
 
@@ -53,16 +53,16 @@ ElementSoundPlayer.State = ElementSoundPlayerState.On;
 
 如果设置为“关”，无论你的应用在何处运行，都始终不会播放声音  。 如果设置为“开”，你的应用将在每个平台上播放声音  。
 
-启用 ElementSoundPlayer 也将自动启用空间音频（3D 声音）。 若要禁用 3D 声音（同时仍保持声音为开启状态），请禁用 ElementSoundPlayer 的 **SpatialAudioMode**： 
+启用 ElementSoundPlayer 也将自动启用空间音频（3D 声音）。 若要禁用 3D 声音（同时仍保持声音为开启状态），请禁用 ElementSoundPlayer 的 **SpatialAudioMode** ： 
 
 ```C#
 ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 ```
 
 **SpatialAudioMode** 属性可以采用以下值： 
-- **Auto**：空间音频将在声音开启时启用。 
-- **Off**：空间音频始终关闭，即使声音处于开启状态。
-- **On**：始终播放空间音频。
+- **Auto** ：空间音频将在声音开启时启用。 
+- **Off** ：空间音频始终关闭，即使声音处于开启状态。
+- **On** ：始终播放空间音频。
 
 若要详细了解空间音频以及 XAML 如何处理它，请参阅 [AudioGraph - 空间音频](../../audio-video-camera/audio-graphs.md#spatial-audio)。
 

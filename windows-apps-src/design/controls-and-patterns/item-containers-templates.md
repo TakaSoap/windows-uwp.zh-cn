@@ -1,5 +1,5 @@
 ---
-Description: 使用模板修改 ListView 或 GridView 控件中的项目外观。
+description: 使用模板修改 ListView 或 GridView 控件中的项目外观。
 title: 项目容器和模板
 label: Item containers and templates
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 505e03124f345b8b32c6b3454ffa4aad32a72e29
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 74cacee6dc8ea7bec0af4e5ffab66b392a0f945c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172751"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034680"
 ---
 # <a name="item-containers-and-templates"></a>项目容器和模板
 
@@ -25,7 +25,7 @@ ms.locfileid: "89172751"
 
 ListView 和 GridView 控件用于管理其项目的排列方式（水平、垂直、环绕等）以及用户与项目的交互方式，而不是各个项目在屏幕上的显示方式 。 项目可视化效果由项目容器管理。 向列表视图添加项目时，它们会自动放置在容器中。 用于 ListView 的默认项目容器为 [ListViewItem](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem)；对于 GridView，其项目容器为 [GridViewItem](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem)。
 
-> **重要的 API**：[ListView 类](/uwp/api/windows.ui.xaml.controls.listview)、[GridView 类](/uwp/api/windows.ui.xaml.controls.gridview)、[ListViewItem 类](/uwp/api/windows.ui.xaml.controls.listviewitem)、[GridViewItem 类](/uwp/api/windows.ui.xaml.controls.gridviewitem)、[ItemTemplate 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)、[ItemContainerStyle 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
+> **重要的 API** ： [ListView 类](/uwp/api/windows.ui.xaml.controls.listview)、 [GridView 类](/uwp/api/windows.ui.xaml.controls.gridview)、 [ListViewItem 类](/uwp/api/windows.ui.xaml.controls.listviewitem)、 [GridViewItem 类](/uwp/api/windows.ui.xaml.controls.gridviewitem)、 [ItemTemplate 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)、 [ItemContainerStyle 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
 
 
 > [!NOTE]
@@ -38,7 +38,7 @@ ListView 和 GridView 控件用于管理其项目的排列方式（水平、垂�
 - **GridViewItems** - 项目形状通常为方形，或者至少是细长的矩形形状。 项目以图像为重点，并且可能会有文本出现在图像周围或覆盖在图像上。 
 
 ## <a name="introduction-to-customization"></a>自定义简介
-容器控件（例如 ListViewItem 和 GridViewItem）包含两个重要部分，它们组合在一起以创建为某个项目显示的最终视觉对象：*数据模板*和*控件模板*。
+容器控件（例如 ListViewItem 和 GridViewItem）包含两个重要部分，它们组合在一起以创建为某个项目显示的最终视觉对象： *数据模板* 和 *控件模板* 。
 
 - **数据模板** - 为列表视图的 [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 属性分配 [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate)，以指定各个数据项的显示方式。
 - **控件模板** - 控件模板提供框架负责的部分项目可视化效果，如视觉状态。 你可以使用 [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) 属性修改控件模板。 通常，若要修改列表视图颜色以匹配品牌标记，或者更改所选项目的显示方式，则执行上述操作。
@@ -430,8 +430,8 @@ ListView 和 GridView 以不同方式指示所选项目，具体取决于控件�
 
 你可以设置 [CheckMode](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode) 属性，指定是使用内联样式还是覆盖样式显示复选框。
 
-- **内联**：此样式将在内容左侧显示复选框，并设置项目容器背景色以指示选择。 这是 ListView 的默认样式。
-- **覆盖**：此样式将在内容顶部显示复选框，并且仅设置项目容器的边框颜色以指示选择。 这是 GridView 的默认样式。
+- **内联** ：此样式将在内容左侧显示复选框，并设置项目容器背景色以指示选择。 这是 ListView 的默认样式。
+- **覆盖** ：此样式将在内容顶部显示复选框，并且仅设置项目容器的边框颜色以指示选择。 这是 GridView 的默认样式。
 
 此表显示了用于指示选择的默认视觉对象。
 

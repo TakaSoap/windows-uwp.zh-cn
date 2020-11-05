@@ -1,5 +1,5 @@
 ---
-Description: 大纲/细节模式可显示主列表和当前选定项的详细信息。 此模式通常用于电子邮件和联系人列表/通讯簿。
+description: 大纲/细节模式可显示主列表和当前选定项的详细信息。 此模式通常用于电子邮件和联系人列表/通讯簿。
 title: 大纲/细节
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 60cd7eaa9e5ef317641e105004f2456e82ee48ca
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 605d42417145b9f6ecc8f71a0191afe6049de9c5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219979"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034520"
 ---
 # <a name="masterdetails-pattern"></a>大纲/细节模式
 
@@ -21,7 +21,7 @@ ms.locfileid: "91219979"
 
 大纲/细节模式具有一个大纲窗格（通常带有[列表视图](lists.md)）和一个内容细节窗格。 当选择大纲列表中的项时，将会更新细节窗格。 此模式通常用于电子邮件和通讯簿。
 
-> **重要的 API**：[ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[SplitView 类](/uwp/api/windows.ui.xaml.controls.splitview)
+> **重要的 API** ： [ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)、 [SplitView 类](/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![大纲-细节模式的示例](images/HIGSecOne_MasterDetail.png)
 
@@ -45,7 +45,7 @@ ms.locfileid: "91219979"
 | 320 epx-640 epx        | 堆叠           |
 | 641 epx 或更宽       | 并排      |
 
- 
+ 
 ## <a name="stacked-style"></a>堆叠样式
 
 在堆叠样式中，一次只有一个窗格可见：大纲窗格或细节窗格。

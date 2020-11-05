@@ -1,17 +1,17 @@
 ---
-Description: TwoPaneView 是一个布局控件，用于管理有两个不同内容区域的应用的显示。
+description: TwoPaneView 是一个布局控件，用于管理有两个不同内容区域的应用的显示。
 title: 双窗格视图
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 681405694880024e158b4ef5798ca2862a38fde2
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 76a6264a8ce1704e9bd209a6246c81ba9665265f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750223"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034430"
 ---
 # <a name="two-pane-view"></a>双窗格视图
 
@@ -198,7 +198,7 @@ MyTwoPaneView.PanePriority = Microsoft.UI.Xaml.Controls.TwoPaneViewPriority.Pane
 
 ### <a name="pane-sizing"></a>窗格大小设置
 
-在单屏上，窗格大小取决于 [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) 和 [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) 属性。 它们使用支持 _auto_ 和 _star_(\*) 大小设置的 [GridLength](/uwp/api/windows.ui.xaml.gridlength) 值。 有关 auto 和 star 大小设置的说明，请参阅[采用 XAML 的响应式布局](../layout/layouts-with-xaml.md#layout-properties)中的“布局属性”部分。 
+在单屏上，窗格大小取决于 [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) 和 [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) 属性。 它们使用支持 _auto_ 和 _star_ (\*) 大小设置的 [GridLength](/uwp/api/windows.ui.xaml.gridlength) 值。 有关 auto 和 star 大小设置的说明，请参阅[采用 XAML 的响应式布局](../layout/layouts-with-xaml.md#layout-properties)中的“布局属性”部分。 
 
 默认情况下，`Pane1Length` 设置为 `Auto`，可根据内容自行调整大小。 `Pane2Length` 设置为 `*`，使用所有剩余空间。
 

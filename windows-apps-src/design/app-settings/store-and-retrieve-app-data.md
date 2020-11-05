@@ -1,5 +1,5 @@
 ---
-Description: 了解如何存储和检索本地、漫游和临时应用数据。
+description: 了解如何存储和检索本地、漫游和临时应用数据。
 title: 存储和检索设置以及其他应用数据
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
@@ -8,16 +8,16 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 642f49927a113a79e50dad52c1a73d32a1571fcb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9f4736c598e18bc4f1225a7fa8e0488c3601420c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173941"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031460"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>存储和检索设置以及其他应用数据
 
-应用数据是由特定应用创建和管理的可变数据  。 它包含运行时状态、应用设置、用户首选项、参考内容（如字典应用中的字典定义）以及其他设置。 应用数据不同于*用户数据*，它是用户使用应用时创建和管理的数据。 用户数据包含文档或媒体文件、电子邮件或通信脚本或保留用户所创建内容的数据库记录。 用户数据可能对于多个应用都非常有用或有意义。 通常，此为用户要操作或作为独立于应用自身的实体进行传输的数据，例如文档。
+应用数据是由特定应用创建和管理的可变数据  。 它包含运行时状态、应用设置、用户首选项、参考内容（如字典应用中的字典定义）以及其他设置。 应用数据不同于 *用户数据* ，它是用户使用应用时创建和管理的数据。 用户数据包含文档或媒体文件、电子邮件或通信脚本或保留用户所创建内容的数据库记录。 用户数据可能对于多个应用都非常有用或有意义。 通常，此为用户要操作或作为独立于应用自身的实体进行传输的数据，例如文档。
 
 **关于应用数据的重要说明：** 应用数据的生命周期与应用的生命周期相关联。 如果应用被删除，则会丢失所有应用数据。 不要使用应用数据存储用户数据或用户可能视作有价值和不可替代内容的任何数据。 我们建议使用用户的库和 Microsoft OneDrive 存储此类信息。 应用数据非常适合存储特定于应用的用户首选项、设置和收藏夹。
 
@@ -31,12 +31,12 @@ ms.locfileid: "89173941"
 
 下面是可以用于应用设置的数据类型：
 
-- **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
+- **UInt8** 、 **Int16** 、 **UInt16** 、 **Int32** 、 **UInt32** 、 **Int64** 、 **UInt64** 、 **Single** 、 **Double**
 - 布尔 
-- **Char16**、**String**
+- **Char16** 、 **String**
 - [DateTime](/uwp/api/Windows.Foundation.DateTime)、[TimeSpan](/uwp/api/Windows.Foundation.TimeSpan)  
     - 对于 C#/.NET，请使用：[System.DateTimeOffset](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0)、[System.TimeSpan](/dotnet/api/system.timespan?view=dotnet-uwp-10.0)  
-- **GUID**、[**Point**](/uwp/api/Windows.Foundation.Point)、[**Size**](/uwp/api/Windows.Foundation.Size)、[**Rect**](/uwp/api/Windows.Foundation.Rect)
+- **GUID** 、 [**Point**](/uwp/api/Windows.Foundation.Point)、 [**Size**](/uwp/api/Windows.Foundation.Size)、 [**Rect**](/uwp/api/Windows.Foundation.Rect)
 - [ApplicationDataCompositeValue](/uwp/api/Windows.Storage.ApplicationDataCompositeValue)  ：一组必须按原子方式序列化和反序列化的相关应用设置。 使用复合设置可轻松处理相互依赖的设置的原子更新。 系统会在并发访问和漫游时确保复合设置的完整性。 复合设置针对少量数据进行了优化，如果将它们用于大型数据集，性能可能很差。
 
 ### <a name="files"></a>文件
@@ -132,7 +132,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要打开本地应用数据存储中的文件，请使用文件 API，如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 和 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](/previous-versions/windows/apps/hh965322(v=win.10))。
+若要打开本地应用数据存储中的文件，请使用文件 API，如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、 [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 和 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](/previous-versions/windows/apps/hh965322(v=win.10))。
 
 ```csharp
 async void ReadTimestamp()
@@ -210,7 +210,7 @@ async void ReadTimestamp()
 
 1.  进行注册以在漫游数据发生更改时收到通知。
 
-    在漫游数据发生更改时，[**DataChanged**](/uwp/api/windows.storage.applicationdata.datachanged) 事件将通知你。 此示例将 `DataChangeHandler` 设置为用于漫游数据更改的处理程序。
+    在漫游数据发生更改时， [**DataChanged**](/uwp/api/windows.storage.applicationdata.datachanged) 事件将通知你。 此示例将 `DataChangeHandler` 设置为用于漫游数据更改的处理程序。
 
 ```csharp
 void InitHandlers()
@@ -296,7 +296,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要在漫游应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 和 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)）。 此示例会打开在前一部分中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](/previous-versions/windows/apps/hh965322(v=win.10))。
+若要在漫游应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、 [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 和 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)）。 此示例会打开在前一部分中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](/previous-versions/windows/apps/hh965322(v=win.10))。
 
 ```csharp
 async void ReadTimestamp()
@@ -345,7 +345,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要在临时应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 和 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)）。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](/previous-versions/windows/apps/hh965322(v=win.10))。
+若要在临时应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、 [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 和 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)）。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](/previous-versions/windows/apps/hh965322(v=win.10))。
 
 ```csharp
 async void ReadTimestamp()

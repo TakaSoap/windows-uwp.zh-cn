@@ -1,5 +1,5 @@
 ---
-Description: 你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的 RTF 文档。 你可以通过将 IsReadOnly 属性设置为 true，将 RichEditBox 设置为只读。
+description: 你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的 RTF 文档。 你可以通过将 IsReadOnly 属性设置为 true，将 RichEditBox 设置为只读。
 title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
@@ -11,16 +11,16 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ff0b8cc337c8afe3d7c06ffabca4eb0fa0d5a8d
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: bb5ee48152b96c430e3b6ab8cf320b3055620865
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750323"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035210"
 ---
 # <a name="rich-edit-box"></a>富编辑框
 
-你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的 RTF 文档。 你可以通过将 IsReadOnly 属性设置为 **true**，从而将 RichEditBox 设置为只读。
+你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的 RTF 文档。 你可以通过将 IsReadOnly 属性设置为 **true** ，从而将 RichEditBox 设置为只读。
 
 **获取 Windows UI 库**
 
@@ -36,7 +36,7 @@ ms.locfileid: "91750323"
    :::column-end:::
 :::row-end:::
 
-> **平台 API**：[RichEditBox 类](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)、[Document 属性](/uwp/api/windows.ui.xaml.controls.richeditbox.document)、[IsReadOnly 属性](/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly)、[IsSpellCheckEnabled 属性](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
+> **平台 API** ： [RichEditBox 类](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)、 [Document 属性](/uwp/api/windows.ui.xaml.controls.richeditbox.document)、 [IsReadOnly 属性](/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly)、 [IsSpellCheckEnabled 属性](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -69,7 +69,7 @@ ms.locfileid: "91750323"
 
 ## <a name="create-a-rich-edit-box"></a>创建富编辑框
 
-默认情况下，RichEditBox 支持拼写检查。 若要禁用拼写检查器，请将 [IsSpellCheckEnabled](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) 属性设置为 **false**。 有关详细信息，请参阅[拼写检查器指南](text-controls.md)文章。
+默认情况下，RichEditBox 支持拼写检查。 若要禁用拼写检查器，请将 [IsSpellCheckEnabled](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) 属性设置为 **false** 。 有关详细信息，请参阅[拼写检查器指南](text-controls.md)文章。
 
 请使用 RichEditBox 的 [Document](/uwp/api/windows.ui.xaml.controls.richeditbox.document) 属性来获取其内容。 RichEditBox 的内容是一个 [Windows.UI.Text.ITextDocument](/windows/desktop/api/tom/nn-tom-itextdocument) 对象，与 RichTextBlock 控件不同，它使用 [Windows.UI.Xaml.Documents.Block](/uwp/api/Windows.UI.Xaml.Documents.Block) 对象作为其内容。 ITextDocument 接口提供了一种方法，可用来执行将文档加载并保存到流中、检索文本范围、获取主动选择、撤消和恢复更改、设置默认格式设置属性等操作。
 

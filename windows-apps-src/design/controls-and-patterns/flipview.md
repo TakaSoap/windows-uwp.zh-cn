@@ -1,5 +1,5 @@
 ---
-Description: 显示集锦中的图像（例如相册中的照片或产品详细信息页中的项目），一次显示一张图像。
+description: 显示集锦中的图像（例如相册中的照片或产品详细信息页中的项目），一次显示一张图像。
 title: 翻转视图控件指南
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: dc55d4c74420523739caa0f696feb65f8b7e0a2c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 1637845752d713482ad668cfb7078d5e4c138e84
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219420"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032300"
 ---
 # <a name="flip-view"></a>翻转视图
 
@@ -29,7 +29,7 @@ ms.locfileid: "91219420"
 
 Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](../style/rounded-corner.md)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。
 
-> **平台 API：** [FlipView class](/uwp/api/windows.ui.xaml.controls.flipview)（FlipView 类），[ItemsSource 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)，[ItemTemplate 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
+> **平台 API：** [FlipView class](/uwp/api/windows.ui.xaml.controls.flipview)（FlipView 类）， [ItemsSource 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)， [ItemTemplate 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 

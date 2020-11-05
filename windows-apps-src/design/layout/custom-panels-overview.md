@@ -1,5 +1,5 @@
 ---
-Description: 你可以通过从 Panel 类派生自定义类来为 XAML 布局定义自定义面板。
+description: 你可以通过从 Panel 类派生自定义类来为 XAML 布局定义自定义面板。
 MS-HAID: dev\_ctrl\_layout\_txt.xaml\_custom\_panels\_overview
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -12,21 +12,21 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f57f50cdd5a23857e4384beea5803fc668abbf2c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 99c98a33a3871e3868641aa3f6be6fb826e63850
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165511"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034810"
 ---
 # <a name="xaml-custom-panels-overview"></a>XAML 自定义面板概述
 
  
 
-*面板*是在 Extensible Application Markup Language (XAML) 布局系统运行且呈现应用 UI 时为所包含的子元素提供布局行为的对象。 
+*面板* 是在 Extensible Application Markup Language (XAML) 布局系统运行且呈现应用 UI 时为所包含的子元素提供布局行为的对象。 
 
 
-> **重要的 API**：[Panel  ](/uwp/api/Windows.UI.Xaml.Controls.Panel)、[ArrangeOverride  ](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)、[MeasureOverride  ](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
+> **重要的 API** ： [Panel](/uwp/api/Windows.UI.Xaml.Controls.Panel)、 [ArrangeOverride](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)、 [MeasureOverride](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
 
 你可以通过从 [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel) 类派生自定义类来为 XAML 布局定义自定义面板。 通过替代 [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 和 [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)、提供度量和排列子元素的逻辑来为面板提供行为。
 
@@ -38,9 +38,9 @@ ms.locfileid: "89165511"
 从 [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel)，自定义面板可继承这些 API：
 
 -   [  **Children**](/uwp/api/windows.ui.xaml.controls.panel.children) 属性。
--   [  **Background**](/uwp/api/windows.ui.xaml.controls.panel.background)、[**ChildrenTransitions**](/uwp/api/windows.ui.xaml.controls.panel.childrentransitions) 和 [**IsItemsHost**](/uwp/api/windows.ui.xaml.controls.panel.isitemshost) 属性，以及依赖属性标识符。 这些属性都不是虚拟的，所以你通常无需替代或替换它们。 你通常不需要将这些属性用于自定义面板方案，甚至不用于读取值。
+-   [  **Background**](/uwp/api/windows.ui.xaml.controls.panel.background)、 [**ChildrenTransitions**](/uwp/api/windows.ui.xaml.controls.panel.childrentransitions) 和 [**IsItemsHost**](/uwp/api/windows.ui.xaml.controls.panel.isitemshost) 属性，以及依赖属性标识符。 这些属性都不是虚拟的，所以你通常无需替代或替换它们。 你通常不需要将这些属性用于自定义面板方案，甚至不用于读取值。
 -   布局覆盖方法 [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 和 [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)。 它们最初由 [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement) 定义。 基本 [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel) 类不替代它们，但是实际面板（例如 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid)）确实有替代实现，此实现作为本机代码实现且由系统运行。 为 **ArrangeOverride** 和 **MeasureOverride** 提供新的（或附加的）实现占定义自定义面板所需工作的大部分。
--   [  **FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement)、[**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 和 [**DependencyObject**](/uwp/api/Windows.UI.Xaml.DependencyObject) 的所有其他 API，例如 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)、[**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) 等。 你有时在布局替代中参考这些属性的值，但是它们不是虚拟的，所以你通常不会替代或替换它们。
+-   [  **FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement)、 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 和 [**DependencyObject**](/uwp/api/Windows.UI.Xaml.DependencyObject) 的所有其他 API，例如 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)、 [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) 等。 你有时在布局替代中参考这些属性的值，但是它们不是虚拟的，所以你通常不会替代或替换它们。
 
 此处的重点是介绍 XAML 布局概念，以便你考虑自定义面板能够以及应该在布局中如何表现的所有可能性。 如果你希望直接查看自定义面板实现的示例，请参阅 [BoxPanel：一个自定义面板示例](boxpanel-example-custom-panel.md)。
 
@@ -56,7 +56,7 @@ ms.locfileid: "89165511"
 </local:CustomPanel>
 ```
 
-当 XAML 分析程序读取此标记时，[**Children**](/uwp/api/windows.ui.xaml.controls.panel.children) 被认为所有 [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel) 派生的类型的 XAML 内容属性，因此分析程序会将两个 [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) 元素添加到 **Children** 属性的 [**UIElementCollection**](/uwp/api/Windows.UI.Xaml.Controls.UIElementCollection) 值中。 XAML 内容属性有助于简化用于 UI 定义的 XAML 标记中的父子关系。 有关 XAML 内容属性的详细信息以及如何在解析 XAML 时填充集合属性，请参阅 [XAML 语法指南](../../xaml-platform/xaml-syntax-guide.md)。
+当 XAML 分析程序读取此标记时， [**Children**](/uwp/api/windows.ui.xaml.controls.panel.children) 被认为所有 [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel) 派生的类型的 XAML 内容属性，因此分析程序会将两个 [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) 元素添加到 **Children** 属性的 [**UIElementCollection**](/uwp/api/Windows.UI.Xaml.Controls.UIElementCollection) 值中。 XAML 内容属性有助于简化用于 UI 定义的 XAML 标记中的父子关系。 有关 XAML 内容属性的详细信息以及如何在解析 XAML 时填充集合属性，请参阅 [XAML 语法指南](../../xaml-platform/xaml-syntax-guide.md)。
 
 保持 [**Children**](/uwp/api/windows.ui.xaml.controls.panel.children) 属性的值的集合类型是 [**UIElementCollection**](/uwp/api/Windows.UI.Xaml.Controls.UIElementCollection) 类。 **UIElementCollection** 是强类型集合，此集合使用 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 作为它的强制项类型。 **UIElement** 是基本类型，此类型由数百个实际 UI 元素类型继承，因此此处的类型强制故意较为宽松。 但是它强制你无法拥有作为 [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel) 的直接子元素的 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)，并且通常表示仅预期在 UI 中可见且参与布局的元素将被视为 **Panel** 中的子元素。
 
@@ -67,7 +67,7 @@ ms.locfileid: "89165511"
 ## <a name="overriding-the-layout-methods"></a>替代布局方法
 
 
-布局替代方法（[**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 和 [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)）的基本模型是它们应当迭代所有子元素并调用每个子元素的特定布局方法。 当 XAML 布局系统为根窗口设置视觉对象时，第一个布局周期开始。 由于每个父元素对其子元素调用布局，这会将对布局方法的调用传播到每个应当是布局的一部分的可能的 UI 元素。 在 XAML 布局中，有两个阶段：度量，然后是排列。
+布局替代方法（ [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 和 [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)）的基本模型是它们应当迭代所有子元素并调用每个子元素的特定布局方法。 当 XAML 布局系统为根窗口设置视觉对象时，第一个布局周期开始。 由于每个父元素对其子元素调用布局，这会将对布局方法的调用传播到每个应当是布局的一部分的可能的 UI 元素。 在 XAML 布局中，有两个阶段：度量，然后是排列。
 
 无法从基本 [**Panel**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 类获取任何 [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 和 [**ArrangeOverride**](/uwp/api/Windows.UI.Xaml.Controls.Panel) 的内置布局方法行为。 [  **Children**](/uwp/api/windows.ui.xaml.controls.panel.children) 中的项目不会自动作为 XAML 可视化树的一部分呈现。 由你来使项目对布局过程已知，方法是通过在 **MeasureOverride** 和 **ArrangeOverride** 实现内传递布局，从而针对你在 **Children** 中找到的每个项目调用布局方法。
 
@@ -117,9 +117,9 @@ protected override Size MeasureOverride(Size availableSize)
 }
 ```
 
-当元素为布局准备就绪时，它们通常拥有自然大小。 度量传递后，如果你为 [**Measure**](/uwp/api/windows.ui.xaml.uielement.desiredsize) 传递的 *availableSize* 较小，[**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.measure) 可能显示自然大小。 如果自然大小比你为 **Measure** 传递的 *availableSize* 更大，则 **DesiredSize** 被约束为 *availableSize*。 这是 **Measure** 的内部实现行为方式，而且你的布局替代应当将行为纳入考虑之内。
+当元素为布局准备就绪时，它们通常拥有自然大小。 度量传递后，如果你为 [**Measure**](/uwp/api/windows.ui.xaml.uielement.desiredsize) 传递的 *availableSize* 较小， [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.measure) 可能显示自然大小。 如果自然大小比你为 **Measure** 传递的 *availableSize* 更大，则 **DesiredSize** 被约束为 *availableSize* 。 这是 **Measure** 的内部实现行为方式，而且你的布局替代应当将行为纳入考虑之内。
 
-一些元素没有自然大小，因为它们的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 的值为 **Auto**。 然后，这些元素将使用完整的 *availableSize*，因为这是 **Auto** 值显示的内容：将元素调整为最大可用大小，由直接布局父元素通过调用带有 *availableSize* 的 [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) 来传达。 在实践中，UI 的大小总是调整到一定的度量值（即使它是顶级窗口）。最后，度量值传递会将所有 Auto  值解析到父约束，使所有采用 Auto  值的元素获得实际度量值（布局完成后，可通过查看 [ActualWidth  ](/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) 和 [ActualHeight  ](/uwp/api/windows.ui.xaml.frameworkelement.actualheight) 来获取度量）。
+一些元素没有自然大小，因为它们的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 的值为 **Auto** 。 然后，这些元素将使用完整的 *availableSize* ，因为这是 **Auto** 值显示的内容：将元素调整为最大可用大小，由直接布局父元素通过调用带有 *availableSize* 的 [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) 来传达。 在实践中，UI 的大小总是调整到一定的度量值（即使它是顶级窗口）。最后，度量值传递会将所有 Auto  值解析到父约束，使所有采用 Auto  值的元素获得实际度量值（布局完成后，可通过查看 [ActualWidth  ](/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) 和 [ActualHeight  ](/uwp/api/windows.ui.xaml.frameworkelement.actualheight) 来获取度量）。
 
 将一个大小传递到至少有一个无限维度的 [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) 是合法操作，从而显示面板可以尝试调整自身的大小以适合其内容的度量。 每个被度量的子元素使用其自然大小设置它的 [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.desiredsize) 值。 然后，在排列传递期间，面板通常使用该大小排列。
 
@@ -131,10 +131,10 @@ protected override Size MeasureOverride(Size availableSize)
 
 ### <a name="tips-and-guidance"></a>技巧与指南
 
--   理想情况下，自定义面板应当适合作为 UI 构成中的第一个真视觉对象，也许在紧接着 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page)、[**UserControl**](/uwp/api/Windows.UI.Xaml.Controls.UserControl) 或其他 XAML 页面根元素之下的级别。 在 [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 实现中，不要在未检查值的情况下例行返回输入 [**Size**](/uwp/api/Windows.Foundation.Size)。 如果返回的 **Size** 在其中有 **Infinity** 值，这可能在运行时布局逻辑中引发异常。 **Infinity** 值可能来自主应用窗口，此窗口可滚动，因此没有最大高度。 其他可滚动内容可能有相同的行为。
+-   理想情况下，自定义面板应当适合作为 UI 构成中的第一个真视觉对象，也许在紧接着 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page)、 [**UserControl**](/uwp/api/Windows.UI.Xaml.Controls.UserControl) 或其他 XAML 页面根元素之下的级别。 在 [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 实现中，不要在未检查值的情况下例行返回输入 [**Size**](/uwp/api/Windows.Foundation.Size)。 如果返回的 **Size** 在其中有 **Infinity** 值，这可能在运行时布局逻辑中引发异常。 **Infinity** 值可能来自主应用窗口，此窗口可滚动，因此没有最大高度。 其他可滚动内容可能有相同的行为。
 -   [  **MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 实现中的其他常见错误是，返回新的默认 [**Size**](/uwp/api/Windows.Foundation.Size)（高度和宽度的值为 0）。 你可以从该值开始，并且在面板确定不呈现任何子元素时，它甚至可能为正确的值。 但是，默认的 **Size** 将导致面板的主机错误调整面板大小。 它不请求 UI 中的空间，因此不获取空间且不呈现。 即使所有面板代码均可正常运行，但如果面板的高度和宽度均为零，你仍然无法看到面板或其内容。
 -   在替代内，请避免尝试将子元素转换为 [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement) 并使用计算的属性作为布局结果，尤其是 [**ActualWidth**](/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) 和 [**ActualHeight**](/uwp/api/windows.ui.xaml.frameworkelement.actualheight)。 对于大部分常见方案，你可以将逻辑基于子元素的 [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.desiredsize) 值，而且无需子元素的任何 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 或 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 相关属性。 对于你知道元素类型且拥有其他信息（例如图像文件的自然大小）的特殊用例，你可以使用你的元素的专业信息，因为它不是布局系统主动修改的值。 将经布局计算的属性包括为布局逻辑的一部分将大幅增加定义意外布局循环的风险。 这些循环会导致无法创建有效布局的情况，而且如果循环不可恢复，系统可能引发 [**LayoutCycleException**](/dotnet/api/windows.ui.xaml.markup.xamlparseexception?view=dotnet-uwp-10.0)。
--   尽管具体划分空间的方式不同，但面板通常在多个子元素间划分它们的可用空间。 例如，[**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 实现布局逻辑，此逻辑使用其 [**RowDefinition**](/uwp/api/Windows.UI.Xaml.Controls.RowDefinition) 和 [**ColumnDefinition**](/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) 值将空间划分为 **Grid** 单元格，并支持比例缩放和像素值。 如果它们是像素值，则适用于每个子元素的大小已知，因此作为网格样式 [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) 的输入大小传递。
+-   尽管具体划分空间的方式不同，但面板通常在多个子元素间划分它们的可用空间。 例如， [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 实现布局逻辑，此逻辑使用其 [**RowDefinition**](/uwp/api/Windows.UI.Xaml.Controls.RowDefinition) 和 [**ColumnDefinition**](/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) 值将空间划分为 **Grid** 单元格，并支持比例缩放和像素值。 如果它们是像素值，则适用于每个子元素的大小已知，因此作为网格样式 [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) 的输入大小传递。
 -   面板本身可以引入用于在项目间填充的保留空间。 如果你执行此操作，请确保将度量显示为与 [**Margin**](/uwp/api/windows.ui.xaml.frameworkelement.margin) 或任何 **Padding** 属性不同的属性。
 -   元素可能含有 [**ActualWidth**](/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) 和 [**ActualHeight**](/uwp/api/windows.ui.xaml.frameworkelement.actualheight) 属性的值，这些值基于上一次布局传递。 如果值更改，应用 UI 代码可以在元素上放置 [**LayoutUpdated**](/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) 的处理程序（如果有要运行的特殊逻辑），但是面板逻辑通常不需要使用事件处理检查更改。 布局系统已在确定何时重新运行布局，因为布局相关的属性已更改值，而且在适当情况下自动调用面板的 [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 或 [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)。
 
@@ -145,7 +145,7 @@ protected override Size MeasureOverride(Size availableSize)
 
 请勿返回具有 **Infinity** 组件的 [**Size**](/uwp/api/Windows.Foundation.Size)。 尝试使用这样的 **Size** 将从内部布局引发异常。
 
-所有 [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 实现应当循环访问 [**Children**](/uwp/api/windows.ui.xaml.controls.panel.children)，并且对每个子元素调用 [**Arrange**](/uwp/api/windows.ui.xaml.uielement.arrange) 方法。 和 [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) 一样，**Arrange** 没有返回值。 与 **Measure** 不同，经计算的属性不会设置为结果（但是，问题中的元素通常引发 [**LayoutUpdated**](/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) 事件）。
+所有 [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 实现应当循环访问 [**Children**](/uwp/api/windows.ui.xaml.controls.panel.children)，并且对每个子元素调用 [**Arrange**](/uwp/api/windows.ui.xaml.uielement.arrange) 方法。 和 [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) 一样， **Arrange** 没有返回值。 与 **Measure** 不同，经计算的属性不会设置为结果（但是，问题中的元素通常引发 [**LayoutUpdated**](/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) 事件）。
 
 以下是 [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 方法非常基本的框架：
 
@@ -187,7 +187,7 @@ protected override Size ArrangeOverride(Size finalSize)
 
 -   [UpdateLayout  ](/uwp/api/windows.ui.xaml.uielement.updatelayout)、[InvalidateMeasure  ](/uwp/api/windows.ui.xaml.uielement.invalidatemeasure) 和 [InvalidateArrange  ](/uwp/api/windows.ui.xaml.uielement.invalidatearrange) 是启动布局传递的方法。 **InvalidateArrange** 可能不会触发度量传递，但另外两个可以。 从不在布局方法内部调用这些方法替代，因为它们几乎肯定会导致布局循环。 控件代码通常也不需要调用它们。 布局的大部分特性通过检测对框架定义的布局属性（例如 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 等）的更改来自动触发。
 -   [LayoutUpdated  ](/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) 是在元素布局的某些方面发生变化时引发的事件。 它不特定于面板；该事件由 [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement) 定义。
--   [SizeChanged  ](/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) 是仅在布局传递完成后引发的事件，它意味着 [ActualHeight  ](/uwp/api/windows.ui.xaml.frameworkelement.actualheight) 或 [ActualWidth  ](/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) 也已改变。 这是另一个 [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement) 事件。 在某些情况下，[**LayoutUpdated**](/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) 会引发，但 **SizeChanged** 不会。 例如，内部内容可能已重新安排，但元素的大小并未更改。
+-   [SizeChanged  ](/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) 是仅在布局传递完成后引发的事件，它意味着 [ActualHeight  ](/uwp/api/windows.ui.xaml.frameworkelement.actualheight) 或 [ActualWidth  ](/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) 也已改变。 这是另一个 [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement) 事件。 在某些情况下， [**LayoutUpdated**](/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) 会引发，但 **SizeChanged** 不会。 例如，内部内容可能已重新安排，但元素的大小并未更改。
 
 
 ## <a name="related-topics"></a>相关主题

@@ -1,5 +1,5 @@
 ---
-Description: 通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。 下面我们将介绍如何向控件添加应用。
+description: 通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。 下面我们将介绍如何向控件添加应用。
 title: 控件和模式简介
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
@@ -11,20 +11,20 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: bfbb50668b7270dc39353a7526878d7b48d9dfd5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 507286445e4ebb5ebf4f9e88596a648709c56cfb
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217300"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031020"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控件和模式简介
 
 在 Windows 应用开发中，控件  是用于显示内容或支持交互的 UI 元素。 通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。
 
-> **重要的 API**：[Windows.UI.Xaml.Controls 命名空间](/uwp/api/windows.ui.xaml.controls)
+> **重要的 API** ： [Windows.UI.Xaml.Controls 命名空间](/uwp/api/windows.ui.xaml.controls)
 
-*模式*是修改控件或组合多个控件来创造新内容的一种诀窍。 例如，[大纲/细节](master-details.md)模式是一种可将 [SplitView](split-view.md) 控件用于应用导航的方式。 同样，可以自定义 [NavigationView](navigationview.md) 控件的模板来实现选项卡模式。
+*模式* 是修改控件或组合多个控件来创造新内容的一种诀窍。 例如，[大纲/细节](master-details.md)模式是一种可将 [SplitView](split-view.md) 控件用于应用导航的方式。 同样，可以自定义 [NavigationView](navigationview.md) 控件的模板来实现选项卡模式。
 
 在许多情况下，你可以按原样使用控件。 但 XAML 控件将函数与结构和外观分离开来，因此你可以进行各种级别的修改来使它们符合你的需求。 在[样式](../style/index.md)部分中，你可以了解如何使用 [XAML 样式](xaml-styles.md)和[控件模板](control-templates.md)来修改控件。
 

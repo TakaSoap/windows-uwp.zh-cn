@@ -1,5 +1,5 @@
 ---
-Description: 请考虑我们在日常生活中阅读文本的频率 - 电子邮件、图书、路标、菜单上的价格、胎压指示或街道标牌上的海报。
+description: 请考虑我们在日常生活中阅读文本的频率 - 电子邮件、图书、路标、菜单上的价格、胎压指示或街道标牌上的海报。
 title: 文本控件
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b06767e5009a4d7654fa7937498319a1bbed671
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ca8facaa63f0eb4c99e518c2fafb0e87208b759d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173881"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033000"
 ---
 # <a name="text-controls"></a>文本控件
 
@@ -25,7 +25,7 @@ ms.locfileid: "89173881"
 - 用于显示只读文本的控件是 [TextBlock](text-block.md) 和 [RichTextBlock](rich-text-block.md)。
 - 用于文本输入和编辑的控件是：[TextBox](text-box.md)、[RichEditBox](rich-edit-box.md)、[AutoSuggestBox](auto-suggest-box.md) 和 [PasswordBox](password-box.md)。
 
-> **重要的 API**：[TextBlock class](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[RichTextBlock class](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、[TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[RichEditBox class](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)、[AutoSuggestBox class](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)、[PasswordBox class](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+> **重要的 API** ： [TextBlock class](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、 [RichTextBlock class](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、 [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox)、 [RichEditBox class](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)、 [AutoSuggestBox class](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)、 [PasswordBox class](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -39,7 +39,7 @@ TextBlock 相比 RichTextBlock 通常更易于使用，并且提供更好的文�
 
 它还提供许多用于自定义文本呈现方式的相同格式设置选项。 虽然可以在文本中放入换行符，但 TextBlock 旨在显示一个段落且不支持文本缩进。
 
-如果你需要支持多段落、多列文本或其他复杂文本布局或者内联 UI 元素（例如图像），请使用 **RichTextBlock**。 RichTextBlock 提供适用于高级文本布局的若干功能。
+如果你需要支持多段落、多列文本或其他复杂文本布局或者内联 UI 元素（例如图像），请使用 **RichTextBlock** 。 RichTextBlock 提供适用于高级文本布局的若干功能。
 
 RichTextBlock 的内容属性是 [Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks) 属性，它通过 [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) 元素支持基于段落的文本。 它没有可以用来轻松访问应用中控件的文本内容的 **Text** 属性。  
 
@@ -148,7 +148,7 @@ RichTextBlock 的内容属性是 [Blocks](/uwp/api/windows.ui.xaml.controls.rich
 
 Windows 具有使字体为每个字形包含多个颜色层的功能。 例如，Segoe UI Emoji 字体定义表情和其他表情符号字符的颜色版本。
 
-标准和格式文本控件支持显示颜色字体。 默认情况下，**IsColorFontEnabled** 属性为 **true**，并且带有这些附加层的字体使用颜色呈现。 系统上的默认颜色字体是 Segoe UI Emoji，并且控件将回退到此字体以使用颜色显示字形。
+标准和格式文本控件支持显示颜色字体。 默认情况下， **IsColorFontEnabled** 属性为 **true** ，并且带有这些附加层的字体使用颜色呈现。 系统上的默认颜色字体是 Segoe UI Emoji，并且控件将回退到此字体以使用颜色显示字形。
 
 ```xaml
 <TextBlock FontSize="30">Hello ☺⛄☂♨⛅</TextBlock>

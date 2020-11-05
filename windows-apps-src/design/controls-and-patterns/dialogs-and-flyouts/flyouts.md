@@ -1,5 +1,5 @@
 ---
-Description: 对话框和浮出控件显示当用户请求这些元素或发生需要通知或批准的操作时出现的瞬态 UI 元素。
+description: 对话框和浮出控件显示当用户请求这些元素或发生需要通知或批准的操作时出现的瞬态 UI 元素。
 title: 浮出控件控制
 template: detail.hbs
 ms.date: 09/24/2020
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: cfe7d7cb435437a4a2601db1fdf69650521001cc
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: fd725407e8b8a8972bb9d1acee2c6b699f51ce20
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750483"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034560"
 ---
 # <a name="flyouts"></a>浮出控件
 

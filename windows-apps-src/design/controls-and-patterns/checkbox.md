@@ -1,5 +1,5 @@
 ---
-Description: 用于选择或取消选择操作项目。 可以用于单个列表项目或多个列表项目。
+description: 用于选择或取消选择操作项目。 可以用于单个列表项目或多个列表项目。
 title: 复选框
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7add5ca356f5d1c41ddeb1fa19ea54c69ef9e583
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: e18f750f7a442fdfe5d5ffc0119a8a64f5571407
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750563"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030960"
 ---
 # <a name="check-boxes"></a>复选框
 
@@ -39,7 +39,7 @@ ms.locfileid: "91750563"
    :::column-end:::
 :::row-end:::
 
-> **平台 API：** [CheckBox 类](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、[Checked 事件](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、[IsChecked 属性](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
+> **平台 API：** [CheckBox 类](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、 [Checked 事件](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、 [IsChecked 属性](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -48,7 +48,7 @@ ms.locfileid: "91750563"
 
 ![为单个选项使用的单个复选框](images/checkbox1.png)
 
-对于二元选项，**复选框**和[切换开关](toggles.md)之间的主要差别是：复选框用于表示状态，而切换开关用于表示操作。 你可以延迟提交复选框交互（例如作为表单提交的一部分），然而应该立即提交切换开关交互。 另外，仅复选框允许多选。
+对于二元选项， **复选框** 和 [切换开关](toggles.md)之间的主要差别是：复选框用于表示状态，而切换开关用于表示操作。 你可以延迟提交复选框交互（例如作为表单提交的一部分），然而应该立即提交切换开关交互。 另外，仅复选框允许多选。
 
 使用多选方案的“多个复选框”  ，在这些方案中，用户从非相互排斥的选项组中选择一个或多个项目。
 
@@ -226,11 +226,11 @@ State | 属性 | 值
 取消选中 | IsChecked | **false** 
 不确定 | IsChecked | **null** 
 
-对于报告不确定状态的复选框，必须将 [IsThreeState](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate) 属性设置为 **true**。 
+对于报告不确定状态的复选框，必须将 [IsThreeState](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate) 属性设置为 **true** 。 
 
 当选项可以分组时，你可以使用不确定复选框来表示整个分组。 当用户选择分组的一些（而非所有）子项时，请使用复选框的不确定状态。
 
-在以下示例中，“全选”复选框的 IsThreeState 属性已设置为 **true**。 “全选”复选框在所有子元素已选中的情况下为选中，在所有子元素取消选中时为取消选中，而在其他情况下时为不确定。
+在以下示例中，“全选”复选框的 IsThreeState 属性已设置为 **true** 。 “全选”复选框在所有子元素已选中的情况下为选中，在所有子元素取消选中时为取消选中，而在其他情况下时为不确定。
 
 ```xaml
 <StackPanel>

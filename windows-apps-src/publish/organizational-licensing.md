@@ -1,17 +1,17 @@
 ---
-Description: 可以在应用提交的“组织许可”部分中指示是否提供应用以及如何提供应用，以便通过适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 批量购买应用。
+description: 可以在应用提交的“组织许可”部分中指示是否提供应用以及如何提供应用，以便通过适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 批量购买应用。
 title: 组织许可选项
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 适用于企业的 store, 适用于教育的 store, 组织, 批量许可, 企业, 教育 store, 企业 store, 批量购买, 批量
 localizationpriority: high
-ms.openlocfilehash: f572a09c488cfff391fead603612148b6a85bc02
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: dbaf44409e387d15225e701ef5c64fc2cb198ece
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174741"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034620"
 ---
 # <a name="organizational-licensing-options"></a>组织许可选项
 

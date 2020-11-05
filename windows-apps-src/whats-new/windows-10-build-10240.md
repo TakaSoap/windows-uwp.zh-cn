@@ -1,23 +1,23 @@
 ---
-Description: Windows 10 内部版本 10240 和开发人员工具更新继续提供受通用 Windows 平台支持的工具、功能和体验。
+description: Windows 10 内部版本 10240 和开发人员工具更新继续提供受通用 Windows 平台支持的工具、功能和体验。
 title: Windows 10 版本 10240 中的新增功能 - 2015 年 7 月
 keywords: Windows 10, 1507, 10240
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: eee6552ce26bbe3c24ae6c6647c8297ba7d7487b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 282026436355c1bcaab504d2818c2a30ff09e20d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172801"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029910"
 ---
-# <a name="whats-new-in-windows10-for-developers-build-10240"></a>面向开发人员的 Windows 10 内部版本 10240 中的新增功能
+# <a name="whats-new-in-windows-10-for-developers-build-10240"></a>面向开发人员的 Windows 10 版本 10240 中的新增功能
 
 Windows 10 内部版本 10240 和更新的 SDK 提供用于打造出色的通用 Windows 平台应用的工具、功能和体验。 在 Windows 10 上[安装这些工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 后，你可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-下面按功能逐项查看 Windows 10 内部版本 10240（也称为 Windows 10 版本 1507）的新增功能。
+下面按功能逐项查看 Windows 10 版本 10240（也称为 Windows 10 版本 1507）的新增功能。
 
 ## <a name="adaptive-layouts"></a>自适应布局
 
@@ -90,7 +90,7 @@ Windows 核心文本 API | 新的 [Windows.UI.Text.Core](/uwp/api/windows.ui.tex
 Cortana | 通过语音命令扩展 Cortana 的基本功能，这些命令用于在外部应用程序中启动并执行一个单独操作。 通过集成应用的基本功能，并通过为用户提供中心入口点以在无需直接打开应用的情况下完成大多数任务，Cortana 可以充当应用和用户之间的联络人。 在大多数情况下，这可以为用户节省大量时间和精力。 了解如何[将应用集成到 Cortana 画布](/previous-versions/windows/apps/dn974230(v=win.10))。 如果你需要创意，可以参考[通用 Windows 应用设计基础知识](../design/layout/index.md)中特定于 Cortana 的设计建议和 UX 指南。
 文件资源浏览器 | 新的 [Windows.System.Launcher.LaunchFolderAsync](/uwp/api/windows.system.launcher.launchfolderasync) 方法允许你启动文件资源管理器并显示所指定的文件夹的内容。
 共享存储 | 新的 [Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager](/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager) 类及其方法允许你与另一个应用共享文件，方法是当通过使用 URI 激活启动另一个应用时，传递一个共享标记。 目标应用会兑换令牌以获取源应用共享的文件。
-Settings | 通过将 ms-settings 协议与 [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) 方法结合使用，显示内置的设置页面。 例如，以下代码显示 WLAN 设置页面：**bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings://network/wifi"));** <br /><br />有关可以显示的设置页面列表，请参阅[如何使用 ms-settings 协议显示内置设置页面](/previous-versions/windows/apps/jj207014(v=vs.105))。
+Settings | 通过将 ms-settings 协议与 [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) 方法结合使用，显示内置的设置页面。 例如，以下代码显示 WLAN 设置页面： **bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings://network/wifi"));** <br /><br />有关可以显示的设置页面列表，请参阅[如何使用 ms-settings 协议显示内置设置页面](/previous-versions/windows/apps/jj207014(v=vs.105))。
 应用到应用的通信 | 通过 Windows 10 中新增的[应用到应用的通信](/previous-versions/windows/apps/dn997827(v=win.10)) API，Windows 应用程序（以及 Windows Web 应用程序）可以相互启动并交换数据和文件。 利用这些新 API，使得原本需要用户使用多个应用程序才能完成的复杂任务现在可以无缝地进行处理。 例如，你的应用可启动社交网络应用来选择联系人，或启动结算应用程序来完成支付流程。
 应用服务 | 应用服务是应用在 Windows 10 中向其他应用提供服务的方法。 应用服务的表现形式为后台任务。 前台应用可以调用其他应用中的应用服务以在后台执行任务。 有关应用服务 API 的参考信息，请参阅 [Windows.ApplicationModel.AppService](/uwp/api/Windows.ApplicationModel.AppService)。
 应用包清单 | 对 Windows 10 的[程序包清单架构](/uwp/schemas/appxpackage/appx-package-manifest)参考的更新包括已添加、已删除和已更改的元素。 有关该架构中所有元素、属性和类型的参考信息，请参阅[元素层次结构](/uwp/schemas/appxpackage/uapmanifestschema/root-elements)。
@@ -100,7 +100,7 @@ Settings | 通过将 ms-settings 协议与 [LaunchUriAsync](/uwp/api/windows.sys
 功能 | 说明
  :---- | :----
 Microsoft Surface Hub | Microsoft Surface Hub 是一款强大的团队协作设备和大屏幕平台，适用于在 Surface Hub 或连接的设备中以本机方式运行的通用 Windows 应用。 针对自己的业务生成可以利用大屏幕、触摸和墨迹输入以及各种板载硬件（如相机和传感器）的应用。<br /><br />请参阅[通用 Windows 应用设计基础知识](../design/layout/index.md)中特定于 Surface Hub 的设计建议和 UX 指南。 这些文档介绍了通用 Windows 应用的响应式设计技术。 <br /><br />有关支持社区共享应用的详细信息，请参阅 [SharedModeSettings](/uwp/api/windows.system.profile.sharedmodesettings)。 有关墨迹输入以及在 [InkCanvas](/uwp/api/windows.ui.xaml.controls.inkcanvas) 控件上支持多点墨迹的详细信息，请参阅 [Windows.UI.Input.Inking](/uwp/api/windows.ui.input.inking) 和 [Windows.UI.Input.Inking.Core](/uwp/api/windows.ui.input.inking.core)。 有关处理传感器输入的信息，请参阅[集成设备、打印机和传感器](/previous-versions/windows/apps/br229563(v=win.10))。
-位置 | Windows 10 引入了一个新方法 [RequestAccessAsync](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) 来提示用户提供其位置的访问权限。 用户可通过 **“设置”** 应用中的 **“位置隐私设置”** 来设置其位置数据隐私。 仅当出现以下情况时，你的应用才可以访问用户的位置：“此设备的位置”已打开（不适用于 Windows 10 手机版）、位置服务设置“位置”已打开，并且在“选择可以使用你的位置信息的应用”下，你的应用已设置为打开 。 <br /><br />在访问用户的位置之前，务必调用 **RequestAccessAsync**。 此时，你的应用必须位于前台，并且 **RequestAccessAsync** 必须从 UI 线程中进行调用。 除非用户向你的应用授予访问其位置的权限，否则你的应用将无法访问位置数据。
+位置 | Windows 10 引入了一个新方法 [RequestAccessAsync](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) 来提示用户提供其位置的访问权限。 用户可通过 **“设置”** 应用中的 **“位置隐私设置”** 来设置其位置数据隐私。 仅当出现以下情况时，你的应用才可以访问用户的位置：“此设备的位置”已打开（不适用于 Windows 10 手机版）、位置服务设置“位置”已打开，并且在“选择可以使用你的位置信息的应用”下，你的应用已设置为打开 。 <br /><br />在访问用户的位置之前，务必调用 **RequestAccessAsync** 。 此时，你的应用必须位于前台，并且 **RequestAccessAsync** 必须从 UI 线程中进行调用。 除非用户向你的应用授予访问其位置的权限，否则你的应用将无法访问位置数据。
 AllJoyn | [Windows.Devices.AllJoyn](/uwp/api/windows.devices.alljoyn) Windows 运行时命名空间引入了 Microsoft 实现的 AllJoyn 开放源代码软件框架和服务。 这些 API 使通用 Windows 设备应用可以在物联网 (IoT) 应用场景中参与到 AllJoyn 驱动的其他设备中。 有关 AllJoyn C API 的详细信息，请在 [AllSeen Alliance](https://allseenalliance.org/) 处下载相关文档。 使用该版本中所包含的 [AllJoynCodeGen](/previous-versions/windows/apps/dn913809(v=win.10)) 工具，生成可用于在设备应用中启用 AllJoyn 方案的 Windows 组件。 <br /><br />**注意：** Windows 10 IoT 核心版现在可用于新类型的小型设备，从而允许你使用 Windows 和 Visual Studio 创建“物联网”(IoT) 设备。 在 [Windows 开发人员中心](https://developer.microsoft.com/windows/iot)中了解关于 Windows IoT 的详细信息。
 在移动设备 (XAML) 上打印 API | 有一组单独且统一的 API 使你可以在各设备系列（包括移动设备）中基于 XAML 的 UWP 应用内进行打印。 现在，你可以从 Windows.Graphics.Printing 和 Windows.UI.Xaml.Printing 命名空间使用熟悉的与打印相关的 API，将打印添加到你的移动应用。
 电池 | 通过 [Windows.Devices.Power](/uwp/api/windows.devices.power) 命名空间中的电池 API，你的应用可了解连接到正在运行该应用的设备的所有电池的详细信息。 通过创建 [Battery](/uwp/api/windows.devices.power.battery) 对象来表示单个电池控制器或聚合的所有电池控制器（在它们分别由 [FromIdAsync](/uwp/api/windows.devices.power.battery.fromidasync) 或 [AggregateBattery](/uwp/api/windows.devices.power.battery.aggregatebattery) 创建后）。 使用 [GetReport](/uwp/api/windows.devices.power.battery.getreport) 方法返回 [BatteryReport](/uwp/api/windows.devices.power.batteryreport) 对象，该对象可指示相应电池的充电、容量和状态。
@@ -121,7 +121,7 @@ SoftwareBitmapSource | 在通用 Windows 应用中，你可以使用新的 [Soft
 功能 | 说明
  :---- | :----
 HTTP 实时传送视频流 | 你可以使用新的 [AdaptiveMediaSource](/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) 类将自适应视频流功能添加到你的应用。 通过将对象指向流清单文件可初始化该对象。 支持的清单格式包括 Http 实时传送视频流 (HLS) 和 HTTP 动态自适应流式处理 (DASH)。 对象绑定到 XAML 媒体元素后，即开始自适应播放。 在适当的时候可以查询和设置流的属性，如可用的比特率、最小比特率和最大比特率。
-对媒体基础转换 (MFTs) 的媒体基础转换代码视频处理器 (XVP) 支持 | 使用媒体基础转换 (MFT) 的 Windows 应用现在可以使用**媒体基础转换代码视频处理器** (XVP) 来改变、缩放和转换原始视频数据：新 [MF_XVP_CALLER_ALLOCATES_OUTPUT](/windows/desktop/medfound/mf-xvp-caller-allocates-output) 属性支持输出到调用方分配的纹理，即使在 Microsoft DirectX 视频加速 (DXVA) 模式下也是如此。 新 [IMFVideoProcessorControl2](/windows/desktop/api/mfidl/nn-mfidl-imfvideoprocessorcontrol2) 接口允许你的应用启用硬件效果、查询支持的硬件效果以及替代由视频处理器执行的旋转操作。
+对媒体基础转换 (MFTs) 的媒体基础转换代码视频处理器 (XVP) 支持 | 使用媒体基础转换 (MFT) 的 Windows 应用现在可以使用 **媒体基础转换代码视频处理器** (XVP) 来改变、缩放和转换原始视频数据：新 [MF_XVP_CALLER_ALLOCATES_OUTPUT](/windows/desktop/medfound/mf-xvp-caller-allocates-output) 属性支持输出到调用方分配的纹理，即使在 Microsoft DirectX 视频加速 (DXVA) 模式下也是如此。 新 [IMFVideoProcessorControl2](/windows/desktop/api/mfidl/nn-mfidl-imfvideoprocessorcontrol2) 接口允许你的应用启用硬件效果、查询支持的硬件效果以及替代由视频处理器执行的旋转操作。
 转码 | 新 [MediaProcessingTrigger](/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTrigger) API 让你的应用在后台任务中执行媒体转码，这样即使当前台应用已终止，也可以继续进行转码操作。
 MediaElement 媒体故障事件 | 在通用 Windows 应用中，[MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 将播放包含多个流的内容，即使其中一个流具有解码错误，只要媒体内容包含至少一个有效流即可。 例如包含了一个音频流和一个视频流的内容，如果其中的视频流无法播放，[MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 仍会播放音频流。 [PartialMediaFailureDetected](/uwp/api/windows.ui.xaml.controls.mediaelement.partialmediafailuredetected) 会通知你流内的其中一个流无法解码。 它还会告知你哪些类型的流无法播放，以便你可以在 UI 中反映该信息。 如果在媒体流内的所有流失败，将引发 [MediaFailed](/uwp/api/windows.ui.xaml.controls.mediaelement.mediafailed) 事件。
 对使用 MediaElement 的自适应视频流的支持 | [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 具有新的 [SetPlaybackSource](/uwp/api/windows.ui.xaml.controls.mediaelement.setplaybacksource) 方法，可支持自适应视频流。 若要将你的媒体源设置为 AdaptiveMediaSource，请使用此方法。
@@ -154,7 +154,7 @@ Microsoft Passport for Work | Microsoft Passport for Work 是使用 Azure Active
 
 功能 | 说明
  :---- | :----
-强力 | 当启用或未启用节点模式时，你的 Windows 桌面应用程序现在都可以收到通知。 通过响应电源条件更改，你的应用程序可以帮助延长电池使用时间。 <br /><br />[GUID_POWER_SAVING_STATUS](/windows/desktop/Power/power-setting-guids)：将此新的 GUID 与 [PowerSettingRegisterNotification](/windows/desktop/api/powersetting/nf-powersetting-powersettingregisternotification) 函数结合使用，以便在节电模式处于启用或未启用状态时收到通知。 <br /><br />[SYSTEM_POWER_STATUS](/windows/desktop/api/winbase/ns-winbase-_system_power_status)：已将此结构更新为支持节电模式。 第四个成员 *SystemStatusFlag*（以前名为 Reserved1），现在用于指示节电模式是否已启用。 使用 [GetSystemPowerStatus](/windows/desktop/api/winbase/nf-winbase-getsystempowerstatus) 函数检索指向此结构的指针。
+强力 | 当启用或未启用节点模式时，你的 Windows 桌面应用程序现在都可以收到通知。 通过响应电源条件更改，你的应用程序可以帮助延长电池使用时间。 <br /><br />[GUID_POWER_SAVING_STATUS](/windows/desktop/Power/power-setting-guids)：将此新的 GUID 与 [PowerSettingRegisterNotification](/windows/desktop/api/powersetting/nf-powersetting-powersettingregisternotification) 函数结合使用，以便在节电模式处于启用或未启用状态时收到通知。 <br /><br />[SYSTEM_POWER_STATUS](/windows/desktop/api/winbase/ns-winbase-_system_power_status)：已将此结构更新为支持节电模式。 第四个成员 *SystemStatusFlag* （以前名为 Reserved1），现在用于指示节电模式是否已启用。 使用 [GetSystemPowerStatus](/windows/desktop/api/winbase/nf-winbase-getsystempowerstatus) 函数检索指向此结构的指针。
 版本 | 你可以使用 [Version 帮助程序函数](/windows/desktop/SysInfo/version-helper-apis)确定操作系统的版本。 在 Windows 10 中，这些帮助程序函数包括一个新函数 [IsWindows10OrGreater](/windows/desktop/api/versionhelpers/nf-versionhelpers-iswindows10orgreater)。 如果你想要确定系统版本，则应该使用帮助程序函数，而不是使用已弃用的 [GetVersionEx](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getversionexa) 和 [GetVersion](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getversion) 函数。 有关如何获取系统版本的详细信息，请参阅[获取系统版本](/windows/desktop/SysInfo/getting-the-system-version)。 <br /><br />如果你使用已弃用的 [GetVersionEx](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getversionexa) 或 [GetVersion](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getversion) 函数在 [OSVERSIONINFOEX](/windows/desktop/api/winnt/ns-winnt-_osversioninfoexa) 或 [OSVERSIONINFO](/windows/desktop/api/winnt/ns-winnt-_osversioninfoa) 结构中获取版本信息，请注意，这些结构包含的版本号将从适用于 Windows 8.1 和 Windows Server 2012 R2 的 6.3 版增加到适用于 Windows 10 的 10.0 版。 有关操作系统版本号的详细信息，请参阅[操作系统版本](/windows/desktop/SysInfo/operating-system-version)。 <br /><br />你还需要在你的应用程序中明确定向到 Windows 8.1 或 Windows 10，以使用 [GetVersionEx](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getversionexa) 或 [GetVersion](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getversion) 函数获取有关这些版本的正确版本信息。 有关如何针对这些版本的 Windows 定向你的应用程序的信息，请参阅[针对 Windows 定向你的应用程序](/windows/desktop/SysInfo/targeting-your-application-at-windows-8-1)。
 用户信息 | [Windows.System](/uwp/api/windows.system) 命名空间中的新 API 使你可以轻松访问用户相关信息，例如其用户名和头像。 它还提供了响应用户事件（如登录和注销）的功能。
 内存管理和分析 | 对 [Windows.System](/uwp/api/windows.system) 中内存分析 API 的支持已扩展至所有平台，并且其整体功能已通过新的类和函数进行增强。

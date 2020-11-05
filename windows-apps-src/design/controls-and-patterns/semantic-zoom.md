@@ -1,5 +1,5 @@
 ---
-Description: 语义式缩放控件可使用户在同一数据集的两个不同语义式视图之间缩放。
+description: 语义式缩放控件可使用户在同一数据集的两个不同语义式视图之间缩放。
 title: 语义式缩放
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f2fea27bf44e2e7f199c6c04f045f2cda6663315
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c945fe25807dcdfa556d7dc9b971b5429b4bcfc8
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174441"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035180"
 ---
 # <a name="semantic-zoom"></a>语义式缩放
 
@@ -29,9 +29,9 @@ ms.locfileid: "89174441"
 
 例如，当查看地址簿时，用户可以通过缩小快速跳转到字母“W”，然后在该字母上放大并查看与之相关联的名称。 
 
-> **重要的 API**：[SemanticZoom 类](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)、[ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 类](/uwp/api/Windows.UI.Xaml.Controls.GridView)
+> **重要的 API** ： [SemanticZoom 类](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)、 [ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)、 [GridView 类](/uwp/api/Windows.UI.Xaml.Controls.GridView)
 
-**功能**：
+**功能** ：
 
 -   缩小视图的大小受语义式缩放控件的边界限制。
 -   点击组标题可切换视图。 可以启用收缩作为一种在视图之间切换的方式。

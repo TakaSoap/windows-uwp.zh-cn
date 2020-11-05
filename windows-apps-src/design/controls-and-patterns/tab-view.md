@@ -1,5 +1,5 @@
 ---
-Description: 可以通过 TabView 在动态选项卡中灵活地组织多个文档
+description: 可以通过 TabView 在动态选项卡中灵活地组织多个文档
 title: 选项卡视图
 template: detail.hbs
 ms.date: 09/24/2020
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3010feeb1a19f8c4d38883415cc315b8d863bb82
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: f34e2a882746ac833d2b78373a96496c1f079864
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749733"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034770"
 ---
 # <a name="tabview"></a>TabView
 
@@ -34,7 +34,7 @@ ms.locfileid: "91749733"
    :::column-end:::
 :::row-end:::
 
-> **Windows UI 库 API**：[TabView 类](/uwp/api/microsoft.ui.xaml.controls.tabview)、[TabViewItem 类](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
+> **Windows UI 库 API** ： [TabView 类](/uwp/api/microsoft.ui.xaml.controls.tabview)、 [TabViewItem 类](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 > [!TIP]
 > 在本文档中，我们使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此项添加到我们的[页](/uwp/api/windows.ui.xaml.controls.page)元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
@@ -43,8 +43,8 @@ ms.locfileid: "91749733"
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-通常情况下，选项卡式 UI 有两种不同的样式，这两种样式的功能和外观均不相同：**静态选项卡**是通常在设置窗口中发现的选项卡类型。 它们包含一定数目的页面，这些页面的顺序固定且通常包含预定义的内容。
-**文档选项卡**是在浏览器（例如 Microsoft Edge）中发现的选项卡类型。 用户可以创建、删除和重新排列选项卡；在窗口之间移动选项卡；更改选项卡的内容。
+通常情况下，选项卡式 UI 有两种不同的样式，这两种样式的功能和外观均不相同： **静态选项卡** 是通常在设置窗口中发现的选项卡类型。 它们包含一定数目的页面，这些页面的顺序固定且通常包含预定义的内容。
+**文档选项卡** 是在浏览器（例如 Microsoft Edge）中发现的选项卡类型。 用户可以创建、删除和重新排列选项卡；在窗口之间移动选项卡；更改选项卡的内容。
 
 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 提供适用于 UWP 应用的文档选项卡。 在以下情况下使用 TabView：
 

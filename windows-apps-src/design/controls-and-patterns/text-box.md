@@ -1,6 +1,6 @@
 ---
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-Description: 通过 TextBox 控件，用户可以在应用中输入文本。
+description: 通过 TextBox 控件，用户可以在应用中输入文本。
 title: 文本框
 label: Text box
 template: detail.hbs
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 794bf6e99701dd73ee74b07c289fe9a2e5ca9744
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 542822b27f356c9471ec8a6c6f5bec0aac2144ce
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749774"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034750"
 ---
 # <a name="text-box"></a>文本框
 
@@ -38,7 +38,7 @@ TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置�
    :::column-end:::
 :::row-end:::
 
-> **平台 API**：[TextBox 类](/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text 属性](/uwp/api/windows.ui.xaml.controls.textbox.text)
+> **平台 API** ： [TextBox 类](/uwp/api/Windows.UI.Xaml.Controls.TextBox)、 [Text 属性](/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 

@@ -1,5 +1,5 @@
 ---
-Description: 将 RichTextBlock 与 RichTextBlockOverflow 元素结合使用以创建高级文本布局。
+description: 将 RichTextBlock 与 RichTextBlockOverflow 元素结合使用以创建高级文本布局。
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a8c7f04b42adadda2eec904f7c8796289706f25
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d1e5619009bd3218dbb5b6796585296dcd873192
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169441"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035200"
 ---
 # <a name="rich-text-block"></a>RTF 块
 
@@ -24,11 +24,11 @@ ms.locfileid: "89169441"
 
 RTF 块提供了多种适用于高级文本布局的功能，你可以在需要支持段落、内联 UI 元素或复杂文本布局时使用。
 
-> **平台 API**：[RichTextBlock 类](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、[RichTextBlockOverflow 类](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow)、[Paragraph 类](/uwp/api/Windows.UI.Xaml.Documents.Paragraph)、[Typography 类](/uwp/api/Windows.UI.Xaml.Documents.Typography)
+> **平台 API** ： [RichTextBlock 类](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、 [RichTextBlockOverflow 类](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow)、 [Paragraph 类](/uwp/api/Windows.UI.Xaml.Documents.Paragraph)、 [Typography 类](/uwp/api/Windows.UI.Xaml.Documents.Typography)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-如果你需要支持多段落、多列或其他复杂文本布局或者内联 UI 元素（例如图像），请使用 **RichTextBlock**。
+如果你需要支持多段落、多列或其他复杂文本布局或者内联 UI 元素（例如图像），请使用 **RichTextBlock** 。
 
 使用 **TextBlock** 显示应用中大部分只读文本。 你可以使用它来显示单行或多行文本、内联超链接以及粗体、斜体或带下划线格式的文本。 TextBlock 提供较简单的内容模型，因此通常也更易于使用，并且它比 RichTextBlock 提供文本呈现性能更好。 它优先用于大部分应用 UI 文本。 虽然可以在文本中放入换行符，但 TextBlock 旨在显示一个段落且不支持文本缩进。
 

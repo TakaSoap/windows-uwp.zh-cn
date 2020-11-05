@@ -1,16 +1,16 @@
 ---
-Description: 使用 AppWindow 类在单独的窗口中查看应用的不同组成部分。
+description: 使用 AppWindow 类在单独的窗口中查看应用的不同组成部分。
 title: 使用 AppWindow 类显示应用的辅助窗口
 ms.date: 07/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b89d9100157cf40266bb983e258aa187f65dc93
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a3f8644612954c4693ad28d3c1b41870855b37ca
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867466"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034880"
 ---
 # <a name="show-multiple-views-with-appwindow"></a>使用 AppWindow 显示多个视图
 
@@ -34,7 +34,7 @@ ms.locfileid: "68867466"
 
 > 具有取消停靠颜色选取器和辅助窗口的示例 
 
-> **重要的 API**：[Windows.UI.WindowManagement 命名空间](/uwp/api/windows.ui.windowmanagement)、[AppWindow 类](/uwp/api/windows.ui.windowmanagement.appwindow)
+> **重要的 API** ： [Windows.UI.WindowManagement 命名空间](/uwp/api/windows.ui.windowmanagement)、 [AppWindow 类](/uwp/api/windows.ui.windowmanagement.appwindow)
 
 ## <a name="api-overview"></a>API 概述
 

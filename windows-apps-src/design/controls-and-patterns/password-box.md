@@ -1,5 +1,5 @@
 ---
-Description: 密码框是指出于隐私目的隐藏所键入的字符的文本输入框。
+description: 密码框是指出于隐私目的隐藏所键入的字符的文本输入框。
 title: 密码框指南
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ba2df600e294aab959a090d8b5a5f8645a40d55
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: cb5bce63243869db0f8d9ae46a4c3c2b3844086c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749723"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030880"
 ---
 # <a name="password-box"></a>密码框
 
@@ -39,7 +39,7 @@ ms.locfileid: "91749723"
    :::column-end:::
 :::row-end:::
 
-> **平台 API**：[PasswordBox 类](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)、[Password 属性](/uwp/api/windows.ui.xaml.controls.passwordbox.password)、[PasswordChar 属性](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar)、[PasswordRevealMode 属性](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)、[PasswordChanged 事件](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
+> **平台 API** ： [PasswordBox 类](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)、 [Password 属性](/uwp/api/windows.ui.xaml.controls.passwordbox.password)、 [PasswordChar 属性](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar)、 [PasswordRevealMode 属性](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)、 [PasswordChanged 事件](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -151,7 +151,7 @@ PasswordBox 具有内置按钮，用户按下该按钮可显示密码文本。 �
 
 ### <a name="hidden-and-visible-modes"></a>隐藏和可见模式
 
-其他 [PasswordRevealMode](/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode) 枚举值（**Hidden** 和 **Visible**）会隐藏密码显示按钮，并允许你以编程方式管理是否掩盖密码。
+其他 [PasswordRevealMode](/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode) 枚举值（ **Hidden** 和 **Visible** ）会隐藏密码显示按钮，并允许你以编程方式管理是否掩盖密码。
 
 若要始终掩盖密码，请将 PasswordRevealMode 设置为 Hidden。 如果你不需要始终掩盖密码，可以提供自定义 UI，使用户在 Hidden 和 Visible 之间切换 PasswordRevealMode。 例如，可以使用复选框来切换是否遮盖密码，如下例所示。 你还可以使用其他控件（例如 [ToggleButton](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton)）以使用户切换模式。
 

@@ -1,5 +1,5 @@
 ---
-Description: ItemsRepeater 是一种轻量级控件，用于生成和呈现项的集合。
+description: ItemsRepeater 是一种轻量级控件，用于生成和呈现项的集合。
 title: ItemsRepeater
 label: ItemsRepeater
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 52938a03e7e0287a200cedc5b8edb98169483425
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 43434a0354a39ae37798e959a9eb919465989dba
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750663"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034570"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -71,7 +71,7 @@ ItemsRepeater 没有内置的项集合。 如果需要直接提供项集合，�
 
 ## <a name="scrolling-with-itemsrepeater"></a>通过 ItemsRepeater 进行滚动
 
-[**ItemsRepeater**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 不是派生自[**控件**](/uwp/api/windows.ui.xaml.controls.control)，因此没有控件模板。 因此，它不包含任何内置的滚动功能，这一点不同于 ListView 或其他集合控件。
+[**ItemsRepeater**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 不是派生自 [**控件**](/uwp/api/windows.ui.xaml.controls.control)，因此没有控件模板。 因此，它不包含任何内置的滚动功能，这一点不同于 ListView 或其他集合控件。
 
 使用 **ItemsRepeater** 时，若要提供滚动功能，则应将其包装在 [**ScrollViewer**](/uwp/api/windows.ui.xaml.controls.scrollviewer) 控件中。
 
@@ -86,7 +86,7 @@ ItemsRepeater 没有内置的项集合。 如果需要直接提供项集合，�
 > ```
 > 如果应用只会在最新的 Windows 10 版本（1809 及更高版本）上运行，则不需使用 [**ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost)。
 >
-> Windows 10 版本 1809 之前的 **ScrollViewer** 未实现 **ItemsRepeater** 所需的 [**IScrollAnchorProvider**](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) 接口。  有了 **ItemsRepeaterScrollHost**，**ItemsRepeater** 就可以与 **ScrollViewer** 在较早的版本上配合使用，正确保存用户所查看项的可见位置。  否则，当更改列表中的项或重设应用大小时，这些项在显示时可能会突然移动或消失。
+> Windows 10 版本 1809 之前的 **ScrollViewer** 未实现 **ItemsRepeater** 所需的 [**IScrollAnchorProvider**](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) 接口。  有了 **ItemsRepeaterScrollHost** ， **ItemsRepeater** 就可以与 **ScrollViewer** 在较早的版本上配合使用，正确保存用户所查看项的可见位置。  否则，当更改列表中的项或重设应用大小时，这些项在显示时可能会突然移动或消失。
 
 ## <a name="create-an-itemsrepeater"></a>创建 ItemsRepeater
 
@@ -140,7 +140,7 @@ itemsRepeater1.ItemsSource = Items;
 
 ![使用数据模板显示的项](images/listview-itemstemplate.png)
 
-如果视图显示大量的项，则 **DataTemplate** 中用于项的元素数可能会对性能产生重大影响。 关于如何使用 **DataTemplate** 定义列表中项的外观，请参阅[项容器和模板](item-containers-templates.md)以获取详细信息和示例。
+如果视图显示大量的项，则 **DataTemplate** 中用于项的元素数可能会对性能产生重大影响。 关于如何使用 **DataTemplate** 定义列表中项的外观，请参阅 [项容器和模板](item-containers-templates.md)以获取详细信息和示例。
 
 > [!TIP]
 > 在需要以内联方式声明模板而不是将其作为静态资源引用时，为了方便起见，可将 **DataTemplate** 或 **DataTemplateSelector** 指定为 **ItemsRepeater** 的直接子项。  系统会将它作为 **ItemTemplate** 属性的值分配。 例如，下面的代码是有效的：
@@ -153,13 +153,13 @@ itemsRepeater1.ItemsSource = Items;
 > ```
 
 > [!TIP]
-> 与 **ListView** 和其他集合控件不同，**ItemsRepeater** 不将 **DataTemplate** 中的元素与其他包含默认策略（例如边距、填充、选择视觉对象或基于视觉状态的指针）的项容器包装在一起。 **ItemsRepeater** 只呈现 **DataTemplate** 中定义的内容。 如果希望项的外观与列表视图项的外观相同，则可在数据模板中显式包括一个容器，例如 **ListViewItem**。 **ItemsRepeater** 会显示 **ListViewItem** 视觉对象，但不自动使用其他功能，例如不使用所选内容，也不显示多选复选框。
+> 与 **ListView** 和其他集合控件不同， **ItemsRepeater** 不将 **DataTemplate** 中的元素与其他包含默认策略（例如边距、填充、选择视觉对象或基于视觉状态的指针）的项容器包装在一起。 **ItemsRepeater** 只呈现 **DataTemplate** 中定义的内容。 如果希望项的外观与列表视图项的外观相同，则可在数据模板中显式包括一个容器，例如 **ListViewItem** 。 **ItemsRepeater** 会显示 **ListViewItem** 视觉对象，但不自动使用其他功能，例如不使用所选内容，也不显示多选复选框。
 >
-> 类似地，如果数据集合是一系列实际控件，例如**按钮** (`List<Button>`)，则可将 **ContentPresenter** 置于 **DataTemplate** 中来显示该控件。
+> 类似地，如果数据集合是一系列实际控件，例如 **按钮** (`List<Button>`)，则可将 **ContentPresenter** 置于 **DataTemplate** 中来显示该控件。
 
 #### <a name="datatemplateselector"></a>DataTemplateSelector
 
-在视图中显示的项不需是同一类型。 可以提供带 [**DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector) 的 [**ItemTemplate**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) 属性，以便根据指定条件选择不同的 **DataTemplate**。
+在视图中显示的项不需是同一类型。 可以提供带 [**DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector) 的 [**ItemTemplate**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) 属性，以便根据指定条件选择不同的 **DataTemplate** 。
 
 以下示例假定 **DataTemplateSelector** 已经定义，可用于选择不同的 **DataTemplate** 来表示“大型”项和“小型”项。
 
@@ -172,10 +172,10 @@ itemsRepeater1.ItemsSource = Items;
 </ItemsRepeater>
 ```
 
-定义与 **ItemsRepeater** 配合使用的 **DataTemplateSelector** 时，只需实现 [**SelectTemplateCore(Object)** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_) 方法的重写即可。 有关详细信息和示例，请参阅 [**DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector)。
+定义与 **ItemsRepeater** 配合使用的 **DataTemplateSelector** 时，只需实现 [**SelectTemplateCore(Object)**](/uwp/api/windows.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_) 方法的重写即可。 有关详细信息和示例，请参阅 [**DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector)。
 
 > [!NOTE]
-> 若要替代 **DataTemplate** 在更高级方案中管理元素创建方式，一个方法是实现你自己的 [**Windows.UI.Xaml.Controls.IElementFactory**](/uwp/api/windows.ui.xaml.controls.ielementfactory)，将其用作 **ItemTemplate**。  它将负责按请求生成内容。
+> 若要替代 **DataTemplate** 在更高级方案中管理元素创建方式，一个方法是实现你自己的 [**Windows.UI.Xaml.Controls.IElementFactory**](/uwp/api/windows.ui.xaml.controls.ielementfactory)，将其用作 **ItemTemplate** 。  它将负责按请求生成内容。
 
 ## <a name="configure-the-data-source"></a>配置数据源
 
@@ -201,7 +201,7 @@ itemsRepeater1.ItemsSource = Items;
 
     允许控件按索引访问项，避免冗余的内部副本。
 
-    **警告**：在不实现 [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) 的情况下对列表/矢量进行的更改不会反映在 UI 中。
+    **警告** ：在不实现 [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) 的情况下对列表/矢量进行的更改不会反映在 UI 中。
 
 - [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged)(.NET)
 
@@ -215,7 +215,7 @@ itemsRepeater1.ItemsSource = Items;
 
     与 **INotifyCollectionChanged** 接口一样，此接口使控件能够观察并响应数据源中的更改。
 
-    **警告**：Windows.Foundation.IObservableVector\<T> 不支持“移动”操作。 这可能会导致项的 UI 失去其视觉状态。  例如，某个项当前处于选中状态并且/或者有焦点，当通过“删除”和“添加”操作对其进行移动时，该项会失去焦点，不再处于选中状态。
+    **警告** ：Windows.Foundation.IObservableVector\<T> 不支持“移动”操作。 这可能会导致项的 UI 失去其视觉状态。  例如，某个项当前处于选中状态并且/或者有焦点，当通过“删除”和“添加”操作对其进行移动时，该项会失去焦点，不再处于选中状态。
 
     Platform.Collections.Vector\<T> 使用 IObservableVector\<T> 并具有这种相同的限制。 如果需要支持“移动”操作，则请使用 **INotifyCollectionChanged** 接口。  .NET ObservableCollection\<T> 类使用 INotifyCollectionChanged。
 
@@ -310,11 +310,11 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 可以设置 [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) 属性，以便指定如何增加项大小来填充未使用的空间。
 
-以下列表显示了可用值。 这些定义假定默认的 **Orientation** 为 **Horizontal**。
+以下列表显示了可用值。 这些定义假定默认的 **Orientation** 为 **Horizontal** 。
 
-- **None**：行末尾的额外空间保留不用。 这是默认设置。
-- **Fill**：增加项的宽度，直至用完可用空间（如果为垂直方向的布局，则增加项的高度）。
-- **Uniform**：按纵横比增加项的宽度和高度，直至用完可用空间（如果为垂直方向的布局，则高度和宽度互换）。
+- **None** ：行末尾的额外空间保留不用。 这是默认设置。
+- **Fill** ：增加项的宽度，直至用完可用空间（如果为垂直方向的布局，则增加项的高度）。
+- **Uniform** ：按纵横比增加项的宽度和高度，直至用完可用空间（如果为垂直方向的布局，则高度和宽度互换）。
 
 下图显示水平布局中 **ItemsStretch** 值的效果。
 
@@ -322,14 +322,14 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 当 **ItemsStretch** 为 **None** 时，可以设置 [ItemsJustification](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) 属性，指定如何使用额外的空间来对齐项。
 
-以下列表显示了可用值。 这些定义假定默认的 **Orientation** 为 **Horizontal**。
+以下列表显示了可用值。 这些定义假定默认的 **Orientation** 为 **Horizontal** 。
 
-- **Start**：项与行开头对齐。 行末尾的额外空间保留不用。 这是默认设置。
-- **Center**：项在行中心对齐。 额外空间在行的开头和末尾均匀分布。
-- **End**：项与行末尾对齐。 行开头的额外空间保留不用。
-- **SpaceAround**：项均匀分布。 在每个项的前面和后面添加的空间大小相同。
-- **SpaceBetween**：项均匀分布。 在每个项之间添加的空间大小相同。 不在行的开头和末尾添加空间。
-- **SpaceEvenly**：项均匀分布，在每个项之间以及行的开头和末尾留有相同大小的空间。
+- **Start** ：项与行开头对齐。 行末尾的额外空间保留不用。 这是默认设置。
+- **Center** ：项在行中心对齐。 额外空间在行的开头和末尾均匀分布。
+- **End** ：项与行末尾对齐。 行开头的额外空间保留不用。
+- **SpaceAround** ：项均匀分布。 在每个项的前面和后面添加的空间大小相同。
+- **SpaceBetween** ：项均匀分布。 在每个项之间添加的空间大小相同。 不在行的开头和末尾添加空间。
+- **SpaceEvenly** ：项均匀分布，在每个项之间以及行的开头和末尾留有相同大小的空间。
 
 下图显示垂直布局中 **ItemsStretch** 值的效果（适用于列而非行）。
 
@@ -338,7 +338,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 > [!TIP]
 > **ItemsStretch** 属性影响布局的度量  传递。 **ItemsJustification** 属性影响布局的排列  传递。
 
-以下示例演示如何将 **ItemsRepeater.Layout** 属性设置为 **UniformGridLayout**。
+以下示例演示如何将 **ItemsRepeater.Layout** 属性设置为 **UniformGridLayout** 。
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -441,7 +441,7 @@ private void OnElementClearing(ItemsRepeater sender, ElementClearingEventArgs ar
 
 这样可以让 ItemsRepeater 避免从滚动位置 0 重新开始。 另外还可以让它在重置时针对没有更改的数据快速还原 UIElements，从而提高性能。
 
-以下示例演示如何在某个垂直堆栈中显示项的列表。在该堆栈中，_MyItemsSource_ 是一个用于包装项的基础列表的自定义数据源。 它公开一个 _Data_ 属性，该属性可以用于重新分配一个将要用作项源的新列表，后者随后触发重置。
+以下示例演示如何在某个垂直堆栈中显示项的列表。在该堆栈中， _MyItemsSource_ 是一个用于包装项的基础列表的自定义数据源。 它公开一个 _Data_ 属性，该属性可以用于重新分配一个将要用作项源的新列表，后者随后触发重置。
 
 ```xaml
 <ScrollViewer x:Name="sv">
@@ -578,7 +578,7 @@ public class MyItemsSource : IReadOnlyList<ItemBase>, IKeyIndexMapping, INotifyC
 可以使用 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 创建一个自定义集合控件，该控件带有自己的控件类型，可以呈现每个项。
 
 > [!NOTE]
-> 这类似于使用 **ItemsControl**，但不是从 **ItemsControl** 派生并将 **ItemsPresenter** 置于控件模板中，而是从 **Control** 派生并将 **ItemsRepeater** 插入控件模板中。 自定义集合控件的“有一个”**ItemsRepeater** 与“是一个”**ItemsControl** 的比较。 这意味着，还必须显式选择要公开的属性，而不是选择不支持哪些继承的属性。
+> 这类似于使用 **ItemsControl** ，但不是从 **ItemsControl** 派生并将 **ItemsPresenter** 置于控件模板中，而是从 **Control** 派生并将 **ItemsRepeater** 插入控件模板中。 自定义集合控件的“有一个” **ItemsRepeater** 与“是一个” **ItemsControl** 的比较。 这意味着，还必须显式选择要公开的属性，而不是选择不支持哪些继承的属性。
 
 以下示例演示如何将 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 置于名为 _MediaCollectionView_ 的自定义控件的模板中并公开其属性。
 
@@ -789,14 +789,14 @@ public class MyPage : Page
 
 ![方向导航](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
 
-ItemsRepeater 的 [XYFocusKeyboardNavigation 模式](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)默认为 _Enabled_。 考虑添加对常见[键盘交互](../input/keyboard-interactions.md)（例如 Home、End、PageUp、PageDown）的支持，具体取决于所要的体验。
+ItemsRepeater 的 [XYFocusKeyboardNavigation 模式](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)默认为 _Enabled_ 。 考虑添加对常见[键盘交互](../input/keyboard-interactions.md)（例如 Home、End、PageUp、PageDown）的支持，具体取决于所要的体验。
 
-ItemsRepeater 自动确保其项（不管是否已虚拟化）的默认 Tab 键顺序遵循数据中提供的项的顺序。 默认情况下，ItemsRepeater 的 [TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation) 属性设置为 [Once](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode)，而不是设置为通常的默认值 _Local_。
+ItemsRepeater 自动确保其项（不管是否已虚拟化）的默认 Tab 键顺序遵循数据中提供的项的顺序。 默认情况下，ItemsRepeater 的 [TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation) 属性设置为 [Once](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode)，而不是设置为通常的默认值 _Local_ 。
 
 > [!NOTE]
 > ItemsRepeater 不会自动记住上一个聚焦项。  这意味着，当用户使用 Shift+Tab 时，系统可能会将其转到上一个实现的项。
 
-### <a name="announcing-item-_x_-of-_y_-in-screen-readers"></a>在屏幕阅读器中读出“_Y_ 的项 _X_”
+### <a name="announcing-item-_x_-of-_y_-in-screen-readers"></a>在屏幕阅读器中读出“ _Y_ 的项 _X_ ”
 
 你需要管理相应自动化属性（例如 **PositionInSet** 和 **SizeOfSet** 的值）的设置，并确保这些属性在用户对项执行添加、移动、删除等操作时保持最新状态。
 

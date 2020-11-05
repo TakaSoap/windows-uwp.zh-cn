@@ -1,5 +1,5 @@
 ---
-Description: 每个 UWP 应用中所包含的通用设计功能都有助于生成跨各种设备完美缩放的应用。
+description: 每个 UWP 应用中所包含的通用设计功能都有助于生成跨各种设备完美缩放的应用。
 title: Windows 应用设计简介（Windows 应用）
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 09/24/2020
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d3179a553e0d30bd009765ec55640989720628c2
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 78ccbe1f18167c318ffa38f3614cfab61782d147
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763087"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032440"
 ---
 # <a name="introduction-to-windows-app-design"></a>Windows 应用设计简介
 
@@ -47,7 +47,7 @@ UWP 可以发挥促进作用，即通过自动调整 UI 元素的大小，以使
 
 :::row:::
     :::column span:::
-在 UWP 应用中，UI 元素的大小、边距和位置应始终为 **4 epx 的倍数**。
+在 UWP 应用中，UI 元素的大小、边距和位置应始终为 **4 epx 的倍数** 。
 
 UWP 可以跨一系列设备进行缩放，缩放比例为 100%、125%、150%、175%、200%、225%、250%、300%、350%、400%。 基础单位为 4，因为这是可以通过非整数进行缩放的唯一整数（例如，4*1.5 = 6）。 使用 4 的倍数可以将所有 UI 元素与整个像素匹配，并可确保 UI 元素具有清晰的锐边。 （请注意，文本不会有此要求；文本的大小和位置可以是任意值。）
     :::column-end:::

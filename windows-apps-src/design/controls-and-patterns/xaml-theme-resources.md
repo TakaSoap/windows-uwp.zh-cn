@@ -1,5 +1,5 @@
 ---
-Description: XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。
+description: XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。
 MS-HAID: dev\_ctrl\_layout\_txt.xaml\_theme\_resources
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -11,18 +11,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ac4f7c7705fef0a3a7a1d556635e1c80e9c04a29
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6da668c005f95d51f6fb0588f60fdcf63aea4fd7
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217207"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034420"
 ---
 # <a name="xaml-theme-resources"></a>XAML 主题资源
 
 XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。 XAML 框架支持三种主题：“浅色”、“深色”和“高对比度”。
 
-**先决条件**：本主题假设你已阅读 [ResourceDictionary 和 XAML 资源引用](resourcedictionary-and-xaml-resource-references.md)。
+**先决条件** ：本主题假设你已阅读 [ResourceDictionary 和 XAML 资源引用](resourcedictionary-and-xaml-resource-references.md)。
 
 ## <a name="theme-resources-v-static-resources"></a>主题资源与 静态资源
 
@@ -55,7 +55,7 @@ Windows 运行时不使用这些物理文件进行运行时查找。 这就是�
 
 ## <a name="the-xaml-color-ramp-and-theme-dependent-brushes"></a>XAML 颜色渐变和依赖于主题的画笔
 
-由“浅色”、“深色”和“高对比度”主题组合的颜色集构成了 XAML 中的 *Windows 颜色渐变*。 无论是想要修改系统主题，还是将系统主题应用到自己的 XAML 元素，了解如何构建颜色资源都非常重要。
+由“浅色”、“深色”和“高对比度”主题组合的颜色集构成了 XAML 中的 *Windows 颜色渐变* 。 无论是想要修改系统主题，还是将系统主题应用到自己的 XAML 元素，了解如何构建颜色资源都非常重要。
 
 有关如何在 Windows 应用中应用颜色的更多信息，请参阅 [Windows 应用中的颜色](../style/color.md)。
 
@@ -153,11 +153,11 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 
 | 键                           | 轻松使用名称            | 简单的高对比度名称 | 初始默认设置 |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
-| SystemColorButtonFaceColor    | **按钮文本**（背景）   | 背景               | \#FFF0F0F0      |
-| SystemColorButtonTextColor    | **按钮文本**（前景）   | Foreground               | \#FF000000      |
+| SystemColorButtonFaceColor    | **按钮文本** （背景）   | 背景               | \#FFF0F0F0      |
+| SystemColorButtonTextColor    | **按钮文本** （前景）   | Foreground               | \#FF000000      |
 | SystemColorGrayTextColor      | **禁用的文本**              | 禁用                 | \#FF6D6D6D      |
-| SystemColorHighlightColor     | **选定文本**（背景） | 突出显示                | \#FF3399FF      |
-| SystemColorHighlightTextColor | **选定文本**（前景） | HighlightAlt             | \#FFFFFFFF      |
+| SystemColorHighlightColor     | **选定文本** （背景） | 突出显示                | \#FF3399FF      |
+| SystemColorHighlightTextColor | **选定文本** （前景） | HighlightAlt             | \#FFFFFFFF      |
 | SystemColorHotlightColor      | **超链接**                 | Hyperlink                | \#FF0066CC      |
 | SystemColorWindowColor        | **背景**                 | PageBackground           | \#FFFFFFFF      |
 | SystemColorWindowTextColor    | **文本**                       | PageText                 | \#FF000000      |
@@ -206,7 +206,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ## <a name="the-xaml-type-ramp"></a>XAML 类型渐变
 
-themeresources.xaml 文件将定义若干个资源，这些资源定义可应用到 UI 中的文本容器（特别是 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 或 [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)）的 [Style](/uwp/api/Windows.UI.Xaml.Style)。 它们不是默认的隐式样式。 通过它们，你可以更轻松地创建匹配[字体指南](../style/typography.md)中记录的 *Windows 类型渐变*的 XAML UI 定义。
+themeresources.xaml 文件将定义若干个资源，这些资源定义可应用到 UI 中的文本容器（特别是 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 或 [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)）的 [Style](/uwp/api/Windows.UI.Xaml.Style)。 它们不是默认的隐式样式。 通过它们，你可以更轻松地创建匹配 [字体指南](../style/typography.md)中记录的 *Windows 类型渐变* 的 XAML UI 定义。
 
 这些样式用于你要应用到整个文本容器的文本属性。 如果你仅想要将样式应用到该文本部分，请在容器中的文本元素上（例如 [TextBlock.Inlines](/uwp/api/windows.ui.xaml.controls.textblock.inlines) 中的 [Run](/uwp/api/Windows.UI.Xaml.Documents.Run) 上或 [RichTextBlock.Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks) 中的 [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) 上）设置属性。
 
@@ -228,7 +228,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="basetextblockstyle"></a>BaseTextBlockStyle
 
-**TargetType**：[TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+**TargetType** ： [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
 为所有其他 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 容器样式提供常用属性。
 
@@ -338,7 +338,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="baserichtextblockstyle"></a>BaseRichTextBlockStyle
 
-**TargetType**：[RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
+**TargetType** ： [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
 
 为所有其他 [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 容器样式提供常用属性。
 
@@ -375,7 +375,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-**注意**：  [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 样式不具有 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 包含的所有文本渐变样式，主要原因是适用于“RichTextBlock”的基于块的文档对象模型使对个别文本元素设置属性更为简单。 同样，使用 XAML 内容属性设置 [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.text) 将出现以下情况：没有要设置样式的文本元素，因此你必须设置容器样式。 对于"RichTextBlock"，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph)）中，你可能会在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式。
+**注意** ：   [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 样式不具有 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 包含的所有文本渐变样式，主要原因是适用于“RichTextBlock”的基于块的文档对象模型使对个别文本元素设置属性更为简单。 同样，使用 XAML 内容属性设置 [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.text) 将出现以下情况：没有要设置样式的文本元素，因此你必须设置容器样式。 对于"RichTextBlock"，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph)）中，你可能会在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式。
 
 ## <a name="miscellaneous-named-styles"></a>其他命名样式
 
@@ -383,11 +383,11 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="textblockbuttonstyle"></a>TextBlockButtonStyle
 
-**TargetType**：[ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
+**TargetType** ： [ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
 
 当你需要显示用户可以点击以进行操作的文本时，请将此样式应用到 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)。 使用当前主题色设置该文本的样式以在交互时进行区分，并且该文本具有非常适用于文本的焦点矩形。 与 [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的隐式样式不同，“TextBlockButtonStyle”不会为文本添加下划线。
 
-该模板还设置显示文本的样式以使用 **SystemControlHyperlinkBaseMediumBrush**（适用于“PointerOver”状态）、**SystemControlHighlightBaseMediumLowBrush**（适用于“Pressed”状态）和 **SystemControlDisabledBaseLowBrush**（适用于“Disabled”状态）。
+该模板还设置显示文本的样式以使用 **SystemControlHyperlinkBaseMediumBrush** （适用于“PointerOver”状态）、 **SystemControlHighlightBaseMediumLowBrush** （适用于“Pressed”状态）和 **SystemControlDisabledBaseLowBrush** （适用于“Disabled”状态）。
 
 下面介绍向其应用了“TextBlockButtonStyle”资源的 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)。
 
@@ -402,7 +402,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType**：[Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType** ： [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
 
 此 [Style](/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 默认尺寸是 40 x 40 像素。 要定制样式，可明确设置 [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)、[Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[FontSize](/uwp/api/windows.ui.xaml.controls.control.fontsize) 和“Button”上的其他属性，也可以使用 [BasedOn](/uwp/api/windows.ui.xaml.style.basedon) 创建一个派生的样式。
 
@@ -418,7 +418,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType**：[Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType** ： [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
 
 此 [Style](/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 它与“NavigationBackButtonNormalStyle”类似，但尺寸为 30 x 30 像素。
 

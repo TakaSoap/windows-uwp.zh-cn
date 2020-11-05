@@ -1,5 +1,5 @@
 ---
-Description: 切换开关表示允许用户打开或关闭选项的物理开关。
+description: 切换开关表示允许用户打开或关闭选项的物理开关。
 title: 切换开关控件指南
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c8df28335bf67c00f0429d6967e9013c73ec351
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 03714fef129ccb51bd84a73317bfda702317f313
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154191"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034710"
 ---
 # <a name="toggle-switches"></a>切换开关
 
@@ -25,7 +25,7 @@ ms.locfileid: "89154191"
 
 若要创建一个切换开关控件，可以使用 [ToggleSwitch 类](/uwp/api/windows.ui.xaml.controls.toggleswitch)。
 
-> **平台 API**：[ToggleSwitch 类](/uwp/api/windows.ui.xaml.controls.toggleswitch)、[IsOn 属性](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison)、[Toggled 事件](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+> **平台 API** ： [ToggleSwitch 类](/uwp/api/windows.ui.xaml.controls.toggleswitch)、 [IsOn 属性](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison)、 [Toggled 事件](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
