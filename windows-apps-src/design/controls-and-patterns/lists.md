@@ -1,5 +1,5 @@
 ---
-description: 了解作为一起显示的多个相关数据项的表示形式的集合和列表。 
+description: 了解作为一起显示的多个相关数据项的表示形式的集合和列表。
 title: 集合和列表
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Collections and Lists
@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 764d2d769a1455ff6a0815a6716866c055edf291
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 3fd6cfb7fb0ffd7102f32d7159aba2b4c1042b76
+ms.sourcegitcommit: da44cb95946440cd06ff36254d42ecefcdd87ce2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220020"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063019"
 ---
 # <a name="collections-and-lists"></a>集合和列表
 
 集合和列表都指的是一起显示的多个相关数据项的表示形式。 集合可以由不同的集合控件（也可称为集合视图）通过多种方式来表示。 集合控件显示并启用与基于集合的内容（例如联系人列表、日期列表、图像集合等）的交互。
 
-> **重要的 API**：[ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 类](/uwp/api/Windows.UI.Xaml.Controls.GridView)、[FlipView 类](/uwp/api/windows.ui.xaml.controls.flipview)、[TreeView 类](/uwp/api/windows.ui.xaml.controls.treeview)、[ItemsRepeater 类](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
+> **重要的 API** ： [ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)、 [GridView 类](/uwp/api/Windows.UI.Xaml.Controls.GridView)、 [FlipView 类](/uwp/api/windows.ui.xaml.controls.flipview)、 [TreeView 类](/uwp/api/windows.ui.xaml.controls.treeview)、 [ItemsRepeater 类](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 
 本文介绍的控件包括：
 
@@ -74,7 +74,9 @@ ms.locfileid: "91220020"
     - 创建消息或消息日志的列表。
     - 创建联系人列表。
     - 在[大纲/细节模式](master-details.md)下创建大纲窗格。 大纲/细节模式常用于电子邮件应用中，其中一个窗格（大纲）具有一个包含可选项的列表，而另一个窗格（细节）具有一个包含选定项的详细视图。
-    
+
+> [!NOTE]
+> 如需在可滚动视图（例如 ScrollViewer 或 ListView）中处理 [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) 的指针事件，必须调用 [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations) 以在该视图中显式禁止支持对元素执行操作事件。 若要在该视图中重新启用操作事件，请调用 [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation)。
 
 ### <a name="examples"></a>示例
 
@@ -140,6 +142,9 @@ ms.locfileid: "91220020"
 - 囊括各种用例，包括以下常见用例：
     - 店面类型的用户界面（例如，浏览应用、歌曲、产品）
     - 交互式照片库
+
+> [!NOTE]
+> 如需在可滚动视图（例如 ScrollViewer 或 ListView）中处理 [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) 的指针事件，必须调用 [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations) 以在该视图中显式禁止支持对元素执行操作事件。 若要在该视图中重新启用操作事件，请调用 [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation)。
 
 ### <a name="examples"></a>示例
 
@@ -277,7 +282,7 @@ ItemsRepeater 不同于此页上显示的其他集合控件，因为它不提供
 
 ### <a name="examples"></a>示例
 
-下面的三个示例都是 ItemsRepeater 控件，这些控件绑定到同一数据源（数字集合）。 该数字集合以三种方式表示，下面的每个 ItemsRepeater 使用不同的自定义 [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) 和不同的自定义 [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate?view=winui-2.2)。
+下面的三个示例都是 ItemsRepeater 控件，这些控件绑定到同一数据源（数字集合）。 该数字集合以三种方式表示，下面的每个 ItemsRepeater 使用不同的自定义 [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) 和不同的自定义 [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)。
 
 ![使用水平条形表示法的 ItemsRepeater](images/itemsrepeater-1.png)
 ![使用垂直条形表示法的 ItemsRepeater](images/itemsrepeater-2.png)

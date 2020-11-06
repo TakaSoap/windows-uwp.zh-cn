@@ -1,5 +1,5 @@
 ---
-Description: 可以定义附加的布局，从而与 ItemsRepeater 控件等容器一起使用。
+description: 可以定义附加的布局，从而与 ItemsRepeater 控件等容器一起使用。
 title: AttachedLayout
 label: AttachedLayout
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5be16e22a30f0b366ad55f323a0f3f2aa2b7b837
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 62ecc21d3ed9835ae7360d0c0dfdfa0b09cbdced
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220300"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034860"
 ---
 # <a name="attached-layouts"></a>附加的布局
 
@@ -24,7 +24,7 @@ ms.locfileid: "91220300"
 | - |
 | 此控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](/uwp/toolkits/winui/)。 |
 
-> **重要的 API**：
+> **重要的 API** ：
 
 > * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
 > * [ItemsRepeater](../controls-and-patterns/items-repeater.md)
@@ -58,7 +58,7 @@ ms.locfileid: "91220300"
 [ItemsRepeater](../controls-and-patterns/items-repeater.md) 的行为也与“面板”相似，但与“面板”不同的是，它不会公开将以编程方式添加或删除 UIElement 子元素的子属性。  相反，其子元素的生存期是自动由框架管理的，以便与数据项集合相对应。  尽管它不是派生自“面板”，但它的行为与“面板”相似，并且像“面板”那样由框架进行处理。
 
 > [!NOTE]
-> [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) 是一个派生自“面板”的容器，它将其逻辑委托给附加的[布局](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout)对象。  LayoutPanel 处于“预览版”状态，目前仅可用于 WinUI 包的“预发行版”中   。
+> [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) 是一个派生自“面板”的容器，它将其逻辑委托给附加的[布局](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout)对象。  LayoutPanel 处于“预览版”状态，目前仅可用于 WinUI 包的“预发行版”中。
 
 #### <a name="containers"></a>容器
 
@@ -114,9 +114,9 @@ ms.locfileid: "91220300"
 
 ### <a name="ui-virtualization"></a>UI 虚拟化
 
-UI 虚拟化意味着延迟创建 UI 对象，直到_需要时才创建_。  这是一种性能优化措施。  对于非滚动方案而言，确定何时需要进行创建可能会根据应用特定的事物数量而定  。  在这些情况下，应用应考虑使用 [x:Load](../../xaml-platform/x-load-attribute.md)。 不需要在布局中进行任何特殊处理。
+UI 虚拟化意味着延迟创建 UI 对象，直到 _需要时才创建_ 。  这是一种性能优化措施。  对于非滚动方案而言，确定何时需要进行创建可能会根据应用特定的事物数量而定  。  在这些情况下，应用应考虑使用 [x:Load](../../xaml-platform/x-load-attribute.md)。 不需要在布局中进行任何特殊处理。
 
-在基于滚动的方案中（例如列表），确定_何时需要_进行创建这一事项通常会根据“是否将对用户可见”而定，这一点很大程度上取决于布局过程中它被放置的位置，并且需要特别考虑。  此方案是本文档的重点。
+在基于滚动的方案中（例如列表），确定 _何时需要_ 进行创建这一事项通常会根据“是否将对用户可见”而定，这一点很大程度上取决于布局过程中它被放置的位置，并且需要特别考虑。  此方案是本文档的重点。
 
 > [!NOTE]
 > 虽然本文档中未介绍，但在滚动方案中实现 UI 虚拟化的功能也可以应用于非滚动方案。  例如，有一种数据驱动的 ToolBar 控件，可管理它所呈现命令的生存期，并通过在可见区域和溢出菜单之间回收/移动元素来响应可用空间中的更改。
@@ -152,7 +152,7 @@ UI 虚拟化意味着延迟创建 UI 对象，直到_需要时才创建_。  这
 3. _（新的/可选）_ 将布局所需的任何状态对象初始化为 [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore) 的一部分  。 使用随上下文提供的 [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) 将它与主机容器一起存储。
 4. 替代 [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride)，并对所有子元素调用[度量](/uwp/api/windows.ui.xaml.uielement.measure)方法。
 5. 替代 [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride)，并对所有子元素调用[排列](/uwp/api/windows.ui.xaml.uielement.arrange)方法。
-6. （新的/可选）清理所有作为 [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore) 一部分保存的状态 ** 。
+6. （新的/可选）清理所有作为 [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore) 一部分保存的状态  。
 
 ### <a name="example-a-simple-stack-layout-varying-sized-items"></a>例如：简单的堆叠布局（项的大小可变）
 
@@ -311,13 +311,13 @@ Xbox 活动信息提要的 UI 使用了重复模式，即每行都有一个宽�
 #### <a name="implementation"></a>实现
 
 ```csharp
-/// <summary>
-///  This is a custom layout that displays elements in two different sizes
-///  wide (w) and narrow (n). There are two types of rows 
-///  odd rows - narrow narrow wide
-///  even rows - wide narrow narrow
-///  This pattern repeats.
-/// </summary>
+/// <summary>
+///  This is a custom layout that displays elements in two different sizes
+///  wide (w) and narrow (n). There are two types of rows 
+///  odd rows - narrow narrow wide
+///  even rows - wide narrow narrow
+///  This pattern repeats.
+/// </summary>
 
 public class ActivityFeedLayout : VirtualizingLayout // STEP #1 Inherit from base attached layout
 {

@@ -1,5 +1,5 @@
 ---
-Description: 了解如何在 Windows 应用中启用两个基础页面之间的对等导航。
+description: 了解如何在 Windows 应用中启用两个基础页面之间的对等导航。
 title: 两个页面之间的对等导航
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
@@ -13,18 +13,18 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 8eae03b2d92b8854e5368b824b1572a4946761ed
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d0945db420c2e20fa4b81a8f402f580762afe19c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220630"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031450"
 ---
 # <a name="implement-navigation-between-two-pages"></a>实现两个页面之间的导航
 
 了解如何使用框架和页面在你的应用中实现基本对等导航。 
 
-> **重要的 API**：[Windows.UI.Xaml.Controls.Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) 类、[Windows.UI.Xaml.Controls.Page](/uwp/api/Windows.UI.Xaml.Controls.Page) 类、[Windows.UI.Xaml.Navigation](/uwp/api/Windows.UI.Xaml.Navigation) 命名空间  
+> **重要的 API** ： [Windows.UI.Xaml.Controls.Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) 类、 [Windows.UI.Xaml.Controls.Page](/uwp/api/Windows.UI.Xaml.Controls.Page) 类、 [Windows.UI.Xaml.Navigation](/uwp/api/Windows.UI.Xaml.Navigation) 命名空间  
 
 ![对等导航](images/peertopeer.png)
 
@@ -33,7 +33,7 @@ ms.locfileid: "91220630"
 1.  在 Microsoft Visual Studio 菜单上，依次选择“文件” > “新建项目” 。
 2.  在“新建项目”对话框的左侧窗格中，依次选择“Visual C#” > “Windows” > “通用”节点或“Visual C++” > “Windows” > “通用”节点      。
 3.  在中心窗格中，选择“空白应用”。
-4.  在“名称”框中，输入 **NavApp1**，然后选择“确定”按钮。
+4.  在“名称”框中，输入 **NavApp1** ，然后选择“确定”按钮。
     解决方案已创建并且项目文件显示在“解决方案资源管理器”中。
 5.  若要运行程序，请从菜单中依次选择“调试” > “启动调试”，或按 F5。
     将显示一个空白页面。
@@ -46,7 +46,7 @@ ms.locfileid: "91220630"
 1.  在“解决方案资源管理器”中，右键单击“空白应用”项目节点打开快捷菜单。
 2.  从快捷菜单中依次选择“添加” > “新建项”。
 3.  在“添加新项”对话框中，选择中间窗格中的“空白页面”。
-4.  在“名称”框中，输入 **Page1**（或 **Page2**）并按“添加”按钮。
+4.  在“名称”框中，输入 **Page1** （或 **Page2** ）并按“添加”按钮。
 5. 重复步骤 1-4 以添加第二个页面。
 
 现在，这些文件应列为 NavApp1 项目的一部分。
@@ -87,7 +87,7 @@ ms.locfileid: "91220630"
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 元素作为根 [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素并位于 `pageTitle` [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素之后  。
+-   [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 元素作为根 [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素并位于 `pageTitle` [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素之后  。
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
@@ -124,7 +124,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 元素作为根 [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素并位于 `pageTitle` [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素之后  。
+-   [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 元素作为根 [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素并位于 `pageTitle` [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素之后  。
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -305,7 +305,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 在将更多功能添加到我们的应用之前，让我们来看看我们所添加的页面如何在我们的应用内提供导航。
 
 首先，为 App.xaml 代码隐藏文件中 `App.OnLaunched` 方法中的应用创建一个名为 `rootFrame` 的 [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame)。 Frame 类支持 [Navigate](/uwp/api/windows.ui.xaml.controls.frame.navigate)、[GoBack](/uwp/api/windows.ui.xaml.controls.frame.goback) 和 [GoForward](/uwp/api/windows.ui.xaml.controls.frame.goforward) 等各种导航方法以及 [BackStack](/uwp/api/windows.ui.xaml.controls.frame.backstack)、[ForwardStack](/uwp/api/windows.ui.xaml.controls.frame.forwardstack) 和 [BackStackDepth](/uwp/api/windows.ui.xaml.controls.frame.backstackdepth) 等属性       。
- 
+ 
 [  **Navigate**](/uwp/api/windows.ui.xaml.controls.frame.navigate) 方法用于在此 **Frame** 中显示内容。 默认情况下，此方法加载 MainPage.xaml。 在我们的示例中，`Page1` 将传递到 Navigate 方法，因此该方法会加载 Frame 中的 `Page1` 。 
 
 `Page1` 是 [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) 类的子类。 Page 类具有一个只读 Frame 属性，可获取包含 Page 的 Frame   。 当 `Page1` 中 HyperlinkButton 的 Click 事件处理程序调用 `this.Frame.Navigate(typeof(Page2))` 时，Frame 将显示 Page2.xaml 的内容  。
@@ -330,7 +330,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 </StackPanel>
 ```
 
-在 Page1.xaml 代码隐藏文件的 `HyperlinkButton_Click` 事件处理程序中，向 `Navigate` 方法添加引用 `name` **TextBox** 的 `Text` 属性的参数。
+在 Page1.xaml 代码隐藏文件的 `HyperlinkButton_Click` 事件处理程序中，向 `Navigate` 方法添加引用 `name` TextBox 的 `Text` 属性的参数。
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -353,7 +353,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
-在 Page2.xaml 中，将你之前添加的 **HyperlinkButton** 替换为以下 **StackPanel**。
+在 Page2.xaml 中，将你之前添加的 **HyperlinkButton** 替换为以下 **StackPanel** 。
 
 我们在此处添加 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 来显示从 Page1 传递的文本字符串。
 

@@ -6,12 +6,12 @@ ms.date: 06/05/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb97e58e914da1982066d9cf150f5c8b18ef884a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c937a0cacd0dc198c3ad2bd979850efafcb2aa05
+ms.sourcegitcommit: aa444aff3371f73243c2544cf6afaf8e58875ee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155441"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93298254"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -27,7 +27,7 @@ ms.locfileid: "89155441"
 
 [  **Windows.Web.Http**](/uwp/api/Windows.Web.Http) 命名空间及相关 [**Windows.Web.Http.Headers**](/uwp/api/Windows.Web.Http.Headers) 和 [**Windows.Web.Http.Filters**](/uwp/api/Windows.Web.Http.Filters) 命名空间中的类为充当 HTTP 客户端的通用 Windows 平台 (UWP) 应用提供了一个编程接口，以便于执行基本 GET 请求或实现下面列出的更高级的 HTTP 功能。
 
--   执行常见操作（**DELETE**、**GET**、**PUT** 和 **POST**）的方法。 上述每种请求都作为异步操作进行发送。
+-   执行常见操作（ **DELETE** 、 **GET** 、 **PUT** 和 **POST** ）的方法。 上述每种请求都作为异步操作进行发送。
 
 -   支持常见的身份验证设置和模式。
 
@@ -45,8 +45,8 @@ ms.locfileid: "89155441"
 
 -   [**HttpBufferContent**](/uwp/api/Windows.Web.Http.HttpBufferContent)。 缓冲区形式的内容
 -   [**HttpFormUrlEncodedContent**](/uwp/api/Windows.Web.Http.HttpFormUrlEncodedContent)。 使用 **application/x-www-form-urlencoded** MIME 类型编码的名称和值元组形式的内容
--   [**HttpMultipartContent**](/uwp/api/Windows.Web.Http.HttpMultipartContent)。 采用 **multipart/\*** MIME 类型格式的内容。
--   [**HttpMultipartFormDataContent**](/uwp/api/Windows.Web.Http.HttpMultipartFormDataContent)。 编码为 **multipart/form-data** MIME 类型的内容。
+-   [**HttpMultipartContent**](/uwp/api/Windows.Web.Http.HttpMultipartContent)。 采用 multipart/\* MIME 类型格式的内容。
+-   [HttpMultipartFormDataContent](/uwp/api/Windows.Web.Http.HttpMultipartFormDataContent)*。 编码为 **multipart/form-data** MIME 类型的内容。
 -   [**HttpStreamContent**](/uwp/api/Windows.Web.Http.HttpStreamContent)。 流（供 HTTP GET 方法接收数据和 HTTP POST 方法上载数据使用的内部类型）形式的内容
 -   [**HttpStringContent**](/uwp/api/Windows.Web.Http.HttpStringContent)。 字符串形式的内容。
 -   [**IHttpContent**](/uwp/api/Windows.Web.Http.IHttpContent) - 供开发人员创建其自己的内容对象的基接口
@@ -57,7 +57,7 @@ ms.locfileid: "89155441"
 
 ## <a name="send-a-simple-get-request-over-http"></a>通过 HTTP 发送简单的 GET 请求
 
-正如本文前面提到的，[**Windows.Web.Http**](/uwp/api/Windows.Web.Http) 命名空间允许 UWP 应用发送 GET 请求。 以下代码片段演示了如何使用 \/[Windows.Web.Http.HttpClient  和 ](/uwp/api/Windows.Web.Http.HttpClient)[Windows.Web.Http.HttpResponseMessage  类读取来自 GET 请求的响应，以便将 GET 请求发送到 http:](/uwp/api/Windows.Web.Http.HttpResponseMessage)/www.contoso.com。
+正如本文前面提到的， [**Windows.Web.Http**](/uwp/api/Windows.Web.Http) 命名空间允许 UWP 应用发送 GET 请求。 以下代码片段演示了如何使用 \/[Windows.Web.Http.HttpClient  和 ](/uwp/api/Windows.Web.Http.HttpClient)[Windows.Web.Http.HttpResponseMessage  类读取来自 GET 请求的响应，以便将 GET 请求发送到 http:](/uwp/api/Windows.Web.Http.HttpResponseMessage)/www.contoso.com。
 
 ```csharp
 //Create an HTTP client object
@@ -161,7 +161,7 @@ int main()
 以下 [C++/WinRT](../cpp-and-winrt-apis/index.md) 代码示例演示如何使用表单数据和 POST 请求，以文件上传的形式将少量的二进制数据发送到 Web 服务器。 该代码使用 [**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent) 类表示二进制数据，使用 [**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent) 类表示多部分表单数据。
 
 > [!NOTE]
-> 不适合对 UI 线程调用 **get**（如以下代码示例所示）。 有关在这种情况下可使用的适当方法，请参阅[使用 C++/WinRT 进行并发和异步操作](../cpp-and-winrt-apis/concurrency.md)。
+> 不适合对 UI 线程调用 **get** （如以下代码示例所示）。 有关在这种情况下可使用的适当方法，请参阅[使用 C++/WinRT 进行并发和异步操作](../cpp-and-winrt-apis/concurrency.md)。
 
 ```cppwinrt
 // pch.h
@@ -329,7 +329,7 @@ int main()
 
 将统一资源标识符 (URI) 的无效字符串传递给 [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) 对象的构造函数时，将引发异常。
 
-**.NET：**   [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) 类型在 C# 和 VB 中显示为 [**System.Uri**](/dotnet/api/system.uri)。
+**.NET：** [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) 类型在 C# 和 VB 中显示为 [**System.Uri**](/dotnet/api/system.uri)。
 
 在 C# 和 Visual Basic 中，通过使用 .NET 4.5 中的 [**System.Uri**](/dotnet/api/system.uri) 类和 [**System.Uri.TryCreate**](/dotnet/api/system.uri.trycreate#overloads) 方法之一在构造 URI 之前测试从用户收到的字符串，可以避免该错误。
 
@@ -337,8 +337,12 @@ int main()
 
 [  **Windows.Web.Http**](/uwp/api/Windows.Web.Http) 缺少方便函数。 所以，使用 [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) 和该命名空间中其他类的应用需要使用 **HRESULT** 值。
 
-在采用 C#、VB.NET 编写的使用 .NET Framework 4.5 的应用中发生异常时，[System.Exception](/dotnet/api/system.exception) 表示应用执行期间的错误。 [System.Exception.HResult](/dotnet/api/system.exception.hresult#System_Exception_HResult) 属性将返回分配到特定异常的 **HRESULT**。 [System.Exception.Message](/dotnet/api/system.exception.message#System_Exception_Message) 属性将返回用于描述异常的消息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
+在使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) 的应用中，[winrt::hresult_error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 结构表示在应用执行期间引发的异常。 [winrt::hresult_error::code](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function) 函数将返回分配到特定异常的 HRESULT。 [winrt::hresult_error::message](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errormessage-function) 函数将返回系统提供的与 HRESULT 值关联的字符串。 有关详细信息，请参阅[使用 C++/WinRT 的错误处理](/windows/uwp/cpp-and-winrt-apis/error-handling)
 
-在使用托管的 C++ 的应用中发生异常时，[Platform::Exception](/cpp/cppcx/platform-exception-class) 表示应用执行期间的错误。 [Platform::Exception::HResult](/cpp/cppcx/platform-exception-class#hresult) 属性将返回分配到特定异常的 **HRESULT**。 [Platform::Exception::Message](/cpp/cppcx/platform-exception-class#message) 属性将返回系统提供的与 **HRESULT** 值关联的字符串。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
+可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可筛选特定 HRESULT 值来根据异常原因修改应用行为。
 
-对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。 对于某些非法的方法调用，返回的 **HRESULT** 为 **E\_ILLEGAL\_METHOD\_CALL**。
+在采用 C#、VB.NET 编写的使用 .NET Framework 4.5 的应用中发生异常时，[System.Exception](/dotnet/api/system.exception) 表示应用执行期间的错误。 [System.Exception.HResult](/dotnet/api/system.exception.hresult#System_Exception_HResult) 属性将返回分配到特定异常的 **HRESULT** 。 [System.Exception.Message](/dotnet/api/system.exception.message#System_Exception_Message) 属性将返回用于描述异常的消息。
+
+C++/CX 已由 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) 取代。 但在使用 C++/CX 的应用中，[Platform::Exception](/cpp/cppcx/platform-exception-class) 表示在应用执行期间引发异常时出现的错误。 [Platform::Exception::HResult](/cpp/cppcx/platform-exception-class#hresult) 属性将返回分配到特定异常的 **HRESULT** 。 [Platform::Exception::Message](/cpp/cppcx/platform-exception-class#message) 属性将返回系统提供的与 **HRESULT** 值关联的字符串。
+
+对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG** 。 对于某些非法的方法调用，返回的 **HRESULT** 为 **E\_ILLEGAL\_METHOD\_CALL** 。

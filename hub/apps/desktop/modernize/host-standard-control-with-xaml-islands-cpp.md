@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5acf1a017a55ddf75520eccf22b1a3b00ee8084b
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: fcad3bfeb5c31a6b3af85e5fd9a0ea72f11d65da
+ms.sourcegitcommit: caf4dba6bdfc3c6d9685d10aa9924b170b00bed8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253607"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93049508"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-c-win32-app"></a>在 C++ Win32 应用中托管标准 WinRT XAML 控件
 
@@ -55,6 +55,12 @@ ms.locfileid: "92253607"
             </compatibility>
         </assembly>
         ```
+
+6. 添加对 Windows 运行时元数据的引用：
+   1. 在解决方案资源管理器中，右键单击项目的“引用”节点并选择“添加引用”  。
+   2. 单击页面底部的“浏览”按钮，然后导航到 SDK 安装路径中的 UnionMetadata 文件夹。 默认情况下，SDK 将安装到 `C:\Program Files (x86)\Windows Kits\10\UnionMetadata`。 
+   3. 然后，选择以你面向的 Windows 版本（例如 10.0.18362.0）命名的文件夹，在该文件夹中选择 `Windows.winmd` 文件。
+   4. 单击“确定”，关闭“添加引用”对话框 。
 
 ## <a name="use-the-xaml-hosting-api-to-host-a-winrt-xaml-control"></a>使用 XAML 托管 API 托管 WinRT XAML 控件
 

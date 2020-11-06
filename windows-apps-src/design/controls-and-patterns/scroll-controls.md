@@ -1,5 +1,5 @@
 ---
-Description: 平移和滚动使用户可以获取超出屏幕边界的内容。
+description: 平移和滚动使用户可以获取超出屏幕边界的内容。
 title: 滚动查看器控件
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f4fb37250817087bf7b8a41144bf9e4841a9048
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 60a8e8f204591e455e2ccf52b09684a878b67452
+ms.sourcegitcommit: da44cb95946440cd06ff36254d42ecefcdd87ce2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174461"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063029"
 ---
 # <a name="scroll-viewer-controls"></a>滚动查看器控件
 
@@ -25,7 +25,7 @@ ms.locfileid: "89174461"
 
 当 UI 内容超出一个区域的容量时，可以使用滚动查看器控件。
 
-> **重要的 API**：[ScrollViewer 类](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)、[ScrollBar 类](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
+> **重要的 API** ： [ScrollViewer 类](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)、 [ScrollBar 类](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
 
 滚动查看器允许内容延伸到视区（可见区域）边界外。 用户可以通过触摸、鼠标滚轮、键盘或游戏板操作滚动查看器图面，或者使用鼠标或笔光标操作滚动查看器滚动条查看此内容。 此图显示了滚动查看器控件的几个示例。
 
@@ -144,6 +144,9 @@ ScrollViewer 定义以下 XAML 附加属性：
 - 如果用户将滚动查看一段较长的文本，请配置滚动查看器，使其仅在垂直方向滚动。
 - 使用滚动查看器仅包含一个对象。 请注意，该唯一对象可能是版式面板，它反过来包含自身的任意数量的对象。
 - 不要将 [Pivot](pivot.md) 控件放置在滚动查看器内，避免与透视表的滚动逻辑发生冲突。
+- 如需在可滚动视图（例如 ScrollViewer 或 ListView）中处理 [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) 的指针事件，必须调用 [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations) 以在该视图中显式禁止支持对元素执行操作事件。 若要在该视图中重新启用操作事件，请调用 [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation)。
+
+
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 

@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3f12c3d16cabcbe834ca9bb55a437e3f932bbf78
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 99b0c362613cd1da2050b5f96b9963ca922f75d2
+ms.sourcegitcommit: caf4dba6bdfc3c6d9685d10aa9924b170b00bed8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933048"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93049518"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-c-win32-app"></a>在 C++ Win32 应用中托管自定义 WinRT XAML 控件
 
@@ -21,7 +21,7 @@ ms.locfileid: "91933048"
 
 你需要在本演练中创建以下项目和组件，来托管自定义 UWP XAML 控件：
 
-* **Windows 桌面应用程序项目**。 此项目实现本机 C++ Win32 桌面应用。 你将向此项目添加代码，使用 UWP XAML 托管 API 来托管自定义 UWP XAML 控件。
+* **Windows 桌面应用程序项目** 。 此项目实现本机 C++ Win32 桌面应用。 你将向此项目添加代码，使用 UWP XAML 托管 API 来托管自定义 UWP XAML 控件。
 
 * **UWP 应用项目 (C++/WinRT)** 。 此项目实现自定义 UWP XAML 控件。 它还实现根元数据提供程序，用于加载项目中自定义 UWP XAML 类型的元数据。
 
@@ -48,7 +48,13 @@ ms.locfileid: "91933048"
     * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)（最新稳定版）。 此包定义 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类，你将在本演练中的后面部分使用该类。
     * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140)。
 
-5. 生成解决方案并确认生成成功。
+5. 添加对 Windows 运行时元数据的引用：
+   1. 在解决方案资源管理器中，右键单击项目的“引用”节点并选择“添加引用”  。
+   2. 单击页面底部的“浏览”按钮，然后导航到 SDK 安装路径中的 UnionMetadata 文件夹。 默认情况下，SDK 将安装到 `C:\Program Files (x86)\Windows Kits\10\UnionMetadata`。 
+   3. 然后，选择以你面向的 Windows 版本（例如 10.0.18362.0）命名的文件夹，在该文件夹中选择 `Windows.winmd` 文件。
+   4. 单击“确定”，关闭“添加引用”对话框 。
+
+6. 生成解决方案并确认生成成功。
 
 ## <a name="create-a-uwp-app-project"></a>创建 UWP 应用项目
 
@@ -185,7 +191,7 @@ ms.locfileid: "91933048"
 2. 在 MyUWPApp 项目中，展开 App.xaml 文件   。
 3. 将 App.xaml、App.cpp、App.h 和 App.idl 文件的内容替换为以下代码     。
 
-    * **App.xaml**：
+    * **App.xaml** ：
 
         ```xml
         <Toolkit:XamlApplication
@@ -197,7 +203,7 @@ ms.locfileid: "91933048"
         </Toolkit:XamlApplication>
         ```
 
-    * **App.idl**：
+    * **App.idl** ：
 
         ```IDL
         namespace MyUWPApp
@@ -210,7 +216,7 @@ ms.locfileid: "91933048"
         }
         ```
 
-    * **App.h**：
+    * **App.h** ：
 
         ```cpp
         #pragma once
@@ -233,7 +239,7 @@ ms.locfileid: "91933048"
         }
         ```
 
-    * **App.cpp**：
+    * **App.cpp** ：
 
         ```cpp
         #include "pch.h"
