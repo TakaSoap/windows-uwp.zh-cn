@@ -6,12 +6,12 @@ ms.date: 01/25/2018
 ms.topic: article
 keywords: windows 10，uwp，游戏，入门
 localizationpriority: medium
-ms.openlocfilehash: 7d3e50f5d32cd8c6a497ff3de67005972d3a0f7f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3368186fdf860df48d7ae49e08d47e1abf667aa3
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175311"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339445"
 ---
 # <a name="getting-started"></a>入门
 
@@ -37,7 +37,7 @@ ms.locfileid: "89175311"
 
 ### <a name="step-2-prepare-your-hardware-for-development"></a>步骤2：准备要开发的硬件
 
-如果是首次进行开发，则需要在设备上启用开发人员模式。 有关详细信息，请参阅 [启用设备进行开发](../get-started/enable-your-device-for-development.md)。
+如果是首次进行开发，则需要在设备上启用开发人员模式。 有关详细信息，请参阅 [启用设备进行开发](/windows/apps/get-started/enable-your-device-for-development)。
 
 对于计划使用零售 Xbox 控制台开发 Xbox 游戏的用户，还需要在其上激活并启用开发人员模式。 有关详细信息，请参阅 xbox one [开发人员模式激活](../xbox-apps/devkit-activation.md) 和 [XBOX 上的 UWP 应用开发入门](../xbox-apps/getting-started.md)。 
 

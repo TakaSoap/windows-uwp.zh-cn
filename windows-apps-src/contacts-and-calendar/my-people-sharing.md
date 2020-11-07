@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 76d52fe3ed7e7fb74ae5338e589ab34751bedebe
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8cbf82592e91b82e2d9d34d116d00aecf2ddd021
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173661"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339405"
 ---
 # <a name="my-people-sharing"></a>“我的人脉”共享
 
@@ -20,7 +20,7 @@ ms.locfileid: "89173661"
 
 ## <a name="requirements"></a>要求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](../get-started/get-set-up.md)。
++ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](/windows/apps/get-started/get-set-up)。
 + C# 或类似面向对象的编程语言的基础知识。 若要开始使用 C#，请参阅[创建“Hello, world”应用](../get-started/create-a-hello-world-app-xaml-universal.md)。
 
 ## <a name="overview"></a>概述
@@ -37,7 +37,7 @@ ms.locfileid: "89173661"
 
 ## <a name="declaring-support-for-the-share-contract"></a>声明对“共享”合约提供支持
 
-若要声明支持以应用程序作为共享目标，请首先在 Visual Studio 中打开应用程序。 从**解决方案资源管理器**中，右键单击 **package.appxmanifest** 并选择**打开方式**。 从菜单中，选择 **XML (文本)编辑器**，然后单击**确定**。 然后，对清单进行以下更改：
+若要声明支持以应用程序作为共享目标，请首先在 Visual Studio 中打开应用程序。 从 **解决方案资源管理器** 中，右键单击 **package.appxmanifest** 并选择 **打开方式** 。 从菜单中，选择 **XML (文本)编辑器** ，然后单击 **确定** 。 然后，对清单进行以下更改：
 
 
 **之前**
@@ -103,7 +103,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找你的包系列名称，请使用默认编辑器打开 **Package.appxmanifest**，然后查找“Packaging”选项卡。在这里，“App”是指与“共享目标”视图对应的可激活类。
+“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找你的包系列名称，请使用默认编辑器打开 **Package.appxmanifest** ，然后查找“Packaging”选项卡。在这里，“App”是指与“共享目标”视图对应的可激活类。
 
 ## <a name="running-as-a-my-people-share-target"></a>作为“我的人脉”共享目标运行
 
@@ -131,7 +131,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 + [添加“我的人脉”支持](my-people-support.md)
 + [ShareTarget 类](/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
 + [联系人卡集成示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

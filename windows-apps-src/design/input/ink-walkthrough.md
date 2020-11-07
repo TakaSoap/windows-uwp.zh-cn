@@ -6,17 +6,17 @@ keywords: 墨迹，墨迹书写，教程
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f726f4ab4a422cc94f00493261620ddff8b6122b
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: fb74b5d15b731a6b08a0adcec20a801b7e133a7f
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860194"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339815"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>教程：在 Windows 应用程序中支持墨迹
 
 ![Surface Pen 图片。](images/ink/ink-hero-small.png)  
-*Surface 触控笔*（可通过 [Microsoft 官方商城](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)购买）。
+*Surface 触控笔* （可通过 [Microsoft 官方商城](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)购买）。
 
 本教程将逐步介绍如何创建支持使用 Windows Ink 编写和绘制的基本 Windows 应用程序。 我们使用可以从 GitHub 下载的示例应用中的代码段（参阅[示例代码](#sample-code)），来展示各个步骤所讨论的各种功能和关联的 Windows Ink API（参阅 [Windows Ink 平台的组件](#components-of-the-windows-ink-platform)）。
 
@@ -29,7 +29,7 @@ ms.locfileid: "91860194"
 
 有关实现这些功能的更多详细信息，请参阅 [windows 应用中的笔交互和 Windows 墨迹](./pen-and-stylus-interactions.md)。
 
-## <a name="introduction"></a>简介
+## <a name="introduction"></a>介绍
 
 使用 Windows Ink，你可以为客户提供能够想象的几乎任何一种笔纸体验的同等数字方式，从快速的手写便笺和注释到白板演示，从体系结构和工程绘图到个人作品。
 
@@ -40,22 +40,22 @@ ms.locfileid: "91860194"
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 根据你的配置，可能必须在系统设置中安装 [NETCore Microsoft.netcore.universalwindowsplatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 包并启用 **开发人员模式** (设置-> 更新 & 安全 > 开发人员-> 使用开发人员功能) 。
 * 如果不熟悉 Visual Studio 的 Windows 应用开发，请在开始学习本教程之前先了解以下主题：  
-    * [准备工作](../../get-started/get-set-up.md)
+    * [准备工作](/windows/apps/get-started/get-set-up)
     * [创建“Hello, world”应用 \(XAML\)](../../get-started/create-a-hello-world-app-xaml-universal.md)
 * **[可选]** 数字笔和显示屏支持使用该数字笔输入的计算机。
 
 > [!NOTE] 
 > 虽然 Windows Ink 可以支持使用鼠标和触摸进行绘制（我们将在此教程的步骤 3 中介绍如何执行操作），以提供最佳的 Windows Ink 体验，但是我们仍建议使用数字笔和显示屏支持使用该数字笔输入的计算机。
 
-## <a name="sample-code"></a>示例代码
+## <a name="sample-code"></a>代码示例
 在本指南中，我们全部使用示例墨迹应用来演示所讨论的概念和功能。
 
 在 [windows-appsample-get-started-ink 示例](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)从 [GitHub](https://github.com/) 下载此 Visual Studio 示例和源代码：
 
-1. 选择绿色的**克隆或下载**按钮  
+1. 选择绿色的 **克隆或下载** 按钮  
 ![正在克隆存储库。](images/ink/ink-clone.png)
-2. 如果你有 GitHub 帐户，则可以选择**在 Visual Studio 中打开**，将存储库克隆到本地计算机 
-3. 如果你没有 GitHub 帐户，或者只是想要项目的本地副本，则选择**下载 ZIP**（你需要以后定期查看以下载最新的更新）
+2. 如果你有 GitHub 帐户，则可以选择 **在 Visual Studio 中打开** ，将存储库克隆到本地计算机 
+3. 如果你没有 GitHub 帐户，或者只是想要项目的本地副本，则选择 **下载 ZIP** （你需要以后定期查看以下载最新的更新）
 
 > [!IMPORTANT]
 > 示例中的大部分代码已被注释掉。在我们介绍各个步骤时，系统将要求你取消代码各个部分的注释。 在 Visual Studio 中，只需突出显示代码行，并按 CTRL-K，然后按 CTRL-U。
@@ -75,11 +75,11 @@ ms.locfileid: "91860194"
 
 下载 RadialController 示例应用后，确认它在运行：
 1. 在 Visual Studio 中打开示例项目。
-2. 将**解决方案平台**下拉列表设置为非 ARM 选择。
+2. 将 **解决方案平台** 下拉列表设置为非 ARM 选择。
 3. 按 F5 编译、部署和运行。  
 
    > [!NOTE]
-   > 或者，可以选择 "**调试**"  >  "**开始调试**" 菜单项，或选择此处显示的 "**本地计算机**运行" 按钮。
+   > 或者，可以选择 " **调试** "  >  " **开始调试** " 菜单项，或选择此处显示的 " **本地计算机** 运行" 按钮。
    > ![Visual Studio "生成项目" 按钮。](images/ink/ink-vsrun-small.png)
 
 应用窗口打开，在初始屏幕出现几秒钟后，你将看到此初始屏幕。
@@ -159,7 +159,7 @@ ms.locfileid: "91860194"
 
 [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 是一个 UWP 平台控件，提供激活墨迹相关功能的按钮的可自定义、可扩展集合。 
 
-默认情况下，[**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 包含一组基本按钮，让用户可以快速选择触控笔、铅笔、荧光笔或橡皮擦，这些工具均可以与模具（标尺或量角器）一起使用。 触控笔、铅笔和荧光笔按钮各自还提供浮出控件，用于选择墨迹颜色和笔划大小。
+默认情况下， [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 包含一组基本按钮，让用户可以快速选择触控笔、铅笔、荧光笔或橡皮擦，这些工具均可以与模具（标尺或量角器）一起使用。 触控笔、铅笔和荧光笔按钮各自还提供浮出控件，用于选择墨迹颜色和笔划大小。
 
 若要在墨迹书写应用中添加默认的 [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar)，只需将其放在与 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) 页面相同的页面上，并关联这两个控件。
 
@@ -177,7 +177,7 @@ ms.locfileid: "91860194"
 ```
 
 > [!NOTE]
-> 为了让 UI 和代码尽量保持整齐、简单，我们将使用基本的网格布局，并网格行中在 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) 后面声明 [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar)。 如果在 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) 之前声明，[**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 将首先呈现在画布下方，用户无法访问。  
+> 为了让 UI 和代码尽量保持整齐、简单，我们将使用基本的网格布局，并网格行中在 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) 后面声明 [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar)。 如果在 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) 之前声明， [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 将首先呈现在画布下方，用户无法访问。  
 
 现在，再次运行应用，查看 [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar)，并试用一下一些工具。
 
@@ -210,11 +210,11 @@ ms.locfileid: "91860194"
 在此步骤，我们使用 Windows Ink 手写识别功能来尝试识别你书写的内容。
 
 > [!NOTE]
-> 书写识别可以通过**笔和 Windows Ink** 设置改进：
-> 1. 打开“开始”菜单，然后选择**设置**。
-> 2. 从 "设置" 屏幕中，选择 "**设备**" "  >  **笔 & Windows Ink**"。
+> 书写识别可以通过 **笔和 Windows Ink** 设置改进：
+> 1. 打开“开始”菜单，然后选择 **设置** 。
+> 2. 从 "设置" 屏幕中，选择 " **设备** " "  >  **笔 & Windows Ink** "。
 > !["Windows 墨迹设置" 页 & 笔的屏幕截图。](images/ink/ink-settings-small.png)
-> 3. 选择**了解我的书写**打开**手写个性化**对话框。
+> 3. 选择 **了解我的书写** 打开 **手写个性化** 对话框。
 > !["手写识别个性化" 对话框的屏幕截图。](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### <a name="in-the-sample"></a>在示例中：
@@ -248,7 +248,7 @@ ms.locfileid: "91860194"
     IReadOnlyList<IInkAnalysisNode> words = null;
 ```
 
-- 这是**识别文本**按钮的处理程序，我们用于执行识别处理。
+- 这是 **识别文本** 按钮的处理程序，我们用于执行识别处理。
 
 ``` csharp
     private async void recognizeText_ClickAsync(object sender, RoutedEventArgs e)
@@ -278,7 +278,7 @@ ms.locfileid: "91860194"
     }
 ```
 
-7. 再次运行应用，随便写点什么，然后单击**识别文本**按钮
+7. 再次运行应用，随便写点什么，然后单击 **识别文本** 按钮
 8. 识别结果显示在按钮旁边
 
 ### <a name="challenge-1-international-recognition"></a>挑战 1：国际识别
@@ -328,7 +328,7 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
 - 圆形
 - 菱形
 - 绘图
-- 椭圆形
+- Ellipse
 - 等边三角形
 - 六边形
 - 等腰三角形
@@ -381,7 +381,7 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
     }
 ```
 
-7. 运行应用，绘制一些形状，然后单击**识别形状**按钮
+7. 运行应用，绘制一些形状，然后单击 **识别形状** 按钮
 
 这里是一个数字创意的基本流程图示例。
 
@@ -398,7 +398,7 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
 
 ISF 文件是一种基本的 GIF 图像，包含描述笔划墨迹属性和行为的其他元数据。 不支持墨迹的应用可以忽略额外的元数据，但仍可以加载基本 GIF 图像（包括 alpha 通道背景透明度）。
 
-在此步骤中，我们关联墨迹工具栏旁边的**保存**和**加载**按钮。
+在此步骤中，我们关联墨迹工具栏旁边的 **保存** 和 **加载** 按钮。
 
 ### <a name="in-the-sample"></a>在示例中：
 1. 打开 MainPage.xaml 文件。
@@ -435,9 +435,9 @@ ISF 文件是一种基本的 GIF 图像，包含描述笔划墨迹属性和行�
 ```
 
 7. 运行应用并绘制一些图画。
-8. 选择**保存**按钮，保存你的绘图。
+8. 选择 **保存** 按钮，保存你的绘图。
 9. 擦除墨迹或重启应用。
-10. 选择**加载**按钮，打开刚刚保存的墨迹文件。
+10. 选择 **加载** 按钮，打开刚刚保存的墨迹文件。
 
 ### <a name="challenge-use-the-clipboard-to-copy-and-paste-ink-strokes"></a>挑战：使用剪贴板复制并粘贴笔划墨迹 
 <table class="wdg-noborder">

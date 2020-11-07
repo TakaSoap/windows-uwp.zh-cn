@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
-ms.openlocfilehash: c38eee9e3be7d6ea85b56fd5ad3aa3d62ae751b9
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 7cc63c1bdf5f3357bed596e5afcf03681eeb513a
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93029762"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339735"
 ---
 # <a name="run-app-experiments-with-ab-testing"></a>通过 A/B 测试运行应用实验
 
@@ -36,7 +36,7 @@ A/B 测试的目标应该是标识远程变量值的变体，该变体可能会�
 
 在可以通过 A/B 测试运行实验之前，必须设置你的开发计算机：
 
-* 按照[此处](../get-started/get-set-up.md)的说明为 UWP 开发设置你的开发计算机。
+* 按照[此处](/windows/apps/get-started/get-set-up)的说明为 UWP 开发设置你的开发计算机。
 * [安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。 除了实验的 API，此 SDK 还提供了其他功能（例如，可在应用上显示广告并引导你的客户到“反馈中心”收集反馈）的 API。
 
 ## <a name="best-practices"></a>最佳做法

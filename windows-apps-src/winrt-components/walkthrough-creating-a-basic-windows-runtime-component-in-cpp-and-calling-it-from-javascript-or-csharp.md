@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c7f0e1ba5c78ce41a5326d3643b5afe80f380b3c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d343b2da4bdfee73479c3b5f3c45fd56a92ada35
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155171"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339785"
 ---
 # <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>创建 C++/CX Windows 运行时组件并通过 JavaScript 或 C# 调用此组件的演练
 
@@ -26,16 +26,16 @@ ms.locfileid: "89155171"
 请注意，组件的主类包含属性和方法定义以及事件声明的示例。 只是为了向你演示如何实现该目的才提供它们。 它们不是必需的，并且在本例中，我们将使用自己的代码替换所有生成的代码。
 
 ### <a name="to-create-the-c-component-project"></a>**创建 C++ 组件项目**
-1. 在 Visual Studio 菜单栏上，依次选择 " **文件"、"新建"、"项目"**。
+1. 在 Visual Studio 菜单栏上，依次选择 " **文件"、"新建"、"项目"** 。
 
-2. 在 **“新建项目”** 对话框的左侧窗格中，展开 **“Visual C++”**，然后选择通用 Windows 应用的节点。
+2. 在 **“新建项目”** 对话框的左侧窗格中，展开 **“Visual C++”** ，然后选择通用 Windows 应用的节点。
 
 3. 在中心窗格中，选择 " **Windows 运行时组件** "，然后将项目命名为 WinRT \_ CPP。
 
-4. 选择“确定”  按钮。
+4. 选择 **“确定”** 按钮。
 
 ## <a name="to-add-an-activatable-class-to-the-component"></a>**将可激活类添加到组件**
-可激活类是客户端代码可以使用 **new** 表达式（Visual Basic 中为 **New**，C++ 中为 **ref new**）创建的类。 在你的组件中，将其声明为 **public ref class sealed**。 其实，Class1.h 和 .cpp 文件中已具有一个 ref 类。 你可以更改名称，但在本例中我们将使用默认名称 Class1。 你可以根据需要在组件中定义额外的 ref 类或常规类。 有关 ref 类的详细信息，请参阅[类型系统 (C++/CX)](/cpp/cppcx/type-system-c-cx)。
+可激活类是客户端代码可以使用 **new** 表达式（Visual Basic 中为 **New** ，C++ 中为 **ref new** ）创建的类。 在你的组件中，将其声明为 **public ref class sealed** 。 其实，Class1.h 和 .cpp 文件中已具有一个 ref 类。 你可以更改名称，但在本例中我们将使用默认名称 Class1。 你可以根据需要在组件中定义额外的 ref 类或常规类。 有关 ref 类的详细信息，请参阅[类型系统 (C++/CX)](/cpp/cppcx/type-system-c-cx)。
 
 将这些 \# include 指令添加到 Class1：
 
@@ -275,21 +275,21 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 > Visual Studio 2019 不支持通用 Windows 平台 (UWP) 项目。 请参阅 [Visual Studio 2019 中的 JavaScript 和 TypeScript](/visualstudio/javascript/javascript-in-vs-2019?view=vs-2019#projects)。 若要遵循本部分，我们建议使用 Visual Studio 2017。 请参阅 [Visual Studio 2017 中的 JavaScript](/visualstudio/javascript/javascript-in-vs-2017)。
 
 ### <a name="to-create-a-javascript-project"></a>创建 JavaScript 项目
-1. 在 Visual Studio 2017 的解决方案资源管理器 (中;请参阅) 上的 " **注意** "，打开 "解决方案" 节点的快捷菜单，然后选择 " **添加"、"新建项目**"。
+1. 在 Visual Studio 2017 的解决方案资源管理器 (中;请参阅) 上的 " **注意** "，打开 "解决方案" 节点的快捷菜单，然后选择 " **添加"、"新建项目** "。
 
-2. 展开 JavaScript（它可能嵌套在**其他语言**下方）然后选择**空白应用(通用 Windows)**。
+2. 展开 JavaScript（它可能嵌套在 **其他语言** 下方）然后选择 **空白应用(通用 Windows)** 。
 
 3. &mdash; &mdash; 通过选择 **"确定"** 按钮接受默认名称 "App1"。
 
-4. 打开 App1 项目节点的快捷菜单，然后选择**设置为启动项目**。
+4. 打开 App1 项目节点的快捷菜单，然后选择 **设置为启动项目** 。
 
 5. 添加对 WinRT_CPP 的项目引用：
 
-6. 打开“引用”节点的快捷菜单，然后选择**添加引用**。
+6. 打开“引用”节点的快捷菜单，然后选择 **添加引用** 。
 
-7. 在引用管理器对话框的左侧窗格中，依次选择**项目**和**解决方案**。
+7. 在引用管理器对话框的左侧窗格中，依次选择 **项目** 和 **解决方案** 。
 
-8. 在中心窗格中，选择 WinRT_CPP，然后选择**确定**按钮
+8. 在中心窗格中，选择 WinRT_CPP，然后选择 **确定** 按钮
 
 ## <a name="to-add-the-html-that-invokes-the-javascript-event-handlers"></a>添加调用 JavaScript 事件处理程序的 HTML
 将此 HTML 粘贴到 <body> default.htm"页的节点：
@@ -426,7 +426,7 @@ function ButtonClear_Click() {
 }
 ```
 
-通过添加代码来添加事件侦听器，方法是使用以下在 then 代码块中实现事件注册的代码，在 default.js 的 app.onactivated 中替换对 WinJS.UI.processAll 的现有调用。 有关此情况的详细说明，请参阅 [创建 (JS) 的 "Hello，World" 应用 ](../get-started/create-a-hello-world-app-js-uwp.md)。
+通过添加代码来添加事件侦听器，方法是使用以下在 then 代码块中实现事件注册的代码，在 default.js 的 app.onactivated 中替换对 WinJS.UI.processAll 的现有调用。 有关此情况的详细说明，请参阅 [创建 (JS) 的 "Hello，World" 应用 ](/windows/apps/get-started/)。
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {
@@ -446,19 +446,19 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 ## <a name="creating-a-c-client-app"></a>创建 C# 客户端应用
 
 ### <a name="to-create-a-c-project"></a>创建 C# 项目
-1. 在“解决方案资源管理器”中，打开“解决方案”节点的快捷菜单，然后依次选择**添加 > 新建项目**。
+1. 在“解决方案资源管理器”中，打开“解决方案”节点的快捷菜单，然后依次选择 **添加 > 新建项目** 。
 
-2. 展开 Visual C#（它可能嵌套在**其他语言**下），在左侧窗格中依次选择 **Windows** 和**通用**，然后在中间窗格中选择**空白应用**。
+2. 展开 Visual C#（它可能嵌套在 **其他语言** 下），在左侧窗格中依次选择 **Windows** 和 **通用** ，然后在中间窗格中选择 **空白应用** 。
 
-3. 将此应用命名为 CS_Client，然后选择**确定**按钮。
+3. 将此应用命名为 CS_Client，然后选择 **确定** 按钮。
 
-4. 打开 CS_Client 项目节点的快捷菜单，然后选择**设置为启动项目**。
+4. 打开 CS_Client 项目节点的快捷菜单，然后选择 **设置为启动项目** 。
 
 5. 添加对 WinRT_CPP 的项目引用：
 
-   - 打开 " **引用** " 节点的快捷菜单，然后选择 " **添加引用**"。
+   - 打开 " **引用** " 节点的快捷菜单，然后选择 " **添加引用** "。
 
-   - 在**引用管理器**对话框的左侧窗格中，依次选择**项目**和**解决方案**。
+   - 在 **引用管理器** 对话框的左侧窗格中，依次选择 **项目** 和 **解决方案** 。
 
    - 在中心窗格中，选择 "WinRT_CPP"，然后选择 " **确定"** 按钮。
 
@@ -584,13 +584,13 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 ```
 
 ## <a name="running-the-app"></a>运行应用
-选择 C# 项目或 JavaScript 项目作为启动项目，方法是在“解决方案资源管理器”中打开项目节点的快捷菜单，然后选择**设置为启动项目**。 然后按 F5 运行并调试，或按 Ctrl+F5 运行但不调试。
+选择 C# 项目或 JavaScript 项目作为启动项目，方法是在“解决方案资源管理器”中打开项目节点的快捷菜单，然后选择 **设置为启动项目** 。 然后按 F5 运行并调试，或按 Ctrl+F5 运行但不调试。
 
 ## <a name="inspecting-your-component-in-object-browser-optional"></a>在“对象浏览器”中检查组件（可选）
 在“对象浏览器”中，可以检查在 .winmd 文件中定义的所有 Windows 运行时类型。 这包括 Platform 命名空间和默认命名空间中的类型。 但是，由于 Platform::Collections 命名空间在头文件 collections.h 而非 winmd 文件中定义，因此它们不会显示在“对象浏览器”中。
 
 ### <a name="to-inspect-a-component"></a>**检查组件**
-1. 在菜单栏上，依次选择**视图 > 对象浏览器** (Ctrl+Alt+J)。
+1. 在菜单栏上，依次选择 **视图 > 对象浏览器** (Ctrl+Alt+J)。
 
 2. 在对象浏览器的左窗格中，展开 "WinRT \_ CPP" 节点以显示在组件中定义的类型和方法。
 
@@ -598,17 +598,17 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 为实现更好的调试体验，请从公共 Microsoft 符号服务器下载调试符号：
 
 ### <a name="to-download-debugging-symbols"></a>**下载调试符号**
-1. 在菜单栏上，依次选择 " **工具"、"选项"**。
+1. 在菜单栏上，依次选择 " **工具"、"选项"** 。
 
-2. 在**选项**对话框中，展开**调试**并选择**符号**。
+2. 在 **选项** 对话框中，展开 **调试** 并选择 **符号** 。
 
-3. 选择 **Microsoft 符号服务器**，然后选择**确定**按钮。
+3. 选择 **Microsoft 符号服务器** ，然后选择 **确定** 按钮。
 
 首次下载符号需要花费一些时间。 为实现更快的性能，在下次按 F5 时指定缓存符号的本地目录。
 
-在调试具有组件 DLL 的 JavaScript 解决方案时，你可以将调试器设置为在组件中支持单步调试脚本或单步调试本机代码，但无法设置为同时进行。 若要更改设置，请在“解决方案资源管理器”中打开 JavaScript 项目节点的快捷菜单，然后依次选择**属性 > 调试 > 调试器类型**。
+在调试具有组件 DLL 的 JavaScript 解决方案时，你可以将调试器设置为在组件中支持单步调试脚本或单步调试本机代码，但无法设置为同时进行。 若要更改设置，请在“解决方案资源管理器”中打开 JavaScript 项目节点的快捷菜单，然后依次选择 **属性 > 调试 > 调试器类型** 。
 
-请确保在程序包设计器中选择相应的功能。 可以通过打开 Package.appxmanifest 文件来打开程序包设计器。 例如，如果你尝试以编程方式访问 Pictures 文件夹中的文件，请确保在程序包设计器的**功能**窗格中选中**图片库**复选框。
+请确保在程序包设计器中选择相应的功能。 可以通过打开 Package.appxmanifest 文件来打开程序包设计器。 例如，如果你尝试以编程方式访问 Pictures 文件夹中的文件，请确保在程序包设计器的 **功能** 窗格中选中 **图片库** 复选框。
 
 如果 JavaScript 代码不识别组件中的公共属性或方法，请确保在 JavaScript 中使用的是 Camel 大小写格式。 例如，`ComputeResult` C++ 方法必须在 JavaScript 中引用为 `computeResult`。
 

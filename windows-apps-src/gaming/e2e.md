@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
-ms.openlocfilehash: c6cae9e2416eb992815f098649d6b02ee472da14
-ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
+ms.openlocfilehash: be63c7ec1e682924e2364a2c6ea8e4d2d81dee3f
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192967"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339505"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 游戏开发指南
 
@@ -217,15 +217,15 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </tr>
     <tr>
         <td>JavaScript 2D 游戏示例</td>
-        <td><a href="../get-started/get-started-tutorial-game-js2d.md">用 JavaScript 创建 UWP 游戏</a></td>
+        <td><a href="/windows/uwp/get-started/">用 JavaScript 创建 UWP 游戏</a></td>
     </tr>
     <tr>
         <td>JavaScript 3D 游戏示例</td>
-        <td><a href="../get-started/get-started-tutorial-game-js3d.md">使用 three.js 创建 3D JavaScript 游戏</a></td>
+        <td><a href="/windows/uwp/get-started/">使用 three.js 创建 3D JavaScript 游戏</a></td>
     </tr>
     <tr>
         <td>MonoGame 2D UWP 游戏示例</td>
-        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">用 MonoGame 2D 创建 UWP 游戏</a></td>
+        <td><a href="/windows/uwp/get-started/">用 MonoGame 2D 创建 UWP 游戏</a></td>
     </tr>
 </table>
 
@@ -516,7 +516,7 @@ C#（读作“C sharp”）是一种现代创新型语言，它简单、功能�
     </tr>
 </table>
 
-#### <a name="javascript"></a>Javascript
+#### <a name="javascript"></a>JavaScript
 
 JavaScript 是一种动态脚本语言，广泛用于现代 Web 应用程序和胖客户端应用程序。
 
@@ -752,7 +752,7 @@ MonoGame 是最初基于 Microsoft 的 XNA Framework 4.0 的跨平台开源游�
     </tr>
     <tr>
         <td>MonoGame 2D UWP 游戏示例</td>
-        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">用 MonoGame 2D 创建 UWP 游戏</a></td>
+        <td><a href="/windows/uwp/get-started/">用 MonoGame 2D 创建 UWP 游戏</a></td>
     </tr>
 </table>
 
@@ -970,7 +970,7 @@ Windows 10 引入通用 Windows 平台 (UWP)，该平台在 Windows 10 设备�
     </tr>
 </table>
 
-### <a name="windows-desktop-apisto-uwp"></a>UWP 的 Windows 桌面 API
+### <a name="windows-desktop-apis-to-uwp"></a>UWP 的 Windows 桌面 API
 
 下面是帮你将 Windows 桌面游戏移动到 UWP 的一些链接。
 

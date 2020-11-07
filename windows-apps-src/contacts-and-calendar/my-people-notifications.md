@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e00e3de9445a8b7c63ebaead70173c29b637b54
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9fa73c6fdd0a0cac69cb485d3426ddfc327591bd
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166321"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339665"
 ---
 # <a name="my-people-notifications"></a>“我的人脉”通知
 
@@ -20,7 +20,7 @@ ms.locfileid: "89166321"
 
 ## <a name="requirements"></a>要求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](../get-started/get-set-up.md)。
++ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](/windows/apps/get-started/get-set-up)。
 + C# 或类似面向对象的编程语言的基础知识。 若要开始使用 C#，请参阅[创建“Hello, world”应用](../get-started/create-a-hello-world-app-xaml-universal.md)。
 
 ## <a name="how-it-works"></a>工作原理
@@ -150,7 +150,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 如果“我的人脉”通知回退到 Toast，则将忽略第二个特定于“我的人脉”的绑定，并且仅使用第一个绑定来显示 Toast。 这正是为何在第一个 Toast 绑定中提供回退负载很重要。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 + [“我的人脉”通知示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [添加“我的人脉”支持](my-people-support.md)
 + [自适应 Toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)

@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eea2d228ddf5ad6dfaef227bfaeb0bafb071490
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8c0e174613357ad9e4e45d2776f3fbc618535b30
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170491"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339455"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>为应用程序添加“我的人脉”支持
 
@@ -23,7 +23,7 @@ ms.locfileid: "89170491"
 
 ## <a name="requirements"></a>要求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](../get-started/get-set-up.md)。
++ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](/windows/apps/get-started/get-set-up)。
 + C# 或类似面向对象的编程语言的基础知识。 若要开始使用 C#，请参阅[创建“Hello, world”应用](../get-started/create-a-hello-world-app-xaml-universal.md)。
 
 ## <a name="overview"></a>概述
@@ -38,7 +38,7 @@ ms.locfileid: "89170491"
 
 ## <a name="declaring-support-for-the-contract"></a>声明对合约提供支持
 
-若要声明对“我的人脉”合约提供支持，请在 Visual Studio 中打开应用程序。 从**解决方案资源管理器**中，右键单击 **package.appxmanifest** 并选择**打开方式**。 从菜单中选择 " **XML (文本) 编辑器") ** 然后单击 **"确定"**。 对清单进行以下更改：
+若要声明对“我的人脉”合约提供支持，请在 Visual Studio 中打开应用程序。 从 **解决方案资源管理器** 中，右键单击 **package.appxmanifest** 并选择 **打开方式** 。 从菜单中选择 " **XML (文本) 编辑器")** 然后单击 **"确定"** 。 对清单进行以下更改：
 
 **之前**
 
@@ -104,7 +104,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找你的包系列名称，请使用默认编辑器打开 **Package.appxmanifest**，然后查找“Packaging”选项卡。在这里，“App”是指与应用程序启动视图对应的可激活类。
+“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找你的包系列名称，请使用默认编辑器打开 **Package.appxmanifest** ，然后查找“Packaging”选项卡。在这里，“App”是指与应用程序启动视图对应的可激活类。
 
 ## <a name="allow-contacts-to-invite-new-potential-users"></a>允许联系人邀请新的潜在用户
 
@@ -182,7 +182,7 @@ ContactPanel 对象还允许你设置联系人面板标题的背景颜色（如�
 
 ## <a name="supporting-notification-badging"></a>支持通知锁屏提醒
 
-如果想要任务栏中固定的联系人在应用收到来自与该联系人相关的新通知时进行锁屏提醒，则你必须将 **hint-people**参数包含在 [Toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) 中并在[“我的人脉”通知](./my-people-notifications.md)中体现出来。
+如果想要任务栏中固定的联系人在应用收到来自与该联系人相关的新通知时进行锁屏提醒，则你必须将 **hint-people** 参数包含在 [Toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) 中并在 [“我的人脉”通知](./my-people-notifications.md)中体现出来。
 
 ![人脉通知锁屏提醒](images/my-people-badging.png)
 
@@ -251,7 +251,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 **注意：** 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 + [“我的人脉”共享](my-people-sharing.md)
 + [“我的人脉”通知](my-people-notifications.md)
 + [有关向应用程序添加“我的人脉”支持的 Channel 9 视频](https://channel9.msdn.com/Events/Build/2017/P4056)

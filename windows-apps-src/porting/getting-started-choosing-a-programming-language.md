@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f9da8025936698ab7d72cd8b3d69896d8ec74da0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2e4613b565545bfb7807c98fa74495b4b60b57bb
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174881"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339536"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>入门：选择编程语言
 
@@ -19,17 +19,17 @@ ms.locfileid: "89174881"
 
 在执行下一步操作之前，你应知道在开发通用 Windows 平台 (UWP) 应用时可从中选择的编程语言。 尽管本文中的演练使用的是 C#，但你可以使用一种或多种编程语言开发 UWP 应用（请参阅[语言、工具和框架](/previous-versions/windows/apps/dn465799(v=win.10))）。
 
-可使用 C++、C#、Microsoft Visual Basic 和 JavaScript 进行开发。 JavaScript 使用用于 UI 布局的 HTML5 标记，其他语言使用一种称为*Extensible Application Markup Language (XAML)* 的标记语言来描述其 UI。
+可使用 C++、C#、Microsoft Visual Basic 和 JavaScript 进行开发。 JavaScript 使用用于 UI 布局的 HTML5 标记，其他语言使用一种称为 *Extensible Application Markup Language (XAML)* 的标记语言来描述其 UI。
 
 尽管我们在本文中以 C# 为重点，但其他语言也提供了你可能希望尝试的独特优势。 例如，如果应用的性能是首要关注事项，特别是对于密集图形，则 C++ 可能是正确选择。 Microsoft .NET 版本的 Visual Basic 非常适合 Visual Basic 应用的开发人员。 使用 HTML5 的 JavaScript 非常适合具有 Web 开发背景的开发人员。 有关更多信息，请参见下列内容之一：
 
 -   [使用 c # 或 Visual Basic 创建 "Hello，World！" 应用](../get-started/create-a-hello-world-app-xaml-universal.md)
 -   [使用 C++/WinRT 创建“Hello, World!”应用](../get-started/create-a-basic-windows-10-app-in-cppwinrt.md)
 -   [使用 c + +/CX 创建 "Hello，World！" 应用](../get-started/create-a-basic-windows-10-app-in-cpp.md)
--   [使用 JavaScript 创建 "Hello，World！" 应用](../get-started/create-a-hello-world-app-js-uwp.md)
+-   [使用 JavaScript 创建 "Hello，World！" 应用](/windows/apps/get-started/)
 
-**注意**   对于使用三维图形的应用程序，OpenGL 和 OpenGL ES 标准并不本机可用于 UWP 应用。 如果你不愿意将 OpenGL ES 代码重新写入到 Microsoft DirectX，你可能会有兴趣了解 **“角度”**。 角度是一个持续项目，旨在将 OpenGL API 调用转换为 DirectX API 调用，以将 OpenGL 转换为 DirectX。 若要了解更多信息，请参阅下列文章：
--   [夹角](https://bugs.chromium.org/p/angleproject/)
+**注意**  对于使用 3D 图形的应用，OpenGL 和 OpenGL ES 标准在本地不适用于 UWP 应用。 如果你不愿意将 OpenGL ES 代码重新写入到 Microsoft DirectX，你可能会有兴趣了解 **“角度”** 。 角度是一个持续项目，旨在将 OpenGL API 调用转换为 DirectX API 调用，以将 OpenGL 转换为 DirectX。 若要了解更多信息，请参阅下列文章：
+-   [角度](https://bugs.chromium.org/p/angleproject/)
 -   [使用 DirectX 创建第一个 UWP 应用](/previous-versions/windows/apps/br229580(v=win.10))
 -   [使用 DirectX 的 UWP 应用示例](/samples/browse/?expanded=windows&products=windows-uwp&terms=directx)
 -   [DirectX SDK 在哪里？](/windows/desktop/directx-sdk--august-2009-)
