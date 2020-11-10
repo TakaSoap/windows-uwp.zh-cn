@@ -3,12 +3,12 @@ title: WinUI 3 预览版 2（2020 年 7 月）
 description: WinUI 3 预览版 2 发布概述。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: b7336aa054bac4c59cd535951cc3fc92d4a3486a
-ms.sourcegitcommit: aa88679989ef3c8b726e1bf5a0ed17c1206a414f
+ms.openlocfilehash: 1551e0f401d7dfe5536e4d0b3420d99e7a045cb7
+ms.sourcegitcommit: e2d960269915963470d41f3acba9bed902a7a864
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687772"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94397595"
 ---
 # <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows UI 库 3 预览版 2（2020 年 7 月）
 
@@ -44,20 +44,19 @@ WinUI 3 预览版 2 提供有 Visual Studio 项目模板和 NuGet 包，前者�
     - 使用 C++ 的桌面开发
     - 适用于通用 Windows 平台工作负载的 C++ (v142) 通用 Windows 平台工具可选组件（请参阅右窗格中“通用 Windows 平台开发”部分下的“安装详细信息”）
 
-    安装 Visual Studio 后，请确保在计划中启用 .NET 预览版： 
-    - 转到“工具”>“选项”>“预览功能”> 选择“使用 .NET Core SDK 的预览版(需要重启)”。 
-    
 3. 请确保系统已为 nuget.org 启用了 NuGet 包源。有关详细信息，请参阅[常见 NuGet 配置](/nuget/consume-packages/configuring-nuget-behavior)。
 
-4. 若要为 C#/.NET 5 和 C++/Win32 应用创建桌面 WinUI 项目，还必须同时安装有 .NET 5 预览版 5 的 x64 和 x86 版本。 **请注意，.NET 5 预览版 5 目前是 WinUI 3 唯一受支持的 .NET 5 预览版** ：
+4. 安装 Visual Studio 后，请确保在计划中启用 .NET 预览版： 
+    - 转到“工具”>“选项”>“预览功能”> 选择“使用 .NET Core SDK 的预览版(需要重启)”。 
+
+5. 若要为 C#/.NET 5 和 C++/Win32 应用创建桌面 WinUI 项目，还必须同时安装有 .NET 5 预览版 5 的 x64 和 x86 版本。 **请注意，.NET 5 预览版 5 目前是 WinUI 3 唯一受支持的 .NET 5 预览版** ：
 
     - [适用于 .NET 5 预览版 5 的 x64 安装程序](https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.100-preview.5-windows-x64-installer)
     - [适用于 .NET 5 预览版 5 的 x86 安装程序](https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.100-preview.5-windows-x86-installer)
 
-5. 下载并安装 [WinUI 3 预览版 2 VSIX 包](https://aka.ms/winui3/previewdownload)。 此 VSIX 包将 WinUI 3 项目模板和包含 WinUI 3 库的 NuGet 包添加到 Visual Studio 2019。
+6. 下载并安装 [WinUI 3 预览版 2 VSIX 包](https://aka.ms/winui3/previewdownload)。 此 VSIX 包将 WinUI 3 项目模板和包含 WinUI 3 库的 NuGet 包添加到 Visual Studio 2019。
 
     有关如何将 VSIX 包添加到 Visual Studio 的说明，请参阅[查找和使用 Visual Studio 扩展](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box)。
-
 
 ## <a name="create-winui-projects"></a>创建 WinUI 项目
 
@@ -222,7 +221,7 @@ WinUI 3 预览版 2 与运行 Windows 10 2018 年 4 月更新（版本 1803 - �
 
   WinUI 3 框架是一组 WinRT 组件，而 WinRT 具有与在 .NET 中找到的类似的类型和对象，它们在本质上并不兼容。  C#/WinRT 投影会处理 .NET 与 .NET 5 中的 WinRT 之间的互操作，让你能够当前在 .NET 5 应用中随意使用 .NET 接口。 
   
-  但是，C#/WinRT 无法处理 .NET Native 应用中的互操作，因此 WinUI 3 API 直接投影在 UWP 应用中。 这使得你无法再使用上述 .NET 接口。 **一旦 UWP 应用不再使用 .NET Native，此限制就不复存在** .
+  但是，C#/WinRT 无法处理 .NET Native 应用中的互操作，因此 WinUI 3 API 直接投影在 UWP 应用中。 这使得你无法再使用上述 .NET 接口。 **一旦 UWP 应用不再使用 .NET Native，此限制就不复存在**.
 
   例如，`INotifyPropertyChanged` API 投影到桌面应用中 WinUI3 的 `System.ComponentModel` 命名空间中，但它显示在 UWP 应用（及所有 C++ 应用）中 WinUI3 的 `Microsoft.UI.Xaml.Data` 命名空间中。 
   
