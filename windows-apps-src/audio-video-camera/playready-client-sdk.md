@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 603cdfe0c35d559ca3f2acacbce491ce3f54c35d
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: a444b8af0121c6012bc90adda075c161111838b3
+ms.sourcegitcommit: 4fffc66fac18fc4c80281e2a4afa9c4f2e1f7551
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749993"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94513656"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -24,7 +24,7 @@ PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规
 | 主题                                                                     | 说明                                                                                                                                                                                                                                                                             |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [硬件 DRM](hardware-drm.md)                                           | 本主题概述了如何向 UWP 应用添加基于 PlayReady 硬件的数字版权管理 (DRM)。                                                                                                                                                                 |
-| [使用 PlayReady 的自适应流式处理](adaptive-streaming-with-playready.md) | 本文介绍如何将使用 Microsoft PlayReady 内容保护的多媒体内容自适应流式处理添加到通用 Windows 平台 (UWP) 应用。 此功能当前支持 Http 实时流 (HLS) 和 HTTP 动态流 (DASH) 内容的播放。 |
+| [通过 PlayReady 进行自适应流式处理](adaptive-streaming-with-playready.md) | 本文介绍如何将使用 Microsoft PlayReady 内容保护的多媒体内容自适应流式处理添加到通用 Windows 平台 (UWP) 应用。 此功能当前支持 Http 实时流 (HLS) 和 HTTP 动态流 (DASH) 内容的播放。 |
 
 ## <a name="whats-new-in-playready-drm"></a>PlayReady DRM 中的新增功能
 
@@ -77,7 +77,7 @@ PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规
 -   [**PlayReadySecureStopIterator**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterator) 类
 -   [**PlayReadyHardwareDRMFeatures**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) 枚举器
 
-已创建新示例，用于演示如何使用 PlayReady DRM 的新功能。 可以从 [/samples/browse/？ redirectedfrom = MSDN-samples&clcid = 0x804](/samples/browse/?redirectedfrom=MSDN-samples)下载此示例。
+已创建新示例，用于演示如何使用 PlayReady DRM 的新功能。 可以从 [代码示例浏览器](samples/microsoft/windows-universal-samples/playready/)下载此示例。
 
 ## <a name="things-to-consider"></a>注意事项
 
@@ -98,7 +98,7 @@ PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规
 
 以下部分介绍在 PlayReady 许可证中将适用于 Windows 10 的 PlayReady DRM 与输出保护策略结合使用时的行为。
 
-PlayReady DRM 支持包含在 **Microsoft PlayReady 可扩展媒体权限规范**中的输出保护级别。 本文档可在 PlayReady 授权产品附带的文档包中找到。
+PlayReady DRM 支持包含在 **Microsoft PlayReady 可扩展媒体权限规范** 中的输出保护级别。 本文档可在 PlayReady 授权产品附带的文档包中找到。
 
 > [!NOTE]
 > 可由授权服务器设置的输出保护级别的允许值受 [PlayReady 合规性规则](https://www.microsoft.com/playready/licensing/compliance/)约束。
@@ -128,7 +128,7 @@ PlayReady DRM 仅允许在输出连接器上播放使用输出保护策略的内
         <th>模拟电视</th>
     </tr>
     <tr>
-        <th>Any</th>
+        <th>任意</th>
         <th colspan="2">HDMI、DVI、DisplayPort、MHL</th>
         <th>分量、复合</th>
     </tr>
@@ -164,7 +164,7 @@ PlayReady DRM 仅允许在输出连接器上播放使用输出保护策略的内
                 **当 HDCP 类型限制未定义时：** 使用 HDCP 传递内容。 如果 HDCP 无法使用，将阻止对 HDMI/DVI 端口的播放。
             </p>
             <p>
-                **当 HDCP 类型限制已定义时**：使用 HDCP 2.2 传递内容，并将内容流类型设置为 1。 如果 HDCP 无法使用或内容流类型无法设置为 1，将阻止对 HDMI/DVI 端口的播放。
+                **当 HDCP 类型限制已定义时** ：使用 HDCP 2.2 传递内容，并将内容流类型设置为 1。 如果 HDCP 无法使用或内容流类型无法设置为 1，将阻止对 HDMI/DVI 端口的播放。
             </p>
         </td>
     </tr>
@@ -193,7 +193,7 @@ PlayReady DRM 仅允许在输出连接器上播放使用输出保护策略的内
     <tr>
         <th>HDMI、DisplayPort、MHL</th>
         <th>HDMI、DisplayPort、MHL</th>
-        <th>Any</th>
+        <th>任意</th>
     </tr>
     <tr>
         <th>100</th>
@@ -221,7 +221,7 @@ PlayReady DRM 仅允许在输出连接器上播放使用输出保护策略的内
 
 ### <a name="miracast"></a>Miracast
 
-PlayReady DRM 允许你在使用 HDCP 2.0 或更高版本后立即通过 Miracast 输出播放内容。 但在 Windows 10 上，Miracast 视为*数字*输出。 有关 Miracast 方案的详细信息，请参阅 [PlayReady 合规性规则](https://www.microsoft.com/playready/licensing/compliance/)。 下表概述了 PlayReady 许可证中各种 OPL 间的映射，以及 PlayReady DRM 如何在 Miracast 输出上强制实现它们。
+PlayReady DRM 允许你在使用 HDCP 2.0 或更高版本后立即通过 Miracast 输出播放内容。 但在 Windows 10 上，Miracast 视为 *数字* 输出。 有关 Miracast 方案的详细信息，请参阅 [PlayReady 合规性规则](https://www.microsoft.com/playready/licensing/compliance/)。 下表概述了 PlayReady 许可证中各种 OPL 间的映射，以及 PlayReady DRM 如何在 Miracast 输出上强制实现它们。
 
 <table>
     <tr>
@@ -507,7 +507,7 @@ switch (result)
 -   在到达内容末尾或用户中途停止媒体演示文稿，因而媒体演示文稿停止时。
 -   在上一个会话意外结束时（如因系统或应用崩溃）。 在启动或关机时，应用将查询任何未解决的安全停止会话，并将发送与任何其他媒体播放分离的质询。
 
-有关安全停止的示例实现，请参阅位于 [/samples/browse/？ redirectedfrom = MSDN-samples&](/samples/browse/?redirectedfrom=MSDN-samples)的 PlayReady 示例中的 securestop.cs 文件，clcid = 0x804。
+有关安全停止的示例实现，请参阅 [代码示例浏览器](samples/microsoft/windows-universal-samples/playready//)中 PlayReady 示例中的 **securestop.cs** 文件。
 
 ## <a name="use-playready-drm-on-xbox-one"></a>在 Xbox One 上使用 PlayReady DRM
 
@@ -518,15 +518,15 @@ switch (result)
 
 获得授权后，你将需要向应用清单添加额外 `<DeviceCapability>`。 由于应用清单设计器中当前没有可用的设置，你必须手动添加它。 请按照以下步骤配置它：
 
-1. 在 Visual Studio 中打开项目后，打开 " **解决方案资源管理器** "，然后右键单击 **appxmanifest.xml**。
-2. 选择 " **打开方式 ...**"，选择 " **XML (文本) 编辑器**"，然后单击 **"确定"**。
+1. 在 Visual Studio 中打开项目后，打开 " **解决方案资源管理器** "，然后右键单击 **appxmanifest.xml** 。
+2. 选择 " **打开方式 ...** "，选择 " **XML (文本) 编辑器** "，然后单击 **"确定"** 。
 3. 在 `<Capabilities>` 标记之间，添加以下 `<DeviceCapability>`：
 
     ```xml
     <DeviceCapability Name="6a7e5907-885c-4bcb-b40a-073c067bd3d5" />
     ```
 
-4. 保存文件。
+4. 保存该文件。
 
 最后，在 Xbox One 上使用 PlayReady 时需要注意：开发工具包具有 SL150 限制（即它们不能播放 SL2000 或 SL3000 内容）。 零售设备能够播放安全级别较高的内容，但若要在开发工具包上测试你的应用，你需要使用 SL150 内容。 可以通过以下方式之一测试此内容：
 
