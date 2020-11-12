@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f0a91dd0370b8eda8763b63034d7c3ffaa1acd5
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 29a6f85dfb13e47617138e401c8444cb5b5f6809
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762996"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339575"
 ---
 # <a name="device-portal-for-mobile"></a>适用于移动设备的 Device Portal
 
 从版本 1511 的 Windows 10 开始，附加的开发人员功能可用于移动设备系列。 这些功能仅在设备上启用了“开发人员模式”时才可用。
 
-有关如何启用“开发人员模式”的信息，请参阅[启用设备进行开发](../get-started/enable-your-device-for-development.md)。
+有关如何启用“开发人员模式”的信息，请参阅[启用设备进行开发](/windows/apps/get-started/enable-your-device-for-development)。
 
 ![“设备发现”和“设备门户”设置的屏幕截图。](images/device-portal/mob-dev-mode-options.png)
 

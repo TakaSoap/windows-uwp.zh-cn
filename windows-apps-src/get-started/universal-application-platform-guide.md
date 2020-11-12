@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: contperfq1
 keywords: windows 10, uwp, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: f435631b575a06daae9cb4d34c5419e93ba8063f
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: 3c6fd1f2ebee2e4e3a7d3ceb028f5def19e932c6
+ms.sourcegitcommit: 733d422fa1e3433cde842e2f200d3ef202767cc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011352"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94333282"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>什么是通用 Windows 平台 (UWP) 应用？
 
@@ -115,7 +115,6 @@ UWP 应用可以使用 Windows 运行时，它是操作系统提供的本机 API
 - DirectX UI 和 C++
 - JavaScript 和 HTML
 - WinUI
--
 
 ## <a name="links-to-help-you-get-going"></a>帮助你入门的链接
 

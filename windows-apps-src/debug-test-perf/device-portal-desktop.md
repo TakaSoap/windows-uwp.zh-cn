@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: contperfq1
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: f06a3c933060a7309604ae8dec49455ac3bd02ab
-ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
+ms.openlocfilehash: 1618b2de1f0db96989a7aedf5b53805fd70f535e
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90845566"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339565"
 ---
 # <a name="device-portal-for-windows-desktop"></a>适用于 Windows 桌面的设备门户
 
@@ -32,14 +32,14 @@ Windows 设备门户是一个调试工具，利用它可以查看诊断信息，
 
 ### <a name="turn-on-developer-mode"></a>打开开发人员模式
 
-从 Windows 10 版本 1607 开始，适用于桌面的一些较新功能仅在启用开发人员模式时可用。 有关如何启用开发人员模式的信息，请参阅[启用设备进行开发](../get-started/enable-your-device-for-development.md)。
+从 Windows 10 版本 1607 开始，适用于桌面的一些较新功能仅在启用开发人员模式时可用。 有关如何启用开发人员模式的信息，请参阅[启用设备进行开发](/windows/apps/get-started/enable-your-device-for-development)。
 
 > [!IMPORTANT]
-> 有时，由于网络或兼容性问题，开发人员模式无法在你的设备上正确安装。 有关解决这些问题的帮助，请参阅[启用设备进行开发的相关部分](../get-started/enable-your-device-for-development.md#failure-to-install-developer-mode-package)。
+> 有时，由于网络或兼容性问题，开发人员模式无法在你的设备上正确安装。 有关解决这些问题的帮助，请参阅[启用设备进行开发的相关部分](/windows/apps/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package)。
 
 ### <a name="turn-on-device-portal"></a>打开设备门户
 
-您可以在**设置**的**面向开发人员**部分中启用设备门户。 当你启用它时，你还必须创建相应的用户名和密码。 不要使用你的 Microsoft 帐户或其他 Windows 凭据。
+您可以在 **设置** 的 **面向开发人员** 部分中启用设备门户。 当你启用它时，你还必须创建相应的用户名和密码。 不要使用你的 Microsoft 帐户或其他 Windows 凭据。
 
 ![“设置”应用的“设备门户”部分](images/device-portal/device-portal-desk-settings.png)
 

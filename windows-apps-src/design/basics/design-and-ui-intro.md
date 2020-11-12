@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 78ccbe1f18167c318ffa38f3614cfab61782d147
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 1f6474170967986bfee555eb07d7ea41601e9e48
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93032440"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339755"
 ---
 # <a name="introduction-to-windows-app-design"></a>Windows 应用设计简介
 
@@ -162,7 +162,7 @@ UWP 应用依赖于智能交互。 你可以围绕单击交互进行设计，而
 
 - 有关 XD、Illustrator、Photoshop、Framer 和 Sketch 工具包以及其他设计工具和字体下载的信息，请参阅我们的[设计工具包页面](../downloads/index.md)。
 
-- 要设置计算机来为 UWP 应用编写代码，请参阅[入门 &gt; 准备工作](../../get-started/get-set-up.md)文章。
+- 要设置计算机来为 UWP 应用编写代码，请参阅[入门 &gt; 准备工作](/windows/apps/get-started/get-set-up)文章。
 
 - 有关如何实现 UWP UI 的灵感，请参阅端到端[示例 UWP 应用](https://developer.microsoft.com/windows/samples)。
 

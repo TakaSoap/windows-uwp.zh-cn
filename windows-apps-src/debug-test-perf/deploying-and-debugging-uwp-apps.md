@@ -6,18 +6,18 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 调试, 测试, 性能
 ms.localizationpriority: medium
-ms.openlocfilehash: c21586bceef11b1a2c19900160796bf702578ffb
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 1d537ca64e94d68a8cc9bbe9c59d341d04821cd9
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763062"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339744"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和调试 UWP 应用
 
 本文指导你完成针对各种部署和调试目标的步骤。
 
-通过 Microsoft Visual Studio，可以在各种 Windows 10 设备上部署和调试通用 Windows 平台 (UWP) 应用。 Visual Studio 将处理在目标设备上生成和注册应用的过程。
+Microsoft Visual Studio 允许你在各种 Windows 10 设备上部署和调试通用 Windows 平台 (UWP) 应用。 Visual Studio 将处理在目标设备上生成和注册应用的过程。
 
 ## <a name="picking-a-deployment-target"></a>选取部署目标
 
@@ -29,7 +29,7 @@ ms.locfileid: "91763062"
 - “本地计算机”  会将应用部署到当前开发计算机。 此选项仅在应用的“目标平台最低版本”  低于或等于开发计算机的操作系统时可用。
 - “远程计算机”  允许你指定要部署应用的远程目标。 可以在[指定远程设备](#specifying-a-remote-device)中找到有关部署到远程计算机的详细信息。
 - “设备”  会将应用部署到 USB 连接设备。 该设备必须已针对开发人员解锁，并且已解锁屏幕。
-- “仿真器”  目标会使用名称中指定的配置将应用启动并部署到仿真器。 模拟器仅适用于运行 Windows 8.1 或更高版本并且支持 Hyper-V 的计算机。
+- “仿真器”  目标会使用名称中指定的配置将应用启动并部署到仿真器。 仿真器仅适用于运行 Windows 8.1 或更高版本并且支持 Hyper-V 的计算机。
 
 ## <a name="debugging-deployed-apps"></a>调试已部署的应用
 
@@ -65,7 +65,7 @@ ms.locfileid: "91763062"
 
 ![“远程连接”对话框](images/debug-remote-connections.png)
 
-若要返回到此对话框，可以打开项目属性，然后转到“调试”  选项卡。从此处，选择“**远程计算机**:”旁边的“查找” 
+若要返回到此对话框，可以打开项目属性，然后转到“调试”  选项卡。从此处，选择“ **远程计算机** :”旁边的“查找” 
 
 ![“调试”选项卡](images/debug-remote-machine-config.png)
 
@@ -73,7 +73,7 @@ ms.locfileid: "91763062"
 
 ### <a name="c-and-javascript"></a>C++ 和 JavaScript
 
-若要为 C++ 或 JavaScript UWP 应用指定远程计算机目标，请执行以下步骤：
+若要为 C++ 或 JavaScript UWP 应用指定远程计算机目标：
 
 1. 在“解决方案资源管理器”  中，右键打击项目，然后单击“属性”  。
 2. 转到“调试”  设置，然后在“要启动的调试器”  下选择“远程计算机”  。
@@ -92,7 +92,7 @@ ms.locfileid: "91763062"
 
 若要执行此操作，请在“开始”  菜单中搜索“远程调试器”  、打开它，然后在系统提示时允许该调试器配置你的防火墙设置。 默认情况下，调试器启动时会执行 Windows 身份验证。 如果两台电脑上的登录用户不是同一人，这将要求用户提供凭据。
 
-若要将它更改为“无身份验证”  ，请在“远程调试器”  中依次转到“工具”   -&gt;“选项”，然后将它设置为“无身份验证”   。 在设置远程调试器后，你还必须确保已将主机设备设置为[开发人员模式](../get-started/enable-your-device-for-development.md)。 在这之后，你可以从部署计算机进行部署。
+若要将它更改为“无身份验证”  ，请在“远程调试器”  中依次转到“工具”   -&gt;“选项”，然后将它设置为“无身份验证”   。 在设置远程调试器后，你还必须确保已将主机设备设置为[开发人员模式](/windows/apps/get-started/enable-your-device-for-development)。 在这之后，你可以从部署计算机进行部署。
 
 有关详细信息，请参阅 [Visual Studio 下载中心](https://visualstudio.microsoft.com/downloads/)页面。
 
@@ -111,7 +111,7 @@ ms.locfileid: "91763062"
 
 ![应用 4 属性页的屏幕截图，其中已选中“配置属性”>“调试”选项，并显示表中列出的“命令行参数”属性。](images/command-line-arguments-cpp.png)
 
-指定命令行参数之后，可以在应用的 OnLaunched  方法中访问参数值。 [LaunchActivatedEventArgs  ](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 对象 args  将具有 **Arguments** 属性，其值设置为“命令行参数”  字段中的文本。
+指定命令行参数之后，可以在应用的 OnLaunched  方法中访问参数值。 [LaunchActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 对象 args  将具有 **Arguments** 属性，其值设置为“命令行参数”  字段中的文本。
 
 ![C++ 和 JS 命令行参数的屏幕截图。](images/command-line-arguments-debugging.png)
 
@@ -120,8 +120,8 @@ ms.locfileid: "91763062"
 有三个身份验证模式可用于远程计算机部署：
 
 - **通用（未加密协议）** ：部署到远程设备时，请使用此身份验证模式。 当前，这适用于 IoT 设备、Xbox 设备和 HoloLens 设备，以及具有创意者更新或更高版本的操作系统的电脑。 仅应在受信任的网络上使用通用（未加密协议）。 调试连接对于恶意用户来说容易遭受攻击，这些用户可以截获和更改在开发与远程计算机之间传递的数据。
-- **Windows**：此身份验证模式仅适用于运行 Visual Studio 远程工具的远程电脑（台式机或笔记本电脑）。 当你有权访问目标计算机的登录用户的凭据时，使用此身份验证模式。 这是适用于远程部署的最安全通道。
-- **None**：此身份验证模式仅适用于运行 Visual Studio 远程工具的远程电脑（台式机或笔记本电脑）。 当在有一个登录的测试帐户的环境中设置测试计算机并且无法输入凭据时，使用此身份验证模式。 确保远程调试器设置已设置为接受“无身份验证”。
+- **Windows** ：此身份验证模式仅适用于运行 Visual Studio 远程工具的远程电脑（台式机或笔记本电脑）。 当你有权访问目标计算机的登录用户的凭据时，使用此身份验证模式。 这是适用于远程部署的最安全通道。
+- **None** ：此身份验证模式仅适用于运行 Visual Studio 远程工具的远程电脑（台式机或笔记本电脑）。 当在有一个登录的测试帐户的环境中设置测试计算机并且无法输入凭据时，使用此身份验证模式。 确保远程调试器设置已设置为接受“无身份验证”。
 
 ## <a name="advanced-remote-deployment-options"></a>高级远程部署选项
 
@@ -201,14 +201,14 @@ ms.locfileid: "91763062"
 
   若要从应用中删除网络环回豁免：
 
-  - 在 C# 和 Visual Basic“调试” **** 属性页上，清除“允许本地网络环回”  复选框。
+  - 在 C# 和 Visual Basic“调试”属性页上，清除“允许本地网络环回”复选框。
   - 在 JavaScript 和 C++“调试”  属性页上，将“允许本地网络环回”  值设置为“否”  。
 
 - **不启动，但在启动时调试代码/启动应用程序**
 
   若要将部署配置为启动应用时自动开始一个调试会话：
 
-  - 在 C# 和 Visual Basic“调试” **** 属性页上，选中“不启动，但在其开始运行时调试代码”  复选框。
+  - 在 C# 和 Visual Basic“调试”属性页上，选中“不启动，但在开始时调试我的代码”复选框。
   - 在 JavaScript 和 C++“调试”  属性页上，将“启动应用程序”  值设置为“是”  。
 
 ## <a name="symbols"></a>符号

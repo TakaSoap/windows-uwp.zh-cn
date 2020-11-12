@@ -6,16 +6,16 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, Hello World
 ms.localizationpriority: medium
-ms.openlocfilehash: dda1c0f9a7b61c13965ff2f71c8100a8e771bd7d
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: b602970b2b1f37a4511e2a87eb1be72fba7f5423
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860073"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339835"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, World!” 应用 (XAML)
 
-本教程指导你如何使用 XAML 和 C# 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，可以生成可在任何 Windows 10 设备上运行的应用。
+本教程指导你如何使用 XAML 和 C# 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，你可以生成可在任何 Windows 10 设备上运行的应用。
 
 在此处，你将了解如何：
 
@@ -28,7 +28,7 @@ ms.locfileid: "91860073"
 ## <a name="before-you-start"></a>开始之前...
 
 -   [什么是通用 Windows 应用？](universal-application-platform-guide.md)
--   [下载 Visual Studio 2017（和 Windows 10）](https://developer.microsoft.com/windows/downloads)。 如果需要帮助，请了解如何[设置](get-set-up.md)。
+-   [下载 Visual Studio 2017（和 Windows 10）](https://developer.microsoft.com/windows/downloads)。 如果需要帮助，请了解如何[设置](/windows/apps/get-started/get-set-up)。
 -   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 若要更改默认布局，可以在“窗口”菜单中，使用“重置窗口布局”命令来重置它 。
 
 > [!NOTE]
@@ -46,7 +46,7 @@ ms.locfileid: "91860073"
 
 3.  在左侧的模板列表中，选择“已安装”>“模板 C#”>“Windows Universal”查看 UWP 项目模板列表。
 
-    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 可以通过在“新建项目”对话框中单击“打开 Visual Studio 安装程序”来重复安装流程并添加 UWP 支持。 请参阅[准备工作](get-set-up.md)。）
+    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 可以通过在“新建项目”对话框中单击“打开 Visual Studio 安装程序”来重复安装流程并添加 UWP 支持。 请参阅[准备工作](/windows/apps/get-started/get-set-up)。）
 
     ![如何重复安装流程](images/win10-cs-install.png)
 
@@ -55,7 +55,7 @@ ms.locfileid: "91860073"
     ![“新建项目”窗口](images/win10-cs-01.png)
 
 > [!NOTE]
-> 如果你是首次使用 Visual Studio，则可能会看到要求启用“开发人员模式”的“设置”对话框。 开发人员模式是一种用于启用某些功能（如允许直接运行应用，而不是只能从 Store 运行）的特殊设置。 有关更多信息，请阅读[启用设备进行开发](enable-your-device-for-development.md)。 若要继续使用本指南，请选择“开发人员模式”，然后单击“是”并关闭对话框 。
+> 如果你是首次使用 Visual Studio，则可能会看到要求启用“开发人员模式”的“设置”对话框。 开发人员模式是一种用于启用某些功能（如允许直接运行应用，而不是只能从 Store 运行）的特殊设置。 有关更多信息，请阅读[启用设备进行开发](/windows/apps/get-started/enable-your-device-for-development)。 若要继续使用本指南，请选择“开发人员模式”，然后单击“是”并关闭对话框 。
 
  ![激活“开发人员模式”对话框](images/win10-cs-00.png)
 
@@ -198,7 +198,7 @@ App.xaml 和 App.xaml.cs
 
   当然，你可以手动创建所有代码。 也可以单击按钮选中它，然后访问右下方的“属性”窗格。 如果切换到“事件”（小闪电球），可以添加事件处理程序的名称。
 
-3.  编辑 *MainPage.xaml.cs*（即代码隐藏页面）中的事件处理程序代码。 这是事情变得有趣的所在之处。 默认的事件处理程序如下所示：
+3.  编辑 *MainPage.xaml.cs* （即代码隐藏页面）中的事件处理程序代码。 这是事情变得有趣的所在之处。 默认的事件处理程序如下所示：
 
 ```cs
 private void Button_Click(object sender, RoutedEventArgs e)
@@ -231,7 +231,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="summary"></a>摘要
 
-祝贺你，你已创建了自己的第一个适用于 Windows 10 和 UWP 的应用！
+祝贺你，你已创建了自己的第一个适用于 Windows 10 和 UWP 的应用！
 
 若要了解如何使用 XAML 来布置你的应用将使用的控件，请尝试[网格教程](../design/layout/grid-tutorial.md)，或直接跳至[下一步](./create-uwp-apps.md)。
 
@@ -242,4 +242,4 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 * [有关开发 UWP 应用的操作方法文章](../develop/index.md)
 * [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
 * [什么是通用 Windows 应用？](universal-application-platform-guide.md)
-* [注册 Windows 帐户](sign-up.md)
+* [注册 Windows 帐户](/windows/apps/get-started/sign-up)

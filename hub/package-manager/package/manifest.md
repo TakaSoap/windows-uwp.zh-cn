@@ -4,12 +4,12 @@ description: 如果要将软件包提交到 Windows 程序包管理器存储库�
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a3a1acebf2b48e767fbd16998967145976305434
-ms.sourcegitcommit: 94841d1d59703897b42b11597c28a9d966626f47
+ms.openlocfilehash: c0c01d87dc7e02b356a4fba20b01519e3361b28a
+ms.sourcegitcommit: 36ae65013da22930c8e838fc65a63564a0bafee2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110563"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94377793"
 ---
 # <a name="create-your-package-manifest"></a>创建程序包清单
 
@@ -31,7 +31,7 @@ ms.locfileid: "91110563"
 本文使用以下约定：
 
 * `:` 的左侧是清单定义中使用的文字关键字。
-* `:` 的右侧为数据类型。 数据类型可以是基元类型（例如**字符串**），也可以是对本文中其他地方定义的丰富结构的引用。
+* `:` 的右侧为数据类型。 数据类型可以是基元类型（例如 **字符串** ），也可以是对本文中其他地方定义的丰富结构的引用。
 * 表示法 `[` *datatype* `]` 表示所提到的数据类型的数组。 例如，`[ string ]` 是一个字符串数组。
 * 表示法 `{` *datatype* `:` *datatype* `}` 表示一种数据类型到另一种数据类型的映射。 例如，`{ string: string }` 是字符串到字符串的映射。
 
@@ -166,7 +166,7 @@ ManifestVersion: 0.1.0
 
 ## <a name="installer-switches"></a>安装程序开关
 
-通常可以通过从命令行向安装程序传入 `-?` 来找出可用于安装程序的无提示 `Switches`。 下面是一些可用于不同安装程序类型的常见无提示 `Swtiches`。
+通常可以通过从命令行向安装程序传入 `-?` 来找出可用于安装程序的无提示 `Switches`。 下面是一些可用于不同安装程序类型的常见无提示 `Switches`。
 
 | 安装程序 | 命令  | 文档 |  
 | :--- | :-- | :--- |  
@@ -177,7 +177,7 @@ ManifestVersion: 0.1.0
 
 ## <a name="tips-and-best-practices"></a>技巧与最佳做法
 
-* 为了在查找和安装软件时获得最佳的客户体验，建议你尽可能多地包含必需架构以外的可选项。 例如，`AppMoniker` 字段是可选的。 但是，如果你包含此字段，则客户在执行[搜索](../winget/search.md)命令（例如，用 **vscode** 来表示 **Visual Studio Code**）时会看到与 `AppMoniker` 值关联的结果。 如果只有一个应用具有指定的 `AppMoniker` 值，则客户可以通过指定名字对象（而不是完全限定的 ID）来安装应用程序。
+* 为了在查找和安装软件时获得最佳的客户体验，建议你尽可能多地包含必需架构以外的可选项。 例如，`AppMoniker` 字段是可选的。 但是，如果你包含此字段，则客户在执行 [搜索](../winget/search.md)命令（例如，用 **vscode** 来表示 **Visual Studio Code** ）时会看到与 `AppMoniker` 值关联的结果。 如果只有一个应用具有指定的 `AppMoniker` 值，则客户可以通过指定名字对象（而不是完全限定的 ID）来安装应用程序。
 * `Id` 必须独一无二。 不能有多个具有相同程序包标识符的提交。 请避免使用空格，因为这会要求用户在使用 [winget](../index.md) 客户端时在 `Id` 两侧加上引号。
 * 请避免创建多个发布者文件夹。 例如，如果已有“Contoso”文件夹，请不要再创建“Contoso Ltd”文件夹。 创建文件夹时，也要避免使用空格。
 * 如果可能，应使用无提示安装来提交所有程序包。 如果你有一个不支持无提示安装的可执行文件，用户体验会变差。

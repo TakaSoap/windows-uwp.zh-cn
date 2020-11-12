@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: edaa15aa2e88252c328a368df1b7698a9b74f5e0
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: b1420fc5b5e74cba46b486b57be1098ac17ad1f5
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750443"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339825"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>使用 C++/CX 创建“Hello, World!” 应用
 
@@ -61,7 +61,7 @@ ms.locfileid: "91750443"
 
 ## <a name="hello-world-store-app-in-ccx"></a>使用 C++/CX 的 Hello World Store 应用
 
-我们的第一个应用是“Hello World”，它演示了交互性、布局和样式的一些基本功能。 我们将通过 Universal Windows App 项目模板创建应用。 如果你之前开发过 Windows 8.1 和 Windows Phone 8.1 应用，你可能还记得在 Visual Studio 中你必须具有三个项目：一个用于 Windows 应用，一个用于手机应用，另一个带有共享代码。 Windows 10 通用 Windows 平台 (UWP) 使只需一个项目成为可能，该项目可在所有设备上运行，包括运行 Windows 10 的台式机和笔记本电脑、诸如平板电脑、手机、VR 设备等。
+我们的第一个应用是“Hello World”，它演示了交互性、布局和样式的一些基本功能。 我们将通过 Universal Windows App 项目模板创建应用。 如果你之前开发过 Windows 8.1 和 Windows Phone 8.1 应用，你可能还记得在 Visual Studio 中你必须具有三个项目：一个用于 Windows 应用，一个用于手机应用，另一个带有共享代码。 Windows 10 通用 Windows 平台 (UWP) 使只需一个项目成为可能，该项目可在所有设备上运行，包括运行 Windows 10 的台式机和笔记本电脑，以及诸如平板电脑、手机、VR 设备等。
 
 我们将从基础开始：
 
@@ -75,7 +75,7 @@ ms.locfileid: "91750443"
 
 1.  在 Visual Studio 的菜单栏上，选择“文件” > “新建” > “项目...”  。
 
-2.  在“创建新项目”对话框中，选择“空白应用(通用 Windows - C++/CX)” 。  如果没有看到此选项，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。
+2.  在“创建新项目”对话框中，选择“空白应用(通用 Windows - C++/CX)” 。  如果没有看到此选项，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](/windows/apps/get-started/get-set-up)。
 
 ![“创建新项目”对话框中的 C++/CX 项目模板 ](images/vs2019-uwp-01.png)
 
@@ -84,7 +84,7 @@ ms.locfileid: "91750443"
 4.  选择“创建”按钮。
 
 > [!NOTE]
-> 如果你是首次使用 Visual Studio，则可能会看到要求启用“开发人员模式”的“设置”对话框。 开发人员模式是一种用于启用某些功能（如允许直接运行应用，而不是只能从 Store 运行）的特殊设置。 有关更多信息，请阅读[启用设备进行开发](enable-your-device-for-development.md)。 若要继续使用本指南，请选择“开发人员模式”，然后单击“是”并关闭对话框 。
+> 如果你是首次使用 Visual Studio，则可能会看到要求启用“开发人员模式”的“设置”对话框。 开发人员模式是一种用于启用某些功能（如允许直接运行应用，而不是只能从 Store 运行）的特殊设置。 有关更多信息，请阅读[启用设备进行开发](/windows/apps/get-started/enable-your-device-for-development)。 若要继续使用本指南，请选择“开发人员模式”，然后单击“是”并关闭对话框 。
 
    已创建项目文件。
 
@@ -101,7 +101,7 @@ ms.locfileid: "91750443"
 -   **App.xaml、App.xaml.h、App.xaml.cpp：** 代表应用程序对象，这是应用的入口点。 App.xaml 不包含特定于页面的 UI 标记，但是你可以添加希望可以从任何页面访问的 UI 样式和其他元素。 代码隐藏文件包含 **OnLaunched** 和 **OnSuspending** 事件的处理程序。 通常，你在此处添加自定义代码以在应用启动时初始化应用并在它暂停或终止时执行清理。
 -   MainPage.xaml、MainPage.xaml.h、MainPage.xaml.cpp：包含应用中的默认“开始”页面的 XAML 标记和代码隐藏。 它没有导航支持或内置控件。
 -   **pch.h、pch.cpp：** 预编译标头文件和在你的项目中包含它的文件。 在 pch.h 中，你可以在解决方案中包含任何不经常更改且包含在其他文件中的标头。
--   **Package.appxmanifest：** 描述应用所需的设备功能、应用版本信息以及其他元数据的 XML 文件。 要在**清单设计器**中打开此文件，只需双击它。
+-   **Package.appxmanifest：** 描述应用所需的设备功能、应用版本信息以及其他元数据的 XML 文件。 要在 **清单设计器** 中打开此文件，只需双击它。
 -   HelloWorld\_TemporaryKey.pfx：支持在此计算机上从 Visual Studio 部署应用的密钥。
 
 ## <a name="a-first-look-at-the-code"></a>代码一览
@@ -110,7 +110,7 @@ ms.locfileid: "91750443"
 
 **引用类**
 
-几乎所有 Windows 运行时类，包括 Windows API--XAML 控件中的所有类型、应用中的页面、应用类本身，所有设备和网络对象、所有容器类型，都声明为 **ref class**。 （一些 Windows 类型是 **value class** 或 **value struct**）。 引用类可从任何语言使用。 在 C++/CX 中，这些类型的生存期由自动引用计数管理（非垃圾集合），使你永远不会显式删除这些对象。 你也可以创建自己的引用类。
+几乎所有 Windows 运行时类，包括 Windows API--XAML 控件中的所有类型、应用中的页面、应用类本身，所有设备和网络对象、所有容器类型，都声明为 **ref class** 。 （一些 Windows 类型是 **value class** 或 **value struct** ）。 引用类可从任何语言使用。 在 C++/CX 中，这些类型的生存期由自动引用计数管理（非垃圾集合），使你永远不会显式删除这些对象。 你也可以创建自己的引用类。
 
 ```cpp
 namespace HelloWorld
@@ -237,8 +237,8 @@ MainPage::MainPage()
 
 ## <a name="step-2-create-an-event-handler"></a>步骤 2：创建事件处理程序
 
-1.  在 MainPage.xaml 的 XAML 或设计视图中，在之前添加的 [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 中选择“Say Hello”[**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button)。
-2.  按 F4 打开**属性窗口**，然后选择“事件”按钮（![事件按钮](images/eventsbutton.png)）。
+1.  在 MainPage.xaml 的 XAML 或设计视图中，在之前添加的 [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 中选择“Say Hello” [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button)。
+2.  按 F4 打开 **属性窗口** ，然后选择“事件”按钮（![事件按钮](images/eventsbutton.png)）。
 3.  查找 [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。 在其文本框中，键入处理 **Click** 事件的函数名称。 对于本示例，请键入“Button\_Click”。
 
     ![属性窗口, 事件视图](images/xaml-hw-event.png)
@@ -277,7 +277,7 @@ void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::X
 **切换到深色主题**
 
 1.  打开 App.xaml。
-2.  在开始标记 [**Application**](/uwp/api/Windows.UI.Xaml.Application) 中，编辑 [**RequestedTheme**](/uwp/api/windows.ui.xaml.application.requestedtheme) 属性并将其值设置为 **Dark**：
+2.  在开始标记 [**Application**](/uwp/api/Windows.UI.Xaml.Application) 中，编辑 [**RequestedTheme**](/uwp/api/windows.ui.xaml.application.requestedtheme) 属性并将其值设置为 **Dark** ：
 
     ```xaml
     RequestedTheme="Dark"
@@ -300,7 +300,7 @@ void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::X
 
 你应使用哪个主题？ 你需要的任何一个。 以下我们的观点：对于主要显示图像或视频的应用，我们建议深色主题；对于包含大量文本的应用，我们建议浅色主题。 如果你使用的是自定义配色方案，则请使用最适合应用外观和感觉的主题。 在本教程的其余部分中，我们使用屏幕截图中的浅色主题。
 
-**注意**  主题在应用启动时应用，并且无法在应用运行时更改主题。
+**注意**  主题在应用启动时应用，并且无法在应用运行时更改主题。
 
 ### <a name="using-system-styles"></a>使用系统样式
 
@@ -309,8 +309,8 @@ void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::X
 **更改元素样式**
 
 1.  在 Windows 项目中，打开 MainPage.xaml。
-2.  在 XAML 或设计视图中，选择以前添加的“你叫什么名字？”[**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
-3.  在 **“属性”** 窗口 (**F4**) 中，选择右上角的“属性”按钮（![“属性”按钮](images/propertiesbutton.png)）。
+2.  在 XAML 或设计视图中，选择以前添加的“你叫什么名字？” [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
+3.  在 **“属性”** 窗口 ( **F4** ) 中，选择右上角的“属性”按钮（![“属性”按钮](images/propertiesbutton.png)）。
 4.  展开 **“文本”** 组，并将字体大小设置为 18 px。
 5.  展开“其他”组并找到“样式”属性   。
 6.  单击属性标记（“样式”属性右侧的绿色框），然后在菜单上，选择“系统资源” > “BaseTextBlockStyle”    。
@@ -319,7 +319,7 @@ void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::X
 
     ![属性窗口，属性视图](images/xaml-hw-style-cpp.png)
 
-     在 XAML 设计图面中，文本外观会发生更改。 在 XAML 编辑器中，[**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 的 XAML 会进行更新：
+     在 XAML 设计图面中，文本外观会发生更改。 在 XAML 编辑器中， [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 的 XAML 会进行更新：
 
 ```xaml
 <TextBlock Text="What's your name?" Style="{ThemeResource BaseTextBlockStyle}"/>
@@ -327,7 +327,7 @@ void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::X
 
 7.  重复该过程可设置字体大小并将 **BaseTextBlockStyle** 分配到 `greetingOutput`[**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素。
 
-    **提示**  尽管此 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 中没有文本，但当你将指针移动到 XAML 设计图面上时，蓝色轮廓会显示它的位置，以便你可以选择它。  
+    **提示**  尽管此 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 中没有文本，但当你将指针移动到 XAML 设计图面上时，蓝色轮廓会显示它的位置，以便你可以选择它。  
 
     现在的 XAML 如下所示：
 
@@ -388,7 +388,7 @@ void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::X
 名为 `narrowState` 的第二个 [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 具有一个 [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger)，其 [**MinWindowWidth**](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) 属性设置为 0。 当窗口宽度大于 0 但小于 641 DIP 时，应用此状态。 （在 641 DIP 时，将应用 `wideState`。）在此状态下，定义一些 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 对象以更改 UI 中控件的布局属性：
 
 -   将 `contentPanel` 元素的左边距从 120 降低为 20。
--   将 `inputPanel` 元素的 [**Orientation**](/uwp/api/windows.ui.xaml.controls.stackpanel.orientation) 从 **Horizontal** 更改为 **Vertical**。
+-   将 `inputPanel` 元素的 [**Orientation**](/uwp/api/windows.ui.xaml.controls.stackpanel.orientation) 从 **Horizontal** 更改为 **Vertical** 。
 -   将 4 DIP 的上边距添加到 `inputButton` 元素。
 
 ### <a name="summary"></a>摘要
