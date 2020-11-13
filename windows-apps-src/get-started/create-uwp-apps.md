@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 入门
 ms.localizationpriority: medium
-ms.openlocfilehash: a9230df47c9929ee902fc8e0b93f7de7a5ef70df
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: 143e393a72aa24f81561e792148e4cc8b39bdeb4
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011360"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339795"
 ---
 # <a name="start-coding"></a>开始编码
 
@@ -57,7 +57,7 @@ ms.locfileid: "92011360"
 
 | 领域 | 说明 |
 | --- | --- |
-| **新增功能** | 每次发布 Windows 10 的主要更新，我们的文档库都会增加一些新的指南。 这些文档包含有关我们为每个版本添加的功能和开发人员指南的信息，以及新 API 的列表： </br>   [最新的 Windows 10 版本中面向开发人员的新增功能](../whats-new/windows-10-version-latest.md) |
+| **新增功能** | 每次发布 Windows 10 的主要更新，我们的文档库都会增加一些新的指南。 这些文档包含有关我们为每个版本添加的功能和开发人员指南的信息，以及新 API 的列表： </br>   [最新的 Windows 10 版本中面向开发人员的新增功能](../whats-new/windows-10-build-19041.md) |
 | **设计和 UI** | 有关应用的可视化表示形式和 UI 的所有信息均包含在文档的此区域中。如果对 XAML 标记语言的细节感兴趣，或只是想为文档创建独特的外观，请从这里开始： </br>   [UWP 应用的设计基础知识](../design/basics/index.md) |
 | **开发应用** | 如果要了解特定的 Windows 10 功能的详细信息，或只是想了解可以通过 UWP 开发做些什么事情，请查看文档的这一区域： </br>   [UWP 应用功能](../develop/index.md)。 </br> Windows 10 应用的 API 参考托管在一组相关的文档中，可以在这里找到它们： </br>   [Windows UWP 命名空间](/uwp/api/) </br>   [文件和 XML 架构](/uwp/schemas/) |
 | **开发游戏** | 这些文档包含有关如何在 Windows 或 Xbox 上开发游戏的信息。 这包括设置说明、开发人员计划以及使用 DirectX 或 Xbox 功能进行编程的说明。 </br>   [游戏开发入门](../gaming/getting-started.md) |
