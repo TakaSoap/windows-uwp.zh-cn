@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: 06ac1525a91426f6d39e20c9a9416154ad3d6f3e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: be02f9b049a1beb1866d21c97f11fe3efeb815f3
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174021"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339345"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 应用认证工具包
 
@@ -22,8 +22,8 @@ ms.locfileid: "89174021"
 测试通用 Windows 应用的先决条件：
 
 - 必须安装并运行 Windows 10。
-- 必须安装 [Windows 应用认证工具包](https://developer.microsoft.com/windows/downloads/app-certification-kit/)，该版本包含在适用于 Windows 10 的 Windows 软件开发工具包 (SDK) 中。
-- 必须[启用设备进行开发](../get-started/enable-your-device-for-development.md)。
+- 必须安装 [Windows 应用认证工具包](https://developer.microsoft.com/windows/downloads/app-certification-kit/)，它包含在适用于 Windows 10 的 Windows 软件开发工具包 (SDK) 中。
+- 必须[启用设备进行开发](/windows/apps/get-started/enable-your-device-for-development)。
 - 必须将要测试的 Windows 应用部署到计算机。
 
 > [!NOTE]
@@ -59,7 +59,7 @@ ms.locfileid: "89174021"
 
 1. 在命令窗口中，导航到包含 Windows 应用认证工具包的目录。
 
-    **注意**   默认路径为 C:\\Program Files\\Windows 工具包\\10\\应用认证工具包\\。
+    **注意**   默认路径为 C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\。
 
 2. 按此顺序输入以下命令，以测试已安装在你的测试计算机上的应用：
 
@@ -75,9 +75,9 @@ ms.locfileid: "89174021"
 
 3. 在测试完成后，打开名为 `[report file name]` 的报告文件并查看测试结果。
 
-**注意**   可以从某个服务运行 Windows 应用认证工具包，但是该服务必须在活动用户会话内启动工具包过程，并且不得在 Session0 中运行。
+**注意**  可以从某个服务运行 Windows 应用认证工具包，但是该服务必须在活动用户会话内启动工具包过程，并且不得在 Session0 中运行。
 
-**注意**   有关 Windows 应用认证工具包命令行的更多信息，请输入命令 `appcert.exe /?`
+**注意**   若要详细了解 Windows 应用认证工具包命令行，请输入 `appcert.exe /?` 命令
 
 ## <a name="testing-with-a-low-power-computer"></a>使用低能耗电脑进行测试
 

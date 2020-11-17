@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4f6656530656e3d93fb16598b9a75c4fd06e4c3d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ed06779b2f8a8a38320a7292bea17bf1b64a43d6
+ms.sourcegitcommit: 4fffc66fac18fc4c80281e2a4afa9c4f2e1f7551
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219780"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94513676"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -20,7 +20,7 @@ ms.locfileid: "91219780"
 
 可以通过在应用的[程序包清单](/uwp/schemas/appxpackage/appx-package-manifest)中声明功能来请求对特定资源或 API 的访问权限。 可以使用 Visual Studio 中的[清单设计器](/windows/msix/package/packaging-uwp-apps#configure-an-app-package)来声明常用功能，也可以手动添加它们。 有关详细信息，请参阅[如何在程序包清单中指定功能](/uwp/schemas/appxpackage/how-to-specify-capabilities-in-a-package-manifest)。 请务必了解，当客户从应用商店获取你的应用时，会向它们告知该应用声明的所有功能。 请避免声明你的应用不需要的功能。
 
-某些功能为应用提供对*敏感资源*的访问权限。 由于这些资源可用于访问用户私人数据或花费用户金钱，因此它们被认为是敏感资源。 由“设置”应用管理的隐私设置允许用户动态控制对敏感资源的访问权限。 因此，你的应用不会假设敏感资源始终可用，这一点很重要。 有关访问敏感资源的详细信息，请参阅[隐私感知应用指南](../security/index.md)。 已注释用于为应用提供对敏感资源的访问权限的功能，即此类功能应用场景的旁边会有一个星号 (\*)。
+某些功能为应用提供对 *敏感资源* 的访问权限。 由于这些资源可用于访问用户私人数据或花费用户金钱，因此它们被认为是敏感资源。 由“设置”应用管理的隐私设置允许用户动态控制对敏感资源的访问权限。 因此，你的应用不会假设敏感资源始终可用，这一点很重要。 有关访问敏感资源的详细信息，请参阅[隐私感知应用指南](../security/index.md)。 已注释用于为应用提供对敏感资源的访问权限的功能，即此类功能应用场景的旁边会有一个星号 (\*)。
 
 有多种类型的功能。
 
@@ -38,10 +38,10 @@ ms.locfileid: "91219780"
 
 | 功能应用场景 | 功能用法 |
 |---------------------|------------------|
-| **音乐**\* | musicLibrary 功能提供对用户的“音乐”库的编程访问，允许应用枚举和访问库中的所有文件，而无需用户交互。 此功能通常用在使用整个音乐库的自动唱片点唱机应用中。<br /><br />[  **文件选取器**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker)提供了一种强大的 UI 机制，让用户可以打开要通过某个应用处理的文件。 仅当应用需要进行编程访问，而使用**文件选取器**无法实现编程访问时，才声明 **musicLibrary** 功能。<br /><br /> 当在应用的程序包清单中声明 **musicLibrary** 功能时，该功能必须包含 **uap** 命名空间，如下所示。 <br /><br />```<Capabilities><uap:Capability Name="musicLibrary"/></Capabilities>```
-| **图片**\* | picturesLibrary 功能提供对用户的“图片”库的编程访问，允许应用枚举和访问库中的所有文件，而无需用户交互。 在使用整个图片库的照片应用中，通常会使用此功能。<br /><br />[  **文件选取器**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker)提供了一种强大的 UI 机制，让用户可以打开要通过某个应用处理的文件。 仅当应用需要进行编程访问，而使用**文件选取器**无法实现编程访问时，才声明 **picturesLibrary** 功能。<br /><br />当在应用的程序包清单中声明 **picturesLibrary** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="picturesLibrary"/></Capabilities>```
-| **视频**\* | **videosLibrary** 功能提供对用户视频的编程访问权限，让应用无需用户交互即可枚举和访问库中的所有文件。 此功能通常用在使用整个视频库的电影播放应用中。<br /><br />[  **文件选取器**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker)提供了一种强大的 UI 机制，让用户可以打开要通过某个应用处理的文件。 仅当应用需要进行编程访问，而使用**文件选取器**无法实现编程访问时，才声明 **videosLibrary** 功能。<br /><br />当在应用的程序包清单中声明 **videosLibrary** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="videosLibrary"/></Capabilities>```
-| **可移动存储** | **removableStorage** 功能提供对可移动存储（如 U 盘和外部硬盘驱动器）中文件的编程访问权限，这些文件将按照程序包清单中声明的文件类型关联进行筛选。 例如，如果某个文档阅读器应用声明了 .doc 文件类型关联，则它可以打开可移动存储设备中的 .doc 文件，但无法打开其他类型的文件。 声明此功能时请务必小心，因为用户的可移动存储设备中可能包含多种信息，他们将期待你的应用提供有效的理由，以便对该可移动存储中属于已声明类型的所有文件进行编程访问。<br /><br />用户将期待你的应用处理你所声明的所有文件关联。 因此，请勿声明你的应用无法可靠处理的文件关联。 [  **文件选取器**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker)提供了一种强大的 UI 机制，让用户可以打开要通过某个应用处理的文件。<br /><br />仅当应用需要进行编程访问，而使用[**文件选取器**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker)无法实现编程访问时，才声明 **removableStorage** 功能。<br /><br />当在应用的程序包清单中声明 **removableStorage** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="removableStorage"/></Capabilities>```
+| **音乐**\* | musicLibrary 功能提供对用户的“音乐”库的编程访问，允许应用枚举和访问库中的所有文件，而无需用户交互。 此功能通常用在使用整个音乐库的自动唱片点唱机应用中。<br /><br />[  **文件选取器**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker)提供了一种强大的 UI 机制，让用户可以打开要通过某个应用处理的文件。 仅当应用需要进行编程访问，而使用 **文件选取器** 无法实现编程访问时，才声明 **musicLibrary** 功能。<br /><br /> 当在应用的程序包清单中声明 **musicLibrary** 功能时，该功能必须包含 **uap** 命名空间，如下所示。 <br /><br />```<Capabilities><uap:Capability Name="musicLibrary"/></Capabilities>```
+| **图片**\* | picturesLibrary 功能提供对用户的“图片”库的编程访问，允许应用枚举和访问库中的所有文件，而无需用户交互。 在使用整个图片库的照片应用中，通常会使用此功能。<br /><br />[  **文件选取器**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker)提供了一种强大的 UI 机制，让用户可以打开要通过某个应用处理的文件。 仅当应用需要进行编程访问，而使用 **文件选取器** 无法实现编程访问时，才声明 **picturesLibrary** 功能。<br /><br />当在应用的程序包清单中声明 **picturesLibrary** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="picturesLibrary"/></Capabilities>```
+| **视频**\* | **videosLibrary** 功能提供对用户视频的编程访问权限，让应用无需用户交互即可枚举和访问库中的所有文件。 此功能通常用在使用整个视频库的电影播放应用中。<br /><br />[  **文件选取器**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker)提供了一种强大的 UI 机制，让用户可以打开要通过某个应用处理的文件。 仅当应用需要进行编程访问，而使用 **文件选取器** 无法实现编程访问时，才声明 **videosLibrary** 功能。<br /><br />当在应用的程序包清单中声明 **videosLibrary** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="videosLibrary"/></Capabilities>```
+| **可移动存储** | **removableStorage** 功能提供对可移动存储（如 U 盘和外部硬盘驱动器）中文件的编程访问权限，这些文件将按照程序包清单中声明的文件类型关联进行筛选。 例如，如果某个文档阅读器应用声明了 .doc 文件类型关联，则它可以打开可移动存储设备中的 .doc 文件，但无法打开其他类型的文件。 声明此功能时请务必小心，因为用户的可移动存储设备中可能包含多种信息，他们将期待你的应用提供有效的理由，以便对该可移动存储中属于已声明类型的所有文件进行编程访问。<br /><br />用户将期待你的应用处理你所声明的所有文件关联。 因此，请勿声明你的应用无法可靠处理的文件关联。 [  **文件选取器**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker)提供了一种强大的 UI 机制，让用户可以打开要通过某个应用处理的文件。<br /><br />仅当应用需要进行编程访问，而使用 [**文件选取器**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker)无法实现编程访问时，才声明 **removableStorage** 功能。<br /><br />当在应用的程序包清单中声明 **removableStorage** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="removableStorage"/></Capabilities>```
 | **Internet 和公共网络**\* | 存在两种提供对 Internet 和公共网络的不同级别访问权限的功能。<br /><br />**internetClient** 功能指示应用可以接收从 Internet 传入的数据。 无法充当服务器。 无法访问本地网络。<br />**internetClientServer** 功能指示应用可以接收从 Internet 传入的数据。 可以充当服务器。 无法访问本地网络。<br /><br />具有 Web 服务组件的大多数应用都将使用 **internetClient**。 如果应用支持需要在其中侦听传入的网络连接的对等 (P2P) 方案，则应该使用 **internetClientServer**。 **internetClientServer** 功能包括 **internetClient** 功能所提供的访问权限，因此，在指定 **internetClientServer** 时无需指定 **internetClient**。
 | **家庭和工作网络**\* | **privateNetworkClientServer** 功能提供通过防火墙对家庭和工作网络的入站和出站访问权限。 此功能通常用于通过局域网 (LAN) 通信的游戏和在各种本地设备上共享数据的应用。 如果你的应用指定了 **musicLibrary**、**picturesLibrary** 或 **videosLibrary**，则无需使用此功能即可访问家庭组中相应的库。 在 Windows 上，此功能不提供对 Internet 的访问权限。
 | **约会** | appointments 功能提供对用户的约会存储的访问。 此功能允许读取对从同步的网络帐户获得的约会以及写入约会存储的其他应用的访问权限。 通过此功能，你的应用可以创建新的日历并向所创建的日历写入约会。<br /><br />当在应用的程序包清单中声明 **appointments** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="appointments"/></Capabilities>```
@@ -63,7 +63,7 @@ ms.locfileid: "91219780"
 
 ## <a name="device-capabilities"></a>设备功能
 
-设备功能允许你的应用访问外围设备和内部设备。 可在应用程序包清单中使用 DeviceCapability 元素指定设备功能。 此元素可能需要其他子元素，并且某些设备功能需要手动添加到该程序包清单。 有关详细信息，请参阅[如何在程序包清单中指定设备功能](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)和 [**DeviceCapability Schema reference**](/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability)。
+设备功能允许你的应用访问外围设备和内部设备。 可在应用程序包清单中使用 DeviceCapability 元素指定设备功能。 此元素可能需要其他子元素，并且某些设备功能需要手动添加到该程序包清单。 有关详细信息，请参阅 [如何在程序包清单中指定设备功能](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)和 [**DeviceCapability Schema reference**](/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability)。
 
 > [!NOTE]
 > 在程序包清单中的 Capabilities 元素下可以有多个 DeviceCapability 元素。 所有 DeviceCapability 元素都必须位于任何 Capability 和 [CustomCapability](#custom-capabilities) 元素之后。
@@ -74,8 +74,8 @@ ms.locfileid: "91219780"
 | **麦克风** | microphone 功能提供对麦克风音频源的访问，从而使应用可以录制来自已连接的麦克风的音频。 应用必须处理用户从“设置”超级按钮禁用麦克风的情况。 |
 | **邻近感应** | **proximity** 功能支持临近的多台设备彼此通信。 此功能通常用在一般的多玩家游戏和交换信息的应用中。 设备会尝试使用可提供最佳连接的通信技术，包括蓝牙、Wi-Fi 和 Internet。 此功能仅用于在设备之间发起通信。 |
 | **网络摄像头** | **webcam** 功能提供对内置相机或外部摄像头的视频源的访问权限，这使应用可以捕获照片和视频。 在 Windows 上，应用必须处理用户从“设置”超级按钮禁用相机的情况。<br/>**webcam** 功能仅授予对视频流的访问权限。 若要也授予对音频流的访问权限，必须添加 **microphone** 功能。 |
-| **USB** | **usb** 设备功能允许访问[为 USB 设备更新应用清单程序包](/windows-hardware/drivers/usbcon/)中的 API。 |
-| **人机接口设备 (HID)** | **humaninterfacedevice** 设备功能允许访问[如何为 HID 指定设备功能](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-hid)中的 API。 |
+| **USB** | **usb** 设备功能允许访问 [为 USB 设备更新应用清单程序包](/windows-hardware/drivers/usbcon/)中的 API。 |
+| **人机接口设备 (HID)** | **humaninterfacedevice** 设备功能允许访问 [如何为 HID 指定设备功能](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-hid)中的 API。 |
 | **服务点 (POS)** | **pointOfService** 设备功能允许访问 [**Windows.Devices.PointOfService**](/uwp/api/Windows.Devices.PointOfService) 命名空间中的 API。 该命名空间允许你的应用访问服务点 (POS) 条码扫描仪和磁条阅读器。 该命名空间提供一个独立于供应商的接口，可用于从 UWP 应用访问由各种制造商提供的 POS 设备。 |
 | **蓝牙** | **bluetooth** 设备功能允许应用通过通用属性 (GATT) 或经典基本速率 (RFCOMM) 协议与已经配对的蓝牙设备进行通信。<br/>若要使用 [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices.Bluetooth) 命名空间中的某些 API，则需要此功能。 |
 | **Wi-Fi 网络** | **wiFiControl** 设备功能允许应用扫描并连接到 WLAN 网络。<br/>若要使用 [**Windows.Devices.WiFi**](/uwp/api/Windows.Devices.WiFi) 命名空间中的某些 API，则需要此功能。 |
@@ -83,7 +83,7 @@ ms.locfileid: "91219780"
 | **光盘** | **optical** 设备功能允许应用访问光盘驱动器（如 CD、DVD 和蓝光光盘）上的功能。<br/>若要使用 [**Windows.Devices.Custom**](/uwp/api/Windows.Devices.Custom) 命名空间中的某些 API，则需要此功能。 |
 | **运动记录** | **activity** 设备功能允许应用检测设备的当前运动。<br/>若要使用 [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors) 命名空间中的某些 API，则需要此功能。 |
 | **串行通信** | serialcommunication 设备功能提供对 Windows.Devices.SerialCommunication 命名空间中的 API 的访问，这样 Windows 应用便可与公开了串行端口或串行端口的某些抽象的设备进行通信。 若要使用 [Windows.Devices.SerialCommnication](/uwp/api/windows.devices.serialcommunication) 命名空间中的 API，则需要该功能。 |
-| **眼动追踪仪** | 在连接了兼容的眼动跟踪设备时，gazeInput 功能允许应用在应用程序边界内检测用户正在查看的位置。 若要使用 [Windows.Devices.Input.Preview](/uwp/api/windows.devices.input.preview) 命名空间中的某些 API，则需要该功能。 |
+| **眼动追踪仪** | 在连接了兼容的眼动跟踪设备时或者对于支持视线跟踪的混合现实设备，应用可通过 gazeInput 功能在应用程序边界内检测用户正在查看的位置。 若要使用 [Windows.Devices.Input.Preview](/uwp/api/windows.devices.input.preview) 命名空间中的某些 API，则需要该功能。 对于混合现实设备，[Windows.Perception.People.EyesPose](/uwp/api/windows.perception.people.eyespose) 中的 API 需要此功能。 |
 | **GPIO、I2C、SPI 和 PWM** | lowLevel 设备功能提供对 GPIO、I2C、SPI 和 PWM 设备的访问权限。 若要使用以下命名空间中的 API，则需要此功能：[Windows.Devices.Gpio](/uwp/api/windows.devices.gpio)、[Windows.Devices.I2c](/uwp/api/windows.devices.i2c)、[Windows.Devices.Spi](/uwp/api/windows.devices.spi)、[Windows.Devices.Pwm](/uwp/api/windows.devices.pwm)。<br /><br />```<Capabilities><DeviceCapability Name="lowLevel"/></Capabilities>``` |
 
 

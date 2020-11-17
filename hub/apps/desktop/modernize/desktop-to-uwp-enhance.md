@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2b0d6bb305490e05c2670f0e0a326601c51a8373
-ms.sourcegitcommit: 609441402c17d92e7bfac83a6056909bb235223c
+ms.openlocfilehash: bf460b8c05f1dbb274aa9015e6b892339df9f634
+ms.sourcegitcommit: 21a76fc02ae261f609a2dbb7a56c5de25844c068
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90837812"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93381387"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>在桌面应用中调用 Windows 运行时 API
 
@@ -33,7 +33,7 @@ ms.locfileid: "90837812"
 
 ### <a name="net-5-preview-8-and-later-use-the-target-framework-moniker-option"></a>.NET 5 预览版 8 及更高版本：使用“目标框架名字对象”选项 
 
-此选项仅支持使用 .NET 5 预览版 8（或更早版本）以及面向 Windows 10 1809 版或更高版本的操作系统的项目。 有关此方案的更多背景信息，请参阅[此博客文章](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/)。
+只可在使用 .NET 5 预览版 8（或更高版本）和面向 Windows 10 1809 版（或更高版本）操作系统的项目中使用此选项。 有关此方案的更多背景信息，请参阅[此博客文章](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/)。
 
 1. 在 Visual Studio 中打开项目后，在“解决方案资源管理器”中右键单击该项目，然后选择“编辑项目文件” 。 项目文件的呈现效果与此类似。
 
@@ -85,7 +85,7 @@ ms.locfileid: "90837812"
 
 ### <a name="configure-projects-that-multi-target-different-versions-of-net"></a>配置面向多个不同 .NET 版本的项目
 
-如果你的项目同时面向 .NET 5 预览版 8（或更高版本）和早期版本（包括 .NET Core 3.x 和 .NET Framework），可以将项目文件配置为使用目标框架名字对象自动拉取用于 .NET 5 预览版 8（或更高版本）的 WinRT API 参考，并为早期版本使用 `Microsoft.Windows.SDK.Contracts` NuGet 包。
+如果你的项目同时面向 .NET 5 预览版 8（或更高版本）和早期版本（包括 .NET Core 3.x 和 .NET Framework），可配置项目文件，让其使用目标框架名字对象自动拉取 .NET 5 的 WinRT API 参考，并为早期版本使用 `Microsoft.Windows.SDK.Contracts` NuGet 包。
 
 1. 在 Visual Studio 中打开项目后，在“解决方案资源管理器”中右键单击该项目，然后选择“编辑项目文件” 。 下面的示例展示使用 .NET Core 3.1 的应用的项目文件。
 
@@ -114,7 +114,7 @@ ms.locfileid: "90837812"
     <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
     ```
 
-3. 在 PropertyGroup 元素之后，添加一个 PackageReference 元素，该元素包含一个条件语句，该语句将为应用面向的任何 .NET Core 3.x 版本或 .NET Framework 安装 `Microsoft.Windows.SDK.Contracts` NuGet 包。 PackageReference 元素必须是 ItemGroup 元素的子元素。 下面的示例演示如何面向 .NET Core 3.1 执行此操作。
+3. 在 PropertyGroup 元素后面，添加一个 PackageReference 元素，它包含一个条件语句，该语句将为你的应用面向的任何 .NET Core 3.x 版本或 .NET Framework 安装 NuGet 包 `Microsoft.Windows.SDK.Contracts` 。 PackageReference 元素必须是 ItemGroup 元素的子元素。 下面的示例演示如何面向 .NET Core 3.1 执行此操作。
 
     ```csharp
     <ItemGroup>
