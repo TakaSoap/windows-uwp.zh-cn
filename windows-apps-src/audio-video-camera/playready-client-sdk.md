@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a444b8af0121c6012bc90adda075c161111838b3
-ms.sourcegitcommit: 4fffc66fac18fc4c80281e2a4afa9c4f2e1f7551
+ms.openlocfilehash: be670dfab9e7bd27c4c380e9b00ec8a655704885
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94513656"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691525"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -77,7 +77,7 @@ PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规
 -   [**PlayReadySecureStopIterator**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterator) 类
 -   [**PlayReadyHardwareDRMFeatures**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) 枚举器
 
-已创建新示例，用于演示如何使用 PlayReady DRM 的新功能。 可以从 [代码示例浏览器](samples/microsoft/windows-universal-samples/playready/)下载此示例。
+已创建新示例，用于演示如何使用 PlayReady DRM 的新功能。 可以从 [代码示例浏览器](/samples/microsoft/windows-universal-samples/playready/)下载此示例。
 
 ## <a name="things-to-consider"></a>注意事项
 
@@ -87,7 +87,7 @@ PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规
 -   若要利用某些新的 PlayReady 3.0 功能（包括但不限于适用于基于硬件的客户端的 SL3000、在一个许可证获取消息中获取多个非永久性许可证以及对非永久性许可证的基于时间的限制），要求 PlayReady 服务器是 Microsoft PlayReady 服务器软件开发工具包 v3.0.2769 发行版本或更高版本。
 -   根据内容许可证指定的输出保护策略，如果媒体播放连接的输出不支持这些要求，它将无法让最终用户使用。 下表列出了作为结果发生的常见错误集。 有关详细信息，请参阅 [PlayReady 合规性和可靠性规则](https://www.microsoft.com/playready/licensing/compliance/)。
 
-| 错误                                                   | 值      | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 错误                                                   | “值”      | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 错误 \_ 图形 \_ OPM \_ 输出 \_ 不 \_ \_ 支持 \_ HDCP  | 0xC0262513 | 许可证的输出保护策略要求监视器执行 HDCP，但 HDCP 无法执行。                                                                                                                                                                                                                                                                                                                                                                                              |
 | \_ \_ 不支持 MF E 策略 \_                              | 0xC00D7159 | 许可证的输出保护策略要求监视器执行 HDCP 类型 1，但 HDCP 类型 1 无法执行。                                                                                                                                                                                                                                                                                                                                                                                |
@@ -164,7 +164,7 @@ PlayReady DRM 仅允许在输出连接器上播放使用输出保护策略的内
                 **当 HDCP 类型限制未定义时：** 使用 HDCP 传递内容。 如果 HDCP 无法使用，将阻止对 HDMI/DVI 端口的播放。
             </p>
             <p>
-                **当 HDCP 类型限制已定义时** ：使用 HDCP 2.2 传递内容，并将内容流类型设置为 1。 如果 HDCP 无法使用或内容流类型无法设置为 1，将阻止对 HDMI/DVI 端口的播放。
+                **当 HDCP 类型限制已定义时**：使用 HDCP 2.2 传递内容，并将内容流类型设置为 1。 如果 HDCP 无法使用或内容流类型无法设置为 1，将阻止对 HDMI/DVI 端口的播放。
             </p>
         </td>
     </tr>
@@ -507,7 +507,7 @@ switch (result)
 -   在到达内容末尾或用户中途停止媒体演示文稿，因而媒体演示文稿停止时。
 -   在上一个会话意外结束时（如因系统或应用崩溃）。 在启动或关机时，应用将查询任何未解决的安全停止会话，并将发送与任何其他媒体播放分离的质询。
 
-有关安全停止的示例实现，请参阅 [代码示例浏览器](samples/microsoft/windows-universal-samples/playready//)中 PlayReady 示例中的 **securestop.cs** 文件。
+有关安全停止的示例实现，请参阅 [代码示例浏览器](/samples/microsoft/windows-universal-samples/playready/)中 PlayReady 示例中的 **securestop.cs** 文件。
 
 ## <a name="use-playready-drm-on-xbox-one"></a>在 Xbox One 上使用 PlayReady DRM
 
@@ -518,8 +518,8 @@ switch (result)
 
 获得授权后，你将需要向应用清单添加额外 `<DeviceCapability>`。 由于应用清单设计器中当前没有可用的设置，你必须手动添加它。 请按照以下步骤配置它：
 
-1. 在 Visual Studio 中打开项目后，打开 " **解决方案资源管理器** "，然后右键单击 **appxmanifest.xml** 。
-2. 选择 " **打开方式 ...** "，选择 " **XML (文本) 编辑器** "，然后单击 **"确定"** 。
+1. 在 Visual Studio 中打开项目后，打开 " **解决方案资源管理器** "，然后右键单击 **appxmanifest.xml**。
+2. 选择 " **打开方式 ...**"，选择 " **XML (文本) 编辑器**"，然后单击 **"确定"**。
 3. 在 `<Capabilities>` 标记之间，添加以下 `<DeviceCapability>`：
 
     ```xml
