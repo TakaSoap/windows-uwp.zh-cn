@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 发送 toast 通知, 通知, 发送通知, toast 通知, 操作方法, 快速入门, 开始使用, 代码示例, 演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 4142fb3d036bb19eb652ca9048a70325eb64b17d
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: 0a2e8c25aa7efcb96166b741a073122e3c077c08
+ms.sourcegitcommit: 2a23972e9a0807256954d6da5cf21d0bbe7afb0a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339805"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94941823"
 ---
 # <a name="send-a-local-toast-notification-from-uwp-apps"></a>从 UWP 应用发送本地 toast 通知
 
@@ -23,7 +23,7 @@ Toast 通知是用户当前未在应用内部时应用可构造并发送给用�
 > [!IMPORTANT]
 > 桌面应用程序 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包桌面应用) 执行发送通知和处理激活的步骤不同。 请参阅[桌面 app](toast-desktop-apps.md) 文档，了解如何实现 toast。
 
-> **重要 API** ： [ToastNotification 类](/uwp/api/Windows.UI.Notifications.ToastNotification)、 [ToastNotificationActivatedEventArgs 类](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+> **重要 API**：[ToastNotification 类](/uwp/api/Windows.UI.Notifications.ToastNotification)、[ToastNotificationActivatedEventArgs 类](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
 
@@ -62,7 +62,7 @@ var content = new ToastContentBuilder()
 var notif = new ToastNotification(content.GetXml());
 
 // And show it!
-ToastNotificationManager.CreateToastNotifier().Show();
+ToastNotificationManager.CreateToastNotifier().Show(notif);
 ```
 
 ## <a name="step-4-handling-activation"></a>步骤4：处理激活
@@ -89,7 +89,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 ```
 
 > [!IMPORTANT]
-> 必须按 **OnLaunched** 代码那样初始化框架和激活窗口。 **如果用户单击你的 toast ，则不会调用 OnLaunched** ，即使你的应用已关闭并是首次启动也是如此。 通常建议将 **OnLaunched** 和 **OnActivated** 合并到你自己的 `OnLaunchedOrActivated` 方法中，因为二者中均需执行相同的初始化。
+> 必须按 **OnLaunched** 代码那样初始化框架和激活窗口。 **如果用户单击你的 toast ，则不会调用 OnLaunched**，即使你的应用已关闭并是首次启动也是如此。 通常建议将 **OnLaunched** 和 **OnActivated** 合并到你自己的 `OnLaunchedOrActivated` 方法中，因为二者中均需执行相同的初始化。
 
 
 ## <a name="activation-in-depth"></a>深度激活

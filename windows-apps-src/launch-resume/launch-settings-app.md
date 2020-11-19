@@ -1,21 +1,21 @@
 ---
 title: 启动 Windows 设置应用
-description: 了解如何从你的应用启动 Windows 设置应用。 本主题介绍了 ms-settings URI 方案。 使用此 URI 方案将 Windows 设置应用启动到特定设置页面。
+description: 了解如何使用 ms Settings URI 方案从应用启动 Windows 设置应用。
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 04/19/2019
+ms.date: 11/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.custom: 19H1
+ms.custom: contperfq2
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: d90669e03ae15acdc826d9e0b227f12d4ecf3cbc
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 309568b80d51cc8bd6cd2394317ef3bb8266a212
+ms.sourcegitcommit: 2a23972e9a0807256954d6da5cf21d0bbe7afb0a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304709"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94941813"
 ---
 # <a name="launch-the-windows-settings-app"></a>启动 Windows 设置应用
 
@@ -33,6 +33,8 @@ ms.locfileid: "89304709"
 
 若要启动 " **设置** " 应用，请使用 `ms-settings:` URI 方案，如以下示例中所示。
 
+### <a name="xaml-hyperlink-control"></a>XAML 超链接控件
+
 在此示例中，超链接 XAML 控件用于使用 `ms-settings:privacy-microphone` URI 启动麦克风的隐私设置页面。
 
 ```xml
@@ -47,26 +49,51 @@ ms.locfileid: "89304709"
 </TextBlock>
 ```
 
-此外，你的应用可以调用 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 方法来启动**设置**应用。 此示例演示如何使用 `ms-settings:privacy-webcam` URI 启动到相机的隐私设置页面。
+### <a name="calling-launchuriasync"></a>调用 LaunchUriAsync
+
+此外，你的应用可以调用 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 方法来启动 **设置** 应用。 此示例演示如何使用 `ms-settings:privacy-webcam` URI 启动到相机的隐私设置页面。
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
 ```
+
 ```cppwinrt
 bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Foundation::Uri(L"ms-settings:privacy-webcam"));
 ```
 
 上述代码会启动相机的隐私设置页面：
 
-![相机隐私设置。](images/privacyawarenesssettingsapp.png)
+:::image type="content" source="images/privacyawarenesssettingsapp.png" alt-text="相机隐私设置。":::
 
 有关启动 URI 的详细信息，请参阅[启动 URI 的默认应用](launch-default-app.md)。
 
 ## <a name="ms-settings-uri-scheme-reference"></a>ms-settings: URI 方案引用
 
-使用以下 URI 以打开“设置”应用的各个页面。
+以下各节描述了用于打开 "设置" 应用的各个页面的 ms 设置 Uri 的不同类别：
 
-> 请注意，设置页面是否可用因 Windows SKU 而异。 并非 Windows 10 桌面版中所有可用的设置在 Windows 10 移动版上也都可用，反之亦然。 备注列中还记录了使页面可用所必须满足的附加要求。
+* [帐户](#accounts)
+* [应用](#apps)
+* [Cortana](#cortana)
+* [设备](#devices)
+* [轻松访问](#ease-of-access)
+* [附加信息](#extras)
+* [游戏](#gaming)
+* [主页](#home-page)
+* 混合现实
+* [网络和 internet](#network-and-internet)
+* [个性化](#personalization)
+* [移动](#phone)
+* [隐私](#privacy)
+* [Surface Hub](#surface-hub)
+* [系统](#system)
+* [时间和语言](#time-and-language)
+* [更新和安全](#update-and-security)
+* [用户帐户](#user-accounts)
+
+
+
+> [!NOTE]
+> "设置" 页面是否可用取决 Windows SKU。 并非 Windows 10 桌面版中所有可用的设置在 Windows 10 移动版上也都可用，反之亦然。 备注列中还记录了使页面可用所必须满足的附加要求。
 
 <!-- TODO: 
 * ms-settings:controlcenter
@@ -78,9 +105,9 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 * ms-settings:storagecleanup
 * ms-settings:update-security -->
 
-## <a name="accounts"></a>帐户
+### <a name="accounts"></a>帐户
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 访问工作单位或学校 | ms-settings:workplace |
 | 电子邮件和应用帐户  | ms-settings:emailandaccounts |
@@ -91,9 +118,9 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | Windows Hello 设置 | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
 | 你的信息 | ms-settings:yourinfo |
 
-## <a name="apps"></a>应用
+### <a name="apps"></a>“应用”
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 应用和功能 | ms-settings:appsfeatures |
 | 应用功能 | ms-settings:appsfeatures-app（应用的重置、管理加载项和可下载内容等操作）|
@@ -104,9 +131,9 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 启动应用 | ms-settings:startupapps |
 | 视频播放 | ms-settings:videoplayback |
 
-## <a name="cortana"></a>Cortana
+### <a name="cortana"></a>Cortana
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 跨设备的 Cortana | ms-settings:cortana-notifications |
 | 更多详细信息 | ms-settings:cortana-moredetails |
@@ -117,12 +144,12 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 > [!NOTE] 
 > 如果计算机设置为当前未提供 Cortana 或 Cortana 已禁用的区域，则桌面上的此设置部分将称为 "搜索"。 Cortana 专用页面在我的设备上 (Cortana，并与 Cortana 对话) 在这种情况下不会列出。 
 
-## <a name="devices"></a>设备
+### <a name="devices"></a>设备
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 自动播放 | ms-settings:autoplay |
-| 蓝牙 | ms-settings:bluetooth |
+| Bluetooth | ms-settings:bluetooth |
 | 连接的设备 | ms-settings:connecteddevices |
 | 默认相机 | ms-设置： **在 Windows 10 版本1809及更高版本中，** 照相机 (弃用)  |
 | 鼠标和触摸板 | ms-settings:mousetouchpad（仅具有触摸板的设备可使用触摸板设置） |
@@ -134,9 +161,9 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 滚轮 | ms-settings:wheel（仅在“拨号”配对成功后可用） |
 | 你的手机 | ms-settings:mobile-devices  |
 
-## <a name="ease-of-access"></a>轻松访问
+### <a name="ease-of-access"></a>轻松访问
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 音频 | ms-settings:easeofaccess-audio |
 | 隐藏式字幕 | ms-settings:easeofaccess-closedcaptioning |
@@ -146,22 +173,22 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 目视控制 | ms-settings:easeofaccess-eyecontrol |
 | 字体 | ms-settings:fonts |
 | 高对比度 | ms-settings:easeofaccess-highcontrast |
-| Keyboard | ms-settings:easeofaccess-keyboard |
+| 键盘 | ms-settings:easeofaccess-keyboard |
 | 放大镜 | ms-settings:easeofaccess-magnifier |
 | 鼠标 | ms-settings:easeofaccess-mouse |
 | 讲述人 | ms-settings:easeofaccess-narrator |
 | 其他选项 | ms-settings： easeofaccess-otheroptions (**弃用于 Windows 10 版本1809及更高版本中**)  |
 | 语音 | ms-settings:easeofaccess-speechrecognition |
 
-## <a name="extras"></a>附加信息
+### <a name="extras"></a>附加信息
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 附加信息 | ms 设置：额外 (仅当安装了 "设置应用" （例如，由第三方)  |
 
-## <a name="gaming"></a>游戏
+### <a name="gaming"></a>游戏
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 广播 | ms-settings:gaming-broadcasting |
 | 游戏栏 | ms-settings:gaming-gamebar |
@@ -171,27 +198,27 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | TruePlay | ms-设置： trueplay (从 **Windows 10 版本 1809 (10.0;生成 17763) 中，将从 Windows 中删除此功能**)  |
 | Xbox 网络 | ms-settings:gaming-xboxnetworking |
 
-## <a name="home-page"></a>主页
+### <a name="home-page"></a>主页
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | “设置”主页 | ms-settings: |
 
-## <a name="mixed-reality"></a>混合现实
+### <a name="mixed-reality"></a>混合现实
 
 > [!NOTE]
 > 仅当安装了混合现实门户应用时，这些设置才可用。
 
-| 设置页面 | URI |
+| “设置”页面 | URI |
 |---------------|-----|
 | 音频和语音 | ms-settings:holographic-audio |
 | 环境 | ms 设置：隐私-全息环境 |
-| 耳机显示 | ms-设置：全息耳机 |
-| 卸载 | ms-设置：全息版-管理 |
+| 头戴显示设备显示 | ms-设置：全息耳机 |
+| “卸载” | ms-设置：全息版-管理 |
 
-## <a name="network--internet"></a>网络和 Internet
+### <a name="network-and-internet"></a>网络和 internet
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 飞行模式 | ms-settings:network-airplanemode<br/>ms-settings:proximity |
 | 手机网络和 SIM 卡 | ms-settings:network-cellular |
@@ -202,15 +229,15 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 管理已知网络 | ms-settings:network-wifisettings |
 | 移动热点 | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
-| Proxy (代理) | ms-settings:network-proxy |
+| 代理 | ms-settings:network-proxy |
 | 状态 | ms-settings:network-status<br/>ms-设置：网络 |
 | VPN | ms-settings:network-vpn |
 | Wi-Fi | ms-settings:network-wifi（仅当设备具有 WLAN 适配器时可用） |
 | WLAN 呼叫 | ms-settings:network-wificalling（仅在启用 WLAN 呼叫后可用） |
 
-## <a name="personalization"></a>个性化
+### <a name="personalization"></a>个性化
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 背景 | ms-settings:personalization-background |
 | 选择哪些文件夹显示在“开始”菜单上 | ms-settings:personalization-start-places |
@@ -223,15 +250,15 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 任务栏 | ms-settings:taskbar |
 | 主题 | ms-settings:themes |
 
-## <a name="phone"></a>电话
+### <a name="phone"></a>电话号码
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 你的手机 | ms-settings:mobile-devices<br/>ms-设置：移动设备-addphone<br/>ms-settings：移动设备-addphone-direct (打开 **手机** 应用)  |
 
-## <a name="privacy"></a>隐私
+### <a name="privacy"></a>隐私
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 外部设备应用 | ms-settings： accessoryapps (**在 Windows 10 版本1809及更高版本中已弃用**)  |
 | 帐户信息 | ms-settings:privacy-accountinfo |
@@ -265,9 +292,9 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 视频 | ms-settings:privacy-videos |
 | 语音激活 | ms 设置：隐私-voiceactivation |
 
-## <a name="surface-hub"></a>Surface Hub
+### <a name="surface-hub"></a>Surface Hub
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 帐户 | ms-settings:surfacehub-accounts |
 | 会话清理 | ms-settings:surfacehub-sessioncleanup |
@@ -275,9 +302,9 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 团队设备管理 | ms-settings:surfacehub-devicemanagenent |
 | 欢迎屏幕 | ms-settings:surfacehub-welcome |
 
-## <a name="system"></a>System
+### <a name="system"></a>系统
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 关于 | ms-settings:about |
 | 高级显示设置 | ms-settings:display-advanced（仅适用于支持高级显示选项的设备） |
@@ -291,40 +318,40 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 显示 | ms-settings:screenrotation |
 | 复制我的屏幕 | ms-settings:quietmomentspresentation |
 | 在这些时间内 | ms-settings:quietmomentsscheduled |
-| Encryption | ms-settings:deviceencryption |
+| 加密 | ms-settings:deviceencryption |
 | 专注助手 | ms-settings:quiethours <br> ms-settings:quietmomentshome |
 | 图形设置 | ms-settings:display-advancedgraphics（仅适用于支持高级图形选项的设备） |
 | 消息传递 | ms-settings:messaging |
 | 多任务 | ms-settings:multitasking |
 | 夜灯设置 | ms-settings:nightlight |
-| 电话 | ms-settings:phone-defaultapps |
+| 电话号码 | ms-settings:phone-defaultapps |
 | 投影到这台电脑 | ms-settings:project |
 | 共享体验 | ms-settings:crossdevice |
 | 平板模式 | ms-settings:tabletmode |
 | 任务栏 | ms-settings:taskbar |
 | 通知和操作 | ms-settings:notifications |
 | 远程桌面 | ms-settings:remotedesktop |
-| 电话 | ms-settings： **Windows 10 版本1809及更高版本中不推荐使用** 电话 ()  |
+| 电话号码 | ms-settings： **Windows 10 版本1809及更高版本中不推荐使用** 电话 ()  |
 | 电源和睡眠 | ms-settings:powersleep |
 | 声音 | ms-设置：声音 |
 | 存储 | ms-settings:storagesense |
 | 存储感知 | ms-settings:storagepolicies |
 
-## <a name="time-and-language"></a>时间和语言
+### <a name="time-and-language"></a>时间和语言
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 日期和时间 | ms-settings:dateandtime |
 | 日本输入法设置 | ms-settings:regionlanguage-jpnime（在安装了 Microsoft 日本输入法编辑器的情况下可用） |
 | 区域 | ms-设置： regionformatting |
-| Language | ms-设置：键盘<br/>ms-settings:regionlanguage<br/>ms-settings： regionlanguage-bpmfime<br/>ms-settings： regionlanguage-cangjieime<br/>ms-settings： regionlanguage-chsime-domainlexicon<br/>ms-settings： regionlanguage-chsime-keyconfig<br/>ms-settings： regionlanguage-chsime-udp<br/>ms-settings： regionlanguage-chsime-五笔-udp<br/>ms-settings： regionlanguage-quickime |
+| 语言 | ms-设置：键盘<br/>ms-settings:regionlanguage<br/>ms-settings： regionlanguage-bpmfime<br/>ms-settings： regionlanguage-cangjieime<br/>ms-settings： regionlanguage-chsime-domainlexicon<br/>ms-settings： regionlanguage-chsime-keyconfig<br/>ms-settings： regionlanguage-chsime-udp<br/>ms-settings： regionlanguage-chsime-五笔-udp<br/>ms-settings： regionlanguage-quickime |
 | 拼音输入法设置 | ms-settings:regionlanguage-chsime-pinyin（在安装了 Microsoft 拼音输入法编辑器的情况下可用） |
 | 语音 | ms-settings:speech |
 | 五笔输入法设置  | ms-settings:regionlanguage-chsime-wubi（在安装了 Microsoft 五笔输入法编辑器的情况下可用） |
 
-## <a name="update--security"></a>更新和安全
+### <a name="update-and-security"></a>更新和安全
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 激活 | ms-settings:activation |
 | 备份 | ms-settings:backup |
@@ -340,9 +367,9 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | Windows 更新 - 重启选项 | ms-settings:windowsupdate-restartoptions |
 | Windows 更新 - 查看更新历史记录 | ms-settings:windowsupdate-history |
 
-## <a name="user-accounts"></a>用户帐户
+### <a name="user-accounts"></a>用户帐户
 
-|设置页面| URI |
+|“设置”页面| URI |
 |-------------|-----|
 | 设置 | ms-settings:workplace-provisioning（仅在企业部署了预配包后可用） |
 | 设置 | ms-settings:workplace-provisioning（仅在移动设备和企业部署了预配包后可用） |
