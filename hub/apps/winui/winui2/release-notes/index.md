@@ -3,12 +3,12 @@ title: WinUI 发行说明
 description: WinUI 发行说明的索引。
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 2055ba69566a901ea1491a36d742455fc13b5cb3
-ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
+ms.openlocfilehash: 4c89209868c1478f34de79f8b243fbe0e3dc80a3
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94691535"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933102"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Windows UI 库 2.x 发行说明
 
@@ -38,7 +38,7 @@ https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 Windows UI 库控件的操作方法文章包含在[通用 Windows 平台控件文档](/windows/uwp/design/controls-and-patterns/)中。
 
-API 参考文档位于此处：[Windows UI 库 API](/uwp/api/overview/winui/)。
+API 参考文档位于此处：[Windows UI 库 API](/windows/winui/api/)。
 
 ## <a name="version-history"></a>版本历史记录
 

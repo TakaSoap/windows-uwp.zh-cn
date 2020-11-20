@@ -4,12 +4,12 @@ description: 适用于 Windows 应用开发的 WinUI 库。
 ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具包 sdk, winui, Windows UI 库
-ms.openlocfilehash: 932b3c898737426db6d62d6699b11c8f8c1b484b
-ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
+ms.openlocfilehash: 3b2b18ab35f46b132ec3017bb0f3c6564b7be9ee
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94691505"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933122"
 ---
 # <a name="windows-ui-library-winui"></a>Windows UI 库 (WinUI)
 
@@ -42,7 +42,7 @@ WinUI 2.x 控件保持与早期版本的 Windows 10 的低端兼容性，即使�
 ### <a name="related-links-for-winui-2x"></a>WinUI 2.x 的相关链接
 
 - [WinUI 2.x 库概述](winui2/index.md)
-- [API 文档](/uwp/api/overview/winui/)
+- [API 文档](/windows/winui/api/)
 - [源代码](https://aka.ms/winui)
 - [XAML 控件库应用](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
