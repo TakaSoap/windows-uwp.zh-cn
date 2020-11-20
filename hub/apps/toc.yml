@@ -90,7 +90,7 @@
       items:
         - name: 概述
           href: winui/index.md
-        - name: Windows UI 库 3.0 预览版 2
+        - name: Windows UI 库 3 预览版 3
           items:
             - name: 概述和发行说明
               href: winui/winui3/index.md
