@@ -3,12 +3,12 @@ title: WinUI 3 预览版 3（2020 年 11 月）
 description: WinUI 3 预览版 3 发布概述。
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: d2ff1646c431ef1f79455260a61027d0a84f77ca
-ms.sourcegitcommit: f723edbe3dc846c1988d721f6e8078aaec371899
+ms.openlocfilehash: d91d957434b2a39182e2c764aecf49fc43f7a601
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701963"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933172"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Windows UI 库 3 预览版 3（2020 年 11 月）
 
@@ -43,15 +43,19 @@ WinUI 3 预览版 3 提供有 Visual Studio 项目模板和 NuGet 包，前者�
     若要生成 C++ 应用，还必须包括以下工作负载：
     - 使用 C++ 的桌面开发
     - 适用于通用 Windows 平台工作负载的 C++ (v142) 通用 Windows 平台工具可选组件（请参阅右窗格中“通用 Windows 平台开发”部分下的“安装详细信息”）
-3. 请确保系统已为 nuget.org 启用了 NuGet 包源。有关详细信息，请参阅[常见 NuGet 配置](/nuget/consume-packages/configuring-nuget-behavior)。
+3. 请确保系统已为 nuget.org 启用了 NuGet 包源。有关详细信息，请参阅[常见 NuGet 配置](/nuget/consume-packages/configuring-nuget-behavior)。[Windows 社区工具包](#windows-community-toolkit)
 
 4. 下载并安装 [WinUI 3 预览版 3 VSIX 包](https://aka.ms/winui3/preview3-download)。 它将 WinUI 3 项目模板和包含 WinUI 3 库的 NuGet 包添加到 Visual Studio 2019。
 
     有关如何将 VSIX 包添加到 Visual Studio 的说明，请参阅[查找和使用 Visual Studio 扩展](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box)。
 
-5. 如果你正在应用中使用 WebView2 控件，请从 [Microsoft Edge Insider Channels](https://www.microsoftedgeinsider.com/en-us/download) 安装 Microsoft Edge 浏览器的 Dev 渠道版本。 请务必卸载Microsoft Edge Beta、Microsoft Edge Dev 和 Microsoft Edge WebView2 运行时的所有现有实例。
+#### <a name="webview2"></a>WebView2
 
-6. 如果使用的是 Windows 社区工具包，请[下载最新版本](https://aka.ms/wct-winui3)。
+如果你正在应用中使用 WebView2 控件，请从 [Microsoft Edge Insider Channels](https://www.microsoftedgeinsider.com/en-us/download) 安装 Microsoft Edge 浏览器的 Dev 渠道版本。 请务必卸载Microsoft Edge Beta、Microsoft Edge Dev 和 Microsoft Edge WebView2 运行时的所有现有实例。
+
+#### <a name="windows-community-toolkit"></a>Windows 社区工具包
+
+如果使用的是 Windows 社区工具包，请[下载最新版本](https://aka.ms/wct-winui3)。
 
 ## <a name="create-winui-projects"></a>创建 WinUI 项目
 
@@ -66,7 +70,7 @@ WinUI 3 预览版 3 提供有 Visual Studio 项目模板和 NuGet 包，前者�
 
 除[限制和已知问题](#preview-3-limitations-and-known-issues)外，使用 WinUI 项目生成应用类似于使用 XAML 和 WinUI 2.x 生成 UWP 应用。 因此，有关 UWP 应用和 Windows SDK 中的 Windows.UI WinRT 命名空间的大多数[指南文档](/windows/uwp/design/)均适用。
 
-在此版本中，我们还添加了 [WinUI 3 API 参考文档](/uwp/api/overview/winui/)，它适用于移植到 WinUI 3 的所有 WinRT API。
+在此版本中，我们还添加了 [WinUI 3 API 参考文档](/windows/winui/api/)，它适用于移植到 WinUI 3 的所有 WinRT API。
 
 如果使用 WinUI 3 预览版 2 创建了一个项目，可升级该项目以使用预览版 3。 请参阅 [WinUI GitHub 存储库](https://aka.ms/winui3/upgrade-instructions)了解详细说明。
 

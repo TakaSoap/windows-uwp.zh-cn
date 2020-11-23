@@ -4,12 +4,12 @@ description: 如何安装并使用 Windows UI 库。
 ms.topic: reference
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具包 sdk
-ms.openlocfilehash: 7b7b248ce166368d315dce42f27075d3933c0781
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: e3b0daae3f053daabe153f8a0058953ff76e3b90
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762846"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691565"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>Windows UI 2.x 库入门
 
@@ -18,7 +18,7 @@ ms.locfileid: "91762846"
 该库以 NuGet 包的形式提供，可以添加到任何新的或现有的 Visual Studio 项目中。
 
 > [!NOTE]
-> 有关试用 WinUI 3 早期预览版的详细信息，请参阅 [Windows UI 库 3 预览版 2（2020 年 7 月）](../winui3/index.md)。
+> 有关试用 WinUI 3 早期预览版的详细信息，请参阅 [Windows UI 库 3 预览版 3（2020 年 11 月）](../winui3/index.md)。
 
 ## <a name="download-and-install-the-windows-ui-library"></a>下载并安装 Windows UI 库
 

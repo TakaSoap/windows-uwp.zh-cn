@@ -1,27 +1,27 @@
 ---
 description: 本指南展示了如何开始使用 WinUI 3 UI 创建 .NET 和 C++/Win32 桌面应用。
 title: 适用于桌面应用的 WinUI 3 入门
-ms.date: 05/19/2020
+ms.date: 11/17/2020
 ms.topic: article
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 164ae035d3b9dda24137bcb09dd208e718db0319
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 067e6a6798fbfc2633c3e356be64ecae0403cc6d
+ms.sourcegitcommit: b69edc6d73370923f31df61c7e42b53de6c928ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933098"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94870914"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>适用于桌面应用的 WinUI 3 入门
 
-WinUI 3 预览版 2 引入了新的项目模板，使你能够采用完全基于 WinUI 的用户界面创建托管桌面 C#/.NET Core 应用和原生 C++/Win32 桌面应用。 使用这些项目模板创建应用时，应用程序的整个用户界面都是使用 WinUI 3 提供的窗口、控件和其他 UI 类型实现的。 有关项目模板的完整列表，请参阅[本节](index.md#project-templates-for-winui-3)。
+WinUI 3 预览版 3 中有新的项目模板，使你能够采用完全基于 WinUI 的用户界面创建托管桌面 C#/.NET Core 应用和原生 C++/Win32 桌面应用。 使用这些项目模板创建应用时，应用程序的整个用户界面都是使用 WinUI 3 提供的窗口、控件和其他 UI 类型实现的。 有关项目模板的完整列表，请参阅[本节](index.md#project-templates-for-winui-3)。
 
 ## <a name="prerequisites"></a>必备条件
 
-若要如本文所述将 WinUI 3 用于桌面项目模板，请按照[此处](index.md#install-winui-3-preview-2)的说明配置开发计算机并安装 WinUI 3 预览版 2。
+若要如本文所述将 WinUI 3 用于桌面项目模板，请按照[此处](index.md#install-winui-3-preview-3)的说明配置开发计算机并安装 WinUI 3 预览版 3。
 
 ## <a name="create-a-winui-3-desktop-app-for-c-and-net-5"></a>创建适用于 C# 和 .NET 5 的 WinUI 3 桌面应用
 
@@ -41,7 +41,7 @@ WinUI 3 预览版 2 引入了新的项目模板，使你能够采用完全基于
 
 6. 此时，Visual Studio 生成两个项目：
 
-    * **项目名称(桌面)** ：此项目包含应用的代码。 **App.xaml.cs** 代码文件定义一个表示你的应用实例的 `Application` 类，**MainWindow.xaml.cs** 代码文件定义一个表示应用所显示的主窗口的 `MainWindow` 类。 这些类派生自 WinUI 提供的 **Microsoft.UI.Xaml** 命名空间中的类型。
+    * **项目名称(桌面)** ：此项目包含应用的代码。 App.xaml 文件和 App.xaml.cs 和代码隐藏文件定义了一个 `Application` 类，它表示你的应用实例 。 MainWindow.xaml 文件和 MainWindow.xaml.cs 代码隐藏文件定义了一个 `MainWindow` 类，它表示你的应用显示的主窗口 。 这些类派生自 WinUI 提供的 **Microsoft.UI.Xaml** 命名空间中的类型。
 
         ![Visual Studio 的屏幕截图，其中显示“解决方案资源管理器”窗格以及 MainWindow.xaml.cs 文件的内容。](images/WinUI-csharp-appproject.png)
 
@@ -49,7 +49,7 @@ WinUI 3 预览版 2 引入了新的项目模板，使你能够采用完全基于
 
         ![Visual Studio 的屏幕截图，其中显示“解决方案资源管理器”窗格以及 Package.appxmanifest 文件的内容。](images/WinUI-csharp-packageproject.png)
 
-7. 若要向应用项目中添加新项，请在**解决方案资源管理器**中右键单击“项目名称(桌面)”项目节点，然后选择“添加” -> “新项”。  在“添加新项”对话框中，选择“WinUI”选项卡，选择要添加的项，然后单击“添加”。 有关可用项的更多详细信息，请参阅[本节](index.md#item-templates-for-winui-3)。
+7. 若要向应用项目中添加新项，请在 **解决方案资源管理器** 中右键单击“项目名称(桌面)”项目节点，然后选择“添加” -> “新项”。  在“添加新项”对话框中，选择“WinUI”选项卡，选择要添加的项，然后单击“添加”。 有关可用项的更多详细信息，请参阅[本节](index.md#item-templates-for-winui-3)。
 
     ![“添加新项”对话框的屏幕截图，其中已选中“已安装”>“Visual C# 项”>“WinUI”，并且突出显示了“空白页”选项。](images/WinUI-csharp-newitem.png)
 
@@ -73,7 +73,7 @@ WinUI 3 预览版 2 引入了新的项目模板，使你能够采用完全基于
 
 6. 此时，Visual Studio 生成两个项目：
 
-    * **项目名称(桌面)** ：此项目包含应用的代码。 **App.xaml** 和各种**应用**代码文件定义一个表示应用实例的 `Application` 类，**MainWindow.xaml** 和各种 **MainWindow** 代码文件定义一个表示应用显示的主窗口的 `MainWindow` 类。 这些类派生自 WinUI 提供的 **Microsoft.UI.Xaml** 命名空间中的类型。
+    * **项目名称(桌面)** ：此项目包含应用的代码。 **App.xaml** 和各种 **应用** 代码文件定义一个表示应用实例的 `Application` 类，**MainWindow.xaml** 和各种 **MainWindow** 代码文件定义一个表示应用显示的主窗口的 `MainWindow` 类。 这些类派生自 WinUI 提供的 **Microsoft.UI.Xaml** 命名空间中的类型。
 
         ![Visual Studio 的屏幕截图，其中显示“解决方案资源管理器”窗格以及 MainWindow.xaml 文件的内容。](images/WinUI-cpp-appproject.png)
 
@@ -81,15 +81,39 @@ WinUI 3 预览版 2 引入了新的项目模板，使你能够采用完全基于
 
         ![Visual Studio 的另一个屏幕截图，其中显示“解决方案资源管理器”窗格以及 Package.appxmanifest 文件的内容。](images/WinUI-cpp-packageproject.png)
 
-7. 若要向应用项目中添加新项，请在**解决方案资源管理器**中右键单击“项目名称(桌面)”项目节点，然后选择“添加” -> “新项”。  在“添加新项”对话框中，选择“WinUI”选项卡，选择要添加的项，然后单击“添加”。 有关可用项的更多详细信息，请参阅[本节](index.md#item-templates-for-winui-3)。
+7. 若要向应用项目中添加新项，请在 **解决方案资源管理器** 中右键单击“项目名称(桌面)”项目节点，然后选择“添加” -> “新项”。  在“添加新项”对话框中，选择“WinUI”选项卡，选择要添加的项，然后单击“添加”。 有关可用项的更多详细信息，请参阅[本节](index.md#item-templates-for-winui-3)。
 
     ![新项](images/WinUI-cpp-newitem.png)
 
 8. 生成并运行解决方案，确认应用运行时不会出错。
 
+   > [!NOTE]
+   > 将仅启动打包的项目，因此请确保将其设置为启动项目。
+
+## <a name="localizing-your-winui-desktop-app"></a>将 WinUI 桌面应用本地化
+
+若要在 WinUI 桌面应用中支持多种语言，并确保将打包的项目适当本地化，请将适当的资源添加到项目中（参阅[应用资源和资源管理系统](/windows/uwp/app-resources/)），并在项目的 `package.appxmanifest` 文件中声明每种受支持的语言。 生成项目时，指定的语言将添加到生成的应用清单 (`AppxManifest.xml`) 中，并将使用相应的资源。
+
+1. 在文本编辑器中打开 .wapproj 的 `package.appxmanifest`，找到以下部分：
+
+    ```xml
+    <Resources>
+        <Resource Language="x-generate"/>
+    </Resources>
+    ```
+
+2. 对于你支持的每种语言，请将 `<Resource Language="x-generate">` 替换为 `<Resource />` 元素。 例如，以下标记指定“en-US”和“es-ES”本地化资源可用：
+
+    ```xml
+    <Resources>
+        <Resource Language="en-US"/>
+        <Resource Language="es-ES"/>
+    </Resources>
+    ```
+
 ## <a name="known-issues-and-limitations"></a>已知问题和限制
 
-有关已知问题和限制的列表，请参阅[本节](index.md#preview-2-limitations-and-known-issues)。
+有关已知问题和限制的列表，请参阅[本节](index.md#preview-3-limitations-and-known-issues)。
 
 ## <a name="related-topics"></a>相关主题
 
