@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 00717a64135ef32a99b06c61b31e2ff59a587878
-ms.sourcegitcommit: b66796c73f14da63794efa66c8ded2caa25da0f7
+ms.openlocfilehash: b73568c5fb4bae6392051fedcd6ca3dea078a98d
+ms.sourcegitcommit: 4491da3f509b1126601990a816c6eb301d35ecc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89285448"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95416614"
 ---
 # <a name="guidelines-for-background-tasks"></a>后台任务指南
 
@@ -24,7 +24,7 @@ ms.locfileid: "89285448"
 
 如果你使用后台任务在后台播放媒体，请参阅[在后台播放媒体](../audio-video-camera/background-audio.md)，了解有关 Windows 10 版本 1607 中使此操作更加简单的改进信息。
 
-**进程内与进程外后台任务：** Windows 10 版本 1607 引入了[进程内后台任务](create-and-register-an-inproc-background-task.md)，使你能够在与前台应用相同的进程中运行后台代码。 当决定执行进程内后台任务还是执行进程外后台任务时，请考虑以下因素：
+**进程内与进程外后台任务：** Windows 10 版本 1607 引入了 [进程内后台任务](create-and-register-an-inproc-background-task.md)，使你能够在与前台应用相同的进程中运行后台代码。 当决定执行进程内后台任务还是执行进程外后台任务时，请考虑以下因素：
 
 |注意事项 | 影响 |
 |--------------|--------|
@@ -45,9 +45,9 @@ ms.locfileid: "89285448"
 
 **更新应用清单**：对于在进程外运行的后台任务，请在应用程序清单中声明每个后台任务及其使用的触发器类型。 否则，你的应用将不能在运行时注册后台任务。
 
-如果有多个后台任务，请考虑应在同一个主机进程中运行它们，还是应将它们分配到多个主机进程。 如果担心某个后台任务失败可能会导致其他后台任务失败，请将它们分配到独立的主机进程。  使用清单设计器中的**资源组**条目将后台任务分组到不同的主机进程。 
+如果有多个后台任务，请考虑应在同一个主机进程中运行它们，还是应将它们分配到多个主机进程。 如果担心某个后台任务失败可能会导致其他后台任务失败，请将它们分配到独立的主机进程。  使用清单设计器中的 **资源组** 条目将后台任务分组到不同的主机进程。 
 
-要设置**资源组**，请打开 Package.appxmanifest 设计器，选择**声明**，然后添加一个**应用服务**声明：
+要设置 **资源组**，请打开 Package.appxmanifest 设计器，选择 **声明**，然后添加一个 **应用服务** 声明：
 
 ![资源组设置](images/resourcegroup.png)
 
@@ -59,11 +59,11 @@ ms.locfileid: "89285448"
 
 **请求执行后台任务：**
 
-> **重要提示**   从 Windows 10 开始，应用程序不再需要在锁定屏幕上作为运行后台任务的先决条件。
+> **重要提示**  从 Windows 10 开始，应用不必满足置于锁屏界面上的先决条件也可以运行后台任务。
 
-通用 Windows 平台 (UWP) 应用无需固定到锁屏界面，即可运行所有受支持的任务类型。 但是，应用程序必须调用 [**GetAccessState**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，并检查应用是否未被拒绝在后台运行。 确保 **GetAccessStatus** 不返回拒绝的 [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 枚举中的一个。 例如，如果用户已在设备的设置中明确拒绝应用的后台任务权限，则此方法将返回**BackgroundAccessStatus。**
+通用 Windows 平台 (UWP) 应用无需固定到锁屏界面，即可运行所有受支持的任务类型。 但是，应用程序必须调用 [**GetAccessState**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，并检查应用是否未被拒绝在后台运行。 确保 **GetAccessStatus** 不返回拒绝的 [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 枚举中的一个。 例如，如果用户已在设备的设置中明确拒绝应用的后台任务权限，则此方法将返回 **BackgroundAccessStatus。**
 
-如果你的应用被拒绝在后台运行，则你的应用应调用 [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，并确保在注册后台任务之前未拒绝响应。
+如果你的应用被拒绝在后台运行，则你的应用应调用 [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) ，并确保在注册后台任务之前未拒绝响应。
 
 有关后台活动和节电模式的相关用户选项的详细信息，请参阅[优化后台活动](../debug-test-perf/optimize-background-activity.md)。 
 ## <a name="background-task-checklist"></a>后台任务清单
@@ -89,13 +89,21 @@ ms.locfileid: "89285448"
 *仅适用于进程内后台任务*
 
 - 当取消任务时，请确保 `BackgroundActivated` 事件处理程序退出后再取消，否则整个进程都将终止。
--   编写生存时间较短的后台任务。 后台任务限制为在 30 秒的时钟时间内使用。
--   不要依赖后台任务中的用户交互。
+-   编写生存时间较短的后台任务。 大多数后台任务的时钟用量限制为30秒。
+
+
+*需要避免的事项*
+- 最大程度地减少通过 COM 或 RPC 使用进程间通信的情况。
+-   你尝试与之通信的进程可能未处于运行状态，这可能会导致挂起。
+-   需要花费很长时间来促进跨进程通信，并将计为运行后台任务所分配的时间。
+- 不要依赖后台任务中的用户交互。
+
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建并注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
+* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
 * [创建和注册进程外后台任务](create-and-register-a-background-task.md)
+* [创建和注册 winmain COM 后台任务](create-and-register-a-winmain-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [在后台播放媒体](../audio-video-camera/background-audio.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
@@ -109,6 +117,6 @@ ms.locfileid: "89285448"
 * [调试后台任务](debug-a-background-task.md)
 * [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](/previous-versions/hh974425(v=vs.110))
 
- 
+ 
 
- 
+ 
