@@ -3,12 +3,12 @@ title: WinUI 3 预览版 3（2020 年 11 月）
 description: WinUI 3 预览版 3 发布概述。
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: d91d957434b2a39182e2c764aecf49fc43f7a601
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: ac641036af8505b1e51fb81385f5206a9aa44f40
+ms.sourcegitcommit: 29c8999fb7a941fc6e26b49cf10f4cc1fcb69641
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933172"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "95002912"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Windows UI 库 3 预览版 3（2020 年 11 月）
 
@@ -16,7 +16,7 @@ Windows UI 库 (WinUI) 3 是适用于 Windows 桌面和 UWP 应用的本机用�
 
 WinUI 3 预览版 3 引入了新功能和改进功能，还提供显著的 Bug 修复。
 
-**请参阅[预览版 3 限制和已知问题](#preview-3-limitations-and-known-issues)** 。
+**请参阅 [预览版 3 限制和已知问题](#preview-3-limitations-and-known-issues)** 。
 
 > [!Important]
 > 此 WinUI 3 预览版用于早期评估以及从开发人员社区收集反馈。 它 **不** 应该用于生产应用。
@@ -177,6 +177,7 @@ WinUI 3 预览版 3与运行 Windows 10 2018 年 4 月更新（版本 1803 - 内
 - 桌面应用支持 .NET 5 和 C# 9，而且必须在 MSIX 应用中打包
 - UWP 应用支持 .NET Native 和 C# 7.3
 - 在 Visual Studio 16.8 版本中，开发人员工具和 Intellisense 可能无法正常工作。
+- 不提供 XAML 设计器支持
 - 不支持新的 C++/CX 应用，不过，现有应用可继续运行（请尽快迁移到 C++/WinRT）
 - 现在应用中提供对多个窗口的支持，但该项支持尚不完整，也不稳定。
   - 如果发现多窗口行为出现新问题或性能下降，请在我们的存储库中提交 Bug。
