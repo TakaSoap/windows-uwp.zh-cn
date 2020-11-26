@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b54e0b4417dd4ba9b835622a4c064b803de7fca9
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 416e3947678de0ba70687d9070c245fdfb4376df
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219701"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933182"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>面向开发人员的 Windows 10 内部版本 17763 中的新增功能
 
@@ -34,7 +34,7 @@ Fluent Design 中的动作 | 在 Fluent Design System 中，动作的使用方�
 文本缩放 | 新的[文本缩放指南](../design/input/text-scaling.md)介绍了如何更新应用程序以适应新的文本缩放行为，通过该缩放行为，用户可跨操作系统和单个应用程序来更改相对字号。 用户不必使用放大镜应用（通常只放大屏幕某个区域内的全部内容，并带来其自身的可用性问题）、更改显示分辨率或依赖 DPI 缩放（根据显示器和典型观看距离调整所有内容的大小），而是可以快速访问设置，只调整文本大小，调整范围为 100%（默认大小）至最高 225%。
 工具包 | [Adobe XD 和 Adobe Illustrator 工具包](../design/downloads/index.md)已更新，添加了新功能。 这些设计工具包提供用于设计 UWP 应用的控件和布局模板。
 UI 命令 | [UWP 命令基础结构](../design/basics/commanding-basics.md)更新包括更好地封装命令对象（行为、标签、图标、键盘快捷方式、访问密钥和描述）和一组标准的常用命令（包括剪切、复制、粘贴、退出等），因而无需手动设置这些属性。 </br> 新的 [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) 类提供了一个基类，用于定义在调用时执行操作的交互式 UI 元素的命令行为。 这是 [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) 的父类，StandardUICommand 公开了一组具有预定义属性的标准平台命令。 
-Windows UI 库 | [Windows UI 库](/uwp/toolkits/winui/)是一组 NuGet 程序包，提供用于 UWP 应用的控件和其他用户界面元素。 这些程序包还与 Windows 10 的早期版本兼容，因此即使用户没有最新的操作系统版本，应用也可以正常工作。 </br> 有关 Windows UI 库中内容的详细信息，请参阅 [NuGet 程序包中包含的 API 命名空间列表](/uwp/api/overview/winui/)。
+Windows UI 库 | [Windows UI 库](/uwp/toolkits/winui/)是一组 NuGet 程序包，提供用于 UWP 应用的控件和其他用户界面元素。 这些程序包还与 Windows 10 的早期版本兼容，因此即使用户没有最新的操作系统版本，应用也可以正常工作。 </br> 有关 Windows UI 库中内容的详细信息，请参阅 [NuGet 程序包中包含的 API 命名空间列表](/windows/winui/api/)。
 
 ## <a name="develop-windows-apps"></a>开发 Windows 应用
 

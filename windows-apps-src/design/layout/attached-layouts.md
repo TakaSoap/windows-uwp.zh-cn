@@ -8,10 +8,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 62ecc21d3ed9835ae7360d0c0dfdfa0b09cbdced
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "93034860"
 ---
 # <a name="attached-layouts"></a>附加的布局
@@ -24,7 +24,7 @@ ms.locfileid: "93034860"
 | - |
 | 此控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](/uwp/toolkits/winui/)。 |
 
-> **重要的 API** ：
+> **重要的 API**：
 
 > * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
 > * [ItemsRepeater](../controls-and-patterns/items-repeater.md)
@@ -114,7 +114,7 @@ ms.locfileid: "93034860"
 
 ### <a name="ui-virtualization"></a>UI 虚拟化
 
-UI 虚拟化意味着延迟创建 UI 对象，直到 _需要时才创建_ 。  这是一种性能优化措施。  对于非滚动方案而言，确定何时需要进行创建可能会根据应用特定的事物数量而定  。  在这些情况下，应用应考虑使用 [x:Load](../../xaml-platform/x-load-attribute.md)。 不需要在布局中进行任何特殊处理。
+UI 虚拟化意味着延迟创建 UI 对象，直到 _需要时才创建_。  这是一种性能优化措施。  对于非滚动方案而言，确定何时需要进行创建可能会根据应用特定的事物数量而定  。  在这些情况下，应用应考虑使用 [x:Load](../../xaml-platform/x-load-attribute.md)。 不需要在布局中进行任何特殊处理。
 
 在基于滚动的方案中（例如列表），确定 _何时需要_ 进行创建这一事项通常会根据“是否将对用户可见”而定，这一点很大程度上取决于布局过程中它被放置的位置，并且需要特别考虑。  此方案是本文档的重点。
 

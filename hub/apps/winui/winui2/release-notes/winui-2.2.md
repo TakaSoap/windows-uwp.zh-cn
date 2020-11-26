@@ -3,12 +3,12 @@ title: WinUI 2.2 发行说明
 description: WinUI 2.2 的发行说明，包括新功能和 Bug 修复。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 603c2c439e47c82695c8bdf5cd16fceebc9bc068
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: b14b96ffc03d5e3e934b72d71ae9e2a8a3f0eb1d
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762933"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933142"
 ---
 # <a name="windows-ui-library-22"></a>Windows UI 库 2.2
 
@@ -40,7 +40,7 @@ TabView 控件是选项卡的集合，每个选项卡表示应用中的新页面
 
 #### <a name="documentation"></a>文档
 
-https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2
+https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2&preserve-view=true
 
 #### <a name="navigationview-updates"></a>NavigationView 更新
 
@@ -144,7 +144,7 @@ https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 Windows UI 库控件的操作方法文章包含在[通用 Windows 平台控件文档](/windows/uwp/design/controls-and-patterns/)中。
 
-API 参考文档位于此处：[Windows UI 库 API](/uwp/api/overview/winui/)。
+API 参考文档位于此处：[Windows UI 库 API](/windows/winui/api/)。
 
 ## <a name="microsoftuixaml-22-prerelease-version-history"></a>Microsoft.UI.Xaml 2.2 预发行版历史记录
 
@@ -158,7 +158,7 @@ API 参考文档位于此处：[Windows UI 库 API](/uwp/api/overview/winui/)。
 
 ### <a name="experimental-feature"></a>实验性功能
 
-* [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2)
+* [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2&preserve-view=true)
 
 ### <a name="microsoftuixaml-2220190416001-prerelease"></a>Microsoft.UI.Xaml 2.2.20190416001-prerelease
 

@@ -3,12 +3,12 @@ title: WinUI 2.3 发行说明
 description: WinUI 2.3 的发行说明，包括新功能和 Bug 修复。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 1043ae488342fc8396902c73c2f00eb5b19f584d
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: ad589b15b5481b5b7ff402fc2043afd71c139479
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636507"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933062"
 ---
 # <a name="windows-ui-library-23"></a>Windows UI 库 2.3
 
@@ -73,4 +73,4 @@ https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt) 安装 XAML 控�
 
 Windows UI 库控件的操作方法文章包含在[通用 Windows 平台控件文档](/windows/uwp/design/controls-and-patterns/)中。
 
-API 参考文档位于此处：[Windows UI 库 API](/uwp/api/overview/winui/)。
+API 参考文档位于此处：[Windows UI 库 API](/windows/winui/api/)。
