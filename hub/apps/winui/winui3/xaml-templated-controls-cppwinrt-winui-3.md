@@ -8,12 +8,12 @@ ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 9790db23160538e90e0386c34003831e5efb20ac
-ms.sourcegitcommit: aabd6f40df6cc82bb8ce3a43275e4abd568c236f
+ms.openlocfilehash: 1b06296dd77bb1501ed96bd7b87f6c3d3a43fb1a
+ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92061705"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95482889"
 ---
 # <a name="templated-xaml-controls-for-winui-3-apps-with-cwinrt"></a>使用 C++/WinRT 将 WinUI 3 应用的 XAML 控件模板化
 
@@ -29,7 +29,7 @@ ms.locfileid: "92061705"
 
 ## <a name="add-a-templated-control-to-your-app"></a>向应用添加模板化控件
 
-若要添加模板化控件，请单击工具栏中的“项目”菜单，或在“解决方案资源管理器”中右键单击项目，然后选择“添加新项”  。 在“Visual C++”->“WinUI”下，选择“自定义控件(WinUI)”模板 。 将新控件命名为“BgLabelControl”，然后单击“添加”。 这将向项目中添加三个新文件。 `BgLabelControl.h` 是包含控件声明的标头，`BgLabelControl.cpp` 包含控件的 C++/WinRTmimplementation。 `BgLabelControl.idl` 是允许控件作为运行时类进行实例化的接口定义文件。
+若要添加模板化控件，请单击工具栏中的“项目”菜单，或在“解决方案资源管理器”中右键单击项目，然后选择“添加新项”  。 在“Visual C++”->“WinUI”下，选择“自定义控件(WinUI)”模板 。 将新控件命名为“BgLabelControl”，然后单击“添加”。 这将向项目中添加三个新文件。 `BgLabelControl.h` 是包含控件声明的标头，`BgLabelControl.cpp` 包含控件的 C++/WinRT 实现。 `BgLabelControl.idl` 是允许控件作为运行时类进行实例化的接口定义文件。
 
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>实现 BgLabelControl 自定义控件类
 

@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: f5d1829d9fca4f5805a52ed34a1218723897c13d
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 55dfda48feb87538abc9ae206f93cd577dc63eb8
+ms.sourcegitcommit: 4f82bc9e2096d0212f10d633899f4bc19b7fe75d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932988"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94973296"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>适用于 Windows 应用创建者的 Fluent Design System
 
@@ -251,7 +251,7 @@ Fluent Design 重视华丽的效果。 它融入了真正增强用户体验的�
 
 ## <a name="design-toolkits-and-code-samples"></a>设计工具包和代理示例
 
-希望开始使用 Fluent Design 创建你自己的应用？ 适用于 Adobe XD、Adobe Illustrator、Adobe Photoshop、Framer，和 Sketch 的工具包将帮助你开始设计，我们示例将帮助你更快地完成编码。
+希望开始使用 Fluent Design 创建你自己的应用？ 适用于 Figma、Adobe X 和 Sketch 的工具包将帮助你开始设计，我们示例将帮助你更快地完成编码。
 
 :::row:::
     :::column:::

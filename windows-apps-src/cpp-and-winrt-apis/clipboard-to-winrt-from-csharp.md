@@ -6,13 +6,13 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C#, 示例, 剪贴板, 案例, 研究
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a7ec46b28a8ddf0b4accadb37b40e786ac8c47a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "89170411"
 ---
-# <a name="porting-the-clipboard-sample-tocwinrtfromcmdasha-case-study"></a>将 Clipboard 示例从 C# 移植到 C++/WinRT&mdash;案例研究
+# <a name="porting-the-clipboard-sample-to-cwinrt-from-cmdasha-case-study"></a>将 Clipboard 示例从 C# 移植到 C++/WinRT&mdash;案例研究
 
 本主题提供了一个有关将[通用 Windows 平台 (UWP) 应用示例](https://github.com/microsoft/Windows-universal-samples)之一从 [C#](/visualstudio/get-started/csharp) 移植到 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 的案例研究。 可以通过按照本演练并自行移植示例，获取移植实践和体验。
 
@@ -166,7 +166,7 @@ NotifyType 是在 C# 的 `MainPage.xaml.cs` 中声明的 `enum`。 由于我们�
 因此，在 C++/WinRT 项目中，打开 `MainPage.idl`，并对其进行编辑，使其类似于下面的列表。 请注意，其中一项编辑是将命名空间名称从 Clipboard 更改为 SDKTemplate 。 如果需要，可以将 `MainPage.idl` 的全部内容替换为以下代码。 需要注意的另一个调整是，我们要将名称 Scenario::ClassType 更改为 Scenario::ClassName 。
 
 ```idl
-// MainPage.idl
+// MainPage.idl
 namespace SDKTemplate
 {
     struct Scenario
@@ -203,7 +203,7 @@ namespace SDKTemplate
 
 但在本演练中继续进行迁移操作时，我们会将 Clipboard 命名空间名称的源代码中的每个匹配项更改为 SDKTemplate 。 在 C++/WinRT 项目属性中，还有一个地方会出现 Clipboard 命名空间名称，因此我们现在借此机会进行更改。
 
-在 Visual Studio 中，对于 C++/WinRT 项目，将项目属性“公共属性”\>“C++/WinRT”\>根命名空间”设置为值“SDKTemplate” ****   ****   **** 。
+在 Visual Studio 中，对于 C++/WinRT 项目，将项目属性“公共属性”\>“C++/WinRT”\>“根命名空间”设置为值“SDKTemplate”  。
 
 ### <a name="save-the-idl-and-re-generate-stub-files"></a>保存 IDL 并重新生成存根文件
 
@@ -510,7 +510,7 @@ IVector<Scenario> implementation::MainPage::scenariosInner = winrt::single_threa
 
 #### <a name="add-five-new-blank-xaml-pages"></a>添加五个新的空白 XAML 页
 
-向项目添加新的“XAML” > “空白页(C++/WinRT)”项（确保它是“空白页(C++/WinRT)”项目模板，而不是“空白页”）   。 将其命名为  `CopyText`。 新的 XAML 页在 SDKTemplate 命名空间中定义，这正是我们所需要的。
+向项目添加新的“XAML” > “空白页(C++/WinRT)”项（确保它是“空白页(C++/WinRT)”项模板，而不是“空白页”）   。 将它命名为 `CopyText`。 新的 XAML 页在 SDKTemplate 命名空间中定义，这正是我们所需要的。
 
 再重复上述步骤四次，并将 XAML 页命名为 `CopyImage`、`CopyFiles`、`HistoryAndRoaming` 和 `OtherScenarios`。
 
@@ -955,7 +955,7 @@ void MainPage::OnNavigatedTo(NavigationEventArgs const& /* e */)
 
 同样，我们将调用 [winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) 函数，但这一次是创建 [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 的集合。 这就是对 Scenario 对象执行实时装箱的这一决定的一部分。
 
-这里，我们将 [**to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) 函数和 **winrt::hstring** 的[串联运算符](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator)组合使用，而不是像 C# 那样使用[字符串内插](/dotnet/csharp/language-reference/tokens/interpolated)。
+这里，我们将 [**to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) 函数和 **winrt::hstring** 的 [串联运算符](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator)组合使用，而不是像 C# 那样使用 [字符串内插](/dotnet/csharp/language-reference/tokens/interpolated)。
 
 #### <a name="isapplicationwindowactive"></a>**isApplicationWindowActive**
 
