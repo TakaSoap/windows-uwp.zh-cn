@@ -51,35 +51,35 @@ RadioButtons 组的单一行为将其与[复选框](checkbox.md)区分开来，�
 
 使用单选按钮可以让用户从两个或更多互斥的选项中进行选择。
 
-:::image type="content" source="images/radiobutton_basic.png" alt-text="RadioButtons 组的示例，其中选择了一个单选按钮":::
+:::image type="content" source="images/radiobutton_basic.png" alt-text="RadioButtons 组，其中选择了一个单选按钮":::
 
 当用户需要在做出选择前查看所有选项时，可使用单选按钮。 单选按钮平等地强调所有选项，这意味着有些选项可能会引起超出必要或所需的关注。
 
 除非所有选项都值得平等关注，否则请考虑使用其他控件。 例如，若要在大多数情况下为大多数用户推荐一个最佳选项，请使用[组合框](combo-box.md)将该最佳选项显示为默认选项。
 
-:::image type="content" source="images/combo_box_collapsed.png" alt-text="RadioButtons 组的示例，其中选择了一个单选按钮":::
+:::image type="content" source="images/combo_box_collapsed.png" alt-text="显示默认选项的组合框":::
 
 如果只有两个可能的选项，并且这两个选项可以清楚地表示为单个二元选项（例如“开/关”或“是/否”），则可将它们组合为一个[复选框](checkbox.md)或[切换开关](toggles.md)控件。 例如，使用单个复选框“我同意”，而不是两个单选按钮“我同意”和“我不同意”。
 
 请勿使用两个单选按钮来表示单个二元选项：
 
-:::image type="content" source="images/radiobutton-vs-checkbox-rb.png" alt-text="RadioButtons 组的示例，其中选择了一个单选按钮":::
+:::image type="content" source="images/radiobutton-vs-checkbox-rb.png" alt-text="表示二元选项的两个单选按钮":::
 
 改用复选框：
 
-:::image type="content" source="images/radiobutton-vs-checkbox-cb.png" alt-text="RadioButtons 组的示例，其中选择了一个单选按钮":::
+:::image type="content" source="images/radiobutton-vs-checkbox-cb.png" alt-text="复选框是展示二元选项的良好替代方法":::
 
 当用户可以选择多个选项时，请使用[复选框](checkbox.md)。
 
-:::image type="content" source="images/checkbox2.png" alt-text="RadioButtons 组的示例，其中选择了一个单选按钮":::
+:::image type="content" source="images/checkbox2.png" alt-text="复选框支持多选":::
 
 当用户的选项为某个值范围（例如，10、20、30...100）时，请使用[滑块](slider.md)控件。
 
-:::image type="content" source="images/controls/slider.png" alt-text="RadioButtons 组的示例，其中选择了一个单选按钮":::
+:::image type="content" source="images/controls/slider.png" alt-text="显示某个值范围中的一个值的滑块控件":::
 
 如果有超过八个选项，请使用[组合框](combo-box.md)。
 
-:::image type="content" source="images/combo_box_scroll.png" alt-text="RadioButtons 组的示例，其中选择了一个单选按钮":::
+:::image type="content" source="images/combo_box_scroll.png" alt-text="显示多个选项的列表框":::
 
 如果可用选项基于应用的当前上下文或可以根据其他条件动态变化，请使用列表控件。
 
@@ -294,7 +294,7 @@ RadioButtons 组不会将焦点从第一行或第一列换行到最后一行或�
 
 结果类似以下形式：
 
-:::image type="content" source="images/radiobuttons-default-group.png" alt-text="RadioButtons 组的示例，其中选择了一个单选按钮":::
+:::image type="content" source="images/radiobuttons-default-group.png" alt-text="一个包含三个单选按钮的组":::
 
 要在用户选择某个选项时执行操作，请处理 [SelectionChanged](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged) 事件。 在此处，更改名为“ExampleBorder”的 [Border](/uwp/api/windows.ui.xaml.controls.border) 元素的背景色 (`<Border x:Name="ExampleBorder" Width="100" Height="100"/>`)。
 
@@ -344,7 +344,7 @@ private void BackgroundColor_SelectionChanged(object sender, SelectionChangedEve
 </muxc:RadioButtons>
 ```
 
-:::image type="content" source="images/radiobuttons-symbolicon.png" alt-text="RadioButtons 组的示例，其中选择了一个单选按钮":::
+:::image type="content" source="images/radiobuttons-symbolicon.png" alt-text="一组带有符号图标的单选按钮":::
 
 还可以使用单独的 [RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton) 控件来填充 `RadioButtons` 项。 我们稍后将讨论这种特殊情况。 请参阅 [RadioButtons 组中的 RadioButton 控件]()。
 
@@ -443,7 +443,7 @@ public sealed partial class MainPage : Page
 </muxc:RadioButtons>
 ```
 
-:::image type="content" source="images/radiobuttons-multi-column.png" alt-text="RadioButtons 组的示例，其中选择了一个单选按钮":::
+:::image type="content" source="images/radiobuttons-multi-column.png" alt-text="两个三列组中的单选按钮":::
 
 > [!TIP]
 > 要将项排列在单个水平行中，请将 `MaxColumns` 设置为组中的项数。
@@ -552,7 +552,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 这两组 `RadioButton` 控件如下所示：
 
-:::image type="content" source="images/radio-button-groups.png" alt-text="RadioButtons 组的示例，其中选择了一个单选按钮":::
+:::image type="content" source="images/radio-button-groups.png" alt-text="两个组中的单选按钮":::
 
 ### <a name="radio-button-states"></a>单选按钮状态
 
@@ -578,9 +578,9 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 下图显示了组中单选按钮的首选间距。
 
-:::image type="content" source="images/radiobutton-layout.png" alt-text="RadioButtons 组的示例，其中选择了一个单选按钮":::
+:::image type="content" source="images/radiobutton-layout.png" alt-text="显示一组垂直排列的单选按钮的图像":::
 
-:::image type="content" source="images/radiobutton-redline.png" alt-text="RadioButtons 组的示例，其中选择了一个单选按钮":::
+:::image type="content" source="images/radiobutton-redline.png" alt-text="显示单选按钮间距指南的图像":::
 
 > [!NOTE]
 > 如果使用 WinUI RadioButtons 控件，则间距、边距和方向都已经过优化。
