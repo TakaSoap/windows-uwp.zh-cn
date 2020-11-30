@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: e9cb4a52e56862f9be27c72ef46afced895633c3
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: ee0c92ec81f7bbabc2218afbf263000a167d2057
+ms.sourcegitcommit: e81227399ba0f286e74e4977d757237829440a2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860100"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96310205"
 ---
 # <a name="keyboard-accelerators"></a>键盘快捷键
 
@@ -33,9 +33,9 @@ ms.locfileid: "91860100"
 快捷方式通常包括功能键 F1 到 F12 或标准键与一个或多个配对的修改键（Ctrl、Shift）的某种组合。
 
 > [!NOTE]
-> UWP 平台控件具有内置的键盘快捷键。 例如，ListView 支持使用 Ctrl+A 来选择列表中的所有项，RichEditBox 支持使用 Ctrl+Tab 在文本框中插入一个制表符。 这些内置键盘加速键称为**控件加速键**，只有当焦点位于元素或其子项之一时才会执行。 你使用此处所讨论的键盘加速键 API 定义的加速键被称为**应用加速键**。
+> UWP 平台控件具有内置的键盘快捷键。 例如，ListView 支持使用 Ctrl+A 来选择列表中的所有项，RichEditBox 支持使用 Ctrl+Tab 在文本框中插入一个制表符。 这些内置键盘加速键称为 **控件加速键**，只有当焦点位于元素或其子项之一时才会执行。 你使用此处所讨论的键盘加速键 API 定义的加速键被称为 **应用加速键**。
 
-键盘加速键并非适用于每一项操作，但通常与菜单中公开的命令相关联（并且应该用菜单项内容来指定）。快捷方式也可能与没有等效菜单项的操作相关联。 但是，因为用户依赖于应用程序菜单来发现和了解可用的命令集，所以你应该尝试让加速键的发现尽可能容易（使用标签或既定模式对此有帮助）。
+键盘加速键并非适用于每一项操作，但通常与菜单中公开的命令相关联（并且应该用菜单项内容来指定）。 快捷方式也可能与没有等效菜单项的操作相关联。 但是，因为用户依赖于应用程序菜单来发现和了解可用的命令集，所以你应该尝试让加速键的发现尽可能容易（使用标签或既定模式对此有帮助）。
 
 ![菜单项标签中键盘快捷键的屏幕截图。](images/accelerators/accelerators_menuitemlabel.png)  
 *菜单项标签中所描述的键盘加速键*
@@ -127,11 +127,11 @@ ms.locfileid: "91860100"
 ```
 
 ![工具提示中的键盘快捷键屏幕截图。](images/accelerators/accelerators_tooltip.png)  
-***工具提示中所描述的键盘快捷方式***
+**_工具提示中所述的键盘快捷键_* _
 
 [UIElement](/uwp/api/windows.ui.xaml.uielement) 对象具有一个 [KeyboardAccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 集合，即 [KeyboardAccelerators](/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators)，你可以在其中指定自定义的 KeyboardAccelerator 对象并定义键盘快捷方式的击键：
 
--   **[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** - 用于键盘快捷方式的 [VirtualKey](/uwp/api/windows.system.virtualkey)。
+-   _ *[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)**-用于键盘快捷键的 [VirtualKey](/uwp/api/windows.system.virtualkey) 。
 
 -   **[Modifiers](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** - 用于键盘快捷方式的 [VirtualKeyModifiers](/uwp/api/windows.system.virtualkeymodifiers)。 如果未设置 Modifiers，则默认值是“无”。
 
@@ -189,7 +189,7 @@ ms.locfileid: "91860100"
 </ListView>
 ```
 
-MenuFlyoutItem.KeyboardAccelerators 元素的 ScopeOwner 属性会将快捷方式标记为已限定作用域而非全局（默认为 Null 或全局）。 有关更多详细信息，请参阅本主题后面的**解析加速键**部分。
+MenuFlyoutItem.KeyboardAccelerators 元素的 ScopeOwner 属性会将快捷方式标记为已限定作用域而非全局（默认为 Null 或全局）。 有关更多详细信息，请参阅本主题后面的 **解析加速键** 部分。
 
 ## <a name="invoke-a-keyboard-accelerator"></a>调用键盘加速键 
 
@@ -202,7 +202,7 @@ UIA [控件模式] 将公开常见的控件功能。 例如，Button 控件实�
 ``` xaml 
 <Button Content="Save" Click="OnSave">
   <Button.KeyboardAccelerators>
-    <KeyboardAccelerator Key="S" Modifiers="Control" />
+    <KeyboardAccelerator Key="S" Modifiers="Control" />
   </Button.KeyboardAccelerators>
 </Button>
 ```
@@ -211,7 +211,7 @@ UIA [控件模式] 将公开常见的控件功能。 例如，Button 控件实�
 1.  调用（按钮）
 2.  切换（复选框）
 3.  选择 (ListView)
-4.  展开/折叠 (ComboBox) 
+4.  展开/折叠 (ComboBox) 
 
 如果未找到匹配项，则快捷方式无效，并且会提供调试消息（“未找到此组件的任何自动化模式。 在 Invoked 事件中实现所有所需行为。 在事件处理程序中将 Handled 设置为 true 会取消显示此消息。”）
 
@@ -219,7 +219,7 @@ UIA [控件模式] 将公开常见的控件功能。 例如，Button 控件实�
 
 [KeyboardAccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 对象的 Invoked 事件是在执行快捷方式时激发的。 [KeyboardAcceleratorInvokedEventArgs](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) 事件对象包含以下属性：
 
--  (布尔) 进行[**处理**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled)：将此值设置为 true 可阻止触发控件模式的事件，并停止加速器事件冒泡。 默认值为 false。
+-  (布尔) 进行 [**处理**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled)：将此值设置为 true 可阻止触发控件模式的事件，并停止加速器事件冒泡。 默认值为 false。
 - [**元素**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (system.windows.dependencyobject>) ：与加速器关联的对象。
 - [**KeyboardAccelerator**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator)：用于引发被调用事件的键盘快捷键。
 
@@ -228,8 +228,8 @@ UIA [控件模式] 将公开常见的控件功能。 例如，Button 控件实�
 ``` xaml
 <ListView x:Name="MyListView">
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
-    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
+    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
+    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
 </ListView>
 ```
@@ -285,10 +285,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
   <TextBox>
     <TextBox.KeyboardAccelerators>
       <KeyboardAccelerator 
-        Key="A" 
-        Modifiers="Control" 
-        Invoked="CustomTextSelecAllInvoked" 
-        IsEnabled="False" />
+        Key="A" 
+        Modifiers="Control" 
+        Invoked="CustomTextSelecAllInvoked" 
+        IsEnabled="False" />
     </TextBox.KeyboardAccelerators>
   </TextBox>
 
@@ -308,18 +308,18 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
   <ListView.KeyboardAccelerators>
 
     <KeyboardAccelerator 
-      Key="A" 
-      Modifiers="Control,Shift" 
-      Invoked="CustomSelectAllInvoked" />
+      Key="A" 
+      Modifiers="Control,Shift" 
+      Invoked="CustomSelectAllInvoked" />
       
     <KeyboardAccelerator 
-      Key="F5" 
-      Modifiers="None" 
-      Invoked="RefreshInvoked" />
+      Key="F5" 
+      Modifiers="None" 
+      Invoked="RefreshInvoked" />
 
   </ListView.KeyboardAccelerators>
 
-</ListView>   
+</ListView>   
 ```
 
 > [!NOTE] 
@@ -347,21 +347,21 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 | 添加第二个新项 | Ctrl + Shift + N |
 | （利用撤消）删除所选项 | Del、Ctrl+D |
 | （不用撤消）删除所选项 | Shift + Del |
-| 粗体 | Ctrl + B |
+| 加粗 | Ctrl + B |
 | 下划线 | Ctrl + U |
 | 斜体 | Ctrl + I |
 | **导航** | |
 | 在聚焦的控件或窗口中查找内容 | Ctrl+F |
 | 转至下一个搜索结果 | F3 |
 | **其他操作** | |
-| 添加收藏夹 | Ctrl + D | 
-| 刷新 | F5 或 Ctrl + R | 
-| 放大 | Ctrl + + | 
-| 缩小 | Ctrl + - | 
-| 缩放到默认视图 | Ctrl + 0 | 
-| 保存 | Ctrl+S | 
-| 关闭 | Ctrl+W | 
-| 打印 | Ctrl+P | 
+| 添加收藏夹 | Ctrl + D | 
+| 刷新 | F5 或 Ctrl + R | 
+| 放大 | Ctrl + + | 
+| 缩小 | Ctrl + - | 
+| 缩放到默认视图 | Ctrl + 0 | 
+| 保存 | Ctrl+S | 
+| 关闭 | Ctrl+W | 
+| 打印 | Ctrl+P | 
 
 请注意，某些组合对本地化版本的 Windows 无效。 例如，在西班牙语版本的 Windows 中，Ctrl+N 用于改为粗体，而不是 Ctrl+B。 如果对应用进行了本地化，那么我们建议提供本地化的键盘加速键。
 
@@ -526,14 +526,24 @@ KeyDown 事件也被一些控件用来实现内置的控件快捷方式。 当�
 预览输入事件在任何其他事件之前触发。 如果不处理这些事件，则会触发具有焦点的元素的快捷方式，然后触发 KeyDown 事件。 这两个事件均会浮升，直到被处理为止。
 
 
-![显示键事件序列 ](images/accelerators/accelerators_keyevents.png)
- ***键事件序列***的关系图
+![显示键事件序列 ](images/accelerators/accelerators_keyevents.png) 
+* **键事件序列** _ 的关系图
 
 事件的顺序：
 
-预览 KeyDown 事件...
-应用快捷方式、OnKeyDown 方法、KeyDown 事件、父项上的应用快捷方式、父项上的 OnKeyDown 方法、父项上的 KeyDown 事件（浮升至根）...
-CharacterReceived 事件 PreviewKeyUp 事件 KeyUpEvents
+预览 KeyDown 事件<br>
+…<br>
+应用加速器<br>
+OnKeyDown 方法<br>
+KeyDown 事件<br>
+父项上的应用加速器<br>
+父项上的 OnKeyDown 方法<br>
+父项上的 KeyDown 事件<br>
+ (气泡到根) <br>
+…<br>
+CharacterReceived 事件<br>
+PreviewKeyUp 事件<br>
+KeyUpEvents<br>
 
 处理快捷方式事件后，也会将 KeyDown 事件标记为已处理。 KeyUp 事件仍未处理。
 
@@ -572,8 +582,7 @@ protected override void OnProcessKeyboardAccelerators(
 
 我们建议本地化所有键盘快捷方式。 你可以使用标准 UWP 资源 (.resw) 文件和 XAML 声明中的 X:uid 属性来执行此操作。 在此示例中，Windows 运行时将自动加载资源。
 
-![包含 UWP 资源的键盘快捷键本地化示意图文件 ](images/accelerators/accelerators_localization.png)
- ***键盘加速器本地化（uwp 资源文件***）
+![包含 uwp 资源文件的键盘快捷键本地化图 ](images/accelerators/accelerators_localization.png) -*_带有 uwp 资源文件的键盘快捷键本地化_**
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">

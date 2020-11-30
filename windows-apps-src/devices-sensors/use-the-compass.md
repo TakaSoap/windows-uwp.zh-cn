@@ -6,12 +6,12 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc0365ced06e85a99fa063c86cad0946526b3f26
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 4ddd5ddddb31cf93977cb0d5bd9c16e916c4126b
+ms.sourcegitcommit: e81227399ba0f286e74e4977d757237829440a2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304659"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96310195"
 ---
 # <a name="use-the-compass"></a>使用指南针
 
@@ -39,9 +39,9 @@ ms.locfileid: "89304659"
 
 此部分划分为两个子部分。 第一个子部分将指导你完成从头开始创建简单的指南针应用程序所需的步骤。 以下子部分介绍你刚创建的应用。
 
-### <a name="instructions"></a>Instructions
+### <a name="instructions"></a>说明
 
--   创建新项目，从“Visual C#”**** 项目模板中选择“空白应用(通用 Windows)”****。
+-   创建新项目，从“Visual C#”项目模板中选择“空白应用(通用 Windows)”。
 
 -   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
 
@@ -106,14 +106,14 @@ ms.locfileid: "89304659"
             }
         }
     }
-    ```
+```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **CompassCS**, you'd replace `namespace App1` with `namespace CompassCS`.
+你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为 **CompassCS** 的项目，则使用 `namespace CompassCS` 替换 `namespace App1`。
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
 
 ```xml
-        <Page
+    <Page
         x:Class="App1.MainPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -132,7 +132,7 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**CompassCS**的项目，则使用 `x:Class="CompassCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 还应当将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:CompassCS"`。
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为 **CompassCS** 的项目，则使用 `x:Class="CompassCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 还应当将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:CompassCS"`。
 
 -   按 F5 或选择 "**调试**"  >  "**开始调试**" 以生成、部署和运行应用。
 
@@ -173,6 +173,6 @@ CompassReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/>
  <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
 ```
- 
+ 
 
- 
+ 
