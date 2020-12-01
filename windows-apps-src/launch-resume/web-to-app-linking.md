@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: fcffbf9fd3f333aa4aea4f155c5508d2867c2776
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 493a9936fa5d97ef2ac8d8d67bec15ce2f4df3c2
+ms.sourcegitcommit: 25063560ff0a37fb404bc50e3b6e66759ee1051d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158722"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96420366"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>使用应用 URI 处理程序启用“网站的应用”功能
 
@@ -59,8 +59,8 @@ ms.locfileid: "89158722"
 
 ``` JSON
 [{
-  "packageFamilyName": "Your app's package family name, e.g MyApp_9jmtgj1pbbz6e",
-  "paths": [ "*" ],
+  "packageFamilyName" : "Your app's package family name, e.g MyApp_9jmtgj1pbbz6e",
+  "paths" : [ "*" ],
   "excludePaths" : [ "/news/*", "/blog/*" ]
  }]
 ```
@@ -73,10 +73,10 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 
 | **通配符** | **说明**               |
 |--------------|-------------------------------|
-| **\***       | 表示任何子字符串      |
-| **?**        | 表示单个字符 |
+| **\** _       | 表示任何子字符串      |
+| _ *?**        | 表示单个字符 |
 
-例如， `"excludePaths" : [ "/news/*", "/blog/*" ]` 在上面的示例中，你的应用程序将支持以你的网站地址开头的所有路径 (例如 msn.com) ， **但** 和下的 `/news/` 除外 `/blog/` 。 将支持**msn.com/weather.html** ，但**msn.com/news/topnews.html**。
+例如， `"excludePaths" : [ "/news/*", "/blog/*" ]` 在上面的示例中，你的应用程序将支持以你的网站地址开头的所有路径 (例如 msn.com) ， **但** 和下的 `/news/` 除外 `/blog/` 。 将支持 **msn.com/weather.html** ，但 **msn.com/news/topnews.html**。
 
 ### <a name="multiple-apps"></a>多个应用
 

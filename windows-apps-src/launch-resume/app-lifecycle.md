@@ -6,12 +6,12 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 519ff7ee7bd581ce0f19c0e4297ad1ba34380068
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9e21d52567a8bc88fdb9f73ba1a960b5e6d24462
+ms.sourcegitcommit: 25063560ff0a37fb404bc50e3b6e66759ee1051d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173031"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96420376"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows 10 通用 Windows 平台 (UWP) 应用生命周期
 
@@ -24,13 +24,13 @@ ms.locfileid: "89173031"
 
 Windows 8 随 UWP 应用引入了新应用程序模型。 在高级别上，添加了新的已暂停状态。 当用户最小化 UWP 应用或切换到其他应用后，该应用会立刻处于暂停状态。 这意味着应用的线程已停止，并且应用保留在内存中（除非操作系统需要回收资源）。 当用户切换回该应用时，该应用可快速还原到正在运行状态。
 
-向需要继续运行的后台应用提供多种方法，如[后台任务](support-your-app-with-background-tasks.md)、[扩展执行](/uwp/api/windows.applicationmodel.extendedexecution)和活动赞助执行（例如，**BackgroundMediaEnabled** 功能，允许应用继续[在后台播放媒体](../audio-video-camera/background-audio.md)）。 此外，即使你的应用暂停甚至终止，后台传输操作仍会继续。 有关详细信息，请参阅[如何下载文件](/previous-versions/windows/apps/jj152726(v=win.10))。
+向需要继续运行的后台应用提供多种方法，如 [后台任务](support-your-app-with-background-tasks.md)、[扩展执行](/uwp/api/windows.applicationmodel.extendedexecution)和活动赞助执行（例如，**BackgroundMediaEnabled** 功能，允许应用继续 [在后台播放媒体](../audio-video-camera/background-audio.md)）。 此外，即使你的应用暂停甚至终止，后台传输操作仍会继续。 有关详细信息，请参阅[如何下载文件](/previous-versions/windows/apps/jj152726(v=win.10))。
 
 默认情况下，暂停不在前台运行的应用可以节能，同时向当前处于前台的应用提供更多资源。
 
 已暂停状态对作为开发人员的你提出了新要求，因为操作系统可能会选择终止已暂停的应用，以便释放资源。 已终止的应用仍会显示在任务栏中。 当用户单击该应用时，该应用必须恢复它终止之前所处的状态，因为用户不会意识到系统已关闭该应用。 用户会认为在他们执行其他操作时该应用一直在后台等待，并且希望该应用处于他们离开它之前所处的同一状态。 在本主题中，我们将演示如何实现该目的。
 
-Windows 10 版本 1607 又引入了两个应用模型状态：**在前台运行**和**在后台运行**。 我们还会在接下来的部分中演示这些新状态。
+Windows 10 版本 1607 又引入了两个应用模型状态：**在前台运行** 和 **在后台运行**。 我们还会在接下来的部分中演示这些新状态。
 
 ## <a name="app-execution-state"></a>应用执行状态
 
@@ -54,9 +54,9 @@ Windows 10 版本 1607 又引入了两个应用模型状态：**在前台运行
 |**已挂起** | 用户已最小化或离开应用，并且在数秒内未返回该应用。 | 当应用暂停时，其状态保留在内存中。 只需重新获取任何文件句柄或应用暂停时释放的其他资源。 |
 | **终止** | 应用之前处于暂停状态，但之后某些时候因系统需要回收内存而被终止。 | 恢复用户离开应用时应用所处的状态。|
 |**ClosedByUser** | 用户使用平板电脑模式下的关闭手势或 Alt+F4 关闭了应用。 当用户关闭应用时，它将首先暂停，然后终止。 | 从本质上说，由于应用经历了导致处于 Terminated 状态的相同步骤，因此处理此状态的步骤与 Terminated 状态相同。|
-|**正在运行** | 当用户尝试再次启动应用时，该应用已经打开。 | 那没有意义。 请注意，不会启动应用的另一个实例。 只需激活已在运行的实例。 |
+|**正在运行** | 当用户尝试再次启动应用时，该应用已经打开。 | 无变化。 请注意，不会启动应用的另一个实例。 只需激活已在运行的实例。 |
 
-**注意**  *当前用户会话*基于 Windows 登录。 只要当前用户未注销、关机或者重新启动 Windows，当前用户会话便可以保留在诸如锁屏界面身份验证、切换用户等的多个事件中。 
+**注意**  *当前用户会话* 基于 Windows 登录。 只要当前用户未注销、关机或者重新启动 Windows，当前用户会话便可以保留在诸如锁屏界面身份验证、切换用户等的多个事件中。 
 
 需要注意的一种重要情形是：如果设备具有足够资源，操作系统会预启动针对该行为选择的常用应用，以优化响应性。 在后台启动要预启动的应用，然后快速暂停，以便当用户切换到这些应用时，可以恢复它们，这比启动应用的速度要快得多。
 
@@ -83,7 +83,7 @@ Windows 10 版本 1607 又引入了两个应用模型状态：**在前台运行
 
 这些方法的事件数据包含我们之前所见的相同 [**PreviousExecutionState**](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate) 属性，这会告诉你应用在激活之前处于哪种状态。 解释状态以及应该对它采取的操作，方法与上面[应用启动](#app-launch)部分中所述的方法相同。
 
-**注意**  如果使用计算机的管理员帐户登录，则无法激活 UWP 应用。
+**注意** 如果你使用计算机的管理员帐户登录，则你将无法激活 UWP 应用。
 
 ## <a name="running-in-the-background"></a>在后台运行 ##
 
@@ -153,7 +153,7 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 ### <a name="app-terminate"></a>应用终止
 
-当你的应用暂停时，系统会尝试将你的应用及其数据保留在内存中。 但是，如果系统没有资源将你的应用保留在内存中，它将终止你的应用。 应用不会收到它们被终止的通知，所以你只能将应用数据保存在 **OnSuspension** 事件处理程序中，或者在 **EnteredBackground** 处理程序中以异步方式保存。
+当你的应用暂停时，系统会尝试将你的应用及其数据保留在内存中。 但是，如果系统没有资源将你的应用保留在内存中，它将终止你的应用。 应用程序不会收到即将终止的通知，因此，唯一需要保存应用程序数据的机会是在 **OnSuspending** 事件处理程序中，也可以从 **EnteredBackground** 处理程序异步进行。
 
 当应用确定它在终止后被激活时，它应该加载它保存的应用程序数据，以使应用处于与其终止之前相同的状态。 当用户切换回已终止的暂停应用时，该应用应该在其 [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) 方法中还原其应用程序数据。 当终止应用时系统不会通知应用，因此在暂停应用之前，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且当在终止后又激活应用时还原这些内容。
 
@@ -173,7 +173,7 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 当应用暂停时，它不会收到它注册用于接收的任何网络事件。 这些网络事件没有排队，它们只是丢失了。 因此，你的应用应该在恢复时测试网络状态。
 
-**注意**   由于不会从 UI 线程中引发[**恢复**](/uwp/api/windows.ui.xaml.application.resuming)事件，因此，如果恢复处理程序中的代码与 ui 通信，则必须使用调度程序。 请参阅[从后台线程更新 UI 线程](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)以获取有关如何执行此操作的代码示例。
+**注意**  由于 [**Resuming**](/uwp/api/windows.ui.xaml.application.resuming) 事件未从 UI 线程中引发，因此如果恢复处理程序中的代码与 UI 通信，则必须使用调度程序。 请参阅[从后台线程更新 UI 线程](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)以获取有关如何执行此操作的代码示例。
 
 有关一般准则，请参阅[应用暂停和恢复指南](./index.md)。
 
@@ -183,7 +183,7 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 没有事件指示用户关闭了应用。 当用户关闭应用时，应用首先处于暂停状态，以使你有机会保存其状态。 在 Windows 8.1 和更高版本中，在用户关闭应用之后，该应用将从屏幕和切换列表中删除，但不会显式终止。
 
-**按用户关闭的行为：**   如果在用户关闭应用程序时，应用程序关闭时需要执行其他操作，则可以使用激活事件处理程序来确定应用程序是由用户还是由 Windows 终止。 请参阅 [**ApplicationExecutionState**](/uwp/api/Windows.ApplicationModel.Activation.ApplicationExecutionState) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
+**用户关闭行为：** 如果应用在被用户关闭时需要执行不同于被 Windows 关闭时的操作，你可以使用激活事件处理程序确定应用是被用户还是被 Windows 终止的。 请参阅 [**ApplicationExecutionState**](/uwp/api/Windows.ApplicationModel.Activation.ApplicationExecutionState) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
 
 我们建议，应用不要以编程方式自行关闭，除非绝对必要。 例如，如果应用检测到内存泄漏，它可以关闭自身来确保用户个人数据的安全性。
 
@@ -193,7 +193,7 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 如果应用出现故障、停止响应或者发生意外，系统将通过用户的[反馈和诊断设置](https://support.microsoft.com/help/4468236/diagnostics-feedback-and-privacy-in-windows-10-microsoft-privacy)向 Microsoft 发送问题报告。 Microsoft 在问题报告中向你提供错误数据的一个子集，这样你可以使用这些数据改进你的应用。 你可以在“仪表板”中应用的“质量”页面中看到此数据。
 
-当用户在应用发生崩溃之后激活该应用时，其激活事件处理程序将收到 **NotRunning** 的 [**ApplicationExecutionState**](/uwp/api/Windows.ApplicationModel.Activation.ApplicationExecutionState) 值，并且应显示其初始 UI 和数据。 崩溃后，不要经常使用原本将用于 **Resuming** 和 **Suspended** 的应用数据，因为该数据可能已损坏；请参阅[应用暂停和恢复指南](./index.md)。
+当用户在应用发生崩溃之后激活该应用时，其激活事件处理程序将收到 **NotRunning** 的 [**ApplicationExecutionState**](/uwp/api/Windows.ApplicationModel.Activation.ApplicationExecutionState) 值，并且应显示其初始 UI 和数据。 崩溃后，不要经常使用原本将用于 **Resuming** 和 **Suspended** 的应用数据，因为该数据可能已损坏；请参阅 [应用暂停和恢复指南](./index.md)。
 
 ## <a name="app-removal"></a>应用删除
 
@@ -222,6 +222,6 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 * [单个进程的后台活动模型](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [在后台播放媒体](../audio-video-camera/background-audio.md)
 
- 
+ 
 
- 
+ 
