@@ -827,6 +827,8 @@
           href: ../csharp-winrt/index.md
         - name: 操作实例：从 C++/WinRT 组件生成 .NET 5.0 投影
           href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
+        - name: 敏捷对象
+          href: ../csharp-winrt/agile-objects.md
     - name: 安全
       href: ../security/index.md
       items:
