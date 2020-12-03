@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 数据, 类型
 ms.localizationpriority: medium
-ms.openlocfilehash: d61de7acdfa2fc3b563aa77630a9eb8043bce3d7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9e4c759cef4869f3270a59bb66f2b999cb35f19e
+ms.sourcegitcommit: bbf5451c3240e260fb8f9baadbdadf772ffe96ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154331"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96537301"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>标准 C++ 数据类型和 C++/WinRT
 
@@ -36,7 +36,7 @@ int main()
 }
 ```
 
-此工作分为两个部分。 第一，DataWriter::WriteBytes 方法选取一个 **winrt::array_view** 类型的参数[  ](/uwp/cpp-ref-for-winrt/array-view)。
+此工作分为两个部分。 第一，DataWriter::WriteBytes 方法选取一个 **winrt::array_view** 类型的参数 [](/uwp/cpp-ref-for-winrt/array-view)。
 
 ```cppwinrt
 void WriteBytes(winrt::array_view<uint8_t const> value) const
@@ -61,7 +61,7 @@ IAsyncOperation<IMap<winrt::hstring, IInspectable>> StorageItemContentProperties
 可以使用类似如下的初始值列表调用该 API。
 
 ```cppwinrt
-IAsyncAction retrieve_properties_async(StorageFile const& storageFile)
+IAsyncAction retrieve_properties_async(StorageFile const storageFile)
 {
     auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync({ L"System.ItemUrl" }) };
 }
@@ -91,7 +91,7 @@ std::array<byte, 3> theArray{ 99, 98, 97 };
 dataWriter.WriteBytes(theArray); // theArray is converted to a winrt::array_view before being passed to WriteBytes.
 ```
 
-C++/WinRT 将 std::vector 作为 Windows 运行时集合参数绑定  。 因此，可以传递一个 std::vector**winrt::hstring&lt;，它将转换为 winrt::hstring 的合适 Windows 运行时集合&gt;**  。 如果被调用方是异步的，则需要记住一个额外细节。 由于这种情况的实现细节，需要提供右值，因此必须提供矢量的副本或动作。 在以下代码示例中，我们将矢量的所有权移动到异步的被调用方所接受的参数类型的对象（然后在移动之后务必不再访问 `vecH`）。 如果想要了解有关右值的详细信息，请参阅[值类别以及对它们的引用](cpp-value-categories.md)。
+C++/WinRT 将 std::vector 作为 Windows 运行时集合参数绑定  。 因此，可以传递一个 std::vector **winrt::hstring&lt;，它将转换为 winrt::hstring 的合适 Windows 运行时集合&gt;**  。 如果被调用方是异步的，则需要记住一个额外细节。 由于这种情况的实现细节，需要提供右值，因此必须提供矢量的副本或动作。 在以下代码示例中，我们将矢量的所有权移动到异步的被调用方所接受的参数类型的对象（然后在移动之后务必不再访问 `vecH`）。 如果想要了解有关右值的详细信息，请参阅[值类别以及对它们的引用](cpp-value-categories.md)。
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<winrt::hstring> vecH)
@@ -100,10 +100,10 @@ IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vecto
 }
 ```
 
-但你无法传递需要 Windows 运行时集合的 std::vector**std::wstring&lt;&gt;** 。 原因在于，由于已经转换为 std::wstring 的合适 Windows 运行时集合，C++ 语言随后不会强制转换该集合的类型参数  。 因此，将不会编译以下代码示例（解决方案将改为传递 std:: vector**winrt::hstring&lt;，如上所示）&gt;** 。
+但你无法传递需要 Windows 运行时集合的 std::vector **std::wstring&lt;&gt;** 。 原因在于，由于已经转换为 std::wstring 的合适 Windows 运行时集合，C++ 语言随后不会强制转换该集合的类型参数  。 因此，将不会编译以下代码示例（解决方案将改为传递 std:: vector **winrt::hstring&lt;，如上所示）&gt;** 。
 
 ```cppwinrt
-IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)
+IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<std::wstring> vecW)
 {
     auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecW)) }; // error! Can't convert from vector of wstring to async_iterable of hstring.
 }
@@ -130,8 +130,8 @@ dataWriter.WriteBytes(fromRange); // the winrt::array_view is passed to WriteByt
 
 有关更多示例和信息，请参阅 [winrt::array_view **API 参考主题**](/uwp/cpp-ref-for-winrt/array-view)。
 
-## <a name="ivectorlttgt-and-standard-iteration-constructs"></a>IVector**T&lt; 和标准迭代构造&gt;**
-[SyndicationFeed.Items**是 Windows 运行时 API，它返回类型**IVector](/uwp/api/windows.web.syndication.syndicationfeed.items)T[ **的集合（作为 winrt::Windows::Foundation::Collections::IVector&lt;T&gt; 投影到 C++/WinRT）** ](/uwp/api/windows.foundation.collections.ivector_t_) **&lt;&gt;** 。 可以将此类型与基于范围的 `for` 等标准迭代结构一起使用。
+## <a name="ivectorlttgt-and-standard-iteration-constructs"></a>IVector **T&lt; 和标准迭代构造&gt;**
+[SyndicationFeed.Items **是 Windows 运行时 API，它返回类型** IVector](/uwp/api/windows.web.syndication.syndicationfeed.items)T [ **的集合（作为 winrt::Windows::Foundation::Collections::IVector&lt;T&gt; 投影到 C++/WinRT）**](/uwp/api/windows.foundation.collections.ivector_t_) **&lt;&gt;** 。 可以将此类型与基于范围的 `for` 等标准迭代结构一起使用。
 
 ```cppwinrt
 // main.cpp
