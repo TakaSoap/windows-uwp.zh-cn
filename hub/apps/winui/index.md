@@ -4,12 +4,12 @@ description: 适用于 Windows 应用开发的 WinUI 库。
 ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具包 sdk, winui, Windows UI 库
-ms.openlocfilehash: 3b2b18ab35f46b132ec3017bb0f3c6564b7be9ee
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: cd96367579c61223dcaf2be2f336026244a6ed9b
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933122"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603684"
 ---
 # <a name="windows-ui-library-winui"></a>Windows UI 库 (WinUI)
 
@@ -29,7 +29,7 @@ Windows UI 库 (WinUI) 是适用于 Windows 桌面和 UWP 应用程序的本机�
 WinUI 2.x 可以在 UWP 应用程序中使用，并可通过 [XAML Islands](../desktop/modernize/xaml-islands.md) 纳入到新的或现有的桌面应用程序中。
 
 > [!NOTE]
-> WinUI 2.4 是最新的 WinUI 2.x 版本。 请参阅 [WinUI 2.5 里程碑](https://github.com/microsoft/microsoft-ui-xaml/milestone/10)，了解下一版中计划的工作列表。
+> WinUI 2.5 是最新的 WinUI 2.x 版本。 请参阅 [WinUI 2.6 里程碑](https://github.com/microsoft/microsoft-ui-xaml/milestone/11)，了解下一版中计划的工作列表。
 
 WinUI 2.x 库与 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) 紧密耦合，为 UWP 应用提供正式的原生 Windows UI 控件和其他 UI 元素。
 

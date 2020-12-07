@@ -3,12 +3,12 @@ title: WinUI 发行说明
 description: WinUI 发行说明的索引。
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 4c89209868c1478f34de79f8b243fbe0e3dc80a3
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: 7038a61e0bf7047c49295b8c4482e92f113f647d
+ms.sourcegitcommit: 03308873eafd0f768e1c518f4d1cc4e4fe0b70b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933102"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96606012"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Windows UI 库 2.x 发行说明
 
@@ -46,6 +46,7 @@ API 参考文档位于此处：[Windows UI 库 API](/windows/winui/api/)。
 
 | Microsoft.UI.Xaml NuGet 版本 | 类型 | 发布日期 | 发行说明 | 亮点 |
 | --- | --- | --- | --- | --- |
+| [2.5](winui-2.5.md) | 稳定版 | 2020 年 12 月 | [发行说明](winui-2.5.md) | [InfoBar](winui-2.5.md#infobar)、[确定的 ProgressRing](winui-2.5.md#determinate-progressring)、[NavigationView FooterMenuItems](winui-2.5.md#navigationview-footermenuitems) |
 | [2.4](winui-2.4.md) | 稳定版 | 2020 年 5 月 | [发行说明](winui-2.4.md) | [RadialGradientBrush](winui-2.4.md#radialgradientbrush)、[ProgressRing](winui-2.4.md#progressring)、[TabView 更新](winui-2.4.md#tabview-updates)、[对 TextBox 系列控件的深色主题更新](winui-2.4.md#dark-theme-updates-to-textbox-family-of-controls)、[分层导航](winui-2.4.md#hierarchical-navigation)  |
 | [2.3](winui-2.3.md) | 稳定版 | 2019 年 11 月 | [发行说明](winui-2.3.md) | [进度栏视觉刷新](winui-2.3.md#progress-bar-visual-refresh)、[NumberBox](winui-2.3.md#numberbox)、[RadioButtons](winui-2.3.md#radiobuttons) |
 | [2.2](winui-2.2.md) | 稳定版 | 2019 年 8 月 | [发行说明](winui-2.2.md) | [TabView](winui-2.2.md#tabview)、[NavigationView 更新](winui-2.2.md#navigationview-updates)、[视觉样式更新](winui-2.2.md#visual-style-updates)  |
