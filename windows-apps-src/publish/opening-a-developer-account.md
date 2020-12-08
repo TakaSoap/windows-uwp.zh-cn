@@ -6,12 +6,12 @@ ms.date: 3/30/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f205770f789e2530ac35317f35b545c18592b0c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e16446321ccb8dc2494f59feec88fbb0a52aed94
+ms.sourcegitcommit: a4ca8ba143862411cd1104515cfeb98f1bcdb780
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174761"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857408"
 ---
 # <a name="opening-a-developer-account"></a>开设开发者帐户
 
@@ -28,14 +28,14 @@ ms.locfileid: "89174761"
 > [!NOTE]
 > 有一个已知问题，某些区域设置中的用户可能无法完成其注册。 在我们确认它已解决之前，建议你在 partner.microsoft.com 上开始注册过程后，手动将浏览器的区域设置标记更改为 **en-us** 。
 
-1.  请在[注册页](https://developer.microsoft.com/store/register)**上**，选择 "注册"。
+1.  请在 [注册页](https://developer.microsoft.com/store/register)**上**，选择 "注册"。
 2.  如果您尚未使用 Microsoft 帐户登录，请在此登录或创建一个新的 Microsoft 帐户。 此处使用的 Microsoft 帐户用于登录开发人员帐户。
 3.  选择您所在的 [国家/地区](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) 或业务所在的位置。 此后您将无法更改此信息。
 4.  选择[开发者帐户类型](account-types-locations-and-fees.md)（个人或公司）。 此后您将无法更改此信息，因此请确保选择的帐户类型正确无误。
 5.  输入要使用 (50 个字符或更少) 的 **发布者显示名称** 。 客户在浏览应用时将看到此名称，并通过此名称了解应用，因此请谨慎选择该名称。 对于公司帐户，请务必使用贵组织已注册的业务名称或商业名称。 如果输入其他人已选择的名称，或其他人有权使用该名称，则不允许使用该名称。
 
     > [!NOTE]
-    > 请确保您有权使用在此处输入的名称。 如果您选择的名称已被其他人用作商标或申请版权，则您的帐户可能被关闭。 有关详细信息，请参阅 [应用开发人员协议](/legal/windows/agreements/app-developer-agreement) 。 如果其他人正在使用您已获得商标权或其他法律权利的发布者显示名称，请[联系 Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html)。    
+    > 请确保您有权使用在此处输入的名称。 如果您选择的名称已被其他人用作商标或申请版权，则您的帐户可能被关闭。 有关详细信息，请参阅 [应用开发人员协议](/legal/windows/agreements/app-developer-agreement) 。 如果其他人正在使用您已获得商标权或其他法律权利的发布者显示名称，请[联系 Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html)。    
 
 6.  输入要用于你的开发人员帐户的联系人信息。
 
@@ -50,7 +50,7 @@ ms.locfileid: "89174761"
 
 9.  查看帐户信息，并确认所有内容都正确无误。 然后，阅读并接受[应用开发人员协议](/legal/windows/agreements/app-developer-agreement)的条款和条件。 选中相应的复选框，以指示已阅读并接受这些条款。
 
-10.  选择“完成”**** 以确认注册。 将处理你的付款，我们将向你的电子邮件地址发送一条确认消息。
+10.  选择“完成”以确认注册。 将处理你的付款，我们将向你的电子邮件地址发送一条确认消息。
 
 注册后，你的帐户将经历验证。 对于个人帐户，我们将进行检查，确保其他用户尚未使用您的发布者显示名称。 对于公司帐户，过程所花时间会长一点，因为我们还需要确认用户得到授权，可设置公司帐户。 此验证可能需要几天到几周的时间，并且通常包含公司电话呼叫。 您可以在 " **帐户设置** " 页上检查您的验证状态。
 
@@ -62,7 +62,7 @@ ms.locfileid: "89174761"
 
 如果希望让多名用户使用打开 (该帐户的 Microsoft 帐户登录，而不是将单个用户添加到帐户) ，请参阅以下指南：
 
--   使用不属于你或其他个人的电子邮件地址（例如）创建 Microsoft 帐户 MyCompany_PartnerCenter@outlook.com 。 请勿使用公司域中的电子邮件地址，尤其是在公司已使用 Azure AD 的情况下。 如前文所述，稍后可以从公司的 Azure AD 服务添加其他用户。
+-   电子邮件所有权验证主要联系人（主电子邮件）的地址是否有效。 主要联系人电子邮件地址必须是受监视并可以发送/接收电子邮件的工作帐户。 合作伙伴 **不** 应使用： (1) 与公司域无关的个人电子邮件地址，或 (2) 租户用户登录未关联到电子邮件 (例如， jsmith@testcompany.onmicrosoft.com) 。
 -   将此 Microsoft 帐户的访问权限限制为尽可能少的用户数量。
 -   设置公司电子邮件通讯组列表，其中包括需要访问开发人员帐户的所有用户。 将此电子邮件地址添加到 [与 Microsoft 帐户关联的安全信息](https://account.microsoft.com/security)。 此方法允许列表中的所有员工接收发送到此别名的安全代码。 如果设置通讯组列表不可行，可以将个人电子邮件地址添加到安全信息。 但在出现 (提示时，该电子邮件地址的所有者将是唯一可以访问和共享安全代码的人，如将新的安全信息添加到该帐户时或从新设备访问该帐户时) 。
 -   将公司电话号码添加到 Microsoft 帐户的安全信息。 尝试使用不需要扩展且可供关键团队成员访问的数字。
