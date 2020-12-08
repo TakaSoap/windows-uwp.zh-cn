@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: 此路线图提供了适用于 Windows 10 和通用 Windows 平台 (UWP) 应用的关键企业功能的概述。
+description: 此路线图提供适用于 Windows 10 和通用 Windows 平台 (UWP) 应用的关键企业功能的概述。
 title: 企业
 ms.date: 01/16/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff96cd25c32418f518f6b1807e08eb72c3e14c6a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4bd6c92729766b99630958d4b33514ef4791d4bf
+ms.sourcegitcommit: 3153ef4838c35084a64173c7ed88719c8864f8cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168431"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755284"
 ---
 # <a name="enterprise"></a>企业
 
@@ -19,8 +19,7 @@ ms.locfileid: "89168431"
 
 ## <a name="feature-highlights"></a>功能特点
 
-<a id="template-studio" />
-
+<a id="template-studio"></a>
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
 Windows Template Studio 是一个 Visual Studio 2019 扩展，它使用基于向导的体验加速创建新的通用 Windows 平台 (UWP) 应用。 由此产生的 UWP 项目是格式标准的可读代码，结合了最新的 Windows 10 功能，同时实现了经过验证的模式和最佳做法。
@@ -29,8 +28,7 @@ Windows Template Studio 是一个 Visual Studio 2019 扩展，它使用基于向
 
 请参阅 [Windows Template Studio](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio)
 
-<a id="desktop-style-UI" />
-
+<a id="desktop-style-UI"></a>
 ### <a name="controls-to-create-desktop-style-uis"></a>用于创建桌面样式 UI 的控件
 
 我们已发布了新的 UWP XAML 控件，它们填补了传统桌面应用程序 UI 与 UWP UI 之间的缺口。
@@ -39,8 +37,7 @@ Windows Template Studio 是一个 Visual Studio 2019 扩展，它使用基于向
 
 ![MenuBar](images/menu-bar.png)
 
-<a id="enterprise" />
-
+<a id="enterprise"></a>
 ### <a name="controls-to-support-enterprise-scenarios"></a>用于支持企业方案的控件
 
 [数据网格视图](/windows/communitytoolkit/controls/datagrid)提供了在行和列中显示数据集合的灵活方式。
@@ -58,16 +55,14 @@ Windows UI 库是一组 NuGet 程序包，它们提供了用于 UWP 应用的控
 
 请参阅 [Windows UI 库（预览版）](/uwp/toolkits/winui/)。
 
-<a id="xaml-islands" />
-
+<a id="xaml-islands"></a>
 ### <a name="uwp-controls-in-desktop-applications-xaml-islands"></a>桌面应用程序中的 UWP 控件 (XAML Islands)
 
-现在，Windows 10 支持你通过一个名为 XAML Islands** 的功能在 WPF、Windows 窗体和 C++ Win32 桌面应用程序中使用 UWP 控件。 这意味着你可以使用只能通过 UWP 控件（例如 Windows Ink）和支持 Fluent Design System 的控件提供的最新 Windows 10 UI 功能来增强现有桌面应用程序的外观和功能。 此功能称为 XAML 岛。
+现在，Windows 10 支持你通过一个名为 XAML Islands 的功能在 WPF、Windows 窗体和 C++ Win32 桌面应用程序中使用 UWP 控件。 这意味着你可以使用只能通过 UWP 控件（例如 Windows Ink）和支持 Fluent Design System 的控件提供的最新 Windows 10 UI 功能来增强现有桌面应用程序的外观和功能。 此功能称为 XAML 岛。
 
 请参阅[桌面应用程序中的 UWP 控件](/windows/apps/desktop/modernize/xaml-islands)。
 
-<a id="standard" />
-
+<a id="standard"></a>
 ### <a name="net-standard-20"></a>.NET Standard 2.0
 
 该 .NET Standard 包括的 API 比 .NET Standard 1.x 多 20,000 多个。 这使得迁移现有的 .NET Framework 库并在不同的 .NET 应用程序（包括 UWP 应用程序）中使用它们变得更加容易。
@@ -76,16 +71,14 @@ Windows UI 库是一组 NuGet 程序包，它们提供了用于 UWP 应用的控
 
 请参阅[在桌面应用和 UWP 应用之间共享代码](../porting/desktop-to-uwp-migrate.md)。
 
-<a id="sql-server" />
-
+<a id="sql-server"></a>
 ### <a name="sql-server-connectivity"></a>SQL Server 连接
 
 通过使用 [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) 命名空间中的类，你的应用可以直接连接到 SQL Server 数据库然后存储和检索数据。
 
 请参阅[在 UWP 应用中使用 SQL Server 数据库](../data-access/sql-server-databases.md)。
 
-<a id="MSIX" />
-
+<a id="MSIX"></a>
 ### <a name="msix-deployment"></a>MSIX 部署
 
 MSIX 是一种 Windows 应用包格式，它将 MSI、.appx、App-V 和 ClickOnce 的最佳功能组合在一起，以便针对所有 Windows 应用提供新式的可靠打包体验。 MSIX 包格式保留了现有应用包和安装文件的功能，此外，它还为 Win32、WPF 和 Windows 窗体应用启用了新式的打包和部署功能。 
@@ -94,11 +87,10 @@ MSIX 是一种 Windows 应用包格式，它将 MSI、.appx、App-V 和 ClickOnc
 
 请参阅 [MSIX 文档](/windows/msix/)。
 
-<a id="distribution" />
-
+<a id="distribution"></a>
 ## <a name="security"></a>安全性
 
-Windows 10 为应用开发人员提供一套用于保护用户身份、公司网络安全和存储在设备上的任何业务数据的功能。 Windows 10 的新增功能是 Microsoft Passport，它是一种易于部署的双重密码替代项，可通过使用 PIN 或 Windows Hello 访问，提供企业级安全并支持基于指纹、面部和虹膜的识别。
+Windows 10 为应用开发人员提供一套用于保护用户身份、公司网络安全和存储在设备上的任何业务数据的功能。 Windows 10 的新增功能是 Microsoft Passport，它是一种易于部署的双重密码替代项，可通过使用 PIN 或 Windows Hello 访问，提供企业级安全并支持基于指纹、面部和虹膜的识别。
 
 | 主题 | 说明 |
 |-------|-------------|
@@ -169,10 +161,10 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司�
 
 ## <a name="patterns-and-practices"></a>模式和实践
 
-大规模的企业级应用的代码库可能变得不实用。 Prism 是用于在 WPF、Windows 10 UWP 和 Xamarin Forms 中生成松散耦合、可维护且可测试的 XAML 应用程序的框架。 Prism 提供设计模式集合的实现，有助于编写结构完善且可维护的 XAML 应用程序，包括 MVVM、依赖关系注入、命令、EventAggregator 等。
+大规模的企业级应用的代码库可能变得不实用。 Prism 是用于在 WPF、Windows 10 UWP 和 Xamarin Forms 中生成松散耦合、可维护且可测试的 XAML 应用程序的框架。 Prism 提供设计模式集合的实现，有助于编写结构完善且可维护的 XAML 应用程序，包括 MVVM、依赖关系注入、命令、EventAggregator 等。
 
 有关 Prism 的详细信息，请参阅 [GitHub 存储库](https://github.com/PrismLibrary/Prism)。
 
- 
+ 
 
- 
+ 
