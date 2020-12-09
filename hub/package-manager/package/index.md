@@ -4,12 +4,12 @@ description: 可将 Windows 程序包管理器用作包含应用程序的软件�
 ms.date: 04/29/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9c9039154e2a576a691a01d64abcf8c9029c1c
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: b2bde5a55d22d0541724cd777c315b2751cf1d36
+ms.sourcegitcommit: 3153ef4838c35084a64173c7ed88719c8864f8cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334603"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755274"
 ---
 # <a name="submit-packages-to-windows-package-manager"></a>将程序包提交到 Windows 程序包管理器
 
@@ -20,7 +20,7 @@ ms.locfileid: "85334603"
 若要将软件包提交到 Windows 程序包管理器，请执行以下步骤：
 
 1. [创建提供应用程序相关信息的程序包清单](manifest.md)。 清单是遵循 Windows 程序包管理器架构的 YAML 文件。
-2. [将清单提交到 Windows 程序包管理器存储库](repository.md)。 这是 GitHub 上的开源存储库，其中包含 winget**** 工具可以访问的清单的集合。
+2. [将清单提交到 Windows 程序包管理器存储库](repository.md)。 这是 GitHub 上的开源存储库，其中包含 winget 工具可以访问的清单的集合。
 
 ## <a name="related-topics"></a>相关主题
 
