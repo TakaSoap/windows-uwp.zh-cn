@@ -3,12 +3,12 @@ title: WinUI 3 预览版 3（2020 年 11 月）
 description: WinUI 3 预览版 3 发布概述。
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: ac641036af8505b1e51fb81385f5206a9aa44f40
-ms.sourcegitcommit: 29c8999fb7a941fc6e26b49cf10f4cc1fcb69641
+ms.openlocfilehash: 69855aea647b608d9253e4f71b6d7d38917def61
+ms.sourcegitcommit: a4ca8ba143862411cd1104515cfeb98f1bcdb780
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "95002912"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857418"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Windows UI 库 3 预览版 3（2020 年 11 月）
 
@@ -43,7 +43,7 @@ WinUI 3 预览版 3 提供有 Visual Studio 项目模板和 NuGet 包，前者�
     若要生成 C++ 应用，还必须包括以下工作负载：
     - 使用 C++ 的桌面开发
     - 适用于通用 Windows 平台工作负载的 C++ (v142) 通用 Windows 平台工具可选组件（请参阅右窗格中“通用 Windows 平台开发”部分下的“安装详细信息”）
-3. 请确保系统已为 nuget.org 启用了 NuGet 包源。有关详细信息，请参阅[常见 NuGet 配置](/nuget/consume-packages/configuring-nuget-behavior)。[Windows 社区工具包](#windows-community-toolkit)
+3. 请确保系统已为 nuget.org 启用了 NuGet 包源。有关详细信息，请参阅[常见 NuGet 配置](/nuget/consume-packages/configuring-nuget-behavior)。
 
 4. 下载并安装 [WinUI 3 预览版 3 VSIX 包](https://aka.ms/winui3/preview3-download)。 它将 WinUI 3 项目模板和包含 WinUI 3 库的 NuGet 包添加到 Visual Studio 2019。
 
