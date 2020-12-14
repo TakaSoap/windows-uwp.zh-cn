@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c#, winrt, cswinrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 107c85b7e2562edb9995a6bfd76e47904750536b
-ms.sourcegitcommit: a15bc17aa0640722d761d0d33f878cb2a822e8ed
+ms.openlocfilehash: ef6fad694dd45e80d462f6a0c5c73ac5539fe16a
+ms.sourcegitcommit: c063d0d130944558afa20181dd294ffe7a187a3f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96577089"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090681"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -96,9 +96,9 @@ C#/WinRT 使用 [LoadLibrary 备用搜索顺序](/windows/win32/dlls/dynamic-lin
 
 | 错误或警告消息 | 原因 |
 |--------------------------|--------|
-| System.IO.FileLoadException | 在不公开 Windows SDK 类型的库中调用 API 时，会出现此运行时错误。 |
-| 警告 MSB3277：发现不同版本的 Microsoft.Windows.SDK.NET 之间存在无法解决的冲突。 | 引用在其 API 表面公开 Windows SDK 类型的库时，会出现此生成错误。 |
-| [CS1705](/dotnet/csharp/language-reference/compiler-messages/cs1705)：程序集“AssemblyName1”使用“TypeName”，后者的版本比引用的程序集“AssemblyName2”的版本高 | 引用和使用已在库中公开的 Windows SDK 类型时，会出现此生成编译器错误。 |
+| 警告 MSB3277：发现不同版本的 WinRT.Runtime 或 Microsoft.Windows.SDK.NET 之间存在无法解决的冲突。 | 引用在其 API 表面公开 Windows SDK 类型的库时，会出现此生成警告。 |
+| [错误 CS1705](/dotnet/csharp/language-reference/compiler-messages/cs1705)：程序集“AssemblyName1”使用“TypeName”，后者的版本比引用的程序集“AssemblyName2”的版本高 | 引用和使用已在库中公开的 Windows SDK 类型时，会出现此生成编译器错误。 |
+| System.IO.FileLoadException | 在不公开 Windows SDK 类型的库中调用某些 API 时，可能会出现此运行时错误。 |
 
 要解决这些错误，请将 .NET SDK 更新到最新版本。 这样做将确保你的应用程序使用的运行时和 Windows SDK 程序集与所有依赖项兼容。 使用 .NET 5 SDK 的早期服务/功能更新时可能会出现这些错误，原因是运行时修补程序可能要求程序集版本更新。
 
