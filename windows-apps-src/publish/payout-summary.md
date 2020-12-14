@@ -6,18 +6,18 @@ ms.date: 08/02/2019
 ms.topic: article
 keywords: windows 10, uwp, 付款摘要, 声明, 付款, 收益, 支出, 付款, 收入
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d83031702a642fa21a711edfdbaff69661c853
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 996f77db55d959fb1e328e4e722166cc466a8dbd
+ms.sourcegitcommit: d5ad11e2289d1d04319405a78dd02aaacf866e3a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035020"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97390355"
 ---
 # <a name="payout-reports"></a>付款报表
 
 费用 **摘要** 显示了你在 Microsoft 获得的资金的详细信息。 它还使你可以知道你将何时收到付款和收到多少付款。
 
-如果在 Azure Marketplace 中销售产品，还会在 " **支出摘要** " 中看到有关成功付款的信息。 有关 Azure Marketplace 付款的更多详细信息，请参阅 [Microsoft Azure 应用商店参与策略](/legal/marketplace/participation-policy)和 [Microsoft Azure 应用商店发布者协议](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt)。
+如果在 Azure Marketplace 中销售产品，还会在 " **支出摘要**" 中看到有关成功付款的信息。 有关 Azure Marketplace 付款的更多详细信息，请参阅 [Microsoft Azure 应用商店参与策略](/legal/marketplace/participation-policy)和 [Microsoft Azure 应用商店发布者协议](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt)。
 
 > [!NOTE]
 > 你的收款必须达到 50 美元的[付款阈值](payment-thresholds-methods-and-timeframes.md)，才符合成为付款的条件。 若要详细了解付款阈值，请参阅此页，并查阅应用开发人员协议。
@@ -34,9 +34,9 @@ ms.locfileid: "93035020"
 
 ## <a name="transaction-history-page"></a>“交易历史记录”页
 
-此页显示你的所有个人收入，包括每次交易的日期、类型和收入。 可以选择要查看的时间段，也可以按“合约 ID”、“计划”、“付款 ID”、“收入类型”、“控制杆”和“状态”进行筛选。 本会计年度（7 月 1 日至 6 月 30 日）和前两个会计年度的数据都可查看。
+此页显示你的所有个人收入，包括每次交易的日期、类型和收入。 你可以选择要查看的时间段，还可以按注册 ID、计划、付款 ID、收益类型、杠杆、估计付款月、调整和状态进行筛选。 本会计年度（7 月 1 日至 6 月 30 日）和前两个会计年度的数据都可查看。
 
-若要查看关于收入的更多详情，请选择页面右侧的向下箭头。 这会显示控制杆、收入金额和产品。 如果出于某种原因，此数据无法使用，但你需要访问它，请与 [支持](https://developer.microsoft.com/windows/support)人员联系。 如果收益是调整的结果，而不是交易的，则不会显示 "产品" 字段。
+若要查看关于收入的更多详情，请选择页面右侧的向下箭头。 这将显示杠杆、收入量、估计的付款月和产品。 如果出于某种原因，此数据无法使用，但你需要访问它，请与 [支持](https://developer.microsoft.com/windows/support)人员联系。 如果收益是调整的结果，而不是交易的，则不会显示 "产品" 字段。 除非选择了调整和调整筛选器，否则不会显示调整原因。
 
 若要导出此页上的任何事务数据，请选择 "导出"，然后按照 "导出数据" 页上的说明操作。 从 "事务历史记录" 页导出的文件以交易货币显示数据，按交易币种和美元计算收入，并按货币支付付薪值。
 
@@ -225,5 +225,5 @@ ms.locfileid: "93035020"
 | 付款币种        | 付款时所使用的货币。                                                                                                                                       |
 | 转换后的付款       | 使用外汇汇率，将付款金额兑换为付款货币。                                                                                                         |
 | 税款汇出模型         | 免税方（销售税、使用税或增值税/消费税）。                                                                                                   |
-| 资格日期/时间   | 交易收款符合成为付款的条件的日期和时间 (UTC)。 在创建付款时，这包括资格日期时间早于付款创建日期的交易收益。 （仅包括在“已保留”  的 .csv 文件中。） |
-| Charges                 | 显示“交易金额”列汇总的所有费用明细的细目。 （仅包括在 Azure Marketplace 中；不包括在“已保留”  的 .csv 文件中。） |
+| 资格日期/时间   | 交易收款符合成为付款的条件的日期和时间 (UTC)。 在创建付款时，这包括资格日期时间早于付款创建日期的交易收益。 （仅包括在“已保留”的 .csv 文件中。） |
+| Charges                 | 显示“交易金额”列汇总的所有费用明细的细目。 （仅包括在 Azure Marketplace 中；不包括在“已保留”的 .csv 文件中。） |
