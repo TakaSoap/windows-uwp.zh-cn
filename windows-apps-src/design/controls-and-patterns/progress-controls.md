@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ccdea35b8923c756489f6b671d394fc516a960c
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 24ba67dfa51c039055cc5bc4cb31d4aff4de6765
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749743"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603878"
 ---
 # <a name="progress-controls"></a>进度控件
 
@@ -61,11 +61,12 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 ## <a name="types-of-progress"></a>进度类型
 
-向用户显示操作正在进行的控件有两个：ProgressBar 或 ProgressRing。
+向用户显示操作正在进行的控件有两个：ProgressBar 或 ProgressRing。 ProgressBar 和 ProgressRing 都有两种状态，用于传达用户是否可以与应用程序进行交互。 
 
--   ProgressBar *determinate* 状态显示任务完成的百分比。 此控件应该在持续时间已知的操作中使用，但进度不应阻止用户与应用交互。
--   ProgressBar *indeterminate* 状态显示操作正在进行、没有阻止用户与应用交互，并且完成时间未知。
--   ProgressRing 仅具有 *indeterminate* 状态，并且应该仅在任何其他用户交互均已阻止时使用，直到操作完成为止。
+-   ProgressBar 和 ProgressRing 的确定状态显示任务的完成百分比。 此控件应该在持续时间已知的操作中使用，但进度不应阻止用户与应用交互。
+-   ProgressBar 的不确定状态显示操作正在进行、没有阻止用户与应用交互，并且完成时间未知。
+-   ProgressRing 的不确定状态显示操作正在进行、阻止了用户与应用交互，并且完成时间未知。
+
 
 另外，进度控件为只读，不具有交互性。 这意味着用户无法直接调用或使用这些控件。
 
@@ -73,7 +74,8 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 |---|---|
 | 不确定的进度栏 | ![不确定的进度栏](images/progressbar-indeterminate.gif) |
 | 确定的进度栏 | ![确定的进度栏](images/progressbar-determinate.png)|
-| 不确定的进度环 | ![ProgressRing 状态](images/progressring-indeterminate.gif)|
+| 不确定的进度环 | ![不确定的 ProgressRing 状态](images/progressring-indeterminate.gif)|
+| 确定的 ProgressRing | ![确定的 ProgressRing 状态](images/progress_ring.jpg)|
 
 
 ## <a name="examples"></a>示例
@@ -117,11 +119,15 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 -   **该操作会使用户等候继续操作吗？**
 
-    如果操作需要全部（或大部分）应用交互等到它完成后才能进行，则最好选择 ProgressRing。 ProgressRing 控件用于模式交互，这意味着用户受到阻止，直到 ProgressRing 消失。
+    如果操作需要全部（或大部分）应用交互等到它完成后才能进行，则最好选择不确定的 ProgressRing。
+
+    -   **该控件是否具有已定义的持续时间，或者结束时间是否已预测？**
+
+    如果希望视觉对象是环而不是条，请使用确定的 ProgressRing，并相应地更新百分比或值。 
 
 -   **应用是否需要等待用户完成某个任务？**
 
-    如果是，请使用 ProgressRing，因为它的用途是告知用户等待时间未知。
+    如果是，请使用不确定的 ProgressRing，因为它们为用户指示未知的等待时间。
 
 -   **关键字**
 
@@ -169,6 +175,12 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 ![ProgressRing 不确定示例](images/PR_IndeterminateExample.png)
 
 当暂时不允许用户与应用进行任何进一步交互，或应用正在等待用户输入以便继续运行时，应使用不确定性 ProgressRing。 上面的“正在登录…”一例是最适合使用 ProgressRing 的场景：在登录完成前，用户无法继续使用该应用。
+
+ProgressRing - 确定
+
+![ProgressRing 确定示例](images/progress_ring_determinate_example.png)
+
+如果操作持续时间已知且需要环形视觉对象，则最好使用确定 ProgressRing 显示何时安装、下载、设置等。
 
 ## <a name="customizing-a-progress-control"></a>自定义进度控件
 

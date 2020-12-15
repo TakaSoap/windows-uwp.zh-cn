@@ -4,16 +4,16 @@ description: 如何安装并使用 Windows UI 库。
 ms.topic: reference
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具包 sdk
-ms.openlocfilehash: e3b0daae3f053daabe153f8a0058953ff76e3b90
-ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
+ms.openlocfilehash: 670254b8ca9ba8641e9adf1410aef918be73f705
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94691565"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603834"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>Windows UI 2.x 库入门
 
-[WinUI 2.4](release-notes/winui-2.4.md) 是 WinUI 的最新稳定版本，应该用于生产环境中的应用。
+[WinUI 2.5](release-notes/winui-2.5.md) 是 WinUI 的最新稳定版本，应该用于生产环境中的应用。
 
 该库以 NuGet 包的形式提供，可以添加到任何新的或现有的 Visual Studio 项目中。
 
@@ -27,7 +27,7 @@ ms.locfileid: "94691565"
 2. 打开现有项目，或使用“Visual C#”>“Windows”>“通用”下的“空白应用”模板或适用于语言投影的模板创建一个新项目。  
 
     > [!IMPORTANT]
-    > 若要使用 WinUI 2.4，必须在项目属性中设置 TargetPlatformVersion > = 10.0.18362.0 和 TargetPlatformMinVersion > = 10.0.15063.0。
+    > 若要使用 WinUI 2.5，必须在项目属性中设置 TargetPlatformVersion > = 10.0.18362.0 和 TargetPlatformMinVersion > = 10.0.15063.0。
 
 3. 在“解决方案资源管理器”面板中，右键单击项目名称，然后选择“管理 NuGet 包”。 选择“浏览”选项卡，然后搜索 **Microsoft.UI.Xaml** 或 **WinUI**。 然后选择要使用哪个 [Windows UI 库 NuGet 包](nuget-packages.md)。
 **Microsoft.UI.Xaml** 包包含适用于所有应用的 Fluent 控件和功能。  

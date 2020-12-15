@@ -3,16 +3,16 @@ title: WinUI 2.4 发行说明
 description: WinUI 2.4（包括新功能和 Bug 修复）的发行说明。
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 5e2ff23b3b0ea63002ad54a367e82e81ee1cd542
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: d6c6f029b63ea8ad32f1b0109ed983b74f2b4c4d
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762915"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603694"
 ---
 # <a name="windows-ui-library-24"></a>Windows UI 库 2.4
 
-WinUI 2.4 是 Windows UI 库 (WinUI) 的最新官方版本。
+WinUI 2.4 是 Windows UI 库 (WinUI) 的 2020 年 5 月版本。
 
 WinUI 是托管在 GitHub 的 [Windows UI 库存储库](https://aka.ms/winui)中的开源项目。 请在此存储库中注册所有 Bug 报告、提交功能请求和贡献社区代码。
 
@@ -83,17 +83,17 @@ TabView 控件更新提供了对选项卡呈现方式的更多控制。
 
 ### <a name="hierarchical-navigation"></a>分层导航
 
-[NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4) 控件现在支持分层导航，并包括 Left、Top 和 LeftCompact 显示模式。 对于显示页面类别、标识带有相关子页面的页面，或在具有链接到许多其他页面的中心式页面的应用内使用，分层的 NavigationView 非常有用。
+[NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true) 控件现在支持分层导航，并包括 Left、Top 和 LeftCompact 显示模式。 对于显示页面类别、标识带有相关子页面的页面，或在具有链接到许多其他页面的中心式页面的应用内使用，分层的 NavigationView 非常有用。
 
 ![分层 NavigationView 控件](..\images\HierarchicalNavView.gif)<br>*分层 NavigationView 控件*
 
 [使用准则](/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation)
 
-[API 参考](/uwp/api/microsoft.ui.xaml.controls.navigationview)
+[API 参考](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true)
 
 ## <a name="samples"></a>示例
 
-**XAML 控件库**中提供了每个所述 WinUI 2.4 功能的示例。
+**XAML 控件库** 中提供了每个所述 WinUI 2.4 功能的示例。
 
 如果尚未安装 XAML 控件库应用，请从 [Microsoft Store](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt) 获取它。
 

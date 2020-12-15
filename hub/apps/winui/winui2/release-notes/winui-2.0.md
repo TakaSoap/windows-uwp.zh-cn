@@ -3,16 +3,16 @@ title: WinUI 2.0 发行说明
 description: WinUI 2.0 的发行说明。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: d6b362f78049cc6bb1ed6dfe341c2e5b083484a4
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: 0e6c1bed21619d9ab12f5699c6a446754576cc29
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933082"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603814"
 ---
 # <a name="windows-ui-library-20"></a>Windows UI 库 2.0
 
-WinUI 2.0 是 Windows UI 库的第一个公共版本。
+WinUI 2.0 是 Windows UI 库的第一个公共版本（2018 年 10 月发行）。
 
 若要构建适用于 Windows 的出色 Fluent Design 体验，最简单的方法是使用 WinUI。
 

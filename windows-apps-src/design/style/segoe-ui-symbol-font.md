@@ -1,33 +1,35 @@
 ---
 description: 本文列出并提供了随附 Segoe MDL2 Assets 字体的字形使用指南。
 Search.Refinement.TopicID: 184
-title: Segoe MDL2 图标指南
+title: Segoe MDL2 Assets 图标
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
-label: Segoe MDL2 icons
+label: Segoe MDL2 Assets icons
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 12/05/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.custom: contperfq1
-ms.openlocfilehash: debafac51bee529ba2f78b80bed529cc571e1c6a
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.custom: contperfq2
+ms.openlocfilehash: 4283e896faca3cccfdf86d1a42f81367fe7d7964
+ms.sourcegitcommit: f7535655a37cec610fbdc23c17f9c83fe68409ff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91862132"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96611812"
 ---
-# <a name="segoe-mdl2-icons"></a>Segoe MDL2 图标
+# <a name="segoe-mdl2-assets-icons"></a>Segoe MDL2 Assets 图标
 
- 
+本文提供了使用 Segoe MDL2 Assets 图标的开发人员指南，并列出了字体字形及其 unicode 值和描述性名称。 
 
-本文列出了由 Segoe MDL2 Assets 字体提供的图标。 
+**重要的 API**： 
 
-> **重要的 API**：[Symbol enum](/uwp/api/windows.ui.xaml.controls.symbol)（Symbol 枚举）、[FontIcon class](/uwp/api/windows.ui.xaml.controls.fonticon)（FontIcon 类）  
+* [**符号枚举**](/uwp/api/windows.ui.xaml.controls.symbol)
+* [**FontIcon 类**](/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>关于 Segoe MDL2 Assets
 
-随着 Windows 10 的发布，Windows 8/8.1 Segoe UI Symbol 图标字体已替换为 Segoe MDL2 Assets 字体。 <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> （Segoe UI Symbol 仍将作为“传统”资源提供，但我们建议你更新应用以便使用新的 Segoe MDL2 Assets。   ）
+> [!TIP]
+> 随着 Windows 10 的发布，Windows 8/8.1 Segoe UI Symbol 图标字体已替换为 Segoe MDL2 Assets 字体。 <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> **Segoe UI Symbol** 仍将作为“传统”资源提供，但我们建议你更新应用以便使用新的 **Segoe MDL2 Assets**。
 
 Segoe MDL2 Assets 字体中随附的大部分图标和 UI 控件均将映射至 Unicode 专用区 (PUA)  。 PUA 允许字体开发人员将专用 Unicode 值分配给未映射到现有代码点的字形。 在创建符号字体时这非常有用，但也会带来互操作性问题。 如果字体不可用，则字形将不显示。 仅当你能够指定 Segoe MDL2 Assets 字体时，才使用这些字形  。
 
@@ -69,10 +71,28 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
 ## <a name="icon-list"></a>图标列表
 请记住，Segoe MDL2 Assets 字体所包含的图标远多于此处显示的图标  。 许多图标都用于特定用途，通常不用于其他位置。
 
-<table style="background-color: white; color: black">
+> [!NOTE]
+> 前缀介于“E0-”到“E5-”（例如 E001、E5B1）的字形当前被标记为旧版，因此不推荐使用 。
 
+下表显示所有 Segoe MDL2 Assets 图标及其各自的 unicode 值和描述性名称。 从以下列表中选择一个范围，根据字形所属的 PUA 范围查看字形。
+
+* [PUA E700-E900](#pua-e700-e900)
+* [PUA EA00-EC00](#pua-ea00-ec00)
+* [PUA ED00-EF00](#pua-ed00-ef00)
+* [PUA F000-F200](#pua-f000-f200)
+* [PUA F300-F500](#pua-f300-f500)
+* [PUA F600-F800](#pua-f600-f800)
+
+### <a name="pua-e700-e900"></a>PUA E700-E900
+
+以下字形表中显示了前缀介于 E7- 到 E9- 的 unicode 点。
+
+[返回页首](#icon-list)
+
+</br>
+<table style="background-color: white; color: black">
  <tr>
-  <td>符号</td>
+  <td>标志符号</td>
   <td>Unicode 码位</td>
   <td>说明</td>
  </tr>
@@ -2400,6 +2420,21 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
   <td>E9F9</td>
   <td>ReportDocument</td>
  </tr>
+</table>
+
+ ### <a name="pua-ea00-ec00"></a>PUA EA00-EC00
+
+以下字形表中显示了前缀介于 EA- 到 EC- 的 unicode 点。
+
+[返回页首](#icon-list)
+
+</br>
+ <table style="background-color: white; color: black">
+ <tr>
+  <td>标志符号</td>
+  <td>Unicode 码位</td>
+  <td>说明</td>
+ </tr>
 <tr><td><img src="images/segoe-mdl/EA0C.png" width="32" height="32" alt="VideoSolid" /></td>
   <td>EA0C</td>
   <td>VideoSolid</td>
@@ -3580,6 +3615,21 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
   <td>ECF3</td>
   <td>USBSafeConnect</td>
  </tr>
+</table>
+
+ ### <a name="pua-ed00-ef00"></a>PUA ED00-EF00
+
+以下字形表中显示了前缀介于 ED- 到 EF- 的 unicode 点。
+
+[返回页首](#icon-list)
+
+</br>
+<table style="background-color: white; color: black">
+ <tr>
+  <td>标志符号</td>
+  <td>Unicode 码位</td>
+  <td>说明</td>
+ </tr>
 <tr><td><img src="images/segoe-mdl/ED0C.png" width="32" height="32" alt="ActionCenterNotificationMirrored" /></td>
   <td>ED0C</td>
   <td>ActionCenterNotificationMirrored</td>
@@ -3892,9 +3942,13 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
   <td>EDDB</td>
   <td>CaretUpSolid8</td>
  </tr>
-<tr><td><img src="images/segoe-mdl/EDDC.png" width="32" height="32" alt="CaretDownSolid8" /></td>
+ <tr><td><img src="images/segoe-mdl/EDDC.png" width="32" height="32" alt="CaretDownSolid8" /></td>
   <td>EDDC</td>
   <td>CaretDownSolid8</td>
+ </tr>
+ <tr><td><img src="images/segoe-mdl/EDE0.png" width="32" height="32" alt="Strikethrough" /></td>
+  <td>EDE0</td>
+  <td>删除线</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EDE1.png" width="32" height="32" alt="Export" /></td>
   <td>EDE1</td>
@@ -3931,6 +3985,14 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
 <tr><td><img src="images/segoe-mdl/EE40.png" width="32" height="32" alt="TaskViewSettings" /></td>
   <td>EE40</td>
   <td>TaskViewSettings</td>
+ </tr>
+ <tr><td><img src="images/segoe-mdl/EE47.png" width="32" height="32" alt="MiniExpand2Mirrored" /></td>
+  <td>EE47</td>
+  <td>MiniExpand2Mirrored</td>
+ </tr>
+ <tr><td><img src="images/segoe-mdl/EE49.png" width="32" height="32" alt="MiniContract2Mirrored" /></td>
+  <td>EE49</td>
+  <td>MiniContract2Mirrored</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EE4A.png" width="32" height="32" alt="Play36" /></td>
   <td>EE4A</td>
@@ -4087,6 +4149,21 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
 <tr><td><img src="images/segoe-mdl/EFA9.png" width="32" height="32" alt="Speech" /></td>
   <td>EFA9</td>
   <td>语音</td>
+ </tr>
+</table>
+
+ ### <a name="pua-f000-f200"></a>PUA F000-F200
+
+以下字形表中显示了前缀介于 F0- 到 F2- 的 unicode 点。
+
+[返回页首](#icon-list)
+
+</br>
+<table style="background-color: white; color: black">
+ <tr>
+  <td>标志符号</td>
+  <td>Unicode 码位</td>
+  <td>说明</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F000.png" width="32" height="32" alt="KnowledgeArticle" /></td>
   <td>F000</td>
@@ -4279,6 +4356,10 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
 <tr><td><img src="images/segoe-mdl/F0EE.png" width="32" height="32" alt="SpatialVolume3" /></td>
   <td>F0EE</td>
   <td>SpatialVolume3</td>
+ </tr>
+ <tr><td><img src="images/segoe-mdl/F0EF.png" width="32" height="32" alt="ApplicationGuard" /></td>
+  <td>F0EF</td>
+  <td>ApplicationGuard</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F0F7.png" width="32" height="32" alt="OutlineStarLeftHalf" /></td>
   <td>F0F7</td>
@@ -4600,6 +4681,14 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
   <td>F19D</td>
   <td>EyeGaze</td>
  </tr>
+ <tr><td><img src="images/segoe-mdl/F19E.png" width="32" height="32" alt="ToggleLeft" /></td>
+  <td>F19E</td>
+  <td>ToggleLeft</td>
+ </tr>
+ <tr><td><img src="images/segoe-mdl/F19F.png" width="32" height="32" alt="ToggleRight" /></td>
+  <td>F19F</td>
+  <td>ToggleRight</td>
+ </tr>
 <tr><td><img src="images/segoe-mdl/F1AD.png" width="32" height="32" alt="WindowsInsider" /></td>
   <td>F1AD</td>
   <td>WindowsInsider</td>
@@ -4692,9 +4781,28 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
   <td>F2B7</td>
   <td>LocaleLanguage</td>
 </tr>
+</table>
+
+### <a name="pua-f300-f500"></a>PUA F300-F500
+
+以下字形表中显示了前缀介于 F3- 到 F5- 的 unicode 点。
+
+[返回页首](#icon-list)
+
+</br>
+<table style="background-color: white; color: black">
+ <tr>
+  <td>标志符号</td>
+  <td>Unicode 码位</td>
+  <td>说明</td>
+ </tr>
 <tr><td><img src="images/segoe-mdl/F32A.png" width="32" height="32" alt="PassiveAuthentication" /></td>
   <td>F32A</td>
   <td>PassiveAuthentication</td>
+ </tr>
+ <tr><td><img src="images/segoe-mdl/F354.png" width="32" height="32" alt="ColorSolid" /></td>
+  <td>F354</td>
+  <td>ColorSolid</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F384.png" width="32" height="32" alt="NetworkOffline" /></td>
   <td>F384</td>
@@ -4807,6 +4915,10 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
  <tr><td><img src="images/segoe-mdl/F49A.png" width="32" height="32" alt="Globe2" /></td>
   <td>F49A</td>
   <td>Globe2</td>
+</tr>
+ <tr><td><img src="images/segoe-mdl/F4A5.png" width="32" height="32" alt="SpecialEffectSize" /></td>
+  <td>F4A5</td>
+  <td>SpecialEffectSize</td>
 </tr>
 <tr><td><img src="images/segoe-mdl/F4A9.png" width="32" height="32" alt="GIF" /></td>
   <td>F4A9</td>
@@ -5180,6 +5292,21 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
   <td>F5FF</td>
   <td>VerticalBatteryCharging2</td>
  </tr>
+</table>
+
+ ### <a name="pua-f600-f800"></a>PUA F600-F800
+
+以下字形表中显示了前缀介于 F6- 到 F8- 的 unicode 点。
+
+[返回页首](#icon-list)
+
+</br>
+<table style="background-color: white; color: black">
+ <tr>
+  <td>标志符号</td>
+  <td>Unicode 码位</td>
+  <td>说明</td>
+ </tr>
 <tr><td><img src="images/segoe-mdl/F600.png" width="32" height="32" alt="VerticalBatteryCharging3" /></td>
   <td>F600</td>
   <td>VerticalBatteryCharging3</td>
@@ -5307,6 +5434,14 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
 <tr><td><img src="images/segoe-mdl/F69E.png" width="32" height="32" alt="CHTLanguageBar" /></td>
   <td>F69E</td>
   <td>CHTLanguageBar</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F6A9.png" width="32" height="32" alt="ComposeMode" /></td>
+  <td>F6A9</td>
+  <td>ComposeMode</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F6B8.png" width="32" height="32" alt="ExpressiveInputEntry" /></td>
+  <td>F6B8</td>
+  <td>ExpressiveInputEntry</td>
 </tr>
 <tr><td><img src="images/segoe-mdl/F6BA.png" width="32" height="32" alt="EmojiTabMoreSymbols" /></td>
   <td>F6BA</td>
@@ -5512,7 +5647,74 @@ Segoe MDL2 Assets 中的所有字形的固定宽度均相同，且高度和左�
   <td>F847</td>
   <td>弹出</td>
 </tr>
-
+<tr><td><img src="images/segoe-mdl/F87B.png" width="32" height="32" alt="Spelling" /></td>
+  <td>F87B</td>
+  <td>拼写检查</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F87C.png" width="32" height="32" alt="SpellingKorean" /></td>
+  <td>F87C</td>
+  <td>SpellingKorean</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F87D.png" width="32" height="32" alt="SpellingSerbian" /></td>
+  <td>SpellingSerbian</td>
+  <td>弹出</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F87E.png" width="32" height="32" alt="SpellingChinese" /></td>
+  <td>F87E</td>
+  <td>SpellingChinese</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F89A.png" width="32" height="32" alt="FolderSelect" /></td>
+  <td>F89A</td>
+  <td>FolderSelect</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8A5.png" width="32" height="32" alt="SmartScreen" /></td>
+  <td>F8A5</td>
+  <td>SmartScreen</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8A6.png" width="32" height="32" alt="ExploitProtection" /></td>
+  <td>F8A6</td>
+  <td>ExploitProtection</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8AA.png" width="32" height="32" alt="AddBold" /></td>
+  <td>F8AA</td>
+  <td>AddBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8AB.png" width="32" height="32" alt="SubtractBold" /></td>
+  <td>F8AB</td>
+  <td>SubtractBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8AC.png" width="32" height="32" alt="BackSolidBold" /></td>
+  <td>F8AC</td>
+  <td>BackSolidBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8AD.png" width="32" height="32" alt="ForwardSolidBold" /></td>
+  <td>F8AD</td>
+  <td>ForwardSolidBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8AE.png" width="32" height="32" alt="PauseBold" /></td>
+  <td>F8AE</td>
+  <td>PauseBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8AF.png" width="32" height="32" alt="ClickSolid" /></td>
+  <td>F8AF</td>
+  <td>ClickSolid</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8B0.png" width="32" height="32" alt="SettingsSolid" /></td>
+  <td>F8B0</td>
+  <td>SettingsSolid</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8B1.png" width="32" height="32" alt="MicrophoneSolidBold" /></td>
+  <td>F8B1</td>
+  <td>MicrophoneSolidBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8B2.png" width="32" height="32" alt="SpeechSolidBold" /></td>
+  <td>F8B2</td>
+  <td>SpeechSolidBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8B3.png" width="32" height="32" alt="ClickedOutLoudSolidBold" /></td>
+  <td>F8B3</td>
+  <td>ClickedOutLoudSolidBold</td>
+</tr>
 </table>
 
 

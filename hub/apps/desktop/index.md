@@ -7,12 +7,12 @@ keywords: windows win32, 桌面开发
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 34b860916b90d1adc8ae9e7ae8c8ac7950125ce7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 554869625c0db7a2a19dc7c01837e47029bd28e6
+ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216740"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97214264"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>构建 Windows 电脑的桌面应用
 
@@ -20,10 +20,11 @@ ms.locfileid: "91216740"
 
 ## <a name="platforms-for-desktop-apps"></a>适合桌面应用的平台
 
-有 4 个主要平台可用于构建适合 Windows 电脑的桌面应用。 每个平台都提供用于定义应用生命周期的应用模型，用于创建 Word、Excel 和 Photoshop 等桌面应用的完整 UI 框架和一组 UI 控件以及用于使用 Windows 功能的一组全面的托管或本机 API。 要对这些平台进行深入比较并了解适合每个平台的其他资源，请参阅[选择应用平台](choose-your-platform.md)。
+有 4 个主要平台可用于构建适合 Windows 电脑的桌面应用。 每个平台都提供用于定义应用生命周期的应用模型，用于创建 Word、Excel 和 Photoshop 等桌面应用的完整 UI 框架和一组 UI 控件以及用于使用 Windows 功能的一组全面的托管或本机 API。 
+
+要对这些平台进行深入比较并了解适合每个平台的其他资源，请参阅[选择应用平台](choose-your-platform.md)。
 
 <br/>
-
 <table>
 <colgroup>
 <col width="20%" />
@@ -61,8 +62,17 @@ ms.locfileid: "91216740"
 </tbody>
 </table>
 
-> [!NOTE]
-> 在 Windows 10 上，这些平台还都支持使用 Windows UI (WinUI) 库来创建用户界面。 若要详细了解适用于桌面应用的 WinUI，请参阅[此部分](choose-your-platform.md#windows-ui-library)。
+### <a name="future-roadmap"></a>未来的路线图
+
+展望未来，我们将通过 Windows UI (WinUI) 库和 Project Reunion 改进 Windows 应用开发平台。
+
+* WinUI 是一种适用于 Windows 10 应用的本机用户体验 (UX) 框架。 WinUI 开始时是作为工具包提供的，并为面向低端版 Windows 10 的 UWP 应用提供新版和更新版 UWP 控件。 WinUI 的范围已扩大，从 WinUI 3（目前提供预览版）开始，它现在是适用于 Windows 10 应用（包括 UWP、.NET 和 Win32）的新式本机用户界面 (UI) 平台。 
+
+    有关详细信息，请参阅 [Windows UI (WinUI) 库](../winui/index.md)。
+
+* Project Reunion（目前提供预览版）是一组新的开发人员组件和工具的代号，它们代表着 Windows 应用开发平台的下一步发展。 Project Reunion 提供了一组统一的 API 和工具，各种目标 Windows 10 OS 版本上的任何应用都能够以一致的方式使用它们。 Project Reunion 通过一组通用的 API 和工具（开发人员可以在这些平台中使用）对 UWP、本机 Win32 和 .NET 等现有 Windows 应用平台和框架进行了补充。 
+
+    有关详细信息，请参阅 [Project Reunion](../project-reunion/index.md)。
 
 ## <a name="update-existing-desktop-apps-for-windows-10"></a>针对 Windows 10 更新现有桌面应用
 

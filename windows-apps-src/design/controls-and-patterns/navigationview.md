@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 689f55393df5fc7af59af6ce1e51fb002f49b713
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 614cfc03ade485ba7cf2e6a8d819ec2d33d2d947
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031130"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603905"
 ---
 # <a name="navigation-view"></a>导航视图
 
@@ -39,7 +39,7 @@ NavigationView 控件可为应用提供顶级导航。 它适应各种屏幕大�
    :::column-end:::
 :::row-end:::
 
-> **平台 API** ： [Windows.UI.Xaml.Controls.NavigationView 类](/uwp/api/windows.ui.xaml.controls.navigationview)
+> **平台 API**：[Windows.UI.Xaml.Controls.NavigationView 类](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
 > Windows UI 库 API：[Microsoft.UI.Xaml.Controls.NavigationView 类](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
@@ -191,9 +191,22 @@ NavigationView 窗格可以包含：
 1. AutoSuggestBox（可选）
 1. 设置按钮（可选）
 
+#### <a name="footer-menu-items"></a>页脚菜单项
+你可以使用 [FooterMenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems) 将导航项放置在导航窗格的末尾，与将项目放置在窗格的开头处的 [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.MenuItems) 属性形成对比。
+
+默认情况下，FooterMenuItems 将显示在“设置”项之前。 “设置”项仍然可以使用 [`IsSettingsVisible`](/uwp/api/microsoft.ui.xaml.controls.navigationview.IsSettingsVisible) 属性进行切换。
+
+只有“导航”项应该放在 FooterMenuItems 中 - 任何其他需要与窗格页脚对齐的内容都应该放在 [PaneFooter](/uwp/api/microsoft.ui.xaml.controls.navigationview.PaneFooter) 中。
+
+有关如何向 NavigationView 添加 FooterMenuItems 的示例，请参阅 [FooterMenuItems 类](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems)。 
+
+下图显示了页脚菜单中包含“帐户”、“购物车”和“帮助”导航项的 NavigationView。 
+
+![带有 FooterMenuItems 的 NavigationView](images/footermenu-leftmode.png)
+
 #### <a name="pane-footer"></a>窗格页脚
 
-可以通过将自由格式内容添加到 [PaneFooter](/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter) 属性，将该内容置于窗格页脚中。
+可以通过将自由格式内容添加到 [PaneFooter](/uwp/api/microsoft.ui.xaml.controls.navigationview.PaneFooter) 属性，将该内容置于窗格页脚中。
 
 :::row:::
     :::column:::
@@ -379,6 +392,8 @@ PaneDisplayMode 设置为 LeftMinimal 的导航视图
 每当用户点击导航项时都会引发 ItemInvoked，即使该项已被选中。 （还可以使用鼠标、键盘或其他输入通过等效操作调用该项。 有关更多信息，请参阅[输入和交互](../input/index.md)。）如果在 ItemInvoked 处理程序中导航，则默认情况下，会重新加载页面，并将重复条目添加到导航堆栈。 如果在调用某个项时进行导航，则应禁止重新加载页面，或确保在重新加载页面时不会在导航 Backstack 中创建重复条目。 （请参阅代码示例。）
 
 用户可以通过调用当前未选中的项，或是以编程方式更改所选项来引发 SelectionChanged。 如果因为用户调用某个项而发生选择更改，则首先发生 ItemInvoked 事件。 如果以编程方式进行选择更改，则不会引发 ItemInvoked。
+
+所有导航项都是同一选择模型的一部分，无论它们是 [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.MenuItems) 还是 [FooterMenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems) 的一部分。 一次只能选择一个导航项。 
 
 ### <a name="backwards-navigation"></a>向后导航
 
@@ -977,7 +992,7 @@ void MainPage::NavView_ItemInvoked(
 ## <a name="hierarchical-navigation"></a>分层导航
 某些应用可能具有更复杂的层次结构，该结构不仅仅需要导航项的简单列表。 你可能想要使用顶级导航项来显示页面类别，其中子项显示特定页。 如果你具有仅链接到其他页面的中心样式页面，则此方法也非常有用。 在这些情况下，应创建分层 NavigationView。
 
-要在窗格中显示嵌套导航项的层次结构列表，请使用 [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems?view=winui-2.4) 属性或 NavigationViewItem 的 [MenuItemsSource](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource?view=winui-2.4) 属性。
+要在窗格中显示嵌套导航项的层次结构列表，请使用 [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems) 属性或 NavigationViewItem 的 [MenuItemsSource](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource) 属性。
 每个 NavigationViewItem 可以包含其他 NavigationViewItem 和组织元素，如项标题和分隔符。 若要在使用 `MenuItemsSource` 时显示层次结构列表，请将 `ItemTemplate` 设置为 NavigationViewItem，并将其 `MenuItemsSource` 属性绑定到层次结构的下一级。
 
 尽管 NavigationViewItem 可以包含任意数量的嵌套级别，但建议为应用使用较浅的导航层次结构。 我们认为两个级别是兼顾使用和理解的理想选择。
@@ -1010,7 +1025,7 @@ NavigationView 在顶部、左侧和 LeftCompact 窗格显示模式下显示层�
 * 将 MenuItemsSource 属性绑定到分层数据
 * 将项模板定义为 NavigationViewMenuItem，将其内容设置为菜单项的标签，并将其 MenuItemsSource 属性绑定到层次结构的下一级
 
-此示例还演示了[展开](/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding?view=winui-2.4)和[折叠](/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed?view=winui-2.4)事件。 带有子项的菜单项会引发这些事件。
+此示例还演示了[展开](/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding)和[折叠](/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed)事件。 带有子项的菜单项会引发这些事件。
 
 ```xaml
 <Page ... xmlns:muxc="using:Microsoft.UI.Xaml.Controls" ... >
@@ -1384,7 +1399,7 @@ namespace winrt::HierarchicalNavigationViewDataBinding::implementation
 
 在顶部和左侧模式下，单击 NavigationViewItem 上的箭头将展开或折叠子树。 单击或点击 NavigationViewItem 上的其他位置将触发 `ItemInvoked` 事件，同时还会折叠或展开子树。
 
-若要防止项在被调用时显示选择指示器，请将其 [SelectsOnInvoked](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked?view=winui-2.3) 属性设置为 False，如下所示：
+若要防止项在被调用时显示选择指示器，请将其 [SelectsOnInvoked](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked) 属性设置为 False，如下所示：
 
 ```xaml
 <Page ... xmlns:muxc="using:Microsoft.UI.Xaml.Controls" ... >

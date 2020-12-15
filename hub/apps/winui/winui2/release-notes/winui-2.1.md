@@ -3,16 +3,16 @@ title: WinUI 2.1 发行说明
 description: WinUI 2.1 的发行说明，包括新功能和 Bug 修复。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: d743b5653a824753706cebbfe1f1a60c419debfe
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: eb9d01c49dffd8017b2a70557f9408ceb758ae1e
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933132"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603854"
 ---
 # <a name="windows-ui-library-21"></a>Windows UI 库 2.1
 
-最新官方版 Windows UI 库 – WinUI 2.1 – 刚于 2019 年 4 月 8 日发布。 
+首个开源版 Windows UI 库 - WinUI 2.1（于 2019 年 4 月发布）。
 
 WinUI 提供许多最新的 Windows UX 平台功能，其中包括最新的 Fluent 控件和样式，以可供用户立即使用的方式发布，并且后向兼容 Windows 10 周年更新 (14393)。 [XAML 控件库](/windows/uwp/design/controls-and-patterns/#xaml-controls-gallery)提供了一些示例，供你探索添加到库中的所有酷新功能。
 

@@ -3,16 +3,16 @@ title: WinUI 2.2 发行说明
 description: WinUI 2.2 的发行说明，包括新功能和 Bug 修复。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: b14b96ffc03d5e3e934b72d71ae9e2a8a3f0eb1d
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: 128732f57fff892cc16e4b4b4ac6f691fe72e4a2
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933142"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603864"
 ---
 # <a name="windows-ui-library-22"></a>Windows UI 库 2.2
 
-WinUI 2.2 是 Windows UI 库的最新官方版本。
+WinUI 2.2 是 Windows UI 库的 2019 年 8 月版本。
 
 可以使用 NuGet 包管理器向应用添加 WinUI 包：有关详细信息，请参阅 [Windows UI 库入门](../getting-started.md)。
 
