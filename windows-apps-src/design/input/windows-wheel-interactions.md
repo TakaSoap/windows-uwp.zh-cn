@@ -1,5 +1,5 @@
 ---
-description: 使用 Cortana 语音命令、语音识别和语音合成，将语音整合到你的应用中。
+description: 了解 Surface 拔号，以及如何使用它来为 Windows 和 Windows 应用程序实现引人注目且独特的用户交互体验。
 title: Surface Dial 交互
 label: Surface Dial interactions
 template: detail.hbs
@@ -8,17 +8,17 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: 641ea8a7c17e87086fe2d441b67c16e41fcaf6eb
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: e5b55f35e59779d5fb8dfd01caa843be5bcfa6a3
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033460"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598888"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial 交互
 
 ![适配 Surface Studio 的 Surface Dial 的图像](images/windows-wheel/dial-pen-studio-600px.png)  
-*适配 Surface Studio 和触控笔的 Surface Dial* （可通过 [Microsoft 官方商城](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116)购买）。
+*适配 Surface Studio 和触控笔的 Surface Dial*（可通过 [Microsoft 官方商城](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116)购买）。
 
 ## <a name="overview"></a>概述
 
@@ -74,7 +74,7 @@ Surface Dial 与 Windows 紧密集成，并且支持菜单上的一组内置工�
 - 用户位于 Windows 桌面时的系统亮度工具
 - 播放媒体时的上一首/下一首工具
 
-除了这一常规平台支持之外，Surface Dial 还与 Windows Ink 平台控件（ [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 和 [**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)）紧密集成。
+除了这一常规平台支持之外，Surface Dial 还与 Windows Ink 平台控件（[**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 和 [**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)）紧密集成。
 
 ![适配 Surface 触控笔的 Surface Dial](images/windows-wheel/dial-and-pen-400px.png)  
 *适配 Surface 触控笔的 Surface Dial*
@@ -212,7 +212,7 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
 
    接下来，我们将该项附加到菜单项的集合。
 
-   我们为 [**RadialController**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 对象声明输入事件处理程序（ [**ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.rotationchanged) 和 [**RotationChanged**](/uwp/api/Windows.UI.Input.RadialController)）。
+   我们为 [**RadialController**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 对象声明输入事件处理程序（[**ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.rotationchanged) 和 [**RotationChanged**](/uwp/api/Windows.UI.Input.RadialController)）。
 
    最后，我们定义事件处理程序。
 
@@ -348,7 +348,7 @@ Surface Dial 无法检测到正在使用哪只手，但用户可以在 **Windows
 
 :::row:::
    :::column:::
-      Left
+      左
 
       向上
 
@@ -358,7 +358,7 @@ Surface Dial 无法检测到正在使用哪只手，但用户可以在 **Windows
       ![Surface Dial 的图像](images/windows-wheel/surface-dial-rotate.png)
    :::column-end:::
    :::column:::
-      Right
+      权限
 
       向下
 
@@ -368,13 +368,13 @@ Surface Dial 无法检测到正在使用哪只手，但用户可以在 **Windows
 
 | 概念性方向 | 映射到 Surface Dial | 顺时针旋转 | 逆时针旋转 |
 | --- | --- | --- | --- |
-| 横向 | 基于 Surface Dial 顶部的左右映射 | Right | Left |
+| 横向 | 基于 Surface Dial 顶部的左右映射 | 权限 | 左 |
 | 垂直 | 基于 Surface Dial 左侧的上下映射 | 向下 | 向上 |
 | Z 轴 | 映射到向上/向右的放大（或靠近）<br/>映射到向下/向左的缩小（或远离） | 在 | 出 |
 
 #### <a name="developer-guidance"></a>开发人员指南
 
-用户旋转设备时，将基于相对于旋转方向的增量 ( [**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](/uwp/api/windows.ui.input.radialcontroller.rotationchanged)) 触发 [**RadialController.RotationChanged**](/uwp/api/windows.ui.input.radialcontrollerrotationchangedeventargs.rotationdeltaindegrees) 事件。 可以使用 [**RadialController.RotationResolutionInDegrees**](/uwp/api/windows.ui.input.radialcontroller.rotationresolutionindegrees) 属性设置数据的灵敏度（或分辨率）。
+用户旋转设备时，将基于相对于旋转方向的增量 ([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](/uwp/api/windows.ui.input.radialcontroller.rotationchanged)) 触发 [**RadialController.RotationChanged**](/uwp/api/windows.ui.input.radialcontrollerrotationchangedeventargs.rotationdeltaindegrees) 事件。 可以使用 [**RadialController.RotationResolutionInDegrees**](/uwp/api/windows.ui.input.radialcontroller.rotationresolutionindegrees) 属性设置数据的灵敏度（或分辨率）。
 
 > [!NOTE]
 > 默认情况下，仅当设备旋转至少 10 度时，才会向 [**RadialController**](/uwp/api/Windows.UI.Input.RadialController) 对象传递旋转输入事件。 每个输入事件都会导致设备振动。
@@ -458,7 +458,7 @@ private void MyController_ButtonClicked(RadialController sender,
 
 除了硬件阻挡，用户的手和臂在用户使用设备时可能会阻挡部分屏幕。
 
-已阻挡区域取决于正在使用设备的手。 由于设备设计为主要与非惯用手配合使用，因此与 Surface Dial 有关的 UI 应针对用户指定（ **Windows 设置 > 设备 > 触控笔和 Windows Ink > 选择书写时使用哪只手** 设置）的另一只手进行调整。
+已阻挡区域取决于正在使用设备的手。 由于设备设计为主要与非惯用手配合使用，因此与 Surface Dial 有关的 UI 应针对用户指定（**Windows 设置 > 设备 > 触控笔和 Windows Ink > 选择书写时使用哪只手** 设置）的另一只手进行调整。
 
 **交互应响应 Surface Dial 的位置，而不是移动。**
 
@@ -470,11 +470,11 @@ private void MyController_ButtonClicked(RadialController sender,
 
 #### <a name="developer-guidance"></a>开发人员指南
 
-当 Surface Dial 置于 Surface Studio 的数字化器图面上时，将触发 [**RadialController.ScreenContactStarted**](/uwp/api/windows.ui.input.radialcontroller.screencontactstarted) 事件，并向你的应用提供接触信息 ( [**RadialControllerScreenContactStartedEventArgs.Contact**](/uwp/api/windows.ui.input.radialcontrollerscreencontactstartedeventargs.contact))。
+当 Surface Dial 置于 Surface Studio 的数字化器图面上时，将触发 [**RadialController.ScreenContactStarted**](/uwp/api/windows.ui.input.radialcontroller.screencontactstarted) 事件，并向你的应用提供接触信息 ([**RadialControllerScreenContactStartedEventArgs.Contact**](/uwp/api/windows.ui.input.radialcontrollerscreencontactstartedeventargs.contact))。
 
-同样，如果在 Surface Dial 与 Surface Studio 的数字化器图面接触的情况下单击它，将触发 [**RadialController.ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 事件，并向你的应用提供接触信息 ( [**RadialControllerButtonClickedEventArgs.Contact**](/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact))。 
+同样，如果在 Surface Dial 与 Surface Studio 的数字化器图面接触的情况下单击它，将触发 [**RadialController.ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 事件，并向你的应用提供接触信息 ([**RadialControllerButtonClickedEventArgs.Contact**](/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact))。 
 
-接触信息 ( [**RadialControllerScreenContact**](/uwp/api/Windows.UI.Input.RadialControllerScreenContact)) 包括 Surface Dial 中心在应用的坐标空间中的 X/Y 坐标 ( [**RadialControllerScreenContact.Position**](/uwp/api/windows.ui.input.radialcontrollerscreencontact.position))，以及边界矩形 ( [**RadialControllerScreenContact.Bounds**](/uwp/api/windows.ui.input.radialcontrollerscreencontact.bounds))（以与设备无关的像素 (DIP) 为单位）。 此信息对于向活动工具提供上下文和向用户提供与设备有关的视觉反馈非常有用。
+接触信息 ([**RadialControllerScreenContact**](/uwp/api/Windows.UI.Input.RadialControllerScreenContact)) 包括 Surface Dial 中心在应用的坐标空间中的 X/Y 坐标 ([**RadialControllerScreenContact.Position**](/uwp/api/windows.ui.input.radialcontrollerscreencontact.position))，以及边界矩形 ([**RadialControllerScreenContact.Bounds**](/uwp/api/windows.ui.input.radialcontrollerscreencontact.bounds))（以与设备无关的像素 (DIP) 为单位）。 此信息对于向活动工具提供上下文和向用户提供与设备有关的视觉反馈非常有用。
 
 在以下示例中，我们创建了一个四个部分不同的基本应用，其中的每一个都包含一个滑块和一个切换按钮。 然后，我们使用 Surface Dial 的屏幕位置来确定哪组滑块和切换按钮受 Surface Dial 控制。
 

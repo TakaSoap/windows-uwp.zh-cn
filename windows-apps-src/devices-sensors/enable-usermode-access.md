@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 76ef3c6b75a5d1a4bd8daebba3a392062c845215
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: 0fc07cf45fc4762b202698c07b7cf2088e260e1b
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860184"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598838"
 ---
 # <a name="enable-user-mode-access-to-gpio-i2c-and-spi"></a>启用 GPIO、I2C 和 SPI 的用户模式访问
 
@@ -22,7 +22,7 @@ Windows 10 包含了新的 Api，用于从通用输入/输出的用户模式进�
 > [!IMPORTANT]
 > 本文档的受众是统一可扩展固件接口 (UEFI) 和 ACPI 开发人员。 我们会熟悉 ACPI、ACPI 源语言 (ASL) 创作和 SpbCx/GpioClx。
 
-通过现有和框架查明对 Windows 上的低端总线的用户模式 `GpioClx` 访问 `SpbCx` 。 Windows IoT Core 和 Windows Enterprise 上提供了名为 *RhProxy*的新驱动程序，可 `GpioClx` `SpbCx` 向用户模式公开和资源。 若要启用 Api，必须在 ACPI 表中声明用于 rhproxy 的设备节点，其中每个 GPIO 和 SPB 资源应公开给用户模式。 本文档演示了编写和验证 ASL。
+通过现有和框架查明对 Windows 上的低端总线的用户模式 `GpioClx` 访问 `SpbCx` 。 Windows IoT Core 和 Windows Enterprise 上提供了名为 *RhProxy* 的新驱动程序，可 `GpioClx` `SpbCx` 向用户模式公开和资源。 若要启用 Api，必须在 ACPI 表中声明用于 rhproxy 的设备节点，其中每个 GPIO 和 SPB 资源应公开给用户模式。 本文档演示了编写和验证 ASL。
 
 ## <a name="asl-by-example"></a>ASL 示例
 
@@ -46,6 +46,9 @@ Device(RHPX)
 ### <a name="spi"></a>SPI
 
 Raspberry Pi 具有两条公开的 SPI 总线。 SPI0 有两条硬件芯片选择线，SPI1 有一条硬件芯片选择线。 每条总线的每条芯片选择线需要一个 SPISerialBus\(\) 资源声明。 以下两个 SPISerialBus 资源声明适用于 SPI0 上的两条芯片选择线。 DeviceSelection 字段包含驱动程序将其解释为硬件芯片选择线标识符的唯一值。 放入 DeviceSelection 字段中的确切值取决于驱动程序解释 ACPI 连接描述符的这一字段的方式。
+
+> [!NOTE]
+> 本文包含对字词从属的引用，这是 Microsoft 不再使用的术语。 从软件中删除该字词后，我们会将其从本文中删除。
 
 ```cpp
 // Index 0
@@ -347,7 +350,7 @@ Windows 在 [GpioClx](/windows-hardware/drivers/ddi/content/index)、[SpbCx](/wi
 - 引脚复用客户端 – 这些是使用引脚复用的驱动程序。 引脚复用客户端从 ACPI 固件接收引脚复用资源。 引脚复用资源是一种连接资源，受资源中心管理。 引脚复用客户端通过打开资源的句柄来保留引脚复用资源。 若要使硬件更改生效，客户端必须通过发送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求来提交配置。 客户端通过关闭句柄释放引脚复用资源，其中点复用配置会还原为其默认状态。
 - ACPI 固件 – 指定具有 `MsftFunctionConfig()` 资源的复用配置。 MsftFunctionConfig 资源表示的管脚中具有客户端所需的复用配置。 MsftFunctionConfig 资源包含功能编号、拉配置和管脚编号列表。 MsftFunctionConfig 资源提供给管脚复用客户端作为硬件资源，驱动程序在其 PrepareHardware 回调中接收这些资源（类似于 GPIO 和 SPB 连接资源）。 客户端接收可用于打开资源句柄的资源中心 ID。
 
-> 必须将 `/MsftInternal` 命令行开关传递到 `asl.exe`，才能编译包含 `MsftFunctionConfig()` 描述符的 ASL 文件，因为 ACPI 工作委员会当前正在审查这些描述符。 例如：`asl.exe /MsftInternal dsdt.asl`
+> 必须将 `/MsftInternal` 命令行开关传递到 `asl.exe`，才能编译包含 `MsftFunctionConfig()` 描述符的 ASL 文件，因为 ACPI 工作委员会当前正在审查这些描述符。 例如： `asl.exe /MsftInternal dsdt.asl`
 
 引脚复用中涉及的操作顺序如下所示。
 
@@ -633,11 +636,11 @@ Device(I2C1)
 
 在设备初始化期间，`SpbCx` 和 `SerCx` 框架会解析作为硬件资源提供给设备的所有 `MsftFunctionConfig()` 资源。 然后 SpbCx/SerCx 按需获取和释放引脚复用资源。
 
-`SpbCx`在调用客户端驱动程序的[EvtSpbTargetConnect ( # B1](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect)回调之前，在其*IRP_MJ_CREATE*处理程序中应用 pin muxing 配置。 如果无法应用复用配置，将不会调用控制器驱动程序的 `EvtSpbTargetConnect()` 回调。 因此，SPB 控制器驱动程序可能会假设在调用 `EvtSpbTargetConnect()` 时，引脚会复用为 SPB 功能。
+`SpbCx`在调用客户端驱动程序的 [EvtSpbTargetConnect ( # B1](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect)回调之前，在其 *IRP_MJ_CREATE* 处理程序中应用 pin muxing 配置。 如果无法应用复用配置，将不会调用控制器驱动程序的 `EvtSpbTargetConnect()` 回调。 因此，SPB 控制器驱动程序可能会假设在调用 `EvtSpbTargetConnect()` 时，引脚会复用为 SPB 功能。
 
-`SpbCx`在调用控制器驱动程序的[EvtSpbTargetDisconnect ( # B1](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect)回调之后，在其*IRP_MJ_CLOSE*处理程序中还原 pin muxing 配置。 结果是，每当外设驱动程序打开 SPB 控制器驱动程序的句柄时，引脚就会复用为 SPB 功能；当外设驱动程序关闭其句柄时，会复用回引脚。
+`SpbCx`在调用控制器驱动程序的 [EvtSpbTargetDisconnect ( # B1](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect)回调之后，在其 *IRP_MJ_CLOSE* 处理程序中还原 pin muxing 配置。 结果是，每当外设驱动程序打开 SPB 控制器驱动程序的句柄时，引脚就会复用为 SPB 功能；当外设驱动程序关闭其句柄时，会复用回引脚。
 
-`SerCx` 的行为类似。 `SerCx` 仅在调用 `MsftFunctionConfig()` 控制器驱动程序的 EvtSerCx2FileOpen 之前获取其 *IRP_MJ_CREATE* 处理程序中的所有资源 [ ( # B1 ](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) 回调，并在调用控制器驱动程序的 [EvtSerCx2FileClose](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) 回调之后释放其 IRP_MJ_CLOSE 处理程序中的所有资源。
+`SerCx` 的行为类似。 `SerCx` 仅在调用 `MsftFunctionConfig()` 控制器驱动程序的 EvtSerCx2FileOpen 之前获取其 *IRP_MJ_CREATE* 处理程序中的所有资源 [ ( # B1](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) 回调，并在调用控制器驱动程序的 [EvtSerCx2FileClose](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) 回调之后释放其 IRP_MJ_CLOSE 处理程序中的所有资源。
 
 适用于 `SerCx` 和 `SpbCx` 控制器驱动程序的动态引脚复用的含义就是：它们必须能够容忍在某些时候从 SPB/UART 功能复用回引脚。 控制器驱动程序需要假设：在调用 `EvtSpbTargetConnect()` 或 `EvtSerCx2FileOpen()` 之前，不会复用引脚。 在以下回调期间，引脚不必复用为 SPB/UART 功能。 以下列表虽然不完整，但呈现了控制器驱动程序所实现的最常用 PNP 例程。
 
