@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5f06d5e804d41b1751c72af4d07224fa346323b2
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: 3660417f6e88268dd2ad814ce4dba62354029828
+ms.sourcegitcommit: 05f9bb0c563e12daaacf7732d46f1c7f578dbe6a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860111"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97529285"
 ---
 # <a name="typography-in-windows-apps"></a>Windows 应用中的版式
 
@@ -123,7 +123,7 @@ Windows 字体渐变可在页面上的字型之间建立关键关系，帮助用
 
 :::row:::
     :::column:::
-![[绿色栏的第四个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+![绿色栏的第四个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
 每行保持 50-60 个字母以便于阅读。
     :::column-end:::
     :::column:::
@@ -143,7 +143,7 @@ Windows 字体渐变可在页面上的字型之间建立关键关系，帮助用
 
 :::row:::
     :::column:::
-![[绿色栏的第五个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
+![绿色栏的第五个屏幕截图，其中包含绿色复选标记和文本“执行”。](images/do.svg)
 如果启用了多行，则剪裁文本并换行。
     :::column-end:::
     :::column:::
