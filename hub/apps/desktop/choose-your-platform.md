@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 桌面开发
-ms.openlocfilehash: cdd21279e987f329024c53434e47777e427b95ab
-ms.sourcegitcommit: b69edc6d73370923f31df61c7e42b53de6c928ee
+ms.openlocfilehash: 7ed2d4100bc827dbc0db93897f534b77e1292b7e
+ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94870903"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97214348"
 ---
 # <a name="choose-your-windows-app-platform"></a>选择 Windows 应用平台
 
@@ -68,7 +68,7 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
 * [Windows 窗体入门](/dotnet/framework/winforms/getting-started-with-windows-forms)
 * [项目模板](visual-studio-templates.md#net-templates)
 * [创建第一个 Windows 窗体应用](/dotnet/framework/winforms/creating-a-new-windows-form)
-* [教程：创建图片查看器](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
+* [教程：创建图片查看器](/visualstudio/ide/tutorial-1-create-a-picture-viewer)
 * [API 参考 (.NET)](/dotnet/api/index)
 * [增强 Windows 窗体应用](/dotnet/framework/winforms/advanced/)
 
@@ -103,6 +103,14 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
 * 你可以更新现有的 WPF、Windows 窗体和 C++/Win32 应用，以使用 [XAML 岛](modernize/xaml-islands.md)在应用中托管 WinUI 2.x 控件。
 * 从 [WinUi 3.0](../winui/winui3/index.md) 开始，可以创建[使用完全基于 WinUI 的 UI 的 .NET 和 C++/Win32 应用](../winui/winui3/get-started-winui3-for-desktop.md)。
 
+## <a name="project-reunion-preview"></a>Project Reunion（预览版）
+
+Project Reunion 是一组新的开发人员组件和工具的代号，它们代表着 Windows 应用开发平台的下一步发展。 Project Reunion 提供了一组统一的 API 和工具，各种目标 Windows 10 OS 版本上的任何应用都能够以一致的方式使用它们。 Project Reunion 通过一组通用的 API 和工具（开发人员可以在这些平台中使用）对 UWP、本机 Win32 和 .NET 等现有 Windows 应用平台和框架进行了补充。
+
+Project Reunion 目前提供了早期开发人员预览版。 建议在开发环境中试用此版本。 但请注意，从现在的版本到最终的版本，Project Reunion 将会在许多方面发生变化。 生产环境中使用的应用不支持 Project Reunion。
+
+有关详细信息，请参阅 [Project Reunion](../project-reunion/index.md) 和我们的 [GitHub 存储库](https://github.com/microsoft/ProjectReunion/)。
+
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>平台比较：UWP、WPF 和 Windows 窗体
 
 下表详细比较了 Windows 窗体、WPF 和 UWP 的各种特征。
@@ -133,4 +141,4 @@ PWA 使开发人员能够将网站代码进行打包，以便其能像应用程�
 
 ### <a name="uno-platform"></a>Uno 平台
 
-借助 Uno 平台，Windows 基于 UWP 的代码（C# 和 XAML）可在 iOS、Android、macOS、Linux 和 WebAssembly 上运行。 该平台可提供 [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041)中 UWP 的完整 API 定义，并实现 UWP API 的某些部分（如 [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041)），使 UWP 应用程序能够在这些平台上运行。 有关详细信息，请参阅 [Uno 平台文档](https://platform.uno/docs/articles/intro.html)。
+借助 Uno 平台，Windows 基于 UWP 的代码（C# 和 XAML）可在 iOS、Android、macOS、Linux 和 WebAssembly 上运行。 该平台可提供 [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041)中 UWP 的完整 API 定义，并实现 UWP API 的某些部分（如 [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents)），使 UWP 应用程序能够在这些平台上运行。 有关详细信息，请参阅 [Uno 平台文档](https://platform.uno/docs/articles/intro.html)。

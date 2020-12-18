@@ -1,17 +1,17 @@
 ---
 title: Microsoft Store 策略
 description: Microsoft Store 中的产品必须满足我们的认证标准，为客户提供真正有用且引人入胜的体验，并与 Microsoft Store 完美兼容。
-ms.date: 10/01/2019
+ms.date: 12/16/2020
 ms.topic: article
 keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 4d7c30b49ea0e6276e1d7959a17086f7ff829915
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fc7a9ebd3ebe9ce86f4c44e7e13ea25d5a01240e
+ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170907"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97611455"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 策略
 
@@ -22,6 +22,9 @@ ms.locfileid: "89170907"
 
 > [!NOTE]
 > 有关本协议近期更改的总结，请参阅[更改历史记录](store-policies-change-history.md)。
+
+> [!NOTE]
+> **2020 年 12 月 16 日策略更新通知**：对于面向通过 [Xbox Live 创意者计划](https://www.xbox.com/developers/creators-program/)开发的主机的产品，要求与 XBL 服务集成的规定不再适用。 特定策略（[策略 10.13.1](https://docs.microsoft.com/windows/uwp/publish/store-policies#1013-gaming-and-xbox)）将进行更新，以便在下次更新 Microsoft Store 策略文档时反映出此更改；但自此通知开始，将不再为 XBL 创意者计划强制实施此策略。 
 
 感谢你有兴趣开发适用于 Microsoft Store<sup>1</sup> 的产品。 “产品”是指提交的任何形式的内容，包括但不限于应用、游戏、作品以及在产品内销售或提供的任何其他内容。 我们致力于为全球客户提供种类丰富的产品。 Microsoft Store 中的产品必须满足我们的认证标准，为客户提供真正有用且引人入胜的体验，并与 Microsoft Store 完美兼容。
 
@@ -137,7 +140,7 @@ ms.locfileid: "89170907"
 
 **10.3.1**
 
-如果你的产品需要登录凭据，请使用**认证说明**字段向我们提供一个有效的演示帐户。
+如果你的产品需要登录凭据，请使用 **认证说明** 字段向我们提供一个有效的演示帐户。
 
 **10.3.2**
 

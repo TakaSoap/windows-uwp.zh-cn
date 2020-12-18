@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 942b2ff4af0fa093a0b343c37074185970f8209d
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
+ms.openlocfilehash: c1754edd6901b5de778b40294078b16c03dc0dda
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829544"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598818"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教程：创建用户界面
 

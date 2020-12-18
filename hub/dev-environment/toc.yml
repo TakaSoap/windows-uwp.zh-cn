@@ -106,7 +106,33 @@
                 - name: 将清单提交到存储库
                   href: ../package-manager/package/repository.md
         - name: PowerToys
-          href: 'https://github.com/microsoft/PowerToys'
+          items:
+            - name: 概述
+              items:
+                - name: 关于 PowerToys
+                  href: ../powertoys/index.md
+                - name: 安装 PowerToys
+                  href: ../powertoys/install.md
+                - name: 在管理员模式中运行
+                  href: ../powertoys/administrator.md
+            - name: 颜色选取器
+              href: ../powertoys/color-picker.md
+            - name: FancyZones
+              href: ../powertoys/fancyzones.md
+            - name: 文件资源浏览器
+              href: ../powertoys/file-explorer.md
+            - name: 图像大小调整器
+              href: ../powertoys/image-resizer.md
+            - name: 键盘管理器
+              href: ../powertoys/keyboard-manager.md
+            - name: PowerRename
+              href: ../powertoys/powerrename.md
+            - name: PowerToys Run
+              href: ../powertoys/run.md
+            - name: 快捷键指南
+              href: ../powertoys/shortcut-guide.md
+            - name: 视频会议静音
+              href: ../powertoys/video-conference-mute.md
         - name: VS Code
           href: 'https://code.visualstudio.com/docs'
         - name: Visual Studio

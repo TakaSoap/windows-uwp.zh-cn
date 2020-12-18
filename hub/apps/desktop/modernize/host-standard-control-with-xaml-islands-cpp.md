@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fcad3bfeb5c31a6b3af85e5fd9a0ea72f11d65da
-ms.sourcegitcommit: caf4dba6bdfc3c6d9685d10aa9924b170b00bed8
+ms.openlocfilehash: ccd5efd5270ed12d17992f53b3c9ee50feddec4b
+ms.sourcegitcommit: 6b64741cba279ac17f23f07baaf4a92a2696e8e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93049508"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97502877"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-c-win32-app"></a>在 C++ Win32 应用中托管标准 WinRT XAML 控件
 
@@ -273,11 +273,9 @@ ms.locfileid: "93049508"
     > [!NOTE]
     > 你可能会看到几个生成警告，包括 `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` 和 `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`。 这些警告是当前工具和 NuGet 包的已知问题，可将其忽略。
 
-有关演示使用 XAML 托管 API 托管标准 WinRT XAML 控件的完整示例，请参阅以下代码文件：
+有关演示使用 XAML 托管 API 托管 WinRT XAML 控件的完整示例，请参阅以下代码文件：
 
-* **C++ Win32：**
-  * 请参阅 [HelloWindowsDesktop.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Basic_Win32App/Win32DesktopApp/HelloWindowsDesktop.cpp) 文件。
-  * 请参阅 [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp) 文件。
+* **C++ Win32：** 请参阅 [XAML 岛代码示例存储库](https://github.com/microsoft/Xaml-Islands-Samples) 中的 [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/Contoso/App/XamlBridge.cpp) 文件。
 * **WPF：** 请参阅 Windows 社区工具包中的 [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) 和 [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) 文件。  
 * **Windows 窗体：** 请参阅 Windows 社区工具包中的 [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) 和 [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) 文件。
 
