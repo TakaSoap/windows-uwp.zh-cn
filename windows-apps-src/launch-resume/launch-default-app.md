@@ -6,12 +6,12 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ad25d4ba5d8dfe638d3de3e210f69ea204c48a14
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 2f550fc90a8035d2c7e355d70b7ddd2b9a9e17fc
+ms.sourcegitcommit: f83f2f582f8c7c3447ec62df40a8f0724f7f3bbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220010"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97675788"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>启动 URI 的默认应用
 
@@ -42,6 +42,7 @@ URI 方案允许你通过单击超链接来打开应用。 正如可以使用 **
 |[ms-tonepicker:](#tone-picker-uri-scheme) | 音调选取器 |
 |[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | “114 查号”应用 |
 |[msnweather:](#weather-app-uri-scheme) | 天气应用 |
+|[microsoft edge：](#microsoft-edge-uri-scheme) | Microsoft Edge 浏览器 |
 
 <br>
 例如，以下 URI 打开默认浏览器并显示必应网站。
@@ -119,7 +120,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 调用 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 的源应用可请求在 URI 启动后停留于屏幕上。 默认情况下，Windows 会尝试在处理该 URI 的源应用和目标应用之间平等地共享所有可用空间。 源应用可使用 [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) 属性向操作系统指示希望其应用占用较多或较少的可用空间。 此外，还可使用 **DesiredRemainingView** 指示源应用在 URI 启动后无需停留于屏幕上，并可由目标应用完全替代。 此属性仅指定调用应用的首选窗口大小。 不指定可能会同时显示在屏幕上的其他应用的行为。
 
-**注意**   当 Windows 确定源应用的最终窗口大小时，Windows 会考虑多个不同的因素，例如，源应用的首选项、屏幕上的应用数和屏幕方向等。 设置 [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) 并不能保证为源应用设定具体的窗口化行为。
+**注意** Windows 在确定源应用的最终窗口尺寸时会考虑多个不同因素；例如，源应用的首选项、屏幕上的应用数量以及屏幕的方向等。 设置 [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) 并不能保证为源应用设定具体的窗口化行为。
 
 ```cs
 // Set the desired remaining view.
@@ -161,7 +162,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="maps-app-uri-schemes"></a>“地图”应用 URI 方案
 
-使用 **bingmaps:**、**ms-drive-to:** 和 **ms-walk-to:** URI 方案[启动 Windows 地图应用](launch-maps-app.md)，使其启动后显示特定的地图、路线和搜索结果。 例如，以下 URI 将打开 Windows 地图应用，并显示以纽约市为中心的地图。
+使用 **bingmaps:**、**ms-drive-to:** 和 **ms-walk-to:** URI 方案 [启动 Windows 地图应用](launch-maps-app.md)，使其启动后显示特定的地图、路线和搜索结果。 例如，以下 URI 将打开 Windows 地图应用，并显示以纽约市为中心的地图。
 
 `bingmaps:?cp=40.726966~-74.006076`
 
@@ -222,7 +223,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="settings-app-uri-scheme"></a>“设置”应用 URI 方案
 
-使用 **ms-settings:** URI 方案[启动 Windows“设置”应用](launch-settings-app.md)。 启动为设置应用是编写隐私感知应用的重要组成部分。 如果你的应用无法访问敏感资源，我们建议为用户提供到该资源的隐私设置的方便链接。 例如，以下 URI 将打开设置应用，并显示相机隐私设置。
+使用 **ms-settings:** URI 方案 [启动 Windows“设置”应用](launch-settings-app.md)。 启动为设置应用是编写隐私感知应用的重要组成部分。 如果你的应用无法访问敏感资源，我们建议为用户提供到该资源的隐私设置的方便链接。 例如，以下 URI 将打开设置应用，并显示相机隐私设置。
 
 `ms-settings:privacy-webcam`
 
@@ -232,7 +233,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="store-app-uri-scheme"></a>Microsoft Store 应用 URI 方案
 
-使用 **ms-windows-store:** URI 方案来[启动 UWP 应用](launch-store-app.md)。 打开产品详细信息页面、产品查看页面和搜索页面等。例如，以下 URI 将打开 UWP 应用并启动 Microsoft Store 的主页。
+使用 **ms-windows-store:** URI 方案来 [启动 UWP 应用](launch-store-app.md)。 打开产品详细信息页面、产品查看页面和搜索页面等。例如，以下 URI 将打开 UWP 应用并启动 Microsoft Store 的主页。
 
 `ms-windows-store://home/`
 
@@ -245,3 +246,11 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 | URI 方案 | 结果 |
 |------------|---------|
 | msnweather：//forecast？ la = \[ 纬度 \]&lo = \[ 经度\] | 基于位置地理坐标在预测页中启动天气应用。<br>`latitude` 指位置的纬度。<br> `longitude` 引用位置的经度。<br> |
+
+### <a name="microsoft-edge-uri-scheme"></a>Microsoft Edge URI 方案
+
+使用 **microsoft edge：** URI 方案将 microsoft edge 浏览器启动到指定的 URL。
+
+| URI 方案 | 结果 |
+|------------|---------|
+| microsoft edge： https://example.com/ ] | 打开 Microsoft Edge 浏览器并导航到 https://example.com/<br> |
