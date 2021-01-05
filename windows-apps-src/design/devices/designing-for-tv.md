@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e2648cc9a85c538d71f87f69d8525b171d2bed98
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c7ac5b8c34f007e18e04eb8299d9ccddd583ad29
+ms.sourcegitcommit: 9378b1b2c2a5ba6e774ae76b53d755cbc5215af2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031510"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709646"
 ---
 # <a name="designing-for-xbox-and-tv"></a>针对 Xbox 和电视进行设计
 
@@ -32,7 +32,7 @@ ms.locfileid: "93031510"
 UWP 框架提供的大部分功能使应用能够在这些设备上使用相同的用户界面 (UI)，而无需附加工作。
 但是，定制和优化你的应用以使其在 Xbox One 和电视屏幕上良好工作需要考虑特殊的注意事项。
 
-坐在房间中的沙发上使用游戏板或遥控器与电视交互的体验称为 **10 英尺体验** 。
+坐在房间中的沙发上使用游戏板或遥控器与电视交互的体验称为 **10 英尺体验**。
 如此命名是因为用户通常坐在离屏幕大约 10 英尺的位置。
 这提出了 *2 英尺* 体验（假设）中或与电脑交互时所不存在的独特挑战。
 如果你要为 Xbox One 或任何输出到电视屏幕和使用控制器进行输入的其他设备开发应用，应始终牢记这一点。
@@ -70,16 +70,16 @@ _**屏幕截图中显示的所有电影都可从 Microsoft 电影 & TV 获得。
 | -------------------------------------------------------------- |--------------------------------|
 | [UI 元素大小调整](#ui-element-sizing)  | 通用 Windows 平台使用[缩放和有效像素](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)来根据观看距离缩放 UI。 了解大小调整并在 UI 上应用它有助于针对 10 英尺环境优化你的应用。  |
 |  [电视安全区域](#tv-safe-area) | 默认情况下，UWP 将自动避免在电视不安全区域（接近屏幕边缘的区域）显示任何 UI。 但是，这将导致“箱中”效果，即 UI 看起来以宽屏显示。 为了使你的应用在电视上提供真正的沉浸式体验，你将要对其进行修改，以使其延伸到电视上的屏幕边缘（如果电视支持此功能）。 |
-| [颜色](#colors)  |  UWP 支持颜色主题，并且遵循系统主题的应用在 Xbox One 上将默认为 **深色** 。 如果你的应用具有特定的颜色主题，你应考虑到某些颜色不适用于电视，应避免使用它们。 |
+| [颜色](#colors)  |  UWP 支持颜色主题，并且遵循系统主题的应用在 Xbox One 上将默认为 **深色**。 如果你的应用具有特定的颜色主题，你应考虑到某些颜色不适用于电视，应避免使用它们。 |
 | [声音](../style/sound.md)    | 声音在 10 英尺体验中起到关键作用，它有助于使用户沉浸和向用户提供反馈。 当应用在 Xbox One 上运行时，UWP 提供为常用控件自动启用声音的功能。 了解有关内置于 UWP 的声音支持的详细信息，并了解如何充分利用它。    |
 | [UI 控件指南](#guidelines-for-ui-controls)  |  有多个 UI 控件可跨多台设备运行良好，但在电视上使用时有些特定的注意事项。 请阅读在针对 10 英尺体验进行设计时使用这些控件的一些最佳做法。 |
-| [Xbox 的自定义视觉状态触发器](#custom-visual-state-trigger-for-xbox) | 若要针对 3 米体验定制 UWP 应用，我们建议你使用自定义 *视觉状态触发器* ，以在应用检测到它已在 Xbox 主机上启动时更改布局。 |
+| [Xbox 的自定义视觉状态触发器](#custom-visual-state-trigger-for-xbox) | 若要针对 3 米体验定制 UWP 应用，我们建议你使用自定义 *视觉状态触发器*，以在应用检测到它已在 Xbox 主机上启动时更改布局。 |
 
 除了前面的设计和布局注意事项外，在构建应用程序时，还应考虑许多 [游戏板和远程控制交互](../input/gamepad-and-remote-interactions.md) 优化。
 
 | 功能        | 说明           |
 | -------------------------------------------------------------- |--------------------------------|
-| [XY 焦点导航和交互](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | 通过 **XY 焦点导航** ，用户可以在应用的 UI 周围导航。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
+| [XY 焦点导航和交互](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | 通过 **XY 焦点导航**，用户可以在应用的 UI 周围导航。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
 | [鼠标模式](../input/gamepad-and-remote-interactions.md#mouse-mode)|对于某些类型的应用程序（例如地图、绘图和绘图应用程序），XY 焦点导航并不可行，甚至可能不可行。 在这些情况下， **鼠标模式** 使用户能够在游戏板或遥控器上自由导航，就像 PC 上的鼠标一样。|
 | [焦点视觉对象](../input/gamepad-and-remote-interactions.md#focus-visual)  | 焦点视觉对象是突出显示当前聚焦的 UI 元素的边框。 这可帮助用户快速识别他们要浏览或与之交互的 UI。  |
 | [专注参与](../input/gamepad-and-remote-interactions.md#focus-engagement) | 当 UI 元素具有焦点以便与之进行交互时，用户需要在游戏板或遥控器上按下 **/选择** 按钮。 |
@@ -101,7 +101,7 @@ _**屏幕截图中显示的所有电影都可从 Microsoft 电影 & TV 获得。
 
 ![更改文本、应用和其他项的大小](images/designing-for-tv/ui-scaling.png)
 
-在 Xbox One 上，没有此类系统设置；但是，对于要针对电视设置相应大小的 UWP UI 元素，将以 **200%** （对于 XAML 应用）和 **150%** （对于 HTML 应用）的默认值缩放它们。
+在 Xbox One 上，没有此类系统设置；但是，对于要针对电视设置相应大小的 UWP UI 元素，将以 **200%**（对于 XAML 应用）和 **150%**（对于 HTML 应用）的默认值缩放它们。
 只要 UI 元素针对其他设备设置相应的大小，也将针对电视设置相应的大小。
 Xbox One 以 1080p（1920 x 1080 像素）呈现你的应用。 因此，当显示来自其他设备（如电脑）的应用时，请确保利用[自适应技术](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)使 UI 在 100% 缩放的 960 x 540 px（对于HTML 应用，则为 100% 缩放的 1280 x 720 px）外观出色。
 
@@ -122,7 +122,7 @@ Xbox One 以 1080p（1920 x 1080 像素）呈现你的应用。 因此，当显�
 
 #### <a name="number-of-clicks"></a>单击数
 
-当用户从电视屏幕的一侧导航到另一侧时，此操作不应超过 **六次单击** ，以便简化你的 UI。 同样， **简洁性** 原则也适用于此处。 
+当用户从电视屏幕的一侧导航到另一侧时，此操作不应超过 **六次单击**，以便简化你的 UI。 同样，**简洁性** 原则也适用于此处。 
 
 ![跨 6 个图标](images/designing-for-tv/six-clicks.png)
 
@@ -170,7 +170,7 @@ bool result =
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
 ```
 
-### <a name="image"></a>映像
+### <a name="image"></a>图像
 
 ```xml
 <Page x:Class="Sample.MainPage"
@@ -241,7 +241,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 [CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 是另一个通常定位在应用的一个或多个边缘附近的窗格示例，因此在电视上，它的背景应延伸到屏幕边缘。 它通常还 **包含一个 "** ..."在右侧，它应保留在电视安全区域中。 以下是实现所需交互和视觉效果的一些不同策略。
 
-**选项 1** ：将 `CommandBar` 背景色更改为透明或与页面背景相同的颜色：
+**选项 1**：将 `CommandBar` 背景色更改为透明或与页面背景相同的颜色：
 
 ```xml
 <CommandBar x:Name="topbar"
@@ -252,7 +252,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 执行此操作将使 `CommandBar` 看起来像与页面其余部分位于同一个背景顶部，因此背景将无缝流动到屏幕边缘。
 
-**选项 2** ：添加一个背景矩形，该矩形的填充与 `CommandBar` 背景颜色相同，然后将该矩形置于 `CommandBar` 的下方并填充页面的其余部分：
+**选项 2**：添加一个背景矩形，该矩形的填充与 `CommandBar` 背景颜色相同，然后将该矩形置于 `CommandBar` 的下方并填充页面的其余部分：
 
 ```xml
 <Rectangle VerticalAlignment="Top"
@@ -333,7 +333,7 @@ UWP 具有将焦点视觉对象保留在 [VisibleBounds](/uwp/api/windows.ui.vie
 > [!NOTE]
 > 此代码片段专门用于 `ListView`；对于 `GridView` 样式，请将 [ControlTemplate](/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) 和 [Style](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 的 [TargetType](/uwp/api/Windows.UI.Xaml.Style) 属性设置为 `GridView`。
 
-为了更精细地控制项的显示方式，如果应用程序面向版本1803或更高版本，则可以使用 [BringIntoViewRequested 事件](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 你可以将其放在 [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) **ListView** / **GridView** 的 ItemsPanel 上，在内部 **ScrollViewer** 之前捕获它，如以下代码片段所示：
+为了更精细地控制项的显示方式，如果应用程序面向版本1803或更高版本，则可以使用 [BringIntoViewRequested 事件](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 你可以将其放在 [](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) **ListView** / **GridView** 的 ItemsPanel 上，在内部 **ScrollViewer** 之前捕获它，如以下代码片段所示：
 
 ```xaml
 <GridView x:Name="gridView">
@@ -387,7 +387,7 @@ private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoVie
 
 ### <a name="application-theme"></a>应用程序主题
 
-你可以根据应用的需求选择 **应用程序主题** （深色或浅色），也可以选择退出主题。 阅读有关[颜色主题](../style/color.md)的主题中一般建议的详细信息。
+你可以根据应用的需求选择 **应用程序主题**（深色或浅色），也可以选择退出主题。 阅读有关[颜色主题](../style/color.md)的主题中一般建议的详细信息。
 
 UWP 还允许应用基于运行这些应用的设备所提供的系统设置动态设置主题。
 尽管 UWP 始终遵循用户指定的主题设置，但每台设备还提供相应的默认主题。
@@ -396,14 +396,14 @@ UWP 还允许应用基于运行这些应用的设备所提供的系统设置动�
 
 ### <a name="accent-color"></a>主题色
 
-UWP 提供一种便捷方式来公开用户从其系统设置中选择的 **主题色** 。
+UWP 提供一种便捷方式来公开用户从其系统设置中选择的 **主题色**。
 
 在 Xbox One 上，用户能够选择用户颜色，就像他们可以在电脑上选择主题色一样。
 只要你的应用通过画笔或颜色资源调用这些主题色，就会使用用户在系统设置中选择的颜色。 请注意，Xbox One 上的主题色按用户而不是按系统设置。
 
 另请注意，Xbox One 上的用户颜色集与电脑、手机和其他设备上的不同。
 
-只要应用使用画笔资源（如 **SystemControlForegroundAccentBrush** ）或颜色资源 ( **SystemAccentColor** )，或者直接通过 [UIColorType.Accent*](/uwp/api/Windows.UI.ViewManagement.UIColorType) API 调用主题色，这些颜色就将替换为适用于 Xbox One 的主题色。 还通过与电脑和手机上相同的方式从系统中提取高对比度画笔颜色。
+只要应用使用画笔资源（如 **SystemControlForegroundAccentBrush**）或颜色资源 (**SystemAccentColor**)，或者直接通过 [UIColorType.Accent*](/uwp/api/Windows.UI.ViewManagement.UIColorType) API 调用主题色，这些颜色就将替换为适用于 Xbox One 的主题色。 还通过与电脑和手机上相同的方式从系统中提取高对比度画笔颜色。
 
 要了解有关主题色的一般详细信息，请参阅[主题色](../style/color.md#accent-color)。
 
@@ -436,9 +436,11 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的 **主�
 
 你可以将 [Pivot.IsHeaderItemsCarouselEnabled](/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) 属性设置为 `true`，以便透视表始终保持在相同的位置，而不是使选定的透视表标题始终移动到第一个位置。 这对大屏幕显示（如电视）来说是更佳的体验，因为标题换行可能会干扰用户。 如果所有透视表标题不能全部适合屏幕，有一个滚动条可以让客户看到其他标题；但是，你应确保它们全部适合屏幕以提供最佳体验。 有关详细信息，请参阅[表和透视表](../controls-and-patterns/pivot.md)。
 
-### <a name="navigation-pane"></a>导航窗格 <a name="navigation-pane" />
+<a name="navigation-pane"></a>
 
-导航窗格（也称为 *汉堡菜单* ）是 UWP 应用中常用的导航控件。 通常，该窗格内含多个从列表样式菜单中选择的选项，用于将用户转到其他页面。 此窗格通常一开始以折叠方式显示以节省空间，用户可以通过单击某个按钮来打开它。
+### <a name="navigation-pane"></a>导航窗格
+
+导航窗格（也称为 *汉堡菜单*）是 UWP 应用中常用的导航控件。 通常，该窗格内含多个从列表样式菜单中选择的选项，用于将用户转到其他页面。 此窗格通常一开始以折叠方式显示以节省空间，用户可以通过单击某个按钮来打开它。
 
 用户很容易通过鼠标和触摸操作访问导航窗格，但游戏板/遥控器将使这些窗格不易访问，因为用户必须导航到某个按钮才能打开窗格。 因此，一种很好的做法是让 " **视图** " 按钮打开导航窗格，并允许用户通过导航到页面左侧的所有方法来打开它。 可以在[编程焦点导航](../input/focus-navigation-programmatic.md#split-view-code-sample)文档中找到有关如何实现此设计模式的代码示例。 这样可以使用户轻松访问窗格内容。 有关导航窗格在不同的屏幕大小中的行为以及游戏板/遥控器导航的最佳做法的详细信息，请参阅[导航窗格](../controls-and-patterns/navigationview.md)。
 
@@ -468,7 +470,7 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的 **主�
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 
-[MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 元素通过提供默认的播放体验（即允许用户播放、暂停、打开隐藏式字幕等），允许用户与其媒体交互。 此控件是 [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 的一个属性，支持以下两个布局选项： *单行* 和 *双行* 。 在单行布局中，滑块和播放按钮位于同一行，而播放/暂停按钮位于滑块左侧。 在双行布局中，滑块单独占用一行，而播放按钮位于单独的下一行。 当针对 10 英尺体验进行设计时，应使用双行布局，因为它能为游戏板提供更好的导航。 若要启用双行布局，请在 `MediaPlayerElement` 的 [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) 属性中的 `MediaTransportControls` 元素上设置 `IsCompact="False"`。
+[MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 元素通过提供默认的播放体验（即允许用户播放、暂停、打开隐藏式字幕等），允许用户与其媒体交互。 此控件是 [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 的一个属性，支持以下两个布局选项：*单行* 和 *双行*。 在单行布局中，滑块和播放按钮位于同一行，而播放/暂停按钮位于滑块左侧。 在双行布局中，滑块单独占用一行，而播放按钮位于单独的下一行。 当针对 10 英尺体验进行设计时，应使用双行布局，因为它能为游戏板提供更好的导航。 若要启用双行布局，请在 `MediaPlayerElement` 的 [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) 属性中的 `MediaTransportControls` 元素上设置 `IsCompact="False"`。
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -482,7 +484,8 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的 **主�
 
 请访问[媒体播放](../controls-and-patterns/media-playback.md)，了解有关将媒体添加到应用的详细信息。
 
-> ![注意] `MediaPlayerElement` 仅在 Windows 10 版本 1607 及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 上述建议也适用于 `MediaElement`，并且可通过相同方式访问 `TransportControls` 属性。
+> [!NOTE]
+> `MediaPlayerElement` 仅适用于 Windows 10 版本1607及更高版本。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 上述建议也适用于 `MediaElement`，并且可通过相同方式访问 `TransportControls` 属性。
 
 ### <a name="search-experience"></a>搜索体验
 
@@ -499,7 +502,7 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的 **主�
 
 ## <a name="custom-visual-state-trigger-for-xbox"></a>Xbox 的自定义视觉状态触发器
 
-若要针对 3 米体验定制 UWP 应用，我们建议你在应用检测到它已在 Xbox 主机上启动时更改布局。 达到此目的一个方法是使用自定义 *视觉状态触发器* 。 当你想要在 **Blend for Visual Studio** 中进行编辑时，视觉状态触发器最有用。 以下代码片段显示如何创建适用于 Xbox 的视觉状态触发器：
+若要针对 3 米体验定制 UWP 应用，我们建议你在应用检测到它已在 Xbox 主机上启动时更改布局。 达到此目的一个方法是使用自定义 *视觉状态触发器*。 当你想要在 **Blend for Visual Studio** 中进行编辑时，视觉状态触发器最有用。 以下代码片段显示如何创建适用于 Xbox 的视觉状态触发器：
 
 ```xml
 <VisualStateManager.VisualStateGroups>

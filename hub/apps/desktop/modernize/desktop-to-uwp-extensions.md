@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 1338b45dd5ccc7558725dd1ad1d210f3c5e7232b
-ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
+ms.openlocfilehash: b88f65ba45a2b8a79d822eba525733550f965372
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132990"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860174"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>将桌面应用与 Windows 10 和 UWP 集成
 
@@ -53,7 +53,7 @@ ms.locfileid: "92132990"
     <DesktopAppMigration>
         <DesktopApp AumId="[your_app_aumid]" />
         <DesktopApp ShortcutPath="[path]" />
-    </DesktopAppMigration>
+    </DesktopAppMigration>
 </Extension>
 ```
 
@@ -80,7 +80,7 @@ ms.locfileid: "92132990"
             <rescap3:DesktopApp ShortcutPath="%USERPROFILE%\Desktop\[my_app].lnk" />
             <rescap3:DesktopApp ShortcutPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\[my_app].lnk" />
             <rescap3:DesktopApp ShortcutPath="%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\[my_app_folder]\[my_app].lnk"/>
-         </rescap3:DesktopAppMigration>
+         </rescap3:DesktopAppMigration>
         </rescap3:Extension>
       </Extensions>
     </Application>
@@ -109,11 +109,11 @@ ms.locfileid: "92132990"
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[Name]">
-         <MigrationProgIds>
-            <MigrationProgId>"[ProgID]"</MigrationProgId>
-        </MigrationProgIds>
-    </FileTypeAssociation>
+    <FileTypeAssociation Name="[Name]">
+         <MigrationProgIds>
+            <MigrationProgId>"[ProgID]"</MigrationProgId>
+        </MigrationProgIds>
+    </FileTypeAssociation>
 </Extension>
 ```
 
@@ -137,11 +137,11 @@ ms.locfileid: "92132990"
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap3:FileTypeAssociation Name="myfiletypes">
-            <rescap3:MigrationProgIds>
-              <rescap3:MigrationProgId>Foo.Bar.1</rescap3:MigrationProgId>
+            <rescap3:MigrationProgIds>
+              <rescap3:MigrationProgId>Foo.Bar.1</rescap3:MigrationProgId>
               <rescap3:MigrationProgId>Foo.Bar.2</rescap3:MigrationProgId>
-            </rescap3:MigrationProgIds>
-          </uap3:FileTypeAssociation>
+            </rescap3:MigrationProgIds>
+          </uap3:FileTypeAssociation>
         </uap:Extension>
       </Extensions>
     </Application>
@@ -542,7 +542,7 @@ Windows 应用的 [DLL 搜索顺序](/windows/win32/dlls/dynamic-link-library-se
 </Package>
 ```
 
-如果用户打开 15 个或更少的文件，**MultiSelectModel** 特性的默认选项为*播放机*。 否则，默认选项“文档”**。 始终将 UWP 应用启动为*播放机*。
+如果用户打开 15 个或更少的文件，**MultiSelectModel** 特性的默认选项为 *播放机*。 否则，默认选项“文档”。 始终将 UWP 应用启动为 *播放机*。
 
 <a id="show"></a>
 
@@ -672,11 +672,11 @@ Windows 应用的 [DLL 搜索顺序](/windows/win32/dlls/dynamic-link-library-se
 
 ### <a name="enable-users-to-group-files-by-using-the-kind-column-in-file-explorer"></a>使用户能够使用文件资源管理器中的“类型”列对文件进行分组
 
-可以将文件类型的一个或多个预定义值与**类型**字段相关联。
+可以将文件类型的一个或多个预定义值与 **类型** 字段相关联。
 
 在文件资源管理器中，用户可以使用该字段对这些文件进行分组。 系统组件也会将此字段用于不同的用途，例如建立索引。
 
-若要详细了解**类型**字段以及可对此字段使用的值，请参阅[使用类型名称](/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。
+若要详细了解 **类型** 字段以及可对此字段使用的值，请参阅 [使用类型名称](/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -688,13 +688,13 @@ Windows 应用的 [DLL 搜索顺序](/windows/win32/dlls/dynamic-link-library-se
 ```XML
 <Extension Category="windows.fileTypeAssociation">
     <FileTypeAssociation Name="[Name]">
-        <SupportedFileTypes>
-            <FileType>"[FileExtension]"</FileType>
-        </SupportedFileTypes>
-        <KindMap>
-            <Kind value="[KindValue]">
-        </KindMap>
-    </FileTypeAssociation>
+        <SupportedFileTypes>
+            <FileType>"[FileExtension]"</FileType>
+        </SupportedFileTypes>
+        <KindMap>
+            <Kind value="[KindValue]">
+        </KindMap>
+    </FileTypeAssociation>
 </Extension>
 ```
 
@@ -719,16 +719,16 @@ Windows 应用的 [DLL 搜索顺序](/windows/win32/dlls/dynamic-link-library-se
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
            <uap:FileTypeAssociation Name="mediafiles">
-             <uap:SupportedFileTypes>
-               <uap:FileType>.m4a</uap:FileType>
-               <uap:FileType>.mta</uap:FileType>
-             </uap:SupportedFileTypes>
-             <rescap:KindMap>
-               <rescap:Kind value="Item">
+             <uap:SupportedFileTypes>
+               <uap:FileType>.m4a</uap:FileType>
+               <uap:FileType>.mta</uap:FileType>
+             </uap:SupportedFileTypes>
+             <rescap:KindMap>
+               <rescap:Kind value="Item">
                <rescap:Kind value="Communications">
                <rescap:Kind value="Task">
-             </rescap:KindMap>
-          </uap:FileTypeAssociation>
+             </rescap:KindMap>
+          </uap:FileTypeAssociation>
       </uap:Extension>
       </Extensions>
     </Application>
@@ -874,7 +874,7 @@ Windows 应用的 [DLL 搜索顺序](/windows/win32/dlls/dynamic-link-library-se
         <com:Extension Category="windows.comServer">
           <com:ComServer>
             <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler"">
-              <com:Class Id="Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+              <com:Class Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
             </com:SurrogateServer>
           </com:ComServer>
         </com:Extension>
@@ -1080,7 +1080,7 @@ Windows 应用的 [DLL 搜索顺序](/windows/win32/dlls/dynamic-link-library-se
 > [!NOTE]
 > 用户必须至少启动一次应用程序才可注册此启动任务。
 
-应用程序可声明多个启动任务。 每个任务独立启动。 所有启动任务都将显示在任务管理器的**启动**选项卡下，其名称在应用的清单和应用的图标中指定。 任务管理器将自动分析任务的启动影响。
+应用程序可声明多个启动任务。 每个任务独立启动。 所有启动任务都将显示在任务管理器的 **启动** 选项卡下，其名称在应用的清单和应用的图标中指定。 任务管理器将自动分析任务的启动影响。
 
 用户可以使用任务管理器手动禁用应用的启动任务。 如果用户禁用任务，则无法以编程方式重新启用它。
 

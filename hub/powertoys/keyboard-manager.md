@@ -4,12 +4,12 @@ description: 允许用户重新定义键盘上的键的实用工具
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c2f8f146e02cf9006e4ac74ce3426ccba0d6000c
-ms.sourcegitcommit: 46a7e9db64e17a645ee6e888f62a9b04632c56af
+ms.openlocfilehash: eb17cd5a7ad76728e6b063f76369c8d194a5e12c
+ms.sourcegitcommit: 1a997d7e0100e58886150f9fba33d7b205f41df1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618546"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97865462"
 ---
 # <a name="keyboard-manager-utility"></a>键盘管理器实用工具
 
@@ -26,7 +26,10 @@ PowerToys 键盘管理器使你能够重新定义键盘上的键。
 ![PowerToys 键盘管理器重新映射快捷方式屏幕截图](../images/powertoys-keyboard-shortcuts.png)
 
 > [!NOTE]
-> 某些 [键/操作系统保留的快捷键无法替换](https://github.com/microsoft/PowerToys/wiki/Keyboard-Manager-Overview#14-keys-that-cannot-be-remapped)。
+> 某些快捷键是为操作系统保留的，无法替换。 不能重新映射的密钥包括：
+> - `⊞ Win`+`L`和 `Ctrl`  +  `Alt`  +  `Del` 不能重新映射，因为它们由 Windows OS 保留。
+> - `Fn`在大多数情况下，)  (函数) 密钥不能重新 (映射。 `F1` - `F12` `F13` - `F24` 可以映射 (和) 密钥。
+> - `Pause` 将仅发送 sngle 的 keydown 事件。 例如，将其映射到 backspace 键，并按 + 保存仅会删除单个字符。
 
 ## <a name="settings"></a>设置
 
@@ -149,7 +152,7 @@ Orphaning 密钥意味着已将其映射到另一个密钥，不再有任何映�
 
 ![PowerToys 键盘管理器孤立密钥](../images/powertoys-keyboard-remap-orphaned.png)
 
-## <a name="frequently-asked-questions"></a>常见问题
+## <a name="frequently-asked-questions"></a>常见问题解答
 
 ### <a name="i-remapped-the-wrong-keys-how-can-i-stop-it-quickly"></a>我重新映射了错误的密钥，如何快速停止？
 

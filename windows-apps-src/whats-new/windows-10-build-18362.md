@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bdd003445bed4ad59b21e0b744281651c30bf04f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5c5b4867d8a58779aa716245130a468374054288
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166881"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860123"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>面向开发人员的 Windows 10 内部版本 18362 中的新增功能
 
@@ -53,7 +53,7 @@ WPF、Windows 窗体和 WinUI 的开源 | WPF、Windows 窗体和 WinUI UX 框�
 Project Rome | Project Rome SDK 现在适用于 Android 和 iOS。 了解如何将图形通知与每个平台集成：[Android](/windows/project-rome/notifications/how-to-guide-for-android) 和 [iOS](/windows/project-rome/notifications/how-to-guide-for-ios)。
 远程相机 | 使用 DeviceWatcher 类可以[连接到远程相机](../audio-video-camera/connect-to-remote-cameras.md)，并将这些相机中的帧读入 Windows 应用。
 桌面应用程序中的 UWP 控件（XAML 岛） | Windows SDK 中用于承载 WPF、Windows 窗体和 C++ Win32 桌面应用程序内的 UWP 控件的 API 不再以开发人员预览版提供。 有关详细信息，请参阅[桌面应用中的 UWP 控件](/windows/apps/desktop/modernize/xaml-islands)。
-Visual Studio 2019 | Visual Studio 2019 已发布，其中包含面向任何开发人员、应用或平台的最新工具和服务。 请查看 [Visual Studio 2019 中的新增功能](/visualstudio/ide/whats-new-visual-studio-2019?view=vs-2019)了解最新版本和入门知识。
+Visual Studio 2019 | Visual Studio 2019 已发布，其中包含面向任何开发人员、应用或平台的最新工具和服务。 请查看 [Visual Studio 2019 中的新增功能](/visualstudio/ide/whats-new-visual-studio-2019)了解最新版本和入门知识。
 Win32 WebView | [常见问题解答](/windows/communitytoolkit/controls/wpf-winforms/webview#frequently-asked-questions-faqs)为在桌面应用程序中使用 Microsoft Edge WebView 时所提出的常见问题提供解答，并提供示例和其他资源的链接。
 Windows 命令行 | [新的控制台功能](https://devblogs.microsoft.com/commandline/new-experimental-console-features/)包括试验性的“终端”选项卡，以及有关滚动、光标形状和光标颜色的设置。 请在[面向开发人员的 Windows 命令行工具博客](https://devblogs.microsoft.com/commandline/)中了解详细信息。
 Windows 社区工具包 | Windows 社区工具包 v5.1 提供动画、远程设备、图像裁剪和辅助功能的令人兴奋的更新。 </br> • 新的 [Lottie-Windows 库](/windows/communitytoolkit/animations/lottie)利用 Windows.UI.Composition API 在 Windows 10 (1809) 上提供优质动画支持，并允许使用 [Bodymovin](https://aescripts.com/bodymovin/) JSON 文件或优化的代码生成类在 Windows 应用中播放内容。 请试用 Microsoft Store 中提供的新 [Lottie Viewer 应用](https://www.microsoft.com/p/lottie-viewer/9p7x9k692tmw)，以测试动画并为 Windows 应用生成优化的代码。 </br> • 新的[远程设备选取器](/windows/communitytoolkit/controls/remotedevicepicker)可让用户选择（附近的或可通过云访问的）设备，在该设备上启动应用，或者与远程设备上的应用服务通信。 </br> • 新的 [ImageCropper 控件](/windows/communitytoolkit/controls/imagecropper)集成了裁剪功能，可用于选择个人资料图片或使用照片编辑工具。 </br> • 此外，已改进控件的辅助功能，并为 WPF 和 WinForms 提供了 [Microsoft.Toolkit.Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32) 6.0 预览包更新；在[发行说明](https://github.com/windows-toolkit/WindowsCommunityToolkit/releases/tag/v5.1.0)中可以了解更多的功能。

@@ -11,13 +11,13 @@ dev_langs:
 - cppwinrt
 - cpp
 - javascript
-ms.custom: contperfq1
-ms.openlocfilehash: 6bb0e44fa5ea31d73feebdfb9ced9951cc2bc937
-ms.sourcegitcommit: 2050175043c8c175be3312f17769b4af241b3275
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: fa37bc45ae85456aff177417a3875d724b0ebd54
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027646"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860254"
 ---
 # <a name="file-access-permissions"></a>文件访问权限
 
@@ -266,7 +266,7 @@ ms.locfileid: "90027646"
 
 | 位置 | 功能 | Windows.Storage API |
 |----------|------------|---------------------|
-| 用户有权访问的所有文件。 例如：文档、图片、照片、下载、桌面、OneDrive 等。 | **broadFileSystemAccess**<br><br>此功能受限。 可以通过“设置” > “隐私” > “文件系统”配置访问。 由于用户随时可以在“设置”中授予或拒绝权限，因此，你应确保应用能够弹性应对这些更改。 如果你发现应用没有访问权限，可以选择通过提供 [Windows 10 文件系统访问权限和隐私](https://support.microsoft.com/help/4468237/windows-10-file-system-access-and-privacy-microsoft-privacy)一文的链接，来提示用户更改该设置。 请注意，用户必须关闭应用、切换设置，然后重启应用。 如果他们在应用正在运行时切换设置，则平台将挂起该应用，以便你可以保存状态，然后强制终止该应用以应用新的设置。 在 2018 年 4 月更新中，该权限默认设置为“打开”。 在 2018 年 10 月更新中，默认设置为“关闭”。<br /><br />如果向 Microsoft Store 提交声明此功能的应用，将需要额外说明应用需要此功能的原因以及打算使用它的方式。<br/><br/>此功能适用于 [**Windows.Storage**](/uwp/api/Windows.Storage) 命名空间中的 API。 请参阅本文末尾的**示例**部分，其中的某个示例演示了如何在应用中启用此功能。<br/><br/>**注意：** 此功能在 Xbox 上不受支持。 | 不适用 |
+| 用户有权访问的所有文件。 例如：文档、图片、照片、下载、桌面、OneDrive 等。 | **broadFileSystemAccess**<br><br>此功能受限。 可以通过“设置” > “隐私” > “文件系统”配置访问。 由于用户随时可以在“设置”中授予或拒绝权限，因此，你应确保应用能够弹性应对这些更改。 如果你发现应用没有访问权限，可以选择通过提供 [Windows 10 文件系统访问权限和隐私](https://support.microsoft.com/help/4468237/windows-10-file-system-access-and-privacy-microsoft-privacy)一文的链接，来提示用户更改该设置。 请注意，用户必须关闭应用、切换设置，然后重启应用。 如果他们在应用正在运行时切换设置，则平台将挂起该应用，以便你可以保存状态，然后强制终止该应用以应用新的设置。 在 2018 年 4 月更新中，该权限默认设置为“打开”。 在 2018 年 10 月更新中，默认设置为“关闭”。<br /><br />如果向 Microsoft Store 提交声明此功能的应用，将需要额外说明应用需要此功能的原因以及打算使用它的方式。<br/><br/>此功能适用于 [**Windows.Storage**](/uwp/api/Windows.Storage) 命名空间中的 API。 请参阅本文末尾的 **示例** 部分，其中的某个示例演示了如何在应用中启用此功能。<br/><br/>**注意：** 此功能在 Xbox 上不受支持。 | 不适用 |
 | 文档 | **documentsLibrary**<br><br>注意：必须将文件类型关联（该关联声明你的应用可以在此位置中访问的特定文件类型）添加到你的应用清单。 <br><br>你的应用使用此功能的情况：<br>- 使用有效的 OneDrive URL 或资源 ID 促进跨平台离线访问特定 OneDrive 内容<br>- 在离线时将打开的文件自动保存到用户的 OneDrive | [KnownFolders.DocumentsLibrary](/uwp/api/windows.storage.knownfolders.documentslibrary) |
 | Music     | **musicLibrary** <br>另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.MusicLibrary](/uwp/api/windows.storage.knownfolders.musiclibrary) |    
 | 图片  | **picturesLibrary**<br> 另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.PicturesLibrary](/uwp/api/windows.storage.knownfolders.pictureslibrary) |  

@@ -7,15 +7,15 @@ ms.date: 12/3/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: a62ec52fe2b8f6caac2ac27cfc4d002ec44a5b32
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: cd78d46abacd57be5b08d6caf057e9c703b32560
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034530"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860380"
 ---
 # <a name="filtering-collections-and-lists-through-user-input"></a>通过用户输入筛选集合和列表
-如果集合显示许多项或紧密绑定到用户交互，则筛选是一项很有用的可以实施的功能。 使用本文所述方法进行的筛选可以实施到大多数集合控件，其中包括 [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView](/uwp/api/windows.ui.xaml.controls.gridview) 和 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)。 许多类型的用户输入（例如复选框、单选按钮、滑块）可以用来筛选集合，但本文将重点介绍如何使用基于文本的用户输入，根据用户的搜索用它来实时更新 ListView。 
+如果集合显示许多项或紧密绑定到用户交互，则筛选是一项很有用的可以实施的功能。 使用本文所述方法进行的筛选可以实施到大多数集合控件，其中包括 [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView](/uwp/api/windows.ui.xaml.controls.gridview) 和 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2&preserve-view=true)。 许多类型的用户输入（例如复选框、单选按钮、滑块）可以用来筛选集合，但本文将重点介绍如何使用基于文本的用户输入，根据用户的搜索用它来实时更新 ListView。 
 
 > [!NOTE]
 > 本文将重点介绍如何使用 ListView 进行筛选。 请注意，此筛选方法也可应用到其他集合控件，例如 GridView、ItemsRepeater 或 TreeView。

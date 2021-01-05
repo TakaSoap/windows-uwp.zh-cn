@@ -4,15 +4,15 @@ description: 了解通用 Windows 平台 (UWP) 应用，此类应用可跨多种
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ms.date: 09/15/2020
 ms.topic: article
-ms.custom: contperfq1
+ms.custom: contperf-fy21q1
 keywords: windows 10, uwp, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: 630ac23c6af6e0fb184edf0a0d477b020810abc6
-ms.sourcegitcommit: 25063560ff0a37fb404bc50e3b6e66759ee1051d
+ms.openlocfilehash: 6871512e26b4c1f960034a5e97d88ade0b211094
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96420386"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860426"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>什么是通用 Windows 平台 (UWP) 应用？
 

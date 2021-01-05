@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fd6cfb7fb0ffd7102f32d7159aba2b4c1042b76
-ms.sourcegitcommit: da44cb95946440cd06ff36254d42ecefcdd87ce2
+ms.openlocfilehash: 7b1304032243c7675c4aba6cbda7e7899e8deddb
+ms.sourcegitcommit: e252ccb4a76c4883c7073083d73007957202b84d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063019"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657674"
 ---
 # <a name="collections-and-lists"></a>集合和列表
 
 集合和列表都指的是一起显示的多个相关数据项的表示形式。 集合可以由不同的集合控件（也可称为集合视图）通过多种方式来表示。 集合控件显示并启用与基于集合的内容（例如联系人列表、日期列表、图像集合等）的交互。
 
-> **重要的 API** ： [ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)、 [GridView 类](/uwp/api/Windows.UI.Xaml.Controls.GridView)、 [FlipView 类](/uwp/api/windows.ui.xaml.controls.flipview)、 [TreeView 类](/uwp/api/windows.ui.xaml.controls.treeview)、 [ItemsRepeater 类](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
+> **重要的 API**：[ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 类](/uwp/api/Windows.UI.Xaml.Controls.GridView)、[FlipView 类](/uwp/api/windows.ui.xaml.controls.flipview)、[TreeView 类](/uwp/api/windows.ui.xaml.controls.treeview)、[ItemsRepeater 类](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 
 本文介绍的控件包括：
 
@@ -333,7 +333,7 @@ ItemsRepeater 不同于此页上显示的其他集合控件，因为它不提供
 - [大纲/细节](master-details.md)
 - [导航窗格](navigationview.md)
 - [语义式缩放](semantic-zoom.md)
-- [拖放](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [拖放](../input/drag-and-drop.md)
 - [缩略图图像](../../files/thumbnails.md)
 
 **API 参考**

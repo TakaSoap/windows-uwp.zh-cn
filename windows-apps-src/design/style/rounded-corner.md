@@ -4,12 +4,12 @@ description: 了解圆角原则、设计方法和自定义选项。
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 角半径, 圆
-ms.openlocfilehash: 044ae628ffe397005113f658191398e06fd245f5
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 33432ac0083c0d6660d0669ea43805e0ae73f37e
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636527"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860193"
 ---
 # <a name="corner-radius"></a>角半径
 
@@ -22,7 +22,7 @@ ms.locfileid: "91636527"
 安装 WinUI 2.2 或更高版的 NuGet 包时，会为 WinUI 控件和平台控件安装新的默认样式。 在应用中使用 WinUI 2.2 时，系统会自动使用这些样式；不需执行进一步的操作即可使用新样式。 不过，我们会在本文的后面部分介绍如何根据需要自定义圆角。
 
 > [!IMPORTANT]
-> 某些控件既可用于平台 ([Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls))，也可用于 WinUI ([Microsoft.UI.Xaml.Controls](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.2))，例如 **TreeView** 或 **ColorPicker**。 在应用中使用 WinUI 时，应使用 WinUI 版控件。 角部圆化可能会在平台版中应用得不一致（与 WinUI 配合使用时）。
+> 某些控件既可用于平台 ([Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls))，也可用于 WinUI ([Microsoft.UI.Xaml.Controls](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.2&preserve-view=true))，例如 **TreeView** 或 **ColorPicker**。 在应用中使用 WinUI 时，应使用 WinUI 版控件。 角部圆化可能会在平台版中应用得不一致（与 WinUI 配合使用时）。
 
 > **重要的 API**：[Control.CornerRadius 属性](/uwp/api/windows.ui.xaml.controls.control.cornerradius)
 

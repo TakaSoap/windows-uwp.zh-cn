@@ -6,12 +6,12 @@ ms.date: 02/21/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, .net, unity
 ms.localizationpriority: medium
-ms.openlocfilehash: dcacb227205c0049cfc3467c9906784b0b55728f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b687f3ec09a99ae6ccb81e5c205eb454e0af0e04
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165231"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860112"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>Unity 和 UWP 中缺少的 .NET API
 
@@ -27,21 +27,21 @@ ms.locfileid: "89165231"
 
 UWP SDK 的每个版本都符合不同级别的 .NET Standard。 例如，16299 SDK（秋季创作者更新）支持 .NET Standard 2.0。
 
-如果你要了解特定的 .NET API 在你的目标 UWP 版本中是否受支持，可以查看 [.NET Standard API 参考](/dotnet/api/index?view=netstandard-2.0)并选择该 UWP 版本支持的 .NET Standard 版本。
+如果你要了解特定的 .NET API 在你的目标 UWP 版本中是否受支持，可以查看 [.NET Standard API 参考](/dotnet/api/index?view=netstandard-2.0&preserve-view=true)并选择该 UWP 版本支持的 .NET Standard 版本。
 
 ## <a name="scripting-backend-configuration"></a>脚本后端配置
 
-如果你在针对 UWP 进行生成时遇到麻烦，首先应该检查**播放器设置**（**文件 > 生成设置**，并依次选择**通用 Windows 平台**和**播放器设置**）。 在**其他设置 > 配置**下，前三个下拉列表（**脚本运行时版本**、**脚本后端**和 **API 兼容性级别**）都是需要考虑的重要设置。
+如果你在针对 UWP 进行生成时遇到麻烦，首先应该检查 **播放器设置**（**文件 > 生成设置**，并依次选择 **通用 Windows 平台** 和 **播放器设置**）。 在 **其他设置 > 配置** 下，前三个下拉列表（**脚本运行时版本**、**脚本后端** 和 **API 兼容性级别**）都是需要考虑的重要设置。
 
-Unity 脚本后端使用**脚本运行时版本**来允许你获取你选择的 .NET Framework 支持的（大致）等效版本。 但请记住，该版本的 .NET Framework 中的所有 API 并非全部受支持，仅在你的 UWP 的目标 .NET Standard 版本中的 API 受支持。
+Unity 脚本后端使用 **脚本运行时版本** 来允许你获取你选择的 .NET Framework 支持的（大致）等效版本。 但请记住，该版本的 .NET Framework 中的所有 API 并非全部受支持，仅在你的 UWP 的目标 .NET Standard 版本中的 API 受支持。
 
-在新发布的 .NET 中通常会将更多 API 添加到 .NET Standard 中，这可能允许你在独立版和 UWP 中使用相同代码。 例如，.NET Standard 2.0 中引入了 [System.Runtime.Serialization.Json](/dotnet/api/system.runtime.serialization.json) 命名空间。 如果你将**脚本运行时版本**设置为 **.NET 3.5 等效项**（针对较早版本的 .NET Standard），你在尝试使用 API 时会遇到错误；将其切换到 **.NET 4.6 等效项**（支持 .NET Standard 2.0），该 API 将正常运行。
+在新发布的 .NET 中通常会将更多 API 添加到 .NET Standard 中，这可能允许你在独立版和 UWP 中使用相同代码。 例如，.NET Standard 2.0 中引入了 [System.Runtime.Serialization.Json](/dotnet/api/system.runtime.serialization.json) 命名空间。 如果你将 **脚本运行时版本** 设置为 **.NET 3.5 等效项**（针对较早版本的 .NET Standard），你在尝试使用 API 时会遇到错误；将其切换到 **.NET 4.6 等效项**（支持 .NET Standard 2.0），该 API 将正常运行。
 
-**脚本后端**可以为 **.NET** 或 **IL2CPP**。 在本主题中，我们假设你已选择 **.NET**，因为在此处讨论的问题是在这种情况下发生的。 请参阅[脚本后端](https://docs.unity3d.com/Manual/windowsstore-scriptingbackends.html)获取详细信息。
+**脚本后端** 可以为 **.NET** 或 **IL2CPP**。 在本主题中，我们假设你已选择 **.NET**，因为在此处讨论的问题是在这种情况下发生的。 请参阅[脚本后端](https://docs.unity3d.com/Manual/windowsstore-scriptingbackends.html)获取详细信息。
 
-最后，你应将 **API 兼容性级别**设置为你要运行游戏的 .NET 版本。 它应该匹配**脚本运行时版本**。
+最后，你应将 **API 兼容性级别** 设置为你要运行游戏的 .NET 版本。 它应该匹配 **脚本运行时版本**。
 
-一般情况下，对于**脚本运行时版本**和 **API 兼容性级别**，你应该选择可用的最新版本，以便提高与 .NET Framework 的兼容性，你也可以使用更多的 .NET API。
+一般情况下，对于 **脚本运行时版本** 和 **API 兼容性级别**，你应该选择可用的最新版本，以便提高与 .NET Framework 的兼容性，你也可以使用更多的 .NET API。
 
 ![配置：脚本运行时版本；脚本后端；API 兼容性级别](images/missing-dot-net-apis-in-unity-1.png)
 
@@ -90,7 +90,7 @@ private void Save()
 
 ### <a name="io-operations"></a>I/O 操作
 
-[System.IO](/dotnet/api/system.io) 命名空间中的一些类型，如 [FileStream](/dotnet/api/system.io.filestream)，在 .NET Standard 的较早版本中不可用。 但是，Unity 提供[目录](/dotnet/api/system.io.directory)、[文件](/dotnet/api/system.io.file)和 **FileStream** 类型，以便你可以在游戏中使用它们。
+[System.IO](/dotnet/api/system.io) 命名空间中的一些类型，如 [FileStream](/dotnet/api/system.io.filestream)，在 .NET Standard 的较早版本中不可用。 但是，Unity 提供 [目录](/dotnet/api/system.io.directory)、[文件](/dotnet/api/system.io.file)和 **FileStream** 类型，以便你可以在游戏中使用它们。
 
 或者，你可以使用 [Windows.Storage](/uwp/api/Windows.Storage) API，这些 API 仅适用于 UWP 应用。 但是，这些 API 限制应用写入到它们的特定存储中，且不允许它自由访问整个文件系统。 请参阅[文件、文件夹和库](../files/index.md)获取详细信息。
 
@@ -113,9 +113,9 @@ private void UsingThreads()
 }
 ```
 
-### <a name="security"></a>安全
+### <a name="security"></a>安全性
 
-在为 UWP 生成 Unity 游戏时，有些 **System.Security.*** 命名空间（如 [System.Security.Cryptography.X509Certificates](/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0)）不可用。 在这些情况下，请使用 **Windows.Security.*** API，其具有许多相同的功能。
+某些 **系统安全性。** _ 命名空间（如 [system.security.cryptography.x509certificates.x509certificate2](/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0&preserve-view=true)）在生成适用于 UWP 的 Unity 游戏时不可用。 在这些情况下，请使用 _*Windows 安全性。* *_ Api，涵盖了许多相同的功能。
 
 下面的示例只是从具有指定名称的证书存储获取证书：
 
@@ -138,9 +138,9 @@ private async void GetCertificatesAsync(string certStoreName)
 
 ### <a name="networking"></a>网络
 
-有些 **System&period;Net.*** 命名空间（如 [System.Net.Mail](/dotnet/api/system.net.mail?view=netstandard-2.0)）在为 UWP 生成 Unity 游戏时同样不可用。 对于这些 API 的大多数，请使用相应的 **Windows.Networking.*** 和**Windows.Web.*** WinRT API 来获取类似的功能。 有关详细信息，请参阅[网络和 Web 服务](../networking/index.md)。
+构建 UWP 的 Unity 游戏时，某些 _* *系统 &period; Net*_ 命名空间（如 [系统 .net](/dotnet/api/system.net.mail?view=netstandard-2.0&preserve-view=true)）也不可用。 对于其中的大多数 api，请使用相应的 _*windows 网络* *_ 和 _*windows* *_ 。用于获取相似功能的 WinRT Api。 有关详细信息，请参阅[网络和 Web 服务](../networking/index.md)。
 
-对于 **System.Net.Mail**，请使用 [Windows.ApplicationModel.Email](/uwp/api/windows.applicationmodel.email) 命名空间。 有关详细信息，请参阅[发送电子邮件](../contacts-and-calendar/sending-email.md)。
+对于 _ * 系统 .Net. Mail * *，请使用 [windows.applicationmodel.resources.core](/uwp/api/windows.applicationmodel.email) 命名空间。 有关详细信息，请参阅[发送电子邮件](../contacts-and-calendar/sending-email.md)。
 
 ## <a name="see-also"></a>另请参阅
 

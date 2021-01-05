@@ -5,12 +5,12 @@ keywords: 新增功能, 新功能, Windows, Windows 10, 更新, 刷新, 功能, 
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a6138841a19629523b452eab2f3e7b5d125c37
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 04fba2a6fd1f7a13dae3e3509ccb3a0470396dad
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174421"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860144"
 ---
 # <a name="whats-new-for-developers-in-windows-10-build-19041"></a>Windows 10 内部版本 19041 中面向开发人员的新增功能
 
@@ -31,7 +31,7 @@ Direct3D | [使用具有高动态范围显示和高级颜色的 DirectX](/window
 Direct3D 12 | 已添加 [Direct3D 12 Core 1.0 功能级别](/windows/win32/direct3d12/core-feature-levels)，供仅用于计算的设备使用。 </br> 已为 [ID3D12Debug3 接口](/windows/win32/api/d3d12sdklayers/nn-d3d12sdklayers-id3d12debug3)添加新主题。
 Direct ML | 已将 18 个运算符添加到 DirectML，DirectML 是一个低级别硬件加速 API，WinML 基于此 API 进行生成。 例如 [DML_ACTIVATION_SHRINK_OPERATOR_DESC 结构](/windows/win32/api/directml/ns-directml-dml_activation_shrink_operator_desc)。
 错误报告 | RoFailFastWithErrorContextInternal2 函数已添加到 Win32 中，这会引发一个异常，该异常可能包含其他错误上下文。
-机器学习 | Windows 机器学习[现在支持 ONNX 版本 1.4 和 opset 9](/windows/ai/windows-ml/release-notes)。 </br>  使用 [CloseModelOnSessionCreation](/uwp/api/windows.ai.machinelearning.learningmodelsessionoptions.closemodelonsessioncreation?view=winrt-19041) API，可以在不再需要某个学习模型时自动关闭该模型，从而节省内存。
+机器学习 | Windows 机器学习[现在支持 ONNX 版本 1.4 和 opset 9](/windows/ai/windows-ml/release-notes)。 </br>  使用 [CloseModelOnSessionCreation](/uwp/api/windows.ai.machinelearning.learningmodelsessionoptions.closemodelonsessioncreation) API，可以在不再需要某个学习模型时自动关闭该模型，从而节省内存。
 WLAN | 添加了几个新的本机 WiFi 函数和结构，如 [WlanDeviceServiceCommand 函数](/windows/win32/api/wlanapi/nf-wlanapi-wlandeviceservicecommand)。
 Wi-Fi 热点 2 | [通过网站预配 Wi-Fi 配置文件](/windows/win32/nativewifi/prov-wifi-profile-via-website)描述了 Wi-Fi 热点 2 的新功能。
 Windows Holographic 互操作 | 添加了 [`windows.graphics.holographic.interop.h`](/windows/win32/api/windows.graphics.holographic.interop) 标头以及 17 个 Win32 API。 这些 API 用于在 Win32 和 Windows 运行时之间进行互操作。 虽然在 Windows 10 内部版本 18362 中添加了这些 API，但该标头是内部版本 19041 的新标头。

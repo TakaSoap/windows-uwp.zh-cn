@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, uwp, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e7cdffd484c426faa9b877240f45f122ccc5ec4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1c0798a1d58d3a97d02e030bcd0094f8a7364d16
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161751"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860388"
 ---
 # <a name="asynchronous-programming"></a>异步编程
 本主题介绍通用 Windows 平台 (UWP) 的异步编程及其在 c #、Microsoft Visual Basic .NET、c + + 和 JavaScript 中的表示形式。
@@ -58,9 +58,9 @@ ms.locfileid: "89161751"
 使用 c + +/WinRT，可以使用协同程序和 **co_await** 运算符。 有关详细信息和代码示例，请参阅 [c + +/WinRT 中的异步编程](../cpp-and-winrt-apis/concurrency.md)。
 
 ## <a name="asynchronous-patterns-in-uwp-with-ccx"></a>UWP 中带有 c + +/CX 的异步模式
-在 C++/CX 中， 异步编程基于 [**task class**](/cpp/parallel/concrt/reference/task-class) 及其 [**then method**](/cpp/parallel/concrt/reference/task-class?view=vs-2017)。 语法与 JavaScript 承诺的语法类似。 **task 类**及其相关类型还提供取消和管理线程上下文的功能。 有关详细信息，请参阅 [c + +/cx 中的异步编程](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
+在 C++/CX 中， 异步编程基于 [**task class**](/cpp/parallel/concrt/reference/task-class) 及其 [**then method**](/cpp/parallel/concrt/reference/task-class?view=vs-2017&preserve-view=true)。 语法与 JavaScript 承诺的语法类似。 **task 类** 及其相关类型还提供取消和管理线程上下文的功能。 有关详细信息，请参阅 [c + +/cx 中的异步编程](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
-[**Create \_ async 函数**](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017)为生成可从 JavaScript 使用的异步 API 或支持 UWP 的任何其他语言提供支持。 有关详细信息，请参阅 [在 c + +/cx 中创建异步操作](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)。
+[**Create \_ async 函数**](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017&preserve-view=true)为生成可从 JavaScript 使用的异步 API 或支持 UWP 的任何其他语言提供支持。 有关详细信息，请参阅 [在 c + +/cx 中创建异步操作](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)。
 
 ## <a name="asynchronous-patterns-in-uwp-using-javascript"></a>使用 JavaScript 的 UWP 中的异步模式
 在 JavaScript 中，异步编程通过让异步方法返回承诺对象以遵循 [Common JS Promises/A](https://wiki.commonjs.org/wiki/Promises/A) 建议标准。 承诺可在 UWP 和 Windows JavaScript 库中使用。
@@ -70,6 +70,6 @@ ms.locfileid: "89161751"
 在许多情况下，调用异步函数几乎与调用传统函数一样简单。 区别在于使用 [**then**](/previous-versions/windows/apps/br229728(v=win.10)) 或 [**done**](/previous-versions/windows/apps/hh701079(v=win.10)) 方法来指定结果或错误的处理程序以及启动操作。
 
 ## <a name="related-topics"></a>相关主题
-* [使用 C# 或 Visual Basic 调用异步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)
+* [在 c # 或 Visual Basic 中调用异步 Api](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [使用 Async 和 Await 的异步编程（C# 和 Visual Basic）](/previous-versions/visualstudio/visual-studio-2012/hh191443(v=vs.110))
 * [Reversi 示例功能方案：异步代码](/previous-versions/windows/apps/jj712233(v=win.10))

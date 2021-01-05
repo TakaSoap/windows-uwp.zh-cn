@@ -1,23 +1,23 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 准备工作
-description: 准备工作比想像中的简单。 按照以下说明开始为 Windows 10 创建通用 Windows 平台 (UWP) 应用。
+description: 准备工作比想像中的简单。 按照以下说明开始创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用。
 ms.date: 10/13/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0991e4d1173bc665e0cf14786e1901e26e4823c
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: 6c80bb9a3b9fe59550dff0603bdbe1b87e5b2982
+ms.sourcegitcommit: 3eb43ba2a6c52ad83523d63d825ac5d4d9050cd3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011843"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811958"
 ---
 # <a name="get-set-up"></a>准备工作
 
 ![使用 Visual Studio 的准备工作](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-准备工作比想像中的简单。 按照以下说明开始为 Windows 10 创建通用 Windows 平台 (UWP) 应用。
+准备工作比想像中的简单。 按照以下说明开始创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用。
 
 ## <a name="1-download-or-update-visual-studio"></a>1.下载或更新 Visual Studio
 
@@ -36,7 +36,7 @@ Microsoft Visual Studio 2019 可帮助你设计、编码、测试和调试应用
 
 需要 Visual Studio 方面的帮助吗？ 请参阅 [Visual Studio 入门](https://visualstudio.microsoft.com/vs/getting-started/)。
 
-如果你已开始使用 Visual Studio，但发现缺少部分组件，可以通过*新建项目*对话框再次启动安装程序：
+如果你已开始使用 Visual Studio，但发现缺少部分组件，可以通过 *新建项目* 对话框再次启动安装程序：
 
 ![如何重复安装流程](images/win10-cs-install.png)
 
@@ -57,8 +57,8 @@ Microsoft Visual Studio 2019 可帮助你设计、编码、测试和调试应用
 
 在安装工具并启用用于开发的设备后，请查看我们有关如何开始创建 Windows 10 应用的指南。
 
--   [选择平台](/windows/desktop/apps/choose-your-platform.md)
--   [开始编码 UWP 应用](/windows/uwp/get-started/create-uwp-apps.md)
+-   [选择平台](../desktop/choose-your-platform.md)
+-   [开始编码 UWP 应用](/windows-apps-src/get-started/create-uwp-apps.md)
 
 ## <a name="windows-development-setup-scripts"></a>Windows 开发安装脚本
 
@@ -73,5 +73,5 @@ Microsoft Visual Studio 2019 可帮助你设计、编码、测试和调试应用
 ## <a name="see-also"></a>另请参阅
 
 * [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
-* [UWP 应用是什么？](/windows/uwp/get-started/universal-application-platform-guide.md)
+* [UWP 应用是什么？](/windows-apps-src/get-started/universal-application-platform-guide.md)
 * [注册 Windows 帐户](sign-up.md)

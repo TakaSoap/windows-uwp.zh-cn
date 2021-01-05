@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f0e1d460ca52c659401bbb291deafa5746b7bb6
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: eec20ffc02263383cdbe670771143a6403177e7b
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933108"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860434"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -47,7 +47,7 @@ variables:
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\\'
 
 steps:
-- task: NuGetToolInstaller@0
+- task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
   inputs:
@@ -98,7 +98,7 @@ steps:
 | UapAppxPackageBuildMode | CI | 仅生成 .msixupload/.appxupload 文件。 |
 | UapAppxPackageBuildMode | SideloadOnly | 仅生成要旁加载的 **_Test** 文件夹。 |
 | AppxPackageSigningEnabled | true | 启用包签名。 |
-| PackageCertificateThumbprint | 证书指纹 | 此值**必须**与签名证书中的指纹匹配，或者为空字符串。 |
+| PackageCertificateThumbprint | 证书指纹 | 此值 **必须** 与签名证书中的指纹匹配，或者为空字符串。 |
 | PackageCertificateKeyFile | 路径 | 要使用的证书的路径。 此值是从安全文件元数据中检索的。 |
 | PackageCertificatePassword | 密码 | 证书中私钥的密码。 建议将密码存储在 [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) 中，并将密码链接到[变量组](/azure/devops/pipelines/library/variable-groups)。 可将变量传递到此参数。 |
 

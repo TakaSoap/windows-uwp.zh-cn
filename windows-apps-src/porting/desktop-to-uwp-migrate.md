@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 62f1c6462e56b14396e3fdaed16221698c0333fd
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 4e27333c87b596948afcb430eb1cf1ef4998e851
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933158"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860443"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>从桌面应用程序移至 UWP
 
@@ -70,7 +70,7 @@ ms.locfileid: "91933158"
 &nbsp;
 > [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
-如果你的代码不符合此标准，请考虑其他可以实现该代码的方法。 首先打开 [.NET API 浏览器](/dotnet/api/?view=netstandard-2.0)。 你可以使用该浏览器查看 .NET Standard 2.0 中可用的 API。 请确保将列表作用域限定为 .NET Standard 2.0。
+如果你的代码不符合此标准，请考虑其他可以实现该代码的方法。 首先打开 [.NET API 浏览器](/dotnet/api/?view=netstandard-2.0&preserve-view=true)。 你可以使用该浏览器查看 .NET Standard 2.0 中可用的 API。 请确保将列表作用域限定为 .NET Standard 2.0。
 
 ![.NET 选项](images/desktop-to-uwp/dot-net-option.png)
 
@@ -112,7 +112,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-不过，我们可以使用 [.NET API 浏览器](/dotnet/api/?view=netstandard-2.0) 找到另一种方法。 我们可以使用 ``DbConnection``、``DbCommand`` 和 ``DbDataReader`` 类，这些类都在 .NET Standard 2.0 中可用。  
+不过，我们可以使用 [.NET API 浏览器](/dotnet/api/?view=netstandard-2.0&preserve-view=true) 找到另一种方法。 我们可以使用 ``DbConnection``、``DbCommand`` 和 ``DbDataReader`` 类，这些类都在 .NET Standard 2.0 中可用。  
 
 此修订版本使用这些类来获取客户列表，但是，若要创建 ``DbConnection`` 类，我们将需要传递在客户端应用程序中创建的工厂对象。
 
@@ -232,9 +232,9 @@ public sealed partial class MainPage : Page
 
 #### <a name="add-a-xamarin-project"></a>添加 Xamarin 项目
 
-首先，将 **Android**、**iOS** 或**跨平台**项目添加到你的解决方案中。
+首先，将 **Android**、**iOS** 或 **跨平台** 项目添加到你的解决方案中。
 
-你可以在 **Visual C#** 组下面的**添加新项目**对话框中找到这些模板。
+你可以在 **Visual C#** 组下面的 **添加新项目** 对话框中找到这些模板。
 
 !["添加新项目" 对话框的屏幕截图，其中显示已安装 > Visual C 清晰选择的、Android、跨平台和 i O S 选项。](images/desktop-to-uwp/xamarin-projects.png)
 

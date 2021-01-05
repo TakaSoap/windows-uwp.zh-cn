@@ -3,12 +3,12 @@ title: WinUI 2.5 发行说明
 description: WinUI 2.5（包括新功能和 Bug 修复）的发行说明。
 ms.date: 12/01/2020
 ms.topic: reference
-ms.openlocfilehash: d1b7873e874ff38037fbf766ef16b1e924edec16
-ms.sourcegitcommit: 03308873eafd0f768e1c518f4d1cc4e4fe0b70b7
+ms.openlocfilehash: 1fe64ea547b3e8966ea0ec085e77225a3a1895df
+ms.sourcegitcommit: e252ccb4a76c4883c7073083d73007957202b84d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96606023"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657664"
 ---
 # <a name="windows-ui-library-25"></a>Windows UI 库 2.5
 
@@ -26,7 +26,7 @@ NuGet 包下载：[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.U
 
 ### <a name="infobar"></a>InfoBar
 
-[InfoBar](/uwp/design/controls-and-patterns/infobar) 控件用于显示对用户高度可见的应用范围内的状态消息，但这些消息也不具有侵入性。 该控件包含用于指示所显示消息类型的 Severity 属性，以及用于指定你自己的行动号召或超链接按钮的选项。 由于 InfoBar 与其他 UI 内容内联，你还可以指定控件是始终可见还是可以由用户关闭。
+[InfoBar](/windows/uwp/design/controls-and-patterns/infobar) 控件用于显示对用户高度可见的应用范围内的状态消息，但这些消息也不具有侵入性。 该控件包含用于指示所显示消息类型的 Severity 属性，以及用于指定你自己的行动号召或超链接按钮的选项。 由于 InfoBar 与其他 UI 内容内联，你还可以指定控件是始终可见还是可以由用户关闭。
 
 此示例显示了默认状态的 InfoBar，其中有一个关闭按钮和消息。
 
@@ -42,7 +42,7 @@ NuGet 包下载：[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.U
 
 ### <a name="determinate-progressring"></a>确定的 ProgressRing
 
-[ProgressRing](/uwp/design/controls-and-patterns/progress-controls) 的确定状态显示任务完成的百分比。 在已知持续时间且操作进度不应阻止用户与应用交互的操作期间，应使用此控件。
+[ProgressRing](/windows/uwp/design/controls-and-patterns/progress-controls) 的确定状态显示任务完成的百分比。 在已知持续时间且操作进度不应阻止用户与应用交互的操作期间，应使用此控件。
 
 以下动画图像演示了确定的 ProgressRing 控件。
 

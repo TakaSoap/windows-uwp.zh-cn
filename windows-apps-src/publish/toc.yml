@@ -169,23 +169,6 @@
       href: ../publish/advertising-performance-report.md
     - name: 下载分析报告
       href: ../publish/download-analytic-reports.md
-- name: 收取付款
-  href: ../publish/getting-paid-apps.md
-  items:
-    - name: 设置付款帐户和纳税表单
-      href: ../publish/setting-up-your-payout-account-and-tax-forms.md
-    - name: 付款阈值、方法和时间范围
-      href: ../publish/payment-thresholds-methods-and-timeframes.md
-    - name: 付款报表
-      href: ../publish/payout-summary.md
-    - name: 税务详细信息
-      href: ../publish/tax-details-for-paid-apps.md
-    - name: 了解 IRS 税单
-      href: ../publish/understand-irs-tax-forms.md
-    - name: 移动运营商结算
-      href: ../publish/mobile-operator-billing.md
-    - name: VAT 信息
-      href: ../publish/vat-info.md
 - name: Microsoft Store 策略和行为准则
   href: ../publish/store-policies-and-code-of-conduct.md
   items:

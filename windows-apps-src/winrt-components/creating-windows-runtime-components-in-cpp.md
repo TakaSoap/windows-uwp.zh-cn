@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 288795b2dc189dae7b350a30446410b40044d08f
-ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
+ms.openlocfilehash: 9cda36c6027ae74df9beb5d1de68f69f273dc5f0
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192947"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860105"
 ---
 # <a name="windows-runtime-components-with-ccx"></a>使用 C++/CX 创建 Windows 运行时组件
 
@@ -30,7 +30,7 @@ ms.locfileid: "92192947"
 
 ## <a name="casing-and-naming-rules"></a>大小写和命名规则
 
-### <a name="javascript"></a>Javascript
+### <a name="javascript"></a>JavaScript
 JavaScript 区分大小写。 因此，必须遵循以下大小写约定：
 
 -   引用 C++ 命名空间和类时，采用在 C++ 端上使用的相同大小写。
@@ -543,7 +543,7 @@ C# 和 Visual Basic 均支持枚举语言。 这些语言会看到 c + + 公共�
 ## <a name="asynchronous-methods"></a>异步方法
 若要使用其他 Windows 运行时对象公开的异步方法，请使用[任务类（并发运行时）](/cpp/parallel/concrt/reference/task-class)。 有关详细信息，请参阅[任务并行度（并发运行时）](/cpp/parallel/concrt/task-parallelism-concurrency-runtime)。
 
-若要在 c + +/CX 中实现异步方法，请使用 ppltasks.h 中定义的 [create \_ async](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) 函数。 有关详细信息，请参阅 [在适用于 UWP 应用的 c + +/cx 中创建异步操作](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)。 有关示例，请参阅 [创建 c + +/cx Windows 运行时组件并从 JavaScript 或 c # 中调用该组件的演练](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 语言使用 c + +/CX 异步方法，就像它们是在 .NET 中定义的任何异步方法一样。
+若要在 c + +/CX 中实现异步方法，请使用 ppltasks.h 中定义的 [create \_ async](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017&preserve-view=true) 函数。 有关详细信息，请参阅 [在适用于 UWP 应用的 c + +/cx 中创建异步操作](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)。 有关示例，请参阅 [创建 c + +/cx Windows 运行时组件并从 JavaScript 或 c # 中调用该组件的演练](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 语言使用 c + +/CX 异步方法，就像它们是在 .NET 中定义的任何异步方法一样。
 
 ## <a name="exceptions"></a>异常
 你可以引发任何由 Windows 运行时定义的异常类型。 你无法从任何 Windows 运行时异常类型中派生自定义类型。 但是，你可以引发 COMException 并提供可由捕获异常的代码访问的自定义 HRESULT。 无法在 COMException 中指定自定义消息。

@@ -6,16 +6,16 @@ ms.date: 11/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.custom: contperfq2
+ms.custom: contperf-fy21q2
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 309568b80d51cc8bd6cd2394317ef3bb8266a212
-ms.sourcegitcommit: 2a23972e9a0807256954d6da5cf21d0bbe7afb0a
+ms.openlocfilehash: 78d843ff9bdd0625b7172af0bc973581d8bd988a
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94941813"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860412"
 ---
 # <a name="launch-the-windows-settings-app"></a>启动 Windows 设置应用
 
@@ -82,7 +82,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 * 混合现实
 * [网络和 internet](#network-and-internet)
 * [个性化](#personalization)
-* [移动](#phone)
+* [电话号码](#phone)
 * [隐私](#privacy)
 * [Surface Hub](#surface-hub)
 * [系统](#system)
@@ -107,7 +107,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 
 ### <a name="accounts"></a>帐户
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 访问工作单位或学校 | ms-settings:workplace |
 | 电子邮件和应用帐户  | ms-settings:emailandaccounts |
@@ -118,9 +118,9 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | Windows Hello 设置 | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
 | 你的信息 | ms-settings:yourinfo |
 
-### <a name="apps"></a>“应用”
+### <a name="apps"></a>应用
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 应用和功能 | ms-settings:appsfeatures |
 | 应用功能 | ms-settings:appsfeatures-app（应用的重置、管理加载项和可下载内容等操作）|
@@ -133,7 +133,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 
 ### <a name="cortana"></a>Cortana
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 跨设备的 Cortana | ms-settings:cortana-notifications |
 | 更多详细信息 | ms-settings:cortana-moredetails |
@@ -146,7 +146,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 
 ### <a name="devices"></a>设备
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 自动播放 | ms-settings:autoplay |
 | Bluetooth | ms-settings:bluetooth |
@@ -163,7 +163,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 
 ### <a name="ease-of-access"></a>轻松访问
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 音频 | ms-settings:easeofaccess-audio |
 | 隐藏式字幕 | ms-settings:easeofaccess-closedcaptioning |
@@ -182,13 +182,13 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 
 ### <a name="extras"></a>附加信息
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 附加信息 | ms 设置：额外 (仅当安装了 "设置应用" （例如，由第三方)  |
 
 ### <a name="gaming"></a>游戏
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 广播 | ms-settings:gaming-broadcasting |
 | 游戏栏 | ms-settings:gaming-gamebar |
@@ -200,7 +200,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 
 ### <a name="home-page"></a>主页
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | “设置”主页 | ms-settings: |
 
@@ -209,7 +209,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 > [!NOTE]
 > 仅当安装了混合现实门户应用时，这些设置才可用。
 
-| “设置”页面 | URI |
+| “设置”页 | URI |
 |---------------|-----|
 | 音频和语音 | ms-settings:holographic-audio |
 | 环境 | ms 设置：隐私-全息环境 |
@@ -218,7 +218,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 
 ### <a name="network-and-internet"></a>网络和 internet
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 飞行模式 | ms-settings:network-airplanemode<br/>ms-settings:proximity |
 | 手机网络和 SIM 卡 | ms-settings:network-cellular |
@@ -229,15 +229,15 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 管理已知网络 | ms-settings:network-wifisettings |
 | 移动热点 | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
-| 代理 | ms-settings:network-proxy |
+| Proxy (代理) | ms-settings:network-proxy |
 | 状态 | ms-settings:network-status<br/>ms-设置：网络 |
 | VPN | ms-settings:network-vpn |
-| Wi-Fi | ms-settings:network-wifi（仅当设备具有 WLAN 适配器时可用） |
+| WLAN | ms-settings:network-wifi（仅当设备具有 WLAN 适配器时可用） |
 | WLAN 呼叫 | ms-settings:network-wificalling（仅在启用 WLAN 呼叫后可用） |
 
-### <a name="personalization"></a>个性化
+### <a name="personalization"></a>个性化设置
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 背景 | ms-settings:personalization-background |
 | 选择哪些文件夹显示在“开始”菜单上 | ms-settings:personalization-start-places |
@@ -252,13 +252,13 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 
 ### <a name="phone"></a>电话号码
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 你的手机 | ms-settings:mobile-devices<br/>ms-设置：移动设备-addphone<br/>ms-settings：移动设备-addphone-direct (打开 **手机** 应用)  |
 
 ### <a name="privacy"></a>隐私
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 外部设备应用 | ms-settings： accessoryapps (**在 Windows 10 版本1809及更高版本中已弃用**)  |
 | 帐户信息 | ms-settings:privacy-accountinfo |
@@ -294,7 +294,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 
 ### <a name="surface-hub"></a>Surface Hub
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 帐户 | ms-settings:surfacehub-accounts |
 | 会话清理 | ms-settings:surfacehub-sessioncleanup |
@@ -304,7 +304,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 
 ### <a name="system"></a>系统
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 关于 | ms-settings:about |
 | 高级显示设置 | ms-settings:display-advanced（仅适用于支持高级显示选项的设备） |
@@ -339,11 +339,11 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 
 ### <a name="time-and-language"></a>时间和语言
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 日期和时间 | ms-settings:dateandtime |
 | 日本输入法设置 | ms-settings:regionlanguage-jpnime（在安装了 Microsoft 日本输入法编辑器的情况下可用） |
-| 区域 | ms-设置： regionformatting |
+| Region | ms-设置： regionformatting |
 | 语言 | ms-设置：键盘<br/>ms-settings:regionlanguage<br/>ms-settings： regionlanguage-bpmfime<br/>ms-settings： regionlanguage-cangjieime<br/>ms-settings： regionlanguage-chsime-domainlexicon<br/>ms-settings： regionlanguage-chsime-keyconfig<br/>ms-settings： regionlanguage-chsime-udp<br/>ms-settings： regionlanguage-chsime-五笔-udp<br/>ms-settings： regionlanguage-quickime |
 | 拼音输入法设置 | ms-settings:regionlanguage-chsime-pinyin（在安装了 Microsoft 拼音输入法编辑器的情况下可用） |
 | 语音 | ms-settings:speech |
@@ -351,7 +351,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 
 ### <a name="update-and-security"></a>更新和安全
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 激活 | ms-settings:activation |
 | 备份 | ms-settings:backup |
@@ -369,7 +369,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 
 ### <a name="user-accounts"></a>用户帐户
 
-|“设置”页面| URI |
+|“设置”页| URI |
 |-------------|-----|
 | 设置 | ms-settings:workplace-provisioning（仅在企业部署了预配包后可用） |
 | 设置 | ms-settings:workplace-provisioning（仅在移动设备和企业部署了预配包后可用） |

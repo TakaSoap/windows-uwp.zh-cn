@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 新增功能, 功能, 新增
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0d7c42b1346805c9c03714eb9bbb3944fe940ccf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f5cfe5dc66df98e3dd4d4290023cac1874ae797a
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154461"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860289"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 中的新增功能
 
@@ -34,7 +34,7 @@ C++/WinRT 和 C++ 编译器团队共同合作，尽可能缩短生成时间。 �
 
 ### <a name="improved-msbuild-support"></a>改进的 MSBuild 支持
 
-我们投入了大量工作来改进 [MSBuild](/visualstudio/msbuild/msbuild?view=vs-2019) 支持，使其适合广泛选择的不同方案。
+我们投入了大量工作来改进 [MSBuild](/visualstudio/msbuild/msbuild) 支持，使其适合广泛选择的不同方案。
 
 ### <a name="even-faster-factory-caching"></a>更快的工厂缓存
 
@@ -44,7 +44,7 @@ C++/WinRT 和 C++ 编译器团队共同合作，尽可能缩短生成时间。 �
 
 ### <a name="more-efficient-boxing"></a>更高效的装箱
 
-在 XAML 应用程序中使用时，[**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 现在会更高效（请参阅[装箱和取消装箱](./boxing.md)）。 执行大量装箱操作的应用程序的代码大小也会降低。
+在 XAML 应用程序中使用时，[**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 现在会更高效（请参阅 [装箱和取消装箱](./boxing.md)）。 执行大量装箱操作的应用程序的代码大小也会降低。
 
 ### <a name="support-for-implementing-com-interfaces-that-implement-iinspectable"></a>支持实现用于实现 IInspectable 的 COM 接口
 
@@ -107,9 +107,9 @@ C++/WinRT 协同例程的性能良好，但我们继续寻找对其进行改进�
 #### <a name="fewer-dependencies"></a>更少的依赖项
 
 由于存在 xlang 元数据读取器，`cppwinrt.exe` 工具本身的依赖项更少。 这使它要灵活得多，以及可在更多方案中使用 &mdash; 尤其是在受约束的生成环境中。 值得注意的是，它不再依赖于 `RoMetadata.dll`。
- 
+ 
 以下这些是 `cppwinrt.exe` 2.0 的依赖项。
- 
+ 
 - ADVAPI32.dll
 - KERNEL32.dll
 - SHLWAPI.dll
@@ -142,7 +142,7 @@ C++/WinRT 协同例程的性能良好，但我们继续寻找对其进行改进�
 - api-ms-win-core-threadpool-l1-2-0.dll
 - api-ms-win-core-com-l1-1-0.dll
 - api-ms-win-core-com-l1-1-1.dll
-- api-ms-win-core-synch-l1-2-0.dll 
+- api-ms-win-core-synch-l1-2-0.dll 
 
 #### <a name="the-windows-runtime-noexcept-attribute"></a>Windows 运行时 `noexcept` 属性
 
@@ -171,14 +171,14 @@ printf("%ls\n", projected.ToString().c_str());
 ```cpp
 int32_t Function() noexcept
 {
-    try
-    {
-        // code here constitutes unique value.
-    }
-    catch (...)
-    {
-        // code here is always duplicated.
-    }
+    try
+    {
+        // code here constitutes unique value.
+    }
+    catch (...)
+    {
+        // code here is always duplicated.
+    }
 }
 ```
 
@@ -228,14 +228,14 @@ using namespace Windows::System;
 ...
 fire_and_forget Async(DispatcherQueueController controller)
 {
-    bool queued = co_await resume_foreground(controller.DispatcherQueue());
-    assert(queued);
+    bool queued = co_await resume_foreground(controller.DispatcherQueue());
+    assert(queued);
 
-    // This is just to simulate queue failure...
-    co_await controller.ShutdownQueueAsync();
+    // This is just to simulate queue failure...
+    co_await controller.ShutdownQueueAsync();
 
-    queued = co_await resume_foreground(controller.DispatcherQueue());
-    assert(!queued);
+    queued = co_await resume_foreground(controller.DispatcherQueue());
+    assert(!queued);
 }
 ```
 
@@ -266,20 +266,20 @@ fire_and_forget Async(DispatcherQueueController controller)
 ```cppwinrt
 struct Sample : implements<Sample, IStringable>
 {
-    hstring ToString()
-    {
-        return L"Sample";
-    }
+    hstring ToString()
+    {
+        return L"Sample";
+    }
 
-    ~Sample()
-    {
-        // Called when the unique_ptr below is reset.
-    }
+    ~Sample()
+    {
+        // Called when the unique_ptr below is reset.
+    }
 
-    static void final_release(std::unique_ptr<Sample> self) noexcept
-    {
-        // Move 'self' as needed to delay destruction.
-    }
+    static void final_release(std::unique_ptr<Sample> self) noexcept
+    {
+        // Move 'self' as needed to delay destruction.
+    }
 };
 ```
 
@@ -290,27 +290,27 @@ struct Sample : implements<Sample, IStringable>
 ```cppwinrt
 struct MainPage : PageT<MainPage>
 {
-    MainPage()
-    {
-    }
+    MainPage()
+    {
+    }
 
-    ~MainPage()
-    {
-        DataContext(nullptr);
-    }
+    ~MainPage()
+    {
+        DataContext(nullptr);
+    }
 
-    static IAsyncAction final_release(std::unique_ptr<MainPage> self)
-    {
-        co_await 5s;
+    static IAsyncAction final_release(std::unique_ptr<MainPage> self)
+    {
+        co_await 5s;
 
-        co_await resume_foreground(self->Dispatcher());
-        co_await self->resource.CloseAsync();
+        co_await resume_foreground(self->Dispatcher());
+        co_await self->resource.CloseAsync();
 
-        // The object is destructed normally at the end of final_release,
+        // The object is destructed normally at the end of final_release,
         // when the std::unique_ptr<MyClass> destructs. If you want to destruct
-        // the object earlier than that, then you can set *self* to `nullptr`.
-        self = nullptr;
-    }
+        // the object earlier than that, then you can set *self* to `nullptr`.
+        self = nullptr;
+    }
 };
 ```
 
