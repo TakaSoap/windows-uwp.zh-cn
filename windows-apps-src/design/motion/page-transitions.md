@@ -8,18 +8,18 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d3e2385b1e15334b26663f6f17b3ef47ab015eec
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b676cf274121ae991066f908b18f1be705d1c580
+ms.sourcegitcommit: 77903451ae8ab1ba854494488f79184e674707df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216632"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911007"
 ---
 # <a name="page-transitions"></a>页面过渡
 
 页面过渡可将用户导航到应用中的各个页面，并提供反馈作为页面之间的关系。 页面过渡可帮助用户了解他们是否处于导航层次结构的顶部、在同级页面之间移动或导航到页面层次结构的更深层。
 
-为应用、*页面刷新* 和*钻取* 内的页面之间的导航提供了两个不同的动画，由 [**NavigationTransitionInfo**](/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo) 的子类表示。
+为应用、*页面刷新* 和 *钻取* 内的页面之间的导航提供了两个不同的动画，由 [**NavigationTransitionInfo**](/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo) 的子类表示。
 
 ## <a name="examples"></a>示例
 
@@ -104,4 +104,4 @@ myFrame.Navigate(typeof(Page2), null, new SuppressNavigationTransitionInfo());
 ## <a name="related-topics"></a>相关主题
 
 - [在两个页面之间导航](../basics/navigate-between-two-pages.md)
-- [UWindowsWP 应用中的运动](index.md)
+- [UWP 应用中运动](index.md)
