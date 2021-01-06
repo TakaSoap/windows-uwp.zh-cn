@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, directx, 应用对象
 ms.localizationpriority: medium
-ms.openlocfilehash: 29eaba70a7114624474275b8f98ec77f8038b2b0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 08d2039bd7b3b8aa248acca31615d34635929aa1
+ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163161"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927770"
 ---
 # <a name="the-app-object-and-directx"></a>应用对象和 DirectX
 
@@ -34,7 +34,7 @@ ms.locfileid: "89163161"
 
 ## <a name="the-windows-runtime-app-object"></a>Windows 运行时应用对象
 
-在你的 UWP 应用中，你希望获得一个窗口和一个视图提供程序，你可从该提供程序获得一个视图，也可将你的交换链（显示缓冲区）连接到该提供程序。 你也可以将此视图连接到正在运行的应用的特定于窗口的事件中。 若要获取应用程序对象的父窗口（由 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 类型定义），请创建实现 [**IFrameworkViewSource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource)的类型。 有关演示如何实现**IFrameworkViewSource**的[c + +/WinRT](../cpp-and-winrt-apis/index.md)代码示例，请参阅[使用 DirectX 和 Direct2D 组合本机互操作](../composition/composition-native-interop.md)。
+在你的 UWP 应用中，你希望获得一个窗口和一个视图提供程序，你可从该提供程序获得一个视图，也可将你的交换链（显示缓冲区）连接到该提供程序。 你也可以将此视图连接到正在运行的应用的特定于窗口的事件中。 若要获取应用程序对象的父窗口（由 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 类型定义），请创建实现 [**IFrameworkViewSource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource)的类型。 有关演示如何实现 **IFrameworkViewSource** 的 [c + +/WinRT](../cpp-and-winrt-apis/index.md)代码示例，请参阅 [使用 DirectX 和 Direct2D 组合本机互操作](../composition/composition-native-interop.md)。
 
 下面是使用核心用户界面框架获取窗口的基本步骤集。
 
@@ -66,7 +66,7 @@ ms.locfileid: "89163161"
 -   [**Windows.UI.Core.CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)
 -   [**CoreDispatcher。**](/uwp/api/Windows.UI.Core.CoreDispatcher)
 
-你可以使用这些类型访问应用的视图（具体来讲，访问绘制应用父窗口内容的位），并处理为该窗口引发的事件。 应用窗口的进程是一个*应用程序单线程单元* (ASTA)，它是隔离的并处理所有回调。
+你可以使用这些类型访问应用的视图（具体来讲，访问绘制应用父窗口内容的位），并处理为该窗口引发的事件。 应用窗口的进程是一个 *应用程序单线程单元* (ASTA)，它是隔离的并处理所有回调。
 
 你的应用的视图由你的应用窗口的视图提供程序生成，并且在大多数情况下将由特定框架包或系统本身实现，因此你不需要亲自实现它。 如前所述，对于 DirectX，你需要实现一个精简视图提供程序。 以下组件和行为之间存在特定的 1 对 1 关系：
 
@@ -94,12 +94,13 @@ ms.locfileid: "89163161"
 
 你可以确定为具有 [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) 类型的窗口调度的事件线程行为。 在此类型中，有一个特别重要的方法：即 [**CoreDispatcher.ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) 方法，该方法启动窗口事件处理。 使用应用的错误选项调用此方法可能导致各种异常的事件处理行为。
 
-| CoreProcessEventsOption 选项                                                           | 描述                                                                                                                                                                                                                                  |
-|------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**CoreProcessEventsOption.ProcessOneAndAllPending**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | 调度队列中所有当前可用的事件。 如果没有正在等待的事件，则等待下一个新事件。                                                                                                                                 |
-| [**CoreProcessEventsOption.ProcessOneIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)     | 如果在队列中有正在等待的事件，则调度一个事件。 如果没有正在等待的事件，则不等待引发新事件，而是立即返回。                                                                                          |
-| [**CoreProcessEventsOption.ProcessUntilQuit**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)        | 等待新事件并调度所有可用事件。 继续此行为，直到窗口关闭或者应用程序调用 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 实例上的 [**Close**](/uwp/api/windows.ui.core.corewindow.close) 方法为止。 |
-| [**CoreProcessEventsOption.ProcessAllIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)     | 调度队列中所有当前可用的事件。 如果没有正在等待的事件，则立即返回。                                                                                                                                          |
+| CoreProcessEventsOption 选项 | 说明 |
+|--------------------------------|-------------|
+| [**CoreProcessEventsOption.ProcessOneAndAllPending**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | 调度队列中所有当前可用的事件。 如果没有正在等待的事件，则等待下一个新事件。 |
+| [**CoreProcessEventsOption.ProcessOneIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | 如果在队列中有正在等待的事件，则调度一个事件。 如果没有正在等待的事件，则不等待引发新事件，而是立即返回。 |
+| [**CoreProcessEventsOption.ProcessUntilQuit**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | 等待新事件并调度所有可用事件。 继续此行为，直到窗口关闭或者应用程序调用 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 实例上的 [**Close**](/uwp/api/windows.ui.core.corewindow.close) 方法为止。 |
+| [**CoreProcessEventsOption.ProcessAllIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | 调度队列中所有当前可用的事件。 如果没有正在等待的事件，则立即返回。 |
+
 使用 DirectX 的 UWP 应使用 [**CoreProcessEventsOption.ProcessAllIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) 选项来防止可能中断图形更新的阻止行为。
 
 ## <a name="asta-considerations-for-directx-devs"></a>DirectX 开发中与 ASTA 有关的注意事项
