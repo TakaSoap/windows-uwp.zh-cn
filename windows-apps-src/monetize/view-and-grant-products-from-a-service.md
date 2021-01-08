@@ -6,16 +6,16 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 收集 API, Microsoft Store 购买 API, 查看产品, 授予产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 769366cd45b4734987e3f558c11a6e0e105cfe21
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 700749c45c563be0bb78de557cac3550767846bd
+ms.sourcegitcommit: fc7fb82121a00e552eaebafba42e5f8e1623c58a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164451"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97978572"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理来自服务的产品授权
 
-如果你有应用和加载项的目录，你可以使用 *Microsoft Store 收集 API* 和 *Microsoft Store 购买 API* 访问你的服务中的这些产品的权益信息。 *权益*表示客户使用通过 Microsoft Store 发布的应用或加载项的权利。
+如果你有应用和加载项的目录，你可以使用 *Microsoft Store 收集 API* 和 *Microsoft Store 购买 API* 访问你的服务中的这些产品的权益信息。 *权益* 表示客户使用通过 Microsoft Store 发布的应用或加载项的权利。
 
 这些 API 由 REST 方法组合而成，旨在供开发人员用于跨平台服务支持的加载项目录。 这些 API 支持你执行以下操作：
 
@@ -23,7 +23,7 @@ ms.locfileid: "89164451"
 -   Microsoft Store 购买 API：[向用户授予免费产品](grant-free-products.md)、[获取用户订阅](get-subscriptions-for-a-user.md)和[更改用户订阅的计费状态](change-the-billing-state-of-a-subscription-for-a-user.md)。
 
 > [!NOTE]
-> Microsoft Store 收集 API 和购买 API 使用 Azure Active Directory (Azure AD) 身份验证访问客户所有权信息。 要使用这些 API，你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，则你已具有 Azure AD 目录。
+> Microsoft Store 收集 API 和购买 API 使用 Azure Active Directory (Azure AD) 身份验证访问客户所有权信息。 要使用这些 API，你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。
 
 ## <a name="overview"></a>概述
 
@@ -59,11 +59,13 @@ ms.locfileid: "89164451"
 5.  向 [应用程序清单](/azure/active-directory/develop/active-directory-application-manifest)添加几个必需的受众 uri。 在左窗格中，单击“清单”。 单击 " **编辑**"，将 `"identifierUris"` 部分替换为以下文本，然后单击 " **保存**"。
 
     ```json
-    "identifierUris" : [                                
-            "https://onestore.microsoft.com",
-            "https://onestore.microsoft.com/b2b/keys/create/collections",
-            "https://onestore.microsoft.com/b2b/keys/create/purchase"
+    "accessTokenAcceptedVersion": 1,
+    "identifierUris": [
+        "https://onestore.microsoft.com",
+        "https://onestore.microsoft.com/b2b/keys/create/collections",
+        "https://onestore.microsoft.com/b2b/keys/create/purchase"
         ],
+    "signInAudience": "AzureADMyOrg",
     ```
 
     这些字符串表示你的应用程序支持的受众。 在稍后的步骤中，你将创建与其中每个受众值关联的 Azure AD 访问令牌。
@@ -95,7 +97,7 @@ ms.locfileid: "89164451"
 
 根据你希望在 Microsoft Store 收集 API 或购买 API 中调用的方法，你必须创建两个或三个不同的令牌。 每个访问令牌都与不同的受众 URI（即你之前添加到 Azure AD 应用程序清单的 `"identifierUris"` 部分的 URI）关联。
 
-  * 在所有情况下，你都必须使用 `https://onestore.microsoft.com` 受众 URI 创建令牌。 在稍后的步骤中，你要将此令牌传递到 Microsoft Store 收集 API 或购买 API 中的方法的**授权**标题。
+  * 在所有情况下，你都必须使用 `https://onestore.microsoft.com` 受众 URI 创建令牌。 在稍后的步骤中，你要将此令牌传递到 Microsoft Store 收集 API 或购买 API 中的方法的 **授权** 标题。
       > [!IMPORTANT]
       > 将 `https://onestore.microsoft.com` 受众仅与安全存储在服务中的访问令牌一起使用。 在服务之外公开访问令牌和此受众会让你的服务易受到重播攻击。
 
@@ -124,7 +126,7 @@ grant_type=client_credentials
 
 * 对于 " *客户端 \_ id* " 和 " *客户端 \_ 密码* " 参数，请为你从 [Azure 管理门户](https://portal.azure.com/)检索的应用程序指定应用程序 id 和客户端密码。 若要创建带有 Microsoft Store 收集 API 或购买 API 所需的身份验证级别的访问令牌，这两个参数都是必需的。
 
-* 对于*资源*参数，请指定[上一节](#access-tokens)中列出的受众 URI 之一，具体取决于要创建的访问令牌的类型。
+* 对于 *资源* 参数，请指定 [上一节](#access-tokens)中列出的受众 URI 之一，具体取决于要创建的访问令牌的类型。
 
 在你的访问令牌到期后，你可按照[此处](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens)的说明刷新令牌。 有关访问令牌的结构的更多详细信息，请参阅[支持的令牌和声明类型](/azure/active-directory/develop/id-tokens)。
 
@@ -215,7 +217,7 @@ Microsoft Store ID 密钥是 JSON Web 令牌 (JWT)，该令牌表示你想要访
 * `nbf`： &nbsp; &nbsp; &nbsp; 标识将接受令牌进行处理的时间。 此声明的值表示为纪元时间。
 * `http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId`： &nbsp; &nbsp; &nbsp; 标识开发人员的客户端 ID。
 * `http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload`： &nbsp; &nbsp; &nbsp; (加密和 Base64 编码) 的不透明负载，包含仅供 Microsoft Store 服务使用的信息。
-* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId`： &nbsp; &nbsp; &nbsp; 标识服务上下文中的当前用户的用户 ID。 此值与你传递到[用于创建密钥的方法](#step-4)的可选 *publisherUserId* 参数中的值相同。
+* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId`： &nbsp; &nbsp; &nbsp; 标识服务上下文中的当前用户的用户 ID。 此值与你传递到 [用于创建密钥的方法](#step-4)的可选 *publisherUserId* 参数中的值相同。
 * `http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri`： &nbsp; &nbsp; &nbsp; 可用来续订密钥的 URI。
 
 以下是一个解码的 Microsoft Store ID 密钥标头的示例。
