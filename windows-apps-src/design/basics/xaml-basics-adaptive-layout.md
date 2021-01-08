@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6919a2dc15aac7c5e589f2c0355f9c1cc13bfc7a
-ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
+ms.openlocfilehash: e9db25c822d524ec36c6e512e132e49a69a2bd7d
+ms.sourcegitcommit: 7aa0e1108fd1a19ebc5632acbc9f66ea9af2b321
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97598808"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691529"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教程：创建自适应布局
 
@@ -266,10 +266,7 @@ ms.locfileid: "97598808"
 
 现在，你已完成本实验，并且拥有足够的自适应布局知识，可以自行进行进一步的实验。 作为一项更大的挑战，请尝试针对较大的屏幕大小优化布局（例如 Surface Hub）。 若要测试 Surface Hub 布局，请参阅[使用 Visual Studio 测试 Surface Hub 应用](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md)。
 
-如果遇到问题，可在[采用 XAML 的响应式布局](../layout/layouts-with-xaml.md)的以下部分中找到更多指南。
-
-+ [视觉状态和状态触发器](../layout/layouts-with-xaml.md#adaptive-layouts-with-visual-states-and-state-triggers)
-+ [定制布局](../layout/layouts-with-xaml.md#tailored-layouts)
+如果遇到问题，可在[采用 XAML 的响应式布局](../layout/layouts-with-xaml.md)中找到更多指南。
 
 或者，如果你想要了解有关如何构建初始照片编辑应用的详细信息，请查看这些有关 XAML [用户界面](../basics/xaml-basics-ui.md)和[数据绑定](../../data-binding/xaml-basics-data-binding.md)的教程。
 

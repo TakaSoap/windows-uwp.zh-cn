@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e25f9cdb091f96b648ddc00d5f5cc96bf18d1d1
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 035003be1c9b8ef84d0563af6be9f5b3a01978c7
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750593"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860139"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>从 C++/CX 移动到 C++/WinRT
 
@@ -328,7 +328,7 @@ C++ 集合类型使用默认构造函数，这可能导致意外的对象构造�
 
 ### <a name="more-about-collections-of-empty-references"></a>有关空引用集合的详细信息
 
-只要在 C++/CX 中有一个 **Platform::Array\^** （参见[移植 **Platform::Array\^**](#port-platformarray)），即可将其移植到 C++/WinRT 中的 **std::vector**（事实上，可以将其移植到任何邻近的容器），而不是将其作为数组保留。 选择 **std::vector** 有多种优势。
+只要在 C++/CX 中有一个 **Platform::Array\^** （参见 [移植 **Platform::Array\^**](#port-platformarray)），即可将其移植到 C++/WinRT 中的 **std::vector**（事实上，可以将其移植到任何邻近的容器），而不是将其作为数组保留。 选择 **std::vector** 有多种优势。
 
 例如，尽管存在用于创建固定大小的空引用矢量（参见上表）的速记，但没有用于创建空引用数组的速记。 必须针对数组中的每个元素重复执行 `nullptr`。 如果构造的数目太少，则会默认构造额外的。
 
@@ -559,7 +559,7 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 ### <a name="port-platformarray"></a>移植 Platform::Array\^
 
-在 C++/CX 要求使用数组的情况下，C++/WinRT 允许使用任何相邻的容器。 请参阅[默认构造函数如何影响集合](#how-the-default-constructor-affects-collections)，了解为何可以使用 **std::vector**。
+在 C++/CX 要求使用数组的情况下，C++/WinRT 允许使用任何相邻的容器。 请参阅 [默认构造函数如何影响集合](#how-the-default-constructor-affects-collections)，了解为何可以使用 **std::vector**。
 
 因此，只要在 C++/CX 中有 **Platform::Array\^** ，移植选项中就会包括使用初始值设定项列表、**std::array** 或 **std::vector** 的选项。 有关详细信息和代码示例，请参阅[标准初始值设定项列表](./std-cpp-data-types.md#standard-initializer-lists)和[标准数组和矢量](./std-cpp-data-types.md#standard-arrays-and-vectors)。
 
@@ -625,7 +625,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 
 Platform::String\^ 等同于 Windows 运行时 HSTRING ABI 类型。 对于 C++/WinRT，等效项是 [winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)。 但使用 C++/WinRT，你可以使用 C++ 标准库宽字符串类型（如 std::wstring）和/或宽字符串文字调用 Windows 运行时 API。 有关更多详细信息和代码示例，请参阅 [C++/WinRT 中的字符串处理](strings.md)。
 
-通过 C++/CX，你可以访问 [Platform::String::Data](/cpp/cppcx/platform-string-class?view=vs-2019#data) 属性来作为 C 样式 const wchar_t\* 数组检索字符串（例如，将其传递到 std::wcout）。
+通过 C++/CX，你可以访问 [Platform::String::Data](/cpp/cppcx/platform-string-class#data) 属性来作为 C 样式 const wchar_t\****_ 数组检索字符串（例如，将其传递到 _std::wcout***）。
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };

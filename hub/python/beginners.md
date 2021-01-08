@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, 了解 python, windows 上的 python（初学者）, 使用 microsoft store 安装 python, python 与 vs code, windows 上的 pygame
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 076c62658431ba75bdbd7f385ced86f27fb2f7d0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f225932685e71cb2374249ad96efeac11184d000
+ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174141"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97880540"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>开始在 Windows 上使用 Python（初学者）
 
@@ -31,7 +31,7 @@ ms.locfileid: "89174141"
 
 1. 转到“开始”菜单（左下方 Windows 图标），输入“Microsoft Store”，选择用于打开应用商店的链接。
 
-2. 应用商店打开后，从右上方菜单中选择“搜索”，然后输入“Python”。 从“应用”下的结果中打开“Python 3.7”。 选择“获取”。
+2. 应用商店打开后，从右上方菜单中选择“搜索”，然后输入“Python”。 从“应用”下的结果中打开“Python 3.9”。 选择“获取”。
 
 3. Python 完成下载和安装过程后，使用“开始”菜单（左下方 Windows 图标）打开 Windows PowerShell。 PowerShell 打开后，输入 `Python --version` 以确认已在计算机上安装了 Python3。
 
