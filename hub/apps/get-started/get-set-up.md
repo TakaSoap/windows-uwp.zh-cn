@@ -1,28 +1,28 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 准备工作
-description: 准备工作比想像中的简单。 按照以下说明开始创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用。
-ms.date: 10/13/2020
+description: 按照这些说明操作，开始创建适用于 Windows 10 的应用，并使用 WinRT Api (也称为通用 Windows 平台或 UWP) 。
+ms.date: 1/8/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c80bb9a3b9fe59550dff0603bdbe1b87e5b2982
-ms.sourcegitcommit: 3eb43ba2a6c52ad83523d63d825ac5d4d9050cd3
+ms.openlocfilehash: 928b8fa82e4a06f82f0e85ca34ab838562b08435
+ms.sourcegitcommit: 30d1a27fd78d198cec5c50af5621f9e65c7b965e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97811958"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98043066"
 ---
 # <a name="get-set-up"></a>准备工作
 
 ![使用 Visual Studio 的准备工作](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-准备工作比想像中的简单。 按照以下说明开始创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用。
+欢迎进行 Windows 10 开发！ 按照这些说明操作，开始创建适用于 Windows 10 的应用，并使用 WinRT Api (也称为通用 Windows 平台或 UWP) 。
 
-## <a name="1-download-or-update-visual-studio"></a>1.下载或更新 Visual Studio
+## <a name="1-download-or-update-visual-studio"></a>1. 下载或更新 Visual Studio
 
 > [!NOTE]
-> 新版 Visual Studio 的外观可能与这些说明随附的屏幕截图不同。 不用担心！ 遵照这些说明仍可完成设置。
+> 新版 Visual Studio 的外观可能与这些说明随附的屏幕截图不同。 不必担心！ 遵照这些说明仍可完成设置。
 
 Microsoft Visual Studio 2019 可帮助你设计、编码、测试和调试应用。
 
@@ -41,13 +41,13 @@ Microsoft Visual Studio 2019 可帮助你设计、编码、测试和调试应用
 ![如何重复安装流程](images/win10-cs-install.png)
 
 
-## <a name="2-enable-your-device-for-development"></a>2.启用设备进行开发
+## <a name="2-enable-your-device-for-development"></a>2. 启用设备进行开发
 
 在真实的电脑和手机上测试 UWP 应用非常重要。 你必须先使你的电脑或 Windows Phone 能够进行开发，然后才能将应用部署到它。
 
 -   有关详细说明，请参阅[启用设备进行开发](enable-your-device-for-development.md)。
 
-## <a name="3-register-as-an-app-developer"></a>3.注册成为应用开发人员
+## <a name="3-register-as-an-app-developer"></a>3. 注册为应用开发人员
 
 你可以立即开始开发应用，但需要一个开发人员帐户才能将它们提交到应用商店。
 
@@ -58,7 +58,7 @@ Microsoft Visual Studio 2019 可帮助你设计、编码、测试和调试应用
 在安装工具并启用用于开发的设备后，请查看我们有关如何开始创建 Windows 10 应用的指南。
 
 -   [选择平台](../desktop/choose-your-platform.md)
--   [开始编码 UWP 应用](/windows-apps-src/get-started/create-uwp-apps.md)
+-   [开始编写代码](https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps)
 
 ## <a name="windows-development-setup-scripts"></a>Windows 开发安装脚本
 
