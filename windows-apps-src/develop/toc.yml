@@ -310,17 +310,15 @@
         - name: Windows 设备门户
           href: ../debug-test-perf/device-portal.md
           items:
-            - name: 适用于桌面设备的 Device Portal
+            - name: 适用于桌面设备的 Windows 设备门户
               href: ../debug-test-perf/device-portal-desktop.md
-            - name: 适用于移动设备的 Device Portal
+            - name: 适用于移动设备的 Windows 设备门户
               href: ../debug-test-perf/device-portal-mobile.md
-            - name: 适用于 Hololens 的设备门户
-              href: ../debug-test-perf/device-portal-hololens.md
-            - name: Device Portal 核心 API
+            - name: Windows 设备门户核心 REST API
               href: ../debug-test-perf/device-portal-api-core.md
-            - name: 为设备门户编写自定义插件
+            - name: 为 Windows 设备门户编写自定义插件
               href: ../debug-test-perf/device-portal-plugin.md
-            - name: 使用自定义的 SSL 证书预配设备门户
+            - name: 使用自定义的 SSL 证书预配 Windows 设备门户
               href: ../debug-test-perf/device-portal-ssl.md
         - name: Windows 应用认证工具包
           href: ../debug-test-perf/windows-app-certification-kit.md

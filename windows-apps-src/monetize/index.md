@@ -6,18 +6,18 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, 盈利, 参与, 促销, Microsoft Store 服务
 ms.localizationpriority: medium
-ms.openlocfilehash: f2516a1708948f0322d197bf4fdd524ede6ba0b0
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 29dcc02375358c7f16f38748ca92dbaeaf3ebdb7
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878540"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104698"
 ---
 # <a name="monetization-engagement-and-store-services"></a>盈利、参与度和 Microsoft Store 服务
 
 Windows SDK、Microsoft 广告 SDK、Microsoft Store Services SDK 和 Microsoft Store 提供许多功能，可使你从应用中获取更多收益并通过吸引用户来赢得客户。 本部分的主题介绍如何将这些功能生成到你的应用中。
 
-有关 Microsoft Store 收费情况以及如何获取应用销售所得的详细信息，请参阅[获得收入](../publish/getting-paid-apps.md)。
+有关 Microsoft Store 收费情况以及如何获取应用销售所得的详细信息，请参阅[获得收入](/partner-center/marketplace-get-paid)。
 
 ## <a name="choose-a-pricing-model"></a>选择定价模式
 
@@ -126,7 +126,7 @@ Windows SDK、Microsoft 广告 SDK、Microsoft Store Services SDK 和 Microsoft 
 
 通过使用这些报告，密切关注应用在 Microsoft Store 中的盈利情况。
 
-- [付款摘要](../publish/payout-summary.md)
+- [付款摘要](/partner-center/payout-statement)
 - [购置报告](../publish/acquisitions-report.md)
 - [加载项购置报告](../publish/add-on-acquisitions-report.md)
 - [广告性能报告](../publish/advertising-performance-report.md)

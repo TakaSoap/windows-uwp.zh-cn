@@ -4,12 +4,12 @@ description: Microsoft PowerToys 是一套用于自定义 Windows 10 的实用�
 ms.date: 12/02/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f441c7ef9fc4268b35c041f1100cb7f116318a5
-ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
+ms.openlocfilehash: 5e7e88e8ff179ebbb63aa7369c22149b645c9838
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97611827"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104578"
 ---
 # <a name="microsoft-powertoys-utilities-to-customize-windows-10"></a>Microsoft PowerToys：用于自定义 Windows 10 的实用工具
 
@@ -21,8 +21,8 @@ Microsoft PowerToys 是一组实用工具，可帮助高级用户调整和简化
 ## <a name="processor-support"></a>处理器支持
 
 - **x64**：支持
-- **x86**：正在开发中（请参见[问题 #602](https://github.com/microsoft/PowerToys/issues/602)）
-- **ARM**：正在开发中（请参见[问题 #490](https://github.com/microsoft/PowerToys/issues/490)）
+- **x86**：正在开发中（请参见 [问题 #602](https://github.com/microsoft/PowerToys/issues/602)）
+- **ARM**：正在开发中（请参见 [问题 #490](https://github.com/microsoft/PowerToys/issues/490)）
 
 ## <a name="current-powertoy-utilities"></a>当前 PowerToy 实用工具
 
@@ -149,7 +149,7 @@ Microsoft PowerToys 是一组实用工具，可帮助高级用户调整和简化
 
 - 编写[技术规范](https://codeburst.io/on-writing-tech-specs-6404c9791159)
 - 提交[设计概念或建议](https://www.microsoft.com/design/inclusive/)
-- [参与编辑文档](https://docs.microsoft.com/contribute/)
+- [参与编辑文档](/contribute/)
 - 识别和修复[源代码](https://github.com/microsoft/PowerToys/tree/master/src)中的 bug
 - [对新功能和 PowerToy 实用工具编码](https://github.com/microsoft/PowerToys/tree/master/doc/devdocs)
 
