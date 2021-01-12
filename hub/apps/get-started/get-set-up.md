@@ -6,12 +6,12 @@ ms.date: 1/8/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 928b8fa82e4a06f82f0e85ca34ab838562b08435
-ms.sourcegitcommit: 30d1a27fd78d198cec5c50af5621f9e65c7b965e
+ms.openlocfilehash: bb64345ff14d26a14095feb8065b250598aa78f0
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98043066"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104548"
 ---
 # <a name="get-set-up"></a>准备工作
 
@@ -58,7 +58,7 @@ Microsoft Visual Studio 2019 可帮助你设计、编码、测试和调试应用
 在安装工具并启用用于开发的设备后，请查看我们有关如何开始创建 Windows 10 应用的指南。
 
 -   [选择平台](../desktop/choose-your-platform.md)
--   [开始编写代码](https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps)
+-   [开始编写代码](/windows/uwp/get-started/create-uwp-apps)
 
 ## <a name="windows-development-setup-scripts"></a>Windows 开发安装脚本
 

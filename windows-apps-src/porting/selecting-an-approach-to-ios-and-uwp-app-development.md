@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 83a316a729fc1c2042dde5541e2b187bf8903188
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b7a8920b13b7e28947138a000fd46165abcb58b7
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171181"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104678"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>选择一种方法进行 iOS 和 UWP 应用开发
 
@@ -48,7 +48,7 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
 -   [面向 iOS 的 Windows 桥](https://github.com/Microsoft/WinObjC)
 
-    也称为 Project Islandwood，它是一种可以直接将 Xcode 项目导入到 Visual Studio 的工具，现在仍处于开发中。 OBJECTIVE-C 代码可以在 Visual Studio 中生成并调试。 如果你的项目要为图形使用诸如 Cocos 此类的库，你可能会发现这一种快速移植应用的方法。
+    这是一个仍在开发的工具，可将 Xcode 项目直接导入到 Visual Studio 中。 OBJECTIVE-C 代码可以在 Visual Studio 中生成并调试。 如果你的项目要为图形使用诸如 Cocos 此类的库，你可能会发现这一种快速移植应用的方法。
 
 -   重新调整 C++ 代码的用途。
 

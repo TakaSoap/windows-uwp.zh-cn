@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 盈利
 ms.localizationpriority: medium
-ms.openlocfilehash: c827c257947ea0f365bafe497e627841b501d40d
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 009d4740fed47c7cde392d41bf52384071715106
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878580"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104618"
 ---
 #  <a name="monetization-for-games"></a>通过游戏盈利
 
@@ -31,29 +31,29 @@ Microsoft Store 可以使你的游戏可在全球200多个国家和地区下载�
 
 ## <a name="set-a-price-for-your-game"></a>为你的游戏设置价格
 
-发布到应用商店的 UWP 游戏可以是_付费_游戏，也可以是_免费_游戏。 付费游戏允许你预先向玩家收取你设置的游戏价格，而免费游戏允许用户在未支付游戏的情况下下载和玩游戏。
+发布到应用商店的 UWP 游戏可以是 _付费_ 游戏，也可以是 _免费_ 游戏。 付费游戏允许你预先向玩家收取你设置的游戏价格，而免费游戏允许用户在未支付游戏的情况下下载和玩游戏。
 
 下面是与在应用商店中设置你的游戏价格相关的一些重要概念。
 
 ### <a name="base-price"></a>基价
 
-游戏基价可确定你的游戏属于_付费_还是_免费_类别。 你可以使用 [合作伙伴中心](https://partner.microsoft.com/dashboard) 来配置基于国家和地区的基本价格。
-确定价格的过程可能包括[销往其他国家/地区时的税收义务](../publish/tax-details-for-paid-apps.md)和[特定市场的成本注意事项](../publish/define-market-selection.md)。 还可以[为特定市场设置自定义价格](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets)。
+游戏基价可确定你的游戏属于 _付费_ 还是 _免费_ 类别。 你可以使用 [合作伙伴中心](https://partner.microsoft.com/dashboard) 来配置基于国家和地区的基本价格。
+确定价格的过程可能包括[销往其他国家/地区时的税收义务](/partner-center/tax-details-marketplace)和[特定市场的成本注意事项](../publish/define-market-selection.md)。 还可以[为特定市场设置自定义价格](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets)。
 
 ### <a name="sale-price"></a>售价
 
-推广你的游戏的一种方法是限时低价销售。 也可以将售价设置为__免费__，以使你的游戏可供免费下载。
+推广你的游戏的一种方法是限时低价销售。 也可以将售价设置为 __免费__，以使你的游戏可供免费下载。
 可通过设置销售的开始日期和结束日期，提前计划销售市场活动。 有关详细信息，请参阅[打折出售应用和加载项](../publish/put-apps-and-add-ons-on-sale.md)。
 
 ## <a name="in-game-purchases"></a>游戏内购买
 
-游戏内购买是指在游戏内购买的产品。 它们还通常称为_应用内购买_。 在 Microsoft Store 中，这些产品称为 " _外接程序_"。 [外接程序](../publish/add-on-submissions.md) 通过合作伙伴中心发布。 你还需要在你的游戏代码中启用加载项。
+游戏内购买是指在游戏内购买的产品。 它们还通常称为 _应用内购买_。 在 Microsoft Store 中，这些产品称为 " _外接程序_"。 [外接程序](../publish/add-on-submissions.md) 通过合作伙伴中心发布。 你还需要在你的游戏代码中启用加载项。
 
 ### <a name="types-of-add-ons"></a>加载项类型
 
-你可以在应用商店中创建两种类型的加载项：_耐用型_或_易耗型_。 耐用型加载项可以保留一段指定时间，并且在过期前只能购买一次。 易耗型加载项可以反复购买和使用。
+你可以在应用商店中创建两种类型的加载项：_耐用型_ 或 _易耗型_。 耐用型加载项可以保留一段指定时间，并且在过期前只能购买一次。 易耗型加载项可以反复购买和使用。
 
-创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由_开发人员托管_还是由_应用商店托管_（此功能将在 Windows 10 版本 1607 中开始提供）。 使用由开发人员管理的可执行程序，你负责跟踪工作人员的项目余额;使用存储管理的可执行程序时，Microsoft Store 会持续跟踪项的余额。 有关详细信息，请参阅[易耗型加载项概述](../monetize/enable-consumable-add-on-purchases.md)。
+创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由 _开发人员托管_ 还是由 _应用商店托管_（此功能将在 Windows 10 版本 1607 中开始提供）。 使用由开发人员管理的可执行程序，你负责跟踪工作人员的项目余额;使用存储管理的可执行程序时，Microsoft Store 会持续跟踪项的余额。 有关详细信息，请参阅[易耗型加载项概述](../monetize/enable-consumable-add-on-purchases.md)。
 
 ### <a name="create-in-game-purchases"></a>创建游戏内购买
 
@@ -103,9 +103,9 @@ Microsoft Store 可以使你的游戏可在全球200多个国家和地区下载�
 3. 在 " __应用概述__ " 页上，单击 " __开始提交__"。
 4. 配置此新提交。 在提交页面上：
     * 单击 " __定价和可用性__"。 在 " __可见性__ " 部分中，选择 "__隐藏此应用并防止获取 ...__"，以确保只有开发团队可以访问该游戏。 有关更多详细信息，请转到[分发和可见性](../publish/set-app-pricing-and-availability.md)。
-    * 单击 __“属性”__ 。 在 " __类别和子类别__ " 部分中，选择 " __游戏__ "，然后选择适合你的游戏的子类别。
+    * 单击 __“属性”__。 在 " __类别和子类别__ " 部分中，选择 " __游戏__ "，然后选择适合你的游戏的子类别。
     * 单击 " __年龄分级__"。 准确填写调查表。
-    * 单击__程序包__。 上传在上一步中创建的游戏程序包。
+    * 单击 __程序包__。 上传在上一步中创建的游戏程序包。
 5. 按照仪表板中的任何其他提交提示，你可以成功发布此对公众保持隐藏的游戏。
 6. 单击 __"提交到应用商店"__。
 
@@ -117,7 +117,7 @@ Microsoft Store 可以使你的游戏可在全球200多个国家和地区下载�
 
 通过在 Visual Studio 中打开你的游戏解决方案：
 
-1. 中转到__项目__  >  __存储__  >  __将应用与应用商店关联 ...__
+1. 中转到 __项目__  >  __存储__  >  __将应用与应用商店关联 ...__
 2. 登录到合作伙伴中心开发人员帐户，并选择要与此解决方案相关联的应用名称。
 3. 双击 __Package.appxmanifest.xml 文件__ ，然后单击 " __打包__ " 选项卡以检查游戏是否正确关联。
 
@@ -130,7 +130,7 @@ Microsoft Store 可以使你的游戏可在全球200多个国家和地区下载�
 1. 请参阅 [合作伙伴中心](https://partner.microsoft.com/dashboard) 并登录。
 2. 在 " __仪表板概述__ " 或 " __所有应用__ " 页上，单击要为其创建外接程序的应用程序。
 3. 在 " __应用概述__ " 页上的 " __外接__ 程序" 部分中，选择 " __创建新的外接程序__"。
-4. 选择该加载项的产品类型：__开发人员托管的易耗型__、__应用商店托管的易耗型__或__耐用型__。
+4. 选择该加载项的产品类型：__开发人员托管的易耗型__、__应用商店托管的易耗型__ 或 __耐用型__。
 5. 输入唯一的产品 ID，该 ID 在将此加载项集成到你的游戏代码时用作字符串变量。 客户不会看到此 ID。 有关详细信息，请参阅[设置你的应用产品类型和产品 ID](../publish/set-your-add-on-product-id.md)。
 
 加载项的其他配置包括：
@@ -138,7 +138,7 @@ Microsoft Store 可以使你的游戏可在全球200多个国家和地区下载�
 * [定价和可用性](../publish/set-add-on-pricing-and-availability.md)
 * [商店列表](../publish/create-add-on-store-listings.md)
 
-如果游戏包含许多外接程序，可以使用 __Microsoft Store 提交 API__以编程方式创建它们。 有关详细信息，请参阅 [使用 Microsoft Store 服务创建和管理提交](../monetize/create-and-manage-submissions-using-windows-store-services.md)。
+如果游戏包含许多外接程序，可以使用 __Microsoft Store 提交 API__ 以编程方式创建它们。 有关详细信息，请参阅 [使用 Microsoft Store 服务创建和管理提交](../monetize/create-and-manage-submissions-using-windows-store-services.md)。
 
 ## <a name="display-ads-in-your-game"></a>在游戏中显示广告
 
@@ -225,7 +225,7 @@ AdDuplex 可用于在你的游戏中实现横幅或间隙广告。
 
 ## <a name="related-links"></a>相关链接
 
-* [获取付款](../publish/getting-paid-apps.md)
+* [获取付款](/partner-center/marketplace-get-paid)
 * [帐户类型、位置和费用](../publish/account-types-locations-and-fees.md)
 * [分析](../publish/analytics.md)
 * [全球化和本地化](../design/globalizing/globalizing-portal.md)

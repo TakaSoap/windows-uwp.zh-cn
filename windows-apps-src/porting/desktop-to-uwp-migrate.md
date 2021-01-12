@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e27333c87b596948afcb430eb1cf1ef4998e851
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: fef8499ca10f65c2eeeb9cc37bc96b482db8ad24
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860443"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104628"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>从桌面应用程序移至 UWP
 
@@ -20,7 +20,7 @@ ms.locfileid: "97860443"
 
 可以将桌面应用程序打包在 .MSIX 包中，以访问更多 Windows 10 功能。 MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（包括 UWP、WPF、Windows 窗体和 Win32 应用）的通用打包体验。 将桌面 Windows 应用打包到 MSIX 包中即可访问可靠的安装和更新体验、功能系统灵活的托管安全模型、对 Microsoft Store 的支持、企业管理以及许多自定义分发模型。 无论是使用源代码还是只有现有的安装程序文件 (如 MSI 或 App-v 安装程序) ，你都可以对应用程序进行打包。 打包应用程序后，可以集成 UWP 功能，如包扩展和其他 UWP 组件。
 
-有关详细信息，请参阅将 [桌面应用程序打包 (桌面桥) ](/windows/msix/desktop/desktop-to-uwp-root) 和 [需要包标识的功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
+有关详细信息，请参阅 [从代码生成 .msix 包](/windows/msix/desktop/desktop-to-uwp-root) 和 [需要包标识的功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
 
 ## <a name="use-windows-runtime-apis"></a>使用 Windows 运行时 Api
 

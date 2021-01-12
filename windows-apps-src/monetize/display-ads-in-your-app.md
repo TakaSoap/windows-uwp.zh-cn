@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 横幅, 广告控件, 间隙
 ms.localizationpriority: medium
-ms.openlocfilehash: c12d79b97010826b05bf42a9de46780dd2f93756
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 3b4c49c08deb793614bacb0e30136dd4bd8cdfb3
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933118"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104648"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft 广告 SDK 在你的应用中显示广告
 
@@ -103,7 +103,7 @@ Microsoft 广告 SDK 提供了你可以在应用中使用的多种不同类型�
 
 完成使用广告开发应用后，可以在合作伙伴中心 [提交更新的应用](../publish/app-submissions.md) ，使其在商店中可用。 显示广告的应用必须满足 [Microsoft Store 政策的 10.10 部分](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[应用开发人员协议的附录 E](/legal/windows/agreements/app-developer-agreement) 中指定的其他要求。
 
-在应用程序发布并在应用商店中可用后，可以在合作伙伴中心查看 [广告性能报告](../publish/advertising-performance-report.md) ，并继续对你的中介设置进行更改，以优化广告的性能。 广告收入包含在你的[支出汇总](../publish/payout-summary.md)中。
+在应用程序发布并在应用商店中可用后，可以在合作伙伴中心查看 [广告性能报告](../publish/advertising-performance-report.md) ，并继续对你的中介设置进行更改，以优化广告的性能。 广告收入包含在你的[支出汇总](/partner-center/payout-statement)中。
 
 <span id="additional-help" />
 
@@ -113,7 +113,7 @@ Microsoft 广告 SDK 提供了你可以在应用中使用的多种不同类型�
 
 |  任务    | 资源 |               
 |----------|-------|
-| 报告错误或获取对广告的辅助支持     | 访问[支持页面](https://developer.microsoft.com/windows/support)，然后选择**应用内广告**。        |
+| 报告错误或获取对广告的辅助支持     | 访问 [支持页面](https://developer.microsoft.com/windows/support)，然后选择 **应用内广告**。        |
 | 获取社区支持     | 访问[论坛](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps)。       |
 | 下载演示如何向应用添加横幅和间隙广告的示例项目。     | 请参阅 [GitHub 上的广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。       |
 | 了解有关 Windows 应用的最新盈利机会     | 访问[获取应用收益](https://developer.microsoft.com/store/monetize)。        |
