@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 强, 弱, 引用
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9ca3ae231a70b69f9f41bb1077b875dca798eb05
-ms.sourcegitcommit: e6a7749f9ddc0fe165b68506b0be465d4ca51ab6
+ms.openlocfilehash: 46b62c202d090a7760445b3e07bca073d2636c66
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96935979"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104478"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>C++/WinRT 中的强引用和弱引用
 
 Windows 运行时是引用在其中占有重要地位的一个系统；在这样的系统中，了解强引用与弱引用（以及非强、非弱引用，例如隐式 *this* 指针）的意义和区别非常重要。 如本主题中所述，了解如何正确管理这些引用可以了解平稳运行的可靠系统与不可预见地崩溃的系统之间的差别。 通过提供深度支持语言投影的帮助器函数，[C++/WinRT](./intro-to-using-cpp-with-winrt.md) 基本上能够满足方便正确地构建更复杂系统的需求。
 
 > [!NOTE]
-> 除了少数例外情况外，弱引用支持在默认情况下对在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) 中使用或创作的 Windows 运行时类型是启用的。 “Windows.UI.Composition”和“Windows.Devices.Input.PenDevice”是例外的示例 &mdash; 即，未对这些类型启用弱引用支持的命名空间 。 另请参阅[如果“自动撤销”委托无法注册](/windows/uwp/cpp-and-winrt-apis/handle-events#if-your-auto-revoke-delegate-fails-to-register)。
+> 除了少数例外情况外，弱引用支持在默认情况下对在 [C++/WinRT](./index.md) 中使用或创作的 Windows 运行时类型是启用的。 “Windows.UI.Composition”和“Windows.Devices.Input.PenDevice”是例外的示例 &mdash; 即，未对这些类型启用弱引用支持的命名空间 。 另请参阅[如果“自动撤销”委托无法注册](./handle-events.md#if-your-auto-revoke-delegate-fails-to-register)。
 > 
 > 如果要创作类型，则请参阅本主题中的 [C++/WinRT 中的弱引用](#weak-references-in-cwinrt)部分。
 
