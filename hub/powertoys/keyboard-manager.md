@@ -4,12 +4,12 @@ description: 允许用户重新定义键盘上的键的实用工具
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eb17cd5a7ad76728e6b063f76369c8d194a5e12c
-ms.sourcegitcommit: 1a997d7e0100e58886150f9fba33d7b205f41df1
+ms.openlocfilehash: a8ffd782a1b23d1e439be0462300ebdf20593913
+ms.sourcegitcommit: 375cf20e0583335805ec246d65819dc1674a2e32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97865462"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98240997"
 ---
 # <a name="keyboard-manager-utility"></a>键盘管理器实用工具
 
@@ -33,7 +33,7 @@ PowerToys 键盘管理器使你能够重新定义键盘上的键。
 
 ## <a name="settings"></a>设置
 
-若要使用键盘管理器创建映射，可以使用以下选项：
+若要创建与键盘管理器的映射，你将需要打开 PowerToys 设置 (在 Windows "开始" 菜单中搜索 "PowerToys" 应用程序，选择它将打开 "PowerToys 设置" 窗口) 。 在 PowerToys 设置中，在 "键盘管理器" 选项卡上，你将看到以下选项：
 
 - 通过选择 "重新<kbd>映射密钥</kbd>" 启动重新映射键盘设置窗口
 - 通过选择重新<kbd>映射快捷方式</kbd>来启动重新映射快捷方式设置窗口
@@ -152,7 +152,7 @@ Orphaning 密钥意味着已将其映射到另一个密钥，不再有任何映�
 
 ![PowerToys 键盘管理器孤立密钥](../images/powertoys-keyboard-remap-orphaned.png)
 
-## <a name="frequently-asked-questions"></a>常见问题解答
+## <a name="frequently-asked-questions"></a>常见问题
 
 ### <a name="i-remapped-the-wrong-keys-how-can-i-stop-it-quickly"></a>我重新映射了错误的密钥，如何快速停止？
 
@@ -178,7 +178,7 @@ Orphaning 密钥意味着已将其映射到另一个密钥，不再有任何映�
 
 是的。 现在，如果您在英语 (我们) 键盘 <kbd>重新映射到</kbd> <kbd>B</kbd> ，然后将语言设置更改为 "法语"，请在法语键盘上键入 <kbd>一个</kbd> 在美国英语键盘上 (<kbd>Q</kbd>) 将导致 <kbd>B</kbd>，这与 Windows 处理多语言输入的方式一致。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 如果尝试重新映射键或快捷方式，但遇到问题，则可能是以下问题之一：
 
