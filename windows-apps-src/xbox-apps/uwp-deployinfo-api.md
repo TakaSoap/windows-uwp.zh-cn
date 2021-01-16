@@ -4,21 +4,21 @@ description: 了解如何使用 Xbox 设备门户 REST API deployinfo 来请求�
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 5260125625ced6c258a683bcfb9b552e57d07f06
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 2819b21e12d25aca941808e1feeb8a7539750a91
+ms.sourcegitcommit: b0a82c2a132212eb5fb72b67f0789cac1014642f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942997"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254222"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>请求一个或多个已安装程序包的部署信息。
 
 **请求**
 
-方法      | 请求 URI
-:------     | :------
-POST | /ext/app/deployinfo
-<br />
+| 方法 | 请求 URI |
+|--------|-------------|
+| POST | /ext/app/deployinfo |
+
 **URI 参数**
 
  - 无
@@ -35,7 +35,7 @@ POST | /ext/app/deployinfo
   * PackageFullName - 我们正请求其信息的程序包的名称。
   * OverlayFolder - 重叠文件夹路径的可选路径（如果使用此功能）。
 
-###<a name="response"></a>响应
+### <a name="response"></a>响应
 
 **响应正文**
 
@@ -53,12 +53,11 @@ POST | /ext/app/deployinfo
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
-:------     | :-----
-200 | Success
-4XX | 错误代码
-5XX | 错误代码
-<br />
+| HTTP 状态代码 | 说明 |
+|------------------|-------------|
+| 200 | Success |
+| 4XX | 错误代码 |
+| 5XX | 错误代码 |
 
 **可用设备系列**
 
