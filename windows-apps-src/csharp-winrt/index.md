@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c#, winrt, cswinrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: ef6fad694dd45e80d462f6a0c5c73ac5539fe16a
-ms.sourcegitcommit: c063d0d130944558afa20181dd294ffe7a187a3f
+ms.openlocfilehash: 0704a7e9c731c6f60c59615b964b51e0ded242c2
+ms.sourcegitcommit: 1022e8819e75484ca0cd94f8baf4f4d11900e0e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090681"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98206086"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -38,7 +38,7 @@ WinRT API 在 Windows 元数据 (*.winmd) 文件中定义。 C#/WinRT NuGet 包 
 
 ### <a name="invoke-cswinrtexe"></a>调用 cswinrt.exe
 
-若要从项目中调用 cswinrt.exe，请安装最新的 [C#/WinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)。 然后，可在 C# 库中设置 C#/WinRT 特定的项目属性来生成互操作程序集。 以下项目片段演示了对 **cswinrt** 的简单调用，该调用为 Contoso 命名空间中的类型生成投影源。 然后，这些源会包含在项目生成中。
+若要从项目中调用 cswinrt.exe，请安装最新的 [C#/WinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)。 然后，可在 C# 类库 (.NET Core) 中设置 C#/WinRT 特定的项目属性来生成互操作程序集。 以下项目片段演示了对 **cswinrt** 的简单调用，该调用为 Contoso 命名空间中的类型生成投影源。 然后，这些源会包含在项目生成中。
 
 ```xml
 <PropertyGroup>
@@ -90,7 +90,25 @@ C#/WinRT 支持激活由操作系统承载的 WinRT 类型以及第三方组件�
 
 C#/WinRT 使用 [LoadLibrary 备用搜索顺序](/windows/win32/dlls/dynamic-link-library-search-order#alternate-search-order-for-desktop-applications)查找一个实现 DLL。 依赖于此回退行为的应用应将该实现 DLL 与应用模块一起打包。
 
-## <a name="common-errors-with-net-5"></a>.NET 5+ 的常见错误
+## <a name="common-errors-and-troubleshooting"></a>常见错误和疑难解答
+
+- 错误：“未提供或未检测到 Windows 元数据。”
+
+  可以使用 `<CsWinRTWindowsMetadata>` 项目属性指定 Windows 元数据，例如：
+  ```xml
+  <CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
+  ```
+  
+- 错误 CS0246：找不到类型或命名空间名称“Windows”（是否缺少 using 指令或程序集引用？）
+
+  若要解决此错误，请编辑 `<TargetFramework>` 属性，使其面向特定的 Windows 版本，例如：
+  ```xml
+  <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+  ```
+  有关指定 `<TargetFramework>` 属性的更多详细信息，请参阅[调用 Windows 运行时 API](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) 上的文档。
+
+
+### <a name="net-sdk-versioning-errors"></a>.NET SDK 版本控制错误
 
 在使用版本低于其任何依赖项的 .NET SDK 构建的项目中，你可能会遇到以下错误或警告。
 
