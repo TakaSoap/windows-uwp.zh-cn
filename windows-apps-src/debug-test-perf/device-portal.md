@@ -2,30 +2,35 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Windows Device Portal 概述
 description: 了解 Windows Device Portal 如何支持你通过网络或 USB 连接远程配置和管理你的设备。
-ms.date: 04/09/2019
+ms.date: 01/08/2021
 ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: a4fc5cc5b8bc99e830d3c31604e581f8e57c1007
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b860b081ba7693964b419def670da2f30d1c54c2
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173631"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104528"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概述
 
-Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 它还提供高级诊断工具，用于帮助你查看 Windows 设备的实时性能并对其进行疑难解答。
+Windows 设备门户 (WDP) 是 Windows 设备附带的 web 服务器，使用它，可以通过网络或 USB 连接配置和管理设备的设置（带有 web 浏览器的设备也支持本地连接）。
 
-Windows 设备门户是设备上的 Web 服务器，你可以从电脑上的 Web 浏览器连接到它。 如果你的设备具有 Web 浏览器，还可以与该设备上的浏览器进行本地连接。
+WDP 还提供高级诊断工具，可用于查看 Windows 设备的实时性能并对其进行故障排除。
 
-Windows 设备门户在每个设备系列上都可用，但功能和设置可能因设备的要求而异。 本文提供了 Device Portal 的常规说明以及指向包含每个设备系列的更具体信息的文章链接。
+通过一组 [REST API](device-portal-api-core.md) 以编程方式公开 WDP 功能。
 
-Windows设备门户的功能是通过 [REST API](device-portal-api-core.md) 实现的，你可以直接使用它们来访问数据并以编程方式控制设备。
+本文提供了 Windows 设备门户的常规说明，并包含一系列文章链接，这些文章介绍了每个 Windows 设备系列的更具体的信息。
 
-## <a name="setup"></a>安装
+> [!NOTE]
+> 设备系列可标识在一个设备类所需的 API、系统特性和行为。
 
-每台设备都有有关连接到 Device Portal 的特定说明，但每台设备都需要以下常规步骤：
+## <a name="setup"></a>设置
+
+每个设备系列提供 WDP 的一个版本，但功能和设置因设备的要求而异。
+
+这是适用于所有设备的基本步骤。
 
 1. 在设备上启用开发人员模式和设备门户（在“设置”应用中配置）。
 
@@ -33,23 +38,17 @@ Windows设备门户的功能是通过 [REST API](device-portal-api-core.md) 实�
 
 3. 在浏览器中导航到 Device Portal 页面。 下表显示了每个设备系列使用的端口和协议。
 
-设备系列 | 默认启用？ | HTTP | HTTPS | USB
---------------|----------------|------|-------|----
-HoloLens | 是，处于开发人员模式下 | 80（默认值） | 443（默认值） | http://127.0.0.1:10080
-IoT | 是，处于开发人员模式下 | 8080 | 通过注册表项启用 | N/A
-Xbox | 在开发人员模式内启用 | 禁用 | 11443 | N/A
-台式机| 在开发人员模式内启用 | 50080\* | 50043\* | N/A
-电话号码 | 在开发人员模式内启用 | 80| 443 | http://127.0.0.1:10080
+下表包含 WDP 特定于设备的详细信息。
 
-\*并非始终是这种情况，桌面上的设备门户声明短暂范围 (> 50,000) 内的端口以防止与设备上的现有端口声明冲突。 若要了解详细信息，请参阅适用于桌面的[端口设置](device-portal-desktop.md#registry-based-configuration-for-device-portal)部分。  
+设备系列 | 默认启用？ | HTTP | HTTPS | USB | 说明 |
+--------------|----------------|------|-------|-----|--------------|
+桌面| 在开发人员模式内启用 | 50080\* | 50043\* | 不可用 | [在桌面设备上设置 Windows 设备门户](device-portal-desktop.md#set-up-windows-device-portal-on-a-desktop-device) |
+Xbox | 在开发人员模式内启用 | 禁用 | 11443 | 不可用 | [适用于 Xbox 的设备门户](../xbox-apps/device-portal-xbox.md) |
+HoloLens | 是，处于开发人员模式下 | 80（默认值） | 443（默认值） | http://127.0.0.1:10080 | [适用于 HoloLens 的设备门户](/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal) |
+IoT | 是，处于开发人员模式下 | 8080 | 通过注册表项启用 | 不可用 | [适用于 IoT 的设备门户](/windows/iot-core/manage-your-device/DevicePortal) |
+电话号码 | 在开发人员模式内启用 | 80| 443 | http://127.0.0.1:10080 | [适用于移动设备的设备门户](device-portal-mobile.md) |
 
-有关特定于设备的设置说明，请参阅：
-
-- [适用于 HoloLens 的设备门户](./device-portal-hololens.md)
-- [适用于 IoT 的设备门户](/windows/iot-core/manage-your-device/DevicePortal)
-- [适用于移动设备的设备门户](device-portal-mobile.md)
-- [适用于 Xbox 的设备门户](../xbox-apps/device-portal-xbox.md)
-- [适用于台式机的设备门户](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
+\*并非始终是这种情况，桌面上的设备门户声明短暂范围 (> 50,000) 内的端口以防止与设备上的现有端口声明冲突。 若要了解详细信息，请参阅[适用于桌面设备的 Windows 设备门户](device-portal-desktop.md)中的[基于注册表的配置](device-portal-desktop.md#registry-based-configuration)部分。  
 
 ## <a name="features"></a>功能
 
@@ -223,3 +222,7 @@ T | 字符串的 null 字符分隔列表 | 用户应用的设备标记。 有关
 #### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>跨站点 WebSocket 劫持 (CSWSH) 保护
 
 若要防止受到 [CSWSH 攻击](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html)，用于打开对 Device Portal 的 WebSocket 连接的所有客户端还必须提供与主机头匹配的 Origin 标头。 这向 Device Portal 证明了请求来自 Device Portal UI 或有效的客户端应用程序。 如果没有 Origin 标头，将拒绝你的请求。
+
+## <a name="see-also"></a>请参阅
+
+[设备门户核心 API 参考](device-portal-api-core.md)

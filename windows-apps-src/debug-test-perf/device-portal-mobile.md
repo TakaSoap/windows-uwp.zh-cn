@@ -1,19 +1,19 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: 适用于移动设备的 Device Portal
+title: 适用于移动设备的 Windows 设备门户
 description: 了解 Windows Device Portal 是如何支持你远程配置和管理你的移动设备。
-ms.date: 02/08/2017
+ms.date: 01/08/2021
 ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a6f85dfb13e47617138e401c8444cb5b5f6809
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: b661c1b8249f4244049a19ecb3ccab865218aab2
+ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339575"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98055990"
 ---
-# <a name="device-portal-for-mobile"></a>适用于移动设备的 Device Portal
+# <a name="windows-device-portal-for-mobile"></a>适用于移动设备的 Windows 设备门户
 
 从版本 1511 的 Windows 10 开始，附加的开发人员功能可用于移动设备系列。 这些功能仅在设备上启用了“开发人员模式”时才可用。
 
@@ -21,11 +21,11 @@ ms.locfileid: "94339575"
 
 ![“设备发现”和“设备门户”设置的屏幕截图。](images/device-portal/mob-dev-mode-options.png)
 
-## <a name="set-up-device-portal-on-windows-phone"></a>在 Windows Phone 上设置 Device Portal
+## <a name="set-up-windows-device-portal-on-windows-phone"></a>在 Windows Phone 上设置 Windows 设备门户
 
 ### <a name="turn-on-device-discovery-and-pairing"></a>打开设备发现和配对
 
-若要连接到设备门户，必须在手机设置中启用设备发现和设备门户。 这允许你将手机与电脑或其他 Windows 10 设备进行配对。 两台设备均必须通过有线或无线的连接方式连接到网络的同一子网，或者它们必须通过 USB 进行连接。
+若要连接到 Windows 设备门户 (WDP)，必须在手机设置中启用设备发现和设备门户。 这允许你将手机与电脑或其他 Windows 10 设备进行配对。 两台设备均必须通过有线或无线的连接方式连接到网络的同一子网，或者它们必须通过 USB 进行连接。
 
 首次连接 Device Portal 时，要求输入区分大小写的 6 个字符的安全代码。 这可确保你对手机拥有访问权限，并且使你的手机免受攻击。 在手机上按“配对”按钮将生成和显示 6 个字符的代码，然后在浏览器的文本框中输入该代码。
 

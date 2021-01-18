@@ -1,22 +1,22 @@
 ---
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: Device Portal 核心 API 参考
+title: Windows 设备门户核心 REST API 参考
 description: 了解 Windows Device Portal 核心 REST API，可用于访问数据和以编程方式控制设备。
 ms.custom: 19H1
-ms.date: 04/19/2019
+ms.date: 01/08/2021
 ms.topic: article
-keywords: windows 10, uwp, 设备门户
+keywords: Windows 10, uwp, 设备门户, REST
 ms.localizationpriority: medium
-ms.openlocfilehash: c8615620e09d6f00881c1bb229d98f876a95978c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 33e914d124520b8f4eacd120c191ed63715a3168
+ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173611"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98056050"
 ---
-# <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 参考
+# <a name="windows-device-portal-core-rest-api-reference"></a>Windows 设备门户核心 REST API 参考
 
-所有设备门户功能均基于 REST API 构建，开发人员可用来直接调用以访问资源并以编程方式控制其设备。
+所有 Windows 设备门户 (WDP) 功能均基于 REST API 构建，开发人员可用来直接调用以访问资源并以编程方式控制其设备。
 
 ## <a name="app-deployment"></a>应用部署
 
@@ -3163,7 +3163,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 **响应**
 
-在提供的*接口*上找到的无线网络列表。 这包括采用以下格式的网络详细信息。
+在提供的 *接口* 上找到的无线网络列表。 这包括采用以下格式的网络详细信息。
 
 ```json
 {"AvailableNetworks": [
@@ -3226,7 +3226,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | op   | （**必需**）指示要执行的操作。 可能的值为 connect 或 disconnect。|
 | ssid   | （如果 op  == connect，则为必需项  ）要连接到的 SSID。 |
 | 键   | （如果 op  == connect 并且网络需要身份验证，则为必需项  ）共享的密钥。 |
-| createprofile | （**必需**）在设备上为网络创建配置文件。  这将导致设备在将来自动连接到该网络。 这可以是**是**或**否**。 |
+| createprofile | （**必需**）在设备上为网络创建配置文件。  这将导致设备在将来自动连接到该网络。 这可以是 **是** 或 **否**。 |
 
 **请求标头**
 

@@ -1,21 +1,21 @@
 ---
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
-title: 为设备门户编写自定义插件
+title: 为 Windows 设备门户编写自定义插件
 description: 了解如何编写使用 Windows 设备门户承载网页并提供诊断信息的 UWP 应用。
-ms.date: 07/06/2020
+ms.date: 01/08/2021
 ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: f66650291e2966d6a3a6ac2b5d794006382d2fbf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c01cc48f78abba95b99dc05e1372640241d9af49
+ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170021"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98056000"
 ---
-# <a name="write-a-custom-plugin-for-device-portal"></a>为设备门户编写自定义插件
+# <a name="write-a-custom-plugin-for-windows-device-portal"></a>为 Windows 设备门户编写自定义插件
 
-了解如何编写使用 Windows 设备门户承载网页并提供诊断信息的 UWP 应用。
+了解如何编写使用 Windows 设备门户 (WDP) 承载网页并提供诊断信息的 UWP 应用。
 
 从 Windows 10 创意者更新（版本 1703，内部版本 15063）开始，可以使用设备门户承载应用的诊断接口。 本文介绍为应用创建 DevicePortalProvider 的三个步骤 - 更改[应用包清单](/uwp/schemas/appxpackage/appx-package-manifest)，设置应用到[设备门户服务](./device-portal.md)的连接，以及处理传入请求。
 

@@ -5,14 +5,17 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 353ca9922bc633efa5f53b2c3a3f4d7a4cad5986
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: f107de951c527b9ca4405d1f22870389a219f441
+ms.sourcegitcommit: 2e691ec4998467c8c5525031a00f0213dcce3b6b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750613"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98193199"
 ---
 # <a name="move-to-cwinrt-from-c"></a>从 C# 移动到 C++/WinRT
+
+> [!TIP]
+> 如果你之前已阅读过本主题，并带着特定任务回来复习，可以跳转到本主题的[基于要执行的任务查找内容](#find-content-based-on-the-task-youre-performing)部分。
 
 本主题对 [C#](/visualstudio/get-started/csharp) 项目中的源代码移植到 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 项目中的等效项时所涉及的技术细节进行了全面分类。
 
@@ -24,12 +27,28 @@ ms.locfileid: "91750613"
 
 在所需的移植更改的类型方面，可以将其分组为四个类别。
 
-- [**移植语言投影**](#changes-that-involve-the-language-projection)。 Windows 运行时 (WinRT) 已*投影*到各种编程语言。 其中的每个语言投影均已设计为符合所涉及的编程语言的语言习惯。 对于 C#，某些 Windows 运行时类型被投影为 .NET 类型。 因此例如，你会将 [System.Collections.Generic.IReadOnlyList\<T\>](/dotnet/api/system.collections.generic.ireadonlylist-1) 转换回 [Windows.Foundation.Collections.IVectorView\<T\>](/uwp/api/windows.foundation.collections.ivectorview-1) 。 此外，在 C# 中，某些 Windows 运行时操作也被投影为方便的 C# 语言功能。 例如，在 C# 中，可以使用 `+=` 运算符语法来注册事件处理委托。 因此，你将转换语言功能，例如，转换回要执行的基本操作（在本示例中为事件注册）。
+- [**移植语言投影**](#changes-that-involve-the-language-projection)。 Windows 运行时 (WinRT) 已 *投影* 到各种编程语言。 其中的每个语言投影均已设计为符合所涉及的编程语言的语言习惯。 对于 C#，某些 Windows 运行时类型被投影为 .NET 类型。 因此例如，你会将 [System.Collections.Generic.IReadOnlyList\<T\>](/dotnet/api/system.collections.generic.ireadonlylist-1) 转换回 [Windows.Foundation.Collections.IVectorView\<T\>](/uwp/api/windows.foundation.collections.ivectorview-1) 。 此外，在 C# 中，某些 Windows 运行时操作也被投影为方便的 C# 语言功能。 例如，在 C# 中，可以使用 `+=` 运算符语法来注册事件处理委托。 因此，你将转换语言功能，例如，转换回要执行的基本操作（在本示例中为事件注册）。
 - [**移植语言语法**](#changes-that-involve-the-language-syntax)。 这些更改中的许多更改都是简单的机械转换（将一个符号替换为另一个符号）。 例如，将点 (`.`) 更改为双冒号 (`::`)。
 - [**移植语言过程**](#changes-that-involve-procedures-within-the-language)。 其中的一些可能是简单、重复的更改（例如 `myObject.MyProperty` 到 `myObject.MyProperty()`）。 其他移植则需要更深层次的更改（例如，将涉及使用 **System.Text.StringBuilder** 的过程迁移到涉及使用 **std::wostringstream** 的过程）。
 - [**与移植相关且特定于 C++/WinRT 的任务**](#porting-related-tasks-that-are-specific-to-cwinrt)。 Windows 运行时的某些详细信息会在幕后由 C# 隐式处理。 这些详细信息在 C++/WinRT 中是显式处理的。 例如，使用 `.idl` 文件来定义运行时类。
 
-本主题的其余部分根据该分类进行组织。
+在后续基于任务的索引之后，本主题中其余部分的结构遵循上面的分类。
+
+## <a name="find-content-based-on-the-task-youre-performing"></a>根据要执行的任务查找内容
+
+| 任务 | 内容 |
+| - | - |
+|创作 Windows 运行时组件 (WRC)|只能通过 C++ 实现特定的功能（或调用特定的 API）。 可以将该功能编写为 C++/WINRT WRC，然后从 C#（或其他语言的）应用中使用该 WRC。 请参阅[使用 C++/WinRT 的 Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)和[如果要在 Windows 运行时组件中创作运行时类](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)。|
+|移植异步方法|最好将 C++/WinRT 运行时类中异步方法的第一行设为 `auto lifetime = get_strong();`（请参阅[在类成员协同程序中安全访问 this 指针](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)）。<br><br>从 `Task` 移植，请参阅<a href="#id_async_action">异步行为</a>。<br>从 `Task<T>` 移植，请参阅<a href="#id_async_operation">异步操作</a>。<br>从 `async void` 移植，请参阅<a href="#id_fire_and_forget">发后不理方法</a>。|
+|移植类|首先，确定该类是必须为运行时类，还是可以是普通类。 若要帮助你确定这一信息，请参阅[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)的开始部分。 然后，请参阅下面三行。|
+|移植运行时类|用于在 C++ 应用外部共享功能的类，或在 XAML 数据绑定中使用的类。 请参阅[如果要在 Windows 运行时组件中创作运行时类](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)或[如果要创作在 XAML UI 中引用的运行时类](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui)。<br><br>这些链接对此进行了更详细的介绍，但必须在 IDL 中声明运行时类。 如果你的项目已包含 IDL 文件（例如 `Project.idl`），建议在该文件中声明任何新的运行时类。 在 IDL 中，声明将在应用外使用或将在 XAML 中使用的任何方法和数据成员。 在更新 IDL 文件后重新生成，在解决方案资源管理器中，选中项目节点，并确保打开“显示所有文件”，查看项目 `Generated Files` 文件夹中生成的存根文件（`.h` 和 `.cpp`）。  将存根文件与项目中已有的文件进行比较，并根据需要添加文件或添加/更新函数签名。 存根文件语法始终是正确的，因此建议使用它来最大程度地减少生成错误。 只要项目中的存根与存根文件中的相匹配，就可以通过移植 C# 代码来实现它们。 |
+|移植普通类|请参阅[如果你没有创作运行时类](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class)。|
+|创作 IDL|[Microsoft 接口定义语言 3.0 简介](/uwp/midl-3/intro)<br>[如果你正在创作要在 XAML UI 中引用的运行时类](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui)<br>[使用 XAML 标记中的对象](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup)<br>[在 IDL 中定义运行时类](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#define-your-runtime-classes-in-idl)|
+|移植集合|[使用 C++/WinRT 的集合](/windows/uwp/cpp-and-winrt-apis/collections)<br>[使数据源可供 XAML 标记使用](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#making-a-data-source-available-to-xaml-markup)<br><a href="#id_associative_container">关联容器</a><br><a href="#id_vector_member_access">矢量成员访问</a>|
+|移植事件|<a href="#id_event_handler_delegate_as_class_member">作为类成员的事件处理程序委托</a><br><a href="#id_revoke_event_handler_delegate">撤销事件处理程序委托</a>|
+|移植方法|从 C# ：`private async void SampleButton_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e) { ... }`<br>到 C++/WinRT `.h` 文件：`fire_and_forget SampleButton_Tapped(IInspectable const&, RoutedEventArgs const&);`<br>到 C++/WinRT `.cpp` 文件：`fire_and_forget OcrFileImage::SampleButton_Tapped(IInspectable const&, RoutedEventArgs const&) {...}`<br>|
+|移植字符串|[C++/WinRT 中的字符串处理](/windows/uwp/cpp-and-winrt-apis/strings)<br>[ToString](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#tostring)<br>[字符串生成](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#string-building)<br>[将字符串装箱和取消装箱](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#boxing-and-unboxing-a-string)|
+|类型转换（类型强制转换）|C#：`o.ToString()`<br>C++/WinRT：`to_hstring(static_cast<int>(o))`<br>另请参阅 [ToString](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#tostring)。<br><br>C#：`(Value)o`<br>C++/WinRT：`unbox_value<Value>(o)`<br>在取消装箱失败时引发。 另请参阅[装箱和取消装箱](/windows/uwp/cpp-and-winrt-apis/boxing)。<br><br>C#：`o as Value? ?? fallback`<br>C++/WinRT：`unbox_value_or<Value>(o, fallback)`<br>如果取消装箱失败，则返回回退。 另请参阅[装箱和取消装箱](/windows/uwp/cpp-and-winrt-apis/boxing)。<br><br>C#：`(Class)o`<br>C++/WinRT：`o.as<Class>()`<br>在转换失败时引发。<br><br>C#：`o as Class`<br>C++/WinRT：`o.try_as<Class>()`<br>如果转换失败，则返回 null。|
 
 ## <a name="changes-that-involve-the-language-projection"></a>涉及语言投影的更改
 
@@ -40,17 +59,17 @@ ms.locfileid: "91750613"
 ||`using System.Collections.Generic;`|`using namespace Windows::Foundation::Collections;`||
 |集合大小|`collection.Count`|`collection.Size()`|[移植 **BuildClipboardFormatsOutputString** 方法](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
 |典型集合类型|[IList\<T\>](/dotnet/api/system.collections.generic.ilist-1)，以及用用于添加元素的 Add 。|[IVector\<T\>](/uwp/api/windows.foundation.collections.ivector-1)，以及用于添加元素的 Append 。 如果在任意位置使用 std::vector，则通过 push_back 添加元素 。||
-|只读集合类型|[**IReadOnlyList\<T\>** ](/dotnet/api/system.collections.generic.ireadonlylist-1)|[**IVectorView\<T\>** ](/uwp/api/windows.foundation.collections.ivectorview-1)|[移植 **BuildClipboardFormatsOutputString** 方法](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
-|作为类成员的事件处理程序委托|`myObject.EventName += Handler;`|`token = myObject.EventName({ get_weak(), &Class::Handler });`|[移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
-|撤销事件处理程序委托|`myObject.EventName -= Handler;`|`myObject.EventName(token);`|[移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
-|关联容器|[**IDictionary\<K, V\>** ](/dotnet/api/system.collections.generic.idictionary-2)|[**IMap\<K, V\>** ](/uwp/api/windows.foundation.collections.imap-2)||
-|矢量成员访问|`x = v[i];`<br>`v[i] = x;`|`x = v.GetAt(i);`<br>`v.SetAt(i, x);`||
+|只读集合类型|[**IReadOnlyList\<T\>**](/dotnet/api/system.collections.generic.ireadonlylist-1)|[**IVectorView\<T\>**](/uwp/api/windows.foundation.collections.ivectorview-1)|[移植 **BuildClipboardFormatsOutputString** 方法](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
+|<a name="id_event_handler_delegate_as_class_member"></a>作为类成员的事件处理程序委托|`myObject.EventName += Handler;`|`token = myObject.EventName({ get_weak(), &Class::Handler });`|[移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
+|<a name="id_revoke_event_handler_delegate"></a>撤销事件处理程序委托|`myObject.EventName -= Handler;`|`myObject.EventName(token);`|[移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
+|<a name="id_associative_container"></a>关联容器|[**IDictionary\<K, V\>**](/dotnet/api/system.collections.generic.idictionary-2)|[**IMap\<K, V\>**](/uwp/api/windows.foundation.collections.imap-2)||
+|<a name="id_vector_member_access"></a>矢量成员访问|`x = v[i];`<br>`v[i] = x;`|`x = v.GetAt(i);`<br>`v.SetAt(i, x);`||
 
 ### <a name="registerrevoke-an-event-handler"></a>注册/撤销事件处理程序
 
-在 C++/WinRT 中，可以使用多个语法选项注册/撤销事件处理程序委托，如[在 C++/WinRT 中使用委托处理事件](./handle-events.md)中所述。 另请参阅[移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)。
+在 C++/WinRT 中，可以使用多个语法选项注册/撤销事件处理程序委托，如[在 C++/WinRT 中使用委托处理事件](./handle-events.md)中所述。 另请参阅 [移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)。
 
-有时，例如，当事件接收方（处理事件的对象）即将销毁时，你需要撤销事件处理程序，以使事件源（引发事件的对象）不会调用已销毁的对象。 请参阅[撤销已注册的委托](./handle-events.md#revoke-a-registered-delegate)。 在此类情况下，请为事件处理程序创建一个 **event_token** 成员变量。 有关示例，请参阅[移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)。
+有时，例如，当事件接收方（处理事件的对象）即将销毁时，你需要撤销事件处理程序，以使事件源（引发事件的对象）不会调用已销毁的对象。 请参阅[撤销已注册的委托](./handle-events.md#revoke-a-registered-delegate)。 在此类情况下，请为事件处理程序创建一个 **event_token** 成员变量。 有关示例，请参阅 [移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)。
 
 还可以使用 XAML 标记注册事件处理程序。
 
@@ -60,7 +79,7 @@ ms.locfileid: "91750613"
 
 在 C# 中，**OpenButton_Click** 方法可以是专用的，但 XAML 仍然能够将它连接到 *OpenButton* 引发的 [**ButtonBase.Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。
 
-在 C++/WinRT 中，**OpenButton_Click** 方法在你的[实现类型](./author-apis.md)中必须是公共的（如果你想要使用 XAML 标记注册该方法）。 如果只在命令性代码中注册事件处理程序，则该事件处理程序不需要是公共的。
+在 C++/WinRT 中，**OpenButton_Click** 方法在你的 [实现类型](./author-apis.md)中必须是公共的（如果你想要使用 XAML 标记注册该方法）。 如果只在命令性代码中注册事件处理程序，则该事件处理程序不需要是公共的。
 
 ```cppwinrt
 namespace winrt::MyProject::implementation
@@ -111,9 +130,9 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 | -------- | -- | --------- | -------- |
 |访问修饰符|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[移植 **Button_Click** 方法](./clipboard-to-winrt-from-csharp.md#button_click)|
 |访问数据成员|`this.variable`|`this->variable`||
-|异步行为|`async Task ...`|`IAsyncAction ...`||
-|异步操作|`async Task<T> ...`|`IAsyncOperation<T> ...`||
-|“发后不理”方法（意味着异步）|`async void ...`|`winrt::fire_and_forget ...`|[移植 **CopyButton_Click** 方法](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
+|<a name="id_async_action"></a>异步行为|`async Task ...`|`IAsyncAction ...`| [**IAsyncAction** 接口](/uwp/api/windows.foundation.iasyncaction)，[使用 C++/WinRT 执行并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency) |
+|<a name="id_async_operation"></a>异步操作|`async Task<T> ...`|`IAsyncOperation<T> ...`| [**IAsyncOperation** 接口](/uwp/api/windows.foundation.iasyncoperation)，[使用 C++/WinRT 执行并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency) |
+|<a name="id_fire_and_forget"></a>“发后不理”方法（意味着异步）|`async void ...`|`winrt::fire_and_forget ...`|[移植 **CopyButton_Click** 方法](./clipboard-to-winrt-from-csharp.md#copybutton_click)，[发后不理](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget)|
 |访问枚举常量|`E.Value`|`E::Value`|[移植 **DisplayChangedFormats** 方法](./clipboard-to-winrt-from-csharp.md#displaychangedformats)|
 |配合地等待|`await ...`|`co_await ...`|[移植 **CopyButton_Click** 方法](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
 |作为私有字段的投影类型集合|`private List<MyRuntimeClass> myRuntimeClasses = new List<MyRuntimeClass>();`|`std::vector`<br>`<MyNamespace::MyRuntimeClass>`<br>`m_myRuntimeClasses;`||
@@ -131,23 +150,23 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 |原义/原始字符串文本|`@"verbatim string literal"`|`LR"(raw string literal)"`|[移植 **DisplayToast** 方法](./clipboard-to-winrt-from-csharp.md#displaytoast)|
 
 > [!NOTE]
-> 如果头文件没有包含用于给定命名空间的 `using namespace` 指令，则必须完全限定该命名空间的所有类型名称；或者至少对它们进行充分限定，以使编译器可以找到它们。 有关示例，请参阅[移植 **DisplayToast** 方法](./clipboard-to-winrt-from-csharp.md#displaytoast)。
+> 如果头文件没有包含用于给定命名空间的 `using namespace` 指令，则必须完全限定该命名空间的所有类型名称；或者至少对它们进行充分限定，以使编译器可以找到它们。 有关示例，请参阅 [移植 **DisplayToast** 方法](./clipboard-to-winrt-from-csharp.md#displaytoast)。
 
 ### <a name="porting-classes-and-members"></a>移植类和成员
 
 对于每种 C# 类型，都需要确定是将它移植到 Windows 运行时类型，还是移植到常规 C++ 类/结构/枚举。 有关详细信息以及演示如何做出这些决策的详细示例，请参阅[将 Clipboard 示例从 C# 移植到 C++/WinRT](./clipboard-to-winrt-from-csharp.md)。
 
-一个 C# 属性通常会成为一个访问器函数、一个赋值函数和一个支持数据成员。 有关详细信息和示例，请参阅[移植 **IsClipboardContentChangedEnabled** 属性](./clipboard-to-winrt-from-csharp.md#isclipboardcontentchangedenabled)。
+一个 C# 属性通常会成为一个访问器函数、一个赋值函数和一个支持数据成员。 有关详细信息和示例，请参阅 [移植 **IsClipboardContentChangedEnabled** 属性](./clipboard-to-winrt-from-csharp.md#isclipboardcontentchangedenabled)。
 
 对于非静态字段，请使其成为你的[实现类型](./author-apis.md)的数据成员。
 
-C# 静态字段会成为 C++/WinRT 静态访问器和/或赋值函数。 有关详细信息和示例，请参阅[移植构造函数 **Current** 和 **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)。
+C# 静态字段会成为 C++/WinRT 静态访问器和/或赋值函数。 有关详细信息和示例，请参阅 [移植构造函数 **Current** 和 **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)。
 
 对于成员函数，你也需要为每个成员函数决定其是否属于 IDL，或者它是实现类型的公共成员函数还是私有成员函数。 有关详细信息以及如何决定的示例，请参阅 [**MainPage** 类型的 IDL](./clipboard-to-winrt-from-csharp.md#idl-for-the-mainpage-type)。
 
 ### <a name="porting-xaml-markup-and-asset-files"></a>移植 XAML 标记和资产文件
 
-在[将 Clipboard 示例从 C# 移植到 C++/WinRT](./clipboard-to-winrt-from-csharp.md)的案例中，我们能够在 C# 和 C++/WINRT 项目中使用相同的 XAML 标记（包括资源）和资产文件。 在某些情况下，需要编辑标记才能实现此目的。 请参阅[复制完成移植 **MainPage** 所需的 XAML 和样式](./clipboard-to-winrt-from-csharp.md#copy-the-xaml-and-styles-necessary-to-finish-up-porting-mainpage)。
+在[将 Clipboard 示例从 C# 移植到 C++/WinRT](./clipboard-to-winrt-from-csharp.md)的案例中，我们能够在 C# 和 C++/WINRT 项目中使用相同的 XAML 标记（包括资源）和资产文件。 在某些情况下，需要编辑标记才能实现此目的。 请参阅 [复制完成移植 **MainPage** 所需的 XAML 和样式](./clipboard-to-winrt-from-csharp.md#copy-the-xaml-and-styles-necessary-to-finish-up-porting-mainpage)。
 
 ## <a name="changes-that-involve-procedures-within-the-language"></a>涉及语言内过程的更改
 
@@ -170,14 +189,14 @@ C# 静态字段会成为 C++/WinRT 静态访问器和/或赋值函数。 有关�
 |ToString()|`myObject.ToString()`|`winrt::to_hstring(myObject)`|[ToString()](#tostring)|
 |语言字符串到 Windows 运行时字符串|N/A|`winrt::hstring{ s }`||
 |字符串生成|`StringBuilder builder;`<br>`builder.Append(...);`|`std::wostringstream builder;`<br>`builder << ...;`|[字符串生成](#string-building)|
-|字符串内插|`$"{i++}) {s.Title}"`|[**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) 和/或 [**winrt::hstring::operator+** ](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator)|[移植 **OnNavigatedTo** 方法](./clipboard-to-winrt-from-csharp.md#onnavigatedto)|
+|字符串内插|`$"{i++}) {s.Title}"`|[**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) 和/或 [**winrt::hstring::operator+**](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator)|[移植 **OnNavigatedTo** 方法](./clipboard-to-winrt-from-csharp.md#onnavigatedto)|
 |用于比较的空字符串|**System.String.Empty**|[**winrt::hstring::empty**](/uwp/cpp-ref-for-winrt/hstring#hstringempty-function)|[移植 **UpdateStatus** 方法](./clipboard-to-winrt-from-csharp.md#updatestatus)|
 |创建空字符串|`var myEmptyString = String.Empty;`|`winrt::hstring myEmptyString{ L"" };`||
 |字典操作|`map[k] = v; // replaces any existing`<br>`v = map[k]; // throws if not present`<br>`map.ContainsKey(k)`|`map.Insert(k, v); // replaces any existing`<br>`v = map.Lookup(k); // throws if not present`<br>`map.HasKey(k)`||
 |类型转换（失败时引发）|`(MyType)v`|`v.as<MyType>()`|[移植 **Footer_Click** 方法](./clipboard-to-winrt-from-csharp.md#footer_click)|
 |类型转换（失败时为 null）|`v as MyType`|`v.try_as<MyType>()`|[移植 **PasteButton_Click** 方法](./clipboard-to-winrt-from-csharp.md#pastebutton_click)|
 |具有 x:Name 的 XAML 元素是属性|`MyNamedElement`|`MyNamedElement()`|[移植构造函数 **Current** 和 **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
-|切换到 UI 线程|**CoreDispatcher.RunAsync**|**CoreDispatcher.RunAsync** 或 [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)|[移植 **NotifyUser** 方法](./clipboard-to-winrt-from-csharp.md#notifyuser)以及[移植 **HistoryAndRoaming** 方法](./clipboard-to-winrt-from-csharp.md#historyandroaming)|
+|切换到 UI 线程|**CoreDispatcher.RunAsync**|**CoreDispatcher.RunAsync** 或 [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)|[移植 **NotifyUser** 方法](./clipboard-to-winrt-from-csharp.md#notifyuser)以及 [移植 **HistoryAndRoaming** 方法](./clipboard-to-winrt-from-csharp.md#historyandroaming)|
 |XAML 页的强制性代码中的 UI 元素构造|请参阅 [UI 元素构造](#ui-element-construction)|请参阅 [UI 元素构造](#ui-element-construction)||
 
 以下部分更详细地介绍了该表中的某些项。
@@ -260,7 +279,7 @@ Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
 
 这些绑定会对被绑定属性执行 **winrt::to_hstring**。 至于第二个示例 (**StatusEnum**)，则必须提供你自己的 **winrt::to_hstring** 重载，否则会出现编译器错误。
 
-另请参阅[移植 **Footer_Click** 方法](./clipboard-to-winrt-from-csharp.md#footer_click)。
+另请参阅 [移植 **Footer_Click** 方法](./clipboard-to-winrt-from-csharp.md#footer_click)。
 
 ### <a name="string-building"></a>字符串生成
 
@@ -273,7 +292,7 @@ C# 有一个内置的 [**StringBuilder**](/dotnet/api/system.text.stringbuilder)
 | 添加新行 |`builder.Append(Environment.NewLine);` | `builder << std::endl;` |
 | 访问结果 | `s = builder.ToString();` | `ws = builder.str();` |
 
-另请参阅[移植 **BuildClipboardFormatsOutputString** 方法](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)和[移植 **DisplayChangedFormats** 方法](./clipboard-to-winrt-from-csharp.md#displaychangedformats)。
+另请参阅 [移植 **BuildClipboardFormatsOutputString** 方法](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)和 [移植 **DisplayChangedFormats** 方法](./clipboard-to-winrt-from-csharp.md#displaychangedformats)。
 
 ### <a name="running-code-on-the-main-ui-thread"></a>在主 UI 线程上运行代码 
 
@@ -307,11 +326,11 @@ winrt::fire_and_forget Watcher_Added(DeviceWatcher sender, winrt::DeviceInformat
 
 ### <a name="define-your-runtime-classes-in-idl"></a>在 IDL 中定义运行时类
 
-请参阅 [**MainPage** 类型的 IDL](./clipboard-to-winrt-from-csharp.md#idl-for-the-mainpage-type) 和[合并 `.idl` 文件](./clipboard-to-winrt-from-csharp.md#consolidate-your-idl-files)。
+请参阅 [**MainPage** 类型的 IDL](./clipboard-to-winrt-from-csharp.md#idl-for-the-mainpage-type) 和 [合并 `.idl` 文件](./clipboard-to-winrt-from-csharp.md#consolidate-your-idl-files)。
 
 ### <a name="include-the-cwinrt-windows-namespace-header-files-that-you-need"></a>包含所需的 C++/WinRT Windows 命名空间头文件
 
-在 C++/WinRT 中，只要你希望使用来自 Windows 命名空间的类型，都需要包含对应的 C++/WinRT Windows 命名空间头文件。 有关示例，请参阅[移植 **NotifyUser** 方法](./clipboard-to-winrt-from-csharp.md#notifyuser)。
+在 C++/WinRT 中，只要你希望使用来自 Windows 命名空间的类型，都需要包含对应的 C++/WinRT Windows 命名空间头文件。 有关示例，请参阅 [移植 **NotifyUser** 方法](./clipboard-to-winrt-from-csharp.md#notifyuser)。
 
 ### <a name="boxing-and-unboxing"></a>装箱和取消装箱
 
@@ -340,7 +359,7 @@ C# 自动将标量装箱到对象中。 C++/WinRT 要求你显式调用 [**winrt
 | 取消整数的装箱，在为 null 的情况下使用回退；任何其他情况则崩溃 | `i = o != null ? (int)o : fallback;` | `i = o ? unbox_value<int>(o) : fallback;` |
 | 尽可能取消整数的装箱；在任何其他情况下使用回退 | `i = as int? ?? fallback;` | `i = unbox_value_or<int>(o, fallback);` |
 
-有关示例，请参阅[移植 **OnNavigatedTo** 方法](./clipboard-to-winrt-from-csharp.md#onnavigatedto)和[移植 **Footer_Click** 方法](./clipboard-to-winrt-from-csharp.md#footer_click)。
+有关示例，请参阅 [移植 **OnNavigatedTo** 方法](./clipboard-to-winrt-from-csharp.md#onnavigatedto)和 [移植 **Footer_Click** 方法](./clipboard-to-winrt-from-csharp.md#footer_click)。
 
 #### <a name="boxing-and-unboxing-a-string"></a>将字符串装箱和取消装箱
 
@@ -384,7 +403,7 @@ C# 将 Windows 运行时字符串表示为引用类型，而 C++/WinRT 则将字
 
 在 C++/WinRT 2.0.190530.8 及更高版本中，[winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) 创建一个可观测的支持 [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\> 和 IObservableVector\<IInspectable\> 的矢量  。 有关示例，请参阅 [移植 **Scenarios** 属性](./clipboard-to-winrt-from-csharp.md#scenarios)。
 
-你可以创作 **Midl 文件 (.idl)** ，如下所示（另请参阅[将运行时类重构到 Midl 文件 (.idl) 中](./author-apis.md#factoring-runtime-classes-into-midl-files-idl)）。
+你可以创作 **Midl 文件 (.idl)** ，如下所示（另请参阅 [将运行时类重构到 Midl 文件 (.idl) 中](./author-apis.md#factoring-runtime-classes-into-midl-files-idl)）。
 
 ```idl
 namespace Bookstore

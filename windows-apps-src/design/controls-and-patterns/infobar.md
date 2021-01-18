@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 ms.custom: 20H2
 ms.localizationpriority: medium
-ms.openlocfilehash: 422d2cb0874abe2fbe767a75d718cd1f0637ccee
-ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
+ms.openlocfilehash: f790e4ed1d16ac42c95f9a835a3b9cc7f3598190
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96604873"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104538"
 ---
 # <a name="infobar"></a>InfoBar
 InfoBar 控件用于向用户显示应用范围内的状态消息，这些消息是高度可见的，但不具有侵入性。 提供有内置的严重性级别，可轻松指示所显示的消息类型，还提供可包含自己的行动号召或超链接按钮的选项。 由于 InfoBar 与其他 UI 内容是内联的，因此可以选择让控件始终可见或由用户关闭。 
@@ -182,7 +182,7 @@ public MainPage()
 
 ### <a name="add-an-action-button"></a>添加操作按钮
 
-通过定义自己的按钮（继承 [ButtonBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)）并在 ActionButton 属性中设置它，可以添加一个附加的操作按钮。 自定义样式将应用于 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 和 [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 类型的操作按钮，以实现一致性和可访问性。 除了 ActionButton 属性之外，还可以通过自定义内容添加其他操作按钮，这些按钮将显示在消息的下方。
+通过定义自己的按钮（继承 [ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)）并在 ActionButton 属性中设置它，可以添加一个附加的操作按钮。 自定义样式将应用于 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) 和 [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 类型的操作按钮，以实现一致性和可访问性。 除了 ActionButton 属性之外，还可以通过自定义内容添加其他操作按钮，这些按钮将显示在消息的下方。
 
 
 ```xaml
@@ -240,7 +240,7 @@ public MainPage()
     Message="Your documents are being saved to the cloud"
     IsClosable="False">
     <muxc:InfoBar.Content>
-        <ProgressBar IsIndeterminate="True" Margin="0,0,0,6"/>
+        <muxc:ProgressBar IsIndeterminate="True" Margin="0,0,0,6" MaxWidth="200"/>
     </muxc:InfoBar.Content>
 </muxc:InfoBar>
 ```
@@ -249,13 +249,14 @@ public MainPage()
 
 ### <a name="lightweight-styling"></a>轻型样式设置
 
-可以修改默认 Style 和 ControlTemplate 以使控件具有唯一的外观。 有关详细信息，请参阅[设置控件样式](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles)一文中的[轻量级样式设置部分](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling)。
+可以修改默认 Style 和 ControlTemplate 以使控件具有唯一的外观。 请参阅 InfoBar API 文档的[控件样式和模板](/windows/winui/api/microsoft.ui.xaml.controls.infobar#control-style-and-template)部分，以查看可用主题资源的列表。
+有关详细信息，请参阅[设置控件样式](./xaml-styles.md)一文中的[轻量级样式设置部分](./xaml-styles.md#lightweight-styling)。 
 
-例如，以下示例使页面 InfoBar 上的字体大小为 22pt：
+例如，以下内容会使页面上所有信息型 InfoBar 的背景色呈蓝色：
 
 ```xaml
 <Page.Resources>
-    <x:Double x:Key="InfoBarTitleFontSize">22</x:Double>
+    <x:SolidColorBrush x:Key="InfoBarInformationalSeverityBackgroundBrush" Color="LightBlue"></x:SolidColorBrush>
 </Page.Resources>
 ```
 ### <a name="canceling-close"></a>取消关闭
