@@ -9,17 +9,18 @@ label: ResourceDictionary and XAML resource references
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: conceptual
+ms.custom: contperf-fy21q1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 198da0517b5bc1a4d14851e2a2d2aecd072d1de5
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 93d2c7e3381315d370969b7d5789e92b649012b4
+ms.sourcegitcommit: c0da06081d6b9a0386e61facdf68b28f606367b2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93030160"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577549"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 和 XAML 资源引用
 
@@ -239,7 +240,7 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
 
 ## <a name="every-frameworkelement-can-have-a-resourcedictionary"></a>每个 FrameworkElement 都可以具有 ResourceDictionary
 
-[FrameworkElement](/uwp/api/Windows.UI.Xaml.FrameworkElement) 是控件所继承的基类，并且具有 [Resources](/uwp/api/windows.ui.xaml.frameworkelement.resources) 属性。 因此你可以将本地资源字典添加到任何 **FrameworkElement** 。
+[FrameworkElement](/uwp/api/Windows.UI.Xaml.FrameworkElement) 是控件所继承的基类，并且具有 [Resources](/uwp/api/windows.ui.xaml.frameworkelement.resources) 属性。 因此你可以将本地资源字典添加到任何 **FrameworkElement**。
 
 此时，[Page](/uwp/api/Windows.UI.Xaml.Controls.Page) 和 [Border](/uwp/api/Windows.UI.Xaml.Controls.Border) 都具有资源字典，并且都具有名为“greeting”的资源。 名为“textBlock2”的 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 位于 Border 内，因此其资源查找将依次查找“Border”的资源、“Page”的资源以及 [Application](/uwp/api/Windows.UI.Xaml.Application) 资源    。 **TextBlock** 将读取“Hola mundo”。
 
@@ -433,7 +434,7 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
 
 *查找行为* 是描述 XAML 资源系统如何尝试查找 XAML 资源的术语。 当键从应用的 XAML 的某处被引用为 XAML 资源引用时，即发生查找行为。 首先，资源系统具有可预测行为，它将为此类行为根据作用域检查是否存在资源。 如果在初始作用域中未找到资源，该作用域将展开。 将在应用或系统可能定义了 XAML 资源的位置和作用域上继续查找行为。 如果所有可能的资源查找尝试均失败，通常会导致错误。 通常可以在开发过程中消除这些错误。
 
-针对 XAML 资源引用的查找行为首先从应用实际用法的对象以及它自己的 [Resources](/uwp/api/windows.ui.xaml.frameworkelement.resources) 属性开始。 如果此处存在 [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary)，则会检查该“ResourceDictionary”以查看其中是否存在具有所请求键的项  。 该第一级查找很少包含相关信息，因为你通常不会在同一个对象上定义某个资源，然后引用该资源。 实际上， **Resources** 属性通常不存在于此处。 你几乎可以在 XAML 中的任何位置进行 XAML 资源引用，而不限于在 [FrameworkElement](/uwp/api/Windows.UI.Xaml.FrameworkElement) 子类的属性中。
+针对 XAML 资源引用的查找行为首先从应用实际用法的对象以及它自己的 [Resources](/uwp/api/windows.ui.xaml.frameworkelement.resources) 属性开始。 如果此处存在 [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary)，则会检查该“ResourceDictionary”以查看其中是否存在具有所请求键的项  。 该第一级查找很少包含相关信息，因为你通常不会在同一个对象上定义某个资源，然后引用该资源。 实际上，**Resources** 属性通常不存在于此处。 你几乎可以在 XAML 中的任何位置进行 XAML 资源引用，而不限于在 [FrameworkElement](/uwp/api/Windows.UI.Xaml.FrameworkElement) 子类的属性中。
 
 查找序列随后检查应用的运行时对象树中的下一个父对象。 如果存在一个 [FrameworkElement.Resources](/uwp/api/windows.ui.xaml.frameworkelement.resources) 并且它持有一个 [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary)，将请求具有指定键字符串的字典项。 如果找到资源，查找序列就会停止，并将该对象提供到执行引用的位置。 否则，查找行为会向对象树根方向前进到下一个父级对象。 此搜索会继续递归前进，直至到达 XAML 的根元素，从而完成对所有可能直接资源位置的搜索。
 
@@ -445,7 +446,7 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
 
 在引用查找中，控件模板有另一个可能的位置：主题字典。 主题字典是单个 XAML 文件，它具有一个 [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 元素作为其根。 主题字典可能是来自 [Application.Resources](/uwp/api/windows.ui.xaml.application.resources) 的一个合并字典。 主题字典也可能是一个特定于控件的主题字典，用于模板化的自定义控件。
 
-最后，还有一种针对平台资源的资源查找。 平台资源包括为每个系统 UI 主题定义的控件模板，以及用于定义你在 Windows 运行时应用中为所有 UI 控件使用的默认外观的控件模板。 平台资源还包括与系统范围内的外观和主题相关的一组已命名资源。 从技术上来说，这些资源是 [MergedDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) 项，因此在加载应用之后可用于从 XAML 或代码中查找。 例如，系统主题资源包括一个名为 “SystemColorWindowTextColor”的资源，该资源提供一个 [Color](/uwp/api/Windows.UI.Color) 定义以使应用文本颜色与系统窗口的文本颜色（来自操作系统和用户首选项）相匹配。 应用的其他 XAML 样式可以引用该样式，或者你的代码可以获取资源查找值（并将该值转换为示例中的 **Color** ）。
+最后，还有一种针对平台资源的资源查找。 平台资源包括为每个系统 UI 主题定义的控件模板，以及用于定义你在 Windows 运行时应用中为所有 UI 控件使用的默认外观的控件模板。 平台资源还包括与系统范围内的外观和主题相关的一组已命名资源。 从技术上来说，这些资源是 [MergedDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) 项，因此在加载应用之后可用于从 XAML 或代码中查找。 例如，系统主题资源包括一个名为 “SystemColorWindowTextColor”的资源，该资源提供一个 [Color](/uwp/api/Windows.UI.Color) 定义以使应用文本颜色与系统窗口的文本颜色（来自操作系统和用户首选项）相匹配。 应用的其他 XAML 样式可以引用该样式，或者你的代码可以获取资源查找值（并将该值转换为示例中的 **Color**）。
 
 有关特定于主题的资源和系统资源（可用于使用 XAML 的 Windows 应用）的详细信息和列表，请参阅 [XAML 主题资源](xaml-theme-resources.md)。
 
@@ -510,7 +511,7 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
 ## <a name="resourcedictionary-and-localization"></a>ResourceDictionary 和本地化
 
 
-XAML [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 最初可能包含要本地化的字符串。 如果是这样，将这些字符串存储为项目资源，而不存储在 **ResourceDictionary** 中。 将字符串放在 XAML 外部，而为拥有元素提供一个 [x:Uid 指令](../../xaml-platform/x-uid-directive.md)值。 然后，在资源文件中定义一个资源。 以 *XUIDValue*. *PropertyName* 的形式提供资源名称，并提供应该本地化的字符串的资源值。
+XAML [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 最初可能包含要本地化的字符串。 如果是这样，将这些字符串存储为项目资源，而不存储在 **ResourceDictionary** 中。 将字符串放在 XAML 外部，而为拥有元素提供一个 [x:Uid 指令](../../xaml-platform/x-uid-directive.md)值。 然后，在资源文件中定义一个资源。 以 *XUIDValue*.*PropertyName* 的形式提供资源名称，并提供应该本地化的字符串的资源值。
 
 ## <a name="custom-resource-lookup"></a>自定义资源查找
 
