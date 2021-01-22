@@ -3,12 +3,12 @@ title: WinUI 3 预览版 3（2020 年 11 月）
 description: WinUI 3 预览版 3 发布概述。
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: 69855aea647b608d9253e4f71b6d7d38917def61
-ms.sourcegitcommit: a4ca8ba143862411cd1104515cfeb98f1bcdb780
+ms.openlocfilehash: cbda5dc7ea58111ef40c0b9f92aef192bd61e422
+ms.sourcegitcommit: 617344ae1a1f5b580c938b61e910d99120b73626
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857418"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620834"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Windows UI 库 3 预览版 3（2020 年 11 月）
 
@@ -37,9 +37,11 @@ WinUI 3 预览版 3 提供有 Visual Studio 项目模板和 NuGet 包，前者�
 2. 安装 [Visual Studio 2019 版本 16.9 预览版](https://visualstudio.microsoft.com/vs/preview/)
 
     安装 Visual Studio 时，必须包括以下工作负载：
-    - .NET 桌面开发（这也将安装 .NET 5）
     - 通用 Windows 平台开发
 
+    若要生成 .NET 应用，还必须包括以下工作负载：
+    - .NET 桌面开发（这也将安装 .NET 5）
+    
     若要生成 C++ 应用，还必须包括以下工作负载：
     - 使用 C++ 的桌面开发
     - 适用于通用 Windows 平台工作负载的 C++ (v142) 通用 Windows 平台工具可选组件（请参阅右窗格中“通用 Windows 平台开发”部分下的“安装详细信息”）

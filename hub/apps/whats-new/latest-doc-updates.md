@@ -2,313 +2,285 @@
 description: 发现 Windows 开发人员文档的最新新增内容。
 title: Windows 开发人员文档的最新更新
 ms.topic: article
-ms.date: 12/8/2020
+ms.date: 1/15/2021
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: b613c7a688110b5c8c2388b113a077c8e05cd574
-ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
+ms.openlocfilehash: a8f2b199143c3d882bb88d60af6f58d19916208e
+ms.sourcegitcommit: 375cf20e0583335805ec246d65819dc1674a2e32
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98104468"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98240987"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Windows 开发人员文档的最新更新
 
-Windows 开发人员文档会定期更新有新的、经过改进的信息和内容。 下面是截至 2020 年 12 月 8 日的更改摘要。
+Windows 开发人员文档会定期更新有新的、经过改进的信息和内容。 下面是截至 2021 年 1 月 15 日的更改摘要。
 
 注意：有关作为 Windows 10 版本 19041（也称为 2004）的一部分添加的特定 API 列表，请参阅[此列表](/windows/uwp/whats-new/windows-10-build-19041-api-diff)。
 
+若要了解最新的 Windows 开发人员文档资讯，或联系我们提交意见和疑惑，请访问我们的 Twitter 网页 [@WindowsDocs](https://twitter.com/windowsdocs)。
 
+若要了解如何向 Microsoft 文档贡献内容，请查看[参与者指南](https://docs.microsoft.com/contribute/)。
 
 本月要点包括：
 
-### <a name="new-videos"></a>新视频
-
-* [制表符与空格剧集 6](https://www.youtube.com/watch?v=XkLjxr9iQ-8)
-
-### <a name="new-topics"></a>新主题
-
-* [WinUI 3 预览版 3](../winui/winui3/index.md)
-* [WinUI 2.5 版本](../winui/winui2/release-notes/winui-2.5.md)
-* [Segoe MDL2 Assets 图标文章](/windows/uwp/design/style/segoe-ui-symbol-font)
-
-* [C#/WinRT 中的敏捷对象](/windows/uwp/csharp-winrt/agile-objects)
+### <a name="new-content"></a>新增内容
 
 
+* [WinUI 2.5](https://docs.microsoft.com/windows/apps/winui/winui2/)
+* [PowerToys 文档](https://docs.microsoft.com/windows/powertoys/)
 
+
+* [IMsRdpClientNonScriptable6](https://docs.microsoft.com/windows/win32/termserv/imsrdpclientnonscriptable6)
+* [IMsRdpClientNonScriptable7](https://docs.microsoft.com/windows/win32/termserv/imsrdpclientnonscriptable7)
+* [IMsRdpCameraRedirConfigCollection](https://docs.microsoft.com/windows/win32/termserv/imsrdpcameraredirconfigcollection)
+* [IMsRdpCameraRedirConfig](https://docs.microsoft.com/windows/win32/termserv/imsrdpcameraredirconfigcollection)
+* [IMsRdpClipboard](https://docs.microsoft.com/windows/win32/termserv/imsrdpclipboard)
+
+### <a name="updated-topics"></a>更新的主题
+
+* [“捕获映像”主题](https://docs.microsoft.com/windows/win32/gdi/capturing-an-image)
+* [RASENTRY](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/aa377274(v=vs.85))
+* [Segoe MDL2 Asset 图标](https://docs.microsoft.com/windows/uwp/design/style/segoe-ui-symbol-font)
 
 
 ### <a name="other-content-of-interest"></a>其他感兴趣的内容
 
-* [Azure 通信服务](/azure/communication-services/overview)
-* [Azure 应用配置 Python 快速入门](/azure/azure-app-configuration/quickstart-python)
 
 
-### <a name="updated-documentation"></a>已更新的文档
+* 示例 - 我们将继续更新 C++/WinRT 的 C++/CX 示例，例如 [IDirect3DSurface 接口](https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface)。 请记得使用页面右上角的语言选择器来选择 C++/WinRT。
 
-* [DirectML 内容](/windows/win32/direct3d12/dml-version-history)
 
 以下参考主题在过去一个月中有了重大更新：
 
 ## <a name="winrt-conceptual"></a>WinRT 概念
 
 <ul>
-<li><a href="/windows/uwp/audio-video-camera/playready-client-sdk">PlayReady DRM</a></li>
-<li><a href="/windows/uwp/composition/composition-native-interop">合成本机互操作</a></li>
-<li><a href="/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types">标准 C++ 数据类型和 C++/WinRT</a></li>
-<li><a href="/windows/uwp/csharp-winrt/agile-objects">使用 C#/WinRT 的敏捷对象</a></li>
-<li><a href="/windows/uwp/csharp-winrt/index">C#/WinRT</a></li>
-<li><a href="/windows/uwp/debug-test-perf/device-portal-desktop">适用于 Windows 桌面的设备门户</a></li>
-<li><a href="/windows/uwp/debug-test-perf/loose-file-registration">通过松散文件注册部署应用</a></li>
-<li><a href="/windows/uwp/design/basics/design-and-ui-intro">Windows 应用设计简介（Windows 应用）</a></li>
-<li><a href="/windows/uwp/design/controls-and-patterns/infobar">InfoBar</a></li>
-<li><a href="/windows/uwp/design/controls-and-patterns/navigationview">导航视图</a></li>
-<li><a href="/windows/uwp/design/controls-and-patterns/progress-controls">进度控件指南</a></li>
-<li><a href="/windows/uwp/design/input/ink-walkthrough">在 Windows 应用中支持墨迹</a></li>
-<li><a href="/windows/uwp/design/input/keyboard-accelerators">键盘快捷键</a></li>
-<li><a href="/windows/uwp/design/input/radialcontroller-walkthrough">在 Windows 应用中支持 Surface Dial（和其他滚轮设备）</a></li>
-<li><a href="/windows/uwp/design/layout/grid-tutorial">使用 Grid 和 StackPanel 创建简单应用。</a></li>
-<li><a href="/windows/uwp/design/shell/tiles-and-notifications/toast-schema">Toast 内容架构</a></li>
-<li><a href="/windows/uwp/design/style/segoe-ui-symbol-font">Segoe MDL2 Assets 图标</a></li>
-<li><a href="/windows/uwp/devices-sensors/host-card-emulation">创建 NFC 智能卡应用</a></li>
-<li><a href="/windows/uwp/devices-sensors/use-the-compass">使用指南针</a></li>
-<li><a href="/windows/uwp/enterprise/index">企业</a></li>
-<li><a href="/windows/uwp/gaming/e2e">Windows 10 游戏开发指南</a></li>
-<li><a href="/windows/uwp/get-started/create-a-basic-windows-10-app-in-cpp">使用 C++/CX 创建 Hello World 应用 (Windows 10)</a></li>
-<li><a href="/windows/uwp/get-started/create-uwp-apps">使用通用 Windows 平台创建应用</a></li>
-<li><a href="/windows/uwp/get-started/universal-application-platform-guide">什么是通用 Windows 平台 (UWP) 应用？</a></li>
-<li><a href="/windows/uwp/launch-resume/app-lifecycle">Windows 10 UWP 应用生命周期</a></li>
-<li><a href="/windows/uwp/launch-resume/guidelines-for-background-tasks">后台任务指南</a></li>
-<li><a href="/windows/uwp/launch-resume/web-to-app-linking">使用应用 URI 处理程序启用“网站的应用”功能</a></li>
-<li><a href="/windows/uwp/monetize/run-app-experiments-with-a-b-testing">通过 A/B 测试运行应用实验</a></li>
-<li><a href="/windows/uwp/packaging/app-capability-declarations">应用功能声明</a></li>
-<li><a href="/windows/uwp/xbox-apps/devkit-activation">Xbox One 开发人员模式激活</a></li>
+
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp">从 C# 移动到 C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx">从 C++/CX 移动到 C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/news">C++/WinRT 中的新增功能</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/weak-references">C++/WinRT 中的弱引用</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/csharp-winrt/index">C#/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/csharp-winrt/net-projection-from-cppwinrt-component">有关从 C++/WinRT 组件生成 .NET 5 投影并分发 NuGet 的演练</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/data-access/sqlite-databases">在 UWP 应用中使用 SQLite 数据库</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core">Windows 设备门户核心 REST API 参考</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop">适用于桌面设备的 Windows 设备门户</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-mobile">适用于移动设备的 Windows 设备门户</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin">为 Windows 设备门户编写自定义插件</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal">Windows 设备门户概述</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-adaptive-layout">“创建自适应布局”教程</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/infobar">InfoBar</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv">针对 Xbox 和电视进行设计</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/layouts-with-xaml">采用 XAML 的响应式布局</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/segoe-ui-symbol-font">Segoe MDL2 Assets 图标</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/typography">Windows 应用中的版式</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/about-the-uwp-user-interface-and-directx">应用对象和 DirectX</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/missing-dot-net-apis-in-unity-and-uwp">Unity 和 UWP 中缺少 .NET API</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/monetization-for-games">通过游戏盈利</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">什么是通用 Windows 平台 (UWP) 应用？</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/your-first-app">创建你的第一个应用</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/graphics-concepts/graphics-pipeline">图形管道</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/launch-default-app">启动 URI 的默认应用</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/acquisitions-data">获取游戏和应用的购置数据</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/index">盈利、参与度和 Microsoft Store 服务</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/manage-add-ons">管理加载项</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/view-and-grant-products-from-a-service">管理来自服务的产品授权</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/httpclient">HttpClient</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/sockets">套接字</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/packaging/auto-build-package-uwp-apps">设置 UWP 应用的自动生成</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate">在桌面应用程序和 UWP 应用之间共享代码</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/acquisitions-report">购置报告</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/add-on-acquisitions-report">加载项购置报告</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/organizational-licensing">组织许可选项</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/set-and-schedule-app-pricing">设置和计划应用定价</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/set-custom-permissions-for-account-users">为帐户用户设置角色或自定义权限</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/store-policies">Microsoft Store 策略</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps">使用 C++ 进行异步编程</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">异步编程</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-18362">Windows 10 版本 18362 中的新增功能</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-19041">Windows 10 内部版本 19041 中的新增功能</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp">使用 C++/CX 创建 Windows 运行时组件</a></li>
+
 </ul>
 
 ## <a name="win32-conceptual"></a>Win32 概念
 
 <ul>
-<li><a href="/windows/desktop/TermServ/win32-tslicensekeypack">Win32_TSLicenseKeyPack 类</a></li>
-<li><a href="/windows/desktop/direct3d12/direct3d-directml-constants">DirectML 常量</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ne-directml-dml_axis_direction">DML_AXIS_DIRECTION</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ne-directml-dml_depth_space_order">DML_DEPTH_SPACE_ORDER</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ne-directml-dml_graph_edge_type">DML_GRAPH_EDGE_TYPE</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ne-directml-dml_graph_node_type">DML_GRAPH_NODE_TYPE</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/nf-directml-dmlcreatedevice1">DMLCreateDevice1 函数</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/nn-directml-idmldevice1">IDMLDevice1</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ns-directml-dml_graph_desc">DML_GRAPH_DESC</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ns-directml-dml_graph_edge_desc">DML_GRAPH_EDGE_DESC</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ns-directml-dml_graph_node_desc">DML_GRAPH_NODE_DESC</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ns-directml-dml_scalar_union">DML_SCALAR_UNION</a></li>
-<li><a href="/windows/desktop/direct3d12/queries">查询</a></li>
-<li><a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax">变量语法</a></li>
-<li><a href="/windows/desktop/dlgbox/color-dialog-box">“颜色”对话框</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/api.jetopentemptable3-method">Api.JetOpenTempTable3 方法</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/database-parameters">数据库参数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/esenterrorexception-class">EsentErrorException 类</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/esentioexception-class">EsentIOException 类</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/esentmemoryexception-class">EsentMemoryException 类</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/esentquotaexception-class">EsentQuotaException 类</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/esentresourceexception-class">EsentResourceException 类</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/index-parameters">索引参数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-columnbase-structure">JET_COLUMNBASE 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-columncreate-structure">JET_COLUMNCREATE 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-columndef-structure">JET_COLUMNDEF 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-columnlist-structure">JET_COLUMNLIST 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-dbinfomisc-structure">JET_DBINFOMISC 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-dbinfomisc2-structure">JET_DBINFOMISC2 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-dbinfomisc3-structure">JET_DBINFOMISC3 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-dbinfomisc4-structure">JET_DBINFOMISC4 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-dbinfoupgrade-structure">JET_DBINFOUPGRADE 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-enumcolumn-structure">JET_ENUMCOLUMN 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-indexcreate-structure">JET_INDEXCREATE 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-indexcreate2-structure">JET_INDEXCREATE2 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-indexlist-structure">JET_INDEXLIST 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-objectinfo-structure">JET_OBJECTINFO 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-objectlist-structure">JET_OBJECTLIST 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-retrievecolumn-structure">JET_RETRIEVECOLUMN 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-sesid">JET_SESID</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-tablecreate-structure">JET_TABLECREATE 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-tablecreate2-structure">JET_TABLECREATE2 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-tablecreate3-structure">JET_TABLECREATE3 结构</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-tableid">JET_TABLEID</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetaddcolumn-function">JetAddColumn 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetattachdatabase-function">JetAttachDatabase 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetattachdatabase2-function">JetAttachDatabase2 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetbackup-function">JetBackup 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetbackupinstance-function">JetBackupInstance 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetbeginsession-function">JetBeginSession 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetbegintransaction-function">JetBeginTransaction 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetbegintransaction2-function">JetBeginTransaction2 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetbegintransaction3-function">JetBeginTransaction3 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcommittransaction-function">JetCommitTransaction 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreatedatabase-function">JetCreateDatabase 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreatedatabase2-function">JetCreateDatabase2 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreateindex-function">JetCreateIndex 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreateindex2-function">JetCreateIndex2 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreateindex3-function">JetCreateIndex3 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreateindex4w-function">JetCreateIndex4W 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreateinstance-function">JetCreateInstance 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreateinstance2-function">JetCreateInstance2 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreatetable-function">JetCreateTable 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetdelete-function">JetDelete 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetdetachdatabase-function">JetDetachDatabase 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetdetachdatabase2-function">JetDetachDatabase2 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetdupcursor-function">JetDupCursor 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetendexternalbackup-function">JetEndExternalBackup 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetenumeratecolumns-function">JetEnumerateColumns 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetescrowupdate-function">JetEscrowUpdate 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetexternalrestore2-function">JetExternalRestore2 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgetattachinfo-function">JetGetAttachInfo 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgetcolumninfo-function">JetGetColumnInfo 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgetdatabaseinfo-function">JetGetDatabaseInfo 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgetindexinfo-function">JetGetIndexInfo 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgetobjectinfo-function">JetGetObjectInfo 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgetrecordposition-function">JetGetRecordPosition 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgettableindexinfo-function">JetGetTableIndexInfo 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgettableinfo-function">JetGetTableInfo 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetinit-function">JetInit 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetinit2-function">JetInit2 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetinit3-function">JetInit3 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetintersectindexes-function">JetIntersectIndexes 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetmakekey-function">JetMakeKey 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetmove-function">JetMove 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopendatabase-function">JetOpenDatabase 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopenfile-function">JetOpenFile 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopenfileinstance-function">JetOpenFileInstance 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopentable-function">JetOpenTable 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopentemptable-function">JetOpenTempTable 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopentemptable2-function">JetOpenTempTable2 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopentemptable3-function">JetOpenTempTable3 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetossnapshotfreeze-function">JetOSSnapshotFreeze 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetossnapshotprepare-function">JetOSSnapshotPrepare 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetreadfileinstance-function">JetReadFileInstance 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetregistercallback-function">JetRegisterCallback 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetrestore-function">JetRestore 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetrestore2-function">JetRestore2 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetrestoreinstance-function">JetRestoreInstance 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetretrievecolumn-function">JetRetrieveColumn 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetretrievecolumns-function">JetRetrieveColumns 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetretrievekey-function">JetRetrieveKey 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetcolumn-function">JetSetColumn 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetcolumns-function">JetSetColumns 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetcurrentindex-function">JetSetCurrentIndex 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetcurrentindex2-function">JetSetCurrentIndex2 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetcurrentindex3-function">JetSetCurrentIndex3 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetcurrentindex4-function">JetSetCurrentIndex4 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetindexrange-function">JetSetIndexRange 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetls-function">JetSetLS 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetstopservice-function">JetStopService 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetterm-function">JetTerm 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetterm2-function">JetTerm2 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetupdate-function">JetUpdate 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetupdate2-function">JetUpdate2 函数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/transaction-log-parameters">事务日志参数</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/transactions">事务（Windows 事件）</a></li>
-<li><a href="/windows/desktop/security">安全和标识</a></li>
-<li><a href="/windows/desktop/shell/handlers">创建 Shell 扩展处理程序</a></li>
-<li><a href="/windows/desktop/shell/nf-shobjidl-istorageprovidercopyhook-copycallback">IStorageProviderCopyHook::CopyCallback</a></li>
-<li><a href="/windows/desktop/shell/nn-shobjidl-istorageprovidercopyhook">IStorageProviderCopyHook 接口</a></li>
-<li><a href="/windows/desktop/shell/shell-shellexecute">Shell.ShellExecute 方法 (Shldisp.h)</a></li>
+
+<li><a href="https://docs.microsoft.com/windows/desktop/DevNotes/msdelta-applydeltab">ApplyDeltaB 函数</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DevNotes/msdelta-createdeltab">CreateDeltaB 函数</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DevNotes/msdelta-deltafree">DeltaFree 函数</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal">DirectWrite (DWrite)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/dwrite/ne-dwrite-dwrite_factory_type">DWRITE_FACTORY_TYPE (dwrite.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/dwrite_3/nf-dwrite_3-idwritebitmaprendertarget2-getbitmapdata">IDWriteBitmapRenderTarget2::GetBitmapData (dwrite_3.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/dwrite_3/nn-dwrite_3-idwritebitmaprendertarget2">IDWriteBitmapRenderTarget2 (dwrite_3.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/dwrite_3/ns-dwrite_3-dwrite_bitmap_data_bgra32">DWRITE_BITMAP_DATA_BGRA32 (dwrite_3.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/dwritecore-overview">DWriteCore 概述</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/SecAuthN/tls-cipher-suites-in-windows-10-v21H1">Windows 10 v21H1 中的 TLS 密码套件。</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/SecCNG/cng-named-elliptic-curves">CNG Named Elliptic Curves (Bcrypt.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig-deviceexists">IMsRdpCameraRedirConfig DeviceExists 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig-friendlyname">IMsRdpCameraRedirConfig FriendlyName 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig-instanceid">IMsRdpCameraRedirConfig InstanceId 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig-parentinstanceid">IMsRdpCameraRedirConfig ParentInstanceId 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig-redirected">IMsRdpCameraRedirConfig Redirected 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig-symboliclink">IMsRdpCameraRedirConfig SymbolicLink 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig">IMsRdpCameraRedirConfig 接口</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-addconfig">IMsRdpCameraRedirConfigCollection AddConfig 方法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-byindex">IMsRdpCameraRedirConfigCollection ByIndex 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-byinstanceid">IMsRdpCameraRedirConfigCollection ByInstanceId 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-bysymboliclink">IMsRdpCameraRedirConfigCollection BySymbolicLink 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-count">IMsRdpCameraRedirConfigCollection Count 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-encodevideo">IMsRdpCameraRedirConfigCollection EncodeVideo 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-encodingquality">IMsRdpCameraRedirConfigCollection EncodingQuality 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-redirectbydefault">IMsRdpCameraRedirConfigCollection RedirectByDefault 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-rescan">IMsRdpCameraRedirConfigCollection Rescan 方法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection">IMsRdpCameraRedirConfigCollection 接口</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable6-sendlocation2d">IMsRdpClientNonScriptable6 SendLocation2D 方法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable6-sendlocation3d">IMsRdpClientNonScriptable6 SendLocation3D 方法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable6">IMsRdpClientNonScriptable6 接口</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable7-cameraredirconfigcollection">IMsRdpClientNonScriptable7 CameraRedirConfigCollection 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable7-clipboard">IMsRdpClientNonScriptable7 Clipboard 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable7-disabledpicursorscalingforprocess">IMsRdpClientNonScriptable7 DisableDpiCursorScalingForProcess 方法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable7">IMsRdpClientNonScriptable7 接口</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclipboard-cansynclocalclipboardtoremotesession">IMsRdpClipboard CanSyncLocalClipboardToRemoteSession 方法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclipboard-cansyncremoteclipboardtolocalsession">IMsRdpClipboard CanSyncRemoteClipboardToLocalSession 方法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclipboard-synclocalclipboardtoremotesession">IMsRdpClipboard SyncLocalClipboardToRemoteSession 方法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclipboard-syncremoteclipboardtolocalsession">IMsRdpClipboard SyncRemoteClipboardToLocalSession 方法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclipboard">IMsRdpClipboard 接口</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpextendedsettings-property">IMsRdpExtendedSettings Property 属性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/UpdateOrchestrator/universalorchestrator-hasmoratoriumpassed">IUniversalOrchestrator::HasMoratoriumPassed</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/UpdateOrchestrator/universalorchestrator-schedulework">IUniversalOrchestrator::ScheduleWork</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/UpdateOrchestrator/universalorchestrator-workcompleted">IUniversalOrchestrator::WorkCompleted</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/cossdk/applications">应用程序集合</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/cossdk/components">组件集合</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/cossdk/localcomputer">LocalComputer 集合</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/gdi/capturing-an-image">捕获映像</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wic/hdphoto-format-overview">HD 照片格式概述</a></li>
+
 </ul>
 
 ## <a name="win32-api-reference"></a>Win32 API 参考
 
 <ul>
-<li><a href="/windows/win32/api/directml/ne-directml-dml_operator_type">DML_OPERATOR_TYPE </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_gather_operator_desc">DML_GATHER_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_gru_operator_desc">DML_GRU_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_join_operator_desc">DML_JOIN_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_lstm_operator_desc">DML_LSTM_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_one_hot_operator_desc">DML_ONE_HOT_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_padding_operator_desc">DML_PADDING_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_reduce_operator_desc">DML_REDUCE_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_scatter_operator_desc">DML_SCATTER_OPERATOR_DESC (DML_SCATTER_ELEMENTS_OPERATOR_DESC) </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_split_operator_desc">DML_SPLIT_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_top_k_operator_desc">DML_TOP_K_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_net_event_header0">FWPM_NET_EVENT_HEADER0 (fwpmtypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_net_event_header1">FWPM_NET_EVENT_HEADER1 (fwpmtypes.h)</a></li>
-<li><a href="/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_net_event_header2">FWPM_NET_EVENT_HEADER2 (fwpmtypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_net_event_header3">FWPM_NET_EVENT_HEADER3 (fwpmtypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_provider_context1">FWPM_PROVIDER_CONTEXT1 (fwpmtypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_provider_context2">FWPM_PROVIDER_CONTEXT2 (fwpmtypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpmu/nf-fwpmu-fwpmfilteradd0">FwpmFilterAdd0 函数 (fwpmu.h) </a></li>
-<li><a href="/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_filter0">FWPS_FILTER0 (fwpstypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_filter1">FWPS_FILTER1 (fwpstypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_filter2">FWPS_FILTER2 (fwpstypes.h) </a></li>
-<li><a href="/windows/win32/api/fwptypes/ns-fwptypes-fwp_condition_value0">FWP_CONDITION_VALUE0 (fwptypes.h) </a></li>
+
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/ne-d3d12-d3d12_resource_flags">D3D12_RESOURCE_FLAGS (d3d12.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/dxcore_interface/ne-dxcore_interface-dxcoreadapterproperty">DXCoreAdapterProperty </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/shellapi/ns-shellapi-shellexecuteinfoa">SHELLEXECUTEINFOA (shellapi.h)</a></li>
+
 </ul>
 
 ## <a name="uwp-api-reference"></a>UWP API 参考
 
 <ul>
-<li><a href="/uwp/api/windows.applicationmodel.activation.applicationexecutionstate">Windows.ApplicationModel.Activation.ApplicationExecutionState</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.activation.searchactivatedeventargs">Windows.ApplicationModel.Activation.SearchActivatedEventArgs</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.background.maintenancetrigger">Windows.ApplicationModel.Background.MaintenanceTrigger</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.contacts.provider.contactpickerui">Windows.ApplicationModel.Contacts.Provider.ContactPickerUI</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.contacts.contact.fields">Windows.ApplicationModel.Contacts.Contact.Fields</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.contacts.contact.name">Windows.ApplicationModel.Contacts.Contact.Name</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.contacts.contactinformation">Windows.ApplicationModel.Contacts.ContactInformation</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.namedresource">Windows.ApplicationModel.Resources.Core.NamedResource</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.resourcecandidate">Windows.ApplicationModel.Resources.Core.ResourceCandidate</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.resourcecandidatevectorview">Windows.ApplicationModel.Resources.Core.ResourceCandidateVectorView</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.resourcecontext">Windows.ApplicationModel.Resources.Core.ResourceContext</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.resourcemap">Windows.ApplicationModel.Resources.Core.ResourceMap</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.resourcequalifier">Windows.ApplicationModel.Resources.Core.ResourceQualifier</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.resourcequalifiervectorview">Windows.ApplicationModel.Resources.Core.ResourceQualifierVectorView</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchpane.language">Windows.ApplicationModel.Search.SearchPane.Language</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchpane.querysubmitted">Windows.ApplicationModel.Search.SearchPane.QuerySubmitted</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchpane.visible">Windows.ApplicationModel.Search.SearchPane.Visible</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchpanequerylinguisticdetails">Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchpanequerysubmittedeventargs">Windows.ApplicationModel.Search.SearchPaneQuerySubmittedEventArgs</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchpanesuggestionsrequest">Windows.ApplicationModel.Search.SearchPaneSuggestionsRequest</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchsuggestioncollection">Windows.ApplicationModel.Search.SearchSuggestionCollection</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchsuggestioncollection.size">Windows.ApplicationModel.Search.SearchSuggestionCollection.Size</a></li>
-<li><a href="/uwp/api/windows.devices.enumeration.deviceinformationupdate">Windows.Devices.Enumeration.DeviceInformationUpdate</a></li>
-<li><a href="/uwp/api/windows.devices.enumeration.devicewatcher">Windows.Devices.Enumeration.DeviceWatcher</a></li>
-<li><a href="/uwp/api/windows.devices.serialcommunication.serialdevice.readtimeout">Windows.Devices.SerialCommunication.SerialDevice.ReadTimeout</a></li>
-<li><a href="/uwp/api/windows.devices.serialcommunication.serialdevice.writetimeout">Windows.Devices.SerialCommunication.SerialDevice.WriteTimeout</a></li>
-<li><a href="/uwp/api/windows.graphics.display.brightnessoverride">Windows.Graphics.Display.BrightnessOverride</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printbindingoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintBindingOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printborderingoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintBorderingOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printcollationoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintCollationOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printcolormodeoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintColorModeOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printcopiesoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintCopiesOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printcustomitemdetails">Windows.Graphics.Printing.OptionDetails.PrintCustomItemDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printduplexoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintDuplexOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printholepunchoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintHolePunchOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printmediasizeoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintMediaSizeOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printmediatypeoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintMediaTypeOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printqualityoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintQualityOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printstapleoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintStapleOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printtaskoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.printmanager">Windows.Graphics.Printing.PrintManager</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.printtask">Windows.Graphics.Printing.PrintTask</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.printtaskrequest">Windows.Graphics.Printing.PrintTaskRequest</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.printtasksourcerequestedargs">Windows.Graphics.Printing.PrintTaskSourceRequestedArgs</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions">Windows.Graphics.Printing.StandardPrintTaskOptions</a></li>
-<li><a href="/uwp/api/windows.media.playlists.playlist">Windows.Media.Playlists.Playlist</a></li>
-<li><a href="/uwp/api/windows.networking.proximity.peerwatcher.stop">Windows.Networking.Proximity.PeerWatcher.Stop</a></li>
-<li><a href="/uwp/api/windows.networking.servicediscovery.dnssd.dnssdregistrationresult">Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult</a></li>
-<li><a href="/uwp/api/windows.networking.servicediscovery.dnssd.dnssdregistrationstatus">Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationStatus</a></li>
-<li><a href="/uwp/api/windows.networking.servicediscovery.dnssd.dnssdservicewatcher">Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher</a></li>
-<li><a href="/uwp/api/windows.networking.servicediscovery.dnssd.dnssdservicewatcherstatus">Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcherStatus</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueue.createtimer">Windows.System.DispatcherQueue.CreateTimer</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueue.getforcurrentthread">Windows.System.DispatcherQueue.GetForCurrentThread</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueue.shutdowncompleted">Windows.System.DispatcherQueue.ShutdownCompleted</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueue.shutdownstarting">Windows.System.DispatcherQueue.ShutdownStarting</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuecontroller.dispatcherqueue">Windows.System.DispatcherQueueController.DispatcherQueue</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuepriority">Windows.System.DispatcherQueuePriority</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueueshutdownstartingeventargs">Windows.System.DispatcherQueueShutdownStartingEventArgs</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer">Windows.System.DispatcherQueueTimer</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer.interval">Windows.System.DispatcherQueueTimer.Interval</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer.isrepeating">Windows.System.DispatcherQueueTimer.IsRepeating</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer.isrunning">Windows.System.DispatcherQueueTimer.IsRunning</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer.start">Windows.System.DispatcherQueueTimer.Start</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer.stop">Windows.System.DispatcherQueueTimer.Stop</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer.tick">Windows.System.DispatcherQueueTimer.Tick</a></li>
-<li><a href="/uwp/api/windows.ui.core.animationmetrics.animationdescription">Windows.UI.Core.AnimationMetrics.AnimationDescription</a></li>
-<li><a href="/uwp/api/windows.ui.input.pointerpointproperties">Windows.UI.Input.PointerPointProperties</a></li>
-<li><a href="/uwp/api/windows.ui.startscreen.secondarytile">Windows.UI.StartScreen.SecondaryTile</a></li>
-<li><a href="/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync">Windows.UI.StartScreen.SecondaryTile.RequestDeleteAsync</a></li>
+
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.listinginformation">Windows.ApplicationModel.Store.ListingInformation</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense">Windows.ApplicationModel.Store.ProductLicense</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting">Windows.ApplicationModel.Store.ProductListing</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy">Windows.Devices.Geolocation.Geolocator.DesiredAccuracy</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.portable.storagedevice">Windows.Devices.Portable.StorageDevice</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.wifidirect.windows.devices.wifidirect">N:Windows.Devices.WiFiDirect</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.propertytype">Windows.Foundation.PropertyType</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.rect">Windows.Foundation.Rect</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.size">Windows.Foundation.Size</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.globalization.fonts.languagefont">Windows.Globalization.Fonts.LanguageFont</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.globalization.fonts.languagefontgroup">Windows.Globalization.Fonts.LanguageFontGroup</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3ddevice">Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface">Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapdecoder">Windows.Graphics.Imaging.BitmapDecoder</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder">Windows.Graphics.Imaging.BitmapEncoder</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.devices.callcontrol">Windows.Media.Devices.CallControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.protection.componentrenewal">Windows.Media.Protection.ComponentRenewal</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.protection.mediaprotectionmanager">Windows.Media.Protection.MediaProtectionManager</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.protection.revocationandrenewalinformation">Windows.Media.Protection.RevocationAndRenewalInformation</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.protection.revocationandrenewalitem">Windows.Media.Protection.RevocationAndRenewalItem</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis.speechsynthesizer">Windows.Media.SpeechSynthesis.SpeechSynthesizer</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.mediacontrol">Windows.Media.MediaControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.videoeffects">Windows.Media.VideoEffects</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader">Windows.Networking.BackgroundTransfer.BackgroundDownloader</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounduploader">Windows.Networking.BackgroundTransfer.BackgroundUploader</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.downloadoperation">Windows.Networking.BackgroundTransfer.DownloadOperation</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.uploadoperation">Windows.Networking.BackgroundTransfer.UploadOperation</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.sockets.datagramsocketcontrol">Windows.Networking.Sockets.DatagramSocketControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.sockets.messagewebsocketcontrol">Windows.Networking.Sockets.MessageWebSocketControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocketcontrol">Windows.Networking.Sockets.StreamSocketControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocketlistenercontrol">Windows.Networking.Sockets.StreamSocketListenerControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamwebsocketcontrol">Windows.Networking.Sockets.StreamWebSocketControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchortransfermanager.tryexportanchorsasync">Windows.Perception.Spatial.SpatialAnchorTransferManager.TryExportAnchorsAsync(Windows.Foundation.Collections.IIterable{Windows.Foundation.Collections.IKeyValuePair{System.String,Windows.Perception.Spatial.SpatialAnchor}},Windows.Storage.Streams.IOutputStream)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.security.authentication.onlineid.onlineidauthenticator.authenticatedsafecustomerid">Windows.Security.Authentication.OnlineId.OnlineIdAuthenticator.AuthenticatedSafeCustomerId</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.security.credentials.ui.userconsentverifier.checkavailabilityasync">Windows.Security.Credentials.UI.UserConsentVerifier.CheckAvailabilityAsync</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.accesscache.accesslistentryview">Windows.Storage.AccessCache.AccessListEntryView</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemaccesslist">Windows.Storage.AccessCache.StorageItemAccessList</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties">Windows.Storage.FileProperties.BasicProperties</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.storageitemcontentproperties">Windows.Storage.FileProperties.StorageItemContentProperties</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.storageitemthumbnail">Windows.Storage.FileProperties.StorageItemThumbnail</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.pickers.provider.fileopenpickerui">Windows.Storage.Pickers.Provider.FileOpenPickerUI</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.pickers.provider.fileopenpickerui.fileremoved">Windows.Storage.Pickers.Provider.FileOpenPickerUI.FileRemoved</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.pickers.provider.fileremovedeventargs">Windows.Storage.Pickers.Provider.FileRemovedEventArgs</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.pickers.provider.targetfilerequest.getdeferral">Windows.Storage.Pickers.Provider.TargetFileRequest.GetDeferral</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.pickers.provider.targetfilerequestedeventargs">Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.provider.fileupdaterequest">Windows.Storage.Provider.FileUpdateRequest</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions">Windows.Storage.Search.QueryOptions</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult">Windows.Storage.Search.StorageFileQueryResult</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult.findstartindexasync">Windows.Storage.Search.StorageFileQueryResult.FindStartIndexAsync(System.Object)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.storagefolderqueryresult">Windows.Storage.Search.StorageFolderQueryResult</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.storagefolderqueryresult.findstartindexasync">Windows.Storage.Search.StorageFolderQueryResult.FindStartIndexAsync(System.Object)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.storageitemqueryresult">Windows.Storage.Search.StorageItemQueryResult</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.storageitemqueryresult.findstartindexasync">Windows.Storage.Search.StorageItemQueryResult.FindStartIndexAsync(System.Object)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader">Windows.Storage.Streams.DataReader</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter">Windows.Storage.Streams.DataWriter</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata">Windows.Storage.ApplicationData</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged">Windows.Storage.ApplicationData.DataChanged</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings">Windows.Storage.ApplicationData.LocalSettings</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacompositevalue">Windows.Storage.ApplicationDataCompositeValue</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer">Windows.Storage.ApplicationDataContainer</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.cachedfilemanager">Windows.Storage.CachedFileManager</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.fileio">Windows.Storage.FileIO</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.fileio.readbufferasync">Windows.Storage.FileIO.ReadBufferAsync(Windows.Storage.IStorageFile)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.fileio.writebufferasync">Windows.Storage.FileIO.WriteBufferAsync(Windows.Storage.IStorageFile,Windows.Storage.Streams.IBuffer)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.knownfolders">Windows.Storage.KnownFolders</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.pathio">Windows.Storage.PathIO</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefile">Windows.Storage.StorageFile</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefile.properties">Windows.Storage.StorageFile.Properties</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync">Windows.Storage.StorageFolder.CreateFileAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfilequery">Windows.Storage.StorageFolder.CreateFileQuery</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfilequerywithoptions">Windows.Storage.StorageFolder.CreateFileQueryWithOptions(Windows.Storage.Search.QueryOptions)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfolderasync">Windows.Storage.StorageFolder.CreateFolderAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createitemquery">Windows.Storage.StorageFolder.CreateItemQuery</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.deleteasync">Windows.Storage.StorageFolder.DeleteAsync</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync">Windows.Storage.StorageFolder.GetFileAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync">Windows.Storage.StorageFolder.GetFilesAsync</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfolderasync">Windows.Storage.StorageFolder.GetFolderAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfolderfrompathasync">Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfoldersasync">Windows.Storage.StorageFolder.GetFoldersAsync</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getitemasync">Windows.Storage.StorageFolder.GetItemAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.trygetitemasync">Windows.Storage.StorageFolder.TryGetItemAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction">Windows.Storage.StorageStreamTransaction</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.display.displayrequest">Windows.System.Display.DisplayRequest</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.profile.hardwareidentification">Windows.System.Profile.HardwareIdentification</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.launcher.launchfileasync">Windows.System.Launcher.LaunchFileAsync(Windows.Storage.IStorageFile,Windows.System.LauncherOptions)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync">Windows.System.Launcher.LaunchUriAsync(Windows.Foundation.Uri,Windows.System.LauncherOptions)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.contenttype">Windows.System.LauncherOptions.ContentType</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.fallbackuri">Windows.System.LauncherOptions.FallbackUri</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationdisplayname">Windows.System.LauncherOptions.PreferredApplicationDisplayName</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkdrawingattributes">Windows.UI.Input.Inking.InkDrawingAttributes</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.popups.messagedialog">Windows.UI.Popups.MessageDialog</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitchingoptions">Windows.UI.ViewManagement.ApplicationViewSwitchingOptions</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding">Windows.UI.ViewManagement.InputPane.Hiding</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing">Windows.UI.ViewManagement.InputPane.Showing</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.tryhide">Windows.UI.ViewManagement.InputPane.TryHide</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.tryshow">Windows.UI.ViewManagement.InputPane.TryShow</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.projectionmanager">Windows.UI.ViewManagement.ProjectionManager</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource">Windows.UI.Xaml.Controls.ItemsControl.ItemsSource</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.doubleanimation">Windows.UI.Xaml.Media.Animation.DoubleAnimation</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.enableframeratecounter">Windows.UI.Xaml.DebugSettings.EnableFrameRateCounter</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.thickness">Windows.UI.Xaml.Thickness</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler">Windows.UI.Xaml.UIElement.AddHandler(Windows.UI.Xaml.RoutedEvent,System.Object,System.Boolean)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.web.http.windows.web.http">N:Windows.Web.Http</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem">Windows.Web.Syndication.SyndicationItem</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.web.weberrorstatus">Windows.Web.WebErrorStatus</a></li>
+</ul>
+
+
+
