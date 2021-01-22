@@ -2,16 +2,16 @@
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: 如果你有应用和加载项的目录，你可以使用 Microsoft Store 收集 API 和 Microsoft Store 购买 API 访问你的服务中的这些产品的所有权信息。
 title: 管理来自服务的产品授权
-ms.date: 08/01/2018
+ms.date: 01/21/2021
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 收集 API, Microsoft Store 购买 API, 查看产品, 授予产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 1447a8f7a689b3405ac1ebb8807c1c68b81294db
-ms.sourcegitcommit: ad33b2b191c7e62dc68a46bd349a87ff8ca7cef8
+ms.openlocfilehash: 7674a9b966510d914850e1fc8b2c8ca531f64a20
+ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108920"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98668738"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理来自服务的产品授权
 
@@ -45,9 +45,6 @@ ms.locfileid: "98108920"
 
 你必须创建 Azure AD Web 应用程序、检索应用程序的租户 ID 和应用程序 ID，并生成一个密钥，然后才能使用 Microsoft Store 收集 API 或购买 API。 Azure AD Web 应用程序表示你要从中调用 Microsoft Store 收集 API 或购买 API 的服务。 需要租户 ID、应用程序 ID 和密钥，才能生成需要调用 API Azure AD 访问令牌。
 
-> [!NOTE]
-> 你只需执行一次本部分中任务。 更新 Azure AD 应用程序清单并拥有租户 ID、应用程序 ID 和客户端密码后，Azure AD 随时都可以重复使用这些值。
-
 1.  如果尚未这样做，请按照将 [应用程序与 Azure Active Directory 集成](/azure/active-directory/develop/active-directory-integrating-applications) 中的说明向 Azure AD 注册 **WEB 应用/API** 应用程序。
     > [!NOTE]
     > 注册应用程序时，必须选择 **Web 应用/API** 作为应用程序类型，以便可以检索密钥 (也称为 *客户端密钥*) 应用程序。 若要调用 Microsoft Store 收集 API 或购买 API，必须在稍后步骤从 Azure AD 中请求访问令牌时提供客户端密码。
@@ -55,19 +52,6 @@ ms.locfileid: "98108920"
 2.  在 [Azure 管理门户](https://portal.azure.com/)中，导航到 " **Azure Active Directory**"。 选择你的目录，在左侧导航窗格中单击 " **应用注册** "，然后选择你的应用程序。
 3.  你将转到应用程序的主注册页。 在此页上，复制 " **应用程序 ID** " 值以供稍后使用。
 4.  创建稍后需要 (的密钥，此密钥称为 " *客户端机密* ") 。 在左窗格中，单击 " **设置** "，然后单击 " **密钥**"。 在此页上，完成 [创建密钥](/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis)的步骤。 复制此密钥供以后使用。
-5.  向 [应用程序清单](/azure/active-directory/develop/active-directory-application-manifest)添加几个必需的受众 uri。 在左窗格中，单击“清单”。 单击 " **编辑**"，将 `"identifierUris"` 部分替换为以下文本，然后单击 " **保存**"。
-
-    ```json
-    "accessTokenAcceptedVersion": 1,
-    "identifierUris": [
-        "https://onestore.microsoft.com",
-        "https://onestore.microsoft.com/b2b/keys/create/collections",
-        "https://onestore.microsoft.com/b2b/keys/create/purchase"
-        ],
-    "signInAudience": "AzureADMyOrg",
-    ```
-
-    这些字符串表示你的应用程序支持的受众。 在稍后的步骤中，你将创建与其中每个受众值关联的 Azure AD 访问令牌。
 
 <span id="step-2"/>
 
@@ -76,7 +60,7 @@ ms.locfileid: "98108920"
 必须先将 Azure AD 应用程序 ID 与应用 (中的应用程序或包含合作伙伴中心外接程序) 的应用相关联，然后才能使用 Microsoft Store 收集 API 或购买 API 来配置应用或外接程序的所有权和购买。
 
 > [!NOTE]
-> 你只需执行一次此任务。
+> 你只需执行一次此任务。 获得租户 ID、应用程序 ID 和客户端密码后，Azure AD 随时都可以重复使用这些值。
 
 1.  登录到 " [合作伙伴中心](https://partner.microsoft.com/dashboard) " 并选择应用。
 2.  请访问 " **服务** &gt; **产品集合和购买** " 页，并将 Azure AD 应用程序 id 输入其中一个可用的 **客户端 id** 字段。
@@ -94,7 +78,7 @@ ms.locfileid: "98108920"
 
 ### <a name="understanding-the-different-tokens-and-audience-uris"></a>了解不同的令牌和受众 URI
 
-根据你希望在 Microsoft Store 收集 API 或购买 API 中调用的方法，你必须创建两个或三个不同的令牌。 每个访问令牌都与不同的受众 URI（即你之前添加到 Azure AD 应用程序清单的 `"identifierUris"` 部分的 URI）关联。
+根据你希望在 Microsoft Store 收集 API 或购买 API 中调用的方法，你必须创建两个或三个不同的令牌。 每个访问令牌都与其他受众 URI 相关联。
 
   * 在所有情况下，你都必须使用 `https://onestore.microsoft.com` 受众 URI 创建令牌。 在稍后的步骤中，你要将此令牌传递到 Microsoft Store 收集 API 或购买 API 中的方法的 **授权** 标题。
       > [!IMPORTANT]
