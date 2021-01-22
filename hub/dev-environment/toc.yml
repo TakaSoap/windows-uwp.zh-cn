@@ -31,7 +31,7 @@
           items:
             - name: 概述
               href: ../nodejs/index.yml
-            - name: 使用 WSL2 进行设置
+            - name: 使用 WSL 2 进行设置
               href: ../nodejs/setup-on-wsl2.md
             - name: 使用 Windows 进行设置（初学者）
               href: ../nodejs/setup-on-windows.md
