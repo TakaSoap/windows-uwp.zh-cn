@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 云服务
 ms.localizationpriority: medium
-ms.openlocfilehash: ca575975b27a71798b7cad1cac0cc83ec870d756
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9252e6c2b47e51f51f7cb3cd28f49de08478019d
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173171"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811250"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>使用适用于 UWP 游戏的云服务
 
@@ -21,7 +21,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 
 ##  <a name="what-is-cloud-computing"></a>什么是云计算？
 
-云计算基于 Internet 按需使用 IT 资源和应用程序，来存储和处理设备的数据。 术语_云_是在 Internet 上提供大量资源（非本地资源）的一种比喻说法，可供你从任意位置进行访问。
+云计算基于 Internet 按需使用 IT 资源和应用程序，来存储和处理设备的数据。 术语 _云_ 是在 Internet 上提供大量资源（非本地资源）的一种比喻说法，可供你从任意位置进行访问。
 云计算的本质是提供一种可使用资源和软件的全新方式。 用户不再需要事先购买整套产品和资源，只需要能够使用作为服务提供的平台、软件和资源即可。 云提供商通常根据其客户的使用情况或服务计划产品向他们收取费用。
 
 ##  <a name="why-use-cloud-services"></a>为什么要使用云服务？
@@ -49,7 +49,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
     </colgroup>
     <tr class="header" align="left">
         <th>开发人员</th>
-        <th>描述</th>
+        <th>说明</th>
         <th>主要游戏方案</th>
         <th>了解详细信息</th>
     </tr>
@@ -112,7 +112,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
     </tr>
     <tr>
         <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
-        <td>Pixel Squad 使用 Unity 游戏引擎和 Azure 开发了<b>罪恶港湾</b>。 <b>罪恶港湾</b>是一款社交策略游戏，适用于 Android、iOS 和 Windows 平台。 这款游戏使用了 Azure Blob 存储、托管的 Azure Redis 缓存、负载平衡 IIS VM 阵列和 Microsoft 通知中心。 了解它们如何管理扩展以及如何处理 5000 名玩家同时在线时的玩家数量飙升情况。
+        <td>Pixel Squad 使用 Unity 游戏引擎和 Azure 开发了<b>罪恶港湾</b>。 <b>罪恶港湾</b>是一款社交策略游戏，适用于 Android、iOS 和 Windows 平台。 Azure Blob 存储、托管的 Azure Redis 缓存、负载平衡的 IIS Vm 的数组和 Microsoft 通知中心在游戏中使用。 了解它们如何管理扩展以及如何处理 5000 名玩家同时在线时的玩家数量飙升情况。
         </td>
         <td>
             <ul>
@@ -150,7 +150,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 
     平台即服务 (PaaS) 与 IaaS 类似，但它还包括对诸如服务器、存储和网络连接等基础设施的管理。 因此，首先是不必购买物理服务器和数据中心基础设施，其次是也不需要购买和管理软件许可证、底层应用程序基础架构、中间件、开发工具或其他资源。
 
-* [软件即服务 (SaaS)](https://azure.microsoft.com/overview/what-is-saas/)
+* [软件即服务 (SaaS) ](https://azure.microsoft.com/overview/what-is-saas/)
 
     软件即服务 (SaaS) 让用户可以通过 Internet 连接并使用基于云的应用。 它提供了一个完整的软件解决方案，你可以从云服务商那里以即付即用方式购买该解决方案。  常见示例包括电子邮件、日历和 office 工具 (例如 Microsoft 365 Office 应用程序) 。 你可以租用组织的应用，并且你的用户通常使用 Web 浏览器通过 Internet 连接到该应用。 所有底层基础结构、中间件、应用软件和应用数据都位于服务提供商的数据中心。 服务提供商将管理硬件和软件，并通过适当的服务协议来确保游戏和数据的可用性和安全性。 SaaS 使组织能够以最低的前期费用快速启动并运行应用。
 
@@ -162,7 +162,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 | 要求                 | 活动方案                            | 产品供应                      | 产品功能                                    |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
 | 在云中托管你的域     | 有效地响应 DNS 查询            | [Azure DNS](https://azure.microsoft.com/services/dns/) | 托管你的域以实现高性能和高可用性  |
-| 登录，身份验证      | 对玩家登录信息和玩家身份进行验证  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | 通过多重身份验证单一登录到任何云和本地 Web 应用            | 
+| 登录，身份验证      | 对玩家登录信息和玩家身份进行验证  | Azure Active Directory | 通过多重身份验证单一登录到任何云和本地 Web 应用            | 
 | 使用基础结构即服务 (IaaS) 的游戏      | 游戏托管在云中虚拟机上       | [Azure VM](https://azure.microsoft.com/services/virtual-machines/) | 从 1 扩展到数千个虚拟机实例以用作游戏服务器（内置虚拟网络连接和负载平衡）；本地系统的混合一致性           |
 | 使用平台即服务模型 (PaaS) 的 Web 或手机游戏            | 游戏托管在托管平台上                | [Azure 应用服务](https://azure.microsoft.com/services/app-service/) | 适用于网站或手机游戏的 PaaS（这意味着 Azure VM 与中间件/开发工具/BI/DB 管理相互配合）   |
 | 可用性高的可缩放型 n 层云游戏，并且可以更好地控制操作系统 (PaaS)        | 游戏托管在托管平台上                | [Azure 云服务](https://azure.microsoft.com/services/app-service/) | 旨在支持可缩放、可靠且运行成本低廉的应用程序的 PaaS   |
@@ -228,6 +228,6 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 * [ID@Xbox](https://www.xbox.com/Developers/id)
 
 
- 
+ 
 
- 
+ 

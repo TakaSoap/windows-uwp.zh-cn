@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: ac16d6932a2f20e701d7446ac8c21c316cfe5d4a
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: c1f5704963dd1d6d6ad786a48c63ecfcd789aff9
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364120"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811298"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C \# 示例：提交应用、外接程序和航班
 
@@ -59,7 +59,7 @@ ms.locfileid: "89364120"
 1. 首先，此方法[获取指定应用的数据](get-an-app.md)。
 2. 接下来，此方法会[删除应用的挂起提交](delete-an-app-submission.md)（如果存在）。
 3. 然后，此方法会[创建新的应用提交](create-an-app-submission.md)（新提交时是上次发布的提交副本）。
-4. 它会更改新提交的部分详细信息并将新的提交包上载到 Azure Blob 存储。
+4. 它会更改新提交的某些详细信息，并上传新包以提交到 Azure Blob 存储。
 5. 接下来，它将 [更新](update-an-app-submission.md) 并 [提交](commit-an-app-submission.md) 到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-app-submission.md)，直到其成功提交。
 
@@ -74,7 +74,7 @@ ms.locfileid: "89364120"
 
 1. 首先，该方法会 [创建新加载项](create-an-add-on.md)。
 2. 然后，该方法会 [创建新的加载项提交](create-an-add-on-submission.md)。
-3. 该方法会将包含提交图标的 ZIP 存档上传至 Azure Blob 存储。
+3. 它上传包含用于提交到 Azure Blob 存储的图标的 ZIP 存档。
 4. 接下来，将 [新提交提交给合作伙伴中心](commit-an-add-on-submission.md)。
 5. 最后，它会定期[检查新提交的状态](get-status-for-an-add-on-submission.md)，直到其成功提交。
 
@@ -105,7 +105,7 @@ ms.locfileid: "89364120"
 1. 首先，此方法[获取指定软件包外部测试版的数据](get-a-flight.md)。
 2. 接下来，此方法会[删除软件包外部测试版的挂起提交](delete-a-flight-submission.md)（如果存在）。
 3. 然后，此方法[会创建新的软件包外部测试版提交](create-a-flight-submission.md)（新提交时是上次发布的提交副本）。
-4. 它会将新的提交程序包上载到 Azure Blob 存储。
+4. 它将上载新包，以便提交到 Azure Blob 存储。
 5. 接下来，它将 [更新](update-a-flight-submission.md) 并 [提交](commit-a-flight-submission.md) 到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-a-flight-submission.md)，直到其成功提交。
 
@@ -119,7 +119,7 @@ ms.locfileid: "89364120"
 ```IngestionClient``` 类提供的帮助程序方法由示例应用中的其他方法用来执行以下任务：
 
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，此访问令牌可用于在 Microsoft Store 提交 API 中调用方法。 获取令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用“Microsoft Store 提交 API”。 该令牌到期后，可以重新生成一个。
-* 将包含新的应用或加载项提交资源的 ZIP 存档上传至 Azure Blob 存储。 有关将 ZIP 存档上传至应用和加载项提交的 Azure Blob 存储的详细信息，请参阅 [创建应用提交](manage-app-submissions.md#create-an-app-submission) 和 [创建加载项提交](manage-add-on-submissions.md#create-an-add-on-submission) 中的相关说明。
+* 上传包含新资产（适用于应用程序）或将提交提交到 Azure Blob 存储的 ZIP 存档。 若要详细了解如何向应用程序和加载项的提交内容上传到 Azure Blob 存储，请参阅 [创建应用程序提交](manage-app-submissions.md#create-an-app-submission) 和 [创建加载项提交](manage-add-on-submissions.md#create-an-add-on-submission)中的相关说明。
 * 处理 Microsoft Store 提交 API 的 HTTP 请求。
 
 > [!div class="tabbedCodeSnippets"]

@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, java
 ms.localizationpriority: medium
-ms.openlocfilehash: d10390dbb5364ff4f05de211167551d91dfab858
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 383514a7390e00ce0406be1d846fb38621007745
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363930"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811294"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java 示例：应用、加载项和外部测试版的提交
 
@@ -73,7 +73,7 @@ ms.locfileid: "89363930"
 1. 首先，此方法[获取指定应用的数据](get-an-app.md)。
 2. 接下来，此方法会[删除应用的挂起提交](delete-an-app-submission.md)（如果存在）。
 3. 然后，此方法会[创建新的应用提交](create-an-app-submission.md)（新提交时是上次发布的提交副本）。
-4. 它会更改新提交的部分详细信息并将新的提交包上载到 Azure Blob 存储。
+4. 它会更改新提交的某些详细信息，并上传新包以提交到 Azure Blob 存储。
 5. 接下来，它将 [更新](update-an-app-submission.md) 并 [提交](commit-an-app-submission.md) 到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-app-submission.md)，直到其成功提交。
 
@@ -88,7 +88,7 @@ ms.locfileid: "89363930"
 1. 首先，此方法[获取指定加载项的数据](get-an-add-on.md)。
 2. 接下来，此方法会[删除加载项的挂起提交](delete-an-add-on-submission.md)（如果存在）。
 3. 然后，该方法会 [创建新的加载项提交](create-an-add-on-submission.md)（新提交是上次发布的提交的副本）。
-4. 该方法会将包含提交图标的 ZIP 存档上传至 Azure Blob 存储。
+4. 它上传包含用于提交到 Azure Blob 存储的图标的 ZIP 存档。
 5. 接下来，它将 [更新](update-an-add-on-submission.md) 并 [提交](commit-an-add-on-submission.md) 到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-add-on-submission.md)，直到其成功提交。
 
@@ -103,7 +103,7 @@ ms.locfileid: "89363930"
 1. 首先，此方法[获取指定软件包外部测试版的数据](get-a-flight.md)。
 2. 接下来，此方法会[删除软件包外部测试版的挂起提交](delete-a-flight-submission.md)（如果存在）。
 3. 然后，此方法[会创建新的软件包外部测试版提交](create-a-flight-submission.md)（新提交时是上次发布的提交副本）。
-4. 它会将新的提交程序包上载到 Azure Blob 存储。
+4. 它将上载新包，以便提交到 Azure Blob 存储。
 5. 接下来，它将 [更新](update-a-flight-submission.md) 并 [提交](commit-a-flight-submission.md) 到 PartnerCenter 的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-a-flight-submission.md)，直到其成功提交。
 
@@ -115,7 +115,7 @@ ms.locfileid: "89363930"
 
 这些实用程序方法演示了以下任务：
 
-* 如何将包含新的应用或加载项提交资源的 ZIP 存档上载到 Azure Blob 存储。 有关将 ZIP 存档上载到应用和加载项提交的 Azure Blob 存储的详细信息，请参阅[创建应用提交](manage-app-submissions.md#create-an-app-submission)、[创建加载项提交](manage-add-on-submissions.md#create-an-add-on-submission)和[创建软件包外部测试版提交](manage-flight-submissions.md#create-a-package-flight-submission)中的相关说明。
+* 如何将包含新资产的 ZIP 存档上传到 Azure Blob 存储，并将其提交到 Azure Blob 存储。 若要详细了解如何向应用程序和加载项的提交内容上载到 Azure Blob 存储，请参阅 [创建应用提交](manage-app-submissions.md#create-an-app-submission)、 [创建加载项提交](manage-add-on-submissions.md#create-an-add-on-submission)和 [创建包航班提交](manage-flight-submissions.md#create-a-package-flight-submission)中的相关说明。
 * 如何处理请求响应。
 
 :::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="433-490":::
