@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd8fdccc62dc45928085c53fa3f5b32fe9db98c
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: 155fd01b16f93ac8419282e5b2256f7e8a939a7f
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860153"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98988749"
 ---
 # <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>创建 C++/CX Windows 运行时组件并通过 JavaScript 或 C# 调用此组件的演练
 
@@ -272,7 +272,7 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 如果要创建 c # 客户端，则可以跳过此部分。
 
 > [!NOTE]
-> Visual Studio 2019 不支持通用 Windows 平台 (UWP) 项目。 请参阅 [Visual Studio 2019 中的 JavaScript 和 TypeScript](/visualstudio/javascript/javascript-in-vs-2019#projects)。 若要遵循本部分，我们建议使用 Visual Studio 2017。 请参阅 [Visual Studio 2017 中的 JavaScript](/visualstudio/javascript/javascript-in-vs-2017)。
+> Visual Studio 2019 不支持使用 JavaScript 通用 Windows 平台 (UWP) 项目。 请参阅 [Visual Studio 2019 中的 JavaScript 和 TypeScript](/visualstudio/javascript/javascript-in-vs-2019#projects)。 若要遵循本部分，我们建议使用 Visual Studio 2017。 请参阅 [Visual Studio 2017 中的 JavaScript](/visualstudio/javascript/javascript-in-vs-2017)。
 
 ### <a name="to-create-a-javascript-project"></a>创建 JavaScript 项目
 1. 在 Visual Studio 2017 的解决方案资源管理器 (中;请参阅) 上的 " **注意** "，打开 "解决方案" 节点的快捷菜单，然后选择 " **添加"、"新建项目**"。

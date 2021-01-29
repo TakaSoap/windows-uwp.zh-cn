@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 773ff1da19116a088d52a11dfc3180ea271efe82
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: a1d931e98f21160badb7a8c2603a580c2adfd682
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339715"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98988739"
 ---
 # <a name="walkthrough-of-creating-a-c-or-visual-basic-windows-runtime-component-and-calling-it-from-javascript"></a>创建 C# 或 Visual Basic Windows 运行时组件并通过 JavaScript 调用此组件的演练
 
@@ -34,14 +34,17 @@ Windows 运行时类型可以在内部使用 UWP 应用程序中允许的任何 
 - Windows 10
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
+> [!NOTE]
+> Visual Studio 2019 不支持使用 JavaScript 通用 Windows 平台 (UWP) 项目。 请参阅 [Visual Studio 2019 中的 JavaScript 和 TypeScript](/visualstudio/javascript/javascript-in-vs-2019#projects)。 若要遵循本主题，我们建议使用 Visual Studio 2017。 请参阅 [Visual Studio 2017 中的 JavaScript](/visualstudio/javascript/javascript-in-vs-2017)。
+
 ## <a name="creating-a-simple-windows-runtime-class"></a>创建一个简单的 Windows 运行时类
 
 本部分将创建一个 JavaScript UWP 应用程序，并将 Visual Basic 或 c # Windows 运行时组件项目添加到解决方案中。 它演示了如何定义 Windows 运行时类型、如何从 JavaScript 创建类型的实例，以及如何调用静态和实例成员。 为了使焦点位于组件上，示例应用程序的可视显示是有意用低键的。
 
 1. 在 Visual Studio 中，创建新的 JavaScript 项目：在菜单栏上，依次选择“文件”、“新建”、“项目”。 在“新建项目”对话框的“已安装模板”部分中，依次选择JavaScript、“Windows”和“通用”。 （如果 Windows 不可用，请确保使用的是 Windows 8 或更高版本。）选择“空白应用程序”模板，然后输入 SampleApp 作为项目名称。
 2.  创建组件项目：在“解决方案资源管理器”中，打开 SampleApp 解决方案的快捷菜单，然后依次选择“添加”、“新建项目”将新的 C# 或 Visual Basic 项目添加到解决方案。 在“添加新项目”对话框的“已安装模板”部分中，选择“Visual Basic”或“Visual C#”，然后依次选择“Windows”、“通用”。 选择“Windows 运行时组件”模板，然后输入 **SampleComponent** 作为项目名称。
-3.  将类名更改为 **Example** 。 请注意，该类在默认情况下标记为 **public sealed** （Visual Basic 中为 **Public NotInheritable** ）。 必须封装通过你的组件公开的所有 Windows 运行时类。
-4.  将两个简单的成员添加到类： **static** 方法（在 Visual Basic 中为 **Shared** 方法）和实例属性：
+3.  将类名更改为 **Example**。 请注意，该类在默认情况下标记为 **public sealed**（Visual Basic 中为 **Public NotInheritable**）。 必须封装通过你的组件公开的所有 Windows 运行时类。
+4.  将两个简单的成员添加到类：**static** 方法（在 Visual Basic 中为 **Shared** 方法）和实例属性：
 
     > [!div class="tabbedCodeSnippets"]
     > ```csharp

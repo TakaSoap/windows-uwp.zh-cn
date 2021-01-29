@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Windows 10 中的语音，语音，语音，对话，win32 语音应用程序，UWP speech apps，WPF speech apps，WinForms speech apps
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: d810f08a2db60309e4528167bcb4bddc95d850c6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d157d33316925db6112ab892e13b2c849cfcaa5d
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174151"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98988699"
 ---
 # <a name="speech-voice-and-conversation-in-windows-10"></a>Windows 10 中的语音、语音和对话
 
@@ -61,7 +61,7 @@ ms.locfileid: "89174151"
    :::column:::
       ![.NET](images/platform-dotnet.png)
 
-      **.NET framework**
+      **.NET Framework**
 
       使用 XAML UI 模型和 .NET Framework 在建立的平台上针对托管 Windows 应用程序开发易访问的应用和工具。
 
@@ -72,13 +72,15 @@ ms.locfileid: "89174151"
 
       **Azure 语音服务**
 
-      通过 Azure 语音服务设计、构建和测试可访问的网站。
+      将语音处理集成到应用和服务中。
 
       [语音到文本](https://azure.microsoft.com/services/cognitive-services/speech-to-text/)
 
       [文本到语音转换](https://azure.microsoft.com/services/cognitive-services/text-to-speech/)
       
       [语音翻译](https://azure.microsoft.com/services/cognitive-services/speech-translation/)
+
+      [说话人识别](https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/)
 
       [语音首次虚拟助手](/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
    :::column-end:::
@@ -87,16 +89,21 @@ ms.locfileid: "89174151"
    :::column span="2":::
       **旧功能**
 
-      旧的、不推荐使用和/或不受支持的 Microsoft Speech 技术版本。
+      旧版、不推荐使用和/或不受支持的 Microsoft speech and 会话技术版本。
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
+      [Cortana 技能套件](/cortana/skills/)
+
+      作为我们目标的一部分，通过将 Cortana 嵌入到 Microsoft 365 来转换新式工作效率体验，我们正在淘汰开发人员平台 (的 Cortana 技能套件) 以及在此平台上构建的所有技能。
+   :::column-end:::
+   :::column:::
+
       [Microsoft Agent](/windows/win32/lwef/microsoft-agent)
 
       [Microsoft Speech Application 软件开发工具包 (SASDK) 版本1。0](https://www.microsoft.com/download/details.aspx?id=2200)
-   :::column-end:::
-   :::column:::
+
       [Microsoft Speech API (SAPI) 5。3](/previous-versions/windows/desktop/ms723627(v=vs.85))
 
       [Microsoft Speech API (SAPI) 5。4](/previous-versions/windows/desktop/ee125663(v=vs.85))
