@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: cdfdf9b7396943e3ee5345249f38a35d48beb128
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 16dc1b59147cb937a09eb085c716ebac0e1cef7b
+ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253618"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98922740"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 岛在 WPF 应用中托管自定义 WinRT XAML 控件
 
@@ -21,11 +21,14 @@ ms.locfileid: "92253618"
 
 尽管本文介绍了如何在 WPF 应用中实现此操作，但该过程类似于在 Windows 窗体中实现。 有关在 WPF 和 Windows 窗体应用中托管 WinRT XAML 控件的概述，请参阅[本文](xaml-islands.md#wpf-and-windows-forms-applications)。
 
+> [!NOTE]
+> 目前仅支持在面向 .NET Core 3.x 的应用中使用 XAML 岛托管 WPF 和 Windows 窗体应用中的 WinRT XAML 控件。 尚不支持在面向 .NET 5 的应用中和面向任何 .NET Framework 版本的应用中使用 XAML 岛。
+
 ## <a name="required-components"></a>必需的组件
 
 若要在 WPF（或 Windows 窗体）应用中托管自定义 WinRT XAML 控件，解决方案中需要有以下组件。 本文提供了创建各个组件的说明。
 
-* **项目和应用源代码**。 只能在面向 .NET Core 3.x 的应用中使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件来托管自定义控件。 面向 .NET Framework 的应用不支持此方案。
+* **项目和应用源代码**。 只能在面向 .NET Core 3.x 的应用中使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件来托管自定义控件。
 
 * **自定义 WinRT XAML 控件**。 必须有要托管的自定义控件的源代码，才能通过应用对其进行编译。 通常，在 UWP 类库项目中定义自定义控件，WPF 或 Windows 窗体项目的同一解决方案会引用此项目。
 
@@ -47,7 +50,7 @@ ms.locfileid: "92253618"
 
 3. 确保已启用[包引用](/nuget/consume-packages/package-references-in-project-files)：
 
-    1. 在 Visual Studio 中，单击“工具”->“NuGet 程序包管理器”->“程序包管理器设置”  。
+    1. 在 Visual Studio 中，单击“工具”->“NuGet 程序包管理器”->“程序包管理器设置”。
     2. 确保为“默认程序包管理格式”选择了“PackageReference”   。
 
 4. 在“解决方案资源管理器”中，右键单击相应的 WPF 项目并选择“管理 NuGet 包”   。
@@ -322,7 +325,18 @@ ms.locfileid: "92253618"
 
 2. 在打包项目中，右键单击“应用程序”节点，然后选择“添加引用”   。 在项目列表中，选择解决方案中的 WPF 项目，然后单击“确认”。
 
-3. 生成并运行打包项目。 确认 WPF 按预期运行，并且 UWP 自定义控件按预期方式显示。
+    > [!NOTE]
+    > 如果你想要在 Microsoft Store 中发布应用，必须在打包项目中添加对 UWP 项目的引用。
+
+3. 将解决方案配置为面向特定平台，例如 x86 或 x64。 在使用 Windows 应用程序打包项目将 WPF 应用生成到 MSIX 包中时，必须执行此操作。
+
+    1. 在“解决方案资源管理器”中，右键单击相应的解决方案节点，选择“属性” -> “配置属性” -> “配置管理器”   。
+    2. 在“活动解决方案平台”下，选择“x64”或“x86” 。
+    3. 在 WPF 项目的行中，在“平台”列中选择“新建”。
+    4. 在“新建解决方案平台”对话框中，选择“x64”或“x86”（你为“活动解决方案平台”选择的相同平台），然后单击“确定”。
+    5. 关闭打开的对话框。
+
+4. 生成并运行打包项目。 确认 WPF 按预期运行，并且 UWP 自定义控件按预期方式显示。
 
 ## <a name="related-topics"></a>相关主题
 

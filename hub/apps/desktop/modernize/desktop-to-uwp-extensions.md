@@ -8,16 +8,16 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b88f65ba45a2b8a79d822eba525733550f965372
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: 91b5e975c40b7c9642cd452b3c67045c7be1127d
+ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860174"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98668712"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>将桌面应用与 Windows 10 和 UWP 集成
 
-如果桌面应用具有[程序包标识符](modernize-packaged-apps.md)，则可以使用扩展将应用与 Windows 10 集成，方法是使用[程序包清单](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的预定义扩展。
+如果桌面应用具有[程序包标识符](modernize-packaged-apps.md)，可通过[程序包清单](/uwp/schemas/appxpackage/uapmanifestschema/extensions)中的预定义扩展，使用扩展将应用与 Windows 10 进行集成。
 
 例如，使用扩展创建一个防火墙例外，使应用成为某一文件类型的默认应用程序，或将“开始”磁贴指向你的应用。 若要使用扩展，只需将某些 XML 添加到应用的程序包清单文件。 不需要任何代码。
 

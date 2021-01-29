@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 752b02f4bbf6faaca1fd04007c85cfe41f6c28f9
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: b8cb2670c09c5a93d2edd67e3f338a33eeb488ad
+ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671546"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98922758"
 ---
 # <a name="host-winrt-xaml-controls-in-desktop-apps-xaml-islands"></a>在桌面应用中托管 WinRT XAML 控件（XAML 岛）
 
@@ -40,12 +40,12 @@ XAML 岛具有以下运行时要求：
 
 ## <a name="wpf-and-windows-forms-applications"></a>WPF 和 Windows 窗体应用程序
 
+> [!NOTE]
+> 目前仅支持在面向 .NET Core 3.x 的应用中使用 XAML 岛托管 WPF 和 Windows 窗体应用中的 WinRT XAML 控件。 尚不支持在面向 .NET 5 的应用中和面向任何 .NET Framework 版本的应用中使用 XAML 岛。
+
 我们的建议是让 WPF 和 Windows 窗体应用程序使用 Windows 社区工具包中提供的 XAML 岛 .NET 控件。 这些控件提供一个对象模型，用于模拟相应 WinRT XAML 控件的属性、方法和事件（或提供对它们的访问权限）。 它们还处理键盘导航和布局更改等行为。
 
 有两组用于 WPF 和 Windows 窗体应用程序的 XAML 岛控件：包装控件和主机控件。 
-
-> [!NOTE]
-> 只能在面向 .NET Core 3.x 的 WPF 和 Windows 窗体应用中使用 XAML 岛来托管 WinRT XAML 控件。 面向 .NET Framework 的应用不支持 XAML 岛。
 
 ### <a name="wrapped-controls"></a>包装控件
 

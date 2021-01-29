@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python 系统管理, python 文件自动化, windows 上的 python 脚本, 在 windows 上设置 python, windows 上的 python 开发人员环境, windows 上的 python 开发环境, python 与 powershell, 适用于文件系统任务的 python 脚本
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: d465d46a0524345a45dff9b1cc7c425e4cb468a4
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: a8f13243f3501b2af42d38c13bff580be2e5b42a
+ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253672"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98691322"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>开始在 Windows 上将 Python 用于脚本和自动化
 
@@ -176,11 +176,14 @@ VS Code 包含一个[内置终端](https://code.visualstudio.com/docs/editor/int
 
 恭喜！ 你刚刚编写了一个自动系统管理脚本，该脚本会读取你创建的目录和文件，并使用 Python 显示目录结构并打印到自己的文本文件中。
 
+> [!NOTE]
+> 如果无法从 Microsoft Store 安装 Python 3，请查看此[问题](https://github.com/MicrosoftDocs/windows-uwp/issues/2901)，通过示例了解如何处理此示例脚本的路径。
+
 ## <a name="example-script-to-modify-all-files-in-a-directory"></a>用于修改目录中的所有文件的示例脚本
 
 此示例使用刚刚创建的文件和目录，通过将文件的上次修改日期添加到文件名开头来重命名每个文件。
 
-1. 在 python-scripts  目录内的 src  文件夹中，为脚本创建新 Python 文件：
+1. 在 python-scripts 目录内的 src 文件夹中，为脚本创建新 Python 文件：
 
     ```powershell
     new-item update-filenames.py
@@ -210,7 +213,7 @@ VS Code 包含一个[内置终端](https://code.visualstudio.com/docs/editor/int
 
 3. 测试 update-filenames.py 脚本，具体方式是运行它：`python3 update-filenames.py`，然后再次运行 list-directory-contents.py 脚本：`python3 list-directory-contents.py`
 
-4. 你应会看到如下所示的输出：
+4. 你应该会看到如下所示的输出：
 
     ```powershell
     Renaming: ..\food\fruits\banana.txt to: ..\food\fruits\2019-07-18 12.24.46.385185_banana.txt

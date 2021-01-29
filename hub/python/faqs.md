@@ -8,24 +8,45 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, file paths, PYTHONPATH, python deployment, python packaging
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 4504e7550d19d2cc713284abebed43b6305b5dbd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c1cada0fef5968846100f66bb41b3dd70ea5b59a
+ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174121"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98691302"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>有关在 Windows 上使用 Python 的常见问题解答
 
-## <a name="why-cant-i-pip-install-a-certain-package"></a>为什么我不能“pip 安装”某些包？
+## <a name="trouble-installing-a-package-with-pip-install"></a>使用 pip install 解决包安装问题
 
-安装失败的原因有很多 - 在大多数情况下，正确的解决方案是联系包开发人员。
+安装失败的原因有很多 - 在很多情况下，正确的解决方案是联系包开发人员。
 
-出现问题的最常见原因是尝试将包安装到你无权修改的位置。 例如，默认的安装位置可能需要管理权限，但是默认情况下，Python 没有管理权限。 最佳解决方案是创建一个虚拟环境并在其中进行安装。
+出现问题的常见原因是尝试将包安装到你无权修改的位置。 例如，默认的安装位置可能需要管理权限，但是默认情况下，Python 没有管理权限。 最佳解决方案是创建一个[虚拟环境](./web-frameworks.md#create-a-virtual-environment)并在其中进行安装。
 
 某些包包括本机代码，需要 C 或 C++ 编译器才能进行安装。 一般来说，包开发人员应发布预编译的版本，但通常没有发布。 如果[安装了适用于 Visual Studio 的生成工具](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019)并选择了 C++ 选项，则某些包可能会正常运行，但是在大多数情况下，需要联系包开发人员。
 
-[请关注有关 StackOverflow 的讨论](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379)。
+[请关注有关 StackOverflow 的讨论](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379)
+
+### <a name="trouble-installing-pip-with-wsl"></a>使用 WSL 解决 pip 安装问题
+
+在适用于 Linux 的 Windows 子系统（WSL 或 WSL2）上使用 pip 安装 Flask 等包时，例如使用 `python3 -m pip install flask`，你可能会特别遇到如下错误：
+
+```bash
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None))
+after connection broken by 'NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection
+object at 0x7f655471da30>: Failed to establish a new connection: [Errno -3]
+Temporary failure in name resolution')': /simple/flask/
+```
+
+调查此问题时，你可能会遭遇几个陷阱，其中没有一个能通过 WSL Linux 发行版特别高效地解决。 （警告：在 WSL 上，请勿尝试编辑 `resolv.conf`，该文件是一个符号链接，修改它会导致出现大量问题）。 除非你正在运行二级市场防火墙，否则只需重新安装 pip 可能就能解决问题：
+
+```bash
+sudo apt -y purge python3-pip
+sudo python3 -m pip uninstall pip
+sudo apt -y install python3-pip --fix-missing
+```
+
+**有关进一步的讨论，请查看 [GitHub 上的 WSL 产品存储库](https://github.com/microsoft/WSL/issues/4020)。感谢我们的用户社区在 docs 中[参与此问题的解决](https://github.com/MicrosoftDocs/windows-uwp/issues/2679)。*
 
 ## <a name="what-is-pyexe"></a>什么是 py.exe？
 
@@ -39,7 +60,7 @@ ms.locfileid: "89174121"
 
 使用任何命令行参数运行快捷方式可执行文件都将返回错误代码，指示未安装 Python。 这是为了防止批处理文件和脚本意外打开 Store 应用。
 
-如果使用 [python.org](https://www.python.org/downloads/windows/) 中的安装程序安装 Python 并选择“添加到 PATH”选项，则新的 `python` 命令将优先于快捷方式。 请注意，其他安装程序可能以低于内置快捷方式的优先级添加 `python`__。
+如果使用 [python.org](https://www.python.org/downloads/windows/) 中的安装程序安装 Python 并选择“添加到 PATH”选项，则新的 `python` 命令将优先于快捷方式。 请注意，其他安装程序可能以低于内置快捷方式的优先级添加 `python`。
 
 通过从“开始”打开“管理应用执行别名”，找到“应用安装程序”Python 条目并将其切换为“关闭”，无需安装 Python 即可禁用快捷方式。
 
@@ -59,7 +80,7 @@ Python 使用 PYTHONPATH 环境变量来指定可以从中导入模块的目录�
 
 要在 PowerShell 中设置此变量，请在启动 Python 之前使用：`$env:PYTHONPATH=’list;of;paths’`。
 
-不建议通过“环境变量”设置全局设置此变量，因为使用它的可能是任何版本的 Python，而非要使用的版本********。
+不建议通过“环境变量”设置全局设置此变量，因为使用它的可能是任何版本的 Python，而非要使用的版本。
 
 ## <a name="where-can-i-find-help-with-packaging-and-deployment"></a>何处可以找到有关打包和部署的帮助？
 
