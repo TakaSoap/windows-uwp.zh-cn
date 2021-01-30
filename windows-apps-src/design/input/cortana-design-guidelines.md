@@ -8,12 +8,12 @@ ms.date: 01/27/2021
 ms.topic: article
 keywords: cortana，设计
 ms.localizationpriority: medium
-ms.openlocfilehash: 008a2612b808f1ca9dac5d55fd4472f23d39cef3
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: 0d1f27c2e70ce8bf9d77f07dd0871cf09a441bdc
+ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "99041481"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99057568"
 ---
 # <a name="cortana-design-guidelines"></a>Cortana 设计指南
 
@@ -26,7 +26,7 @@ ms.locfileid: "99041481"
 
 尽管用户应该觉得 **cortana** 有助于尽可能地简化过程，但你可能还想让 **cortana** 知道，你的应用程序需要完成该任务。
 
-我们使用名为 " **艾德作品** 集成到 **Cortana** UI" 的行程计划和管理应用，其中显示了我们讨论的许多概念和功能。
+我们使用名为 " **艾德作品** 集成到 **Cortana** UI" 的行程计划和管理应用，其中显示了我们讨论的许多概念和功能。 有关详细信息，请参阅 [Cortana 语音命令示例](https://go.microsoft.com/fwlink/p/?LinkID=619899)。
 
 :::image type="content" source="images/cortana/cortana-overview.png" alt-text="Cortana 画布的屏幕截图":::
 
@@ -179,9 +179,9 @@ ms.locfileid: "99041481"
 
 ### <a name="handoff"></a>Handoff
 
-:::image type="content" source="images/cortana/cortana-backgroundapp-result.png" alt-text="Cortana 画布的屏幕截图，适用于端到端 cortana 后台应用流使用 AdventureWorks 取消行程，无切换":::*AdventureWorks "取消行程"，无切换屏幕*
+:::image type="content" source="images/cortana/cortana-backgroundapp-result.png" alt-text="Cortana 画布的屏幕截图，适用于端到端 cortana 后台应用流使用 adventureworks，无":::切换 *AdventureWorks* ，无移交
 
-:::image type="content" source="images/cortana/cortana-backgroundapp-progress-result.png" alt-text="使用 AdventureWorks 取消行程的 cortana 画布的 cortana 画布屏幕截图":::，使用切换 *adventureworks "取消行程" 和切换屏幕*
+:::image type="content" source="images/cortana/cortana-backgroundapp-progress-result.png" alt-text="使用 AdventureWorks 后端到端 cortana 后台应用程序流的 cortana 画布的屏幕截图，其中":::*包含移交*
 
 对于您的应用程序而言，不需要500毫秒的任务会进行响应，并且无需用户提供其他信息，无需再通过 **Cortana** 进一步参与，而只需显示完成屏幕。
 
@@ -350,4 +350,6 @@ GUI 和 TTS 字符串可以相同，但不需要。 尝试保持 GUI 字符串�
 
 ## <a name="related-articles"></a>相关文章
 
-[Windows 应用中的 Cortana 交互](cortana-interactions.md)
+- [Windows 应用中的 Cortana 交互](cortana-interactions.md)
+- [VCD 元素和属性 v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+- [Cortana 语音命令示例](https://go.microsoft.com/fwlink/p/?LinkID=619899)

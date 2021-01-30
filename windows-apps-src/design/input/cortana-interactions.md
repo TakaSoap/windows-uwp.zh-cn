@@ -8,12 +8,12 @@ keywords: Cortana, Cortana 画布, Cortana 设计, 用户界面, 语音命令, V
 ms.date: 01/27/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fca4da482585ddd4b7f9d54008c1905e372ca030
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: ca9f77d10f6e22d4e244b102cb8b85e1f75113fc
+ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98988729"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99057558"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Windows 应用中的 Cortana 交互
 
@@ -22,7 +22,7 @@ ms.locfileid: "98988729"
 
 使用在 Windows 应用程序中启动和执行单个操作的语音命令扩展 **Cortana** 的基本功能。
 
-可以在应用程序获得焦点时在前台启动目标应用程序，) 或在后台激活 **cortana** (**cortana** 会保留焦点，但会根据交互的复杂程度从应用) 提供结果 (。 通常，需要其他上下文或用户输入的语音命令最好在前台应用程序中进行处理，而基本命令可通过后台应用在 **Cortana** 中进行处理。 
+可以在应用程序获得焦点时在前台启动目标应用程序，) 或在后台激活 **cortana** (**cortana** 会保留焦点，但会根据交互的复杂程度从应用) 提供结果 (。 通常，需要其他上下文或用户输入的语音命令最好在前台应用程序中进行处理，而基本命令可通过后台应用在 **Cortana** 中进行处理。
 
 通过集成你的应用程序的基本功能，并为用户提供一个中心入口点来完成大部分任务，而无需直接打开应用， **Cortana** 就成为了你的应用程序和用户之间的联系。 将此快捷方式提供给应用功能并减少切换应用的需要，可以节省用户大量时间和精力。
 
@@ -45,12 +45,6 @@ ms.locfileid: "98988729"
 
 ## <a name="related-articles"></a>相关文章
 
-* [VCD 元素和属性 v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
-
-### <a name="designers"></a>设计器
-
-* [Cortana 设计准则](cortana-design-guidelines.md)
-
-### <a name="samples"></a>示例
-
-* [Cortana 语音命令示例](https://go.microsoft.com/fwlink/p/?LinkID=619899)
+- [VCD 元素和属性 v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+- [Cortana 设计准则](cortana-design-guidelines.md)
+- [Cortana 语音命令示例](https://go.microsoft.com/fwlink/p/?LinkID=619899)
