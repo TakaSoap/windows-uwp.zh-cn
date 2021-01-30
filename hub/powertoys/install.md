@@ -4,29 +4,21 @@ description: 安装 PowerToys，这是一组用于自定义 Windows 10 的实用
 ms.date: 12/02/2020
 ms.topic: quickstart
 ms.localizationpriority: medium
-ms.openlocfilehash: c695be3784ff2145788e4887b5f9022fcc7a6999
-ms.sourcegitcommit: ea1115b921d18c7bbddc95dba9275568ff57af02
+ms.openlocfilehash: d0018e69e5a107baa595e4d3dd05a924257551a8
+ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97794223"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99077215"
 ---
 # <a name="install-powertoys"></a>安装 PowerToys
 
-安装 PowerToys 有多种方法：
-
-- 建议使用 **[Windows executable 文件](#install-with-windows-executable-file)** *()*
-- [Windows 程序包管理器](#install-with-windows-package-manager-preview) *(预览)*
-- *(不正式支持*[社区驱动的安装工具](#community-driven-install-tools)) 
-
-## <a name="requirements"></a>要求
-
-- Windows 10 1803 (版本 17134) 或更高版本。
-- [.Net Core 3.1 桌面运行时](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer)。 PowerToys 安装程序将处理此要求。
-
-若要确保计算机满足这些要求，请通过选择 " **⊞ Win** *(windows 键")* R 来检查 Windows 10 版本和内部版本号，  +  然后键入 " **winver**"，然后选择 **"确定"**。 （或者在 Windows 命令提示符下输入 `ver` 命令）。 可以在 "**设置**" 菜单中 [更新到最新的 Windows 版本](ms-settings:windowsupdate)。
+建议使用下面链接的 Windows 可执行文件按钮安装 PowerToys，但如果更喜欢使用程序包管理器，也会列出其他安装方法。
 
 ## <a name="install-with-windows-executable-file"></a>通过 Windows 可执行文件安装
+
+> [!div class="nextstepaction"]
+> [安装 PowerToys](https://aka.ms/installpowertoys)
 
 使用 Windows 可执行文件安装 PowerToys：
 
@@ -36,7 +28,19 @@ ms.locfileid: "97794223"
 4. 选择 `PowerToysSetup-0.##.#-x64.exe` 要下载 PowerToys 可执行安装程序的文件。
 5. 下载后，打开可执行文件并按照安装提示进行操作。
 
-**目前，建议使用这种安装方法。**
+## <a name="requirements"></a>要求
+
+- Windows 10 1803 (版本 17134) 或更高版本。
+- [.Net Core 3.1 桌面运行时](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer)。 PowerToys 安装程序将处理此要求。
+- 当前支持 x64 体系结构。 ARM 和 x86 支持将在以后推出。
+
+若要确保你的计算机满足这些要求，请通过选择 " **⊞ Win** *(windows 键")* D 检查 windows 10 版本和内部版本号，  +  然后键入 **winver**，然后选择 **"确定"**。 （或者在 Windows 命令提示符下输入 `ver` 命令）。 可以在 "**设置**" 菜单中 [更新到最新的 Windows 版本](ms-settings:windowsupdate)。
+
+## <a name="alternative-install-methods"></a>备用安装方法
+
+<!--  - **[Windows executable .exe file](#install-with-windows-executable-file)** *(Recommended)* -->
+- [Windows 程序包管理器](#install-with-windows-package-manager-preview) *(预览)*
+- *(不正式支持*[社区驱动的安装工具](#community-driven-install-tools)) 
 
 ## <a name="install-with-windows-package-manager-preview"></a>随 Windows 程序包管理器一起安装 (预览) 
 

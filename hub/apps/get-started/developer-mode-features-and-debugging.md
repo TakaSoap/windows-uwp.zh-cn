@@ -5,12 +5,12 @@ keywords: 入门 开发人员许可证 Visual Studio，开发人员许可证 启
 ms.date: 10/13/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a8e42b9f35866f07a07122043ced803045bf99d6
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: 85c64cd4baed7be9edde0dfc008ab90c1d537ca4
+ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011847"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99077225"
 ---
 # <a name="developer-mode-features-and-debugging"></a>开发人员模式功能和调试
 
@@ -28,12 +28,13 @@ ms.locfileid: "92011847"
 
 若要了解有关设备门户的详细信息，请参阅 [Windows 设备门户概述](/windows/uwp/debug-test-perf/device-portal.md)。
 
+
 有关特定于设备的设置说明，请参阅：
-- [适用于台式机的设备门户](/windows/uwp/debug-test-perf/device-portal-desktop.md)
+- [适用于台式机的设备门户](/windows/uwp/debug-test-perf/device-portal-desktop)
 - [适用于 HoloLens 的设备门户](/windows/mixed-reality/using-the-windows-device-portal)
-- [适用于 IoT 的设备门户](/windows/iot-core/manage-your-device/DevicePortal)
-- [适用于移动设备的设备门户](/windows/uwp/debug-test-perf/device-portal-mobile.md)
-- [适用于 Xbox 的设备门户](/windows/xbox-apps/device-portal-xbox.md)
+- [适用于 IoT 的设备门户](/windows/iot-core/manage-your-device/deviceportal)
+- [适用于移动设备的设备门户](/windows/uwp/debug-test-perf/device-portal-mobile)
+- [适用于 Xbox 的设备门户](/windows/uwp/xbox-apps/device-portal-xbox)
 
 如果在启用开发人员模式或设备门户时遇到问题，请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛以查找这些问题的解决方法，或者访问[无法安装开发人员模式程序包](#failure-to-install-developer-mode-package)以获取更多详细信息，并了解可以使用哪些 WSUS KB 来解除阻止开发人员模式程序包。
 
@@ -51,7 +52,7 @@ ms.locfileid: "92011847"
 -   对于移动设备系列：对于移动设备系列：如果已安装了必需的证书，则可以点击文件以安装任何通过电子邮件收到的或 SD 卡上的 .appx。
 
 
-**旁加载应用**是比开发人员模式更安全的选项，因为你无法在缺少可信任证书的设备上安装应用。
+**旁加载应用** 是比开发人员模式更安全的选项，因为你无法在缺少可信任证书的设备上安装应用。
 
 > [!NOTE]
 > 如果旁加载应用，你仍然应该仅从受信任的源安装应用。 安装未经 Microsoft Store 认证的旁加载应用时，即表明你同意已获取旁加载应用所需的所有权限，并且你对任何由安装和运行应用引发的损害负全责。 请参阅此[隐私声明](https://privacy.microsoft.com/privacystatement)的“ Windows &gt; Microsoft Store”部分。
@@ -81,7 +82,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 
 ### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>适用于 Windows 资源管理器、远程桌面和 PowerShell 的优化（仅限桌面设备）
 
- 在桌面设备系列上，**面向开发人员**设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击“应用”或单击“显示设置”链接打开该选项的设置页 。
+ 在桌面设备系列上，**面向开发人员** 设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击“应用”或单击“显示设置”链接打开该选项的设置页 。
 
 
 ## <a name="notes"></a>注释
@@ -93,7 +94,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 -   可以使用[设备门户](/windows/uwp/debug-test-perf/device-portal.md)从浏览器部署到运行 Windows 10 版本 1511 或更高版本的移动设备。 在 Device Portal 中使用 **[应用](/windows/uwp/debug-test-perf/device-portal.md#apps-manager)** 页上传应用包 (.appx) 并在设备上安装它。
 
 ## <a name="failure-to-install-developer-mode-package"></a>无法安装开发人员模式程序包。
-有时，由于网络或管理问题，开发人员模式无法正确安装。 开发人员模式程序包是**远程**部署到此电脑的必需条件 - 使用来自浏览器的设备门户或设备发现启用 SSH - 但不用于本地部署。  即使遇到这些问题，仍然可以使用 Visual Studio 本地部署应用，或者从本设备向其他设备部署。
+有时，由于网络或管理问题，开发人员模式无法正确安装。 开发人员模式程序包是 **远程** 部署到此电脑的必需条件 - 使用来自浏览器的设备门户或设备发现启用 SSH - 但不用于本地部署。  即使遇到这些问题，仍然可以使用 Visual Studio 本地部署应用，或者从本设备向其他设备部署。
 
 请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛，查找这些问题的解决方法以及其他内容。
 
