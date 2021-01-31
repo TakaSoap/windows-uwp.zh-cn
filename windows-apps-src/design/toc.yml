@@ -499,19 +499,19 @@
       href: input/cortana-interactions.md
       items:
         - name: 设计指南
-          href: /cortana/voice-commands/voicecommand-design-guidelines
+          href: input/cortana-design-guidelines.md
         - name: 激活前台应用
-          href: /cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
+          href: input/cortana-launch-a-foreground-app-with-voice-commands.md
         - name: 修改 VCD 短语列表
-          href: /cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
+          href: input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md
         - name: 启动后台应用
-          href: /cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
+          href: input/cortana-launch-a-background-app-with-voice-commands.md
         - name: 与后台应用交互
-          href: /cortana/voice-commands/interact-with-a-background-app-in-cortana
+          href: input/cortana-interact-with-a-background-app.md
         - name: 通过后台应用的深层链接
-          href: /cortana/voice-commands/deep-link-into-your-app-from-cortana
+          href: input/cortana-deep-link-into-your-app.md
         - name: 支持自然语言形式的语音命令
-          href: /cortana/voice-commands/support-natural-language-voice-commands-in-cortana
+          href: input/cortana-support-natural-language-voice-commands.md
     - name: 多个输入
       href: input/multiple-input-design-guidelines.md
     - name: 输入注入
@@ -542,7 +542,7 @@
   items:
     - name: 概述
       href: usability/index.md
-    - name: 可访问性
+    - name: 辅助功能
       href: accessibility/accessibility.md
       items:
         - name: 概述
