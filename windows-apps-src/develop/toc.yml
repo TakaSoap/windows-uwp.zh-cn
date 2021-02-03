@@ -827,6 +827,8 @@
           href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
         - name: 创建一个 C# /WinRT 组件并从 C++/WinRT 使用它
           href: ../csharp-winrt/create-windows-runtime-component-cswinrt.md
+        - name: 诊断组件错误
+          href: ../csharp-winrt/authoring-diagnostics.md
         - name: 敏捷对象
           href: ../csharp-winrt/agile-objects.md
     - name: 安全
