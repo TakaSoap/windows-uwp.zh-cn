@@ -4,12 +4,12 @@ description: 用于大容量重命名文件的 windows shell 扩展
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 39e06685b6948ed3d3935c69a8b4dafeb9ecc2ea
-ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
+ms.openlocfilehash: 3c751624c93fec5996885c766e73b5ab1849fd4c
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98691332"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534386"
 ---
 # <a name="powerrename-utility"></a>PowerRename 实用程序
 
@@ -44,6 +44,8 @@ PowerRename 是一种批量重命名工具，可用于：
 ### <a name="options---use-regular-expressions"></a>选项-使用正则表达式
 
 如果选中，搜索值将被解释为 [正则表达式](https://wikipedia.org/wiki/Regular_expression) (regex) 。 替换值还可以包含 regex 变量 (参阅下面) 的示例。  如果未选中，则搜索值将被解释为纯文本，以替换为替换字段中的文本。
+
+有关 `Use Boost library` 扩展 regex 功能的 "设置" 菜单中的选项的详细信息，请参阅 [正则表达式部分](#regular-expressions)。
 
 ### <a name="options---case-sensitive"></a>选项-区分大小写
 
@@ -139,6 +141,8 @@ PowerRename 是一种批量重命名工具，可用于：
 
 **注意：** 使用正则表达式时，可能需要选中 "匹配所有匹配项"。
 
+若要使用 [提升库](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) 而不是标准库，请检查 `Use Boost library` PowerToys 设置中的选项。 它启用 `[lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind)` 标准库不支持的扩展功能，如。
+
 ### <a name="examples-of-regular-expressions"></a>正则表达式示例
 
 #### <a name="simple-matching-examples"></a>简单匹配示例
@@ -164,6 +168,7 @@ PowerRename 是一种批量重命名工具，可用于：
 | `(.*).png`   | `$1_foo.png`   | 将 " \_ foo" 追加到现有文件名  |
 | `(.*)`       | `$1.txt`        | 向现有文件名追加 ".txt" 扩展 |
 | `(^\w+\.$)|(^\w+$)` | `$2.txt` | 仅当现有文件名没有扩展名时，向其追加 ".txt" 扩展 |
+|  `(\d\d)-(\d\d)-(\d\d\d\d)` | `$3-$2-$1` | 移动文件名中的数字： "29-03-2020" 变为 "2020-03-29" |
 
 ### <a name="additional-resources-for-learning-regular-expressions"></a>用于学习正则表达式的其他资源
 

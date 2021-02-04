@@ -4,16 +4,16 @@ description: 适用于包含一些附加功能而不影响性能的高级用户�
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9be1d54946ec2286d95dbe7d4518a631efd471e9
-ms.sourcegitcommit: 46a7e9db64e17a645ee6e888f62a9b04632c56af
+ms.openlocfilehash: 126c38cd98f0d8ff1102c7f53f14cb95ec7e38c5
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618526"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534396"
 ---
 # <a name="powertoys-run-utility"></a>PowerToys 运行实用工具
 
-对于包含某些附加功能而不牺牲性能的高级用户，PowerToys 运行是快速启动程序。 它是其他插件的开源和模块化。
+对于包含某些附加功能而不牺牲性能的高级用户，PowerToys 运行是快速启动程序。 对其他插件来说，它是开源和模块化的。
 
 若要使用 PowerToys 运行，请选择 " <kbd>Alt</kbd> + <kbd>Space</kbd> " 并开始键入！
 
@@ -44,7 +44,7 @@ PowerToys 运行功能包括：
 
 "PowerToys 设置" 菜单中提供了以下运行选项。
 
-  | **设置** |**操作** |
+  | **设置** |**Action** |
   | --- | --- |
   | 打开 PowerToys 运行 | 定义用于打开/隐藏 PowerToys 运行的键盘快捷方式 |
   | 在全屏模式下忽略快捷方式 |  处于全屏 (F11) 时，运行不会与快捷方式结合 |
@@ -54,7 +54,7 @@ PowerToys 运行功能包括：
 
 ## <a name="keyboard-shortcuts"></a>键盘快捷方式
 
-  | **快捷方式** | **操作** |
+  | **快捷方式** | **Action** |
   | --- | --- |
   | Alt + 空格键 | 打开或隐藏 PowerToys 运行 |
   | Esc | 隐藏 PowerToys 运行 |
@@ -67,7 +67,7 @@ PowerToys 运行功能包括：
 
 这将强制 PowerToys 仅在目标插件中运行。
 
-  | **操作键** | **操作** |
+  | **操作键** | **Action** |
   | --- | --- |
   | `=` | 仅计算器。 示例 `=2+2` |
   | `?` | 仅搜索文件。 `?road`要查找的示例`roadmap.txt` |
@@ -75,6 +75,22 @@ PowerToys 运行功能包括：
   | `//` | 仅 Url。 `//docs.microsoft.com`要使默认浏览器继续使用的示例https://docs.microsoft.com |
   | `<` | 仅运行进程。 `<outlook`查找包含 outlook 的所有进程的示例 |
   | `>` | 仅 Shell 命令。 `>ping localhost`执行 ping 查询的示例 |
+  | `:` | 仅限注册表项。 `:hkcu`搜索 HKEY_CURRENT_USER 注册表项的示例 |
+  | `!` | 仅限 Windows 服务。 `!alu`搜索要启动或停止的应用程序层网关服务的示例 |
+
+## <a name="system-commands"></a>系统命令
+
+对于 PowerToys v 0.31 和 on，你现在可以执行的系统级操作。
+
+  | **操作键**   |   **Action** |
+  | ------------------ | ---------------------------------------------------------------------------------|
+  | `Shutdown` | 关闭计算机 |
+  | `Restart` | 重新启动计算机 |
+  | `Sign Out` | 注销当前用户 |
+  | `Lock` | 锁定计算机 |
+  | `Sleep` | 睡眠计算机 |
+  | `Hibernate` | 休眠计算机 |
+  | `Empty Recycle Bin` | 清空回收站 |
 
 ## <a name="indexer-settings"></a>索引器设置
 

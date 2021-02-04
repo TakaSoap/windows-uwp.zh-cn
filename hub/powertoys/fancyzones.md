@@ -4,18 +4,18 @@ description: 用于将窗口排列并对齐到高效布局的窗口管理器实�
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 00b849e19d3ae8fcf76e1f2a63dc1915353aad30
-ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
+ms.openlocfilehash: b1f417307c173e868284254c0a1721e4e6ef5536
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97612018"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534421"
 ---
 # <a name="fancyzones-utility"></a>FancyZones 实用程序
 
 FancyZones 是一种窗口管理器实用工具，用于将窗口排列和对齐到高效的布局中，以便快速提高工作流和还原布局的速度。 FancyZones 允许用户为要拖动 windows 的目标的桌面定义一组窗口位置。  当用户将窗口拖动到区域时，将调整窗口的大小并重新定位以填充该区域。  
 
-![FancyZones 屏幕快照](../images/pt-fancy-zones2.png)
+![FancyZones 屏幕截图](../images/pt-fancy-zones2.png)
 
 ## <a name="getting-started"></a>开始使用
 
@@ -35,17 +35,17 @@ FancyZones 是一种窗口管理器实用工具，用于将窗口排列和对齐
 
 ## <a name="choose-your-layout-layout-editor"></a>选择布局 (布局编辑器) 
 
-首次启动时，区域编辑器会显示一个布局列表，可根据监视器上的窗口数进行调整。 选择布局会在监视器上显示该布局的预览。 选择 "应用" 将布局设置为监视器。  
+首次启动时，区域编辑器会显示一个布局列表，可根据监视器上的窗口数进行调整。 选择布局会在监视器上显示该布局的预览。 选定布局会自动应用。  
 
 ![FancyZones 选取器屏幕快照](../images/pt-fancyzones-picker.png)
 
-如果正在使用多个显示，编辑器将检测可用的监视器并显示它们，以便用户在之间进行选择。 选定的监视器将成为所选布局的目标（如果已应用）。
+如果正在使用多个显示，编辑器将检测可用的监视器并显示它们，以便用户在之间进行选择。 选定的监视器将成为所选布局的目标。
 
 ![FancyZones 选取器多个监视器](../images/pt-fancyzones-multimon.png)
 
 ### <a name="space-around-zones"></a>区域周围的空间
 
-通过 "在 **区域周围显示空间** " 复选框，您可以确定边框或边距的显示范围是否环绕每个 FancyZone 窗口。 " **区域** " 字段周围的空间使你可以为边框的宽度设置自定义值。
+"在 **区域间显示空间** " 切换功能使你能够确定边框或边距的显示方式将环绕每个 FancyZone 窗口。 " **区域** " 字段周围的空间使你可以为边框的宽度设置自定义值。
 
 **突出显示相邻区域的距离** 使你可以为 FancyZone 窗口之间的空间量设置自定义值，直到它们合并在一起，或者在两者都突出显示之前，使它们合并在一起。
 
@@ -55,19 +55,19 @@ FancyZones 是一种窗口管理器实用工具，用于将窗口排列和对齐
 
 ### <a name="creating-a-custom-layout"></a>创建自定义布局
 
-区域编辑器还支持创建和保存自定义布局。 选择区域编辑器顶部菜单中的 "**模板**" 旁的 "**自定义**" 选项卡。
+区域编辑器还支持创建和保存自定义布局。 选择右下角的 " **+ 创建新布局** " 按钮。
   
-可以通过两种方法创建自定义区域布局：窗口布局和表布局。 它们也可以被视为附加模型和 subtractive 模型。  
+可以通过两种方法创建自定义区域布局： **网格** 布局和 **画布** 布局。 它们也可以被视为 subtractive 和附加模型。  
 
-附加窗口布局模型以空白布局开头，并支持添加可进行拖动和调整大小与 windows 相似的区域。
-
-![FancyZones 窗口编辑器模式](../images/pt-fancyzones-windoweditor.png)
-
-Subtractive 表布局模型以表布局开头，并允许通过拆分和合并区域并调整区域之间的装订线来创建区域。
+Subtractive **网格** 模型以三列网格开头，并允许通过拆分和合并区域来创建区域，并根据需要调整区域之间的装订线大小。
 
 若要合并两个区域，请选择并按住鼠标左键并拖动鼠标，直到选择第二个区域，然后松开按钮，随即显示一个弹出菜单。
 
-![FancyZones 表编辑器模式](../images/pt-fancyzones-tableeditor.png)
+![FancyZones 表编辑器模式](../images/pt-fancyzones-grideditor.png)
+
+添加 **画布** 模型以空白布局开头，并支持添加可进行拖动和调整大小与 windows 相似的区域。
+
+![FancyZones 窗口编辑器模式](../images/pt-fancyzones-canvaseditor.png)
 
 ## <a name="snapping-a-window-to-two-or-more-zones"></a>使窗口与两个或多个区域对齐
 
