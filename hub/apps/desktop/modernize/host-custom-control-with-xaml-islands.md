@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 16dc1b59147cb937a09eb085c716ebac0e1cef7b
-ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
+ms.openlocfilehash: 714573c91b8352bb52bb895347867862bd0642b3
+ms.sourcegitcommit: 41251e85b2168704e33b9d3ee92606ab84c24769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98922740"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99478522"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 岛在 WPF 应用中托管自定义 WinRT XAML 控件
 
