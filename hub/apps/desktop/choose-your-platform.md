@@ -3,17 +3,17 @@ description: 若要创建新的 Windows 桌面应用，首先需要决定的是�
 ms.assetid: 82705644-F1F0-40F3-99B1-7A97BFB32831
 title: 选择 Windows 应用平台
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 02/03/2021
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 桌面开发
-ms.openlocfilehash: 51d799a4779f6d3ecee2119277b6c41485e0d377
-ms.sourcegitcommit: e1c182ea23da9b0bd9e89425f7f1a00baec81136
+ms.openlocfilehash: 62567b36d16e01fc6091f9514137c60dc352942a
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97826268"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534376"
 ---
 # <a name="choose-your-windows-app-platform"></a>选择 Windows 应用平台
 
@@ -23,7 +23,7 @@ ms.locfileid: "97826268"
 * [WPF](#wpf) 和 [Windows 窗体](#windows-forms)：这些基于 .NET 的平台为托管应用程序提供通用类型系统、API 和应用程序模型。
 * [Win32](#win32)：这是原始平台，适用于需直接访问 Windows 和硬件的原生 C/C++ Windows 应用程序。 这使得 Win32 API 成为需要最高级别性能和直接访问系统硬件的应用程序的首选平台。
 
-这些平台每个都包括一个完整的 UI 框架和一组 UI 控件。你可以使用它们创建在经典 Windows 桌面上运行的 Word、Excel 和 Photoshop 等桌面应用，并充分利用该环境的特定功能。 在 Windows 10 上，这些平台还都支持使用 [Windows UI (WinUI) 库](#windows-ui-library)来创建其用户界面。
+这些平台每个都包括一个完整的 UI 框架和一组 UI 控件。你可以使用它们创建在经典 Windows 桌面上运行的 Word、Excel 和 Photoshop 等桌面应用，并充分利用该环境的特定功能。 在 Windows 10 上，这些平台还都支持使用 [Windows UI 库 (WinUI)](#use-the-windows-ui-library-with-windows-apps) 来创建其用户界面。
 
 其中一些平台有一些共同的特征，更适用于某些类型的应用程序。 例如，UWP 和 .NET 都与 Visual Studio 深度集成。 这提供了许多好处，尤其是在开发人员的工作效率、复杂的可自定义 UI 和应用程序安全方面。 由于这些框架支持可视化设计器和 UI 标记以快速创建 UI，因此它们特别适用于业务线应用程序。
 
@@ -93,24 +93,6 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
 * [API 参考](/windows/win32/apiindex/windows-api-list/)
 * [示例](https://github.com/Microsoft/Windows-classic-samples)
 
-## <a name="windows-ui-library"></a>Windows UI 库
-
-在 Windows 10 上，每个主要桌面平台都支持使用 [Windows UI (WinUI) 库](../winui/index.md)来创建其用户界面。 WinUI 开始时是作为工具包提供的，并为面向低端版 Windows 10 的 UWP 应用提供新版和更新版 UWP 控件。 WinUI 的范围已扩大，现在是 Windows 10 应用（包括 UWP、.NET 和 Win32）的新式原生用户界面 (UI) 平台。
-
-可通过以下方式在桌面应用中使用 WinUI：
-
-* UWP 应用可以使用 WinUI 控件来替代 Windows SDK 提供的 UWP 控件。
-* 你可以更新现有的 WPF、Windows 窗体和 C++/Win32 应用，以使用 [XAML 岛](modernize/xaml-islands.md)在应用中托管 WinUI 2.x 控件。
-* 从 [WinUi 3.0](../winui/winui3/index.md) 开始，可以创建[使用完全基于 WinUI 的 UI 的 .NET 和 C++/Win32 应用](../winui/winui3/get-started-winui3-for-desktop.md)。
-
-## <a name="project-reunion-preview"></a>Project Reunion（预览版）
-
-Project Reunion 是一组新的开发人员组件和工具的代号，它们代表着 Windows 应用开发平台的下一步发展。 Project Reunion 提供了一组统一的 API 和工具，各种目标 Windows 10 OS 版本上的任何应用都能够以一致的方式使用它们。 Project Reunion 通过一组通用的 API 和工具（开发人员可以在这些平台中使用）对 UWP、本机 Win32 和 .NET 等现有 Windows 应用平台和框架进行了补充。
-
-Project Reunion 目前提供了早期开发人员预览版。 建议在开发环境中试用此版本。 但请注意，从现在的版本到最终的版本，Project Reunion 将会在许多方面发生变化。 生产环境中使用的应用不支持 Project Reunion。
-
-有关详细信息，请参阅 [Project Reunion](../project-reunion/index.md) 和我们的 [GitHub 存储库](https://github.com/microsoft/ProjectReunion/)。
-
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>平台比较：UWP、WPF 和 Windows 窗体
 
 下表详细比较了 Windows 窗体、WPF 和 UWP 的各种特征。
@@ -128,6 +110,22 @@ Project Reunion 目前提供了早期开发人员预览版。 建议在开发环
 <sup>1</sup> 我们已经公开发布了一些功能，这些功能将在未来版本的 Windows 10 中处理此方案。
 
 <sup>2</sup> 尽管该平台缺少针对此方案的一流 API 支持，但开发人员可通过工作区来支持此方案。
+
+## <a name="use-the-windows-ui-library-with-windows-apps"></a>在 Windows 应用中使用 Windows UI 库
+
+为了对主要的 Windows 应用平台进行补充，还可以在应用中使用 [Windows UI 库 (WinUI)](../winui/index.md)。 WinUI 开始时是以工具包的形式出现，为面向低端版 Windows 10 的 UWP 应用提供新版和更新版 WinRT 控件。 从 WinUI 3（仍为预览版）开始，WinUI 扩大范围，成为跨 UWP、.NET 和 Win32 应用平台的 Windows 10 应用的顶级本机用户界面 (UI) 框架。
+
+可通过以下方式在 Windows 应用中使用 WinUI。
+
+* [WinUI 2.x](../winui/winui2/index.md)：
+  * UWP 应用可以使用 WinUI 2.x 控件来替代 Windows SDK 提供的 WinRT 控件。 这些版本的 WinUI 包括全新的控件和 Windows SDK 中现有控件的更新版本。
+  * 你可以更新现有的 WPF、Windows 窗体和 C++/Win32 应用，以使用 [XAML 岛](modernize/xaml-islands.md)托管 WinUI 2.x 控件。
+
+* [WinUI 3（预览版）](../winui/winui3/index.md)：
+  * 从 WinUI 3 开始，你可以创建使用完全基于 WinUI 的 UI 的 [.NET 和 C++/Win32 应用](../winui/winui3/get-started-winui3-for-desktop.md)和 [UWP 应用](../winui/winui3/get-started-winui3-for-uwp.md)。 此版本包含 Visual Studio 项目模板，可提供创建这些应用所需的一切条件。
+
+> [!NOTE]
+> WinUI 3 仍为预览版，不应用于生产应用。
 
 ## <a name="other-app-platforms"></a>其他应用平台
 

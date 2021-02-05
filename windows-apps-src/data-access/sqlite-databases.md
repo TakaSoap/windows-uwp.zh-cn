@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: Windows 10, uwp, SQLite, 数据库
 ms.localizationpriority: medium
-ms.openlocfilehash: ba2bcf104bd1fee9657e83f7a20334522fa0450c
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: 045f327622c93d7d4c1653492e54b7939ee919a2
+ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860209"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99077245"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQLite 数据库
 可以使用 SQLite 在用户设备上的轻量级数据库中存储和检索数据。 本指南演示如何执行该操作。
@@ -35,7 +35,7 @@ ms.locfileid: "97860209"
 
 Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定于域的对象处理关系数据。 如果已使用此框架处理其他 .NET 应用中的数据，则可以将该代码迁移到 UWP 应用，它将处理对连接字符串的相应更改。
 
-若要试用它，请参阅[开始使用通用 Windows 平台 (UWP) 上的带新数据库的 EF Core](/ef/core/get-started/uwp/getting-started)。
+若要试用，请参阅 [EF Core 入门](/ef/core/get-started/overview/first-app)。
 
 ### <a name="sqlite-library"></a>SQLite 库
 

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36397e64215bfe4b57aac32e9eccc94182495688
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c84595a8d5aadfb22f84a5fe780e93b9518490dc
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033300"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534476"
 ---
 # <a name="controls-by-function"></a>按功能列出控件
 
@@ -41,7 +41,7 @@ ms.locfileid: "93033300"
 ## <a name="appbars-and-commands"></a>应用栏和命令
 
 ### <a name="app-bar"></a>应用栏
-用于显示特定于应用程序的命令的工具栏。 请参阅“命令栏”。
+用于显示特定于应用程序的命令的工具栏。 请参阅[命令栏](#command-bar)。
 
 参考：[AppBar](/uwp/api/Windows.UI.Xaml.Controls.AppBar) 
 
@@ -105,7 +105,7 @@ ms.locfileid: "93033300"
 设计和操作方法：[按钮控件指南](buttons.md) 
 
 ### <a name="hyperlink"></a>Hyperlink
-请参阅“超链接”按钮。
+请参阅[“超链接”按钮](#hyperlink-button)。
 
 ### <a name="hyperlink-button"></a>“超链接”按钮
 显示为标记文本并在浏览器中打开指定 URI 的按钮。
@@ -248,7 +248,7 @@ ms.locfileid: "93033300"
 ## <a name="flyouts"></a>浮出控件
 
 ### <a name="context-menu"></a>上下文菜单
-请参阅菜单浮出控件和弹出菜单。
+请参阅[菜单浮出控件](#menu-flyout)和[弹出菜单](#popup-menu)。
 
 ### <a name="flyout"></a>浮出控件
 显示要求用户交互的消息。 （与对话框不同，浮出控件不创建一个单独的窗口，而且不阻止其他用户交互。）
@@ -416,7 +416,7 @@ ms.locfileid: "93033300"
 参考：[网格](/uwp/api/Windows.UI.Xaml.Controls.Grid)
  
 ### <a name="panning-scroll-viewer"></a>平移滚动查看器
-请参阅滚动查看器。
+请参阅[滚动查看器](#scroll-viewer)。
 
 ### <a name="relativepanel"></a>RelativePanel
 允许你放置子对象并使其相互对齐或与父面板对齐的面板。
@@ -433,7 +433,7 @@ ms.locfileid: "93033300"
 参考：[RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)
 
 ### <a name="scroll-bar"></a>滚动条
-请参阅“滚动查看器”。 （ScrollBar 是 ScrollViewer 的元素。 你通常不会将其用作独立控件。）
+请参阅[滚动查看器](#scroll-viewer)。 （ScrollBar 是 ScrollViewer 的元素。 你通常不会将其用作独立控件。）
 
 参考：[ScrollBar](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ScrollBar)
  
@@ -511,23 +511,28 @@ ms.locfileid: "93033300"
 参考：[Viewbox](/uwp/api/Windows.UI.Xaml.Controls.Viewbox)
  
 ### <a name="zooming-scroll-viewer"></a>缩放滚动查看器
-请参阅滚动查看器。
+请参阅[滚动查看器](#scroll-viewer)。
 
 ## <a name="media-controls"></a>媒体控件
 
 ### <a name="audio"></a>音频
-请参阅媒体元素。
 
-### <a name="media-element"></a>媒体元素
+请参阅[媒体播放器元素](#media-player-element)。
+
+### <a name="media-player-element"></a>媒体播放器元素
+
 可播放音频和视频内容的控件。
 
 ```xaml
-<MediaElement x:Name="myMediaElement"/>
+<MediaPlayerElement x:Name="myMediaPlayerElement"/>
 ```
 
-参考：[MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 
+> [!Important]
+> **MediaPlayerElement** 仅在 Windows 10 1607 版本及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你需要改用 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 控件。
 
-设计和操作方法：[媒体元素控件指南](media-playback.md)
+参考：[MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)
+
+设计和操作方法：[媒体播放](media-playback.md)
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 可为 MediaElement 提供播放控件的控件。
@@ -540,12 +545,12 @@ ms.locfileid: "93033300"
 
 参考：[MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 
 
-设计和操作方法：[媒体元素控件指南](media-playback.md) 
+设计和操作方法：[媒体播放](media-playback.md)
 
 示例代码：[媒体传输控件示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls)
 
 ### <a name="video"></a>视频
-请参阅媒体元素。
+请参阅[媒体播放器元素](#media-player-element)。
 
 ## <a name="navigation"></a>导航
 
@@ -666,7 +671,7 @@ ms.locfileid: "93033300"
 示例代码：[AutoSuggestBox 迁移示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox)
 
 ### <a name="multi-line-text-box"></a>多行文本框
-请参阅文本框。
+请参阅[文本框](#text-box)。
 
 ### <a name="password-box"></a>密码框
 用于输入密码的一种控件。
@@ -698,13 +703,13 @@ ms.locfileid: "93033300"
 示例代码：[XAML 文本示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
 
 ### <a name="search-box"></a>搜索框
-请参阅自动建议框
+请参阅[自动建议框](#auto-suggest-box)。
 
 ### <a name="single-line-text-box"></a>单行文本框
-请参阅文本框。
+请参阅[文本框](#text-box)。
 
 ### <a name="static-textparagraph"></a>静态文本/段落
-请参阅文本块。
+请参阅[文本块](#text-block)。
 
 ### <a name="text-block"></a>文本块
 显示文本的控件。

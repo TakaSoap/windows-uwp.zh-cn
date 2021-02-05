@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5c5b4867d8a58779aa716245130a468374054288
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: 3db6ce85e81f4478a9776cec6a4e38caee0a2c9c
+ms.sourcegitcommit: a7d49538d7ad762d34d41579fdfad2fb4422d667
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860123"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99061414"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>面向开发人员的 Windows 10 内部版本 18362 中的新增功能
 
@@ -101,10 +101,10 @@ Microsoft Learn 为 Microsoft 开发人员提供新的动手学习和培训机�
 
 在“一个开发问题”视频系列中，资深的 Microsoft 开发人员介绍了关于 Windows 开发、团队文化和发展历程的一系列问题。
 
-* [Raymond Chen：Windows 开发和历史](https://www.youtube.com/playlist?list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7)
+* [Raymond Chen：Windows 开发和历史](https://www.youtube.com/watch?v=teV0gjCacug&list=PLlrxD0HtieHge3_8Dm48C0Ns61I6bHThc)
 
-* [Larry Osterman：Windows 开发和历史](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPUkYGpJU0RzvY6PBSEA4K)
+* [Larry Osterman：Windows 开发和历史](https://www.youtube.com/watch?v=_34CokLwodE&list=PLlrxD0HtieHhDTjMijDOd0BSJcpSFabfE)
 
-* [Aaron Gustafson：渐进式 Web 应用](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
+* [Chris Heilmann：VS Code](https://www.youtube.com/watch?v=cYRn5ONWAqo&list=PLlrxD0HtieHjQX77y-0sWH9IZBTmv1tTx)
 
-* [Chris Heilmann：webhint 工具](https://www.youtube.com/playlist?list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
+* [Aaron Gustafson：渐进式 Web 应用](https://www.youtube.com/watch?v=ks3CYvPBO2k&ab_channel=MicrosoftDeveloper)

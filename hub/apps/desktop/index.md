@@ -2,17 +2,17 @@
 description: 了解如何着手为 Windows 电脑构建桌面应用，包括如何选择适合新应用的应用平台，以及如何实现 Windows 10 现有应用的现代化。
 title: 构建 Windows 电脑的桌面应用
 ms.topic: article
-ms.date: 9/10/2020
+ms.date: 02/03/2021
 keywords: windows win32, 桌面开发
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 554869625c0db7a2a19dc7c01837e47029bd28e6
-ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
+ms.openlocfilehash: 2518d838ca41e5ca2faa6dbd5697d64ea9257922
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97214264"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534366"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>构建 Windows 电脑的桌面应用
 
@@ -64,11 +64,11 @@ ms.locfileid: "97214264"
 
 ### <a name="future-roadmap"></a>未来的路线图
 
-展望未来，我们将通过 Windows UI (WinUI) 库和 Project Reunion 改进 Windows 应用开发平台。
+展望未来，我们将通过 Windows UI 库 (WinUI) 和 Project Reunion 改进 Windows 应用开发平台。
 
-* WinUI 是一种适用于 Windows 10 应用的本机用户体验 (UX) 框架。 WinUI 开始时是作为工具包提供的，并为面向低端版 Windows 10 的 UWP 应用提供新版和更新版 UWP 控件。 WinUI 的范围已扩大，从 WinUI 3（目前提供预览版）开始，它现在是适用于 Windows 10 应用（包括 UWP、.NET 和 Win32）的新式本机用户界面 (UI) 平台。 
+* WinUI 是一种适用于 Windows 10 应用的本机用户体验 (UX) 框架。 WinUI 开始时是以工具包的形式出现，为面向低端版 Windows 10 的 UWP 应用提供新版和更新版 WinRT 控件。 从 WinUI 3（仍为预览版）开始，WinUI 扩大范围，成为跨 UWP、.NET 和 Win32 应用平台的 Windows 10 应用的顶级本机用户界面 (UI) 框架。
 
-    有关详细信息，请参阅 [Windows UI (WinUI) 库](../winui/index.md)。
+    有关详细信息，请参阅 [Windows UI 库 (WinUI)](../winui/index.md)。
 
 * Project Reunion（目前提供预览版）是一组新的开发人员组件和工具的代号，它们代表着 Windows 应用开发平台的下一步发展。 Project Reunion 提供了一组统一的 API 和工具，各种目标 Windows 10 OS 版本上的任何应用都能够以一致的方式使用它们。 Project Reunion 通过一组通用的 API 和工具（开发人员可以在这些平台中使用）对 UWP、本机 Win32 和 .NET 等现有 Windows 应用平台和框架进行了补充。 
 

@@ -1,19 +1,19 @@
 ---
 description: 使用 Windows 运行时 API 为 Windows 10 用户增强桌面应用程序。
 title: 在桌面应用中调用 Windows 运行时 API
-ms.date: 08/20/2019
+ms.date: 01/28/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bf460b8c05f1dbb274aa9015e6b892339df9f634
-ms.sourcegitcommit: 21a76fc02ae261f609a2dbb7a56c5de25844c068
+ms.openlocfilehash: 2dc56597dccf00a15ffc672f60ca2e1f0936f14f
+ms.sourcegitcommit: 6f15cc14e0c4c13999c862664fa7a70de8730b74
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93381387"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98981866"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>在桌面应用中调用 Windows 运行时 API
 
@@ -31,9 +31,9 @@ ms.locfileid: "93381387"
 * 对于早期版本的 .NET，可以安装 `Microsoft.Windows.SDK.Contracts` NuGet 包，以便将所有必要的引用添加到项目中。 此选项支持面向 Windows 10 1803 版或更高版本的项目。
 * 如果你的项目同时面向 .NET 5 预览版 8（或更高版本）和早期版本的 .NET 等多个目标，可将项目文件配置为同时使用这两个选项。
 
-### <a name="net-5-preview-8-and-later-use-the-target-framework-moniker-option"></a>.NET 5 预览版 8 及更高版本：使用“目标框架名字对象”选项 
+### <a name="net-5-use-the-target-framework-moniker-option"></a>.NET 5：使用“目标框架名字对象”选项
 
-只可在使用 .NET 5 预览版 8（或更高版本）和面向 Windows 10 1809 版（或更高版本）操作系统的项目中使用此选项。 有关此方案的更多背景信息，请参阅[此博客文章](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/)。
+只可在使用 .NET 5（或更高版本）和面向 Windows 10 版本 1809 或更高版本操作系统的项目中使用此选项。 有关此方案的更多背景信息，请参阅[此博客文章](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/)。
 
 1. 在 Visual Studio 中打开项目后，在“解决方案资源管理器”中右键单击该项目，然后选择“编辑项目文件” 。 项目文件的呈现效果与此类似。
 

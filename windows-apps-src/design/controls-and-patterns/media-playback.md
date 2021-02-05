@@ -1,34 +1,33 @@
 ---
-Description: 媒体播放器用于观看和收听视频、音频和图像。
+description: 媒体播放涉及通过内联或专用全屏体验观看和收听视频和音频。
 title: 媒体播放器
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
-label: Media player
+label: Media playback controls
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e7f575f22a56c7c97700e1949494848402d239c6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a1471eb468e85bb1c4706c5432e38e501c4c1469
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218686"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534406"
 ---
-# <a name="media-player"></a>媒体播放器
+# <a name="media-players"></a>媒体播放器
 
+媒体播放涉及通过内联（嵌入在页面中或使用一组其他控件）或专用全屏体验来观看和收听视频和音频。
 
-
-媒体播放器用于观看和收听视频和音频。 媒体播放可以是嵌入式的（嵌入在页面中或使用一组其他控件嵌入），也可以位于专用全屏视图中。 你可以根据需要修改播放器的按钮组合、更改控件栏的背景以及排列布局。 只需记住，用户预期获得基本的控件集（播放/暂停、快退、快进）。
+用户需要一个基本控制集（如播放/暂停、快退、快进），你可以根据需要进行修改（包括媒体播放器的按钮、控件条的背景以及控件排列或布局）。
 
 ![具有传输控件的媒体播放器元素](images/controls/mtc_double_video_inprod.png)
 
 > **重要的 API**：[MediaPlayerElement 类](/uwp/api/windows.ui.xaml.controls.mediaplayerelement)、[MediaTransportControls 类](/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
 
-
-> [!NOTE]
-> **MediaPlayerElement** 仅在 Windows 10 1607 版本及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 此页面上的所有建议均同样适用于 MediaElement。
+> [!Important]
+> **MediaPlayerElement** 仅在 Windows 10 1607 版本及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你需要改用 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 控件。 这里提出的所有建议同样适用于 MediaElement。
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -97,9 +96,9 @@ Windows 10 入门应用中的媒体播放器。
 ### <a name="set-the-media-source"></a>设置媒体源
 若要播放网络上的文件或嵌入在应用中的文件，请将 [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 属性设置为带有该文件路径的 [MediaSource](/uwp/api/windows.media.core.mediasource)。
 
-**提示**  若要打开 Internet 中的文件，需要在应用的清单 (Package.appxmanifest) 中声明 **Internet（客户端）** 功能。 有关声明功能的详细信息，请参阅[应用功能声明](../../packaging/app-capability-declarations.md)。
+**提示**  若要打开 Internet 中的文件，需要在应用的清单 (Package.appxmanifest) 中声明 **Internet（客户端）** 功能。 有关声明功能的详细信息，请参阅[应用功能声明](../../packaging/app-capability-declarations.md)。
 
- 
+ 
 
 此代码尝试将使用 XAML 定义的 [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 的 [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 属性设置为输入到 [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 中的文件路径。
 
@@ -171,7 +170,7 @@ private void LoadEmbeddedAppFile()
 
 如果你的应用需要在不进行用户交互的情况下访问“音乐”  或“视频”  文件夹（例如，如果要枚举用户集锦中的所有音乐或视频文件并将它们显示在你的应用中），则你需要声明“音乐库”  和“视频库”  功能。 有关详细信息，请参阅[音乐、图片和视频库中的文件和文件夹](../../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。
 
-[FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 不需要特殊功能即可访问本地文件系统上的文件（例如用户的**音乐**或**视频**文件夹），因为用户对所访问的文件具有完全控制权。 从安全性和隐私性角度来看，最好尽量减少你的应用使用的功能数。
+[FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 不需要特殊功能即可访问本地文件系统上的文件（例如用户的 **音乐** 或 **视频** 文件夹），因为用户对所访问的文件具有完全控制权。 从安全性和隐私性角度来看，最好尽量减少你的应用使用的功能数。
 
 **使用 FileOpenPicker 打开本地媒体**
 
@@ -386,7 +385,7 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 如果你有足够的屏幕空间或要针对 10 英尺体验进行设计，请选择双行布局。 它为控件提供比紧凑的单行布局更多的空间，并且更易于在 10 体验中使用游戏板导航。
 
-> **注意**&nbsp;&nbsp;有关针对 10 英尺体验优化应用程序的详细信息，请访问[针对 Xbox 和 TV 进行设计](../devices/designing-for-tv.md)文章。
+> **注意**&nbsp;&nbsp;有关针对 10 英尺体验优化应用程序的详细信息，请访问 [针对 Xbox 和 TV 进行设计](../devices/designing-for-tv.md)文章。
 
 默认控件已针对媒体播放进行优化，但你能够将所需的自定义选项添加到媒体播放器，以便为应用提供最佳的体验。 若要了解有关添加自定义控件的详细信息，请访问[创建自定义传输控件](custom-transport-controls.md)。
 

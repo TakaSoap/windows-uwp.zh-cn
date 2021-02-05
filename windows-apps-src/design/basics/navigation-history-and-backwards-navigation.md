@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 269d3b9f256016cb0d10441dc394eb4783ef6ec9
-ms.sourcegitcommit: 9bd23e0e08ed834accebde4db96fc87f921d983d
+ms.openlocfilehash: 738efe43afaf5c278425d5636bddc72cecadf47a
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98949127"
+ms.locfileid: "98988759"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Windows 应用的导航历史记录和向后导航
 
@@ -102,7 +102,7 @@ Windows 应用提供了一个一致的后退导航系统，用于遍历用户在
 | 事件 | 输入 |
 | --- | --- |
 | [CoreDispatcher.AcceleratorKeyActivated](/uwp/api/windows.ui.core.coredispatcher.acceleratorkeyactivated) | Alt+左箭头，<br/>VirtualKey.GoBack |
-| [SystemNavigationManager.BackRequested](/api/windows.ui.core.systemnavigationmanager.backrequested) | 手柄 B 按钮，<br/>平板模式后退按钮，<br/>硬件后退按钮 |
+| [SystemNavigationManager.BackRequested](/api/windows.ui.core.systemnavigationmanager.backrequested) | Windows + Backspace，<br/>手柄 B 按钮，<br/>平板模式后退按钮，<br/>硬件后退按钮 |
 | [CoreWindow.PointerPressed](/uwp/api/windows.ui.core.corewindow.pointerpressed) | VirtualKey.XButton1<br/>（例如在一些鼠标上找到的后退按钮。） |
 
 ## <a name="code-examples"></a>代码示例
@@ -115,7 +115,7 @@ Windows 应用提供了一个一致的后退导航系统，用于遍历用户在
 
 此示例代码演示了如何使用后退按钮实现向导航行为。 代码会响应按钮 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) 事件进行导航。 后退按钮是在 [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) 方法中启用或禁用的，该方法将在导航到新页面时调用。
 
-此时显示 `MainPage` 的代码，但你要将此代码添加到支持向后导航的每一页上。 若要避免重复，可以在 `App.xaml` 代码隐藏页中将导航相关的代码放在 `App` 类中。
+此时显示 `MainPage` 的代码，但你要将此代码添加到支持向后导航的每一页上。 若要避免重复，可以在 `App.xaml.*` 代码隐藏页中将导航相关的代码放在 `App` 类中。
 
 ```xaml
 <!-- MainPage.xaml -->
@@ -135,13 +135,13 @@ Windows 应用提供了一个一致的后退导航系统，用于遍历用户在
 // MainPage.xaml.cs
 private void BackButton_Click(object sender, RoutedEventArgs e)
 {
-    ((App)Application.Current).TryGoBack();
+    App.TryGoBack();
 }
 
 // App.xaml.cs
 //
 // Add this method to the App class.
-public bool TryGoBack()
+public static bool TryGoBack()
 {
     Frame rootFrame = Window.Current.Content as Frame;
     if (rootFrame.CanGoBack)
@@ -163,7 +163,7 @@ namespace winrt::AppName::implementation
  
         void MainPage::BackButton_Click(IInspectable const&, RoutedEventArgs const&)
         {
-            m_navigationHelper->TryGoBack();
+            App::TryGoBack();
         }
     };
 }
@@ -188,7 +188,7 @@ struct App : AppT<App>
     // ...
 
     // Perform back navigation if possible.
-    bool TryGoBack()
+    static bool TryGoBack()
     {
         Frame rootFrame{ nullptr };
         auto content = Window::Current().Content();
@@ -576,7 +576,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 // ...
 
 // (Add these methods to the App class.)
-public bool TryGoBack()
+public static bool TryGoBack()
 {
     Frame rootFrame = Window.Current.Content as Frame;
     if (rootFrame.CanGoBack)
@@ -700,7 +700,7 @@ struct App : AppT<App>
     // ...
 
     // Perform back navigation if possible.
-    bool TryGoBack()
+    static bool TryGoBack()
     {
         Frame rootFrame{ nullptr };
         auto content = Window::Current().Content();

@@ -8,16 +8,16 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4736c598e18bc4f1225a7fa8e0488c3601420c
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 9f00a056085b6b1f4315a19d223c21c7a4cd6638
+ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031460"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99077235"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>存储和检索设置以及其他应用数据
 
-应用数据是由特定应用创建和管理的可变数据  。 它包含运行时状态、应用设置、用户首选项、参考内容（如字典应用中的字典定义）以及其他设置。 应用数据不同于 *用户数据* ，它是用户使用应用时创建和管理的数据。 用户数据包含文档或媒体文件、电子邮件或通信脚本或保留用户所创建内容的数据库记录。 用户数据可能对于多个应用都非常有用或有意义。 通常，此为用户要操作或作为独立于应用自身的实体进行传输的数据，例如文档。
+应用数据是由特定应用创建和管理的可变数据  。 它包含运行时状态、应用设置、用户首选项、参考内容（如字典应用中的字典定义）以及其他设置。 应用数据不同于 *用户数据*，它是用户使用应用时创建和管理的数据。 用户数据包含文档或媒体文件、电子邮件或通信脚本或保留用户所创建内容的数据库记录。 用户数据可能对于多个应用都非常有用或有意义。 通常，此为用户要操作或作为独立于应用自身的实体进行传输的数据，例如文档。
 
 **关于应用数据的重要说明：** 应用数据的生命周期与应用的生命周期相关联。 如果应用被删除，则会丢失所有应用数据。 不要使用应用数据存储用户数据或用户可能视作有价值和不可替代内容的任何数据。 我们建议使用用户的库和 Microsoft OneDrive 存储此类信息。 应用数据非常适合存储特定于应用的用户首选项、设置和收藏夹。
 
@@ -31,12 +31,12 @@ ms.locfileid: "93031460"
 
 下面是可以用于应用设置的数据类型：
 
-- **UInt8** 、 **Int16** 、 **UInt16** 、 **Int32** 、 **UInt32** 、 **Int64** 、 **UInt64** 、 **Single** 、 **Double**
+- **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
 - 布尔 
-- **Char16** 、 **String**
+- **Char16**、**String**
 - [DateTime](/uwp/api/Windows.Foundation.DateTime)、[TimeSpan](/uwp/api/Windows.Foundation.TimeSpan)  
     - 对于 C#/.NET，请使用：[System.DateTimeOffset](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0)、[System.TimeSpan](/dotnet/api/system.timespan?view=dotnet-uwp-10.0)  
-- **GUID** 、 [**Point**](/uwp/api/Windows.Foundation.Point)、 [**Size**](/uwp/api/Windows.Foundation.Size)、 [**Rect**](/uwp/api/Windows.Foundation.Rect)
+- **GUID**、[**Point**](/uwp/api/Windows.Foundation.Point)、[**Size**](/uwp/api/Windows.Foundation.Size)、[**Rect**](/uwp/api/Windows.Foundation.Rect)
 - [ApplicationDataCompositeValue](/uwp/api/Windows.Storage.ApplicationDataCompositeValue)  ：一组必须按原子方式序列化和反序列化的相关应用设置。 使用复合设置可轻松处理相互依赖的设置的原子更新。 系统会在并发访问和漫游时确保复合设置的完整性。 复合设置针对少量数据进行了优化，如果将它们用于大型数据集，性能可能很差。
 
 ### <a name="files"></a>文件
@@ -132,7 +132,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要打开本地应用数据存储中的文件，请使用文件 API，如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、 [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 和 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](/previous-versions/windows/apps/hh965322(v=win.10))。
+若要打开本地应用数据存储中的文件，请使用文件 API，如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 和 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](/previous-versions/windows/apps/hh965322(v=win.10))。
 
 ```csharp
 async void ReadTimestamp()
@@ -152,6 +152,10 @@ async void ReadTimestamp()
 
 ## <a name="roaming-data"></a>漫游数据
 
+> [!WARNING]
+> 我们[宣布](/windows/deployment/planning/windows-10-deprecated-features)，自 Windows 10 版本 1909 起，在将来的更新中将删除包状态漫游 (PSR)。 PSR 允许非 Microsoft 开发人员访问设备上的漫游数据，从而使 UWP 应用程序的开发人员可以将数据写入 Windows，并将其同步到该用户的其他 Windows 实例。
+> 
+>PSR 的建议替代产品为 [Azure 应用服务](/azure/app-service/)。 Azure 应用服务广受支持、记录良好、可靠，并且支持跨平台/跨生态系统场景，例如 iOS、Android 和 Web。
 
 如果在应用中使用漫游数据，用户可轻松地在多个设备之间保持应用的应用数据同步。 如果用户在多个设备上安装了你的应用，操作系统将保持应用数据同步，减少用户需要在他们的第二个设备上为你的应用所做的设置工作量。 漫游还支持用户甚至在不同的设备上从他们离开的位置继续执行任务，例如撰写列表。 OS 在漫游数据更新时将它复制到云，并将该数据同步到已安装应用的其他设备。
 
@@ -160,6 +164,8 @@ async void ReadTimestamp()
 只要用户可在所需的时间间隔内从某个设备访问应用的漫游数据，这些数据就将存在于云中。 如果用户不会在比此时间间隔更长的时间内运行应用，它的漫游数据将从云中删除。 如果用户卸载应用，它的漫游数据不会自动从云中删除，将会保留。 如果用户在该时间间隔内重新安装该应用，则会从云中同步漫游数据。
 
 ### <a name="roaming-data-dos-and-donts"></a>漫游数据应做事项和禁止事项
+
+> 请参阅关于[漫游数据](#roaming-data)的重要说明。
 
 - 将漫游用于用户首选项和自定义、链接以及小型数据文件。 例如，使用漫游在所有设备上保留用户的背景颜色首选项。
 - 使用漫游以允许用户跨设备继续执行任务。 例如，诸如草稿电子邮件的内容或阅读器应用中最近查看的页面的漫游应用数据。
@@ -173,23 +179,33 @@ async void ReadTimestamp()
 
 ### <a name="roaming-pre-requisites"></a>漫游先决条件
 
+> 请参阅关于[漫游数据](#roaming-data)的重要说明。
+
 如果用户使用 Microsoft 帐户登录相应的设备，则任何用户都可以享受到漫游应用数据的益处。 但是，用户和组策略管理员可以随时在设备上关闭漫游应用数据。 如果用户选择不使用 Microsoft 帐户或者禁用漫游数据功能，她仍可以使用你的应用，但应用数据都将留在每台设备本地。
 
-[  **PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) 中存储的数据仅将在用户使设备成为“受信任”设备的情况下传输。 如果设备不受信任，则不会漫游在该保管库中安全存储的数据。
+只有用户将设备设置为“受信任”设备时，[PasswordVault](/uwp/api/Windows.Security.Credentials.PasswordVault) 中存储的数据才会传输。 如果设备不受信任，则不会漫游在该保管库中安全存储的数据。
 
 ### <a name="conflict-resolution"></a>冲突解决
+
+> 请参阅关于[漫游数据](#roaming-data)的重要说明。
 
 漫游应用数据不适合在多个设备上同时使用。 如果在同步期间由于两台设备的特定数据单位已更改而导致冲突，系统将始终倾向于最后写入的值。 这将确保应用使用的是最新信息。 如果该数据单元是一个设置组合，则还会在设置单元级别解决冲突，这意味着具有最新更改的组合将被同步。
 
 ### <a name="when-to-write-data"></a>何时写入数据
 
+> 请参阅关于[漫游数据](#roaming-data)的重要说明。
+
 数据应在不同时间写入，具体取决于设置的预期生命周期。 更改较少且较慢的应用数据应立即写入。 然而，频繁更改的应用数据应每隔一定时间（例如每 5 分钟一次）定期写入，以及在应用暂停时写入。 例如，开始播放新歌曲时，音乐应用就可立即写入“当前歌曲”设置，不过，歌曲中的实际位置则仅应在应用暂停时写入。
 
 ### <a name="excessive-usage-protection"></a>过度使用保护
 
+> 请参阅关于[漫游数据](#roaming-data)的重要说明。
+
 系统具有各种保护机制，以避免资源使用不当。 如果应用数据没有如期传输，可能是因为设备暂时受限。 等待一段时间，系统通常可以自动解决此情况，无需进行任何操作。
 
 ### <a name="versioning"></a>版本控制
+
+> 请参阅关于[漫游数据](#roaming-data)的重要说明。
 
 应用数据可利用版本控制功能，从一个数据结构升级至另一数据结构。 此版本编号不同于应用版本，可随意设置。 虽不强制遵循，但强烈建议你使用递增的版本编号，因为如果你尝试向表示更新数据的较低数据版本编号传输，可能发生不良的并发情况（包括数据丢失）。
 
@@ -197,20 +213,23 @@ async void ReadTimestamp()
 
 ### <a name="testing-and-tools"></a>测试和工具
 
+> 请参阅关于[漫游数据](#roaming-data)的重要说明。
+
 开发人员可锁定自己的设备，以触发漫游应用数据的同步。 如果应用数据看起来没有在特定时段进行传输，请检查以下项目并确保：
 
 - 你的漫游数据未超过最大大小（有关详细信息，请参阅 [**RoamingStorageQuota**](/uwp/api/windows.storage.applicationdata.roamingstoragequota)）。
 - 你的文件已关闭且发布正确。
 - 至少存在两台运行相同应用版本的设备。
 
-
 ### <a name="register-to-receive-notification-when-roaming-data-changes"></a>进行注册以在漫游数据发生更改时收到通知
+
+> 请参阅关于[漫游数据](#roaming-data)的重要说明。
 
 若要使用漫游应用数据，需要对漫游数据更改进行注册，并且检索漫游数据容器，以便可以读取和写入设置。
 
 1.  进行注册以在漫游数据发生更改时收到通知。
 
-    在漫游数据发生更改时， [**DataChanged**](/uwp/api/windows.storage.applicationdata.datachanged) 事件将通知你。 此示例将 `DataChangeHandler` 设置为用于漫游数据更改的处理程序。
+    在漫游数据发生更改时，[**DataChanged**](/uwp/api/windows.storage.applicationdata.datachanged) 事件将通知你。 此示例将 `DataChangeHandler` 设置为用于漫游数据更改的处理程序。
 
 ```csharp
 void InitHandlers()
@@ -237,6 +256,8 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 ```
 
 ### <a name="create-and-retrieve-roaming-settings"></a>创建和检索漫游设置
+
+> 请参阅关于[漫游数据](#roaming-data)的重要说明。
 
 使用 [**ApplicationDataContainer.Values**](/uwp/api/windows.storage.applicationdatacontainer.values) 属性访问我们在前一部分中获取的 `roamingSettings` 容器中的设置。 此示例将创建名为 `exampleSetting` 的简单设置和名为 `composite` 的复合值。
 
@@ -282,7 +303,9 @@ else
 
 ### <a name="create-and-retrieve-roaming-files"></a>创建和检索漫游文件
 
-若要在漫游应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](/uwp/api/windows.storage.storagefolder.createfileasync) 和 [**Windows.Storage.FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync)）。 此示例会在 `roamingFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [  **CreationCollisionOption**](/uwp/api/Windows.Storage.CreationCollisionOption) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
+> 请参阅关于[漫游数据](#roaming-data)的重要说明。
+
+若要在漫游应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](/uwp/api/windows.storage.storagefolder.createfileasync) 和 [**Windows.Storage.FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync)）。 此示例会在 `roamingFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [**CreationCollisionOption**](/uwp/api/Windows.Storage.CreationCollisionOption) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
 
 ```csharp
 async void WriteTimestamp()
@@ -296,7 +319,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要在漫游应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、 [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 和 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)）。 此示例会打开在前一部分中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](/previous-versions/windows/apps/hh965322(v=win.10))。
+若要在漫游应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 和 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)）。 此示例会打开在前一部分中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](/previous-versions/windows/apps/hh965322(v=win.10))。
 
 ```csharp
 async void ReadTimestamp()
@@ -314,7 +337,6 @@ async void ReadTimestamp()
 }
 ```
 
-
 ## <a name="temporary-app-data"></a>临时应用数据
 
 
@@ -330,7 +352,7 @@ Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.Temporar
 
 ### <a name="create-and-read-temporary-files"></a>创建和读取临时文件
 
-若要在临时应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](/uwp/api/windows.storage.storagefolder.createfileasync) 和 [**Windows.Storage.FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync)）。 此示例会在 `temporaryFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [  **CreationCollisionOption**](/uwp/api/Windows.Storage.CreationCollisionOption) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
+若要在临时应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](/uwp/api/windows.storage.storagefolder.createfileasync) 和 [**Windows.Storage.FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync)）。 此示例会在 `temporaryFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [**CreationCollisionOption**](/uwp/api/Windows.Storage.CreationCollisionOption) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
 
 
 ```csharp
@@ -345,7 +367,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要在临时应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、 [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 和 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)）。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](/previous-versions/windows/apps/hh965322(v=win.10))。
+若要在临时应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 和 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)）。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](/previous-versions/windows/apps/hh965322(v=win.10))。
 
 ```csharp
 async void ReadTimestamp()
@@ -368,7 +390,7 @@ async void ReadTimestamp()
 
 若要帮助你组织应用数据设置和文件，请创建容器（由 [**ApplicationDataContainer**](/uwp/api/Windows.Storage.ApplicationDataContainer) 对象表示），而不是直接使用目录。 你可以向本地、漫游和临时应用数据存储添加容器。 容器的嵌套深度可达 32 层。
 
-若要创建设置容器，请调用 [**ApplicationDataContainer.CreateContainer**](/uwp/api/windows.storage.applicationdatacontainer.createcontainer) 方法。 此示例将创建一个名为 `exampleContainer` 的本地设置容器并添加一个名为 `exampleSetting` 的设置。 [  **ApplicationDataCreateDisposition**](/uwp/api/Windows.Storage.ApplicationDataCreateDisposition) 枚举中的 **Always** 值指示已创建容器（如果尚不存在的话）。
+若要创建设置容器，请调用 [**ApplicationDataContainer.CreateContainer**](/uwp/api/windows.storage.applicationdatacontainer.createcontainer) 方法。 此示例将创建一个名为 `exampleContainer` 的本地设置容器并添加一个名为 `exampleSetting` 的设置。 [**ApplicationDataCreateDisposition**](/uwp/api/Windows.Storage.ApplicationDataCreateDisposition) 枚举中的 **Always** 值指示已创建容器（如果尚不存在的话）。
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -435,8 +457,8 @@ localSettings.DeleteContainer("exampleContainer");
 
 ## <a name="related-articles"></a>相关文章
 
-* [Windows.Storage.ApplicationData](/uwp/api/Windows.Storage.ApplicationData) 
-* [Windows.Storage.ApplicationData.RoamingSettings](/uwp/api/windows.storage.applicationdata.roamingsettings) 
-* [Windows.Storage.ApplicationData.RoamingFolder](/uwp/api/windows.storage.applicationdata.roamingfolder) 
-* [Windows.Storage.ApplicationData.RoamingStorageQuota](/uwp/api/windows.storage.applicationdata.roamingstoragequota) 
-* [Windows.Storage.ApplicationDataCompositeValue](/uwp/api/Windows.Storage.ApplicationDataCompositeValue) 
+* [**Windows.Storage.ApplicationData**](/uwp/api/Windows.Storage.ApplicationData)
+* [Windows.Storage.ApplicationData.RoamingSettings](/uwp/api/windows.storage.applicationdata.roamingsettings)
+* [Windows.Storage.ApplicationData.RoamingFolder](/uwp/api/windows.storage.applicationdata.roamingfolder)
+* [Windows.Storage.ApplicationData.RoamingStorageQuota](/uwp/api/windows.storage.applicationdata.roamingstoragequota)
+* [**Windows.Storage.ApplicationDataCompositeValue**](/uwp/api/Windows.Storage.ApplicationDataCompositeValue)
