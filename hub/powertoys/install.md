@@ -4,12 +4,12 @@ description: 安装 PowerToys，这是一组用于自定义 Windows 10 的实用
 ms.date: 12/02/2020
 ms.topic: quickstart
 ms.localizationpriority: medium
-ms.openlocfilehash: d0018e69e5a107baa595e4d3dd05a924257551a8
-ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
+ms.openlocfilehash: 3effdd927b89a53b2ff92efeb422fb32293f98ba
+ms.sourcegitcommit: 447382282a6f549825480c2ff5b3cec9568d0e47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99077215"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99624626"
 ---
 # <a name="install-powertoys"></a>安装 PowerToys
 
@@ -34,7 +34,7 @@ ms.locfileid: "99077215"
 - [.Net Core 3.1 桌面运行时](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer)。 PowerToys 安装程序将处理此要求。
 - 当前支持 x64 体系结构。 ARM 和 x86 支持将在以后推出。
 
-若要确保你的计算机满足这些要求，请通过选择 " **⊞ Win** *(windows 键")* D 检查 windows 10 版本和内部版本号，  +  然后键入 **winver**，然后选择 **"确定"**。 （或者在 Windows 命令提示符下输入 `ver` 命令）。 可以在 "**设置**" 菜单中 [更新到最新的 Windows 版本](ms-settings:windowsupdate)。
+若要确保计算机满足这些要求，请通过选择 " **⊞ Win** *(windows 键")* R 来检查 Windows 10 版本和内部版本号，  +  然后键入 " **winver**"，然后选择 **"确定"**。 （或者在 Windows 命令提示符下输入 `ver` 命令）。 可以在 "**设置**" 菜单中 [更新到最新的 Windows 版本](ms-settings:windowsupdate)。
 
 ## <a name="alternative-install-methods"></a>备用安装方法
 
