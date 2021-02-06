@@ -5,17 +5,19 @@ ms.assetid: b497145b-c7a0-454a-8329-6bc1228953bb
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 9f9e0aeb1cf23eb64df3104cf1f90e2b30d083ba
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 1f61a08e9eeb66371ed39b44eb39dacbc1bf3cf5
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057743"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606032"
 ---
 # <a name="dynamically-modify-cortana-vcd-phrase-lists"></a>动态修改 Cortana VCD 短语列表
 
 >[!WARNING]
 > 从 Windows 10 2020 更新 (版本2004，codename "20H1" ) 中不再支持此功能。
+>
+> 有关 Cortana 如何转换新式生产力体验的 Microsoft 365，请参阅 [cortana in](/microsoft-365/admin/misc/cortana-integration) 。
 
 使用语音识别结果在运行时访问和更新语音命令定义中 (**PhraseList**) 元素的列表， (VCD) 文件。
 
@@ -41,7 +43,7 @@ ms.locfileid: "99057743"
 有关 **PhraseList** 和其他 VCD 元素的详细信息，请参阅 [**VCD 元素和属性 1.2**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) 参考。
 
 > [!TIP]
-> **必备条件**
+> **先决条件**
 >
 > 如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请查看这些主题来熟悉此处讨论的技术。
 >

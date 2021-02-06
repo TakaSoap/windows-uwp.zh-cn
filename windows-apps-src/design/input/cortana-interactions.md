@@ -8,17 +8,19 @@ keywords: Cortana, Cortana 画布, Cortana 设计, 用户界面, 语音命令, V
 ms.date: 01/27/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ca9f77d10f6e22d4e244b102cb8b85e1f75113fc
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 6187022f4fcce254d142c61f1c2fe222c11bd8a5
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057558"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606042"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Windows 应用中的 Cortana 交互
 
 >[!WARNING]
 > 从 Windows 10 2020 更新 (版本2004，codename "20H1" ) 中不再支持此功能。
+>
+> 有关 Cortana 如何转换新式生产力体验的 Microsoft 365，请参阅 [cortana in](/microsoft-365/admin/misc/cortana-integration) 。
 
 使用在 Windows 应用程序中启动和执行单个操作的语音命令扩展 **Cortana** 的基本功能。
 

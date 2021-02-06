@@ -5,17 +5,19 @@ ms.assetid: e42917dc-aece-4880-813f-80b897f9126c
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 111f945c548d34f614305e31c1c79ce9197f0925
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 835a2f60d2b86e5bef49195d4f937fa844f4d921
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057739"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606072"
 ---
 # <a name="interact-with-a-background-app-in-cortana"></a>在 Cortana 中与后台应用交互
 
 >[!WARNING]
 > 从 Windows 10 2020 更新 (版本2004，codename "20H1" ) 中不再支持此功能。
+>
+> 有关 Cortana 如何转换新式生产力体验的 Microsoft 365，请参阅 [cortana in](/microsoft-365/admin/misc/cortana-integration) 。
 
 执行语音命令时，通过 **Cortana** 画布中的语音和文本输入，使用户能够与后台应用交互。
 
@@ -37,7 +39,7 @@ Cortana 支持通过应用完成的一次性工作流。 此工作流由您的�
 ## <a name="composing-feedback-strings"></a>撰写反馈字符串
 
 > [!TIP]
-> **必备条件**
+> **先决条件**
 >
 > 如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请查看这些主题来熟悉此处讨论的技术。
 >

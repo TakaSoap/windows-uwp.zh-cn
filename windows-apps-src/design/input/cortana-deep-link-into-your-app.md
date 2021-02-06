@@ -5,17 +5,19 @@ ms.assetid: 6fe5fcc5-9ee4-4c04-92f4-7b1bf7ef5651
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 5d0f841ed653adac6770089a9ec9c1be0335e346
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: d96e54604c5def61802a77625a6c18c556db909d
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057778"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606052"
 ---
 # <a name="deep-link-from-a-background-app-in-cortana-to-a-foreground-app"></a>从 Cortana 中的后台应用到前台应用的深层链接
 
 >[!WARNING]
 > 从 Windows 10 2020 更新 (版本2004，codename "20H1" ) 中不再支持此功能。
+>
+> 有关 Cortana 如何转换新式生产力体验的 Microsoft 365，请参阅 [cortana in](/microsoft-365/admin/misc/cortana-integration) 。
 
 提供从 **Cortana** 中的后台应用程序的深层链接，该应用程序在特定状态或上下文中启动应用程序到前台。
 

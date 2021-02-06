@@ -7,17 +7,19 @@ ms.assetid: c2959c1b-c2f2-4a8d-8f3e-79585f69afcf
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 94f3d6323649737f978128e442c95449bce94075
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 7716d4d623653c6b2d943135f2e2cf1ac9a40343
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057738"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99605992"
 ---
 # <a name="support-natural-language-voice-commands-in-cortana"></a>在 Cortana 中支持自然语言形式的语音命令
 
 >[!WARNING]
 > 从 Windows 10 2020 更新 (版本2004，codename "20H1" ) 中不再支持此功能。
+>
+> 有关 Cortana 如何转换新式生产力体验的 Microsoft 365，请参阅 [cortana in](/microsoft-365/admin/misc/cortana-integration) 。
 
 使用更灵活和自然的声音命令扩展 **Cortana** ，让用户在命令中的任意位置显示应用的名称。
 
@@ -38,7 +40,7 @@ ms.locfileid: "99057738"
 - 后缀-在命令短语后面
 
 > [!TIP]
-> **必备条件**
+> **先决条件**
 >
 > 本主题基于 [使用语音命令激活 Cortana 中的后台应用](cortana-launch-a-background-app-with-voice-commands.md)。 接下来，我们将使用名为 " **艾德作品**" 的 "行程计划" 和 "管理" 应用来演示功能。
 >

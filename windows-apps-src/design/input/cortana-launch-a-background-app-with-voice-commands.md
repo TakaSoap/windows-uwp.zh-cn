@@ -5,17 +5,19 @@ ms.assetid: e2c7eae3-6beb-4156-92a5-474bba53451e
 ms.date: 09/24/2019
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 9331a87eb6a7f2f8a09beb57f82540518993806a
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: f1ed51107f41318cecf2d8fea73484713b4b837c
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057744"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606062"
 ---
 # <a name="activate-a-background-app-in-cortana-using-voice-commands"></a>使用语音命令激活 Cortana 中的后台应用  
 
 >[!WARNING]
 > 从 Windows 10 2020 更新 (版本2004，codename "20H1" ) 中不再支持此功能。
+>
+> 有关 Cortana 如何转换新式生产力体验的 Microsoft 365，请参阅 [cortana in](/microsoft-365/admin/misc/cortana-integration) 。
 
 除了使用 **Cortana** 中的语音命令访问系统功能外，还可以使用指定要运行的操作或命令的语音命令) ，使用应用中的特性和功能扩展 **Cortana** (作为后台任务。 当应用程序在后台处理声音命令时，它不会获得焦点。 相反，它会通过 **cortana** 画布和 **cortana** 语音返回所有反馈和结果。  
 
@@ -55,7 +57,7 @@ ms.locfileid: "99057744"
 5. 向 **Cortana** 内的语音命令显示和朗读相应的反馈。  
 
 > [!TIP]
-> **必备条件**
+> **先决条件**
 >
 > 如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请查看这些主题来熟悉此处讨论的技术。
 >

@@ -8,17 +8,19 @@ ms.date: 01/27/2021
 ms.topic: article
 keywords: cortana，设计
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d1f27c2e70ce8bf9d77f07dd0871cf09a441bdc
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: b7711f9fd653bbd635582a0b2268a5eb0ed7417b
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057568"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606082"
 ---
 # <a name="cortana-design-guidelines"></a>Cortana 设计指南
 
 >[!WARNING]
 > 从 Windows 10 2020 更新 (版本2004，codename "20H1" ) 中不再支持此功能。
+>
+> 有关 Cortana 如何转换新式生产力体验的 Microsoft 365，请参阅 [cortana in](/microsoft-365/admin/misc/cortana-integration) 。
 
 这些指导原则和建议描述了应用如何最好地使用 **Cortana** 与用户交互，帮助他们完成任务，并清楚地传达一切发生的情况。
 
