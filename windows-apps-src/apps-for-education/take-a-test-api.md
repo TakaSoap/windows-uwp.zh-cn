@@ -6,18 +6,22 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 教育版
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a5d2749531e12ef7ce9b44cd6598c38cd089db
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: d4ed3bf3062deac308b9ed39ff7be709bcee4af3
+ms.sourcegitcommit: 3be258523c5ee3666498d6a98ed2648b27b2907d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031520"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99973097"
 ---
 # <a name="take-a-test-javascript-api"></a>参加测验 JavaScript API
 
 [进行测试](/education/windows/take-tests-in-windows-10) 是一种基于浏览器的 UWP 应用，用于呈现用于钉测试的锁定的联机评估，使教师能够专注于评估内容而不是如何提供安全的测试环境。 为了实现此目的，它使用任何 Web 应用程序都可以利用的 JavaScript API。 “参加测验”API 支持高利害关系通用核心测试的 [SBAC 浏览器 API 标准](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
 
 有关应用本身的详细信息，请参阅[参加测验应用技术参考](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 有关疑难解答帮助，请参阅[使用事件查看器对 Microsoft 参加测验进行疑难解答](troubleshooting.md)。
+
+> [!NOTE]
+> 本文包含对术语“黑名单”的引用，Microsoft 不再使用该术语。 在从软件中删除该术语后，我们会将其从本文中删除。
+
 
 ## <a name="reference-documentation"></a>参考文档
 参加测验 API 存在于以下命名空间中。 注意，所有 API 都依赖于全局 `SecureBrowser` 对象。
@@ -58,7 +62,7 @@ ms.locfileid: "93031520"
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
 **Parameters**  
-* `enable` - **如果为 true** ，则在锁屏界面上运行 Take a Test 应用，并应用本 [文档](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中讨论的策略。 若为 **false** ，将停止在锁屏界面上运行“参加测验”并关闭它，除非该应用不处于锁定状态；在此情况下没有影响。  
+* `enable` - **如果为 true** ，则在锁屏界面上运行 Take a Test 应用，并应用本 [文档](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中讨论的策略。 若为 **false**，将停止在锁屏界面上运行“参加测验”并关闭它，除非该应用不处于锁定状态；在此情况下没有影响。  
 * `onSuccess` -[可选] 已成功启用或禁用锁定后要调用的函数。 其形式必须是 `Function(Boolean currentlockdownstate)`。  
 * `onError` -[可选] 锁定操作失败时要调用的函数。 其形式必须是 `Function(Boolean currentlockdownstate)`。  
 
@@ -241,7 +245,7 @@ Windows 10 版本 1709
 `feature` -用于确定要查询的功能的字符串。 有效功能字符串有“screenMonitoring”、“printing”和“textSuggestions”（不区分大小写）。
 
 **返回值**  
-此函数返回 JavaScript 对象或形式为 `{<feature>:true|false}` 的文本。 如果查询的功能已启用，则为 **true** ，如果功能未启用或功能字符串无效，则为 **false** 。
+此函数返回 JavaScript 对象或形式为 `{<feature>:true|false}` 的文本。 如果查询的功能已启用，则为 **true**，如果功能未启用或功能字符串无效，则为 **false**。
 
 **要求** Windows 10 版本 1703
 
@@ -277,7 +281,7 @@ Windows 10 版本 1709
 `Boolean SecureBrowser.security.isRemoteSession();`
 
 **返回值**  
-如果当前会话为远程，则为 **true** ，否则为 **false** 。
+如果当前会话为远程，则为 **true**，否则为 **false**。
 
 **惠?**  
 Windows 10 版本 1709
@@ -293,7 +297,7 @@ Windows 10 版本 1709
 `Boolean SecureBrowser.security.isVMSession();`
 
 **返回值**  
-如果当前会话在虚拟机中运行，则为 **true** ，否则为 **false** 。
+如果当前会话在虚拟机中运行，则为 **true**，否则为 **false**。
 
 **备注**  
 此 API 检查只可以检测在实现适当 API 的特定虚拟机监控程序中运行的 VM 会话
