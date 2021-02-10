@@ -78,8 +78,6 @@
       href: controls-and-patterns/controls-and-events-intro.md
     - name: 命令处理简介
       href: controls-and-patterns/commanding.md
-    - name: 按功能的控件索引
-      href: controls-and-patterns/controls-by-function.md
     - name: 基本输入
       items:
         - name: 按钮
@@ -542,7 +540,7 @@
   items:
     - name: 概述
       href: usability/index.md
-    - name: 辅助功能
+    - name: 可访问性
       href: accessibility/accessibility.md
       items:
         - name: 概述
