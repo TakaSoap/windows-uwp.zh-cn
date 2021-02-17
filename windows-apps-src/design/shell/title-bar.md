@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标题栏
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d8aa92ec320c18b1947cb9b3fa7777070e19726
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5fdc3f6a38e6115e211eb5ea0644ad82df840301
+ms.sourcegitcommit: 06d59b59a95aad009acb947a0dac7432116bdb60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220080"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100544637"
 ---
 # <a name="title-bar-customization"></a>标题栏自定义
 
@@ -75,6 +75,7 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 - 使用系统后退按钮时，按钮颜色属性会应用于该按钮。 （[请参阅“导航历史记录和向后导航”](../basics/navigation-history-and-backwards-navigation.md)。）
 - 将颜色属性设置为 **null** 会将其重置为默认的系统颜色。
 - 你无法设置透明色。 颜色的 alpha 通道会被忽略。
+- 屏幕上的颜色可能不同于您的选择，例如，由于颜色筛选器或高对比度模式等设置。 请勿仅依赖颜色来传达重要信息。
 
 Windows 为用户提供了将选定的[主题色](../style/color.md#accent-color)应用于标题栏的选项。 如果你要设置任何标题栏颜色，那么我们建议你显式设置所有颜色。 这可以确保不存在因用户定义的颜色设置而出现的意外颜色组合。
 
@@ -253,7 +254,7 @@ private void UpdateTitleBarLayout(CoreApplicationViewTitleBar coreTitleBar)
 
 ### <a name="full-screen-and-tablet-mode"></a>全屏和平板模式
 
-当应用在_全屏_或_平板模式_下运行时，系统将隐藏标题栏和标题控制按钮。 但是，用户可以调用标题栏，以使其以覆盖形式显示在应用的 UI 顶部。
+当应用在 _全屏_ 或 _平板模式_ 下运行时，系统将隐藏标题栏和标题控制按钮。 但是，用户可以调用标题栏，以使其以覆盖形式显示在应用的 UI 顶部。
 你可以处理隐藏或调用标题栏时将通知的 [CoreApplicationViewTitleBar.IsVisibleChanged](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.IsVisibleChanged) 事件，并根据需要显示或隐藏你的自定义标题栏内容。
 
 此示例介绍如何处理 IsVisibleChanged 以显示和隐藏之前显示的 `AppTitleBar` 元素。
@@ -284,7 +285,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->仅在应用支持时才能进入_全屏_模式。 有关详细信息，请参阅 [ApplicationView.IsFullScreenMode](/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_平板模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是受支持的硬件上的用户选项，以便用户可以选择在平板模式下运行任何应用。
+>仅在应用支持时才能进入 _全屏_ 模式。 有关详细信息，请参阅 [ApplicationView.IsFullScreenMode](/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_平板模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是受支持的硬件上的用户选项，以便用户可以选择在平板模式下运行任何应用。
 
 ## <a name="full-customization-example"></a>完全自定义示例
 

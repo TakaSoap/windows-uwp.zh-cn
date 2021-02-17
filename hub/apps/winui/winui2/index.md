@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具包 sdk, winui, Windows UI 库
 ms.custom: RS5
-ms.openlocfilehash: 92a546dcd177639b8c9bc7d2fd3dd6ca1fc7d3e5
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: 69e70431303d809ea7303d29a002c72a1c63480a
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933112"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100334951"
 ---
 # <a name="windows-ui-library-2x"></a>Windows UI 库 2.x
 
@@ -21,7 +21,7 @@ Windows UI 库为 Windows 应用提供官方的本机 Windows UI 控件和其他
 它保持与早期版本的 Windows 10 的底层兼容性。因此，即使用户没有最新 OS，你的应用也可以工作。
 
 > [!NOTE]
-> 请查看 [Windows UI 库 3 预览版 3（2020 年 11 月）](../winui3/index.md)，它是 Windows 10 UI 平台的重大更新。
+> 请查看 [Windows UI 库 3 预览版 4（2021 年 2 月）](../winui3/index.md)，它是 Windows 10 UI 平台的重大更新。
 
 ## <a name="features"></a>功能
 
