@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: uwp
 ms.technology: apps
 ms.date: 03/19/2020
-ms.openlocfilehash: 0f67795f57ba5a7af1fea54eac59e00b5664d6e8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6e5eaae1360e87e7e2153b3cee162ca8940c8e53
+ms.sourcegitcommit: 71701f5ffc540951f86d6f77a52416c6d75fe305
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174541"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100632688"
 ---
 # <a name="contribute-to-windows-docs-and-be-entered-to-win-some-swag"></a>参与 Windows 文档并进入以赢得一些顺手牵羊
 
@@ -24,7 +24,7 @@ ms.locfileid: "89174541"
 1. [使用 GitHub 设置帐户](https://github.com/join)（如果还没有帐户），并阅读[文档参与者指南](/contribute/)。
 2. 阅读以下文档内容，查找更好的内容：
     - **生成桌面应用**  - [UWP](/windows/uwp/)、 [Win32](/windows/win32/)、 [WPF](/dotnet/framework/wpf/)、 [Windows 窗体](/dotnet/framework/winforms/)
-    - **WINDOWS UI 库**  - [UWP 应用的控件](/windows/uwp/design/controls-and-patterns/)，[控件 API 参考](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.3)
+    - **WINDOWS UI 库**  - [UWP 应用的控件](/windows/uwp/design/controls-and-patterns/)，[控件 API 参考](/uwp/api/microsoft.ui.xaml.controls)
     - **用 Windows 生成**  - [适用于 Linux 的 Windows 子系统](/windows/wsl/about)、 [Python](./python/index.yml)、 [NodeJS](./nodejs/index.yml)、 [Mac 到 Windows 指南](./dev-environment/mac-to-windows.md)
     - **Windows 硬件开发人员**  - [工具和驱动程序](/windows-hardware/drivers/)
 3. 通过选择页面顶部的 " **编辑** " 按钮来更正文档页。 这会将你转到 GitHub 中的 markdown 源文件。
