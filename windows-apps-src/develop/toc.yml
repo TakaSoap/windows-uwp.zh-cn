@@ -819,6 +819,8 @@
           items:
             - name: 值类别和引用
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
+        - name: 创作 C# Windows 运行时组件，便于通过 C++/WinRT 应用使用
+          href: ../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md
     - name: C#/WinRT
       items:
         - name: 概述
