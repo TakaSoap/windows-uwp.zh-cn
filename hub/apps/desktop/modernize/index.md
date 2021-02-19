@@ -6,12 +6,12 @@ ms.date: 10/02/2020
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 99bb68ff7d990b0b633df0c4efa2d8eafad759cd
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: e57a3fc5444a4afa2217cc128dabec76844ef549
+ms.sourcegitcommit: 71701f5ffc540951f86d6f77a52416c6d75fe305
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031060"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100632668"
 ---
 # <a name="modernize-your-desktop-apps"></a>实现桌面应用的现代化
 
@@ -28,8 +28,8 @@ Windows UI 库是一组 NuGet 程序包，提供用于 Windows 10 应用的控�
 
 可通过以下方式在桌面应用中使用 WinUI：
 
-* 你可以更新现有的 WPF、Windows 窗体和 C++/Win32 应用，以使用 [XAML 岛](xaml-islands.md)在应用中托管 WinUI 2.x 控件。
-* 从 [WinUi 3.0 预览版 1](../../winui/winui3/index.md) 开始，可以创建[使用完全基于 WinUI 的 UI 的 .NET 和 C++/Win32 应用](../../winui/winui3/get-started-winui3-for-desktop.md)。
+* 可使用 [XAML 岛](xaml-islands.md)来更新现有的 WPF、Windows 窗体和 C++/Win32 应用，并托管 WinUI 2.x 控件。
+* 使用 [WinUi 3.0](../../winui/winui3/index.md)（预览版），通过完全基于 WinUI 的用户界面创建托管的 [C#/.NET Core 应用和原生 C++/Win32 桌面应用](../../winui/winui3/get-started-winui3-for-desktop.md)。
 
 请参阅 [Windows UI (WinUI) 库](../../winui/index.md)。
 
