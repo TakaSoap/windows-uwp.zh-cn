@@ -1,27 +1,27 @@
 ---
 description: 本指南展示了如何开始使用 WinUI 3 UI 创建 .NET 和 C++/Win32 桌面应用。
 title: 适用于桌面应用的 WinUI 3 入门
-ms.date: 11/17/2020
+ms.date: 02/09/2021
 ms.topic: article
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 067e6a6798fbfc2633c3e356be64ecae0403cc6d
-ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
+ms.openlocfilehash: dcf3309f9b4a82019e867789bbeabb07c724ea0d
+ms.sourcegitcommit: 71701f5ffc540951f86d6f77a52416c6d75fe305
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96025153"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100632698"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>适用于桌面应用的 WinUI 3 入门
 
-WinUI 3 预览版 3 中有新的项目模板，使你能够采用完全基于 WinUI 的用户界面创建托管桌面 C#/.NET Core 应用和原生 C++/Win32 桌面应用。 使用这些项目模板创建应用时，应用程序的整个用户界面都是使用 WinUI 3 提供的窗口、控件和其他 UI 类型实现的。 有关项目模板的完整列表，请参阅[本节](index.md#project-templates-for-winui-3)。
+WinUI 3 预览版 4 中有新的项目模板，使你能够采用完全基于 WinUI 的用户界面创建托管桌面 C#/.NET Core 应用和原生 C++/Win32 桌面应用。 使用这些项目模板创建应用时，应用程序的整个用户界面都是使用 WinUI 3 提供的窗口、控件和其他 UI 类型实现的。 有关项目模板的完整列表，请参阅[本节](index.md#project-templates-for-winui-3)。
 
 ## <a name="prerequisites"></a>必备条件
 
-若要如本文所述将 WinUI 3 用于桌面项目模板，请按照[此处](index.md#install-winui-3-preview-3)的说明配置开发计算机并安装 WinUI 3 预览版 3。
+若要如本文所述将 WinUI 3 用于桌面项目模板，请按照[此处](index.md#install-winui-3-preview-4)的说明配置开发计算机并安装 WinUI 3 预览版 4。
 
 ## <a name="create-a-winui-3-desktop-app-for-c-and-net-5"></a>创建适用于 C# 和 .NET 5 的 WinUI 3 桌面应用
 
@@ -113,8 +113,8 @@ WinUI 3 预览版 3 中有新的项目模板，使你能够采用完全基于 Wi
 
 ## <a name="known-issues-and-limitations"></a>已知问题和限制
 
-有关已知问题和限制的列表，请参阅[本节](index.md#preview-3-limitations-and-known-issues)。
+请参阅 [Windows UI 库 3 预览版 4（2021 年 2 月）](index.md)的[限制和已知问题](index.md#limitations-and-known-issues)部分。
 
 ## <a name="related-topics"></a>相关主题
 
-* [Windows UI 库 3](index.md)
+* [Windows UI 库 3 预览版 4（2021 年 2 月）](index.md)

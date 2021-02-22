@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 91b5e975c40b7c9642cd452b3c67045c7be1127d
-ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
+ms.openlocfilehash: 9da6b1acf2ce27fa6b4ec6c1b4e4274a28491b8b
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98668712"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100335097"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>将桌面应用与 Windows 10 和 UWP 集成
 
@@ -121,7 +121,7 @@ ms.locfileid: "98668712"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.fileTypeAssociation``。
+|类别 |总是为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 此名称可用于组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |MigrationProgId |[编程标识符 (ProgID)](/windows/desktop/shell/fa-progids)，描述要从中继承文件关联的应用程序、组件和桌面应用程序版本。|
 
@@ -157,7 +157,7 @@ ms.locfileid: "98668712"
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>将打包的应用程序与一组文件类型相关联
 
-可将打包后的应用程序与文件类型扩展相关联。 如果用户右键单击某个文件，然后选择“打开方式”  选项，应用程序将出现在建议列表中。
+可将打包后的应用程序与文件类型扩展相关联。 如果用户在文件资源管理器中右键单击某个文件，然后选择“打开方式”选项，应用程序将出现在建议列表中。 有关使用此扩展的详细信息，请参阅 [将打包的桌面应用与文件资源管理器集成](integrate-packaged-app-with-file-explorer.md)。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -180,7 +180,7 @@ ms.locfileid: "98668712"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.fileTypeAssociation``。
+|类别 |总是为 ``windows.fileTypeAssociation``。
 |名称 | 文件类型关联的名称。 此名称可用于组织和分组文件类型。 该名称必须是不带空格的小写字符。   |
 |FileType |应用支持的文件扩展名。 |
 
@@ -215,9 +215,7 @@ ms.locfileid: "98668712"
 
 ### <a name="add-options-to-the-context-menus-of-files-that-have-a-certain-file-type"></a>向具有特定文件类型的文件的上下文菜单添加选项
 
-在大多数情况下，用户双击即可打开文件。 如果用户右键单击某个文件，将显示多种选项。
-
-可向该菜单添加选项。 这些选项为用户提供与文件进行交互的其他方法，如打印、编辑或预览文件。
+通过此扩展，你可以在当用户在文件资源管理器中右键单击某个文件时显示的上下文菜单中添加选项。这些选项为用户提供了与文件进行交互的其他方式，如打印、编辑或预览文件。 有关使用此扩展的详细信息，请参阅 [将打包的桌面应用与文件资源管理器集成](integrate-packaged-app-with-file-explorer.md)。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -241,7 +239,7 @@ ms.locfileid: "98668712"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 | 始终为 ``windows.fileTypeAssociation``。
+|类别 | 总是为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 此名称可用于组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |Verb |文件资源管理器上下文菜单中显示的名称。 此字符串可使用 ```ms-resource``` 进行本地化。|
 |ID |谓词的唯一 ID。 如果你的应用程序为 UWP 应用，则会将该谓词作为应用的激活事件参数的一部分向其传递，以便应用可以相应地处理用户的选择。 如果应用程序是完全信任的已打包应用，它将改为接收参数（请参阅下一项）。 |
@@ -305,7 +303,7 @@ ms.locfileid: "98668712"
 
 |名称 |说明 |
 |-------|-------------|
-|类别 |始终为 ``windows.fileTypeAssociation``。
+|类别 |总是为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 此名称可用于组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |UseUrl |指示是否直接从 URL 目标打开文件。 如果未设置此值，应用程序尝试使用 URL 打开文件的操作将导致系统先在本地下载文件。 |
 |参数 | 可选参数。 |

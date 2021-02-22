@@ -5,12 +5,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp, 设备门户, 应用管理器, 部署, sdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 7006d32777e7b3ece5c5b6ed066bd23265b0bbb7
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: 34302b421f51fcc9fdf408baabc178190c7ed335
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339615"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100334889"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>通过松散文件注册部署应用 
 
@@ -31,17 +31,17 @@ ms.locfileid: "94339615"
 
 ## <a name="how-to-register-a-loose-file-layout"></a>如何注册宽松文件布局
 
-Windows 提供有多种用于在本地和远程设备上注册宽松文件布局的开发人员工具。 可以选择 `WinDeployAppCmd`（Windows SDK 工具）、Windows 设备门户、PowerShell 或 [Visual Studio](./deploying-and-debugging-uwp-apps.md#register-layout-from-network)。 下面我们将介绍如何使用这些工具注册宽松文件。 首先，请确保你具有以下设置：
+Windows 提供有多种用于在本地和远程设备上注册宽松文件布局的开发人员工具。 可以选择 `WinAppDeployCmd`（Windows SDK 工具）、Windows 设备门户、PowerShell 或 [Visual Studio](./deploying-and-debugging-uwp-apps.md#register-layout-from-network)。 下面我们将介绍如何使用这些工具注册宽松文件。 首先，请确保你具有以下设置：
 
 - 你的设备必须运行 Windows 10 创意者更新（内部版本 14965）或更高版本。
 - 你需要在所有设备上启用[开发者模式](/windows/apps/get-started/enable-your-device-for-development)和[设备发现](/windows/apps/get-started/enable-your-device-for-development#device-discovery)。
 
 > [!IMPORTANT]
-> 只有在支持网络共享 (SMB) 协议的设备上才可以使用宽松文件注册：台式电脑和 Xbox。 
+> 只有在支持网络共享 (SMB) 协议的设备上才可以使用宽松文件注册：台式机和 Xbox。 
 
-### <a name="register-with-windeployappcmd"></a>使用 WinDeployAppCmd 注册
+### <a name="register-with-winappdeploycmd"></a>使用 WinAppDeployCmd 注册
 
-如果使用与 Windows 10 创意者更新（内部版本 14965）或更高版本相应的 SDK 工具，则可以在命令提示符中使用 `WinDeployAppCmd` 命令。
+如果使用与 Windows 10 创意者更新（内部版本 14965）或更高版本相应的 SDK 工具，则可以在命令提示符中使用 `WinAppDeployCmd` 命令。
 
 ```cmd
 WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Address> -pin <target machine PIN>
@@ -59,13 +59,13 @@ Windows 设备门户在所有 Windows 10 设备上均可用，开发人员可使
 
 若要在设备门户中注册宽松文件布局，请执行以下步骤。
 
-1. 按照 [Windows 设备门户概述](device-portal.md)“设置”  部分中的步骤连接到设备门户。
-1. 在“应用管理器”选项卡中，选择“从网络共享注册”  。
+1. 按照 [Windows 设备门户概述](device-portal.md)“设置”部分中的步骤连接到设备门户。
+1. 在“应用管理器”选项卡中，选择“从网络共享注册”。
 1. 输入宽松文件布局的网络共享路径。 
 1. 如果主机设备没有网络共享的访问权限，系统则会提示输入所需的凭据。
 1. 注册完成后，你就可以启动应用了。
 
-在设备门户的“应用管理器”页面，还可以为你的主要应用注册可选的宽松文件布局：选中“我要指定可选包”复选框，然后指定可选应用的网络共享路径  。 
+在设备门户的“应用管理器”页面，还可以为你的主要应用注册可选的宽松文件布局：选中“我要指定可选包”复选框，然后指定可选应用的网络共享路径。 
 
 ### <a name="powershell"></a>PowerShell 
 
@@ -77,7 +77,7 @@ Windows 设备门户在所有 Windows 10 设备上均可用，开发人员可使
 Add-AppxPackage -Register <path to manifest file>
 ```
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 ### <a name="mapped-network-drives"></a>映射网络驱动器
 目前，宽松文件注册不支持映射的网络驱动器。 如需查看完整的网络共享路径，请参阅映射驱动器。

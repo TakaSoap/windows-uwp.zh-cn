@@ -1,25 +1,25 @@
 ---
 description: 本指南展示如何开始使用 WinUI 3 UI 创建 UWP 应用。
 title: 适用于 UWP 应用的 WinUI 3 入门
-ms.date: 11/17/2020
+ms.date: 02/09/2021
 ms.topic: article
 keywords: windows 10, uwp, winui
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 5da4944b38fc764eb11bdc2f6daed0cab54ea445
-ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
+ms.openlocfilehash: d13acb2181160ec214070dc1276e844dc1f203ad
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96025133"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100334899"
 ---
 # <a name="get-started-with-winui-3-for-uwp-apps"></a>适用于 UWP 应用的 WinUI 3 入门
 
-WinUI 3 预览版 3 中有新的项目模板，使你可使用完全在 WinUI 上生成的用户界面创建通用 Windows 平台 (UWP) 应用。 在你使用这些项目模板创建应用时，应用的整个用户界面都是通过 WinUI 3 提供的窗口、控件和样式实现的。 有关支持的 WinUI 3 项目模板的完整列表，请参阅 [适用于 WinUI 3 的项目模板](index.md#project-templates-for-winui-3)。
+WinUI 3 预览版 4 中有新的项目模板，使你可使用完全在 WinUI 上生成的用户界面创建通用 Windows 平台 (UWP) 应用。 在你使用这些项目模板创建应用时，应用的整个用户界面都是通过 WinUI 3 提供的窗口、控件和样式实现的。 有关支持的 WinUI 3 项目模板的完整列表，请参阅 [适用于 WinUI 3 的项目模板](index.md#project-templates-for-winui-3)。
 
 ## <a name="prerequisites"></a>必备条件
 
-若要如本文中所述将 WinUI 3 用于 UWP 项目模板，请配置开发计算机并[安装 WinUI 3 预览版 3](index.md#install-winui-3-preview-3)。
+若要如本文中所述将 WinUI 3 用于 UWP 项目模板，请配置开发计算机并[安装 WinUI 3 预览版 4](index.md#install-winui-3-preview-4)。
 
 ## <a name="create-a-winui-3-app-in-uwp-for-c"></a>在 UWP 中创建适用于 C# 的 WinUI 3 应用
 
@@ -84,9 +84,9 @@ WinUI 3 预览版 3 中有新的项目模板，使你可使用完全在 WinUI �
 
 ## <a name="known-issues-and-limitations"></a>已知问题和限制
 
-有关已知问题和限制的列表，请参阅[本节](index.md#preview-3-limitations-and-known-issues)。
+请参阅 [Windows UI 库 3 预览版 4（2021 年 2 月）](index.md)的[限制和已知问题](index.md#limitations-and-known-issues)部分。
 
 ## <a name="related-topics"></a>相关主题
 
-- [WinUI 3](index.md)
+- [Windows UI 库 3 预览版 4（2021 年 2 月）](index.md)
 - [创建你的第一个应用](/windows/uwp/get-started/your-first-app)

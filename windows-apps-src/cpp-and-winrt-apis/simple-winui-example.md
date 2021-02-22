@@ -1,20 +1,20 @@
 ---
-description: 本主题将指导你完成在 C++/WinRT 项目内添加对 WinUI 的简单支持的过程。
+description: 本主题指导你完成在 C++/WinRT 项目内添加对 WinUI 的基础支持的过程。
 title: 一个简单的 C++WinRT Windows UI 库示例
 ms.date: 07/12/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, Windows UI 库, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: 8242055e3c448e2720226859f2ea10e1ae54794f
-ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
+ms.openlocfilehash: b7323ba63bedfc1ed560effb4da8ea61d1527897
+ms.sourcegitcommit: 71701f5ffc540951f86d6f77a52416c6d75fe305
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437131"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100632678"
 ---
-# <a name="a-simple-cwinrt-windows-ui-library-example"></a>一个简单的 C++WinRT Windows UI 库示例
+# <a name="a-basic-cwinrt-windows-ui-library-example"></a>一个基础的 C++WinRT Windows UI 库示例
 
-本主题详述如何向 C++/WinRT 项目添加对 [Windows UI (WinUI) 库](https://github.com/Microsoft/microsoft-ui-xaml)的简单支持。 顺便说一下，Windows UI 库本身是使用 C++/WinRT 编写的。
+本主题详述如何向 C++/WinRT 项目添加对 [Windows UI (WinUI) 库](https://github.com/Microsoft/microsoft-ui-xaml)的基础支持。 顺便说一下，Windows UI 库本身是使用 C++/WinRT 编写的。
 
 > [!NOTE]
 > Windows UI (WinUI) 库工具包以 NuGet 包的形式提供，可以添加到任何现有的或新的项目，只要该项目使用 Visual Studio 即可，这一点我们会在本主题中介绍。 如需更多的背景、设置和支持信息，请参阅 [Windows UI 库入门](/uwp/toolkits/winui/getting-started)。
