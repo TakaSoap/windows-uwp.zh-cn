@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: f107de951c527b9ca4405d1f22870389a219f441
-ms.sourcegitcommit: 2e691ec4998467c8c5525031a00f0213dcce3b6b
+ms.openlocfilehash: f4dbffbee1ecabf89d316fe0d497162c0b1f6312
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98193199"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824401"
 ---
 # <a name="move-to-cwinrt-from-c"></a>从 C# 移动到 C++/WinRT
 
@@ -38,17 +38,17 @@ ms.locfileid: "98193199"
 
 | 任务 | 内容 |
 | - | - |
-|创作 Windows 运行时组件 (WRC)|只能通过 C++ 实现特定的功能（或调用特定的 API）。 可以将该功能编写为 C++/WINRT WRC，然后从 C#（或其他语言的）应用中使用该 WRC。 请参阅[使用 C++/WinRT 的 Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)和[如果要在 Windows 运行时组件中创作运行时类](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)。|
-|移植异步方法|最好将 C++/WinRT 运行时类中异步方法的第一行设为 `auto lifetime = get_strong();`（请参阅[在类成员协同程序中安全访问 this 指针](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)）。<br><br>从 `Task` 移植，请参阅<a href="#id_async_action">异步行为</a>。<br>从 `Task<T>` 移植，请参阅<a href="#id_async_operation">异步操作</a>。<br>从 `async void` 移植，请参阅<a href="#id_fire_and_forget">发后不理方法</a>。|
-|移植类|首先，确定该类是必须为运行时类，还是可以是普通类。 若要帮助你确定这一信息，请参阅[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)的开始部分。 然后，请参阅下面三行。|
-|移植运行时类|用于在 C++ 应用外部共享功能的类，或在 XAML 数据绑定中使用的类。 请参阅[如果要在 Windows 运行时组件中创作运行时类](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)或[如果要创作在 XAML UI 中引用的运行时类](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui)。<br><br>这些链接对此进行了更详细的介绍，但必须在 IDL 中声明运行时类。 如果你的项目已包含 IDL 文件（例如 `Project.idl`），建议在该文件中声明任何新的运行时类。 在 IDL 中，声明将在应用外使用或将在 XAML 中使用的任何方法和数据成员。 在更新 IDL 文件后重新生成，在解决方案资源管理器中，选中项目节点，并确保打开“显示所有文件”，查看项目 `Generated Files` 文件夹中生成的存根文件（`.h` 和 `.cpp`）。  将存根文件与项目中已有的文件进行比较，并根据需要添加文件或添加/更新函数签名。 存根文件语法始终是正确的，因此建议使用它来最大程度地减少生成错误。 只要项目中的存根与存根文件中的相匹配，就可以通过移植 C# 代码来实现它们。 |
-|移植普通类|请参阅[如果你没有创作运行时类](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class)。|
-|创作 IDL|[Microsoft 接口定义语言 3.0 简介](/uwp/midl-3/intro)<br>[如果你正在创作要在 XAML UI 中引用的运行时类](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui)<br>[使用 XAML 标记中的对象](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup)<br>[在 IDL 中定义运行时类](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#define-your-runtime-classes-in-idl)|
-|移植集合|[使用 C++/WinRT 的集合](/windows/uwp/cpp-and-winrt-apis/collections)<br>[使数据源可供 XAML 标记使用](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#making-a-data-source-available-to-xaml-markup)<br><a href="#id_associative_container">关联容器</a><br><a href="#id_vector_member_access">矢量成员访问</a>|
+|创作 Windows 运行时组件 (WRC)|只能通过 C++ 实现特定的功能（或调用特定的 API）。 可以将该功能编写为 C++/WINRT WRC，然后从 C#（或其他语言的）应用中使用该 WRC。 请参阅[使用 C++/WinRT 的 Windows 运行时组件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)和[如果要在 Windows 运行时组件中创作运行时类](./author-apis.md#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)。|
+|移植异步方法|最好将 C++/WinRT 运行时类中异步方法的第一行设为 `auto lifetime = get_strong();`（请参阅[在类成员协同程序中安全访问 this 指针](./weak-references.md#safely-accessing-the-this-pointer-in-a-class-member-coroutine)）。<br><br>从 `Task` 移植，请参阅<a href="#id_async_action">异步行为</a>。<br>从 `Task<T>` 移植，请参阅<a href="#id_async_operation">异步操作</a>。<br>从 `async void` 移植，请参阅<a href="#id_fire_and_forget">发后不理方法</a>。|
+|移植类|首先，确定该类是必须为运行时类，还是可以是普通类。 若要帮助你确定这一信息，请参阅[使用 C++/WinRT 创作 API](./author-apis.md)的开始部分。 然后，请参阅下面三行。|
+|移植运行时类|用于在 C++ 应用外部共享功能的类，或在 XAML 数据绑定中使用的类。 请参阅[如果要在 Windows 运行时组件中创作运行时类](./author-apis.md#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)或[如果要创作在 XAML UI 中引用的运行时类](./author-apis.md#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui)。<br><br>这些链接对此进行了更详细的介绍，但必须在 IDL 中声明运行时类。 如果你的项目已包含 IDL 文件（例如 `Project.idl`），建议在该文件中声明任何新的运行时类。 在 IDL 中，声明将在应用外使用或将在 XAML 中使用的任何方法和数据成员。 在更新 IDL 文件后重新生成，在解决方案资源管理器中，选中项目节点，并确保打开“显示所有文件”，查看项目 `Generated Files` 文件夹中生成的存根文件（`.h` 和 `.cpp`）。  将存根文件与项目中已有的文件进行比较，并根据需要添加文件或添加/更新函数签名。 存根文件语法始终是正确的，因此建议使用它来最大程度地减少生成错误。 只要项目中的存根与存根文件中的相匹配，就可以通过移植 C# 代码来实现它们。 |
+|移植普通类|请参阅[如果你没有创作运行时类](./author-apis.md#if-youre-not-authoring-a-runtime-class)。|
+|创作 IDL|[Microsoft 接口定义语言 3.0 简介](/uwp/midl-3/intro)<br>[如果你正在创作要在 XAML UI 中引用的运行时类](./author-apis.md#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui)<br>[使用 XAML 标记中的对象](./binding-property.md#consuming-objects-from-xaml-markup)<br>[在 IDL 中定义运行时类](#define-your-runtime-classes-in-idl)|
+|移植集合|[使用 C++/WinRT 的集合](./collections.md)<br>[使数据源可供 XAML 标记使用](#making-a-data-source-available-to-xaml-markup)<br><a href="#id_associative_container">关联容器</a><br><a href="#id_vector_member_access">矢量成员访问</a>|
 |移植事件|<a href="#id_event_handler_delegate_as_class_member">作为类成员的事件处理程序委托</a><br><a href="#id_revoke_event_handler_delegate">撤销事件处理程序委托</a>|
 |移植方法|从 C# ：`private async void SampleButton_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e) { ... }`<br>到 C++/WinRT `.h` 文件：`fire_and_forget SampleButton_Tapped(IInspectable const&, RoutedEventArgs const&);`<br>到 C++/WinRT `.cpp` 文件：`fire_and_forget OcrFileImage::SampleButton_Tapped(IInspectable const&, RoutedEventArgs const&) {...}`<br>|
-|移植字符串|[C++/WinRT 中的字符串处理](/windows/uwp/cpp-and-winrt-apis/strings)<br>[ToString](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#tostring)<br>[字符串生成](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#string-building)<br>[将字符串装箱和取消装箱](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#boxing-and-unboxing-a-string)|
-|类型转换（类型强制转换）|C#：`o.ToString()`<br>C++/WinRT：`to_hstring(static_cast<int>(o))`<br>另请参阅 [ToString](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#tostring)。<br><br>C#：`(Value)o`<br>C++/WinRT：`unbox_value<Value>(o)`<br>在取消装箱失败时引发。 另请参阅[装箱和取消装箱](/windows/uwp/cpp-and-winrt-apis/boxing)。<br><br>C#：`o as Value? ?? fallback`<br>C++/WinRT：`unbox_value_or<Value>(o, fallback)`<br>如果取消装箱失败，则返回回退。 另请参阅[装箱和取消装箱](/windows/uwp/cpp-and-winrt-apis/boxing)。<br><br>C#：`(Class)o`<br>C++/WinRT：`o.as<Class>()`<br>在转换失败时引发。<br><br>C#：`o as Class`<br>C++/WinRT：`o.try_as<Class>()`<br>如果转换失败，则返回 null。|
+|移植字符串|[C++/WinRT 中的字符串处理](./strings.md)<br>[ToString](#tostring)<br>[字符串生成](#string-building)<br>[将字符串装箱和取消装箱](#boxing-and-unboxing-a-string)|
+|类型转换（类型强制转换）|C#：`o.ToString()`<br>C++/WinRT：`to_hstring(static_cast<int>(o))`<br>另请参阅 [ToString](#tostring)。<br><br>C#：`(Value)o`<br>C++/WinRT：`unbox_value<Value>(o)`<br>在取消装箱失败时引发。 另请参阅[装箱和取消装箱](./boxing.md)。<br><br>C#：`o as Value? ?? fallback`<br>C++/WinRT：`unbox_value_or<Value>(o, fallback)`<br>如果取消装箱失败，则返回回退。 另请参阅[装箱和取消装箱](./boxing.md)。<br><br>C#：`(Class)o`<br>C++/WinRT：`o.as<Class>()`<br>在转换失败时引发。<br><br>C#：`o as Class`<br>C++/WinRT：`o.try_as<Class>()`<br>如果转换失败，则返回 null。|
 
 ## <a name="changes-that-involve-the-language-projection"></a>涉及语言投影的更改
 
@@ -130,9 +130,9 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 | -------- | -- | --------- | -------- |
 |访问修饰符|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[移植 **Button_Click** 方法](./clipboard-to-winrt-from-csharp.md#button_click)|
 |访问数据成员|`this.variable`|`this->variable`||
-|<a name="id_async_action"></a>异步行为|`async Task ...`|`IAsyncAction ...`| [**IAsyncAction** 接口](/uwp/api/windows.foundation.iasyncaction)，[使用 C++/WinRT 执行并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency) |
-|<a name="id_async_operation"></a>异步操作|`async Task<T> ...`|`IAsyncOperation<T> ...`| [**IAsyncOperation** 接口](/uwp/api/windows.foundation.iasyncoperation)，[使用 C++/WinRT 执行并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency) |
-|<a name="id_fire_and_forget"></a>“发后不理”方法（意味着异步）|`async void ...`|`winrt::fire_and_forget ...`|[移植 **CopyButton_Click** 方法](./clipboard-to-winrt-from-csharp.md#copybutton_click)，[发后不理](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget)|
+|<a name="id_async_action"></a>异步行为|`async Task ...`|`IAsyncAction ...`| [**IAsyncAction** 接口](/uwp/api/windows.foundation.iasyncaction)，[使用 C++/WinRT 执行并发和异步操作](./concurrency.md) |
+|<a name="id_async_operation"></a>异步操作|`async Task<T> ...`|`IAsyncOperation<T> ...`| [**IAsyncOperation** 接口](/uwp/api/windows.foundation.iasyncoperation)，[使用 C++/WinRT 执行并发和异步操作](./concurrency.md) |
+|<a name="id_fire_and_forget"></a>“发后不理”方法（意味着异步）|`async void ...`|`winrt::fire_and_forget ...`|[移植 **CopyButton_Click** 方法](./clipboard-to-winrt-from-csharp.md#copybutton_click)，[发后不理](./concurrency-2.md#fire-and-forget)|
 |访问枚举常量|`E.Value`|`E::Value`|[移植 **DisplayChangedFormats** 方法](./clipboard-to-winrt-from-csharp.md#displaychangedformats)|
 |配合地等待|`await ...`|`co_await ...`|[移植 **CopyButton_Click** 方法](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
 |作为私有字段的投影类型集合|`private List<MyRuntimeClass> myRuntimeClasses = new List<MyRuntimeClass>();`|`std::vector`<br>`<MyNamespace::MyRuntimeClass>`<br>`m_myRuntimeClasses;`||

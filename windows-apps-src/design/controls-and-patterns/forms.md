@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 0c55d98d0680142ad1d4f319b8910fd335fe8d5f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7a4c33bbdae980029cdeeb650375b9f8cb38bbf9
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219460"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823341"
 ---
 # <a name="forms"></a>窗体
 表单是一组控件，用于收集和提交来自用户的数据。 表单通常用于设置页面、调查、创建帐户，等等。 
@@ -147,7 +147,7 @@ ms.locfileid: "91219460"
 [TimePicker](time-picker.md) | 选取一个时间值
 
 ### <a name="additional-controls"></a>其他控件 
-如需 UWP 控件的完整列表，请参阅[按功能排序的控件索引](controls-by-function.md)。
+如需 UWP 控件的完整列表，请参阅[按功能排序的控件索引](./index.md)。
 
 如需更多复杂的自定义 UI 控件，请查看 [Telerik](https://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/uwp-ui-controls)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](https://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP)、[ActiPro](https://www.actiprosoftware.com/products/controls/universal) 等公司提供的资源。
 
@@ -234,7 +234,7 @@ ms.locfileid: "91219460"
 ```
 
 ## <a name="customer-orders-database-sample"></a>客户订单数据库示例
-![客户订单数据库屏幕截图](images/customerorderform.png) 若要了解如何将表单输入连接到 **Azure** 数据库并查看完全实现的表单，请参阅[客户订单数据库](https://github.com/Microsoft/Windows-appsample-customers-orders-database)应用示例。
+![客户订单数据库屏幕截图](images/customerorderform.png) 若要了解如何将表单输入连接到 **Azure** 数据库并查看完全实现的表单，请参阅 [客户订单数据库](https://github.com/Microsoft/Windows-appsample-customers-orders-database)应用示例。
 
 ## <a name="related-topics"></a>相关主题
 - [输入控件](controls-and-events-intro.md)
