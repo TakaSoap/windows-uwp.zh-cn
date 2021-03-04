@@ -1,16 +1,16 @@
 ---
-title: 使用语音命令激活 Cortana 中的后台应用 |Cortana UWP 设计和开发
+title: 使用语音命令激活 Cortana 中的后台应用 | Cortana UWP 设计和开发
 description: 使用语音命令) ，使用应用中的功能扩展 Cortana (作为后台任务。
 ms.assetid: e2c7eae3-6beb-4156-92a5-474bba53451e
 ms.date: 09/24/2019
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: f1ed51107f41318cecf2d8fea73484713b4b837c
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: 987a8f4146e5f97c0338c6a8492ace050fbaa3d0
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606062"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824631"
 ---
 # <a name="activate-a-background-app-in-cortana-using-voice-commands"></a>使用语音命令激活 Cortana 中的后台应用  
 
@@ -61,8 +61,8 @@ ms.locfileid: "99606062"
 >
 > 如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请查看这些主题来熟悉此处讨论的技术。
 >
-> - [创建你的第一个应用](/windows/uwp/get-started/your-first-app)
-> - 借助[事件和路由事件概述](/windows/uwp/xaml-platform/events-and-routed-events-overview)了解事件
+> - [创建你的第一个应用](../../get-started/your-first-app.md)
+> - 借助[事件和路由事件概述](../../xaml-platform/events-and-routed-events-overview.md)了解事件
 >
 > **用户体验指南**
 >
@@ -98,7 +98,7 @@ UWP 应用应自动选择最适合的映像。 选择基于特定设置和设备
 - 设备类型  
 - 位置  
 
-若要详细了解高对比度和缩放比例的图像资源，请访问位于 [msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)的磁贴和图标资产页面的指导原则。  
+若要详细了解高对比度和缩放比例的图像资源，请访问位于 [msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets](../../app-resources/images-tailored-for-scale-theme-contrast.md)的磁贴和图标资产页面的指导原则。  
 
 必须使用限定符命名资源。 资源限定符是文件夹和文件名修饰符，用于标识应在其中使用特定版本资源的上下文。  
 

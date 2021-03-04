@@ -1,5 +1,5 @@
 ---
-title: 支持 Cortana 中的更自然的声音命令-Cortana UWP 设计和开发
+title: 在 Cortana 中支持更自然的语音命令 - Cortana UWP 设计和开发
 description: 使用更灵活和自然的声音命令扩展 Cortana，让用户在命令中的任意位置显示应用的名称。
 author: kbridge
 label: Conceptual
@@ -7,12 +7,12 @@ ms.assetid: c2959c1b-c2f2-4a8d-8f3e-79585f69afcf
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 7716d4d623653c6b2d943135f2e2cf1ac9a40343
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: c6777a0c7ad9a8e2658b759e516b659bbd4eb9a9
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99605992"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824501"
 ---
 # <a name="support-natural-language-voice-commands-in-cortana"></a>在 Cortana 中支持自然语言形式的语音命令
 
@@ -46,8 +46,8 @@ ms.locfileid: "99605992"
 >
 > 如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请查看这些主题来熟悉此处讨论的技术。
 >
-> - [创建你的第一个应用](/windows/uwp/get-started/your-first-app)
-> - 借助[事件和路由事件概述](/windows/uwp/xaml-platform/events-and-routed-events-overview)了解事件
+> - [创建你的第一个应用](../../get-started/your-first-app.md)
+> - 借助[事件和路由事件概述](../../xaml-platform/events-and-routed-events-overview.md)了解事件
 >
 > **用户体验指南**
 >

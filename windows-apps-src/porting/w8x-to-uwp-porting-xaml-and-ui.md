@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 62085377da89d64c8ba0799dc6bab13c17675f90
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: ba3a01487dd962ffb119d808ef951c891a8b9443
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750673"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824461"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>将 Windows 运行时 8.x XAML 和 UI 移植到 UWP
 
@@ -88,7 +88,7 @@ ms.locfileid: "91750673"
 
 对于控件，在 Windows 10 上运行的通用 8.1 应用将保留 8.1 的外观和行为。 但当你将该应用移植为 Windows 10 应用时，请注意其外观和行为的一些差异。 对于 Windows 10 应用，控件的体系结构和设计本质上是不变的，因此这些更改主要围绕设计语言、简化和可用性改进。
 
-**注意**   PointerOver 视觉对象状态适用于 Windows 10 应用和 Windows 运行时8.x 应用中的自定义样式/模板，但不适用于 Windows Phone 应用商店应用。 出于此原因， (和由于 Windows 10 应用程序所支持的系统资源密钥) ，我们建议你在将应用程序移植到 Windows 10 时，从 Windows 运行时8gb 应用重新使用自定义样式/模板。
+**注意**   PointerOver 视觉对象状态适用于 Windows 10 应用和 Windows 运行时8.x 应用中的自定义样式/模板，但不适用于 Windows Phone 应用商店应用。 出于此原因， (和由于 Windows 10 应用程序所支持的系统资源密钥) ，我们建议你在将应用程序移植到 Windows 10 时，从 Windows 运行时8gb 应用重新使用自定义样式/模板。
 如果你需要确定你的自定义样式/模板使用的是否是最新的视觉状态集，以及是否受益于对默认样式/模板所做的性能改进，则可编辑新 Windows10 默认模板的副本，并将你的自定义重新应用于其中。 性能改进的一个示例是，以前包含 **ContentPresenter** 或面板的任何 **Border** 已被删除，而子元素现在可呈现边框。
 
 下面是对控件所做的更改的一些更具体的示例。
@@ -102,7 +102,7 @@ ms.locfileid: "91750673"
 | [**CommandBar**](/uwp/api/Windows.UI.Xaml.Controls.AppBar) | 在 Windows 10 应用中，[**CommandBar**](/uwp/api/Windows.UI.Xaml.Controls.AppBar) 不处理 [**EdgeGesture.Completed**](/uwp/api/windows.ui.input.edgegesture.completed) 事件，也不处理 [**UIElement.RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped) 事件。 同时也不会响应点击或向上轻扫操作。 你仍可以选择处理这些事件并设置 [**IsOpen**](/uwp/api/windows.ui.xaml.controls.appbar.isopen)。 |
 | [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker)、[**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) | 通过从视觉上更改 [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker) 和 [**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)，查看你的应用的外观。 对于在移动设备上运行的 Windows 10 应用，这些控件不会再导航到选择页面，但会改为使用轻触消除弹出窗口。 |
 | [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker)、[**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) | 在 Windows 10 应用程序中，不能将 [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker) 或 [**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) 置于飞出内。如果希望这些控件显示在弹出类型控件中，可以使用 [**DatePickerFlyout**](/uwp/api/Windows.UI.Xaml.Controls.DatePickerFlyout) 和 [**TimePickerFlyout**](/uwp/api/Windows.UI.Xaml.Controls.TimePickerFlyout)。 |
-| **GridView**、**ListView** | 对于**gridview** / **ListView**，请参阅[gridview 和 ListView 更改](#gridview-and-listview-changes)。 |
+| **GridView**、**ListView** | 对于 **gridview** / **ListView**，请参阅 [gridview 和 ListView 更改](#gridview-and-listview-changes)。 |
 | [**星**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | 在 Windows Phone 应用商店应用中，[**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub) 控件从最后一部分环绕到第一部分。 在 Windows 运行时的3.x 应用程序中，以及在 Windows 10 应用程序中，中心部分不会换行。 |
 | [**星**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | 在 Windows Phone 应用商店应用中，[**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub) 控件的背景图像相对于中心区域在视差中移动。 在 Windows 运行时的8.x 应用中，在 Windows 10 应用中，不使用视差。 |
 | [**星**](/uwp/api/Windows.UI.Xaml.Controls.Hub)  | 在通用 8.1 应用中，[**HubSection.IsHeaderInteractive**](/uwp/api/windows.ui.xaml.controls.hubsection.isheaderinteractive) 属性会导致区域标头（和呈现在它旁边的 V 型字型）变得具有交互性。 在 Windows 10 应用中，在该标头旁提供可交互的“查看详细信息”，但该标头本身不可交互。 **IsHeaderInteractive** 仍用于确定交互是否引发 [**Hub.SectionHeaderClick**](/uwp/api/windows.ui.xaml.controls.hub.sectionheaderclick) 事件。 |
@@ -113,14 +113,14 @@ ms.locfileid: "91750673"
 | [**SearchBox**](/uwp/api/Windows.UI.Xaml.Controls.SearchBox) | 尽管已在通用设备系列中实现了 [**SearchBox**](/uwp/api/windows.ui.xaml.controls.searchbox)，但它无法在移动设备上正常运行。 请参阅[弃用 SearchBox 以支持 AutoSuggestBox](#searchbox-deprecated-in-favor-of-autosuggestbox)。 |
 | **SemanticZoom** | 有关 **SemanticZoom**，请参阅 [SemanticZoom 更改](#semanticzoom-changes)。 |
 | [**ScrollViewer**](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)  | [**ScrollViewer**](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 的某些默认属性已更改。 [**HorizontalScrollMode**](/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode) 已更改为 **Auto**，[**VerticalScrollMode**](/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollmode) 已更改为 **Auto**，而 [**ZoomMode**](/uwp/api/windows.ui.xaml.controls.scrollviewer.zoommode) 已更改为 **Disabled**。 如果新的默认值不适合你的应用，你可以使用样式更改它们，或对控件本身的本地值进行更改。  |
-| [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) | 在 Windows 运行时3.x 应用程序中，默认情况下，对 [**文本框**](/uwp/api/Windows.UI.Xaml.Controls.TextBox)关闭拼写检查。 在 Windows Phone 应用商店应用和 Windows 10 应用中，它默认处于启用状态。 |
-| [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) | [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 的默认字体大小已从 11 更改为 15。 |
-| [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) | [**TextBox.TextReadingOrder**](/uwp/api/windows.ui.xaml.controls.textblock.textreadingorder) 的默认值已从 **Default** 更改为 **DetectFromContent**。 如果不适用，则使用 **UseFlowDirection**。 **Default** 已弃用。 |
+| [**工具箱**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) | 在 Windows 运行时3.x 应用程序中，默认情况下，对 [**文本框**](/uwp/api/Windows.UI.Xaml.Controls.TextBox)关闭拼写检查。 在 Windows Phone 应用商店应用和 Windows 10 应用中，它默认处于启用状态。 |
+| [**工具箱**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) | [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 的默认字体大小已从 11 更改为 15。 |
+| [**工具箱**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) | [**TextBox.TextReadingOrder**](/uwp/api/windows.ui.xaml.controls.textblock.textreadingorder) 的默认值已从 **Default** 更改为 **DetectFromContent**。 如果不适用，则使用 **UseFlowDirection**。 **Default** 已弃用。 |
 | 各种 | 强调颜色适用于 Windows Phone 应用商店应用和 Windows 10 应用，但不适用于 Windows 运行时3.x 应用。  |
 
-有关 UWP 应用控件的详细信息，请参阅[按功能列出的控件](../design/controls-and-patterns/controls-by-function.md)、[控件列表](../design/controls-and-patterns/index.md)和[控件指南](../design/controls-and-patterns/index.md)。
+有关 UWP 应用控件的详细信息，请参阅[按功能列出的控件](../design/controls-and-patterns/index.md)、[控件列表](../design/controls-and-patterns/index.md)和[控件指南](../design/controls-and-patterns/index.md)。
 
-##  <a name="design-language-in-windows10"></a>Windows 10 设计语言
+##  <a name="design-language-in-windows-10"></a>Windows 10 设计语言
 
 Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的设计语言差异。 有关所有详细信息，请参阅[设计](https://developer.microsoft.com/windows/apps/design)。 不考虑设计语言更改，我们的设计原则始终保持一致：关注细节却又力求简洁（专注于内容而不是外观），显著减少视觉元素，始终忠实于数字领域；使用可视化层次结构（尤其是版式）；基于网格进行设计；通过流畅的动画带给你生动的体验。
 
@@ -134,7 +134,7 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 
 这样，应用便可在所有屏幕上提供最佳体验。我们建议你针对各种屏幕大小创建每个位图资源，其中每个资源均适用于特定的比例因子。 在大多数情况下，提供 100% 缩放、200% 缩放和 400% 缩放的资源（按优先级顺序）能在采用所有中间比例系数时均可提供极佳效果。
 
-**注意**   如果出于任何原因而无法以多个大小创建资产，请创建100% 规模的资产。 在 Microsoft Visual Studio 中，UWP 应用的默认项目模板仅使用一个大小提供品牌标识资源（磁贴图像和徽标），但这些资源并非 100% 缩放。 为自己的应用编写资源时，请按照本部分中的指南进行编写、提供 100%、200% 和 400% 尺寸，并使用资源包。
+**注意**  如果出于任何原因无法使用多种大小创建资源，则创建 100% 缩放的资源。 在 Microsoft Visual Studio 中，UWP 应用的默认项目模板仅使用一个大小提供品牌标识资源（磁贴图像和徽标），但这些资源并非 100% 缩放。 为自己的应用编写资源时，请按照本部分中的指南进行编写、提供 100%、200% 和 400% 尺寸，并使用资源包。
 
 如果具有繁复的图案，则可能希望在更多尺寸中提供资源。 如果要从矢量图像开始，则生成采用任意比例系数的高质量资源相对容易。
 
@@ -194,13 +194,13 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 |                     | PointerOver             |                   | PointerOver         |
 |                     | 已按下                 |                   | 已按下             |
 |                     | PointerOverPressed      |                   | [不可用]       |
-|                     | 禁用                |                   | [不可用]       |
+|                     | 已禁用                |                   | [不可用]       |
 |                     | [不可用]           |                   | PointerOverSelected |
-|                     | [不可用]           |                   | 已选定            |
+|                     | [不可用]           |                   | 选定            |
 |                     | [不可用]           |                   | PressedSelected     |
 | [不可用]       |                         | DisabledStates    |                     |
-|                     | [不可用]           |                   | 禁用            |
-|                     | [不可用]           |                   | 启用             |
+|                     | [不可用]           |                   | 已禁用            |
+|                     | [不可用]           |                   | 已启用             |
 | SelectionHintStates |                         | [不可用]     |                     |
 |                     | VerticalSelectionHint   |                   | [不可用]       |
 |                     | HorizontalSelectionHint |                   | [不可用]       |
@@ -214,7 +214,7 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 |                     | UnselectedPointerOver   |                   | [不可用]       |
 |                     | UnselectedSwiping       |                   | [不可用]       |
 |                     | 选择               |                   | [不可用]       |
-|                     | 已选定                |                   | [不可用]       |
+|                     | 选定                |                   | [不可用]       |
 |                     | SelectedSwiping         |                   | [不可用]       |
 |                     | SelectedUnfocused       |                   | [不可用]       |
 
@@ -235,7 +235,7 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 
 ## <a name="localization-and-globalization"></a>本地化和全球化
 
-在 UWP App 项目中，你可以重新使用通用 8.1 项目中的 Resources.resw 文件。 复制完该文件后，将其添加到项目，然后将 **“生成操作”** 设置为**PRIResource**，并将 **“复制到输出目录”** 设置为 **“不复制”**。 [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) 主题介绍了如何基于设备系列资源选择规格加载特定于设备系列的资源。
+在 UWP App 项目中，你可以重新使用通用 8.1 项目中的 Resources.resw 文件。 复制完该文件后，将其添加到项目，然后将 **“生成操作”** 设置为 **PRIResource**，并将 **“复制到输出目录”** 设置为 **“不复制”**。 [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) 主题介绍了如何基于设备系列资源选择规格加载特定于设备系列的资源。
 
 ## <a name="play-to"></a>播放到
 

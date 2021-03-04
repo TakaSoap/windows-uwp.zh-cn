@@ -8,12 +8,12 @@ keywords: 笔、鼠标、触摸板、触摸、指针、输入、用户交互
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bae166c1671421c13302df0d2f85e505985d3f2e
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 80360ef30b50229beda813ae211966f398744941
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93030740"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824671"
 ---
 # <a name="handle-pointer-input"></a>处理指针输入
 
@@ -21,7 +21,7 @@ ms.locfileid: "93030740"
 
 > [!Important]
 > 仅当要求清楚、定义良好且平台控件支持的交互不支持你的方案时才创建自定义交互。  
-> 如果你在 Windows 应用程序中自定义交互体验，用户需要的是一致、直观且可发现的体验。 出于这些原因，我们建议你基于[平台控件](../controls-and-patterns/controls-by-function.md)支持的交互进行自定义交互建模。 平台控件提供完整的 Windows 应用用户交互体验，包括标准交互、动画物理学效果、视觉反馈和辅助功能。 
+> 如果你在 Windows 应用程序中自定义交互体验，用户需要的是一致、直观且可发现的体验。 出于这些原因，我们建议你基于[平台控件](../controls-and-patterns/index.md)支持的交互进行自定义交互建模。 平台控件提供完整的 Windows 应用用户交互体验，包括标准交互、动画物理学效果、视觉反馈和辅助功能。 
 
 ## <a name="important-apis"></a>重要的 API
 - [Windows.Devices.Input](/uwp/api/Windows.Devices.Input)
@@ -43,7 +43,7 @@ ms.locfileid: "93030740"
 Windows 应用可以侦听以下指针事件：
 
 > [!NOTE]
-> 通过在指针事件处理程序内对该元素调用 [**CapturePointer**](/uwp/api/windows.ui.xaml.uielement.capturepointer)，将指针输入约束到特定的 UI 元素。 当指针由元素捕获时，仅该对象接收指针输入事件，即使指针移动到该对象的边界区域之外也是如此。 若要使 **CapturePointer** 成功， [**IsInContact**](/uwp/api/windows.ui.xaml.input.pointer.isincontact)（鼠标按钮已按下，触控或触笔相互接触）必须为 true。
+> 通过在指针事件处理程序内对该元素调用 [**CapturePointer**](/uwp/api/windows.ui.xaml.uielement.capturepointer)，将指针输入约束到特定的 UI 元素。 当指针由元素捕获时，仅该对象接收指针输入事件，即使指针移动到该对象的边界区域之外也是如此。 若要使 **CapturePointer** 成功，[**IsInContact**](/uwp/api/windows.ui.xaml.input.pointer.isincontact)（鼠标按钮已按下，触控或触笔相互接触）必须为 true。
 
 <table>
 <colgroup>
@@ -240,7 +240,7 @@ public MainPage()
 -   此处理程序管理 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件。 我们将事件添加到事件日志、将指针添加活动指针字典，并显示指针详细信息。
 
     > [!NOTE]
-    > [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件并不总是成对出现。 你的应用应该侦听和处理可能会结束指针向下（如 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited)、 [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled) 和 [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)）的所有事件。
+    > [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件并不总是成对出现。 你的应用应该侦听和处理可能会结束指针向下（如 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited)、[**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled) 和 [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)）的所有事件。
          
 
 ```csharp
@@ -698,7 +698,7 @@ String QueryPointer(PointerPoint ptrPt)
 
 ### <a name="visual-feedback"></a>视觉反馈
 
-我们基于 XAML **[椭圆形](/uwp/api/windows.ui.xaml.shapes.ellipse)** 对象定义一个 **[UserControl](/uwp/api/windows.ui.xaml.controls.usercontrol)** ，突出显示每个指针在画布上的位置，并使用 **[故事板](/uwp/api/windows.ui.xaml.media.animation.storyboard)** 来动画显示与主指针对应的椭圆形。
+我们基于 XAML **[椭圆形](/uwp/api/windows.ui.xaml.shapes.ellipse)** 对象定义一个 **[UserControl](/uwp/api/windows.ui.xaml.controls.usercontrol)**，突出显示每个指针在画布上的位置，并使用 **[故事板](/uwp/api/windows.ui.xaml.media.animation.storyboard)** 来动画显示与主指针对应的椭圆形。
 
 **下面是 XAML：**
 
@@ -890,7 +890,7 @@ namespace UWP_Pointers
 ```
 
 ### <a name="create-the-ui"></a>创建 UI
-此示例中的 UI 限制为输入 **[画布](/uwp/api/windows.ui.xaml.controls.canvas)** ，我们在其中跟踪所有指针并呈现指针指示器和主指针动画（如果适用），同时显示一个包含指针计数器和主指针标识符的标题栏。
+此示例中的 UI 限制为输入 **[画布](/uwp/api/windows.ui.xaml.controls.canvas)**，我们在其中跟踪所有指针并呈现指针指示器和主指针动画（如果适用），同时显示一个包含指针计数器和主指针标识符的标题栏。
 
 下面是 MainPage.xaml：
 

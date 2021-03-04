@@ -1,5 +1,5 @@
 ---
-title: Cortana 设计准则-Cortana UWP 设计和开发
+title: Cortana 设计准则 - Cortana UWP 设计和开发
 description: 这些指导原则和建议描述你的应用程序如何使用 Cortana 与用户交互。
 ms.assetid: 332ccb95-0e56-410e-ab63-cc028fce4192
 label: Cortana
@@ -8,12 +8,12 @@ ms.date: 01/27/2021
 ms.topic: article
 keywords: cortana，设计
 ms.localizationpriority: medium
-ms.openlocfilehash: b7711f9fd653bbd635582a0b2268a5eb0ed7417b
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: ae5f1ce3c481e833ce80d0ebd52d64f6efba7e78
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606082"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823271"
 ---
 # <a name="cortana-design-guidelines"></a>Cortana 设计指南
 
@@ -118,17 +118,17 @@ ms.locfileid: "99606082"
 
 应避免冗长的 GUI 字符串。 **Cortana** 画布提供三行用于响应，并将截断超过该长度的字符串。
 
-有关详细信息，请参阅 [全球化和本地化部分](/windows/uwp/design/globalizing/guidelines-and-checklist-for-globalizing-your-app)。
+有关详细信息，请参阅 [全球化和本地化部分](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md)。
 
 ## <a name="image-resources-and-scaling"></a>图像资源和缩放
 
 通用 Windows 平台 (UWP) 应用可根据特定设置和设备功能自动选择最适合的应用徽标图像， (高对比度、有效像素、区域设置等) 。 你需要做的只是提供映像，并确保在应用项目中对不同资源版本使用适当的命名约定和文件夹组织。 如果不提供建议的资源版本、可访问性、本地化和图像质量，这取决于用户的首选项、功能、设备类型和位置。
 
-若要详细了解高对比度和缩放比例的图像资源，请参阅 [磁贴和图标资产的准则](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)。
+若要详细了解高对比度和缩放比例的图像资源，请参阅 [磁贴和图标资产的准则](../../app-resources/images-tailored-for-scale-theme-contrast.md)。
 
 使用限定符命名资源。 资源限定符是文件夹和文件名修饰符，用于标识应在其中使用特定版本资源的上下文。
 
-标准命名约定为 "文件夹名称/qualifiername \[ \_ qualifiername-value \] /filename.qualifiername-value \[ \_ qualifiername \] "。 例如： images/徽标键。 \_ 只需在代码中使用根文件夹和文件名： images/logo.png 来1-100 缩放contrast-white.png。 请参阅 [管理语言和区域](/windows/uwp/design/globalizing/manage-language-and-region) 和 [如何使用限定符命名资源](/previous-versions/windows/apps/hh965324(v=win.10))。
+标准命名约定为 "文件夹名称/qualifiername \[ \_ qualifiername-value \] /filename.qualifiername-value \[ \_ qualifiername \] "。 例如： images/徽标键。 \_ 只需在代码中使用根文件夹和文件名： images/logo.png 来1-100 缩放contrast-white.png。 请参阅 [管理语言和区域](../globalizing/manage-language-and-region.md) 和 [如何使用限定符命名资源](/previous-versions/windows/apps/hh965324(v=win.10))。
 
 建议您将字符串资源 (文件中的默认语言（例如 " \\ .resw" ) ）和 (图像的默认缩放比例（如 "logo.scale-100.png" ) ）标记为默认语言，即使您当前不打算提供本地化或多个解析资源也是如此。 但至少建议为100、200和400规模因素提供资产。
 

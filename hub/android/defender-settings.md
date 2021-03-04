@@ -1,18 +1,18 @@
 ---
 title: 通过更新 Defender 设置提高性能速度
-description: 了解如何通过更新 Windows Defender 设置以排除检查指定的文件类型，从而提高性能速度和生成时间。
+description: 指南：通过更新 Windows Defender 设置以排除检查指定的文件类型，提高总体性能速度和生成时间。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: android、windows、windows defender、设置、配置、排除、% USERPROFILE%、devenv.exe、性能、速度、生成、gradle
 ms.date: 04/28/2020
-ms.openlocfilehash: 0437ffc263c618e52c7a3e4dc3256e9fcd502c8e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e762e595bf2b8aa9b8420d41f68d2890e7d5dfe0
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154861"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823201"
 ---
 # <a name="update-windows-defender-settings-to-improve-performance"></a>更新 Windows Defender 设置以提高性能
 
@@ -39,8 +39,8 @@ ms.locfileid: "89154861"
 2. 输入 **Windows 安全性**
 3. 选择 **病毒和威胁防护**
 4. 选择 "安全 **& 威胁防护设置**" 下的 "**管理设置**"
-5. 滚动到**排除**标题，并选择 "**添加或删除排除**项"
-6. 选择 " **+ 添加排除**"。 然后，需要选择要添加的排除项是 **文件**、 **文件夹**、 **文件类型**还是 **进程**。
+5. 滚动到 **排除** 标题，并选择 "**添加或删除排除** 项"
+6. 选择 " **+ 添加排除**"。 然后，需要选择要添加的排除项是 **文件**、 **文件夹**、 **文件类型** 还是 **进程**。
 
 ![Windows Defender 添加排除屏幕快照](../images/windows-defender-exclusions.png)
 

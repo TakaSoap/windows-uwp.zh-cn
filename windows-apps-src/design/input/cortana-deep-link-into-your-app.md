@@ -1,16 +1,16 @@
 ---
-title: 从 Cortana 中的后台应用到前台应用的深层链接-Cortana UWP 设计和开发
+title: 从 Cortana 中的后台应用到前台应用的深层链接 - Cortana UWP 设计和开发
 description: 提供从 **Cortana** 中的后台应用程序的深层链接，该应用程序在特定状态或上下文中启动应用程序到前台。
 ms.assetid: 6fe5fcc5-9ee4-4c04-92f4-7b1bf7ef5651
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: d96e54604c5def61802a77625a6c18c556db909d
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: 5096e4897d5a75be70deaf272ec52c151c1ad871
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606052"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823491"
 ---
 # <a name="deep-link-from-a-background-app-in-cortana-to-a-foreground-app"></a>从 Cortana 中的后台应用到前台应用的深层链接
 
@@ -230,7 +230,7 @@ await  VoiceCommandServiceConnection.RequestAppLaunchAsync(response);
 
 ## <a name="protocol-contract"></a>协议协定
 
-您的应用程序通过统一资源标识符启动到前台， (URI) 使用 [**协议**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) 协定激活。 应用必须重写应用的 [**OnActivated**](/uwp/api/Windows.UI.Xaml.Application) 事件，并检查是否有 **ActivationKind** 的 **协议**。 有关详细信息，请参阅 [处理 URI 激活](/windows/uwp/launch-resume/handle-uri-activation)。
+您的应用程序通过统一资源标识符启动到前台， (URI) 使用 [**协议**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) 协定激活。 应用必须重写应用的 [**OnActivated**](/uwp/api/Windows.UI.Xaml.Application) 事件，并检查是否有 **ActivationKind** 的 **协议**。 有关详细信息，请参阅 [处理 URI 激活](../../launch-resume/handle-uri-activation.md)。
 
 在这里，我们对 [**ProtocolActivatedEventArgs**](/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs) 提供的 URI 进行解码，以访问启动参数。 在此示例中， [**Uri**](/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs) 设置为 "personalassistantlaunch：？LaunchContext = 内华达州拉斯维加斯 "。
 

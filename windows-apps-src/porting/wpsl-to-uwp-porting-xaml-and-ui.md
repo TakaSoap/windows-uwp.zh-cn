@@ -6,14 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a6f78d30b1366078f2094aa17ab15c65a050c43
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c421f071cb3e13e1ebb24b8d2cd9f8aec3341c2b
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164341"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824531"
 ---
-#  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>将 Windows Phone Silverlight XAML 和 UI 移植到 UWP
+#  <a name="porting-windows-phone-silverlight-xaml-and-ui-to-uwp"></a>将 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 
 
 
@@ -174,7 +174,7 @@ UWP 应用的绑定相关的功能当前具有以下限制：
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-在 UWP 应用中，使用 ms-appx [URI 方案](/previous-versions/windows/apps/jj655406(v=win.10))。 因此，你可以使其余的代码保持原样，还可以使用 **System.Uri** 构造函数的不同重载将 ms-appx URI 方案放置在基 URI 中并将路径的其余部分附加到其中。 如：
+在 UWP 应用中，使用 ms-appx [URI 方案](/previous-versions/windows/apps/jj655406(v=win.10))。 因此，你可以使其余的代码保持原样，还可以使用 **System.Uri** 构造函数的不同重载将 ms-appx URI 方案放置在基 URI 中并将路径的其余部分附加到其中。 类似于下面这样：
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
@@ -199,17 +199,17 @@ Windows Phone Silverlight 应用使用在 **Microsoft.Phone.Controls** 命名空
 | Panorama | Windows Phone Silverlight 全景控件映射到用于集线器控件的 [Windows 运行时的应用程序](../design/basics/navigation-basics.md) 和中心控件指南。 <br/> 请注意，Panorama 控件从最后一部分环绕到第一部分，并且其背景图像相对于具体部分在视差中移动。 [Hub](/uwp/api/Windows.UI.Xaml.Controls.Hub) 部分不会环绕，并且不使用视差。 |
 | 透视 | Windows Phone Silverlight Pivot 控件的 UWP 等效项是 [Windows.UI.Xaml.Controls.Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot)。 它适用于所有设备系列。 |
 
-**注意**   PointerOver 视觉对象状态适用于 Windows 10 应用中的自定义样式/模板，但在 Windows Phone Silverlight 应用中不适用。 存在其他原因导致你的现有自定义样式/模板不适用于 Windows 10 应用，包括你正在使用的系统资源键、对所使用的视觉状态集的更改以及对 Windows 10 默认样式/模板所做的性能改进。 我们建议你为 Windows 10 编辑一个控件默认模板的全新副本，然后对其重新应用你的样式和模板自定义。
+**注意**   PointerOver 视觉状态与 Windows 10 应用中的自定义样式/模板有关，但与 Windows Phone Silverlight 应用无关。 存在其他原因导致你的现有自定义样式/模板不适用于 Windows 10 应用，包括你正在使用的系统资源键、对所使用的视觉状态集的更改以及对 Windows 10 默认样式/模板所做的性能改进。 我们建议你为 Windows 10 编辑一个控件默认模板的全新副本，然后对其重新应用你的样式和模板自定义。
 
-有关 UWP 控件的详细信息，请参阅[按功能列出的控件](../design/controls-and-patterns/controls-by-function.md)、[控件列表](../design/controls-and-patterns/index.md)和[控件指南](../design/controls-and-patterns/index.md)。
+有关 UWP 控件的详细信息，请参阅[按功能列出的控件](../design/controls-and-patterns/index.md)、[控件列表](../design/controls-and-patterns/index.md)和[控件指南](../design/controls-and-patterns/index.md)。
 
-##  <a name="design-language-in-windows10"></a>Windows 10 设计语言
+##  <a name="design-language-in-windows-10"></a>Windows 10 设计语言
 
 设计语言 Windows Phone Silverlight 应用和 Windows 10 应用之间有一些区别。 有关所有详细信息，请参阅[设计](https://developer.microsoft.com/windows/apps/design)。 不考虑设计语言更改，我们的设计原则始终保持一致：关注细节却又力求简洁（专注于内容而不是外观），显著减少视觉元素，始终忠实于数字领域；使用可视化层次结构（尤其是版式）；基于网格进行设计；通过流畅的动画带给你生动的体验。
 
 ## <a name="localization-and-globalization"></a>本地化和全球化
 
-对于本地化字符串，你可以在 UWP 应用项目中重复使用 Windows Phone Silverlight 项目中的 .resx 文件。 复制文件，将其添加到项目，并将其重命名为 Resources.resw，以便查找机制默认找到它。 将 **“生成操作”** 设置为**PRIResource**并将 **“复制到输出目录”** 设置为 **“不要复制”**。 然后你可以通过在 XAML 元素上指定 **“x:Uid”** 属性来使用标记中的字符串。 请参阅[快速入门：使用字符串资源](/previous-versions/windows/apps/hh965329(v=win.10))。
+对于本地化字符串，你可以在 UWP 应用项目中重复使用 Windows Phone Silverlight 项目中的 .resx 文件。 复制文件，将其添加到项目，并将其重命名为 Resources.resw，以便查找机制默认找到它。 将 **“生成操作”** 设置为 **PRIResource** 并将 **“复制到输出目录”** 设置为 **“不要复制”**。 然后你可以通过在 XAML 元素上指定 **“x:Uid”** 属性来使用标记中的字符串。 请参阅[快速入门：使用字符串资源](/previous-versions/windows/apps/hh965329(v=win.10))。
 
 Windows Phone Silverlight 应用使用 **CultureInfo** 类帮助实现应用全球化。 UWP 应用使用 MRT（现代资源技术），此技术支持在运行时和在 Visual Studio 设计图面中动态加载应用资源（本地化、比例和主题）。 有关详细信息，请参阅[文件、数据和全球化指南](../design/usability/index.md)。
 
@@ -221,7 +221,7 @@ Windows Phone Silverlight 应用使用 **CultureInfo** 类帮助实现应用全�
 
 Windows Phone Silverlight 具有 UWP 中不存在的 **RadialGradientBrush** 类型，尽管存在其他 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 类型。 在某些情况下，你将可以使用位图获得类似的效果。 请注意，你可以使用 [Microsoft DirectX](/windows/desktop/directx) 中的 Direct2D 和 XAML C++ UWP [创建径向渐变画笔](/windows/desktop/Direct2D/how-to-create-a-radial-gradient-brush)。
 
-Windows Phone Silverlight 具有 **System.Windows.UIElement.OpacityMask** 属性，但是该属性不是 UWP [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 类型的成员。 在某些情况下，你将可以使用位图获得类似的效果。 并且你可以使用 [Microsoft DirectX](/windows/desktop/directx) 中的 Direct2D 和 XAML C++ UWP 应用[创建不透明蒙板](/windows/desktop/Direct2D/opacity-masks-overview)。 但是，**OpacityMask** 的常见用例是使用适应浅色和深色主题的单个位图。 对于矢量图形，你可以使用与主题有关的系统画笔（例如下面所示的饼图）。 但是，若要创建与主题有关的位图（例如下面所示的复选标记），则需要使用其他方法。
+Windows Phone Silverlight 具有 **System.Windows.UIElement.OpacityMask** 属性，但是该属性不是 UWP  [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 类型的成员。 在某些情况下，你将可以使用位图获得类似的效果。 并且你可以使用 [Microsoft DirectX](/windows/desktop/directx) 中的 Direct2D 和 XAML C++ UWP 应用[创建不透明蒙板](/windows/desktop/Direct2D/opacity-masks-overview)。 但是，**OpacityMask** 的常见用例是使用适应浅色和深色主题的单个位图。 对于矢量图形，你可以使用与主题有关的系统画笔（例如下面所示的饼图）。 但是，若要创建与主题有关的位图（例如下面所示的复选标记），则需要使用其他方法。
 
 ![与主题有关的位图](images/wpsl-to-uwp-case-studies/wpsl-to-uwp-theme-aware-bitmap.png)
 
@@ -241,7 +241,7 @@ Windows Phone Silverlight 具有 **System.Windows.UIElement.OpacityMask** 属性
     <BitmapIcon UriSource="Assets/winrt_check.png" Width="21" Height="21"/>
 ```
 
-在这里，winrt \_check.png 是位图形式的 alpha 掩码，就像 wpsl \_check.png 为一样，它也可能是同一个文件。 但是，你可能希望提供多种不同大小的 winrt \_check.png 用于不同的缩放系数。 有关详细信息和对 **Width** 和 **Height** 值进行更改的说明，请参阅本主题中的[视图或有效像素、观看距离和比例系数](#view-or-effective-pixels-viewing-distance-and-scale-factors)。
+在这里，winrt \_check.png 是位图形式的 alpha 掩码，就像 wpsl \_check.png 为一样，它也可能是同一个文件。 但是，你可能希望提供多种不同大小的 winrt \_check.png 用于不同的缩放系数。 有关详细信息和对 **Width** 和 **Height** 值进行更改的说明，请参阅本主题中的 [视图或有效像素、观看距离和比例系数](#view-or-effective-pixels-viewing-distance-and-scale-factors)。
 
 较常规的方法（适用于位图的浅色和深色主题之间有差异的情况）是使用两个图像资源：一个带有深色前景（用于浅色主题），而另一个带有浅色前景（用于深色主题）。 有关如何命名这组位图资产的更多详细信息，请参阅 [为语言、缩放和其他限定符定制资源](../app-resources/tailor-resources-lang-scale-contrast.md)。 为一组图像文件正确命名后，你可以使用它们的根名称在摘要中引用它们，如下所示：
 
@@ -368,13 +368,13 @@ Windows Phone Silverlight 应用和 Windows 10 应用从设备的实际物理大
 
 对于 Windows Phone Silverlight 应用，所有手机屏幕的宽都正好是 480 视图像素，无一例外，无论屏幕有多少物理像素，或者其像素密度和物理大小是多少。 这意味着带有 `Width="48"` 的 **Image** 元素将正好是可运行 Windows Phone Silverlight 应用的任何手机的屏幕宽度的十分之一。
 
-对于 Windows 10 应用，这*不*是所有设备都是某个固定有效像素数宽的情况。 鉴于 UWP 应用可运行的设备种类广泛，这可能很明显。 不同设备的宽度的有效像素是不同的，范围从最小设备的 320 像素到中等大小监视器的 1024 像素，甚至更高宽度的有效像素。 你只需像往常那样继续使用可自动调整大小的元素和动态布局面板。 在某些情况下，你还需要将 XAML 标记中的 UI 元素的相关属性设置为固定大小。 根据应用运行所在的设备和用户所设置的显示设置，比例因子将自动应用于应用。 并且，该比例因子可使具有固定大小的任何 UI 元素在各种尺寸的屏幕上都能向用户显示一些大小恒定的触摸（和阅读）目标。 此外通过与动态布局结合使用，你的 UI 不仅能在不同设备上进行视觉上的缩放，还能改为执行任何必要的操作以将相应的内容量纳入可用空间。
+对于 Windows 10 应用，这 *不* 是所有设备都是某个固定有效像素数宽的情况。 鉴于 UWP 应用可运行的设备种类广泛，这可能很明显。 不同设备的宽度的有效像素是不同的，范围从最小设备的 320 像素到中等大小监视器的 1024 像素，甚至更高宽度的有效像素。 你只需像往常那样继续使用可自动调整大小的元素和动态布局面板。 在某些情况下，你还需要将 XAML 标记中的 UI 元素的相关属性设置为固定大小。 根据应用运行所在的设备和用户所设置的显示设置，比例因子将自动应用于应用。 并且，该比例因子可使具有固定大小的任何 UI 元素在各种尺寸的屏幕上都能向用户显示一些大小恒定的触摸（和阅读）目标。 此外通过与动态布局结合使用，你的 UI 不仅能在不同设备上进行视觉上的缩放，还能改为执行任何必要的操作以将相应的内容量纳入可用空间。
 
 由于 480 以前是手机大小屏幕的固定视图像素宽度，并且该值现在通常在以有效像素为单位时更小，经验法则是将 Windows Phone Silverlight 应用标记中的任何维度乘以系数 0.8。
 
 这样，应用便可在所有屏幕上提供最佳体验。我们建议你针对各种屏幕大小创建每个位图资源，其中每个资源均适用于特定的比例因子。 在大多数情况下，提供 100% 缩放、200% 缩放和 400% 缩放的资源（按优先级顺序）能在采用所有中间比例系数时均可提供极佳效果。
 
-**注意**   如果出于任何原因而无法以多个大小创建资产，请创建100% 规模的资产。 在 Microsoft Visual Studio 中，UWP 应用的默认项目模板仅使用一个大小提供品牌标识资源（磁贴图像和徽标），但这些资源并非 100% 缩放。 为自己的应用编写资源时，请按照本部分中的指南进行编写、提供 100%、200% 和 400% 尺寸，并使用资源包。
+**注意**  如果出于任何原因无法使用多种大小创建资源，则创建 100% 缩放的资源。 在 Microsoft Visual Studio 中，UWP 应用的默认项目模板仅使用一个大小提供品牌标识资源（磁贴图像和徽标），但这些资源并非 100% 缩放。 为自己的应用编写资源时，请按照本部分中的指南进行编写、提供 100%、200% 和 400% 尺寸，并使用资源包。
 
 如果具有繁复的图案，则可能希望在更多尺寸中提供资源。 如果要从矢量图像开始，则生成采用任意比例系数的高质量资源相对容易。
 

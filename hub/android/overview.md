@@ -1,18 +1,18 @@
 ---
 title: Windows 上的 Android 开发概述
-description: 本指南可帮助你开始在 Windows 上开发 Android。
+description: 开始在 Windows 上开发 Android，包括本机 Android 开发、跨平台开发和 Android 游戏开发。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: windows 上的 android，xamarin，响应本机，cordova，ionic，phonegap，c + + android 游戏，windows defender，模拟器
 ms.date: 04/28/2020
-ms.openlocfilehash: e215d9e08fcef7ddb1caae40bd8f3a83e183d197
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b839972033c9edfad3524909345380e7fac9462e
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157701"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823161"
 ---
 # <a name="overview-of-android-development-on-windows"></a>Windows 上的 Android 开发概述
 
@@ -41,7 +41,7 @@ ms.locfileid: "89157701"
 
 尽管跨平台框架旨在尽可能接近本地应用程序，但它们永远不会与本机开发的应用程序无缝集成，并且可能会降低速度和性能下降。 此外，用于构建跨平台应用程序的工具可能不具备每个不同设备平台提供的所有功能，这可能需要解决方法。
 
-基本**代码通常**由**UI 代码**组成，用于创建用于调用 web 服务、访问数据库、调用硬件功能和管理状态的用户界面，如页面、按钮控件、标签、列表等。 通常，90% 的可重复使用，不过，通常需要为每个设备平台自定义代码。 这种通用化很大程度上取决于您要生成的应用程序类型，但它提供了一个可帮助您做出决策的上下文。  
+基本 **代码通常** 由 **UI 代码** 组成，用于创建用于调用 web 服务、访问数据库、调用硬件功能和管理状态的用户界面，如页面、按钮控件、标签、列表等。 通常，90% 的可重复使用，不过，通常需要为每个设备平台自定义代码。 这种通用化很大程度上取决于您要生成的应用程序类型，但它提供了一个可帮助您做出决策的上下文。  
 
 ## <a name="choosing-a-cross-platform-framework"></a>选择跨平台框架
 

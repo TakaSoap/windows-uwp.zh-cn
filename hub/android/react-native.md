@@ -1,18 +1,18 @@
 ---
 title: 针对 Windows 上的 Android 开发做出本机响应
-description: 开始使用 Windows 上的 Xamarin 本机开发 Android 应用。
+description: 介绍如何开始使用 Windows 上的响应本机的分步指南，以创建可在 Android 设备上工作的跨平台应用。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: android，windows，响应本机，模拟器，展览，地铁捆绑程序，终端
 ms.date: 04/28/2020
-ms.openlocfilehash: 50c117154b103ca4e201f21bc643e7cbfa609b84
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 82bf078d6c29c8968ce3e0cc19ce4d6f803e6d71
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157711"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823221"
 ---
 # <a name="get-started-developing-for-android-using-react-native"></a>开始使用响应本机开发 Android
 
@@ -50,7 +50,7 @@ ms.locfileid: "89157711"
     npm install -g expo-cli
     ```
 
-2. 使用展览创建在 iOS、Android 和 web 上运行的响应本机应用。 然后，需要在项目模板之间进行选择，其中包括 **空白**、 **空白 (TypeScript) **、 **选项卡** (使用响应导航) 、 **最小**或 **最小化 typescript ** (的示例屏幕。
+2. 使用展览创建在 iOS、Android 和 web 上运行的响应本机应用。 然后，需要在项目模板之间进行选择，其中包括 **空白**、 **空白 (TypeScript)**、 **选项卡** (使用响应导航) 、 **最小** 或 **最小化 typescript** (的示例屏幕。
 
     ```powershell
     expo init my-new-app
@@ -75,7 +75,7 @@ ms.locfileid: "89157711"
 
 5. 若要查看 Android 设备上运行的项目，需要先使用 Android 设备上 [的 Google Play 商店安装 "博览会客户端应用](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US) "。 安装了博览会客户端应用后，在设备上打开它，并选择 " **扫描 QR 码**"。 注册 QR 码后，你将能够在你的浏览器中的设备上和 localhost 上运行的地铁捆绑程序窗口中看到包生成。
 
-6. 若要查看 Android 模拟器上运行的项目，首先需要打开 Android Studio，然后创建并启动虚拟设备。 **工具**  > **AVD 管理器**  > **[+ 创建虚拟设备 ...](https://developer.android.com/studio/run/managing-avds#createavd)** 创建虚拟设备后，在 Android 虚拟设备管理器的 "**操作**" 列下选择 "启动" 按钮▷，开始模拟设备。 打开虚拟设备后，返回到在 internet 浏览器窗口中运行的地铁捆绑程序窗口，并选择左侧列中的 "Android 设备/模拟器上运行"。 你会看到一个弹出窗口，让你知道地铁捆绑程序 "正在尝试打开模拟器 ..."然后，查看在您的仿真 Android 设备中打开的用户应用程序，并在完成下载 JavaScript 捆绑后，您将看到您的响应本机应用程序已显示。  (如果遇到问题，请 [查看 "博览会 Android 模拟器" 文档](https://docs.expo.io/workflow/android-studio-emulator/)。 ) 
+6. 若要查看 Android 模拟器上运行的项目，首先需要打开 Android Studio，然后创建并启动虚拟设备。 **工具**  > **AVD 管理器**  > **[+ 创建虚拟设备 ...](https://developer.android.com/studio/run/managing-avds#createavd)** 创建虚拟设备后，在 Android 虚拟 Device Manager 的 "**操作**" 列下选择 "启动" 按钮▷，开始模拟设备。 打开虚拟设备后，返回到在 internet 浏览器窗口中运行的地铁捆绑程序窗口，并选择左侧列中的 "Android 设备/模拟器上运行"。 你会看到一个弹出窗口，让你知道地铁捆绑程序 "正在尝试打开模拟器 ..."然后，查看在您的仿真 Android 设备中打开的用户应用程序，并在完成下载 JavaScript 捆绑后，您将看到您的响应本机应用程序已显示。  (如果遇到问题，请 [查看 "博览会 Android 模拟器" 文档](https://docs.expo.io/workflow/android-studio-emulator/)。 ) 
 
 7. 打开响应本机项目，开始使用应用。 你应该会在设备上或你的 Android Emulator 中看到，在运行的应用中自动更新你的更改。
 

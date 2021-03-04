@@ -1,16 +1,16 @@
 ---
-title: 通过 Cortana 使用语音命令激活前台应用-Cortana UWP 设计和开发
+title: 通过 Cortana 使用语音命令激活前台应用 - Cortana UWP 设计和开发
 description: 使用语音命令激活应用到前台，并在应用中执行操作或命令。
 ms.assetid: e4bf3714-6f62-466f-9e7c-3b03ee86a117
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 6e4e1b30d7d6e259ff66cdccebeed325ded57c18
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: 4b17a93d950d48209637cedf89bb49759ba0cf1f
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606012"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824321"
 ---
 # <a name="activate-a-foreground-app-with-voice-commands-through-cortana"></a>通过 Cortana 使用语音命令激活前台应用
 
@@ -59,8 +59,8 @@ ms.locfileid: "99606012"
 >
 > 如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请查看这些主题来熟悉此处讨论的技术。
 >
-> - [创建你的第一个应用](/windows/uwp/get-started/your-first-app)
-> - 借助[事件和路由事件概述](/windows/uwp/xaml-platform/events-and-routed-events-overview)了解事件
+> - [创建你的第一个应用](../../get-started/your-first-app.md)
+> - 借助[事件和路由事件概述](../../xaml-platform/events-and-routed-events-overview.md)了解事件
 >
 > **用户体验指南**
 >
@@ -90,7 +90,7 @@ ms.locfileid: "99606012"
 
 UWP 应用可以根据特定的设置和设备功能自动选择最适合的图像 (高对比度、有效像素、区域设置等) 。 你需要做的只是提供映像，并确保在应用项目中对不同资源版本使用适当的命名约定和文件夹组织。 如果不提供建议的资源版本、可访问性、本地化和图像质量，这取决于用户的首选项、功能、设备类型和位置。
 
-若要详细了解高对比度和缩放比例的图像资源，请参阅 [磁贴和图标资产的准则](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)。
+若要详细了解高对比度和缩放比例的图像资源，请参阅 [磁贴和图标资产的准则](../../app-resources/images-tailored-for-scale-theme-contrast.md)。
 
 使用限定符命名资源。 资源限定符是文件夹和文件名修饰符，用于标识应在其中使用特定版本资源的上下文。
 

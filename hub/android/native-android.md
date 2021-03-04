@@ -1,18 +1,18 @@
 ---
 title: Windows 上的本机 Android 开发
-description: 开始在 Windows 上开发 Android 本机应用。
+description: 有关如何开始在 Windows 上开发 Android 本机应用程序的分步指南。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: android、windows、android studio、visual studio、c + + android 游戏、windows defender、模拟器、虚拟设备、安装、java、kotlin
 ms.date: 04/28/2020
-ms.openlocfilehash: c9c718d2cccc6a38ac75d3220a79c7b2ec757f54
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c08aac8968ecc16ec548fadd4bee7d83b74ea719
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166841"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823181"
 ---
 # <a name="get-started-with-native-android-development-on-windows"></a>Windows 上的本机 Android 开发入门
 
@@ -31,7 +31,7 @@ Android Studio 是 Google 的 Android 操作系统的官方集成开发环境。
 
 ## <a name="create-a-new-project"></a>创建新项目
 
-选择 "**文件**" "新建" "  >  **New**  >  **新建项目**"。
+选择 "**文件**" "新建" "  >    >  **新建项目**"。
 
 在 " **选择你的项目** " 窗口中，你将能够在这些模板之间进行选择：
 
@@ -46,7 +46,7 @@ Android Studio 是 Google 的 Android 操作系统的官方集成开发环境。
 模板通常用于向新的和现有的应用模块中添加活动。 例如，若要为应用程序的用户创建登录屏幕，请使用 [登录活动模板](https://developer.android.com/studio/projects/templates#LoginActivity)添加一个活动。
 
 > [!NOTE]
-> Android 操作系统基于 **组件** 的概念，并使用术语 **活动** 和 **意向** 来定义交互。 **活动**表示用户可执行的单个重点任务。 **活动**提供了一个窗口，用于基于**视图**类使用类生成用户界面。 Android 操作系统中的 **活动** 有一个生命周期，由六个回调集定义： `onCreate()` 、 `onStart()` 、 `onResume()` 、、 `onPause()` `onStop()` 和 `onDestroy()` 。 活动组件使用 **意向** 对象彼此交互。 意向定义要启动的活动，或说明要执行的操作类型 (并且系统为你选择适当的活动，甚至可以从不同的应用程序) 。 详细了解 Android 文档中的 [活动](https://developer.android.com/reference/android/app/Activity)、 [活动生命周期](https://developer.android.com/guide/components/activities/activity-lifecycle)和 [意向](https://developer.android.com/reference/android/content/Intent.html) 。
+> Android 操作系统基于 **组件** 的概念，并使用术语 **活动** 和 **意向** 来定义交互。 **活动** 表示用户可执行的单个重点任务。 **活动** 提供了一个窗口，用于基于 **视图** 类使用类生成用户界面。 Android 操作系统中的 **活动** 有一个生命周期，由六个回调集定义： `onCreate()` 、 `onStart()` 、 `onResume()` 、、 `onPause()` `onStop()` 和 `onDestroy()` 。 活动组件使用 **意向** 对象彼此交互。 意向定义要启动的活动，或说明要执行的操作类型 (并且系统为你选择适当的活动，甚至可以从不同的应用程序) 。 详细了解 Android 文档中的 [活动](https://developer.android.com/reference/android/app/Activity)、 [活动生命周期](https://developer.android.com/guide/components/activities/activity-lifecycle)和 [意向](https://developer.android.com/reference/android/content/Intent.html) 。
 
 ### <a name="java-or-kotlin"></a>Java 或 Kotlin
 
@@ -99,7 +99,7 @@ Google Play **即时应用** 提供一种方法，让用户无需安装即可试
 
 ## <a name="use-c-or-c-for-android-game-development"></a>使用 C 或 c + + 进行 Android 游戏开发
 
-Android 操作系统旨在支持以 Java 或 Kotlin 编写的应用程序，这些应用程序可以从系统体系结构中嵌入的工具中获益。 许多系统功能（如 Android UI 和意向处理）仅通过 Java 接口公开。 在某些情况下，你可能希望 **通过 Android 本机开发工具包使用 C 或 c + + 代码 (NDK) ** ，尽管存在一些相关的挑战。 游戏开发是一个示例，因为游戏通常使用 OpenGL 或 Vulkan 中编写的自定义呈现逻辑，并受益于专门针对游戏开发的大量 C 库。 使用 C 或 c + + *可能* 还有助于将额外性能从设备中弹出，以实现低延迟或运行计算密集型应用程序，如物理学模拟。 不过，此 NDK **不适用于大多数初学者的 Android 编程人员** 。 除非你有使用 NDK 的特定目的，否则建议不要使用 Java、Kotlin 或某个 [跨平台框架](./overview.md)。
+Android 操作系统旨在支持以 Java 或 Kotlin 编写的应用程序，这些应用程序可以从系统体系结构中嵌入的工具中获益。 许多系统功能（如 Android UI 和意向处理）仅通过 Java 接口公开。 在某些情况下，你可能希望 **通过 Android 本机开发工具包使用 C 或 c + + 代码 (NDK)** ，尽管存在一些相关的挑战。 游戏开发是一个示例，因为游戏通常使用 OpenGL 或 Vulkan 中编写的自定义呈现逻辑，并受益于专门针对游戏开发的大量 C 库。 使用 C 或 c + + *可能* 还有助于将额外性能从设备中弹出，以实现低延迟或运行计算密集型应用程序，如物理学模拟。 不过，此 NDK **不适用于大多数初学者的 Android 编程人员** 。 除非你有使用 NDK 的特定目的，否则建议不要使用 Java、Kotlin 或某个 [跨平台框架](./overview.md)。
 
 若要创建具有 C/c + + 支持的新项目，请执行以下操作：
 
@@ -107,7 +107,7 @@ Android 操作系统旨在支持以 Java 或 Kotlin 编写的应用程序，这�
 
 - 在向导的 " **自定义 c + + 支持** " 部分中，可以通过 " **c + + 标准** " 字段自定义项目。 使用下拉列表选择要使用的 c + + 标准化。 选择 **工具链默认值** 将使用默认的 CMake 设置。 选择“完成”。
 
-- Android Studio 创建新项目后，可以在 "**项目**" 窗格中找到一个**cpp**文件夹，其中包含本机源文件、标头、用于 CMake 或 ndk 构建的生成脚本，以及预生成的包含在项目中的库。 还可以在文件夹中找到一个示例 c + + 源文件，该文件 `native-lib.cpp` `src/main/cpp/` 提供了一个 `stringFromJNI()` 返回字符串 "Hello From c + +" 的简单函数。 此外，你将 [`CMakeLists.txt`](https://developer.android.com/studio/projects/configure-cmake.html) 在生成本机库所需的模块根目录中找到 CMake 生成脚本。
+- Android Studio 创建新项目后，可以在 "**项目**" 窗格中找到一个 **cpp** 文件夹，其中包含本机源文件、标头、用于 CMake 或 ndk 构建的生成脚本，以及预生成的包含在项目中的库。 还可以在文件夹中找到一个示例 c + + 源文件，该文件 `native-lib.cpp` `src/main/cpp/` 提供了一个 `stringFromJNI()` 返回字符串 "Hello From c + +" 的简单函数。 此外，你将 [`CMakeLists.txt`](https://developer.android.com/studio/projects/configure-cmake.html) 在生成本机库所需的模块根目录中找到 CMake 生成脚本。
 
 若要了解详细信息，请参阅 Android 文档主题： [将 C 和 c + + 代码添加到你的项目](https://developer.android.com/studio/projects/add-native-code)。 有关示例，请参阅 GitHub 上的 [Android Studio c + + 集成存储库的 ANDROID NDK 示例](https://github.com/android/ndk-samples) 。 若要在 Android 上编译并运行 c + + 游戏，请使用 [Google Play 游戏服务 API](https://developers.google.com/games/services/cpp/gettingStartedAndroid)。
 

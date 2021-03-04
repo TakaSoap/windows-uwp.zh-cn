@@ -6,12 +6,12 @@ ms.date: 01/21/2021
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 收集 API, Microsoft Store 购买 API, 查看产品, 授予产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 7674a9b966510d914850e1fc8b2c8ca531f64a20
-ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
+ms.openlocfilehash: 4e58a3e601c1a9f3ff438342ccaa9ee4014a1450
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98668738"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824421"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理来自服务的产品授权
 
@@ -84,7 +84,7 @@ ms.locfileid: "98668738"
       > [!IMPORTANT]
       > 将 `https://onestore.microsoft.com` 受众仅与安全存储在服务中的访问令牌一起使用。 在服务之外公开访问令牌和此受众会让你的服务易受到重播攻击。
 
-  * 如果你想要在 Microsoft Store 收集 API 中调用某个方法以[查询用户拥有的产品](query-for-products.md)或[将可消费产品报告为已完成](report-consumable-products-as-fulfilled.md)，则还必须使用 `https://onestore.microsoft.com/b2b/keys/create/collections` 受众 URI 创建令牌。 在稍后的步骤中，你要将此令牌传递到 Windows SDK 中的客户端方法，以请求可与 Microsoft Store 收集 API 一起使用的 Microsoft Store ID 密钥。
+  * 如果你想要在 Microsoft Store 收集 API 中调用某个方法以[查询用户拥有的产品](query-for-products.md)或[将可消费产品报告为已完成](report-consumable-products-as-fulfilled.md)，则还必须使用 `https://onestore.microsoft.com` 受众 URI 创建令牌。 在稍后的步骤中，你要将此令牌传递到 Windows SDK 中的客户端方法，以请求可与 Microsoft Store 收集 API 一起使用的 Microsoft Store ID 密钥。
 
   * 如果你想要调用 Microsoft Store 购买 API 中的方法来[向用户授予免费产品](grant-free-products.md)、[获取用户订阅](get-subscriptions-for-a-user.md)或[更改用户订阅的计费状态](change-the-billing-state-of-a-subscription-for-a-user.md)，则必须使用 `https://onestore.microsoft.com/b2b/keys/create/purchase` 受众 URI 创建一个令牌。 在稍后的步骤中，你要将此令牌传递到 Windows SDK 中的客户端方法，以请求可与 Microsoft Store 购买 API 一起使用的 Microsoft Store ID 密钥。
 

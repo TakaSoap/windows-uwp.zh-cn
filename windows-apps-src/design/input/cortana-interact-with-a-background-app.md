@@ -1,16 +1,16 @@
 ---
-title: 与 Cortana 中的后台应用交互-Cortana UWP 设计和开发
+title: 与 Cortana 中的后台应用交互 - Cortana UWP 设计和开发
 description: 执行语音命令时，通过 Cortana 画布中的语音和文本输入，使用户能够与后台应用交互。
 ms.assetid: e42917dc-aece-4880-813f-80b897f9126c
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 835a2f60d2b86e5bef49195d4f937fa844f4d921
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: 6e63d86d8d3764f8ca95dce4c1b8b7de437c95ec
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606072"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824491"
 ---
 # <a name="interact-with-a-background-app-in-cortana"></a>在 Cortana 中与后台应用交互
 
@@ -43,8 +43,8 @@ Cortana 支持通过应用完成的一次性工作流。 此工作流由您的�
 >
 > 如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请查看这些主题来熟悉此处讨论的技术。
 >
-> - [创建你的第一个应用](/windows/uwp/get-started/your-first-app)
-> - 借助[事件和路由事件概述](/windows/uwp/xaml-platform/events-and-routed-events-overview)了解事件
+> - [创建你的第一个应用](../../get-started/your-first-app.md)
+> - 借助[事件和路由事件概述](../../xaml-platform/events-and-routed-events-overview.md)了解事件
 >
 > **用户体验指南**
 >

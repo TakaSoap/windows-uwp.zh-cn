@@ -1,16 +1,16 @@
 ---
-title: 动态修改 Cortana VCD 短语列表-Cortana UWP 设计和开发
+title: 动态修改 Cortana VCD 短语列表 - Cortana UWP 设计和开发
 description: 使用语音识别结果在运行时访问和更新语音命令定义中 (PhraseList) 元素的列表， (VCD) 文件。
 ms.assetid: b497145b-c7a0-454a-8329-6bc1228953bb
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 1f61a08e9eeb66371ed39b44eb39dacbc1bf3cf5
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: 5c28330a975b66c2f04baba1d0df58b38d684356
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606032"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824411"
 ---
 # <a name="dynamically-modify-cortana-vcd-phrase-lists"></a>动态修改 Cortana VCD 短语列表
 
@@ -47,8 +47,8 @@ ms.locfileid: "99606032"
 >
 > 如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请查看这些主题来熟悉此处讨论的技术。
 >
-> - [创建你的第一个应用](/windows/uwp/get-started/your-first-app)
-> - 借助[事件和路由事件概述](/windows/uwp/xaml-platform/events-and-routed-events-overview)了解事件
+> - [创建你的第一个应用](../../get-started/your-first-app.md)
+> - 借助[事件和路由事件概述](../../xaml-platform/events-and-routed-events-overview.md)了解事件
 >
 > **用户体验指南**
 >
