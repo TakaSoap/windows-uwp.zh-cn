@@ -3,12 +3,12 @@ title: WinUI 3 预览版 4（2021 年 2 月）
 description: WinUI 3 预览版 4 发布概述。
 ms.date: 02/09/2021
 ms.topic: article
-ms.openlocfilehash: 7bbc5c4983f77080366942ecaf702e7e1f844886
-ms.sourcegitcommit: 884318ec5118cade85a31f4d5644436614e9f272
+ms.openlocfilehash: a6c74ac64e3384b5a1f5cdc466b4faf441f14445
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100524993"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824081"
 ---
 # <a name="windows-ui-library-3-preview-4-february-2021"></a>Windows UI 库 3 预览版 4（2021 年 2 月）
 
@@ -262,36 +262,36 @@ WinUI 3 预览版 4 与运行 Windows 10 2018 年 4 月更新（版本 1803 - �
 
 #### <a name="corewindow-applicationview-coreapplicationview-and-coredispatcher-in-desktop-apps"></a>桌面应用中的 CoreWindow、ApplicationView、CoreApplicationView 和 CoreDispatcher
 
-预览版 4 中的新增功能 [CoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)、[ApplicationView](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationView)、[CoreApplicationView](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
-[CoreDispatcher](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 及其依赖项在桌面应用中不可用。
+预览版 4 中的新增功能 [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow)、[ApplicationView](/uwp/api/Windows.UI.ViewManagement.ApplicationView)、[CoreApplicationView](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
+[CoreDispatcher](/uwp/api/Windows.UI.Core.CoreDispatcher) 及其依赖项在桌面应用中不可用。
 
-例如，[Window.Dispatcher](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.Dispatcher) 属性始终为 null，但 Window.DispatcherQueue 属性可用作一种替代方法。
+例如，[Window.Dispatcher](/uwp/api/Windows.UI.Xaml.Window.Dispatcher) 属性始终为 null，但 Window.DispatcherQueue 属性可用作一种替代方法。
 
 这些 API 仅适用于 UWP 应用。
 在过去的预览版中，它们在桌面应用中也可以部分使用，但在预览版 4 中它们被完全禁用。
 这些 API 是针对 UWP 情况设计的，其中每个线程只适用于一个窗口，WinUI3 的功能之一是启用多个窗口。
 
-有一些 API 在内部依赖于这些 API 的存在，因此在桌面应用中不受支持。 这些 API 通常具有静态 `GetForCurrentView` 方法。 例如 [UIViewSettings.GetForCurrentView](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView)。
+有一些 API 在内部依赖于这些 API 的存在，因此在桌面应用中不受支持。 这些 API 通常具有静态 `GetForCurrentView` 方法。 例如 [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView)。
 
 
 ### <a name="known-issues"></a>已知问题
 
 - Alt+F4 不会关闭桌面应用窗口。
 
-- 由于 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) 的更改，以下 WinRT API 可能不再像预期的那样适用于桌面应用：
-  - [`ApplicationView`](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) 和所有相关 API 将不再适用。
-  - [`CoreApplicationView`](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview) 和所有相关 API 将不再适用。
-  - 可能并不支持所有 `GetForCurrentView` API，例如 [`CoreInputView.GetForCurrentView`](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.Core.CoreInputView.GetForCurrentView)。
-  - [`CoreWindow.GetForCurrentThread`](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow.GetForCurrentThread) 现在将返回 null。
+- 由于 [CoreWindow](/uwp/api/windows.ui.core.corewindow) 的更改，以下 WinRT API 可能不再像预期的那样适用于桌面应用：
+  - [`ApplicationView`](/uwp/api/windows.ui.viewmanagement.applicationview) 和所有相关 API 将不再适用。
+  - [`CoreApplicationView`](/uwp/api/windows.applicationmodel.core.coreapplicationview) 和所有相关 API 将不再适用。
+  - 可能并不支持所有 `GetForCurrentView` API，例如 [`CoreInputView.GetForCurrentView`](/uwp/api/Windows.UI.ViewManagement.Core.CoreInputView.GetForCurrentView)。
+  - [`CoreWindow.GetForCurrentThread`](/uwp/api/Windows.UI.Core.CoreWindow.GetForCurrentThread) 现在将返回 null。
 
-  有关在 WinUI 3 桌面应用中使用 WinRT API 的详细信息，请参阅[可用于桌面应用的 Windows Runtime API](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-supported-api
+  有关在 WinUI 3 桌面应用中使用 WinRT API 的详细信息，请参阅[可用于桌面应用的 Windows Runtime API](../../desktop/modernize/desktop-to-uwp-supported-api.md
 )。
 
-- 桌面应用中不再支持 [UISettings.ColorValuesChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged)和 [AccessibilitySettings.HighContrastChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged)。 如果使用它来检测 Windows 主题中的更改，可能会导致问题。 
+- 桌面应用中不再支持 [UISettings.ColorValuesChanged 事件](/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged)和 [AccessibilitySettings.HighContrastChanged 事件](/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged)。 如果使用它来检测 Windows 主题中的更改，可能会导致问题。 
 
 - 此版本包含一些试验性 API。 这些尚未经过团队全面测试，并且可能存在未知问题。 如果遇到任何问题，请在我们的存储库中[提交 bug](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=)。 
 
-- 以前，如果要获取 CompositionCapabilities 实例，需要调用 [CompositionCapabilites.GetForCurrentView()](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities.getforcurrentview)。 但是，从此调用返回的功能不依赖于视图。 为了解决并反映此问题，我们已在此版本中删除 GetForCurrentView() 静态，因此现在可以直接创建 [CompositionCapabilties](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities) 对象。
+- 以前，如果要获取 CompositionCapabilities 实例，需要调用 [CompositionCapabilites.GetForCurrentView()](/uwp/api/windows.ui.composition.compositioncapabilities.getforcurrentview)。 但是，从此调用返回的功能不依赖于视图。 为了解决并反映此问题，我们已在此版本中删除 GetForCurrentView() 静态，因此现在可以直接创建 [CompositionCapabilties](/uwp/api/windows.ui.composition.compositioncapabilities) 对象。
 
 - 对于 C# UWP 应用：
 

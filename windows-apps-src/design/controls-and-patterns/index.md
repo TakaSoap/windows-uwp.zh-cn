@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: f7a06c75b37b62436c4ef0ebcb8ccae2a6153b85
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
+ms.openlocfilehash: 1e568dfb35f273b4efe045a6a16c944007f1ee7f
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829426"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824471"
 ---
 # <a name="controls-for-windows-apps"></a>适用于 Windows 应用的控件
 
@@ -56,7 +56,7 @@ ms.locfileid: "91829426"
 
 ## <a name="alphabetical-index"></a>按字母顺序排序的索引
 
-有关特定控件和模式的详细信息。 （有关按功能排序的列表，请参阅[按功能排序的控件索引](controls-by-function.md)。）
+有关特定控件和模式的详细信息。 
 
 :::row:::
     :::column:::

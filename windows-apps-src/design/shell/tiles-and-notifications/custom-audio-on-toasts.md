@@ -7,12 +7,12 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, 自定义音频, 通知, 音频, 声音
 ms.localizationpriority: medium
-ms.openlocfilehash: d2d32b9545cccfb25790d394aec028fd29904ca5
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 54f890ceb0031b4c244e387e1f7068615a2fedc1
+ms.sourcegitcommit: 98ca28fd0b5d306d35f3919fe9dd4d5a0222235e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984403"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102029820"
 ---
 # <a name="custom-audio-on-toasts"></a>toast 上的自定义音频
 
