@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: windows 10, uwp, 屏幕捕获
 ms.localizationpriority: medium
-ms.openlocfilehash: 26de7699f9f261bba6e02bc3664e335c46e4ac3d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: be8d63a446c05998948327d7055b4385c5e88761
+ms.sourcegitcommit: 9842e0e5c369a52594336d2278af877ccf40b049
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218660"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102196970"
 ---
 # <a name="screen-capture"></a>屏幕捕获
 
@@ -31,7 +31,7 @@ ms.locfileid: "91218660"
 
 在 **Windows. Capture** 命名空间中找到的 api 需要在应用程序清单中声明常规功能：
 
-1. 在**解决方案资源管理器**中打开**appxmanifest.xml** 。
+1. 在 **解决方案资源管理器** 中打开 **appxmanifest.xml** 。
 2. 选择“功能”选项卡。
 3. 检查 **图形捕获**。
 
@@ -96,7 +96,7 @@ Public Async Function StartCaptureAsync() As Task
 End Function
 ```
 
-由于这是 UI 代码，因此需要在 UI 线程上调用。 如果从应用 (程序页面的代码隐藏中调用该 MainPage.xaml.cs （如**MainPage.xaml.cs** ）) 自动为你执行此操作，但如果不是，则可以使用以下代码强制其在 UI 线程上运行：
+由于这是 UI 代码，因此需要在 UI 线程上调用。 如果从应用 (程序页面的代码隐藏中调用该 MainPage.xaml.cs （如 ）) 自动为你执行此操作，但如果不是，则可以使用以下代码强制其在 UI 线程上运行：
 
 ```csharp
 CoreWindow window = CoreApplication.MainView.CoreWindow;
@@ -116,6 +116,9 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>创建捕获帧池和捕获会话
 
 使用 **GraphicsCaptureItem**，你将使用 D3D 设备创建 [Direct3D11CaptureFramePool](/uwp/api/windows.graphics.capture.direct3d11captureframepool) ， (**DXGI \_ format \_ B8G8R8A8 \_ UNORM**) ，所需帧数 (，可以是) 的任何整数和帧大小。 **GraphicsCaptureItem** 类的 **ContentSize** 属性可以用作帧的大小：
+
+> [!NOTE]
+> 在启用了 Windows HD 颜色的系统上，内容像素格式可能不一定是 **DXGI \_ 格式 \_ B8G8R8A8 \_ UNORM**。 若要避免像素 overclipping (即捕获的内容在捕获 HDR 内容时看似冲蚀) ，请考虑对捕获管道中的每个组件使用 **DXGI \_ FORMAT \_ R16G16B16A16 \_ FLOAT** ，其中包括 [Direct3D11CaptureFramePool](/uwp/api/windows.graphics.capture.direct3d11captureframepool)，目标目标（如 [CanvasBitmap](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm)）。 取决于需求，可能需要进行其他处理，如保存到 HDR 内容格式或 HDR 到 SDR 的音调映射。 本文重点介绍 SDR 内容捕获。 有关详细信息，请参阅 [使用具有高动态范围显示和高级颜色的 DirectX](/windows/win32/direct3darticles/high-dynamic-range)。
 
 ```csharp
 private GraphicsCaptureItem _item;
@@ -241,7 +244,7 @@ CanvasBitmap canvasBitmap = CanvasBitmap.CreateFromDirect3D11Surface(
     frame.Surface);
 ```
 
-有了 **CanvasBitmap**后，我们就可以将其另存为映像文件。 在下面的示例中，我们将其保存为用户的 " **已保存图片** " 文件夹中的 PNG 文件。
+有了 **CanvasBitmap** 后，我们就可以将其另存为映像文件。 在下面的示例中，我们将其保存为用户的 " **已保存图片** " 文件夹中的 PNG 文件。
 
 ```csharp
 StorageFolder pictureFolder = KnownFolders.SavedPictures;
@@ -690,7 +693,7 @@ End Class
 
 如果要录制应用程序的视频，可以按照 [屏幕截图到视频](screen-capture-video.md)一文中介绍的演练进行操作。 或者，可以使用 [AppRecording 命名空间](/uwp/api/windows.media.apprecording)。 这是桌面扩展 SDK 的一部分，因此它仅适用于桌面，并要求你从项目中添加对它的引用。 有关详细信息，请参阅 [通过扩展 sdk 进行编程](/uwp/extension-sdks/device-families-overview) 。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 * [Windows.Graphics.Capture 命名空间](/uwp/api/windows.graphics.capture)
 * [屏幕捕获到视频](screen-capture-video.md)
