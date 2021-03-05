@@ -5,12 +5,12 @@ ms.date: 05/22/2020
 ms.topic: article
 keywords: windows 10 s, 始终连接, ARM, ARM64, x86 模拟
 ms.localizationpriority: medium
-ms.openlocfilehash: 39ff5b2aa6c72feaeaea0a7a61100196c109257c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: abb6e891d1f23ae94d61732d70af6bc3babcb07f
+ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162291"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102192929"
 ---
 # <a name="windows-10-on-arm"></a>基于 ARM 的 Windows 10
 起初，Windows 10（与 Windows 10 移动版不同）只能在采用 x86 和 x64 处理器的电脑上运行。 现在，Windows 10 桌面可以在使用秋季创建者更新或更新版本的 ARM64 处理器的计算机上运行。 ARM CPU 体系结构的省电特性使这些电脑拥有全天的电池使用时间，并且支持移动数据网络。 这些电脑将提供出色的应用程序兼容性，让你在不进行任何修改的情况下运行现有的 x86 win32 应用程序。 有关详细信息或演示，请查看 "始终连接的 PC" 的第 [9 频道视频](https://channel9.msdn.com/Events/Build/2017/P4171)。
@@ -37,7 +37,7 @@ ARM 上的 Windows 10 从 Microsoft Store 运行所有 x86、ARM32 和 ARM64 [UW
 
 ## <a name="downloads"></a>下载
 
-Visual Studio 2019 为 ARM 上的 Windows 10 提供了多个工具下载。 使用 Visual Studio 2017 的用户 stil 可以使用安装程序来查找和安装类似的工具和包。 请注意，若要执行这些步骤，您必须使用 Visual Studio 2019。
+Visual Studio 2019 为 ARM 上的 Windows 10 提供了多个工具下载。 仍在使用 Visual Studio 2017 的用户可以使用安装程序来查找和安装类似的工具和包。 请注意，若要执行这些步骤，您必须使用 Visual Studio 2019。
 
 ### <a name="visual-c-redistributable"></a>Visual C++ Redistributable
 
@@ -49,7 +49,7 @@ Visual Studio 远程工具适用于 ARM 应用。 访问 [Visual studio 下载�
 
 
 ## <a name="in-this-section"></a>在本节中
-|主题 | 描述 |
+|主题 | 说明 |
 |-----|-----|
 |[x86 仿真在 ARM 上的工作原理](apps-on-arm-x86-emulation.md)|详细介绍如何在 ARM 上模拟 x86 应用。|
 |[ARM 上的 x86 应用疑难解答](apps-on-arm-troubleshooting-x86.md)|在 ARM 上运行 x86 应用的常见问题以及如何解决这些问题。 |
@@ -57,7 +57,7 @@ Visual Studio 远程工具适用于 ARM 应用。 访问 [Visual studio 下载�
 |[ARM 上的程序兼容性疑难解答](apps-on-arm-program-compat-troubleshooter.md)|介绍当你的应用无法在 ARM 上正常工作时如何调整兼容性设置。 |
 
 ## <a name="related-topics"></a>相关主题
-|主题 | 描述 |
+|主题 | 说明 |
 |-----|-----|
 |[使用 WDK 生成 ARM64 驱动程序](/windows-hardware/drivers/develop/building-arm64-drivers)|有关构建 ARM64 驱动程序的说明。 |
 | [调试基于 ARM 的 x86 应用](/windows-hardware/drivers/debugger/debugging-arm64) | 调试基于 ARM 的 x86 应用的指南。 |
