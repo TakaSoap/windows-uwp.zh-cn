@@ -1,18 +1,18 @@
 ---
-title: 通过更新 Defender 设置提高性能速度
-description: 指南：通过更新 Windows Defender 设置以排除检查指定的文件类型，提高总体性能速度和生成时间。
+title: Windows Defender 安全设置
+description: 了解如何通过更新 Windows Defender 设置以排除检查指定的文件类型，从而提高性能速度和生成时间。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: android、windows、windows defender、设置、配置、排除、% USERPROFILE%、devenv.exe、性能、速度、生成、gradle
 ms.date: 04/28/2020
-ms.openlocfilehash: e762e595bf2b8aa9b8420d41f68d2890e7d5dfe0
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: f7b2a44f31bf4ec84a4c7f014a3a502350dca748
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823201"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254311"
 ---
 # <a name="update-windows-defender-settings-to-improve-performance"></a>更新 Windows Defender 设置以提高性能
 

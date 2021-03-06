@@ -1,5 +1,5 @@
 ---
-title: 从 Windows 运行 Android 设备或模拟器
+title: 在 Android 设备或仿真程序上测试
 description: 在 Android 设备或模拟器上从 Windows 测试应用，并使用 hyper-v 和 Windows 虚拟机监控程序平台 (WHPX) 启用虚拟化。
 author: mattwojo
 ms.author: mattwoj
@@ -7,12 +7,12 @@ manager: jken
 ms.topic: article
 keywords: android，windows，模拟器，虚拟设备，设备设置，启用设备，开发人员，配置，虚拟化，visual studio，hyper-v，intel，haxm，amd，Windows 虚拟机监控程序平台，WHPX
 ms.date: 04/28/2020
-ms.openlocfilehash: 57e1d8d62ea7b3918c5e52724c11febcb9f03d72
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9e9d8cac14fd424ab653db2f5e1639a4c26e434a
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161551"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254318"
 ---
 # <a name="test-on-an-android-device-or-emulator"></a>在 Android 设备或仿真程序上测试
 
@@ -61,7 +61,7 @@ ms.locfileid: "89161551"
 > * 提供4GB 的可用内存
 > * 为64位 Intel 处理器或 AMD Ryzen CPU 提供二级地址转换 (SLAT) 
 > * 正在运行 Windows 10 build 1803 + ([检查您的内部版本](ms-settings:about)) 
-> * 已更新的图形驱动程序 (设备管理器 > 显示适配器 > 更新驱动程序) 
+> * 已更新的图形驱动程序 (Device Manager > 显示适配器 > 更新驱动程序) 
 >
 > 如果计算机不满足此条件，则可以运行 [INTEL HAXM](https://github.com/intel/haxm/wiki/Installation-Instructions-on-Windows) 或 [AMD 虚拟机监控程序](https://github.com/google/android-emulator-hypervisor-driver-for-amd-processors)。 有关详细信息，请参阅文章： [仿真程序性能的硬件加速](/xamarin/android/get-started/installation/android-emulator/hardware-acceleration) 或 [Android Studio 模拟器文档](https://developer.android.com/studio/run/emulator)。
 
@@ -100,13 +100,13 @@ ms.locfileid: "89161551"
 
 1. 如果尚未安装，请下载 [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)。 使用 Visual Studio 安装程序 [修改工作负荷](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads) ，并确保具有 **.net 工作负载的移动开发**。
 
-2. 创建一个新的项目。 [设置 Android Emulator](/xamarin/android/get-started/installation/android-emulator/)后，可以使用[Android Device Manager](/xamarin/android/get-started/installation/android-emulator/device-manager?pivots=windows&tabs=windows#requirements)创建、复制、自定义和启动各种 Android 虚拟设备。 从 "工具" 菜单中启动 Android Device Manager： **tools**  >  **Android**  >  **Android Device Manager**。
+2. 创建新项目。 [设置 Android Emulator](/xamarin/android/get-started/installation/android-emulator/)后，可以使用[Android Device Manager](/xamarin/android/get-started/installation/android-emulator/device-manager?pivots=windows&tabs=windows#requirements)创建、复制、自定义和启动各种 Android 虚拟设备。 从 "工具" 菜单中启动 Android Device Manager： **tools**  >  **Android**  >  **Android Device Manager**。
 
 3. 打开 Android Device Manager 后，选择 " **+ 新建** " 以创建新设备。
 
 4. 你将需要为设备命名，从下拉菜单中选择基本设备类型，选择处理器、操作系统版本以及虚拟设备的其他几个变量。 有关详细信息，请 [Android Device Manager 主屏幕](/xamarin/android/get-started/installation/android-emulator/device-manager?pivots=windows&tabs=windows#main-screen)。
 
-5. 在 Visual Studio 工具栏中，在应用启动) 或**发布**模式 (禁用调试器) 后，选择 "**调试**" (会附加到在模拟器内运行的应用程序进程。 然后从 "设备" 下拉菜单中选择虚拟设备，然后选择 " **播放** " 按钮▷在模拟器中运行应用程序。
+5. 在 Visual Studio 工具栏中，在应用启动) 或 **发布** 模式 (禁用调试器) 后，选择 "**调试**" (会附加到在模拟器内运行的应用程序进程。 然后从 "设备" 下拉菜单中选择虚拟设备，然后选择 " **播放** " 按钮▷在模拟器中运行应用程序。
 
     ![Visual Studio 启动 Android Emulator](../images/vs-target-device-menu.png)
 

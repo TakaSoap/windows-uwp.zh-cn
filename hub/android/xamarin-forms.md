@@ -1,18 +1,18 @@
 ---
-title: 使用 Xamarin 创建简单的 Android 应用
-description: 如何开始在 Windows 上使用 Xamarin. Forms 的分步指南，用于创建可在 Android 设备上工作的跨平台应用。
+title: 用 Xamarin 创建 Android 应用程序
+description: 如何开始编写带有 Xamarin 的 Android 应用程序
 author: hickeys
 ms.author: hickeys
 manager: jken
 ms.topic: article
 keywords: android、windows、xamarin、xaml、教程
 ms.date: 04/28/2020
-ms.openlocfilehash: b1364d8ac19176ec25ee6d45664c7e765accfe1e
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: b6c6a00c430dcc04994c0f8fd537d7c5c2083d4e
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823191"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254258"
 ---
 # <a name="get-started-developing-for-android-using-xamarinforms"></a>使用 Xamarin 进行 Android 开发入门
 

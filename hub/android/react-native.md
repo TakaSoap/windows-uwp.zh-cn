@@ -1,18 +1,18 @@
 ---
-title: 针对 Windows 上的 Android 开发做出本机响应
-description: 介绍如何开始使用 Windows 上的响应本机的分步指南，以创建可在 Android 设备上工作的跨平台应用。
+title: 对 Android 开发进行本机响应
+description: 开始使用 Windows 上的 Xamarin 本机开发 Android 应用。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: android，windows，响应本机，模拟器，展览，地铁捆绑程序，终端
 ms.date: 04/28/2020
-ms.openlocfilehash: 82bf078d6c29c8968ce3e0cc19ce4d6f803e6d71
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 099dc073e36ee153376f4247b5d7c0526c3a8646
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823221"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254322"
 ---
 # <a name="get-started-developing-for-android-using-react-native"></a>开始使用响应本机开发 Android
 

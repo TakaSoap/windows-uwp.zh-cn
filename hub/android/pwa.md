@@ -1,18 +1,18 @@
 ---
-title: 适用于 Windows 上的 Android 开发的 PWA 方法
-description: 有关如何开始在 Windows 上创建混合 web 应用或渐进式 Web 应用 (PWA) 的分步指南。
+title: 创建适用于 Android 的 PWA 或混合 web 应用
+description: 开始在 Windows 上使用 PWA 方法开发 Android 应用。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: windows 上的 android，pwa，android，cordova，ionic，phonegap，混合 web 应用
 ms.date: 04/28/2020
-ms.openlocfilehash: 8115de0dedaa561c7a71621904d060ca62b5ac47
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 1591bedbe79e873def5c4ecc75663fb5271eb1c1
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823151"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254262"
 ---
 # <a name="get-started-developing-a-pwa-or-hybrid-web-app-for-android"></a>开始为 Android 开发 PWA 或混合 web 应用
 
