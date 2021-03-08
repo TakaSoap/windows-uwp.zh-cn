@@ -1,6 +1,6 @@
 ---
 title: 开始在 Windows 上使用 Python（初学者）
-description: 一个指南，可在你刚开始接触在 Windows 上使用 Python 时帮助你入门。
+description: 面向刚接触或有兴趣通过 Windows 10 学习 Python 的初学者的分步指南。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, 了解 python, windows 上的 python（初学者）, 使用 microsoft store 安装 python, python 与 vs code, windows 上的 pygame
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: f225932685e71cb2374249ad96efeac11184d000
-ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
+ms.openlocfilehash: 614e78b3dc4295b52b58645f04a0c02007bff4d4
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97880540"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823611"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>开始在 Windows 上使用 Python（初学者）
 
@@ -29,7 +29,7 @@ ms.locfileid: "97880540"
 
 使用 Microsoft Store 安装 Python：
 
-1. 转到“开始”菜单（左下方 Windows 图标），输入“Microsoft Store”，选择用于打开应用商店的链接。
+1. 转到“开始”  菜单（左下方 Windows 图标），输入“Microsoft Store”，选择用于打开应用商店的链接。
 
 2. 应用商店打开后，从右上方菜单中选择“搜索”，然后输入“Python”。 从“应用”下的结果中打开“Python 3.9”。 选择“获取”。
 

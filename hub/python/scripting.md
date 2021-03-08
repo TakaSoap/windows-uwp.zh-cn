@@ -1,6 +1,6 @@
 ---
 title: 在 Windows 上使用 Python 的脚本和自动化
-description: 如何开始在 Windows 上将 Python 用于脚本、自动化和系统管理。
+description: 帮助开始使用 Python 在 Windows 上进行脚本编写、自动化和系统管理的分步指南。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python 系统管理, python 文件自动化, windows 上的 python 脚本, 在 windows 上设置 python, windows 上的 python 开发人员环境, windows 上的 python 开发环境, python 与 powershell, 适用于文件系统任务的 python 脚本
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: a8f13243f3501b2af42d38c13bff580be2e5b42a
-ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
+ms.openlocfilehash: 8b6ce391d810fc26ab9964f39939ce8c5a9958e9
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98691322"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823571"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>开始在 Windows 上将 Python 用于脚本和自动化
 

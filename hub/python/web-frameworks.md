@@ -1,6 +1,6 @@
 ---
 title: 在 Windows 上使用 Python 进行 Web 开发
-description: 如何开始在 Windows 上使用 Python 进行 Web 开发，包括针对 Flask 和 Django 等框架进行设置。
+description: 帮助开始使用 Python 在 Windows 上进行 Web 开发（包括针对 Flask 和 Django 等框架进行设置）的分步指南。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, windows 上的 python, 使用 wsl 的 python web, 使用适用于 linux 的 windows 子系统的 python web 应用, windows 上的 python web 开发, windows 上的 flask 应用, windows 上的 django 应用, python web, windows 上的 flask web 开发, windows 上的 django web 开发, 使用 python 的 windows web 开发, vs code python web 开发, 远程 wsl 扩展, ubuntu, wsl, venv, pip, microsoft python 扩展, 在 windows 上运行 python, 在 windows 上使用 python, 在 windows 上使用 python 构建
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 3b5ed80b746d0aa1441bf77e6468101deee320a6
-ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
+ms.openlocfilehash: ae9084541656ababf9ace4207cbfa84e30f7417a
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97880550"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823621"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>开始在 Windows 上将 Python 用于 Web 开发
 
@@ -105,9 +105,9 @@ VS Code 使用 Remote - WSL 扩展（之前已安装）将 Linux 子系统视为
 
 需要安装 Remote - WSL 的所有 VS Code 扩展。 已在 VS Code 上本地安装的扩展不会自动可用。 [了解详细信息](https://code.visualstudio.com/docs/remote/wsl#_managing-extensions)。
 
-1. 通过输入 Ctrl+Shift+X 来打开 VS Code 扩展窗口（或使用菜单导航到“视图” > “扩展”）。
+1. 通过输入 Ctrl+Shift+X  来打开 VS Code 扩展窗口（或使用菜单导航到“视图”   > “扩展”  ）。
 
-2. 在顶部的“在应用商店中搜索扩展”框中，输入：Python。
+2. 在顶部的“在应用商店中搜索扩展”  框中，输入：Python  。
 
 3. 找到“Python (ms-python.python) by Microsoft”扩展，然后选择绿色的“安装”按钮。
 

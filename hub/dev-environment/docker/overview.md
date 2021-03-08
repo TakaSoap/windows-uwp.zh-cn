@@ -1,6 +1,6 @@
 ---
 title: Docker 入门 - 使用容器进行远程开发
-description: Windows 或 WSL 上的 Docker Desktop 入门指南。
+description: Windows 或 WSL 上的 Docker Desktop 完整入门指南。 包括 Microsoft 提供的支持和各种 Azure 服务。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 ms.technology: windows-nodejs
 keywords: Microsoft, Windows, Docker, WSL, 远程开发, 容器, Docker Desktop, Windows 与 WSL
 ms.date: 09/24/2020
-ms.openlocfilehash: b3fc2509aa6a623bebd9f4566f3b8e75301251db
-ms.sourcegitcommit: c65f62bda57563f6196691e7b9c25cbf5a8b16e5
+ms.openlocfilehash: 09552a6a2a43e414c143ef0a51b6932fa2aaaf20
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91780567"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824161"
 ---
 # <a name="overview-of-docker-remote-development-on-windows"></a>Windows 上的 Docker 远程开发概述
 

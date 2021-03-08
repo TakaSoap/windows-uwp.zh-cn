@@ -1,6 +1,6 @@
 ---
 title: 有关在 Windows 上使用 Python 的常见问题解答
-description: 如需获取帮助，请查看有关在 Windows 上使用 Python 进行开发的常见问题解答 (FAQ)。
+description: 获取有关在 Windows 上使用 Python 进行开发的最常见问题 (FAQ) 的解答。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, file paths, PYTHONPATH, python deployment, python packaging
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: c1cada0fef5968846100f66bb41b3dd70ea5b59a
-ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
+ms.openlocfilehash: 7bc1d159bac5ebc9877db5d879b6acd82c51079b
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98691302"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823551"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>有关在 Windows 上使用 Python 的常见问题解答
 
@@ -46,7 +46,7 @@ sudo python3 -m pip uninstall pip
 sudo apt -y install python3-pip --fix-missing
 ```
 
-**有关进一步的讨论，请查看 [GitHub 上的 WSL 产品存储库](https://github.com/microsoft/WSL/issues/4020)。感谢我们的用户社区在 docs 中[参与此问题的解决](https://github.com/MicrosoftDocs/windows-uwp/issues/2679)。*
+**有关进一步的讨论，请查看 [GitHub 上的 WSL 产品存储库](https://github.com/microsoft/WSL/issues/4020)。感谢我们的用户社区在 docs 中 [参与此问题的解决](https://github.com/MicrosoftDocs/windows-uwp/issues/2679)。*
 
 ## <a name="what-is-pyexe"></a>什么是 py.exe？
 

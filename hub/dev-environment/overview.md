@@ -1,6 +1,6 @@
 ---
 title: 在 Windows 10 上设置开发环境
-description: 帮助你在 Windows 上设置开发环境并安装首选工具和代码语言的指南。 无论你是否选择使用 Python、NodeJS、VS Code、Git、Bash、Linux 工具和命令、Android Studio，我们都会为你提供功能强大的新工具（例如 Windows 终端和 WSL）。
+description: 帮助你在 Windows 上设置开发环境并安装首选工具和代码语言的完整指南。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: 设置 windows, 开发环境, 开发工具, 开发路径, Microsoft, Windows, 开发人员, 使用技巧, 性能, WSL, 终端, nodejs, python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 578bc10b26dfe04384ca8e8174e36497c20896cb
-ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
+ms.openlocfilehash: 58c68522fdb3ffe11c4e11dff48fb49faa79b830
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97927810"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824031"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>在 Windows 10 上设置开发环境
 
@@ -92,9 +92,9 @@ ms.locfileid: "97927810"
     :::column-end:::
     :::column:::
        [![PowerToys 图标](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
-        **[Windows PowerToys](../PowerToys/index.md)**<br>
+        **[Windows PowerToys](https://github.com/microsoft/PowerToys)**<br>
         通过这组高级用户实用程序，调整并简化 Windows 体验，以提高工作效率。<br>
-        [安装 PowerToys](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
+        [安装 PowerToys（公共预览版）](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
     :::column-end:::
 :::row-end:::
 :::row:::

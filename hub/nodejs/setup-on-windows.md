@@ -1,6 +1,6 @@
 ---
 title: 在本机 Windows 上设置 NodeJS
-description: 本指南可帮助你直接在 Windows 上设置 Node.js 开发环境。
+description: 帮助你直接在 Windows 上设置 Node.js 开发环境的分步指南。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Node.js, windows 10, 本机 windows, 直接在 windows 上
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 8c865610ba2678c1c5ab1b25ff7a2c7410d11f15
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bb950dcda9fddd6cf1b4b77da657f88ce2687785
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166581"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823591"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>直接在 Windows 上设置 Node.js 开发环境
 
@@ -26,14 +26,14 @@ ms.locfileid: "89166581"
 > [!IMPORTANT]
 > 在安装版本管理器之前，始终建议从操作系统中删除 Node.js 或 npm 的任何现有安装，因为不同的安装类型可能会导致出现奇怪和混淆的冲突。 这包括删除可能保留的任何现有的 nodejs 安装目录（例如，“C:\Program Files\nodejs”）。 NVM 生成的符号链接不会覆盖现有的（甚至是空的）安装目录。 有关删除先前安装的帮助，请参阅[如何从 Windows 中完全删除 node.js](https://stackoverflow.com/questions/20711240/how-to-completely-remove-node-js-from-windows)。
 
-1. 在 Internet 浏览器中打开 [windows-nvm 存储库](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows)，然后选择“立即下载”  链接。
-2. 下载最新版本的 nvm-setup.zip  文件。
-3. 下载完成后，打开 zip 文件，然后打开 nvm-setup.exe  文件。
+1. 在 Internet 浏览器中打开 [windows-nvm 存储库](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows)，然后选择“立即下载”链接。
+2. 下载最新版本的 nvm-setup.zip 文件。
+3. 下载完成后，打开 zip 文件，然后打开 nvm-setup.exe 文件。
 4. Setup-NVM-for-Windows 安装向导将引导你完成安装步骤，包括选择将在其中安装 nvm-windows 和 Node.js 的目录。
 
     ![NVM for Windows 安装向导](../images/install-nvm-for-windows-wizard.png)
 
-5. 安装完成后， 打开 PowerShell，尝试使用 windows-nvm 来列出当前安装的 Node 版本（此时应为无）：`nvm ls`
+5. 安装完成后。 打开 PowerShell，尝试使用 windows-nvm 来列出当前安装的 Node 版本（此时应为无）：`nvm ls`
 
     ![显示无 Node 版本的 NVM 列表](../images/windows-nvm-powershell-no-node.png)
 
@@ -61,7 +61,7 @@ ms.locfileid: "89166581"
 
 - [Volta](https://github.com/volta-cli/volta#installing-volta) 是来自 LinkedIn 团队的新版本管理器，它声称改进了速度和跨平台支持。
 
-若要将 Volta 安装为版本管理器（而不是 windows-nvm），请参阅其[入门指南](https://docs.volta.sh/guide/getting-started)的“Windows 安装”  部分，然后按照安装说明下载并运行其 Windows 安装程序。
+若要将 Volta 安装为版本管理器（而不是 windows-nvm），请参阅其[入门指南](https://docs.volta.sh/guide/getting-started)的“Windows 安装”部分，然后按照安装说明下载并运行其 Windows 安装程序。
 
 > [!IMPORTANT]
 > 安装 Volta 之前，必须确保在 Windows 计算机上启用[开发人员模式](/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers)。
@@ -74,9 +74,9 @@ ms.locfileid: "89166581"
 
 安装 Node.js 扩展包：
 
-1. 在 VS Code 中打开“扩展”  窗口 (Ctrl+Shift+X)。
-2. 在“扩展”窗口顶部的搜索框中，输入：“Node 扩展包”（或要查找的任何扩展的名称）。
-3. 选择“安装”  。 安装完成后，扩展将出现在“扩展”  窗口的“已启用”文件夹中。 可以通过选择新扩展说明旁的齿轮图标来禁用、卸载或配置设置。
+1. 在 VS Code 中打开“扩展”窗口 (Ctrl+Shift+X)。
+2. 在“扩展”窗口顶部的搜索框中，输入“Node 扩展包”（或你正在查找的扩展的名称）。
+3. 选择“安装”  。 安装完成后，扩展将出现在“扩展”窗口的“已启用”文件夹中。 可以通过选择新扩展说明旁的齿轮图标来禁用、卸载或配置设置。
 
 可能需要考虑的几个附加扩展包括：
 
@@ -101,4 +101,4 @@ ms.locfileid: "89166581"
 直接在 Windows 上使用 Node.js 非常适合学习和试验可执行的操作。 准备好生成可投入生产的 Web 应用后（通常部署到基于 Linux 的服务器），建议使用适用于 Linux 的 Windows 子系统版本 2 (WSL 2) 来开发 Node.js Web 应用。 许多 Node.js 包和框架是在 *nix 环境下创建的，并且大多数 Node.js 应用都部署在 Linux 上，因此在 WSL 上开发可确保开发环境和生产环境之间的一致性。 若要设置 WSL 开发环境，请参阅[使用 WSL 2 设置 Node.js 开发环境](./setup-on-wsl2.md)。
 
 > [!NOTE]
-> 如果需要在 Windows 服务器上托管 Node.js 应用程序，最常见的场景似乎是[使用反向代理](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca)。 可通过两种方式实现此目的：1) [使用 iisnode](https://harveywilliams.net/blog/installing-iisnode) 或[直接实现](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b)。 我们不会保留这些资源，建议[使用 Linux 服务器来托管 Node.js 应用](/azure/app-service/app-service-web-get-started-nodejs)。
+> 如果需要在 Windows 服务器上托管 Node.js 应用程序，最常见的场景似乎是[使用反向代理](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca)。 可采用两种方式做到这一点：[使用 iisnode](https://harveywilliams.net/blog/installing-iisnode) 或[直接](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b)操作。 我们不会保留这些资源，建议[使用 Linux 服务器来托管 Node.js 应用](/azure/app-service/app-service-web-get-started-nodejs)。

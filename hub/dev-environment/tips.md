@@ -1,6 +1,6 @@
 ---
 title: 改进 Windows 10 上的开发工作流的技巧
-description: 改进 Windows 10 上的开发工作流的技巧。
+description: 可帮助提升性能并使你在 Windows 10 上的开发工作流更高效、更愉悦的提示。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Microsoft, Windows, 开发人员, 使用技巧, 性能, WSL
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 7d02e3b46d6938532bbc7024e8840b976b2715a6
-ms.sourcegitcommit: 861c381a31e4a5fd75f94ca19952b2baaa2b72df
+ms.openlocfilehash: ef7ee52e778f49e35f68acb4ea02351d4208b3b7
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171154"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823951"
 ---
 # <a name="tips-for-improving-performance-and-development-workflows"></a>改进性能和开发工作流的技巧
 
