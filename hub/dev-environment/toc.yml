@@ -69,6 +69,18 @@
           href: /powershell/
         - name: WSL 上的数据库入门
           href: /windows/wsl/tutorials/wsl-database
+        - name: Rust 入门
+          items:
+            - name: 目录
+              href: ./rust/index.yml
+            - name: 在 Windows 上通过 Rust 进行开发的概述
+              href: ./rust/overview.md
+            - name: 设置开发环境
+              href: ./rust/setup.md
+            - name: 适用于 Windows 的 Rust
+              href: ./rust/rust-for-windows.md
+            - name: RSS 读者教程（适用于 Windows 的 Rust）
+              href: ./rust/rss-reader-rust-for-windows.md
     - name: 工具和平台
       items:
         - name: 适用于 Linux 的 Windows 子系统
