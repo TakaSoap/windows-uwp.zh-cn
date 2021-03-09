@@ -1,0 +1,26 @@
+- name: Windows 10 上的 Web 开发
+  items:
+    - name: Windows 10 上的 Web 开发
+      items:
+        - name: 概述
+          href: index.md
+        - name: API
+          href: apis.md
+    - name: Visual Studio
+      href: /visualstudio/windows/
+    - name: Visual Studio Code
+      href: 'https://code.visualstudio.com/docs'
+    - name: Microsoft Edge
+      href: 'https://developer.microsoft.com/microsoft-edge/'
+    - name: .NET
+      href: 'https://dotnet.microsoft.com/'
+    - name: 适用于 Linux 的 Windows 子系统
+      href: /windows/wsl/
+    - name: Windows 终端
+      href: /windows/terminal/
+    - name: Windows 程序包管理器
+      href: /windows/package-manager/
+    - name: 适用于 Windows 的 Docker Desktop
+      href: /windows/dev-environment/docker/overview/
+    - name: Azure 云服务
+      href: /azure/
