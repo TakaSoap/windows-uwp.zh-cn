@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 60a8e8f204591e455e2ccf52b09684a878b67452
-ms.sourcegitcommit: da44cb95946440cd06ff36254d42ecefcdd87ce2
+ms.openlocfilehash: f0bd0fa72587d83e9dca28b18688f1c667033070
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063029"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784848"
 ---
 # <a name="scroll-viewer-controls"></a>滚动查看器控件
 
@@ -25,7 +25,7 @@ ms.locfileid: "93063029"
 
 当 UI 内容超出一个区域的容量时，可以使用滚动查看器控件。
 
-> **重要的 API** ： [ScrollViewer 类](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)、 [ScrollBar 类](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
+> **重要的 API**：[ScrollViewer 类](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)、[ScrollBar 类](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
 
 滚动查看器允许内容延伸到视区（可见区域）边界外。 用户可以通过触摸、鼠标滚轮、键盘或游戏板操作滚动查看器图面，或者使用鼠标或笔光标操作滚动查看器滚动条查看此内容。 此图显示了滚动查看器控件的几个示例。
 
@@ -143,7 +143,6 @@ ScrollViewer 定义以下 XAML 附加属性：
 - 如果你希望用户可在较大的区域中在两个方向上平移并缩放，请将该图像放置到滚动查看器中。例如，如果你希望用户可以在完整大小的图像（不是调整大小以适应屏幕的图像）中平移和缩放。
 - 如果用户将滚动查看一段较长的文本，请配置滚动查看器，使其仅在垂直方向滚动。
 - 使用滚动查看器仅包含一个对象。 请注意，该唯一对象可能是版式面板，它反过来包含自身的任意数量的对象。
-- 不要将 [Pivot](pivot.md) 控件放置在滚动查看器内，避免与透视表的滚动逻辑发生冲突。
 - 如需在可滚动视图（例如 ScrollViewer 或 ListView）中处理 [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) 的指针事件，必须调用 [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations) 以在该视图中显式禁止支持对元素执行操作事件。 若要在该视图中重新启用操作事件，请调用 [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation)。
 
 

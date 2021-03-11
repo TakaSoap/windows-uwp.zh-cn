@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: b3ad3a204b2eb4b288e3d3c313a0832bea124de0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7812eca3263e266820f3624f88aad41b2d6e6ef5
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219890"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629375"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -22,7 +22,7 @@ C++/WinRT 适合有兴趣编写适用于 Windows 的美观、快速的代码的�
 &nbsp;
 > [!VIDEO https://www.youtube.com/embed/TLSul1XxppA]
 
-C++ 编程语言适用于企业*和*独立软件供应商 (ISV) 行业中重视高水平的正确性、质量和性能的应用场合。 例如：系统编程；资源受限的嵌入式和移动系统；游戏和图形；设备驱动程序；以及工业、科学和医疗应用，等等。
+C++ 编程语言适用于企业 *和* 独立软件供应商 (ISV) 行业中重视高水平的正确性、质量和性能的应用场合。 例如：系统编程；资源受限的嵌入式和移动系统；游戏和图形；设备驱动程序；以及工业、科学和医疗应用，等等。
 
 从语言的角度来说，C++ 一直专注于创作和使用类型丰富且轻量的抽象。 但是，由于原始的指针、原始的循环、耗时耗力的内存分配以及 C++98 的发布，该语言已经发生了根本性的改变。 新式 C++（从 C++11 起）可以清楚地表达想法，具有简便性和可读性并且引入 bug 可能性低得多。
 
@@ -40,7 +40,7 @@ C++ 编程语言适用于企业*和*独立软件供应商 (ISV) 行业中重视�
 - [从 WRL 移动到 C++/WinRT](./move-to-winrt-from-wrl.md)
 - [从 C# 移动到 C++/WinRT](./move-to-winrt-from-csharp.md)
 
-另请参阅[可在哪里找到 C++/WinRT 示例应用？](./faq.md#where-can-i-find-cwinrt-sample-apps)。
+另请参阅[可在哪里找到 C++/WinRT 示例应用？](./faq.yml#where-can-i-find-c---winrt-sample-apps-)。
 
 ### <a name="topics-about-cwinrt"></a>有关 C++/WinRT 的主题
 
@@ -49,12 +49,12 @@ C++ 编程语言适用于企业*和*独立软件供应商 (ISV) 行业中重视�
 | [C++/WinRT 简介](./intro-to-using-cpp-with-winrt.md) | 对 C++/WinRT（一种适用于 Windows 运行时 API 的标准 C++ 语言投影）的介绍。 |
 | [C++/WinRT 入门](./get-started.md) | 为了帮助你更快地开始使用 C++/WinRT，本主题详细介绍了一个简单的代码示例。 |
 | [C++/WinRT 中的新增功能](./news.md) | C++/WinRT 的新增功能和更改。 |
-| [常见问题解答](./faq.md) | 对你可能存疑的关于通过 C++/WinRT 创作和使用 Windows 运行时 API 的问题的解答。 |
+| [常见问题解答](./faq.yml) | 对你可能存疑的关于通过 C++/WinRT 创作和使用 Windows 运行时 API 的问题的解答。 |
 | [故障排除](./troubleshooting.md) | 无论你是要削减新代码还是要移植现有应用，本主题中的症状排查和补救措施表都可能对你有帮助。 |
-| [照片编辑器 C++/WinRT 示例应用程序](./photo-editor-sample.md) | 照片编辑器是一个 UWP 示例应用程序，其通过 C++/WinRT 语言投影展示开发。 此示例应用程序允许你从**图片**库检索照片，然后使用分类的照片效果编辑选择的图像。 | 
+| [照片编辑器 C++/WinRT 示例应用程序](./photo-editor-sample.md) | 照片编辑器是一个 UWP 示例应用程序，其通过 C++/WinRT 语言投影展示开发。 此示例应用程序允许你从 **图片** 库检索照片，然后使用分类的照片效果编辑选择的图像。 | 
 | [字符串处理](./strings.md) | 利用 C++/WinRT，你可以使用标准 C++ 宽字符串类型来调用 Windows 运行时 API，也可以使用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 类型。 |
 | [标准 C++ 数据类型和 C++/WinRT](./std-cpp-data-types.md) | 利用 C++/WinRT，你可以使用标准 C++ 数据类型调用 Windows 运行时 API。 |
-| [将标量值装箱到 IInspectable 和从 IInspectable 取消标量值装箱](./boxing.md) | 标量值需要先封装到引用类对象内，然后再传递到需要 **IInspectable** 的函数。 该封装过程称为对值进行*装箱*。 |
+| [将标量值装箱到 IInspectable 和从 IInspectable 取消标量值装箱](./boxing.md) | 标量值需要先封装到引用类对象内，然后再传递到需要 **IInspectable** 的函数。 该封装过程称为对值进行 *装箱*。 |
 | [通过 C++/WinRT 使用 API](./consume-apis.md) | 本主题介绍了如何使用 C++/WinRT API，无论它们是由 Windows、第三方组件供应商还是由你自己实现的。 |
 | [使用 C++/WinRT 创作 API](./author-apis.md) | 本主题展示了如何直接或间接使用 **winrt::implements** 基结构来创作 C++/WinRT API。 |
 | [C++/WinRT 的错误处理](./error-handling.md) | 本主题讨论了处理使用 C++/WinRT 编程时出现的错误的策略。 |
@@ -63,8 +63,8 @@ C++ 编程语言适用于企业*和*独立软件供应商 (ISV) 行业中重视�
 | [使用 C++/WinRT 的集合](./collections.md) | C++/WinRT 提供了函数和基类，当你希望实现并/或传递集合时，它们可以为你节省大量的时间和精力。 |
 | [并发和异步操作](./concurrency.md) | 本主题介绍了你可通过 C++/WinRT 创建和使用 Windows 运行时异步对象的方式。 |
 | [更高级的并发和异步](./concurrency-2.md) | 使用 C++/WinRT 的具有并发性和异步性的更高级方案。 |
-| [XAML 控件; 绑定到 C++/WinRT 属性](./binding-property.md) | 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 本主题介绍了如何实现和使用可观测属性以及如何将 XAML 控件绑定到该属性。 |
-| [XAML 项目控件; 绑定到 C++/WinRT 集合](./binding-collection.md) | 可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 本主题介绍了如何实现和使用可观测集合以及如何将 XAML 项目控件绑定到该集合。 |
+| [XAML 控件; 绑定到 C++/WinRT 属性](./binding-property.md) | 可有效地绑定到 XAML 项目控件的属性称为 *可观测* 属性。 本主题介绍了如何实现和使用可观测属性以及如何将 XAML 控件绑定到该属性。 |
+| [XAML 项目控件; 绑定到 C++/WinRT 集合](./binding-collection.md) | 可有效地绑定到 XAML 项目控件的集合称为 *可观测* 集合。 本主题介绍了如何实现和使用可观测集合以及如何将 XAML 项目控件绑定到该集合。 |
 | [XAML 自定义（模板化）控件与 C++/WinRT](./xaml-cust-ctrl.md) | 本主题引导你完成使用 C++/WinRT 创建简单的自定义控件的步骤。 你可以基于此处的信息创建你自己的功能丰富且可自定义的 UI 控件。 |
 | [将参数传递到 ABI 边界](./pass-parms-to-abi.md) | C++/ WinRT 通过提供针对常见情况的自动转换，简化了将参数传递到 ABI 边界。 |
 | [通过 C++/WinRT 使用 COM 组件](./consume-com.md) | 本主题通过一个完整的 Direct2D 代码示例展示了如何通过 C++/WinRT 来使用 COM 类和接口。 |

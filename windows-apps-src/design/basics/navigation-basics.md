@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ae88d30988ff2c3ccb4e7b32e1fefbf4d8bb9fde
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c5dc119edefbdd3ef4dd155c9de9d2e69fee193b
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031120"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784768"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Windows 应用的导航设计基础知识
 
@@ -204,22 +204,6 @@ ms.locfileid: "93031120"
 - 你希望用户能够动态地打开、关闭或重新排列选项卡。
 - 你预料有可能会同时打开大量的选项卡。
 - 你期望用户能够在应用程序中使用选项卡的窗口之间轻松移动选项卡，类似于 Microsoft Edge 这样的 Web 浏览器。
-
-:::row-end:::
-
-:::row:::
-    :::column:::
-         ![“选项卡和透视表”图像](images/nav/thumbnail-tabs-pivot.svg)
-    :::column-end:::
-        :::column span="2":::
-    [Pivot](../controls-and-patterns/pivot.md) 
-    
-类似于[导航视图](../controls-and-patterns/navigationview.md)，但增加了对触控的支持，且导航行为略有不同。
-    
-在以下情况下使用透视表：
-- 想要应用支持通过轻扫切换类别
-- 想要导航选项能够无限旋转
-- 无需全面控制类别之间的导航行为
 
 :::row-end:::
 

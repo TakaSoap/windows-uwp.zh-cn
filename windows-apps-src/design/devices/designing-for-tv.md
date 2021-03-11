@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ac5b8c34f007e18e04eb8299d9ccddd583ad29
-ms.sourcegitcommit: 9378b1b2c2a5ba6e774ae76b53d755cbc5215af2
+ms.openlocfilehash: 51dc59f9390e2f4bbbf8dda35ed8fad6de0135a4
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97709646"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784778"
 ---
 # <a name="designing-for-xbox-and-tv"></a>针对 Xbox 和电视进行设计
 
@@ -170,7 +170,7 @@ bool result =
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
 ```
 
-### <a name="image"></a>图像
+### <a name="image"></a>映像
 
 ```xml
 <Page x:Class="Sample.MainPage"
@@ -394,7 +394,7 @@ UWP 还允许应用基于运行这些应用的设备所提供的系统设置动�
 由于 Xbox One 的性质，即预期其 *媒体* 体验多于 *办公* 体验，因此它默认为深色系统主题。
 如果你的应用主题基于系统设置，则预期它在 Xbox One 上默认为深色。
 
-### <a name="accent-color"></a>主题色
+### <a name="accent-color"></a>着色
 
 UWP 提供一种便捷方式来公开用户从其系统设置中选择的 **主题色**。
 
@@ -427,14 +427,6 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的 **主�
 ## <a name="guidelines-for-ui-controls"></a>UI 控件指南
 
 有多个 UI 控件可跨多台设备运行良好，但在电视上使用时有些特定的注意事项。 请阅读在针对 10 英尺体验进行设计时使用这些控件的一些最佳做法。
-
-### <a name="pivot-control"></a>Pivot 控件
-
-[Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) 通过选择不同标题或选项卡来提供应用内视图的快速导航。 该控件会对具有焦点的标题加下划线，从而在使用游戏板/遥控器时使当前选中标题的显示较为明显。
-
-![Pivot 下划线](images/designing-for-tv/pivot-underline.png)
-
-你可以将 [Pivot.IsHeaderItemsCarouselEnabled](/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) 属性设置为 `true`，以便透视表始终保持在相同的位置，而不是使选定的透视表标题始终移动到第一个位置。 这对大屏幕显示（如电视）来说是更佳的体验，因为标题换行可能会干扰用户。 如果所有透视表标题不能全部适合屏幕，有一个滚动条可以让客户看到其他标题；但是，你应确保它们全部适合屏幕以提供最佳体验。 有关详细信息，请参阅[表和透视表](../controls-and-patterns/pivot.md)。
 
 <a name="navigation-pane"></a>
 

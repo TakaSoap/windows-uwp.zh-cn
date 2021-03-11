@@ -4,12 +4,12 @@ description: 了解圆角原则、设计方法和自定义选项。
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 角半径, 圆
-ms.openlocfilehash: 33432ac0083c0d6660d0669ea43805e0ae73f37e
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: 14abadb968e31c52e49d7597241eb017f5ebead7
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860193"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784808"
 ---
 # <a name="corner-radius"></a>角半径
 
@@ -94,7 +94,6 @@ ms.locfileid: "97860193"
 **控件**
 
 - NavigationView 选择指示器
-- 透视选择指示器
 - 进度栏
 - ScrollBar（当 `IndicatorMode=TouchIndicator` 时）
 - 滑块

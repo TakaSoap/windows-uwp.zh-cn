@@ -9,12 +9,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f11cde619b783292e4880927c68b6ae8ff38323
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7ad6c173596c4f716f58b64f51d9068b6a689905
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217181"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784788"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>游戏板和遥控器交互
 
@@ -24,7 +24,7 @@ ms.locfileid: "91217181"
 
 在 Windows 应用程序中构建交互体验，以确保你的应用程序可供使用，并可通过传统的 Pc、便携式计算机和平板电脑 (鼠标、键盘、触摸等) 的输入类型以及电视和 Xbox *10 英尺* 体验的典型输入类型（例如游戏板和远程控制）进行访问。
 
-有关 Windows 应用程序的常规设计指南，请参阅在*10 英尺*体验中[设计 Xbox 和 TV](../devices/designing-for-tv.md) 。
+有关 Windows 应用程序的常规设计指南，请参阅在 *10 英尺* 体验中 [设计 Xbox 和 TV](../devices/designing-for-tv.md) 。
 
 ## <a name="overview"></a>概述
 
@@ -45,9 +45,9 @@ ms.locfileid: "91217181"
 > [!NOTE]
 > 由于 Xbox gamepads 和远程控制支持许多 Windows 键盘行为和体验，因此，这些建议适用于这两种输入类型。 有关更详细的键盘信息，请参阅 [键盘交互](keyboard-interactions.md) 。
 
-| Feature        | 说明           |
+| 功能        | 说明           |
 | -------------------------------------------------------------- |--------------------------------|
-| [XY 焦点导航和交互](#xy-focus-navigation-and-interaction) | 通过**XY 焦点导航**，用户可以在应用的 UI 周围导航。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
+| [XY 焦点导航和交互](#xy-focus-navigation-and-interaction) | 通过 **XY 焦点导航**，用户可以在应用的 UI 周围导航。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
 | [鼠标模式](#mouse-mode)|对于某些类型的应用程序（例如地图、绘图和绘图应用程序），XY 焦点导航并不可行，甚至可能不可行。 在这些情况下， **鼠标模式** 使用户能够在游戏板或遥控器上自由导航，就像 PC 上的鼠标一样。|
 | [焦点视觉对象](#focus-visual)  | 焦点视觉对象是突出显示当前聚焦的 UI 元素的边框。 这可帮助用户快速识别他们要浏览或与之交互的 UI。  |
 | [专注参与](#focus-engagement) | 当 UI 元素具有焦点以便与之进行交互时，用户需要在游戏板或遥控器上按下 **/选择** 按钮。 |
@@ -158,7 +158,7 @@ Xbox one 上的 Windows 应用程序还支持按 **菜单** 按钮打开上下�
 | 交互   | 键盘/鼠标   | 游戏板      | 内置用于：  | 建议用于： |
 |---------------|------------|--------------|----------------|------------------|
 | 向上/向下翻页  | 向上/向下翻页 | 左/右扳机键 | [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)、[ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支持垂直滚动的视图
-| 向左/向右翻页 | 无 | 左/右缓冲键 | [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支持水平滚动的视图
+| 向左/向右翻页 | 无 | 左/右缓冲键 | [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox)、 [ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、 [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)、 `ScrollViewer` 、 [选择器](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、 [LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、 [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支持水平滚动的视图
 | 放大/缩小        | Ctrl +/- | 左/右扳机键 | 无 | `ScrollViewer`支持放大和缩小的视图 |
 | 打开/关闭导航窗格 | 无 | 查看 | 无 | 导航窗格​​ |
 | 搜索 | 无 | Y 按钮 | 无 | 应用中主要搜索功能的快捷方式 |
@@ -167,7 +167,7 @@ Xbox one 上的 Windows 应用程序还支持按 **菜单** 按钮打开上下�
 ## <a name="xy-focus-navigation-and-interaction"></a>XY 焦点导航和交互
 
 如果应用支持键盘的适当焦点导航，这将很好地转换到游戏板和遥控器。
-使用箭头键的导航映射到**方向键**（以及游戏板上的**左摇杆**），而与 UI 元素的交互映射到 **输入/选择**键（请参阅[游戏板和远程控制](#gamepad-and-remote-control)）。
+使用箭头键的导航映射到 **方向键**（以及游戏板上的 **左摇杆**），而与 UI 元素的交互映射到 **输入/选择** 键（请参阅 [游戏板和远程控制](#gamepad-and-remote-control)）。
 
 键盘和游戏板会使用许多事件和属性&mdash;它们会触发 `KeyDown` 和 `KeyUp` 事件，并且两者仅导航到具有 `IsTabStop="True"` 和 `Visibility="Visible"` 属性的控件。 有关键盘设计指南，请参阅[键盘交互](../input/keyboard-interactions.md)。
 
@@ -226,19 +226,19 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ```xml
 <StackPanel>
-    <Button x:Name="MyBtnLeft"
+    <Button x:Name="MyBtnLeft"
             Content="Search" />
-    <Button x:Name="MyBtnRight"
+    <Button x:Name="MyBtnRight"
             Content="Delete"/>
-    <Button x:Name="MyBtnTop"
+    <Button x:Name="MyBtnTop"
             Content="Update" />
-    <Button x:Name="MyBtnDown"
+    <Button x:Name="MyBtnDown"
             Content="Undo" />
-    <Button Content="Home"  
+    <Button Content="Home"  
             XYFocusLeft="{x:Bind MyBtnLeft}"
-            XYFocusRight="{x:Bind MyBtnRight}"
-            XYFocusDown="{x:Bind MyBtnDown}"
-            XYFocusUp="{x:Bind MyBtnTop}" />
+            XYFocusRight="{x:Bind MyBtnRight}"
+            XYFocusDown="{x:Bind MyBtnDown}"
+            XYFocusUp="{x:Bind MyBtnTop}" />
 </StackPanel>
 ```
 
@@ -247,8 +247,8 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 若要防止焦点从控件以特定方向移动，请使用 `XYFocus*` 属性将其指向相同的控件：
 
 ```xml
-<Button Name="HomeButton"  
-        Content="Home"  
+<Button Name="HomeButton"  
+        Content="Home"  
         XYFocusLeft ="{x:Bind HomeButton}" />
 ```
 
@@ -288,7 +288,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ![位于列表/网格底部的 CommandBar](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
-如果你将  放置在列表/网格`CommandBar` *上方*会怎么样？ 尽管向下滚动列表/网格的用户必须重新向上滚动才能到达 `CommandBar`，但与之前的配置相比，导航数略少。 请注意，这假设你的应用的初始焦点放置在 `CommandBar` 旁边或上方；如果初始焦点在列表/网格下方，则此方法不起作用。 如果这些 `CommandBar` 项是无需经常访问的全局操作项（如 **“同步”** 按钮），则可以将它们放置在列表/网格上方。
+如果你将  放置在列表/网格`CommandBar` *上方* 会怎么样？ 尽管向下滚动列表/网格的用户必须重新向上滚动才能到达 `CommandBar`，但与之前的配置相比，导航数略少。 请注意，这假设你的应用的初始焦点放置在 `CommandBar` 旁边或上方；如果初始焦点在列表/网格下方，则此方法不起作用。 如果这些 `CommandBar` 项是无需经常访问的全局操作项（如 **“同步”** 按钮），则可以将它们放置在列表/网格上方。
 
 尽管你无法垂直堆叠 `CommandBar` 的项，但相对于滚动方向放置它们（例如，垂直滚动列表的左侧或右侧，或者水平滚动列表的顶部或底部）是另一个需要考虑的选项（如果适用于你的 UI 布局）。
 
@@ -313,7 +313,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 #### <a name="problem-ui-elements-located-after-long-scrolling-listgrid"></a>问题：位于长滚动列表/网格之后的 UI 元素 <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
-下图所示的房产 [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) 是一个非常长的滚动列表。 如果 `ListView` 上*不*要求[占用](#focus-engagement)，当用户导航到该列表时，焦点将放置在列表中的第一个项上。 若要使用户到达**上一步**或**下一步**按钮，他们必须浏览列表中的所有项。 在这种难以要求用户遍历整个列表&mdash;即，当列表太长，无法接受此体验时&mdash;的情况下，你可能希望考虑其他选项。
+下图所示的房产 [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) 是一个非常长的滚动列表。 如果 `ListView` 上 *不* 要求 [占用](#focus-engagement)，当用户导航到该列表时，焦点将放置在列表中的第一个项上。 若要使用户到达 **上一步** 或 **下一步** 按钮，他们必须浏览列表中的所有项。 在这种难以要求用户遍历整个列表&mdash;即，当列表太长，无法接受此体验时&mdash;的情况下，你可能希望考虑其他选项。
 
 ![房地产应用：带有 50 个项的列表，需要单击 51 次才能到达下方的按钮](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
 
@@ -329,7 +329,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 **专注参与 <a name="engagement"></a>**
 
-当要求*占用*时，整个 `ListView` 将变为一个焦点目标。 用户将能够绕过列表的内容到达下一个可聚焦元素。 在[焦点占用](#focus-engagement)中阅读有关哪些控件支持占用以及如何使用它们的详细信息。
+当要求 *占用* 时，整个 `ListView` 将变为一个焦点目标。 用户将能够绕过列表的内容到达下一个可聚焦元素。 在[焦点占用](#focus-engagement)中阅读有关哪些控件支持占用以及如何使用它们的详细信息。
 
 ![房地产应用：设置要求的占用，以便只需 1 次单击即可到达“上一步”/“下一步”按钮](images/designing-for-tv/2d-focus-navigation-and-interaction-engagement.png)
 
@@ -355,7 +355,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 对于这些方案，你应为整个页面或者在页面内部的控件上请求指针（鼠标模式）。
 例如，你的应用可能具有一个包含 `WebView` 控件的页面，它仅在该控件内部使用鼠标模式，而在任何其他位置使用 XY 焦点导航。
-若要请求一个指针，你可以指定**在控件或页面已占用时**还是**在页面具有焦点时**需要它。
+若要请求一个指针，你可以指定 **在控件或页面已占用时** 还是 **在页面具有焦点时** 需要它。
 
 > [!NOTE]
 > 不支持在控件得到焦点时请求指针。
@@ -436,7 +436,7 @@ public App()
 
 尽管可以在不同的平台上使用相同的焦点视觉对象，但对于 10 英尺体验，用户遇到此情况的上下文稍有不同。 你应假设用户不会对整个电视屏幕投入完全的注意力，因此当前具有焦点的元素始终对用户清晰可见以避免其在搜寻视觉对象时感到沮丧，这一点很重要。
 
-请记住在使用游戏板或遥控器（而*不是*键盘）时，默认情况下将显示焦点视觉对象，这一点也很重要。 因此，即使你不实现它，当你在 Xbox One 上运行你的应用时，它仍会出现。
+请记住在使用游戏板或遥控器（而 *不是* 键盘）时，默认情况下将显示焦点视觉对象，这一点也很重要。 因此，即使你不实现它，当你在 Xbox One 上运行你的应用时，它仍会出现。
 
 ### <a name="initial-focus-visual-placement"></a>初始焦点视觉对象放置
 
@@ -538,9 +538,9 @@ public App()
 
 与这些控件稍有不同的是 [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)，该控件具有其自己的特点要考虑。 如果你有包含可聚焦内容的 `ScrollViewer`，默认情况下导航到 `ScrollViewer` 将允许你移动其可聚焦元素。 和在 `ListView` 中相同，你必须滚动浏览每一项才能导航到 `ScrollViewer` 外部。
 
-如果 `ScrollViewer` *不* 具有可设定焦点 &mdash; 的内容（例如，如果它仅包含可以设置的文本），则 &mdash; `IsFocusEngagementEnabled="True"` 用户可以 `ScrollViewer` 通过使用 " **/选择** " 按钮来参与。 使用后，他们可以使用 **D-pad/左摇杆**滚动文本，然后按 **B/后退** 按钮，在完成后松开。
+如果 `ScrollViewer` *不* 具有可设定焦点 &mdash; 的内容（例如，如果它仅包含可以设置的文本），则 &mdash; `IsFocusEngagementEnabled="True"` 用户可以 `ScrollViewer` 通过使用 " **/选择** " 按钮来参与。 使用后，他们可以使用 **D-pad/左摇杆** 滚动文本，然后按 **B/后退** 按钮，在完成后松开。
 
-另一个方法是在 `ScrollViewer` 上设置 `IsTabStop="True"`，以便当 `ScrollViewer` 内不存在可聚焦元素时用户无需占用控件&mdash;他们只需将焦点放置在该控件上，然后使用**方向键/左摇杆**进行滚动。
+另一个方法是在 `ScrollViewer` 上设置 `IsTabStop="True"`，以便当 `ScrollViewer` 内不存在可聚焦元素时用户无需占用控件&mdash;他们只需将焦点放置在该控件上，然后使用 **方向键/左摇杆** 进行滚动。
 
 ### <a name="focus-engagement-defaults"></a>焦点占用默认值
 
@@ -548,14 +548,14 @@ public App()
 
 | 控制               | 焦点占用默认值  |
 |-----------------------|---------------------------|
-| CalendarDatePicker    | 启用                        |
-| FlipView              | 关闭                       |
-| GridView              | 关闭                       |
-| ListBox               | 关闭                       |
-| ListView              | 关闭                       |
-| ScrollViewer          | 关闭                       |
-| SemanticZoom          | 关闭                       |
-| 滑块                | 启用                        |
+| CalendarDatePicker    | 开                        |
+| FlipView              | 关                       |
+| GridView              | 关                       |
+| ListBox               | 关                       |
+| ListView              | 关                       |
+| ScrollViewer          | 关                       |
+| SemanticZoom          | 关                       |
+| 滑块                | 开                        |
 
 所有其他 Windows 控件在时不会导致行为或视觉对象更改 `IsFocusEngagementEnabled="True"` 。
 

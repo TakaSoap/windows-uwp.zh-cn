@@ -5,12 +5,12 @@ ms.date: 12/30/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c6d766eb757241d6d3f38c425538c62fd057316
-ms.sourcegitcommit: b0cedbb65d00e6241a9350c2ee1b1e89b090a2d2
+ms.openlocfilehash: cc341f6fd716daf0474fdbcb25f567a7c727d507
+ms.sourcegitcommit: 7d542c6367b3b441044225431ee69d869ed0ff4b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101086938"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102402333"
 ---
 # <a name="authoring-a-c-windows-runtime-component-for-use-from-a-cwinrt-app"></a>创作 C# Windows 运行时组件，便于通过 C++/WinRT 应用使用
 
@@ -218,5 +218,5 @@ C# 项目版本的[应用程序最低版本](https://docs.microsoft.com/windows/
 ```
 
 ## <a name="related-topics"></a>相关主题
-* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [使用 C++/WinRT 创建 Windows 运行时组件](/windows-apps-src/winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)
+* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)
+* [使用 C++/WinRT 创建 Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)

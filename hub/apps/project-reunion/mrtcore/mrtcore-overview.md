@@ -1,20 +1,20 @@
 ---
 description: 'MRT.LOG 核心组件的概述，以及它们如何工作以 (项目留尼汪岛加载应用程序资源) '
-title: MRT.LOG Core (项目留尼汪岛) 简介
+title: '管理资源 MRT.LOG Core (项目留尼汪岛) '
 ms.topic: article
-ms.date: 12/11/2020
+ms.date: 03/09/2021
 keywords: MRT.LOG，MRTCore，pri，makepri.exe，资源，资源加载
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
-ms.openlocfilehash: ce07491dcab2a11738bd5407e9094d8d780ea219
-ms.sourcegitcommit: 30d1a27fd78d198cec5c50af5621f9e65c7b965e
+ms.openlocfilehash: bde540ff99e763a2d5c622eba1d292f722008ef6
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98043056"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629209"
 ---
-# <a name="introduction-to-mrt-core-project-reunion"></a>MRT.LOG Core (项目留尼汪岛) 简介
+# <a name="manage-resources-with-mrt-core-project-reunion"></a>用 MRT.LOG Core (项目留尼汪岛管理资源) 
 
 MRT.LOG Core 是新式 Windows [资源管理系统](/windows/uwp/app-resources/resource-management-system) 的简化版本，作为 [项目](../index.md)的一部分进行分发。
 

@@ -5,12 +5,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: e4875e7d34f36104cb5ed64bb56ea289de2db92e
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 46d63a5f0bf929c391e9080e621023dc9eaafdd0
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636567"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784718"
 ---
 # <a name="page-layout"></a>页面布局
 
@@ -51,7 +51,7 @@ ms.locfileid: "91636567"
 
 顶部导航还可以充当顶级导航。 当左侧导航可折叠时，顶部导航始终可见。 [NavigationView](../controls-and-patterns/navigationview.md) 控件实现 UWP 的顶部导航和选项卡模式。
 
-![顶部导航](images/pivot-large.svg)
+:::image type="content" source="../controls-and-patterns/images/displaymode-top.png" alt-text="顶部导航":::
 
 ## <a name="command-bar"></a>命令栏
 

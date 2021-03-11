@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: ee0c92ec81f7bbabc2218afbf263000a167d2057
-ms.sourcegitcommit: e81227399ba0f286e74e4977d757237829440a2e
+ms.openlocfilehash: 6f712dd8e845b3beb52981be4a17df128c48845d
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96310205"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784738"
 ---
 # <a name="keyboard-accelerators"></a>键盘快捷键
 
@@ -127,11 +127,11 @@ ms.locfileid: "96310205"
 ```
 
 ![工具提示中的键盘快捷键屏幕截图。](images/accelerators/accelerators_tooltip.png)  
-**_工具提示中所述的键盘快捷键_* _
+***工具提示中所描述的键盘快捷方式***
 
 [UIElement](/uwp/api/windows.ui.xaml.uielement) 对象具有一个 [KeyboardAccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 集合，即 [KeyboardAccelerators](/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators)，你可以在其中指定自定义的 KeyboardAccelerator 对象并定义键盘快捷方式的击键：
 
--   _ *[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)**-用于键盘快捷键的 [VirtualKey](/uwp/api/windows.system.virtualkey) 。
+-   **[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** - 用于键盘快捷方式的 [VirtualKey](/uwp/api/windows.system.virtualkey)。
 
 -   **[Modifiers](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** - 用于键盘快捷方式的 [VirtualKeyModifiers](/uwp/api/windows.system.virtualkeymodifiers)。 如果未设置 Modifiers，则默认值是“无”。
 
@@ -331,7 +331,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 这或许并不总能实现，因为各个应用的功能不同。
 
-| **编辑** | **常用键盘加速键** |
+| **正在编辑** | **常用键盘加速键** |
 | ------------- | ----------------------------------- |
 | 启动编辑模式 | Ctrl+E |
 | 选择聚焦的控件或窗口中的所有项 | Ctrl+A |
@@ -466,7 +466,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 </Button>
 ```
 
-在某些情况下，你可能需要相对于另一个元素（通常是容器对象）显示工具提示。 例如，“透视”控件通过“透视”标头显示 PivotItem 的工具提示。 
+在某些情况下，你可能需要相对于另一个元素（通常是容器对象）显示工具提示。 
 
 下面，我们介绍如何使用 KeyboardAcceleratorPlacementTarget 属性通过网格容器而不是按钮来显示“保存”按钮的键盘加速键组合。
 
@@ -526,8 +526,8 @@ KeyDown 事件也被一些控件用来实现内置的控件快捷方式。 当�
 预览输入事件在任何其他事件之前触发。 如果不处理这些事件，则会触发具有焦点的元素的快捷方式，然后触发 KeyDown 事件。 这两个事件均会浮升，直到被处理为止。
 
 
-![显示键事件序列 ](images/accelerators/accelerators_keyevents.png) 
-* **键事件序列** _ 的关系图
+![显示键事件序列 ](images/accelerators/accelerators_keyevents.png)
+ ***键事件序列*** 的关系图
 
 事件的顺序：
 
@@ -582,7 +582,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 我们建议本地化所有键盘快捷方式。 你可以使用标准 UWP 资源 (.resw) 文件和 XAML 声明中的 X:uid 属性来执行此操作。 在此示例中，Windows 运行时将自动加载资源。
 
-![包含 uwp 资源文件的键盘快捷键本地化图 ](images/accelerators/accelerators_localization.png) -*_带有 uwp 资源文件的键盘快捷键本地化_**
+![包含 UWP 资源的键盘快捷键本地化示意图文件 ](images/accelerators/accelerators_localization.png)
+ ***键盘加速器本地化（uwp 资源文件***）
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 21cb4c105cc4c95c3a14c4c5bd0049265682f91c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d15f0b1dccbdb165cb2bbcf39628e16859a42ed5
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220580"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784728"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
 
@@ -127,7 +127,7 @@ ms.locfileid: "91220580"
 <td align="left"><strong>对等导航。</strong> <br><br>通过在具有同等层次结构重要性的页面之间导航向用户呈现。</td>
 <td align="left"><strong>选项卡</strong>、<strong>轻扫视图</strong>和<strong>导航箱</strong>均提供<strong>横向导航</strong>。</td>
 <td align="left"><strong>选项卡栏控制器</strong>、<strong>拆分视图控制器</strong>和<strong>页面视图控制器</strong>允许在同等层次结构的视图之间导航。</td>
-<td align="left">你可以使用<strong><a href="/windows/uwp/controls-and-patterns/tabs-pivot">选项卡/透视</a></strong>在内容上方显示链接/选项卡的永久性列表。 <strong><a href="/windows/uwp/controls-and-patterns/split-view">导航窗格/拆分视图</a></strong>允许你在内容旁显示一列链接。<br/><br/><a href="/windows/uwp/layout/navigation-basics">导航</a><br/><br/><a href="/windows/uwp/layout/navigate-between-two-pages">在两个页面之间导航</a></td>
+<td align="left">可以使用 <strong><a href="/windows/uwp/controls-and-patterns/navigationview">NavigationView</a></strong>在内容上方显示链接/选项卡的持久性列表。 <strong><a href="/windows/uwp/controls-and-patterns/split-view">导航窗格/拆分视图</a></strong>允许你在内容旁显示一列链接。<br/><br/><a href="/windows/uwp/layout/navigation-basics">导航</a><br/><br/><a href="/windows/uwp/layout/navigate-between-two-pages">在两个页面之间导航</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>分层导航。</strong> <br><br>在层次结构的父页面和子页面之间导航。</td>

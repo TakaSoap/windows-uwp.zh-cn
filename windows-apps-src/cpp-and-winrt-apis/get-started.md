@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 入门, 开始使用
 ms.localizationpriority: medium
-ms.openlocfilehash: f38269acd9f1d6e2e830b51b3fcfa3a9014f2d7e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 994ca6c28fab60528f9c533fad9587525c003e43
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219900"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629325"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT 入门
 
@@ -106,7 +106,7 @@ SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri
 for (const SyndicationItem syndicationItem : syndicationFeed.Items()) { ... }
 ```
 
-[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) 是一个范围，由从 **begin** 和 **end** 函数（或其常量、反向和常量-反向变体）返回的迭代程序定义。 因此，可以使用基于范围的 `for` 语句或使用 **std::for_each** 模板函数枚举**项**。 循环访问此类 Windows 运行时集合时，需要指定 `#include <winrt/Windows.Foundation.Collections.h>`。
+[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) 是一个范围，由从 **begin** 和 **end** 函数（或其常量、反向和常量-反向变体）返回的迭代程序定义。 因此，可以使用基于范围的 `for` 语句或使用 **std::for_each** 模板函数枚举 **项**。 循环访问此类 Windows 运行时集合时，需要指定 `#include <winrt/Windows.Foundation.Collections.h>`。
 
 ```cppwinrt
 winrt::hstring titleAsHstring = syndicationItem.Title().Text();
@@ -129,7 +129,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 转到项目属性“常规”\>“Windows SDK 版本”，然后选择“所有配置”和“所有平台”。 确保“Windows SDK 版本”设置为 10.0.17134.0（Windows 10 版本 1803）或更高。
 
-确认你没有遇到[为何我的新项目不能编译？](./faq.md)的问题。
+确认你没有遇到[为何我的新项目不能编译？](./faq.yml)的问题。
 
 由于 C++/WinRT 使用 C++17 标准版中的功能，请将项目属性“C/C++” > “语言” > “C++ 语言标准版”设置为“ISO C++17 标准版(/std:c++17)”。
 
@@ -183,7 +183,7 @@ C++/WinRT 语言投影依赖于某些 Windows 运行时自由（非成员）函�
 
 ## <a name="sample-apps-written-in-cwinrt"></a>使用 C++/WinRT 编写的示例应用
 
-请参阅[可在哪里找到 C++/WinRT 示例应用？](./faq.md#where-can-i-find-cwinrt-sample-apps)。
+请参阅[可在哪里找到 C++/WinRT 示例应用？](./faq.yml#where-can-i-find-c---winrt-sample-apps-)。
 
 ## <a name="important-apis"></a>重要的 API
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

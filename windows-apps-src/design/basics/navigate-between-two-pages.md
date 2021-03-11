@@ -13,18 +13,18 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: d0945db420c2e20fa4b81a8f402f580762afe19c
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: bb65d36f545210363537bced272780a20308e292
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031450"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784798"
 ---
 # <a name="implement-navigation-between-two-pages"></a>实现两个页面之间的导航
 
 了解如何使用框架和页面在你的应用中实现基本对等导航。 
 
-> **重要的 API** ： [Windows.UI.Xaml.Controls.Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) 类、 [Windows.UI.Xaml.Controls.Page](/uwp/api/Windows.UI.Xaml.Controls.Page) 类、 [Windows.UI.Xaml.Navigation](/uwp/api/Windows.UI.Xaml.Navigation) 命名空间  
+> **重要的 API**：[Windows.UI.Xaml.Controls.Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) 类、[Windows.UI.Xaml.Controls.Page](/uwp/api/Windows.UI.Xaml.Controls.Page) 类、[Windows.UI.Xaml.Navigation](/uwp/api/Windows.UI.Xaml.Navigation) 命名空间  
 
 ![对等导航](images/peertopeer.png)
 
@@ -33,7 +33,7 @@ ms.locfileid: "93031450"
 1.  在 Microsoft Visual Studio 菜单上，依次选择“文件” > “新建项目” 。
 2.  在“新建项目”对话框的左侧窗格中，依次选择“Visual C#” > “Windows” > “通用”节点或“Visual C++” > “Windows” > “通用”节点      。
 3.  在中心窗格中，选择“空白应用”。
-4.  在“名称”框中，输入 **NavApp1** ，然后选择“确定”按钮。
+4.  在“名称”框中，输入 **NavApp1**，然后选择“确定”按钮。
     解决方案已创建并且项目文件显示在“解决方案资源管理器”中。
 5.  若要运行程序，请从菜单中依次选择“调试” > “启动调试”，或按 F5。
     将显示一个空白页面。
@@ -46,7 +46,7 @@ ms.locfileid: "93031450"
 1.  在“解决方案资源管理器”中，右键单击“空白应用”项目节点打开快捷菜单。
 2.  从快捷菜单中依次选择“添加” > “新建项”。
 3.  在“添加新项”对话框中，选择中间窗格中的“空白页面”。
-4.  在“名称”框中，输入 **Page1** （或 **Page2** ）并按“添加”按钮。
+4.  在“名称”框中，输入 **Page1**（或 **Page2**）并按“添加”按钮。
 5. 重复步骤 1-4 以添加第二个页面。
 
 现在，这些文件应列为 NavApp1 项目的一部分。
@@ -353,7 +353,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
-在 Page2.xaml 中，将你之前添加的 **HyperlinkButton** 替换为以下 **StackPanel** 。
+在 Page2.xaml 中，将你之前添加的 **HyperlinkButton** 替换为以下 **StackPanel**。
 
 我们在此处添加 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 来显示从 Page1 传递的文本字符串。
 
@@ -452,5 +452,4 @@ Page1::Page1()
 
 ## <a name="related-articles"></a>相关文章
 * [Windows 应用的导航设计基础知识](./navigation-basics.md)
-* [透视表](../controls-and-patterns/pivot.md)
 * [导航视图](../controls-and-patterns/navigationview.md)
