@@ -1,67 +1,50 @@
 ---
-title: WinUI 3 预览版 4（2021 年 2 月）
-description: WinUI 3 预览版 4 发布概述。
-ms.date: 02/09/2021
+title: WinUI 3 Project Reunion 0.5 预览版（2021 年 3 月）
+description: 概括介绍 WinUI 3 Project Reunion 0.5 预览版。
+ms.date: 03/08/2021
 ms.topic: article
-ms.openlocfilehash: a6c74ac64e3384b5a1f5cdc466b4faf441f14445
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 8e5dea7ee18fe305cd9550ab42d30c561b9d803e
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101824081"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629256"
 ---
-# <a name="windows-ui-library-3-preview-4-february-2021"></a>Windows UI 库 3 预览版 4（2021 年 2 月）
+# <a name="windows-ui-library-3---project-reunion-05-preview-march-2021"></a>Windows UI 库 3 - Project Reunion 0.5 预览版（2021 年 3 月）
 
-Windows UI 库 (WinUI) 3 是适用于 Windows 桌面和 UWP 应用的本机用户体验 (UX) 框架。
+Windows UI 库 (WinUI) 3 是用于构建新式 Windows 应用的原生用户体验 (UX) 平台。 它既适用于桌面/Win32 应用，也适用于 UWP 应用，并且包含 Visual Studio 项目模板和 NuGet 包，前者有助于你开始使用基于 WinUI 的用户界面构建应用，后者包含 WinUI 库。
 
-WinUI 3 预览版 4 是稳定预览版本，其中包含重要的 bug 修复和其他常规改进（请参阅[预览版 4 中推出的功能](#capabilities-introduced-in-preview-4)）。
+WinUI 3 - Project Reunion 0.5 预览版是 WinUI 3 的第一个版本，在 Project Reunion 包中提供。 除了这项更改之外，此预览版本还包含一些关键的 bug 修复、更高的稳定性以及其他一些常规改进（请参阅[WinUI 3 - Project Reunion 0.5 预览版中引入的功能](#major-changes-introduced-in-this-release)）。
 
 > [!Important]
 > 此 WinUI 3 预览版用于早期评估以及从开发人员社区收集反馈。 它 **不** 应该用于生产应用。
 >
-> 我们将继续在 2021 年推出 WinUI 3 的预览版，后续将在 2021 年 3 月发布第一个官方的受支持版本。
+> 我们预计将在 3 月下旬发布 Project Reunion 0.5，其中包含 WinUI 3 的第一个稳定受支持版本。
 >
 > 请使用 [WinUI GitHub 存储库](https://github.com/microsoft/microsoft-ui-xaml)提供反馈、报告问题并提出建议。
 
-## <a name="install-winui-3-preview-4"></a>安装 WinUI 3 预览版 4
+## <a name="install-winui-3---project-reunion-05-preview"></a>安装 WinUI 3 - Project Reunion 0.5 预览版
 
-WinUI 3 预览版 4 提供有 Visual Studio 项目模板和 NuGet 包，前者有助于你开始使用基于 WinUI 的用户界面构建应用，后者包含 WinUI 库。 若要安装 WinUI 3 预览版 4，请执行以下步骤。
+此新版 WinUI 3 作为 Project Reunion 0.5 预览版的一部分提供。 要安装，请参阅 [Project Reunion 0.5 预览版的安装说明](../../project-reunion/index.md#set-up-your-development-environment)。 
+
+与 WinUI 3 以前的预览版本相比，你将下载 Project Reunion VSIX 包，而不是 WinUI VSIX 包。 但是，与之前相同，此 VSIX 也包含同样的 [WinUI 项目模板](#create-winui-projects)。 完成安装后，WinUI 3 应用的开发体验不会改变。
 
 > [!NOTE]
-> 你还可克隆并生成 [XAML 控件库](#xaml-controls-gallery-winui-3-preview-4-branch)的 WinUI 3 预览版 4 版本。
+> 你还可以克隆并构建 WinUI 3 预览版本的 [XAML 控件库](#xaml-controls-gallery-winui-3-preview-branch)。
 
-1. 确保你的开发计算机上已安装 Windows 10 版本 1803（内部版本 17134）或更高版本。
+> [!NOTE]
+> 若要使用 WinUI 3 工具（如“实时可视化树”、“热重载”和“实时属性资源管理器”），必须按照[此处说明](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)所述，启用 Visual Studio Preview 功能中的 WinUI 3 工具。
 
-2. 安装 [Visual Studio 2019 版本 16.9 预览版](https://visualstudio.microsoft.com/vs/preview/)。 下载最新预览版，以确保获取工作负载所需的所有更新（如 .NET 5）。
+### <a name="webview2"></a>WebView2
+要将 WebView2 与此 WinUI 3 预览版一起使用，请下载在[此页](https://developer.microsoft.com/microsoft-edge/webview2/)上找到的常青引导程序或常青独立安装程序（如果尚未安装 WebView2 运行时）。 
 
-    安装 Visual Studio 时，必须包括以下工作负载：
-    - 通用 Windows 平台开发
-
-    若要生成 .NET 应用，还必须包括以下工作负载：
-    - .NET 桌面开发（这还会安装你所需的最新版本的 .NET 5）
-
-    若要生成 C++ 应用，还必须包括以下工作负载：
-    - 使用 C++ 的桌面开发
-    - 适用于通用 Windows 平台工作负载的 C++ (v142) 通用 Windows 平台工具可选组件（请参阅右窗格中“通用 Windows 平台开发”部分下的“安装详细信息”）
-
-3. 请确保系统已为 nuget.org 启用了 NuGet 包源。有关详细信息，请参阅[常见 NuGet 配置](/nuget/consume-packages/configuring-nuget-behavior)。
-
-4. 下载并安装 [WinUI 3 预览版 4 VSIX 包](https://aka.ms/winui3/preview4-download)。 它将 WinUI 3 项目模板和包含 WinUI 3 库的 NuGet 包添加到 Visual Studio 2019。
-
-    有关如何将 VSIX 包添加到 Visual Studio 的说明，请参阅[查找和使用 Visual Studio 扩展](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box)。
-
-5. 若要使用 WinUI 3 工具（如“实时可视化树”、“热重载”和“实时属性资源管理器”），必须按照[此处说明](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)所述，启用 Visual Studio Preview 功能中的 WinUI 3 工具。
-
-#### <a name="webview2"></a>WebView2
-若要将 WebView2 用于 WinUI 3 预览版 4，请下载[此页](https://developer.microsoft.com/microsoft-edge/webview2/)上的 Evergreen Bootstrapper 或 Evergreen Standalone Installer。 
-
-#### <a name="windows-community-toolkit"></a>Windows 社区工具包
+### <a name="windows-community-toolkit"></a>Windows 社区工具包
 
 如果使用的是 Windows 社区工具包，请[下载最新版本](https://aka.ms/wct-winui3)。
 
 ## <a name="create-winui-projects"></a>创建 WinUI 项目
 
-安装 WinUI 3 预览版 4 VSIX 包后，即可使用 Visual Studio 中的一个 WinUI 项目模板创建一个新项目。 若要在“创建新项目”对话框中访问 WinUI 项目模板，请将语言筛选为“C++”或“C#”，将平台筛选为“Windows”，将项目类型筛选为“WinUI”    。 或者可以搜索“WinUI”并选择一个可用的 C# 或 C++ 模板。
+安装 Project Reunion 0.5 预览版 VSIX 包后，即可在 Visual Studio 中使用其中一个 WinUI 项目模板创建一个新项目。 若要在“创建新项目”对话框中访问 WinUI 项目模板，请将语言筛选为“C++”或“C#”，将平台筛选为“Windows”，将项目类型筛选为“WinUI”    。 或者可以搜索“WinUI”并选择一个可用的 C# 或 C++ 模板。
 
 ![WinUI 项目模板](images/winui-projects-csharp.png)
 
@@ -72,9 +55,9 @@ WinUI 3 预览版 4 提供有 Visual Studio 项目模板和 NuGet 包，前者�
 
 除[限制和已知问题](#limitations-and-known-issues)外，使用 WinUI 项目生成应用类似于使用 XAML 和 WinUI 2.x 生成 UWP 应用。 因此，有关 UWP 应用和 Windows SDK 中的 Windows.UI WinRT 命名空间的大多数[指南文档](/windows/uwp/design/)均适用。
 
-即将推出此版本的 API 参考文档。 参考文档推出时，相关链接将在此处提供。 在此期间，请查看[适用于预览版 3 的 WinUI 3 API 参考文档](/windows/winui/api/)。
+WinUI 3 API 参考文档请参阅此处：[WinUI 3 API 参考](/windows/winui/api)
 
-如果使用 WinUI 3 预览版 3 创建了一个项目，可升级该项目以使用预览版 4。 请参阅 [WinUI GitHub 存储库](https://aka.ms/winui3/upgrade-instructions)了解详细说明。
+如果之前创建了使用 WinUI 3 预览版 4 的项目，可将该项目升级到使用 Project Reunion 0.5 预览版。 请参阅 [WinUI GitHub 存储库](https://aka.ms/winui3/upgrade-instructions)了解详细说明。
 
 ### <a name="project-templates-for-winui-3"></a>适用于 WinUI 3 的项目模板
 
@@ -91,7 +74,7 @@ WinUI 3 预览版 4 提供有 Visual Studio 项目模板和 NuGet 包，前者�
 |----------|----------|-------------|
 | 类库（桌面版 WinUI） | 仅限 C# | 使用 C# 创建一个 .NET 5 托管类库 (DLL)，使其可由具有基于 WinUI 的用户界面的其他 .NET 5 桌面应用使用。  |
 | 类库（UWP 版 WinUI）  | 仅限 C# | 使用 C# 创建一个托管类库 (DLL)，使其可由具有基于 WinUI 的用户界面的其他 UWP 应用使用。 |
-| Windows 运行时组件 (WinUI) | C++ | 创建一个用 C++/WinRT 编写的 [Windows 运行时组件](/windows/uwp/winrt-components/)，使其可由任何具有基于 WinUI 的用户界面的 UWP 或桌面应用使用，而不管这些应用使用哪种编程语言编写。 |
+| Windows 运行时组件 (WinUI) | C++ | 创建一个用 C++/WinRT 编写的 [Windows 运行时组件](/windows/uwp/winrt-components/)，任何具有基于 WinUI 的用户界面的 UWP 或桌面应用都可以使用该组件，而无论该应用使用何种编程语言编写。 |
 | Windows 运行时组件 (UWP) | C# | 创建一个用 C# 编写的 [Windows 运行时组件](/windows/uwp/winrt-components/)，使其可由任何具有基于 WinUI 的用户界面的 UWP 应用使用，而不管这些应用使用哪种编程语言编写。 |
 
 ### <a name="item-templates-for-winui-3"></a>适用于 WinUI 3 的项模板
@@ -111,83 +94,56 @@ WinUI 3 预览版 4 提供有 Visual Studio 项目模板和 NuGet 包，前者�
 
 ### <a name="visual-studio-support"></a>Visual Studio 支持
 
-为了充分利用添加到 WinUI 3 预览版 4 中的最新工具功能（例如热重载、实时可视化树和实时属性资源浏览器），必须结合最新的 WinUI 3 预览版使用 Visual Studio 的最新预览版，并确保启用 Visual Studio Preview 功能中的 WinUI 工具，如[此处说明](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)所述。 下表显示了未来版本与 WinUI 3 预览版 4 的兼容性：
+为了充分利用添加到 WinUI 3 中的最新工具功能（例如热重载、实时可视化树和实时属性资源管理器），必须结合使用最新的 Visual Studio 预览版和最新的 WinUI 3 预览版，并确保启用 Visual Studio 预览版功能中的 WinUI 工具，如[此处的说明](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)所述。 下表显示了未来版本与 WinUI 3 - Project Reunion 0.5 预览版的兼容性：
 
-| VS 版本  | WinUI 3 预览版 4  |
+| VS 版本  | WinUI 3 - Project Reunion 0.5 预览版  |
 |---|---|
 | 16.8 RTM  | 否   |
 | 16.9 预览版  | 是  | 
 | 16.9 RTM  | 否   |
 | 16.10 预览版  | 是   |
 
-## <a name="capabilities-introduced-in-preview-4"></a>预览版 4 中推出的功能
+## <a name="major-changes-introduced-in-this-release"></a>此版本中引入的重大更改
 
-- 与 WinUI 2.5 的奇偶校验（包括 InfoBar 控件、ProgressRing 和 NavigationView 中的新功能以及 bug 修补程序）
-- 自定义标题栏功能：新的 Window.ExtendsContentIntoTitleBar 和 Window.SetTitleBar API，支持开发人员在桌面应用中创建自定义标题栏。
-- VirtualSurfaceImageSource  支持
+- WinUI 3 现在作为 Project Reunion 包的一部分发布，这也是我们未来受支持版本的发布机制。
 
-## <a name="list-of-bugs-fixed-in-preview-4"></a>预览版 4 中已修复的 bug 列表
+- 现在支持应用内 acrylic。
+
+- 透视控件不再受支持，已在 WinUI 3 中弃用。 建议使用 [NavigationView 控件](/windows/uwp/design/controls-and-patterns/navigationview)实现应用内导航。
+
+- 只有 Windows 10 版本 1809（内部版本 17763）或更高版本才支持 WinUI 3 和 Project Reunion。
+
+- 预览功能现在标记为试验功能。 
+  - 预览功能是指 WinUI 3 预览版中继续包含，但下一个 WinUI 3 受支持版本不会包含的任何功能。 
+  - 预览功能还包括 WinUI 2.6 预览版中包含的所有试验 API。
+  - 构建使用预览功能的应用时，该应用会发出警告。 
+
+
+## <a name="list-of-bugs-fixed-in-winui-3---project-reunion-05-preview"></a>WinUI 3 - Project Reunion 0.5 预览版中已修复 bug 的列表
 
 下面是自预览版 3 以来团队已修复的面向用户的 bug 的列表。 围绕稳定性和改进测试，还有很多工作要做。
 
-- 此版本已采用新版本的 CS/WinRT 和 Windows SDK，对以下 bug 进行了修复：
-  - 使用 {Binding} 绑定到 URI 属性时出现故障
-  - C#/WinRT 封送函数不能与 .NET 5 正确互操作
+- WinUI 3 错误消息需要改写：“无法解析‘Windows.metadata’。  请安装 Windows 软件开发工具包。 Windows SDK 已随 Visual Studio 一起安装。”
+- 选择 Windows 默认主题时，应用不会响应 Windows 中的主题更改，重启后才会响应
+- 调用 XamlDirect.CreateInstance 时发生异常
+  - 感谢 @BorzillaR [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/3509)！
+- 进度栏不显示“暂停”和“错误”选项之间的区别
+- 标准 UI 控件列表视图项浮出控件显示在错误位置。
+- 尝试通过触摸重新排列列表视图项时，桌面 XAML 控件库崩溃
+  - 感谢 @j0shuams [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/3694)！
+- 按住格式文本块会使浮出控件放置在错误位置
+- 按向左/向右箭头时焦点不会在各单选按钮之间移动
+  - 感谢 @vmadurga [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/3385)！
+- 当用户按向下/向上箭头键选择日期选取器中的下一个/上一个月/年/日时，讲述人保持沉默
 
-- 在 Windows 预览体验内部版本上运行时出现 WinUI 3 故障
-  - 感谢多个社区参与者在 GitHub 上报告此 bug！ 
-- WebView2 不将主机应用的语言/区域设置应用于 CoreWebView2Environment
-- Windows 社区工具包 DataGrid 控件在启动/显示滚动条时，使应用发生故障
-  - 感谢多个社区参与者在 GitHub 上报告此 bug！
-- 当显示模式发生变化时，页面呈现进入错误状态
-- 使用 CalendarView 中的语言复合框时出现故障
-- WinUI 3 桌面：无法按 tab 键退出 WebView2
-- WinUI 3 桌面：具有派生的 TreeViewNodes 的 TreeView 出现故障 
-  - 感谢 @eleanorleffler [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/2699)！
-- WinUI 3 桌面：无法在 ContentDialog 中的文本框内输入文本 
-  - 感谢 @eleanorleffler [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/2704)！
-- WinUI 3 桌面：ALT 和 F6 不起作用
-- 旧的已删除的 SwapChainPanel 在新的 SwapChain 上呈现
-  - 感谢 @dotMorten [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/2942)！
-- WinUI 3 桌面：无法在触控板中滚动
-- 将 NavigationView 控件用于同一线程上的多个窗口时出现故障
-- 辅助功能问题：WinUI 桌面应用启动时显示定焦矩形
-- 在 DataGrid 中滚动时出现访问冲突
-  - 感谢 @TroelsL [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/2946)！
-- WinUI 3 桌面：Tab 键循环不起作用 
-- 在具有 WinUI Xaml Islands 的桌面应用程序中，针对 GridView 的拖放操作失败
-  - 感谢 @smk2007 [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/3871)！
-- 辅助功能问题：无法在 WinUI 3 桌面上使用 PageUp/PageDown 键滚动
-- WebView2 具有错误的视区大小
-- 打开 MenuFlyout 后单击时 WebView2 出现故障
-  - 感谢 @sudongg [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/3729)！
-- WinUI 3 桌面：尝试关闭 DropDownButton 或 SplitButton 的浮出控件会导致应用故障
-- WebView2：右键双击鼠标会导致故障
-- 单击 ToggleSplitButton 将导致应用程序故障
-  - 感谢 @lhak [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/3641)！
-- WinUI 3 桌面：任务栏上显示空的 DesktopWindowXamlSource 窗口
-  - 感谢 @bridgesquared [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/3698)！
-- WinUI 3 桌面：DataGrid 不显示
-  - 感谢 @eleanorleffler [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/2703)！
-- WinUI 3 桌面：无法将文件拖放到网格上 
-  - 感谢 @eleanorleffler [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/2715)！
-- WinUI 3 桌面：WinUI 3 预览版 2 中的 ItemsRepeater 出现故障 
-  - 感谢 @hshristov [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/3007)！
-- 更新绑定时引发 AccessViolationException
-  - 感谢 @WamWooWam [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/3680)！
-- WinUI 3 桌面：应用在滚动 NavigationView 上出现故障
-  - 感谢 @Berkunath [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/3598)！
-- 动态添加或删除 ItemsControl 的 ItemsSource 集合中的项时，ItemsControl 不会更新。 
-  - 感谢 @VigneshRameshh [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/3517)！
-- 如果启用 C++ 一致性模式，App.xaml.g.h 中会发生编译错误 C2760 
-  - 感谢 @boostafazoo [在 GitHub 上提交了此问题](https://github.com/microsoft/microsoft-ui-xaml/issues/3716)！
+- 导航视图轻型消除在 WinUI 3 中不起作用
 
 
 ## <a name="new-features-and-capabilities-introduced-in-past-winui-3-previews"></a>之前的 WinUI 3 预览版中引入的新特性和功能
 
-以下特性和功能是在 WinUI 3 预览版 1 -3 中引入的，并且在 WinUI 3 预览版 4 中继续受支持。
+以下特性和功能在 WinUI 3 预览版 1-4 中引入，在 WinUI 3 - Project Reunion 0.5 预览版中继续受支持。
 
-- 能够创建采用 WinUI 的桌面应用，包括适用于 Win32 应用的 [.NET 5](https://github.com/dotnet/core/tree/master/release-notes/5.0)
+- 创建使用 WinUI 的桌面应用的功能，包括适用于 Win32 应用的 [.NET 5](https://github.com/dotnet/core/tree/master/release-notes/5.0)
 - [RadialGradientBrush](/windows/uwp/design/style/brushes#radial-gradient-brushes)
 - [TabView 更新](/windows/uwp/design/controls-and-patterns/tab-view)
 - 深色主题更新
@@ -208,6 +164,8 @@ WinUI 3 预览版 4 提供有 Visual Studio 项目模板和 NuGet 包，前者�
   - 实时可视化树、热重载、实时属性资源管理器及类似工具
   - Intellisense for WinUI 3
 - 开放源代码迁移所需的改进
+- 自定义标题栏功能：新的 [Window.ExtendsContentIntoTitleBar](/windows/winui/api/microsoft.ui.xaml.window.extendscontentintotitlebar) 和 [Window.SetTitleBar](/windows/winui/api/microsoft.ui.xaml.window.settitlebar) API，支持开发人员在桌面应用中创建自定义标题栏。
+- 虚拟图面图像源支持
 
 若要详细了解 WinUI 3 的优势和 WinUI 路线图，请参阅 GitHub 上的 [Windows UI 库路线图](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
 
@@ -221,23 +179,23 @@ WinUI 3 预览版 4 提供有 Visual Studio 项目模板和 NuGet 包，前者�
 
 ## <a name="limitations-and-known-issues"></a>限制和已知问题
 
-预览版 4 版本只是一个预览版。 围绕桌面应用制定的方案尤其新颖。 Bug、限制和其他问题是少不了的。
+WinUI 3 - Project Reunion 0.5 预览版只是一个预览版。 围绕桌面应用制定的方案尤其新颖。 Bug、限制和其他问题是少不了的。
 
-以下各项是 WinUI 3 预览版 4 的一些已知问题。 如果发现下面未列出的问题，请在 [WinUI GitHub 存储库](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose)中，通过为现有问题贡献内容或提交新问题来告知我们。
+以下各项是 WinUI 3 - Project Reunion 0.5 预览版的一些已知问题。 如果发现下面未列出的问题，请在 [WinUI GitHub 存储库](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose)中，通过为现有问题贡献内容或提交新问题来告知我们。
 
 ### <a name="platform-and-os-support"></a>平台和 OS 支持
 
-WinUI 3 预览版 4 与运行 Windows 10 2018 年 4 月更新（版本 1803 - 内部版本 17134）及更高版本的电脑兼容。
+WinUI 3 - Project Reunion 0.5 预览版与运行 Windows 10 2018 年 4 月更新（版本 1809 - 内部版本 17763）及更高版本的电脑兼容。
 
 ### <a name="developer-tools"></a>开发人员工具
 
 - 仅支持 C# 和 C++/WinRT 应用
 - 桌面应用支持 .NET 5 和 C# 9，而且必须在 MSIX 应用中打包
 - UWP 应用支持 .NET Native 和 C# 7.3
-- 在 Visual Studio 16.8 版本中，开发人员工具和 Intellisense 可能无法正常工作。
+- 在 Visual Studio 中，开发人员工具和 Intellisense 可能无法正常工作。
 - 不提供 XAML 设计器支持
 - 不支持新的 C++/CX 应用，不过，现有应用可继续运行（请尽快迁移到 C++/WinRT）
-- 现在应用中提供对多个窗口的支持，但该项支持尚不完整，也不稳定。
+- 现在，桌面应用中提供对多个窗口的支持，但该功能尚不完整，也不稳定。
   - 如果发现多窗口行为出现新问题或性能下降，请在我们的存储库中提交 Bug。
 - 不支持未打包的桌面部署
 - 使用 F5 运行桌面应用时，请确保你运行的是打包项目。 在应用项目上按 F5 将运行未打包的应用，而 WinUI 3 尚不支持此类应用。
@@ -260,42 +218,32 @@ WinUI 3 预览版 4 与运行 Windows 10 2018 年 4 月更新（版本 1803 - �
 - IME 不起作用
 - 桌面应用中不支持 CoreWindow、ApplicationView、CoreApplicationView、CoreDispatcher 及其依赖项（请参阅下文）
 
-#### <a name="corewindow-applicationview-coreapplicationview-and-coredispatcher-in-desktop-apps"></a>桌面应用中的 CoreWindow、ApplicationView、CoreApplicationView 和 CoreDispatcher
+### <a name="corewindow-applicationview-coreapplicationview-and-coredispatcher-in-desktop-apps"></a>桌面应用中的 CoreWindow、ApplicationView、CoreApplicationView 和 CoreDispatcher
 
-预览版 4 中的新增功能 [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow)、[ApplicationView](/uwp/api/Windows.UI.ViewManagement.ApplicationView)、[CoreApplicationView](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
-[CoreDispatcher](/uwp/api/Windows.UI.Core.CoreDispatcher) 及其依赖项在桌面应用中不可用。
+预览版 4 以及后续标准版中的新增功能 [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow)、[ApplicationView](/uwp/api/Windows.UI.ViewManagement.ApplicationView)、[CoreApplicationView](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
+[CoreDispatcher](/uwp/api/Windows.UI.Core.CoreDispatcher) 及其依赖项在桌面应用中不可用。 例如，[Window.Dispatcher](/uwp/api/Windows.UI.Xaml.Window.Dispatcher) 属性始终为 null，但 Window.DispatcherQueue 属性可用作一种替代方法。
 
-例如，[Window.Dispatcher](/uwp/api/Windows.UI.Xaml.Window.Dispatcher) 属性始终为 null，但 Window.DispatcherQueue 属性可用作一种替代方法。
-
-这些 API 仅适用于 UWP 应用。
-在过去的预览版中，它们在桌面应用中也可以部分使用，但在预览版 4 中它们被完全禁用。
-这些 API 是针对 UWP 情况设计的，其中每个线程只适用于一个窗口，WinUI3 的功能之一是启用多个窗口。
+这些 API 仅适用于 UWP 应用。 在过去的预览版中，它们在桌面应用中也可以部分使用，但在预览版 4 中它们被完全禁用。 这些 API 是针对 UWP 情况设计的，其中每个线程只适用于一个窗口，WinUI3 的功能之一是启用多个窗口。
 
 有一些 API 在内部依赖于这些 API 的存在，因此在桌面应用中不受支持。 这些 API 通常具有静态 `GetForCurrentView` 方法。 例如 [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView)。
 
+有关受影响 API 以及这些 API 的变通方法和替代方法的详细信息，请参阅[适用于桌面应用的 WinRT API 更改](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/winrt-apis-for-desktop.md)
 
 ### <a name="known-issues"></a>已知问题
 
-- Alt+F4 不会关闭桌面应用窗口。
+- 存在导致 UWP 应用无法在 Windows 10 版本 1809 上启动的问题。 团队正在努力修复此 bug，希望在下一个预览版本中解决此问题。
 
-- 由于 [CoreWindow](/uwp/api/windows.ui.core.corewindow) 的更改，以下 WinRT API 可能不再像预期的那样适用于桌面应用：
-  - [`ApplicationView`](/uwp/api/windows.ui.viewmanagement.applicationview) 和所有相关 API 将不再适用。
-  - [`CoreApplicationView`](/uwp/api/windows.applicationmodel.core.coreapplicationview) 和所有相关 API 将不再适用。
-  - 可能并不支持所有 `GetForCurrentView` API，例如 [`CoreInputView.GetForCurrentView`](/uwp/api/Windows.UI.ViewManagement.Core.CoreInputView.GetForCurrentView)。
-  - [`CoreWindow.GetForCurrentThread`](/uwp/api/Windows.UI.Core.CoreWindow.GetForCurrentThread) 现在将返回 null。
-
-  有关在 WinUI 3 桌面应用中使用 WinRT API 的详细信息，请参阅[可用于桌面应用的 Windows Runtime API](../../desktop/modernize/desktop-to-uwp-supported-api.md
-)。
+- 按 Alt+F4 不会关闭桌面应用窗口。
 
 - 桌面应用中不再支持 [UISettings.ColorValuesChanged 事件](/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged)和 [AccessibilitySettings.HighContrastChanged 事件](/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged)。 如果使用它来检测 Windows 主题中的更改，可能会导致问题。 
 
-- 此版本包含一些试验性 API。 这些尚未经过团队全面测试，并且可能存在未知问题。 如果遇到任何问题，请在我们的存储库中[提交 bug](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=)。 
+- 此版本包含一些试验 API，使用这些 API 时会出现版本警告。 这些尚未经过团队全面测试，并且可能存在未知问题。 如果遇到任何问题，请在我们的存储库中[提交 bug](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=)。 
 
 - 以前，如果要获取 CompositionCapabilities 实例，需要调用 [CompositionCapabilites.GetForCurrentView()](/uwp/api/windows.ui.composition.compositioncapabilities.getforcurrentview)。 但是，从此调用返回的功能不依赖于视图。 为了解决并反映此问题，我们已在此版本中删除 GetForCurrentView() 静态，因此现在可以直接创建 [CompositionCapabilties](/uwp/api/windows.ui.composition.compositioncapabilities) 对象。
 
 - 对于 C# UWP 应用：
 
-  WinUI 3 框架是一组 WinRT 组件，可从 C++（使用 C++/WinRT）或 C# 使用它们。 使用 C# 时，存在两个版本的 .NET，具有由应用模型决定：在 UWP 应用中使用 WinUI 3 时，你使用的是 .NET Native；在桌面应用中使用时，你使用的是 .NET 5（和 C#/WinRT）。
+  WinUI 3 框架是一组 WinRT 组件，可从 C++（使用 C++/WinRT）或 C# 使用它们。 使用 C# 时，存在两个版本的 .NET，具体由应用模型决定：在 UWP 应用中使用 WinUI 3 时，你使用的是 .NET Native；在桌面应用中使用时，你使用的是 .NET 5（和 C#/WinRT）。
 
   在 UWP 中对 WinUI 3 应用使用 C# 时，与 WinUI 3 桌面应用或 C# WinUI 2 应用中的 C# 相比，API 命名空间方面存在一些差异：一些类型位于 `Microsoft` 命名空间中，而不是在 `System` 命名空间中。 例如，`INotifyPropertyChanged` 接口在 `Microsoft.UI.Xaml.Data` 命名空间中，而不是在 `System.ComponentModel` 命名空间中。 
 
@@ -306,12 +254,12 @@ WinUI 3 预览版 4 与运行 Windows 10 2018 年 4 月更新（版本 1803 - �
 
   `System` 命名空间版本仍然存在，但不可用于 WinUI 3。 这意味着 `ObservableCollection` 在 WinUI 3 C# UWP 应用中不按原样工作。 有关暂时解决方案，请参阅 [XAML 控件库示例](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)中的 [CollectionsInterop 示例](https://github.com/microsoft/Xaml-Controls-Gallery/blob/winui3preview/XamlControlsGallery/CollectionsInterop.cs)。
 
-## <a name="xaml-controls-gallery-winui-3-preview-4-branch"></a>XAML 控件库（WinUI 3 预览版 4 分支）
+## <a name="xaml-controls-gallery-winui-3-preview-branch"></a>XAML 控件库（WinUI 3 预览版分支）
 
-请参阅 [XAML 控件库的 WinUI 3 预览版 4 分支](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)，了解包含所有 WinUI 3 预览版 4 控件和功能的示例应用。
+请参阅 [WinUI 3 预览版分支的 XAML 控件库](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)获取示例应用，该示例应用包含属于 WinUI 3 - Project Reunion 0.5 预览版的所有控件和功能。
 
-![WinUI 3 预览版 4 XAML 控件库应用](images/WinUI3XamlControlsGallery.PNG)<br/>
-*WinUI 3 预览版 4 XAML 控件库应用示例*
+![WinUI 3 预览版XAML 控件库应用](images/WinUI3XamlControlsGallery.png)<br/>
+WinUI 3 预览版 XAML 控件库应用示例
 
 要下载该示例，请使用以下命令克隆 winui3preview 分支：
 

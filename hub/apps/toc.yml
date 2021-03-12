@@ -1,4 +1,4 @@
-- name: 构建 Windows 应用
+- name: 针对 Windows 进行开发
   href: index.yml
   items:
     - name: 构建桌面应用
@@ -88,11 +88,19 @@
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
             - name: 向未打包的桌面应用授予标识
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+    - name: Project Reunion 0.5 预览版
+      items:
+        - name: 概述
+          href: project-reunion/index.md
+        - name: 使用 MRT Core 管理资源
+          href: project-reunion/mrtcore/mrtcore-overview.md
+        - name: 使用 DWriteCore 呈现文本
+          href: project-reunion/dwritecore.md
     - name: Windows UI 库 (WinUI)
       items:
         - name: 概述
           href: winui/index.md
-        - name: Windows UI 库 3 预览版 4
+        - name: Windows UI 库 3 - Project Reunion 0.5 预览版
           items:
             - name: 概述和发行说明
               href: winui/winui3/index.md
@@ -132,14 +140,6 @@
                   href: winui/winui2/release-notes/winui-2.0.md
         - name: WinUI API 参考
           href: /windows/winui/api/
-    - name: 使用 Project Reunion（预发行版）构建 Windows 应用
-      items:
-        - name: 概述
-          href: project-reunion/index.md
-        - name: MRT 核心
-          href: project-reunion/mrtcore/mrtcore-overview.md
-        - name: DWriteCore
-          href: project-reunion/dwritecore.md
     - name: 针对 Windows 10 进行开发
       items:
         - name: Windows 10X 开发常见问题解答
