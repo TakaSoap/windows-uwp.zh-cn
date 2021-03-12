@@ -4,12 +4,12 @@ description: 适用于包含一些附加功能而不影响性能的高级用户�
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 126c38cd98f0d8ff1102c7f53f14cb95ec7e38c5
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: 5b6f86636cb5753d93422a5658e6ae661151d0f9
+ms.sourcegitcommit: eb203b55b1332d0ed135abccd50f3fc287f89a5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534396"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193292"
 ---
 # <a name="powertoys-run-utility"></a>PowerToys 运行实用工具
 
@@ -44,7 +44,7 @@ PowerToys 运行功能包括：
 
 "PowerToys 设置" 菜单中提供了以下运行选项。
 
-  | **设置** |**Action** |
+  | **设置** |**操作** |
   | --- | --- |
   | 打开 PowerToys 运行 | 定义用于打开/隐藏 PowerToys 运行的键盘快捷方式 |
   | 在全屏模式下忽略快捷方式 |  处于全屏 (F11) 时，运行不会与快捷方式结合 |
@@ -52,9 +52,9 @@ PowerToys 运行功能包括：
   | 清除上一次启动查询 | 启动后，不会突出显示以前的搜索 |
   | 禁用驱动器检测警告 | 警告，如果所有驱动器未建立索引，将不再可见 |
 
-## <a name="keyboard-shortcuts"></a>键盘快捷方式
+## <a name="keyboard-shortcuts"></a>键盘快捷键
 
-  | **快捷方式** | **Action** |
+  | **快捷方式** | **操作** |
   | --- | --- |
   | Alt + 空格键 | 打开或隐藏 PowerToys 运行 |
   | Esc | 隐藏 PowerToys 运行 |
@@ -67,7 +67,7 @@ PowerToys 运行功能包括：
 
 这将强制 PowerToys 仅在目标插件中运行。
 
-  | **操作键** | **Action** |
+  | **操作键** | **操作** |
   | --- | --- |
   | `=` | 仅计算器。 示例 `=2+2` |
   | `?` | 仅搜索文件。 `?road`要查找的示例`roadmap.txt` |
@@ -76,13 +76,13 @@ PowerToys 运行功能包括：
   | `<` | 仅运行进程。 `<outlook`查找包含 outlook 的所有进程的示例 |
   | `>` | 仅 Shell 命令。 `>ping localhost`执行 ping 查询的示例 |
   | `:` | 仅限注册表项。 `:hkcu`搜索 HKEY_CURRENT_USER 注册表项的示例 |
-  | `!` | 仅限 Windows 服务。 `!alu`搜索要启动或停止的应用程序层网关服务的示例 |
+  | `!` | 仅限 Windows 服务。 `!alg`搜索要启动或停止的应用程序层网关服务的示例 |
 
 ## <a name="system-commands"></a>系统命令
 
 对于 PowerToys v 0.31 和 on，你现在可以执行的系统级操作。
 
-  | **操作键**   |   **Action** |
+  | **操作键**   |   **操作** |
   | ------------------ | ---------------------------------------------------------------------------------|
   | `Shutdown` | 关闭计算机 |
   | `Restart` | 重新启动计算机 |
