@@ -752,7 +752,7 @@
         - name: 新增功能
           href: ../cpp-and-winrt-apis/news.md
         - name: 常见问题解答
-          href: ../cpp-and-winrt-apis/faq.md
+          href: ../cpp-and-winrt-apis/faq.yml
         - name: 疑难解答
           href: ../cpp-and-winrt-apis/troubleshooting.md
         - name: 照片编辑器示例应用程序
