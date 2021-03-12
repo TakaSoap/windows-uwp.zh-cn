@@ -7,12 +7,12 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, 自定义音频, 通知, 音频, 声音
 ms.localizationpriority: medium
-ms.openlocfilehash: 54f890ceb0031b4c244e387e1f7068615a2fedc1
-ms.sourcegitcommit: 98ca28fd0b5d306d35f3919fe9dd4d5a0222235e
+ms.openlocfilehash: 905292155dfc43a82c464edb651b2d176aeab960
+ms.sourcegitcommit: 5e718720d1032a7089dea46a7c5aefa6cda3385f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102029820"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103226121"
 ---
 # <a name="custom-audio-on-toasts"></a>toast 上的自定义音频
 
@@ -27,11 +27,8 @@ Toast 通知可使用自定义音频，从而让你的应用展现品牌的独�
 
 ## <a name="add-namespace-declarations"></a>添加命名空间声明
 
-`Windows.UI.Notifications` 包括磁贴和 Toast API。 `Microsoft.Toolkit.Uwp.Notifications` 包括通知库。
-
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;
-using Windows.UI.Notifications;
 ```
 
 
@@ -61,7 +58,8 @@ if (supportsCustomAudio)
     contentBuilder.AddAudio(new Uri("ms-appx:///Assets/Audio/CustomToastAudio.m4a"));
 }
 
-// TODO: Send the toast
+// Send the toast
+contentBuilder.Show();
 ```
 
 支持的音频文件类型包括...
@@ -76,7 +74,7 @@ if (supportsCustomAudio)
 
 ## <a name="send-the-notification"></a>发送通知
 
-发送带有音频的通知与发送定期通知相同。 请参阅 [发送本地 toast](send-local-toast.md) 以了解详细信息。
+发送带有音频的通知与发送定期通知 (只需调用 Show 方法) 相同。 请参阅 [发送本地 toast](send-local-toast.md) 以了解详细信息。
 
 
 ## <a name="related-topics"></a>相关主题

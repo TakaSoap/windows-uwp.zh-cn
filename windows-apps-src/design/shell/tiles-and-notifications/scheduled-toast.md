@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: windows 10，uwp，计划 toast 通知，scheduledtoastnotification，如何，快速入门，入门，代码示例，演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a138458634f0246d7e6bed9d6d65c2479dac3c9
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 488972d4f7d84967299f0a097bd5bbb8e0599aee
+ms.sourcegitcommit: 5e718720d1032a7089dea46a7c5aefa6cda3385f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93030690"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103226101"
 ---
 # <a name="schedule-a-toast-notification"></a>计划 toast 通知
 
@@ -23,7 +23,7 @@ ms.locfileid: "93030690"
 > [!IMPORTANT]
 > 桌面应用程序 (.MSIX/稀疏包和经典桌面) 用于发送通知和处理激活的步骤略有不同。 请按照下面的说明进行操作，但 `ToastNotificationManager` 将替换为 `DesktopNotificationManagerCompat` [桌面应用](toast-desktop-apps.md) 文档中的类。
 
-> **重要 api** ： [ScheduledToastNotification 类](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+> **重要 api**： [ScheduledToastNotification 类](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 
 ## <a name="prerequisites"></a>先决条件
@@ -42,10 +42,7 @@ ms.locfileid: "93030690"
 
 ## <a name="step-2-add-namespace-declarations"></a>步骤2：添加命名空间声明
 
-`Windows.UI.Notifications` 包括 toast Api。
-
 ```csharp
-using Windows.UI.Notifications;
 using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ```
 
@@ -55,20 +52,12 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 我们将使用一个简单的基于文本的通知来提醒学生当天到期的家庭作业。 构造通知和计划！
 
 ```csharp
-// Construct the content
-var content = new ToastContentBuilder()
-    .AddToastActivationInfo("itemsDueToday", ToastActivationType.Foreground)
+// Construct the content and schedule the toast!
+new ToastContentBuilder()
+    .AddArgument("action", "viewItemsDueToday")
     .AddText("ASTR 170B1")
     .AddText("You have 3 items due today!");
-    .GetToastContent();
-
-    
-// Create the scheduled notification
-var toast = new ScheduledToastNotification(content.GetXml(), DateTime.Now.AddSeconds(5));
-
-
-// Add your scheduled toast to the schedule
-ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
+    .Schedule(DateTime.Now.AddSeconds(5));
 ```
 
 
@@ -81,8 +70,16 @@ ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 Tag 和 Group 组合充当复合主键。 Group 是两者中较为通用的标识符，你可以用它来分配如“wallPosts”、“messages”、“friendRequests”等组。而 Tag 应该唯一标识组中的通知本身。 使用通用组时，可以使用 [RemoveGroup API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) 删除该组中的所有通知。
 
 ```csharp
-toast.Tag = "18365";
-toast.Group = "ASTR 170B1";
+// Construct the content and schedule the toast!
+new ToastContentBuilder()
+    .AddArgument("action", "viewItemsDueToday")
+    .AddText("ASTR 170B1")
+    .AddText("You have 3 items due today!");
+    .Schedule(DateTime.Now.AddSeconds(5), toast =>
+    {
+        toast.Tag = "18365";
+        toast.Group = "ASTR 170B1";
+    });
 ```
 
 
@@ -90,11 +87,11 @@ toast.Group = "ASTR 170B1";
 
 若要取消计划的通知，必须首先检索所有计划的通知的列表。
 
-然后，找到与标记 (匹配的计划 toast，还可以选择) 之前指定的组，然后调用 RemoveFromSchedule ( # A3。
+然后，找到与标记 (匹配的计划 toast，还可以选择) 之前指定的组，并调用 RemoveFromSchedule () 。
 
 ```csharp
 // Create the toast notifier
-ToastNotifier notifier = ToastNotificationManager.CreateToastNotifier();
+ToastNotifierCompat notifier = ToastNotificationManagerCompat.CreateToastNotifier();
 
 // Get the list of scheduled toasts that haven't appeared yet
 IReadOnlyList<ScheduledToastNotification> scheduledToasts = notifier.GetScheduledToastNotifications();
@@ -107,6 +104,9 @@ if (toRemove != null)
     notifier.RemoveFromSchedule(toRemove);
 }
 ```
+
+> [!IMPORTANT]
+> Win32 非 .MSIX/稀疏应用程序必须使用 ToastNotificationManagerCompat 类，如上文所示。 如果使用 ToastNotificationManager 本身，你将收到 "找不到元素" 异常。 所有类型的应用程序都可以使用兼容类，并且它将正常工作。
 
 
 ## <a name="activation-handling"></a>激活处理
