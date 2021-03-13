@@ -4,12 +4,12 @@ description: 用于将窗口排列并对齐到高效布局的窗口管理器实�
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b1f417307c173e868284254c0a1721e4e6ef5536
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: 4e297467f6681d3060e085ee4b60fe8c51f1ec21
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534421"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103417119"
 ---
 # <a name="fancyzones-utility"></a>FancyZones 实用程序
 
@@ -17,7 +17,7 @@ FancyZones 是一种窗口管理器实用工具，用于将窗口排列和对齐
 
 ![FancyZones 屏幕截图](../images/pt-fancy-zones2.png)
 
-## <a name="getting-started"></a>开始使用
+## <a name="getting-started"></a>入门
 
 ### <a name="enable"></a>启用
 
@@ -27,7 +27,7 @@ FancyZones 是一种窗口管理器实用工具，用于将窗口排列和对齐
 
 使用 "PowerToys 设置" 菜单中的按钮或按<kbd>Win</kbd> (启动区域编辑器 + <kbd>`</kbd> ，请注意，可以在 "设置" 对话框) 中更改此快捷方式。  
 
-![FancyZones 设置 UI](../images/pt-fancyzones-settings1.png) 
+![FancyZones 设置 UI](../images/pt-fancyzones-settings.png) 
 
 ### <a name="elevated-permission-admin-apps"></a>提升的权限管理应用
 
@@ -90,7 +90,7 @@ FancyZones 不会重写 Windows 10 `Win ⊞ + Shift + Arrow` 以将窗口快速�
 
 ## <a name="settings"></a>设置
 
-| 设置 | 说明 |
+| 设置 | 描述 |
 | --------- | ------------- |
 | 配置区域编辑器热键 | 若要更改默认热键，请单击文本框， (不需要选择或删除文本) 然后按键盘上所需的组合键 |
 | 按住 Shift 键以在拖动时激活区域 | 在拖动和手动 snap 模式期间，通过在按住 shift 键的同时按下 shift 键，在自动对齐模式和手动对齐模式间切换，启用对齐 |

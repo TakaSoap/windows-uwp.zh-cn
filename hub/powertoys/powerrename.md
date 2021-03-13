@@ -4,12 +4,12 @@ description: 用于大容量重命名文件的 windows shell 扩展
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c751624c93fec5996885c766e73b5ab1849fd4c
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: 26eee9fcb954a0a97ba6f30fae8a9d09395403a3
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534386"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103417098"
 ---
 # <a name="powerrename-utility"></a>PowerRename 实用程序
 
@@ -141,13 +141,13 @@ PowerRename 是一种批量重命名工具，可用于：
 
 **注意：** 使用正则表达式时，可能需要选中 "匹配所有匹配项"。
 
-若要使用 [提升库](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) 而不是标准库，请检查 `Use Boost library` PowerToys 设置中的选项。 它启用 `[lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind)` 标准库不支持的扩展功能，如。
+若要使用 [提升库](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) 而不是标准库，请检查 `Use Boost library` PowerToys 设置中的选项。 它启用标准库不支持的扩展功能，如 [回顾](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind)。
 
 ### <a name="examples-of-regular-expressions"></a>正则表达式示例
 
 #### <a name="simple-matching-examples"></a>简单匹配示例
 
-| 搜索       | 说明                                           |
+| 搜索       | 描述                                           |
 | ---------------- | ------------- |
 | `^`              | 匹配文件名的开头                   |
 | `$`              | 匹配文件名的末尾                         |
@@ -162,7 +162,7 @@ PowerRename 是一种批量重命名工具，可用于：
 
 *使用变量时，必须启用 "匹配所有事件" 选项。*
 
-| 搜索   | 替换为    | 说明                                |
+| 搜索   | 替换为    | 描述                                |
 | ------------ | --------------- |--------------------------------------------|
 | `(.*).png`   | `foo_$1.png`   | 在现有文件名前面预置 "foo \_ " |
 | `(.*).png`   | `$1_foo.png`   | 将 " \_ foo" 追加到现有文件名  |

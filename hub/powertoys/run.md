@@ -4,12 +4,12 @@ description: 适用于包含一些附加功能而不影响性能的高级用户�
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b6f86636cb5753d93422a5658e6ae661151d0f9
-ms.sourcegitcommit: eb203b55b1332d0ed135abccd50f3fc287f89a5a
+ms.openlocfilehash: ce71ac5f4667952be8beb790b0890aadd0d8eb54
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/12/2021
-ms.locfileid: "103193292"
+ms.locfileid: "103417108"
 ---
 # <a name="powertoys-run-utility"></a>PowerToys 运行实用工具
 
@@ -50,9 +50,9 @@ PowerToys 运行功能包括：
   | 在全屏模式下忽略快捷方式 |  处于全屏 (F11) 时，运行不会与快捷方式结合 |
   | 最大结果数 |  未滚动显示的最大结果数 |
   | 清除上一次启动查询 | 启动后，不会突出显示以前的搜索 |
-  | 禁用驱动器检测警告 | 警告，如果所有驱动器未建立索引，将不再可见 |
+  | 禁用驱动器检测警告 | 警告：如果所有驱动器未编制索引，将不再可见。 |
 
-## <a name="keyboard-shortcuts"></a>键盘快捷键
+## <a name="keyboard-shortcuts"></a>键盘快捷方式
 
   | **快捷方式** | **操作** |
   | --- | --- |
@@ -65,13 +65,13 @@ PowerToys 运行功能包括：
 
 ## <a name="action-key"></a>操作键
 
-这将强制 PowerToys 仅在目标插件中运行。
+这些默认激活短语将强制 PowerToys 仅在目标插件中运行。
 
   | **操作键** | **操作** |
   | --- | --- |
   | `=` | 仅计算器。 示例 `=2+2` |
   | `?` | 仅搜索文件。 `?road`要查找的示例`roadmap.txt` |
-  | `.` | 仅安装了应用搜索。 `.code`获取 Visual Studio Code 的示例 |
+  | `.` | 仅适用于已安装的程序。 `.code`获取 Visual Studio Code 的示例。 有关向程序的启动添加参数的选项，请参阅 [程序参数](#program-parameters) 。 |
   | `//` | 仅 Url。 `//docs.microsoft.com`要使默认浏览器继续使用的示例https://docs.microsoft.com |
   | `<` | 仅运行进程。 `<outlook`查找包含 outlook 的所有进程的示例 |
   | `>` | 仅 Shell 命令。 `>ping localhost`执行 ping 查询的示例 |
@@ -80,7 +80,7 @@ PowerToys 运行功能包括：
 
 ## <a name="system-commands"></a>系统命令
 
-对于 PowerToys v 0.31 和 on，你现在可以执行的系统级操作。
+PowerToys 运行启用一组可执行的系统级操作。
 
   | **操作键**   |   **操作** |
   | ------------------ | ---------------------------------------------------------------------------------|
@@ -92,13 +92,33 @@ PowerToys 运行功能包括：
   | `Hibernate` | 休眠计算机 |
   | `Empty Recycle Bin` | 清空回收站 |
 
-## <a name="indexer-settings"></a>索引器设置
+## <a name="plugin-manager"></a>插件管理器
 
-如果索引器设置未设置为涵盖所有驱动器，您将收到以下警告：
+使用 PowerToys v 0.33 和 on，PowerToys 运行设置菜单包含一个插件管理器，可用于启用/禁用当前可用的各种插件。 通过选择和扩展部分，可以自定义每个插件使用的激活短语。 此外，还可以选择全局结果中是否显示某个插件，还可以设置可用的其他插件选项。 
+
+## <a name="program-parameters"></a>程序参数
+
+使用 PowerToys v 0.33 和更高版本时，PowerToys 运行程序插件允许在启动应用程序时添加程序自变量。 程序参数必须符合程序的命令行接口定义的预期格式。
+
+例如，当启动 Visual Studio Code 时，您可以指定要打开的文件夹：
+
+`Visual Studio Code -- C:\myFolder`
+
+Visual Studio Code 还支持一组 [命令行参数](https://code.visualstudio.com/docs/editor/command-line)，这些参数可在 PowerToys 运行到的相应参数中使用，例如，查看文件之间的差异：
+
+`Visual Studio Code -d C:\foo.txt C:\bar.txt` 
+
+如果未选择程序插件的选项 "在全局结果中包含"，请确保在默认情况下包含激活短语 `.` 以调用插件的行为：
+
+`.Visual Studio Code -- C:\myFolder`
+
+## <a name="windows-search-settings"></a>Windows 搜索设置
+
+如果未将 Windows Search 插件设置为涵盖所有驱动器，则将收到以下警告：
 
 ![PowerToys 运行索引器警告](../images/pt-run-warning.png)
 
-你可以在 "PowerToys" 设置中关闭该警告，或选择警告来展开正在索引的驱动器。 选择警告后，将打开 "Windows 10 设置" "搜索窗口" 选项。
+你可以在 "Windows 搜索" 的 "PowerToys 运行插件管理器" 选项中关闭该警告，或选择警告来展开正在索引的驱动器。 选择警告后，将打开 "Windows 10 设置" "搜索窗口" "选项" 菜单。
 
 ![索引设置](../images/pt-run-indexing.png)
 

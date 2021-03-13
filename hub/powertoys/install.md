@@ -4,12 +4,12 @@ description: 安装 PowerToys，这是一组用于自定义 Windows 10 的实用
 ms.date: 12/02/2020
 ms.topic: quickstart
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6cf15e7d21eca9e24fcc2d81f9409b2cd94b6f
-ms.sourcegitcommit: 884318ec5118cade85a31f4d5644436614e9f272
+ms.openlocfilehash: c7add819c201678ceca72814d36c585859972e23
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100524983"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103417048"
 ---
 # <a name="install-powertoys"></a>安装 PowerToys
 
@@ -89,3 +89,7 @@ scoop update powertoys
 ```
 
 如果在安装/更新时遇到问题，请在 [GitHub 上的优惠](https://github.com/lukesampson/scoop/issues)存储库中创建问题。
+
+## <a name="post-install"></a>安装后
+
+成功安装 PowerToys 后，将显示一个概述窗口，其中包含有关每个可用实用工具的介绍性指南。

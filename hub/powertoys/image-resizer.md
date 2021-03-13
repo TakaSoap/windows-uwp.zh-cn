@@ -4,12 +4,12 @@ description: 用于大容量图像大小调整的 Windows shell 扩展
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 486eb90b8515ec8422e8a475c9f03ced070dafa1
-ms.sourcegitcommit: 46a7e9db64e17a645ee6e888f62a9b04632c56af
+ms.openlocfilehash: e417a70e34ae1e5fdba95e2838a6221b3236e1c6
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618577"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103417061"
 ---
 # <a name="image-resizer-utility"></a>图像调整程序实用工具
 
@@ -41,7 +41,6 @@ ms.locfileid: "97618577"
 
 可以交换指定大小的宽度和高度，使其与当前图像的纵向/横向) 方向 (。 若要始终使用指定的宽度和高度，请取消选中： **忽略图片的方向**。
 
-![图像调整调整设置](../images/powertoys-resize-settings.gif)
 
 ### <a name="fallback-encoding"></a>回退编码
 
