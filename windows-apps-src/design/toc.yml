@@ -316,16 +316,14 @@
           href: shell/tiles-and-notifications/toast-ux-guidance.md
         - name: 发送本地 Toast
           items:
-            - name: UWP 应用
+            - name: C# 应用
               href: shell/tiles-and-notifications/send-local-toast.md
-            - name: 桌面应用
-              items:
-                - name: 概述
-                  href: shell/tiles-and-notifications/toast-desktop-apps.md
-                - name: C# 应用
-                  href: shell/tiles-and-notifications/send-local-toast-desktop.md
-                - name: C++ WRL 应用
-                  href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: C++ UWP 应用
+              href: shell/tiles-and-notifications/send-local-toast-cpp-uwp.md
+            - name: C++ WRL 应用
+              href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: 其他应用
+              href: shell/tiles-and-notifications/send-local-toast-other-apps.md
         - name: Toast 内容
           items:
             - name: Content
@@ -540,7 +538,7 @@
   items:
     - name: 概述
       href: usability/index.md
-    - name: 可访问性
+    - name: 辅助功能
       href: accessibility/accessibility.md
       items:
         - name: 概述

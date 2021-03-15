@@ -7,12 +7,12 @@ keywords: windows win32, 桌面开发, project reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2354e7f42ab9c487275c66c9f709f8791ba5005e
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: 9e2e4bda8440a9a504cba78286de491236d6bd49
+ms.sourcegitcommit: 2a71bb5c56bed80f26fb67a47ae8f9198c431760
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629242"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103366232"
 ---
 # <a name="build-desktop-windows-apps-with-project-reunion-05-preview-march-2021"></a>使用 Project Reunion 0.5 预览版（2021 年 3 月）构建桌面 Windows 应用
 
@@ -59,7 +59,10 @@ Project Reunion 0.5 预览版包含以下组件。
 
 1. 确保开发计算机上已安装 Windows 10 版本 1809（内部版本 17763）或更高版本的 OS。
 
-2. 如果尚未安装 [Visual Studio 2019 版本 16.10 预览版](https://visualstudio.microsoft.com/vs/preview/)（或更高版本），请先安装。
+2. 如果尚未安装 [Visual Studio 2019 版本 16.10 预览版](https://visualstudio.microsoft.com/vs/preview/)（或更高版本），请先安装。 
+
+    > [!NOTE]
+    > Visual Studio 2019 版本 16.9 还支持 Project Reunion，但不支持 WinUI 3 工具功能。 有关 WinUI 3 工具支持的详细信息，请参阅 Windows UI Library 3 - Project Reunion 0.5 预览版（2021 年 3 月）。
 
     安装 Visual Studio 时，必须包含以下组件：
     - 在“工作负载”选项卡上，确保选中“通用 Windows 平台开发” 。

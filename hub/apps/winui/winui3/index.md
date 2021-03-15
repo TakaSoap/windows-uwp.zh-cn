@@ -3,12 +3,12 @@ title: WinUI 3 Project Reunion 0.5 预览版（2021 年 3 月）
 description: 概括介绍 WinUI 3 Project Reunion 0.5 预览版。
 ms.date: 03/08/2021
 ms.topic: article
-ms.openlocfilehash: 8e5dea7ee18fe305cd9550ab42d30c561b9d803e
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: de00c3fa2a9dba5eae3ceadc7e6ad16c10286f77
+ms.sourcegitcommit: 2a71bb5c56bed80f26fb67a47ae8f9198c431760
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629256"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103366242"
 ---
 # <a name="windows-ui-library-3---project-reunion-05-preview-march-2021"></a>Windows UI 库 3 - Project Reunion 0.5 预览版（2021 年 3 月）
 
@@ -94,14 +94,14 @@ WinUI 3 API 参考文档请参阅此处：[WinUI 3 API 参考](/windows/winui/ap
 
 ### <a name="visual-studio-support"></a>Visual Studio 支持
 
-为了充分利用添加到 WinUI 3 中的最新工具功能（例如热重载、实时可视化树和实时属性资源管理器），必须结合使用最新的 Visual Studio 预览版和最新的 WinUI 3 预览版，并确保启用 Visual Studio 预览版功能中的 WinUI 工具，如[此处的说明](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)所述。 下表显示了未来版本与 WinUI 3 - Project Reunion 0.5 预览版的兼容性：
+为了充分利用添加到 WinUI 3 中的最新工具功能（例如热重载、实时可视化树和实时属性资源管理器），必须结合使用最新的 Visual Studio 预览版和最新的 WinUI 3 预览版，并确保启用 Visual Studio 预览功能中的 WinUI 工具，如[此处的说明](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)所述。 下表显示了未来版本与 WinUI 3 - Project Reunion 0.5 预览版的兼容性：
 
 | VS 版本  | WinUI 3 - Project Reunion 0.5 预览版  |
 |---|---|
 | 16.8 RTM  | 否   |
-| 16.9 预览版  | 是  | 
-| 16.9 RTM  | 否   |
-| 16.10 预览版  | 是   |
+| 16.9 预览版  | 是，有工具  | 
+| 16.9 RTM  | 是，但没有工具   |
+| 16.10 预览版  | 是，有工具   |
 
 ## <a name="major-changes-introduced-in-this-release"></a>此版本中引入的重大更改
 
