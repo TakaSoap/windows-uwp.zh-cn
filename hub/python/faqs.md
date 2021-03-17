@@ -1,6 +1,6 @@
 ---
-title: 有关在 Windows 上使用 Python 的常见问题解答
-description: 获取有关在 Windows 上使用 Python 进行开发的最常见问题 (FAQ) 的解答。
+title: 关于在 Windows 10 上使用 Python 的 FAQ
+description: 如需获取帮助，请查看有关在 Windows 上使用 Python 进行开发的常见问题解答 (FAQ)。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, file paths, PYTHONPATH, python deployment, python packaging
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 7bc1d159bac5ebc9877db5d879b6acd82c51079b
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 49ff3d506835555ed5be598419a5cbf13f46cdf9
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823551"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254501"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>有关在 Windows 上使用 Python 的常见问题解答
 

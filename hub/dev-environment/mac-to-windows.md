@@ -1,6 +1,6 @@
 ---
-title: 从 Mac (Unix) 转到 Windows 的帮助
-description: 帮助你从 Mac (Unix) 过渡到还包含快捷键映射的 Windows 开发环境的完整指南。
+title: 从 Mac (Unix) 迁移到 Windows
+description: 本指南可帮助你从 Mac (Unix) 转换到 Windows 开发环境，具体内容包括快捷键映射和 Mac 和 Windows 之间概念差异概述。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac 转到 Windows, 快捷键映射, 从 Unix 转到 Windows, 从 Mac 转到 Windows, 从 MacBook 转到 Surface 的帮助, Macintosh 用户如何使用 Windows, 从 Macintosh 切换到 Windows, 开发环境更改帮助, Mac OS X 转到 Windows, 从 Mac 转到电脑的帮助
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: c23bceecc09677dbecbda7b4e4065377c514cc0d
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 782f0d50c8b1f577f8530628b76b3df75673c083
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823941"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254589"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>将开发环境从 Mac 改为 Windows 的指南
 

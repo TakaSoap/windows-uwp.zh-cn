@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f34e2a882746ac833d2b78373a96496c1f079864
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: ecb4f0dd59c5e48d348821c55ed33f2b27495da3
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034770"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784828"
 ---
 # <a name="tabview"></a>TabView
 
@@ -34,7 +34,7 @@ ms.locfileid: "93034770"
    :::column-end:::
 :::row-end:::
 
-> **Windows UI 库 API** ： [TabView 类](/uwp/api/microsoft.ui.xaml.controls.tabview)、 [TabViewItem 类](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
+> **Windows UI 库 API**：[TabView 类](/uwp/api/microsoft.ui.xaml.controls.tabview)、[TabViewItem 类](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 > [!TIP]
 > 在本文档中，我们使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此项添加到我们的[页](/uwp/api/windows.ui.xaml.controls.page)元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
@@ -43,7 +43,7 @@ ms.locfileid: "93034770"
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-通常情况下，选项卡式 UI 有两种不同的样式，这两种样式的功能和外观均不相同： **静态选项卡** 是通常在设置窗口中发现的选项卡类型。 它们包含一定数目的页面，这些页面的顺序固定且通常包含预定义的内容。
+通常情况下，选项卡式 UI 有两种不同的样式，这两种样式的功能和外观均不相同：**静态选项卡** 是通常在设置窗口中发现的选项卡类型。 它们包含一定数目的页面，这些页面的顺序固定且通常包含预定义的内容。
 **文档选项卡** 是在浏览器（例如 Microsoft Edge）中发现的选项卡类型。 用户可以创建、删除和重新排列选项卡；在窗口之间移动选项卡；更改选项卡的内容。
 
 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 提供适用于 UWP 应用的文档选项卡。 在以下情况下使用 TabView：
@@ -52,7 +52,7 @@ ms.locfileid: "93034770"
 - 用户需要能够将文档或网页直接打开到选项卡中。
 - 用户需要能够在窗口之间拖放选项卡。
 
-如果 TabView 不适合你的应用，考虑使用 [Pivot](./pivot.md) 或 [NavigationView](./navigationview.md) 之类的控件。
+如果 TabView 不适合你的应用，请考虑使用 [NavigationView](./navigationview.md) 控件。
 
 ## <a name="anatomy"></a>结构
 
@@ -339,4 +339,3 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 - [MasterDetails](./master-details.md)
 - [NavigationView](./navigationview.md)
-- [透视表](./pivot.md)

@@ -1,20 +1,20 @@
 ---
-description: 使用后台传输 API 以通过网络可靠地复制文件。
+description: 使用后台传输 API 以便在网络上可靠地复制文件。
 title: 后台传输
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 ms.date: 03/23/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: faf88751f5008c5a819bb39bb461a4224180edf2
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: b9786f285fc0da5f67180224699f03acb67cecfb
+ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363010"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102192999"
 ---
 # <a name="background-transfers"></a>后台传输
-使用后台传输 API 以通过网络可靠地复制文件。 后台传输 API 提供应用暂停期间在后台运行的高级上载和下载功能，并持续至应用终止。 API 监视网络状态，并在连接丢失时自动暂停和恢复传输，并且传输还具有流量感知和电量感知功能，这意味着可以根据当前连接和设备电池状态调整下载活动。 该 API 适用于使用 HTTP 上载和下载较大文件。 还支持 FTP，但只能用于下载。
+使用后台传输 API 以便在网络上可靠地复制文件。 后台传输 API 提供应用暂停期间在后台运行的高级上载和下载功能，并持续至应用终止。 API 监视网络状态，并在连接丢失时自动暂停和恢复传输，并且传输还具有流量感知和电量感知功能，这意味着可以根据当前连接和设备电池状态调整下载活动。 该 API 适用于使用 HTTP 上载和下载较大文件。 还支持 FTP，但只能用于下载。
 
 后台传输独立于调用应用单独运行，主要是针对资源（如视频、音乐和大型图像）的长期传输操作设计的。 对于这些应用场景，使用后台传输非常必要，因为即使应用已暂停，下载仍会继续进行。
 
@@ -40,11 +40,11 @@ ms.locfileid: "89363010"
 
 虽然后台传输功能具备其自己的处理网络状态更改的机制，但对于使用网络连接功能的应用还有其他需要考虑的常规连接因素。 有关其他信息，请阅读[利用可用的网络连接信息](/previous-versions/windows/apps/hh452983(v=win.10))。
 
-> **注意**  对于在移动设备上运行的应用，存在一些允许用户监控和限制根据连接类型、漫游状态和用户的流量套餐传输的数据量的功能。 因此，即使 [**BackgroundTransferCostPolicy**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) 表示传输应该继续，仍可在电话上暂停后台传输。
+> **注意**  对于在移动设备上运行的应用，存在一些允许用户监控和限制根据连接类型、漫游状态和用户的流量套餐传输的数据量的功能。 因此，即使 [**BackgroundTransferCostPolicy**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) 表示传输应该继续，仍可在电话上暂停后台传输。
 
 下表指示在电话的当前给定状态下，对于每个 [**BackgroundTransferCostPolicy**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) 值，允许在电话上进行后台传输的时间。 你可以使用 [**ConnectionCost**](/uwp/api/Windows.Networking.Connectivity.ConnectionCost) 类确定电话的当前状态。
 
-| 设备状态                                                                                                                      | UnrestrictedOnly | 默认值 | 始终 |
+| 设备状态                                                                                                                      | UnrestrictedOnly | 默认 | 始终 |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
 | 已连接到 WiFi                                                                                                                 | 允许            | 允许   | 允许  |
 | 按流量计费的连接、未漫游、受数据限制、计划不超出限制                                                   | 拒绝             | 允许   | 允许  |
@@ -52,7 +52,7 @@ ms.locfileid: "89363010"
 | 按流量计费的连接、漫游、受数据限制                                                                                     | 拒绝             | 拒绝    | 允许  |
 | 按流量计费的连接、不受数据限制。 仅当用户在“流量管理”UI 中启用“限制后台数据”时，才会发生该状态。 | 拒绝             | 拒绝    | 拒绝   |
 
-## <a name="uploading-files"></a>上载文件
+## <a name="uploading-files"></a>上传文件
 如果使用后台传输，上传作为 [**UploadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation) 存在，该对象具有一系列用于重新启动或取消操作的控制方法。 系统根据 **UploadOperation** 自动处理应用事件（例如暂停或终止）和连接更改；在应用挂起期间或暂停时，上传会继续运行，并且在应用终止后，仍然保持运行。 此外，正确设置 [**CostPolicy**](/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader.costpolicy) 可指示在对 Internet 连接使用按流量计费的网络时，应用是否将开始上传。
 
 以下示例将指导你完成基本上传的创建和初始化，以及如何枚举和重新引入以前应用会话中保持的操作。
@@ -231,7 +231,7 @@ Task<DownloadOperation> startTask = download.StartAsync().AsTask();
 startTask.ContinueWith(ForegroundCompletionHandler);
 
 // Do not enable the CompletionGroup until after all downloads are created.
-downloader.CompletinGroup.Enable();
+downloader.CompletionGroup.Enable();
 ```
 
 3.  后台任务中的代码从触发器详细信息中提取操作列表，然后代码检查每个操作的详细信息，并且针对每个操作执行相应的后处理。
@@ -260,37 +260,37 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 
 -   建立连接之后，将中止在两分钟内未收到响应的 HTTP 请求消息。
 
-> **注意**  在任何一种方案中，假定存在 Internet 连接，后台传输将最多自动重试一个请求三次。 如果未检测到 Internet 连接，则其他请求将一直等待，直到检测到 Internet 连接。
+> **注意**  在任何一种方案中，假定存在 Internet 连接，后台传输将最多自动重试一个请求三次。 如果未检测到 Internet 连接，则其他请求将一直等待，直到检测到 Internet 连接。
 
 ## <a name="debugging-guidance"></a>调试指南
 在 Microsoft Visual Studio 中停止调试会话与关闭你的应用相似；PUT 上载将暂停，POST 上载将终止。 即使在调试时，你的应用也应该枚举，然后重新启动或取消任何保持的上载。 例如，如果对该调试会话之前的操作没有兴趣，你可以使应用在应用启动时取消已枚举的持续上载操作。
 
 在调试会话期间，当系统随着应用启动开始枚举下载/上载时，如果对该调试会话之前的操作没有兴趣，你可以让应用取消它们。 请注意，如果存在 Visual Studio 项目更新（例如，对应用清单的更改），并且应用被卸载并重新部署，[**GetCurrentUploadsAsync**](/uwp/api/windows.networking.backgroundtransfer.backgrounduploader.getcurrentuploadsasync) 不能枚举使用之前的应用部署创建的操作。
 
-在部署期间使用后台传输时，你可能会遇到一种情况，即可用的和已完成的传输操作的内部缓存不同步。这可能会导致不能启动新的传输操作，或者不能与现有操作和 [**BackgroundTransferGroup**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferGroup) 对象交互。 在某些情况下，尝试与现有操作交互可能引发崩溃。 如果 [**TransferBehavior**](/uwp/api/windows.networking.backgroundtransfer.backgroundtransfergroup.transferbehavior) 属性设置为 **Parallel**，则可能产生该结果。 该问题仅在开发期间的某些应用场景中发生，该情况不适用于应用的最终用户。
+如果在开发过程中使用后台传输功能，则你可能会遇到活动和已完成传输操作的内部缓存不同步的情况。这可能会导致无法启动新的传输操作或者无法与现有操作和 [**BackgroundTransferGroup**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferGroup) 对象交互。 在某些情况下，尝试与现有操作交互可能引发崩溃。 如果 [**TransferBehavior**](/uwp/api/windows.networking.backgroundtransfer.backgroundtransfergroup.transferbehavior) 属性设置为 **Parallel**，则可能产生该结果。 该问题仅在开发期间的某些应用场景中发生，该情况不适用于应用的最终用户。
 
 使用 Visual Studio 的四种应用场景可能会导致该问题。
 
 -   你用于创建新项目的应用名称与现有项目相同，但语言不同（例如从 C++ 改为 C#）。
 -   你更改了现有项目中的目标体系结构（例如，从 x86 改为 x64）。
 -   你更改了现有项目中的区域性（例如，从中性改为 en-US）。
--   你在现有项目的程序包清单中添加或删除了一项功能（例如，添加“企业身份验证”  ）。
+-   你在现有项目的程序包清单中添加或删除了一项功能（例如，添加 **企业身份验证**）。
 
 常规应用服务（包含可添加或删除功能的清单更新）不会在应用的最终用户部署时导致该问题。
-若要解决该问题，请彻底卸载应用的所有版本，并采用新的语言、体系结构、区域性或功能重新部署。 可通过“开始”  屏幕或使用 PowerShell 和 **Remove-AppxPackage** cmdlet 完成此操作。
+若要解决该问题，请彻底卸载应用的所有版本，并采用新的语言、体系结构、区域性或功能重新部署。 可通过 **开始** 屏幕或使用 PowerShell 和 **Remove-AppxPackage** cmdlet 完成此操作。
 
 ## <a name="exceptions-in-windowsnetworkingbackgroundtransfer"></a>Windows.Networking.BackgroundTransfer 中的异常
 将统一资源标识符 (URI) 的无效字符串传递给 [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) 对象的构造函数时，将引发异常。
 
-**.NET：** [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) 类型在 C# 和 VB 中显示为 [**System.Uri**](/dotnet/api/system.uri)。
+.NET：[Windows.Foundation.Uri](/uwp/api/Windows.Foundation.Uri) 类型在 C# 和 VB 中显示为 [System.Uri](/dotnet/api/system.uri)。
 
 在 C# 和 Visual Basic 中，通过使用 .NET 4.5 中的 [**System.Uri**](/dotnet/api/system.uri) 类和 [**System.Uri.TryCreate**](/dotnet/api/system.uri.trycreate#overloads) 方法之一在构造 URI 之前测试从应用用户收到的字符串，可以避免该错误。
 
 在 C++ 中，没有可用于试用字符串和将其解析到 URI 的方法。 如果应用获取 [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) 用户输入，则构造函数应位于 try/catch 块中。 如果引发了异常，该应用可以通知用户并请求新的主机名。
 
-[  **Windows.Networking.backgroundTransfer**](/uwp/api/Windows.Networking.BackgroundTransfer) 命名空间具有方便的帮助程序方法，并使用 [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) 命名空间中用于处理错误的枚举。 这有助于在应用中分别处理特定网络异常。
+[**Windows.Networking.backgroundTransfer**](/uwp/api/Windows.Networking.BackgroundTransfer) 命名空间具有方便的帮助程序方法，并使用 [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) 命名空间中用于处理错误的枚举。 这有助于在应用中分别处理特定网络异常。
 
-在 [**Windows.Networking.backgroundTransfer**](/uwp/api/Windows.Networking.BackgroundTransfer) 命名空间中的异步方法上发生的错误返回为 **HRESULT** 值。 [  **BackgroundTransferError.GetStatus**](/uwp/api/windows.networking.backgroundtransfer.backgroundtransfererror.getstatus) 方法用于将来自后台传送操作的网络错误转化为 [**WebErrorStatus**](/uwp/api/Windows.Web.WebErrorStatus) 枚举值。 大部分 **WebErrorStatus** 枚举值对应由本机 HTTP 或 FTP 客户端操作返回的错误。 应用可以筛选特定 **WebErrorStatus** 枚举值来基于异常原因修改应用行为。
+在 [**Windows.Networking.backgroundTransfer**](/uwp/api/Windows.Networking.BackgroundTransfer) 命名空间中的异步方法上发生的错误返回为 **HRESULT** 值。 [**BackgroundTransferError.GetStatus**](/uwp/api/windows.networking.backgroundtransfer.backgroundtransfererror.getstatus) 方法用于将来自后台传送操作的网络错误转化为 [**WebErrorStatus**](/uwp/api/Windows.Web.WebErrorStatus) 枚举值。 大部分 **WebErrorStatus** 枚举值对应由本机 HTTP 或 FTP 客户端操作返回的错误。 应用可以筛选特定 **WebErrorStatus** 枚举值来基于异常原因修改应用行为。
 
 对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 来了解关于导致该异常的错误的详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。
 

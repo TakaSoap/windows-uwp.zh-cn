@@ -1,6 +1,6 @@
 ---
-title: 从 Mac 切换到 Windows 的开发人员的成功案例
-description: 听听其他开发人员的故事，了解他们在 Mac 和 Windows 开发环境之间切换时的具体体验。
+title: 从 Mac 切换到 Windows 的开发人员故事
+description: 从 Mac 切换到 Windows 开发计算机的开发人员成功案例。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Microsoft, Windows, 开发人员, 成功案例, 从 Mac 切换到 Windows, Mac 到 Windows, WSL
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 0141e3698b40b941cd78b60f28d862246cbc5d50
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 2a4471e1de4fc50a2cb1da2e3736d46b9b58a515
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823971"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254592"
 ---
 # <a name="stories-from-developers-who-have-switched-from-mac-to-windows"></a>从 Mac 切换到 Windows 的开发人员的成功案例
 

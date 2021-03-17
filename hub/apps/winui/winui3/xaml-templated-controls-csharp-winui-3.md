@@ -1,19 +1,19 @@
 ---
 description: 本文介绍如何使用 C# 创建适用于 WinUI 3 的 XAML 模板化控件。
 title: 使用 C# 将 WinUI 3 应用的 XAML 控件模板化
-ms.date: 09/11/2020
+ms.date: 03/05/2021
 ms.topic: article
 keywords: windows 10, uwp, 自定义控件, 模板化控件, winui
 ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 618bfc5a9937d29c546dc9420a1cba1c25fcc0ea
-ms.sourcegitcommit: aabd6f40df6cc82bb8ce3a43275e4abd568c236f
+ms.openlocfilehash: 3caadca2c6aae1ecceed534f9d9597f126310f3d
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92061695"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254631"
 ---
 # <a name="templated-xaml-controls-for-winui-3-apps-with-c"></a>使用 C# 将 WinUI 3 应用的 XAML 控件模板化
 
@@ -29,11 +29,11 @@ ms.locfileid: "92061695"
 
 ## <a name="add-a-templated-control-to-your-app"></a>向应用添加模板化控件
 
-若要添加模板化控件，请单击工具栏中的“项目”菜单，或在“解决方案资源管理器”中右键单击项目，然后选择“添加新项”  。 在“Visual C#”->“WinUI”下，选择“自定义控件(WinUI)”模板 。 将新控件命名为“BgLabelControl”，然后单击“添加”。 这将向项目中添加两个新文件。 `BgLabelControl.cs` 包含该控件的代码隐藏。 
+若要添加模板化控件，请单击工具栏中的“项目”菜单，或在“解决方案资源管理器”中右键单击项目，然后选择“添加新项”  。 在“Visual C#”->“WinUI”下，选择“自定义控件(WinUI)”模板 。 将新控件命名为“BgLabelControl”，然后单击“添加”。 
 
-## <a name="update-the-code-behind-file"></a>更新代码隐藏文件
+## <a name="update-the-custom-control-c-file"></a>更新自定义控件 C# 文件
 
-在代码隐藏文件 BgLabelControl.xaml.cs 中，请注意，构造函数定义了控件的 DefaultStyleKey 属性。 此键标识默认模板，如果控件的使用者未显式指定模板，则使用该模版。 键值是控件的类型。 稍后，在实现通用模板文件时，我们将看到使用此键。
+在 C# 文件 BgLabelControl.cs 中，请注意，构造函数定义了控件的 DefaultStyleKey 属性。 此键标识默认模板，如果控件的使用者未显式指定模板，则使用该模版。 键值是控件的类型。 稍后，在实现通用模板文件时，我们将看到使用此键。
 
 ```csharp
 public BgLabelControl()
@@ -85,9 +85,9 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
 有关依赖项属性工作原理的详细信息，请参阅[依赖项属性概述](/windows/uwp/xaml-platform/dependency-properties-overview)。
 
 ## <a name="define-the-default-style-for-bglabelcontrol"></a>定义 BgLabelControl 的默认样式
-模板化控件必须提供默认样式模板，如果控件的用户未显示设置样式，则使用该样式模板。 在此步骤中，我们将为控件创建一个通用模板文件。
+模板化控件必须提供默认样式模板，如果控件的用户未显示设置样式，则使用该样式模板。 在此步骤中，我们将修改控件的通用模板文件。
 
-确保“显示所有文件”仍处于打开状态（在“解决方案资源管理器”中）。  在项目节点下，新建文件夹，并将其命名为“主题”。 在 `Themes` 下，添加类型为“Visual C#”>“WinUI”>“资源字典(WinUI)”的新项，并将其命名为“Generic.xaml”。 文件夹和文件的名称必须与此类似，以便 XAML 框架查找模块化控件的默认样式。 删除 Generic.xaml 的默认内容，然后粘贴下方的标记。
+当你将自定义控件 (WinUI) 添加到应用时，就会生成通用模板文件。 此文件命名为“Generic.xaml”，并且在解决方案资源管理器的“Themes”文件夹中生成。 为了让 XAML 框架能够找到模板化控件的默认样式，文件夹和文件名是必须的。 删除 Generic.xaml 的默认内容，然后粘贴下方的标记。
 
 
 

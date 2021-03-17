@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b5c515760d0a03e163fa663da1f97a728a6da2c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e81b635d4c5bc2819aa126e4d685b49b044aa6ca
+ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154591"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102192949"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 创作 API
 
@@ -29,7 +29,9 @@ ms.locfileid: "89154591"
 
 ## <a name="if-youre-not-authoring-a-runtime-class"></a>如果你没有创作运行时类
 
-最简单的方案是你要实现一个 Windows 运行时接口以进行本地使用。 你不需要运行时类；只需一个普通的 C++ 类。 例如，你可能会基于 [CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication) 编写一个应用  。
+最简单的方案是，你的类型在实现 Windows 运行时接口，并且你将在同一个应用中使用此类型。 在这种情况下，你的类型不需要是运行时类；只是一个普通的 C++ 类。 例如，你可能会基于 [CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication) 编写一个应用  。
+
+如果你的类型被 XAML UI 引用，那么它确实必须是运行时类，即使它与 XAML 在同一个项目中，也不例外。 在这种情况下，请参阅[若要创作要在 XAML UI 中引用的运行时类](#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui)部分。
 
 > [!NOTE]
 > 有关安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息，请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
@@ -126,7 +128,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>如果你正在 Windows 运行时组件中创作一个运行时类
 
-如果类型打包在一个 Windows 运行时组件中以方便从应用程序中使用，则它需要是一个运行时类。 在 Microsoft 接口定义语言 (IDL) (.idl) 文件中声明运行时类（请参阅[将运行时类重构到 Midl 文件 (.idl) 中](#factoring-runtime-classes-into-midl-files-idl)）。
+如果你的类型打包在 Windows 运行时组件中，以便从另一个二进制文件（另一个二进制文件通常是应用程序）使用它，则你的类型必须是运行时类。 在 Microsoft 接口定义语言 (IDL) (.idl) 文件中声明运行时类（请参阅[将运行时类重构到 Midl 文件 (.idl) 中](#factoring-runtime-classes-into-midl-files-idl)）。
 
 每个 IDL 文件生成一个 `.winmd` 文件，Visual Studio 会将所有这些合并为一个与根命名空间同名的文件。 最后生成的 `.winmd` 文件将是组件使用者将参考的文件。
 

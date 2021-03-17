@@ -1,25 +1,27 @@
 ---
 description: 本指南展示如何开始使用 WinUI 3 UI 创建 UWP 应用。
 title: 适用于 UWP 应用的 WinUI 3 入门
-ms.date: 02/09/2021
+ms.date: 03/08/2021
 ms.topic: article
 keywords: windows 10, uwp, winui
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: d13acb2181160ec214070dc1276e844dc1f203ad
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: 6216dd85579e606f6de04c44b2f7cab6277a8df5
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100334899"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629305"
 ---
 # <a name="get-started-with-winui-3-for-uwp-apps"></a>适用于 UWP 应用的 WinUI 3 入门
 
-WinUI 3 预览版 4 中有新的项目模板，使你可使用完全在 WinUI 上生成的用户界面创建通用 Windows 平台 (UWP) 应用。 在你使用这些项目模板创建应用时，应用的整个用户界面都是通过 WinUI 3 提供的窗口、控件和样式实现的。 有关支持的 WinUI 3 项目模板的完整列表，请参阅 [适用于 WinUI 3 的项目模板](index.md#project-templates-for-winui-3)。
+WinUI 3 - Project Reunion 0.5 Preview 中包含项目模板，便于你创建具有完全基于 WinUI 生成的用户界面的通用 Windows 平台 (UWP) 应用。 在你使用这些项目模板创建应用时，应用的整个用户界面都是通过 WinUI 3 提供的窗口、控件和样式实现的。 有关支持的 WinUI 3 项目模板的完整列表，请参阅 [适用于 WinUI 3 的项目模板](index.md#project-templates-for-winui-3)。
 
-## <a name="prerequisites"></a>必备条件
+自 WinUI 3 - Project Reunion 0.5 Preview 起，WinUI 3 现在作为 Project Reunion 包的一部分提供。 这将略微改变安装说明，并为你提供更多的可选功能，但不会改变你开发 WinUI 3 应用的体验。 若要详细了解 Project Reunion，请参阅[使用 Project Reunion (0.5 Preview) 生成 Windows 应用](../../project-reunion/index.md)
 
-若要如本文中所述将 WinUI 3 用于 UWP 项目模板，请配置开发计算机并[安装 WinUI 3 预览版 4](index.md#install-winui-3-preview-4)。
+## <a name="prerequisites"></a>先决条件
+
+若要对本文描述的 UWP 项目模板使用 WinUI 3，请配置开发计算机，并[安装 Project Reunion 0.5 Preview](../../project-reunion/index.md#set-up-your-development-environment)。
 
 ## <a name="create-a-winui-3-app-in-uwp-for-c"></a>在 UWP 中创建适用于 C# 的 WinUI 3 应用
 
@@ -42,7 +44,7 @@ WinUI 3 预览版 4 中有新的项目模板，使你可使用完全在 WinUI �
 
 :::image type="content" source="images/WinUI-and-UWP/vs2019-configure-new-project-dialog.png" alt-text="“配置新项目”对话框的屏幕截图，其中突出显示了“位置”文本框和“创建”选项。":::
 
-5. 在下面的对话框中，将“目标版本”设置为 Windows 10 版本 1903（内部版本 18362），将“最低版本”设置为 Windows 10 版本 1803（内部版本 17134），然后单击“确定”。
+5. 在下面的对话框中，将“目标版本”设置为 Windows 10 版本 1903（内部版本 18362），并将“最低版本”设置为 Windows 10 版本 1809（内部版本 17763），然后单击“确定”。
 
 :::image type="content" source="images/WinUI-min-target-version.png" alt-text="“目标版本”和“最低版本”对话框":::
 
@@ -84,9 +86,9 @@ WinUI 3 预览版 4 中有新的项目模板，使你可使用完全在 WinUI �
 
 ## <a name="known-issues-and-limitations"></a>已知问题和限制
 
-请参阅 [Windows UI 库 3 预览版 4（2021 年 2 月）](index.md)的[限制和已知问题](index.md#limitations-and-known-issues)部分。
+请参阅 [Windows UI 库 3 - Project Reunion 0.5 Preview（2021 年 3 月）](index.md)的[限制和已知问题](index.md#limitations-and-known-issues)部分。
 
 ## <a name="related-topics"></a>相关主题
 
-- [Windows UI 库 3 预览版 4（2021 年 2 月）](index.md)
+- [Windows UI 库 3 - Project Reunion 0.5 Preview（2021 年 3 月）](index.md)
 - [创建你的第一个应用](/windows/uwp/get-started/your-first-app)

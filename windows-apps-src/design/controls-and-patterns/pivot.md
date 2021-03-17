@@ -10,14 +10,19 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: eaef3bb57eb8719ac4183f21b764ece98cae22fe
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c5462eecbb4b15e74fc6932da9bbbbe37fcdbd92
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93030850"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784838"
 ---
 # <a name="pivot"></a>Pivot
+
+> [!Important]
+> 不再建议使用 [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) 控件，可能会在 Windows UI 库 (WinUI) 的未来版本中删除它。 请注意，本主题中的信息和图像可能已过时。
+>
+> 请改用具有 Top 导航样式（或显示模式）的 [NavigationView](navigationview.md) 控件。
 
 [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) 控件可在一小组内容部分之间进行触控滑动。
 
@@ -37,7 +42,7 @@ ms.locfileid: "93030850"
    :::column-end:::
 :::row-end:::
 
-> **平台 API** ： [Pivot 类](/uwp/api/Windows.UI.Xaml.Controls.Pivot)、 [NavigationView 类](/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
+> **平台 API**：[Pivot 类](/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[NavigationView 类](/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
 ## <a name="examples"></a>示例
 

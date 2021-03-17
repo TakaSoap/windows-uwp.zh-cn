@@ -1,6 +1,6 @@
 ---
 description: NavigationView 是为应用实现顶级导航模式的自适应控件。
-title: 导航视图
+title: NavigationView
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
@@ -14,19 +14,19 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: af52032a0ebdf60e72f8bad0dd853696b717a05a
-ms.sourcegitcommit: 9bd23e0e08ed834accebde4db96fc87f921d983d
+ms.openlocfilehash: 4da8d370c76f18b243930bb478bc28975d6444a9
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98949137"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784858"
 ---
-# <a name="navigation-view"></a>导航视图
+# <a name="navigationview"></a>NavigationView
 
 NavigationView 控件可为应用提供顶级导航。 它适应各种屏幕大小，支持顶部和左侧导航样式。
 
 ![顶部导航](images/nav-view-header.png)<br/>
-导航视图支持顶部和左侧导航窗格或菜单
+NavigationView 支持顶部和左侧导航窗格或菜单
 
 **获取 Windows UI 库**
 
@@ -138,19 +138,19 @@ NavigationView 是非常适合于以下功能的自适应导航控件：
 
 ### <a name="auto"></a>Auto
 
-默认情况下，PaneDisplayMode 设置为 Auto。在 Auto 模式下，导航视图会进行自适应，在窗口狭窄时为 LeftMinimal，接下来为 LeftCompact，随后在窗口变宽时为 Left。 有关更多信息，请参阅[自适应行为](#adaptive-behavior)部分。
+默认情况下，PaneDisplayMode 设置为 Auto。在 Auto 模式下，NavigationView 会进行自适应，在窗口狭窄时为 LeftMinimal，接下来为 LeftCompact，随后在窗口变宽时为 Left。 有关更多信息，请参阅[自适应行为](#adaptive-behavior)部分。
 
 ![左侧导航默认自适应行为](images/displaymode-auto.png)<br/>
-导航视图默认自适应行为
+NavigationView 默认自适应行为
 
 ## <a name="anatomy"></a>结构
 
 这些图像显示为顶部或左侧导航进行配置时，控件窗格、标题和内容区域的布局。
 
-![顶部导航视图布局](images/topnav-anatomy.png)<br/>
+![顶部 NavigationView 布局](images/topnav-anatomy.png)<br/>
 顶部导航布局
 
-![左侧导航视图布局](images/leftnav-anatomy.png)<br/>
+![左侧 NavigationView 布局](images/leftnav-anatomy.png)<br/>
 左侧导航布局
 
 ### <a name="pane"></a>窗格
@@ -169,13 +169,13 @@ NavigationView 窗格可以包含：
 
 - 用于切换窗格打开和关闭状态的菜单按钮。 打开窗格后在较大的应用窗口中，你可以选择使用 [IsPaneToggleButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible) 属性隐藏此按钮。
 
-导航视图具有置于窗格左上角的后退按钮。 但是，它不会自动处理向后导航以及将内容添加到 Backstack。 若要启用向后导航，请参阅[向后导航](#backwards-navigation)部分。
+NavigationView 有一个后退按钮，它位于窗格的左上角。 但是，它不会自动处理向后导航以及将内容添加到 Backstack。 若要启用向后导航，请参阅[向后导航](#backwards-navigation)部分。
 
 下面是顶部和左侧窗格位置的详细窗格结构。
 
 #### <a name="top-navigation-pane"></a>顶部导航窗格
 
-![导航视图顶部窗格结构](images/navview-pane-anatomy-horizontal.png)
+![NavigationView 顶部窗格剖析](images/navview-pane-anatomy-horizontal.png)
 
 1. 标头
 1. 导航项
@@ -185,7 +185,7 @@ NavigationView 窗格可以包含：
 
 #### <a name="left-navigation-pane"></a>左侧导航窗格
 
-![导航视图左侧窗格结构](images/navview-pane-anatomy-vertical.png)
+![NavigationView 左侧窗格剖析](images/navview-pane-anatomy-vertical.png)
 
 1. “菜单”按钮
 1. 导航项
@@ -260,8 +260,8 @@ NavigationView 窗格可以包含：
 
 可以通过设置 [Header](/uwp/api/windows.ui.xaml.controls.navigationview.header) 属性来添加页面标题。
 
-![导航视图标题区域示例](images/nav-header.png)<br/>
-导航视图标题
+![NavigationView 标题区域示例](images/nav-header.png)<br/>
+NavigationView 标题
 
 标题区域在左侧窗格位置中与导航按钮垂直对齐，在顶部窗格位置中位于窗格下方。 它具有固定高度 52 px。 它的用途是保存所选导航类别的页面标题。 标题停靠在页面顶部，并作为内容区域的滚动剪辑点。
 
@@ -269,8 +269,8 @@ NavigationView 窗格可以包含：
 
 ### <a name="content"></a>内容
 
-![导航视图内容区域示例](images/nav-content.png)<br/>
-导航视图内容
+![NavigationView 内容区域示例](images/nav-content.png)<br/>
+NavigationView 内容
 
 内容区域是显示所选导航类别的大部分信息的位置。
 
@@ -278,7 +278,7 @@ NavigationView 窗格可以包含：
 
 ## <a name="adaptive-behavior"></a>自适应行为
 
-默认情况下，导航视图会根据可用的屏幕空间自动更改显示模式。 [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) 和 [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) 属性指定显示模式更改的断点。 可以修改这些值以自定义自适应显示模式行为。
+默认情况下，NavigationView 会根据可用的屏幕空间大小自动更改其显示模式。 [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) 和 [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) 属性指定显示模式更改的断点。 可以修改这些值以自定义自适应显示模式行为。
 
 ### <a name="default"></a>默认值
 
@@ -291,7 +291,7 @@ NavigationView 窗格可以包含：
 有关自适应行为的窗口大小的更多信息，请参阅[屏幕大小和断点](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)。
 
 ![左侧导航默认自适应行为](images/displaymode-auto.png)<br/>
-导航视图默认自适应行为
+NavigationView 默认自适应行为
 
 ### <a name="minimal"></a>最小
 
@@ -303,7 +303,7 @@ NavigationView 窗格可以包含：
 - 无法使用图标清楚地表示导航类别。
 
 ![左侧导航最小自适应行为](images/adaptive-behavior-minimal.png)<br/>
-导航视图“最小”自适应行为
+NavigationView“最小”自适应行为
 
 若要配置此行为，请将 CompactModeThresholdWidth 设为要折叠窗格时的宽度。 在这里，它从默认值 640 更改为 1007。 还应设置 ExpandedModeThresholdWidth 以确保值不会发生冲突。
 
@@ -321,7 +321,7 @@ NavigationView 窗格可以包含：
 - 可以使用图标清楚地表示导航类别。
 
 ![左侧导航精简自适应行为](images/adaptive-behavior-compact.png)<br/>
-导航视图“精简”自适应行为
+NavigationView“精简”自适应行为
 
 若要配置此行为，请将 CompactModeThresholdWidth 设置为 0。
 
@@ -334,7 +334,7 @@ NavigationView 窗格可以包含：
 若要禁用自动自适应行为，请将 PaneDisplayMode 设置为 Auto 以外的值。在这里，它设置为 LeftMinimal，因此仅显示菜单按钮，无论窗口宽度如何。
 
 ![左侧导航无自适应行为](images/adaptive-behavior-none.png)<br/>
-PaneDisplayMode 设置为 LeftMinimal 的导航视图
+PaneDisplayMode 设置为 LeftMinimal 的 NavigationView
 
 ```xaml
 <NavigationView PaneDisplayMode="LeftMinimal" />
@@ -384,13 +384,13 @@ PaneDisplayMode 设置为 LeftMinimal 的导航视图
 ```
 
 > [!TIP]
-> 如果使用 AdaptiveTrigger.MinWindowWidth，则当窗口宽于指定最小宽度时，会触发可视状态。 这意味着默认 XAML 定义狭窄窗口，而 VisualState 定义在窗口变得更宽时应用的修改。 导航视图的默认 PaneDisplayMode 为 Auto，所以当窗口宽度小于或等于 CompactModeThresholdWidth 时，会使用 LeftMinimal 导航。 当窗口变得更宽时，VisualState 会替代默认值，并使用 Top 导航。
+> 如果使用 AdaptiveTrigger.MinWindowWidth，则当窗口宽于指定最小宽度时，会触发可视状态。 这意味着默认 XAML 定义狭窄窗口，而 VisualState 定义在窗口变得更宽时应用的修改。 NavigationView 的默认 PaneDisplayMode 为 Auto，所以当窗口宽度小于或等于 CompactModeThresholdWidth 时，就会使用 LeftMinimal 导航。 当窗口变得更宽时，VisualState 会替代默认值，并使用 Top 导航。
 
 ## <a name="navigation"></a>导航
 
-导航视图不自动执行任何导航任务。 当用户点击某个导航项时，导航视图会将该项显示为已选中，并引发 [ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked) 事件。 如果点击导致新项被选中，则还会引发 [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged) 事件。
+NavigationView 不会自动执行任何导航任务。 当用户点击某个导航项时，NavigationView 会将此项显示为已选中，并触发 [ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked) 事件。 如果点击导致新项被选中，则还会引发 [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged) 事件。
 
-可以处理任一事件来执行与请求的导航相关的任务。 应处理哪个事件取决于希望应用具有的行为。 通常会导航到请求的页面并更新导航视图标题以响应这些事件。
+可以处理任一事件来执行与请求的导航相关的任务。 应处理哪个事件取决于希望应用具有的行为。 通常情况下，你会导航到请求的页面，并更新 NavigationView 标题来响应这些事件。
 
 每当用户点击导航项时都会引发 ItemInvoked，即使该项已被选中。 （还可以使用鼠标、键盘或其他输入通过等效操作调用该项。 有关更多信息，请参阅[输入和交互](../input/index.md)。）如果在 ItemInvoked 处理程序中导航，则默认情况下，会重新加载页面，并将重复条目添加到导航堆栈。 如果在调用某个项时进行导航，则应禁止重新加载页面，或确保在重新加载页面时不会在导航 Backstack 中创建重复条目。 （请参阅代码示例。）
 
@@ -402,7 +402,7 @@ PaneDisplayMode 设置为 LeftMinimal 的导航视图
 
 NavigationView 具有内置后退按钮；但是与向前导航一样，它不会自动执行向后导航。 用户点击后退按钮时，会引发 [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested) 事件。 可处理此事件以执行向后导航。 有关更多信息和代码示例，请参阅[导航历史记录和向后导航](../basics/navigation-history-and-backwards-navigation.md)。
 
-在最小或精简模式下，导航视图窗格会作为浮出控件打开。 在这种情况下，单击后退按钮会关闭窗格并改为引发 PaneClosing 事件。
+在 Minimal 或 Compact 模式下，NavigationView 窗格会作为浮出控件打开。 在这种情况下，单击后退按钮会关闭窗格并改为引发 PaneClosing 事件。
 
 可以通过设置以下这些属性来隐藏或禁用后退按钮：
 
@@ -411,11 +411,11 @@ NavigationView 具有内置后退按钮；但是与向前导航一样，它不�
 
 :::row:::
     :::column:::
-        ![左侧导航窗格中的导航视图后退按钮](images/leftnav-back.png)<br/>
+        ![左侧导航窗格中的 NavigationView 后退按钮](images/leftnav-back.png)<br/>
         左侧导航窗格中的后退按钮
     :::column-end:::
     :::column:::
-        ![顶部导航窗格中的导航视图后退按钮](images/topnav-back.png)<br/>
+        ![顶部导航窗格中的 NavigationView 后退按钮](images/topnav-back.png)<br/>
         顶部导航窗格中的后退按钮
     :::column-end:::
 :::row-end:::
@@ -1651,7 +1651,7 @@ MainPage::MainPage()
 
 ### <a name="keyboarding-within-hierarchical-navigationview"></a>分层 NavigationView 内的键盘操作
 
-用户可以使用[键盘](../input/keyboard-interactions.md)在导航视图上移动焦点。 箭头键在窗格内公开“内部导航”，并按照[树视图](./tree-view.md)中提供的交互进行操作。 当在 NavigationView 或其浮出控件菜单（在 HierarchicalNavigationView 的顶部和左侧模式下显示）中导航时，键操作将发生变化。 下面是每个键可在分层 NavigationView 中执行的特定操作：
+用户可以使用[键盘](../input/keyboard-interactions.md)在 NavigationView 周围移动焦点。 箭头键在窗格内公开“内部导航”，并按照[树视图](./tree-view.md)中提供的交互进行操作。 当在 NavigationView 或其浮出控件菜单（在 HierarchicalNavigationView 的顶部和左侧模式下显示）中导航时，键操作将发生变化。 下面是每个键可在分层 NavigationView 中执行的特定操作：
 
 | 键      |      在左侧模式下      |  在顶部模式下 | 在浮出控件中  |
 |----------|------------------------|--------------|------------|
@@ -1666,7 +1666,7 @@ MainPage::MainPage()
 
 *请注意，项不需要在视觉上相邻，焦点将从窗格列表的最后一项移动到设置项。 
 
-## <a name="navigation-view-customization"></a>导航视图自定义
+## <a name="navigationview-customization"></a>NavigationView 自定义
 
 ### <a name="pane-backgrounds"></a>窗格背景
 

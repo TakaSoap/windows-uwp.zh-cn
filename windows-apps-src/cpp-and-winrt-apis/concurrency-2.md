@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: e916465d664b5658eeb155874dfa00795a772622
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d5dc755fbb5247c47cd0acd8a3e1f3147f061ccf
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170391"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784648"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>C++/WinRT 的更高级并发和异步
 
@@ -558,32 +558,39 @@ IAsyncOperationWithProgress<double, double> CalcPiTo5DPs()
 
     co_await 1s;
     double pi_so_far{ 3.1 };
+    progress.set_result(pi_so_far);
     progress(0.2);
 
     co_await 1s;
     pi_so_far += 4.e-2;
+    progress.set_result(pi_so_far);
     progress(0.4);
 
     co_await 1s;
     pi_so_far += 1.e-3;
+    progress.set_result(pi_so_far);
     progress(0.6);
 
     co_await 1s;
     pi_so_far += 5.e-4;
+    progress.set_result(pi_so_far);
     progress(0.8);
 
     co_await 1s;
     pi_so_far += 9.e-5;
+    progress.set_result(pi_so_far);
     progress(1.0);
+
     co_return pi_so_far;
 }
 
 IAsyncAction DoMath()
 {
     auto async_op_with_progress{ CalcPiTo5DPs() };
-    async_op_with_progress.Progress([](auto const& /* sender */, double progress)
+    async_op_with_progress.Progress([](auto const& sender, double progress)
     {
-        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << std::endl;
+        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << L". "
+                   << L"Value so far: " << sender.GetResults() << std::endl;
     });
     double pi{ co_await async_op_with_progress };
     std::wcout << L"CalcPiTo5DPs() is complete !" << std::endl;
@@ -596,6 +603,13 @@ int main()
     DoMath().get();
 }
 ```
+
+若要报告进度，请调用以进度值作为参数的进度标记。 若要设置临时结果，请对进度标记使用 `set_result()` 方法。
+
+> [!NOTE]
+> 报告临时结果需要 C++/WinRT 版本 2.0.210309.3 或更高版本。
+
+上面的示例选择为每个进度报告都设置一个临时结果。 可以选择随时报告临时结果（如果有）。 它不需要加上进度报告。
 
 > [!NOTE]
 > 对一个异步操作或运算实现多个完成处理程序是错误的做法  。 可对其已完成的事件使用单个委托，或者可对其运行 `co_await`。 如果同时采用这两种方法，则第二种方法会失败。 以下两种完成处理程序都是适当的；但不能同时对同一个异步对象使用两者。
@@ -668,7 +682,7 @@ IAsyncAction Async(HANDLE event)
 }
 ```
 
-传入的**句柄**仅在函数返回之前有效，该函数（为协同程序）在第一个暂停点（在此示例中为第一个 `co_await`）返回。 在等待 **DoWorkAsync** 时，控制返回到调用方，调用帧超出范围，你再也无法知道在协同程序继续时句柄是否会有效。
+传入的 **句柄** 仅在函数返回之前有效，该函数（为协同程序）在第一个暂停点（在此示例中为第一个 `co_await`）返回。 在等待 **DoWorkAsync** 时，控制返回到调用方，调用帧超出范围，你再也无法知道在协同程序继续时句柄是否会有效。
 
 从技术上来说，我们的协同程序在按值接收其参数，这符合预期（请参阅上面的[参数传递](concurrency.md#parameter-passing)）。 但在此示例中，我们需要更进一步，因此我们将遵循该指南的精神（而不仅仅是字面涵义）。 除了句柄，我们还需要传递强引用（换句话说，所有权）。 操作方法如下。
 
@@ -808,7 +822,7 @@ case AsyncStatus::Started:
 
 ## <a name="returning-an-array-asynchronously"></a>异步返回数组
 
-以下是 [MIDL 3.0](/uwp/midl-3/) 示例，它生成*错误 MIDL2025: [msg]syntax error [context]: expecting > or, near "["* 。
+以下是 [MIDL 3.0](/uwp/midl-3/) 示例，它生成 *错误 MIDL2025: [msg]syntax error [context]: expecting > or, near "["* 。
 
 ```idl
 Windows.Foundation.IAsyncOperation<Int32[]> RetrieveArrayAsync();

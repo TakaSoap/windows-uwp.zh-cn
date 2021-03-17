@@ -11,12 +11,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f81e440670ccee34269ddbe5d55d93637b8d89df
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 7cc03fd8b2acafd7f3e85b0a6438365d74d5657c
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043549"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784818"
 ---
 # <a name="swipe"></a>轻扫
 
@@ -184,9 +184,9 @@ UWP 轻扫命令有两种模式：[显示](/uwp/api/windows.ui.xaml.controls.swi
 
 ## <a name="handle-an-invoked-swipe-command"></a>处理调用的轻扫命令
 
-要对轻扫命令执行操作，可以处理其 [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) 事件。 （有关用户如何调用命令的更多信息，请参阅本文前面的_轻扫如何运作？_ 部分。）通常，轻扫命令用在 ListView 或类似列表的场景中。 在这种情况下，调用命令时，表示你要对所轻扫的项目执行操作。
+要对轻扫命令执行操作，可以处理其 [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) 事件。 （有关用户如何调用命令的更多信息，请参阅本文前面的 _轻扫如何运作？_ 部分。）通常，轻扫命令用在 ListView 或类似列表的场景中。 在这种情况下，调用命令时，表示你要对所轻扫的项目执行操作。
 
-下面介绍如何处理你之前创建的 delete 轻扫项目的 Invoked 事件__。
+下面介绍如何处理你之前创建的 delete 轻扫项目的 Invoked 事件。
 
 ```xaml
 <SwipeItems x:Key="ExecuteDelete" Mode="Execute">
@@ -217,7 +217,7 @@ UWP 轻扫命令有两种模式：[显示](/uwp/api/windows.ui.xaml.controls.swi
 - **RemainOpen**
   - 项目被调用时，无论处于何种模式，轻扫控件将始终处于打开状态。
 
-在这里，一个 reply 轻扫项目设置为在调用后关闭__。
+在这里，一个 reply 轻扫项目设置为在调用后关闭。
 
 ```xaml
 <SwipeItem Text="Reply" IconSource="{StaticResource ReplyIcon}"
@@ -227,7 +227,7 @@ UWP 轻扫命令有两种模式：[显示](/uwp/api/windows.ui.xaml.controls.swi
 
 ## <a name="dos-and-donts"></a>准则
 
-- 请勿在 FlipView、Hub 或 Pivot 中使用轻扫。 用户可能会因轻扫指令冲突而混淆组合。
+- 请勿在 FlipView 或 Hub 中使用轻扫。 用户可能会因轻扫指令冲突而混淆组合。
 - 请勿将水平轻扫和水平导航组合在一起，也不要将垂直轻扫和垂直导航混在一起。
 - 务必确保用户轻扫的内容为相同操作，并且在可轻扫的所有相关项目中保持一致。
 - 务必对用户将要执行的主要操作使用轻扫。

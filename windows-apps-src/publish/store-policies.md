@@ -1,30 +1,42 @@
 ---
 title: Microsoft Store 策略
 description: Microsoft Store 中的产品必须满足我们的认证标准，为客户提供真正有用且引人入胜的体验，并与 Microsoft Store 完美兼容。
-ms.date: 12/16/2020
+ms.date: 03/04/2021
 ms.topic: article
 keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 7d9679b591b64f804ae9c84badc5849cac28de99
-ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
+ms.openlocfilehash: 4a762410011a369e79956f5fb858d030169307b2
+ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98104658"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102192989"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 策略
 
 
 **文档版本：7.12**
 
-**文档日期：2019 年 10 月 1 日**
+**文档日期：2021 年 3 月 4 日**
 
 > [!NOTE]
 > 有关本协议近期更改的总结，请参阅[更改历史记录](store-policies-change-history.md)。
 
 > [!NOTE]
-> **2020 年 12 月 16 日策略更新通知**：对于面向通过 [Xbox Live 创意者计划](https://www.xbox.com/developers/creators-program/)开发的主机的产品，要求与 XBL 服务集成的规定不再适用。 特定策略（[策略 10.13.1](#1013-gaming-and-xbox)）将进行更新，以便在下次更新 Microsoft Store 策略文档时反映出此更改；但自此通知开始，将不再为 XBL 创意者计划强制实施此策略。 
+>**2021 年 3 月 4 日策略更新通知**
+>
+>Microsoft Store 将在本月更新其 Store 策略，计划于 2021 年 4 月底生效。  关键策略更改包括：
+>
+>- 策略 10.8.6 更新：将允许“PC 游戏”订阅产品使用 Microsoft 的应用内购买 API 或安全的第三方计费服务，以便在通过订阅服务提供的游戏中进行游戏内购买。 此外，作为此类订阅服务的一部分的游戏也可以提供给 Store 之外的订阅者。
+>- 更新了策略 11.12，以阐明与用户生成的内容相关的策略要求。
+>
+>根据请求，如果适用的产品符合上面所述的更新，Microsoft 将向任何根据此通知受更新约束的策略授予例外。
+
+>[!NOTE]
+>**2020 年 12 月 16 日策略更新通知**
+>
+>对于定目标到通过 Xbox Live 创意者计划开发的主机的游戏产品，与 XBL Services 集成的要求不再适用。 特定策略（策略 10.13.1）将进行更新，以便在下次更新 Microsoft Store 策略文档时反映出此更改；但自此通知开始，将不再为 XBL 创意者计划强制实施此策略。
 
 感谢你有兴趣开发适用于 Microsoft Store<sup>1</sup> 的产品。 “产品”是指提交的任何形式的内容，包括但不限于应用、游戏、作品以及在产品内销售或提供的任何其他内容。 我们致力于为全球客户提供种类丰富的产品。 Microsoft Store 中的产品必须满足我们的认证标准，为客户提供真正有用且引人入胜的体验，并与 Microsoft Store 完美兼容。
 

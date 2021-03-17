@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 桌面开发
-ms.openlocfilehash: 62567b36d16e01fc6091f9514137c60dc352942a
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: 11605902b334025c50847103e2de9b10e49c3a0f
+ms.sourcegitcommit: 432cc11c460e9ddf855d28bcd59852741408c823
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534376"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102474837"
 ---
 # <a name="choose-your-windows-app-platform"></a>选择 Windows 应用平台
 
@@ -23,9 +23,9 @@ ms.locfileid: "99534376"
 * [WPF](#wpf) 和 [Windows 窗体](#windows-forms)：这些基于 .NET 的平台为托管应用程序提供通用类型系统、API 和应用程序模型。
 * [Win32](#win32)：这是原始平台，适用于需直接访问 Windows 和硬件的原生 C/C++ Windows 应用程序。 这使得 Win32 API 成为需要最高级别性能和直接访问系统硬件的应用程序的首选平台。
 
-这些平台每个都包括一个完整的 UI 框架和一组 UI 控件。你可以使用它们创建在经典 Windows 桌面上运行的 Word、Excel 和 Photoshop 等桌面应用，并充分利用该环境的特定功能。 在 Windows 10 上，这些平台还都支持使用 [Windows UI 库 (WinUI)](#use-the-windows-ui-library-with-windows-apps) 来创建其用户界面。
+这些平台每个都包括一个完整的 UI 框架和一组 UI 控件。你可以使用它们创建在经典 Windows 桌面上运行的 Word、Excel 和 Photoshop 等桌面应用，并充分利用该环境的特定功能。 在 Windows 10 上，这些平台都支持使用 [Windows UI 库 (WinUI)](#use-the-windows-ui-library-with-windows-apps) 来创建其用户界面。
 
-其中一些平台有一些共同的特征，更适用于某些类型的应用程序。 例如，UWP 和 .NET 都与 Visual Studio 深度集成。 这提供了许多好处，尤其是在开发人员的工作效率、复杂的可自定义 UI 和应用程序安全方面。 由于这些框架支持可视化设计器和 UI 标记以快速创建 UI，因此它们特别适用于业务线应用程序。
+其中一些平台有一些共同的特征，更适用于特定类型的应用程序。 例如，UWP 和 .NET 都与 Visual Studio 深度集成。 这提供了许多好处，尤其是在开发人员的工作效率、复杂的可自定义 UI 和应用程序安全方面。 由于这些框架支持可视化设计器和 UI 标记以快速创建 UI，因此它们特别适用于业务线应用程序。
 
 > [!NOTE]
 > 无论选择哪个应用平台，都可以使用许多 Windows 10 功能在应用中提供新式体验。 例如，即使桌面应用是使用 WPF、Windows 窗体或 Win32 API 构建的，你也可以使用 MSIX 程序包部署。 若要详细了解实现桌面应用现代化的所有方法，请参阅[实现桌面应用的现代化](modernize/index.md)。

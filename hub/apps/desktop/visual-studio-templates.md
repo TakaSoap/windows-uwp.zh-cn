@@ -7,12 +7,12 @@ keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
-ms.openlocfilehash: 7f288d301583c08b0fd4104802b643a7c31ad99f
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: ea6ac2491afe8820bc47f69149f553241f17e89e
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100335112"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629285"
 ---
 # <a name="visual-studio-project-and-item-templates-for-windows-apps"></a>适用于 Windows 应用的 Visual Studio 项目和项模板
 
@@ -25,7 +25,9 @@ Visual Studio 2019 提供很多项目和项模板，可帮助你使用 C\# 或 C
 
 [Windows UI 库 (WinUI)](../winui/index.md) 是新式的本机用户界面 (UI) 平台，适用于跨桌面（.NET 和本机 Win32）和 UWP 应用平台的 Windows 应用。 [WinUI 3](../winui/winui3/index.md)（目前作为开发者预览版提供）是 WinUI 的最新主要版本，它将 WinUI 转换为适用于桌面 Windows 应用的完整 UX 框架。
 
-WinUI 3 包括用于 Visual Studio 2019 的 VSIX 包，此包提供项目和项模板，可帮助你使用基于 WinUI 的界面开始生成应用。 有关 WinUI 3 VSIX 包及所提供的项目模板的详细信息，请参阅[安装 WinUI 3 预览版 4](../winui/winui3/index.md#install-winui-3-preview-4)。
+WinUI 3 的当前开发人员预览版是 [Project Reunion 0.5 Preview](../project-reunion/index.md) 的一部分。 此预览版包括用于 Visual Studio 2019 的 VSIX 包，它提供了项目和项模板，可帮助你开始生成具有基于 WinUI 的界面的应用。
+
+有关安装 Project Reunion 0.5 Preview VSIX 包和 WinUI 项目模板的说明，请参阅[创建开发环境](../project-reunion/index.md#set-up-your-development-environment)。 若要详细了解可用的 WinUI 项目和项模板，请参阅[创建 WinUI 项目](../winui/winui3/index.md#create-winui-projects)。
 
 > [!IMPORTANT]
 > WinUI 3（包括相关的 Visual Studio 模板）当前以开发者预览版提供，用于早期评估并从开发人员社区收集反馈。 目前不应将其用于生产应用。

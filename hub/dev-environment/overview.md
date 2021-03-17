@@ -1,6 +1,6 @@
 ---
-title: 在 Windows 10 上设置开发环境
-description: 帮助你在 Windows 上设置开发环境并安装首选工具和代码语言的完整指南。
+title: 在 Windows 10 上创建开发环境
+description: 帮助你在 Windows 上设置开发环境并安装首选工具和代码语言的指南。 无论你是否选择使用 Python、NodeJS、VS Code、Git、Bash、Linux 工具和命令、Android Studio，我们都会为你提供功能强大的新工具（例如 Windows 终端和 WSL）。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: 设置 windows, 开发环境, 开发工具, 开发路径, Microsoft, Windows, 开发人员, 使用技巧, 性能, WSL, 终端, nodejs, python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 58c68522fdb3ffe11c4e11dff48fb49faa79b830
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 3a577ca4241f102bcff2a84419a0e3523f812b74
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101824031"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254641"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>在 Windows 10 上设置开发环境
 
@@ -65,6 +65,14 @@ ms.locfileid: "101824031"
        [![PowerShell 图标](../images/powershell.png)](/powershell/)<br>
         **[PowerShell 入门](/powershell/)**<br>
         开始使用 PowerShell（一种命令行 shell 和脚本语言）自动完成跨平台任务和管理配置。
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+       [![Rust 图标](../images/rust-icon.png)](./rust/index.yml)<br>
+        **[Rust 入门](./rust/index.yml)**<br>
+        开始使用 Rust 编程 &mdash; 其中包括如何使用 Windows crate 设置 Rust for Windows。
     :::column-end:::
 :::row-end:::
 

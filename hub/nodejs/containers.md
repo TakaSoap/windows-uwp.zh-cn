@@ -1,5 +1,5 @@
 ---
-title: 开始将 Docker 容器与 Node.js 结合使用
+title: 将 Docker 容器与 Node.js 结合使用
 description: 本分步指南可帮助你开始将 Docker 容器与 Node.js 应用结合使用。
 author: mattwojo
 ms.author: mattwoj
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: ''
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: bd9b912dfd4b733f57aaacfe6e8f246985e3b4f5
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 5a6ba80f96410ead8195e6175063916d2519ed91
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933078"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254552"
 ---
 # <a name="get-started-using-docker-containers-with-nodejs"></a>开始将 Docker 容器与 Node.js 结合使用
 

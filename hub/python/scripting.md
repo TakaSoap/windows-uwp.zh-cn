@@ -1,6 +1,6 @@
 ---
-title: 在 Windows 上使用 Python 的脚本和自动化
-description: 帮助开始使用 Python 在 Windows 上进行脚本编写、自动化和系统管理的分步指南。
+title: 将 Python 用于脚本和自动化
+description: 如何开始在 Windows 上将 Python 用于脚本、自动化和系统管理。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python 系统管理, python 文件自动化, windows 上的 python 脚本, 在 windows 上设置 python, windows 上的 python 开发人员环境, windows 上的 python 开发环境, python 与 powershell, 适用于文件系统任务的 python 脚本
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 8b6ce391d810fc26ab9964f39939ce8c5a9958e9
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 9123aed078a2af243b201b92d2cd0565be53efe3
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823571"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254540"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>开始在 Windows 上将 Python 用于脚本和自动化
 
@@ -34,7 +34,7 @@ ms.locfileid: "101823571"
 
 1. 转到“开始”  菜单（左下方 Windows 图标），输入“Microsoft Store”，选择用于打开应用商店的链接。
 
-2. 应用商店打开后，从右上方菜单中选择“搜索”  ，然后输入“Python”。 从“应用”下的结果中打开“Python 3.7”。 选择“获取”  。
+2. 应用商店打开后，从右上方菜单中选择“搜索”，然后输入“Python”。 从“应用”下的结果中打开“Python 3.7”。 选择“获取”。
 
 3. Python 完成下载和安装过程后，使用“开始”  菜单（左下方 Windows 图标）打开 Windows PowerShell。 PowerShell 打开后，输入 `Python --version` 以确认已在计算机上安装了 Python3。
 

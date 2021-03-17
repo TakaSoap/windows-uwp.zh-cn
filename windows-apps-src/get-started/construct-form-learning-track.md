@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a674514bfeb2acbc545e59cf1b3fc6e59d697215
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 86d352aff0b091a698e4b91cbee9cfdc8b1f8340
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304519"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784658"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 
@@ -25,7 +25,7 @@ ms.locfileid: "89304519"
 
 UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需要通过在页面上安排一组 UI 元素来创建表单。
 
-为此，你需要了解**布局面板**。 布局面板是容纳应用 UI 元素的容器，允许你安排 UI 元素和进行分组。 将布局面板放置在其他布局面板中，可以很好地控制一个项目相对于其他项目的位置和显示方式。 这也可以让应用更轻松地适应不同的屏幕大小。
+为此，你需要了解 **布局面板**。 布局面板是容纳应用 UI 元素的容器，允许你安排 UI 元素和进行分组。 将布局面板放置在其他布局面板中，可以很好地控制一个项目相对于其他项目的位置和显示方式。 这也可以让应用更轻松地适应不同的屏幕大小。
 
 请参阅[布局面板文档](../design/layout/layout-panels.md)。 表单通常显示在一个或多个垂直列中，因此需要将相似项目分组到 **StackPanel** 中，并根据需要将它们安排到 **RelativePanel** 中。 现在我们开始组织一些面板 - 如果需要参考，下面是两列表单的基本布局框架：
 
@@ -57,7 +57,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ## <a name="format-controls-in-your-layout"></a>在布局中格式化控件
 
-你知道如何安排布局面板和如何添加所需项目，但该如何格式化它们呢？ [表单](../design/controls-and-patterns/forms.md)页面有一些特定的设计指南。 请阅读**表单类型**和**布局**部分，以获取有用的建议。 很快我们将讨论辅助功能和相对布局。
+你知道如何安排布局面板和如何添加所需项目，但该如何格式化它们呢？ [表单](../design/controls-and-patterns/forms.md)页面有一些特定的设计指南。 请阅读 **表单类型** 和 **布局** 部分，以获取有用的建议。 很快我们将讨论辅助功能和相对布局。
 
 请牢记以下建议：在向布局中添加选择的控件时，请确保为其分配标签和提供适当的间隔。 例如，下面是采用上述布局、控件和设计指南的单页表单的基本框架：
 
@@ -92,11 +92,11 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 用户可能会在具有不同屏幕宽度的各种设备上查看 UI。 为了确保他们在任意屏幕上都能获得良好的体验，应该采用[响应式设计](../design/layout/responsive-design.md)。 请通读该页面，以获得关于设计理念的良好建议并在继续时予以实践。
 
-[采用 XAML 的响应式布局](../design/layout/layouts-with-xaml.md)页面详细介绍了如何实现这一点。 现在，我们将着重介绍**流动布局**和 **XAML 中的可视状态**。
+[采用 XAML 的响应式布局](../design/layout/layouts-with-xaml.md)页面详细介绍了如何实现这一点。 现在，我们将着重介绍 **流动布局** 和 **XAML 中的可视状态**。
 
-上面给出的基本表单框架就是一个**流动布局**，因为它主要取决于控件的相对位置，最大限度减少了特定像素大小和位置的使用。 请在日后创建更多 UI 时牢记这一点。
+上面给出的基本表单框架就是一个 **流动布局**，因为它主要取决于控件的相对位置，最大限度减少了特定像素大小和位置的使用。 请在日后创建更多 UI 时牢记这一点。
 
-对于响应式布局来说，更重要的是**可视状态**。 可视状态定义了当给定条件为真时应用于给定元素的属性值。 [了解如何在 XAML 中进行该操作](../design/layout/layouts-with-xaml.md#set-visual-states-in-xaml-markup)，然后在表单中实现它们。 下面对我们之前的示例做了更改，实现了一个非常基础的可视状态  ：
+对于响应式布局来说，更重要的是 **可视状态**。 可视状态定义了当给定条件为真时应用于给定元素的属性值。 [了解如何在 XAML 中进行该操作](../design/layout/layouts-with-xaml.md#set-visual-states-in-xaml-markup)，然后在表单中实现它们。 下面对我们之前的示例做了更改，实现了一个非常基础的可视状态  ：
 
 ```xaml
 <Page ...>
@@ -144,7 +144,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 虽然本文创建的只是一个表单，但布局和控件的概念适用于你可能构建的所有 XAML UI。 请抽时间浏览本文中提供的链接文档，对已有表单进行试验 - 添加新 UI 功能并进一步改进用户体验。 如果需要更详细布局功能的分步指南，请参阅[自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md)。
 
-表单不一定非得单独使用，你也可以更进一步 - 将它们嵌入到[大纲/细节模式](../design/controls-and-patterns/master-details.md)或[透视表控件](../design/controls-and-patterns/pivot.md)中。 或者，如果要对表单背后的代码做些改动，请参阅[事件概述](../xaml-platform/events-and-routed-events-overview.md)。
+表单也不必存在于真空中，可以更进一步，将它们嵌入到[大纲/细节模式](../design/controls-and-patterns/master-details.md)或 [NavigationView](../design/controls-and-patterns/navigationview.md) 中。 或者，如果要对表单背后的代码做些改动，请参阅[事件概述](../xaml-platform/events-and-routed-events-overview.md)。
 
 ## <a name="useful-apis-and-docs"></a>有用的 API 和文档
 
@@ -170,7 +170,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 | [窗体](../design/controls-and-patterns/forms.md) | 关于创建表单的总括指南。 |
 | [布局面板](../design/layout/layout-panels.md) | 概述布局面板类型以及在何处使用它们。 |
 | [大纲/细节模式](../design/controls-and-patterns/master-details.md) | 可以围绕一个或多个表单实现的设计模式。 |
-| [Pivot 控件](../design/controls-and-patterns/pivot.md) | 一种可以包含一个或多个表单的控件。 |
+| [NavigationView](../design/controls-and-patterns/navigationview.md) | 一种可以包含一个或多个表单的控件。 |
 | [响应式设计](../design/layout/responsive-design.md) | 对响应式设计原则的宽泛介绍。 |
 | [采用 XAML 的响应式布局](../design/layout/layouts-with-xaml.md) | 关于响应式设计可视状态及其他实现的特定信息。 |
 | [面向响应式设计的屏幕大小](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | 关于应将响应式布局限制在哪些屏幕大小范围内的指南。 |
@@ -182,4 +182,4 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 | [自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md) | 对于自适应布局和响应式设计的分步指导体验。 |
 | [客户订单数据库](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | 了解布局和表单在多页企业示例中的应用。 |
 | [XAML 控件库](https://github.com/Microsoft/Xaml-Controls-Gallery) | 了解一些精选的 XAML 控件及其实现方式。 |
-| [其他代码示例](https://developer.microsoft.com/windows/samples) | 在类别下拉列表中选择**控件、布局和文本**，以查看相关代码示例。 |
+| [其他代码示例](https://developer.microsoft.com/windows/samples) | 在类别下拉列表中选择 **控件、布局和文本**，以查看相关代码示例。 |
