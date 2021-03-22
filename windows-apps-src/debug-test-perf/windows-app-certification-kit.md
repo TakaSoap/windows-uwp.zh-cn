@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: be02f9b049a1beb1866d21c97f11fe3efeb815f3
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: a8be8ff09b962456b70d604a6a44203ceddb8cbc
+ms.sourcegitcommit: 8bface2162e091999b1cf2218340edda2389da89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339345"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496684"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 应用认证工具包
 
@@ -22,12 +22,36 @@ ms.locfileid: "94339345"
 测试通用 Windows 应用的先决条件：
 
 - 必须安装并运行 Windows 10。
-- 必须安装 [Windows 应用认证工具包](https://developer.microsoft.com/windows/downloads/app-certification-kit/)，它包含在适用于 Windows 10 的 Windows 软件开发工具包 (SDK) 中。
+- 必须安装 [Windows 应用认证工具包](https://developer.microsoft.com/windows/downloads/windows-10-sdk/)，它包含在适用于 Windows 10 的 Windows 软件开发工具包 (SDK) 中。
 - 必须[启用设备进行开发](/windows/apps/get-started/enable-your-device-for-development)。
 - 必须将要测试的 Windows 应用部署到计算机。
 
 > [!NOTE]
 > **就地升级：** 安装更高版本的 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)将替换已安装的所有早期版本的工具包。
+
+## <a name="whats-new"></a>新变化
+
+工具包现在支持 Windows [桌面桥应用](/windows/msix/desktop/source-code-overview)测试。 [Windows 桌面桥应用测试](/windows/uwp/debug-test-perf/windows-desktop-bridge-app-tests)可为你的应用提供在 Microsoft Store 中发布或通过认证的最佳机会。
+
+工具包现可集成到没有交互式用户会话的自动测试中。
+
+不再支持应用预启动验证测试。
+
+## <a name="known-issues"></a>已知问题
+
+以下是 Windows 应用认证工具包的已知问题列表：
+
+在测试期间，如果安装程序终止，但活动进程或窗口仍保持运行，则该应用认证工具包可以检测到是否仍存在需要该安装程序来完成的任务。 在此种情况下，该工具包将停止运行“进程安装跟踪文件”任务，并且无法继续处理 UI。
+
+**解决方法：** 在安装程序完成后，手动关闭该安装程序衍生的任何活动进程或窗口。
+
+对于 ARM UWA 或不是面向设备系列桌面或 OneCore 的任何 UWA 应用，最终报告中将出现一条消息，指示“并非所有测试均在验证期间进行。 这可能影响你的 Microsoft Store 提交。”。 如果用户未手动取消测试，将不显示此消息。
+
+**解决方法：** 不适用
+
+对于使用 Windows SDK 版本 10.0.15063 的桌面桥应用，请忽略应用程序清单资源测试中任何标记图像不符合预期尺寸的失败，前提是这些尺寸只相差一个像素。 测试应该具有 +/-1 像素容差。 例如 125% 的小磁贴为 88.75x88.75 像素，如果舍入为 89x89 像素，则不符合 88x88px 的大小限制。
+
+**解决方法：** 不适用
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-interactively"></a>以交互方式使用 Windows 应用认证工具包验证 Windows 应用
 
@@ -89,5 +113,7 @@ Windows 应用认证工具包的性能测试阈值基于低能耗电脑的性能
 
 ## <a name="related-topics"></a>相关主题
 
+- [使用 Windows 应用认证工具包](/windows/win32/win_cert/using-the-windows-app-certification-kit)
+- [Windows 桌面应用认证要求](/windows/win32/win_cert/certification-requirements-for-windows-desktop-apps)
 - [Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)
 - [Microsoft Store 策略](/legal/windows/agreements/store-policies)
