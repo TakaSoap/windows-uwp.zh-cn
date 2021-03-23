@@ -8,12 +8,12 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b676cf274121ae991066f908b18f1be705d1c580
-ms.sourcegitcommit: 77903451ae8ab1ba854494488f79184e674707df
+ms.openlocfilehash: 0b2bdb95c6383559899e6baf06c391bbd250f3ca
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911007"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804981"
 ---
 # <a name="page-transitions"></a>页面过渡
 
@@ -99,7 +99,7 @@ myFrame.Navigate(typeof(Page2), null, new SuppressNavigationTransitionInfo());
 
 要在向后导航时播放特定过渡，可以使用 `Frame.GoBack(NavigationTransitionInfo)`.
 
-基于屏幕大小动态修改导航行为时（例如，在响应式主/细节场景中），这会很有用。
+当基于屏幕大小动态修改导航行为时，这可能很有用;例如，在响应式列表/详细情况下。
 
 ## <a name="related-topics"></a>相关主题
 

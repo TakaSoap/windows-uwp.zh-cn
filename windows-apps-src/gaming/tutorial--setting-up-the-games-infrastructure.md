@@ -6,12 +6,12 @@ ms.date: 06/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 设置, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c7b80ba7125547c2a45dae434c40a67a758b0d
-ms.sourcegitcommit: 8bface2162e091999b1cf2218340edda2389da89
+ms.openlocfilehash: 8e2e93ad43f866e26b448e2cbcd2cb480054cbc9
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103496694"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804261"
 ---
 # <a name="set-up-the-game-project"></a>设置游戏项目
 
@@ -30,7 +30,7 @@ ms.locfileid: "103496694"
 ## <a name="create-a-new-project-in-visual-studio"></a>在 Visual Studio 中创建新项目
 
 > [!NOTE]
-> 有关设置 Visual Studio 以进行 C++/WinRT 部署的信息 &mdash; 包括安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息 &mdash; 请参阅[适用于 C++/WinRT 的 Visual Studio 支持](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 有关设置 Visual Studio 以进行 C++/WinRT 部署的信息 &mdash; 包括安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息 &mdash; 请参阅[适用于 C++/WinRT 的 Visual Studio 支持](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 首先安装 (或更新以) 最新版本的 c + +/WinRT Visual Studio 扩展 (VSIX) ;请参阅上述说明。 然后，在 Visual Studio 中，基于 **核心应用 (c + +/WinRT)** 项目模板创建一个新项目。 面向 Windows SDK 的最新正式发布（非预览）版本。
 
@@ -189,7 +189,7 @@ void GameMain::Run()
 |VertexShader. hlsl 和 VertexShaderFlat hlsl|着色器|包含基本顶点着色器 (HLSL) 代码的高级着色器语言。|
 |PixelShader. hlsl 和 PixelShaderFlat hlsl|着色器|包含基本像素着色器 (HLSL) 代码的高级着色器语言。|
 |ConstantBuffers. .hlsli|着色器|包含用于将模型视图投影 (MVP) 矩阵和每个顶点的数据传递到顶点着色器的常量缓冲区和着色器结构的数据结构定义。|
-|pch.h/.cpp|不适用|包含常见的 c + +/WinRT、Windows 和 DirectX 包括。| 
+|pch.h/.cpp|空值|包含常见的 c + +/WinRT、Windows 和 DirectX 包括。| 
 
 ### <a name="next-steps"></a>后续步骤
 

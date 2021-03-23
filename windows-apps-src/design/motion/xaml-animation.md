@@ -6,12 +6,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 40752da17591c9eca16f46fbd244d4507a38b1fb
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 178ab2e8787621b6df42cbb850895c058bb3eb7e
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220000"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804901"
 ---
 # <a name="animations-in-xaml"></a>XAML 中的动画
 
@@ -28,7 +28,7 @@ ms.locfileid: "91220000"
 
 例如，当用户将某个项添加到列表时，新项不会立即出现在列表中，而是采用动画形式过渡到相应的位置。 在很短的时间内，列表中的其他项也会采用动画形式移动到它们的新位置，以便为添加的项腾出空间。 此处的过渡行为可使控件更明显地与用户交互。
 
-Windows 10 版本 1607 引入了一个用于实现动画的新 [**ConnectedAnimationService**](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) API，其中某一元素似乎在导航期间在视图之间进行动画处理。 此 API 具有不同于其他动画库 API 的使用模式。 将在[参考页面](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)中介绍 **ConnectedAnimationService** 的用法。
+Windows 10 版本 1607 引入了一个用于实现动画的新 [**ConnectedAnimationService**](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) API，其中某一元素似乎在导航期间在视图之间进行动画处理。 此 API 具有不同于其他动画库 API 的使用模式。 将在 [参考页面](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)中介绍 **ConnectedAnimationService** 的用法。
 
 该动画库不会为每个可能方案提供动画。 在某些情况下，你可能希望采用 XAML 创建自定义动画。 有关详细信息，请参阅[情节提要动画](storyboarded-animations.md)。
 
@@ -38,11 +38,11 @@ Windows 10 版本 1607 引入了一个用于实现动画的新 [**ConnectedAnima
 
 Windows 运行时动画系统和动画库实现了更大的目标，即允许控件和 UI 的其他部分具备动画行为。 以下是几个不同类型的动画。
 
--   *主题过渡*会在 UI 中的某些条件（其中涉及预定义 Windows 运行时 XAML UI 类型的控件或元素）更改时自动应用。 这些称为 *“主题过渡”*，原因是动画支持 Windows 外观，并且定义所有应用从一个交互模式更改为另一个交互模式时为特定 UI 方案执行的操作。 主题过渡是动画库的一部分。
+-   *主题过渡* 会在 UI 中的某些条件（其中涉及预定义 Windows 运行时 XAML UI 类型的控件或元素）更改时自动应用。 这些称为 *“主题过渡”*，原因是动画支持 Windows 外观，并且定义所有应用从一个交互模式更改为另一个交互模式时为特定 UI 方案执行的操作。 主题过渡是动画库的一部分。
 -   *“主题动画”* 是具备预定义 Windows 运行时 XAML UI 类型一个或多个属性的动画。 主题动画与主题过渡不同，因为主题动画面向一个特定元素并存在于控件中的特定视觉状态，而主题过渡将分配到存在于视觉状态外部的控件属性并影响这些状态之间的过渡。 许多 Windows 运行时 XAML 控件在情节提要中包含主题动画，这些主题动画是其控件模板的一部分且包含由视觉状态引发的动画。 只要你未修改模板，你都可以将这些内置主题动画用于 UI 中的控件。 但是，如果你替换了模板，则也将删除内置控件主题动画。 若要重新获取它们，你必须在视觉状态的控件集中定义包含主题动画的情节提要。 你也可以从不在视觉状态中的情节提要运行主题动画，并通过 [**Begin**](/uwp/api/windows.ui.xaml.media.animation.storyboard.begin) 方法开始运行，但这并不常见。 主题动画是动画库的一部分。
 -   *“视觉转换”* 会在控件从其定义的视觉状态之一转换到其他状态时应用。 这些是你编写的自定义动画，通常与为控件编写的自定义模板和该模板中的视觉状态定义相关。 该动画仅在两个状态之间的时间运行，这个时间通常很短，最多几秒钟。 有关详细信息，请参阅[视觉状态的情节提要动画的“视觉转换”部分](/previous-versions/windows/apps/jj819808(v=win.10))。
--   *情节提要动画*可以随时间推移设置 Windows 运行时依赖属性的值的动画。 情节提要可以定义为可视化过渡的一部分，或者在运行时由应用程序触发。 有关详细信息，请参阅[情节提要动画](storyboarded-animations.md)。 有关依赖属性及其所处位置的详细信息，请参阅[依赖属性概述](../../xaml-platform/dependency-properties-overview.md)。
--   通过新 [**ConnectedAnimationService**](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) API 提供的*已连接动画*允许开发人员轻松创建以下效果：某一元素似乎在导航期间在视图之间进行动画处理。 从 Windows 10 版本 1607 开始，将提供此 API。 有关详细信息，请参阅 [**ConnectedAnimationService**](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)。
+-   *情节提要动画* 可以随时间推移设置 Windows 运行时依赖属性的值的动画。 情节提要可以定义为可视化过渡的一部分，或者在运行时由应用程序触发。 有关详细信息，请参阅[情节提要动画](storyboarded-animations.md)。 有关依赖属性及其所处位置的详细信息，请参阅[依赖属性概述](../../xaml-platform/dependency-properties-overview.md)。
+-   通过新 [**ConnectedAnimationService**](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) API 提供的 *已连接动画* 允许开发人员轻松创建以下效果：某一元素似乎在导航期间在视图之间进行动画处理。 从 Windows 10 版本 1607 开始，将提供此 API。 有关详细信息，请参阅 [**ConnectedAnimationService**](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)。
 
 ## <a name="animations-available-in-the-library"></a>库中提供的动画
 
@@ -134,7 +134,7 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 | 任意 UI 容器的内容 | [**ContentThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
 | 适用于控件或不应用其他动画时 | [**FadeInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation) 和 [**FadeOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
 
- 
+ 
 
 ## <a name="transition-animation-examples"></a>过渡动画示例
 
@@ -291,7 +291,7 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 
 在对 UI 元素进行添加、删除、重新排序等操作时，可用多个过渡效果在 UI 元素上创建动画。 这些 API 的名称都包含“ThemeTransition”：
 
-| API | 描述 |
+| API | 说明 |
 |-----|-------------|
 | [**NavigationThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) | 在 [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) 中提供用于页面导航的 Windows 个性化动画。 |
 | [**AddDeleteThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.AddDeleteThemeTransition) | 为控件添加或删除子对象或内容的情况提供动画过渡表现方式。 通常，控件是项目容器。 |
@@ -303,7 +303,7 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 | [**ReorderThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.ReorderThemeTransition) | 为列表视图控件项目更改顺序的情况提供动画过渡表现方式。 通常它作为拖放操作的结果出现。 不同的控件和主题可能具有不同的动画特征。 |
 | [**RepositionThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition) | 为控件更改位置的情况提供动画过渡表现方式。 |
 
- 
+ 
 
 ## <a name="theme-animation-examples"></a>主题动画示例
 
@@ -349,13 +349,13 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 与过渡动画不同，主题动画没有自动运行的内置触发器（过渡）。 你必须使用 [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 来包含主题动画，才能在 XAML 中定义它。 还可以更改动画的默认表现方式。 例如，可以通过增加 [**FadeOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) 上的 [**Duration**](/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 时间值来放缓淡出。
 
-**注意**   为了显示基本动画技术，我们将使用应用代码通过调用[**情节提要**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)的方法来启动动画。 你可以使用 [**Begin**](/uwp/api/windows.ui.xaml.media.animation.storyboard.begin)、[**Stop**](/uwp/api/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](/uwp/api/windows.ui.xaml.media.animation.storyboard.pause) 和 [**Resume**](/uwp/api/windows.ui.xaml.media.animation.storyboard.resume) **Storyboard** 方法来控制 **Storyboard** 动画的运行方式。 但是，这并不是你将库动画包含在应用中的典型操作。 相反，你通常将库动画集成到应用于控件或元素的 XAML 样式和模板中。 了解模板和视觉状态会稍微复杂一些。 但是我们介绍了你可以如何使用视觉状态中的库动画，并将其作为[视觉状态的情节提要动画](/previous-versions/windows/apps/jj819808(v=win.10))主题的一部分。
+**注意**  为便于显示基本动画技术，我们将通过调用 [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 方法来使用应用代码启动动画。 你可以使用 [**Begin**](/uwp/api/windows.ui.xaml.media.animation.storyboard.begin)、[**Stop**](/uwp/api/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](/uwp/api/windows.ui.xaml.media.animation.storyboard.pause) 和 [**Resume**](/uwp/api/windows.ui.xaml.media.animation.storyboard.resume) **Storyboard** 方法来控制 **Storyboard** 动画的运行方式。 但是，这并不是你将库动画包含在应用中的典型操作。 相反，你通常将库动画集成到应用于控件或元素的 XAML 样式和模板中。 了解模板和视觉状态会稍微复杂一些。 但是我们介绍了你可以如何使用视觉状态中的库动画，并将其作为[视觉状态的情节提要动画](/previous-versions/windows/apps/jj819808(v=win.10))主题的一部分。
 
- 
+ 
 
 你可以为 UI 元素应用多个其他主题动画以创建动画效果。 这些 API 的名称都包含“ThemeAnimation”：
 
-| API | 描述 |
+| API | 说明 |
 |-----|-------------|
 | [**DragItemThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.DragItemThemeAnimation) | 表示应用到正在拖动的项元素的预配置动画。 |
 | [**DragOverThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.DragOverThemeAnimation) | 表示应用到位于正在拖动的元素下方的元素的预配置动画。 |
@@ -369,19 +369,19 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 | [**RepositionThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation) | 对象重新放置时该对象的预配置动画。 |
 | [**SplitCloseThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.SplitCloseThemeAnimation) | 使用 [**ComboBox**](/uwp/api/windows.ui.xaml.controls.combobox) 打开和关闭样式的动画隐藏目标 UI 的预配置动画。 |
 | [**SplitOpenThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.SplitOpenThemeAnimation) | 使用 [**ComboBox**](/uwp/api/windows.ui.xaml.controls.combobox) 打开和关闭样式的动画显示目标 UI 的预配置动画。 |
-| [**DrillInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.drillinthemeanimation) | 表示在用户在逻辑层次结构中前进（如从主页到详细信息页）时运行的预配置动画。 |
-| [**DrillOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.drilloutthemeanimation) | 表示在用户在逻辑层次结构中后退（如从详细信息页到主页）时运行的预配置动画。 |
+| [**DrillInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.drillinthemeanimation) | 表示在用户向前导航逻辑层次结构时运行的预先配置的动画，如从列表页到详细信息页。 |
+| [**DrillOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.drilloutthemeanimation) | 表示用户向后导航逻辑层次结构（如从详细信息页到列表页）时运行的预配置动画。 |
 
- 
+ 
 
 ## <a name="create-your-own-animations"></a>创建你自己的动画
 
 如果主题动画不能满足你的需求，你可以创建自己的动画。 你可以通过创建一个或多个对象属性值的动画来创建对象的动画。 例如，你可以创建矩形的宽度、[**RotateTransform**](/uwp/api/Windows.UI.Xaml.Media.RotateTransform) 的角度或按钮的颜色值的动画。 我们将此类型的自定义动画称为情节提要动画，用于将其从 Windows 运行时提供为预配置动画类型的库动画中区分出来。 对于情节提要动画，你可以使用可更改特定类型的值的动画（例如 [**DoubleAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation) 可创建 **Double** 动画），并将该动画放置在 [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 中以对其进行控制。
 
-为了创建动画，要动画显示的属性必须是*依赖属性*。 有关依赖属性的详细信息，请参阅[依赖属性概述](../../xaml-platform/dependency-properties-overview.md)。 有关创建自定义情节提要动画的详细信息，包括如何确定动画目标以及控制动画，请参阅[情节提要动画](storyboarded-animations.md)。
+为了创建动画，要动画显示的属性必须是 *依赖属性*。 有关依赖属性的详细信息，请参阅[依赖属性概述](../../xaml-platform/dependency-properties-overview.md)。 有关创建自定义情节提要动画的详细信息，包括如何确定动画目标以及控制动画，请参阅[情节提要动画](storyboarded-animations.md)。
 
 XAML（可以在其中定义自定义情节提要动画）中应用 UI 定义的最大领域是在 XAML 中定义控件的视觉状态。 你执行此操作的原因有两个：你要创建一个新控件类；或者你要重新创建现有控件的模板，且该控件的控件模板中具有视觉状态。 有关详细信息，请参阅[视觉状态的情节提要动画](/previous-versions/windows/apps/jj819808(v=win.10))。
 
- 
+ 
 
- 
+ 

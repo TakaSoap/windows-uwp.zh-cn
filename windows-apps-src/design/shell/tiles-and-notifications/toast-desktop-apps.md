@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10，uwp，win32，桌面，toast 通知，desktop bridge，.msix，稀疏包，用于发送 toast，com 服务器，com 激活器，com，虚假 com，无 com，无 com，send toast 的选项
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cdd8e57311400c8603f4eb99e9bfd1a2230f2ce
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 1f7c29c8819f293384e3b38483f02a49d3f65cf6
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033090"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804941"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>来自桌面应用的 Toast 通知
 
@@ -36,7 +36,7 @@ ms.locfileid: "93033090"
 
 ## <a name="preferred-option---com-activator"></a>首选选项 - COM 激活器
 
-这是适用于桌面应用程序的首选选项，并且支持所有通知功能。 不必担心使用“COM 激活器”；我们有 [C#](send-local-toast-desktop.md) 和 [C++ 应用](send-local-toast-desktop-cpp-wrl.md)的资源库，让使用此选项变得很简单，即使你之前从未编写过 COM 服务器。<br/><br/>
+这是适用于桌面应用程序的首选选项，并且支持所有通知功能。 不必担心使用“COM 激活器”；我们有 [C#](./send-local-toast.md) 和 [C++ 应用](send-local-toast-desktop-cpp-wrl.md)的资源库，让使用此选项变得很简单，即使你之前从未编写过 COM 服务器。<br/><br/>
 
 | 视觉对象 | 操作 | 输入 | 在进程内激活 |
 | -- | -- | -- | -- |
@@ -54,7 +54,7 @@ ms.locfileid: "93033090"
 > [!NOTE]
 > 如果将 COM 激活器添加到现有的 .MSIX/稀疏包应用，前台/背景和旧通知激活现在会激活 COM 激活器而不是命令行。
 
-若要了解如何使用此选项，请参阅 [从桌面 c # 应用发送本地 toast 通知](send-local-toast-desktop.md) 或 [从 Win32 c + + WRL 应用发送本地 toast 通知](send-local-toast-desktop-cpp-wrl.md)。
+若要了解如何使用此选项，请参阅 [从桌面 c # 应用发送本地 toast 通知](./send-local-toast.md) 或 [从 Win32 c + + WRL 应用发送本地 toast 通知](send-local-toast-desktop-cpp-wrl.md)。
 
 
 ## <a name="alternative-option---no-com--stub-clsid"></a>备用选项 - 无 COM / 存根 CLSID
@@ -81,6 +81,6 @@ ms.locfileid: "93033090"
 
 ## <a name="resources"></a>资源
 
-* [从桌面 C# 应用发送本地 toast 通知](send-local-toast-desktop.md)
+* [从桌面 C# 应用发送本地 toast 通知](./send-local-toast.md)
 * [从 Win32 c + + WRL 应用发送本地 toast 通知](send-local-toast-desktop-cpp-wrl.md)
 * [toast 内容文档](adaptive-interactive-toasts.md)

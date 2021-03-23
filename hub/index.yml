@@ -9,12 +9,12 @@ metadata:
   ms.author: tedhudek
   ms.topic: hub-page
   uhfHeaderId: MSDocsHeader-DocsL1
-  ms.openlocfilehash: 5b19de5f2358bda3f7a780e271ca4e6b208110ba
-  ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+  ms.openlocfilehash: 151f08b821b4a2006e486cd01a60ea2f2eb97153
+  ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 03/04/2021
-  ms.locfileid: "101823911"
+  ms.lasthandoff: 03/23/2021
+  ms.locfileid: "104804531"
 productDirectory:
   items:
   - title: 应用程序开发人员
@@ -36,7 +36,7 @@ productDirectory:
   - title: 适用于 IoT 的 Windows
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
     summary: 使用安全设备创建 IoT 解决方案，这些设备可快速预配、轻松管理并无缝连接到整体云策略。
-    url: https://docs.microsoft.com/windows/iot/
+    url: /windows/iot/
   - title: Windows 预览体验计划
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
     summary: 抢先体验新增功能，通过运行 Windows 10 预览体验版并提供反馈来帮助打造 Windows 的未来。

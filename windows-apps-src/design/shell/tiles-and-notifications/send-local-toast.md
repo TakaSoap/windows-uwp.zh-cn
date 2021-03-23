@@ -1,73 +1,64 @@
 ---
-description: 了解如何从 UWP 应用发送本地 toast 通知，并处理用户单击 toast 的操作。
-title: 从 UWP 应用发送本地 toast 通知
+description: '了解如何从 c # 应用程序发送本地 toast 通知，并处理用户单击 toast 的操作。'
+title: '从 c # 应用发送本地 toast 通知'
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification from UWP apps
+label: Send a local toast notification from C# apps
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp, 发送 toast 通知, 通知, 发送通知, toast 通知, 操作方法, 快速入门, 开始使用, 代码示例, 演练
+keywords: 'windows 10，uwp，发送 toast 通知，通知，发送通知，toast 通知，如何，快速入门，入门，代码示例，演练，c #，csharp，win32，桌面'
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a2e8c25aa7efcb96166b741a073122e3c077c08
-ms.sourcegitcommit: 2a23972e9a0807256954d6da5cf21d0bbe7afb0a
+ms.openlocfilehash: 9e6130b703cc1f8a0163ea539ba97cf4a08388b5
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94941823"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804309"
 ---
-# <a name="send-a-local-toast-notification-from-uwp-apps"></a>从 UWP 应用发送本地 toast 通知
+# <a name="send-a-local-toast-notification-from-c-apps"></a>从 c # 应用发送本地 toast 通知
 
-
-Toast 通知是用户当前未在应用内部时应用可构造并发送给用户的消息。 此快速入门指南将指导你借助新自适应模板和交互式操作完成创建、交付并显示 Windows 10 toast 通知的步骤。 通过本地通知对这些操作进行说明，本地通知是实现起来最简单的通知。
+[!INCLUDE [intro](includes/send-toast-intro.md)]
 
 > [!IMPORTANT]
-> 桌面应用程序 (包括打包的 [.msix](/windows/msix/desktop/source-code-overview) 应用、使用 [稀疏包](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 获取包标识的应用，以及经典非打包桌面应用) 执行发送通知和处理激活的步骤不同。 请参阅[桌面 app](toast-desktop-apps.md) 文档，了解如何实现 toast。
-
-> **重要 API**：[ToastNotification 类](/uwp/api/Windows.UI.Notifications.ToastNotification)、[ToastNotificationActivatedEventArgs 类](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
-
+> 如果要编写 c + + 应用程序，请参阅 [c + + UWP](send-local-toast-cpp-uwp.md) 或 [c + + WRL](send-local-toast-desktop-cpp-wrl.md) 文档。
 
 
 ## <a name="step-1-install-nuget-package"></a>步骤1：安装 NuGet 包
 
-安装 "..." [NuGet 包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)。 我们的代码示例将使用此包。 本文结束时，我们会提供不使用任何 NuGet 包的 "纯" 代码片段。 使用此包可以创建 toast 通知，而无需使用 XML。
+[!INCLUDE [nuget package](includes/nuget-package.md)]
+
+[!INCLUDE [nuget package .NET warnings](includes/nuget-package-dotnet-warnings.md)]
+
+我们的代码示例将使用此包。 使用此包可以创建 toast 通知，而无需使用 XML，还允许桌面应用发送 toast。
 
 
-## <a name="step-2-add-namespace-declarations"></a>步骤2：添加命名空间声明
+## <a name="step-2-send-a-toast"></a>步骤2：发送 toast
 
-`Windows.UI.Notifications` 包括 toast Api。
-
-```csharp
-using Windows.UI.Notifications;
-using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
-```
-
-
-## <a name="step-3-send-a-toast"></a>步骤3：发送 toast
-
-在 Windows 10 中，你的 toast 通知内容是使用对于你的通知外观给予了最大程度灵活性的自适应语言描述的。 有关详细信息，请参阅 [toast 内容文档](adaptive-interactive-toasts.md)。
-
-我们将从一个简单的基于文本的通知开始。 使用通知库) 构造通知内容 (并显示通知！
-
-<img alt="Simple text notification" src="images/send-toast-01.png" width="364"/>
+[!INCLUDE [basic toast intro](includes/send-toast-basic-toast-intro.md)]
 
 ```csharp
-// Construct the content
-var content = new ToastContentBuilder()
-    .AddToastActivationInfo("picOfHappyCanyon", ToastActivationType.Foreground)
+// Requires Microsoft.Toolkit.Uwp.Notifications NuGet package
+new ToastContentBuilder()
+    .AddArgument("action", "viewConversation")
+    .AddArgument("conversationId", 9813)
     .AddText("Andrew sent you a picture")
-    .AddText("Check this out, Happy Canyon in Utah!")
-    .GetToastContent();
-
-// Create the notification
-var notif = new ToastNotification(content.GetXml());
-
-// And show it!
-ToastNotificationManager.CreateToastNotifier().Show(notif);
+    .AddText("Check this out, The Enchantments in Washington!")
+    .Show();
 ```
 
-## <a name="step-4-handling-activation"></a>步骤4：处理激活
+尝试运行此代码，你应看到通知已出现！
 
-当用户单击你的通知 (或使用前台激活) 通知上的按钮时，将调用应用的 **App.xaml.cs** **OnActivated** 。
+
+## <a name="step-3-handling-activation"></a>步骤3：处理激活
+
+显示通知后，你可能需要处理用户单击通知 (这意味着在用户单击后显示特定内容、在一般情况下打开你的应用，或在用户单击通知) 时执行操作。
+
+用于处理激活的步骤不同于 UWP、桌面 (.MSIX) 和桌面 (未打包) 应用。
+
+
+#### <a name="uwp"></a>[UWP](#tab/uwp)
+
+当用户单击你的通知 (或使用前台激活) 通知上的按钮时，将调用应用 **的** **OnActivated** ，并将返回你添加的参数。
 
 **App.xaml.cs**
 
@@ -78,7 +69,7 @@ protected override void OnActivated(IActivatedEventArgs e)
     if (e is ToastNotificationActivatedEventArgs toastActivationArgs)
     {
         // Obtain the arguments from the notification
-        string args = toastActivationArgs.Argument;
+        ToastArguments args = ToastArguments.Parse(toastActivationArgs.Argument);
 
         // Obtain any user input (text boxes, menu selections) from the notification
         ValueSet userInput = toastActivationArgs.UserInput;
@@ -88,108 +79,96 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-> [!IMPORTANT]
-> 必须按 **OnLaunched** 代码那样初始化框架和激活窗口。 **如果用户单击你的 toast ，则不会调用 OnLaunched**，即使你的应用已关闭并是首次启动也是如此。 通常建议将 **OnLaunched** 和 **OnActivated** 合并到你自己的 `OnLaunchedOrActivated` 方法中，因为二者中均需执行相同的初始化。
+[!INCLUDE [OnLaunched warning](includes/onlaunched-warning.md)]
 
+#### <a name="desktop-msix"></a>[桌面 (.MSIX) ](#tab/desktop-msix)
 
-## <a name="activation-in-depth"></a>深度激活
+首先，在 **appxmanifest.xml** 中添加：
 
-使你的通知可操作的第一步是将一些启动参数添加到你的通知，以便你的应用程序可以知道当用户单击通知时要启动的内容 (在这种情况下，我们将包括一些信息，稍后会告诉我们你应该打开一个会话，并且我们知道要打开哪些特定对话) 。
+1. **xmlns:com** 声明
+1. **xmlns:desktop** 声明
+1. 在 **IgnorableNamespaces** 属性中，添加 **com** 和 **desktop**
+1. **desktop：** **toastNotificationActivation** 的扩展使用所选) 的新 GUID 声明 toast 激活器 CLSID (。
+1. 仅限 .MSIX：使用步骤 #4 中的 GUID 对 COM 激活器使用 **com： Extension** 。 请确保包含， `Arguments="-ToastActivated"` 以便了解你的启动来自通知
 
-建议安装 [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/) NuGet 包，以帮助构造和分析通知参数的查询字符串，如下所示。
+**Package.appxmanifest**
 
-```csharp
-using Microsoft.QueryStringDotNET; // QueryString.NET
+```xml
+<!--Add these namespaces-->
+<Package
+  ...
+  xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  IgnorableNamespaces="... com desktop">
+  ...
+  <Applications>
+    <Application>
+      ...
+      <Extensions>
 
-int conversationId = 384928;
+        <!--Specify which CLSID to activate when toast clicked-->
+        <desktop:Extension Category="windows.toastNotificationActivation">
+          <desktop:ToastNotificationActivation ToastActivatorCLSID="replaced-with-your-guid-C173E6ADF0C3" /> 
+        </desktop:Extension>
 
-// Construct the content
-var content = new ToastContentBuilder()
+        <!--Register COM CLSID LocalServer32 registry key-->
+        <com:Extension Category="windows.comServer">
+          <com:ComServer>
+            <com:ExeServer Executable="YourProject\YourProject.exe" Arguments="-ToastActivated" DisplayName="Toast activator">
+              <com:Class Id="replaced-with-your-guid-C173E6ADF0C3" DisplayName="Toast activator"/>
+            </com:ExeServer>
+          </com:ComServer>
+        </com:Extension>
 
-    // Arguments returned when user taps body of notification
-    .AddToastActivationInfo(new QueryString() // Using QueryString.NET
-    {
-        { "action", "viewConversation" },
-        { "conversationId", conversationId.ToString() }
-    }.ToString(), ToastActivationType.Foreground)
-
-    .AddText("Andrew sent you a picture")
-    ...
+      </Extensions>
+    </Application>
+  </Applications>
+ </Package>
 ```
 
+然后， **在应用程序的启动代码** (for WPF) 中，订阅 OnActivated 事件。
 
-下面是一个更复杂的示例，说明如何处理激活 .。。
+[!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-code.md)]
 
-**App.xaml.cs**
 
-```csharp
-protected override void OnActivated(IActivatedEventArgs e)
-{
-    // Get the root frame
-    Frame rootFrame = Window.Current.Content as Frame;
- 
-    // TODO: Initialize root frame just like in OnLaunched
- 
-    // Handle toast activation
-    if (e is ToastNotificationActivatedEventArgs toastActivationArgs)
-    {            
-        // Parse the query string (using QueryString.NET)
-        QueryString args = QueryString.Parse(toastActivationArgs.Argument);
- 
-        // See what action is being requested 
-        switch (args["action"])
-        {
-            // Open the image
-            case "viewImage":
- 
-                // The URL retrieved from the toast args
-                string imageUrl = args["imageUrl"];
- 
-                // If we're already viewing that image, do nothing
-                if (rootFrame.Content is ImagePage && (rootFrame.Content as ImagePage).ImageUrl.Equals(imageUrl))
-                    break;
- 
-                // Otherwise navigate to view it
-                rootFrame.Navigate(typeof(ImagePage), imageUrl);
-                break;
-                             
- 
-            // Open the conversation
-            case "viewConversation":
- 
-                // The conversation ID retrieved from the toast args
-                int conversationId = int.Parse(args["conversationId"]);
- 
-                // If we're already viewing that conversation, do nothing
-                if (rootFrame.Content is ConversationPage && (rootFrame.Content as ConversationPage).ConversationId == conversationId)
-                    break;
- 
-                // Otherwise navigate to view it
-                rootFrame.Navigate(typeof(ConversationPage), conversationId);
-                break;
-        }
- 
-        // If we're loading the app for the first time, place the main page on
-        // the back stack so that user can go back after they've been
-        // navigated to the specific page
-        if (rootFrame.BackStack.Count == 0)
-            rootFrame.BackStack.Add(new PageStackEntry(typeof(MainPage), null, null));
-    }
- 
-    // TODO: Handle other types of activation
- 
-    // Ensure the current window is active
-    Window.Current.Activate();
-}
-```
+[!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-sequence.md)]
+
+
+#### <a name="desktop-unpackaged"></a>[桌面 (未打包) ](#tab/desktop)
+
+[!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-sequence.md)]
+
+**在应用程序的启动代码** (WPF) 中，订阅 OnActivated 事件。
+
+[!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-code.md)]
+
+---
+
+
+## <a name="step-4-handling-uninstallation"></a>步骤4：处理卸载
+
+#### <a name="uwp"></a>[UWP](#tab/uwp)
+
+无需执行任何操作！ 卸载 UWP 应用时，将自动清除所有通知和任何其他相关资源。
+
+#### <a name="desktop-msix"></a>[桌面 (.MSIX) ](#tab/desktop-msix)
+
+无需执行任何操作！ 卸载 .MSIX 应用时，会自动清除所有通知和任何其他相关资源。
+
+#### <a name="desktop-unpackaged"></a>[桌面 (未打包) ](#tab/desktop)
+
+如果你的应用程序具有卸载程序，你应在卸载程序中调用 `ToastNotificationManagerCompat.Uninstall();` 。 如果你的应用程序是无需安装程序的 "可移植应用程序"，请考虑在应用程序退出时调用此方法，除非你有要在应用程序关闭后保存的通知。
+
+Uninstall 方法将清除任何计划的和当前通知、删除任何关联的注册表值并删除库创建的任何关联的临时文件。
+
+---
 
 
 ## <a name="adding-images"></a>添加图像
 
 可以向通知添加丰富的内容。 我们会将一个内联图像和一个配置文件 (应用徽标覆盖) 映像。
 
-> [!NOTE]
-> 图像可来自于应用包、应用的本地存储或来自 Web。 自 Fall Creators Update 起，正常连接上的 Web 图像的大小限制提升至 3 MB，按流量计费的连接上的限制提升至 1 MB。 在尚未运行 Fall Creators Update 的设备上，Web 图像的大小不得超过 200 KB。
+[!INCLUDE [images note](includes/images-note.md)]
 
 > [!IMPORTANT]
 > Http 映像仅在其清单中具有 internet 功能的 UWP/.MSIX/稀疏应用中受支持。 桌面非 .MSIX/稀疏应用不支持 http 映像;必须将映像下载到本地应用数据，并在本地引用它。
@@ -197,8 +176,8 @@ protected override void OnActivated(IActivatedEventArgs e)
 <img alt="Toast with images" src="images/send-toast-02.png" width="364"/>
 
 ```csharp
-// Construct the content
-var content = new ToastContentBuilder()
+// Construct the content and show the toast!
+new ToastContentBuilder()
     ...
 
     // Inline image
@@ -207,9 +186,7 @@ var content = new ToastContentBuilder()
     // Profile (app logo override) image
     .AddAppLogoOverride(new Uri("ms-appdata:///local/Andrew.jpg"), ToastGenericAppLogoCrop.Circle)
     
-    .GetToastContent();
-    
-...
+    .Show();
 ```
 
 
@@ -218,47 +195,47 @@ var content = new ToastContentBuilder()
 
 你可以添加按钮和输入以使你的通知交互。 按钮可以启动前景应用、协议或后台任务。 我们将添加一个 "答复" 文本框、一个 "赞" 按钮和一个打开该图像的 "视图" 按钮。
 
-<img alt="Toast with images and buttons" src="images/send-toast-03.png" width="364"/>
+<img src="images/toast-notification.png" width="628" alt="Screenshot of a toast notification with inputs and buttons"/>
 
 ```csharp
 int conversationId = 384928;
 
 // Construct the content
-var content = new ToastContentBuilder()
+new ToastContentBuilder()
+    .AddArgument("conversationId", conversationId)
     ...
 
     // Text box for replying
     .AddInputTextBox("tbReply", placeHolderContent: "Type a response")
 
-    // Reference the text box's ID in order to place this button next to the text box
-    .AddButton("tbReply", "Reply", ToastActivationType.Background, new QueryString()
-    {
-        { "action", "reply" },
-        { "conversationId", conversationId.ToString() }
-    }.ToString(), imageUri: new Uri("Assets/Reply.png", UriKind.Relative))
+    // Buttons
+    .AddButton(new ToastButton()
+        .SetContent("Reply")
+        .AddArgument("action", "reply")
+        .SetBackgroundActivation())
 
-    .AddButton("Like", ToastActivationType.Background, new QueryString()
-    {
-        { "action", "like" },
-        { "conversationId", conversationId.ToString() }
-    }.ToString())
+    .AddButton(new ToastButton()
+        .SetContent("Like")
+        .AddArgument("action", "like")
+        .SetBackgroundActivation())
 
-    .AddButton("View", ToastActivationType.Foreground, new QueryString()
-    {
-        { "action", "viewImage" },
-        { "imageUrl", image.ToString() }
-    }.ToString())
+    .AddButton(new ToastButton()
+        .SetContent("View")
+        .AddArgument("action", "viewImage")
+        .AddArgument("imageUrl", image.ToString()))
     
-    .GetToastContent();
-    
-...
+    .Show();
 ```
 
-将按照与主 toast 正文相同的方式来处理前景按钮的激活方式， (App.xaml.cs OnActivated 将被称为) 。
+对前台按钮的激活方式的处理方式与应用程序 (主 toast 正文相同。 OnActivated 将) 调用。
+
+请注意，在单击按钮时，还会返回添加到顶层 toast (（例如会话 ID) ）的参数，只要按钮使用 AddArgument API （如上所示） (如果你在按钮上自定义了赋值参数，则不会将顶级参数包括在) 中。
 
 
 
 ## <a name="handling-background-activation"></a>处理后台激活
+
+#### <a name="uwp"></a>[UWP](#tab/uwp)
 
 当你对你的 toast（或 toast 内的按钮）指定后台激活时，将执行后台任务而不是激活前台应用。
 
@@ -290,7 +267,7 @@ BackgroundTaskRegistration registration = builder.Register();
 ```
 
 
-然后在 App.xaml.cs 中，重写 OnBackgroundActivated 方法。 然后，你可以检索预定义参数和用户输入，类似于前台激活。
+然后在应用程序中，重写 OnBackgroundActivated 方法。 然后，你可以检索预定义参数和用户输入，类似于前台激活。
 
 **App.xaml.cs**
 
@@ -305,7 +282,7 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
             var details = args.TaskInstance.TriggerDetails as ToastNotificationActionTriggerDetail;
             if (details != null)
             {
-                string arguments = details.Argument;
+                ToastArguments arguments = ToastArguments.Parse(details.Argument);
                 var userInput = details.UserInput;
 
                 // Perform tasks
@@ -316,6 +293,12 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
     deferral.Complete();
 }
 ```
+
+#### <a name="desktop"></a>[桌面](#tab/desktop-msix+desktop)
+
+对于桌面应用程序，后台激活的处理方式与前台激活相同 (**OnActivated** 事件处理程序将) 触发。 您可以选择不显示任何 UI，并在处理激活后关闭应用程序。
+
+---
 
 
 ## <a name="set-an-expiration-time"></a>设置过期时间
@@ -328,19 +311,13 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 > 本地 toast 通知的默认和最长过期时间为 3 天。
 
 ```csharp
-// Create toast content
-var content = new ToastContentBuilder()
+// Create toast content and show the toast!
+new ToastContentBuilder()
     .AddText("Expires in 2 days...")
-    .GetToastContent();
-
-// Set expiration time
-var notif = new ToastNotification(content.GetXml())
-{
-    ExpirationTime = DateTime.Now.AddDays(2)
-};
-
-// And show it!
-ToastNotificationManager.CreateToastNotifier().Show(notif);
+    .Show(toast =>
+    {
+        toast.ExpirationTime = DateTime.Now.AddDays(2);
+    });
 ```
 
 
@@ -353,27 +330,21 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 Tag 和 Group 组合充当复合主键。 Group 是两者中较为通用的标识符，你可以用它来分配如“wallPosts”、“messages”、“friendRequests”等组。而 Tag 应该唯一标识组中的通知本身。 使用通用组时，可以使用 [RemoveGroup API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) 删除该组中的所有通知。
 
 ```csharp
-// Create toast content
-var content = new ToastContentBuilder()
+// Create toast content and show the toast!
+new ToastContentBuilder()
     .AddText("New post on your wall!")
-    .GetToastContent();
-
-// Set tag/group
-new ToastNotification(content.GetXml())
-{
-    Tag = "18365",
-    Group = "wallPosts"
-};
-
-// And show it!
-ToastNotificationManager.CreateToastNotifier().Show(notif);
+    .Show(toast =>
+    {
+        toast.Tag = "18365";
+        toast.Group = "wallPosts";
+    });
 ```
 
 
 
 ## <a name="clear-your-notifications"></a>清除你的通知
 
-UWP 应用负责删除和清除它们自己的通知。 当你的应用启动时，我们不会自动清除你的通知。
+应用负责删除和清除自己的通知。 当你的应用启动时，我们不会自动清除你的通知。
 
 仅当用户显式单击通知时，Windows 才会自动删除该通知。
 
@@ -387,91 +358,9 @@ UWP 应用负责删除和清除它们自己的通知。 当你的应用启动时
 若要了解有关清除所有通知或删除特定通知的信息，请参阅[快速入门：在操作中心 (XAML) 中管理 toast 通知](/previous-versions/windows/apps/dn631260(v=win.10))。
 
 ```csharp
-ToastNotificationManager.History.Clear();
+ToastNotificationManagerCompat.History.Clear();
 ```
 
-
-## <a name="plain-code-snippets"></a>普通代码片段
-
-如果使用的不是 NuGet 中的通知库，可以按如下所示手动构造 XML，以创建 [ToastNotification](/uwp/api/Windows.UI.Notifications.ToastNotification)。
-
-```csharp
-using Windows.UI.Notifications;
-using Windows.Data.Xml.Dom;
-
-// In a real app, these would be initialized with actual data
-string title = "Andrew sent you a picture";
-string content = "Check this out, Happy Canyon in Utah!";
-string image = "http://blogs.msdn.com/cfs-filesystemfile.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-71-81-permanent/2727.happycanyon1_5B00_1_5D00_.jpg";
-string logo = "ms-appdata:///local/Andrew.jpg";
- 
-// TODO: all values need to be XML escaped
- 
-// Construct the visuals of the toast
-string toastVisual =
-$@"<visual>
-  <binding template='ToastGeneric'>
-    <text>{title}</text>
-    <text>{content}</text>
-    <image src='{image}'/>
-    <image src='{logo}' placement='appLogoOverride' hint-crop='circle'/>
-  </binding>
-</visual>";
-
-// In a real app, these would be initialized with actual data
-int conversationId = 384928;
- 
-// Generate the arguments we'll be passing in the toast
-string argsReply = $"action=reply&conversationId={conversationId}";
-string argsLike = $"action=like&conversationId={conversationId}";
-string argsView = $"action=viewImage&imageUrl={Uri.EscapeDataString(image)}";
- 
-// TODO: all args need to be XML escaped
- 
-string toastActions =
-$@"<actions>
- 
-  <input
-      type='text'
-      id='tbReply'
-      placeHolderContent='Type a response'/>
- 
-  <action
-      content='Reply'
-      arguments='{argsReply}'
-      activationType='background'
-      imageUri='Assets/Reply.png'
-      hint-inputId='tbReply'/>
- 
-  <action
-      content='Like'
-      arguments='{argsLike}'
-      activationType='background'/>
- 
-  <action
-      content='View'
-      arguments='{argsView}'/>
- 
-</actions>";
-
-// Now we can construct the final toast content
-string argsLaunch = $"action=viewConversation&conversationId={conversationId}";
- 
-// TODO: all args need to be XML escaped
- 
-string toastXmlString =
-$@"<toast launch='{argsLaunch}'>
-    {toastVisual}
-    {toastActions}
-</toast>";
- 
-// Parse to XML
-XmlDocument toastXml = new XmlDocument();
-toastXml.LoadXml(toastXmlString);
- 
-// Generate toast
-var toast = new ToastNotification(toastXml);
-```
 
 
 ## <a name="resources"></a>资源

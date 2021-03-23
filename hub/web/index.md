@@ -7,12 +7,12 @@ manager: jken
 ms.topic: article
 keywords: web 开发, web dev, windows 上的 web, api, 边缘
 ms.date: 01/06/2021
-ms.openlocfilehash: 3149e49b258f970989df75b87300a2dce23ff1f2
-ms.sourcegitcommit: 5e40a6f8755aca1e97226ce8f85cda239bdcdad0
+ms.openlocfilehash: 98b5d1443869baec9dd46796088ff7b71521237d
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102259146"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804481"
 ---
 # <a name="web-development-on-windows-10"></a>Windows 10 上的 Web 开发
 
@@ -97,8 +97,8 @@ Microsoft 为 web 开发人员提供各种资源，包括支持使用 Windows 10
         [安装 CLI](https://webhint.io/docs/user-guide/)
     :::column-end:::
     :::column:::
-       [![WebDriver 图标](../images/webdriver.png)](https://docs.microsoft.com/microsoft-edge/webdriver-chromium/)<br>
-        **[WebDriver](https://docs.microsoft.com/microsoft-edge/webdriver-chromium/)**<br>
+       [![WebDriver 图标](../images/webdriver.png)](/microsoft-edge/webdriver-chromium/)<br>
+        **[WebDriver](/microsoft-edge/webdriver-chromium/)**<br>
         使用 Microsoft WebDriver 在 Microsoft Edge 中自动测试网站，结束开发人员周期中的循环。<br>
         [安装 WebDriver](https://developer.microsoft.com/microsoft-edge/tools/webdriver/)
     :::column-end:::
@@ -204,11 +204,11 @@ Microsoft 为 web 开发人员提供各种资源，包括支持使用 Windows 10
         [提交性能问题](https://github.com/microsoft/WinDev/issues)
     :::column-end:::
     :::column:::
-       [![文档图标](../images/docs.png)](https://docs.microsoft.com/contribute/)<br>
-        **[参与编辑文档](https://docs.microsoft.com/contribute/)**<br>
+       [![文档图标](../images/docs.png)](/contribute/)<br>
+        **[参与编辑文档](/contribute/)**<br>
         Microsoft 文档集中大部分是托管在 GitHub 上的开放源代码。 可通过提交问题或创作拉取请求来作出贡献。
         <br>
-        [了解操作方法](https://docs.microsoft.com/contribute/)
+        [了解操作方法](/contribute/)
     :::column-end:::
 :::row-end:::
 
@@ -254,11 +254,11 @@ Microsoft 为 web 开发人员提供各种资源，包括支持使用 Windows 10
         [安装适用于 macOS 的 React Native](https://microsoft.github.io/react-native-windows/docs/rnm-getting-started)
     :::column-end:::
     :::column:::
-       [![Learn 图标](../images/learn-icon.png)](https://docs.microsoft.com/learn/browse/?terms=web)<br>
-        **[与 web 开发相关的 Microsoft Learn 课程](https://docs.microsoft.com/learn/browse/?terms=web)**<br>
+       [![Learn 图标](../images/learn-icon.png)](/learn/browse/?terms=web)<br>
+        **[与 web 开发相关的 Microsoft Learn 课程](/learn/browse/?terms=web)**<br>
         Microsoft Learn 提供免费的在线课程，可帮助你学习各种新技能，并通过分步指南来发现 Microsoft 产品和服务。
         <br>
-        [开始学习](https://docs.microsoft.com/learn/browse/?terms=web)
+        [开始学习](/learn/browse/?terms=web)
     :::column-end:::
 :::row-end:::
 
