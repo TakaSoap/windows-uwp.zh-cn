@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e568dfb35f273b4efe045a6a16c944007f1ee7f
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: df9acd948ea2dc964989803a550d9ee57ea5caf6
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101824471"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804791"
 ---
 # <a name="controls-for-windows-apps"></a>适用于 Windows 应用的控件
 
@@ -86,9 +86,9 @@ ms.locfileid: "101824471"
 - [超链接按钮](hyperlinks.md#create-a-hyperlinkbutton)
 - [图像和图像画笔](images-imagebrushes.md)
 - [墨迹书写控件](inking-controls.md)
+- [列表/细节](list-details.md)（模式）
 - [列表视图](listview-and-gridview.md)
 - [地图控件](../../maps-and-location/display-maps.md)
-- [大纲/细节](master-details.md)（模式）
 - [媒体播放](media-playback.md)
 - [菜单栏](menus.md#create-a-menu-bar) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [菜单浮出控件](menus.md)

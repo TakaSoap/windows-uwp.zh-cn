@@ -5,18 +5,20 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c#, winrt, cswinrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 0704a7e9c731c6f60c59615b964b51e0ded242c2
-ms.sourcegitcommit: 1022e8819e75484ca0cd94f8baf4f4d11900e0e3
+ms.openlocfilehash: 55fbc91bb67b0853eafebdf05ffcf116637233bf
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98206086"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804771"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
-C#/WinRT 是一个进行 NuGet 打包的工具包，为 C# 语言提供 Windows 运行时 (WinRT) 投影支持。 “投影”是一个转换层（例如互操作程序集），它以自然而熟悉的方式为目标语言启用编程 WinRT API。 例如，C#/WinRT 投影隐藏了 C# 与 WinRT 接口之间的互操作的详细信息，并提供了从许多 WinRT 类型到相应的 .NET 等效项（例如字符串、URI、公用值类型和泛型集合）的映射。
+C#/WinRT 是一个进行 NuGet 打包的工具包，为 C# 语言提供 Windows 运行时 (WinRT) 投影支持。 “投影”是一个互操作程序集，它以自然而熟悉的方式为目标语言启用编程 WinRT API。 C#/WinRT 投影隐藏了 C# 与 WinRT 接口之间的互操作的详细信息，并提供了从许多 [WinRT 类型到相应的 .NET 等效项](../winrt-components/net-framework-mappings-of-windows-runtime-types.md)（例如字符串、URI、公用值类型和泛型集合）的映射。
 
-C#/WinRT 当前支持使用 WinRT 类型，最新版本允许[创建](#create-an-interop-assembly)和[引用](#reference-an-interop-assembly) WinRT 互操作程序集。 将来的 C# /WinRT 版本将支持采用 C# 创作 WinRT 类型。
+C#/WinRT 目前支持通过使用 .NET 5 及更高版本中的[目标框架名字对象](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-5-use-the-target-framework-moniker-option)来使用 WinRT API。 如果使用特定 Windows 版本来指定目标框架名字对象，会添加对 C#/WinRT 生成的 Windows SDK 投影和运行时程序集的引用。
+
+借助最新的 [C#/WinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)，可为 .NET 5 及更高版本的使用者[创建](#create-an-interop-assembly)和[引用](#reference-an-interop-assembly)你自己的 WinRT 互操作程序集。 C#/WinRT 最新版还包含在 C# 中[创作](create-windows-runtime-component-cswinrt.md) WinRT 类型的功能（现为预览版）。
 
 有关 C#/WinRT 的更多信息，请参阅 [C#/WinRT GitHub 存储库](https://aka.ms/cswinrt/repo)。
 
@@ -32,7 +34,7 @@ C#/WinRT 还支持 WinUI 3.0。 此版本的 WinUI 从操作系统中移除了�
 
 ## <a name="create-an-interop-assembly"></a>创建一个互操作程序集
 
-WinRT API 在 Windows 元数据 (*.winmd) 文件中定义。 C#/WinRT NuGet 包 ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) 中包括 C#/WinRT 编译器 cswinrt.exe，可用它来处理 Windows 元数据文件并生成 .NET 5.0 C# 代码。 可以将这些源文件编译为互操作程序集，这与 [C++/WinRT](../cpp-and-winrt-apis/index.md) 为 C++ 语言投影生成头文件的方式类似。 然后，可以将 C#/WinRT 互操作程序集与 C#/WinRT 运行时程序集一起分发，供应用程序引用。
+WinRT API 是在 Windows 元数据 (\*.winmd) 文件中定义的。 C#/WinRT NuGet 包 ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) 中包括 C#/WinRT 编译器 cswinrt.exe，可用它来处理 Windows 元数据文件并生成 .NET 5 C# 代码。 可以将这些源文件编译为互操作程序集，这与 [C++/WinRT](../cpp-and-winrt-apis/index.md) 为 C++ 语言投影生成头文件的方式类似。 然后，可将 C#/WinRT 互操作程序集与 C#/WinRT 运行时程序集一起分发，供 .NET 5 应用程序引用。
 
 若要在演练中查看如何创建互操作程序集并将其作为 NuGet 包进行分发，请参阅[演练：从 C++/WinRT 组件生成 .NET 5 投影并更新 NuGet](net-projection-from-cppwinrt-component.md)。
 
@@ -46,13 +48,13 @@ WinRT API 在 Windows 元数据 (*.winmd) 文件中定义。 C#/WinRT NuGet 包 
 </PropertyGroup>
 ```
 
-在此项目中，你还需要引用 CsWinRT NuGet 包以及想要投射的项目特定的 .winmd 文件（无论是通过 NuGet 包、项目引用还是直接引用来进行投射）。 默认情况下，不会投射 Windows 和 Microsoft 命名空间 。 有关 CsWinRT 项目属性的完整列表，请参阅 [CsWinRT NuGet 文档](https://github.com/microsoft/CsWinRT/blob/master/nuget/readme.md)。
+在此项目中，你还需要引用 C#/WinRT NuGet 包以及想要投影的项目特定的 .winmd 文件（无论是通过 NuGet 包、项目引用还是直接文件引用来进行投影）。 默认情况下，不会投影 Windows 和 Microsoft 命名空间，这是因为 C#/WinRT 已通过对目标框架名字对象和 WinUI 3 的支持生成了这些投影 。 有关 C#/WinRT NuGet 项目属性的完整列表，请查看 [CsWinRT NuGet 文档](https://github.com/microsoft/CsWinRT/blob/master/nuget/readme.md)。
 
 ### <a name="distribute-the-interop-assembly"></a>分发互操作程序集
 
 互操作程序集通常以 NuGet 包的形式分发，并且依赖于必需的 C#/WinRT 运行时程序集 WinRT.Runtime.dll 的 C#/WinRT NuGet 包。
 
-若要确保为 .NET 5.0 应用程序部署了正确版本的 C#/WinRT 运行时，请在依赖 C#/WinRT NuGet 包的 .nuspec 文件中包含一个 `targetFramework` 条件。
+若要确保为 .NET 5 应用程序部署了正确版本的 C#/WinRT 运行时，请在依赖 C#/WinRT NuGet 包的 .nuspec 文件中包含一个 `targetFramework` 条件。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -60,7 +62,7 @@ WinRT API 在 Windows 元数据 (*.winmd) 文件中定义。 C#/WinRT NuGet 包 
   <metadata>
     <dependencies>
       <group targetFramework="net5.0">
-        <dependency id="Microsoft.Windows.CsWinRT" version="1.0.1" />
+        <dependency id="Microsoft.Windows.CsWinRT" version="1.1.4" />
       </group>
     </dependencies>
   </metadata>
