@@ -5,12 +5,12 @@ ms.date: 12/30/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: cc341f6fd716daf0474fdbcb25f567a7c727d507
-ms.sourcegitcommit: 7d542c6367b3b441044225431ee69d869ed0ff4b
+ms.openlocfilehash: 0b2b4f67d67fc1a23e650d1fbe5d58964add1a70
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102402333"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804751"
 ---
 # <a name="authoring-a-c-windows-runtime-component-for-use-from-a-cwinrt-app"></a>创作 C# Windows 运行时组件，便于通过 C++/WinRT 应用使用
 
@@ -21,12 +21,12 @@ ms.locfileid: "102402333"
 在内部，Windows 运行时类型可以使用 UWP 应用程序中允许的任何 .NET 功能。
 
 > [!NOTE]
-> 有关详细信息，请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)和[适用于 UWP 应用的 .NET 概述](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)。
+> 有关详细信息，请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)和[适用于 UWP 应用的 .NET 概述](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)。
 
 在外部，类型的成员只能为其参数和返回值公开 Windows 运行时类型。 在生成解决方案时，Visual Studio 会生成 .NET WRC 项目，然后执行可创建 Windows 元数据 (.winmd) 文件的生成步骤。 这是你的 Windows 运行时组件 (WRC)，即 Visual Studio 在你的应用中包含的组件。
 
 > [!NOTE]
-> .NET 自动将某些常用的 .NET 类型（例如基元数据类型和集合类型）映射到其 Windows 运行时等效项。 这些 .NET 类型可在 Windows 运行时组件的公共接口中使用，并且将作为相应的 Windows 运行时类型向该组件的用户显示。 请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)。
+> .NET 自动将某些常用的 .NET 类型（例如基元数据类型和集合类型）映射到其 Windows 运行时等效项。 这些 .NET 类型可在 Windows 运行时组件的公共接口中使用，并且将作为相应的 Windows 运行时类型向该组件的用户显示。 请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)。
 
 ## <a name="prerequisites"></a>先决条件：
 
@@ -124,7 +124,7 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 
 ## <a name="application-minimum-version"></a>应用程序最低版本
 
-C# 项目版本的[应用程序最低版本](https://docs.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version)将控制用于编译应用程序的 .NET 版本。 例如，选择“Windows 10 Fall Creators Update (10.0; 内部版本 16299)”或更高版本将启用 .NET Standard 2.0 和 Windows ARM64 处理器支持。 
+C# 项目版本的[应用程序最低版本](../updates-and-versions/choose-a-uwp-version.md)将控制用于编译应用程序的 .NET 版本。 例如，选择“Windows 10 Fall Creators Update (10.0; 内部版本 16299)”或更高版本将启用 .NET Standard 2.0 和 Windows ARM64 处理器支持。 
 
 > [!TIP]
 > 如果不需要 .NET Standard 2.0 或 ARM64 支持，建议使用低于 16299 的应用程序最低版本以避免额外的生成配置。
@@ -218,5 +218,5 @@ C# 项目版本的[应用程序最低版本](https://docs.microsoft.com/windows/
 ```
 
 ## <a name="related-topics"></a>相关主题
-* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)
-* [使用 C++/WinRT 创建 Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
+* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [使用 C++/WinRT 创建 Windows 运行时组件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)

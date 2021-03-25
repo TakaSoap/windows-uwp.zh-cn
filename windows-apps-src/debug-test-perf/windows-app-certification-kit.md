@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: a8be8ff09b962456b70d604a6a44203ceddb8cbc
-ms.sourcegitcommit: 8bface2162e091999b1cf2218340edda2389da89
+ms.openlocfilehash: 6f63ad960993ade83bdfa52283a33b76e2d80db2
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103496684"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804811"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 应用认证工具包
 
@@ -31,7 +31,7 @@ ms.locfileid: "103496684"
 
 ## <a name="whats-new"></a>新变化
 
-工具包现在支持 Windows [桌面桥应用](/windows/msix/desktop/source-code-overview)测试。 [Windows 桌面桥应用测试](/windows/uwp/debug-test-perf/windows-desktop-bridge-app-tests)可为你的应用提供在 Microsoft Store 中发布或通过认证的最佳机会。
+工具包现在支持 Windows [桌面桥应用](/windows/msix/desktop/source-code-overview)测试。 [Windows 桌面桥应用测试](./windows-desktop-bridge-app-tests.md)可为你的应用提供在 Microsoft Store 中发布或通过认证的最佳机会。
 
 工具包现可集成到没有交互式用户会话的自动测试中。
 
