@@ -172,8 +172,8 @@
           href: controls-and-patterns/menus.md
     - name: 导航
       items:
-        - name: 大纲/细节
-          href: controls-and-patterns/master-details.md
+        - name: 列表/详细信息
+          href: controls-and-patterns/list-details.md
         - name: 导航视图
           href: controls-and-patterns/navigationview.md
         - name: Pivot
@@ -538,7 +538,7 @@
   items:
     - name: 概述
       href: usability/index.md
-    - name: 辅助功能
+    - name: 可访问性
       href: accessibility/accessibility.md
       items:
         - name: 概述
