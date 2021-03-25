@@ -6,19 +6,19 @@ label: Designing for Mixed Reality
 template: detail.hbs
 isNew: true
 keywords: 混合现实, Hololens, 增强现实, 注视, 语音, 控制器
-ms.date: 02/05/2018
+ms.date: 02/26/2021
 ms.topic: article
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 225b91b20f35c974fca865cc4e94a96efceda84d
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 11987ec6e7bd5f97937cc7b9aa86ec9f0fafcca1
+ms.sourcegitcommit: e8ea2a36e4f2b9e0326958d226a36dd30c3efa57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034370"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105099818"
 ---
 # <a name="designing-for-mixed-reality"></a>针对混合现实而开发
 
@@ -40,7 +40,7 @@ HoloLens 和 Windows Mixed Reality 头戴显示设备支持在 UWP 平台上运�
 
 如果要创建沉浸式应用，你应访问 [Windows Mixed Reality 开发人员中心](https://developer.microsoft.com/mixed-reality)以了解更多信息。
 
-2D 应用作为传统的平面窗口在用户的视图内运行。 在 HoloLens 上，这表示固定到墙的某个视图或用户自己的真实客厅或办公室空间中的某点。 在 Windows Mixed Reality 头戴显示设备中，该应用已固定到 [混合现实家庭版](/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)（有时称为 *悬崖小屋* ）中的墙上。
+2D 应用作为传统的平面窗口在用户的视图内运行。 在 HoloLens 上，这表示固定到墙的某个视图或用户自己的真实客厅或办公室空间中的某点。 在 Windows Mixed Reality 头戴显示设备中，该应用已固定到 [混合现实家庭版](/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)（有时称为 *悬崖小屋*）中的墙上。
 
 ![在混合现实中运行的多个应用](images/MR-multiple.png)
 
@@ -113,9 +113,9 @@ HoloLens 和混合现实平台上均支持键盘和鼠标。 你可以通过蓝�
 
 ![混合现实应用中显示的文本应为大。](images/MR-text.png)
 
-* [注视是鼠标](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting)。 当用户看着某内容时，它将充当 **触控悬停** 事件，所以，仅看着某个对象可能会触发无意的弹出窗口或其他不需要的交互。 你可能需要检查应用目前是否正在混合现实中运行并更改此行为。 请参阅下面的 **运行时支持** 。 
+* [注视是鼠标](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting)。 当用户看着某内容时，它将充当 **触控悬停** 事件，所以，仅看着某个对象可能会触发无意的弹出窗口或其他不需要的交互。 你可能需要检查应用目前是否正在混合现实中运行并更改此行为。 请参阅下面的 **运行时支持**。 
 
-* 当用户使用运动控制器注视某些内容或点时， **触控悬停** 事件将发生。 这包括 **PointerPoint** ，其中 **PointerType** 为 **触控** ，但 **IsInContact** 为 **false** 。 当某些形式的提交发生（例如，按钮下游戏板 A 按钮、按下遥控器设备、按下运动控制器扳机键或“选择”语音识别人头）时， **触控按下** 事件将发生，同时具有 **IsInContact** 的 **PointerPoint** 变为 **true** 。 有关这些输入事件的更多信息，请参阅[触控交互](../input/touch-interactions.md)。
+* 当用户使用运动控制器注视某些内容或点时，**触控悬停** 事件将发生。 这包括 **PointerPoint**，其中 **PointerType** 为 **触控**，但 **IsInContact** 为 **false**。 当某些形式的提交发生（例如，按钮下游戏板 A 按钮、按下遥控器设备、按下运动控制器扳机键或“选择”语音识别人头）时，**触控按下** 事件将发生，同时具有 **IsInContact** 的 **PointerPoint** 变为 **true**。 有关这些输入事件的更多信息，请参阅[触控交互](../input/touch-interactions.md)。
 
 * 请记住，注视并不与鼠标指向一样地准确。 较小的鼠标目标或按钮可能会为用户带来沮丧，因此请相应地调整控件大小。 如果它们针对触控进行设计，则将适用于混合现实，但你可能决定在运行时放大一些按钮。 请参阅[针对 Hololens 更新现有通用应用](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens)。
 
@@ -126,10 +126,7 @@ HoloLens 和混合现实平台上均支持键盘和鼠标。 你可以通过蓝�
 
 ## <a name="other-points-to-consider"></a>要考虑的其他要点
 
-* 尽管[桌面桥](/windows/msix/desktop/source-code-overview)可帮助将现有 (Win32) 桌面应用带入 Windows 10 和 Microsoft Store，但它无法创建同时在 HoloLens 上和混合现实中运行的应用。
-
-
-
+* 虽然 [桌面桥](/windows/msix/desktop/source-code-overview) 可帮助将现有的 (Win32) 桌面应用程序引入 Windows 10 和 Microsoft Store，但目前无法创建在 HoloLens 上运行的应用程序。 从 Windows 10 版本1903，Win32 桌面应用可在混合现实耳机上运行。
 
 ## <a name="runtime-support"></a>运行时支持
 

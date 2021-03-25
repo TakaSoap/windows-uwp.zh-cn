@@ -6,12 +6,12 @@ ms.date: 06/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 设置, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e2e93ad43f866e26b448e2cbcd2cb480054cbc9
-ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.openlocfilehash: c6e3a84b2f483f0b6d2d590181cac232f68f2b72
+ms.sourcegitcommit: e8ea2a36e4f2b9e0326958d226a36dd30c3efa57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104804261"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105099808"
 ---
 # <a name="set-up-the-game-project"></a>设置游戏项目
 
@@ -94,11 +94,11 @@ struct App : winrt::implements<App, IFrameworkViewSource, IFrameworkView>
 struct App : winrt::implements<App, IFrameworkViewSource, IFrameworkView>
 {
     ...
-    void Initialize(Windows::ApplicationModel::CoreCoreApplicationView const& applicationView) { ... }
+    void Initialize(Windows::ApplicationModel::Core::CoreApplicationView const& applicationView) { ... }
     void SetWindow(Windows::UI::Core::CoreWindow const& window) { ... }
     void Load(winrt::hstring const& entryPoint) { ... }
     void OnActivated(
-        Windows::ApplicationModel::CoreCoreApplicationView const& applicationView,
+        Windows::ApplicationModel::Core::CoreApplicationView const& applicationView,
         Windows::ApplicationModel::Activation::IActivatedEventArgs const& args) { ... }
     void Run() { ... }
     void Uninitialize() { ... }
@@ -189,7 +189,7 @@ void GameMain::Run()
 |VertexShader. hlsl 和 VertexShaderFlat hlsl|着色器|包含基本顶点着色器 (HLSL) 代码的高级着色器语言。|
 |PixelShader. hlsl 和 PixelShaderFlat hlsl|着色器|包含基本像素着色器 (HLSL) 代码的高级着色器语言。|
 |ConstantBuffers. .hlsli|着色器|包含用于将模型视图投影 (MVP) 矩阵和每个顶点的数据传递到顶点着色器的常量缓冲区和着色器结构的数据结构定义。|
-|pch.h/.cpp|空值|包含常见的 c + +/WinRT、Windows 和 DirectX 包括。| 
+|pch.h/.cpp|不适用|包含常见的 c + +/WinRT、Windows 和 DirectX 包括。| 
 
 ### <a name="next-steps"></a>后续步骤
 
