@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 3411ee4c947d809009c2185389f5513a49afce98
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 90a186a63104c0393cb871ceffee023a05a7d514
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215036"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619633"
 ---
 # <a name="manage-creatives"></a>管理创意
 
@@ -34,20 +34,20 @@ ms.locfileid: "66215036"
 
 这些方法具有以下 URI。
 
-| 方法类型 | 请求 URI     |  描述  |
+| 方法类型 | 请求 URI     |  说明  |
 |--------|-----------------------------|---------------|
-| 发布   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/creative``` |  创建新创意。  |
+| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/creative``` |  创建新创意。  |
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/creative/{creativeId}``` |  获取通过 *creativeId* 指定的创意。  |
 
 > [!NOTE]
 > 此 API 当前不支持 PUT 方法。
 
 
-### <a name="header"></a>Header
+### <a name="header"></a>标头
 
-| Header        | 在任务栏的搜索框中键入   | 描述         |
+| 标头        | 类型   | 说明         |
 |---------------|--------|---------------------|
-| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 的访问令牌，采用的格式为 **持有** 者 &lt; *令牌* &gt; 。 |
 | 跟踪 ID   | GUID   | 可选。 跟踪调用流的 ID。                                  |
 
 
@@ -113,32 +113,32 @@ Authorization: Bearer <your access token>
 
 这些方法的请求和响应正文包含以下字段。 这张表列出了 POST 方法请求正文中的哪些字段是只读字段（意味着不能在 PUT 方法中更改它们）以及哪些字段是必填字段。
 
-| 字段        | 在任务栏的搜索框中键入   |  描述      |  只读  | 默认  |  POST 必填字段 |  
+| 字段        | 类型   |  说明      |  只读  | 默认  |  POST 必填字段 |  
 |--------------|--------|---------------|------|-------------|------------|
-|  id   |  整数   |  创意的 ID。     |   是    |      |    否   |       
+|  id   |  integer   |  创意的 ID。     |   是    |      |    否   |       
 |  name   |  string   |   创意的名称。    |    否   |      |  是     |       
-|  content   |  string   |  创意图像的内容（Base64 编码格式）。<br/><br/>**注意**&nbsp;&nbsp;允许的最大创意大小为 40 KB。 如果提交的创意文件大于此值，则此 API 将不会返回错误，但不会成功创建市场活动。      |  否     |      |   是    |       
-|  height   |  整数   |   创意的高度。    |    否    |      |   是    |       
-|  width   |  整数   |  创意的宽度。     |  否    |     |    是   |       
-|  landingUrl   |  string   |  如果使用活动跟踪 AppsFlyer、 Kochava、 优化，Vungle 等服务用于衡量您的应用程序安装分析，分配你在此字段中的跟踪 URL 时调用 POST 方法 （如果指定，此值必须是有效的 URI）。 如果未使用市场活动跟踪服务，则在调用 POST 方法时，请忽略此值（在此情况下，将会成功创建此 URL）。   |  否    |     |   是    |
-|  format   |  string   |   广告的格式。 当前，唯一受支持的值为 **Banner**。    |   否    |  横幅   |  否     |       
+|  内容   |  string   |  创意图像的内容（Base64 编码格式）。<br/><br/> &nbsp; 注意 &nbsp;允许的最大创作大小为 40 KB。 如果提交的创意文件大于此值，则此 API 将不会返回错误，但不会成功创建市场活动。      |  否     |      |   是    |       
+|  高度   |  integer   |   创意的高度。    |    否    |      |   是    |       
+|  width   |  integer   |  创意的宽度。     |  否    |     |    是   |       
+|  landingUrl   |  string   |  如果你使用的是市场活动跟踪服务（如 AppsFlyer、Kochava、优化或 Vungle）来度量应用的安装分析，请在调用 POST 方法时在此字段中分配跟踪 URL (如指定，此值必须是有效的 URI) 。 如果未使用市场活动跟踪服务，则在调用 POST 方法时，请忽略此值（在此情况下，将会成功创建此 URL）。   |  否    |     |   是    |
+|  format   |  字符串   |   广告的格式。 当前，唯一受支持的值为 **Banner**。    |   否    |  标题   |  否     |       
 |  imageAttributes   | [ImageAttributes](#image-attributes)    |   提供创意的属性。     |   否    |      |   是    |       
-|  storeProductId   |  string   |   与广告活动关联的应用的[应用商店 ID](in-app-purchases-and-trials.md#store-ids)。 产品应用商店 ID 示例：9nblggh42cfd。    |   否    |    |  否     |   |  
+|  storeProductId   |  string   |   与广告活动关联的应用的[应用商店 ID](in-app-purchases-and-trials.md#store-ids)。 产品应用商店 ID 示例：9nblggh42cfd。    |   否    |    |  否     |
 
 
 <span id="image-attributes"/>
 
 ## <a name="imageattributes-object"></a>ImageAttributes 对象
 
-| 字段        | 在任务栏的搜索框中键入   |  描述      |  只读  | 默认值  | POST 必填字段 |  
+| 字段        | 类型   |  说明      |  只读  | 默认值  | POST 必填字段 |  
 |--------------|--------|---------------|------|-------------|------------|
-|  imageExtension   |   string  |   以下值之一：**PNG**或**JPG**。    |    否   |      |   是    |       |
+|  imageExtension   |   string  |   以下值之一：**PNG** 或 **JPG**。    |    否   |      |   是    |
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [运行使用 Microsoft 应用商店服务广告市场活动](run-ad-campaigns-using-windows-store-services.md)
-* [管理广告市场活动](manage-ad-campaigns.md)
-* [管理 ad 市场活动传递行](manage-delivery-lines-for-ad-campaigns.md)
-* [管理 ad 市场活动的目标配置文件](manage-targeting-profiles-for-ad-campaigns.md)
-* [获取 ad 市场活动的性能数据](get-ad-campaign-performance-data.md)
+* [使用 Microsoft Store 服务开展广告市场活动](run-ad-campaigns-using-windows-store-services.md)
+* [管理广告活动](manage-ad-campaigns.md)
+* [管理广告活动的投放渠道](manage-delivery-lines-for-ad-campaigns.md)
+* [管理广告活动的目标市场配置文件](manage-targeting-profiles-for-ad-campaigns.md)
+* [获取广告市场活动性能数据](get-ad-campaign-performance-data.md)

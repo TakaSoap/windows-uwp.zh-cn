@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7217b52c6e9f9882997649c5f843eb119d741e0b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 67e5f4a212602f0b177c94d96f61d52a3369fd9d
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156151"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619403"
 ---
 # <a name="span-iddirect3dconceptsusing_system-generated_valuesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>使用系统生成的值
 
@@ -64,16 +64,16 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
- 
+ 
 
 三角形带实例 U 具有 3 个三角形基元，其系统生成值如下所示：
 
-|                 |     |     |     |
+|                 | 值 1    | 值 2    | 值3    |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
 | **InstanceID**  | 0   | 0   | 0   |
 
- 
+ 
 
 下表显示了实例 V 的系统生成的值。
 
@@ -82,16 +82,16 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
- 
+ 
 
 三角形带实例 V 具有 3 个三角形基元，其系统生成值如下所示：
 
-|                 |     |     |     |
+|                 | 值 1    | 值 2    | 值3    |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
 | **InstanceID**  | 1   | 1   | 1   |
 
- 
+ 
 
 [输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)将生成 ID（顶点、基元和实例）；另请注意，每个实例都将获得一个唯一的实例 ID。 该数据将以条带切割结尾，这将分隔三角形带的每个实例。
 
@@ -100,6 +100,6 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 
 [输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)
 
- 
+ 
 
- 
+ 

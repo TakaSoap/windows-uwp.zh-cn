@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d84c6eb678bf884709e13ecefd81e64097ee738
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 10a10e15c736d77e132543a54dff11455f08cde3
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630202"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619513"
 ---
 # <a name="manage-targeting-profiles"></a>管理目标市场配置文件
 
@@ -20,7 +20,7 @@ ms.locfileid: "57630202"
 
 有关目标市场配置文件与广告活动、投放渠道和创意之间关系的详细信息，请参阅[使用 Microsoft Store 服务开展广告活动](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用这些方法，首先需要执行以下操作：
 
@@ -31,7 +31,7 @@ ms.locfileid: "57630202"
 
 这些方法具有以下 URI。
 
-| 方法类型 | 请求 URI                                                      |  描述  |
+| 方法类型 | 请求 URI                                                      |  说明  |
 |--------|------------------------------------------------------------------|---------------|
 | POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile``` |  创建新的目标市场配置文件。  |
 | PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  编辑通过 *targetingProfileId* 指定的目标市场配置文件。  |
@@ -40,9 +40,9 @@ ms.locfileid: "57630202"
 
 ### <a name="header"></a>标头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述         |
+| 标头        | 类型   | 说明         |
 |---------------|--------|---------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 的访问令牌，采用的格式为 **持有** 者 &lt; *令牌* &gt; 。 |
 | 跟踪 ID   | GUID   | 可选。 跟踪调用流的 ID。                                  |
 
 
@@ -139,17 +139,17 @@ Authorization: Bearer <your access token>
 
 这些方法的请求和响应正文包含以下字段。 这张表列出了 POST 方法请求正文中的哪些字段是只读字段（意味着不能在 PUT 方法中更改它们）以及哪些字段是必填字段。
 
-| 字段        | 在任务栏的搜索框中键入   |  描述      |  只读  | 默认  | POST 必填字段 |  
+| 字段        | 类型   |  说明      |  只读  | 默认  | POST 必填字段 |  
 |--------------|--------|---------------|------|-------------|------------|
-|  id   |  整数   |  目标市场配置文件的 ID。     |   是    |       |   否      |       
-|  name   |  字符串   |   目标市场配置文件的名称。    |    否   |      |  是     |       
-|  targetingType   |  字符串   |  以下值之一： <ul><li>**自动**：指定此值可使 Microsoft 能够选择基于合作伙伴中心中的应用设置的目标配置文件。</li><li>**手动**：指定此值来定义自己的目标配置文件。</li></ul>     |  否     |  自动    |   是    |       
-|  age   |  数组   |   一个或多个整数，用于标识要针对的用户的年龄范围。 有关整数的完整列表，请参阅本文章中的[年龄值](#age-values)。    |    否    |  null    |     否    |       
-|  gender   |  数组   |  一个或多个整数，用于标识要针对的用户的性别。 有关整数的完整列表，请参阅本文章中的[性别值](#gender-values)。       |  否    |  null    |     否    |       
-|  country   |  数组   |  一个或多个整数，用于标识要针对的用户所在的国家或地区代码。 有关整数的完整列表，请参阅本文章中的[国家或地区代码值](#country-code-values)。    |  否    |  null   |      否   |       
-|  osVersion   |  数组   |   一个或多个整数，用于标识要针对的用户的操作系统版本。 有关整数的完整列表，请参阅本文章中的[操作系统版本值](#osversion-values)。     |   否    |  null   |     否    |       
-|  deviceType   | 数组    |  一个或多个整数，用于标识要针对的用户的设备类型。 有关整数的完整列表，请参阅本文章中的[设备类型值](#devicetype-values)。       |   否    |  null    |    否     |       
-|  supplyType   |  数组   |  一个或多个整数，用于标识将展示活动广告的广告资源的类型。 有关整数的完整列表，请参阅本文章中的[供应类型值](#supplytype-values)。      |   否    |  null   |     否    |   |  
+|  id   |  integer   |  目标市场配置文件的 ID。     |   是    |       |   否      |       
+|  name   |  string   |   目标市场配置文件的名称。    |    否   |      |  是     |       
+|  targetingType   |  string   |  以下值之一： <ul><li>**自动**：指定此值以允许 Microsoft 基于合作伙伴中心的应用设置选择目标配置文件。</li><li>**Manual**：指定此值可定义你自己的目标市场配置文件。</li></ul>     |  否     |  Auto    |   是    |       
+|  age   |  array   |   一个或多个整数，用于标识要针对的用户的年龄范围。 有关整数的完整列表，请参阅本文章中的[年龄值](#age-values)。    |    否    |  null    |     否    |       
+|  gender   |  array   |  一个或多个整数，用于标识要针对的用户的性别。 有关整数的完整列表，请参阅本文章中的[性别值](#gender-values)。       |  否    |  null    |     否    |       
+|  country   |  array   |  一个或多个整数，用于标识要针对的用户所在的国家或地区代码。 有关整数的完整列表，请参阅本文章中的[国家或地区代码值](#country-code-values)。    |  否    |  null   |      否   |       
+|  osVersion   |  array   |   一个或多个整数，用于标识要针对的用户的操作系统版本。 有关整数的完整列表，请参阅本文章中的[操作系统版本值](#osversion-values)。     |   否    |  null   |     否    |       
+|  deviceType   | array    |  一个或多个整数，用于标识要针对的用户的设备类型。 有关整数的完整列表，请参阅本文章中的[设备类型值](#devicetype-values)。       |   否    |  null    |    否     |       
+|  supplyType   |  array   |  一个或多个整数，用于标识将展示活动广告的广告资源的类型。 有关整数的完整列表，请参阅本文章中的[供应类型值](#supplytype-values)。      |   否    |  null   |     否    |
 
 
 <span id="age-values"/>
@@ -166,7 +166,7 @@ Authorization: Bearer <your access token>
 |     654     |            35 到 49             |
 |     655     |            50 及以上             |
 
-要以编程方式获取 *age* 字段的支持值，你可以调用下面的 GET 方法。  有关```Authorization```标头，在窗体中传递你的 Azure AD 访问令牌**持有者** &lt;*令牌*&gt;。
+要以编程方式获取 *age* 字段的支持值，你可以调用下面的 GET 方法。  对于 ```Authorization``` 标头，请以 **Bearer** &lt;*token*&gt; 形式传递你的 Azure AD 访问令牌。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/age
@@ -197,10 +197,10 @@ Authorization: Bearer <your access token>
 
 |  *gender* 字段的整数值  |  对应的性别  |  
 |---------------------------------|---------------------------|
-|     3.     |            男性             |
-|     701     |           女性             |
+|     700     |            男             |
+|     701     |           女             |
 
-要以编程方式获取 *gender* 字段的支持值，你可以调用下面的 GET 方法。  有关```Authorization```标头，在窗体中传递你的 Azure AD 访问令牌**持有者** &lt;*令牌*&gt;。
+要以编程方式获取 *gender* 字段的支持值，你可以调用下面的 GET 方法。  对于 ```Authorization``` 标头，请以 **Bearer** &lt;*token*&gt; 形式传递你的 Azure AD 访问令牌。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/gender
@@ -229,7 +229,7 @@ Authorization: Bearer <your access token>
 
 |  *osVersion* 字段的整数值  |  对应的操作系统版本  |  
 |---------------------------------|---------------------------|
-|     500     |            Windows Phone 7             |
+|     500     |            Windows 7 Phone             |
 |     501     |           Windows Phone 7.1             |
 |     502     |           Windows Phone 7.5             |
 |     503     |           Windows Phone 7.8             |
@@ -240,7 +240,7 @@ Authorization: Bearer <your access token>
 |     508     |           Windows 10             |
 |     509     |           Windows 10 移动版             |
 
-要以编程方式获取 *osVersion* 字段的支持值，你可以调用下面的 GET 方法。  有关```Authorization```标头，在窗体中传递你的 Azure AD 访问令牌**持有者** &lt;*令牌*&gt;。
+要以编程方式获取 *osVersion* 字段的支持值，你可以调用下面的 GET 方法。  对于 ```Authorization``` 标头，请以 **Bearer** &lt;*token*&gt; 形式传递你的 Azure AD 访问令牌。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/osversion
@@ -275,12 +275,12 @@ Authorization: Bearer <your access token>
 
 [TargetingProfile](#targeting-profile) 对象中的 *deviceType* 字段包含一个或多个以下整数，用于标识要针对的用户的设备类型。
 
-|  *deviceType* 字段的整数值  |  对应的设备类型  |  描述  |
+|  *deviceType* 字段的整数值  |  对应的设备类型  |  说明  |
 |---------------------------------|---------------------------|---------------------------|
 |     710     |  Windows   |  代表运行 Windows 10 或 Windows 8.x 桌面版的设备。  |
-|     711     |  Phone     |  代表运行 Windows 10 移动版、Windows Phone 8.x 或 Windows Phone 7.x 的设备。
+|     711     |  电话     |  代表运行 Windows 10 移动版、Windows Phone 8.x 或 Windows Phone 7.x 的设备。
 
-要以编程方式获取 *deviceType* 字段的支持值，你可以调用下面的 GET 方法。  有关```Authorization```标头，在窗体中传递你的 Azure AD 访问令牌**持有者** &lt;*令牌*&gt;。
+要以编程方式获取 *deviceType* 字段的支持值，你可以调用下面的 GET 方法。  对于 ```Authorization``` 标头，请以 **Bearer** &lt;*token*&gt; 形式传递你的 Azure AD 访问令牌。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/devicetype
@@ -307,12 +307,12 @@ Authorization: Bearer <your access token>
 
 [TargetingProfile](#targeting-profile) 对象中的 *supplyType* 字段包含一个或多个以下整数，用于标识将展示活动广告的广告资源的类型。
 
-|  *supplyType* 字段的整数值  |  对应的供应类型  |  描述  |
+|  *supplyType* 字段的整数值  |  对应的供应类型  |  说明  |
 |---------------------------------|---------------------------|---------------------------|
 |     11470     |  应用        |  指只在应用中展示的广告。  |
 |     11471     |  通用        |  指在应用、Web 及其他显示表面上展示的广告。  |
 
-要以编程方式获取 *supplyType* 字段的支持值，你可以调用下面的 GET 方法。  有关```Authorization```标头，在窗体中传递你的 Azure AD 访问令牌**持有者** &lt;*令牌*&gt;。
+要以编程方式获取 *supplyType* 字段的支持值，你可以调用下面的 GET 方法。  对于 ```Authorization``` 标头，请以 **Bearer** &lt;*token*&gt; 形式传递你的 Azure AD 访问令牌。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/supplytype
@@ -340,7 +340,7 @@ Authorization: Bearer <your access token>
 
 |  *country* 字段的整数值  |  对应的国家或地区代码  |  
 |-------------------------------------|------------------------------|
-|     1      |            美国                  |
+|     1      |            US                  |
 |     2      |            AU                  |
 |     3      |            AT                  |
 |     4      |            BE                  |
@@ -360,7 +360,7 @@ Authorization: Bearer <your access token>
 |     18      |            MX                  |
 |     19      |            NL                  |
 |     20      |            NZ                  |
-|     21      |            否                  |
+|     21      |            是                  |
 |     22      |            PL                  |
 |     23      |            PT                  |
 |     24      |            SG                  |
@@ -470,7 +470,7 @@ Authorization: Bearer <your access token>
 |     225      |            RE                  |
 |     246      |            PR                  |
 
-要以编程方式获取 *country* 字段的支持值，你可以调用下面的 GET 方法。  有关```Authorization```标头，在窗体中传递你的 Azure AD 访问令牌**持有者** &lt;*令牌*&gt;。
+要以编程方式获取 *country* 字段的支持值，你可以调用下面的 GET 方法。  对于 ```Authorization``` 标头，请以 **Bearer** &lt;*token*&gt; 形式传递你的 Azure AD 访问令牌。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/country
@@ -619,8 +619,8 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相关主题
 
-* [运行使用 Microsoft 应用商店服务广告市场活动](run-ad-campaigns-using-windows-store-services.md)
-* [管理广告市场活动](manage-ad-campaigns.md)
-* [管理 ad 市场活动传递行](manage-delivery-lines-for-ad-campaigns.md)
-* [管理 creatives ad 市场活动](manage-creatives-for-ad-campaigns.md)
-* [获取 ad 市场活动的性能数据](get-ad-campaign-performance-data.md)
+* [使用 Microsoft Store 服务开展广告市场活动](run-ad-campaigns-using-windows-store-services.md)
+* [管理广告活动](manage-ad-campaigns.md)
+* [管理广告活动的投放渠道](manage-delivery-lines-for-ad-campaigns.md)
+* [管理广告活动的创意](manage-creatives-for-ad-campaigns.md)
+* [获取广告市场活动性能数据](get-ad-campaign-performance-data.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ec2213f5a46318f3aaddbbe5d55b58f6816fcce
-ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
+ms.openlocfilehash: 53fc255c85c3102d26110d05e20ebdee26b70ed9
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97927779"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619593"
 ---
 # <a name="manage-add-ons"></a>管理加载项
 
@@ -49,7 +49,7 @@ ms.locfileid: "97927779"
 <td align="left"><a href="create-an-add-on.md">创建加载项</a></td>
 </tr>
 <tr>
-<td align="left">删除</td>
+<td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
 <td align="left"><a href="delete-an-add-on.md">删除加载项</a></td>
 </tr>
@@ -100,11 +100,11 @@ ms.locfileid: "97927779"
 | 值      | 类型   | 说明        |
 |------------|--------|--------------|
 | applications      | array  | 包含表示应用（与此加载项相关联）的[应用程序资源](#application-object)的数组。 只有一个项在此数组中受支持。  |
-| id | 字符串  | 加载项的应用商店 ID。 此值由应用商店提供。 应用商店 ID 的一个示例是 9NBLGGH4TNMP。  |
-| productId | 字符串  | 加载项的产品 ID。 这是在创建加载项时由开发人员提供的 ID。 有关详细信息，请参阅[设置你的产品类型和产品 ID](../publish/set-your-add-on-product-id.md)。 |
-| productType | 字符串  | 加载项的产品类型。 支持以下值：**Durable** 和 **Consumable**。  |
+| id | string  | 加载项的应用商店 ID。 此值由应用商店提供。 应用商店 ID 的一个示例是 9NBLGGH4TNMP。  |
+| productId | string  | 加载项的产品 ID。 这是在创建加载项时由开发人员提供的 ID。 有关详细信息，请参阅[设置你的产品类型和产品 ID](../publish/set-your-add-on-product-id.md)。 |
+| productType | string  | 加载项的产品类型。 支持以下值：**Durable** 和 **Consumable**。  |
 | lastPublishedInAppProductSubmission       | object | 提供有关加载项的上次发布提交的信息的[提交资源](#submission-object)。         |
-| pendingInAppProductSubmission        | object  |  提供有关加载项的当前挂起提交的信息的[提交资源](#submission-object)。  |   |
+| pendingInAppProductSubmission        | object  |  提供有关加载项的当前挂起提交的信息的[提交资源](#submission-object)。  |
 
 <span id="application-object" />
 
@@ -152,8 +152,8 @@ ms.locfileid: "97927779"
 
 | 值           | 类型    | 说明     |
 |-----------------|---------|------------------|
-| id            | 字符串  | 提交的 ID。    |
-| resourceLocation   | 字符串  | 可追加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 请求 URI 的相对路径，用于检索提交的完整数据。     |
+| id            | string  | 提交的 ID。    |
+| resourceLocation   | string  | 可追加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 请求 URI 的相对路径，用于检索提交的完整数据。     |
 
 <span/>
 

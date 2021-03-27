@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用数据
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dfbad9d0aa2bfb69479f168ec262fe67bedb49c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 120cb4d20299a8690f3d3814a8e937e763de1e7a
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162411"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619603"
 ---
 # <a name="get-app-data"></a>获取应用数据
 
@@ -26,7 +26,7 @@ ms.locfileid: "89162411"
 | GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [获取应用的加载项](get-add-ons-for-an-app.md)         |
 | GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [获取应用的软件包外部测试版](get-flights-for-an-app.md) |
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)，然后再尝试使用其中任何方法。
 
@@ -64,16 +64,15 @@ ms.locfileid: "89162411"
 
 | 值           | 类型    | 说明       |
 |-----------------|---------|---------------------|
-| id            | 字符串  | 应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](../publish/view-app-identity-details.md)。   |
-| primaryName   | 字符串  | 应用的显示名称。      |
-| packageFamilyName | 字符串  | 应用的程序包系列名称。      |
-| packageIdentityName          | 字符串  | 应用的程序包标识名称。                       |
-| publisherName       | 字符串  | 与应用相关联的 Windows 发布者 ID。 这对应于合作伙伴中心应用的[应用标识](../publish/view-app-identity-details.md)页上显示的 "**包/标识/发布服务器**" 值。       |
-| firstPublishedDate      | 字符串  | 应用的首次发布日期，采用 ISO 8601 格式。   |
-| lastPublishedApplicationSubmission       | 对象 (object) | 提供有关应用的上次发布提交信息的 [提交资源](#submission_object)。    |
-| pendingApplicationSubmission        | 对象 (object)  |  提供有应用的当前挂起提交信息的 [提交资源](#submission_object)。   |   
-| hasAdvancedListingPermission        | boolean  |  指示你是否可以配置[gamingOptions](manage-app-submissions.md#gaming-options-object)或[预告片](manage-app-submissions.md#trailer-object)以针对该应用提交。 2017 年 5 月之后创建的提交，此值为 true。 |  |
-
+| id            | string  | 应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](../publish/view-app-identity-details.md)。   |
+| primaryName   | string  | 应用的显示名称。      |
+| packageFamilyName | string  | 应用的程序包系列名称。      |
+| packageIdentityName          | string  | 应用的程序包标识名称。                       |
+| publisherName       | 字符串  | 与应用相关联的 Windows 发布者 ID。 这对应于合作伙伴中心应用的 [应用标识](../publish/view-app-identity-details.md)页上显示的 "**包/标识/发布服务器**" 值。       |
+| firstPublishedDate      | string  | 应用的首次发布日期，采用 ISO 8601 格式。   |
+| lastPublishedApplicationSubmission       | object | 提供有关应用的上次发布提交信息的 [提交资源](#submission_object)。    |
+| pendingApplicationSubmission        | object  |  提供有应用的当前挂起提交信息的 [提交资源](#submission_object)。   |   
+| hasAdvancedListingPermission        | boolean  |  指示你是否可以配置[gamingOptions](manage-app-submissions.md#gaming-options-object)或[预告片](manage-app-submissions.md#trailer-object)以针对该应用提交。 2017 年 5 月之后创建的提交，此值为 true。 |
 
 <span id="add-on-object" />
 
@@ -89,9 +88,9 @@ ms.locfileid: "89162411"
 
 此资源具有以下值。
 
-| 值           | 类型    | 描述         |
+| 值           | 类型    | 说明         |
 |-----------------|---------|----------------------|
-| inAppProductId            | 字符串  | 加载项的应用商店 ID。 此值由应用商店提供。 应用商店 ID 的一个示例是 9NBLGGH4TNMP。   |
+| inAppProductId            | string  | 加载项的应用商店 ID。 此值由应用商店提供。 应用商店 ID 的一个示例是 9NBLGGH4TNMP。   |
 
 
 <span id="flight-object" />
@@ -121,14 +120,14 @@ ms.locfileid: "89162411"
 
 此资源具有以下值。
 
-| 值           | 类型    | 描述           |
+| 值           | 类型    | 说明           |
 |-----------------|---------|------------------------|
-| flightId            | 字符串  | 软件包外部测试版的 ID。 此值由合作伙伴中心提供。  |
-| friendlyName           | 字符串  | 软件包外部测试版的名称，如开发人员所指定。   |
-| lastPublishedFlightSubmission       | 对象 (object) | 提供有关软件包外部测试版的上次发布提交信息的 [提交资源](#submission_object)。   |
-| pendingFlightSubmission        | 对象 (object)  |  提供有关软件包外部测试版的当前挂起提交信息的[提交资源](#submission_object)。  |    
+| flightId            | string  | 软件包外部测试版的 ID。 此值由合作伙伴中心提供。  |
+| friendlyName           | string  | 软件包外部测试版的名称，如开发人员所指定。   |
+| lastPublishedFlightSubmission       | object | 提供有关软件包外部测试版的上次发布提交信息的 [提交资源](#submission_object)。   |
+| pendingFlightSubmission        | object  |  提供有关软件包外部测试版的当前挂起提交信息的[提交资源](#submission_object)。  |    
 | groupIds           | array  | 包含与软件包外部测试版关联的外部测试版组 ID 的字符串数组。 有关外部测试版组的详细信息，请参阅[软件包外部测试版](../publish/package-flights.md)。   |
-| rankHigherThan           | 字符串  | 排名紧跟在当前软件包外部测试版之后的软件包外部测试版的友好名称。 有关排名的外部测试版组的详细信息，请参阅 [软件包外部测试版](../publish/package-flights.md)。  |
+| rankHigherThan           | string  | 排名紧跟在当前软件包外部测试版之后的软件包外部测试版的友好名称。 有关排名的外部测试版组的详细信息，请参阅 [软件包外部测试版](../publish/package-flights.md)。  |
 
 
 <span id="submission_object" />
@@ -150,10 +149,10 @@ ms.locfileid: "89162411"
 
 | 值              | 类型   | 说明               |
 |--------------------|--------|---------------------------|
-| id                 | 字符串 | 提交的 ID。 |
-| resourceLocation   | 字符串 | 可追加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于检索提交的完整数据。 |
+| id                 | string | 提交的 ID。 |
+| resourceLocation   | string | 可追加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于检索提交的完整数据。 |
 
- 
+ 
 ## <a name="related-topics"></a>相关主题
 
 * [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)

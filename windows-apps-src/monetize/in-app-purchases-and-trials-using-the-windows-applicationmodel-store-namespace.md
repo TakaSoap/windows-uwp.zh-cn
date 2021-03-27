@@ -6,21 +6,21 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: uwp, 应用内购买, IAP, 加载项, 试用, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee18b6ea4cc8a2e77a970a273bc4a8a51516247
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: be4932725104cc96999f733d8729d37d47694e87
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162351"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619423"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用
 
 可以使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空间中的成员，将应用内购买和试用功能添加到通用 Windows 平台 (UWP) 应用，以帮助通过应用盈利。 这些 API 还提供应用的许可证信息访问权限。
 
-本部分中的文章提供有关针对多个常见方案使用 **Windows.ApplicationModel.Store** 命名空间中的成员的深入指南和代码示例。 有关与 UWP 中的应用内购买相关的基本概念概述，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。 有关演示如何使用 **Windows.ApplicationModel.Store** 命名空间实现试用和应用内购买的完整示例，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
+本部分中的文章提供有关针对多个常见方案使用 **Windows.ApplicationModel.Store** 命名空间中的成员的深入指南和代码示例。 有关与 UWP 中的应用内购买相关的基本概念概述，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。 有关演示如何使用 **Windows.ApplicationModel.Store** 命名空间实现试用和应用内购买的完整示例，请参阅 [应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
 
 > [!IMPORTANT]
-> **Windows.ApplicationModel.Store** 命名空间不再更新新功能。 如果你的项目针对的是 Visual Studio 中的 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本（即，针对 Windows 10 版本 1607 或更高版本），我们建议你使用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空间。 有关详细信息，请参阅[应用内购买和试用](./in-app-purchases-and-trials.md)。 使用[桌上型计算机](https://developer.microsoft.com/windows/bridges/desktop)的 windows 桌面应用程序、在合作伙伴中心 (使用开发沙箱的 windows 桌面应用程序中不支持**windows.applicationmodel.resources.core**命名空间，例如，与 Xbox Live) 集成的任何游戏的情况都是如此。 这些产品必须使用 **Windows.Services.Store** 命名空间才能实现应用内购买和试用。
+> **Windows.ApplicationModel.Store** 命名空间不再更新新功能。 如果你的项目针对的是 Visual Studio 中的 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本（即，针对 Windows 10 版本 1607 或更高版本），我们建议你使用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空间。 有关详细信息，请参阅[应用内购买和试用](./in-app-purchases-and-trials.md)。 使用 [桌上型计算机](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序或在合作伙伴中心 (使用开发沙箱的应用程序或游戏中不支持 **Windows.ApplicationModel.Store** 命名空间，例如，与 Xbox Live) 集成的任何游戏的情况都是如此。 这些产品必须使用 **Windows.Services.Store** 命名空间才能实现应用内购买和试用。
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>开始使用 CurrentApp 和 CurrentAppSimulator 类
 
@@ -32,7 +32,7 @@ ms.locfileid: "89162351"
 
 有关可使用 **CurrentApp** 和 **CurrentAppSimulator** 执行的常见任务的详细信息，请参阅以下文章。
 
-| 主题       | 描述                 |
+| 主题       | 说明                 |
 |----------------------------|-----------------------------|
 | [排除或限制试用版中的功能](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | 如果允许客户在试用期内免费使用你的应用，则可以通过排除或限制试用期内的某些功能，吸引客户升级到完整版应用。 |
 | [启用应用内产品购买](enable-in-app-product-purchases.md)      |  无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 下面我们显示了如何在应用中启用这些产品。  |
@@ -355,7 +355,7 @@ ms.locfileid: "89162351"
 
 此文件的根元素是 **CurrentApp** 元素，它表示当前应用。 此元素包含以下子元素。
 
-|  元素  |  必选  |  数量  |  描述   |
+|  元素  |  必须  |  数量  |  说明   |
 |-------------|------------|--------|--------|
 |  [ListingInformation](#listinginformation)  |    是        |  1  |  包含应用列表的数据。            |
 |  [LicenseInformation](#licenseinformation)  |     是       |   1    |   描述了可用于此应用及其持久型加载项的许可证。     |
@@ -370,10 +370,10 @@ ms.locfileid: "89162351"
 
 **ListingInformation** 包含以下子元素。
 
-|  元素  |  必选  |  数量  |  描述   |
+|  元素  |  必须  |  数量  |  说明   |
 |-------------|------------|--------|--------|
 |  [应用](#app-child-of-listinginformation)  |    是   |  1   |    提供有关应用的数据。         |
-|  [Product](#product-child-of-listinginformation)  |    否  |  0 个或更多   |      描述了该应用的加载项。     |     |
+|  [产品](#product-child-of-listinginformation)  |    否  |  0 个或更多   |      描述了该应用的加载项。     |
 
 <span id="app-child-of-listinginformation"/>
 
@@ -383,13 +383,13 @@ ms.locfileid: "89162351"
 
 **App** 包含以下子元素。
 
-|  元素  |  必选  |  数量  | 描述   |
+|  元素  |  必须  |  数量  | 说明   |
 |-------------|------------|--------|--------|
 |  **AppId**  |    是   |  1   |   识别应用商店中应用的 GUID。 这可以是用于测试的任何 GUID。        |
 |  **LinkUri**  |    是  |  1   |    应用商店中列表页面的 URI。 这可以是用于测试的任何有效 URI。         |
 |  **CurrentMarket**  |    是  |  1   |    客户所在的国家/地区。         |
 |  **AgeRating**  |    是  |  1   |     一个整数，表示应用的最低年龄分级。 此值与你在提交应用时在合作伙伴中心中指定的值相同。 由应用商店使用的值是：3、7、12 和 16。 有关这些分级的详细信息，请参阅[年龄分级](../publish/age-ratings.md)。        |
-|  [MarketData](#marketdata-child-of-app)  |    是  |  大于等于 1      |    包含有关给定国家/地区的应用的信息。 对于在其中列出了应用的每个国家/地区，必须包含 **MarketData** 元素。       |    |
+|  [MarketData](#marketdata-child-of-app)  |    是  |  大于等于 1      |    包含有关给定国家/地区的应用的信息。 对于在其中列出了应用的每个国家/地区，必须包含 **MarketData** 元素。       |
 
 <span id="marketdata-child-of-app"/>
 
@@ -399,19 +399,19 @@ ms.locfileid: "89162351"
 
 **MarketData** 包含以下子元素。
 
-|  元素  |  必选  |  数量  | 描述   |
+|  元素  |  必须  |  数量  | 说明   |
 |-------------|------------|--------|--------|
 |  **名称**  |    是   |  1   |   在此国家/地区中应用的名称。        |
 |  **说明**  |    是  |  1   |      在此国家/地区中应用的描述。       |
 |  **价格**  |    是  |  1   |     在此国家/地区中应用的价格 。        |
 |  **CurrencySymbol**  |    是  |  1   |     在此国家/地区使用的货币符号。        |
-|  **CurrencyCode**  |    否  |  0 或 1      |      在此国家/地区使用的货币代码。         |  |
+|  **CurrencyCode**  |    否  |  0 或 1      |      在此国家/地区使用的货币代码。         |
 
 **MarketData** 具有以下属性。
 
-|  Attribute  |  必需  |  描述   |
+|  属性  |  必需  |  说明   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    是        |     指定市场数据信息适用的国家/地区。          |  |
+|  **xml:lang**  |    是        |     指定市场数据信息适用的国家/地区。          |
 
 <span id="product-child-of-listinginformation"/>
 
@@ -421,11 +421,11 @@ ms.locfileid: "89162351"
 
 **Product** 具有以下属性。
 
-|  Attribute  |  必需  |  描述   |
+|  属性  |  必需  |  说明   |
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |    包含应用用来标识加载项的字符串。           |
 |  **LicenseDuration**  |    否        |    指示已购买商品后，许可证有效的天数。 由产品购买创建的新许可证的过期日期是购买日期加许可证持续时间。 此属性仅在 **ProductType** 属性是 **Durable** 时使用；对于易耗型加载项，将忽略此属性。           |
-|  **ProductType**  |    否        |    包含标识应用内产品的持久性的一个值。 受支持的值有 **Durable**（默认值）和 **Consumable**。 对于持久类型，其他信息由 [LicenseInformation](#licenseinformation) 下的 [Product](#product-child-of-licenseinformation) 元素描述；对于易耗类型，其他信息由 [ConsumableInformation](#consumableinformation) 下的 [Product](#product-child-of-consumableinformation) 元素描述。           |  |
+|  **ProductType**  |    否        |    包含标识应用内产品的持久性的一个值。 受支持的值有 **Durable**（默认值）和 **Consumable**。 对于持久类型，其他信息由 [LicenseInformation](#licenseinformation) 下的 [Product](#product-child-of-licenseinformation) 元素描述；对于易耗类型，其他信息由 [ConsumableInformation](#consumableinformation) 下的 [Product](#product-child-of-consumableinformation) 元素描述。           |
 
 <span id="marketdata-child-of-product"/>
 
@@ -435,7 +435,7 @@ ms.locfileid: "89162351"
 
 **MarketData** 包含以下子元素。
 
-|  元素  |  必选  |  数量  | 描述   |
+|  元素  |  必须  |  数量  | 说明   |
 |-------------|------------|--------|--------|
 |  **名称**  |    是   |  1   |   在此国家/地区中加载项的名称。        |
 |  **价格**  |    是  |  1   |     在此国家/地区中加载项的价格。        |
@@ -443,14 +443,14 @@ ms.locfileid: "89162351"
 |  **CurrencyCode**  |    否  |  0 或 1      |      在此国家/地区使用的货币代码。         |  
 |  **说明**  |    否  |   0 或 1   |      在此国家/地区中加载项的描述。       |
 |  **标记**  |    否  |   0 或 1   |      加载项的[自定义开发人员数据](../publish/enter-add-on-properties.md#custom-developer-data)（也称为标记）。       |
-|  **关键字**  |    否  |   0 或 1   |      包含最多 10 个 **Keyword** 元素，这些元素包含加载项的[关键字](../publish/enter-add-on-properties.md#keywords)。       |
-|  **ImageUri**  |    否  |   0 或 1   |      加载项列表中[图像的 URI](../publish/create-add-on-store-listings.md#icon)。           |  |
+|  **关键字**  |    否  |   0 或 1   |      包含最多 10 个 **Keyword** 元素，这些元素包含加载项的 [关键字](../publish/enter-add-on-properties.md#keywords)。       |
+|  **ImageUri**  |    否  |   0 或 1   |      加载项列表中[图像的 URI](../publish/create-add-on-store-listings.md#icon)。           |
 
 **MarketData** 具有以下属性。
 
-|  Attribute  |  必需  |  描述   |
+|  属性  |  必需  |  说明   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    是        |     指定市场数据信息适用的国家/地区。          |  |
+|  **xml:lang**  |    是        |     指定市场数据信息适用的国家/地区。          |
 
 <span id="licenseinformation"/>
 
@@ -460,10 +460,10 @@ ms.locfileid: "89162351"
 
 **LicenseInformation** 包含以下子元素。
 
-|  元素  |  必选  |  数量  | 描述   |
+|  元素  |  必须  |  数量  | 说明   |
 |-------------|------------|--------|--------|
 |  [应用](#app-child-of-licenseinformation)  |    是   |  1   |    描述应用的许可证。         |
-|  [Product](#product-child-of-licenseinformation)  |    否  |  0 个或更多   |      描述了应用中持久型加载项的许可证状态。         |   |
+|  [产品](#product-child-of-licenseinformation)  |    否  |  0 个或更多   |      描述了应用中持久型加载项的许可证状态。         |
 
 下表显示了如何通过组合 **App** 和 **Product** 元素下的值来模拟某些常见情形。
 
@@ -472,7 +472,7 @@ ms.locfileid: "89162351"
 |  完全授权  |    true   |  false  |    不存在。 它实际上可能会出现并指定将来的日期，但我们建议你从 XML 文件省略该元素。 如果它存在并指定过去的日期，那么 **IsActive** 将被忽略并为 false。          |
 |  在试用期内  |    true  |  true   |      &lt;将来的日期时间&gt; 此元素必须存在，因为 **IsTrial** 为 true。 你可以访问显示当前协调世界时 (UTC) 的网站，了解要设置的日期时间距离现在多久，以便获取想要的剩余试用期。         |
 |  试用过期  |    false  |  true   |      &lt;过去的日期时间&gt; 此元素必须存在，因为 **IsTrial** 为 true。 你可以访问显示当前协调世界时 (UTC) 的网站，了解“过去”的 UTC 时间。         |
-|  无效  |    false  | false       |     &lt;任何值或省略&gt;          |  |
+|  无效  |    false  | false       |     &lt;任何值或省略&gt;          |
 
 <span id="app-child-of-licenseinformation"/>
 
@@ -482,11 +482,11 @@ ms.locfileid: "89162351"
 
 **App** 包含以下子元素。
 
-|  元素  |  必选  |  数量  | 描述   |
+|  元素  |  必须  |  数量  | 说明   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    是   |  1   |    描述了此应用的当前许可证状态。 值 **true** 指示许可证有效。**false** 指示许可证无效。 通常此值为 **true**，无论该应用是否具有试用模式。  将此值设置为 **false** 来测试你的应用在具有无效许可证时的行为。           |
 |  **IsTrial**  |    是  |  1   |      描述此应用的当前试用状态。 值 **true** 指示应用在试用期内使用；**false** 指示应用不在试用期内，或者因为已购买应用，或者因为试用期已过。         |
-|  **ExpirationDate**  |    否  |  0 或 1       |     此应用的过期日期，以协调世界时 (UTC) 表示。 该日期必须表示为：yyyy-mm-ddThh:mm:ss.ssZ。 例如，2015 年 1 月 19 日 05:00 将被指定为 2015-01-19T05:00:00.00Z。 当 **IsTrial** 是 **true** 时，此元素是必需的。 否则，不是必需的。          |  |
+|  **ExpirationDate**  |    否  |  0 或 1       |     此应用的过期日期，以协调世界时 (UTC) 表示。 该日期必须表示为：yyyy-mm-ddThh:mm:ss.ssZ。 例如，2015 年 1 月 19 日 05:00 将被指定为 2015-01-19T05:00:00.00Z。 当 **IsTrial** 是 **true** 时，此元素是必需的。 否则，不是必需的。          |
 
 <span id="product-child-of-licenseinformation"/>
 
@@ -496,14 +496,14 @@ ms.locfileid: "89162351"
 
 **Product** 包含以下子元素。
 
-|  元素  |  必选  |  数量  | 描述   |
+|  元素  |  必须  |  数量  | 说明   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    是   |  1     |    描述此加载项的当前许可证状态。 值 **true** 指示可以使用该加载项；**false** 指示不能使用或未购买该加载项           |
 |  **ExpirationDate**  |    否   |  0 或 1     |     加载项的过期日期，以协调世界时 (UTC) 表示。 该日期必须表示为：yyyy-mm-ddThh:mm:ss.ssZ。 例如，2015 年 1 月 19 日 05:00 将被指定为 2015-01-19T05:00:00.00Z。 如果该元素存在，该加载项将具有一个过期日期。 如果不存在，该加载项不会到期。  |  
 
 **Product** 具有以下属性。
 
-|  Attribute  |  必需  |  描述   |
+|  属性  |  必需  |  说明   |
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |   包含应用用来标识加载项的字符串。            |
 |  **OfferId**  |     否       |   包含应用用来标识加载项所属的类别的字符串。 这为大型项目目录提供了支持，如[管理应用内产品的大型目录](manage-a-large-catalog-of-in-app-products.md)所述。           |
@@ -516,7 +516,7 @@ ms.locfileid: "89162351"
 
 **Simulation** 具有以下属性。
 
-|  Attribute  |  必需  |  描述   |
+|  属性  |  必需  |  说明   |
 |-------------|------------|----------------|
 |  **SimulationMode**  |    否        |      值可以是 **Interactive** 或 **Automatic**。 当此属性设置为 **Automatic** 时，这些方法将自动返回指定的 HRESULT 错误代码。 这可运行自动测试用例时使用。       |
 
@@ -528,10 +528,10 @@ ms.locfileid: "89162351"
 
 **DefaultResponse** 具有以下属性。
 
-|  Attribute  |  必需  |  描述   |
+|  属性  |  必需  |  说明   |
 |-------------|------------|----------------|
-|  **MethodName**  |    是        |   将此属性分配给为[架构](#schema)中的 **StoreMethodName** 类型显示的枚举值之一。 每个枚举值表示 **CurrentAppSimulator** 方法，你希望在测试期间为其模拟应用中的错误代码返回值。 例如，值 **RequestAppPurchaseAsync_GetResult** 指示你想要模拟 [RequestAppPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync) 方法的错误代码返回值。            |
-|  **HResult**  |     是       |   将此属性分配给为[架构](#schema)中的 **ResponseCodes** 类型显示的枚举值之一。 每个枚举值表示你希望为方法返回的错误代码，该方法已分配给 **DefaultResponse** 元素的 **MethodName** 属性。           |
+|  **MethodName**  |    是        |   将此属性分配给为 [架构](#schema)中的 **StoreMethodName** 类型显示的枚举值之一。 每个枚举值表示 **CurrentAppSimulator** 方法，你希望在测试期间为其模拟应用中的错误代码返回值。 例如，值 **RequestAppPurchaseAsync_GetResult** 指示你想要模拟 [RequestAppPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync) 方法的错误代码返回值。            |
+|  **HResult**  |     是       |   将此属性分配给为 [架构](#schema)中的 **ResponseCodes** 类型显示的枚举值之一。 每个枚举值表示你希望为方法返回的错误代码，该方法已分配给 **DefaultResponse** 元素的 **MethodName** 属性。           |
 
 <span id="consumableinformation"/>
 
@@ -547,7 +547,7 @@ ms.locfileid: "89162351"
 
 **Product** 具有以下属性。
 
-|  Attribute  |  必需  |  描述   |
+|  属性  |  必需  |  说明   |
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |   包含应用用来标识易耗型加载项的字符串。            |
 |  **TransactionId**  |     是       |   包含在实施过程中应用用于跟踪易耗品购买交易的 GUID（作为字符串）。 请参阅[启用易耗型应用内产品购买](enable-consumable-in-app-product-purchases.md)。            |

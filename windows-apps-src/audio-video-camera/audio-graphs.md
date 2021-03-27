@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 72a6fe2e704bc419306c74f410ed51e8e8560fa6
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 31889f94eaa489bdb6955b578c0ad4b18af6b606
+ms.sourcegitcommit: dacbb7eef2cfffd7a8639e3a24ebda7b4eefae38
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362970"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105616780"
 ---
 # <a name="audio-graphs"></a>音频图
 
@@ -19,13 +19,12 @@ ms.locfileid: "89362970"
 
 本文介绍如何使用 [**Windows.Media.Audio**](/uwp/api/Windows.Media.Audio) 命名空间中的 API 来创建音频路由、混合和处理方案的音频图。
 
-*音频图*是音频数据流经的一组相互连接的音频节点。 
+*音频图* 是音频数据流经的一组相互连接的音频节点。 
 
-- *音频输入节点*为音频图提供来自音频输入设备、音频文件或自定义代码的音频数据。 
+- *音频输入节点* 为音频图提供来自音频输入设备、音频文件或自定义代码的音频数据。 lat
+- *音频输出节点* 是音频图处理的音频的目标。 可以绕过音频图将音频路由到音频输出设备、音频文件或自定义代码。 
 
-- *音频输出节点*是音频图处理的音频的目标。 可以绕过音频图将音频路由到音频输出设备、音频文件或自定义代码。 
-
-- *子混合节点*从一个或多个节点获取音频，并将其合并为可以路由到音频图中其他节点的单个输出。 
+- *子混合节点* 从一个或多个节点获取音频，并将其合并为可以路由到音频图中其他节点的单个输出。 
 
 创建完所有节点并在它们之间建立连接后，你只需启动音频图，音频数据便会从输入节点开始，流经所有子混合节点，最后流至输出节点。 此模型可以快速轻松地实现以下方案：将设备麦克风的音频录制到音频文件、通过设备扬声器播放文件中的音频，或混合来自多个源的音频。
 
@@ -109,7 +108,7 @@ Windows 运行时音频图 API：
 
 ##  <a name="mediasource-input-node"></a>MediaSource 输入节点
 
-[**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) 类提供从不同的源引用媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式（可能是磁盘上的文件或自适应流式处理网络源）。 可使用 [**MediaSourceAudioInputNode](/uwp/api/windows.media.audio.mediasourceaudioinputnode) 节点将 **MediaSource** 中的音频数据定向到音频图中。 通过调用 [**CreateMediaSourceAudioInputNodeAsync**](/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_) 创建 **MediaSourceAudioInputNode**，进而传入代表想要播放的内容的 **MediaSource** 对象。 返回了 [**CreateMediaSourceAudioInputNodeResult](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult)，你可以使用它检查 [**Status**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status) 属性，从而确定操作的状态。 如果状态是**成功**，可通过访问 [**Node**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node) 属性获取所创建的 **MediaSourceAudioInputNode**。 以下示例介绍如何使用代表通过网络进行内容流式处理的 AdaptiveMediaSource 对象创建节点。 若要详细了解如何使用 **MediaSource**，请参阅[媒体项、播放列表和曲目](media-playback-with-mediasource.md)。 若要详细了解如何通过 Internet 流式处理媒体内容，请参阅[自适应流式处理](adaptive-streaming.md)。
+[**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) 类提供从不同的源引用媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式（可能是磁盘上的文件或自适应流式处理网络源）。 可使用 [**MediaSourceAudioInputNode](/uwp/api/windows.media.audio.mediasourceaudioinputnode) 节点将 **MediaSource** 中的音频数据定向到音频图中。 通过调用 [**CreateMediaSourceAudioInputNodeAsync**](/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_) 创建 **MediaSourceAudioInputNode**，进而传入代表想要播放的内容的 **MediaSource** 对象。 返回了 [**CreateMediaSourceAudioInputNodeResult](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult)，你可以使用它检查 [**Status**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status) 属性，从而确定操作的状态。 如果状态是 **成功**，可通过访问 [**Node**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node) 属性获取所创建的 **MediaSourceAudioInputNode**。 以下示例介绍如何使用代表通过网络进行内容流式处理的 AdaptiveMediaSource 对象创建节点。 若要详细了解如何使用 **MediaSource**，请参阅 [媒体项、播放列表和曲目](media-playback-with-mediasource.md)。 若要详细了解如何通过 Internet 流式处理媒体内容，请参阅[自适应流式处理](adaptive-streaming.md)。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetDeclareMediaSourceInputNode":::
 
@@ -168,7 +167,7 @@ Windows 运行时音频图 API：
 -   此方法访问以 Windows 运行时类型为基础的原始缓冲区，因此必须使用 **unsafe** 关键字进行声明。 你还必须使用 Microsoft Visual Studio 配置你的项目，以允许通过以下操作编译不安全的代码：打开项目的 **“属性”** 页面、单击 **“生成”** 属性页，然后选中 **“允许不安全代码”** 复选框。
 -   通过将所需的缓冲区大小传入构造函数，在 **Windows.Media** 命名空间中初始化 [**AudioFrame**](/uwp/api/Windows.Media.AudioFrame) 的新实例。 缓冲区大小等于样本数乘以每个样本的大小。
 -   通过调用 [**LockBuffer**](/uwp/api/windows.media.audioframe.lockbuffer) 获取音频帧的 [**AudioBuffer**](/uwp/api/Windows.Media.AudioBuffer)。
--   通过调用[**CreateReference**](/uwp/api/windows.media.audiobuffer.createreference)从音频缓冲区获取[**IMemoryBufferByteAccess**](/previous-versions/mt297505(v=vs.85)) COM 接口的实例。
+-   通过调用 [**CreateReference**](/uwp/api/windows.media.audiobuffer.createreference)从音频缓冲区获取 [**IMemoryBufferByteAccess**](/previous-versions/mt297505(v=vs.85)) COM 接口的实例。
 -   通过调用 [**IMemoryBufferByteAccess.GetBuffer**](/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer) 获取指向原始音频缓冲区数据的指针，并将其转换为音频数据的样本数据类型。
 -   使用数据填充缓冲区并返回 [**AudioFrame**](/uwp/api/Windows.Media.AudioFrame) 以提交到音频图中。
 
@@ -230,7 +229,7 @@ Windows 运行时音频图 API：
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetAddEffect":::
 
 -   所有音频效果都可实现 [**IAudioEffectDefinition**](/uwp/api/Windows.Media.Effects.IAudioEffectDefinition)。 每个节点都将公开 **EffectDefinitions** 属性，它表示应用于该节点的效果的列表。 通过将效果的定义对象添加到列表来添加效果。
--   **Windows.Media.Audio** 命名空间中提供了多个效果定义类。 这些方法包括：
+-   **Windows.Media.Audio** 命名空间中提供了多个效果定义类。 其中包括:
     -   [**EchoEffectDefinition**](/uwp/api/Windows.Media.Audio.EchoEffectDefinition)
     -   [**EqualizerEffectDefinition**](/uwp/api/Windows.Media.Audio.EqualizerEffectDefinition)
     -   [**LimiterEffectDefinition**](/uwp/api/Windows.Media.Audio.LimiterEffectDefinition)
@@ -250,7 +249,7 @@ Windows 运行时音频图 API：
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetCreateEmitter":::
 
-将音频图中的音频输出到用户的 [**AudioDeviceOutputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode) 具有侦听器对象（可使用 [**Listener**](/uwp/api/windows.media.audio.audiodeviceoutputnode.listener) 属性访问），它表示 3D 空间中用户的位置、方向和速度。 音频图中所有发射器的位置都与发射器对象的位置和方向有关。 默认情况下，侦听器位于原点 (0,0,0)（沿 Z 轴正面向前），但可以使用 [**Position**](/uwp/api/windows.media.audio.audionodelistener.position) 和 [**Orientation**](/uwp/api/windows.media.audio.audionodelistener.orientation) 属性设置其位置和方向。
+将音频图中的音频输出到用户的 [**AudioDeviceOutputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode) 具有侦听器对象（可使用 [**Listener**](/uwp/api/windows.media.audio.audiodeviceoutputnode.listener) 属性访问），它表示 3D 空间中用户的位置、方向和速度。 关系图中所有发射器的位置均相对于侦听器对象的位置和方向。 默认情况下，侦听器位于原点 (0,0,0)（沿 Z 轴正面向前），但可以使用 [**Position**](/uwp/api/windows.media.audio.audionodelistener.position) 和 [**Orientation**](/uwp/api/windows.media.audio.audionodelistener.orientation) 属性设置其位置和方向。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetListener":::
 
@@ -266,6 +265,6 @@ Windows 运行时音频图 API：
 
 ## <a name="see-also"></a>另请参阅
 - [媒体播放](media-playback.md)
- 
+ 
 
- 
+ 

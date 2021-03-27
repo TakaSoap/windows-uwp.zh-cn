@@ -6,22 +6,22 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: e7b370d8eea61033092d833cdf751f1dade86c6d
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 28db33951df79700c58a86d1d3189744028abcc4
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878560"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619563"
 ---
 # <a name="manage-delivery-lines"></a>管理投放渠道
 
-在 Microsoft Store 促销 API 中使用这些方法可以创建一个或多个*投放渠道*，以便为促销性广告活动购买广告资源和投放广告。 你可以针对每个投放渠道设定目标市场、标价，并通过设定预算及与你希望启用的创意连接来判断你的预期费用。
+在 Microsoft Store 促销 API 中使用这些方法可以创建一个或多个 *投放渠道*，以便为促销性广告活动购买广告资源和投放广告。 你可以针对每个投放渠道设定目标市场、标价，并通过设定预算及与你希望启用的创意连接来判断你的预期费用。
 
 有关投放渠道与广告活动、目标市场配置文件和创意之间关系的详细信息，请参阅[使用 Microsoft Store 服务开展广告活动](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)。
 
->**Note** &nbsp; 注意 &nbsp;必须先[使用合作伙伴中心的 " **ad 市场活动**" 页创建一个付费广告活动](./index.md)，然后在此页上至少添加一种付款方式，然后才能成功使用此 API 创建广告活动的传递行。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用 API 创建的 ad 活动将自动对在合作伙伴中心的 " **Ad 市场活动** " 页上选择的默认付款方式进行计费。
+> &nbsp; 注意 &nbsp;必须先 [使用合作伙伴中心的 " **ad 市场活动**" 页创建一个付费广告活动](./index.md)，然后在此页上至少添加一种付款方式，然后才能成功使用此 API 创建广告活动的传递行。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用 API 创建的 ad 活动将自动对在合作伙伴中心的 " **Ad 市场活动** " 页上选择的默认付款方式进行计费。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用这些方法，首先需要执行以下操作：
 
@@ -43,11 +43,11 @@ ms.locfileid: "91878560"
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/{lineId}``` |  获取通过 *lineId* 指定的投放渠道。  |
 
 
-### <a name="header"></a>Header
+### <a name="header"></a>标头
 
-| Header        | 类型   | 说明         |
+| 标头        | 类型   | 说明         |
 |---------------|--------|---------------------|
-| 授权 | 字符串 | 必需。 Azure AD 的访问令牌，采用的格式为**持有**者 &lt; *令牌* &gt; 。 |
+| 授权 | 字符串 | 必需。 Azure AD 的访问令牌，采用的格式为 **持有** 者 &lt; *令牌* &gt; 。 |
 | 跟踪 ID   | GUID   | 可选。 跟踪调用流的 ID。                                  |
 
 
@@ -137,24 +137,24 @@ Authorization: Bearer <your access token>
 
 | 字段        | 类型   |  说明      |  只读  | 默认  | POST/PUT 必填字段 |   
 |--------------|--------|---------------|------|-------------|------------|
-|  id   |  整型   |  投放渠道的 ID。     |   是    |      |  否      |    
-|  name   |  字符串   |   投放渠道的名称。    |    否   |      |  POST     |     
-|  configuredStatus   |  字符串   |  以下值之一，用于指定开发人员指定的投放渠道的状态： <ul><li>**活动**</li><li>**非活动**</li></ul>     |  否     |      |   POST    |       
-|  effectiveStatus   |  字符串   |   以下值之一，用于根据系统验证情况指定投放渠道的有效状态： <ul><li>**活动**</li><li>**非活动**</li><li>**Processing**</li><li>失败</li></ul>    |    是   |      |  否      |      
+|  id   |  integer   |  投放渠道的 ID。     |   是    |      |  否      |    
+|  name   |  string   |   投放渠道的名称。    |    否   |      |  POST     |     
+|  configuredStatus   |  string   |  以下值之一，用于指定开发人员指定的投放渠道的状态： <ul><li>**活动**</li><li>**非活动**</li></ul>     |  否     |      |   POST    |       
+|  effectiveStatus   |  string   |   以下值之一，用于根据系统验证情况指定投放渠道的有效状态： <ul><li>**活动**</li><li>**非活动**</li><li>**Processing**</li><li>**已失败**</li></ul>    |    是   |      |  否      |      
 |  effectiveStatusReasons   |  array   |  以下值中的一个或多个，用于指定投放渠道处于此有效状态的原因： <ul><li>**AdCreativesInactive**</li><li>**ValidationFailed**</li></ul>      |  是     |     |    否    |           
-|  startDatetime   |  字符串   |  投放渠道的开始日期和时间（ISO 8601 格式）。 如果此值为过去的时间，则不能更改。     |    否   |      |    POST、PUT     |
-|  endDatetime   |  字符串   |  投放渠道的结束日期和时间（ISO 8601 格式）。 如果此值为过去的时间，则不能更改。     |   否    |      |  POST、PUT     |
-|  createdDatetime   |  字符串   |  投放渠道的创建日期和时间（ISO 8601 格式）。      |    是   |      |  否      |
-|  bidType   |  字符串   |  此值用于指定投放渠道的出价类型。 当前，唯一受支持的值为 **CPM**。      |    否   |  CPM    |  否     |
-|  bidAmount   |  Decimal   |  用于对任意广告请求出价的出价金额。      |    否   |  基于目标市场的平均 CPM（此值定期修订）。    |    否    |  
-|  dailyBudget   |  Decimal   |  投放渠道的每日预算。 必须设置 *dailyBudget* 或 *lifetimeBudget*。      |    否   |      |   POST、PUT（如果未设置 *lifetimeBudget* 的话）       |
-|  lifetimeBudget   |  Decimal   |   投放渠道的生存期预算。 必须设置 lifetimeBudget 或 *dailyBudget* 。      |    否   |      |   POST、PUT（如果未设置 *dailyBudget* 的话）    |
+|  startDatetime   |  string   |  投放渠道的开始日期和时间（ISO 8601 格式）。 如果此值为过去的时间，则不能更改。     |    否   |      |    POST、PUT     |
+|  endDatetime   |  string   |  投放渠道的结束日期和时间（ISO 8601 格式）。 如果此值为过去的时间，则不能更改。     |   否    |      |  POST、PUT     |
+|  createdDatetime   |  string   |  投放渠道的创建日期和时间（ISO 8601 格式）。      |    是   |      |  否      |
+|  bidType   |  string   |  此值用于指定投放渠道的出价类型。 当前，唯一受支持的值为 **CPM**。      |    否   |  CPM    |  否     |
+|  bidAmount   |  decimal   |  用于对任意广告请求出价的出价金额。      |    否   |  基于目标市场的平均 CPM（此值定期修订）。    |    否    |  
+|  dailyBudget   |  decimal   |  投放渠道的每日预算。 必须设置 *dailyBudget* 或 *lifetimeBudget*。      |    否   |      |   POST、PUT（如果未设置 *lifetimeBudget* 的话）       |
+|  lifetimeBudget   |  decimal   |   投放渠道的生存期预算。 必须设置 lifetimeBudget 或 *dailyBudget* 。      |    否   |      |   POST、PUT（如果未设置 *dailyBudget* 的话）    |
 |  targetingProfileId   |  object   |  一个用于标识描述了此投放渠道所针对的用户、地理位置和广告资源类型的[目标市场配置文件](manage-targeting-profiles-for-ad-campaigns.md#targeting-profile)的对象。 此对象由指定目标市场配置文件 ID 的单个 *id* 字段组成。     |    否   |      |  否      |  
 |  creatives   |  array   |  一个或多个代表与投放渠道关联的[创意](manage-creatives-for-ad-campaigns.md#creative)的对象。 此字段中的每个对象都由指定创意 ID 的单个 *id* 字段组成。      |    否   |      |   否     |  
-|  campaignId   |  整型   |  父广告活动的 ID。      |    否   |      |   否     |  
-|  minMinutesPerImp   |  整型   |  指定从此投放渠道向同一用户进行两次展示之间的最小时间间隔（分钟）。      |    否   |  4000    |  否      |  
-|  pacingType   |  字符串   |  以下值之一，用于指定速率类型： <ul><li>**SpendEvenly**</li><li>**SpendAsFastAsPossible**</li></ul>      |    否   |  SpendEvenly    |  否      |
-|  currencyId   |  整型   |  活动货币 ID。      |    是   |  开发人员帐户的货币（你不必在 POST 或 PUT 调用中指定此字段）    |   否     |      |
+|  campaignId   |  integer   |  父广告活动的 ID。      |    否   |      |   否     |  
+|  minMinutesPerImp   |  integer   |  指定从此投放渠道向同一用户进行两次展示之间的最小时间间隔（分钟）。      |    否   |  4000    |  否      |  
+|  pacingType   |  string   |  以下值之一，用于指定速率类型： <ul><li>**SpendEvenly**</li><li>**SpendAsFastAsPossible**</li></ul>      |    否   |  SpendEvenly    |  否      |
+|  currencyId   |  integer   |  活动货币 ID。      |    是   |  开发人员帐户的货币（你不必在 POST 或 PUT 调用中指定此字段）    |   否     |
 
 
 ## <a name="related-topics"></a>相关主题

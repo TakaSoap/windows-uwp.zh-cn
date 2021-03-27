@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 00820f00360575f0a335d37aa0859b94648709e3
-ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
+ms.openlocfilehash: 45f4dd26920d0e323bd1efc13a378aec6eb52468
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98811281"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619333"
 ---
 # <a name="manage-app-submissions"></a>管理应用提交
 
@@ -28,7 +28,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 ## <a name="methods-for-managing-app-submissions"></a>管理应用提交的方法
 
-使用以下方法获取、创建、更新、提交或删除应用提交。 在可以使用这些方法之前，应用必须已存在于合作伙伴中心帐户中，并且必须先在合作伙伴中心为应用创建一个提交。 有关详细信息，请参阅 [先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
+使用以下方法获取、创建、更新、提交或删除应用提交。 在可以使用这些方法之前，应用必须已存在于合作伙伴中心帐户中，并且必须先在合作伙伴中心为应用创建一个提交。 有关详细信息，请参阅[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 
 <table>
 <colgroup>
@@ -70,7 +70,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 <td align="left"><a href="commit-an-app-submission.md">提交新建或已更新的应用提交</a></td>
 </tr>
 <tr>
-<td align="left">删除</td>
+<td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-an-app-submission.md">删除应用提交</a></td>
 </tr>
@@ -344,7 +344,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 | targetPublishMode           | string  | 提交的发布模式。 这可以是以下值之一： <ul><li>即时</li><li>手动</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |  
 | listings           |   object  |  键值对字典，其中每个键为国家/地区代码，而每个值为包含应用列表信息的[列表资源](#listing-object)。       |   
-| hardwarePreferences           |  array  |   一组用于定义应用的[硬件首选项](../publish/enter-app-properties.md)的字符串。 这可以是以下值之一： <ul><li>触摸</li><li>Keyboard</li><li>鼠标</li><li>照相机</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
+| hardwarePreferences           |  array  |   一组用于定义应用的[硬件首选项](../publish/enter-app-properties.md)的字符串。 这可以是以下值之一： <ul><li>触摸</li><li>键盘</li><li>鼠标</li><li>照相机</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
 | automaticBackupEnabled           |  boolean  |   指示 Windows 是否可以将应用的数据包含在 OneDrive 的自动备份中。 有关详细信息，请参阅[应用声明](../publish/product-declarations.md)。   |   
 | canInstallOnRemovableMedia           |  boolean  |   指示客户是否可以将应用安装到可移动存储。 有关详细信息，请参阅[应用声明](../publish/product-declarations.md)。     |   
 | isGameDvrEnabled           |  boolean |   指示是否可以为应用启用游戏 DVR。    |   
@@ -352,7 +352,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 | hasExternalInAppProducts           |     boolean          |   指示应用是否允许用户在 Microsoft Store 商务系统之外进行购买。 有关详细信息，请参阅[应用声明](../publish/product-declarations.md)。     |   
 | meetAccessibilityGuidelines           |    boolean           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](../publish/product-declarations.md)。      |   
 | notesForCertification           |  string  |   包含应用的[认证说明](../publish/notes-for-certification.md)。    |    
-| 状态           |   字符串  |  提交的状态。 这可以是以下值之一： <ul><li>None</li><li>已取消</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>发布</li><li>已发布</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>认证</li><li>CertificationFailed</li><li>发布</li><li>ReleaseFailed</li></ul>      |    
+| status           |   字符串  |  提交的状态。 这可以是以下值之一： <ul><li>无</li><li>已取消</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>发布</li><li>已发布</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>认证</li><li>CertificationFailed</li><li>发布</li><li>ReleaseFailed</li></ul>      |    
 | statusDetails           |   object  | 包含有关提交状态的附加详细信息的[状态详细信息资源](#status-details-object)，其中包括任何错误的相关信息。       |    
 | fileUploadUrl           |   string  | 用于为提交上传任何程序包的共享访问签名 (SAS) URI。 如果要为提交添加新的程序包、应用一览图像或预告片文件，请将包含这些程序包和图像的 ZIP 存档上传到此 URI。 有关详细信息，请参阅[创建应用提交](#create-an-app-submission)。       |    
 | applicationPackages           |   array  | 提供有关提交中每个包的详细信息的[应用程序包资源](#application-package-object)数组。 |    
@@ -410,7 +410,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 | 值           | 类型    | 说明                  |
 |-----------------|---------|------|
 |  baseListing               |   object      |  应用的[基本列表](#base-listing-object)信息，它定义了所有平台的默认列表信息。   |     
-|  platformOverrides               | object |   键值对字典，其中每个键为字符串，用于标识要替代其列表信息的平台；而每个值为[基本列表](#base-listing-object)资源（仅将描述中的值包含在标题中），用于指定要为指定平台替代的列表信息。 键可以具有以下值： <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
+|  platformOverrides               | object |   键值对字典，其中每个键为字符串，用于标识要替代其列表信息的平台；而每个值为[基本列表](#base-listing-object)资源（仅将描述中的值包含在标题中），用于指定要为指定平台替代的列表信息。 键可以具有以下值： <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |
 
 <span id="base-listing-object" />
 
@@ -448,7 +448,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 | 值           | 类型    | 说明           |
 |-----------------|---------|------|
 |  fileName               |    string     |   ZIP 存档中已为提交上载的图像文件的名称。    |     
-|  fileStatus               |   string      |  图像文件的状态。 这可以是以下值之一： <ul><li>None</li><li>PendingUpload</li><li>已上传</li><li>PendingDelete</li></ul>   |
+|  fileStatus               |   string      |  图像文件的状态。 这可以是以下值之一： <ul><li>无</li><li>PendingUpload</li><li>已上传</li><li>PendingDelete</li></ul>   |
 |  id  |  string  | 图像的 ID。 此值由合作伙伴中心提供。  |
 |  description  |  字符串  | 图像的描述。  |
 |  imageType  |  string  | 指示图像的类型。 当前支持以下字符串。 <p/>[屏幕截图图像](../publish/app-screenshots-and-images.md#screenshots)： <ul><li>屏幕截图（对于桌面屏幕截图，请使用此值）</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul><p/>[存储徽标](../publish/app-screenshots-and-images.md#store-logos)：<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>图标（对于 1:1 300 x 300 像素徽标，请使用此值）</li></ul><p/>[促销图像](../publish/app-screenshots-and-images.md#promotional-images)： <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200</li></ul><p/>[Xbox 映像](../publish/app-screenshots-and-images.md#xbox-images)： <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[可选促销映像](../publish/app-screenshots-and-images.md#optional-promotional-images)： <ul><li>SquareIcon358X358</li><li>BackgroundImage1000X800</li><li>PromotionalArtwork414X180</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
@@ -499,7 +499,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 |  localCooperativeMaxPlayers               |   int      |   指定游戏支持进行本地合作游戏的最大玩家人数。  |     
 |  isBroadcastingPrivilegeGranted               |   boolean      |  指示游戏是否支持广播。   |     
 |  isCrossPlayEnabled               |   boolean      |   指示游戏是否支持 Windows 10 电脑和 Xbox 玩家之间的多人游戏会话。  |     
-|  kinectDataForExternal               |   string      |  指定以下字符串值之一，表示游戏是否可以收集 Kinect 数据并将其发送到外部服务： <ul><li>NotSet</li><li>Unknown</li><li>已启用</li><li>禁用</li></ul>   |
+|  kinectDataForExternal               |   string      |  指定以下字符串值之一，表示游戏是否可以收集 Kinect 数据并将其发送到外部服务： <ul><li>NotSet</li><li>Unknown</li><li>已启用</li><li>已禁用</li></ul>   |
 
 > [!NOTE]
 > Microsoft Store 提交 API 首次面向开发人员发布后，在 2017 年 5 月添加了 *GamingOptions* 资源。 如果你在此资源推出前通过提交 API 为应用创建了提交并且此提交仍在进行中，则在成功确认提交或删除提交前，此资源将为 null 且无法为应用提交。 如果 *gamingOptions* 资源不可用于应用提交，则 [get an app](get-an-app.md) 方法返回的 [应用程序资源](get-app-data.md#application_object) 的 *hasAdvancedListingPermission* 字段为 false。
@@ -570,14 +570,14 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 | 值           | 类型    | 说明                   |
 |-----------------|---------|------|
 | fileName   |   string      |  包的名称。    |  
-| fileStatus    | string    |  程序包的状态。 这可以是以下值之一： <ul><li>None</li><li>PendingUpload</li><li>已上传</li><li>PendingDelete</li></ul>    |  
+| fileStatus    | string    |  程序包的状态。 这可以是以下值之一： <ul><li>无</li><li>PendingUpload</li><li>已上传</li><li>PendingDelete</li></ul>    |  
 | id    |  string   |  唯一标识程序包的 ID。 此值由合作伙伴中心提供。   |     
 | 版本    |  string   |  应用包的版本。 有关详细信息，请参阅[程序包版本编号](../publish/package-version-numbering.md)。   |   
 | 体系结构    |  string   |  程序包的体系结构（例如 ARM）。   |     
 | 语言    | array    |  语言代码数组，用于指示应用支持的语言。 有关详细信息，请参阅[支持的语言](../publish/supported-languages.md)。    |     
 | capabilities    |  array   |  程序包所需的功能数组。 有关功能的详细信息，请参阅[应用功能声明](../packaging/app-capability-declarations.md)。   |     
-| minimumDirectXVersion    |  string   |  应用包支持的最低 DirectX 版本。 这只能为面向 Windows 8.x 的应用设置。 对于面向其他操作系统版本的应用，调用 [update an app submission交](update-an-app-submission.md) 方法时，此值必须存在，但会忽略你指定的值。 这可以是以下值之一： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | string    |  应用包所需的最小 RAM。 这只能为面向 Windows 8.x 的应用设置。 对于面向其他操作系统版本的应用，调用 [update an app submission交](update-an-app-submission.md) 方法时，此值必须存在，但会忽略你指定的值。 这可以是以下值之一： <ul><li>None</li><li>Memory2GB</li></ul>   |       
+| minimumDirectXVersion    |  string   |  应用包支持的最低 DirectX 版本。 这只能为面向 Windows 8.x 的应用设置。 对于面向其他操作系统版本的应用，调用 [update an app submission交](update-an-app-submission.md) 方法时，此值必须存在，但会忽略你指定的值。 这可以是以下值之一： <ul><li>无</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | string    |  应用包所需的最小 RAM。 这只能为面向 Windows 8.x 的应用设置。 对于面向其他操作系统版本的应用，调用 [update an app submission交](update-an-app-submission.md) 方法时，此值必须存在，但会忽略你指定的值。 这可以是以下值之一： <ul><li>无</li><li>Memory2GB</li></ul>   |       
 | targetDeviceFamilies    | array    |  一个字符串数组，它表示程序包所面向的设备系列。 此值仅用于面向 Windows 10 的程序包；对于面向早期版本的程序包，此值具有值 **None**。 目前，Windows 10 包支持以下设备系列字符串，其中 *{0}* 是 windows 10 版本的字符串，例如10.0.10240.0、10.0.10586.0 或10.0.14393.0： <ul><li>Windows 通用最小版本 *{0}*</li><li>Windows Desktop min 版本 *{0}*</li><li>Windows Mobile 最小版本 *{0}*</li><li>Windows Xbox 最小版本 *{0}*</li><li>Windows. 全息最低版本 *{0}*</li></ul>   |    
 
 <span/>
@@ -632,7 +632,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 | 值           | 类型    | 说明        |
 |-----------------|---------|------|
 | isPackageRollout   |   boolean      |  指示是否为提交启用逐步软件包推出。    |  
-| packageRolloutPercentage    | float    |  将在逐步推出中收到软件包的用户百分比。    |  
+| packageRolloutPercentage    | FLOAT    |  将在逐步推出中收到软件包的用户百分比。    |  
 | packageRolloutStatus    |  string   |  以下指示逐步软件包推出状态的字符串之一： <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  string   |  将由不获取逐步推出软件包的客户接收的提交 ID。   |          
 
@@ -739,7 +739,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 | 值           |  说明      |
 |-----------------|---------------|
-| None            |     不向具有应用商店托管（联机）批量许可的企业提供应用。         |     
+| 无            |     不向具有应用商店托管（联机）批量许可的企业提供应用。         |     
 | 联机        |     向具有应用商店托管（联机）批量许可的企业提供应用。  |
 | OnlineAndOffline | 向具有应用商店托管（联机）批量许可的企业提供应用，并通过断开连接的（脱机）许可向企业提供应用。 |
 
@@ -752,7 +752,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 | 值           |  说明      |
 |-----------------|---------------|
-| None            |     未指定任何代码。         |     
+| 无            |     未指定任何代码。         |     
 | InvalidArchive        |     包含程序包的 ZIP 存档无效或具有无法识别的存档格式。  |
 | MissingFiles | ZIP 存档未包含提交数据中列出的所有文件，或者它们位于存档中的错误位置。 |
 | PackageValidationFailed | 提交中的一个或多个程序包验证失败。 |
