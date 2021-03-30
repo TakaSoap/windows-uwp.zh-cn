@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 738efe43afaf5c278425d5636bddc72cecadf47a
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: 27250869d02c901825af72fe6fb1a3c0cd887e07
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98988759"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804411"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Windows 应用的导航历史记录和向后导航
 
@@ -827,7 +827,7 @@ private:
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>枚举项目</strong>
-<p>应用显示屏幕项目的内容，例如大纲/细节列表中的选定项目的详细信息。</p></td>
+<p>应用显示屏幕项目的内容，例如列表/细节列表中的选定项目的详细信息。</p></td>
 <td style="vertical-align:top;"><strong>否</strong>
 <p>枚举项目与在对等组内导航类似。 当用户按下后退时，导航到位于当前页面前面的具有项目枚举的页面。</p>
 <p><img src="images/back-nav/nav-enumerate.png" alt="Iterm enumeration" /></p></td>

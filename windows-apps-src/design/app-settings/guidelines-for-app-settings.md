@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b3f3388951dc2e3d854fcb97269e5bfb0449a6e
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: d1608c88473bf8fdf615141c18ab8a85aed07797
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93032400"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804631"
 ---
 # <a name="guidelines-for-app-settings"></a>应用设置指南
 
@@ -62,9 +62,9 @@ ms.locfileid: "93032400"
 
 对于表或透视表布局，我们不推荐将应用设置入口点作为顶部项之一放在导航中。 相反，应用设置的入口点应放置在应用栏的“更多”溢出菜单中。
 
-**大纲-细节**
+**列表-细节**
 
-与其将应用设置入口点深埋在大纲-细节窗格中，不如将其设置为高级大纲窗格上的最后一个固定项。
+与其将应用设置入口点深埋在列表-细节窗格中，不如将其设置为高级列表窗格上的最后一个固定项。
 
 ## <a name="layout"></a>布局
 

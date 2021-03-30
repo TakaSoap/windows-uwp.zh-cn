@@ -1,17 +1,17 @@
 ---
 title: 学习轨迹 - 在列表中显示客户
 description: 了解在列表中显示客户对象的集合需要执行的操作。
-ms.date: 05/07/2018
+ms.date: 03/17/2021
 ms.topic: article
 keywords: 入门, uwp, windows 10, 了解轨迹, 数据绑定, 列表
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 097105d16d6d17807235ab61d36ab1fe185c8ca3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bf116dc1e7861cb9b135b57bc8be236b4ad2bb9c
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165051"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804241"
 ---
 # <a name="display-customers-in-a-list"></a>以列表形式显示客户
 
@@ -23,7 +23,7 @@ ms.locfileid: "89165051"
 
 ## <a name="what-do-you-need-to-know"></a>需要了解哪些内容？
 
-数据绑定是在其 UI 中显示应用数据的方式。 这允许在应用中*分离出关注内容*，将 UI 与其他代码分开。 这将创建更便于阅读和维护的更简洁的概念模型。
+数据绑定是在其 UI 中显示应用数据的方式。 这允许在应用中 *分离出关注内容*，将 UI 与其他代码分开。 这将创建更便于阅读和维护的更简洁的概念模型。
 
 每个数据绑定有两个部分：
 
@@ -95,10 +95,10 @@ public sealed partial class MainPage : Page
 [数据绑定概述](../data-binding/data-binding-quickstart.md#binding-to-a-collection-of-items)在其有关项目集合的绑定部分指导你解决类似问题。 这里的示例显示以下关键步骤：
 
 * 在 UI 的代码隐藏中，创建一个类型 **ObservableCollection<T>** 的属性来保存客户对象。
-* 将 ListView 的 **ItemSource** 绑定到该属性。
+* 将 ListView 的 ItemSource 绑定到该属性。
 * 为 ListView 提供基本 **ItemTemplate**，这将配置各个项目在列表中的显示方式。
 
-如果想要自定义布局、添加项目选择，或调整刚刚创建的 **DataTemplate**，可以随时查看[列表视图](../design/controls-and-patterns/listview-and-gridview.md)文档。 不过如果你想要编辑客户怎么办？
+如果想要自定义布局、添加项目选择，或调整刚刚创建的 **DataTemplate**，可以随时查看 [列表视图](../design/controls-and-patterns/listview-and-gridview.md)文档。 不过如果你想要编辑客户怎么办？
 
 ## <a name="edit-your-customers-through-the-ui"></a>通过 UI 编辑客户
 
@@ -134,7 +134,7 @@ public class Customer : INotifyPropertyChanged
         this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 ```
-然后使用 **TextBox** 而不是 **TextBlock** 将 ListView 中的文本变为可编辑，并确保将数据绑定上的**模式**设置为 **TwoWay**。
+然后使用 **TextBox** 而不是 **TextBlock** 将 ListView 中的文本变为可编辑，并确保将数据绑定上的 **模式** 设置为 **TwoWay**。
 
 ```xaml
 <ListView ItemsSource="{x:Bind Customers}"
@@ -155,7 +155,7 @@ public class Customer : INotifyPropertyChanged
 
 ## <a name="going-further"></a>深入探索
 
-现已使用双向绑定创建了客户列表，请随时参阅我们链接给你的文档并进行试验。 如果需要基本和高级绑定的分步操作实例，或调查[大纲/细节模式](../design/controls-and-patterns/master-details.md)等控件以制作更可靠的 UI，还可以查看我们的[数据绑定教程](../data-binding/xaml-basics-data-binding.md)。
+现已使用双向绑定创建了客户列表，请随时参阅我们链接给你的文档并进行试验。 如果需要基本和高级绑定的分步操作实例，或调查[列表/细节模式](../design/controls-and-patterns/list-details.md)等控件以制作更可靠的 UI，还可以查看我们的[数据绑定教程](../data-binding/xaml-basics-data-binding.md)。
 
 ## <a name="useful-apis-and-docs"></a>有用的 API 和文档
 

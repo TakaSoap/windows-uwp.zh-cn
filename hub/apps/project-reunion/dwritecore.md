@@ -7,15 +7,15 @@ keywords: ''
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
-ms.openlocfilehash: bf76d8b4a10d454578d72519c59067c9b1b62e08
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: 693de240fa45a7267baaf4dcf6b06ead934fa900
+ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629245"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105730471"
 ---
-# <a name="render-text-with-dwritecore-project-reunion"></a>用 DWriteCore (项目留尼汪岛呈现文本) 
+# <a name="render-text-with-dwritecore"></a>使用 DWriteCore 呈现文本 
 
-DWriteCore 是[DirectWrite](/windows/win32/directwrite/direct-write-portal)的[项目留尼汪岛](index.md)实现。 DWriteCore 是 DirectWrite 的一种形式，可在 Windows 到 Windows 8 的各种版本上运行，并为跨平台使用它奠定了基础。
+DWriteCore 是[DirectWrite](/windows/win32/directwrite/direct-write-portal)的[项目留尼汪岛](index.md)实现。 通过 DWriteCore，你可以获取用于呈现文本的所有当前 DirectWrite 功能，包括与设备无关的文本布局系统、硬件加速文本、多格式文本和广泛的语言支持。
 
 有关 DWriteCore 的更多详细信息，包括对其进行编程的指导和代码示例，请参阅 DirectWrite 文档中的 [DWriteCore 概述](/windows/win32/directwrite/dwritecore-overview) 。

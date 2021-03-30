@@ -7,12 +7,12 @@ keywords: windows win32, 桌面开发, project reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e2e4bda8440a9a504cba78286de491236d6bd49
-ms.sourcegitcommit: 2a71bb5c56bed80f26fb67a47ae8f9198c431760
+ms.openlocfilehash: 9e6ff54d8605457dd5b29735f29405e9d0302fb7
+ms.sourcegitcommit: dacbb7eef2cfffd7a8639e3a24ebda7b4eefae38
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103366232"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105616790"
 ---
 # <a name="build-desktop-windows-apps-with-project-reunion-05-preview-march-2021"></a>使用 Project Reunion 0.5 预览版（2021 年 3 月）构建桌面 Windows 应用
 
@@ -65,15 +65,15 @@ Project Reunion 0.5 预览版包含以下组件。
     > Visual Studio 2019 版本 16.9 还支持 Project Reunion，但不支持 WinUI 3 工具功能。 有关 WinUI 3 工具支持的详细信息，请参阅 Windows UI Library 3 - Project Reunion 0.5 预览版（2021 年 3 月）。
 
     安装 Visual Studio 时，必须包含以下组件：
-    - 在“工作负载”选项卡上，确保选中“通用 Windows 平台开发” 。
-    - 在“单个组件”选项卡上，确保在“SDK、库和框架”部分选择了“Windows 10 SDK (10.0.19041.0)”  。
+    - 在安装对话框的“工作负载”选项卡上，确保选择了“通用 Windows 平台开发” 。
+    - 在安装对话框的“单个组件”选项卡上，确保在“SDK、库和框架”部分选择了 Windows 10 SDK (10.0.19041.0)  。
 
     要构建 .NET 应用，还必须包含以下组件：
-    - .NET 桌面开发工作负载。
+    - 在安装对话框的“工作负载”选项卡上，确保选择了“.NET 桌面开发” 。
 
     要构建 C++ 应用，还必须包含以下组件：
-    - 使用 C++ 进行桌面开发工作负载。
-    - 用于通用 Windows 平台开发的 C++ (v142) 通用 Windows 平台工具可选组件工作负载 。
+    - 在安装对话框的“工作负载”选项卡上，确保选择了“C++ 桌面开发” 。
+    - 在安装对话框右侧的“安装详细信息”窗格中，确保在“通用 Windows 平台开发”部分选择了“C++ (v142)通用 Windows 平台工具”可选组件  。
 
 3. 如果之前通过早期的 WinUI 3 预览版本安装了 [WinUI 3 预览版扩展](https://marketplace.visualstudio.com/items?itemName=Microsoft-WinUI.WinUIProjectTemplates)，请卸载该扩展。 有关如何卸载扩展的详细信息，请参阅[管理适用于 Visual Studio 的扩展](/visualstudio/ide/finding-and-using-visual-studio-extensions)。
 

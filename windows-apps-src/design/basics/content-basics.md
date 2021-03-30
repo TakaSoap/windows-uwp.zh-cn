@@ -9,12 +9,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3933910d77249476e76c4d87dfd96af66bd418a8
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 4f076911fc1ed4770c9f1d69125c4fc6d0cecdf9
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031571"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804862"
 ---
 # <a name="content-design-basics-for-windows-apps"></a>Windows 应用的内容设计基础知识
 
@@ -39,11 +39,11 @@ ms.locfileid: "93031571"
 集合可让用户浏览一组内容或数据。 [网格视图](../controls-and-patterns/item-templates-gridview.md)是适用于照片或媒体中心式内容的选项，[列表视图](../controls-and-patterns/item-templates-listview.md)是适用于以文字为主内容或数据的选项。
 
 
-### <a name="masterdetail"></a>大纲/细节
+### <a name="listdetail"></a>列表/细节
 
-![大纲细节](images/content-basics/master-detail.png)
+![列表细节](images/content-basics/list-detail.png)
 
-[大纲/细节](../controls-and-patterns/master-details.md)模型包含一个列表视图（大纲）和一个内容视图（细节）。 这两个窗格都是固定的，并且具有垂直滚动。 列表项和内容视图之间有明确的关系：在大纲视图中选择项目后，会相应地更新明细视图。 除了提供明细视图导航之外，还可以添加和删除大纲视图中的项目。
+[列表/细节](../controls-and-patterns/list-details.md)模型包含一个列表视图和一个内容视图（细节）。 这两个窗格都是固定的，并且具有垂直滚动。 列表项和内容视图之间有明确的关系：在列表视图中选择项目后，会相应地更新细节视图。 除了提供细节视图导航之外，还可以添加和删除列表视图中的项目。
 
 ### <a name="details"></a>详细信息
 

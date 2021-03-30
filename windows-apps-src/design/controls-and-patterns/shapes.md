@@ -6,12 +6,12 @@ ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a33670f69d86a913288608ff07efb72edab8fd17
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
+ms.openlocfilehash: d94ba7ccd1ebce9612747d5a7be5239300bf21d6
+ms.sourcegitcommit: 9c84129c8b02c370a528b876a62ad9502092689d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829665"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105030351"
 ---
 # <a name="draw-shapes"></a>绘制图形
 
@@ -102,7 +102,7 @@ layoutRoot.Children.Add(rectangle1);
 
 ![呈现的矩形。](images/shapes-rectangle.jpg)
 
-**提示**  对于 UI 定义来说，在某些情况下，不使用 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)，使用 [**Border**](/uwp/api/Windows.UI.Xaml.Controls.Border) 可能更合理。 如果你打算在其他内容周围创建一个矩形形状，最好使用 **Border**，因为它可能会有子内容而且将自动在子内容周围调整大小，而不是像 **Rectangle** 那样使用固定的高度和宽度尺寸。 **Border** 在你设置了 [**CornerRadius**](/uwp/api/windows.ui.xaml.controls.border.cornerradius) 属性的情况下还提供了创建圆角的选项。
+**提示**  对于 UI 定义来说，在某些情况下，不使用 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)，使用 [**Border**](/uwp/api/Windows.UI.Xaml.Controls.Border) 可能更合理。 如果你打算在其他内容周围创建一个矩形形状，最好使用 **Border**，因为它可能会有子内容而且将自动在子内容周围调整大小，而不是像 **Rectangle** 那样使用固定的高度和宽度尺寸。 **Border** 在你设置了 [**CornerRadius**](/uwp/api/windows.ui.xaml.controls.border.cornerradius) 属性的情况下还提供了创建圆角的选项。
 
 另一方面，[**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 可能是控件组合的较好选择。 **Rectangle** 形状可以在很多控件模板中看到，因为它用作可获得焦点的控件的“FocusVisual”部分。 当控件处于“已设置焦点”视觉状态时，此矩形可见，在其他状态时，它处于隐藏状态。
 
@@ -141,7 +141,7 @@ layoutRoot.Children.Add(polygon1);
 
 ![呈现的多边形。](images/shapes-polygon.jpg)
 
-**提示**  在除了声明形状顶点的其他方案的 XAML 中，[**Point**](/uwp/api/Windows.Foundation.Point) 值通常用作类型。 例如，**Point** 属于触摸事件的事件数据，因此你可以精确了解触摸操作发生在坐标空间的哪个位置。 有关 **Point** 以及如何将其用于 XAML 或代码的详细信息，请参阅 [**Point**](/uwp/api/Windows.Foundation.Point) 的 API 参考主题。
+**提示**  在除了声明形状顶点的其他方案的 XAML 中，[**Point**](/uwp/api/Windows.Foundation.Point) 值通常用作类型。 例如，**Point** 属于触摸事件的事件数据，因此你可以精确了解触摸操作发生在坐标空间的哪个位置。 有关 **Point** 以及如何将其用于 XAML 或代码的详细信息，请参阅 [**Point**](/uwp/api/Windows.Foundation.Point) 的 API 参考主题。
 
 ## <a name="line"></a>Line
 
@@ -169,7 +169,7 @@ layoutRoot.Children.Add(line1);
 
 [  **Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 与 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) 类似，该形状的边也是通过一组点来进行定义，只不过 **Polyline** 的最后一个点不与第一个点相连。
 
-**注意**   你可以在 [**Points**](/uwp/api/windows.ui.xaml.shapes.polyline.points) 中为 [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 明确设置相同的起点和终点，但是，在这种情况下，你可能已改用 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)。
+注意：你可以在 [Points](/uwp/api/windows.ui.xaml.shapes.polyline.points) 中为 [Polyline](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 显式设置相同的起点和终点，但是，在这种情况下，你可能已改用 [Polygon](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)   。
 
 如果你指定 [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 的 [**Fill**](/uwp/api/windows.ui.xaml.shapes.shape.fill)，则 **Fill** 会绘制形状的内部空间，即使为 **Polyline** 设置的 [**Points**](/uwp/api/windows.ui.xaml.shapes.polyline.points) 的起点和终点不相交也是如此。 如果你没有指定 **Fill**，则 **Polyline** 与指定了多个单独的、其连续直线的起点和终点相交的 [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 元素时所呈现的内容相似。
 
@@ -310,7 +310,7 @@ path1.Data = geometryGroup1;
 // When you create a XAML element in code, you have to add
 // it to the XAML visual tree. This example assumes you have
 // a panel named 'layoutRoot' in your XAML file, like this:
-// <Grid x:Name="layoutRoot>
+// <Grid x:Name="layoutRoot">
 layoutRoot.Children.Add(path1);
 ```
 

@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 249b738e3db4b266ad5bd589bfb9aff875e0b0d3
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 1c82993bc7fd2734550e4afe8406cbb40a9fd600
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034580"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804281"
 ---
 # <a name="responsive-design-techniques"></a>响应式设计技术
 
@@ -38,19 +38,19 @@ UWP 应用使用有效像素，保证 UI 清晰可见并可在所有支持 Windo
 >[!TIP]
 > 许多 UWP 控件会自动实现这些响应行为。 若要创建响应式 UI，建议查看 [UWP 控件](../controls-and-patterns/index.md)一文。
 
-## <a name="reposition"></a>重新定位
+## <a name="reposition"></a>重新放置
 
 可以更改 UI 元素的位置和放置方式，充分利用窗口大小。 在以下示例中，较小的窗口以垂直方式堆叠元素。 当应用转换为较大的窗口时，元素可以利用的窗口宽度更宽。
 
-![重新定位](images/rsp-design/rspd-reposition2.gif)
+![重新放置](images/rsp-design/rspd-reposition2.gif)
 
-在此照片应用的示例设计中，照片应用在较大的屏幕上重新单位其内容。
+在此照片应用的示例设计中，照片应用在较大的屏幕上重新放置其内容。
 
 ## <a name="resize"></a>调整大小
 
 可以调整 UI 元素的边距和大小，针对窗口大小进行优化。 例如，只需增大内容框架即可改善较大屏幕上的阅读体验。
 
-![调整设计元素大小](images/rsp-design/rspd-resize2.gif)
+![调整大小设计要素](images/rsp-design/rspd-resize2.gif)
 
 ## <a name="reflow"></a>重新排列
 
@@ -62,9 +62,9 @@ UWP 应用使用有效像素，保证 UI 清晰可见并可在所有支持 Windo
 
 ## <a name="showhide"></a>显示/隐藏
 
-可以基于屏幕空间显示或隐藏 UI 元素，或在设备支持附加功能、特定情况或首选屏幕方向时显示或隐藏 UI。
+你可以基于屏幕空间显示或隐藏 UI 元素，或在设备支持附加功能、特定情况或首选屏幕方向时显示或隐藏 UI。
 
-![隐藏设计元素](images/rsp-design/rspd-revealhide.gif)
+![隐藏设计要素](images/rsp-design/rspd-revealhide.gif)
 
 例如，媒体播放器控件的按钮集在较小屏幕上折叠，在较大屏幕上展开。 例如，与较小窗口相比，较大窗口中的媒体播放器可以处理的屏幕上的功能要多得多。
 
@@ -76,7 +76,7 @@ UWP 应用使用有效像素，保证 UI 清晰可见并可在所有支持 Windo
 - 在任一应用中，都可以使各列分解并显示更多详细信息。
 - 在任一应用中，都可以获取垂直堆叠的内容并使之以水平方式布局。 当从手机或平板手机转至较大型设备时，堆叠的列表项可以更改为显示多行列表项和多列元数据。
 
-## <a name="replace"></a>替换
+## <a name="replace"></a>Replace
 
 使用这种技术，可以针对特定断点来切换用户界面。 在此示例中，瞬态 UI（导航窗格及其精简版）适用于较小的屏幕，但在较大屏幕上，最好选择使用选项卡。
 
@@ -86,7 +86,7 @@ UWP 应用使用有效像素，保证 UI 清晰可见并可在所有支持 Windo
 
 ## <a name="re-architect"></a>重新构建
 
-可以折叠或拆分应用的体系结构，以更好地适应特定设备。 在此示例中，展开窗口时会显示整个大纲/细节模式。
+可以折叠或拆分应用的体系结构，以更好地适应特定设备。 在此示例中，展开窗口时会显示整个列表/细节模式。
 
 ![重新构建用户界面的示例](images/rsp-design/rspd-rearchitect.gif)
 

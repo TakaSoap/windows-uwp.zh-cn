@@ -7,14 +7,14 @@ keywords: MRT.LOG，MRTCore，pri，makepri.exe，资源，资源加载
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
-ms.openlocfilehash: bde540ff99e763a2d5c622eba1d292f722008ef6
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: 2b732deb0f387c11b2675193c047d33fa3e55ace
+ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629209"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105730481"
 ---
-# <a name="manage-resources-with-mrt-core-project-reunion"></a>用 MRT.LOG Core (项目留尼汪岛管理资源) 
+# <a name="manage-resources-with-mrt-core"></a>使用 MRT Core 管理资源 
 
 MRT.LOG Core 是新式 Windows [资源管理系统](/windows/uwp/app-resources/resource-management-system) 的简化版本，作为 [项目](../index.md)的一部分进行分发。
 
@@ -22,22 +22,21 @@ MRT.LOG 核心提供生成时和运行时功能。 在生成时间，系统创�
 
 ## <a name="package-resource-index-pri-file"></a>包资源索引 (PRI) 文件
 
-每个应用包都应包含应用中资源的二进制索引。 此索引在生成时创建，并且包含在一个或多个资源 ( .resw) 文件中。
+每个应用包都应包含应用中资源的二进制索引。 此索引在生成时创建，并且包含在一个或多个 PRI 文件中。 每个 PRI 文件都包含一个命名资源集合，称为资源映射。
 
-.Resw 文件包含实际的字符串资源，以及引用包中各种文件的一组索引的文件路径。
-包通常包含每个语言的单个 .resw 文件，名为 .resw。 实例化 ResourceManager 时，会自动加载每个包的根处的 .resw 文件。
+PRI 文件包含实际的字符串资源。 嵌入的二进制文件和文件路径资源直接从项目文件进行索引。 包通常包含每种语言的单个 PRI 文件，名为 "**资源"。** 实例化 [ResourceManager](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager)对象时，会自动加载每个包的根处的 **资源 pri** 文件。
 
-每个 .resw 文件都包含一个命名的资源集合，称为资源映射。 加载包中的 .resw 文件时，将验证资源映射名称以匹配包标识名称。
+PRI 文件仅包含数据，因此它们不使用可移植可执行 (PE) 格式。 它们专门设计为仅用于数据。
 
-.Resw 文件仅包含数据，因此它们不会使用) 格式的可移植可执行文件 (。 它们专门设计为仅用于数据。
+## <a name="access-app-resources"></a>访问应用资源
 
-## <a name="using-mrt-core-to-access-app-resources"></a>使用 MRT.LOG Core 访问应用资源
+MRT.LOG Core 提供多种不同方式来访问应用资源。
 
-### <a name="resource-loader-basic-functionality"></a>资源加载器 (基本功能) 
+### <a name="basic-functionality-with-resourceloader"></a>Windows.applicationmodel.resources.resourceloader 的基本功能
 
-以编程方式访问应用资源的最简单方法是使用 [windows.applicationmodel.resources.core](/windows/winui/api/microsoft.applicationmodel.resources) 命名空间和 windows.applicationmodel.resources.resourceloader 类。 ResourceLoader 为你提供对资源文件集、引用库或其他包的字符串资源的基本访问权限。
+以编程方式访问应用资源的最简单方法是使用 [windows.applicationmodel.resources.resourceloader](/windows/winui/api/microsoft.applicationmodel.resources.resourceloader) 类。 **ResourceLoader** 为你提供对资源文件集、引用库或其他包的字符串资源的基本访问权限。
 
-### <a name="resource-manager-advanced-functionality"></a>资源管理器 (高级功能) 
+### <a name="advanced-functionality-with-resourcemanager"></a>带有 ResourceManager 的高级功能
 
 [ResourceManager](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager)类提供有关资源的其他信息，例如枚举和检查。 这超出了 **ResourceLoader** 类的提供范围。
 
@@ -47,15 +46,18 @@ MRT.LOG 核心提供生成时和运行时功能。 在生成时间，系统创�
 
 **ResourceManager** 不仅支持访问某个应用的字符串资源，它还维护枚举和检查各种文件资源的能力。 为了避免文件和源自该文件内部的其他资源之间发生冲突，索引的文件路径全部驻留在预留的“文件”**ResourceMap** 子树中。 例如，文件 "\Images\logo.png" 对应于资源名称 "Files/images/logo.png"。
 
-### <a name="resourcecontext"></a>ResourceContext
+### <a name="qualify-resource-selection-with-resourcecontext"></a>用 ResourceContext 限定资源选择
 
 基于作为资源限定符值集合（语言、比例、对比度等）的特定的 [ResourceContext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext) 选择候选资源。 除非覆盖，默认上下文对每个限定符值使用应用的当前配置。 例如，可以针对比例限定图像等资源，具体因不同的监视器而异，因此不同应用程序视图之间也有差异。 出于此原因，每个应用程序视图都有不同的默认上下文。 每当你检索候选资源时，都应该传递 **ResourceContext** 实例，以获取最适合给定视图的值。
 
-### <a name="important-apis"></a>重要的 API
+### <a name="load-images"></a>加载图像
 
-- [ResourceLoader](/windows/winui/api/microsoft.applicationmodel.resources.resourceloader)
-- [ResourceManager](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager)
-- [ResourceContext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext)
+如果要使用 MRT.LOG Core 检索添加到项目中的映像，则必须将映像配置为作为内容生成。 如果未执行此操作，则不会在资源 pri 文件中对映像进行索引，并且无法通过 MRT.LOG 核心来检索。
+
+配置要生成为内容的图像：
+
+* 在 c #/.NET 5 项目中，将图像的 " **生成操作** " 属性设置为 " **内容**"。
+* 在 c + +/WinRT 项目中，将图像的 **Content** 属性设置为 **True**。
 
 ## <a name="sample"></a>示例
 

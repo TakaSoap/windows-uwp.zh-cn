@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b1304032243c7675c4aba6cbda7e7899e8deddb
-ms.sourcegitcommit: e252ccb4a76c4883c7073083d73007957202b84d
+ms.openlocfilehash: c21d7deb96f4788a1f9b4a23dad1455cf80c8956
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657674"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804921"
 ---
 # <a name="collections-and-lists"></a>集合和列表
 
@@ -73,7 +73,7 @@ ms.locfileid: "97657674"
 - 囊括各种用例，包括以下常见用例：
     - 创建消息或消息日志的列表。
     - 创建联系人列表。
-    - 在[大纲/细节模式](master-details.md)下创建大纲窗格。 大纲/细节模式常用于电子邮件应用中，其中一个窗格（大纲）具有一个包含可选项的列表，而另一个窗格（细节）具有一个包含选定项的详细视图。
+    - 在[列表/细节模式](list-details.md)下创建列表窗格。 列表/细节模式常用于电子邮件应用中，其中一个窗格具有一个包含可选项的列表，而另一个窗格（细节）具有一个包含选定项的详细视图。
 
 > [!NOTE]
 > 如需在可滚动视图（例如 ScrollViewer 或 ListView）中处理 [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) 的指针事件，必须调用 [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations) 以在该视图中显式禁止支持对元素执行操作事件。 若要在该视图中重新启用操作事件，请调用 [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation)。
@@ -330,7 +330,7 @@ ItemsRepeater 不同于此页上显示的其他集合控件，因为它不提供
 ## <a name="related-articles"></a>相关文章
 
 **设计和 UX 指南**
-- [大纲/细节](master-details.md)
+- [列表/细节](list-details.md)
 - [导航窗格](navigationview.md)
 - [语义式缩放](semantic-zoom.md)
 - [拖放](../input/drag-and-drop.md)

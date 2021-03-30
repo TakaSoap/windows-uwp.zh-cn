@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 319bf762d54ed341672a99d15d9e760c91d93cff
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
+ms.openlocfilehash: 2dcbbeda200e6d8d07cc3735fa6aad9aa66d68b9
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829458"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804641"
 ---
 # <a name="nested-ui-in-list-items"></a>列表项中嵌套的 UI
 
@@ -30,9 +30,9 @@ ms.locfileid: "91829458"
 
 在本文中，我们将讨论如何在 [ListView](/uwp/api/windows.ui.xaml.controls.listview) 和 [GridView](/uwp/api/windows.ui.xaml.controls.gridview) 项目中创建嵌套的 UI。 尽管本部分不讨论其他嵌套的 UI 情形，但是这些概念是可转移的。 在开始之前，你应当熟悉在 UI 中使用 ListView 或 GridView 控件的常规指南，可在[列表](lists.md)以及[列表视图和网格视图](listview-and-gridview.md)文章中找到它。
 
-在本文中，我们使用术语*列表*、*列表项目*和*嵌套的 UI*，其定义如下：
-- *列表*是指包含在列表视图或网格视图中的项目集合。
-- *列表项目*是指列表中用户可对其采取操作的各个项目。
+在本文中，我们使用术语 *列表*、*列表项目* 和 *嵌套的 UI*，其定义如下：
+- *列表* 是指包含在列表视图或网格视图中的项目集合。
+- *列表项目* 是指列表中用户可对其采取操作的各个项目。
 - *嵌套的 UI* 是指用户可对其采取操作的列表项目内的 UI 元素，此类操作不同于对列表项目本身采取的操作。
 
 ![显示嵌套 UI 各个部分的屏幕截图。](images/nested-ui-example-1.png)
@@ -50,9 +50,9 @@ ms.locfileid: "91829458"
 - 操作是否应该向用户公开？
     - 考虑所有输入类型。 一些嵌套的 UI 的形式非常适合某种输入方法，但可能不适用于其他方法。  
 
-*主要操作*是指用户在按下列表项目时预期发生的操作。
+*主要操作* 是指用户在按下列表项目时预期发生的操作。
 
-*辅助操作*通常是与列表项目关联的快捷键。 这些快捷键可用于列表管理或与列表项目相关的操作。
+*辅助操作* 通常是与列表项目关联的快捷键。 这些快捷键可用于列表管理或与列表项目相关的操作。
 
 ## <a name="options-for-secondary-actions"></a>辅助操作的选项
 
@@ -66,9 +66,9 @@ ms.locfileid: "91829458"
 
 ### <a name="put-secondary-actions-on-the-detail-page"></a>将辅助操作放置在详细信息页面上
 
-将辅助操作放置在该页面上，当按下列表项目时可以导航到该页面。 当使用大纲/细节模式时，详细信息页面通常是适合放置辅助操作的位置。
+将辅助操作放置在该页面上，当按下列表项目时可以导航到该页面。 当使用列表/细节模式时，详细信息页面通常是适合放置辅助操作的位置。
 
-有关详细信息，请参阅[大纲/细节模式](master-details.md)。
+有关详细信息，请参阅[列表/细节模式](list-details.md)。
 
 ### <a name="put-secondary-actions-in-a-context-menu"></a>将辅助操作放置在上下文菜单中
 

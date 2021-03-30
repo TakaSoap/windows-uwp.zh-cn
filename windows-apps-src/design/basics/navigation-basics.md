@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c5dc119edefbdd3ef4dd155c9de9d2e69fee193b
-ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.openlocfilehash: 36a5489ab4fa278163fd5fad53be4d28156d4cf4
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102784768"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804453"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Windows 应用的导航设计基础知识
 
@@ -224,17 +224,17 @@ ms.locfileid: "102784768"
         
 :::row:::
     :::column:::
-        ![大纲细节图像](images/nav/thumbnail-master-detail.svg)
+        ![列表细节图片](images/nav/thumbnail-list-detail.svg)
     :::column-end:::
     :::column span="2":::
-        [**大纲/细节**](../controls-and-patterns/master-details.md)
+        [**列表/细节**](../controls-and-patterns/list-details.md)
 
-显示项目的列表（大纲视图）。 通过选择项目，可在细节部分中显示其相应的页面。 何时使用：
+显示项目列表。 通过选择项目，可在细节部分中显示其相应的页面。 何时使用：
         
 - 你预期用户在子项目之间频繁切换。
 - 你希望用户能够对单个项目或项目组执行高级别操作（例如删除或排序），并且还希望用户可以查看或更新每个项目的详细信息。
 
-大纲/细节非常适合电子邮件收件箱、联系人列表和数据输入。
+列表/细节非常适合电子邮件收件箱、联系人列表和数据输入。
 :::row-end:::
 
 :::row:::

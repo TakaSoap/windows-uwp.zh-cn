@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c942c5748ef1d62dc86f6fa3d041bae651167f2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fb12e251f56a8eb90b507d1bac40381789504926
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173901"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804931"
 ---
 # <a name="split-view-control"></a>拆分视图控件
 
 拆分视图控件具有一个可展开/可折叠的窗格和一个内容区域。
 
-> **重要的 API**：[SplitView 类](/uwp/api/Windows.UI.Xaml.Controls.SplitView)
+> **重要 API**：[SplitView 类](/uwp/api/Windows.UI.Xaml.Controls.SplitView)
 
 下面是使用 SplitView 显示其中心的 Microsoft Edge 应用的示例。
 
@@ -36,7 +36,7 @@ ms.locfileid: "89173901"
 
     在打开之前隐藏窗格。 在打开时，窗格覆盖内容区域。
 
--   **Inline**
+-   **内联**
 
     窗格始终可见，并且不会覆盖内容区域。 窗格和内容区域划分可用的屏幕空间。
 
@@ -50,7 +50,7 @@ ms.locfileid: "89173901"
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-拆分视图控件可用于创建任何“抽屉”体验，其中用户可以打开和关闭补充窗格。 例如，可以使用 SplitView 构建[大纲/细节](master-details.md)模式。
+拆分视图控件可用于创建任何“抽屉”体验，其中用户可以打开和关闭补充窗格。 例如，可以使用 SplitView 构建[/细节](list-details.md)模式。
 
 若要生成带有展开/折叠按钮和导航项列表的导航菜单，可使用 [NavigationView](navigationview.md) 控件。
 
@@ -100,4 +100,4 @@ ms.locfileid: "89173901"
 ## <a name="related-topics"></a>相关主题
 - [导航窗格模式](navigationview.md)
 - [列表视图](lists.md)
-- [大纲/细节](master-details.md)
+- [列表/细节](list-details.md)

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb4f0dd59c5e48d348821c55ed33f2b27495da3
-ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.openlocfilehash: 3bf103e3473ce240cb4e6633c4d5002804eb4a23
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102784828"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804951"
 ---
 # <a name="tabview"></a>TabView
 
@@ -337,5 +337,5 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## <a name="related-articles"></a>相关文章
 
-- [MasterDetails](./master-details.md)
+- [列表/细节](./list-details.md)
 - [NavigationView](./navigationview.md)

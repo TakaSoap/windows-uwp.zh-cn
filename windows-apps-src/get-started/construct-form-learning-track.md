@@ -1,17 +1,17 @@
 ---
 title: 学习轨迹 - 构建和配置表单
 description: 了解如何在通用 Windows 平台 (UWP) 应用中构建和配置稳健窗体，以便处理大量信息的输入。
-ms.date: 05/07/2018
+ms.date: 03/17/2021
 ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 86d352aff0b091a698e4b91cbee9cfdc8b1f8340
-ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.openlocfilehash: 9d9fe2ee2c4d68084460293f91f65b728fabd4da
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102784658"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804971"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 
@@ -144,7 +144,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 虽然本文创建的只是一个表单，但布局和控件的概念适用于你可能构建的所有 XAML UI。 请抽时间浏览本文中提供的链接文档，对已有表单进行试验 - 添加新 UI 功能并进一步改进用户体验。 如果需要更详细布局功能的分步指南，请参阅[自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md)。
 
-表单也不必存在于真空中，可以更进一步，将它们嵌入到[大纲/细节模式](../design/controls-and-patterns/master-details.md)或 [NavigationView](../design/controls-and-patterns/navigationview.md) 中。 或者，如果要对表单背后的代码做些改动，请参阅[事件概述](../xaml-platform/events-and-routed-events-overview.md)。
+表单也不必存在于真空中，可以更进一步，将它们嵌入到[/细节模式](../design/controls-and-patterns/list-details.md)或 [NavigationView](../design/controls-and-patterns/navigationview.md) 中。 或者，如果要对表单背后的代码做些改动，请参阅[事件概述](../xaml-platform/events-and-routed-events-overview.md)。
 
 ## <a name="useful-apis-and-docs"></a>有用的 API 和文档
 
@@ -169,7 +169,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 | [事件概述](../xaml-platform/events-and-routed-events-overview.md) | 有关添加和构造事件以处理 UI 操作的详细信息。 |
 | [窗体](../design/controls-and-patterns/forms.md) | 关于创建表单的总括指南。 |
 | [布局面板](../design/layout/layout-panels.md) | 概述布局面板类型以及在何处使用它们。 |
-| [大纲/细节模式](../design/controls-and-patterns/master-details.md) | 可以围绕一个或多个表单实现的设计模式。 |
+| [列表/细节模式](../design/controls-and-patterns/list-details.md) | 可以围绕一个或多个表单实现的设计模式。 |
 | [NavigationView](../design/controls-and-patterns/navigationview.md) | 一种可以包含一个或多个表单的控件。 |
 | [响应式设计](../design/layout/responsive-design.md) | 对响应式设计原则的宽泛介绍。 |
 | [采用 XAML 的响应式布局](../design/layout/layouts-with-xaml.md) | 关于响应式设计可视状态及其他实现的特定信息。 |

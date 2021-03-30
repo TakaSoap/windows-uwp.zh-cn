@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c7d1d0069c074b95bfe93ee5894854734e3a3052
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a18094ad4cc76df41b12b9746ecdea3938d87d0b
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218510"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804581"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>屏幕大小和断点
 
-Windows 应用可以在运行 Windows 的任何设备上运行，其中包括手机、平板电脑、台式机、电视等。 鉴于 Windows 10 生态系统中的各种设备目标和屏幕大小，我们建议针对几个关键宽度类别（也称为“断点”）进行设计而不是为每台设备优化 UI： 
+Windows 应用可以在运行 Windows 的任何设备上运行，其中包括手机、平板电脑、台式机、电视等。 鉴于 Windows 10 生态系统中的大量设备目标和屏幕大小，我们建议针对几个关键宽度类别（也称为“断点”）进行设计而不是为每台设备优化 UI： 
 - 小（640px 以下）
 - 中等（641px 到 1007px）
 - 大（不小于 1008px）
@@ -82,7 +82,7 @@ UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都�
 - 一次使用一个列/区域。
 - 使用图标表示搜索（不显示搜索框）。
 - 使[导航窗格](../controls-and-patterns/navigationview.md)处于覆盖模式，以节省屏幕空间。
-- 如果你使用的是[大纲细节模式](../controls-and-patterns/master-details.md)，请使用堆叠演示模式来节省屏幕空间。
+- 如果使用的是[细节模式](../controls-and-patterns/list-details.md)，请使用堆叠演示模式来节省屏幕空间。
 
 ### <a name="medium"></a>中
 - 将左右窗口边距设置为 24px 以在应用窗口的左侧和右侧边缘之间创建一个可视间隔。

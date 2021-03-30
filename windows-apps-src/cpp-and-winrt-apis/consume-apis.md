@@ -5,16 +5,23 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: eb667c27b937b252f0fe3c883730646938bf19d9
-ms.sourcegitcommit: a93a309a11cdc0931e2f3bf155c5fa54c23db7c3
+ms.openlocfilehash: 5d696295c81aac18a0f11004a104f7a058bf76e0
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646270"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804741"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
 
 本主题介绍如何使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) API，无论它们是 Windows 的一部分、由第三方组件供应商或自行实现。
+
+> [!IMPORTANT]
+> 本主题中的代码示例较短，并且很容易试验，可以通过创建新的 Windows 控制台应用程序 (C++/WinRT) 项目和复制粘贴代码来重现它们。 但是，不能按该方法从未打包应用中使用任意自定义（第三方）Windows 运行时类型。 只能对 Windows 类型使用该方法。
+>
+> 若要从控制台应用中使用自定义（第三方）Windows 运行时类型，需要为应用指定一个包标识，以便它可以解析已使用的自定义类型的注册。 有关详细信息，请参阅 [Windows 应用程序打包项目](/windows/msix/desktop/source-code-overview)。
+>
+> 或者，通过“空白应用(C++/WinRT)”、“核心应用(C++/WinRT)”或“Windows 运行时组件(C++/WinRT)”项目模板创建一个新项目  。 这些应用类型已经具有包标识。
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>如果 API 位于 Windows 命名空间中
 这是你使用 Windows 运行时 API 最常见的情况。 对于元数据中定义的 Windows 命名空间中的每个类型，C++/WinRT 都定义了 C++ 友好等效项（称为投影类型  ）。 投影类型具有与 Windows 类型相同的完全限定名称，但使用 C++ 语法放置于 C++ winrt  命名空间中。 例如，[Windows::Foundation::Uri  ](/uwp/api/windows.foundation.uri) 作为 winrt::Windows::Foundation::Uri  投影到 C++/WinRT。
@@ -448,7 +455,7 @@ struct MyPage : Page
 }
 ```
 
-在上面的代码中，编译器认为你是在将 [**FrameworkElement.Style()** ](/uwp/api/windows.ui.xaml.frameworkelement.style)（这在 C++/WinRT 中是成员函数）作为模板参数传递给 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)。 解决方案是将名称 `Style` 强制解释为类型 [**Windows::UI::Xaml::Style**](/uwp/api/windows.ui.xaml.style)。
+在上面的代码中，编译器认为你是在将 [**FrameworkElement.Style()**](/uwp/api/windows.ui.xaml.frameworkelement.style)（这在 C++/WinRT 中是成员函数）作为模板参数传递给 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)。 解决方案是将名称 `Style` 强制解释为类型 [**Windows::UI::Xaml::Style**](/uwp/api/windows.ui.xaml.style)。
 
 ```cppwinrt
 struct MyPage : Page

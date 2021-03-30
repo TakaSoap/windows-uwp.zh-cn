@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, microsoft, windows 10, tutorials, online courses, blogs, events
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: e5ae3eb09a015a5ae1385612d5410c41a43b005b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3736802249eb0bce10b8d0730d361e4a70df5e8c
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175771"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804551"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>用于在 Windows 上使用 Python 进行开发的资源
 
@@ -44,6 +44,8 @@ ms.locfileid: "89175771"
 - [使用 Python 的 Azure 代码示例](https://azure.microsoft.com/resources/samples/?platform=python&sort=0)：了解如何使用 Python 代码与 Azure 服务进行交互。
 
 - [Python 和 Visual Studio Code](https://code.visualstudio.com/docs/languages/python)：将 Python 与 VS Code 结合使用的概述。
+
+- [适用于 Windows 的 Python 版本](https://www.python.org/downloads/windows/)：适用于 Windows 的官方 Python 版本。
 
 ## <a name="online-courses"></a>在线课程
 

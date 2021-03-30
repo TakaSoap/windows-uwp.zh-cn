@@ -5,12 +5,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 46d63a5f0bf929c391e9080e621023dc9eaafdd0
-ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.openlocfilehash: 238f341373e08f2ae73b22a01020e37e4fe68673
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102784718"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804441"
 ---
 # <a name="page-layout"></a>页面布局
 
@@ -79,11 +79,11 @@ ms.locfileid: "102784718"
 
 集合可让用户浏览一组内容或数据。 [网格视图](../controls-and-patterns/item-templates-gridview.md)是适用于照片或媒体中心式内容的选项，[列表视图](../controls-and-patterns/item-templates-listview.md)是适用于以文字为主内容或数据的选项。
 
-## <a name="masterdetail"></a>大纲/细节
+## <a name="listdetail"></a>列表/细节
 
-![大纲细节](images/master-detail.svg)
+![列表细节](images/master-detail.svg)
 
-[大纲/细节](../controls-and-patterns/master-details.md)模型包含一个列表视图（大纲）和一个内容视图（细节）。 这两个窗格都是固定的，并且具有垂直滚动。 选择列表视图中的项时，将相应地更新内容视图。 
+[列表/细节](../controls-and-patterns/list-details.md)模型包含一个列表视图和一个内容视图（细节）。 这两个窗格都是固定的，并且具有垂直滚动。 选择列表视图中的项时，将相应地更新内容视图。
 
 ## <a name="forms"></a>窗体
 ![显示空文本框和按钮的窗体的屏幕截图。](images/form.svg)

@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 4170efdf7e3133f216d26a3a4b5098664f3d4af4
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: fe0081a1558bfce9bd00eaaa0a7e4268320ce91b
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823261"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804761"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控件和模式简介
 
@@ -24,7 +24,7 @@ ms.locfileid: "101823261"
 
 > **重要的 API**：[Windows.UI.Xaml.Controls 命名空间](/uwp/api/windows.ui.xaml.controls)
 
-*模式* 是修改控件或组合多个控件来创造新内容的一种诀窍。 例如，[大纲/细节](master-details.md)模式是一种可将 [SplitView](split-view.md) 控件用于应用导航的方式。 同样，可以自定义 [NavigationView](navigationview.md) 控件的模板来实现选项卡模式。
+*模式* 是修改控件或组合多个控件来创造新内容的一种诀窍。 例如，[/细节](list-details.md)模式是一种可将 [SplitView](split-view.md) 控件用于应用导航的方式。 同样，可以自定义 [NavigationView](navigationview.md) 控件的模板来实现选项卡模式。
 
 在许多情况下，你可以按原样使用控件。 但 XAML 控件将函数与结构和外观分离开来，因此你可以进行各种级别的修改来使它们符合你的需求。 在[样式](../style/index.md)部分中，你可以了解如何使用 [XAML 样式](xaml-styles.md)和[控件模板](control-templates.md)来修改控件。
 

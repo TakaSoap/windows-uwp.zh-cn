@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 7a4c33bbdae980029cdeeb650375b9f8cb38bbf9
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 8c394e4f1168f986cfb97d218d2ef477b19028f7
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823341"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804801"
 ---
 # <a name="forms"></a>窗体
 表单是一组控件，用于收集和提交来自用户的数据。 表单通常用于设置页面、调查、创建帐户，等等。 
@@ -152,7 +152,7 @@ ms.locfileid: "101823341"
 如需更多复杂的自定义 UI 控件，请查看 [Telerik](https://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/uwp-ui-controls)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](https://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP)、[ActiPro](https://www.actiprosoftware.com/products/controls/universal) 等公司提供的资源。
 
 ## <a name="one-column-form-example"></a>单列表单示例
-以下示例使用亚克力的[大纲/细节](master-details.md)[列表视图](lists.md)和 [NavigationView](navigationview.md) 控件。
+以下示例使用亚克力的[列表/细节](list-details.md)[列表视图](lists.md)和 [NavigationView](navigationview.md) 控件。
 ![另一表单示例的屏幕截图](images/FormExample2.png)
 ```xaml
 <StackPanel>
