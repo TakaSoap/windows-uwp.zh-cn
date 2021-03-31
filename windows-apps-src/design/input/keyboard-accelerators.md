@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f712dd8e845b3beb52981be4a17df128c48845d
-ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.openlocfilehash: 96df9555f567d8e8c1fd29847245e4e1a56a09bf
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102784738"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939102"
 ---
 # <a name="keyboard-accelerators"></a>键盘快捷键
 
@@ -354,14 +354,14 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 | 在聚焦的控件或窗口中查找内容 | Ctrl+F |
 | 转至下一个搜索结果 | F3 |
 | **其他操作** | |
-| 添加收藏夹 | Ctrl + D | 
-| 刷新 | F5 或 Ctrl + R | 
-| 放大 | Ctrl + + | 
-| 缩小 | Ctrl + - | 
-| 缩放到默认视图 | Ctrl + 0 | 
-| 保存 | Ctrl+S | 
-| 关闭 | Ctrl+W | 
-| 打印 | Ctrl+P | 
+| 添加收藏夹 | Ctrl + D |
+| 刷新 | F5 或 Ctrl + R |
+| 放大 | Ctrl + + |
+| 缩小 | Ctrl + - |
+| 缩放到默认视图 | Ctrl + 0 |
+| 保存 | Ctrl+S |
+| 关闭 | Ctrl+W |
+| 打印 | Ctrl+P |
 
 请注意，某些组合对本地化版本的 Windows 无效。 例如，在西班牙语版本的 Windows 中，Ctrl+N 用于改为粗体，而不是 Ctrl+B。 如果对应用进行了本地化，那么我们建议提供本地化的键盘加速键。
 

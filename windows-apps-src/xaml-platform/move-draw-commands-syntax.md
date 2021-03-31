@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d8fac685e341ab78357bfb2ab3ea4e668a78918a
-ms.sourcegitcommit: 34f532fd023af2849c3e975baf7aa6771d7e53b9
+ms.openlocfilehash: e1a0350cfcc9d77b0341fe90a92749faac5c63f2
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104893847"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939012"
 ---
 # <a name="move-and-draw-commands-syntax"></a>移动和绘制命令语法
 
@@ -109,7 +109,7 @@ ms.locfileid: "104893847"
 
 | 术语 | 说明 |
 |------|-------------|
-| x | [**仔细**](/dotnet/api/system.double) <br/> 线条终点的 x 坐标。 |
+| x | [**Double**](/dotnet/api/system.double) <br/> 线条终点的 x 坐标。 |
 
 **竖线命令**
 
@@ -121,7 +121,7 @@ ms.locfileid: "104893847"
 
 | 术语 | 说明 |
 |------|-------------|
-| *y* | [**仔细**](/dotnet/api/system.double) <br/> 直线终点的 y 坐标。 |
+| *y* | [**Double**](/dotnet/api/system.double) <br/> 直线终点的 y 坐标。 |
 
 **三次方贝塞尔曲线命令**
 
@@ -135,7 +135,7 @@ ms.locfileid: "104893847"
 |------|-------------|
 | *controlPoint1* | [**点**](/uwp/api/Windows.Foundation.Point) <br/> 曲线的第一个控制点，它决定曲线的起始切线。 |
 | *controlPoint2* | [**点**](/uwp/api/Windows.Foundation.Point) <br/> 曲线的第二个控制点，它决定曲线的结束切线。 |
-| *终结点* | [**点**](/uwp/api/Windows.Foundation.Point) <br/> 绘制曲线将通过的点。 | 
+| *终结点* | [**点**](/uwp/api/Windows.Foundation.Point) <br/> 绘制曲线将通过的点。 |
 
 **二次方贝塞尔曲线命令**
 
@@ -187,7 +187,7 @@ ms.locfileid: "104893847"
 | 术语 | 说明 |
 |------|-------------|
 | size  | [**大小**](/uwp/api/Windows.Foundation.Size)<br/>圆弧的 x 半径和 y 半径。 |
-| *rotationAngle* | [**仔细**](/dotnet/api/system.double) <br/> 椭圆的旋转，以度为单位。 |
+| *rotationAngle* | [**Double**](/dotnet/api/system.double) <br/> 椭圆的旋转，以度为单位。 |
 | *isLargeArcFlag* | 如果圆弧角度应为 180 度或更大，请设置为 1，否则设置为 0。 |
 | *sweepDirectionFlag* | 如果以正角方向绘制圆弧，请设置为 1；否则设置为 0。 |
 | *终结点* | [**点**](/uwp/api/Windows.Foundation.Point) <br/> 绘制弧将通过的点。 |
@@ -210,8 +210,8 @@ ms.locfileid: "104893847"
 
 | 术语 | 说明 |
 |------|-------------|
-| *x* | [**仔细**](/dotnet/api/system.double) <br/> 该点的 x 坐标。 |
-| *y* | [**仔细**](/dotnet/api/system.double) <br/> 该点的 y 坐标。 |
+| *x* | [**Double**](/dotnet/api/system.double) <br/> 该点的 x 坐标。 |
+| *y* | [**Double**](/dotnet/api/system.double) <br/> 该点的 y 坐标。 |
 
 **其他说明**
 
@@ -233,7 +233,7 @@ ms.locfileid: "104893847"
 
 ## <a name="related-topics"></a>相关主题
 
-* [绘制形状](../design/controls-and-patterns/shapes.md)
+* [绘制图形](../design/controls-and-patterns/shapes.md)
 * [使用画笔](../design/style/brushes.md)
 * [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data)
 * [**PathIcon**](/uwp/api/Windows.UI.Xaml.Controls.PathIcon)

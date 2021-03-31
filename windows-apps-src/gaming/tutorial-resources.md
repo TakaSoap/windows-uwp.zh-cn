@@ -5,17 +5,19 @@ keywords: DirectX, XAML
 ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be2ef3b4d5c3cce4a4305a8faa1f4af5dea3e8bc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a81926a29d102acec0597f70678f66868d65e44d
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156371"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105938972"
 ---
 # <a name="extend-the-sample-game"></a>扩展示例游戏
 
 > [!NOTE]
 > 本主题是 [使用 DirectX 教程系列 (UWP) 游戏创建简单通用 Windows 平台](tutorial--create-your-first-uwp-directx-game.md) 的一部分。 该链接上的主题设置了序列的上下文。
+
+若要下载使用 XAML 进行覆盖的此游戏的版本，请参阅 [DirectX 和 XAML 游戏示例](/samples/microsoft/windows-universal-samples/simple3dgamexaml/)。 要了解有关生成示例的详细信息，请参阅自述文件。
 
 此时，我们已经介绍了基本的通用 Windows 平台 (UWP) DirectX 3D 游戏的关键组件。 您可以为游戏设置框架，包括视图提供程序和渲染管道，并实现基本游戏循环。 还可以创建基本的用户界面覆盖层、合并声音、实现控件。 你已经踏上了创建自己游戏的旅程，如果你需要更多帮助和信息，请查看这些资源。
 
@@ -63,7 +65,7 @@ ms.locfileid: "89156371"
 </Page>
 ```
 
-**SwapChainPanel** 对象由应用单一实例设置为[启动时](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/App.xaml.cpp#L45-L51)创建的当前窗口对象的 [**Content**](/uwp/api/Windows.UI.Xaml.Window.Content) 属性。
+**SwapChainPanel** 对象由应用单一实例设置为 [启动时](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/App.xaml.cpp#L45-L51)创建的当前窗口对象的 [**Content**](/uwp/api/Windows.UI.Xaml.Window.Content) 属性。
 
 ```cpp
 void App::OnLaunched(_In_ LaunchActivatedEventArgs^ /* args */)
@@ -132,6 +134,6 @@ void App::OnLaunched(_In_ LaunchActivatedEventArgs^ /* args */)
 
 ## <a name="sample"></a>示例
 
-若要下载使用 XAML 进行覆盖的此游戏的版本，请参阅 Direct3D 获取 [示例游戏 (XAML) ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameXaml)。
+若要下载使用 XAML 进行覆盖的此游戏的版本，请参阅 [DirectX 和 XAML 游戏示例](/samples/microsoft/windows-universal-samples/simple3dgamexaml/)。 要了解有关生成示例的详细信息，请参阅自述文件。
 
-与在本主题的其余部分中讨论的示例游戏的版本不同，XAML 版本在[app.xaml](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/App.xaml.cpp)和[DirectXPage](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/DirectXPage.xaml.cpp)文件中定义其框架，而不是分别在[GameInfoOverlay 和](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp)中定义[App.cpp](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameDX/cpp/App.cpp) 。
+与在本主题的其余部分中讨论的示例游戏的版本不同，XAML 版本在[app.xaml](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/App.xaml.cpp)和[DirectXPage](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/DirectXPage.xaml.cpp)文件中定义其框架，而不是分别在[GameInfoOverlay 和](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp)中定义[](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameDX/cpp/App.cpp) 。

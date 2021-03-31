@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: be238be3414fb17ff64a5c6d5da713f614c297be
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1d5f1ce1b12e2cbc98744ba898a36c79ff5c6c4a
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169081"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105938982"
 ---
 # <a name="xclass-attribute"></a>x:Class 属性
 
@@ -32,11 +32,11 @@ ms.locfileid: "89169081"
 | 术语 | 说明 |
 |------|-------------|
 | 命名空间 | 可选。 指定一个包含 _classname_ 所标识的分部类的命名空间。 如果 _namespace_ 已指定，点 (.) 会将 _namespace_ 和 _classname_ 分开。 如果省略 _namespace_，会假设 _classname_ 没有命名空间。 |
-| classname | 必需。 指定分部类的名称，该分部类连接已加载的 XAML 和该 XAML 的代码隐藏。 | 
+| classname | 必需。 指定分部类的名称，该分部类连接已加载的 XAML 和该 XAML 的代码隐藏。 |
 
 ## <a name="remarks"></a>备注
 
-**x:Class** 可声明为作为一个 XAML 文件/对象树的根并由生成操作编译的任何元素的属性，或者已编译应用程序的应用程序定义中 [**Application**](/uwp/api/Windows.UI.Xaml.Application) 根的属性。 在根节点以外的任何元素上，以及在不会使用“页面”**** 生成操作编译 XAML 文件的任何环境中声明 **x:Class**，会导致编译时错误。
+**x:Class** 可声明为作为一个 XAML 文件/对象树的根并由生成操作编译的任何元素的属性，或者已编译应用程序的应用程序定义中 [**Application**](/uwp/api/Windows.UI.Xaml.Application) 根的属性。 在根节点以外的任何元素上，以及在不会使用“页面”生成操作编译 XAML 文件的任何环境中声明 **x:Class**，会导致编译时错误。
 
 用作 **x:Class** 的类不能是嵌套类。
 

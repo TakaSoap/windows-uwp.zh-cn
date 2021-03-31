@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f53ebf6a7326bd9e6a99272c01d9eeb5c03f580
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 668a95d92926ddce17d4003f66672ef1e7a3f34e
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165071"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939042"
 ---
 # <a name="bc6h-format"></a>BC6H 格式
 
@@ -30,15 +30,16 @@ BC6H 由以下 DXGI \_ 格式枚举值指定：
 -   **DXGI \_设置 \_ BC6H \_ UF16 的格式**。 此 BC6H 格式不使用 16 位浮点颜色通道值中的符号位。
 -   **DXGI \_设置 \_ BC6H \_ SF16 的格式**。 此 BC6H 格式使用 16 位浮点颜色通道值中的符号位。
 
-**注意**   颜色通道的16位浮点格式通常称为 "半角" 浮点格式。 此格式具有以下位布局：
-|                       |                                                 |
+**注意** 颜色通道的 16 位浮点格式通常称为“半”浮点格式。 此格式具有以下位布局：
+
+| 格式                      |      Layout                                           |
 |-----------------------|-------------------------------------------------|
 | UF16（无符号浮点） | 5 个指数位 + 11 个尾数位              |
 | SF16（带符号浮点）   | 1 个符号位 + 5 个指数位 + 10 个尾数位 |
 
- 
+ 
 
- 
+ 
 
 BC6H 格式可用于 [Texture2D](/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures)（包括数组）、Texture3D 或 TextureCube（包括阵列）纹理资源。 同样，此格式适用于与这些资源相关联的任何 MIP 贴图表面。
 
@@ -93,7 +94,7 @@ decompress_bc6h(x, y, block)
 
 下表包含 BC6H 块 14 种可能格式中每一种的位计数和值。
 
-| “模式” | 分区索引 | 分区 | 颜色终结点                  | 模式位      |
+| 模型 | 分区索引 | 分区 | 颜色终结点                  | 模式位      |
 |------|-------------------|-----------|----------------------------------|----------------|
 | 1    | 46 位           | 5 位    | 75 位 (10.555, 10.555, 10.555) | 2 位 (00)    |
 | 2    | 46 位           | 5 位    | 75 位 (7666, 7666, 7666)       | 2 位 (01)    |
@@ -110,7 +111,7 @@ decompress_bc6h(x, y, block)
 | 13   | 63 位           | 0 位    | 60 位 (12.8, 12.8, 12.8)       | 5 位 (01011) |
 | 14   | 63 位           | 0 位    | 60 位 (16.4, 16.4, 16.4)       | 5 位 (01111) |
 
- 
+ 
 
 此表中的每个格式可以由模式位唯一地进行标识。 前十个模式用于两区域磁贴，而模式位字段的长度可以是两位或五位。 这些块还有用于压缩颜色终结点（72 位或 75 位）、分区（5 位）和分区索引（46 位）的字段。
 
@@ -156,7 +157,7 @@ decompress_bc6h(x, y, block)
 | by    | endpt \[ 1 \] 。A \[ 2\] |
 | bz    | endpt \[ 1 \] 。B \[ 2\] |
 
- 
+ 
 
 Endpt \[ i \] ，其中 i 是0或1，分别指第0个或第一组终结点。
 ## <a name="span-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspansign-extension-for-endpoint-values"></a><span id="Sign-extension-for-endpoint-values"></span><span id="sign-extension-for-endpoint-values"></span><span id="SIGN-EXTENSION-FOR-ENDPOINT-VALUES"></span>终结点值的签名扩展
@@ -249,7 +250,7 @@ void generate_palette_unquantized(UINT8 uNumIndices, int c1, int c2, int prec, U
 下一个代码示例演示了插值过程，其中包含以下观察结果：
 
 -   由于 **unquantize** 函数（下方）的颜色值的完整范围为 -32768 至 65535，内插器是使用 17 位带符号算术实现的。
--   在内插后，将值传递给 ** \_ unquantize** 函数 (此部分第三个示例中所述的) ，这将应用最终缩放。
+-   在内插后，将值传递给 **\_ unquantize** 函数 (此部分第三个示例中所述的) ，这将应用最终缩放。
 -   所有硬件解压缩器都需要返回带有这些函数的位精度结果。
 
 ``` syntax
@@ -296,7 +297,7 @@ int unquantize(int comp, int uBitsPerComp)
 }
 ```
 
-在调色板内插后调用**finish \_ unquantize** 。 对于带符号的终结点，**unquantize** 函数会按 31/32 延迟缩放，而对于无符号的终结点，会按 31/64 延迟缩放。 在完成调色板内插之后，为了减少需要的乘法次数，需要此行为来使最终值进入有效半范围 (-0x7BFF ~ 0x7BFF)。 **finish \_ unquantize**应用最终缩放，并返回一个重新解释为**半部分**的**无符号短**值。
+在调色板内插后调用 **finish \_ unquantize** 。 对于带符号的终结点，**unquantize** 函数会按 31/32 延迟缩放，而对于无符号的终结点，会按 31/64 延迟缩放。 在完成调色板内插之后，为了减少需要的乘法次数，需要此行为来使最终值进入有效半范围 (-0x7BFF ~ 0x7BFF)。 **finish \_ unquantize** 应用最终缩放，并返回一个重新解释为 **半部分** 的 **无符号短** 值。
 
 ``` syntax
 unsigned short finish_unquantize(int comp)
@@ -325,6 +326,6 @@ unsigned short finish_unquantize(int comp)
 
 [纹理块压缩](texture-block-compression.md)
 
- 
+ 
 
- 
+ 

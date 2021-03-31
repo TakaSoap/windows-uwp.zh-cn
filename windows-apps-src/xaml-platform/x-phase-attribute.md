@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 70c867441aff2532627f6e2bb1bfbdc50a1510dc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e46e681a0486488447c283448025755823765abb
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169017"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105938952"
 ---
 # <a name="xphase-attribute"></a>x:Phase 属性
 
 
-使用带有[{x:Bind} 标记扩展](x-bind-markup-extension.md)的**x:Phase**来增量呈现[**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)和[**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView)项，并改善平移体验。 为了能实现与使用 [**ContainerContentChanging**](/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件手动控制列表项的呈现相同的效果，**x:Phase** 提供了一种声明性方法。 另请参阅[以增量方式更新 ListView 和 GridView 项](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
+使用带有 [{x:Bind} 标记扩展](x-bind-markup-extension.md)的 **x:Phase** 来增量呈现 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)和 [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView)项，并改善平移体验。 为了能实现与使用 [**ContainerContentChanging**](/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件手动控制列表项的呈现相同的效果，**x:Phase** 提供了一种声明性方法。 另请参阅[以增量方式更新 ListView 和 GridView 项](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
 
 ## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
@@ -28,9 +28,9 @@ ms.locfileid: "89169017"
 ## <a name="xaml-values"></a>XAML 值
 
 
-| 术语 | 描述 |
+| 术语 | 说明 |
 |------|-------------|
-| PhaseValue | 一个用于指示将处理的元素所处的阶段的数字。 默认值为 0。 | 
+| PhaseValue | 一个用于指示将处理的元素所处的阶段的数字。 默认值为 0。 |
 
 ## <a name="remarks"></a>备注
 
@@ -42,23 +42,23 @@ ms.locfileid: "89169017"
 
 ```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
-    <Grid Width="200" Height="80">
-        <Grid.ColumnDefinitions>
-           <ColumnDefinition Width="75" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Image Grid.RowSpan="4" Source="{x:Bind ImageData}" MaxWidth="70" MaxHeight="70" x:Phase="3"/>
-        <TextBlock Text="{x:Bind DisplayName}" Grid.Column="1" FontSize="12"/>
-        <TextBlock Text="{x:Bind prettyDate}"  Grid.Column="1"  Grid.Row="1" FontSize="12" x:Phase="1"/>
-        <TextBlock Text="{x:Bind prettyFileSize}"  Grid.Column="1"  Grid.Row="2" FontSize="12" x:Phase="2"/>
-        <TextBlock Text="{x:Bind prettyImageSize}"  Grid.Column="1"  Grid.Row="3" FontSize="12" x:Phase="2"/>
-    </Grid>
+    <Grid Width="200" Height="80">
+        <Grid.ColumnDefinitions>
+           <ColumnDefinition Width="75" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Grid.RowSpan="4" Source="{x:Bind ImageData}" MaxWidth="70" MaxHeight="70" x:Phase="3"/>
+        <TextBlock Text="{x:Bind DisplayName}" Grid.Column="1" FontSize="12"/>
+        <TextBlock Text="{x:Bind prettyDate}"  Grid.Column="1"  Grid.Row="1" FontSize="12" x:Phase="1"/>
+        <TextBlock Text="{x:Bind prettyFileSize}"  Grid.Column="1"  Grid.Row="2" FontSize="12" x:Phase="2"/>
+        <TextBlock Text="{x:Bind prettyImageSize}"  Grid.Column="1"  Grid.Row="3" FontSize="12" x:Phase="2"/>
+    </Grid>
 </DataTemplate>
 ```
 

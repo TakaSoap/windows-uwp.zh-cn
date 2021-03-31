@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 383e7b0576b5462879f903b684c332b35ee7d756
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d8d81adab37f942f804fadb3d8d1ec0cefd20380
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155021"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105938962"
 ---
 # <a name="relativesource-markup-extension"></a>{RelativeSource} 标记扩展
 
@@ -36,10 +36,10 @@ ms.locfileid: "89155021"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 术语 | 描述 |
+| 术语 | 说明 |
 |------|-------------|
 | {RelativeSource Self} | 生成 <strong>Self</strong> 的 [<strong>Mode</strong>](/uwp/api/windows.ui.xaml.data.relativesource.mode) 值。 目标元素应用作此绑定的来源。 这对于将一个元素的属性绑定到相同元素上的另一个属性很有用。 |
-| {RelativeSource TemplatedParent} | 生成将应用为此绑定来源的 [<strong>ControlTemplate</strong>](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)。 这对于在模板级别向绑定应用运行时信息很有用。 | 
+| {RelativeSource TemplatedParent} | 生成将应用为此绑定来源的 [<strong>ControlTemplate</strong>](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)。 这对于在模板级别向绑定应用运行时信息很有用。 |
 
 ## <a name="remarks"></a>备注
 
@@ -60,7 +60,7 @@ ms.locfileid: "89155021"
 
 `RelativeSource={RelativeSource Self}` 的另一个用途是作为将对象的 [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 设置为其自身的一种方式。  例如，你可能会在一些 SDK 示例中看到此方法，其中 [**页面**](/uwp/api/Windows.UI.Xaml.Controls.Page) 类已使用自定义属性进行了扩展，该自定义属性已经为自己的数据绑定提供现成的视图模型，例如： `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**注意**   **RelativeSource**的 XAML 用法仅显示其用途：在 xaml 中将[**RelativeSource**](/uwp/api/windows.ui.xaml.data.binding.relativesource)的值设置为绑定表达式的一部分。 在理论上，如果将一个属性的值设置为 [**RelativeSource**](/uwp/api/Windows.UI.Xaml.Data.RelativeSource)，也可能还有其他用法。
+**注意****RelativeSource** 的 XAML 用法仅显示它应有的用法：作为绑定表达式的一部分，在 XAML 中设置 [**Binding.RelativeSource**](/uwp/api/windows.ui.xaml.data.binding.relativesource) 的值。 在理论上，如果将一个属性的值设置为 [**RelativeSource**](/uwp/api/Windows.UI.Xaml.Data.RelativeSource)，也可能还有其他用法。
 
 ## <a name="related-topics"></a>相关主题
 

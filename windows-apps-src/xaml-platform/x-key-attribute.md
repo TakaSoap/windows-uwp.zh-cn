@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 45cdc3bcf766cd110498e357052da150ea96fa21
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 462a1323766a4fb2cc1c8bfdc119c72069fd59e4
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161691"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105938992"
 ---
 # <a name="xkey-attribute"></a>x:Key 特性
 
@@ -36,10 +36,10 @@ ms.locfileid: "89161691"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 术语 | 描述 |
+| 术语 | 说明 |
 |------|-------------|
-| 对象 (object) | 任何可共享的对象。 请参阅 [ResourceDictionary 和 XAML 资源引用](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)。 |
-| stringKeyValue | 一个用作键的真实字符串，它必须遵守 _XamlName_&gt; 语法。 请参阅下面的“XamlName 语法”。 | 
+| object | 任何可共享的对象。 请参阅 [ResourceDictionary 和 XAML 资源引用](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)。 |
+| stringKeyValue | 一个用作键的真实字符串，它必须遵守 _XamlName_&gt; 语法。 请参阅下面的“XamlName 语法”。 |
 
 ##  <a name="xamlname-grammar"></a>XamlName 语法
 

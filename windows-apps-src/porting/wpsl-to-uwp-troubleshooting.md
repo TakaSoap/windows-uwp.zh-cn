@@ -6,14 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b1e73dcb74ae95729cb5c07db469a1ef1a77e35
-ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
+ms.openlocfilehash: b196408a769e204513d46b67cd13c31f0d2e8b9c
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92133000"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939032"
 ---
-#  <a name="troubleshooting-porting-windowsphone-silverlight-to-uwp"></a>将 Windows Phone Silverlight 移植到 UWP 疑难解答
+#  <a name="troubleshooting-porting-windows-phone-silverlight-to-uwp"></a>将 Windows Phone Silverlight 移植到 UWP 疑难解答
 
 
 上一主题是[移植项目](wpsl-to-uwp-porting-to-a-uwp-project.md)。
@@ -32,8 +32,8 @@ XAML 分析异常可能难以诊断出来，特别是在此类异常中没有含
 
 本部分介绍了在 Visual Studio 中打开 Windows 10 项目后看到如下消息时该执行何种操作：“需要 Visual Studio 更新。 一个或多个项目需要平台 SDK &lt;version&gt;（未安装该 SDK 版本，也未将其作为 Visual Studio 后续更新的一部分进行提供）。”
 
--   首先，确定适用于你已安装的 Windows 10 的 SDK 版本号。 导航到**C： \\ Program Files (x86) \\ Windows 工具包 \\ 10 \\ 包括 \\ &lt; versionfoldername &gt; ** ，并记下 " * &lt; Versionfoldername &gt; *"，它将采用四部分表示法 "主版本. 内部版本. 修订版本"。
--   打开项目文件以进行编辑，并找到 `TargetPlatformVersion` 和 `TargetPlatformMinVersion` 元素。 按如下所示对其进行编辑，将* &lt; versionfoldername &gt; *替换为在磁盘上找到的四个表示法版本号：
+-   首先，确定适用于你已安装的 Windows 10 的 SDK 版本号。 导航到 **C： \\ Program Files (x86) \\ Windows 工具包 \\ 10 \\ 包括 \\ &lt; versionfoldername &gt;** ，并记下 " *&lt; Versionfoldername &gt;*"，它将采用四部分表示法 "主版本. 内部版本. 修订版本"。
+-   打开项目文件以进行编辑，并找到 `TargetPlatformVersion` 和 `TargetPlatformMinVersion` 元素。 按如下所示对其进行编辑，将 *&lt; versionfoldername &gt;* 替换为在磁盘上找到的四个表示法版本号：
 
 ```xml
    <TargetPlatformVersion><versionfoldername></TargetPlatformVersion>
@@ -55,9 +55,9 @@ XAML 分析异常可能难以诊断出来，特别是在此类异常中没有含
 | _XamlCompiler 错误 WMC0055：无法将文本值 " &lt; stream geometry" 赋给 &gt; 类型为 "RectangleGeometry" 的属性 "Clip"_ | 在 UWP 中，[Microsoft DirectX](/windows/desktop/directx) 的类型和 XAML C++ UWP 应用。 |
 | _XamlCompiler 错误 WMC0001：XML 命名空间中的“RadialGradientBrush”类型未知 [...]_ | UWP 不具有 **RadialGradientBrush** 类型。 从标记中删除 **RadialGradientBrush** 并使用一些其他类型的 [Microsoft DirectX](/windows/desktop/directx) 和 XAML C++ UWP 应用。 |
 | _XamlCompiler 错误 WMC0011：元素 " &lt; UIElement type" 上的未知成员 "OpacityMask" &gt;_ | UWP [Microsoft DirectX](/windows/desktop/directx) 和 XAML C++ UWP 应用。 |
-| _SYSTEM.NI.DLL 中发生了 "COMException" 类型的第一次机会异常。附加信息：应用程序调用了为另一个线程封送的接口。 (异常来自 HRESULT： 0x8001010E (RPC_E_WRONG_THREAD) # A3。_ | 必须在 UI 线程上完成你正在执行的工作。 调用 [**CoreWindow.GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread))。 |
+| _SYSTEM.NI.DLL 中发生了 "COMException" 类型的第一次机会异常。附加信息：应用程序调用了为另一个线程封送的接口。 (异常来自 HRESULT： 0x8001010E (RPC_E_WRONG_THREAD) ) 。_ | 必须在 UI 线程上完成你正在执行的工作。 调用 [**CoreWindow.GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread))。 |
 | 动画正在运行，但是它对其目标属性没有影响。 | 使动画独立，或对其设置 `EnableDependentAnimation="True"`。 请参阅[动画](wpsl-to-uwp-porting-xaml-and-ui.md)。 |
 | 在 Visual Studio 中打开 Windows 10 项目时，你会看到如下消息：“需要 Visual Studio 更新。 一个或多个项目需要平台 SDK &lt;version&gt;（未安装该 SDK 版本，也未将其作为 Visual Studio 后续更新的一部分进行提供）。” | 请参阅本主题中的 [TargetPlatformVersion](#targetplatformversion) 部分。 |
-| 当在 xaml.cs 文件中调用 InitializeComponent 时，将引发 System.InvalidCastException。 | 当你有多个 xaml 文件（至少其中一个受 MRT 限定）共享同一个 xaml.cs 文件并且元素具有在两个 xaml 文件之间不一致的 x:Name 属性时，可能会发生这种情况。 尝试将相同名称添加到两个 xaml 文件中的相同元素，或全部省略名称。 | 
+| 当在 xaml.cs 文件中调用 InitializeComponent 时，将引发 System.InvalidCastException。 | 当你有多个 xaml 文件（至少其中一个受 MRT 限定）共享同一个 xaml.cs 文件并且元素具有在两个 xaml 文件之间不一致的 x:Name 属性时，可能会发生这种情况。 尝试将相同名称添加到两个 xaml 文件中的相同元素，或全部省略名称。 |
 
 下一主题是[移植 XAML 和 UI](wpsl-to-uwp-porting-xaml-and-ui.md)。
