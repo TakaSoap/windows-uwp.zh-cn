@@ -7,12 +7,12 @@ ms.date: 01/08/2021
 ms.topic: article
 keywords: Windows 10, uwp, 设备门户, REST
 ms.localizationpriority: medium
-ms.openlocfilehash: 33e914d124520b8f4eacd120c191ed63715a3168
-ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
+ms.openlocfilehash: ffae68a0b5b6d17ec6b0afe88c82dc77994d72fa
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2021
-ms.locfileid: "98056050"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619483"
 ---
 # <a name="windows-device-portal-core-rest-api-reference"></a>Windows 设备门户核心 REST API 参考
 
@@ -4350,7 +4350,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 | HTTP 状态代码      | 说明 |
 | :------     | :----- |
-| 200 | “确定” |. 文件已重命名
+| 200 | 没问题。 文件已重命名|
 | 404 | 找不到文件 |
 | 5XX | 错误代码 |
 
@@ -4401,7 +4401,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 | HTTP 状态代码      | 说明 |
 | :------     | :----- |
-| 200 | “确定” |. 文件已删除 |
+| 200 | 没问题。 文件已删除 |
 | 404 | 找不到文件 |
 | 5XX | 错误代码 |
 
@@ -4449,7 +4449,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 | HTTP 状态代码      | 说明 |
 | :------     | :----- |
-| 200 | “确定” |. 文件已上载 |
+| 200 | 没问题。 文件已上载 |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 

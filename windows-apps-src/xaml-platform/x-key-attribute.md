@@ -58,7 +58,7 @@ CombiningCharacter::= none
 -   不支持 Unicode 字符范围。
 -   名称不能以数字开头。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的子元素一般包含一个 **x:Key** 属性，该属性在该词典中指定一个唯一的键值。 键唯一性在加载时由 XAML 处理器执行。 非唯一的 **x:Key** 值将导致 XAML 分析异常。 如果 [{StaticResource} 标记扩展](staticresource-markup-extension.md)发出请求，任何未解析的键也会导致 XAML 分析异常。
 

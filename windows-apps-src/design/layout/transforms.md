@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7168895a690b8602e67b8e05832c74b8ddf4d67d
-ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
+ms.openlocfilehash: a24f4191541c289d4b26a07e69430a76e5f7bf67
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89643805"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619653"
 ---
 # <a name="transforms-overview"></a>转换概述
 
@@ -19,7 +19,7 @@ ms.locfileid: "89643805"
 
 ## <a name="span-idwhat_is_a_transform_spanspan-idwhat_is_a_transform_spanspan-idwhat_is_a_transform_spanwhat-is-a-transform"></a><span id="What_is_a_transform_"></span><span id="what_is_a_transform_"></span><span id="WHAT_IS_A_TRANSFORM_"></span>什么是转换？
 
-*转换*定义了如何将各种点从一个坐标空间映射或转换到另一个坐标空间。 将转换应用到 UI 元素时，就更改了 UI 元素作为 UI 一部分在屏幕中呈现的方式。
+*转换* 定义了如何将各种点从一个坐标空间映射或转换到另一个坐标空间。 将转换应用到 UI 元素时，就更改了 UI 元素作为 UI 一部分在屏幕中呈现的方式。
 
 将转换视为四个广义的类别：转换、旋转、缩放和倾斜（或扭曲）。 出于使用图形 API 更改 UI 元素外观的目的，通常最简单的做法是创建每次只定义一个操作的转换。 因此 Windows 运行时为每一种转换分类定义了一个离散类。
 
@@ -107,7 +107,7 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 如果你有数学背景或熟悉图形编程技术（同样使用矩阵描述坐标空间的转换），转换的数学描述就可能对你有用。 有一个 [Transform](/uwp/api/Windows.UI.Xaml.Media.Transform) 派生类，使你能够直接以它的 3×3 矩阵方式表达转换：[MatrixTransform](/uwp/api/Windows.UI.Xaml.Media.MatrixTransform)。 MatrixTransform 具有一个 [Matrix](/uwp/api/windows.ui.xaml.media.matrixtransform.matrix) 属性，该属性保留具有六项属性的结构 ：[M11](/uwp/api/windows.ui.xaml.media.matrix.m11)、[M12](/uwp/api/windows.ui.xaml.media.matrix.m12)、[M21](/uwp/api/windows.ui.xaml.media.matrix.m21)、[M22](/uwp/api/windows.ui.xaml.media.matrix.m22)、[OffsetX](/uwp/api/windows.ui.xaml.media.matrix.offsetx) 和 [OffsetY](/uwp/api/windows.ui.xaml.media.matrix.offsety)      。 每个 [**Matrix**](/uwp/api/Windows.UI.Xaml.Media.Matrix) 属性使用 **Double** 值，并且对应于仿射转换矩阵的六个相关值（列 1 和列 2）。
 
-|                                             |                                             |     |
+|           列 1                                  |         列 2                                    | 列 3 |
 |---------------------------------------------|---------------------------------------------|-----|
 | [**M11**](/uwp/api/windows.ui.xaml.media.matrix.m11)         | [**M12**](/uwp/api/windows.ui.xaml.media.matrix.m12)         | 0   |
 | [**M21**](/uwp/api/windows.ui.xaml.media.matrix.m21)         | [**M22**](/uwp/api/windows.ui.xaml.media.matrix.m22)         | 0   |

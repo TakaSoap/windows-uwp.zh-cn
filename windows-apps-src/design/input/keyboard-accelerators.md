@@ -347,7 +347,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 | 添加第二个新项 | Ctrl + Shift + N |
 | （利用撤消）删除所选项 | Del、Ctrl+D |
 | （不用撤消）删除所选项 | Shift + Del |
-| 加粗 | Ctrl + B |
+| Bold | Ctrl + B |
 | 下划线 | Ctrl + U |
 | 斜体 | Ctrl + I |
 | **导航** | |

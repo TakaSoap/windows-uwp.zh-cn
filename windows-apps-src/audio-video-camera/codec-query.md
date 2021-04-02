@@ -6,17 +6,15 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 编解码器, 编码器, 解码器, 查询
 ms.localizationpriority: medium
-ms.openlocfilehash: f0f1ddff8336594e62ee26b6bf62b062039bf857
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 75aac91f41a854ee21a3ccfaf5b9a9c0f19bfef8
+ms.sourcegitcommit: d7783efb1c60b81e94898294fc5794c1d3320004
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363990"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105982630"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>查询设备上安装的编解码器
 **[CodecQuery](/uwp/api/windows.media.core.codecquery)** 类允许查询在当前设备上安装的编解码器。 文章[支持的编解码器](supported-codecs.md)中给出了 Windows 10 附带的用于不同设备系列的编解码器列表，但是由于用户和应用可以在设备上安装其他编解码器，因此你可能要在运行时查询编解码器支持，以确定当前设备上可用的编解码器。
-
-CodecQuery API 是 **[Windows. Core](/uwp/api/windows.media.core)** 命名空间的成员，因此需要在应用中包含此命名空间。
 
 CodecQuery API 是 **[Windows. Core](/uwp/api/windows.media.core)** 命名空间的成员，因此需要在应用中包含此命名空间。
 
@@ -28,7 +26,7 @@ CodecQuery API 是 **[Windows. Core](/uwp/api/windows.media.core)** 命名空间
 
 **[FindAllAsync](/uwp/api/windows.media.core.codecquery.findallasync)** 方法返回与提供的参数相匹配的所有已安装的编解码器。 这些参数包括指定是要查询音频或视频编解码器还是同时查询两者的 **[CodecKind](/uwp/api/windows.media.core.codeckind)** 值， **[CodecCategory](/uwp/api/windows.media.core.codeccategory)** 值指定是要查询编码器还是解码器，并指定表示要查询的媒体编码子类型的字符串，例如：
 
-为子类型值指定空字符串或 null 以返回适用于所有子类型的编解码器。 以下示例列出了设备上安装的所有视频编码器。
+为子类型值指定空字符串可为所有子类型返回编解码器。 以下示例列出了设备上安装的所有视频编码器。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetFindAllEncoders":::
 
@@ -48,6 +46,6 @@ CodecQuery API 是 **[Windows. Core](/uwp/api/windows.media.core)** 命名空间
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [转换媒体文件代码](transcode-media-files.md)
 * [支持的编解码器](supported-codecs.md)
- 
+ 
 
- 
+ 

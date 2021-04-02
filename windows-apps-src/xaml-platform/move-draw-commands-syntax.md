@@ -109,7 +109,7 @@ ms.locfileid: "105939012"
 
 | 术语 | 说明 |
 |------|-------------|
-| x | [**Double**](/dotnet/api/system.double) <br/> 线条终点的 x 坐标。 |
+| x | [**仔细**](/dotnet/api/system.double) <br/> 线条终点的 x 坐标。 |
 
 **竖线命令**
 
@@ -117,11 +117,11 @@ ms.locfileid: "105939012"
 
 | 语法 |
 |--------|
-| `V ` _y_ <br/> - 或 - <br/> `v ` _y_ |
+| `V `_y_ <br/> - 或 - <br/> `v `_y_ |
 
 | 术语 | 说明 |
 |------|-------------|
-| *y* | [**Double**](/dotnet/api/system.double) <br/> 直线终点的 y 坐标。 |
+| *y* | [**仔细**](/dotnet/api/system.double) <br/> 直线终点的 y 坐标。 |
 
 **三次方贝塞尔曲线命令**
 
@@ -187,7 +187,7 @@ ms.locfileid: "105939012"
 | 术语 | 说明 |
 |------|-------------|
 | size  | [**大小**](/uwp/api/Windows.Foundation.Size)<br/>圆弧的 x 半径和 y 半径。 |
-| *rotationAngle* | [**Double**](/dotnet/api/system.double) <br/> 椭圆的旋转，以度为单位。 |
+| *rotationAngle* | [**仔细**](/dotnet/api/system.double) <br/> 椭圆的旋转，以度为单位。 |
 | *isLargeArcFlag* | 如果圆弧角度应为 180 度或更大，请设置为 1，否则设置为 0。 |
 | *sweepDirectionFlag* | 如果以正角方向绘制圆弧，请设置为 1；否则设置为 0。 |
 | *终结点* | [**点**](/uwp/api/Windows.Foundation.Point) <br/> 绘制弧将通过的点。 |
@@ -210,8 +210,8 @@ ms.locfileid: "105939012"
 
 | 术语 | 说明 |
 |------|-------------|
-| *x* | [**Double**](/dotnet/api/system.double) <br/> 该点的 x 坐标。 |
-| *y* | [**Double**](/dotnet/api/system.double) <br/> 该点的 y 坐标。 |
+| *x* | [**仔细**](/dotnet/api/system.double) <br/> 该点的 x 坐标。 |
+| *y* | [**仔细**](/dotnet/api/system.double) <br/> 该点的 y 坐标。 |
 
 **其他说明**
 

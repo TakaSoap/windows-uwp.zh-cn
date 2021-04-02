@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 桌面开发
-ms.openlocfilehash: 11605902b334025c50847103e2de9b10e49c3a0f
-ms.sourcegitcommit: 432cc11c460e9ddf855d28bcd59852741408c823
+ms.openlocfilehash: 2afa5e4ff1c116439f916b10a156c567bd7a2ac4
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102474837"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619363"
 ---
 # <a name="choose-your-windows-app-platform"></a>选择 Windows 应用平台
 
@@ -105,7 +105,7 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
 | **开放源代码** | [是（仅限 Windows UI 库）](https://github.com/Microsoft/microsoft-ui-xaml)  |  [是（仅限 .NET Core）](https://github.com/dotnet/wpf) | [是（仅限 .NET Core）](https://github.com/dotnet/winforms)  |
 | **支持 XAML** |   是   |  是  |   否   |
 | **优势**  |  <ul><li>适用于 UI 的 XAML 标记</li><li>丰富且可自定义的 UX</li><li>现有代码库符合 .NET 标准</li><li>高 DPI 支持</li><li>支持跨 Windows 设备的多种输入类型（包括触控、笔、游戏板、鼠标和键盘）</li><li>支持 Xbox、HoloLens、IoT 或 Surface Hub</li><li>可选的密集（精简）UI</li><li>支持本机 C++</li><li>优化的电池使用时间</li><li>新式辅助功能支持（如屏幕阅读器）</li><li>丰富的文本数据功能（如内置拼写检查）</li><li>墨迹书写支持</li><li>通过应用程序容器实现安全执行（例如，对不受信任的内容进行沙盒处理）</li></ul>  |  <ul><li>适用于 UI 的 XAML 标记</li><li>丰富且可自定义的 UX</li><li>Microsoft 及合作伙伴提供的大量控件</li><li>密集 UI</li><li>支持 Windows 7</li><li>平台支持输入验证</li></ul> | <ul><li>快速开发应用程序</li><li>用于生成 UI 的 WYSIWYG 编辑器</li><li>Microsoft 及合作伙伴提供的大量控件</li><li>密集 UI</li><li>支持 Windows 7</li><li>键盘和鼠标输入</li></ul>          |
-| **具有有限支持的方案** |  <ul><li>多窗口支持<sup>1</sup></li><li>平台支持输入验证<sup>1</sup></li><li>不支持 Windows 7</li><li>某些 Windows 运行时 API 要求使用特定最低版本的 Windows 10</li><li>完整的平台支持和 shell 集成（例如，UWP 当前不支持系统托盘集成或对所有设备的完全访问权限）</li><li>直接访问磁盘上的所有文件</li><li>ADO.NET</li><li>使用非 .NET 标准或非 Windows 应用认证工具包兼容 API 的现有代码库类库</li><li>本地网络环回支持（也就是说，如果应用需要与 localhost 通信，而无需在目标设备上创建环回豁免）</li><li>密集型文件 I/O</li></ul>     |  <ul><li>高 DPI 支持<sup>2</sup></li><li>触摸输入<sup>2</sup></li></ul>  |  <ul><li>高 DPI 支持<sup>2</sup></li><li>触摸输入<sup>2</sup></li><li>可自定义的 UI</li><li>丰富的图形和用户体验（例如触控和动画）</li><li>丰富的视图和数据模型抽象</li></ul>    |   |
+| **具有有限支持的方案** |  <ul><li>多窗口支持<sup>1</sup></li><li>平台支持输入验证<sup>1</sup></li><li>不支持 Windows 7</li><li>某些 Windows 运行时 API 要求使用特定最低版本的 Windows 10</li><li>完整的平台支持和 shell 集成（例如，UWP 当前不支持系统托盘集成或对所有设备的完全访问权限）</li><li>直接访问磁盘上的所有文件</li><li>ADO.NET</li><li>使用非 .NET 标准或非 Windows 应用认证工具包兼容 API 的现有代码库类库</li><li>本地网络环回支持（也就是说，如果应用需要与 localhost 通信，而无需在目标设备上创建环回豁免）</li><li>密集型文件 I/O</li></ul>     |  <ul><li>高 DPI 支持<sup>2</sup></li><li>触摸输入<sup>2</sup></li></ul>  |  <ul><li>高 DPI 支持<sup>2</sup></li><li>触摸输入<sup>2</sup></li><li>可自定义的 UI</li><li>丰富的图形和用户体验（例如触控和动画）</li><li>丰富的视图和数据模型抽象</li></ul>    |
 
 <sup>1</sup> 我们已经公开发布了一些功能，这些功能将在未来版本的 Windows 10 中处理此方案。
 

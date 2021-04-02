@@ -41,7 +41,7 @@ ms.locfileid: "105938962"
 | {RelativeSource Self} | 生成 <strong>Self</strong> 的 [<strong>Mode</strong>](/uwp/api/windows.ui.xaml.data.relativesource.mode) 值。 目标元素应用作此绑定的来源。 这对于将一个元素的属性绑定到相同元素上的另一个属性很有用。 |
 | {RelativeSource TemplatedParent} | 生成将应用为此绑定来源的 [<strong>ControlTemplate</strong>](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)。 这对于在模板级别向绑定应用运行时信息很有用。 |
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 [**Binding**](/uwp/api/Windows.UI.Xaml.Data.Binding) 可以将 [**Binding.RelativeSource**](/uwp/api/windows.ui.xaml.data.binding.relativesource) 设置为 **Binding** 对象元素的属性或者 [{Binding} 标记扩展](binding-markup-extension.md)内部的组件。 这就是显示两种不同 XAML 语法的原因。
 

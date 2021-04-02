@@ -2,17 +2,17 @@
 description: 'MRT.LOG 核心组件的概述，以及它们如何工作以 (项目留尼汪岛加载应用程序资源) '
 title: '管理资源 MRT.LOG Core (项目留尼汪岛) '
 ms.topic: article
-ms.date: 03/09/2021
+ms.date: 03/31/2021
 keywords: MRT.LOG，MRTCore，pri，makepri.exe，资源，资源加载
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b732deb0f387c11b2675193c047d33fa3e55ace
-ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
+ms.openlocfilehash: 4b86e3d1b232a9c0da87808e8fa07a13b18ffdd6
+ms.sourcegitcommit: d793c82587b8368e241d74be1473f4f0af5bb9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105730481"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106164367"
 ---
 # <a name="manage-resources-with-mrt-core"></a>使用 MRT Core 管理资源 
 
@@ -28,7 +28,13 @@ PRI 文件包含实际的字符串资源。 嵌入的二进制文件和文件路
 
 PRI 文件仅包含数据，因此它们不使用可移植可执行 (PE) 格式。 它们专门设计为仅用于数据。
 
-## <a name="access-app-resources"></a>访问应用资源
+> [!NOTE]
+> 你必须确保已配置这些资源，以便可以在资源 pri 文件中对这些资源进行索引，然后才能使用 MRT.LOG Core 在使用 c #/.NET 5 的 WinUI 3 项目中检索字符串和图像。 否则，MRT.LOG Core 无法检索这些资源。
+>
+> * 对于字符串资源文件 () ，请确保将文件的 " **生成操作** " 属性设置为 " **PRIResource**"。
+> * 对于映像文件，请确保将文件的 " **生成操作** " 属性设置为 " **内容**"。
+
+## <a name="access-app-resources-with-mrt-core"></a>使用 MRT.LOG Core 访问应用资源
 
 MRT.LOG Core 提供多种不同方式来访问应用资源。
 
@@ -49,15 +55,6 @@ MRT.LOG Core 提供多种不同方式来访问应用资源。
 ### <a name="qualify-resource-selection-with-resourcecontext"></a>用 ResourceContext 限定资源选择
 
 基于作为资源限定符值集合（语言、比例、对比度等）的特定的 [ResourceContext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext) 选择候选资源。 除非覆盖，默认上下文对每个限定符值使用应用的当前配置。 例如，可以针对比例限定图像等资源，具体因不同的监视器而异，因此不同应用程序视图之间也有差异。 出于此原因，每个应用程序视图都有不同的默认上下文。 每当你检索候选资源时，都应该传递 **ResourceContext** 实例，以获取最适合给定视图的值。
-
-### <a name="load-images"></a>加载图像
-
-如果要使用 MRT.LOG Core 检索添加到项目中的映像，则必须将映像配置为作为内容生成。 如果未执行此操作，则不会在资源 pri 文件中对映像进行索引，并且无法通过 MRT.LOG 核心来检索。
-
-配置要生成为内容的图像：
-
-* 在 c #/.NET 5 项目中，将图像的 " **生成操作** " 属性设置为 " **内容**"。
-* 在 c + +/WinRT 项目中，将图像的 **Content** 属性设置为 **True**。
 
 ## <a name="sample"></a>示例
 

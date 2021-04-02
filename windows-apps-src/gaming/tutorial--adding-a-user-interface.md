@@ -258,7 +258,7 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
 - "再次点击播放 ..."
 - "级别正在加载，请稍候 ..."
 - "点击以继续 ..."
-- 无
+- None
 
 > [!NOTE]
 > 这两种方法将在 [表示游戏状态](#representing-game-state) 部分进一步讨论。
@@ -342,7 +342,7 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
 加载 | [GameInfoOverlay::SetGameLoading](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L254-L306) |**标题**</br>加载资源 </br>**正文**</br> 以增量方式打印 "." 以表示加载活动。
 初始开始/高分数统计 | [GameInfoOverlay::SetGameStats](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L310-L354) |**标题**</br>高分</br> **正文**</br> 已完成级别# </br>总点数#</br>照片总数#
 级别开始 | [GameInfoOverlay::SetLevelStart](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L413-L471) |**标题**</br>调配#</br>**正文**</br>级别目标说明。
-已暂停游戏 | [GameInfoOverlay::SetPause](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L475-L502) |**标题**</br>已暂停游戏</br>**正文**</br>无
+已暂停游戏 | [GameInfoOverlay::SetPause](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L475-L502) |**标题**</br>已暂停游戏</br>**正文**</br>None
 游戏结束 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**标题**</br>游戏结束</br> **正文**</br> 已完成级别# </br>总点数#</br>照片总数#</br>已完成级别#</br>高分#
 游戏获胜 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**标题**</br>你赢了！</br> **正文**</br> 已完成级别# </br>总点数#</br>照片总数#</br>已完成级别#</br>高分#
 
