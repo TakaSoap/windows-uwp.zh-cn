@@ -7,12 +7,12 @@ keywords: windows win32, 桌面开发, project reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 08d25334014d90f4aaec7119bc9ee84444547115
-ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
+ms.openlocfilehash: b427e3a5b26427e00c288f90bf6f63464ebd438a
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105730772"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270196"
 ---
 # <a name="get-started-with-project-reunion"></a>项目留尼汪岛入门
 
@@ -89,6 +89,9 @@ ms.locfileid: "105730772"
 如果你有想要在其中使用项目的现有项目，则可以在项目中安装项目留尼汪岛 0.5 NuGet 包。 此方案有 [一些限制](#limitations-for-using-project-reunion-in-existing-projects)。
 
 1. 在 Visual Studio 2019 中，打开现有桌面项目（C#/.NET 5 或 C++/WinRT）或 UWP 项目。
+
+    > [!NOTE]
+    > 如果有 c #/.NET 5 桌面项目，请确保将项目文件中的 **TargetFramework** 元素分配给特定于 windows 10 的 .net 5 名字对象，例如 **NET 5.0-Windows 10.0.19041.0**，以便它可以调用 Windows 运行时 api。 有关详情，请参阅[本部分](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-5-use-the-target-framework-moniker-option)。
 
 2. 确保已启用[包引用](/nuget/consume-packages/package-references-in-project-files)：
 
