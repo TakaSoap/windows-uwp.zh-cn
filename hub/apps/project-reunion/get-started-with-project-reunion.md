@@ -7,12 +7,12 @@ keywords: windows win32, 桌面开发, project reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b427e3a5b26427e00c288f90bf6f63464ebd438a
-ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
+ms.openlocfilehash: 5b07229f381575da29d25353ca8147e712482bef
+ms.sourcegitcommit: 3942f09c620e3f3065cae91dc51505e86ec0969b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106270196"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106376585"
 ---
 # <a name="get-started-with-project-reunion"></a>项目留尼汪岛入门
 
@@ -40,7 +40,10 @@ ms.locfileid: "106270196"
 
 3. 如果以前安装了 [Visual Studio 的 WinUI 3 预览版扩展](https://marketplace.visualstudio.com/items?itemName=Microsoft-WinUI.WinUIProjectTemplates)，请卸载该扩展。 有关如何卸载扩展的详细信息，请参阅[管理适用于 Visual Studio 的扩展](/visualstudio/ide/finding-and-using-visual-studio-extensions)。
 
-4. 请确保系统已为 nuget.org 启用了 NuGet 包源。有关详细信息，请参阅[常见 NuGet 配置](/nuget/consume-packages/configuring-nuget-behavior)。
+4. 请确保系统中已为正式 NuGet 服务索引启用了 NuGet 包源 `https://api.nuget.org/v3/index.json` 。 
+
+    1. 在 Visual Studio 中，选择 "**工具**" "  ->  **NuGet 包管理器**  ->  **包管理器设置**" 以打开 "**选项**" 对话框。 
+    2. 在 " **选项** " 对话框的左窗格中，选择 " **包源** " 选项卡，并确保将指向的 **nuget.org** 的包源 `https://api.nuget.org/v3/index.json` 作为源 URL。 有关详细信息，请参阅 [常见 NuGet 配置](/nuget/consume-packages/configuring-nuget-behavior)。
 
 5. 下载并安装适用于 Visual Studio 的项目留尼汪岛0.5 扩展。 扩展有两个版本：一个用于桌面 (c #/.NET 5 或 c + +/WinRT) 应用，另一个用于 UWP 应用。
 
