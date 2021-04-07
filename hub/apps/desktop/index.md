@@ -7,12 +7,12 @@ keywords: windows win32, 桌面开发
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2518d838ca41e5ca2faa6dbd5697d64ea9257922
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: fcea88d91313893f93084716113ff506e502b03c
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534366"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270124"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>构建 Windows 电脑的桌面应用
 
@@ -66,11 +66,11 @@ ms.locfileid: "99534366"
 
 展望未来，我们将通过 Windows UI 库 (WinUI) 和 Project Reunion 改进 Windows 应用开发平台。
 
-* WinUI 是一种适用于 Windows 10 应用的本机用户体验 (UX) 框架。 WinUI 开始时是以工具包的形式出现，为面向低端版 Windows 10 的 UWP 应用提供新版和更新版 WinRT 控件。 从 WinUI 3（仍为预览版）开始，WinUI 扩大范围，成为跨 UWP、.NET 和 Win32 应用平台的 Windows 10 应用的顶级本机用户界面 (UI) 框架。
+* WinUI 是一种适用于 Windows 10 应用的本机用户体验 (UX) 框架。 WinUI 开始时是以工具包的形式出现，为面向低端版 Windows 10 的 UWP 应用提供新版和更新版 WinRT 控件。 从 WinUI 3 开始，WinUI 扩大范围，成为跨 UWP、.NET 和 Win32 应用平台的 Windows 10 应用的顶级本机用户界面 (UI) 框架。
 
     有关详细信息，请参阅 [Windows UI 库 (WinUI)](../winui/index.md)。
 
-* Project Reunion（目前提供预览版）是一组新的开发人员组件和工具的代号，它们代表着 Windows 应用开发平台的下一步发展。 Project Reunion 提供了一组统一的 API 和工具，各种目标 Windows 10 OS 版本上的任何应用都能够以一致的方式使用它们。 Project Reunion 通过一组通用的 API 和工具（开发人员可以在这些平台中使用）对 UWP、本机 Win32 和 .NET 等现有 Windows 应用平台和框架进行了补充。 
+* Project Reunion 是一组新的开发人员组件和工具的代号，它们代表着 Windows 应用开发平台的下一步发展。 Project Reunion 提供了一组统一的 API 和工具，各种目标 Windows 10 OS 版本上的任何应用都能够以一致的方式使用它们。 Project Reunion 通过一组通用的 API 和工具（开发人员可以在这些平台中使用）对 UWP、本机 Win32 和 .NET 等现有 Windows 应用平台和框架进行了补充。 
 
     有关详细信息，请参阅 [Project Reunion](../project-reunion/index.md)。
 

@@ -2,16 +2,16 @@
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: 本文将列出 UWP 应用的音频和视频编解码器以及格式支持。
 title: 支持的编解码器
-ms.date: 02/08/2017
+ms.date: 04/01/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bf61935459d8b842a3d26fcfe546995427d98d3f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2d5b9fd8ed0cdde7af38de2c855d2738458eb571
+ms.sourcegitcommit: ffe124f95967c49993c8dacc7c4c17f5a534a163
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175691"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504006"
 ---
 # <a name="supported-codecs"></a>支持的编解码器
 
@@ -26,9 +26,9 @@ ms.locfileid: "89175691"
 > [!NOTE] 
 > 其中表明 AMR-NB 支持，此编解码器在服务器 SKU 上不受支持。
 
- 
+ 
 
-### <a name="desktop"></a>“桌面”
+### <a name="desktop"></a>桌面
 
 <table>
 <colgroup>
@@ -111,34 +111,20 @@ ms.locfileid: "89175691"
 </tr>
 <tr class="even">
 <td align="left">AC3</td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">EAC3 / EC3</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
+
 <tr class="even">
 <td align="left">ALAC</td>
 <td align="left">D/E</td>
@@ -155,8 +141,8 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">AMR-NB</td>
-<td align="left">D</td>
+<td align="left">AMR-NB<sup>*</sup></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -246,14 +232,14 @@ ms.locfileid: "89175691"
 </tr>
 <tr class="odd">
 <td align="left">MP3</td>
-<td align="left"></td>
+<td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -337,9 +323,9 @@ ms.locfileid: "89175691"
 </tbody>
 </table>
 
- 
+<sup>*</sup> 在 Windows Server Sku 上不可用。
 
-### <a name="mobile"></a>移动型
+### <a name="mobile"></a>移动
 
 <table>
 <colgroup>
@@ -410,7 +396,7 @@ ms.locfileid: "89175691"
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -435,21 +421,7 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left"></td>
 </tr>
-<tr class="odd">
-<td align="left">EAC3 / EC3</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
+
 <tr class="even">
 <td align="left">ALAC</td>
 <td align="left">D</td>
@@ -467,7 +439,7 @@ ms.locfileid: "89175691"
 </tr>
 <tr class="odd">
 <td align="left">AMR-NB</td>
-<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -557,13 +529,13 @@ ms.locfileid: "89175691"
 </tr>
 <tr class="odd">
 <td align="left">MP3</td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -648,320 +620,9 @@ ms.locfileid: "89175691"
 </tbody>
 </table>
 
- 
+ 
 
-### <a name="iot-core-x86"></a>IoT Core (x86)
-
-<table>
-<colgroup>
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">编解码器/容器</th>
-<th align="left">MPEG-4</th>
-<th align="left">MPEG-3</th>
-<th align="left">MPEG-2</th>
-<th align="left">ADTS</th>
-<th align="left">ASF</th>
-<th align="left">RIFF</th>
-<th align="left">AVI</th>
-<th align="left">AC-3</th>
-<th align="left">AMR</th>
-<th align="left">3GP</th>
-<th align="left">FLAC</th>
-<th align="left">WAV</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">AAC-LC</td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">AC3</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">EAC3 / EC3</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">ALAC</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">AMR-NB</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">FLAC</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">G.711 (A-Law, µ-law)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-</tr>
-<tr class="even">
-<td align="left">GSM 6.10</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-</tr>
-<tr class="odd">
-<td align="left">IMA ADPCM</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-</tr>
-<tr class="even">
-<td align="left">LPCM</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D/E</td>
-</tr>
-<tr class="odd">
-<td align="left">MP3</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">MPEG-1/2</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">MS ADPCM</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-</tr>
-<tr class="even">
-<td align="left">WMA 1/2/3</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">WMA Pro</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">WMA 语音</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-### <a name="iot-core-arm"></a>IoT Core (ARM)
+### <a name="windows-10-iot"></a>WIndows 10 IoT
 
 <table>
 <colgroup>
@@ -1057,21 +718,7 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left"></td>
 </tr>
-<tr class="odd">
-<td align="left">EAC3 / EC3</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
+
 <tr class="even">
 <td align="left">ALAC</td>
 <td align="left">D</td>
@@ -1089,7 +736,7 @@ ms.locfileid: "89175691"
 </tr>
 <tr class="odd">
 <td align="left">AMR-NB</td>
-<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1179,13 +826,13 @@ ms.locfileid: "89175691"
 </tr>
 <tr class="odd">
 <td align="left">MP3</td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1228,7 +875,7 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1243,7 +890,7 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1258,7 +905,7 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1270,7 +917,7 @@ ms.locfileid: "89175691"
 </tbody>
 </table>
 
- 
+
 
 ### <a name="xbox"></a>Xbox
 
@@ -1359,30 +1006,16 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
-<tr class="odd">
-<td align="left">EAC3 / EC3</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
+
 <tr class="even">
 <td align="left">ALAC</td>
 <td align="left">D</td>
@@ -1490,13 +1123,13 @@ ms.locfileid: "89175691"
 </tr>
 <tr class="odd">
 <td align="left">MP3</td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1581,7 +1214,7 @@ ms.locfileid: "89175691"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="video-codec--format-support"></a>视频编解码器和格式支持
 
@@ -1589,230 +1222,10 @@ ms.locfileid: "89175691"
 
 > [!NOTE] 
 > 其中表明 H.265 支持，该设备系列内的所有设备不一定都受支持。
-> 其中表明 MPEG-2/MPEG-1 支持，只在安装可选的 Microsoft DVD 通用 Windows 应用后才受支持。
 
- 
+ 
 
-### <a name="desktop"></a>“桌面”
-
-<table>
-<colgroup>
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">编解码器/容器</th>
-<th align="left">FOURCC</th>
-<th align="left">fMP4</th>
-<th align="left">MPEG-4</th>
-<th align="left">MPEG-2 PS</th>
-<th align="left">MPEG-2 TS</th>
-<th align="left">MPEG-1</th>
-<th align="left">3GPP</th>
-<th align="left">3GPP2</th>
-<th align="left">AVCHD</th>
-<th align="left">ASF</th>
-<th align="left">AVI</th>
-<th align="left">MKV</th>
-<th align="left">DV</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">MPEG-1</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left">D/E</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">MPEG-2</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">MPEG-4（第 2 部分）</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left">D</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">H.265</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">H.264</td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left">D/E</td>
-<td align="left">D/E</td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left">D</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">H.263</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">VC-1</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left">D</td>
-<td align="left">D</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">WMV7/8/9</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">WMV9 屏幕</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">DV</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left">D</td>
-</tr>
-<tr class="odd">
-<td align="left">Motion JPEG</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-### <a name="mobile"></a>移动型
+### <a name="desktop"></a>桌面
 
 <table>
 <colgroup>
@@ -1834,7 +1247,6 @@ ms.locfileid: "89175691"
 <thead>
 <tr class="header">
 <th align="left">编解码器/容器</th>
-<th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-2 PS</th>
@@ -1851,41 +1263,38 @@ ms.locfileid: "89175691"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">MPEG-1</td>
+<td align="left">MPEG-1<sup>*</sup></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">MPEG-2</td>
+<td align="left">MPEG-2<sup>*</sup></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">MPEG-4（第 2 部分）</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1899,8 +1308,7 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">H.265</td>
-<td align="left"></td>
+<td align="left">H。<sup>**</sup></td>
 <td align="left">D</td>
 <td align="left">D/E</td>
 <td align="left"></td>
@@ -1916,7 +1324,6 @@ ms.locfileid: "89175691"
 </tr>
 <tr class="odd">
 <td align="left">H.264</td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
@@ -1933,7 +1340,6 @@ ms.locfileid: "89175691"
 <tr class="even">
 <td align="left">H.263</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1949,7 +1355,6 @@ ms.locfileid: "89175691"
 <tr class="odd">
 <td align="left">VC-1</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1957,7 +1362,7 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left">D</td>
 <td align="left">D</td>
 <td align="left"></td>
@@ -1965,38 +1370,53 @@ ms.locfileid: "89175691"
 <tr class="even">
 <td align="left">WMV7/8/9</td>
 <td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">WMV9 屏幕</td>
 <td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left">DV</td>
 <td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+
+<tr class="even">
+<td align="left">VP8</td>
+<td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2005,14 +1425,44 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
+
+<tr class="even">
+<td align="left">VP9</td>
+<td align="left">D</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+
+<tr class="even">
+<td align="left">AV1<sup>**</sup></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+
 <tr class="odd">
 <td align="left">Motion JPEG</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
@@ -2029,9 +1479,11 @@ ms.locfileid: "89175691"
 </tbody>
 </table>
 
- 
+<sup>*</sup> 安装可选的 Microsoft UWP DVD 应用程序时，可以使用 MPEG-2/MPEG-2 编解码器。
 
-### <a name="iot-core-x86"></a>IoT Core (x86)
+<sup>**</sup> 可以通过安装相应的可选编解码器包来提供 AV1。
+
+### <a name="mobile"></a>移动
 
 <table>
 <colgroup>
@@ -2053,73 +1505,33 @@ ms.locfileid: "89175691"
 <thead>
 <tr class="header">
 <th align="left">编解码器/容器</th>
-<th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-2 PS</th>
 <th align="left">MPEG-2 TS</th>
-<th align="left">MPEG-1</th>
 <th align="left">3GPP</th>
-<th align="left">3GPP2</th>
 <th align="left">AVCHD</th>
 <th align="left">ASF</th>
 <th align="left">AVI</th>
 <th align="left">MKV</th>
-<th align="left">DV</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">MPEG-1</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">MPEG-2</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
+
 <tr class="odd">
 <td align="left">MPEG-4（第 2 部分）</td>
 <td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left">D</td>
-<td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left">H.265</td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left">D/E</td>
 <td align="left"></td>
@@ -2128,49 +1540,36 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">H.264</td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left">D</td>
-<td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left">H.263</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 </tr>
 <tr class="odd">
 <td align="left">VC-1</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2178,79 +1577,26 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left">D</td>
-<td align="left">D</td>
-<td align="left"></td>
 </tr>
-<tr class="even">
-<td align="left">WMV7/8/9</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">WMV9 屏幕</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">DV</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
+
 <tr class="odd">
 <td align="left">Motion JPEG</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
 <td align="left"></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
-### <a name="iot-arm"></a>IoT (ARM)
+### <a name="windows-10-iot"></a>Windows 10 IoT
 
 <table>
 <colgroup>
@@ -2272,7 +1618,6 @@ ms.locfileid: "89175691"
 <thead>
 <tr class="header">
 <th align="left">编解码器/容器</th>
-<th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-2 PS</th>
@@ -2292,53 +1637,49 @@ ms.locfileid: "89175691"
 <td align="left">MPEG-1</td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">MPEG-2</td>
+<td align="left">MPEG-2<sup>*</sup></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">MPEG-4（第 2 部分）</td>
 <td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">H.265</td>
-<td align="left"></td>
+<td align="left">H。<sup>**</sup></td>
 <td align="left">D</td>
 <td align="left">D/E</td>
 <td align="left"></td>
@@ -2354,7 +1695,6 @@ ms.locfileid: "89175691"
 </tr>
 <tr class="odd">
 <td align="left">H.264</td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
@@ -2371,22 +1711,20 @@ ms.locfileid: "89175691"
 <tr class="even">
 <td align="left">H.263</td>
 <td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">VC-1</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
@@ -2403,6 +1741,20 @@ ms.locfileid: "89175691"
 <tr class="even">
 <td align="left">WMV7/8/9</td>
 <td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">WMV9 屏幕</td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
@@ -2417,7 +1769,9 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">WMV9 屏幕</td>
+<td align="left">VP8</td>
+<td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2426,10 +1780,37 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">VP9</td>
+<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">AV1<sup>**</sup></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -2445,12 +1826,10 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 </tr>
 <tr class="odd">
 <td align="left">Motion JPEG</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
@@ -2467,7 +1846,14 @@ ms.locfileid: "89175691"
 </tbody>
 </table>
 
- 
+<sup>*</sup> 安装可选的 Microsoft UWP DVD 应用程序时，可以使用 MPEG-2/MPEG-2 编解码器。
+
+<sup>**</sup> 可以通过安装相应的可选编解码器包来提供 AV1。
+ 
+
+
+
+ 
 
 ### <a name="xbox"></a>Xbox
 
@@ -2491,14 +1877,12 @@ ms.locfileid: "89175691"
 <thead>
 <tr class="header">
 <th align="left">编解码器/容器</th>
-<th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-2 PS</th>
 <th align="left">MPEG-2 TS</th>
 <th align="left">MPEG-1</th>
 <th align="left">3GPP</th>
-<th align="left">3GPP2</th>
 <th align="left">AVCHD</th>
 <th align="left">ASF</th>
 <th align="left">AVI</th>
@@ -2511,11 +1895,9 @@ ms.locfileid: "89175691"
 <td align="left">MPEG-1</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
@@ -2527,10 +1909,8 @@ ms.locfileid: "89175691"
 <td align="left">MPEG-2</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D/E</td>
@@ -2542,13 +1922,11 @@ ms.locfileid: "89175691"
 <tr class="odd">
 <td align="left">MPEG-4（第 2 部分）</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -2557,10 +1935,8 @@ ms.locfileid: "89175691"
 </tr>
 <tr class="even">
 <td align="left">H.265</td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2573,14 +1949,12 @@ ms.locfileid: "89175691"
 </tr>
 <tr class="odd">
 <td align="left">H.264</td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -2590,13 +1964,11 @@ ms.locfileid: "89175691"
 <tr class="even">
 <td align="left">H.263</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -2606,9 +1978,7 @@ ms.locfileid: "89175691"
 <tr class="odd">
 <td align="left">VC-1</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2620,7 +1990,9 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">WMV7/8/9</td>
+<td align="left">VP8</td>
+<td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2628,15 +2000,13 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
-<tr class="odd">
-<td align="left">WMV9 屏幕</td>
+<tr class="even">
+<td align="left">VP9</td>
+<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2644,11 +2014,21 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">AV1</td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -2663,16 +2043,12 @@ ms.locfileid: "89175691"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 </tr>
 <tr class="odd">
 <td align="left">Motion JPEG</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2686,7 +2062,7 @@ ms.locfileid: "89175691"
 </tbody>
 </table>
 
-## <a name="image-codec--format-support"></a>图像编解码器和格式支持 
+## <a name="image-codec--format-support"></a>图像编解码器和格式支持 
 
 <table>
 <colgroup>
@@ -2697,7 +2073,7 @@ ms.locfileid: "89175691"
 <thead>
 <tr class="header">
 <th align="left">编解码器</th>
-<th align="left">“桌面”</th>
+<th align="left">桌面</th>
 <th align="left">其他设备系列</th>
 </tr>
 </thead>

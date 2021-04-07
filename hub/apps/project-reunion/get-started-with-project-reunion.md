@@ -1,20 +1,20 @@
 ---
 description: 本文提供了有关在开发计算机上安装 Visual Studio 2019 项目中的扩展插件的说明，并在新项目或现有项目中使用 "项目使用"。
-title: 项目留尼汪岛入门
+title: Project Reunion 入门
 ms.topic: article
 ms.date: 03/19/2021
 keywords: windows win32, 桌面开发, project reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b07229f381575da29d25353ca8147e712482bef
-ms.sourcegitcommit: 3942f09c620e3f3065cae91dc51505e86ec0969b
+ms.openlocfilehash: 5ca69825acd12d67167b009474a2afe9fecc8187
+ms.sourcegitcommit: 0be372d792b58a260634b4e008e180f0447a46ff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106376585"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106549673"
 ---
-# <a name="get-started-with-project-reunion"></a>项目留尼汪岛入门
+# <a name="get-started-with-project-reunion"></a>Project Reunion 入门
 
 本文提供了有关在开发计算机上安装 Visual Studio 2019 项目中的扩展插件的说明，并在新项目或现有项目中使用 "项目使用"。 在安装和使用 "项目留尼汪岛" 之前，请参阅 [限制和已知问题](index.md#limitations-and-known-issues)。
 
@@ -74,7 +74,7 @@ ms.locfileid: "106376585"
 1. 按照以下文章中的说明进行操作：
 
     - [适用于桌面应用的 WinUI 3 入门](..\winui\winui3\get-started-winui3-for-desktop.md)
-    - [WinUI 3 for UWP 应用入门 (预览) ](..\winui\winui3\get-started-winui3-for-uwp.md)
+    - [适用于 UWP 应用的 WinUI 3 入门（预览）](..\winui\winui3\get-started-winui3-for-uwp.md)
     - [构建基本的 WinUI 3 桌面应用](..\winui\winui3\desktop-build-basic-winui3-app.md)
 
 2. 创建项目后，除了桌面和 UWP 应用常用的所有其他 Windows 和 .NET API 之外，你还可以使用以下 Project Reunion API 和组件。
@@ -89,7 +89,7 @@ ms.locfileid: "106376585"
 
 ## <a name="use-project-reunion-in-an-existing-project"></a>在现有项目中使用 Project Reunion
 
-如果你有想要在其中使用项目的现有项目，则可以在项目中安装项目留尼汪岛 0.5 NuGet 包。 此方案有 [一些限制](#limitations-for-using-project-reunion-in-existing-projects)。
+如果你有想要在其中使用项目的现有项目，则可以在项目中安装项目留尼汪岛 0.5 NuGet 包。 此方案有 [一些限制](index.md#using-the-project-reunion-nuget-package-in-existing-projects)。
 
 1. 在 Visual Studio 2019 中，打开现有桌面项目（C#/.NET 5 或 C++/WinRT）或 UWP 项目。
 
@@ -114,15 +114,6 @@ ms.locfileid: "106376585"
     - [使用 MRT Core 管理资源](mrtcore/mrtcore-overview.md)
     - [使用 DWriteCore 呈现文本](dwritecore.md)
 
-### <a name="limitations-for-using-project-reunion-in-existing-projects"></a>在现有项目中使用 Project 留的限制
-
-如果要在现有项目中使用项目留尼汪岛0.5，请注意以下限制：
-
-- 如果将 "项目留尼汪岛 0.5 NuGet 包" 安装到现有项目，则只能在项目中使用项目留的非 WinUI 3 组件。 要使用 WinUI 3，必须使用上一节中介绍的其中一个 WinUI 3 项目模板创建一个新项目。
--  (名为 **ProjectReunion**) 的 "Project 留尼汪岛 0.5 NuGet 包" 包含其他子 (包，其中包括 **ProjectReunion** 和 **WinUI**) ，其中包含组件的实现，包括 WinUI、mrt.log 核心和 DWriteCore。 在当前版本中，不能单独安装这些子包以只引用项目中的某些组件。 必须安装 **ProjectReunion** 包，其中包括所有组件。  
-- WPF 项目目前不支持安装项目留尼汪岛 0.5 NuGet 包。
-- 在生产环境中，支持将项目留尼汪岛 0.5 NuGet 包与 desktop (c #/.NET 5 和 c + +/WinRT) 项目配合使用。 它可用作 UWP 项目的开发人员预览版，不支持在生产环境中与 UWP 项目一起使用。
-
 ## <a name="samples"></a>示例
 
 目前，你可以浏览以下 Project Reunion 示例。
@@ -134,5 +125,5 @@ ms.locfileid: "106376585"
 
 ## <a name="related-topics"></a>相关主题
 
-- [用项目的留尼汪岛构建桌面 Windows 应用](index.md)
-- [部署使用项目配置的应用](deploy-apps-that-use-project-reunion.md)
+- [使用 Project Reunion 构建桌面 Windows 应用](index.md)
+- [部署使用 Project Reunion 的应用](deploy-apps-that-use-project-reunion.md)
