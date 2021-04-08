@@ -3,12 +3,12 @@ title: WinUI 3 Project Reunion 0.5（2021 年 3 月）
 description: WinUI 3 Project Reunion 0.5 的概述。
 ms.date: 03/19/2021
 ms.topic: article
-ms.openlocfilehash: 92437934b7a07c6409d5d44325094f8dd024f443
-ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
+ms.openlocfilehash: 685fd1525088bd662435b95f727c1e9fa5de5d81
+ms.sourcegitcommit: 0be372d792b58a260634b4e008e180f0447a46ff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105730459"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106549683"
 ---
 # <a name="windows-ui-library-3---project-reunion-05-march-2021"></a>Windows UI 库 3 - Project Reunion 0.5（2021 年 3 月）
 
@@ -138,36 +138,33 @@ WinUI 3 API 参考文档请参阅此处：[WinUI 3 API 参考](/windows/winui/ap
     添加以下部分：
 
     ```xml
+      <ItemGroup>
+        <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.0]">
+          <IncludeAssets>build</IncludeAssets>
+        </PackageReference>
+      </ItemGroup>
+    ```
+    然后，删除以下行：
+    ```xml
+      <AppxTargetsLocation Condition="'$(AppxTargetsLocation)'==''">$(MSBuildThisFileDirectory)build\</AppxTargetsLocation>
+    ```
+    和
+
+    ```xml
+      <Import Project="$(Microsoft_ProjectReunion_AppXReference_props)" />
+      <Import Project="$(Microsoft_WinUI_AppX_targets)" />
+    ```
+    以及此项组：
+    ```xml
     <ItemGroup>
-      <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.0]">
-        <IncludeAssets>build</IncludeAssets>
-      </PackageReference>
-    </ItemGroup>
-    ```
-    然后，删除以下行（如果存在）：
-    ```xml
-    <AppxTargetsLocation Condition="'$(AppxTargetsLocation)'==''">$(MSBuildThisFileDirectory)build\</AppxTargetsLocation>
-    ```
-
-    ```xml
-    <Import Project="$(Microsoft_ProjectReunion_AppXReference_props)" />
-    <Import Project="$(Microsoft_WinUI_AppX_targets)" />
-    ```
-
-    删除此项组：
-
-    ```xml
-    <ItemGroup>
-      <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.0-prerelease]" GeneratePathProperty="true">
-        <ExcludeAssets>all</ExcludeAssets>
-      </PackageReference>
-      <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="[0.5.0-prerelease]" GeneratePathProperty="true">
-        <ExcludeAssets>all</ExcludeAssets>
-      </PackageReference>
-    </ItemGroup>
-    ```
-
-5. 在项目的 {YourProject}(package)/build/ 文件夹下，删除现有的 `Microsoft.WinUI.AppX.targets` 文件。
+        <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.0-prerelease]" GeneratePathProperty="true">
+          <ExcludeAssets>all</ExcludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="[0.5.0-prerelease]" GeneratePathProperty="true">
+          <ExcludeAssets>all</ExcludeAssets>
+        </PackageReference>
+      </ItemGroup>
+      ```
 
 ## <a name="major-changes-introduced-in-this-release"></a>此版本中引入的重大更改
 
