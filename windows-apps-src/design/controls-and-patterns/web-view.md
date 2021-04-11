@@ -21,7 +21,7 @@ Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Ed
 
 > **重要 API**：[WebView 类](/uwp/api/Windows.UI.Xaml.Controls.WebView)
 
-## <a name="is-this-the-right-control"></a>这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是合适的控件吗？
 
 使用 Web 视图控件从远程 Web 服务器、动态生成的代码或者应用程序包中的内容文件显示格式丰富的 HTML 内容。 丰富的内容还可以包含脚本代码，并在脚本和你的应用代码之间通信。
 
@@ -177,9 +177,9 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 - [FrameDOMContentLoaded](/uwp/api/windows.ui.xaml.controls.webview.framedomcontentloaded) - 在 Web 视图中的框架已完成分析其当前 HTML 内容时发生。 
 - [FrameNavigationCompleted](/uwp/api/windows.ui.xaml.controls.webview.framenavigationcompleted) - 在 Web 视图中的框架已完成加载其内容时发生。 
 
-### <a name="responding-to-potential-problems"></a>响应潜在问题
+### <a name="responding-to-potential-problems"></a>应对潜在问题
 
-你可以对内容可能出现的问题做出响应，例如脚本长时间运行、Web 视图不能加载内容和不安全内容的警告。 
+你可以应对内容的潜在问题，例如脚本长时间运行、Web 视图不能加载内容和不安全内容的警告。 
 
 脚本运行期间，你的应用可能不做任何响应。 [LongRunningScriptDetected](/uwp/api/windows.ui.xaml.controls.webview.longrunningscriptdetected) 事件在 Web 视图执行 JavaScript 期间定期发生，从而提供中断该脚本运行的机会。 若要确定脚本已运行的时间，请检查 [WebViewLongRunningScriptDetectedEventArgs](/uwp/api/Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs) 的 [ExecutionTime](/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime) 属性。 若要停止该脚本，请将事件参数 [StopPageScriptExecution](/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution) 属性设置为 **true**。 除非在后续 Web 视图导航期间重新加载已停止执行的脚本，否则不会再次执行该脚本。 
 
