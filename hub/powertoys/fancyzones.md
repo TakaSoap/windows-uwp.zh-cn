@@ -4,12 +4,12 @@ description: 用于将窗口排列并对齐到高效布局的窗口管理器实�
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e297467f6681d3060e085ee4b60fe8c51f1ec21
-ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
+ms.openlocfilehash: 4e85193aca4ffda4f863cca7321ca870a08694a3
+ms.sourcegitcommit: 77af97719a439f5e73a6109b42fd3110bcb2843b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103417119"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107219002"
 ---
 # <a name="fancyzones-utility"></a>FancyZones 实用程序
 
@@ -68,6 +68,14 @@ Subtractive **网格** 模型以三列网格开头，并允许通过拆分和合
 添加 **画布** 模型以空白布局开头，并支持添加可进行拖动和调整大小与 windows 相似的区域。
 
 ![FancyZones 窗口编辑器模式](../images/pt-fancyzones-canvaseditor.png)
+
+### <a name="quickly-changing-between-layouts"></a>在布局之间快速更改
+
+使用自定义布局，可以将此布局配置为用户定义的热键，以快速将其应用到所需的桌面。 可以通过打开自定义布局的 "编辑" 菜单来设置热键。 设置后，可以通过按绑定来应用自定义布局 `Win ⊞ + Ctrl + Alt + [hotkey]` 。 还可以通过在拖动窗口时按热键来应用布局。
+
+在下面的演示中，我们从应用于屏幕的默认模板开始，为分配热键（共2个）。 然后，使用 `Win ⊞ + Ctrl + Alt + [hotkey]` 绑定应用第一个自定义布局，并将窗口绑定到该布局。 最后，在拖动窗口时应用第二个自定义布局，并将窗口绑定到它。
+
+![FancyZones Quick-Swap 布局](../images/pt-fancyzones-quickswap.gif) 
 
 ## <a name="snapping-a-window-to-two-or-more-zones"></a>使窗口与两个或多个区域对齐
 

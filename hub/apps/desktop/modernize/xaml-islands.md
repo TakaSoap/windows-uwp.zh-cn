@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: b8cb2670c09c5a93d2edd67e3f338a33eeb488ad
-ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
+ms.openlocfilehash: 6e881fbb883d35d35b70eb8984b9264acd78191d
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98922758"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270174"
 ---
 # <a name="host-winrt-xaml-controls-in-desktop-apps-xaml-islands"></a>在桌面应用中托管 WinRT XAML 控件（XAML 岛）
 
@@ -29,7 +29,7 @@ ms.locfileid: "98922758"
 使用 XAML 岛的方式取决于应用程序类型和要托管的 WinRT XAML 控件类型。
 
 > [!NOTE]
-> 如果有关于 XAML 岛的反馈，请在 [Microsoft.Toolkit.Win32 存储库](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)中创建一个新问题，将你的意见留在那里。 若要私下提交反馈，可将其发送到 XamlIslandsFeedback@microsoft.com。 你的意见和方案对我们至关重要。
+> 如果有关于 XAML 岛的反馈，请在 [Microsoft.Toolkit.Win32 存储库](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)中创建一个新问题，将你的意见留在那里。
 
 ## <a name="requirements"></a>要求
 

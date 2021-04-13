@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a837dc025023d529d9090fade401726a670c7561
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6e20d56485ad7b5a54b9e951e8ad8ee331b5da8f
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166191"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939112"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
@@ -177,7 +177,7 @@ ESC | WIN + ESC | BACK | 长按可实现预期效果。
 -   右上角部分会列出日志。 当你将一对设备触碰到一起（或触碰到 POS 终端）时，将记录触碰事件，而当设备取消触碰时，将记录取消触碰事件。 此部分还记录你的应用是否在连接中断前响应或记录你在模拟器 UI 中执行的任何其他操作，并带有时间戳。 日志在模式切换后仍然保留，并且你可以随时通过点击“日志”  屏幕上方的“清除”  按钮清除日志。
 -   屏幕的下半部分是消息日志，显示通过当前选择的连接发送或接收的所有消息的报道，具体取决于所选择的模式。
 
-> **重要提示**：首次启动触碰器工具时，你会收到一个 Windows 防火墙提示。   你必须选中全部 3 个复选框，并允许该工具通过防火墙，否则该工作将在无提示的情况下无法运行。
+> **重要提示** 当你首次启动触碰器工具时，你会收到一个 Windows 防火墙提示。 你必须选中全部 3 个复选框，并允许该工具通过防火墙，否则该工作将在无提示的情况下无法运行。
 
 在启动快速启动安装程序后，请确保按照上述说明选中防火墙提示上的全部 3 个复选框。 此外，必须安装触碰器工具，并且在与 Microsoft 模拟器相同的物理主机上使用它。
 
@@ -365,7 +365,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 | 速度限制 | 路线的速度限制 | 不适用   | 以发布的速度限制遍历路线。 |
 | 步行     | 5 km/h                   | 1.39 m           | 以 5 km/h 的自然步行速度遍历路线。 |
 | 骑行      | 25 km/h                  | 6.94 m           | 以 25 km/h 的自然骑行速度遍历路线。 |
-| 迅速        |                          |                  |以快于发布的速度限制的速度遍历路线。 | 
+| 迅速        |                          |                  |以快于发布的速度限制的速度遍历路线。 |
 
 **“路线”模式**
 
@@ -452,7 +452,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
         -   如果你在同步操作正在进行时单击“取消同步”  ，将弹出该卡，并且同步操作的结果会不完整。
     -   “弹出 SD 卡”  按钮将更改回“插入 SD 卡”  。
 
-> **注意**：由于手机使用的 SD 卡已使用 FAT32 文件系统进行格式化，所以最大容量为 32GB。  
+> **注意** 由于手机使用的 SD 卡已使用 FAT32 文件系统进行格式化，所以最大容量为 32GB。
 
 读取和写入模拟 SD 卡的速度受到限制以模仿真实速度。 访问 SD 卡的速度慢于访问计算机的硬盘驱动器的速度。
 
@@ -625,13 +625,13 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 若要在此情况下恢复，请在管理员命令提示符下运行“netcfg -d”：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`。 当命令结束运行时，需要重新启动计算机才能完成恢复过程。
 
-**注意**：此命令将删除所有网络设备，而不仅仅是与模拟器相关联的设备。   当计算机再次启动时，将自动发现所有硬件网络设备。
- 
+**注意** 此命令将删除所有网络设备，而不仅仅是与模拟器相关联的设备。 当计算机再次启动时，将自动发现所有硬件网络设备。
+ 
 ### <a name="unable-to-launch-the-emulators"></a>无法启动模拟器
 
 Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机、diff 磁盘和特定于模拟器的网络交换机，它已随附于模拟器 (XDE) 二进制文件。 如果仿真器虚拟机进入错误状态，你应使用此工具将其清理。 从管理员命令提示符运行该工具：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
-> **注意**：XDECleanup.exe 会删除所有特定于模拟器的 Hyper-V VM，还会删除任何 VM 检查点或已保存的状态。  
+> **注意** XDECleanup.exe 删除所有特定于模拟器的 Hyper-V VM，并且它还将删除任何 VM 检查点或已保存的状态。
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>卸载 Windows 10 移动版映像
 
@@ -660,6 +660,6 @@ Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机�
 
 ## <a name="related-topics"></a>相关主题
 
-* [在模拟器中运行 Windows Phone 应用](/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
+* [在模拟器中运行 Windows Phone 应用](/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015&preserve-view=true)
 * [Windows 和 Windows Phone SDK 存档](https://developer.microsoft.com/windows/downloads/sdk-archive)
- 
+ 

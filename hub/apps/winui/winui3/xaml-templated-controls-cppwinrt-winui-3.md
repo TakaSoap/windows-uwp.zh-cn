@@ -8,12 +8,12 @@ ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 154177c8c909f0ea30f4fbe2323a0b28222eb932
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: 1c2d77c9e109fdaf83a3ca328daf183c47bc639b
+ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100334996"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105730371"
 ---
 # <a name="templated-xaml-controls-for-winui-3-apps-with-cwinrt"></a>使用 C++/WinRT 将 WinUI 3 应用的 XAML 控件模板化
 
@@ -34,7 +34,6 @@ ms.locfileid: "100334996"
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>实现 BgLabelControl 自定义控件类
 
 在下面的步骤中，更新项目目录中的 `BgLabelControl.idl`、`BgLabelControl.h` 和 `BgLabelControl.cpp` 文件中的代码以实现运行时类。 
-
 
 模板化控件类将从 XAML 标记进行实例化，因此它将成为一个运行时类。 生成已完成的项目时，MIDL 编译器 (midl.exe) 将使用 `BgLabelControl.idl` 文件为控件生成 Windows 运行时元数据文件 (.winmd)，组件的使用者将引用该文件。 有关如何创建运行时类的详细信息，请参阅[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
 

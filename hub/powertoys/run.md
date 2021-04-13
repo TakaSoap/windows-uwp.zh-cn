@@ -4,12 +4,12 @@ description: 适用于包含一些附加功能而不影响性能的高级用户�
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ce71ac5f4667952be8beb790b0890aadd0d8eb54
-ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
+ms.openlocfilehash: 8d9c67b38f9a7c7729c0f4839a327a2527aa116d
+ms.sourcegitcommit: 77af97719a439f5e73a6109b42fd3110bcb2843b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103417108"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107218131"
 ---
 # <a name="powertoys-run-utility"></a>PowerToys 运行实用工具
 
@@ -63,20 +63,21 @@ PowerToys 运行功能包括：
   | Ctrl+C |  (仅适用于) 复制路径位置的文件夹和文件 |
   | 选项卡 | 导航搜索结果和上下文菜单按钮 |
 
-## <a name="action-key"></a>操作键
+## <a name="action-keys"></a>操作键
 
 这些默认激活短语将强制 PowerToys 仅在目标插件中运行。
 
   | **操作键** | **操作** |
   | --- | --- |
-  | `=` | 仅计算器。 示例 `=2+2` |
-  | `?` | 仅搜索文件。 `?road`要查找的示例`roadmap.txt` |
+  | `=` | 仅计算器。 示例 `=2+2` 。 |
+  | `?` | 仅搜索文件。 `?road`要查找 `roadmap.txt` 的示例。 |
   | `.` | 仅适用于已安装的程序。 `.code`获取 Visual Studio Code 的示例。 有关向程序的启动添加参数的选项，请参阅 [程序参数](#program-parameters) 。 |
-  | `//` | 仅 Url。 `//docs.microsoft.com`要使默认浏览器继续使用的示例https://docs.microsoft.com |
-  | `<` | 仅运行进程。 `<outlook`查找包含 outlook 的所有进程的示例 |
-  | `>` | 仅 Shell 命令。 `>ping localhost`执行 ping 查询的示例 |
-  | `:` | 仅限注册表项。 `:hkcu`搜索 HKEY_CURRENT_USER 注册表项的示例 |
-  | `!` | 仅限 Windows 服务。 `!alg`搜索要启动或停止的应用程序层网关服务的示例 |
+  | `//` | 仅 Url。 `//docs.microsoft.com`要使默认浏览器继续使用的示例 https://docs.microsoft.com 。 |
+  | `<` | 仅运行进程。 `<outlook`查找包含 outlook 的所有进程的示例。 |
+  | `>` | 仅 Shell 命令。 `>ping localhost`执行 ping 查询的示例。 |
+  | `:` | 仅限注册表项。 `:hkcu`搜索 HKEY_CURRENT_USER 注册表项的示例。 |
+  | `!` | 仅限 Windows 服务。 `!alg`搜索要启动或停止的应用程序层网关服务的示例。 |
+  | `{` | Visual Studio Code 以前打开的工作区、远程计算机 (SSH 或 Codespaces) 和容器。 `{powertoys`用于在其路径中搜索包含 "powertoys" 的工作区的示例。 此插件默认情况下处于关闭状态。
 
 ## <a name="system-commands"></a>系统命令
 
@@ -94,11 +95,11 @@ PowerToys 运行启用一组可执行的系统级操作。
 
 ## <a name="plugin-manager"></a>插件管理器
 
-使用 PowerToys v 0.33 和 on，PowerToys 运行设置菜单包含一个插件管理器，可用于启用/禁用当前可用的各种插件。 通过选择和扩展部分，可以自定义每个插件使用的激活短语。 此外，还可以选择全局结果中是否显示某个插件，还可以设置可用的其他插件选项。 
+PowerToys 运行设置菜单包含一个插件管理器，可用于启用/禁用当前可用的各种插件。 通过选择和扩展部分，可以自定义每个插件使用的激活短语。 此外，还可以选择全局结果中是否显示某个插件，还可以设置可用的其他插件选项。 
 
 ## <a name="program-parameters"></a>程序参数
 
-使用 PowerToys v 0.33 和更高版本时，PowerToys 运行程序插件允许在启动应用程序时添加程序自变量。 程序参数必须符合程序的命令行接口定义的预期格式。
+PowerToys Run program 插件允许在启动应用程序时添加程序自变量。 程序参数必须符合程序的命令行接口定义的预期格式。
 
 例如，当启动 Visual Studio Code 时，您可以指定要打开的文件夹：
 
@@ -111,6 +112,16 @@ Visual Studio Code 还支持一组 [命令行参数](https://code.visualstudio.c
 如果未选择程序插件的选项 "在全局结果中包含"，请确保在默认情况下包含激活短语 `.` 以调用插件的行为：
 
 `.Visual Studio Code -- C:\myFolder`
+
+## <a name="monitor-positioning"></a>监视定位
+
+如果正在使用多个监视器，则可以通过在 "设置" 菜单中配置相应的启动行为，在所需的监视器上启动 PowerToys 运行。 选项包括打开：
+
+- 主监视器
+- 用鼠标光标监视
+- 用聚焦窗口监视
+
+![PowerToys 运行监视器选定内容](../images/pt-run-monitor.png)
 
 ## <a name="windows-search-settings"></a>Windows 搜索设置
 
