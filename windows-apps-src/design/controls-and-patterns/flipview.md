@@ -4,19 +4,19 @@ title: 翻转视图控件指南
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 04/07/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1637845752d713482ad668cfb7078d5e4c138e84
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 90f0cd65dac11128f5a66d5dc15a9a2f75a99adc
+ms.sourcegitcommit: f5d7fd9ac1837260ef1bbda9ad54208826c522f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93032300"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107073024"
 ---
 # <a name="flip-view"></a>翻转视图
 
@@ -29,7 +29,7 @@ ms.locfileid: "93032300"
 
 Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](../style/rounded-corner.md)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](/uwp/toolkits/winui/)。
 
-> **平台 API：** [FlipView class](/uwp/api/windows.ui.xaml.controls.flipview)（FlipView 类）， [ItemsSource 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)， [ItemTemplate 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
+> **平台 API：** [FlipView class](/uwp/api/windows.ui.xaml.controls.flipview)（FlipView 类），[ItemsSource 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)，[ItemTemplate 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -130,7 +130,8 @@ stackPanel1.Children.Add(flipView1);
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->注意：可以通过将项目添加到其&nbsp;Items&nbsp;集合或设置其 ItemsSource 属性来填充翻转视图，但不能同时使用这两种方式  。 如果你设置 ItemsSource 属性并使用 XAML 添加项目，将忽略添加的项目。 如果 ItemsSource 属性已设置且使用代码向项集合中添加项，则会引发异常。
+> [!CAUTION]
+> 可以通过将项目添加到其 Items 集合或设置其 ItemsSource 属性来填充翻转视图，但不能同时使用这两种方式。 如果你设置 ItemsSource 属性并使用 XAML 添加项目，将忽略添加的项目。 如果 ItemsSource 属性已设置且使用代码向项集合中添加项，则会引发异常。
 
 ### <a name="specify-the-look-of-the-items"></a>指定项目的外观
 
@@ -159,7 +160,7 @@ stackPanel1.Children.Add(flipView1);
 
 以下是数据模板所定义布局的外观。
 
-翻转视图数据模板。
+![使用数据模板的翻转视图示例](images/flip-view-template.png)
 
 ### <a name="set-the-orientation-of-the-flip-view"></a>设置翻转视图的方向
 

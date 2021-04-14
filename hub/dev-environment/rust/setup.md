@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Rust, Windows 10, Microsoft, 了解 Rust, 初学者在 Windows 上使用 Rust 进行开发, 结合使用 Rust 与 VS Code
 ms.localizationpriority: medium
 ms.date: 03/04/2021
-ms.openlocfilehash: 5aac8dd9b9f760f6e1ed49ff0246e44c400d72c4
-ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
+ms.openlocfilehash: fa79808c2a2e69ec7e11c7b212d17021cc13cc50
+ms.sourcegitcommit: 2beecf3e403e9f057aefdc43c2f7db6f621793cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102194137"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099792"
 ---
 # <a name="set-up-your-dev-environment-on-windows-for-rust"></a>在 Windows 上针对 Rust 设置开发环境
 
@@ -62,7 +62,7 @@ VS Code 还包含[内置终端](https://code.visualstudio.com/docs/editor/integr
 3. 若要获得调试支持，请安装 CodeLLDB 扩展。 可以[从 Visual Studio Marketplace 安装 CodeLLDB 扩展](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)，也可以打开 VS Code，然后在“扩展”菜单 (Ctrl+Shift+X) 中搜索“CodeLLDB”。
 
    > [!NOTE]
-   > 除了使用 CodeLLDB 扩展获得调试支持外，还可以使用 Microsoft C/C++ 扩展。 C/C++ 扩展不像 CodeLLDB 那样与 IDE 集成得很好。 但 C/C++ 扩展提供了上级调试信息。 所以你最好把它准备好，以防万一。
+   > 除了使用 CodeLLDB 扩展获得调试支持外，还可以使用 Microsoft C/C++ 扩展。 C/C++ 扩展不像 CodeLLDB 那样也与 IDE 集成。 但 C/C++ 扩展提供了上级调试信息。 所以你最好把它准备好，以防万一。
    >
    > 可以[从 Visual Studio Marketplace 安装 C/C++ 扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)，也可以打开 VS Code，然后在“扩展”菜单 (Ctrl+Shift+X) 中搜索“C/C++”。
 

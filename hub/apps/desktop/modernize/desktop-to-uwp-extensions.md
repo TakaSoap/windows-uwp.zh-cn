@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 9da6b1acf2ce27fa6b4ec6c1b4e4274a28491b8b
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: d6ad174a6f3a9795cced8a77accf3eac3bb2a477
+ms.sourcegitcommit: 261c582d23b5d70b5e7b0ff094c212f74246d28a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100335097"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106400775"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>将桌面应用与 Windows 10 和 UWP 集成
 
@@ -30,11 +30,93 @@ ms.locfileid: "100335097"
 
 帮助用户切换到打包后的应用。
 
+* [将现有桌面应用重定向到打包的应用](#redirect)
 * [将现有“开始”磁贴和任务栏按钮指向打包后的应用](#point)
-* [使打包后的应用程序打开文件（而非桌面应用）](#make)
-* [将打包的应用程序与一组文件类型相关联](#associate)
+* [使打包后的应用（而非桌面应用）打开文件](#make)
+* [将打包的应用与一组文件类型相关联](#associate)
 * [向具有特定文件类型的文件的上下文菜单添加选项](#add)
 * [直接使用 URL 打开某些类型的文件](#open)
+
+<a id="redirect"></a>
+
+### <a name="redirect-your-existing-desktop-app-to-your-packaged-app"></a>将现有桌面应用重定向到打包的应用
+
+当用户启动现有未打包桌面应用时，你可以配置改为将 MSIX 打包的应用打开。 
+
+> [!NOTE]
+> Windows Insider Preview 版本 21313 及更高版本支持此功能。
+
+若要启用此行为：
+
+1. 添加注册表项以将未打包桌面应用可执行文件重定向到打包的应用。
+2. 注册在启动未打包桌面应用可执行文件时要启动的打包的应用。
+
+#### <a name="add-registry-entries-to-redirect-your-unpackaged-desktop-app-executable"></a>添加注册表项以重定向未打包桌面应用可执行文件
+
+1. 在注册表中，在 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options** 键下使用桌面应用可执行文件的名称创建一个子项。
+2. 在此子项下，添加以下值：
+    * **AppExecutionAliasRedirect** (DWORD)：如果设置为 1，系统将检查与可执行文件同名的 [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appexecutionalias) 包扩展。 如果已启用 AppExecutionAlias 扩展，则将使用该值激活打包的应用。
+    * **AppExecutionAliasRedirectPackages** (REG_SZ)：系统将仅重定向到列出的包。 包按其包系列名称列出，并用分号隔开。 如果使用了特殊值 *，系统将从任何包重定向到 AppExecutionAlias。
+
+例如：
+
+```Ini
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\contosoapp.exe 
+    AppExecutionAliasRedirect = 1
+    AppExecutionAliasRedirectPackages = "Microsoft.WindowsNotepad_8weky8webbe" 
+```
+
+#### <a name="register-your-packaged-app-to-be-launched"></a>注册要启动的打包应用
+
+在程序包清单中，添加 [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appexecutionalias) 扩展，用于注册未打包桌面应用可执行文件的名称。 例如：
+
+```XML
+<Package
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  IgnorableNamespaces="uap3">
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias" EntryPoint="Windows.FullTrustApplication">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="contosoapp.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
+```
+
+#### <a name="disable-the-redirection"></a>禁用重定向
+
+用户可以通过以下选项关闭重定向并启动未打包应用可执行文件：
+
+* 他们可以卸载应用的 .MSIX 打包版本。
+* 用户可以在“设置”中的“应用执行别名”页上禁用 .Msix 打包应用的 AppExecutionAlias 条目  。
+
+#### <a name="xml-namespaces"></a>XML 命名空间
+
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
+
+#### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
+
+```XML
+<uap3:Extension
+    Category="windows.appExecutionAlias"
+    EntryPoint="Windows.FullTrustApplication">
+    <uap3:AppExecutionAlias>
+        <desktop:ExecutionAlias Alias="[AliasName]" />
+    </uap3:AppExecutionAlias>
+</uap3:Extension>
+```
+
+|名称 |说明 |
+|-------|-------------|
+|类别 |总是为 ``windows.appExecutionAlias``。 |
+|可执行文件 |调用别名时要启动的可执行文件的相对路径。 |
+|Alias |应用的简称。 它必须始终以“.exe”扩展名结尾。 |
 
 <a id="point"></a>
 

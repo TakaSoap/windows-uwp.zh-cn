@@ -1,19 +1,19 @@
 ---
 description: 使用 Windows 运行时 API 为 Windows 10 用户增强桌面应用程序。
 title: 在桌面应用中调用 Windows 运行时 API
-ms.date: 01/28/2021
+ms.date: 04/02/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2dc56597dccf00a15ffc672f60ca2e1f0936f14f
-ms.sourcegitcommit: 6f15cc14e0c4c13999c862664fa7a70de8730b74
+ms.openlocfilehash: 754cc0d4d230172ec8fc6b1ee7c253e10404c370
+ms.sourcegitcommit: 86630e2163a87f6d6e02db9598a3e43f2d227cb6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98981866"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106272987"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>在桌面应用中调用 Windows 运行时 API
 
@@ -27,9 +27,9 @@ ms.locfileid: "98981866"
 
 有几个用于 .NET 项目的选项：
 
-* 从 .NET 5 预览 8 开始，可以在项目文件中添加目标框架名字对象 (TFM)，用于访问 WinRT API。 此选项支持面向 Windows 10 1809 版或更高版本的项目。
+* 从 .NET 5 开始，可以在项目文件中添加目标框架名字对象 (TFM)，用于访问 WinRT API。 此选项支持面向 Windows 10 1809 版或更高版本的项目。
 * 对于早期版本的 .NET，可以安装 `Microsoft.Windows.SDK.Contracts` NuGet 包，以便将所有必要的引用添加到项目中。 此选项支持面向 Windows 10 1803 版或更高版本的项目。
-* 如果你的项目同时面向 .NET 5 预览版 8（或更高版本）和早期版本的 .NET 等多个目标，可将项目文件配置为同时使用这两个选项。
+* 如果你的项目同时面向 .NET 5（或更高版本）和早期版本的 .NET 等多个目标，可将项目文件配置为同时使用这两个选项。
 
 ### <a name="net-5-use-the-target-framework-moniker-option"></a>.NET 5：使用“目标框架名字对象”选项
 
@@ -37,7 +37,7 @@ ms.locfileid: "98981866"
 
 1. 在 Visual Studio 中打开项目后，在“解决方案资源管理器”中右键单击该项目，然后选择“编辑项目文件” 。 项目文件的呈现效果与此类似。
 
-    ```csharp
+    ```xml
     <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
       <PropertyGroup>
         <OutputType>WinExe</OutputType>
@@ -55,7 +55,7 @@ ms.locfileid: "98981866"
 
     例如，以下元素适用于面向 Windows 10 2004 版的项目。
 
-    ```csharp
+    ```xml
     <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
     ```
 
@@ -63,7 +63,7 @@ ms.locfileid: "98981866"
 
 ### <a name="earlier-versions-of-net-install-the-microsoftwindowssdkcontracts-nuget-package"></a>早期版本的 .NET：安装 Microsoft.Windows.SDK.Contracts NuGet 包
 
-如果应用使用 .NET Core 3.x、.NET 5 预览版 7（或更低版本）或 .NET Framework，请使用此选项。 此选项支持面向 Windows 10 1803 版或更高版本操作系统的项目。
+如果应用使用 .NET Core 3.x 或 .NET Framework，请使用此选项。 此选项支持面向 Windows 10 1803 版或更高版本操作系统的项目。
 
 1. 确保已启用[包引用](/nuget/consume-packages/package-references-in-project-files)：
 
@@ -85,11 +85,11 @@ ms.locfileid: "98981866"
 
 ### <a name="configure-projects-that-multi-target-different-versions-of-net"></a>配置面向多个不同 .NET 版本的项目
 
-如果你的项目同时面向 .NET 5 预览版 8（或更高版本）和早期版本（包括 .NET Core 3.x 和 .NET Framework），可配置项目文件，让其使用目标框架名字对象自动拉取 .NET 5 的 WinRT API 参考，并为早期版本使用 `Microsoft.Windows.SDK.Contracts` NuGet 包。
+如果你的项目同时面向 .NET 5（或更高版本）和早期版本（包括 .NET Core 3.x 和 .NET Framework），可配置项目文件，让其使用目标框架名字对象自动拉取 .NET 5 的 WinRT API 参考，并为早期版本使用 `Microsoft.Windows.SDK.Contracts` NuGet 包。
 
 1. 在 Visual Studio 中打开项目后，在“解决方案资源管理器”中右键单击该项目，然后选择“编辑项目文件” 。 下面的示例展示使用 .NET Core 3.1 的应用的项目文件。
 
-    ```csharp
+    ```xml
     <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
       <PropertyGroup>
         <OutputType>WinExe</OutputType>
@@ -101,22 +101,22 @@ ms.locfileid: "98981866"
 
 2. 将文件中的 TargetFramework 元素替换为 TargetFrameworks 元素（请注意复数形式）。 在此元素中，为要面向的所有 .NET 版本（以分号分隔）指定目标框架名字对象。 
 
-    * 对于 .NET 5 预览版 8 或更高版本，请使用以下目标框架名字对象之一：
+    * 对于 .NET 5 或更高版本，请使用以下目标框架名字对象之一：
         * **net5.0-windows10.0.17763.0**：如果应用面向 Windows 10 1809 版，请使用此值。
         * **net5.0-windows10.0.18362.0**：如果应用面向 Windows 10 1903 版，请使用此值。
         * **net5.0-windows10.0.19041.0**：如果应用面向 Windows 10 2004 版，请使用此值。
     * 对于 .NET Core 3.x，请使用 netcoreapp 3.0 或 netcoreapp 3.1。
     * 对于 .NET Framework，请使用 net46。
 
-    下面的示例演示如何同时面向 .NET Core 3.1 和 .NET 5 预览版 8（适用于 Windows 10 2004 版）。
+    下面的示例演示如何同时面向 .NET Core 3.1 和 .NET 5（适用于 Windows 10 2004 版）。
 
-    ```csharp
+    ```xml
     <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
     ```
 
 3. 在 PropertyGroup 元素后面，添加一个 PackageReference 元素，它包含一个条件语句，该语句将为你的应用面向的任何 .NET Core 3.x 版本或 .NET Framework 安装 NuGet 包 `Microsoft.Windows.SDK.Contracts` 。 PackageReference 元素必须是 ItemGroup 元素的子元素。 下面的示例演示如何面向 .NET Core 3.1 执行此操作。
 
-    ```csharp
+    ```xml
     <ItemGroup>
       <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
                         Include="Microsoft.Windows.SDK.Contracts"
@@ -126,7 +126,7 @@ ms.locfileid: "98981866"
 
     完成后，项目文件的呈现效果与此类似。
 
-    ```csharp
+    ```xml
     <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
       <PropertyGroup>
         <OutputType>WinExe</OutputType>

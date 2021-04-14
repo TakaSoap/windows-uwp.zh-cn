@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 桌面开发
-ms.openlocfilehash: 2afa5e4ff1c116439f916b10a156c567bd7a2ac4
-ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
+ms.openlocfilehash: a9efb252b6b20e7a9cfe9c6bd2b3ad345c4d3abf
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105619363"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270145"
 ---
 # <a name="choose-your-windows-app-platform"></a>选择 Windows 应用平台
 
@@ -113,7 +113,7 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
 
 ## <a name="use-the-windows-ui-library-with-windows-apps"></a>在 Windows 应用中使用 Windows UI 库
 
-为了对主要的 Windows 应用平台进行补充，还可以在应用中使用 [Windows UI 库 (WinUI)](../winui/index.md)。 WinUI 开始时是以工具包的形式出现，为面向低端版 Windows 10 的 UWP 应用提供新版和更新版 WinRT 控件。 从 WinUI 3（仍为预览版）开始，WinUI 扩大范围，成为跨 UWP、.NET 和 Win32 应用平台的 Windows 10 应用的顶级本机用户界面 (UI) 框架。
+为了对主要的 Windows 应用平台进行补充，还可以在应用中使用 [Windows UI 库 (WinUI)](../winui/index.md)。 WinUI 开始时是以工具包的形式出现，为面向低端版 Windows 10 的 UWP 应用提供新版和更新版 WinRT 控件。 从 WinUI 3 开始，WinUI 扩大范围，成为跨 UWP、.NET 和 Win32 应用平台的 Windows 10 应用的顶级本机用户界面 (UI) 框架。
 
 可通过以下方式在 Windows 应用中使用 WinUI。
 
@@ -121,11 +121,8 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
   * UWP 应用可以使用 WinUI 2.x 控件来替代 Windows SDK 提供的 WinRT 控件。 这些版本的 WinUI 包括全新的控件和 Windows SDK 中现有控件的更新版本。
   * 你可以更新现有的 WPF、Windows 窗体和 C++/Win32 应用，以使用 [XAML 岛](modernize/xaml-islands.md)托管 WinUI 2.x 控件。
 
-* [WinUI 3（预览版）](../winui/winui3/index.md)：
+* [WinUI 3](../winui/winui3/index.md)：
   * 从 WinUI 3 开始，你可以创建使用完全基于 WinUI 的 UI 的 [.NET 和 C++/Win32 应用](../winui/winui3/get-started-winui3-for-desktop.md)和 [UWP 应用](../winui/winui3/get-started-winui3-for-uwp.md)。 此版本包含 Visual Studio 项目模板，可提供创建这些应用所需的一切条件。
-
-> [!NOTE]
-> WinUI 3 仍为预览版，不应用于生产应用。
 
 ## <a name="other-app-platforms"></a>其他应用平台
 
