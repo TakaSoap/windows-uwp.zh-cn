@@ -1,6 +1,6 @@
 ---
-title: 窗体
-description: 了解为通用 Windows 平台 (UWP) 应用中的窗体设计和创建 XAML 布局的指南。
+title: 表单
+description: 了解为通用 Windows 平台 (UWP) 应用中的表单设计和创建 XAML 布局的指南。
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 03/23/2021
 ms.locfileid: "104804801"
 ---
-# <a name="forms"></a>窗体
+# <a name="forms"></a>表单
 表单是一组控件，用于收集和提交来自用户的数据。 表单通常用于设置页面、调查、创建帐户，等等。 
 
 本文讨论为表单创建 XAML 布局的设计准则。
@@ -25,7 +25,7 @@ ms.locfileid: "104804801"
 - 注册帐户
 - 更改应用设置，例如隐私或显示选项
 - 参与调查
-- 购买项
+- 购买项目
 - 提供反馈
 
 ## <a name="types-of-forms"></a>表单类型
